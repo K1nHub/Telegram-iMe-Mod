@@ -11,7 +11,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 /* JADX WARN: Enum visitor error
@@ -50,13 +50,34 @@ public final class TelegramCacheType {
 
         static {
             int[] iArr = new int[TelegramCacheType.values().length];
-            iArr[TelegramCacheType.PHOTO.ordinal()] = 1;
-            iArr[TelegramCacheType.VIDEO.ordinal()] = 2;
-            iArr[TelegramCacheType.DOCUMENTS.ordinal()] = 3;
-            iArr[TelegramCacheType.MUSIC.ordinal()] = 4;
-            iArr[TelegramCacheType.VOICE.ordinal()] = 5;
-            iArr[TelegramCacheType.STICKERS.ordinal()] = 6;
-            iArr[TelegramCacheType.OTHER.ordinal()] = 7;
+            try {
+                iArr[TelegramCacheType.PHOTO.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[TelegramCacheType.VIDEO.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[TelegramCacheType.DOCUMENTS.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[TelegramCacheType.MUSIC.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[TelegramCacheType.VOICE.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr[TelegramCacheType.STICKERS.ordinal()] = 6;
+            } catch (NoSuchFieldError unused6) {
+            }
+            try {
+                iArr[TelegramCacheType.OTHER.ordinal()] = 7;
+            } catch (NoSuchFieldError unused7) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -124,31 +145,31 @@ public final class TelegramCacheType {
     public final String title() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String string = LocaleController.getString("LocalPhotoCache", C3158R.string.LocalPhotoCache);
+                String string = LocaleController.getString("LocalPhotoCache", C3286R.string.LocalPhotoCache);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"LocalPhotoCac…R.string.LocalPhotoCache)");
                 return string;
             case 2:
-                String string2 = LocaleController.getString("LocalVideoCache", C3158R.string.LocalVideoCache);
+                String string2 = LocaleController.getString("LocalVideoCache", C3286R.string.LocalVideoCache);
                 Intrinsics.checkNotNullExpressionValue(string2, "getString(\"LocalVideoCac…R.string.LocalVideoCache)");
                 return string2;
             case 3:
-                String string3 = LocaleController.getString("LocalDocumentCache", C3158R.string.LocalDocumentCache);
+                String string3 = LocaleController.getString("LocalDocumentCache", C3286R.string.LocalDocumentCache);
                 Intrinsics.checkNotNullExpressionValue(string3, "getString(\"LocalDocument…tring.LocalDocumentCache)");
                 return string3;
             case 4:
-                String string4 = LocaleController.getString("LocalMusicCache", C3158R.string.LocalMusicCache);
+                String string4 = LocaleController.getString("LocalMusicCache", C3286R.string.LocalMusicCache);
                 Intrinsics.checkNotNullExpressionValue(string4, "getString(\"LocalMusicCac…R.string.LocalMusicCache)");
                 return string4;
             case 5:
-                String string5 = LocaleController.getString("LocalAudioCache", C3158R.string.LocalAudioCache);
+                String string5 = LocaleController.getString("LocalAudioCache", C3286R.string.LocalAudioCache);
                 Intrinsics.checkNotNullExpressionValue(string5, "getString(\"LocalAudioCac…R.string.LocalAudioCache)");
                 return string5;
             case 6:
-                String string6 = LocaleController.getString("AnimatedStickers", C3158R.string.AnimatedStickers);
+                String string6 = LocaleController.getString("AnimatedStickers", C3286R.string.AnimatedStickers);
                 Intrinsics.checkNotNullExpressionValue(string6, "getString(\"AnimatedStick….string.AnimatedStickers)");
                 return string6;
             case 7:
-                String string7 = LocaleController.getString("LocalCache", C3158R.string.LocalCache);
+                String string7 = LocaleController.getString("LocalCache", C3286R.string.LocalCache);
                 Intrinsics.checkNotNullExpressionValue(string7, "getString(\"LocalCache\", R.string.LocalCache)");
                 return string7;
             default:
@@ -183,8 +204,14 @@ public final class TelegramCacheType {
 
             static {
                 int[] iArr = new int[TelegramCacheType.values().length];
-                iArr[TelegramCacheType.DOCUMENTS.ordinal()] = 1;
-                iArr[TelegramCacheType.MUSIC.ordinal()] = 2;
+                try {
+                    iArr[TelegramCacheType.DOCUMENTS.ordinal()] = 1;
+                } catch (NoSuchFieldError unused) {
+                }
+                try {
+                    iArr[TelegramCacheType.MUSIC.ordinal()] = 2;
+                } catch (NoSuchFieldError unused2) {
+                }
                 $EnumSwitchMapping$0 = iArr;
             }
         }
@@ -212,7 +239,7 @@ public final class TelegramCacheType {
                 List<File> directories = telegramCacheType2.getDirectories();
                 if (!(directories instanceof Collection) || !directories.isEmpty()) {
                     for (File file2 : directories) {
-                        if (Intrinsics.areEqual(file2 == null ? null : file2.getPath(), file.getParent())) {
+                        if (Intrinsics.areEqual(file2 != null ? file2.getPath() : null, file.getParent())) {
                             z = true;
                             break;
                         }

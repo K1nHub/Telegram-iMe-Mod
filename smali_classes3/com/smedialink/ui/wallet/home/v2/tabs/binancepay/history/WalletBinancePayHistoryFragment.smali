@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment$ScreenType;,
-        Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment$Companion;
+        Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment$Companion;,
+        Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment$ScreenType;
     }
 .end annotation
 
@@ -47,34 +47,34 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$4RpyHuH2wv4iK4TRD0qweJx45qc(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
+.method public static synthetic $r8$lambda$BQOQ0HkZPnCxWLvAGJaXaPC6R_E(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;->getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;->setupListeners$lambda$10(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$6dWW0pNmgkU6sfU6klkpgImT46Y(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$PukAPvEMcdqGBD21Gnb04-oRoIw(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;->setupListeners$lambda-10(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;->setupListeners$lambda$9$lambda$8(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$e_icrPrZp8eXgYH0Vs463qICGvs(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
+.method public static synthetic $r8$lambda$R1Ri4WfOporHEAJvOU61gG2ixeU(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/adapter/BinancePayHistoryRecycleAdapter;Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;->setupListeners$lambda-9$lambda-8(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;->setupLoadMore$lambda$6$lambda$5$lambda$4(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/adapter/BinancePayHistoryRecycleAdapter;Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$nFHDenleyvfPwBUjACPcvyUIft8(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/adapter/BinancePayHistoryRecycleAdapter;Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
+.method public static synthetic $r8$lambda$hwlRwbSVhgbqXvdUAnsHgQ9kHVI(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;->setupLoadMore$lambda-6$lambda-5$lambda-4(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/adapter/BinancePayHistoryRecycleAdapter;Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;->getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
 
     return-void
 .end method
@@ -323,7 +323,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
+.method private static final getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -469,18 +469,18 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-10(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$10(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "$noName_1"
+    const-string p1, "<anonymous parameter 1>"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -550,7 +550,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-9$lambda-8(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
+.method private static final setupListeners$lambda$9$lambda$8(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -596,7 +596,7 @@
     return-void
 .end method
 
-.method private static final setupLoadMore$lambda-6$lambda-5$lambda-4(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/adapter/BinancePayHistoryRecycleAdapter;Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
+.method private static final setupLoadMore$lambda$6$lambda$5$lambda$4(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/adapter/BinancePayHistoryRecycleAdapter;Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
     .locals 1
 
     const-string v0, "$this_with"
@@ -673,9 +673,6 @@
 
     .line 148
     invoke-direct {p0, v1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;->setupLoadMore(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/adapter/BinancePayHistoryRecycleAdapter;)V
-
-    .line 149
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 145
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V

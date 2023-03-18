@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/MultiPanelSettingsActivity$$ExternalSyntheticLambda1;->f$0:Lorg/fork/ui/fragment/MultiPanelSettingsActivity;
 
-    invoke-static {v0, p1, p2}, Lorg/fork/ui/fragment/MultiPanelSettingsActivity;->$r8$lambda$UebE5Z7iA7phTYK0gaFPKaCOCY0(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2}, Lorg/fork/ui/fragment/MultiPanelSettingsActivity;->$r8$lambda$yOoVCfTGNYsPMJjSOjZ0-R5HL4Y(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;Landroid/view/View;I)V
 
     return-void
 .end method

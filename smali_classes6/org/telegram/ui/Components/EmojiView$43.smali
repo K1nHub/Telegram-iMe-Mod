@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroidx/recyclerview/widget/GridLayoutManager;Lorg/telegram/ui/Components/RecyclerListView;)V
     .locals 0
 
-    .line 5511
+    .line 5529
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/EmojiView$43;->val$layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
@@ -43,7 +43,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 5533
+    .line 5551
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$15300(Lorg/telegram/ui/Components/EmojiView;)Landroid/animation/AnimatorSet;
@@ -56,7 +56,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 5534
+    .line 5552
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v0, 0x0
@@ -70,7 +70,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 6
 
-    .line 5514
+    .line 5532
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$15300(Lorg/telegram/ui/Components/EmojiView;)Landroid/animation/AnimatorSet;
@@ -83,21 +83,21 @@
 
     if-eqz p1, :cond_5
 
-    .line 5515
+    .line 5533
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$43;->val$layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findFirstVisibleItemPosition()I
 
     move-result p1
 
-    .line 5516
+    .line 5534
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setTranslationY(F)V
 
-    .line 5517
+    .line 5535
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 5519
+    .line 5537
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -138,7 +138,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 5520
+    .line 5538
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -155,7 +155,7 @@
 
     goto :goto_1
 
-    .line 5521
+    .line 5539
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -167,7 +167,7 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 5522
+    .line 5540
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, 0x5
@@ -192,7 +192,7 @@
 
     goto :goto_1
 
-    .line 5518
+    .line 5536
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -213,12 +213,12 @@
 
     if-eq p1, v0, :cond_4
 
-    .line 5525
+    .line 5543
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->val$layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     invoke-virtual {v0, p1, v4}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
-    .line 5527
+    .line 5545
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
 

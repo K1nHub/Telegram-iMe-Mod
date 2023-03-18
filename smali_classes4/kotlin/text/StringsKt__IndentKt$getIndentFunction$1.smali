@@ -59,7 +59,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 102
+    .line 104
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lkotlin/text/StringsKt__IndentKt$getIndentFunction$1;->invoke(Ljava/lang/String;)Ljava/lang/String;

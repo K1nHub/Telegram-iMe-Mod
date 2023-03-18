@@ -894,7 +894,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // com.google.android.exoplayer2.drm.DrmSessionEventListener
     public final void onDrmKeysLoaded(int i, MediaSource.MediaPeriodId mediaPeriodId) {
         final AnalyticsListener.EventTime generateMediaPeriodEventTime = generateMediaPeriodEventTime(i, mediaPeriodId);
-        sendEvent(generateMediaPeriodEventTime, 1023, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda2
+        sendEvent(generateMediaPeriodEventTime, AnalyticsListener.EVENT_DRM_KEYS_LOADED, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda2
             @Override // com.google.android.exoplayer2.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onDrmKeysLoaded(AnalyticsListener.EventTime.this);

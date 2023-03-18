@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoPickerSearchActivity;)V
     .locals 0
 
-    .line 155
+    .line 154
     iput-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 
     if-nez v1, :cond_0
 
-    .line 175
+    .line 174
     iget-object v2, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$300(Lorg/telegram/ui/PhotoPickerSearchActivity;)[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
@@ -63,7 +63,7 @@
 
     return-void
 
-    .line 178
+    .line 177
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
@@ -75,7 +75,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 179
+    .line 178
     iget-object v2, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$300(Lorg/telegram/ui/PhotoPickerSearchActivity;)[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
@@ -104,7 +104,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 180
+    .line 179
     iget-object v2, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$300(Lorg/telegram/ui/PhotoPickerSearchActivity;)[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
@@ -149,7 +149,7 @@
 
     goto :goto_0
 
-    .line 182
+    .line 181
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
@@ -177,7 +177,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 183
+    .line 182
     iget-object v2, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$300(Lorg/telegram/ui/PhotoPickerSearchActivity;)[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
@@ -223,7 +223,7 @@
     :goto_0
     if-nez v1, :cond_2
 
-    .line 186
+    .line 185
     iget-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$300(Lorg/telegram/ui/PhotoPickerSearchActivity;)[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
@@ -232,7 +232,7 @@
 
     aget-object p1, p1, v3
 
-    .line 187
+    .line 186
     iget-object v1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$300(Lorg/telegram/ui/PhotoPickerSearchActivity;)[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
@@ -249,7 +249,7 @@
 
     aput-object v2, v1, v3
 
-    .line 188
+    .line 187
     iget-object v1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$300(Lorg/telegram/ui/PhotoPickerSearchActivity;)[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
@@ -258,7 +258,7 @@
 
     aput-object p1, v1, v0
 
-    .line 189
+    .line 188
     iget-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$300(Lorg/telegram/ui/PhotoPickerSearchActivity;)[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
@@ -278,7 +278,7 @@
 .method public onPageSelected(IZ)V
     .locals 4
 
-    .line 158
+    .line 157
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$300(Lorg/telegram/ui/PhotoPickerSearchActivity;)[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
@@ -297,7 +297,7 @@
 
     return-void
 
-    .line 161
+    .line 160
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
@@ -323,7 +323,7 @@
     :goto_0
     invoke-static {v0, v2}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$502(Lorg/telegram/ui/PhotoPickerSearchActivity;Z)Z
 
-    .line 162
+    .line 161
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$300(Lorg/telegram/ui/PhotoPickerSearchActivity;)[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
@@ -334,7 +334,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;->access$402(Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;I)I
 
-    .line 163
+    .line 162
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$300(Lorg/telegram/ui/PhotoPickerSearchActivity;)[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
@@ -345,19 +345,19 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 164
+    .line 163
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v0, v3}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$700(Lorg/telegram/ui/PhotoPickerSearchActivity;Z)V
 
-    .line 165
+    .line 164
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v0, p2}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$802(Lorg/telegram/ui/PhotoPickerSearchActivity;Z)Z
 
     if-nez p1, :cond_2
 
-    .line 167
+    .line 166
     iget-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$200(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -376,7 +376,7 @@
 
     goto :goto_1
 
-    .line 169
+    .line 168
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$3;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 

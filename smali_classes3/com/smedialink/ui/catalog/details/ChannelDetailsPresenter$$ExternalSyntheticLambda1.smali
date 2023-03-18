@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Z
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Z)V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p1, p0, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$$ExternalSyntheticLambda1;->f$0:Z
+    iput-object p1, p0, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$$ExternalSyntheticLambda1;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -25,11 +25,9 @@
 .method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-boolean v0, p0, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$$ExternalSyntheticLambda1;->f$0:Z
+    iget-object v0, p0, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$$ExternalSyntheticLambda1;->f$0:Lkotlin/jvm/functions/Function1;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$Chat;
-
-    invoke-static {v0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter;->$r8$lambda$dKHWQOjn5bV2IUupLwgsBZv8c20(ZLorg/telegram/tgnet/TLRPC$Chat;)Ljava/lang/Boolean;
+    invoke-static {v0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter;->$r8$lambda$RJh7PVrIjpgct7NZsNGanvGLIxA(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/lang/Boolean;
 
     move-result-object p1
 

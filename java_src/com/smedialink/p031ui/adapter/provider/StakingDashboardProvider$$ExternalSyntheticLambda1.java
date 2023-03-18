@@ -11,6 +11,6 @@ public final /* synthetic */ class StakingDashboardProvider$$ExternalSyntheticLa
 
     @Override // org.fork.utils.Callbacks$Callback
     public final void invoke() {
-        StakingDashboardProvider.m1404onCalculatorClick$lambda0();
+        StakingDashboardProvider.onCalculatorClick$lambda$0();
     }
 }

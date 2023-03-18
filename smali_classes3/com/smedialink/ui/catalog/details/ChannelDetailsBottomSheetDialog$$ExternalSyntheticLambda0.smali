@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;->$r8$lambda$tr9F5xJN3iQJ_KQhPzutipn1ABU(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;->$r8$lambda$SmTcB0n17UGrT9dtwEehOwiuJ0o(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
 
     return-void
 .end method

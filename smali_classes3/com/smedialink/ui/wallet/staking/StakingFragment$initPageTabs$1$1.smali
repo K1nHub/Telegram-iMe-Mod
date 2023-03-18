@@ -59,6 +59,10 @@
 
     move-result-object v0
 
+    const-string v1, "null cannot be cast to non-null type com.smedialink.navigation.common.router.base.BaseNavigationRouter<com.smedialink.ui.base.mvp.MvpFragment>"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     check-cast v0, Lcom/smedialink/navigation/common/router/base/BaseNavigationRouter;
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/staking/StakingFragment$initPageTabs$1$1;->$tab:Lcom/smedialink/storage/domain/model/staking/StakingTabType;

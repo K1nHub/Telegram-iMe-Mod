@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDrawerHeaderSettingsBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DrawerHeaderSettingsBottomSheet.kt\norg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,251:1\n169#2,2:252\n1#3:254\n*S KotlinDebug\n*F\n+ 1 DrawerHeaderSettingsBottomSheet.kt\norg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet\n*L\n148#1:252,2\n*E\n"
+    value = "SMAP\nDrawerHeaderSettingsBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DrawerHeaderSettingsBottomSheet.kt\norg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,251:1\n177#2,2:252\n1#3:254\n*S KotlinDebug\n*F\n+ 1 DrawerHeaderSettingsBottomSheet.kt\norg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet\n*L\n148#1:252,2\n*E\n"
 .end annotation
 
 
@@ -50,26 +50,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$15wiz26FV1q3pQ6eO4MW04-fIQo(Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Lorg/telegram/ui/Components/RecyclerListView;Landroid/view/View;IFF)V
+.method public static synthetic $r8$lambda$OEIFnnLSDMgwFWKJLBuWGIVIwLw(ZLorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;ILcom/smedialink/ui/drawer/DrawerAccountData;)V
     .locals 0
 
-    invoke-static/range {p0 .. p5}, Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->initListView$lambda-6$lambda-5(Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Lorg/telegram/ui/Components/RecyclerListView;Landroid/view/View;IFF)V
+    invoke-static {p0, p1, p2, p3}, Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->initListView$lambda$6$lambda$5$lambda$3(ZLorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;ILcom/smedialink/ui/drawer/DrawerAccountData;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$KoyKSthDOZiZX-qiD20kuJENYcQ(ZLorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;ILcom/smedialink/ui/drawer/DrawerAccountData;)V
+.method public static synthetic $r8$lambda$aqvgHOWu-qk8cLPX2pP8gwl3qts(ZLorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->initListView$lambda-6$lambda-5$lambda-3(ZLorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;ILcom/smedialink/ui/drawer/DrawerAccountData;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->createBottomButton$lambda$10$lambda$9(ZLorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$fuQxzTAEgpo87j5xluaxPKfxybs(ZLorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$iI8lYsKFsqH7tdzOxNXnPoM33LE(Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Lorg/telegram/ui/Components/RecyclerListView;Landroid/view/View;IFF)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->createBottomButton$lambda-10$lambda-9(ZLorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Landroid/view/View;)V
+    invoke-static/range {p0 .. p5}, Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->initListView$lambda$6$lambda$5(Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Lorg/telegram/ui/Components/RecyclerListView;Landroid/view/View;IFF)V
 
     return-void
 .end method
@@ -501,7 +501,7 @@
     return-object v0
 .end method
 
-.method private static final createBottomButton$lambda-10$lambda-9(ZLorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Landroid/view/View;)V
+.method private static final createBottomButton$lambda$10$lambda$9(ZLorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Landroid/view/View;)V
     .locals 1
 
     const-string p2, "this$0"
@@ -708,7 +708,7 @@
 
     move-result v1
 
-    .line 169
+    .line 177
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/View;->setPadding(IIII)V
 
     const/4 v1, 0x1
@@ -841,7 +841,7 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda-6$lambda-5(Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Lorg/telegram/ui/Components/RecyclerListView;Landroid/view/View;IFF)V
+.method private static final initListView$lambda$6$lambda$5(Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Lorg/telegram/ui/Components/RecyclerListView;Landroid/view/View;IFF)V
     .locals 1
 
     const-string p5, "this$0"
@@ -972,8 +972,6 @@
     .line 132
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 118
     iput-object p1, p0, Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->accountDataSelector:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -1041,7 +1039,7 @@
     return-void
 .end method
 
-.method private static final initListView$lambda-6$lambda-5$lambda-3(ZLorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;ILcom/smedialink/ui/drawer/DrawerAccountData;)V
+.method private static final initListView$lambda$6$lambda$5$lambda$3(ZLorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;ILcom/smedialink/ui/drawer/DrawerAccountData;)V
     .locals 2
 
     const-string v0, "this$0"
@@ -1152,7 +1150,7 @@
     .line 84
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    const-string v1, "windowBackgroundWhite"
+    const-string/jumbo v1, "windowBackgroundWhite"
 
     .line 85
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1314,14 +1312,11 @@
     .line 62
     iget-object v0, p0, Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->accountDataSelector:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
 
-    :goto_0
+    :cond_0
     const/4 v0, 0x0
 
     .line 63

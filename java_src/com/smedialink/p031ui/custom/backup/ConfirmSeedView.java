@@ -55,6 +55,7 @@ public final class ConfirmSeedView extends FrameLayout {
         LinearLayout linearLayout = this.binding.linearSwitcherWrapper;
         Intrinsics.checkNotNullExpressionValue(linearLayout, "binding\n                .linearSwitcherWrapper");
         filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(linearLayout), ConfirmSeedView$applyColors$$inlined$filterIsInstance$1.INSTANCE);
+        Intrinsics.checkNotNull(filter, "null cannot be cast to non-null type kotlin.sequences.Sequence<R of kotlin.sequences.SequencesKt___SequencesKt.filterIsInstance>");
         for (BackupWordSwitcher backupWordSwitcher : filter) {
             backupWordSwitcher.applyColors();
         }
@@ -72,6 +73,7 @@ public final class ConfirmSeedView extends FrameLayout {
         LinearLayout linearLayout = this.binding.linearSwitcherWrapper;
         Intrinsics.checkNotNullExpressionValue(linearLayout, "binding\n                .linearSwitcherWrapper");
         filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(linearLayout), ConfirmSeedView$drawSwitchers$$inlined$filterIsInstance$1.INSTANCE);
+        Intrinsics.checkNotNull(filter, "null cannot be cast to non-null type kotlin.sequences.Sequence<R of kotlin.sequences.SequencesKt___SequencesKt.filterIsInstance>");
         int i = 0;
         for (Object obj : filter) {
             int i2 = i + 1;

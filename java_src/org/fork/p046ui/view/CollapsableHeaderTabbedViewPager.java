@@ -9,7 +9,6 @@ import android.widget.FrameLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.google.android.material.appbar.AppBarLayout;
 import com.smedialink.utils.extentions.common.ViewExtKt;
-import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.utils.AbstractTabbedViewPage;
@@ -61,9 +60,9 @@ public final class CollapsableHeaderTabbedViewPager extends TabbedViewPager {
             frameLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.fork.ui.view.CollapsableHeaderTabbedViewPager$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view, MotionEvent motionEvent) {
-                    boolean m2104init$lambda2$lambda1$lambda0;
-                    m2104init$lambda2$lambda1$lambda0 = CollapsableHeaderTabbedViewPager.m2104init$lambda2$lambda1$lambda0(CollapsableHeaderTabbedViewPager.this, view, motionEvent);
-                    return m2104init$lambda2$lambda1$lambda0;
+                    boolean init$lambda$2$lambda$1$lambda$0;
+                    init$lambda$2$lambda$1$lambda$0 = CollapsableHeaderTabbedViewPager.init$lambda$2$lambda$1$lambda$0(CollapsableHeaderTabbedViewPager.this, view, motionEvent);
+                    return init$lambda$2$lambda$1$lambda$0;
                 }
             });
             forkViewCollapsableHeaderPagerBinding.framePagesContainer.addView(getPager(), LayoutHelper.createFrame(-1, -1.0f));
@@ -72,8 +71,7 @@ public final class CollapsableHeaderTabbedViewPager extends TabbedViewPager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: init$lambda-2$lambda-1$lambda-0  reason: not valid java name */
-    public static final boolean m2104init$lambda2$lambda1$lambda0(CollapsableHeaderTabbedViewPager this$0, View view, MotionEvent motionEvent) {
+    public static final boolean init$lambda$2$lambda$1$lambda$0(CollapsableHeaderTabbedViewPager this$0, View view, MotionEvent motionEvent) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getPager().onTouchEvent(motionEvent);
         return true;
@@ -97,23 +95,21 @@ public final class CollapsableHeaderTabbedViewPager extends TabbedViewPager {
             return;
         }
         TabbedViewPagerDelegate<AbstractTabbedViewPage> delegate = getDelegate();
-        final SwipeRefreshLayout swipeRefreshLayout = delegate == null ? null : delegate.getSwipeRefreshLayout();
+        final SwipeRefreshLayout swipeRefreshLayout = delegate != null ? delegate.getSwipeRefreshLayout() : null;
         if (swipeRefreshLayout != null) {
             AppBarLayout.OnOffsetChangedListener onOffsetChangedListener = new AppBarLayout.OnOffsetChangedListener() { // from class: org.fork.ui.view.CollapsableHeaderTabbedViewPager$$ExternalSyntheticLambda1
                 @Override // com.google.android.material.appbar.AppBarLayout.BaseOnOffsetChangedListener
                 public final void onOffsetChanged(AppBarLayout appBarLayout, int i) {
-                    CollapsableHeaderTabbedViewPager.m2103addSwipeToRefreshSupportIfNeeded$lambda3(SwipeRefreshLayout.this, appBarLayout, i);
+                    CollapsableHeaderTabbedViewPager.addSwipeToRefreshSupportIfNeeded$lambda$3(SwipeRefreshLayout.this, appBarLayout, i);
                 }
             };
             this.binding.appbar.addOnOffsetChangedListener(onOffsetChangedListener);
-            Unit unit = Unit.INSTANCE;
             this.onOffsetChangedListener = onOffsetChangedListener;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: addSwipeToRefreshSupportIfNeeded$lambda-3  reason: not valid java name */
-    public static final void m2103addSwipeToRefreshSupportIfNeeded$lambda3(SwipeRefreshLayout swipeRefreshLayout, AppBarLayout appBarLayout, int i) {
+    public static final void addSwipeToRefreshSupportIfNeeded$lambda$3(SwipeRefreshLayout swipeRefreshLayout, AppBarLayout appBarLayout, int i) {
         swipeRefreshLayout.setEnabled(i == 0);
     }
 }

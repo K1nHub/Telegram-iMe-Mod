@@ -17,7 +17,7 @@ public final class StakingOperation {
     private final StakingOperationCost fee;
 
     /* renamed from: id */
-    private final long f347id;
+    private final long f350id;
     private final String issuedAt;
     private final String issuer;
     private final NetworkType networkType;
@@ -37,21 +37,42 @@ public final class StakingOperation {
 
         static {
             int[] iArr = new int[StakingOperationType.values().length];
-            iArr[StakingOperationType.APPROVAL.ordinal()] = 1;
-            iArr[StakingOperationType.DEPOSIT.ordinal()] = 2;
-            iArr[StakingOperationType.WITHDRAWAL.ordinal()] = 3;
-            iArr[StakingOperationType.CLAIM.ordinal()] = 4;
+            try {
+                iArr[StakingOperationType.APPROVAL.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[StakingOperationType.DEPOSIT.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[StakingOperationType.WITHDRAWAL.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[StakingOperationType.CLAIM.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
             $EnumSwitchMapping$0 = iArr;
             int[] iArr2 = new int[StakingOperationStatus.values().length];
-            iArr2[StakingOperationStatus.PENDING.ordinal()] = 1;
-            iArr2[StakingOperationStatus.CONFIRMED.ordinal()] = 2;
-            iArr2[StakingOperationStatus.FAILED.ordinal()] = 3;
+            try {
+                iArr2[StakingOperationStatus.PENDING.ordinal()] = 1;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr2[StakingOperationStatus.CONFIRMED.ordinal()] = 2;
+            } catch (NoSuchFieldError unused6) {
+            }
+            try {
+                iArr2[StakingOperationStatus.FAILED.ordinal()] = 3;
+            } catch (NoSuchFieldError unused7) {
+            }
             $EnumSwitchMapping$1 = iArr2;
         }
     }
 
     public final long component1() {
-        return this.f347id;
+        return this.f350id;
     }
 
     public final StakingOperationCost component10() {
@@ -127,13 +148,13 @@ public final class StakingOperation {
         }
         if (obj instanceof StakingOperation) {
             StakingOperation stakingOperation = (StakingOperation) obj;
-            return this.f347id == stakingOperation.f347id && this.stakingId == stakingOperation.stakingId && Intrinsics.areEqual(this.transaction, stakingOperation.transaction) && this.type == stakingOperation.type && this.status == stakingOperation.status && Intrinsics.areEqual(this.issuer, stakingOperation.issuer) && Intrinsics.areEqual(this.issuedAt, stakingOperation.issuedAt) && Intrinsics.areEqual(this.settledAt, stakingOperation.settledAt) && Intrinsics.areEqual(this.failReason, stakingOperation.failReason) && Intrinsics.areEqual(this.amount, stakingOperation.amount) && Intrinsics.areEqual(this.fee, stakingOperation.fee) && Intrinsics.areEqual(this.safe, stakingOperation.safe) && Intrinsics.areEqual(this.approvedToken, stakingOperation.approvedToken) && Intrinsics.areEqual(this.token, stakingOperation.token) && this.networkType == stakingOperation.networkType;
+            return this.f350id == stakingOperation.f350id && this.stakingId == stakingOperation.stakingId && Intrinsics.areEqual(this.transaction, stakingOperation.transaction) && this.type == stakingOperation.type && this.status == stakingOperation.status && Intrinsics.areEqual(this.issuer, stakingOperation.issuer) && Intrinsics.areEqual(this.issuedAt, stakingOperation.issuedAt) && Intrinsics.areEqual(this.settledAt, stakingOperation.settledAt) && Intrinsics.areEqual(this.failReason, stakingOperation.failReason) && Intrinsics.areEqual(this.amount, stakingOperation.amount) && Intrinsics.areEqual(this.fee, stakingOperation.fee) && Intrinsics.areEqual(this.safe, stakingOperation.safe) && Intrinsics.areEqual(this.approvedToken, stakingOperation.approvedToken) && Intrinsics.areEqual(this.token, stakingOperation.token) && this.networkType == stakingOperation.networkType;
         }
         return false;
     }
 
     public int hashCode() {
-        int m716m = ((((((((((((StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f347id) * 31) + this.stakingId) * 31) + this.transaction.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.issuer.hashCode()) * 31) + this.issuedAt.hashCode()) * 31;
+        int m716m = ((((((((((((StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f350id) * 31) + this.stakingId) * 31) + this.transaction.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.issuer.hashCode()) * 31) + this.issuedAt.hashCode()) * 31;
         String str = this.settledAt;
         int hashCode = (m716m + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.failReason;
@@ -149,7 +170,7 @@ public final class StakingOperation {
     }
 
     public String toString() {
-        return "StakingOperation(id=" + this.f347id + ", stakingId=" + this.stakingId + ", transaction=" + this.transaction + ", type=" + this.type + ", status=" + this.status + ", issuer=" + this.issuer + ", issuedAt=" + this.issuedAt + ", settledAt=" + ((Object) this.settledAt) + ", failReason=" + ((Object) this.failReason) + ", amount=" + this.amount + ", fee=" + this.fee + ", safe=" + this.safe + ", approvedToken=" + this.approvedToken + ", token=" + this.token + ", networkType=" + this.networkType + ')';
+        return "StakingOperation(id=" + this.f350id + ", stakingId=" + this.stakingId + ", transaction=" + this.transaction + ", type=" + this.type + ", status=" + this.status + ", issuer=" + this.issuer + ", issuedAt=" + this.issuedAt + ", settledAt=" + this.settledAt + ", failReason=" + this.failReason + ", amount=" + this.amount + ", fee=" + this.fee + ", safe=" + this.safe + ", approvedToken=" + this.approvedToken + ", token=" + this.token + ", networkType=" + this.networkType + ')';
     }
 
     public StakingOperation(long j, int i, String transaction, StakingOperationType type, StakingOperationStatus status, String issuer, String issuedAt, String str, String str2, StakingOperationCost stakingOperationCost, StakingOperationCost stakingOperationCost2, Boolean bool, StakingToken stakingToken, String token, NetworkType networkType) {
@@ -160,7 +181,7 @@ public final class StakingOperation {
         Intrinsics.checkNotNullParameter(issuedAt, "issuedAt");
         Intrinsics.checkNotNullParameter(token, "token");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        this.f347id = j;
+        this.f350id = j;
         this.stakingId = i;
         this.transaction = transaction;
         this.type = type;
@@ -178,7 +199,7 @@ public final class StakingOperation {
     }
 
     public final long getId() {
-        return this.f347id;
+        return this.f350id;
     }
 
     public final int getStakingId() {
@@ -271,7 +292,7 @@ public final class StakingOperation {
         if (i != 1) {
             if (i != 2) {
                 if (i == 3 || i == 4) {
-                    return TransactionDirection.f366IN;
+                    return TransactionDirection.f370IN;
                 }
                 throw new NoWhenBranchMatchedException();
             }

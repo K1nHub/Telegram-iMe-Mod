@@ -697,7 +697,7 @@
     .line 117
     new-instance v2, Lokhttp3/internal/http2/Header;
 
-    const-string v3, "vary"
+    const-string/jumbo v3, "vary"
 
     invoke-direct {v2, v3, v4}, Lokhttp3/internal/http2/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -708,7 +708,7 @@
     .line 118
     new-instance v2, Lokhttp3/internal/http2/Header;
 
-    const-string v3, "via"
+    const-string/jumbo v3, "via"
 
     invoke-direct {v2, v3, v4}, Lokhttp3/internal/http2/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -719,7 +719,7 @@
     .line 119
     new-instance v2, Lokhttp3/internal/http2/Header;
 
-    const-string v3, "www-authenticate"
+    const-string/jumbo v3, "www-authenticate"
 
     invoke-direct {v2, v3, v4}, Lokhttp3/internal/http2/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

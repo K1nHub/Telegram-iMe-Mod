@@ -130,7 +130,7 @@ public final class ImageRadioCell extends FrameLayout {
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView.setTextSize(1, 16.0f);
-        if (getDialog()) {
+        if (this.dialog) {
             textView.setTextColor(Theme.getColor("dialogTextBlack"));
         } else {
             textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
@@ -142,7 +142,7 @@ public final class ImageRadioCell extends FrameLayout {
     public final RadioButton initRadioButton() {
         RadioButton radioButton = new RadioButton(getContext());
         radioButton.setSize(AndroidUtilities.m50dp(20));
-        if (getDialog()) {
+        if (this.dialog) {
             radioButton.setColor(Theme.getColor("dialogRadioBackground"), Theme.getColor("dialogRadioBackgroundChecked"));
         } else {
             radioButton.setColor(Theme.getColor("radioBackground"), Theme.getColor("radioBackgroundChecked"));

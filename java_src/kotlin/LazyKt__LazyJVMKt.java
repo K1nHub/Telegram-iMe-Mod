@@ -14,9 +14,18 @@ public class LazyKt__LazyJVMKt {
 
         static {
             int[] iArr = new int[LazyThreadSafetyMode.values().length];
-            iArr[LazyThreadSafetyMode.SYNCHRONIZED.ordinal()] = 1;
-            iArr[LazyThreadSafetyMode.PUBLICATION.ordinal()] = 2;
-            iArr[LazyThreadSafetyMode.NONE.ordinal()] = 3;
+            try {
+                iArr[LazyThreadSafetyMode.SYNCHRONIZED.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[LazyThreadSafetyMode.PUBLICATION.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[LazyThreadSafetyMode.NONE.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }

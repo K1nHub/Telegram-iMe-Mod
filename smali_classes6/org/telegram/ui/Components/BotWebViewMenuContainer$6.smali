@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)V
     .locals 0
 
-    .line 663
+    .line 708
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method private synthetic lambda$onLayoutChange$0(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
     .locals 0
 
-    .line 677
+    .line 722
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1000(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -53,7 +53,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->restoreButtonData()V
 
-    .line 678
+    .line 723
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1000(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -72,10 +72,10 @@
 .method public onLayoutChange(Landroid/view/View;IIIIIIII)V
     .locals 0
 
-    .line 666
+    .line 711
     invoke-virtual {p1, p0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    .line 668
+    .line 713
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$500(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;
@@ -96,14 +96,14 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->setSwipeOffsetY(F)V
 
-    .line 669
+    .line 714
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     const/high16 p2, 0x3f800000    # 1.0f
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 671
+    .line 716
     new-instance p1, Landroidx/dynamicanimation/animation/SpringAnimation;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
@@ -124,19 +124,19 @@
 
     const/high16 p3, 0x3f400000    # 0.75f
 
-    .line 673
+    .line 718
     invoke-virtual {p2, p3}, Landroidx/dynamicanimation/animation/SpringForce;->setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object p2
 
     const/high16 p3, 0x43fa0000    # 500.0f
 
-    .line 674
+    .line 719
     invoke-virtual {p2, p3}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object p2
 
-    .line 672
+    .line 717
     invoke-virtual {p1, p2}, Landroidx/dynamicanimation/animation/SpringAnimation;->setSpring(Landroidx/dynamicanimation/animation/SpringForce;)Landroidx/dynamicanimation/animation/SpringAnimation;
 
     move-result-object p1
@@ -145,14 +145,14 @@
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/BotWebViewMenuContainer$6$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/BotWebViewMenuContainer$6;)V
 
-    .line 676
+    .line 721
     invoke-virtual {p1, p2}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addEndListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
     move-result-object p1
 
     check-cast p1, Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 680
+    .line 725
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
     return-void

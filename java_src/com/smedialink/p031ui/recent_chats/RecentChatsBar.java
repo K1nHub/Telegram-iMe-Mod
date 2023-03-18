@@ -12,9 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.smedialink.storage.domain.model.HistoryDialogModel;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.p046ui.view.AvatarDrawableCell;
 import org.telegram.messenger.AndroidUtilities;
@@ -22,6 +23,7 @@ import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.LayoutHelper;
 import org.telegram.p048ui.Components.RecyclerListView;
 import p034j$.util.Collection$EL;
+import p034j$.util.function.Predicate;
 /* compiled from: RecentChatsBar.kt */
 /* renamed from: com.smedialink.ui.recent_chats.RecentChatsBar */
 /* loaded from: classes3.dex */
@@ -88,14 +90,38 @@ public final class RecentChatsBar extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: removeData$lambda-0  reason: not valid java name */
-    public static final boolean m1468removeData$lambda0(HistoryDialogModel it) {
-        Intrinsics.checkNotNullParameter(it, "it");
-        return !it.isPinned();
+    public static final boolean removeData$lambda$0(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return ((Boolean) tmp0.invoke(obj)).booleanValue();
     }
 
     public final void removeData() {
-        Collection$EL.removeIf(this.data, RecentChatsBar$$ExternalSyntheticLambda0.INSTANCE);
+        List<HistoryDialogModel> list = this.data;
+        final RecentChatsBar$removeData$1 recentChatsBar$removeData$1 = RecentChatsBar$removeData$1.INSTANCE;
+        Collection$EL.removeIf(list, new Predicate() { // from class: com.smedialink.ui.recent_chats.RecentChatsBar$$ExternalSyntheticLambda0
+            @Override // p034j$.util.function.Predicate
+            public /* synthetic */ Predicate and(Predicate predicate) {
+                return Objects.requireNonNull(predicate);
+            }
+
+            @Override // p034j$.util.function.Predicate
+            public /* synthetic */ Predicate negate() {
+                return Predicate.CC.$default$negate(this);
+            }
+
+            @Override // p034j$.util.function.Predicate
+            /* renamed from: or */
+            public /* synthetic */ Predicate mo21or(Predicate predicate) {
+                return Objects.requireNonNull(predicate);
+            }
+
+            @Override // p034j$.util.function.Predicate
+            public final boolean test(Object obj) {
+                boolean removeData$lambda$0;
+                removeData$lambda$0 = RecentChatsBar.removeData$lambda$0(Function1.this, obj);
+                return removeData$lambda$0;
+            }
+        });
         getListAdapter().notifyDataSetChanged();
     }
 
@@ -144,7 +170,7 @@ public final class RecentChatsBar extends FrameLayout {
         getListView().setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.smedialink.ui.recent_chats.RecentChatsBar$$ExternalSyntheticLambda1
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                RecentChatsBar.m1469setupListeners$lambda2(RecentChatsBar.this, view, i);
+                RecentChatsBar.setupListeners$lambda$2(RecentChatsBar.this, view, i);
             }
         });
         getListView().setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListenerExtended() { // from class: com.smedialink.ui.recent_chats.RecentChatsBar$setupListeners$2
@@ -176,11 +202,10 @@ public final class RecentChatsBar extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-2  reason: not valid java name */
-    public static final void m1469setupListeners$lambda2(RecentChatsBar this$0, View view, int i) {
+    public static final void setupListeners$lambda$2(RecentChatsBar this$0, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(view, "view");
-        this$0.getDelegate().onItemListener(this$0.data.get(i), view);
+        this$0.delegate.onItemListener(this$0.data.get(i), view);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -188,41 +213,38 @@ public final class RecentChatsBar extends FrameLayout {
     /* renamed from: com.smedialink.ui.recent_chats.RecentChatsBar$ListAdapter */
     /* loaded from: classes3.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ RecentChatsBar this$0;
-
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
             return true;
         }
 
-        public ListAdapter(RecentChatsBar this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public ListAdapter() {
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
             Intrinsics.checkNotNullParameter(parent, "parent");
-            Context context = this.this$0.getContext();
+            Context context = RecentChatsBar.this.getContext();
             Intrinsics.checkNotNullExpressionValue(context, "context");
-            AvatarDrawableCell avatarDrawableCell = new AvatarDrawableCell(context, this.this$0.getCurrentAccount());
+            AvatarDrawableCell avatarDrawableCell = new AvatarDrawableCell(context, RecentChatsBar.this.getCurrentAccount());
             avatarDrawableCell.setLayoutParams(new RecyclerView.LayoutParams(AndroidUtilities.m50dp(50), -1));
-            Unit unit = Unit.INSTANCE;
             return new RecyclerListView.Holder(avatarDrawableCell);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            AvatarDrawableCell avatarDrawableCell = (AvatarDrawableCell) holder.itemView;
-            RecentChatsBar recentChatsBar = this.this$0;
+            View view = holder.itemView;
+            Intrinsics.checkNotNull(view, "null cannot be cast to non-null type org.fork.ui.view.AvatarDrawableCell");
+            AvatarDrawableCell avatarDrawableCell = (AvatarDrawableCell) view;
+            RecentChatsBar recentChatsBar = RecentChatsBar.this;
             avatarDrawableCell.updateColors();
             avatarDrawableCell.setDialog(((HistoryDialogModel) recentChatsBar.data.get(i)).getDialogId(), ((HistoryDialogModel) recentChatsBar.data.get(i)).isPinned());
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            return this.this$0.data.size();
+            return RecentChatsBar.this.data.size();
         }
     }
 }

@@ -14,6 +14,6 @@ public final /* synthetic */ class SessionsActivity$4$$ExternalSyntheticLambda1 
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-        SessionsActivity.C63044.lambda$onSessionTerminated$1(tLObject, tLRPC$TL_error);
+        SessionsActivity.C64474.lambda$onSessionTerminated$1(tLObject, tLRPC$TL_error);
     }
 }

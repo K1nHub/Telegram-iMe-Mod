@@ -4,7 +4,6 @@ import com.google.android.exoplayer2.DefaultLoadControl;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.security.SecureRandom;
-import java.util.Objects;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Charsets;
 import org.apache.commons.codec.binary.Base64;
@@ -71,7 +70,7 @@ public final class AESUtil {
             Intrinsics.checkNotNullExpressionValue(charArray, "this as java.lang.String).toCharArray()");
             pKCS5S2ParametersGenerator.init(PBEParametersGenerator.PKCS5PasswordToUTF8Bytes(charArray), copyOfRange, i);
             CipherParameters generateDerivedParameters = pKCS5S2ParametersGenerator.generateDerivedParameters(256);
-            Objects.requireNonNull(generateDerivedParameters, "null cannot be cast to non-null type org.bouncycastle.crypto.params.KeyParameter");
+            Intrinsics.checkNotNull(generateDerivedParameters, "null cannot be cast to non-null type org.bouncycastle.crypto.params.KeyParameter");
             ParametersWithIV parametersWithIV = new ParametersWithIV((KeyParameter) generateDerivedParameters, copyOfRange);
             if (i2 == 0) {
                 oFBBlockCipher = new CBCBlockCipher(new AESEngine());
@@ -123,7 +122,7 @@ public final class AESUtil {
             Intrinsics.checkNotNullExpressionValue(charArray, "this as java.lang.String).toCharArray()");
             pKCS5S2ParametersGenerator.init(PBEParametersGenerator.PKCS5PasswordToUTF8Bytes(charArray), bArr, i);
             CipherParameters generateDerivedParameters = pKCS5S2ParametersGenerator.generateDerivedParameters(256);
-            Objects.requireNonNull(generateDerivedParameters, "null cannot be cast to non-null type org.bouncycastle.crypto.params.KeyParameter");
+            Intrinsics.checkNotNull(generateDerivedParameters, "null cannot be cast to non-null type org.bouncycastle.crypto.params.KeyParameter");
             ParametersWithIV parametersWithIV = new ParametersWithIV((KeyParameter) generateDerivedParameters, bArr);
             if (i2 == 0) {
                 oFBBlockCipher = new CBCBlockCipher(new AESEngine());

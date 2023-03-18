@@ -38,7 +38,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -71,14 +71,12 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
     private ArrayList<Theme.ThemeInfo> customThemes;
     private ArrayList<Theme.ThemeInfo> defaultThemes;
     private boolean drawDivider;
+    private BaseFragment fragment;
     private LinearLayoutManager horizontalLayoutManager;
     private HashMap<String, Theme.ThemeInfo> loadingThemes;
     private HashMap<Theme.ThemeInfo, String> loadingWallpapers;
     private int prevCount;
     private Theme.ThemeInfo prevThemeInfo;
-
-    protected void presentFragment(BaseFragment baseFragment) {
-    }
 
     protected void showOptionsForTheme(Theme.ThemeInfo themeInfo) {
     }
@@ -174,8 +172,8 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
             this.bitmapPaint = new Paint(3);
             this.shaderMatrix = new Matrix();
             setWillNotDraw(false);
-            this.inDrawable = context.getResources().getDrawable(C3158R.C3160drawable.minibubble_in).mutate();
-            this.outDrawable = context.getResources().getDrawable(C3158R.C3160drawable.minibubble_out).mutate();
+            this.inDrawable = context.getResources().getDrawable(C3286R.C3288drawable.minibubble_in).mutate();
+            this.outDrawable = context.getResources().getDrawable(C3286R.C3288drawable.minibubble_out).mutate();
             this.textPaint.setTextSize(AndroidUtilities.m50dp(13));
             RadioButton radioButton = new RadioButton(context);
             this.button = radioButton;
@@ -497,7 +495,7 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
                 updateColors(false);
                 this.optionsDrawable = null;
             } else {
-                this.optionsDrawable = getResources().getDrawable(C3158R.C3160drawable.preview_dots).mutate();
+                this.optionsDrawable = getResources().getDrawable(C3286R.C3288drawable.preview_dots).mutate();
                 int previewBackgroundColor = this.themeInfo.getPreviewBackgroundColor();
                 this.backColor = previewBackgroundColor;
                 this.oldBackColor = previewBackgroundColor;
@@ -568,7 +566,7 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
                     if (tLRPC$TL_theme.document != null) {
                         themeInfo2.themeLoaded = false;
                         this.placeholderAlpha = 1.0f;
-                        Drawable mutate = getResources().getDrawable(C3158R.C3160drawable.msg_theme).mutate();
+                        Drawable mutate = getResources().getDrawable(C3286R.C3288drawable.msg_theme).mutate();
                         this.loadingDrawable = mutate;
                         int color = Theme.getColor("windowBackgroundWhiteGrayText7");
                         this.loadingColor = color;
@@ -583,7 +581,7 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
                             }
                         }
                     } else {
-                        Drawable mutate2 = getResources().getDrawable(C3158R.C3160drawable.preview_custom).mutate();
+                        Drawable mutate2 = getResources().getDrawable(C3286R.C3288drawable.preview_custom).mutate();
                         this.loadingDrawable = mutate2;
                         int color2 = Theme.getColor("windowBackgroundWhiteGrayText7");
                         this.loadingColor = color2;
@@ -826,18 +824,19 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
             accessibilityNodeInfo.setEnabled(true);
             if (Build.VERSION.SDK_INT >= 21) {
                 accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK);
-                accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccDescrMoreOptions", C3158R.string.AccDescrMoreOptions)));
+                accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions)));
             }
         }
     }
 
-    public ThemesHorizontalListCell(Context context, int i, ArrayList<Theme.ThemeInfo> arrayList, ArrayList<Theme.ThemeInfo> arrayList2) {
+    public ThemesHorizontalListCell(Context context, BaseFragment baseFragment, int i, ArrayList<Theme.ThemeInfo> arrayList, ArrayList<Theme.ThemeInfo> arrayList2) {
         super(context);
         this.loadingThemes = new HashMap<>();
         this.loadingWallpapers = new HashMap<>();
         this.customThemes = arrayList2;
         this.defaultThemes = arrayList;
         this.currentType = i;
+        this.fragment = baseFragment;
         if (i == 2) {
             setBackgroundColor(Theme.getColor("dialogBackground"));
         } else {
@@ -899,7 +898,11 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
                 return;
             }
             if (tLRPC$TL_theme.document == null) {
-                presentFragment(new ThemeSetUrlActivity(themeInfo, null, true));
+                BaseFragment baseFragment = this.fragment;
+                if (baseFragment != null) {
+                    baseFragment.presentFragment(new ThemeSetUrlActivity(themeInfo, null, true));
+                    return;
+                }
                 return;
             }
         }
@@ -929,6 +932,9 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
             }
         }
         EmojiThemes.saveCustomTheme(themeInfo, themeInfo.currentAccentId);
+        if (this.currentType != 1) {
+            Theme.turnOffAutoNight(this.fragment);
+        }
     }
 
     public void setDrawDivider(boolean z) {

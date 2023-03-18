@@ -6,14 +6,14 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/ui/topics/TopicsBar$TouchHelperCallback;,
         Lcom/smedialink/ui/topics/TopicsBar$ListAdapter;,
-        Lcom/smedialink/ui/topics/TopicsBar$TopicsBarDelegate;
+        Lcom/smedialink/ui/topics/TopicsBar$TopicsBarDelegate;,
+        Lcom/smedialink/ui/topics/TopicsBar$TouchHelperCallback;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTopicsBar.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TopicsBar.kt\ncom/smedialink/ui/topics/TopicsBar\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,284:1\n1720#2,3:285\n1#3:288\n*S KotlinDebug\n*F\n+ 1 TopicsBar.kt\ncom/smedialink/ui/topics/TopicsBar\n*L\n63#1:285,3\n*E\n"
+    value = "SMAP\nTopicsBar.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TopicsBar.kt\ncom/smedialink/ui/topics/TopicsBar\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,284:1\n1726#2,3:285\n1#3:288\n*S KotlinDebug\n*F\n+ 1 TopicsBar.kt\ncom/smedialink/ui/topics/TopicsBar\n*L\n63#1:285,3\n*E\n"
 .end annotation
 
 
@@ -50,20 +50,20 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$ZLaVdisLUS0qOkvAlMKuUBoIh0c(Lcom/smedialink/ui/topics/TopicsBar;Landroid/view/View;I)Z
+.method public static synthetic $r8$lambda$KB4Q62vTneZaOoyEM3g48FgNV7Y(Lcom/smedialink/ui/topics/TopicsBar;Landroid/view/View;I)Z
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/topics/TopicsBar;->setupListeners$lambda-4(Lcom/smedialink/ui/topics/TopicsBar;Landroid/view/View;I)Z
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/topics/TopicsBar;->setupListeners$lambda$4(Lcom/smedialink/ui/topics/TopicsBar;Landroid/view/View;I)Z
 
     move-result p0
 
     return p0
 .end method
 
-.method public static synthetic $r8$lambda$s688VM72Qr1gEs1j9a4KPBZcpog(Lcom/smedialink/ui/topics/TopicsBar;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$fQknoM84dMfXtA9_qB5OqjiK6NY(Lcom/smedialink/ui/topics/TopicsBar;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/topics/TopicsBar;->setupListeners$lambda-3(Lcom/smedialink/ui/topics/TopicsBar;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/topics/TopicsBar;->setupListeners$lambda$3(Lcom/smedialink/ui/topics/TopicsBar;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -285,8 +285,6 @@
     .line 174
     invoke-virtual {v0, v3}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 147
     invoke-virtual {v0, v3}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
@@ -359,7 +357,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-3(Lcom/smedialink/ui/topics/TopicsBar;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$3(Lcom/smedialink/ui/topics/TopicsBar;Landroid/view/View;I)V
     .locals 5
 
     const-string p1, "this$0"
@@ -440,7 +438,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-4(Lcom/smedialink/ui/topics/TopicsBar;Landroid/view/View;I)Z
+.method private static final setupListeners$lambda$4(Lcom/smedialink/ui/topics/TopicsBar;Landroid/view/View;I)Z
     .locals 0
 
     const-string p2, "this$0"
@@ -878,7 +876,7 @@
     :goto_1
     iget-object p1, p0, Lcom/smedialink/ui/topics/TopicsBar;->data:Ljava/util/List;
 
-    .line 1720
+    .line 1726
     instance-of v2, p1, Ljava/util/Collection;
 
     if-eqz v2, :cond_2
@@ -891,7 +889,7 @@
 
     goto :goto_3
 
-    .line 1721
+    .line 1727
     :cond_2
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 

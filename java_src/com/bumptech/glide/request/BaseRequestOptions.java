@@ -27,6 +27,7 @@ import com.bumptech.glide.util.Util;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Map;
+import org.telegram.messenger.LiteMode;
 /* loaded from: classes.dex */
 public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implements Cloneable {
     private int errorId;
@@ -66,7 +67,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T sizeMultiplier(float f) {
         if (this.isAutoCloneEnabled) {
-            return (T) m882clone().sizeMultiplier(f);
+            return (T) mo883clone().sizeMultiplier(f);
         }
         if (f < BitmapDescriptorFactory.HUE_RED || f > 1.0f) {
             throw new IllegalArgumentException("sizeMultiplier must be between 0 and 1");
@@ -78,7 +79,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T useAnimationPool(boolean z) {
         if (this.isAutoCloneEnabled) {
-            return (T) m882clone().useAnimationPool(z);
+            return (T) mo883clone().useAnimationPool(z);
         }
         this.useAnimationPool = z;
         this.fields |= ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES;
@@ -87,7 +88,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T diskCacheStrategy(DiskCacheStrategy diskCacheStrategy) {
         if (this.isAutoCloneEnabled) {
-            return (T) m882clone().diskCacheStrategy(diskCacheStrategy);
+            return (T) mo883clone().diskCacheStrategy(diskCacheStrategy);
         }
         this.diskCacheStrategy = (DiskCacheStrategy) Preconditions.checkNotNull(diskCacheStrategy);
         this.fields |= 4;
@@ -96,7 +97,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T priority(Priority priority) {
         if (this.isAutoCloneEnabled) {
-            return (T) m882clone().priority(priority);
+            return (T) mo883clone().priority(priority);
         }
         this.priority = (Priority) Preconditions.checkNotNull(priority);
         this.fields |= 8;
@@ -105,7 +106,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T placeholder(Drawable drawable) {
         if (this.isAutoCloneEnabled) {
-            return (T) m882clone().placeholder(drawable);
+            return (T) mo883clone().placeholder(drawable);
         }
         this.placeholderDrawable = drawable;
         int i = this.fields | 64;
@@ -117,7 +118,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T error(Drawable drawable) {
         if (this.isAutoCloneEnabled) {
-            return (T) m882clone().error(drawable);
+            return (T) mo883clone().error(drawable);
         }
         this.errorPlaceholder = drawable;
         int i = this.fields | 16;
@@ -129,7 +130,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T skipMemoryCache(boolean z) {
         if (this.isAutoCloneEnabled) {
-            return (T) m882clone().skipMemoryCache(true);
+            return (T) mo883clone().skipMemoryCache(true);
         }
         this.isCacheable = !z;
         this.fields |= 256;
@@ -138,7 +139,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T override(int i, int i2) {
         if (this.isAutoCloneEnabled) {
-            return (T) m882clone().override(i, i2);
+            return (T) mo883clone().override(i, i2);
         }
         this.overrideWidth = i;
         this.overrideHeight = i2;
@@ -148,15 +149,16 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T signature(Key key) {
         if (this.isAutoCloneEnabled) {
-            return (T) m882clone().signature(key);
+            return (T) mo883clone().signature(key);
         }
         this.signature = (Key) Preconditions.checkNotNull(key);
         this.fields |= 1024;
         return selfOrThrowIfLocked();
     }
 
+    @Override // 
     /* renamed from: clone */
-    public T m882clone() {
+    public T mo883clone() {
         try {
             T t = (T) super.clone();
             Options options = new Options();
@@ -175,7 +177,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public <Y> T set(Option<Y> option, Y y) {
         if (this.isAutoCloneEnabled) {
-            return (T) m882clone().set(option, y);
+            return (T) mo883clone().set(option, y);
         }
         Preconditions.checkNotNull(option);
         Preconditions.checkNotNull(y);
@@ -185,7 +187,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T decode(Class<?> cls) {
         if (this.isAutoCloneEnabled) {
-            return (T) m882clone().decode(cls);
+            return (T) mo883clone().decode(cls);
         }
         this.resourceClass = (Class) Preconditions.checkNotNull(cls);
         this.fields |= 4096;
@@ -230,7 +232,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     final T optionalTransform(DownsampleStrategy downsampleStrategy, Transformation<Bitmap> transformation) {
         if (this.isAutoCloneEnabled) {
-            return (T) m882clone().optionalTransform(downsampleStrategy, transformation);
+            return (T) mo883clone().optionalTransform(downsampleStrategy, transformation);
         }
         downsample(downsampleStrategy);
         return transform(transformation, false);
@@ -238,7 +240,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     final T transform(DownsampleStrategy downsampleStrategy, Transformation<Bitmap> transformation) {
         if (this.isAutoCloneEnabled) {
-            return (T) m882clone().transform(downsampleStrategy, transformation);
+            return (T) mo883clone().transform(downsampleStrategy, transformation);
         }
         downsample(downsampleStrategy);
         return transform(transformation);
@@ -270,7 +272,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
     /* JADX WARN: Multi-variable type inference failed */
     T transform(Transformation<Bitmap> transformation, boolean z) {
         if (this.isAutoCloneEnabled) {
-            return (T) m882clone().transform(transformation, z);
+            return (T) mo883clone().transform(transformation, z);
         }
         DrawableTransformation drawableTransformation = new DrawableTransformation(transformation, z);
         transform(Bitmap.class, transformation, z);
@@ -286,7 +288,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     <Y> T transform(Class<Y> cls, Transformation<Y> transformation, boolean z) {
         if (this.isAutoCloneEnabled) {
-            return (T) m882clone().transform(cls, transformation, z);
+            return (T) mo883clone().transform(cls, transformation, z);
         }
         Preconditions.checkNotNull(cls);
         Preconditions.checkNotNull(transformation);
@@ -310,7 +312,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T apply(BaseRequestOptions<?> baseRequestOptions) {
         if (this.isAutoCloneEnabled) {
-            return (T) m882clone().apply(baseRequestOptions);
+            return (T) mo883clone().apply(baseRequestOptions);
         }
         if (isSet(baseRequestOptions.fields, 2)) {
             this.sizeMultiplier = baseRequestOptions.sizeMultiplier;
@@ -370,7 +372,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
             this.fallbackDrawable = null;
             this.fields &= -8193;
         }
-        if (isSet(baseRequestOptions.fields, 32768)) {
+        if (isSet(baseRequestOptions.fields, LiteMode.FLAG_CHAT_SCALE)) {
             this.theme = baseRequestOptions.theme;
         }
         if (isSet(baseRequestOptions.fields, 65536)) {

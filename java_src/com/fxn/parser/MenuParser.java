@@ -53,9 +53,10 @@ public final class MenuParser {
             }
         }
         String name = xmlResourceParser.getName();
-        if (!Intrinsics.areEqual(name, "menu")) {
-            throw new IllegalArgumentException(Intrinsics.stringPlus("Expecting menu, got ", name).toString());
+        if (Intrinsics.areEqual(name, "menu")) {
+            return;
         }
+        throw new IllegalArgumentException(("Expecting menu, got " + name).toString());
     }
 
     private final List<MenuItem> parseMenu(XmlResourceParser xmlResourceParser, AttributeSet attributeSet) {

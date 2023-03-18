@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nClearCacheBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ClearCacheBottomSheet.kt\norg/fork/ui/dialog/ClearCacheBottomSheet\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 4 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 5 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,126:1\n1547#2:127\n1618#2,3:128\n37#3:131\n36#3,3:132\n211#4,2:135\n200#4,4:137\n479#5,7:141\n*S KotlinDebug\n*F\n+ 1 ClearCacheBottomSheet.kt\norg/fork/ui/dialog/ClearCacheBottomSheet\n*L\n37#1:127\n37#1:128,3\n37#1:131\n37#1:132,3\n61#1:135,2\n86#1:137,4\n104#1:141,7\n*E\n"
+    value = "SMAP\nClearCacheBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ClearCacheBottomSheet.kt\norg/fork/ui/dialog/ClearCacheBottomSheet\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 4 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 5 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,126:1\n1549#2:127\n1620#2,3:128\n37#3,2:131\n215#4,2:133\n204#4,4:135\n483#5,7:139\n*S KotlinDebug\n*F\n+ 1 ClearCacheBottomSheet.kt\norg/fork/ui/dialog/ClearCacheBottomSheet\n*L\n37#1:127\n37#1:128,3\n37#1:131,2\n61#1:133,2\n86#1:135,4\n104#1:139,7\n*E\n"
 .end annotation
 
 
@@ -53,34 +53,34 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$0M2vtlST4HZP2lghb24BC7nWuTY(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/fork/models/TelegramCacheData;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$6qK9rP7vvbtb1Fcn707wb2Eiusw(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Ljava/util/Map;Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->createCategoryItem$lambda-6$lambda-5(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/fork/models/TelegramCacheData;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->initClearButton$lambda$13$lambda$12$lambda$11(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Ljava/util/Map;Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$7VZhsZCSwYEwqqo1NCGG9TW_c2I(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$Zq7Ly2Kui0dGLB4_hg3tKoeASno(Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->initClearButton$lambda-13$lambda-12(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;Landroid/view/View;)V
+    invoke-static {p0}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->initClearButton$lambda$13$lambda$12$lambda$11$lambda$10(Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$MUE_GMep39AAfEjfqu4UMLRO4AQ(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Ljava/util/Map;Lorg/telegram/ui/ActionBar/AlertDialog;)V
+.method public static synthetic $r8$lambda$axGIfv1tlHMWWMrFXVDKh8pX_-4(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/fork/models/TelegramCacheData;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->initClearButton$lambda-13$lambda-12$lambda-11(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Ljava/util/Map;Lorg/telegram/ui/ActionBar/AlertDialog;)V
+    invoke-static {p0, p1, p2, p3}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->createCategoryItem$lambda$6$lambda$5(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/fork/models/TelegramCacheData;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$o36__pkPNxnc1n4FtZN_irSeBmM(Lorg/telegram/ui/ActionBar/AlertDialog;)V
+.method public static synthetic $r8$lambda$d_2SDRl_5VGWL-9bhMYTGcHF7Gc(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->initClearButton$lambda-13$lambda-12$lambda-11$lambda-10(Lorg/telegram/ui/ActionBar/AlertDialog;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->initClearButton$lambda$13$lambda$12(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;Landroid/view/View;)V
 
     return-void
 .end method
@@ -206,7 +206,7 @@
 
     invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1547
+    .line 1549
     new-instance p3, Ljava/util/ArrayList;
 
     const/16 v0, 0xa
@@ -217,7 +217,7 @@
 
     invoke-direct {p3, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
@@ -233,7 +233,7 @@
 
     move-result-object v0
 
-    .line 1619
+    .line 1621
     check-cast v0, Lorg/fork/models/TelegramCacheData;
 
     .line 37
@@ -241,6 +241,7 @@
 
     move-result-object v0
 
+    .line 1621
     invoke-interface {p3, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -252,10 +253,6 @@
     invoke-interface {p3, p2}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p2
-
-    const-string p3, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-static {p2, p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     check-cast p2, [Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
@@ -384,16 +381,14 @@
 
     move-result-object v2
 
-    const-string v3, "windowBackgroundWhiteGrayIcon"
+    const-string/jumbo v3, "windowBackgroundWhiteGrayIcon"
 
     const-string v5, "checkboxCheck"
 
     invoke-virtual {v0, v2, v3, v5}, Lorg/telegram/ui/Cells/CheckBoxCell;->setCheckBoxColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 79
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->getData()Ljava/util/EnumMap;
-
-    move-result-object v2
+    iget-object v2, p0, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->data:Ljava/util/EnumMap;
 
     invoke-virtual {v2}, Ljava/util/EnumMap;->keySet()Ljava/util/Set;
 
@@ -424,7 +419,7 @@
     return-object v0
 .end method
 
-.method private static final createCategoryItem$lambda-6$lambda-5(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/fork/models/TelegramCacheData;Landroid/view/View;)V
+.method private static final createCategoryItem$lambda$6$lambda$5(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/fork/models/TelegramCacheData;Landroid/view/View;)V
     .locals 0
 
     const-string p3, "this$0"
@@ -552,7 +547,7 @@
     return-object v0
 .end method
 
-.method private static final initClearButton$lambda-13$lambda-12(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;Landroid/view/View;)V
+.method private static final initClearButton$lambda$13$lambda$12(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;Landroid/view/View;)V
     .locals 4
 
     const-string p2, "this$0"
@@ -588,23 +583,19 @@
     invoke-virtual {p2, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->showDelayed(J)V
 
     .line 103
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->getFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    move-result-object v0
+    iget-object v0, p0, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     .line 104
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->getData()Ljava/util/EnumMap;
+    iget-object v0, p0, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->data:Ljava/util/EnumMap;
 
-    move-result-object v0
-
-    .line 479
+    .line 483
     new-instance v1, Ljava/util/LinkedHashMap;
 
     invoke-direct {v1}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 480
+    .line 484
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -627,7 +618,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 481
+    .line 485
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v3
@@ -639,21 +630,21 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_1
+    if-eqz v3, :cond_1
 
-    const/4 v3, 0x0
-
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {v3}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->isClear()Z
 
     move-result v3
 
+    goto :goto_1
+
+    :cond_1
+    const/4 v3, 0x0
+
     :goto_1
     if-eqz v3, :cond_0
 
-    .line 482
+    .line 486
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -679,7 +670,7 @@
     return-void
 .end method
 
-.method private static final initClearButton$lambda-13$lambda-12$lambda-11(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Ljava/util/Map;Lorg/telegram/ui/ActionBar/AlertDialog;)V
+.method private static final initClearButton$lambda$13$lambda$12$lambda$11(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Ljava/util/Map;Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -695,15 +686,10 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 106
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->getOnProcess()Lorg/fork/utils/Callbacks$Callback2;
+    iget-object p0, p0, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->onProcess:Lorg/fork/utils/Callbacks$Callback2;
 
-    move-result-object p0
+    if-eqz p0, :cond_0
 
-    if-nez p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
     invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
@@ -723,7 +709,7 @@
     invoke-interface {p0, v0, p1}, Lorg/fork/utils/Callbacks$Callback2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 107
-    :goto_0
+    :cond_0
     new-instance p0, Lorg/fork/ui/dialog/ClearCacheBottomSheet$$ExternalSyntheticLambda3;
 
     invoke-direct {p0, p2}, Lorg/fork/ui/dialog/ClearCacheBottomSheet$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog;)V
@@ -733,7 +719,7 @@
     return-void
 .end method
 
-.method private static final initClearButton$lambda-13$lambda-12$lambda-11$lambda-10(Lorg/telegram/ui/ActionBar/AlertDialog;)V
+.method private static final initClearButton$lambda$13$lambda$12$lambda$11$lambda$10(Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 1
 
     const-string v0, "$progressDialog"
@@ -843,7 +829,7 @@
     .line 61
     iget-object v0, p0, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->data:Ljava/util/EnumMap;
 
-    .line 211
+    .line 215
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -901,9 +887,6 @@
 
     invoke-virtual {v3, v4, v5}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->setSize(J)V
 
-    .line 65
-    sget-object v4, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 62
     invoke-virtual {v1, v3}, Lorg/fork/models/TelegramCacheData;->setClearViewData(Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;)V
 
@@ -947,7 +930,7 @@
     .line 86
     iget-object v0, p0, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->data:Ljava/util/EnumMap;
 
-    .line 200
+    .line 204
     invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
 
     move-result v1
@@ -958,7 +941,7 @@
 
     goto :goto_2
 
-    .line 202
+    .line 206
     :cond_0
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -995,16 +978,16 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_2
+    if-eqz v3, :cond_2
 
-    const/4 v3, 0x0
+    invoke-virtual {v3}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->isClear()Z
+
+    move-result v3
 
     goto :goto_1
 
     :cond_2
-    invoke-virtual {v3}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->isClear()Z
-
-    move-result v3
+    const/4 v3, 0x0
 
     :goto_1
     if-eqz v3, :cond_1
@@ -1056,54 +1039,4 @@
 
     :goto_3
     return-void
-.end method
-
-
-# virtual methods
-.method public final getData()Ljava/util/EnumMap;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/EnumMap<",
-            "Lorg/fork/enums/TelegramCacheType;",
-            "Lorg/fork/models/TelegramCacheData;",
-            ">;"
-        }
-    .end annotation
-
-    .line 25
-    iget-object v0, p0, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->data:Ljava/util/EnumMap;
-
-    return-object v0
-.end method
-
-.method public final getFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
-    .locals 1
-
-    .line 24
-    iget-object v0, p0, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    return-object v0
-.end method
-
-.method public final getOnProcess()Lorg/fork/utils/Callbacks$Callback2;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lorg/fork/utils/Callbacks$Callback2<",
-            "Ljava/util/List<",
-            "Lorg/fork/enums/TelegramCacheType;",
-            ">;",
-            "Ljava/util/List<",
-            "Lorg/fork/models/TelegramCacheData;",
-            ">;>;"
-        }
-    .end annotation
-
-    .line 26
-    iget-object v0, p0, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->onProcess:Lorg/fork/utils/Callbacks$Callback2;
-
-    return-object v0
 .end method

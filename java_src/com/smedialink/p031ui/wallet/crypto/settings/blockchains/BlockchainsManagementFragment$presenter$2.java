@@ -23,7 +23,7 @@ public final class BlockchainsManagementFragment$presenter$2 extends Lambda impl
     @Override // kotlin.jvm.functions.Function0
     public final BlockchainsManagementPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1964xf9c4974c(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2079xf9c4974c(this.this$0, null, null));
         return (BlockchainsManagementPresenter) lazy.getValue();
     }
 }

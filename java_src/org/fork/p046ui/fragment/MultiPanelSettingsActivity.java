@@ -22,7 +22,6 @@ import java.util.List;
 import java.util.Map;
 import kotlin.Pair;
 import kotlin.TuplesKt;
-import kotlin.Unit;
 import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
@@ -43,11 +42,11 @@ import org.fork.enums.MultiPanelButton;
 import org.fork.models.MultiPanelButtonState;
 import org.fork.p046ui.view.DialogTypeTopicsBar;
 import org.fork.p046ui.view.MovingCheckCell;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -156,8 +155,7 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescriptions$lambda-2  reason: not valid java name */
-    public static final void m2052getThemeDescriptions$lambda2(MultiPanelSettingsActivity this$0) {
+    public static final void getThemeDescriptions$lambda$2(MultiPanelSettingsActivity this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         DialogTypeTopicsBar dialogTypeTopicsBar = this$0.topicsBar;
         if (dialogTypeTopicsBar == null) {
@@ -173,7 +171,7 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.fork.ui.fragment.MultiPanelSettingsActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                MultiPanelSettingsActivity.m2052getThemeDescriptions$lambda2(MultiPanelSettingsActivity.this);
+                MultiPanelSettingsActivity.getThemeDescriptions$lambda$2(MultiPanelSettingsActivity.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -185,15 +183,15 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.setTitle(LocaleController.getInternalString(C3158R.string.settings_multi_panel_item_title));
-        ActionBarMenuItem addItem = c3222ActionBar.createMenu().addItem(0, C3158R.C3160drawable.ic_ab_other);
-        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3158R.string.AccDescrMoreOptions));
-        addItem.addSubItem(1, C3158R.C3160drawable.msg_reset, LocaleController.getString("ThemeResetToDefaults", C3158R.string.ThemeResetToDefaults));
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.MultiPanelSettingsActivity$setupActionBar$1$2
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.setTitle(LocaleController.getInternalString(C3286R.string.settings_multi_panel_item_title));
+        ActionBarMenuItem addItem = c3351ActionBar.createMenu().addItem(0, C3286R.C3288drawable.ic_ab_other);
+        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions));
+        addItem.addSubItem(1, C3286R.C3288drawable.msg_reset, LocaleController.getString("ThemeResetToDefaults", C3286R.string.ThemeResetToDefaults));
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.MultiPanelSettingsActivity$setupActionBar$1$2
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     MultiPanelSettingsActivity.this.finishFragment();
@@ -221,19 +219,18 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
         recyclerListView.setFocusable(true);
         recyclerListView.setLayoutManager(new LinearLayoutManager(getParentActivity()));
         recyclerListView.setAdapter(getListAdapter());
-        new ItemTouchHelper(new TouchHelperCallback(this)).attachToRecyclerView(recyclerListView);
+        new ItemTouchHelper(new TouchHelperCallback()).attachToRecyclerView(recyclerListView);
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.fork.ui.fragment.MultiPanelSettingsActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                MultiPanelSettingsActivity.m2053initListView$lambda12$lambda11(MultiPanelSettingsActivity.this, view, i);
+                MultiPanelSettingsActivity.initListView$lambda$12$lambda$11(MultiPanelSettingsActivity.this, view, i);
             }
         });
         return recyclerListView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-12$lambda-11  reason: not valid java name */
-    public static final void m2053initListView$lambda12$lambda11(MultiPanelSettingsActivity this$0, View view, int i) {
+    public static final void initListView$lambda$12$lambda$11(MultiPanelSettingsActivity this$0, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (view instanceof TextCheckCell) {
             Intrinsics.checkNotNullExpressionValue(view, "view");
@@ -381,63 +378,59 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
     /* renamed from: org.fork.ui.fragment.MultiPanelSettingsActivity$ListAdapter */
     /* loaded from: classes4.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ MultiPanelSettingsActivity this$0;
-
-        public ListAdapter(MultiPanelSettingsActivity this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public ListAdapter() {
             updateRows();
         }
 
         public final void updateRows() {
-            this.this$0.rowCount = 0;
-            MultiPanelSettingsActivity multiPanelSettingsActivity = this.this$0;
+            MultiPanelSettingsActivity.this.rowCount = 0;
+            MultiPanelSettingsActivity multiPanelSettingsActivity = MultiPanelSettingsActivity.this;
             int i = multiPanelSettingsActivity.rowCount;
             multiPanelSettingsActivity.rowCount = i + 1;
             multiPanelSettingsActivity.enableRow = i;
-            MultiPanelSettingsActivity multiPanelSettingsActivity2 = this.this$0;
+            MultiPanelSettingsActivity multiPanelSettingsActivity2 = MultiPanelSettingsActivity.this;
             int i2 = multiPanelSettingsActivity2.rowCount;
             multiPanelSettingsActivity2.rowCount = i2 + 1;
             multiPanelSettingsActivity2.enableSectionRow = i2;
-            if (!this.this$0.newIsEnabled) {
-                this.this$0.dialogTypeTopicsBarRow = -1;
-                this.this$0.allButtonsRow = -1;
-                this.this$0.buttonsStartRow = -1;
-                this.this$0.buttonsEndRow = -1;
-                this.this$0.sectionInfoRow = -1;
+            if (!MultiPanelSettingsActivity.this.newIsEnabled) {
+                MultiPanelSettingsActivity.this.dialogTypeTopicsBarRow = -1;
+                MultiPanelSettingsActivity.this.allButtonsRow = -1;
+                MultiPanelSettingsActivity.this.buttonsStartRow = -1;
+                MultiPanelSettingsActivity.this.buttonsEndRow = -1;
+                MultiPanelSettingsActivity.this.sectionInfoRow = -1;
                 return;
             }
-            MultiPanelSettingsActivity multiPanelSettingsActivity3 = this.this$0;
+            MultiPanelSettingsActivity multiPanelSettingsActivity3 = MultiPanelSettingsActivity.this;
             int i3 = multiPanelSettingsActivity3.rowCount;
             multiPanelSettingsActivity3.rowCount = i3 + 1;
             multiPanelSettingsActivity3.hideOnScrollRow = i3;
-            MultiPanelSettingsActivity multiPanelSettingsActivity4 = this.this$0;
+            MultiPanelSettingsActivity multiPanelSettingsActivity4 = MultiPanelSettingsActivity.this;
             int i4 = multiPanelSettingsActivity4.rowCount;
             multiPanelSettingsActivity4.rowCount = i4 + 1;
             multiPanelSettingsActivity4.hideOnScrollSectionRow = i4;
-            MultiPanelSettingsActivity multiPanelSettingsActivity5 = this.this$0;
+            MultiPanelSettingsActivity multiPanelSettingsActivity5 = MultiPanelSettingsActivity.this;
             int i5 = multiPanelSettingsActivity5.rowCount;
             multiPanelSettingsActivity5.rowCount = i5 + 1;
             multiPanelSettingsActivity5.dialogTypeTopicsBarRow = i5;
-            MultiPanelSettingsActivity multiPanelSettingsActivity6 = this.this$0;
+            MultiPanelSettingsActivity multiPanelSettingsActivity6 = MultiPanelSettingsActivity.this;
             int i6 = multiPanelSettingsActivity6.rowCount;
             multiPanelSettingsActivity6.rowCount = i6 + 1;
             multiPanelSettingsActivity6.allButtonsRow = i6;
-            MultiPanelSettingsActivity multiPanelSettingsActivity7 = this.this$0;
+            MultiPanelSettingsActivity multiPanelSettingsActivity7 = MultiPanelSettingsActivity.this;
             multiPanelSettingsActivity7.buttonsStartRow = multiPanelSettingsActivity7.rowCount;
-            this.this$0.rowCount += this.this$0.getCurrentDialogType().getMultiPanelButtons().size();
-            MultiPanelSettingsActivity multiPanelSettingsActivity8 = this.this$0;
+            MultiPanelSettingsActivity.this.rowCount += MultiPanelSettingsActivity.this.getCurrentDialogType().getMultiPanelButtons().size();
+            MultiPanelSettingsActivity multiPanelSettingsActivity8 = MultiPanelSettingsActivity.this;
             multiPanelSettingsActivity8.buttonsEndRow = multiPanelSettingsActivity8.rowCount;
-            MultiPanelSettingsActivity multiPanelSettingsActivity9 = this.this$0;
+            MultiPanelSettingsActivity multiPanelSettingsActivity9 = MultiPanelSettingsActivity.this;
             int i7 = multiPanelSettingsActivity9.rowCount;
             multiPanelSettingsActivity9.rowCount = i7 + 1;
             multiPanelSettingsActivity9.sectionInfoRow = i7;
         }
 
         public final void swapElements(int i, int i2) {
-            List buttons = this.this$0.getButtons();
-            int i3 = i - this.this$0.buttonsStartRow;
-            int i4 = i2 - this.this$0.buttonsStartRow;
+            List buttons = MultiPanelSettingsActivity.this.getButtons();
+            int i3 = i - MultiPanelSettingsActivity.this.buttonsStartRow;
+            int i4 = i2 - MultiPanelSettingsActivity.this.buttonsStartRow;
             MultiPanelButtonState multiPanelButtonState = (MultiPanelButtonState) buttons.get(i3);
             MultiPanelButtonState multiPanelButtonState2 = (MultiPanelButtonState) buttons.get(i4);
             multiPanelButtonState.setPosition(i4);
@@ -449,24 +442,24 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            return this.this$0.rowCount;
+            return MultiPanelSettingsActivity.this.rowCount;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
-            if (i == this.this$0.dialogTypeTopicsBarRow) {
+            if (i == MultiPanelSettingsActivity.this.dialogTypeTopicsBarRow) {
                 return IdFabric$ViewTypes.TOPICS_BAR;
             }
-            if ((i == this.this$0.enableRow || i == this.this$0.hideOnScrollRow) || i == this.this$0.allButtonsRow) {
+            if ((i == MultiPanelSettingsActivity.this.enableRow || i == MultiPanelSettingsActivity.this.hideOnScrollRow) || i == MultiPanelSettingsActivity.this.allButtonsRow) {
                 return IdFabric$ViewTypes.TEXT_CHECK;
             }
-            return (i == this.this$0.enableSectionRow || i == this.this$0.hideOnScrollSectionRow) || i == this.this$0.sectionInfoRow ? IdFabric$ViewTypes.TEXT_INFO_PRIVACY : IdFabric$ViewTypes.MOVING_CHECK;
+            return (i == MultiPanelSettingsActivity.this.enableSectionRow || i == MultiPanelSettingsActivity.this.hideOnScrollSectionRow) || i == MultiPanelSettingsActivity.this.sectionInfoRow ? IdFabric$ViewTypes.TEXT_INFO_PRIVACY : IdFabric$ViewTypes.MOVING_CHECK;
         }
 
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            return this.this$0.isClickableViewType(holder.getItemViewType());
+            return MultiPanelSettingsActivity.this.isClickableViewType(holder.getItemViewType());
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -475,64 +468,60 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
             List list;
             Intrinsics.checkNotNullParameter(parent, "parent");
             if (i == IdFabric$ViewTypes.TOPICS_BAR) {
-                Activity parentActivity = this.this$0.getParentActivity();
+                Activity parentActivity = MultiPanelSettingsActivity.this.getParentActivity();
                 Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
                 list = ArraysKt___ArraysKt.toList(DialogType.values());
-                DialogTypeTopicsBar dialogTypeTopicsBar2 = new DialogTypeTopicsBar(parentActivity, list, this.this$0.getCurrentDialogType(), new MultiPanelSettingsActivity$ListAdapter$onCreateViewHolder$1(this.this$0, this));
-                this.this$0.topicsBar = dialogTypeTopicsBar2;
-                Unit unit = Unit.INSTANCE;
+                DialogTypeTopicsBar dialogTypeTopicsBar2 = new DialogTypeTopicsBar(parentActivity, list, MultiPanelSettingsActivity.this.getCurrentDialogType(), new MultiPanelSettingsActivity$ListAdapter$onCreateViewHolder$1(MultiPanelSettingsActivity.this, this));
+                MultiPanelSettingsActivity.this.topicsBar = dialogTypeTopicsBar2;
                 dialogTypeTopicsBar = dialogTypeTopicsBar2;
             } else if (i == IdFabric$ViewTypes.TEXT_CHECK) {
-                dialogTypeTopicsBar = new TextCheckCell(this.this$0.getParentActivity());
+                dialogTypeTopicsBar = new TextCheckCell(MultiPanelSettingsActivity.this.getParentActivity());
             } else if (i == IdFabric$ViewTypes.TEXT_INFO_PRIVACY) {
-                FrameLayout textInfoPrivacyCell = new TextInfoPrivacyCell(this.this$0.getParentActivity());
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(this.this$0.getParentActivity(), C3158R.C3160drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
-                Unit unit2 = Unit.INSTANCE;
+                FrameLayout textInfoPrivacyCell = new TextInfoPrivacyCell(MultiPanelSettingsActivity.this.getParentActivity());
+                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(MultiPanelSettingsActivity.this.getParentActivity(), C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
                 dialogTypeTopicsBar = textInfoPrivacyCell;
             } else {
-                Activity parentActivity2 = this.this$0.getParentActivity();
+                Activity parentActivity2 = MultiPanelSettingsActivity.this.getParentActivity();
                 Intrinsics.checkNotNullExpressionValue(parentActivity2, "parentActivity");
                 FrameLayout movingCheckCell = new MovingCheckCell(parentActivity2);
                 movingCheckCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                Unit unit3 = Unit.INSTANCE;
                 dialogTypeTopicsBar = movingCheckCell;
             }
             dialogTypeTopicsBar.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-            Unit unit4 = Unit.INSTANCE;
             return new RecyclerListView.Holder(dialogTypeTopicsBar);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            boolean needDivider = this.this$0.needDivider(getItemViewType(i + 1));
+            boolean needDivider = MultiPanelSettingsActivity.this.needDivider(getItemViewType(i + 1));
             int itemViewType = getItemViewType(i);
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK && (view instanceof TextCheckCell)) {
-                MultiPanelSettingsActivity multiPanelSettingsActivity = this.this$0;
+                MultiPanelSettingsActivity multiPanelSettingsActivity = MultiPanelSettingsActivity.this;
                 TextCheckCell textCheckCell = (TextCheckCell) view;
                 if (i == multiPanelSettingsActivity.enableRow) {
                     textCheckCell.setType(1);
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3158R.string.multi_panel_settings_enable_item_title), multiPanelSettingsActivity.newIsEnabled, needDivider);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.multi_panel_settings_enable_item_title), multiPanelSettingsActivity.newIsEnabled, needDivider);
                     return;
                 }
                 textCheckCell.setType(0);
                 if (i == multiPanelSettingsActivity.hideOnScrollRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3158R.string.multi_panel_hide_on_scroll), multiPanelSettingsActivity.newIsHideOnScrollEnabled, needDivider);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.multi_panel_hide_on_scroll), multiPanelSettingsActivity.newIsHideOnScrollEnabled, needDivider);
                 } else if (i == multiPanelSettingsActivity.allButtonsRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3158R.string.multi_panel_settings_section_enable_all_item_title), multiPanelSettingsActivity.isAllButtonsEnabled(), needDivider);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.multi_panel_settings_section_enable_all_item_title), multiPanelSettingsActivity.isAllButtonsEnabled(), needDivider);
                 }
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY && (view instanceof TextInfoPrivacyCell)) {
-                MultiPanelSettingsActivity multiPanelSettingsActivity2 = this.this$0;
+                MultiPanelSettingsActivity multiPanelSettingsActivity2 = MultiPanelSettingsActivity.this;
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) view;
                 if (i == multiPanelSettingsActivity2.enableSectionRow && multiPanelSettingsActivity2.newIsEnabled) {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(multiPanelSettingsActivity2.getParentActivity(), C3158R.C3160drawable.greydivider, "windowBackgroundGrayShadow"));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(multiPanelSettingsActivity2.getParentActivity(), C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"));
                     textInfoPrivacyCell.setFixedSize(12);
                     textInfoPrivacyCell.setText(null);
                     return;
                 }
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(multiPanelSettingsActivity2.getParentActivity(), C3158R.C3160drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(multiPanelSettingsActivity2.getParentActivity(), C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
                 if (i == multiPanelSettingsActivity2.hideOnScrollSectionRow) {
                     textInfoPrivacyCell.setFixedSize(1);
                     textInfoPrivacyCell.setText(null);
@@ -541,15 +530,15 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
                 textInfoPrivacyCell.setFixedSize(0);
                 if (i != multiPanelSettingsActivity2.enableSectionRow) {
                     if (i == multiPanelSettingsActivity2.sectionInfoRow) {
-                        textInfoPrivacyCell.setText(LocaleController.getInternalString(C3158R.string.multi_panel_settings_section_hint));
+                        textInfoPrivacyCell.setText(LocaleController.getInternalString(C3286R.string.multi_panel_settings_section_hint));
                         return;
                     }
                     return;
                 }
-                textInfoPrivacyCell.setText(LocaleController.getInternalString(C3158R.string.multi_panel_settings_enable_item_subtitle));
+                textInfoPrivacyCell.setText(LocaleController.getInternalString(C3286R.string.multi_panel_settings_enable_item_subtitle));
             } else if (itemViewType == IdFabric$ViewTypes.MOVING_CHECK && (view instanceof MovingCheckCell)) {
                 MovingCheckCell movingCheckCell = (MovingCheckCell) view;
-                MultiPanelButtonState button = this.this$0.getButton(i);
+                MultiPanelButtonState button = MultiPanelSettingsActivity.this.getButton(i);
                 if (button == null) {
                     return;
                 }
@@ -557,7 +546,7 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
                 movingCheckCell.setIcon(button.getType().getIconId(), "chats_actionBackground", button.getType().getPorterDuffMode());
                 if (button.getType() == MultiPanelButton.SUBSCRIBERS || button.getType() == MultiPanelButton.RECENT_ACTIONS) {
                     Intrinsics.checkNotNullExpressionValue(text, "text");
-                    String internalString = LocaleController.getInternalString(C3158R.string.multi_panel_settings_only_for_admin_button_item_subtitle);
+                    String internalString = LocaleController.getInternalString(C3286R.string.multi_panel_settings_only_for_admin_button_item_subtitle);
                     Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…min_button_item_subtitle)");
                     movingCheckCell.setTextAndValueAndCheck(text, internalString, button.isEnabled(), needDivider);
                     return;
@@ -573,8 +562,6 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
     /* renamed from: org.fork.ui.fragment.MultiPanelSettingsActivity$TouchHelperCallback */
     /* loaded from: classes4.dex */
     public final class TouchHelperCallback extends ItemTouchHelper.Callback {
-        final /* synthetic */ MultiPanelSettingsActivity this$0;
-
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
         public boolean isLongPressDragEnabled() {
             return true;
@@ -585,9 +572,7 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
             Intrinsics.checkNotNullParameter(viewHolder, "viewHolder");
         }
 
-        public TouchHelperCallback(MultiPanelSettingsActivity this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public TouchHelperCallback() {
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
@@ -605,15 +590,15 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
             if (source.getItemViewType() != target.getItemViewType()) {
                 return false;
             }
-            this.this$0.getListAdapter().swapElements(source.getAdapterPosition(), target.getAdapterPosition());
+            MultiPanelSettingsActivity.this.getListAdapter().swapElements(source.getAdapterPosition(), target.getAdapterPosition());
             return true;
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
         public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int i) {
             if (i != 0) {
-                this.this$0.getListView().cancelClickRunnables(false);
-                View view = viewHolder == null ? null : viewHolder.itemView;
+                MultiPanelSettingsActivity.this.getListView().cancelClickRunnables(false);
+                View view = viewHolder != null ? viewHolder.itemView : null;
                 if (view != null) {
                     view.setPressed(true);
                 }

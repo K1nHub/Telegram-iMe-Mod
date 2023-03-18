@@ -81,7 +81,7 @@ public abstract class TransferArgs implements TransactionArgs {
             }
             if (obj instanceof EVM) {
                 EVM evm = (EVM) obj;
-                return Intrinsics.areEqual(Double.valueOf(getAmount()), Double.valueOf(evm.getAmount())) && this.weiConvertUnit == evm.weiConvertUnit && Intrinsics.areEqual(this.recipientAddress, evm.recipientAddress) && this.chainId == evm.chainId && Intrinsics.areEqual(this.nonce, evm.nonce) && Intrinsics.areEqual(this.gasPrice, evm.gasPrice) && Intrinsics.areEqual(this.gasLimit, evm.gasLimit) && Intrinsics.areEqual(this.contractAddress, evm.contractAddress);
+                return Double.compare(getAmount(), evm.getAmount()) == 0 && this.weiConvertUnit == evm.weiConvertUnit && Intrinsics.areEqual(this.recipientAddress, evm.recipientAddress) && this.chainId == evm.chainId && Intrinsics.areEqual(this.nonce, evm.nonce) && Intrinsics.areEqual(this.gasPrice, evm.gasPrice) && Intrinsics.areEqual(this.gasLimit, evm.gasLimit) && Intrinsics.areEqual(this.contractAddress, evm.contractAddress);
             }
             return false;
         }
@@ -93,7 +93,7 @@ public abstract class TransferArgs implements TransactionArgs {
         }
 
         public String toString() {
-            return "EVM(amount=" + getAmount() + ", weiConvertUnit=" + this.weiConvertUnit + ", recipientAddress=" + this.recipientAddress + ", chainId=" + this.chainId + ", nonce=" + this.nonce + ", gasPrice=" + this.gasPrice + ", gasLimit=" + this.gasLimit + ", contractAddress=" + ((Object) this.contractAddress) + ')';
+            return "EVM(amount=" + getAmount() + ", weiConvertUnit=" + this.weiConvertUnit + ", recipientAddress=" + this.recipientAddress + ", chainId=" + this.chainId + ", nonce=" + this.nonce + ", gasPrice=" + this.gasPrice + ", gasLimit=" + this.gasLimit + ", contractAddress=" + this.contractAddress + ')';
         }
 
         public /* synthetic */ EVM(double d, Convert.Unit unit, String str, long j, BigInteger bigInteger, BigInteger bigInteger2, BigInteger bigInteger3, String str2, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -198,7 +198,7 @@ public abstract class TransferArgs implements TransactionArgs {
             }
             if (obj instanceof TON) {
                 TON ton = (TON) obj;
-                return Intrinsics.areEqual(Double.valueOf(getAmount()), Double.valueOf(ton.getAmount())) && this.weiConvertUnit == ton.weiConvertUnit && Intrinsics.areEqual(this.recipientAddress, ton.recipientAddress) && Intrinsics.areEqual(this.message, ton.message) && this.sendMode == ton.sendMode && this.isUnencrypted == ton.isUnencrypted;
+                return Double.compare(getAmount(), ton.getAmount()) == 0 && this.weiConvertUnit == ton.weiConvertUnit && Intrinsics.areEqual(this.recipientAddress, ton.recipientAddress) && Intrinsics.areEqual(this.message, ton.message) && this.sendMode == ton.sendMode && this.isUnencrypted == ton.isUnencrypted;
             }
             return false;
         }
@@ -217,7 +217,7 @@ public abstract class TransferArgs implements TransactionArgs {
         }
 
         public String toString() {
-            return "TON(amount=" + getAmount() + ", weiConvertUnit=" + this.weiConvertUnit + ", recipientAddress=" + this.recipientAddress + ", message=" + ((Object) this.message) + ", sendMode=" + this.sendMode + ", isUnencrypted=" + this.isUnencrypted + ')';
+            return "TON(amount=" + getAmount() + ", weiConvertUnit=" + this.weiConvertUnit + ", recipientAddress=" + this.recipientAddress + ", message=" + this.message + ", sendMode=" + this.sendMode + ", isUnencrypted=" + this.isUnencrypted + ')';
         }
 
         public /* synthetic */ TON(double d, Convert.Unit unit, String str, String str2, int i, boolean z, int i2, DefaultConstructorMarker defaultConstructorMarker) {

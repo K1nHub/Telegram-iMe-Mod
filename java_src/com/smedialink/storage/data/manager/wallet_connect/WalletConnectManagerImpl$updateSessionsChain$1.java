@@ -29,7 +29,6 @@ public final class WalletConnectManagerImpl$updateSessionsChain$1 extends Lambda
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         Map map;
@@ -41,7 +40,7 @@ public final class WalletConnectManagerImpl$updateSessionsChain$1 extends Lambda
         WalletConnectManagerImpl walletConnectManagerImpl = this.this$0;
         for (WCClient wCClient : values) {
             wallet = walletConnectManagerImpl.getWallet();
-            String address = wallet == null ? null : wallet.getAddress();
+            String address = wallet != null ? wallet.getAddress() : null;
             if (address == null) {
                 address = "";
             }

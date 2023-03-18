@@ -87,8 +87,8 @@ public final class HorizontalActionButtonItem {
         if (this == obj) {
             return true;
         }
-        if (Intrinsics.areEqual(HorizontalActionButtonItem.class, obj == null ? null : obj.getClass())) {
-            Objects.requireNonNull(obj, "null cannot be cast to non-null type com.smedialink.model.wallet.home.HorizontalActionButtonItem");
+        if (Intrinsics.areEqual(HorizontalActionButtonItem.class, obj != null ? obj.getClass() : null)) {
+            Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type com.smedialink.model.wallet.home.HorizontalActionButtonItem");
             HorizontalActionButtonItem horizontalActionButtonItem = (HorizontalActionButtonItem) obj;
             return this.iconRes == horizontalActionButtonItem.iconRes && this.textRes == horizontalActionButtonItem.textRes && this.isEnabled == horizontalActionButtonItem.isEnabled;
         }

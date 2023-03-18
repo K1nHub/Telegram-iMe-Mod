@@ -94,10 +94,10 @@ public abstract class BaseItemProvider<T> {
 
     public BaseProviderMultiAdapter<T> getAdapter() {
         WeakReference<BaseProviderMultiAdapter<T>> weakReference = this.weakAdapter;
-        if (weakReference == null) {
-            return null;
+        if (weakReference != null) {
+            return weakReference.get();
         }
-        return weakReference.get();
+        return null;
     }
 
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int i) {

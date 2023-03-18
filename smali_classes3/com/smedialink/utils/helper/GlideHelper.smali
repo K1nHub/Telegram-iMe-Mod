@@ -8,10 +8,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$fL6f6nfxOC_EsV7lR1wj6FJBuzg()Ljava/util/Map;
+.method public static synthetic $r8$lambda$YDN8IC0-lEmJCTPyCuaC6w6xYKQ()Ljava/util/Map;
     .locals 1
 
-    invoke-static {}, Lcom/smedialink/utils/helper/GlideHelper;->loadBinanceImageAsBitmap$lambda-0()Ljava/util/Map;
+    invoke-static {}, Lcom/smedialink/utils/helper/GlideHelper;->loadBinanceImageAsBitmap$lambda$0()Ljava/util/Map;
 
     move-result-object v0
 
@@ -149,7 +149,7 @@
     return-void
 .end method
 
-.method private static final loadBinanceImageAsBitmap$lambda-0()Ljava/util/Map;
+.method private static final loadBinanceImageAsBitmap$lambda$0()Ljava/util/Map;
     .locals 1
 
     .line 20
@@ -160,4 +160,41 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public static final loadImageAsBitmap(Landroid/content/Context;Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback1;Z)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "Ljava/lang/String;",
+            "Lorg/fork/utils/Callbacks$Callback1<",
+            "Landroid/graphics/Bitmap;",
+            ">;Z)V"
+        }
+    .end annotation
+
+    const-string v0, "context"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "url"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "callback"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 27
+    sget-object v0, Lcom/smedialink/utils/helper/GlideHelper;->INSTANCE:Lcom/smedialink/utils/helper/GlideHelper;
+
+    new-instance v1, Lcom/bumptech/glide/load/model/GlideUrl;
+
+    invoke-direct {v1, p1}, Lcom/bumptech/glide/load/model/GlideUrl;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {v0, p0, v1, p2, p3}, Lcom/smedialink/utils/helper/GlideHelper;->internalLoad(Landroid/content/Context;Lcom/bumptech/glide/load/model/GlideUrl;Lorg/fork/utils/Callbacks$Callback1;Z)V
+
+    return-void
 .end method

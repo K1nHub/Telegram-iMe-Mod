@@ -50,7 +50,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 47
+    .line 48
     check-cast p1, Lcom/smedialink/model/wallet/crypto/pin/EnterPinCodeResult;
 
     check-cast p2, Lcom/smedialink/ui/base/mvp/MvpFragment;
@@ -73,17 +73,17 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 49
+    .line 50
     instance-of p1, p1, Lcom/smedialink/model/wallet/crypto/pin/EnterPinCodeResult$Success;
 
     if-eqz p1, :cond_0
 
-    .line 50
+    .line 51
     iget-object p1, p0, Lcom/smedialink/navigation/wallet/coordinator/PinCodeCoordinator$startAction$1;->$action:Lorg/fork/utils/Callbacks$Callback;
 
     invoke-interface {p1}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
 
-    .line 51
+    .line 52
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->onBackPressed()Z
 
     :cond_0

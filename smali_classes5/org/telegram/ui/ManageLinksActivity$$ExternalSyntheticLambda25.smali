@@ -35,7 +35,7 @@
 
     check-cast p1, Lcom/smedialink/model/wallet/select/SelectableToken;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$MhDjBtna249h52OBBHntZpyPCt0(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;Lcom/smedialink/model/wallet/select/SelectableToken;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$5OfYedS-0R1aPkSbcqLr0fJe23U(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;Lcom/smedialink/model/wallet/select/SelectableToken;)V
 
     return-void
 .end method

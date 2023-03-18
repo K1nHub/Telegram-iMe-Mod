@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.chunk;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DataSourceUtil;
@@ -17,7 +17,7 @@ public abstract class DataChunk extends Chunk {
     protected abstract void consume(byte[] bArr, int i) throws IOException;
 
     public DataChunk(DataSource dataSource, DataSpec dataSpec, int i, Format format, int i2, Object obj, byte[] bArr) {
-        super(dataSource, dataSpec, i, format, i2, obj, C0474C.TIME_UNSET, C0474C.TIME_UNSET);
+        super(dataSource, dataSpec, i, format, i2, obj, C0468C.TIME_UNSET, C0468C.TIME_UNSET);
         DataChunk dataChunk;
         byte[] bArr2;
         if (bArr == null) {

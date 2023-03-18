@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lcom/smedialink/navigation/wallet/coordinator/TokenBuyCoordinator$$ExternalSyntheticLambda0;->f$2:Lcom/smedialink/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;
 
-    invoke-static {v0, v1, v2}, Lcom/smedialink/navigation/wallet/coordinator/TokenBuyCoordinator;->$r8$lambda$d8jDRCfY_9sEojF4s7QntdggUg8(Lcom/smedialink/navigation/wallet/coordinator/TokenBuyCoordinator;Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/smedialink/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;)V
+    invoke-static {v0, v1, v2}, Lcom/smedialink/navigation/wallet/coordinator/TokenBuyCoordinator;->$r8$lambda$XpqamOpGqIR4nK59zhQudm0uP4E(Lcom/smedialink/navigation/wallet/coordinator/TokenBuyCoordinator;Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/smedialink/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;)V
 
     return-void
 .end method

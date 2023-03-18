@@ -15,10 +15,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$du7dCKjGZnlfPRqpP34Q_5_HRaw(Lcom/smedialink/model/wallet/ActionItem;)V
+.method public static synthetic $r8$lambda$e90_WjMj3jYU271KDIWg6YeUc-U(Lcom/smedialink/model/wallet/ActionItem;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;->newInstance$lambda-0(Lcom/smedialink/model/wallet/ActionItem;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;->newInstance$lambda$0(Lcom/smedialink/model/wallet/ActionItem;)V
 
     return-void
 .end method
@@ -59,7 +59,7 @@
     return-object p0
 .end method
 
-.method private static final newInstance$lambda-0(Lcom/smedialink/model/wallet/ActionItem;)V
+.method private static final newInstance$lambda$0(Lcom/smedialink/model/wallet/ActionItem;)V
     .locals 0
 
     return-void

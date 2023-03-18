@@ -27,6 +27,7 @@ import kotlin.coroutines.SafeContinuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugProbesKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NeuroBot.kt */
@@ -67,7 +68,7 @@ public final class NeuroBot implements AigramBot {
             build = new FirebaseLocalModel.Builder(getBotId()).setFilePath(factory.getBotMlModelPath(getBotId(), z)).build();
         }
         FirebaseModelManager.getInstance().registerLocalModel(build);
-        Log.d("NeuroBot", Intrinsics.stringPlus(getBotId(), " registered"));
+        Log.d("NeuroBot", getBotId() + " registered");
     }
 
     public String getBotId() {
@@ -83,29 +84,29 @@ public final class NeuroBot implements AigramBot {
         return (FirebaseModelInterpreter) this.classifier$delegate.getValue();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0033  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x0334 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00cf A[LOOP:3: B:21:0x00cd->B:22:0x00cf, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x010d  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0145  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0147  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x014d  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x014f  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x015f  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0161  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x02b6 A[LOOP:0: B:62:0x02b4->B:63:0x02b6, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x02df  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0322  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x033a  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0035  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0344 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00d7 A[LOOP:3: B:21:0x00d5->B:22:0x00d7, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0118  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0150  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0155  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0158  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0161  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x016a  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0171  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x02c6 A[LOOP:0: B:62:0x02c4->B:63:0x02c6, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x02ef  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0332  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0349  */
     @Override // com.smedialink.bots.domain.AigramBot
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public java.lang.Object getResponse(java.util.List<java.lang.String> r25, kotlin.coroutines.Continuation<? super com.smedialink.bots.data.model.Response> r26) {
+    public java.lang.Object getResponse(java.util.List<java.lang.String> r24, kotlin.coroutines.Continuation<? super com.smedialink.bots.data.model.Response> r25) {
         /*
-            Method dump skipped, instructions count: 1029
+            Method dump skipped, instructions count: 1047
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.smedialink.bots.data.model.bot.NeuroBot.getResponse(java.util.List, kotlin.coroutines.Continuation):java.lang.Object");
@@ -116,28 +117,35 @@ public final class NeuroBot implements AigramBot {
         Continuation intercepted;
         Object coroutine_suspended;
         Task<FirebaseModelOutputs> run;
-        Task<FirebaseModelOutputs> addOnSuccessListener;
         intercepted = IntrinsicsKt__IntrinsicsJvmKt.intercepted(continuation);
         final SafeContinuation safeContinuation = new SafeContinuation(intercepted);
-        if (firebaseModelInterpreter != null && (run = firebaseModelInterpreter.run(firebaseModelInputs, firebaseModelInputOutputOptions)) != null && (addOnSuccessListener = run.addOnSuccessListener(new OnSuccessListener() { // from class: com.smedialink.bots.data.model.bot.NeuroBot$getOutputsFromModel$2$1
-            @Override // com.google.android.gms.tasks.OnSuccessListener
-            public final void onSuccess(FirebaseModelOutputs result) {
-                Intrinsics.checkNotNullParameter(result, "result");
-                Continuation<Object> continuation2 = safeContinuation;
-                Object output = result.getOutput(0);
-                Result.Companion companion = Result.Companion;
-                continuation2.resumeWith(Result.m1870constructorimpl(output));
-            }
-        })) != null) {
-            addOnSuccessListener.addOnFailureListener(new OnFailureListener() { // from class: com.smedialink.bots.data.model.bot.NeuroBot$getOutputsFromModel$2$2
-                @Override // com.google.android.gms.tasks.OnFailureListener
-                public final void onFailure(Exception exception) {
-                    Intrinsics.checkNotNullParameter(exception, "exception");
-                    Continuation<Object> continuation2 = safeContinuation;
-                    Result.Companion companion = Result.Companion;
-                    continuation2.resumeWith(Result.m1870constructorimpl(ResultKt.createFailure(exception)));
+        if (firebaseModelInterpreter != null && (run = firebaseModelInterpreter.run(firebaseModelInputs, firebaseModelInputOutputOptions)) != null) {
+            final NeuroBot$getOutputsFromModel$2$1 neuroBot$getOutputsFromModel$2$1 = new NeuroBot$getOutputsFromModel$2$1(safeContinuation);
+            Task<FirebaseModelOutputs> addOnSuccessListener = run.addOnSuccessListener(new OnSuccessListener(neuroBot$getOutputsFromModel$2$1) { // from class: com.smedialink.bots.data.model.bot.NeuroBot$sam$com_google_android_gms_tasks_OnSuccessListener$0
+                private final /* synthetic */ Function1 function;
+
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    Intrinsics.checkNotNullParameter(neuroBot$getOutputsFromModel$2$1, "function");
+                    this.function = neuroBot$getOutputsFromModel$2$1;
+                }
+
+                @Override // com.google.android.gms.tasks.OnSuccessListener
+                public final /* synthetic */ void onSuccess(Object obj) {
+                    this.function.invoke(obj);
                 }
             });
+            if (addOnSuccessListener != null) {
+                addOnSuccessListener.addOnFailureListener(new OnFailureListener() { // from class: com.smedialink.bots.data.model.bot.NeuroBot$getOutputsFromModel$2$2
+                    @Override // com.google.android.gms.tasks.OnFailureListener
+                    public final void onFailure(Exception exception) {
+                        Intrinsics.checkNotNullParameter(exception, "exception");
+                        Continuation<Object> continuation2 = safeContinuation;
+                        Result.Companion companion = Result.Companion;
+                        continuation2.resumeWith(Result.m1463constructorimpl(ResultKt.createFailure(exception)));
+                    }
+                });
+            }
         }
         Object orThrow = safeContinuation.getOrThrow();
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();

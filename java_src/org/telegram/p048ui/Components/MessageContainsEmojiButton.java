@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
@@ -109,9 +109,9 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
             }
         } else if (arrayList.size() == 1) {
             if (i2 == 0) {
-                string = LocaleController.getString("MessageContainsEmojiPack", C3158R.string.MessageContainsEmojiPack);
+                string = LocaleController.getString("MessageContainsEmojiPack", C3286R.string.MessageContainsEmojiPack);
             } else {
-                string = LocaleController.getString("MessageContainsReactionsPack", C3158R.string.MessageContainsReactionsPack);
+                string = LocaleController.getString("MessageContainsReactionsPack", C3286R.string.MessageContainsReactionsPack);
             }
             String[] split = string.split("%s");
             if (split.length <= 1) {
@@ -130,7 +130,7 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
                     ArrayList<TLRPC$Document> arrayList3 = stickerSet.documents;
                     if (arrayList3 == null || i4 >= arrayList3.size()) {
                         break;
-                    } else if (stickerSet.documents.get(i4).f1502id == stickerSet.set.thumb_document_id) {
+                    } else if (stickerSet.documents.get(i4).f1507id == stickerSet.set.thumb_document_id) {
                         tLRPC$Document = stickerSet.documents.get(i4);
                         break;
                     } else {

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
+.implements Lkotlin/jvm/functions/Function0;
 
 
 # instance fields
@@ -22,20 +22,14 @@
 
 
 # virtual methods
-.method public final didSelectCloudDialog(J)V
+.method public final invoke()Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda257;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$YZrPs1XCwtAxLOGmLUslPlA7dfw(Lorg/telegram/ui/ChatActivity;J)V
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$1mzIH0CaGqhspXqZDzl5vHnMpLg(Lorg/telegram/ui/ChatActivity;)Lorg/koin/core/parameter/ParametersHolder;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public synthetic onAlbumCreatorOpened()V
-    .locals 0
-
-    invoke-static {p0}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate$-CC;->$default$onAlbumCreatorOpened(Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
-
-    return-void
+    return-object v0
 .end method

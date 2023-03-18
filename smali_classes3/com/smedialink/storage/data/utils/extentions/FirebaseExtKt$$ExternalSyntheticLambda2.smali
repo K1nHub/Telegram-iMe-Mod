@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$$ExternalSyntheticLambda2;->f$0:Lio/reactivex/ObservableEmitter;
 
-    invoke-static {v0, p1}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->$r8$lambda$vpNN_X0vCF8rpQTYRspO-X7dFSs(Lio/reactivex/ObservableEmitter;Ljava/lang/Exception;)V
+    invoke-static {v0, p1}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->$r8$lambda$SKYfCURqG0suXcFjYjQcyCRY6w4(Lio/reactivex/ObservableEmitter;Ljava/lang/Exception;)V
 
     return-void
 .end method

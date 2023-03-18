@@ -1,7 +1,7 @@
 package io.grpc.internal;
 
 import java.util.ArrayList;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class InsightBuilder {
     private final ArrayList<String> buffer = new ArrayList<>();
 

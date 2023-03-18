@@ -13,7 +13,6 @@ final class GlobalStateProvider$onRetryButtonClickAction$1 extends Lambda implem
         super(0);
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
     }

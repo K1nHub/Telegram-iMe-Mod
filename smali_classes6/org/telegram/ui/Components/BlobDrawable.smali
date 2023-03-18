@@ -48,6 +48,8 @@
 
 .field public cubicBezierK:F
 
+.field private final liteFlag:I
+
 .field private final m:Landroid/graphics/Matrix;
 
 .field public maxRadius:F
@@ -81,9 +83,20 @@
 .end method
 
 .method public constructor <init>(I)V
+    .locals 1
+
+    const/16 v0, 0x200
+
+    .line 65
+    invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/BlobDrawable;-><init>(II)V
+
+    return-void
+.end method
+
+.method public constructor <init>(II)V
     .locals 4
 
-    .line 62
+    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 40
@@ -135,7 +148,7 @@
 
     int-to-float v0, p1
 
-    .line 63
+    .line 69
     iput v0, p0, Lorg/telegram/ui/Components/BlobDrawable;->N:F
 
     const/high16 v1, 0x40000000    # 2.0f
@@ -148,7 +161,7 @@
 
     div-double/2addr v2, v0
 
-    .line 64
+    .line 70
     invoke-static {v2, v3}, Ljava/lang/Math;->tan(D)D
 
     move-result-wide v0
@@ -161,32 +174,32 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/BlobDrawable;->L:F
 
-    .line 65
+    .line 71
     new-array v0, p1, [F
 
     iput-object v0, p0, Lorg/telegram/ui/Components/BlobDrawable;->radius:[F
 
-    .line 66
+    .line 72
     new-array v0, p1, [F
 
     iput-object v0, p0, Lorg/telegram/ui/Components/BlobDrawable;->angle:[F
 
-    .line 68
+    .line 74
     new-array v0, p1, [F
 
     iput-object v0, p0, Lorg/telegram/ui/Components/BlobDrawable;->radiusNext:[F
 
-    .line 69
+    .line 75
     new-array v0, p1, [F
 
     iput-object v0, p0, Lorg/telegram/ui/Components/BlobDrawable;->angleNext:[F
 
-    .line 70
+    .line 76
     new-array v0, p1, [F
 
     iput-object v0, p0, Lorg/telegram/ui/Components/BlobDrawable;->progress:[F
 
-    .line 71
+    .line 77
     new-array p1, p1, [F
 
     iput-object p1, p0, Lorg/telegram/ui/Components/BlobDrawable;->speed:[F
@@ -196,28 +209,28 @@
     :goto_0
     int-to-float v0, p1
 
-    .line 73
+    .line 79
     iget v1, p0, Lorg/telegram/ui/Components/BlobDrawable;->N:F
 
     cmpg-float v0, v0, v1
 
     if-gez v0, :cond_0
 
-    .line 74
+    .line 80
     iget-object v0, p0, Lorg/telegram/ui/Components/BlobDrawable;->radius:[F
 
     iget-object v1, p0, Lorg/telegram/ui/Components/BlobDrawable;->angle:[F
 
     invoke-direct {p0, v0, v1, p1}, Lorg/telegram/ui/Components/BlobDrawable;->generateBlob([F[FI)V
 
-    .line 75
+    .line 81
     iget-object v0, p0, Lorg/telegram/ui/Components/BlobDrawable;->radiusNext:[F
 
     iget-object v1, p0, Lorg/telegram/ui/Components/BlobDrawable;->angleNext:[F
 
     invoke-direct {p0, v0, v1, p1}, Lorg/telegram/ui/Components/BlobDrawable;->generateBlob([F[FI)V
 
-    .line 76
+    .line 82
     iget-object v0, p0, Lorg/telegram/ui/Components/BlobDrawable;->progress:[F
 
     const/4 v1, 0x0
@@ -228,14 +241,17 @@
 
     goto :goto_0
 
+    .line 85
     :cond_0
+    iput p2, p0, Lorg/telegram/ui/Components/BlobDrawable;->liteFlag:I
+
     return-void
 .end method
 
 .method private generateBlob([F[FI)V
     .locals 6
 
-    .line 81
+    .line 89
     iget v0, p0, Lorg/telegram/ui/Components/BlobDrawable;->N:F
 
     const/high16 v1, 0x43b40000    # 360.0f
@@ -246,14 +262,14 @@
 
     mul-float v0, v0, v2
 
-    .line 82
+    .line 90
     iget v2, p0, Lorg/telegram/ui/Components/BlobDrawable;->maxRadius:F
 
     iget v3, p0, Lorg/telegram/ui/Components/BlobDrawable;->minRadius:F
 
     sub-float/2addr v2, v3
 
-    .line 83
+    .line 91
     iget-object v4, p0, Lorg/telegram/ui/Components/BlobDrawable;->random:Ljava/util/Random;
 
     invoke-virtual {v4}, Ljava/util/Random;->nextInt()I
@@ -278,7 +294,7 @@
 
     aput v3, p1, p3
 
-    .line 84
+    .line 92
     iget p1, p0, Lorg/telegram/ui/Components/BlobDrawable;->N:F
 
     div-float/2addr v1, p1
@@ -305,7 +321,7 @@
 
     aput v1, p2, p3
 
-    .line 85
+    .line 93
     iget-object p1, p0, Lorg/telegram/ui/Components/BlobDrawable;->speed:[F
 
     iget-object p2, p0, Lorg/telegram/ui/Components/BlobDrawable;->random:Ljava/util/Random;
@@ -352,9 +368,9 @@
 
     move/from16 v2, p2
 
-    const/16 v3, 0x200
+    .line 112
+    iget v3, v0, Lorg/telegram/ui/Components/BlobDrawable;->liteFlag:I
 
-    .line 104
     invoke-static {v3}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v3
@@ -363,7 +379,7 @@
 
     return-void
 
-    .line 107
+    .line 115
     :cond_0
     iget-object v3, v0, Lorg/telegram/ui/Components/BlobDrawable;->path:Landroid/graphics/Path;
 
@@ -376,14 +392,14 @@
     :goto_0
     int-to-float v5, v4
 
-    .line 109
+    .line 117
     iget v6, v0, Lorg/telegram/ui/Components/BlobDrawable;->N:F
 
     cmpg-float v5, v5, v6
 
     if-gez v5, :cond_3
 
-    .line 110
+    .line 118
     iget-object v5, v0, Lorg/telegram/ui/Components/BlobDrawable;->progress:[F
 
     aget v7, v5, v4
@@ -403,11 +419,11 @@
     :cond_1
     const/4 v6, 0x0
 
-    .line 112
+    .line 120
     :goto_1
     aget v5, v5, v6
 
-    .line 113
+    .line 121
     iget-object v9, v0, Lorg/telegram/ui/Components/BlobDrawable;->radius:[F
 
     aget v10, v9, v4
@@ -426,7 +442,7 @@
 
     add-float/2addr v10, v14
 
-    .line 114
+    .line 122
     aget v9, v9, v6
 
     sub-float/2addr v11, v5
@@ -439,7 +455,7 @@
 
     add-float/2addr v9, v13
 
-    .line 115
+    .line 123
     iget-object v13, v0, Lorg/telegram/ui/Components/BlobDrawable;->angle:[F
 
     aget v14, v13, v4
@@ -454,7 +470,7 @@
 
     add-float/2addr v14, v15
 
-    .line 116
+    .line 124
     aget v7, v13, v6
 
     mul-float v7, v7, v11
@@ -465,7 +481,7 @@
 
     add-float/2addr v7, v6
 
-    .line 118
+    .line 126
     iget v5, v0, Lorg/telegram/ui/Components/BlobDrawable;->L:F
 
     invoke-static {v10, v9}, Ljava/lang/Math;->min(FF)F
@@ -494,17 +510,17 @@
 
     mul-float v5, v5, v6
 
-    .line 119
+    .line 127
     iget-object v6, v0, Lorg/telegram/ui/Components/BlobDrawable;->m:Landroid/graphics/Matrix;
 
     invoke-virtual {v6}, Landroid/graphics/Matrix;->reset()V
 
-    .line 120
+    .line 128
     iget-object v6, v0, Lorg/telegram/ui/Components/BlobDrawable;->m:Landroid/graphics/Matrix;
 
     invoke-virtual {v6, v14, v1, v2}, Landroid/graphics/Matrix;->setRotate(FFF)V
 
-    .line 122
+    .line 130
     iget-object v6, v0, Lorg/telegram/ui/Components/BlobDrawable;->pointStart:[F
 
     aput v1, v6, v3
@@ -513,55 +529,55 @@
 
     const/4 v11, 0x1
 
-    .line 123
+    .line 131
     aput v10, v6, v11
 
     add-float v12, v1, v5
 
     const/4 v13, 0x2
 
-    .line 124
+    .line 132
     aput v12, v6, v13
 
     const/4 v12, 0x3
 
-    .line 125
+    .line 133
     aput v10, v6, v12
 
-    .line 127
+    .line 135
     iget-object v10, v0, Lorg/telegram/ui/Components/BlobDrawable;->m:Landroid/graphics/Matrix;
 
     invoke-virtual {v10, v6}, Landroid/graphics/Matrix;->mapPoints([F)V
 
-    .line 129
+    .line 137
     iget-object v6, v0, Lorg/telegram/ui/Components/BlobDrawable;->pointEnd:[F
 
     aput v1, v6, v3
 
     sub-float v9, v2, v9
 
-    .line 130
+    .line 138
     aput v9, v6, v11
 
     sub-float v5, v1, v5
 
-    .line 131
+    .line 139
     aput v5, v6, v13
 
-    .line 132
+    .line 140
     aput v9, v6, v12
 
-    .line 134
+    .line 142
     iget-object v5, v0, Lorg/telegram/ui/Components/BlobDrawable;->m:Landroid/graphics/Matrix;
 
     invoke-virtual {v5}, Landroid/graphics/Matrix;->reset()V
 
-    .line 135
+    .line 143
     iget-object v5, v0, Lorg/telegram/ui/Components/BlobDrawable;->m:Landroid/graphics/Matrix;
 
     invoke-virtual {v5, v7, v1, v2}, Landroid/graphics/Matrix;->setRotate(FFF)V
 
-    .line 137
+    .line 145
     iget-object v5, v0, Lorg/telegram/ui/Components/BlobDrawable;->m:Landroid/graphics/Matrix;
 
     iget-object v6, v0, Lorg/telegram/ui/Components/BlobDrawable;->pointEnd:[F
@@ -570,7 +586,7 @@
 
     if-nez v4, :cond_2
 
-    .line 140
+    .line 148
     iget-object v4, v0, Lorg/telegram/ui/Components/BlobDrawable;->path:Landroid/graphics/Path;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/BlobDrawable;->pointStart:[F
@@ -581,7 +597,7 @@
 
     invoke-virtual {v4, v6, v5}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 143
+    .line 151
     :cond_2
     iget-object v14, v0, Lorg/telegram/ui/Components/BlobDrawable;->path:Landroid/graphics/Path;
 
@@ -607,11 +623,11 @@
 
     goto/16 :goto_0
 
-    .line 150
+    .line 158
     :cond_3
     invoke-virtual/range {p3 .. p3}, Landroid/graphics/Canvas;->save()I
 
-    .line 151
+    .line 159
     iget-object v1, v0, Lorg/telegram/ui/Components/BlobDrawable;->path:Landroid/graphics/Path;
 
     move-object/from16 v2, p3
@@ -620,7 +636,7 @@
 
     invoke-virtual {v2, v1, v3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 152
+    .line 160
     invoke-virtual/range {p3 .. p3}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -634,28 +650,28 @@
     :goto_0
     int-to-float v1, v0
 
-    .line 156
+    .line 164
     iget v2, p0, Lorg/telegram/ui/Components/BlobDrawable;->N:F
 
     cmpg-float v1, v1, v2
 
     if-gez v1, :cond_0
 
-    .line 157
+    .line 165
     iget-object v1, p0, Lorg/telegram/ui/Components/BlobDrawable;->radius:[F
 
     iget-object v2, p0, Lorg/telegram/ui/Components/BlobDrawable;->angle:[F
 
     invoke-direct {p0, v1, v2, v0}, Lorg/telegram/ui/Components/BlobDrawable;->generateBlob([F[FI)V
 
-    .line 158
+    .line 166
     iget-object v1, p0, Lorg/telegram/ui/Components/BlobDrawable;->radiusNext:[F
 
     iget-object v2, p0, Lorg/telegram/ui/Components/BlobDrawable;->angleNext:[F
 
     invoke-direct {p0, v1, v2, v0}, Lorg/telegram/ui/Components/BlobDrawable;->generateBlob([F[FI)V
 
-    .line 159
+    .line 167
     iget-object v1, p0, Lorg/telegram/ui/Components/BlobDrawable;->progress:[F
 
     const/4 v2, 0x0
@@ -673,12 +689,12 @@
 .method public setValue(FZ)V
     .locals 1
 
-    .line 174
+    .line 182
     iput p1, p0, Lorg/telegram/ui/Components/BlobDrawable;->animateToAmplitude:F
 
-    const/16 p1, 0x200
+    .line 183
+    iget p1, p0, Lorg/telegram/ui/Components/BlobDrawable;->liteFlag:I
 
-    .line 175
     invoke-static {p1}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result p1
@@ -690,7 +706,7 @@
     :cond_0
     if-eqz p2, :cond_2
 
-    .line 179
+    .line 187
     iget p1, p0, Lorg/telegram/ui/Components/BlobDrawable;->animateToAmplitude:F
 
     iget p2, p0, Lorg/telegram/ui/Components/BlobDrawable;->amplitude:F
@@ -705,7 +721,7 @@
 
     div-float/2addr p1, p2
 
-    .line 180
+    .line 188
     iput p1, p0, Lorg/telegram/ui/Components/BlobDrawable;->animateAmplitudeDiff:F
 
     goto :goto_0
@@ -717,12 +733,12 @@
 
     div-float/2addr p1, p2
 
-    .line 182
+    .line 190
     iput p1, p0, Lorg/telegram/ui/Components/BlobDrawable;->animateAmplitudeDiff:F
 
     goto :goto_0
 
-    .line 185
+    .line 193
     :cond_2
     iget p1, p0, Lorg/telegram/ui/Components/BlobDrawable;->animateToAmplitude:F
 
@@ -738,7 +754,7 @@
 
     div-float/2addr p1, p2
 
-    .line 186
+    .line 194
     iput p1, p0, Lorg/telegram/ui/Components/BlobDrawable;->animateAmplitudeDiff:F
 
     goto :goto_0
@@ -750,7 +766,7 @@
 
     div-float/2addr p1, p2
 
-    .line 188
+    .line 196
     iput p1, p0, Lorg/telegram/ui/Components/BlobDrawable;->animateAmplitudeDiff:F
 
     :goto_0
@@ -760,9 +776,9 @@
 .method public update(FF)V
     .locals 6
 
-    const/16 v0, 0x200
+    .line 97
+    iget v0, p0, Lorg/telegram/ui/Components/BlobDrawable;->liteFlag:I
 
-    .line 89
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v0
@@ -777,14 +793,14 @@
     :goto_0
     int-to-float v1, v0
 
-    .line 92
+    .line 100
     iget v2, p0, Lorg/telegram/ui/Components/BlobDrawable;->N:F
 
     cmpg-float v1, v1, v2
 
     if-gez v1, :cond_2
 
-    .line 93
+    .line 101
     iget-object v1, p0, Lorg/telegram/ui/Components/BlobDrawable;->progress:[F
 
     aget v2, v1, v0
@@ -813,7 +829,7 @@
 
     aput v2, v1, v0
 
-    .line 94
+    .line 102
     aget v2, v1, v0
 
     const/high16 v3, 0x3f800000    # 1.0f
@@ -824,10 +840,10 @@
 
     const/4 v2, 0x0
 
-    .line 95
+    .line 103
     aput v2, v1, v0
 
-    .line 96
+    .line 104
     iget-object v1, p0, Lorg/telegram/ui/Components/BlobDrawable;->radius:[F
 
     iget-object v2, p0, Lorg/telegram/ui/Components/BlobDrawable;->radiusNext:[F
@@ -836,7 +852,7 @@
 
     aput v3, v1, v0
 
-    .line 97
+    .line 105
     iget-object v1, p0, Lorg/telegram/ui/Components/BlobDrawable;->angle:[F
 
     iget-object v3, p0, Lorg/telegram/ui/Components/BlobDrawable;->angleNext:[F
@@ -845,7 +861,7 @@
 
     aput v4, v1, v0
 
-    .line 98
+    .line 106
     invoke-direct {p0, v2, v3, v0}, Lorg/telegram/ui/Components/BlobDrawable;->generateBlob([F[FI)V
 
     :cond_1
@@ -860,7 +876,7 @@
 .method public updateAmplitude(J)V
     .locals 3
 
-    .line 194
+    .line 202
     iget v0, p0, Lorg/telegram/ui/Components/BlobDrawable;->animateToAmplitude:F
 
     iget v1, p0, Lorg/telegram/ui/Components/BlobDrawable;->amplitude:F
@@ -869,7 +885,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 195
+    .line 203
     iget v2, p0, Lorg/telegram/ui/Components/BlobDrawable;->animateAmplitudeDiff:F
 
     long-to-float p1, p1
@@ -890,7 +906,7 @@
 
     if-lez p1, :cond_1
 
-    .line 198
+    .line 206
     iput v0, p0, Lorg/telegram/ui/Components/BlobDrawable;->amplitude:F
 
     goto :goto_0
@@ -900,7 +916,7 @@
 
     if-gez p1, :cond_1
 
-    .line 202
+    .line 210
     iput v0, p0, Lorg/telegram/ui/Components/BlobDrawable;->amplitude:F
 
     :cond_1

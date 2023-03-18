@@ -43,26 +43,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$I57s0FW4M_y1l2i2_AjVfM7nsl0(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;)V
+.method public static synthetic $r8$lambda$IbFW2FkMEC1RZ7kthRhfqlZQjvI(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;->showRequiredWalletCreatedDialog$lambda-2(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;->getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$X_fk7HkQq6J03CFCTLS_gV8p2Yg(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$ZXsWehE0INI-BXcza4fPhffXMNc(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;->setupListeners$lambda-5$lambda-4(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;->setupListeners$lambda$5$lambda$4(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$xkEUKPSD1m1qOjTeU8BpGMC03qA(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;)V
+.method public static synthetic $r8$lambda$oVObTPDAGK43snYsT01BqpEBfno(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;->getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;->showRequiredWalletCreatedDialog$lambda$2(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;)V
 
     return-void
 .end method
@@ -268,7 +268,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;)V
+.method private static final getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -327,18 +327,18 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-5$lambda-4(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$5$lambda$4(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "$noName_1"
+    const-string p1, "<anonymous parameter 1>"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -478,9 +478,6 @@
 
     invoke-virtual {v1, v2}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffCallback(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;)V
 
-    .line 113
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 111
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
@@ -495,7 +492,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    const-string v1, ""
+    const-string v1, "setupWalletRecycleView$lambda$7"
 
     .line 115
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -505,7 +502,7 @@
     return-void
 .end method
 
-.method private static final showRequiredWalletCreatedDialog$lambda-2(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;)V
+.method private static final showRequiredWalletCreatedDialog$lambda$2(Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;)V
     .locals 1
 
     const-string v0, "this$0"

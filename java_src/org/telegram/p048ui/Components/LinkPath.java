@@ -6,6 +6,7 @@ import android.os.Build;
 import android.text.Layout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
 /* renamed from: org.telegram.ui.Components.LinkPath */
 /* loaded from: classes6.dex */
 public class LinkPath extends Path {
@@ -134,7 +135,7 @@ public class LinkPath extends Path {
                     float f14 = f7;
                     this.centerX = (f11 + f10) / 2.0f;
                     this.centerY = (f14 + f6) / 2.0f;
-                    if (this.useRoundRect) {
+                    if (this.useRoundRect && LiteMode.isEnabled(LiteMode.FLAGS_CHAT)) {
                         super.addRect(f10 - (getRadius() / 2.0f), f6, f11 + (getRadius() / 2.0f), f14, direction);
                     } else {
                         super.addRect(f10, f6, f11, f14, direction);

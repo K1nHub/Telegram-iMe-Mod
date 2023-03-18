@@ -287,9 +287,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/res/Configuration;->setLocale(Ljava/util/Locale;)V
 
-    .line 28
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 26
     iput-object v0, p0, Lcom/smedialink/storage/data/utils/system/AndroidResourceManager;->config:Landroid/content/res/Configuration;
 

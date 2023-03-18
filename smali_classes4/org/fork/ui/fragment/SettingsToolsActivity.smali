@@ -33,10 +33,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$q05XsOglHLeMrsF6i__cyUtvgnY(Lorg/fork/ui/fragment/SettingsToolsActivity;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$txnI7CaJiaJymoP0Q2511_-O2EI(Lorg/fork/ui/fragment/SettingsToolsActivity;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/SettingsToolsActivity;->initListView$lambda-3$lambda-2(Lorg/fork/ui/fragment/SettingsToolsActivity;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/SettingsToolsActivity;->initListView$lambda$3$lambda$2(Lorg/fork/ui/fragment/SettingsToolsActivity;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -282,7 +282,7 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda-3$lambda-2(Lorg/fork/ui/fragment/SettingsToolsActivity;Landroid/view/View;I)V
+.method private static final initListView$lambda$3$lambda$2(Lorg/fork/ui/fragment/SettingsToolsActivity;Landroid/view/View;I)V
     .locals 1
 
     const-string p1, "this$0"
@@ -317,7 +317,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundGray"
+    const-string/jumbo v1, "windowBackgroundGray"
 
     .line 63
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -398,7 +398,7 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "windowBackgroundGray"
+    const-string/jumbo v9, "windowBackgroundGray"
 
     move-object v2, v10
 
@@ -507,7 +507,7 @@
 
     aput-object v5, v9, v2
 
-    const-string v13, "windowBackgroundWhite"
+    const-string/jumbo v13, "windowBackgroundWhite"
 
     move-object v6, v3
 
@@ -605,7 +605,7 @@
 
     const/4 v13, 0x0
 
-    const-string v14, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v14, "windowBackgroundWhiteBlackText"
 
     move-object v6, v3
 

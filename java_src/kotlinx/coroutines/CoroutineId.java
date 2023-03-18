@@ -14,21 +14,21 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
     public static final Key Key = new Key(null);
 
     /* renamed from: id */
-    private final long f1212id;
+    private final long f1217id;
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof CoroutineId) && this.f1212id == ((CoroutineId) obj).f1212id;
+        return (obj instanceof CoroutineId) && this.f1217id == ((CoroutineId) obj).f1217id;
     }
 
     public int hashCode() {
-        return StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f1212id);
+        return StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f1217id);
     }
 
     public final long getId() {
-        return this.f1212id;
+        return this.f1217id;
     }
 
     /* compiled from: CoroutineContext.kt */
@@ -44,11 +44,11 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
 
     public CoroutineId(long j) {
         super(Key);
-        this.f1212id = j;
+        this.f1217id = j;
     }
 
     public String toString() {
-        return "CoroutineId(" + this.f1212id + ')';
+        return "CoroutineId(" + this.f1217id + ')';
     }
 
     @Override // kotlinx.coroutines.ThreadContextElement

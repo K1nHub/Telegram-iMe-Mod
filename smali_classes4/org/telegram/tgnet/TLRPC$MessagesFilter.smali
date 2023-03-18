@@ -13,7 +13,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 44956
+    .line 45199
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 
     goto/16 :goto_0
 
-    .line 44976
+    .line 45219
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterUrl;
 
@@ -36,7 +36,7 @@
 
     goto/16 :goto_0
 
-    .line 44997
+    .line 45240
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterRoundVoice;
 
@@ -44,7 +44,7 @@
 
     goto/16 :goto_0
 
-    .line 45012
+    .line 45255
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterEmpty;
 
@@ -52,7 +52,7 @@
 
     goto :goto_0
 
-    .line 44982
+    .line 45225
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterPhotoVideo;
 
@@ -60,7 +60,7 @@
 
     goto :goto_0
 
-    .line 45003
+    .line 45246
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterVoice;
 
@@ -68,7 +68,7 @@
 
     goto :goto_0
 
-    .line 44970
+    .line 45213
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterChatPhotos;
 
@@ -76,7 +76,7 @@
 
     goto :goto_0
 
-    .line 44967
+    .line 45210
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterMusic;
 
@@ -84,7 +84,7 @@
 
     goto :goto_0
 
-    .line 44991
+    .line 45234
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterPinned;
 
@@ -92,7 +92,7 @@
 
     goto :goto_0
 
-    .line 44964
+    .line 45207
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterGif;
 
@@ -100,7 +100,7 @@
 
     goto :goto_0
 
-    .line 44988
+    .line 45231
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterGeo;
 
@@ -108,7 +108,7 @@
 
     goto :goto_0
 
-    .line 45000
+    .line 45243
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterContacts;
 
@@ -116,7 +116,7 @@
 
     goto :goto_0
 
-    .line 44985
+    .line 45228
     :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterPhotoVideoDocuments;
 
@@ -124,7 +124,7 @@
 
     goto :goto_0
 
-    .line 44994
+    .line 45237
     :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterMyMentions;
 
@@ -132,7 +132,7 @@
 
     goto :goto_0
 
-    .line 45015
+    .line 45258
     :sswitch_d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterRoundVideo;
 
@@ -140,7 +140,7 @@
 
     goto :goto_0
 
-    .line 45006
+    .line 45249
     :sswitch_e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterVideo;
 
@@ -148,7 +148,7 @@
 
     goto :goto_0
 
-    .line 44979
+    .line 45222
     :sswitch_f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterDocument;
 
@@ -156,7 +156,7 @@
 
     goto :goto_0
 
-    .line 44973
+    .line 45216
     :sswitch_10
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterPhotos;
 
@@ -164,7 +164,7 @@
 
     goto :goto_0
 
-    .line 45009
+    .line 45252
     :sswitch_11
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterPhoneCalls;
 
@@ -177,7 +177,7 @@
 
     goto :goto_1
 
-    .line 45019
+    .line 45262
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -207,7 +207,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 45022
+    .line 45265
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

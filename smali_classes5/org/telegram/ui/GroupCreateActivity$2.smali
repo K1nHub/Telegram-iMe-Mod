@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCreateActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 460
+    .line 464
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-direct {p0, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
@@ -37,10 +37,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 514
+    .line 518
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 515
+    .line 519
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCreateActivity;->access$1700(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -83,7 +83,7 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 6
 
-    .line 520
+    .line 524
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCreateActivity;->access$700(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -92,10 +92,10 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 521
+    .line 525
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 522
+    .line 526
     invoke-virtual {p2}, Landroid/view/View;->getLeft()I
 
     move-result v0
@@ -138,17 +138,17 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 523
+    .line 527
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p2
 
-    .line 524
+    .line 528
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return p2
 
-    .line 526
+    .line 530
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
@@ -158,10 +158,10 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 527
+    .line 531
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 528
+    .line 532
     invoke-virtual {p2}, Landroid/view/View;->getLeft()I
 
     move-result v0
@@ -204,17 +204,17 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 529
+    .line 533
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p2
 
-    .line 530
+    .line 534
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return p2
 
-    .line 533
+    .line 537
     :cond_1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
@@ -226,15 +226,15 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 473
+    .line 477
     invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
 
-    .line 474
+    .line 478
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity$2;->verticalPositionAutoAnimator:Lorg/telegram/ui/Components/VerticalPositionAutoAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 475
+    .line 479
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VerticalPositionAutoAnimator;->ignoreNextLayout()V
 
     :cond_0
@@ -244,7 +244,7 @@
 .method protected onLayout(ZIIII)V
     .locals 5
 
-    .line 501
+    .line 505
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$1500(Lorg/telegram/ui/GroupCreateActivity;)Landroid/widget/ScrollView;
@@ -275,7 +275,7 @@
 
     invoke-virtual {p1, v2, v2, v0, v1}, Landroid/widget/ScrollView;->layout(IIII)V
 
-    .line 502
+    .line 506
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$700(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -326,7 +326,7 @@
 
     invoke-virtual {p1, v2, v0, v1, v3}, Landroid/view/ViewGroup;->layout(IIII)V
 
-    .line 503
+    .line 507
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$1600(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
@@ -377,7 +377,7 @@
 
     invoke-virtual {p1, v2, v0, v1, v3}, Landroid/widget/FrameLayout;->layout(IIII)V
 
-    .line 505
+    .line 509
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$1400(Lorg/telegram/ui/GroupCreateActivity;)Landroid/widget/ImageView;
@@ -386,7 +386,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 506
+    .line 510
     sget-boolean p1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v0, 0xe
@@ -423,7 +423,7 @@
     :goto_0
     sub-int/2addr p5, p3
 
-    .line 507
+    .line 511
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -442,7 +442,7 @@
 
     sub-int/2addr p5, p2
 
-    .line 508
+    .line 512
     iget-object p2, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/GroupCreateActivity;->access$1400(Lorg/telegram/ui/GroupCreateActivity;)Landroid/widget/ImageView;
@@ -482,20 +482,20 @@
 .method protected onMeasure(II)V
     .locals 6
 
-    .line 481
+    .line 485
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 482
+    .line 486
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
-    .line 483
+    .line 487
     invoke-virtual {p0, p1, p2}, Landroid/view/ViewGroup;->setMeasuredDimension(II)V
 
-    .line 484
+    .line 488
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
@@ -508,7 +508,7 @@
 
     goto :goto_0
 
-    .line 487
+    .line 491
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
@@ -520,7 +520,7 @@
 
     goto :goto_1
 
-    .line 485
+    .line 489
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
@@ -533,7 +533,7 @@
 
     iput v2, v0, Lorg/telegram/ui/GroupCreateActivity;->maxSize:I
 
-    .line 490
+    .line 494
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
@@ -559,7 +559,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/widget/ScrollView;->measure(II)V
 
-    .line 491
+    .line 495
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCreateActivity;->access$700(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -588,7 +588,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/view/ViewGroup;->measure(II)V
 
-    .line 492
+    .line 496
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCreateActivity;->access$1600(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
@@ -617,7 +617,7 @@
 
     invoke-virtual {v0, p1, p2}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 493
+    .line 497
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$1400(Lorg/telegram/ui/GroupCreateActivity;)Landroid/widget/ImageView;
@@ -626,7 +626,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 494
+    .line 498
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 p2, 0x15
@@ -643,7 +643,7 @@
 
     move-result p1
 
-    .line 495
+    .line 499
     iget-object p2, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/GroupCreateActivity;->access$1400(Lorg/telegram/ui/GroupCreateActivity;)Landroid/widget/ImageView;
@@ -667,7 +667,7 @@
 .method public onViewAdded(Landroid/view/View;)V
     .locals 1
 
-    .line 466
+    .line 470
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity$2;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCreateActivity;->access$1400(Lorg/telegram/ui/GroupCreateActivity;)Landroid/widget/ImageView;
@@ -680,7 +680,7 @@
 
     if-nez v0, :cond_0
 
-    .line 467
+    .line 471
     invoke-static {p1}, Lorg/telegram/ui/Components/VerticalPositionAutoAnimator;->attach(Landroid/view/View;)Lorg/telegram/ui/Components/VerticalPositionAutoAnimator;
 
     move-result-object p1

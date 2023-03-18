@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer$40;)V
     .locals 0
 
-    .line 7241
+    .line 7252
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$40$1;->this$1:Lorg/telegram/ui/PhotoViewer$40;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$onAnimationEnd$0()V
     .locals 2
 
-    .line 7248
+    .line 7259
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$40$1;->this$1:Lorg/telegram/ui/PhotoViewer$40;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$40;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -50,7 +50,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$2502(Lorg/telegram/ui/PhotoViewer;Z)Z
 
-    .line 7249
+    .line 7260
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$40$1;->this$1:Lorg/telegram/ui/PhotoViewer$40;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$40;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -61,7 +61,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 7250
+    .line 7261
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$40$1;->this$1:Lorg/telegram/ui/PhotoViewer$40;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$40;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -72,7 +72,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
 
-    .line 7252
+    .line 7263
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$40$1;->this$1:Lorg/telegram/ui/PhotoViewer$40;
 
@@ -90,7 +90,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 7258
+    .line 7269
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$40$1;->this$1:Lorg/telegram/ui/PhotoViewer$40;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$40;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -105,7 +105,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 7244
+    .line 7255
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$40$1;->this$1:Lorg/telegram/ui/PhotoViewer$40;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$40;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -118,7 +118,7 @@
 
     return-void
 
-    .line 7247
+    .line 7258
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$40$1;->this$1:Lorg/telegram/ui/PhotoViewer$40;
 

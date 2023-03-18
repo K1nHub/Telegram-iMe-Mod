@@ -12,6 +12,6 @@ public final /* synthetic */ class WalletTokenDetailsPresenter$$ExternalSyntheti
 
     @Override // org.fork.utils.Callbacks$Callback1
     public final void invoke(Object obj) {
-        WalletTokenDetailsPresenter.m1649loadAccountLevelInfo$lambda3((AccountLevelInformation) obj);
+        WalletTokenDetailsPresenter.loadAccountLevelInfo$lambda$3((AccountLevelInformation) obj);
     }
 }

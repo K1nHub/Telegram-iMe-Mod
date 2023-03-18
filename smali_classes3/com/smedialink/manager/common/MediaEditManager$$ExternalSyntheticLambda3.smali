@@ -49,7 +49,7 @@
 
     move-object v5, p2
 
-    invoke-static/range {v0 .. v5}, Lcom/smedialink/manager/common/MediaEditManager;->$r8$lambda$7Nd5gqZQGDB51sl6k0nlKaFT7lQ(Lcom/smedialink/manager/common/MediaEditManager;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static/range {v0 .. v5}, Lcom/smedialink/manager/common/MediaEditManager;->$r8$lambda$xXWeWJUgs5lGEzCLUeWa8D10YzI(Lcom/smedialink/manager/common/MediaEditManager;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

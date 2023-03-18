@@ -5,7 +5,7 @@ public abstract class TLRPC$FileLocation extends TLObject {
     public byte[] file_reference;
 
     /* renamed from: iv */
-    public byte[] f1508iv;
+    public byte[] f1513iv;
     public byte[] key;
     public int local_id;
     public long secret;

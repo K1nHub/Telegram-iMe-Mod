@@ -35,20 +35,16 @@
         }
     .end annotation
 
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "context"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1127
+    .line 1128
     iput-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericTextView;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 1130
+    .line 1131
     new-instance p1, Landroid/text/TextPaint;
 
     const/4 p2, 0x1
@@ -59,7 +55,7 @@
 
     const/16 p2, 0x1f
 
-    .line 1135
+    .line 1136
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -70,7 +66,7 @@
 
     const/16 p2, 0x10
 
-    .line 1136
+    .line 1137
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -91,20 +87,17 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1152
+    .line 1153
     invoke-super {p0, p1}, Landroid/widget/TextView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 1153
+    .line 1154
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericTextView;->number:Ljava/lang/String;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericTextView;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 1154
+    .line 1155
     iget-object v2, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericTextView;->numericPaint:Landroid/text/TextPaint;
 
     const-string v3, "windowBackgroundWhiteHintText"
@@ -115,7 +108,7 @@
 
     invoke-virtual {v2, v3}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 1157
+    .line 1158
     invoke-static {v1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getMaxNumberWidth$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)I
 
     move-result v1
@@ -128,20 +121,20 @@
 
     const/16 v2, 0x11
 
-    .line 1158
+    .line 1159
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     int-to-float v2, v2
 
-    .line 1159
+    .line 1160
     iget-object v3, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericTextView;->numericPaint:Landroid/text/TextPaint;
 
-    .line 1155
+    .line 1156
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -152,10 +145,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1142
+    .line 1143
     iput-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericTextView;->number:Ljava/lang/String;
 
-    .line 1143
+    .line 1144
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericTextView;->numericPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0, p1}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
@@ -172,7 +165,7 @@
 
     iput p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericTextView;->numberWidth:I
 
-    .line 1144
+    .line 1145
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericTextView;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getMaxNumberWidth$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)I

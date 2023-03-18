@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;Landroid/content/Context;Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)V
     .locals 0
 
-    .line 691
+    .line 714
     invoke-direct {p0, p2}, Lorg/telegram/ui/AvatarPreviewPagerIndicator;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 694
+    .line 717
     iget-object v0, p0, Lorg/telegram/ui/AvatarPreviewPagerIndicator;->profileGalleryView:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ProfileGalleryView;->getRealCount()I
@@ -40,7 +40,7 @@
 
     if-le v0, v1, :cond_0
 
-    .line 695
+    .line 718
     invoke-super {p0, p1}, Lorg/telegram/ui/AvatarPreviewPagerIndicator;->onDraw(Landroid/graphics/Canvas;)V
 
     :cond_0

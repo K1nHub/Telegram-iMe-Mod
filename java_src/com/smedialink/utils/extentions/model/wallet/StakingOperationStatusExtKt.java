@@ -14,9 +14,18 @@ public final class StakingOperationStatusExtKt {
 
         static {
             int[] iArr = new int[StakingOperationStatus.values().length];
-            iArr[StakingOperationStatus.CONFIRMED.ordinal()] = 1;
-            iArr[StakingOperationStatus.FAILED.ordinal()] = 2;
-            iArr[StakingOperationStatus.PENDING.ordinal()] = 3;
+            try {
+                iArr[StakingOperationStatus.CONFIRMED.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[StakingOperationStatus.FAILED.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[StakingOperationStatus.PENDING.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }

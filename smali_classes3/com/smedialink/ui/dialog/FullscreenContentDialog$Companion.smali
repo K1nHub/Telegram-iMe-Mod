@@ -44,7 +44,7 @@
 
     move-result-object v0
 
-    const-string v1, ""
+    const-string v1, "createDialog$lambda$0"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -55,18 +55,12 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     iget-object v1, p1, Lorg/telegram/messenger/databinding/ForkFullscreenContentAlertBinding;->buttonAction:Lcom/smedialink/ui/custom/ActionButton;
 
-    if-nez v1, :cond_1
+    if-eqz v1, :cond_0
 
-    goto :goto_0
-
-    :cond_1
     const-wide/16 v2, 0x0
 
     new-instance v4, Lcom/smedialink/ui/dialog/FullscreenContentDialog$Companion$createDialog$1;
@@ -79,7 +73,7 @@
 
     invoke-static/range {v1 .. v6}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
-    :goto_0
+    :cond_0
     const-string p1, "dialog"
 
     .line 100

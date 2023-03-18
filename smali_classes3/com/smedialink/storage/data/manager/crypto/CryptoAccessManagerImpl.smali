@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCryptoAccessManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoAccessManagerImpl.kt\ncom/smedialink/storage/data/manager/crypto/CryptoAccessManagerImpl\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,91:1\n13536#2,2:92\n13536#2,2:94\n*S KotlinDebug\n*F\n+ 1 CryptoAccessManagerImpl.kt\ncom/smedialink/storage/data/manager/crypto/CryptoAccessManagerImpl\n*L\n51#1:92,2\n62#1:94,2\n*E\n"
+    value = "SMAP\nCryptoAccessManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoAccessManagerImpl.kt\ncom/smedialink/storage/data/manager/crypto/CryptoAccessManagerImpl\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,91:1\n13579#2,2:92\n13579#2,2:94\n*S KotlinDebug\n*F\n+ 1 CryptoAccessManagerImpl.kt\ncom/smedialink/storage/data/manager/crypto/CryptoAccessManagerImpl\n*L\n51#1:92,2\n62#1:94,2\n*E\n"
 .end annotation
 
 
@@ -84,7 +84,7 @@
 
     move-result-object v0
 
-    .line 13536
+    .line 13579
     array-length v1, v0
 
     const/4 v2, 0x0
@@ -350,16 +350,16 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/model/crypto/Wallet;
 
-    if-nez p1, :cond_1
+    if-eqz p1, :cond_1
 
-    const/4 p1, 0x0
+    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getGuid()Ljava/lang/String;
+
+    move-result-object p1
 
     goto :goto_1
 
     :cond_1
-    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getGuid()Ljava/lang/String;
-
-    move-result-object p1
+    const/4 p1, 0x0
 
     :goto_1
     invoke-virtual {p0}, Lcom/smedialink/storage/data/manager/crypto/CryptoAccessManagerImpl;->getLastLoggedInGuid()Ljava/lang/String;
@@ -486,7 +486,7 @@
 
     move-result-object v0
 
-    .line 13536
+    .line 13579
     array-length v1, v0
 
     const/4 v2, 0x0

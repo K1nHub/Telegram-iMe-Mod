@@ -30,10 +30,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$cczv6a6U87EWJKifV4uWhjmFez4(Lkotlin/jvm/functions/Function0;)V
+.method public static synthetic $r8$lambda$VZBu5BV0Oy3wClKLKECbnkWk9tM(Lkotlin/jvm/functions/Function0;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->postViewAction$lambda-0(Lkotlin/jvm/functions/Function0;)V
+    invoke-static {p0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->postViewAction$lambda$0(Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
@@ -109,7 +109,7 @@
     return-void
 .end method
 
-.method private static final postViewAction$lambda-0(Lkotlin/jvm/functions/Function0;)V
+.method private static final postViewAction$lambda$0(Lkotlin/jvm/functions/Function0;)V
     .locals 1
 
     const-string v0, "$tmp0"
@@ -200,15 +200,12 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {p1}, Lmoxy/MvpDelegate;->onCreate()V
 
     .line 70
-    :goto_0
+    :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     const-string v0, "fragmentView"
@@ -493,14 +490,11 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0, p1}, Lmoxy/MvpDelegate;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -542,9 +536,6 @@
 
     .line 129
     invoke-virtual {p1, p4}, Landroid/app/Dialog;->setCancelable(Z)V
-
-    .line 130
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 126
     invoke-virtual {v0, p1}, Lcom/smedialink/ui/base/mvp/base/MvpBaseDelegate;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;

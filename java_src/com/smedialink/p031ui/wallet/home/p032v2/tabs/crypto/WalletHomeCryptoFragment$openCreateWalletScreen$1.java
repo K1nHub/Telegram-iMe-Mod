@@ -22,6 +22,6 @@ final class WalletHomeCryptoFragment$openCreateWalletScreen$1 extends Lambda imp
 
     @Override // kotlin.jvm.functions.Function0
     public final BaseFragment invoke() {
-        return CreateWalletFragment.Companion.newInstance(new CreateWalletFragment.ScreenType.SecretWords(this.$words, null, this.$password, null, false, 26, null));
+        return CreateWalletFragment.Companion.newInstance(new CreateWalletFragment.ScreenType.SecretWords(this.$words, null, this.$password, null, 10, null));
     }
 }

@@ -14,10 +14,22 @@ public final class StatusExtKt {
 
         static {
             int[] iArr = new int[Status.values().length];
-            iArr[Status.OK.ordinal()] = 1;
-            iArr[Status.ERROR.ordinal()] = 2;
-            iArr[Status.PENDING.ordinal()] = 3;
-            iArr[Status.CANCELLED.ordinal()] = 4;
+            try {
+                iArr[Status.OK.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[Status.ERROR.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[Status.PENDING.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[Status.CANCELLED.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }

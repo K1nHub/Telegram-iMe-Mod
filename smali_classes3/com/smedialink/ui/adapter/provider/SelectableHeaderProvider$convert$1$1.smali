@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSelectableHeaderProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectableHeaderProvider.kt\ncom/smedialink/ui/adapter/provider/SelectableHeaderProvider$convert$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,62:1\n1547#2:63\n1618#2,3:64\n*S KotlinDebug\n*F\n+ 1 SelectableHeaderProvider.kt\ncom/smedialink/ui/adapter/provider/SelectableHeaderProvider$convert$1$1\n*L\n40#1:63\n40#1:64,3\n*E\n"
+    value = "SMAP\nSelectableHeaderProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectableHeaderProvider.kt\ncom/smedialink/ui/adapter/provider/SelectableHeaderProvider$convert$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,62:1\n1549#2:63\n1620#2,3:64\n*S KotlinDebug\n*F\n+ 1 SelectableHeaderProvider.kt\ncom/smedialink/ui/adapter/provider/SelectableHeaderProvider$convert$1$1\n*L\n40#1:63\n40#1:64,3\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_2
+    if-nez p1, :cond_1
 
     .line 40
     iget-object p1, p0, Lcom/smedialink/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->$item:Lcom/smedialink/model/wallet/home/SelectableHeaderItem;
@@ -96,7 +96,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->this$0:Lcom/smedialink/ui/adapter/provider/SelectableHeaderProvider;
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -107,7 +107,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -123,7 +123,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Ljava/lang/Number;
 
     invoke-virtual {v2}, Ljava/lang/Number;->intValue()I
@@ -139,6 +139,7 @@
 
     move-result-object v2
 
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -178,38 +179,33 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_1
+    if-eqz p1, :cond_3
 
-    goto :goto_2
-
-    :cond_1
     invoke-virtual {p1}, Landroidx/appcompat/widget/ListPopupWindow;->show()V
 
-    goto :goto_2
+    goto :goto_1
 
     .line 48
-    :cond_2
+    :cond_1
     iget-object p1, p0, Lcom/smedialink/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->this$0:Lcom/smedialink/ui/adapter/provider/SelectableHeaderProvider;
 
     invoke-static {p1}, Lcom/smedialink/ui/adapter/provider/SelectableHeaderProvider;->access$getPopupWindow$p(Lcom/smedialink/ui/adapter/provider/SelectableHeaderProvider;)Landroidx/appcompat/widget/ListPopupWindow;
 
     move-result-object p1
 
-    if-nez p1, :cond_3
+    if-eqz p1, :cond_2
 
-    goto :goto_1
-
-    :cond_3
     invoke-virtual {p1}, Landroidx/appcompat/widget/ListPopupWindow;->dismiss()V
 
     .line 49
-    :goto_1
+    :cond_2
     iget-object p1, p0, Lcom/smedialink/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->this$0:Lcom/smedialink/ui/adapter/provider/SelectableHeaderProvider;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lcom/smedialink/ui/adapter/provider/SelectableHeaderProvider;->access$setPopupWindow$p(Lcom/smedialink/ui/adapter/provider/SelectableHeaderProvider;Landroidx/appcompat/widget/ListPopupWindow;)V
 
-    :goto_2
+    :cond_3
+    :goto_1
     return-void
 .end method

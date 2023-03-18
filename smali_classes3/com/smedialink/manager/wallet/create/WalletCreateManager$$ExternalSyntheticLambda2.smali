@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda2;->f$1:Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;
 
-    invoke-static {v0, v1}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->$r8$lambda$EyBOUTgKQXoX1owhxYtdg1vewS0(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
+    invoke-static {v0, v1}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->$r8$lambda$Nwcde5RIKV5Xu002exHWjAXLbvE(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
 
     return-void
 .end method

@@ -31,10 +31,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$AGNkBkKCM6nVwOc0y9SCmZUCS04(Ldrinkless/org/ton/TonApi$Object;)V
+.method public static synthetic $r8$lambda$sU1KtOJrqYjdl3LRhs32Bg851YE(Ldrinkless/org/ton/TonApi$Object;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$client$2;->invoke$lambda-0(Ldrinkless/org/ton/TonApi$Object;)V
+    invoke-static {p0}, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$client$2;->invoke$lambda$0(Ldrinkless/org/ton/TonApi$Object;)V
 
     return-void
 .end method
@@ -61,7 +61,7 @@
     return-void
 .end method
 
-.method private static final invoke$lambda-0(Ldrinkless/org/ton/TonApi$Object;)V
+.method private static final invoke$lambda$0(Ldrinkless/org/ton/TonApi$Object;)V
     .locals 0
 
     return-void

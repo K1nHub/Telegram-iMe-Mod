@@ -43,10 +43,18 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
-    .line 323
+    .line 322
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$7;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CalendarActivity;->access$4200(Lorg/telegram/ui/CalendarActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$7;->this$0:Lorg/telegram/ui/CalendarActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/CalendarActivity;->access$4300(Lorg/telegram/ui/CalendarActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v0
 
@@ -62,10 +70,10 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 324
+    .line 323
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$7;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/CalendarActivity;->access$4400(Lorg/telegram/ui/CalendarActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v0}, Lorg/telegram/ui/CalendarActivity;->access$4500(Lorg/telegram/ui/CalendarActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v0
 
@@ -75,7 +83,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity$7;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/CalendarActivity;->access$4300(Lorg/telegram/ui/CalendarActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v2}, Lorg/telegram/ui/CalendarActivity;->access$4400(Lorg/telegram/ui/CalendarActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v2
 
@@ -95,12 +103,12 @@
 
     check-cast v0, Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 325
+    .line 324
     instance-of v1, v0, Lorg/telegram/ui/ChatActivity;
 
     if-eqz v1, :cond_0
 
-    .line 326
+    .line 325
     check-cast v0, Lorg/telegram/ui/ChatActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/CalendarActivity$7;->this$0:Lorg/telegram/ui/CalendarActivity;

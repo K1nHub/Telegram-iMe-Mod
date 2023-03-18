@@ -13,7 +13,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 import org.fork.utils.Callbacks$Callback;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CreateWalletFragment.kt */
@@ -30,8 +30,7 @@ public final class CreateWalletFragment$createButtonTextView$1$1 extends Lambda 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: invoke$lambda-2$lambda-1  reason: not valid java name */
-    public static final void m1597invoke$lambda2$lambda1() {
+    public static final void invoke$lambda$2$lambda$1() {
     }
 
     @Override // kotlin.jvm.functions.Function1
@@ -58,7 +57,6 @@ public final class CreateWalletFragment$createButtonTextView$1$1 extends Lambda 
                 CreateWalletFragment createWalletFragment = this.this$0;
                 CreateWalletFragment newInstance = CreateWalletFragment.Companion.newInstance(new CreateWalletFragment.ScreenType.WordsCheck(((CreateWalletFragment.ScreenType.SecretWords) createWalletFragment.currentType).getSecretWords(), ((CreateWalletFragment.ScreenType.SecretWords) this.this$0.currentType).getPassword(), ((CreateWalletFragment.ScreenType.SecretWords) this.this$0.currentType).getPin()));
                 newInstance.fragmentToRemove = this.this$0;
-                Unit unit = Unit.INSTANCE;
                 createWalletFragment.presentFragment(newInstance);
                 return;
             }
@@ -75,7 +73,7 @@ public final class CreateWalletFragment$createButtonTextView$1$1 extends Lambda 
                         CollectionsKt__CollectionsKt.throwIndexOverflow();
                     }
                     if (!Intrinsics.areEqual(((CreateWalletFragment.ScreenType.WordsCheck) createWalletFragment2.currentType).getSecretWords().get(((Number) obj).intValue()), ((CreateWalletFragment.NumericEditText) createWalletFragment2.editTexts.get(i)).getText().toString())) {
-                        createWalletFragment2.showAlertDialog(new DialogModel(LocaleController.getInternalString(C3158R.string.wallet_backup_test_time_alert_title), LocaleController.getInternalString(C3158R.string.wallet_backup_test_time_alert_text), LocaleController.getInternalString(C3158R.string.wallet_backup_test_time_alert_button_see), LocaleController.getInternalString(C3158R.string.wallet_backup_test_time_alert_button_try)), C1926xc3945669.INSTANCE, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.crypto.create.CreateWalletFragment$createButtonTextView$1$1$$ExternalSyntheticLambda0
+                        createWalletFragment2.showAlertDialog(new DialogModel(LocaleController.getInternalString(C3286R.string.wallet_backup_test_time_alert_title), LocaleController.getInternalString(C3286R.string.wallet_backup_test_time_alert_text), LocaleController.getInternalString(C3286R.string.wallet_backup_test_time_alert_button_see), LocaleController.getInternalString(C3286R.string.wallet_backup_test_time_alert_button_try)), C2040xc3945669.INSTANCE, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.crypto.create.CreateWalletFragment$createButtonTextView$1$1$$ExternalSyntheticLambda0
                             @Override // org.fork.utils.Callbacks$Callback
                             public final void invoke() {
                                 CreateWalletFragment.this.finishFragment();

@@ -51,7 +51,7 @@
 
     iget-object v4, p0, Lorg/fork/controller/BackupController$$ExternalSyntheticLambda2;->f$4:Lorg/fork/utils/Callbacks$Callback1;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/fork/controller/BackupController;->$r8$lambda$oD9RRGIXGbT3ESzSiwEYgeYXisI(Lorg/fork/controller/BackupController;Lorg/telegram/messenger/MessageObject;Ljava/util/List;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/fork/controller/BackupController;->$r8$lambda$_ht9Aa3sp6k_eW88dKD6wmO17C0(Lorg/fork/controller/BackupController;Lorg/telegram/messenger/MessageObject;Ljava/util/List;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback1;)V
 
     return-void
 .end method

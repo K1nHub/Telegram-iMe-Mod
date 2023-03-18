@@ -9,7 +9,7 @@ import io.grpc.LoadBalancer;
 import io.grpc.Status;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class PickFirstLoadBalancer extends LoadBalancer {
     private final LoadBalancer.Helper helper;
     private LoadBalancer.Subchannel subchannel;
@@ -57,7 +57,7 @@ final class PickFirstLoadBalancer extends LoadBalancer {
         if (state == ConnectivityState.SHUTDOWN) {
             return;
         }
-        int i = C23202.$SwitchMap$io$grpc$ConnectivityState[state.ordinal()];
+        int i = C24442.$SwitchMap$io$grpc$ConnectivityState[state.ordinal()];
         if (i == 1) {
             requestConnectionPicker = new RequestConnectionPicker(subchannel);
         } else {
@@ -78,8 +78,8 @@ final class PickFirstLoadBalancer extends LoadBalancer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: io.grpc.internal.PickFirstLoadBalancer$2 */
-    /* loaded from: classes3.dex */
-    public static /* synthetic */ class C23202 {
+    /* loaded from: classes4.dex */
+    public static /* synthetic */ class C24442 {
         static final /* synthetic */ int[] $SwitchMap$io$grpc$ConnectivityState;
 
         static {
@@ -121,7 +121,7 @@ final class PickFirstLoadBalancer extends LoadBalancer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Picker extends LoadBalancer.SubchannelPicker {
         private final LoadBalancer.PickResult result;
 
@@ -140,7 +140,7 @@ final class PickFirstLoadBalancer extends LoadBalancer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class RequestConnectionPicker extends LoadBalancer.SubchannelPicker {
         private final AtomicBoolean connectionRequested = new AtomicBoolean(false);
         private final LoadBalancer.Subchannel subchannel;

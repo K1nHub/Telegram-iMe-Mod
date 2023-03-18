@@ -22,10 +22,10 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 3
 
-    .line 7726
+    .line 7744
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 7727
+    .line 7745
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -36,10 +36,10 @@
 
     const/high16 v1, 0x41500000    # 13.0f
 
-    .line 7728
+    .line 7746
     invoke-virtual {v0, p1, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 7729
+    .line 7747
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackExpand;->textView:Landroid/widget/TextView;
 
     const-string v0, "windowBackgroundWhite"
@@ -50,7 +50,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 7730
+    .line 7748
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackExpand;->textView:Landroid/widget/TextView;
 
     const/16 v0, 0xb
@@ -77,7 +77,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 7731
+    .line 7749
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackExpand;->textView:Landroid/widget/TextView;
 
     const-string p2, "fonts/rmedium.ttf"
@@ -88,7 +88,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 7732
+    .line 7750
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackExpand;->textView:Landroid/widget/TextView;
 
     const/4 p2, 0x6
@@ -115,7 +115,7 @@
 
     invoke-virtual {p1, v0, v1, p2, v2}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 7733
+    .line 7751
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackExpand;->textView:Landroid/widget/TextView;
 
     const/4 p2, -0x2

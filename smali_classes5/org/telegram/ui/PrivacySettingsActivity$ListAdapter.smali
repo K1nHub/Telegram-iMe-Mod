@@ -930,21 +930,13 @@
 
     const/4 v13, 0x1
 
-    sget v14, Lorg/telegram/messenger/R$drawable;->msg_filled_autodelete:I
+    sget v14, Lorg/telegram/messenger/R$drawable;->msg2_autodelete:I
 
-    iget-object v1, v0, Lorg/telegram/ui/PrivacySettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacySettingsActivity;
-
-    const-string v2, "color_lightblue"
-
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
-
-    move-result v15
-
-    const/16 v16, 0x1
+    const/4 v15, 0x1
 
     move-object v10, v6
 
-    invoke-virtual/range {v10 .. v16}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndColorfulIcon(Ljava/lang/String;Ljava/lang/CharSequence;ZIIZ)V
+    invoke-virtual/range {v10 .. v15}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndIcon(Ljava/lang/String;Ljava/lang/String;ZIZ)V
 
     goto/16 :goto_12
 
@@ -1082,21 +1074,13 @@
 
     const/4 v13, 0x1
 
-    sget v14, Lorg/telegram/messenger/R$drawable;->msg_filled_devices:I
+    sget v14, Lorg/telegram/messenger/R$drawable;->msg2_devices:I
 
-    iget-object v1, v0, Lorg/telegram/ui/PrivacySettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacySettingsActivity;
-
-    const-string v2, "color_yellow"
-
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
-
-    move-result v15
-
-    const/16 v16, 0x0
+    const/4 v15, 0x0
 
     move-object v10, v6
 
-    invoke-virtual/range {v10 .. v16}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndColorfulIcon(Ljava/lang/String;Ljava/lang/CharSequence;ZIIZ)V
+    invoke-virtual/range {v10 .. v15}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndIcon(Ljava/lang/String;Ljava/lang/String;ZIZ)V
 
     goto/16 :goto_12
 
@@ -1135,73 +1119,71 @@
 
     invoke-static {v1}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    move-result-object v1
+    move-result-object v12
 
     .line 1215
-    iget-object v2, v0, Lorg/telegram/ui/PrivacySettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacySettingsActivity;
+    iget-object v1, v0, Lorg/telegram/ui/PrivacySettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacySettingsActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/PrivacySettingsActivity;->access$6300(Lorg/telegram/ui/PrivacySettingsActivity;)Lorg/telegram/tgnet/TLRPC$account_Password;
+    invoke-static {v1}, Lorg/telegram/ui/PrivacySettingsActivity;->access$6300(Lorg/telegram/ui/PrivacySettingsActivity;)Lorg/telegram/tgnet/TLRPC$account_Password;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$account_Password;->login_email_pattern:Ljava/lang/String;
+    iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$account_Password;->login_email_pattern:Ljava/lang/String;
 
-    const/16 v5, 0x2a
+    const/16 v2, 0x2a
 
-    invoke-virtual {v2, v5}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {v1, v2}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v1
+
+    .line 1216
+    iget-object v5, v0, Lorg/telegram/ui/PrivacySettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacySettingsActivity;
+
+    invoke-static {v5}, Lorg/telegram/ui/PrivacySettingsActivity;->access$6300(Lorg/telegram/ui/PrivacySettingsActivity;)Lorg/telegram/tgnet/TLRPC$account_Password;
+
+    move-result-object v5
+
+    iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$account_Password;->login_email_pattern:Ljava/lang/String;
+
+    invoke-virtual {v5, v2}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v2
 
-    .line 1216
-    iget-object v7, v0, Lorg/telegram/ui/PrivacySettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacySettingsActivity;
+    if-eq v1, v2, :cond_a
 
-    invoke-static {v7}, Lorg/telegram/ui/PrivacySettingsActivity;->access$6300(Lorg/telegram/ui/PrivacySettingsActivity;)Lorg/telegram/tgnet/TLRPC$account_Password;
-
-    move-result-object v7
-
-    iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$account_Password;->login_email_pattern:Ljava/lang/String;
-
-    invoke-virtual {v7, v5}, Ljava/lang/String;->lastIndexOf(I)I
-
-    move-result v5
-
-    if-eq v2, v5, :cond_a
+    if-eq v1, v11, :cond_a
 
     if-eq v2, v11, :cond_a
 
-    if-eq v5, v11, :cond_a
-
     .line 1218
-    new-instance v7, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
+    new-instance v5, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
-    invoke-direct {v7}, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;-><init>()V
+    invoke-direct {v5}, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;-><init>()V
 
     .line 1219
-    iget v10, v7, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
+    iget v7, v5, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
-    or-int/lit16 v10, v10, 0x100
+    or-int/lit16 v7, v7, 0x100
 
-    iput v10, v7, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
+    iput v7, v5, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
     .line 1220
-    iput v2, v7, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->start:I
+    iput v1, v5, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->start:I
 
-    add-int/2addr v5, v9
+    add-int/2addr v2, v9
 
     .line 1221
-    iput v5, v7, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->end:I
+    iput v2, v5, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->end:I
 
     .line 1222
-    new-instance v10, Lorg/telegram/ui/Components/TextStyleSpan;
+    new-instance v7, Lorg/telegram/ui/Components/TextStyleSpan;
 
-    invoke-direct {v10, v7}, Lorg/telegram/ui/Components/TextStyleSpan;-><init>(Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;)V
+    invoke-direct {v7, v5}, Lorg/telegram/ui/Components/TextStyleSpan;-><init>(Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;)V
 
-    invoke-virtual {v1, v10, v2, v5, v8}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
-
-    :cond_a
-    move-object v12, v1
+    invoke-virtual {v12, v7, v1, v2, v8}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 1226
+    :cond_a
     :goto_5
     invoke-virtual {v6, v9}, Lorg/telegram/ui/Cells/TextCell;->setPrioritizeTitleOverValue(Z)V
 
@@ -1210,23 +1192,11 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v1
 
-    sget v13, Lorg/telegram/messenger/R$drawable;->msg_filled_email:I
+    sget v2, Lorg/telegram/messenger/R$drawable;->msg2_email:I
 
-    iget-object v1, v0, Lorg/telegram/ui/PrivacySettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacySettingsActivity;
-
-    const-string v2, "color_orange"
-
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
-
-    move-result v14
-
-    const/4 v15, 0x1
-
-    move-object v10, v6
-
-    invoke-virtual/range {v10 .. v15}, Lorg/telegram/ui/Cells/TextCell;->setTextAndSpoilersValueAndColorfulIcon(Ljava/lang/String;Ljava/lang/CharSequence;IIZ)V
+    invoke-virtual {v6, v1, v12, v2, v9}, Lorg/telegram/ui/Cells/TextCell;->setTextAndSpoilersValueAndIcon(Ljava/lang/String;Ljava/lang/CharSequence;IZ)V
 
     goto/16 :goto_12
 
@@ -1297,21 +1267,13 @@
 
     const/4 v13, 0x1
 
-    sget v14, Lorg/telegram/messenger/R$drawable;->msg_filled_permissions:I
+    sget v14, Lorg/telegram/messenger/R$drawable;->msg2_permissions:I
 
-    iget-object v1, v0, Lorg/telegram/ui/PrivacySettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacySettingsActivity;
-
-    const-string v2, "color_blue"
-
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
-
-    move-result v15
-
-    const/16 v16, 0x1
+    const/4 v15, 0x1
 
     move-object v10, v6
 
-    invoke-virtual/range {v10 .. v16}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndColorfulIcon(Ljava/lang/String;Ljava/lang/CharSequence;ZIIZ)V
+    invoke-virtual/range {v10 .. v15}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndIcon(Ljava/lang/String;Ljava/lang/String;ZIZ)V
 
     goto/16 :goto_12
 
@@ -1342,7 +1304,7 @@
     move-result-object v1
 
     .line 1242
-    sget v2, Lorg/telegram/messenger/R$drawable;->msg_filled_passcode_on:I
+    sget v2, Lorg/telegram/messenger/R$drawable;->msg2_secret:I
 
     goto :goto_8
 
@@ -1355,7 +1317,7 @@
     move-result-object v1
 
     .line 1245
-    sget v2, Lorg/telegram/messenger/R$drawable;->msg_filled_passcode_off:I
+    sget v2, Lorg/telegram/messenger/R$drawable;->msg2_secret:I
 
     :goto_8
     move-object v12, v1
@@ -1373,19 +1335,11 @@
 
     const/4 v13, 0x1
 
-    iget-object v1, v0, Lorg/telegram/ui/PrivacySettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacySettingsActivity;
-
-    const-string v2, "color_green"
-
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
-
-    move-result v15
-
-    const/16 v16, 0x1
+    const/4 v15, 0x1
 
     move-object v10, v6
 
-    invoke-virtual/range {v10 .. v16}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndColorfulIcon(Ljava/lang/String;Ljava/lang/CharSequence;ZIIZ)V
+    invoke-virtual/range {v10 .. v15}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndIcon(Ljava/lang/String;Ljava/lang/String;ZIZ)V
 
     goto/16 :goto_12
 
@@ -1465,21 +1419,13 @@
 
     const/4 v13, 0x1
 
-    sget v14, Lorg/telegram/messenger/R$drawable;->msg_filled_blocked:I
+    sget v14, Lorg/telegram/messenger/R$drawable;->msg2_block2:I
 
-    iget-object v1, v0, Lorg/telegram/ui/PrivacySettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacySettingsActivity;
-
-    const-string v2, "color_red"
-
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
-
-    move-result v15
-
-    const/16 v16, 0x1
+    const/4 v15, 0x1
 
     move-object v10, v6
 
-    invoke-virtual/range {v10 .. v16}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndColorfulIcon(Ljava/lang/String;Ljava/lang/CharSequence;ZIIZ)V
+    invoke-virtual/range {v10 .. v15}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndIcon(Ljava/lang/String;Ljava/lang/String;ZIZ)V
 
     goto :goto_12
 

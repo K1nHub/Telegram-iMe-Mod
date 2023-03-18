@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;Lorg/telegram/ui/LoginActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 3611
+    .line 3612
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$1;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     iput-object p3, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$1;->val$context:Landroid/content/Context;
@@ -45,7 +45,7 @@
 .method private synthetic lambda$onClick$0(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 3619
+    .line 3620
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$1;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     iget-object p1, p1, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -62,10 +62,10 @@
 
     const/4 p1, 0x1
 
-    .line 3614
+    .line 3615
     invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->setNewTelegramAuthorizationRulesRead(Z)V
 
-    .line 3615
+    .line 3616
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$1;->val$context:Landroid/content/Context;
@@ -74,7 +74,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->RestorePasswordNoEmailTitle:I
 
-    .line 3616
+    .line 3617
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -85,7 +85,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->new_telegram_authorization_rules_alert:I
 
-    .line 3617
+    .line 3618
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -96,7 +96,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->Close:I
 
-    .line 3618
+    .line 3619
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -109,7 +109,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->DidNotGetTheCodeSms:I
 
-    .line 3619
+    .line 3620
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -122,7 +122,7 @@
 
     move-result-object p1
 
-    .line 3620
+    .line 3621
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void

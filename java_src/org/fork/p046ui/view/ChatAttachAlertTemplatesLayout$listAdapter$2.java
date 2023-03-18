@@ -18,6 +18,6 @@ final class ChatAttachAlertTemplatesLayout$listAdapter$2 extends Lambda implemen
 
     @Override // kotlin.jvm.functions.Function0
     public final ChatAttachAlertTemplatesLayout.ListAdapter invoke() {
-        return new ChatAttachAlertTemplatesLayout.ListAdapter(this.this$0);
+        return new ChatAttachAlertTemplatesLayout.ListAdapter();
     }
 }

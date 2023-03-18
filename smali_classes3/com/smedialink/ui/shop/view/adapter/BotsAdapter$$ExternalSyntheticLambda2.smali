@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/shop/view/adapter/BotsAdapter$$ExternalSyntheticLambda2;->f$1:Lcom/smedialink/bots/domain/model/ShopItem;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/shop/view/adapter/BotsAdapter;->$r8$lambda$lGHp8W6B9FUMDdPZx1PjQotKir0(Lcom/smedialink/ui/shop/view/adapter/BotsAdapter;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/shop/view/adapter/BotsAdapter;->$r8$lambda$hxj1QwwzWx-EpOKHo8ZjyCWZ3RI(Lcom/smedialink/ui/shop/view/adapter/BotsAdapter;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
 
     return-void
 .end method

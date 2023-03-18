@@ -64,7 +64,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 195
+    .line 194
     invoke-virtual {p0}, Lcom/smedialink/manager/common/MediaEditManager$convertGifNft$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -75,7 +75,7 @@
 .method public final invoke()V
     .locals 2
 
-    .line 196
+    .line 195
     iget-object v0, p0, Lcom/smedialink/manager/common/MediaEditManager$convertGifNft$1;->$gifCompressing:Ljava/util/concurrent/Future;
 
     const/4 v1, 0x1

@@ -29,7 +29,7 @@
 
     check-cast p1, Ljava/lang/Throwable;
 
-    invoke-static {v0, p1}, Lcom/smedialink/services/FilteredContactsProcessingService;->$r8$lambda$8c46x3XKPossN23PTNcLjnNPDGc(Lcom/smedialink/services/FilteredContactsProcessingService;Ljava/lang/Throwable;)V
+    invoke-static {v0, p1}, Lcom/smedialink/services/FilteredContactsProcessingService;->$r8$lambda$5EEvRPavBx4OM3a6RsREk5re8gI(Lcom/smedialink/services/FilteredContactsProcessingService;Ljava/lang/Throwable;)V
 
     return-void
 .end method

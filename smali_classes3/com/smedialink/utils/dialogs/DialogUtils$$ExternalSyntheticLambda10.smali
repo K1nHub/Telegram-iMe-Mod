@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda10;->f$1:Lorg/fork/utils/Callbacks$Callback1;
 
-    invoke-static {v0, v1}, Lcom/smedialink/utils/dialogs/DialogUtils;->$r8$lambda$_BsE1vDiN02ZwwI5IhYruzPHNaI(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-static {v0, v1}, Lcom/smedialink/utils/dialogs/DialogUtils;->$r8$lambda$XbpL9E6x9skWYKiOsUHIxeaAEyg(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/fork/utils/Callbacks$Callback1;)V
 
     return-void
 .end method

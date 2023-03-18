@@ -43,18 +43,18 @@
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    move-object v3, v2
-
-    goto :goto_0
-
-    :cond_0
     new-instance v3, Lcom/smedialink/model/wallet/crypto/send/fee/GasPriceItem;
 
     sget-object v4, Lcom/smedialink/storage/domain/model/crypto/send/TransactionSpeedLevel;->LOW:Lcom/smedialink/storage/domain/model/crypto/send/TransactionSpeedLevel;
 
     invoke-direct {v3, v4, p1, v1}, Lcom/smedialink/model/wallet/crypto/send/fee/GasPriceItem;-><init>(Lcom/smedialink/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;)V
+
+    goto :goto_0
+
+    :cond_0
+    move-object v3, v2
 
     :goto_0
     const/4 v1, 0x0
@@ -83,18 +83,15 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_1
+    if-eqz p0, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     new-instance v2, Lcom/smedialink/model/wallet/crypto/send/fee/GasPriceItem;
 
     sget-object v3, Lcom/smedialink/storage/domain/model/crypto/send/TransactionSpeedLevel;->FASTEST:Lcom/smedialink/storage/domain/model/crypto/send/TransactionSpeedLevel;
 
     invoke-direct {v2, v3, p1, p0}, Lcom/smedialink/model/wallet/crypto/send/fee/GasPriceItem;-><init>(Lcom/smedialink/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;)V
 
-    :goto_1
+    :cond_1
     aput-object v2, v0, v1
 
     .line 9

@@ -185,7 +185,7 @@ public class DatabaseMigrationHelper {
                     byteBufferValue2.reuse();
                     if (TLdeserialize != null) {
                         TLRPC$TL_chatFull tLRPC$TL_chatFull = new TLRPC$TL_chatFull();
-                        tLRPC$TL_chatFull.f1495id = intValue2;
+                        tLRPC$TL_chatFull.f1500id = intValue2;
                         tLRPC$TL_chatFull.chat_photo = new TLRPC$TL_photoEmpty();
                         tLRPC$TL_chatFull.notify_settings = new TLRPC$TL_peerNotifySettingsEmpty_layer77();
                         tLRPC$TL_chatFull.exported_invite = null;
@@ -1173,7 +1173,17 @@ public class DatabaseMigrationHelper {
         if (i7 == 111) {
             sQLiteDatabase.executeFast("CREATE TABLE emoji_groups(type INTEGER PRIMARY KEY, data BLOB)").stepThis().dispose();
             sQLiteDatabase.executeFast("PRAGMA user_version = 112").stepThis().dispose();
-            return 112;
+            i7 = 112;
+        }
+        if (i7 == 112) {
+            sQLiteDatabase.executeFast("CREATE TABLE app_config(data BLOB)").stepThis().dispose();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 113").stepThis().dispose();
+            i7 = 113;
+        }
+        if (i7 == 113) {
+            messagesStorage.reset();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 114").stepThis().dispose();
+            return 114;
         }
         return i7;
     }
@@ -1217,7 +1227,7 @@ public class DatabaseMigrationHelper {
             FileLog.m45e(e2);
             z = false;
         }
-        if (intValue != 112) {
+        if (intValue != 114) {
             FileLog.m47e("can't restore database from version " + intValue);
             return false;
         }

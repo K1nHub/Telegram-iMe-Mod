@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/dialog/ClearCacheBottomSheet$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    invoke-static {v0}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->$r8$lambda$o36__pkPNxnc1n4FtZN_irSeBmM(Lorg/telegram/ui/ActionBar/AlertDialog;)V
+    invoke-static {v0}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->$r8$lambda$Zq7Ly2Kui0dGLB4_hg3tKoeASno(Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
     return-void
 .end method

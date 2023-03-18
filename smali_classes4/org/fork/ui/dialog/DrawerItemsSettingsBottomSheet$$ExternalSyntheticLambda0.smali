@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet$$ExternalSyntheticLambda0;->f$0:Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;
 
-    invoke-static {v0, p1}, Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;->$r8$lambda$xXBs5NSp_bxeo1MYdvFYz0m2njA(Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;->$r8$lambda$8fyarK8wi5n3Kz8-uY3DmVpbjMs(Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;Landroid/view/View;)V
 
     return-void
 .end method

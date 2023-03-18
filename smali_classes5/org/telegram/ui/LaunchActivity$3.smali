@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
-    .line 670
+    .line 674
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$3;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 2
 
-    .line 673
+    .line 677
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$3;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$500(Lorg/telegram/ui/LaunchActivity;)Ljava/lang/Runnable;
@@ -47,7 +47,7 @@
 
     if-ne v0, p0, :cond_1
 
-    .line 674
+    .line 678
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$3;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$600(Lorg/telegram/ui/LaunchActivity;)Ljava/lang/Runnable;
@@ -56,7 +56,7 @@
 
     if-nez v0, :cond_1
 
-    .line 675
+    .line 679
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$3;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$700(Lorg/telegram/ui/LaunchActivity;)Lorg/fork/enums/LockedSection;
@@ -69,12 +69,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 676
+    .line 680
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$3;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/LaunchActivity;->showLockedSectionPasscodeActivity()V
 
-    .line 678
+    .line 682
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$3;->this$0:Lorg/telegram/ui/LaunchActivity;
 

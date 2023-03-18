@@ -18,6 +18,6 @@ final class ChatAttachAlertButtonsSettingsActivity$listAdapter$2 extends Lambda 
 
     @Override // kotlin.jvm.functions.Function0
     public final ChatAttachAlertButtonsSettingsActivity.ListAdapter invoke() {
-        return new ChatAttachAlertButtonsSettingsActivity.ListAdapter(this.this$0);
+        return new ChatAttachAlertButtonsSettingsActivity.ListAdapter();
     }
 }

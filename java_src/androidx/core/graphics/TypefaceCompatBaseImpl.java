@@ -26,15 +26,17 @@ public class TypefaceCompatBaseImpl {
     }
 
     private static <T> T findBestFont(T[] tArr, int i, StyleExtractor<T> styleExtractor) {
-        int i2 = (i & 1) == 0 ? 400 : 700;
-        boolean z = (i & 2) != 0;
+        return (T) findBestFont(tArr, (i & 1) == 0 ? 400 : 700, (i & 2) != 0, styleExtractor);
+    }
+
+    private static <T> T findBestFont(T[] tArr, int i, boolean z, StyleExtractor<T> styleExtractor) {
         T t = null;
-        int i3 = Integer.MAX_VALUE;
+        int i2 = Integer.MAX_VALUE;
         for (T t2 : tArr) {
-            int abs = (Math.abs(styleExtractor.getWeight(t2) - i2) * 2) + (styleExtractor.isItalic(t2) == z ? 0 : 1);
-            if (t == null || i3 > abs) {
+            int abs = (Math.abs(styleExtractor.getWeight(t2) - i) * 2) + (styleExtractor.isItalic(t2) == z ? 0 : 1);
+            if (t == null || i2 > abs) {
                 t = t2;
-                i3 = abs;
+                i2 = abs;
             }
         }
         return t;
@@ -137,7 +139,7 @@ public class TypefaceCompatBaseImpl {
         if (findBestEntry == null) {
             return null;
         }
-        Typeface createFromResourcesFontFile = TypefaceCompat.createFromResourcesFontFile(context, resources, findBestEntry.getResourceId(), findBestEntry.getFileName(), i);
+        Typeface createFromResourcesFontFile = TypefaceCompat.createFromResourcesFontFile(context, resources, findBestEntry.getResourceId(), findBestEntry.getFileName(), 0, i);
         addFontFamily(createFromResourcesFontFile, fontFamilyFilesResourceEntry);
         return createFromResourcesFontFile;
     }

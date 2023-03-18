@@ -6,13 +6,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/fork/ui/dialog/SettingsHelpBottomSheet$ScreenType;,
-        Lorg/fork/ui/dialog/SettingsHelpBottomSheet$Companion;
+        Lorg/fork/ui/dialog/SettingsHelpBottomSheet$Companion;,
+        Lorg/fork/ui/dialog/SettingsHelpBottomSheet$ScreenType;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSettingsHelpBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SettingsHelpBottomSheet.kt\norg/fork/ui/dialog/SettingsHelpBottomSheet\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,133:1\n1858#2,3:134\n*S KotlinDebug\n*F\n+ 1 SettingsHelpBottomSheet.kt\norg/fork/ui/dialog/SettingsHelpBottomSheet\n*L\n76#1:134,3\n*E\n"
+    value = "SMAP\nSettingsHelpBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SettingsHelpBottomSheet.kt\norg/fork/ui/dialog/SettingsHelpBottomSheet\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,133:1\n1864#2,3:134\n*S KotlinDebug\n*F\n+ 1 SettingsHelpBottomSheet.kt\norg/fork/ui/dialog/SettingsHelpBottomSheet\n*L\n76#1:134,3\n*E\n"
 .end annotation
 
 
@@ -36,18 +36,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$FlC0iQCqBu8RXsfRiGQTh6eoEpY(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Lorg/fork/enums/DrawerSocialNetwork;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$NKGpYAm7kuWDUo4ttq5SCGxE20k(Lkotlin/Pair;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lorg/fork/ui/dialog/SettingsHelpBottomSheet;->createSocialNetworkAlert$lambda-7$lambda-6(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Lorg/fork/enums/DrawerSocialNetwork;Landroid/content/DialogInterface;I)V
+    invoke-static {p0, p1}, Lorg/fork/ui/dialog/SettingsHelpBottomSheet;->createBottomSheetCell$lambda$4$lambda$3(Lkotlin/Pair;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$lVF9Bs04uf3yu4ZCvkhEiId0sFE(Lkotlin/Pair;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$jH0hwP_eZr2lISf2cj9zkyvCac8(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Lorg/fork/enums/DrawerSocialNetwork;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/dialog/SettingsHelpBottomSheet;->createBottomSheetCell$lambda-4$lambda-3(Lkotlin/Pair;Landroid/view/View;)V
+    invoke-static {p0, p1, p2, p3}, Lorg/fork/ui/dialog/SettingsHelpBottomSheet;->createSocialNetworkAlert$lambda$7$lambda$6(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Lorg/fork/enums/DrawerSocialNetwork;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
@@ -388,7 +388,7 @@
     return-object v0
 .end method
 
-.method private static final createBottomSheetCell$lambda-4$lambda-3(Lkotlin/Pair;Landroid/view/View;)V
+.method private static final createBottomSheetCell$lambda$4$lambda$3(Lkotlin/Pair;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$item"
@@ -427,7 +427,7 @@
     .line 76
     iget-object v1, p0, Lorg/fork/ui/dialog/SettingsHelpBottomSheet;->items:Ljava/util/List;
 
-    .line 1859
+    .line 1865
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -570,7 +570,7 @@
     return-object p1
 .end method
 
-.method private static final createSocialNetworkAlert$lambda-7$lambda-6(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Lorg/fork/enums/DrawerSocialNetwork;Landroid/content/DialogInterface;I)V
+.method private static final createSocialNetworkAlert$lambda$7$lambda$6(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Lorg/fork/enums/DrawerSocialNetwork;Landroid/content/DialogInterface;I)V
     .locals 0
 
     const-string p2, "$this_apply"

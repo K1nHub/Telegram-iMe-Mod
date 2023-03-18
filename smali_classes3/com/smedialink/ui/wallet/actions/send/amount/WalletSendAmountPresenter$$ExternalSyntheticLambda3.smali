@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter$$ExternalSyntheticLambda3;->f$1:Lorg/fork/utils/Callbacks$Callback1;
 
-    invoke-static {v0, v1}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->$r8$lambda$InXK8rXgcqZO31fUwpLqHANfRmw(Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-static {v0, v1}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->$r8$lambda$EbaciUY1prH5HrW5nMYpzBlVttc(Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;Lorg/fork/utils/Callbacks$Callback1;)V
 
     return-void
 .end method

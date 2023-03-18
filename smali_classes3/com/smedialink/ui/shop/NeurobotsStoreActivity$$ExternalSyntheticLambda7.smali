@@ -5,27 +5,17 @@
 .implements Lio/reactivex/functions/Function;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda7;
+# instance fields
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda7;
-
-    invoke-direct {v0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda7;-><init>()V
-
-    sput-object v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda7;->INSTANCE:Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda7;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda7;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -33,11 +23,11 @@
 
 # virtual methods
 .method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    .locals 1
 
-    check-cast p1, Ljava/util/List;
+    iget-object v0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda7;->f$0:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {p1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->$r8$lambda$5SoJry2fjWEILEUEmpS9lCZboqM(Ljava/util/List;)Ljava/util/List;
+    invoke-static {v0, p1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->$r8$lambda$BImFEnfIyUnKjVvQ7JzRyUQO390(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
 

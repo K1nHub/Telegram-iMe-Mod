@@ -81,10 +81,10 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(9:117|(3:119|(1:121)(1:131)|122)(2:132|(3:134|(1:136)(1:138)|137)(9:139|(2:141|(1:143)(1:145))(1:146)|144|124|125|126|127|99|100))|123|124|125|126|127|99|100) */
-    /* JADX WARN: Code restructure failed: missing block: B:161:0x0400, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:161:0x0409, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:162:0x0401, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:162:0x040a, code lost:
         org.telegram.messenger.FileLog.m45e(r0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:93:0x0260, code lost:
@@ -97,7 +97,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     */
     public android.widget.RemoteViews getViewAt(int r20) {
         /*
-            Method dump skipped, instructions count: 1542
+            Method dump skipped, instructions count: 1553
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.ChatsRemoteViewsFactory.getViewAt(int):android.widget.RemoteViews");

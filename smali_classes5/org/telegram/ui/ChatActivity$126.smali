@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/ChatActivity$126;
-.super Lorg/telegram/ui/Components/EmojiPacksAlert;
+.super Ljava/lang/Object;
 .source "ChatActivity.java"
+
+# interfaces
+.implements Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity;->lambda$createMenu$250(Ljava/util/ArrayList;Landroid/view/View;)V
+    value = Lorg/telegram/ui/ChatActivity;->createMenu(Landroid/view/View;ZZFFZ)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,33 +20,54 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
+.field final synthetic val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+.field final synthetic val$primaryMessage:Lorg/telegram/messenger/MessageObject;
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/util/ArrayList;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
     .locals 0
 
-    .line 28099
+    .line 28095
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$126;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Components/EmojiPacksAlert;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/util/ArrayList;)V
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$126;->val$primaryMessage:Lorg/telegram/messenger/MessageObject;
+
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$126;->val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public dismiss()V
-    .locals 2
+.method public onReactionClicked(Landroid/view/View;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;ZZ)V
+    .locals 10
 
-    .line 28102
-    invoke-super {p0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->dismiss()V
-
-    .line 28103
+    .line 28098
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$126;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$126;->val$primaryMessage:Lorg/telegram/messenger/MessageObject;
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ChatActivity;->dimBehindView(Z)V
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$126;->val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v7, 0x0
+
+    move-object v3, p1
+
+    move-object v6, p2
+
+    move v8, p3
+
+    move v9, p4
+
+    invoke-virtual/range {v0 .. v9}, Lorg/telegram/ui/ChatActivity;->selectReaction(Lorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/view/View;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;ZZZ)V
 
     return-void
 .end method

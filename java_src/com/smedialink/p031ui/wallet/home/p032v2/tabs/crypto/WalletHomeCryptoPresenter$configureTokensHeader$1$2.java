@@ -25,8 +25,8 @@ public final class WalletHomeCryptoPresenter$configureTokensHeader$1$2 extends L
         return Unit.INSTANCE;
     }
 
-    public final void invoke(int i, String noName_1) {
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+    public final void invoke(int i, String str) {
+        Intrinsics.checkNotNullParameter(str, "<anonymous parameter 1>");
         this.this$0.setTokensType(TokenType.Companion.getAvailableTypes().get(i));
     }
 }

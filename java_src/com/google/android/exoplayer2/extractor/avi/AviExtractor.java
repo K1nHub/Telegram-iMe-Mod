@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.avi;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.extractor.DummyExtractorOutput;
@@ -62,7 +62,7 @@ public final class AviExtractor implements Extractor {
     private long moviStart = -1;
     private long moviEnd = -1;
     private int hdrlSize = -1;
-    private long durationUs = C0474C.TIME_UNSET;
+    private long durationUs = C0468C.TIME_UNSET;
 
     @Target({ElementType.TYPE_USE})
     @Documented

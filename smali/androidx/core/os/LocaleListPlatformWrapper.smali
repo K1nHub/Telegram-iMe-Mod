@@ -11,13 +11,15 @@
 
 
 # direct methods
-.method constructor <init>(Landroid/os/LocaleList;)V
+.method constructor <init>(Ljava/lang/Object;)V
     .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 32
+    check-cast p1, Landroid/os/LocaleList;
+
     iput-object p1, p0, Landroidx/core/os/LocaleListPlatformWrapper;->mLocaleList:Landroid/os/LocaleList;
 
     return-void

@@ -1,8 +1,9 @@
 package org.telegram.tgnet;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import java.util.ArrayList;
+import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
 public abstract class TLRPC$User extends TLObject {
     public long access_hash;
@@ -26,7 +27,7 @@ public abstract class TLRPC$User extends TLObject {
     public int flags2;
 
     /* renamed from: id */
-    public long f1633id;
+    public long f1639id;
     public boolean inactive;
     public String lang_code;
     public String last_name;
@@ -74,7 +75,7 @@ public abstract class TLRPC$User extends TLObject {
                         this.scam = (16777216 & readInt32) != 0;
                         this.apply_min_photo = (33554432 & readInt32) != 0;
                         this.fake = (readInt32 & ConnectionsManager.FileTypeFile) != 0;
-                        this.f1633id = abstractSerializedData2.readInt32(z2);
+                        this.f1639id = abstractSerializedData2.readInt32(z2);
                         if ((this.flags & 1) != 0) {
                             this.access_hash = abstractSerializedData2.readInt64(z2);
                         }
@@ -137,7 +138,7 @@ public abstract class TLRPC$User extends TLObject {
                         this.flags = i5;
                         int i6 = this.bot ? i5 | 16384 : i5 & (-16385);
                         this.flags = i6;
-                        int i7 = this.bot_chat_history ? i6 | 32768 : i6 & (-32769);
+                        int i7 = this.bot_chat_history ? i6 | LiteMode.FLAG_CHAT_SCALE : i6 & (-32769);
                         this.flags = i7;
                         int i8 = this.bot_nochats ? i7 | 65536 : i7 & (-65537);
                         this.flags = i8;
@@ -158,7 +159,7 @@ public abstract class TLRPC$User extends TLObject {
                         int i16 = this.fake ? i15 | ConnectionsManager.FileTypeFile : i15 & (-67108865);
                         this.flags = i16;
                         abstractSerializedData2.writeInt32(i16);
-                        abstractSerializedData2.writeInt32((int) this.f1633id);
+                        abstractSerializedData2.writeInt32((int) this.f1639id);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt64(this.access_hash);
                         }
@@ -206,7 +207,7 @@ public abstract class TLRPC$User extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_userDeleted_old2, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1633id = abstractSerializedData2.readInt32(z2);
+                        this.f1639id = abstractSerializedData2.readInt32(z2);
                         this.first_name = abstractSerializedData2.readString(z2);
                         this.last_name = abstractSerializedData2.readString(z2);
                     }
@@ -214,7 +215,7 @@ public abstract class TLRPC$User extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_userDeleted_old2, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32((int) this.f1633id);
+                        abstractSerializedData2.writeInt32((int) this.f1639id);
                         abstractSerializedData2.writeString(this.first_name);
                         abstractSerializedData2.writeString(this.last_name);
                     }
@@ -242,7 +243,7 @@ public abstract class TLRPC$User extends TLObject {
                         this.restricted = (readInt32 & 262144) != 0;
                         this.min = (1048576 & readInt32) != 0;
                         this.bot_inline_geo = (readInt32 & 2097152) != 0;
-                        this.f1633id = abstractSerializedData2.readInt32(z2);
+                        this.f1639id = abstractSerializedData2.readInt32(z2);
                         if ((this.flags & 1) != 0) {
                             this.access_hash = abstractSerializedData2.readInt64(z2);
                         }
@@ -288,7 +289,7 @@ public abstract class TLRPC$User extends TLObject {
                         this.flags = i5;
                         int i6 = this.bot ? i5 | 16384 : i5 & (-16385);
                         this.flags = i6;
-                        int i7 = this.bot_chat_history ? i6 | 32768 : i6 & (-32769);
+                        int i7 = this.bot_chat_history ? i6 | LiteMode.FLAG_CHAT_SCALE : i6 & (-32769);
                         this.flags = i7;
                         int i8 = this.bot_nochats ? i7 | 65536 : i7 & (-65537);
                         this.flags = i8;
@@ -301,7 +302,7 @@ public abstract class TLRPC$User extends TLObject {
                         int i12 = this.bot_inline_geo ? i11 | 2097152 : i11 & (-2097153);
                         this.flags = i12;
                         abstractSerializedData2.writeInt32(i12);
-                        abstractSerializedData2.writeInt32((int) this.f1633id);
+                        abstractSerializedData2.writeInt32((int) this.f1639id);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt64(this.access_hash);
                         }
@@ -350,7 +351,7 @@ public abstract class TLRPC$User extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_userContact_old2, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1633id = abstractSerializedData2.readInt32(z2);
+                        this.f1639id = abstractSerializedData2.readInt32(z2);
                         this.first_name = abstractSerializedData2.readString(z2);
                         this.last_name = abstractSerializedData2.readString(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
@@ -362,7 +363,7 @@ public abstract class TLRPC$User extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_userContact_old2, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32((int) this.f1633id);
+                        abstractSerializedData2.writeInt32((int) this.f1639id);
                         abstractSerializedData2.writeString(this.first_name);
                         abstractSerializedData2.writeString(this.last_name);
                         abstractSerializedData2.writeInt64(this.access_hash);
@@ -384,13 +385,13 @@ public abstract class TLRPC$User extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_userEmpty, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1633id = abstractSerializedData2.readInt32(z2);
+                        this.f1639id = abstractSerializedData2.readInt32(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_userEmpty, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32((int) this.f1633id);
+                        abstractSerializedData2.writeInt32((int) this.f1639id);
                     }
                 };
                 break;
@@ -411,7 +412,7 @@ public abstract class TLRPC$User extends TLObject {
                         this.bot_nochats = (65536 & readInt32) != 0;
                         this.verified = (131072 & readInt32) != 0;
                         this.explicit_content = (readInt32 & 262144) != 0;
-                        this.f1633id = abstractSerializedData2.readInt32(z2);
+                        this.f1639id = abstractSerializedData2.readInt32(z2);
                         if ((this.flags & 1) != 0) {
                             this.access_hash = abstractSerializedData2.readInt64(z2);
                         }
@@ -451,7 +452,7 @@ public abstract class TLRPC$User extends TLObject {
                         this.flags = i5;
                         int i6 = this.bot ? i5 | 16384 : i5 & (-16385);
                         this.flags = i6;
-                        int i7 = this.bot_chat_history ? i6 | 32768 : i6 & (-32769);
+                        int i7 = this.bot_chat_history ? i6 | LiteMode.FLAG_CHAT_SCALE : i6 & (-32769);
                         this.flags = i7;
                         int i8 = this.bot_nochats ? i7 | 65536 : i7 & (-65537);
                         this.flags = i8;
@@ -460,7 +461,7 @@ public abstract class TLRPC$User extends TLObject {
                         int i10 = this.explicit_content ? i9 | 262144 : i9 & (-262145);
                         this.flags = i10;
                         abstractSerializedData2.writeInt32(i10);
-                        abstractSerializedData2.writeInt32((int) this.f1633id);
+                        abstractSerializedData2.writeInt32((int) this.f1639id);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt64(this.access_hash);
                         }
@@ -494,7 +495,7 @@ public abstract class TLRPC$User extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_userRequest_old2, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1633id = abstractSerializedData2.readInt32(z2);
+                        this.f1639id = abstractSerializedData2.readInt32(z2);
                         this.first_name = abstractSerializedData2.readString(z2);
                         this.last_name = abstractSerializedData2.readString(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
@@ -506,7 +507,7 @@ public abstract class TLRPC$User extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_userRequest_old2, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32((int) this.f1633id);
+                        abstractSerializedData2.writeInt32((int) this.f1639id);
                         abstractSerializedData2.writeString(this.first_name);
                         abstractSerializedData2.writeString(this.last_name);
                         abstractSerializedData2.writeInt64(this.access_hash);
@@ -537,7 +538,7 @@ public abstract class TLRPC$User extends TLObject {
                         this.bot_inline_geo = (2097152 & readInt32) != 0;
                         this.support = (8388608 & readInt32) != 0;
                         this.scam = (readInt32 & ConnectionsManager.FileTypePhoto) != 0;
-                        this.f1633id = abstractSerializedData2.readInt32(z2);
+                        this.f1639id = abstractSerializedData2.readInt32(z2);
                         if ((this.flags & 1) != 0) {
                             this.access_hash = abstractSerializedData2.readInt64(z2);
                         }
@@ -586,7 +587,7 @@ public abstract class TLRPC$User extends TLObject {
                         this.flags = i5;
                         int i6 = this.bot ? i5 | 16384 : i5 & (-16385);
                         this.flags = i6;
-                        int i7 = this.bot_chat_history ? i6 | 32768 : i6 & (-32769);
+                        int i7 = this.bot_chat_history ? i6 | LiteMode.FLAG_CHAT_SCALE : i6 & (-32769);
                         this.flags = i7;
                         int i8 = this.bot_nochats ? i7 | 65536 : i7 & (-65537);
                         this.flags = i8;
@@ -603,7 +604,7 @@ public abstract class TLRPC$User extends TLObject {
                         int i14 = this.scam ? i13 | ConnectionsManager.FileTypePhoto : i13 & (-16777217);
                         this.flags = i14;
                         abstractSerializedData2.writeInt32(i14);
-                        abstractSerializedData2.writeInt32((int) this.f1633id);
+                        abstractSerializedData2.writeInt32((int) this.f1639id);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt64(this.access_hash);
                         }
@@ -665,7 +666,7 @@ public abstract class TLRPC$User extends TLObject {
                         this.fake = (67108864 & readInt32) != 0;
                         this.bot_attach_menu = (134217728 & readInt32) != 0;
                         this.premium = (readInt32 & 268435456) != 0;
-                        this.f1633id = abstractSerializedData2.readInt64(z2);
+                        this.f1639id = abstractSerializedData2.readInt64(z2);
                         if ((this.flags & 1) != 0) {
                             this.access_hash = abstractSerializedData2.readInt64(z2);
                         }
@@ -728,7 +729,7 @@ public abstract class TLRPC$User extends TLObject {
                         this.flags = i5;
                         int i6 = this.bot ? i5 | 16384 : i5 & (-16385);
                         this.flags = i6;
-                        int i7 = this.bot_chat_history ? i6 | 32768 : i6 & (-32769);
+                        int i7 = this.bot_chat_history ? i6 | LiteMode.FLAG_CHAT_SCALE : i6 & (-32769);
                         this.flags = i7;
                         int i8 = this.bot_nochats ? i7 | 65536 : i7 & (-65537);
                         this.flags = i8;
@@ -748,12 +749,12 @@ public abstract class TLRPC$User extends TLObject {
                         this.flags = i15;
                         int i16 = this.fake ? i15 | ConnectionsManager.FileTypeFile : i15 & (-67108865);
                         this.flags = i16;
-                        int i17 = this.bot_attach_menu ? i16 | C0474C.BUFFER_FLAG_FIRST_SAMPLE : i16 & (-134217729);
+                        int i17 = this.bot_attach_menu ? i16 | C0468C.BUFFER_FLAG_FIRST_SAMPLE : i16 & (-134217729);
                         this.flags = i17;
                         int i18 = this.premium ? i17 | 268435456 : i17 & (-268435457);
                         this.flags = i18;
                         abstractSerializedData2.writeInt32(i18);
-                        abstractSerializedData2.writeInt64(this.f1633id);
+                        abstractSerializedData2.writeInt64(this.f1639id);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt64(this.access_hash);
                         }
@@ -801,7 +802,7 @@ public abstract class TLRPC$User extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_userForeign_old2, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1633id = abstractSerializedData2.readInt32(z2);
+                        this.f1639id = abstractSerializedData2.readInt32(z2);
                         this.first_name = abstractSerializedData2.readString(z2);
                         this.last_name = abstractSerializedData2.readString(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
@@ -812,7 +813,7 @@ public abstract class TLRPC$User extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_userForeign_old2, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32((int) this.f1633id);
+                        abstractSerializedData2.writeInt32((int) this.f1639id);
                         abstractSerializedData2.writeString(this.first_name);
                         abstractSerializedData2.writeString(this.last_name);
                         abstractSerializedData2.writeInt64(this.access_hash);
@@ -847,7 +848,7 @@ public abstract class TLRPC$User extends TLObject {
                         this.bot_attach_menu = (134217728 & readInt32) != 0;
                         this.premium = (268435456 & readInt32) != 0;
                         this.attach_menu_enabled = (readInt32 & 536870912) != 0;
-                        this.f1633id = abstractSerializedData2.readInt64(z2);
+                        this.f1639id = abstractSerializedData2.readInt64(z2);
                         if ((this.flags & 1) != 0) {
                             this.access_hash = abstractSerializedData2.readInt64(z2);
                         }
@@ -913,7 +914,7 @@ public abstract class TLRPC$User extends TLObject {
                         this.flags = i5;
                         int i6 = this.bot ? i5 | 16384 : i5 & (-16385);
                         this.flags = i6;
-                        int i7 = this.bot_chat_history ? i6 | 32768 : i6 & (-32769);
+                        int i7 = this.bot_chat_history ? i6 | LiteMode.FLAG_CHAT_SCALE : i6 & (-32769);
                         this.flags = i7;
                         int i8 = this.bot_nochats ? i7 | 65536 : i7 & (-65537);
                         this.flags = i8;
@@ -933,14 +934,14 @@ public abstract class TLRPC$User extends TLObject {
                         this.flags = i15;
                         int i16 = this.fake ? i15 | ConnectionsManager.FileTypeFile : i15 & (-67108865);
                         this.flags = i16;
-                        int i17 = this.bot_attach_menu ? i16 | C0474C.BUFFER_FLAG_FIRST_SAMPLE : i16 & (-134217729);
+                        int i17 = this.bot_attach_menu ? i16 | C0468C.BUFFER_FLAG_FIRST_SAMPLE : i16 & (-134217729);
                         this.flags = i17;
                         int i18 = this.premium ? i17 | 268435456 : i17 & (-268435457);
                         this.flags = i18;
                         int i19 = this.attach_menu_enabled ? i18 | 536870912 : i18 & (-536870913);
                         this.flags = i19;
                         abstractSerializedData2.writeInt32(i19);
-                        abstractSerializedData2.writeInt64(this.f1633id);
+                        abstractSerializedData2.writeInt64(this.f1639id);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt64(this.access_hash);
                         }
@@ -991,7 +992,7 @@ public abstract class TLRPC$User extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_userSelf_old3, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1633id = abstractSerializedData2.readInt32(z2);
+                        this.f1639id = abstractSerializedData2.readInt32(z2);
                         this.first_name = abstractSerializedData2.readString(z2);
                         this.last_name = abstractSerializedData2.readString(z2);
                         this.username = abstractSerializedData2.readString(z2);
@@ -1004,7 +1005,7 @@ public abstract class TLRPC$User extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_userSelf_old3, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32((int) this.f1633id);
+                        abstractSerializedData2.writeInt32((int) this.f1639id);
                         abstractSerializedData2.writeString(this.first_name);
                         abstractSerializedData2.writeString(this.last_name);
                         abstractSerializedData2.writeString(this.username);
@@ -1021,7 +1022,7 @@ public abstract class TLRPC$User extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_userSelf_old3, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1633id = abstractSerializedData2.readInt32(z2);
+                        this.f1639id = abstractSerializedData2.readInt32(z2);
                         this.first_name = abstractSerializedData2.readString(z2);
                         this.last_name = abstractSerializedData2.readString(z2);
                         this.phone = abstractSerializedData2.readString(z2);
@@ -1033,7 +1034,7 @@ public abstract class TLRPC$User extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_userSelf_old3, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32((int) this.f1633id);
+                        abstractSerializedData2.writeInt32((int) this.f1639id);
                         abstractSerializedData2.writeString(this.first_name);
                         abstractSerializedData2.writeString(this.last_name);
                         abstractSerializedData2.writeString(this.phone);

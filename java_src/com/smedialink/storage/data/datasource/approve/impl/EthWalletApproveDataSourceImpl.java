@@ -3,18 +3,14 @@ package com.smedialink.storage.data.datasource.approve.impl;
 import com.smedialink.storage.data.datasource.approve.WalletApproveDataSource;
 import com.smedialink.storage.data.network.api.own.SwapApi;
 import com.smedialink.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
-import com.smedialink.storage.data.network.model.request.crypto.swap.SendCryptoApproveTransactionRequest;
-import com.smedialink.storage.data.network.model.response.base.ApiBaseResponse;
-import com.smedialink.storage.data.network.model.response.crypto.wallet.TransactionResponse;
 import com.smedialink.storage.data.utils.extentions.Web3jExtKt;
 import com.smedialink.storage.domain.manager.crypto.CryptoAccessManager;
 import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.crypto.Wallet;
 import com.smedialink.storage.domain.model.crypto.send.TransactionArgs;
 import com.smedialink.storage.domain.model.crypto.swap.ApproveArgs;
+import com.smedialink.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.functions.Function;
 import java.math.BigInteger;
 import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
@@ -47,41 +43,10 @@ public final class EthWalletApproveDataSourceImpl implements WalletApproveDataSo
     }
 
     @Override // com.smedialink.storage.data.datasource.approve.WalletApproveDataSource
-    public Observable<Result<String>> approve(final TransactionArgs args) {
+    public Observable<Result<String>> approve(TransactionArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
         if (args instanceof ApproveArgs.Dex) {
-            Observable flatMap = sign(args).flatMap(new Function() { // from class: com.smedialink.storage.data.datasource.approve.impl.EthWalletApproveDataSourceImpl$approve$$inlined$flatMapSuccess$1
-                /* JADX WARN: Incorrect types in method signature: (TT;)Lio/reactivex/ObservableSource<+TR;>; */
-                @Override // io.reactivex.functions.Function
-                public final ObservableSource apply(Result result) {
-                    SwapApi swapApi;
-                    final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler;
-                    Intrinsics.checkNotNullParameter(result, "result");
-                    if (!(result instanceof Result.Success)) {
-                        return result instanceof Result.Error ? Observable.just(Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null)) : Observable.empty();
-                    }
-                    swapApi = EthWalletApproveDataSourceImpl.this.swapApi;
-                    String str = (String) result.getData();
-                    if (str == null) {
-                        str = "";
-                    }
-                    Observable<ApiBaseResponse<TransactionResponse>> sendCryptoApproveTransaction = swapApi.sendCryptoApproveTransaction(new SendCryptoApproveTransactionRequest(str, ((ApproveArgs.Dex) args).getProtocol().name(), ((ApproveArgs.Dex) args).getNetworkType().name()));
-                    firebaseFunctionsErrorHandler = EthWalletApproveDataSourceImpl.this.firebaseErrorHandler;
-                    Observable<R> map = sendCryptoApproveTransaction.map(new Function() { // from class: com.smedialink.storage.data.datasource.approve.impl.EthWalletApproveDataSourceImpl$approve$lambda-1$$inlined$mapSuccess$1
-                        /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-                        @Override // io.reactivex.functions.Function
-                        public final Result apply(ApiBaseResponse response) {
-                            Intrinsics.checkNotNullParameter(response, "response");
-                            if (!response.isSuccess()) {
-                                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-                            }
-                            return Result.Companion.success(((TransactionResponse) response.getPayload()).getTransactionHash());
-                        }
-                    });
-                    Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-                    return map;
-                }
-            });
+            Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new EthWalletApproveDataSourceImpl$approve$$inlined$flatMapSuccess$1(this, args)));
             Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
             return flatMap;
         }
@@ -98,7 +63,7 @@ public final class EthWalletApproveDataSourceImpl implements WalletApproveDataSo
         RawTransaction createTransactionByType = createTransactionByType(dex);
         long chainId = dex.getChainId();
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        Observable<Result<String>> just = Observable.just(Result.Companion.success(Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet == null ? null : eVMWallet.getCredentials()))));
+        Observable<Result<String>> just = Observable.just(Result.Companion.success(Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet != null ? eVMWallet.getCredentials() : null))));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         return just;
     }

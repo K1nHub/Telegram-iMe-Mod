@@ -3,15 +3,15 @@ package com.smedialink.p031ui.music;
 import com.smedialink.p031ui.dialogs.EmptyCellType;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: MusicTab.kt */
 /* renamed from: com.smedialink.ui.music.MusicTab */
 /* loaded from: classes3.dex */
 public enum MusicTab {
-    ALBUMS(C3158R.string.music_albums_tab, EmptyCellType.MUSIC_ALBUMS),
-    CHANNELS(C3158R.string.music_channels_tab, EmptyCellType.MUSIC_CHANNELS),
-    BOTS(C3158R.string.music_bots_tab, EmptyCellType.MUSIC_BOTS),
-    DEVICE(C3158R.string.music_device_tab, EmptyCellType.MUSIC_DEVICE);
+    ALBUMS(C3286R.string.music_albums_tab, EmptyCellType.MUSIC_ALBUMS),
+    CHANNELS(C3286R.string.music_channels_tab, EmptyCellType.MUSIC_CHANNELS),
+    BOTS(C3286R.string.music_bots_tab, EmptyCellType.MUSIC_BOTS),
+    DEVICE(C3286R.string.music_device_tab, EmptyCellType.MUSIC_DEVICE);
     
     public static final Companion Companion = new Companion(null);
     private final EmptyCellType emptyCellType;

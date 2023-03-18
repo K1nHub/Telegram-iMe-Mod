@@ -11,8 +11,8 @@ public final /* synthetic */ class EVMBlockchainCryptoWalletManagerImpl$$Externa
 
     @Override // java.util.concurrent.Callable
     public final Object call() {
-        Result m1300generateMnemonic$lambda3;
-        m1300generateMnemonic$lambda3 = EVMBlockchainCryptoWalletManagerImpl.m1300generateMnemonic$lambda3();
-        return m1300generateMnemonic$lambda3;
+        Result generateMnemonic$lambda$3;
+        generateMnemonic$lambda$3 = EVMBlockchainCryptoWalletManagerImpl.generateMnemonic$lambda$3();
+        return generateMnemonic$lambda$3;
     }
 }

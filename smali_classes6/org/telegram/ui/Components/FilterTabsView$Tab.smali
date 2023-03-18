@@ -413,9 +413,9 @@
 
     .line 409
     :cond_1
-    sget p1, Lorg/telegram/messenger/R$string;->ArchivedChats:I
+    sget p1, Lorg/telegram/messenger/R$string;->FilterAllChats:I
 
-    const-string v0, "ArchivedChats"
+    const-string v0, "FilterAllChats"
 
     invoke-static {v0, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 

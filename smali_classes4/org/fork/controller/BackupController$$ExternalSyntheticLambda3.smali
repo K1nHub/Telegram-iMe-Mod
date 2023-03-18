@@ -5,27 +5,17 @@
 .implements Lj$/util/function/Predicate;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/fork/controller/BackupController$$ExternalSyntheticLambda3;
+# instance fields
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/fork/controller/BackupController$$ExternalSyntheticLambda3;
-
-    invoke-direct {v0}, Lorg/fork/controller/BackupController$$ExternalSyntheticLambda3;-><init>()V
-
-    sput-object v0, Lorg/fork/controller/BackupController$$ExternalSyntheticLambda3;->INSTANCE:Lorg/fork/controller/BackupController$$ExternalSyntheticLambda3;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/fork/controller/BackupController$$ExternalSyntheticLambda3;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -63,11 +53,11 @@
 .end method
 
 .method public final test(Ljava/lang/Object;)Z
-    .locals 0
+    .locals 1
 
-    check-cast p1, Lorg/fork/models/backup/TopicBackup;
+    iget-object v0, p0, Lorg/fork/controller/BackupController$$ExternalSyntheticLambda3;->f$0:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {p1}, Lorg/fork/controller/BackupController;->$r8$lambda$kkqJNeeI6ea5MYIOKnxXgkkksI8(Lorg/fork/models/backup/TopicBackup;)Z
+    invoke-static {v0, p1}, Lorg/fork/controller/BackupController;->$r8$lambda$DuCX8mNERWmLvuMy-W4_EeINZEc(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
 
     move-result p1
 

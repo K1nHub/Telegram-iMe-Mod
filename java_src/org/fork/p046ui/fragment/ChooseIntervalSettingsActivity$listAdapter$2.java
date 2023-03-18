@@ -19,6 +19,6 @@ public final class ChooseIntervalSettingsActivity$listAdapter$2 extends Lambda i
 
     @Override // kotlin.jvm.functions.Function0
     public final ChooseIntervalSettingsActivity.ListAdapter invoke() {
-        return new ChooseIntervalSettingsActivity.ListAdapter(this.this$0);
+        return new ChooseIntervalSettingsActivity.ListAdapter();
     }
 }

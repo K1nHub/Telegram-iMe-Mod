@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nKiklikoRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 KiklikoRepositoryImpl.kt\ncom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl\n+ 2 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,75:1\n26#2:76\n26#2:77\n26#2:78\n26#2:79\n26#2:80\n26#2:81\n26#2:82\n8#3:83\n8#3:84\n8#3:85\n8#3:86\n8#3:87\n8#3:88\n8#3:89\n*S KotlinDebug\n*F\n+ 1 KiklikoRepositoryImpl.kt\ncom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl\n*L\n29#1:76\n36#1:77\n43#1:78\n50#1:79\n57#1:80\n64#1:81\n71#1:82\n28#1:83\n35#1:84\n42#1:85\n49#1:86\n56#1:87\n63#1:88\n70#1:89\n*E\n"
+    value = "SMAP\nKiklikoRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 KiklikoRepositoryImpl.kt\ncom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl\n+ 2 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,75:1\n26#2:76\n26#2:77\n26#2:78\n26#2:79\n26#2:80\n26#2:81\n26#2:82\n8#3:83\n8#3:84\n8#3:85\n*S KotlinDebug\n*F\n+ 1 KiklikoRepositoryImpl.kt\ncom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl\n*L\n29#1:76\n36#1:77\n43#1:78\n50#1:79\n57#1:80\n64#1:81\n71#1:82\n56#1:83\n63#1:84\n70#1:85\n*E\n"
 .end annotation
 
 
@@ -21,70 +21,70 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$9f_ZbSxwbIDKcTqshsRMMfrcCH4(Lcom/smedialink/storage/data/network/model/response/kikliko/SearchResultResponse;)Lcom/smedialink/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$_EJ7c8PP4hHMs1ecLWwnp6LjeIk(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->searchByKeyword$lambda-1(Lcom/smedialink/storage/data/network/model/response/kikliko/SearchResultResponse;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {p0}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->share$lambda$4(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$HUDlzTJh_vb-_49UgGbkTIFTY0M(Lcom/smedialink/storage/data/network/model/response/kikliko/SearchResultResponse;)Lcom/smedialink/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$aA-hqz4AYmt6xzcrKIL8WUONwUA(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->getTrending$lambda-3(Lcom/smedialink/storage/data/network/model/response/kikliko/SearchResultResponse;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {p0}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->report$lambda$6(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$NQdOByQ2vqtA7zze4LeX78aTRN0(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$fCXvXxIr8eIp6z1PxoJqLG9XPWU(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->view$lambda-5(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {p0}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->view$lambda$5(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$_eoN79IcuuRD-OsmWEmagncZ2wg(Lcom/smedialink/storage/data/network/model/response/kikliko/GetTagsResponse;)Lcom/smedialink/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$ikjp2PudcXTPc9jry_-qFs-vcHs(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->getTags$lambda-0(Lcom/smedialink/storage/data/network/model/response/kikliko/GetTagsResponse;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->searchByKeyword$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$mT4biRy8qsVLhQKVtYrYqmzX588(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$k1diqYFqjFNBByB1qUy_RxluOVI(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->share$lambda-4(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->getTrending$lambda$3(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$qQ1wCzsVT_E8CeJjDn6aAZEu17s(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$tIdQdxbbsxFwGidIwCeEPoXr86w(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->report$lambda-6(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->searchByTag$lambda$2(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$yaJLOJI3ibmSD5tnYxAKdr7AnTk(Lcom/smedialink/storage/data/network/model/response/kikliko/SearchResultResponse;)Lcom/smedialink/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$w9Ygq6O__6itHy4n0mmIyPCbDa4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->searchByTag$lambda-2(Lcom/smedialink/storage/data/network/model/response/kikliko/SearchResultResponse;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->getTags$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p0
 
@@ -121,51 +121,41 @@
     return-void
 .end method
 
-.method private static final getTags$lambda-0(Lcom/smedialink/storage/data/network/model/response/kikliko/GetTagsResponse;)Lcom/smedialink/storage/domain/model/Result;
+.method private static final getTags$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 1
 
-    const-string v0, "it"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 28
-    invoke-virtual {p0}, Lcom/smedialink/storage/data/network/model/response/kikliko/GetTagsResponse;->getData()Ljava/util/List;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 8
-    sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
-
-    invoke-virtual {v0, p0}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
-
-    move-result-object p0
+    check-cast p0, Lcom/smedialink/storage/domain/model/Result;
 
     return-object p0
 .end method
 
-.method private static final getTrending$lambda-3(Lcom/smedialink/storage/data/network/model/response/kikliko/SearchResultResponse;)Lcom/smedialink/storage/domain/model/Result;
+.method private static final getTrending$lambda$3(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 1
 
-    const-string v0, "it"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 49
-    invoke-virtual {p0}, Lcom/smedialink/storage/data/network/model/response/kikliko/SearchResultResponse;->getData()Lcom/smedialink/storage/data/network/model/response/kikliko/SearchResponse;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 8
-    sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
-
-    invoke-virtual {v0, p0}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
-
-    move-result-object p0
+    check-cast p0, Lcom/smedialink/storage/domain/model/Result;
 
     return-object p0
 .end method
 
-.method private static final report$lambda-6(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+.method private static final report$lambda$6(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 1
 
     const-string v0, "it"
@@ -185,51 +175,41 @@
     return-object p0
 .end method
 
-.method private static final searchByKeyword$lambda-1(Lcom/smedialink/storage/data/network/model/response/kikliko/SearchResultResponse;)Lcom/smedialink/storage/domain/model/Result;
+.method private static final searchByKeyword$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 1
 
-    const-string v0, "it"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 35
-    invoke-virtual {p0}, Lcom/smedialink/storage/data/network/model/response/kikliko/SearchResultResponse;->getData()Lcom/smedialink/storage/data/network/model/response/kikliko/SearchResponse;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 8
-    sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
-
-    invoke-virtual {v0, p0}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
-
-    move-result-object p0
+    check-cast p0, Lcom/smedialink/storage/domain/model/Result;
 
     return-object p0
 .end method
 
-.method private static final searchByTag$lambda-2(Lcom/smedialink/storage/data/network/model/response/kikliko/SearchResultResponse;)Lcom/smedialink/storage/domain/model/Result;
+.method private static final searchByTag$lambda$2(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 1
 
-    const-string v0, "it"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 42
-    invoke-virtual {p0}, Lcom/smedialink/storage/data/network/model/response/kikliko/SearchResultResponse;->getData()Lcom/smedialink/storage/data/network/model/response/kikliko/SearchResponse;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 8
-    sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
-
-    invoke-virtual {v0, p0}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
-
-    move-result-object p0
+    check-cast p0, Lcom/smedialink/storage/domain/model/Result;
 
     return-object p0
 .end method
 
-.method private static final share$lambda-4(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+.method private static final share$lambda$4(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 1
 
     const-string v0, "it"
@@ -249,7 +229,7 @@
     return-object p0
 .end method
 
-.method private static final view$lambda-5(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+.method private static final view$lambda$5(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 1
 
     const-string v0, "it"
@@ -292,10 +272,14 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda0;->INSTANCE:Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda0;
-
     .line 28
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    sget-object v1, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$getTags$1;->INSTANCE:Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$getTags$1;
+
+    new-instance v2, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda3;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda3;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v0
 
@@ -307,11 +291,15 @@
     iget-object v1, p0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance v2, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance v2, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$getTags$$inlined$handleError$1;
 
-    invoke-direct {v2, v1}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {v2, v1}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$getTags$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v1, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v1, v2}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v0
 
@@ -358,10 +346,14 @@
 
     move-result-object p1
 
-    sget-object v0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda2;->INSTANCE:Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda2;
-
     .line 49
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    sget-object v0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$getTrending$1;->INSTANCE:Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$getTrending$1;
+
+    new-instance v1, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda1;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -373,11 +365,15 @@
     iget-object v0, p0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance v1, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance v1, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$getTrending$$inlined$handleError$1;
 
-    invoke-direct {v1, v0}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {v1, v0}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$getTrending$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v0, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v0, v1}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -429,7 +425,7 @@
 
     move-result-object p1
 
-    sget-object p2, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda6;->INSTANCE:Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda6;
+    sget-object p2, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda5;->INSTANCE:Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda5;
 
     .line 70
     invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
@@ -444,11 +440,15 @@
     iget-object p2, p0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance v0, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance v0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$report$$inlined$handleError$1;
 
-    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$report$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -501,10 +501,14 @@
 
     move-result-object p1
 
-    sget-object p2, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda1;->INSTANCE:Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda1;
-
     .line 35
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    sget-object p2, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$searchByKeyword$1;->INSTANCE:Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$searchByKeyword$1;
+
+    new-instance v0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda0;
+
+    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -516,11 +520,15 @@
     iget-object p2, p0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance v0, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance v0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$searchByKeyword$$inlined$handleError$1;
 
-    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$searchByKeyword$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -573,10 +581,14 @@
 
     move-result-object p1
 
-    sget-object p2, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda3;->INSTANCE:Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda3;
-
     .line 42
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    sget-object p2, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$searchByTag$1;->INSTANCE:Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$searchByTag$1;
+
+    new-instance v0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda2;
+
+    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda2;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -588,11 +600,15 @@
     iget-object p2, p0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance v0, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance v0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$searchByTag$$inlined$handleError$1;
 
-    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$searchByTag$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -639,7 +655,7 @@
 
     move-result-object p1
 
-    sget-object v0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda5;->INSTANCE:Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda5;
+    sget-object v0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda4;->INSTANCE:Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda4;
 
     .line 56
     invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
@@ -654,11 +670,15 @@
     iget-object v0, p0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance v1, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance v1, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$share$$inlined$handleError$1;
 
-    invoke-direct {v1, v0}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {v1, v0}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$share$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v0, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v0, v1}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -705,7 +725,7 @@
 
     move-result-object p1
 
-    sget-object v0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda4;->INSTANCE:Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda4;
+    sget-object v0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda6;->INSTANCE:Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$$ExternalSyntheticLambda6;
 
     .line 63
     invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
@@ -720,11 +740,15 @@
     iget-object v0, p0, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance v1, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance v1, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$view$$inlined$handleError$1;
 
-    invoke-direct {v1, v0}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {v1, v0}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl$view$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v0, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v0, v1}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 

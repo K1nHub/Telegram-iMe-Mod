@@ -39,7 +39,7 @@
 
     iget v2, p0, Lorg/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter$$ExternalSyntheticLambda0;->f$2:I
 
-    invoke-static {v0, v1, v2}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->$r8$lambda$35Q8C9joAPW3Mf4AIKNh7x4coYE(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Lorg/fork/models/SortingTabState;I)V
+    invoke-static {v0, v1, v2}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->$r8$lambda$jsCDIS94ompTD90HOeAG_CvhzH8(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Lorg/fork/models/SortingTabState;I)V
 
     return-void
 .end method

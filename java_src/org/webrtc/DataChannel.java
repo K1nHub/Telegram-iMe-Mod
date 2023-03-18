@@ -43,7 +43,7 @@ public class DataChannel {
         public String protocol = "";
 
         /* renamed from: id */
-        public int f1829id = -1;
+        public int f1840id = -1;
 
         @CalledByNative("Init")
         boolean getOrdered() {
@@ -72,7 +72,7 @@ public class DataChannel {
 
         @CalledByNative("Init")
         int getId() {
-            return this.f1829id;
+            return this.f1840id;
         }
     }
 

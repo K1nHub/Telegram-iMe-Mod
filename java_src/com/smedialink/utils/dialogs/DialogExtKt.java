@@ -27,34 +27,31 @@ public final class DialogExtKt {
         alertDialog.setOnShowListener(new DialogInterface.OnShowListener() { // from class: com.smedialink.utils.dialogs.DialogExtKt$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnShowListener
             public final void onShow(DialogInterface dialogInterface) {
-                DialogExtKt.m1808makeClickableDescription$lambda1(textView, alertDialog, clickableText, action, dialogInterface);
+                DialogExtKt.makeClickableDescription$lambda$1(textView, alertDialog, clickableText, action, dialogInterface);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: makeClickableDescription$lambda-1  reason: not valid java name */
-    public static final void m1808makeClickableDescription$lambda1(TextView textView, AlertDialog this_makeClickableDescription, String clickableText, final Function1 action, final DialogInterface dialogInterface) {
+    public static final void makeClickableDescription$lambda$1(TextView textView, AlertDialog this_makeClickableDescription, String clickableText, final Function1 action, final DialogInterface dialogInterface) {
         Intrinsics.checkNotNullParameter(this_makeClickableDescription, "$this_makeClickableDescription");
         Intrinsics.checkNotNullParameter(clickableText, "$clickableText");
         Intrinsics.checkNotNullParameter(action, "$action");
         if (textView == null) {
             textView = this_makeClickableDescription.getMessageTextView();
         }
-        if (textView == null) {
-            return;
+        if (textView != null) {
+            ViewExtKt.setSubstringClickListener(textView, clickableText, new Callbacks$Callback() { // from class: com.smedialink.utils.dialogs.DialogExtKt$$ExternalSyntheticLambda1
+                @Override // org.fork.utils.Callbacks$Callback
+                public final void invoke() {
+                    DialogExtKt.makeClickableDescription$lambda$1$lambda$0(Function1.this, dialogInterface);
+                }
+            });
         }
-        ViewExtKt.setSubstringClickListener(textView, clickableText, new Callbacks$Callback() { // from class: com.smedialink.utils.dialogs.DialogExtKt$$ExternalSyntheticLambda1
-            @Override // org.fork.utils.Callbacks$Callback
-            public final void invoke() {
-                DialogExtKt.m1809makeClickableDescription$lambda1$lambda0(Function1.this, dialogInterface);
-            }
-        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: makeClickableDescription$lambda-1$lambda-0  reason: not valid java name */
-    public static final void m1809makeClickableDescription$lambda1$lambda0(Function1 action, DialogInterface dialogInterface) {
+    public static final void makeClickableDescription$lambda$1$lambda$0(Function1 action, DialogInterface dialogInterface) {
         Intrinsics.checkNotNullParameter(action, "$action");
         Intrinsics.checkNotNullExpressionValue(dialogInterface, "dialogInterface");
         action.invoke(dialogInterface);
@@ -62,7 +59,7 @@ public final class DialogExtKt {
 
     public static final void makeRedPositiveButton(AlertDialog alertDialog) {
         Intrinsics.checkNotNullParameter(alertDialog, "<this>");
-        setButtonColor(alertDialog, -1, "dialogTextRed2");
+        setButtonColor(alertDialog, -1, "dialogTextRed");
     }
 
     public static final void setButtonColor(AlertDialog alertDialog, int i, String colorKey) {
@@ -70,9 +67,8 @@ public final class DialogExtKt {
         Intrinsics.checkNotNullParameter(colorKey, "colorKey");
         View button = alertDialog.getButton(i);
         TextView textView = button instanceof TextView ? (TextView) button : null;
-        if (textView == null) {
-            return;
+        if (textView != null) {
+            textView.setTextColor(Theme.getColor(colorKey));
         }
-        textView.setTextColor(Theme.getColor(colorKey));
     }
 }

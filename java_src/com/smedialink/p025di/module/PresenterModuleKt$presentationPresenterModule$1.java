@@ -41,6 +41,9 @@ import com.smedialink.p031ui.profile.ProfilePresenter;
 import com.smedialink.p031ui.reaction.ReactionPresenter;
 import com.smedialink.p031ui.recognition.PhotoViewerPresenter;
 import com.smedialink.p031ui.translate.TranslationPresenter;
+import com.smedialink.p031ui.twitter.TwitterPresenter;
+import com.smedialink.p031ui.twitter.auth.TwitterAuthPresenter;
+import com.smedialink.p031ui.twitter.search.TwitterSearchPresenter;
 import com.smedialink.p031ui.wallet.actions.send.amount.WalletSendAmountPresenter;
 import com.smedialink.p031ui.wallet.actions.send.recipient.WalletSendRecipientPresenter;
 import com.smedialink.p031ui.wallet.airdrop.WalletAirdropPresenter;
@@ -120,18 +123,22 @@ import com.smedialink.storage.domain.interactor.kikliko.KiklikoInteractor;
 import com.smedialink.storage.domain.interactor.notification.PushNotificationInteractor;
 import com.smedialink.storage.domain.interactor.socialEmotion.ReactionInteractor;
 import com.smedialink.storage.domain.interactor.translate.TranslationInteractor;
+import com.smedialink.storage.domain.interactor.twitter.TwitterInteractor;
 import com.smedialink.storage.domain.interactor.wallet.WalletInteractor;
 import com.smedialink.storage.domain.interactor.wallet.WalletSessionInteractor;
+import com.smedialink.storage.domain.manager.auth.AuthManager;
 import com.smedialink.storage.domain.manager.binancepay.BinancePayManager;
 import com.smedialink.storage.domain.manager.crypto.CryptoAccessManager;
 import com.smedialink.storage.domain.manager.wallet_connect.WalletConnectManager;
 import com.smedialink.storage.domain.model.catalog.ChatType;
+import com.smedialink.storage.domain.model.crypto.BlockchainType;
 import com.smedialink.storage.domain.model.crypto.NetworkType;
 import com.smedialink.storage.domain.model.staking.StakingTabType;
 import com.smedialink.storage.domain.model.wallet.token.TokenCode;
 import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
 import com.smedialink.storage.domain.storage.HintsPreferenceHelper;
 import com.smedialink.storage.domain.storage.PreferenceHelper;
+import com.smedialink.storage.domain.storage.TwitterPreferenceHelper;
 import com.smedialink.storage.domain.utils.p030rx.RxEventBus;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
@@ -170,18 +177,18 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C13601 extends Lambda implements Function2<Scope, ParametersHolder, TranslationPresenter> {
-        public static final C13601 INSTANCE = new C13601();
+    public static final class C13651 extends Lambda implements Function2<Scope, ParametersHolder, TranslationPresenter> {
+        public static final C13651 INSTANCE = new C13651();
 
-        C13601() {
+        C13651() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final TranslationPresenter invoke(Scope factory, ParametersHolder dstr$args) {
+        public final TranslationPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$args, "$dstr$args");
-            TranslationArgs translationArgs = (TranslationArgs) dstr$args.elementAt(0, Reflection.getOrCreateKotlinClass(TranslationArgs.class));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            TranslationArgs translationArgs = (TranslationArgs) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(TranslationArgs.class));
             TelegramGateway telegramGateway = (TelegramGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, null);
             ResourceManager resourceManager = (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null);
             return new TranslationPresenter(translationArgs, (TranslationInteractor) factory.get(Reflection.getOrCreateKotlinClass(TranslationInteractor.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), resourceManager, telegramGateway);
@@ -192,19 +199,19 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$12 */
     /* loaded from: classes3.dex */
-    public static final class C136312 extends Lambda implements Function2<Scope, ParametersHolder, WalletHomeCryptoTokensSettingsPresenter> {
-        public static final C136312 INSTANCE = new C136312();
+    public static final class C136812 extends Lambda implements Function2<Scope, ParametersHolder, WalletHomeCryptoTokensSettingsPresenter> {
+        public static final C136812 INSTANCE = new C136812();
 
-        C136312() {
+        C136812() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final WalletHomeCryptoTokensSettingsPresenter invoke(Scope factory, ParametersHolder dstr$screenType) {
+        public final WalletHomeCryptoTokensSettingsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$screenType, "$dstr$screenType");
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
             ResourceManager resourceManager = (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null);
-            return new WalletHomeCryptoTokensSettingsPresenter((CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null), resourceManager, (WalletHomeCryptoTokensSettingsFragment.ScreenType) dstr$screenType.elementAt(0, Reflection.getOrCreateKotlinClass(WalletHomeCryptoTokensSettingsFragment.ScreenType.class)));
+            return new WalletHomeCryptoTokensSettingsPresenter((CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null), resourceManager, (WalletHomeCryptoTokensSettingsFragment.ScreenType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(WalletHomeCryptoTokensSettingsFragment.ScreenType.class)));
         }
     }
 
@@ -212,18 +219,18 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$14 */
     /* loaded from: classes3.dex */
-    public static final class C136514 extends Lambda implements Function2<Scope, ParametersHolder, WalletTokenDetailsPresenter> {
-        public static final C136514 INSTANCE = new C136514();
+    public static final class C137014 extends Lambda implements Function2<Scope, ParametersHolder, WalletTokenDetailsPresenter> {
+        public static final C137014 INSTANCE = new C137014();
 
-        C136514() {
+        C137014() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final WalletTokenDetailsPresenter invoke(Scope factory, ParametersHolder dstr$args) {
+        public final WalletTokenDetailsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$args, "$dstr$args");
-            return new WalletTokenDetailsPresenter((TokenDetailsArgs) dstr$args.elementAt(0, Reflection.getOrCreateKotlinClass(TokenDetailsArgs.class)), (AccountLevelInteractor) factory.get(Reflection.getOrCreateKotlinClass(AccountLevelInteractor.class), null, null), (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (StakingInteractor) factory.get(Reflection.getOrCreateKotlinClass(StakingInteractor.class), null, null), (WalletCreateManager) factory.get(Reflection.getOrCreateKotlinClass(WalletCreateManager.class), null, null));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new WalletTokenDetailsPresenter((TokenDetailsArgs) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(TokenDetailsArgs.class)), (AccountLevelInteractor) factory.get(Reflection.getOrCreateKotlinClass(AccountLevelInteractor.class), null, null), (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (StakingInteractor) factory.get(Reflection.getOrCreateKotlinClass(StakingInteractor.class), null, null), (WalletCreateManager) factory.get(Reflection.getOrCreateKotlinClass(WalletCreateManager.class), null, null));
         }
     }
 
@@ -231,19 +238,19 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$16 */
     /* loaded from: classes3.dex */
-    public static final class C136716 extends Lambda implements Function2<Scope, ParametersHolder, WalletTransactionsPresenter> {
-        public static final C136716 INSTANCE = new C136716();
+    public static final class C137216 extends Lambda implements Function2<Scope, ParametersHolder, WalletTransactionsPresenter> {
+        public static final C137216 INSTANCE = new C137216();
 
-        C136716() {
+        C137216() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final WalletTransactionsPresenter invoke(Scope factory, ParametersHolder dstr$screenType$token) {
+        public final WalletTransactionsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$screenType$token, "$dstr$screenType$token");
-            WalletTransactionsFragment.ScreenType screenType = (WalletTransactionsFragment.ScreenType) dstr$screenType$token.elementAt(0, Reflection.getOrCreateKotlinClass(WalletTransactionsFragment.ScreenType.class));
-            TokenCode tokenCode = (TokenCode) dstr$screenType$token.elementAt(1, Reflection.getOrCreateKotlinClass(TokenCode.class));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            WalletTransactionsFragment.ScreenType screenType = (WalletTransactionsFragment.ScreenType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(WalletTransactionsFragment.ScreenType.class));
+            TokenCode tokenCode = (TokenCode) parametersHolder.elementAt(1, Reflection.getOrCreateKotlinClass(TokenCode.class));
             ResourceManager resourceManager = (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null);
             SchedulersProvider schedulersProvider = (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null);
             RxEventBus rxEventBus = (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null);
@@ -256,18 +263,18 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$17 */
     /* loaded from: classes3.dex */
-    public static final class C136817 extends Lambda implements Function2<Scope, ParametersHolder, WalletNotificationDetailsPresenter> {
-        public static final C136817 INSTANCE = new C136817();
+    public static final class C137317 extends Lambda implements Function2<Scope, ParametersHolder, WalletNotificationDetailsPresenter> {
+        public static final C137317 INSTANCE = new C137317();
 
-        C136817() {
+        C137317() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final WalletNotificationDetailsPresenter invoke(Scope factory, ParametersHolder dstr$item) {
+        public final WalletNotificationDetailsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$item, "$dstr$item");
-            return new WalletNotificationDetailsPresenter((NotificationItem) dstr$item.elementAt(0, Reflection.getOrCreateKotlinClass(NotificationItem.class)), (TelegramGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, null), (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new WalletNotificationDetailsPresenter((NotificationItem) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(NotificationItem.class)), (TelegramGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, null), (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null));
         }
     }
 
@@ -275,18 +282,18 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$18 */
     /* loaded from: classes3.dex */
-    public static final class C136918 extends Lambda implements Function2<Scope, ParametersHolder, WalletTransactionDetailsPresenter> {
-        public static final C136918 INSTANCE = new C136918();
+    public static final class C137418 extends Lambda implements Function2<Scope, ParametersHolder, WalletTransactionDetailsPresenter> {
+        public static final C137418 INSTANCE = new C137418();
 
-        C136918() {
+        C137418() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final WalletTransactionDetailsPresenter invoke(Scope factory, ParametersHolder dstr$screenType) {
+        public final WalletTransactionDetailsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$screenType, "$dstr$screenType");
-            WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = (WalletTransactionDetailsBottomSheetDialog.ScreenType) dstr$screenType.elementAt(0, Reflection.getOrCreateKotlinClass(WalletTransactionDetailsBottomSheetDialog.ScreenType.class));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = (WalletTransactionDetailsBottomSheetDialog.ScreenType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(WalletTransactionDetailsBottomSheetDialog.ScreenType.class));
             ResourceManager resourceManager = (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null);
             BoostInteractor boostInteractor = (BoostInteractor) factory.get(Reflection.getOrCreateKotlinClass(BoostInteractor.class), null, null);
             TelegramGateway telegramGateway = (TelegramGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, null);
@@ -298,18 +305,18 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$19 */
     /* loaded from: classes3.dex */
-    public static final class C137019 extends Lambda implements Function2<Scope, ParametersHolder, ReactionPresenter> {
-        public static final C137019 INSTANCE = new C137019();
+    public static final class C137519 extends Lambda implements Function2<Scope, ParametersHolder, ReactionPresenter> {
+        public static final C137519 INSTANCE = new C137519();
 
-        C137019() {
+        C137519() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final ReactionPresenter invoke(Scope factory, ParametersHolder dstr$dialogId) {
+        public final ReactionPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$dialogId, "$dstr$dialogId");
-            long longValue = ((Number) dstr$dialogId.elementAt(0, Reflection.getOrCreateKotlinClass(Long.class))).longValue();
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            long longValue = ((Number) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(Long.class))).longValue();
             return new ReactionPresenter((ReactionInteractor) factory.get(Reflection.getOrCreateKotlinClass(ReactionInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (TelegramApi) factory.get(Reflection.getOrCreateKotlinClass(TelegramApi.class), null, null), (TelegramGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, null), longValue);
         }
     }
@@ -318,18 +325,18 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$21 */
     /* loaded from: classes3.dex */
-    public static final class C137321 extends Lambda implements Function2<Scope, ParametersHolder, ProfilePresenter> {
-        public static final C137321 INSTANCE = new C137321();
+    public static final class C137821 extends Lambda implements Function2<Scope, ParametersHolder, ProfilePresenter> {
+        public static final C137821 INSTANCE = new C137821();
 
-        C137321() {
+        C137821() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final ProfilePresenter invoke(Scope factory, ParametersHolder dstr$userId) {
+        public final ProfilePresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$userId, "$dstr$userId");
-            return new ProfilePresenter(((Number) dstr$userId.elementAt(0, Reflection.getOrCreateKotlinClass(Long.class))).longValue(), (TelegramGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, null), (TelegramControllersGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramControllersGateway.class), null, null), (AccountLevelInteractor) factory.get(Reflection.getOrCreateKotlinClass(AccountLevelInteractor.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new ProfilePresenter(((Number) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(Long.class))).longValue(), ((Number) parametersHolder.elementAt(1, Reflection.getOrCreateKotlinClass(Long.class))).longValue(), (AccountLevelInteractor) factory.get(Reflection.getOrCreateKotlinClass(AccountLevelInteractor.class), null, null), (AuthManager) factory.get(Reflection.getOrCreateKotlinClass(AuthManager.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (TelegramControllersGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramControllersGateway.class), null, null), (TelegramGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, null), (TwitterInteractor) factory.get(Reflection.getOrCreateKotlinClass(TwitterInteractor.class), null, null), (TwitterPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(TwitterPreferenceHelper.class), null, null), (WalletSessionInteractor) factory.get(Reflection.getOrCreateKotlinClass(WalletSessionInteractor.class), null, null));
         }
     }
 
@@ -337,18 +344,18 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$23 */
     /* loaded from: classes3.dex */
-    public static final class C137523 extends Lambda implements Function2<Scope, ParametersHolder, CreateWalletTutorialPresenter> {
-        public static final C137523 INSTANCE = new C137523();
+    public static final class C138023 extends Lambda implements Function2<Scope, ParametersHolder, TwitterPresenter> {
+        public static final C138023 INSTANCE = new C138023();
 
-        C137523() {
+        C138023() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final CreateWalletTutorialPresenter invoke(Scope factory, ParametersHolder dstr$tutorialType) {
+        public final TwitterPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$tutorialType, "$dstr$tutorialType");
-            return new CreateWalletTutorialPresenter((TutorialType) dstr$tutorialType.elementAt(0, Reflection.getOrCreateKotlinClass(TutorialType.class)));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new TwitterPresenter(((Number) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(Long.class))).longValue(), ((Number) parametersHolder.elementAt(1, Reflection.getOrCreateKotlinClass(Long.class))).longValue(), (String) parametersHolder.elementAt(2, Reflection.getOrCreateKotlinClass(String.class)), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (TwitterInteractor) factory.get(Reflection.getOrCreateKotlinClass(TwitterInteractor.class), null, null));
         }
     }
 
@@ -356,37 +363,38 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$24 */
     /* loaded from: classes3.dex */
-    public static final class C137624 extends Lambda implements Function2<Scope, ParametersHolder, BuyCryptoProductPresenter> {
-        public static final C137624 INSTANCE = new C137624();
+    public static final class C138124 extends Lambda implements Function2<Scope, ParametersHolder, TwitterSearchPresenter> {
+        public static final C138124 INSTANCE = new C138124();
 
-        C137624() {
+        C138124() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final BuyCryptoProductPresenter invoke(Scope factory, ParametersHolder dstr$token) {
+        public final TwitterSearchPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$token, "$dstr$token");
-            return new BuyCryptoProductPresenter((TokenCode) dstr$token.elementAt(0, Reflection.getOrCreateKotlinClass(TokenCode.class)), (SimplexInteractor) factory.get(Reflection.getOrCreateKotlinClass(SimplexInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            BlockchainType blockchainType = (BlockchainType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(BlockchainType.class));
+            return new TwitterSearchPresenter((TelegramGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, null), blockchainType, (CryptoRecipientManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoRecipientManager.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (TelegramApi) factory.get(Reflection.getOrCreateKotlinClass(TelegramApi.class), null, null), (TelegramControllersGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramControllersGateway.class), null, null), (TwitterInteractor) factory.get(Reflection.getOrCreateKotlinClass(TwitterInteractor.class), null, null), (TwitterPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(TwitterPreferenceHelper.class), null, null));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$25 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$26 */
     /* loaded from: classes3.dex */
-    public static final class C137725 extends Lambda implements Function2<Scope, ParametersHolder, CryptoBuyCustomPricePresenter> {
-        public static final C137725 INSTANCE = new C137725();
+    public static final class C138326 extends Lambda implements Function2<Scope, ParametersHolder, CreateWalletTutorialPresenter> {
+        public static final C138326 INSTANCE = new C138326();
 
-        C137725() {
+        C138326() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final CryptoBuyCustomPricePresenter invoke(Scope factory, ParametersHolder dstr$item) {
+        public final CreateWalletTutorialPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$item, "$dstr$item");
-            return new CryptoBuyCustomPricePresenter((CryptoBuyItem) dstr$item.elementAt(0, Reflection.getOrCreateKotlinClass(CryptoBuyItem.class)), (SimplexInteractor) factory.get(Reflection.getOrCreateKotlinClass(SimplexInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (CustomPriceValidator) factory.get(Reflection.getOrCreateKotlinClass(CustomPriceValidator.class), null, null));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new CreateWalletTutorialPresenter((TutorialType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(TutorialType.class)));
         }
     }
 
@@ -394,18 +402,18 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$27 */
     /* loaded from: classes3.dex */
-    public static final class C137927 extends Lambda implements Function2<Scope, ParametersHolder, CreateWalletPinPresenter> {
-        public static final C137927 INSTANCE = new C137927();
+    public static final class C138427 extends Lambda implements Function2<Scope, ParametersHolder, BuyCryptoProductPresenter> {
+        public static final C138427 INSTANCE = new C138427();
 
-        C137927() {
+        C138427() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final CreateWalletPinPresenter invoke(Scope factory, ParametersHolder dstr$walletPinScreenArgs) {
+        public final BuyCryptoProductPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$walletPinScreenArgs, "$dstr$walletPinScreenArgs");
-            return new CreateWalletPinPresenter((WalletPinScreenArgs) dstr$walletPinScreenArgs.elementAt(0, Reflection.getOrCreateKotlinClass(WalletPinScreenArgs.class)), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (CryptoWalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(CryptoWalletInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (TelegramControllersGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramControllersGateway.class), null, null));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new BuyCryptoProductPresenter((TokenCode) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(TokenCode.class)), (SimplexInteractor) factory.get(Reflection.getOrCreateKotlinClass(SimplexInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null));
         }
     }
 
@@ -413,18 +421,75 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$28 */
     /* loaded from: classes3.dex */
-    public static final class C138028 extends Lambda implements Function2<Scope, ParametersHolder, WalletPrivacySettingPresenter> {
-        public static final C138028 INSTANCE = new C138028();
+    public static final class C138528 extends Lambda implements Function2<Scope, ParametersHolder, CryptoBuyCustomPricePresenter> {
+        public static final C138528 INSTANCE = new C138528();
 
-        C138028() {
+        C138528() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final WalletPrivacySettingPresenter invoke(Scope factory, ParametersHolder dstr$settingsType) {
+        public final CryptoBuyCustomPricePresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$settingsType, "$dstr$settingsType");
-            int intValue = ((Number) dstr$settingsType.elementAt(0, Reflection.getOrCreateKotlinClass(Integer.class))).intValue();
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new CryptoBuyCustomPricePresenter((CryptoBuyItem) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(CryptoBuyItem.class)), (SimplexInteractor) factory.get(Reflection.getOrCreateKotlinClass(SimplexInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (CustomPriceValidator) factory.get(Reflection.getOrCreateKotlinClass(CustomPriceValidator.class), null, null));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: PresenterModule.kt */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$3 */
+    /* loaded from: classes3.dex */
+    public static final class C13873 extends Lambda implements Function2<Scope, ParametersHolder, WalletSendRecipientPresenter> {
+        public static final C13873 INSTANCE = new C13873();
+
+        C13873() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final WalletSendRecipientPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
+            Intrinsics.checkNotNullParameter(factory, "$this$factory");
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new WalletSendRecipientPresenter((NetworkType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(NetworkType.class)), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (CryptoRecipientManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoRecipientManager.class), null, null), (CryptoWalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(CryptoWalletInteractor.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: PresenterModule.kt */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$30 */
+    /* loaded from: classes3.dex */
+    public static final class C138830 extends Lambda implements Function2<Scope, ParametersHolder, CreateWalletPinPresenter> {
+        public static final C138830 INSTANCE = new C138830();
+
+        C138830() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final CreateWalletPinPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
+            Intrinsics.checkNotNullParameter(factory, "$this$factory");
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new CreateWalletPinPresenter((WalletPinScreenArgs) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(WalletPinScreenArgs.class)), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (CryptoWalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(CryptoWalletInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (TelegramControllersGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramControllersGateway.class), null, null));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: PresenterModule.kt */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$31 */
+    /* loaded from: classes3.dex */
+    public static final class C138931 extends Lambda implements Function2<Scope, ParametersHolder, WalletPrivacySettingPresenter> {
+        public static final C138931 INSTANCE = new C138931();
+
+        C138931() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final WalletPrivacySettingPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
+            Intrinsics.checkNotNullParameter(factory, "$this$factory");
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            int intValue = ((Number) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(Integer.class))).intValue();
             CryptoPermissionInteractor cryptoPermissionInteractor = (CryptoPermissionInteractor) factory.get(Reflection.getOrCreateKotlinClass(CryptoPermissionInteractor.class), null, null);
             ResourceManager resourceManager = (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null);
             return new WalletPrivacySettingPresenter(intValue, (AccountLevelInteractor) factory.get(Reflection.getOrCreateKotlinClass(AccountLevelInteractor.class), null, null), cryptoPermissionInteractor, (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), resourceManager);
@@ -433,20 +498,20 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$29 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$32 */
     /* loaded from: classes3.dex */
-    public static final class C138129 extends Lambda implements Function2<Scope, ParametersHolder, EnterWalletPinPresenter> {
-        public static final C138129 INSTANCE = new C138129();
+    public static final class C139032 extends Lambda implements Function2<Scope, ParametersHolder, EnterWalletPinPresenter> {
+        public static final C139032 INSTANCE = new C139032();
 
-        C138129() {
+        C139032() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final EnterWalletPinPresenter invoke(Scope factory, ParametersHolder dstr$screenType) {
+        public final EnterWalletPinPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$screenType, "$dstr$screenType");
-            EnterPinCodeScreenType enterPinCodeScreenType = (EnterPinCodeScreenType) dstr$screenType.elementAt(0, Reflection.getOrCreateKotlinClass(EnterPinCodeScreenType.class));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            EnterPinCodeScreenType enterPinCodeScreenType = (EnterPinCodeScreenType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(EnterPinCodeScreenType.class));
             ResourceManager resourceManager = (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null);
             SchedulersProvider schedulersProvider = (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null);
             return new EnterWalletPinPresenter(enterPinCodeScreenType, (TelegramControllersGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramControllersGateway.class), null, null), resourceManager, (PinCodeInteractor) factory.get(Reflection.getOrCreateKotlinClass(PinCodeInteractor.class), null, null), schedulersProvider);
@@ -455,40 +520,21 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$3 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$34 */
     /* loaded from: classes3.dex */
-    public static final class C13823 extends Lambda implements Function2<Scope, ParametersHolder, WalletSendRecipientPresenter> {
-        public static final C13823 INSTANCE = new C13823();
+    public static final class C139234 extends Lambda implements Function2<Scope, ParametersHolder, WalletBinancePayHistoryPresenter> {
+        public static final C139234 INSTANCE = new C139234();
 
-        C13823() {
+        C139234() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final WalletSendRecipientPresenter invoke(Scope factory, ParametersHolder dstr$networkType) {
+        public final WalletBinancePayHistoryPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$networkType, "$dstr$networkType");
-            return new WalletSendRecipientPresenter((NetworkType) dstr$networkType.elementAt(0, Reflection.getOrCreateKotlinClass(NetworkType.class)), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (CryptoRecipientManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoRecipientManager.class), null, null), (CryptoWalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(CryptoWalletInteractor.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null));
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$31 */
-    /* loaded from: classes3.dex */
-    public static final class C138431 extends Lambda implements Function2<Scope, ParametersHolder, WalletBinancePayHistoryPresenter> {
-        public static final C138431 INSTANCE = new C138431();
-
-        C138431() {
-            super(2);
-        }
-
-        @Override // kotlin.jvm.functions.Function2
-        public final WalletBinancePayHistoryPresenter invoke(Scope factory, ParametersHolder dstr$screenType$token) {
-            Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$screenType$token, "$dstr$screenType$token");
-            WalletBinancePayHistoryFragment.ScreenType screenType = (WalletBinancePayHistoryFragment.ScreenType) dstr$screenType$token.elementAt(0, Reflection.getOrCreateKotlinClass(WalletBinancePayHistoryFragment.ScreenType.class));
-            String str = (String) dstr$screenType$token.elementAt(1, Reflection.getOrCreateKotlinClass(String.class));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            WalletBinancePayHistoryFragment.ScreenType screenType = (WalletBinancePayHistoryFragment.ScreenType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(WalletBinancePayHistoryFragment.ScreenType.class));
+            String str = (String) parametersHolder.elementAt(1, Reflection.getOrCreateKotlinClass(String.class));
             BinanceInternalInteractor binanceInternalInteractor = (BinanceInternalInteractor) factory.get(Reflection.getOrCreateKotlinClass(BinanceInternalInteractor.class), null, null);
             ResourceManager resourceManager = (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null);
             SchedulersProvider schedulersProvider = (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null);
@@ -498,20 +544,20 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$32 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$35 */
     /* loaded from: classes3.dex */
-    public static final class C138532 extends Lambda implements Function2<Scope, ParametersHolder, WalletHomeBinancePayPresenter> {
-        public static final C138532 INSTANCE = new C138532();
+    public static final class C139335 extends Lambda implements Function2<Scope, ParametersHolder, WalletHomeBinancePayPresenter> {
+        public static final C139335 INSTANCE = new C139335();
 
-        C138532() {
+        C139335() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final WalletHomeBinancePayPresenter invoke(Scope factory, ParametersHolder dstr$binanceApi) {
+        public final WalletHomeBinancePayPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$binanceApi, "$dstr$binanceApi");
-            BinanceAPI binanceAPI = (BinanceAPI) dstr$binanceApi.elementAt(0, Reflection.getOrCreateKotlinClass(BinanceAPI.class));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            BinanceAPI binanceAPI = (BinanceAPI) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(BinanceAPI.class));
             BinancePayProcessManager binancePayProcessManager = (BinancePayProcessManager) factory.get(Reflection.getOrCreateKotlinClass(BinancePayProcessManager.class), null, null);
             BinancePayManager binancePayManager = (BinancePayManager) factory.get(Reflection.getOrCreateKotlinClass(BinancePayManager.class), null, null);
             CryptoPreferenceHelper cryptoPreferenceHelper = (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null);
@@ -523,21 +569,21 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$33 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$36 */
     /* loaded from: classes3.dex */
-    public static final class C138633 extends Lambda implements Function2<Scope, ParametersHolder, WalletReceiveBinancePayPresenter> {
-        public static final C138633 INSTANCE = new C138633();
+    public static final class C139436 extends Lambda implements Function2<Scope, ParametersHolder, WalletReceiveBinancePayPresenter> {
+        public static final C139436 INSTANCE = new C139436();
 
-        C138633() {
+        C139436() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final WalletReceiveBinancePayPresenter invoke(Scope factory, ParametersHolder dstr$screenType$args) {
+        public final WalletReceiveBinancePayPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$screenType$args, "$dstr$screenType$args");
-            int intValue = ((Number) dstr$screenType$args.elementAt(0, Reflection.getOrCreateKotlinClass(Integer.class))).intValue();
-            BinancePayScreenArgs binancePayScreenArgs = (BinancePayScreenArgs) dstr$screenType$args.elementAt(1, Reflection.getOrCreateKotlinClass(BinancePayScreenArgs.class));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            int intValue = ((Number) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(Integer.class))).intValue();
+            BinancePayScreenArgs binancePayScreenArgs = (BinancePayScreenArgs) parametersHolder.elementAt(1, Reflection.getOrCreateKotlinClass(BinancePayScreenArgs.class));
             ResourceManager resourceManager = (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null);
             CryptoPreferenceHelper cryptoPreferenceHelper = (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null);
             SchedulersProvider schedulersProvider = (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null);
@@ -548,20 +594,20 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$34 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$37 */
     /* loaded from: classes3.dex */
-    public static final class C138734 extends Lambda implements Function2<Scope, ParametersHolder, CreateWalletPresenter> {
-        public static final C138734 INSTANCE = new C138734();
+    public static final class C139537 extends Lambda implements Function2<Scope, ParametersHolder, CreateWalletPresenter> {
+        public static final C139537 INSTANCE = new C139537();
 
-        C138734() {
+        C139537() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final CreateWalletPresenter invoke(Scope factory, ParametersHolder dstr$screenType) {
+        public final CreateWalletPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$screenType, "$dstr$screenType");
-            CreateWalletFragment.ScreenType screenType = (CreateWalletFragment.ScreenType) dstr$screenType.elementAt(0, Reflection.getOrCreateKotlinClass(CreateWalletFragment.ScreenType.class));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            CreateWalletFragment.ScreenType screenType = (CreateWalletFragment.ScreenType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(CreateWalletFragment.ScreenType.class));
             CryptoWalletInteractor cryptoWalletInteractor = (CryptoWalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(CryptoWalletInteractor.class), null, null);
             ResourceManager resourceManager = (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null);
             RxEventBus rxEventBus = (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null);
@@ -573,40 +619,21 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$38 */
-    /* loaded from: classes3.dex */
-    public static final class C139138 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainWalletDetailsPresenter> {
-        public static final C139138 INSTANCE = new C139138();
-
-        C139138() {
-            super(2);
-        }
-
-        @Override // kotlin.jvm.functions.Function2
-        public final BlockchainWalletDetailsPresenter invoke(Scope factory, ParametersHolder dstr$walletItem) {
-            Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$walletItem, "$dstr$walletItem");
-            return new BlockchainWalletDetailsPresenter((BlockchainWalletItem) dstr$walletItem.elementAt(0, Reflection.getOrCreateKotlinClass(BlockchainWalletItem.class)), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null));
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C13934 extends Lambda implements Function2<Scope, ParametersHolder, WalletSendAmountPresenter> {
-        public static final C13934 INSTANCE = new C13934();
+    public static final class C13984 extends Lambda implements Function2<Scope, ParametersHolder, WalletSendAmountPresenter> {
+        public static final C13984 INSTANCE = new C13984();
 
-        C13934() {
+        C13984() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final WalletSendAmountPresenter invoke(Scope factory, ParametersHolder dstr$screenType$args) {
+        public final WalletSendAmountPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$screenType$args, "$dstr$screenType$args");
-            int intValue = ((Number) dstr$screenType$args.elementAt(0, Reflection.getOrCreateKotlinClass(Integer.class))).intValue();
-            TransferScreenArgs transferScreenArgs = (TransferScreenArgs) dstr$screenType$args.elementAt(1, Reflection.getOrCreateKotlinClass(TransferScreenArgs.class));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            int intValue = ((Number) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(Integer.class))).intValue();
+            TransferScreenArgs transferScreenArgs = (TransferScreenArgs) parametersHolder.elementAt(1, Reflection.getOrCreateKotlinClass(TransferScreenArgs.class));
             ResourceManager resourceManager = (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null);
             SchedulersProvider schedulersProvider = (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null);
             WalletInteractor walletInteractor = (WalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(WalletInteractor.class), null, null);
@@ -619,20 +646,39 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$42 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$41 */
     /* loaded from: classes3.dex */
-    public static final class C139642 extends Lambda implements Function2<Scope, ParametersHolder, WalletSwapProcessPresenter> {
-        public static final C139642 INSTANCE = new C139642();
+    public static final class C140041 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainWalletDetailsPresenter> {
+        public static final C140041 INSTANCE = new C140041();
 
-        C139642() {
+        C140041() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final WalletSwapProcessPresenter invoke(Scope factory, ParametersHolder dstr$type) {
+        public final BlockchainWalletDetailsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$type, "$dstr$type");
-            WalletSwapProcessFragment.ScreenType screenType = (WalletSwapProcessFragment.ScreenType) dstr$type.elementAt(0, Reflection.getOrCreateKotlinClass(WalletSwapProcessFragment.ScreenType.class));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new BlockchainWalletDetailsPresenter((BlockchainWalletItem) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(BlockchainWalletItem.class)), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: PresenterModule.kt */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$45 */
+    /* loaded from: classes3.dex */
+    public static final class C140445 extends Lambda implements Function2<Scope, ParametersHolder, WalletSwapProcessPresenter> {
+        public static final C140445 INSTANCE = new C140445();
+
+        C140445() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final WalletSwapProcessPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
+            Intrinsics.checkNotNullParameter(factory, "$this$factory");
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            WalletSwapProcessFragment.ScreenType screenType = (WalletSwapProcessFragment.ScreenType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(WalletSwapProcessFragment.ScreenType.class));
             ResourceManager resourceManager = (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null);
             SchedulersProvider schedulersProvider = (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null);
             BinanceInternalInteractor binanceInternalInteractor = (BinanceInternalInteractor) factory.get(Reflection.getOrCreateKotlinClass(BinanceInternalInteractor.class), null, null);
@@ -642,24 +688,24 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$43 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$46 */
     /* loaded from: classes3.dex */
-    public static final class C139743 extends Lambda implements Function2<Scope, ParametersHolder, WalletSelectTokenPresenter> {
-        public static final C139743 INSTANCE = new C139743();
+    public static final class C140546 extends Lambda implements Function2<Scope, ParametersHolder, WalletSelectTokenPresenter> {
+        public static final C140546 INSTANCE = new C140546();
 
-        C139743() {
+        C140546() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final WalletSelectTokenPresenter invoke(Scope factory, ParametersHolder dstr$type$selectedTokenArg$allTokensArg$networkType$onlyPositiveBalance) {
+        public final WalletSelectTokenPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$type$selectedTokenArg$allTokensArg$networkType$onlyPositiveBalance, "$dstr$type$selectedTokenArg$allTokensArg$networkType$onlyPositiveBalance");
-            SelectableType selectableType = (SelectableType) dstr$type$selectedTokenArg$allTokensArg$networkType$onlyPositiveBalance.elementAt(0, Reflection.getOrCreateKotlinClass(SelectableType.class));
-            SelectableToken selectableToken = (SelectableToken) dstr$type$selectedTokenArg$allTokensArg$networkType$onlyPositiveBalance.elementAt(1, Reflection.getOrCreateKotlinClass(SelectableToken.class));
-            List list = (List) dstr$type$selectedTokenArg$allTokensArg$networkType$onlyPositiveBalance.elementAt(2, Reflection.getOrCreateKotlinClass(List.class));
-            NetworkType networkType = (NetworkType) dstr$type$selectedTokenArg$allTokensArg$networkType$onlyPositiveBalance.elementAt(3, Reflection.getOrCreateKotlinClass(NetworkType.class));
-            boolean booleanValue = ((Boolean) dstr$type$selectedTokenArg$allTokensArg$networkType$onlyPositiveBalance.elementAt(4, Reflection.getOrCreateKotlinClass(Boolean.class))).booleanValue();
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            SelectableType selectableType = (SelectableType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(SelectableType.class));
+            SelectableToken selectableToken = (SelectableToken) parametersHolder.elementAt(1, Reflection.getOrCreateKotlinClass(SelectableToken.class));
+            List list = (List) parametersHolder.elementAt(2, Reflection.getOrCreateKotlinClass(List.class));
+            NetworkType networkType = (NetworkType) parametersHolder.elementAt(3, Reflection.getOrCreateKotlinClass(NetworkType.class));
+            boolean booleanValue = ((Boolean) parametersHolder.elementAt(4, Reflection.getOrCreateKotlinClass(Boolean.class))).booleanValue();
             ResourceManager resourceManager = (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null);
             return new WalletSelectTokenPresenter(selectableType, selectableToken, list, networkType, booleanValue, (WalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(WalletInteractor.class), null, null), (BinanceInternalInteractor) factory.get(Reflection.getOrCreateKotlinClass(BinanceInternalInteractor.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), resourceManager);
         }
@@ -667,21 +713,21 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$44 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$47 */
     /* loaded from: classes3.dex */
-    public static final class C139844 extends Lambda implements Function2<Scope, ParametersHolder, WalletSwapFeePresenter> {
-        public static final C139844 INSTANCE = new C139844();
+    public static final class C140647 extends Lambda implements Function2<Scope, ParametersHolder, WalletSwapFeePresenter> {
+        public static final C140647 INSTANCE = new C140647();
 
-        C139844() {
+        C140647() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final WalletSwapFeePresenter invoke(Scope factory, ParametersHolder dstr$args) {
+        public final WalletSwapFeePresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$args, "$dstr$args");
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
             SchedulersProvider schedulersProvider = (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null);
-            return new WalletSwapFeePresenter((SwapFeeScreenArgs) dstr$args.elementAt(0, Reflection.getOrCreateKotlinClass(SwapFeeScreenArgs.class)), (SwapInteractor) factory.get(Reflection.getOrCreateKotlinClass(SwapInteractor.class), null, null), schedulersProvider, (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null));
+            return new WalletSwapFeePresenter((SwapFeeScreenArgs) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(SwapFeeScreenArgs.class)), (SwapInteractor) factory.get(Reflection.getOrCreateKotlinClass(SwapInteractor.class), null, null), schedulersProvider, (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null));
         }
     }
 
@@ -689,19 +735,19 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$5 */
     /* loaded from: classes3.dex */
-    public static final class C14045 extends Lambda implements Function2<Scope, ParametersHolder, WalletDonationsPresenter> {
-        public static final C14045 INSTANCE = new C14045();
+    public static final class C14095 extends Lambda implements Function2<Scope, ParametersHolder, WalletDonationsPresenter> {
+        public static final C14095 INSTANCE = new C14095();
 
-        C14045() {
+        C14095() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final WalletDonationsPresenter invoke(Scope factory, ParametersHolder dstr$screenType$chatId) {
+        public final WalletDonationsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$screenType$chatId, "$dstr$screenType$chatId");
-            int intValue = ((Number) dstr$screenType$chatId.elementAt(0, Reflection.getOrCreateKotlinClass(Integer.class))).intValue();
-            long longValue = ((Number) dstr$screenType$chatId.elementAt(1, Reflection.getOrCreateKotlinClass(Long.class))).longValue();
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            int intValue = ((Number) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(Integer.class))).intValue();
+            long longValue = ((Number) parametersHolder.elementAt(1, Reflection.getOrCreateKotlinClass(Long.class))).longValue();
             ResourceManager resourceManager = (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null);
             SchedulersProvider schedulersProvider = (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null);
             return new WalletDonationsPresenter(longValue, intValue, (DonationsInteractor) factory.get(Reflection.getOrCreateKotlinClass(DonationsInteractor.class), null, null), (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null), (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null), resourceManager, schedulersProvider, (CryptoWalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(CryptoWalletInteractor.class), null, null));
@@ -710,81 +756,20 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$51 */
-    /* loaded from: classes3.dex */
-    public static final class C140651 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectSessionDetailsPresenter> {
-        public static final C140651 INSTANCE = new C140651();
-
-        C140651() {
-            super(2);
-        }
-
-        @Override // kotlin.jvm.functions.Function2
-        public final WalletConnectSessionDetailsPresenter invoke(Scope factory, ParametersHolder dstr$item) {
-            Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$item, "$dstr$item");
-            return new WalletConnectSessionDetailsPresenter((WalletConnectSessionItem) dstr$item.elementAt(0, Reflection.getOrCreateKotlinClass(WalletConnectSessionItem.class)), (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null));
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$52 */
-    /* loaded from: classes3.dex */
-    public static final class C140752 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectNewSessionPresenter> {
-        public static final C140752 INSTANCE = new C140752();
-
-        C140752() {
-            super(2);
-        }
-
-        @Override // kotlin.jvm.functions.Function2
-        public final WalletConnectNewSessionPresenter invoke(Scope factory, ParametersHolder dstr$sessionItem) {
-            Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$sessionItem, "$dstr$sessionItem");
-            return new WalletConnectNewSessionPresenter((WCSessionStoreItem) dstr$sessionItem.elementAt(0, Reflection.getOrCreateKotlinClass(WCSessionStoreItem.class)), (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (WalletConnectManager) factory.get(Reflection.getOrCreateKotlinClass(WalletConnectManager.class), null, null));
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$53 */
-    /* loaded from: classes3.dex */
-    public static final class C140853 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectTransactionPresenter> {
-        public static final C140853 INSTANCE = new C140853();
-
-        C140853() {
-            super(2);
-        }
-
-        @Override // kotlin.jvm.functions.Function2
-        public final WalletConnectTransactionPresenter invoke(Scope factory, ParametersHolder dstr$screenType) {
-            Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$screenType, "$dstr$screenType");
-            return new WalletConnectTransactionPresenter((WalletConnectTransactionScreenType) dstr$screenType.elementAt(0, Reflection.getOrCreateKotlinClass(WalletConnectTransactionScreenType.class)), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (WalletConnectInteractor) factory.get(Reflection.getOrCreateKotlinClass(WalletConnectInteractor.class), null, null), (WalletConnectManager) factory.get(Reflection.getOrCreateKotlinClass(WalletConnectManager.class), null, null));
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$54 */
     /* loaded from: classes3.dex */
-    public static final class C140954 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectMessageSignPresenter> {
-        public static final C140954 INSTANCE = new C140954();
+    public static final class C141454 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectSessionDetailsPresenter> {
+        public static final C141454 INSTANCE = new C141454();
 
-        C140954() {
+        C141454() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final WalletConnectMessageSignPresenter invoke(Scope factory, ParametersHolder dstr$requestId$sessionItem$message) {
+        public final WalletConnectSessionDetailsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$requestId$sessionItem$message, "$dstr$requestId$sessionItem$message");
-            long longValue = ((Number) dstr$requestId$sessionItem$message.elementAt(0, Reflection.getOrCreateKotlinClass(Long.class))).longValue();
-            WalletConnectSessionItem walletConnectSessionItem = (WalletConnectSessionItem) dstr$requestId$sessionItem$message.elementAt(1, Reflection.getOrCreateKotlinClass(WalletConnectSessionItem.class));
-            WCEthereumSignMessage wCEthereumSignMessage = (WCEthereumSignMessage) dstr$requestId$sessionItem$message.elementAt(2, Reflection.getOrCreateKotlinClass(WCEthereumSignMessage.class));
-            CryptoAccessManager cryptoAccessManager = (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null);
-            return new WalletConnectMessageSignPresenter(longValue, walletConnectSessionItem, wCEthereumSignMessage, (WalletConnectManager) factory.get(Reflection.getOrCreateKotlinClass(WalletConnectManager.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), cryptoAccessManager);
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new WalletConnectSessionDetailsPresenter((WalletConnectSessionItem) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(WalletConnectSessionItem.class)), (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null));
         }
     }
 
@@ -792,18 +777,60 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$55 */
     /* loaded from: classes3.dex */
-    public static final class C141055 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectSwitchNetworkPresenter> {
-        public static final C141055 INSTANCE = new C141055();
+    public static final class C141555 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectNewSessionPresenter> {
+        public static final C141555 INSTANCE = new C141555();
 
-        C141055() {
+        C141555() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final WalletConnectSwitchNetworkPresenter invoke(Scope factory, ParametersHolder dstr$requestId$sessionItem$networkType) {
+        public final WalletConnectNewSessionPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$requestId$sessionItem$networkType, "$dstr$requestId$sessionItem$networkType");
-            return new WalletConnectSwitchNetworkPresenter(((Number) dstr$requestId$sessionItem$networkType.elementAt(0, Reflection.getOrCreateKotlinClass(Long.class))).longValue(), (WalletConnectSessionItem) dstr$requestId$sessionItem$networkType.elementAt(1, Reflection.getOrCreateKotlinClass(WalletConnectSessionItem.class)), (NetworkType) dstr$requestId$sessionItem$networkType.elementAt(2, Reflection.getOrCreateKotlinClass(NetworkType.class)), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null), (WalletConnectManager) factory.get(Reflection.getOrCreateKotlinClass(WalletConnectManager.class), null, null));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new WalletConnectNewSessionPresenter((WCSessionStoreItem) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(WCSessionStoreItem.class)), (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (WalletConnectManager) factory.get(Reflection.getOrCreateKotlinClass(WalletConnectManager.class), null, null));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: PresenterModule.kt */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$56 */
+    /* loaded from: classes3.dex */
+    public static final class C141656 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectTransactionPresenter> {
+        public static final C141656 INSTANCE = new C141656();
+
+        C141656() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final WalletConnectTransactionPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
+            Intrinsics.checkNotNullParameter(factory, "$this$factory");
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new WalletConnectTransactionPresenter((WalletConnectTransactionScreenType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(WalletConnectTransactionScreenType.class)), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (WalletConnectInteractor) factory.get(Reflection.getOrCreateKotlinClass(WalletConnectInteractor.class), null, null), (WalletConnectManager) factory.get(Reflection.getOrCreateKotlinClass(WalletConnectManager.class), null, null));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: PresenterModule.kt */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$57 */
+    /* loaded from: classes3.dex */
+    public static final class C141757 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectMessageSignPresenter> {
+        public static final C141757 INSTANCE = new C141757();
+
+        C141757() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final WalletConnectMessageSignPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
+            Intrinsics.checkNotNullParameter(factory, "$this$factory");
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            long longValue = ((Number) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(Long.class))).longValue();
+            WalletConnectSessionItem walletConnectSessionItem = (WalletConnectSessionItem) parametersHolder.elementAt(1, Reflection.getOrCreateKotlinClass(WalletConnectSessionItem.class));
+            WCEthereumSignMessage wCEthereumSignMessage = (WCEthereumSignMessage) parametersHolder.elementAt(2, Reflection.getOrCreateKotlinClass(WCEthereumSignMessage.class));
+            CryptoAccessManager cryptoAccessManager = (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null);
+            return new WalletConnectMessageSignPresenter(longValue, walletConnectSessionItem, wCEthereumSignMessage, (WalletConnectManager) factory.get(Reflection.getOrCreateKotlinClass(WalletConnectManager.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), cryptoAccessManager);
         }
     }
 
@@ -811,37 +838,18 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$58 */
     /* loaded from: classes3.dex */
-    public static final class C141358 extends Lambda implements Function2<Scope, ParametersHolder, ChannelDetailsPresenter> {
-        public static final C141358 INSTANCE = new C141358();
+    public static final class C141858 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectSwitchNetworkPresenter> {
+        public static final C141858 INSTANCE = new C141858();
 
-        C141358() {
+        C141858() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final ChannelDetailsPresenter invoke(Scope factory, ParametersHolder dstr$campaign$chat) {
+        public final WalletConnectSwitchNetworkPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$campaign$chat, "$dstr$campaign$chat");
-            return new ChannelDetailsPresenter((CampaignItem) dstr$campaign$chat.elementAt(0, Reflection.getOrCreateKotlinClass(CampaignItem.class)), (TLRPC$Chat) dstr$campaign$chat.elementAt(1, Reflection.getOrCreateKotlinClass(TLRPC$Chat.class)), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (TelegramApi) factory.get(Reflection.getOrCreateKotlinClass(TelegramApi.class), null, null), (TelegramControllersGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramControllersGateway.class), null, null));
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$59 */
-    /* loaded from: classes3.dex */
-    public static final class C141459 extends Lambda implements Function2<Scope, ParametersHolder, CatalogAllPresenter> {
-        public static final C141459 INSTANCE = new C141459();
-
-        C141459() {
-            super(2);
-        }
-
-        @Override // kotlin.jvm.functions.Function2
-        public final CatalogAllPresenter invoke(Scope factory, ParametersHolder dstr$chatType) {
-            Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$chatType, "$dstr$chatType");
-            return new CatalogAllPresenter((ChatType) dstr$chatType.elementAt(0, Reflection.getOrCreateKotlinClass(ChatType.class)), (CatalogInteractor) factory.get(Reflection.getOrCreateKotlinClass(CatalogInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (TelegramApi) factory.get(Reflection.getOrCreateKotlinClass(TelegramApi.class), null, null));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new WalletConnectSwitchNetworkPresenter(((Number) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(Long.class))).longValue(), (WalletConnectSessionItem) parametersHolder.elementAt(1, Reflection.getOrCreateKotlinClass(WalletConnectSessionItem.class)), (NetworkType) parametersHolder.elementAt(2, Reflection.getOrCreateKotlinClass(NetworkType.class)), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null), (WalletConnectManager) factory.get(Reflection.getOrCreateKotlinClass(WalletConnectManager.class), null, null));
         }
     }
 
@@ -849,18 +857,18 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$6 */
     /* loaded from: classes3.dex */
-    public static final class C14156 extends Lambda implements Function2<Scope, ParametersHolder, ChatPresenter> {
-        public static final C14156 INSTANCE = new C14156();
+    public static final class C14206 extends Lambda implements Function2<Scope, ParametersHolder, ChatPresenter> {
+        public static final C14206 INSTANCE = new C14206();
 
-        C14156() {
+        C14206() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final ChatPresenter invoke(Scope factory, ParametersHolder dstr$chat) {
+        public final ChatPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$chat, "$dstr$chat");
-            TLRPC$Chat tLRPC$Chat = (TLRPC$Chat) dstr$chat.elementAt(0, Reflection.getOrCreateKotlinClass(TLRPC$Chat.class));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            TLRPC$Chat tLRPC$Chat = (TLRPC$Chat) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(TLRPC$Chat.class));
             TelegramApi telegramApi = (TelegramApi) factory.get(Reflection.getOrCreateKotlinClass(TelegramApi.class), null, null);
             ResourceManager resourceManager = (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null);
             WalletSessionInteractor walletSessionInteractor = (WalletSessionInteractor) factory.get(Reflection.getOrCreateKotlinClass(WalletSessionInteractor.class), null, null);
@@ -876,39 +884,39 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$60 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$61 */
     /* loaded from: classes3.dex */
-    public static final class C141660 extends Lambda implements Function2<Scope, ParametersHolder, CatalogCategoriesPresenter> {
-        public static final C141660 INSTANCE = new C141660();
+    public static final class C142261 extends Lambda implements Function2<Scope, ParametersHolder, ChannelDetailsPresenter> {
+        public static final C142261 INSTANCE = new C142261();
 
-        C141660() {
+        C142261() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final CatalogCategoriesPresenter invoke(Scope factory, ParametersHolder dstr$chatType) {
+        public final ChannelDetailsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$chatType, "$dstr$chatType");
-            return new CatalogCategoriesPresenter((ChatType) dstr$chatType.elementAt(0, Reflection.getOrCreateKotlinClass(ChatType.class)), (CatalogInteractor) factory.get(Reflection.getOrCreateKotlinClass(CatalogInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (TelegramApi) factory.get(Reflection.getOrCreateKotlinClass(TelegramApi.class), null, null));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new ChannelDetailsPresenter((CampaignItem) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(CampaignItem.class)), (TLRPC$Chat) parametersHolder.elementAt(1, Reflection.getOrCreateKotlinClass(TLRPC$Chat.class)), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (TelegramApi) factory.get(Reflection.getOrCreateKotlinClass(TelegramApi.class), null, null), (TelegramControllersGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramControllersGateway.class), null, null));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$61 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$62 */
     /* loaded from: classes3.dex */
-    public static final class C141761 extends Lambda implements Function2<Scope, ParametersHolder, CatalogUserChannelsPresenter> {
-        public static final C141761 INSTANCE = new C141761();
+    public static final class C142362 extends Lambda implements Function2<Scope, ParametersHolder, CatalogAllPresenter> {
+        public static final C142362 INSTANCE = new C142362();
 
-        C141761() {
+        C142362() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final CatalogUserChannelsPresenter invoke(Scope factory, ParametersHolder dstr$chatType) {
+        public final CatalogAllPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$chatType, "$dstr$chatType");
-            return new CatalogUserChannelsPresenter((ChatType) dstr$chatType.elementAt(0, Reflection.getOrCreateKotlinClass(ChatType.class)));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new CatalogAllPresenter((ChatType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(ChatType.class)), (CatalogInteractor) factory.get(Reflection.getOrCreateKotlinClass(CatalogInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (TelegramApi) factory.get(Reflection.getOrCreateKotlinClass(TelegramApi.class), null, null));
         }
     }
 
@@ -916,18 +924,18 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$63 */
     /* loaded from: classes3.dex */
-    public static final class C141963 extends Lambda implements Function2<Scope, ParametersHolder, StakingProgrammesPresenter> {
-        public static final C141963 INSTANCE = new C141963();
+    public static final class C142463 extends Lambda implements Function2<Scope, ParametersHolder, CatalogCategoriesPresenter> {
+        public static final C142463 INSTANCE = new C142463();
 
-        C141963() {
+        C142463() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final StakingProgrammesPresenter invoke(Scope factory, ParametersHolder dstr$stakingTabType) {
+        public final CatalogCategoriesPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$stakingTabType, "$dstr$stakingTabType");
-            return new StakingProgrammesPresenter((StakingTabType) dstr$stakingTabType.elementAt(0, Reflection.getOrCreateKotlinClass(StakingTabType.class)), (AccountLevelInteractor) factory.get(Reflection.getOrCreateKotlinClass(AccountLevelInteractor.class), null, null), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (StakingInteractor) factory.get(Reflection.getOrCreateKotlinClass(StakingInteractor.class), null, null));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new CatalogCategoriesPresenter((ChatType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(ChatType.class)), (CatalogInteractor) factory.get(Reflection.getOrCreateKotlinClass(CatalogInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (TelegramApi) factory.get(Reflection.getOrCreateKotlinClass(TelegramApi.class), null, null));
         }
     }
 
@@ -935,37 +943,37 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$64 */
     /* loaded from: classes3.dex */
-    public static final class C142064 extends Lambda implements Function2<Scope, ParametersHolder, StakingConditionsPresenter> {
-        public static final C142064 INSTANCE = new C142064();
+    public static final class C142564 extends Lambda implements Function2<Scope, ParametersHolder, CatalogUserChannelsPresenter> {
+        public static final C142564 INSTANCE = new C142564();
 
-        C142064() {
+        C142564() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final StakingConditionsPresenter invoke(Scope factory, ParametersHolder dstr$stakingDetails) {
+        public final CatalogUserChannelsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$stakingDetails, "$dstr$stakingDetails");
-            return new StakingConditionsPresenter((StakingDetailsItem) dstr$stakingDetails.elementAt(0, Reflection.getOrCreateKotlinClass(StakingDetailsItem.class)), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new CatalogUserChannelsPresenter((ChatType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(ChatType.class)));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$65 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$66 */
     /* loaded from: classes3.dex */
-    public static final class C142165 extends Lambda implements Function2<Scope, ParametersHolder, StakingTransactionPresenter> {
-        public static final C142165 INSTANCE = new C142165();
+    public static final class C142766 extends Lambda implements Function2<Scope, ParametersHolder, StakingProgrammesPresenter> {
+        public static final C142766 INSTANCE = new C142766();
 
-        C142165() {
+        C142766() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final StakingTransactionPresenter invoke(Scope factory, ParametersHolder dstr$screenType$stakingDetails$presetAmount) {
+        public final StakingProgrammesPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$screenType$stakingDetails$presetAmount, "$dstr$screenType$stakingDetails$presetAmount");
-            return new StakingTransactionPresenter((Double) dstr$screenType$stakingDetails$presetAmount.elementAt(2, Reflection.getOrCreateKotlinClass(Double.class)), ((Number) dstr$screenType$stakingDetails$presetAmount.elementAt(0, Reflection.getOrCreateKotlinClass(Integer.class))).intValue(), (StakingDetailsItem) dstr$screenType$stakingDetails$presetAmount.elementAt(1, Reflection.getOrCreateKotlinClass(StakingDetailsItem.class)), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (StakingInteractor) factory.get(Reflection.getOrCreateKotlinClass(StakingInteractor.class), null, null), (WalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(WalletInteractor.class), null, null));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new StakingProgrammesPresenter((StakingTabType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(StakingTabType.class)), (AccountLevelInteractor) factory.get(Reflection.getOrCreateKotlinClass(AccountLevelInteractor.class), null, null), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (StakingInteractor) factory.get(Reflection.getOrCreateKotlinClass(StakingInteractor.class), null, null));
         }
     }
 
@@ -973,18 +981,56 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$67 */
     /* loaded from: classes3.dex */
-    public static final class C142367 extends Lambda implements Function2<Scope, ParametersHolder, StakingCalculatorPresenter> {
-        public static final C142367 INSTANCE = new C142367();
+    public static final class C142867 extends Lambda implements Function2<Scope, ParametersHolder, StakingConditionsPresenter> {
+        public static final C142867 INSTANCE = new C142867();
 
-        C142367() {
+        C142867() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final StakingCalculatorPresenter invoke(Scope factory, ParametersHolder dstr$stakingDetails) {
+        public final StakingConditionsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(dstr$stakingDetails, "$dstr$stakingDetails");
-            return new StakingCalculatorPresenter((StakingDetailsItem) dstr$stakingDetails.elementAt(0, Reflection.getOrCreateKotlinClass(StakingDetailsItem.class)), (AccountLevelInteractor) factory.get(Reflection.getOrCreateKotlinClass(AccountLevelInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (WalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(WalletInteractor.class), null, null));
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new StakingConditionsPresenter((StakingDetailsItem) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(StakingDetailsItem.class)), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: PresenterModule.kt */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$68 */
+    /* loaded from: classes3.dex */
+    public static final class C142968 extends Lambda implements Function2<Scope, ParametersHolder, StakingTransactionPresenter> {
+        public static final C142968 INSTANCE = new C142968();
+
+        C142968() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final StakingTransactionPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
+            Intrinsics.checkNotNullParameter(factory, "$this$factory");
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new StakingTransactionPresenter((Double) parametersHolder.elementAt(2, Reflection.getOrCreateKotlinClass(Double.class)), ((Number) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(Integer.class))).intValue(), (StakingDetailsItem) parametersHolder.elementAt(1, Reflection.getOrCreateKotlinClass(StakingDetailsItem.class)), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (StakingInteractor) factory.get(Reflection.getOrCreateKotlinClass(StakingInteractor.class), null, null), (WalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(WalletInteractor.class), null, null));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: PresenterModule.kt */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$70 */
+    /* loaded from: classes3.dex */
+    public static final class C143270 extends Lambda implements Function2<Scope, ParametersHolder, StakingCalculatorPresenter> {
+        public static final C143270 INSTANCE = new C143270();
+
+        C143270() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final StakingCalculatorPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
+            Intrinsics.checkNotNullParameter(factory, "$this$factory");
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new StakingCalculatorPresenter((StakingDetailsItem) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(StakingDetailsItem.class)), (AccountLevelInteractor) factory.get(Reflection.getOrCreateKotlinClass(AccountLevelInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (WalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(WalletInteractor.class), null, null));
         }
     }
 
@@ -1064,427 +1110,448 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
         List emptyList66;
         List emptyList67;
         List emptyList68;
+        List emptyList69;
+        List emptyList70;
+        List emptyList71;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C13601 c13601 = C13601.INSTANCE;
+        C13651 c13651 = C13651.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Factory;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TranslationPresenter.class), null, c13601, kind, emptyList));
+        FactoryInstanceFactory factoryInstanceFactory = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TranslationPresenter.class), null, c13651, kind, emptyList));
         module.indexPrimaryType(factoryInstanceFactory);
         new Pair(module, factoryInstanceFactory);
-        C13712 c13712 = C13712.INSTANCE;
+        C13762 c13762 = C13762.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory2 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(WalletAttachAlertPresenter.class), null, c13712, kind, emptyList2));
+        FactoryInstanceFactory factoryInstanceFactory2 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(WalletAttachAlertPresenter.class), null, c13762, kind, emptyList2));
         module.indexPrimaryType(factoryInstanceFactory2);
         new Pair(module, factoryInstanceFactory2);
-        C13823 c13823 = C13823.INSTANCE;
+        C13873 c13873 = C13873.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory3 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(WalletSendRecipientPresenter.class), null, c13823, kind, emptyList3));
+        FactoryInstanceFactory factoryInstanceFactory3 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(WalletSendRecipientPresenter.class), null, c13873, kind, emptyList3));
         module.indexPrimaryType(factoryInstanceFactory3);
         new Pair(module, factoryInstanceFactory3);
-        C13934 c13934 = C13934.INSTANCE;
+        C13984 c13984 = C13984.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory4 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(WalletSendAmountPresenter.class), null, c13934, kind, emptyList4));
+        FactoryInstanceFactory factoryInstanceFactory4 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(WalletSendAmountPresenter.class), null, c13984, kind, emptyList4));
         module.indexPrimaryType(factoryInstanceFactory4);
         new Pair(module, factoryInstanceFactory4);
-        C14045 c14045 = C14045.INSTANCE;
+        C14095 c14095 = C14095.INSTANCE;
         StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
         emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory5 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(WalletDonationsPresenter.class), null, c14045, kind, emptyList5));
+        FactoryInstanceFactory factoryInstanceFactory5 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(WalletDonationsPresenter.class), null, c14095, kind, emptyList5));
         module.indexPrimaryType(factoryInstanceFactory5);
         new Pair(module, factoryInstanceFactory5);
-        C14156 c14156 = C14156.INSTANCE;
+        C14206 c14206 = C14206.INSTANCE;
         StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
         emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory6 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(ChatPresenter.class), null, c14156, kind, emptyList6));
+        FactoryInstanceFactory factoryInstanceFactory6 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(ChatPresenter.class), null, c14206, kind, emptyList6));
         module.indexPrimaryType(factoryInstanceFactory6);
         new Pair(module, factoryInstanceFactory6);
-        C14257 c14257 = C14257.INSTANCE;
+        C14317 c14317 = C14317.INSTANCE;
         StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
         emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory7 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(WalletRootPresenter.class), null, c14257, kind, emptyList7));
+        FactoryInstanceFactory factoryInstanceFactory7 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(WalletRootPresenter.class), null, c14317, kind, emptyList7));
         module.indexPrimaryType(factoryInstanceFactory7);
         new Pair(module, factoryInstanceFactory7);
-        C14268 c14268 = C14268.INSTANCE;
+        C14348 c14348 = C14348.INSTANCE;
         StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
         emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory8 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(WalletSettingsPresenter.class), null, c14268, kind, emptyList8));
+        FactoryInstanceFactory factoryInstanceFactory8 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(WalletSettingsPresenter.class), null, c14348, kind, emptyList8));
         module.indexPrimaryType(factoryInstanceFactory8);
         new Pair(module, factoryInstanceFactory8);
-        C14279 c14279 = C14279.INSTANCE;
+        C14359 c14359 = C14359.INSTANCE;
         StringQualifier rootScopeQualifier9 = companion.getRootScopeQualifier();
         emptyList9 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory9 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(PhotoViewerPresenter.class), null, c14279, kind, emptyList9));
+        FactoryInstanceFactory factoryInstanceFactory9 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(PhotoViewerPresenter.class), null, c14359, kind, emptyList9));
         module.indexPrimaryType(factoryInstanceFactory9);
         new Pair(module, factoryInstanceFactory9);
-        C136110 c136110 = C136110.INSTANCE;
+        C136610 c136610 = C136610.INSTANCE;
         StringQualifier rootScopeQualifier10 = companion.getRootScopeQualifier();
         emptyList10 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory10 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(WalletHomePresenter.class), null, c136110, kind, emptyList10));
+        FactoryInstanceFactory factoryInstanceFactory10 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(WalletHomePresenter.class), null, c136610, kind, emptyList10));
         module.indexPrimaryType(factoryInstanceFactory10);
         new Pair(module, factoryInstanceFactory10);
-        C136211 c136211 = C136211.INSTANCE;
+        C136711 c136711 = C136711.INSTANCE;
         StringQualifier rootScopeQualifier11 = companion.getRootScopeQualifier();
         emptyList11 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory11 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(WalletHomeCryptoPresenter.class), null, c136211, kind, emptyList11));
+        FactoryInstanceFactory factoryInstanceFactory11 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(WalletHomeCryptoPresenter.class), null, c136711, kind, emptyList11));
         module.indexPrimaryType(factoryInstanceFactory11);
         new Pair(module, factoryInstanceFactory11);
-        C136312 c136312 = C136312.INSTANCE;
+        C136812 c136812 = C136812.INSTANCE;
         StringQualifier rootScopeQualifier12 = companion.getRootScopeQualifier();
         emptyList12 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory12 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(WalletHomeCryptoTokensSettingsPresenter.class), null, c136312, kind, emptyList12));
+        FactoryInstanceFactory factoryInstanceFactory12 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(WalletHomeCryptoTokensSettingsPresenter.class), null, c136812, kind, emptyList12));
         module.indexPrimaryType(factoryInstanceFactory12);
         new Pair(module, factoryInstanceFactory12);
-        C136413 c136413 = C136413.INSTANCE;
+        C136913 c136913 = C136913.INSTANCE;
         StringQualifier rootScopeQualifier13 = companion.getRootScopeQualifier();
         emptyList13 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory13 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(WalletHomeServicesPresenter.class), null, c136413, kind, emptyList13));
+        FactoryInstanceFactory factoryInstanceFactory13 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(WalletHomeServicesPresenter.class), null, c136913, kind, emptyList13));
         module.indexPrimaryType(factoryInstanceFactory13);
         new Pair(module, factoryInstanceFactory13);
-        C136514 c136514 = C136514.INSTANCE;
+        C137014 c137014 = C137014.INSTANCE;
         StringQualifier rootScopeQualifier14 = companion.getRootScopeQualifier();
         emptyList14 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory14 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(WalletTokenDetailsPresenter.class), null, c136514, kind, emptyList14));
+        FactoryInstanceFactory factoryInstanceFactory14 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(WalletTokenDetailsPresenter.class), null, c137014, kind, emptyList14));
         module.indexPrimaryType(factoryInstanceFactory14);
         new Pair(module, factoryInstanceFactory14);
-        C136615 c136615 = C136615.INSTANCE;
+        C137115 c137115 = C137115.INSTANCE;
         StringQualifier rootScopeQualifier15 = companion.getRootScopeQualifier();
         emptyList15 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory15 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(WalletNotificationsPresenter.class), null, c136615, kind, emptyList15));
+        FactoryInstanceFactory factoryInstanceFactory15 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(WalletNotificationsPresenter.class), null, c137115, kind, emptyList15));
         module.indexPrimaryType(factoryInstanceFactory15);
         new Pair(module, factoryInstanceFactory15);
-        C136716 c136716 = C136716.INSTANCE;
+        C137216 c137216 = C137216.INSTANCE;
         StringQualifier rootScopeQualifier16 = companion.getRootScopeQualifier();
         emptyList16 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory16 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(WalletTransactionsPresenter.class), null, c136716, kind, emptyList16));
+        FactoryInstanceFactory factoryInstanceFactory16 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(WalletTransactionsPresenter.class), null, c137216, kind, emptyList16));
         module.indexPrimaryType(factoryInstanceFactory16);
         new Pair(module, factoryInstanceFactory16);
-        C136817 c136817 = C136817.INSTANCE;
+        C137317 c137317 = C137317.INSTANCE;
         StringQualifier rootScopeQualifier17 = companion.getRootScopeQualifier();
         emptyList17 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory17 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(WalletNotificationDetailsPresenter.class), null, c136817, kind, emptyList17));
+        FactoryInstanceFactory factoryInstanceFactory17 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(WalletNotificationDetailsPresenter.class), null, c137317, kind, emptyList17));
         module.indexPrimaryType(factoryInstanceFactory17);
         new Pair(module, factoryInstanceFactory17);
-        C136918 c136918 = C136918.INSTANCE;
+        C137418 c137418 = C137418.INSTANCE;
         StringQualifier rootScopeQualifier18 = companion.getRootScopeQualifier();
         emptyList18 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory18 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(WalletTransactionDetailsPresenter.class), null, c136918, kind, emptyList18));
+        FactoryInstanceFactory factoryInstanceFactory18 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(WalletTransactionDetailsPresenter.class), null, c137418, kind, emptyList18));
         module.indexPrimaryType(factoryInstanceFactory18);
         new Pair(module, factoryInstanceFactory18);
-        C137019 c137019 = C137019.INSTANCE;
+        C137519 c137519 = C137519.INSTANCE;
         StringQualifier rootScopeQualifier19 = companion.getRootScopeQualifier();
         emptyList19 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory19 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(ReactionPresenter.class), null, c137019, kind, emptyList19));
+        FactoryInstanceFactory factoryInstanceFactory19 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(ReactionPresenter.class), null, c137519, kind, emptyList19));
         module.indexPrimaryType(factoryInstanceFactory19);
         new Pair(module, factoryInstanceFactory19);
-        C137220 c137220 = C137220.INSTANCE;
+        C137720 c137720 = C137720.INSTANCE;
         StringQualifier rootScopeQualifier20 = companion.getRootScopeQualifier();
         emptyList20 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory20 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(ContactsPresenter.class), null, c137220, kind, emptyList20));
+        FactoryInstanceFactory factoryInstanceFactory20 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(ContactsPresenter.class), null, c137720, kind, emptyList20));
         module.indexPrimaryType(factoryInstanceFactory20);
         new Pair(module, factoryInstanceFactory20);
-        C137321 c137321 = C137321.INSTANCE;
+        C137821 c137821 = C137821.INSTANCE;
         StringQualifier rootScopeQualifier21 = companion.getRootScopeQualifier();
         emptyList21 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory21 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(ProfilePresenter.class), null, c137321, kind, emptyList21));
+        FactoryInstanceFactory factoryInstanceFactory21 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(ProfilePresenter.class), null, c137821, kind, emptyList21));
         module.indexPrimaryType(factoryInstanceFactory21);
         new Pair(module, factoryInstanceFactory21);
-        C137422 c137422 = C137422.INSTANCE;
+        C137922 c137922 = C137922.INSTANCE;
         StringQualifier rootScopeQualifier22 = companion.getRootScopeQualifier();
         emptyList22 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory22 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(EmojiViewPresenter.class), null, c137422, kind, emptyList22));
+        FactoryInstanceFactory factoryInstanceFactory22 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(EmojiViewPresenter.class), null, c137922, kind, emptyList22));
         module.indexPrimaryType(factoryInstanceFactory22);
         new Pair(module, factoryInstanceFactory22);
-        C137523 c137523 = C137523.INSTANCE;
+        C138023 c138023 = C138023.INSTANCE;
         StringQualifier rootScopeQualifier23 = companion.getRootScopeQualifier();
         emptyList23 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory23 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(CreateWalletTutorialPresenter.class), null, c137523, kind, emptyList23));
+        FactoryInstanceFactory factoryInstanceFactory23 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(TwitterPresenter.class), null, c138023, kind, emptyList23));
         module.indexPrimaryType(factoryInstanceFactory23);
         new Pair(module, factoryInstanceFactory23);
-        C137624 c137624 = C137624.INSTANCE;
+        C138124 c138124 = C138124.INSTANCE;
         StringQualifier rootScopeQualifier24 = companion.getRootScopeQualifier();
         emptyList24 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory24 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(BuyCryptoProductPresenter.class), null, c137624, kind, emptyList24));
+        FactoryInstanceFactory factoryInstanceFactory24 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(TwitterSearchPresenter.class), null, c138124, kind, emptyList24));
         module.indexPrimaryType(factoryInstanceFactory24);
         new Pair(module, factoryInstanceFactory24);
-        C137725 c137725 = C137725.INSTANCE;
+        C138225 c138225 = C138225.INSTANCE;
         StringQualifier rootScopeQualifier25 = companion.getRootScopeQualifier();
         emptyList25 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory25 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier25, Reflection.getOrCreateKotlinClass(CryptoBuyCustomPricePresenter.class), null, c137725, kind, emptyList25));
+        FactoryInstanceFactory factoryInstanceFactory25 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier25, Reflection.getOrCreateKotlinClass(TwitterAuthPresenter.class), null, c138225, kind, emptyList25));
         module.indexPrimaryType(factoryInstanceFactory25);
         new Pair(module, factoryInstanceFactory25);
-        C137826 c137826 = C137826.INSTANCE;
+        C138326 c138326 = C138326.INSTANCE;
         StringQualifier rootScopeQualifier26 = companion.getRootScopeQualifier();
         emptyList26 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory26 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier26, Reflection.getOrCreateKotlinClass(CreateWalletPasswordPresenter.class), null, c137826, kind, emptyList26));
+        FactoryInstanceFactory factoryInstanceFactory26 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier26, Reflection.getOrCreateKotlinClass(CreateWalletTutorialPresenter.class), null, c138326, kind, emptyList26));
         module.indexPrimaryType(factoryInstanceFactory26);
         new Pair(module, factoryInstanceFactory26);
-        C137927 c137927 = C137927.INSTANCE;
+        C138427 c138427 = C138427.INSTANCE;
         StringQualifier rootScopeQualifier27 = companion.getRootScopeQualifier();
         emptyList27 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory27 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier27, Reflection.getOrCreateKotlinClass(CreateWalletPinPresenter.class), null, c137927, kind, emptyList27));
+        FactoryInstanceFactory factoryInstanceFactory27 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier27, Reflection.getOrCreateKotlinClass(BuyCryptoProductPresenter.class), null, c138427, kind, emptyList27));
         module.indexPrimaryType(factoryInstanceFactory27);
         new Pair(module, factoryInstanceFactory27);
-        C138028 c138028 = C138028.INSTANCE;
+        C138528 c138528 = C138528.INSTANCE;
         StringQualifier rootScopeQualifier28 = companion.getRootScopeQualifier();
         emptyList28 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory28 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier28, Reflection.getOrCreateKotlinClass(WalletPrivacySettingPresenter.class), null, c138028, kind, emptyList28));
+        FactoryInstanceFactory factoryInstanceFactory28 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier28, Reflection.getOrCreateKotlinClass(CryptoBuyCustomPricePresenter.class), null, c138528, kind, emptyList28));
         module.indexPrimaryType(factoryInstanceFactory28);
         new Pair(module, factoryInstanceFactory28);
-        C138129 c138129 = C138129.INSTANCE;
+        C138629 c138629 = C138629.INSTANCE;
         StringQualifier rootScopeQualifier29 = companion.getRootScopeQualifier();
         emptyList29 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory29 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier29, Reflection.getOrCreateKotlinClass(EnterWalletPinPresenter.class), null, c138129, kind, emptyList29));
+        FactoryInstanceFactory factoryInstanceFactory29 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier29, Reflection.getOrCreateKotlinClass(CreateWalletPasswordPresenter.class), null, c138629, kind, emptyList29));
         module.indexPrimaryType(factoryInstanceFactory29);
         new Pair(module, factoryInstanceFactory29);
-        C138330 c138330 = C138330.INSTANCE;
+        C138830 c138830 = C138830.INSTANCE;
         StringQualifier rootScopeQualifier30 = companion.getRootScopeQualifier();
         emptyList30 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory30 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier30, Reflection.getOrCreateKotlinClass(EnterWalletPasswordPresenter.class), null, c138330, kind, emptyList30));
+        FactoryInstanceFactory factoryInstanceFactory30 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier30, Reflection.getOrCreateKotlinClass(CreateWalletPinPresenter.class), null, c138830, kind, emptyList30));
         module.indexPrimaryType(factoryInstanceFactory30);
         new Pair(module, factoryInstanceFactory30);
-        C138431 c138431 = C138431.INSTANCE;
+        C138931 c138931 = C138931.INSTANCE;
         StringQualifier rootScopeQualifier31 = companion.getRootScopeQualifier();
         emptyList31 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory31 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier31, Reflection.getOrCreateKotlinClass(WalletBinancePayHistoryPresenter.class), null, c138431, kind, emptyList31));
+        FactoryInstanceFactory factoryInstanceFactory31 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier31, Reflection.getOrCreateKotlinClass(WalletPrivacySettingPresenter.class), null, c138931, kind, emptyList31));
         module.indexPrimaryType(factoryInstanceFactory31);
         new Pair(module, factoryInstanceFactory31);
-        C138532 c138532 = C138532.INSTANCE;
+        C139032 c139032 = C139032.INSTANCE;
         StringQualifier rootScopeQualifier32 = companion.getRootScopeQualifier();
         emptyList32 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory32 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier32, Reflection.getOrCreateKotlinClass(WalletHomeBinancePayPresenter.class), null, c138532, kind, emptyList32));
+        FactoryInstanceFactory factoryInstanceFactory32 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier32, Reflection.getOrCreateKotlinClass(EnterWalletPinPresenter.class), null, c139032, kind, emptyList32));
         module.indexPrimaryType(factoryInstanceFactory32);
         new Pair(module, factoryInstanceFactory32);
-        C138633 c138633 = C138633.INSTANCE;
+        C139133 c139133 = C139133.INSTANCE;
         StringQualifier rootScopeQualifier33 = companion.getRootScopeQualifier();
         emptyList33 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory33 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier33, Reflection.getOrCreateKotlinClass(WalletReceiveBinancePayPresenter.class), null, c138633, kind, emptyList33));
+        FactoryInstanceFactory factoryInstanceFactory33 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier33, Reflection.getOrCreateKotlinClass(EnterWalletPasswordPresenter.class), null, c139133, kind, emptyList33));
         module.indexPrimaryType(factoryInstanceFactory33);
         new Pair(module, factoryInstanceFactory33);
-        C138734 c138734 = C138734.INSTANCE;
+        C139234 c139234 = C139234.INSTANCE;
         StringQualifier rootScopeQualifier34 = companion.getRootScopeQualifier();
         emptyList34 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory34 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier34, Reflection.getOrCreateKotlinClass(CreateWalletPresenter.class), null, c138734, kind, emptyList34));
+        FactoryInstanceFactory factoryInstanceFactory34 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier34, Reflection.getOrCreateKotlinClass(WalletBinancePayHistoryPresenter.class), null, c139234, kind, emptyList34));
         module.indexPrimaryType(factoryInstanceFactory34);
         new Pair(module, factoryInstanceFactory34);
-        C138835 c138835 = C138835.INSTANCE;
+        C139335 c139335 = C139335.INSTANCE;
         StringQualifier rootScopeQualifier35 = companion.getRootScopeQualifier();
         emptyList35 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory35 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier35, Reflection.getOrCreateKotlinClass(SecretWordsCountPresenter.class), null, c138835, kind, emptyList35));
+        FactoryInstanceFactory factoryInstanceFactory35 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier35, Reflection.getOrCreateKotlinClass(WalletHomeBinancePayPresenter.class), null, c139335, kind, emptyList35));
         module.indexPrimaryType(factoryInstanceFactory35);
         new Pair(module, factoryInstanceFactory35);
-        C138936 c138936 = C138936.INSTANCE;
+        C139436 c139436 = C139436.INSTANCE;
         StringQualifier rootScopeQualifier36 = companion.getRootScopeQualifier();
         emptyList36 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory36 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier36, Reflection.getOrCreateKotlinClass(WalletAccountSettingsPresenter.class), null, c138936, kind, emptyList36));
+        FactoryInstanceFactory factoryInstanceFactory36 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier36, Reflection.getOrCreateKotlinClass(WalletReceiveBinancePayPresenter.class), null, c139436, kind, emptyList36));
         module.indexPrimaryType(factoryInstanceFactory36);
         new Pair(module, factoryInstanceFactory36);
-        C139037 c139037 = C139037.INSTANCE;
+        C139537 c139537 = C139537.INSTANCE;
         StringQualifier rootScopeQualifier37 = companion.getRootScopeQualifier();
         emptyList37 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory37 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier37, Reflection.getOrCreateKotlinClass(BlockchainsManagementPresenter.class), null, c139037, kind, emptyList37));
+        FactoryInstanceFactory factoryInstanceFactory37 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier37, Reflection.getOrCreateKotlinClass(CreateWalletPresenter.class), null, c139537, kind, emptyList37));
         module.indexPrimaryType(factoryInstanceFactory37);
         new Pair(module, factoryInstanceFactory37);
-        C139138 c139138 = C139138.INSTANCE;
+        C139638 c139638 = C139638.INSTANCE;
         StringQualifier rootScopeQualifier38 = companion.getRootScopeQualifier();
         emptyList38 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory38 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier38, Reflection.getOrCreateKotlinClass(BlockchainWalletDetailsPresenter.class), null, c139138, kind, emptyList38));
+        FactoryInstanceFactory factoryInstanceFactory38 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier38, Reflection.getOrCreateKotlinClass(SecretWordsCountPresenter.class), null, c139638, kind, emptyList38));
         module.indexPrimaryType(factoryInstanceFactory38);
         new Pair(module, factoryInstanceFactory38);
-        C139239 c139239 = C139239.INSTANCE;
+        C139739 c139739 = C139739.INSTANCE;
         StringQualifier rootScopeQualifier39 = companion.getRootScopeQualifier();
         emptyList39 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory39 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier39, Reflection.getOrCreateKotlinClass(BackupWordSwitcherPresenter.class), null, c139239, kind, emptyList39));
+        FactoryInstanceFactory factoryInstanceFactory39 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier39, Reflection.getOrCreateKotlinClass(WalletAccountSettingsPresenter.class), null, c139739, kind, emptyList39));
         module.indexPrimaryType(factoryInstanceFactory39);
         new Pair(module, factoryInstanceFactory39);
-        C139440 c139440 = C139440.INSTANCE;
+        C139940 c139940 = C139940.INSTANCE;
         StringQualifier rootScopeQualifier40 = companion.getRootScopeQualifier();
         emptyList40 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory40 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier40, Reflection.getOrCreateKotlinClass(AddressMismatchPresenter.class), null, c139440, kind, emptyList40));
+        FactoryInstanceFactory factoryInstanceFactory40 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier40, Reflection.getOrCreateKotlinClass(BlockchainsManagementPresenter.class), null, c139940, kind, emptyList40));
         module.indexPrimaryType(factoryInstanceFactory40);
         new Pair(module, factoryInstanceFactory40);
-        C139541 c139541 = C139541.INSTANCE;
+        C140041 c140041 = C140041.INSTANCE;
         StringQualifier rootScopeQualifier41 = companion.getRootScopeQualifier();
         emptyList41 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory41 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier41, Reflection.getOrCreateKotlinClass(WalletSwapProtocolsPresenter.class), null, c139541, kind, emptyList41));
+        FactoryInstanceFactory factoryInstanceFactory41 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier41, Reflection.getOrCreateKotlinClass(BlockchainWalletDetailsPresenter.class), null, c140041, kind, emptyList41));
         module.indexPrimaryType(factoryInstanceFactory41);
         new Pair(module, factoryInstanceFactory41);
-        C139642 c139642 = C139642.INSTANCE;
+        C140142 c140142 = C140142.INSTANCE;
         StringQualifier rootScopeQualifier42 = companion.getRootScopeQualifier();
         emptyList42 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory42 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier42, Reflection.getOrCreateKotlinClass(WalletSwapProcessPresenter.class), null, c139642, kind, emptyList42));
+        FactoryInstanceFactory factoryInstanceFactory42 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier42, Reflection.getOrCreateKotlinClass(BackupWordSwitcherPresenter.class), null, c140142, kind, emptyList42));
         module.indexPrimaryType(factoryInstanceFactory42);
         new Pair(module, factoryInstanceFactory42);
-        C139743 c139743 = C139743.INSTANCE;
+        C140243 c140243 = C140243.INSTANCE;
         StringQualifier rootScopeQualifier43 = companion.getRootScopeQualifier();
         emptyList43 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory43 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier43, Reflection.getOrCreateKotlinClass(WalletSelectTokenPresenter.class), null, c139743, kind, emptyList43));
+        FactoryInstanceFactory factoryInstanceFactory43 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier43, Reflection.getOrCreateKotlinClass(AddressMismatchPresenter.class), null, c140243, kind, emptyList43));
         module.indexPrimaryType(factoryInstanceFactory43);
         new Pair(module, factoryInstanceFactory43);
-        C139844 c139844 = C139844.INSTANCE;
+        C140344 c140344 = C140344.INSTANCE;
         StringQualifier rootScopeQualifier44 = companion.getRootScopeQualifier();
         emptyList44 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory44 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier44, Reflection.getOrCreateKotlinClass(WalletSwapFeePresenter.class), null, c139844, kind, emptyList44));
+        FactoryInstanceFactory factoryInstanceFactory44 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier44, Reflection.getOrCreateKotlinClass(WalletSwapProtocolsPresenter.class), null, c140344, kind, emptyList44));
         module.indexPrimaryType(factoryInstanceFactory44);
         new Pair(module, factoryInstanceFactory44);
-        C139945 c139945 = C139945.INSTANCE;
+        C140445 c140445 = C140445.INSTANCE;
         StringQualifier rootScopeQualifier45 = companion.getRootScopeQualifier();
         emptyList45 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory45 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier45, Reflection.getOrCreateKotlinClass(SimplexWebViewProcessingPresenter.class), null, c139945, kind, emptyList45));
+        FactoryInstanceFactory factoryInstanceFactory45 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier45, Reflection.getOrCreateKotlinClass(WalletSwapProcessPresenter.class), null, c140445, kind, emptyList45));
         module.indexPrimaryType(factoryInstanceFactory45);
         new Pair(module, factoryInstanceFactory45);
-        C140046 c140046 = C140046.INSTANCE;
+        C140546 c140546 = C140546.INSTANCE;
         StringQualifier rootScopeQualifier46 = companion.getRootScopeQualifier();
         emptyList46 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory46 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier46, Reflection.getOrCreateKotlinClass(WalletAppearanceSettingsPresenter.class), null, c140046, kind, emptyList46));
+        FactoryInstanceFactory factoryInstanceFactory46 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier46, Reflection.getOrCreateKotlinClass(WalletSelectTokenPresenter.class), null, c140546, kind, emptyList46));
         module.indexPrimaryType(factoryInstanceFactory46);
         new Pair(module, factoryInstanceFactory46);
-        C140147 c140147 = C140147.INSTANCE;
+        C140647 c140647 = C140647.INSTANCE;
         StringQualifier rootScopeQualifier47 = companion.getRootScopeQualifier();
         emptyList47 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory47 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier47, Reflection.getOrCreateKotlinClass(WalletAirdropPresenter.class), null, c140147, kind, emptyList47));
+        FactoryInstanceFactory factoryInstanceFactory47 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier47, Reflection.getOrCreateKotlinClass(WalletSwapFeePresenter.class), null, c140647, kind, emptyList47));
         module.indexPrimaryType(factoryInstanceFactory47);
         new Pair(module, factoryInstanceFactory47);
-        C140248 c140248 = C140248.INSTANCE;
+        C140748 c140748 = C140748.INSTANCE;
         StringQualifier rootScopeQualifier48 = companion.getRootScopeQualifier();
         emptyList48 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory48 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier48, Reflection.getOrCreateKotlinClass(WalletAirdropDialogPresenter.class), null, c140248, kind, emptyList48));
+        FactoryInstanceFactory factoryInstanceFactory48 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier48, Reflection.getOrCreateKotlinClass(SimplexWebViewProcessingPresenter.class), null, c140748, kind, emptyList48));
         module.indexPrimaryType(factoryInstanceFactory48);
         new Pair(module, factoryInstanceFactory48);
-        C140349 c140349 = C140349.INSTANCE;
+        C140849 c140849 = C140849.INSTANCE;
         StringQualifier rootScopeQualifier49 = companion.getRootScopeQualifier();
         emptyList49 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory49 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier49, Reflection.getOrCreateKotlinClass(DebugPresenter.class), null, c140349, kind, emptyList49));
+        FactoryInstanceFactory factoryInstanceFactory49 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier49, Reflection.getOrCreateKotlinClass(WalletAppearanceSettingsPresenter.class), null, c140849, kind, emptyList49));
         module.indexPrimaryType(factoryInstanceFactory49);
         new Pair(module, factoryInstanceFactory49);
-        C140550 c140550 = C140550.INSTANCE;
+        C141050 c141050 = C141050.INSTANCE;
         StringQualifier rootScopeQualifier50 = companion.getRootScopeQualifier();
         emptyList50 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory50 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier50, Reflection.getOrCreateKotlinClass(WalletConnectPresenter.class), null, c140550, kind, emptyList50));
+        FactoryInstanceFactory factoryInstanceFactory50 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier50, Reflection.getOrCreateKotlinClass(WalletAirdropPresenter.class), null, c141050, kind, emptyList50));
         module.indexPrimaryType(factoryInstanceFactory50);
         new Pair(module, factoryInstanceFactory50);
-        C140651 c140651 = C140651.INSTANCE;
+        C141151 c141151 = C141151.INSTANCE;
         StringQualifier rootScopeQualifier51 = companion.getRootScopeQualifier();
         emptyList51 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory51 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier51, Reflection.getOrCreateKotlinClass(WalletConnectSessionDetailsPresenter.class), null, c140651, kind, emptyList51));
+        FactoryInstanceFactory factoryInstanceFactory51 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier51, Reflection.getOrCreateKotlinClass(WalletAirdropDialogPresenter.class), null, c141151, kind, emptyList51));
         module.indexPrimaryType(factoryInstanceFactory51);
         new Pair(module, factoryInstanceFactory51);
-        C140752 c140752 = C140752.INSTANCE;
+        C141252 c141252 = C141252.INSTANCE;
         StringQualifier rootScopeQualifier52 = companion.getRootScopeQualifier();
         emptyList52 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory52 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier52, Reflection.getOrCreateKotlinClass(WalletConnectNewSessionPresenter.class), null, c140752, kind, emptyList52));
+        FactoryInstanceFactory factoryInstanceFactory52 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier52, Reflection.getOrCreateKotlinClass(DebugPresenter.class), null, c141252, kind, emptyList52));
         module.indexPrimaryType(factoryInstanceFactory52);
         new Pair(module, factoryInstanceFactory52);
-        C140853 c140853 = C140853.INSTANCE;
+        C141353 c141353 = C141353.INSTANCE;
         StringQualifier rootScopeQualifier53 = companion.getRootScopeQualifier();
         emptyList53 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory53 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier53, Reflection.getOrCreateKotlinClass(WalletConnectTransactionPresenter.class), null, c140853, kind, emptyList53));
+        FactoryInstanceFactory factoryInstanceFactory53 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier53, Reflection.getOrCreateKotlinClass(WalletConnectPresenter.class), null, c141353, kind, emptyList53));
         module.indexPrimaryType(factoryInstanceFactory53);
         new Pair(module, factoryInstanceFactory53);
-        C140954 c140954 = C140954.INSTANCE;
+        C141454 c141454 = C141454.INSTANCE;
         StringQualifier rootScopeQualifier54 = companion.getRootScopeQualifier();
         emptyList54 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory54 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier54, Reflection.getOrCreateKotlinClass(WalletConnectMessageSignPresenter.class), null, c140954, kind, emptyList54));
+        FactoryInstanceFactory factoryInstanceFactory54 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier54, Reflection.getOrCreateKotlinClass(WalletConnectSessionDetailsPresenter.class), null, c141454, kind, emptyList54));
         module.indexPrimaryType(factoryInstanceFactory54);
         new Pair(module, factoryInstanceFactory54);
-        C141055 c141055 = C141055.INSTANCE;
+        C141555 c141555 = C141555.INSTANCE;
         StringQualifier rootScopeQualifier55 = companion.getRootScopeQualifier();
         emptyList55 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory55 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier55, Reflection.getOrCreateKotlinClass(WalletConnectSwitchNetworkPresenter.class), null, c141055, kind, emptyList55));
+        FactoryInstanceFactory factoryInstanceFactory55 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier55, Reflection.getOrCreateKotlinClass(WalletConnectNewSessionPresenter.class), null, c141555, kind, emptyList55));
         module.indexPrimaryType(factoryInstanceFactory55);
         new Pair(module, factoryInstanceFactory55);
-        C141156 c141156 = C141156.INSTANCE;
+        C141656 c141656 = C141656.INSTANCE;
         StringQualifier rootScopeQualifier56 = companion.getRootScopeQualifier();
         emptyList56 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory56 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier56, Reflection.getOrCreateKotlinClass(CatalogRootPresenter.class), null, c141156, kind, emptyList56));
+        FactoryInstanceFactory factoryInstanceFactory56 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier56, Reflection.getOrCreateKotlinClass(WalletConnectTransactionPresenter.class), null, c141656, kind, emptyList56));
         module.indexPrimaryType(factoryInstanceFactory56);
         new Pair(module, factoryInstanceFactory56);
-        C141257 c141257 = C141257.INSTANCE;
+        C141757 c141757 = C141757.INSTANCE;
         StringQualifier rootScopeQualifier57 = companion.getRootScopeQualifier();
         emptyList57 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory57 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier57, Reflection.getOrCreateKotlinClass(CatalogPresenter.class), null, c141257, kind, emptyList57));
+        FactoryInstanceFactory factoryInstanceFactory57 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier57, Reflection.getOrCreateKotlinClass(WalletConnectMessageSignPresenter.class), null, c141757, kind, emptyList57));
         module.indexPrimaryType(factoryInstanceFactory57);
         new Pair(module, factoryInstanceFactory57);
-        C141358 c141358 = C141358.INSTANCE;
+        C141858 c141858 = C141858.INSTANCE;
         StringQualifier rootScopeQualifier58 = companion.getRootScopeQualifier();
         emptyList58 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory58 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier58, Reflection.getOrCreateKotlinClass(ChannelDetailsPresenter.class), null, c141358, kind, emptyList58));
+        FactoryInstanceFactory factoryInstanceFactory58 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier58, Reflection.getOrCreateKotlinClass(WalletConnectSwitchNetworkPresenter.class), null, c141858, kind, emptyList58));
         module.indexPrimaryType(factoryInstanceFactory58);
         new Pair(module, factoryInstanceFactory58);
-        C141459 c141459 = C141459.INSTANCE;
+        C141959 c141959 = C141959.INSTANCE;
         StringQualifier rootScopeQualifier59 = companion.getRootScopeQualifier();
         emptyList59 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory59 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier59, Reflection.getOrCreateKotlinClass(CatalogAllPresenter.class), null, c141459, kind, emptyList59));
+        FactoryInstanceFactory factoryInstanceFactory59 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier59, Reflection.getOrCreateKotlinClass(CatalogRootPresenter.class), null, c141959, kind, emptyList59));
         module.indexPrimaryType(factoryInstanceFactory59);
         new Pair(module, factoryInstanceFactory59);
-        C141660 c141660 = C141660.INSTANCE;
+        C142160 c142160 = C142160.INSTANCE;
         StringQualifier rootScopeQualifier60 = companion.getRootScopeQualifier();
         emptyList60 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory60 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier60, Reflection.getOrCreateKotlinClass(CatalogCategoriesPresenter.class), null, c141660, kind, emptyList60));
+        FactoryInstanceFactory factoryInstanceFactory60 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier60, Reflection.getOrCreateKotlinClass(CatalogPresenter.class), null, c142160, kind, emptyList60));
         module.indexPrimaryType(factoryInstanceFactory60);
         new Pair(module, factoryInstanceFactory60);
-        C141761 c141761 = C141761.INSTANCE;
+        C142261 c142261 = C142261.INSTANCE;
         StringQualifier rootScopeQualifier61 = companion.getRootScopeQualifier();
         emptyList61 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory61 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier61, Reflection.getOrCreateKotlinClass(CatalogUserChannelsPresenter.class), null, c141761, kind, emptyList61));
+        FactoryInstanceFactory factoryInstanceFactory61 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier61, Reflection.getOrCreateKotlinClass(ChannelDetailsPresenter.class), null, c142261, kind, emptyList61));
         module.indexPrimaryType(factoryInstanceFactory61);
         new Pair(module, factoryInstanceFactory61);
-        C141862 c141862 = C141862.INSTANCE;
+        C142362 c142362 = C142362.INSTANCE;
         StringQualifier rootScopeQualifier62 = companion.getRootScopeQualifier();
         emptyList62 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory62 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier62, Reflection.getOrCreateKotlinClass(StakingPresenter.class), null, c141862, kind, emptyList62));
+        FactoryInstanceFactory factoryInstanceFactory62 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier62, Reflection.getOrCreateKotlinClass(CatalogAllPresenter.class), null, c142362, kind, emptyList62));
         module.indexPrimaryType(factoryInstanceFactory62);
         new Pair(module, factoryInstanceFactory62);
-        C141963 c141963 = C141963.INSTANCE;
+        C142463 c142463 = C142463.INSTANCE;
         StringQualifier rootScopeQualifier63 = companion.getRootScopeQualifier();
         emptyList63 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory63 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier63, Reflection.getOrCreateKotlinClass(StakingProgrammesPresenter.class), null, c141963, kind, emptyList63));
+        FactoryInstanceFactory factoryInstanceFactory63 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier63, Reflection.getOrCreateKotlinClass(CatalogCategoriesPresenter.class), null, c142463, kind, emptyList63));
         module.indexPrimaryType(factoryInstanceFactory63);
         new Pair(module, factoryInstanceFactory63);
-        C142064 c142064 = C142064.INSTANCE;
+        C142564 c142564 = C142564.INSTANCE;
         StringQualifier rootScopeQualifier64 = companion.getRootScopeQualifier();
         emptyList64 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory64 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier64, Reflection.getOrCreateKotlinClass(StakingConditionsPresenter.class), null, c142064, kind, emptyList64));
+        FactoryInstanceFactory factoryInstanceFactory64 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier64, Reflection.getOrCreateKotlinClass(CatalogUserChannelsPresenter.class), null, c142564, kind, emptyList64));
         module.indexPrimaryType(factoryInstanceFactory64);
         new Pair(module, factoryInstanceFactory64);
-        C142165 c142165 = C142165.INSTANCE;
+        C142665 c142665 = C142665.INSTANCE;
         StringQualifier rootScopeQualifier65 = companion.getRootScopeQualifier();
         emptyList65 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory65 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier65, Reflection.getOrCreateKotlinClass(StakingTransactionPresenter.class), null, c142165, kind, emptyList65));
+        FactoryInstanceFactory factoryInstanceFactory65 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier65, Reflection.getOrCreateKotlinClass(StakingPresenter.class), null, c142665, kind, emptyList65));
         module.indexPrimaryType(factoryInstanceFactory65);
         new Pair(module, factoryInstanceFactory65);
-        C142266 c142266 = C142266.INSTANCE;
+        C142766 c142766 = C142766.INSTANCE;
         StringQualifier rootScopeQualifier66 = companion.getRootScopeQualifier();
         emptyList66 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory66 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier66, Reflection.getOrCreateKotlinClass(StakingOperationsPresenter.class), null, c142266, kind, emptyList66));
+        FactoryInstanceFactory factoryInstanceFactory66 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier66, Reflection.getOrCreateKotlinClass(StakingProgrammesPresenter.class), null, c142766, kind, emptyList66));
         module.indexPrimaryType(factoryInstanceFactory66);
         new Pair(module, factoryInstanceFactory66);
-        C142367 c142367 = C142367.INSTANCE;
+        C142867 c142867 = C142867.INSTANCE;
         StringQualifier rootScopeQualifier67 = companion.getRootScopeQualifier();
         emptyList67 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory67 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier67, Reflection.getOrCreateKotlinClass(StakingCalculatorPresenter.class), null, c142367, kind, emptyList67));
+        FactoryInstanceFactory factoryInstanceFactory67 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier67, Reflection.getOrCreateKotlinClass(StakingConditionsPresenter.class), null, c142867, kind, emptyList67));
         module.indexPrimaryType(factoryInstanceFactory67);
         new Pair(module, factoryInstanceFactory67);
-        C142468 c142468 = C142468.INSTANCE;
+        C142968 c142968 = C142968.INSTANCE;
         StringQualifier rootScopeQualifier68 = companion.getRootScopeQualifier();
         emptyList68 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory68 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier68, Reflection.getOrCreateKotlinClass(StakingCalculatorProgrammesPresenter.class), null, c142468, kind, emptyList68));
+        FactoryInstanceFactory factoryInstanceFactory68 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier68, Reflection.getOrCreateKotlinClass(StakingTransactionPresenter.class), null, c142968, kind, emptyList68));
         module.indexPrimaryType(factoryInstanceFactory68);
         new Pair(module, factoryInstanceFactory68);
+        C143069 c143069 = C143069.INSTANCE;
+        StringQualifier rootScopeQualifier69 = companion.getRootScopeQualifier();
+        emptyList69 = CollectionsKt__CollectionsKt.emptyList();
+        FactoryInstanceFactory factoryInstanceFactory69 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier69, Reflection.getOrCreateKotlinClass(StakingOperationsPresenter.class), null, c143069, kind, emptyList69));
+        module.indexPrimaryType(factoryInstanceFactory69);
+        new Pair(module, factoryInstanceFactory69);
+        C143270 c143270 = C143270.INSTANCE;
+        StringQualifier rootScopeQualifier70 = companion.getRootScopeQualifier();
+        emptyList70 = CollectionsKt__CollectionsKt.emptyList();
+        FactoryInstanceFactory factoryInstanceFactory70 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier70, Reflection.getOrCreateKotlinClass(StakingCalculatorPresenter.class), null, c143270, kind, emptyList70));
+        module.indexPrimaryType(factoryInstanceFactory70);
+        new Pair(module, factoryInstanceFactory70);
+        C143371 c143371 = C143371.INSTANCE;
+        StringQualifier rootScopeQualifier71 = companion.getRootScopeQualifier();
+        emptyList71 = CollectionsKt__CollectionsKt.emptyList();
+        FactoryInstanceFactory factoryInstanceFactory71 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier71, Reflection.getOrCreateKotlinClass(StakingCalculatorProgrammesPresenter.class), null, c143371, kind, emptyList71));
+        module.indexPrimaryType(factoryInstanceFactory71);
+        new Pair(module, factoryInstanceFactory71);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$15 */
     /* loaded from: classes3.dex */
-    public static final class C136615 extends Lambda implements Function2<Scope, ParametersHolder, WalletNotificationsPresenter> {
-        public static final C136615 INSTANCE = new C136615();
+    public static final class C137115 extends Lambda implements Function2<Scope, ParametersHolder, WalletNotificationsPresenter> {
+        public static final C137115 INSTANCE = new C137115();
 
-        C136615() {
+        C137115() {
             super(2);
         }
 
@@ -1500,10 +1567,10 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C13712 extends Lambda implements Function2<Scope, ParametersHolder, WalletAttachAlertPresenter> {
-        public static final C13712 INSTANCE = new C13712();
+    public static final class C13762 extends Lambda implements Function2<Scope, ParametersHolder, WalletAttachAlertPresenter> {
+        public static final C13762 INSTANCE = new C13762();
 
-        C13712() {
+        C13762() {
             super(2);
         }
 
@@ -1519,12 +1586,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$30 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$33 */
     /* loaded from: classes3.dex */
-    public static final class C138330 extends Lambda implements Function2<Scope, ParametersHolder, EnterWalletPasswordPresenter> {
-        public static final C138330 INSTANCE = new C138330();
+    public static final class C139133 extends Lambda implements Function2<Scope, ParametersHolder, EnterWalletPasswordPresenter> {
+        public static final C139133 INSTANCE = new C139133();
 
-        C138330() {
+        C139133() {
             super(2);
         }
 
@@ -1540,12 +1607,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$40 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$43 */
     /* loaded from: classes3.dex */
-    public static final class C139440 extends Lambda implements Function2<Scope, ParametersHolder, AddressMismatchPresenter> {
-        public static final C139440 INSTANCE = new C139440();
+    public static final class C140243 extends Lambda implements Function2<Scope, ParametersHolder, AddressMismatchPresenter> {
+        public static final C140243 INSTANCE = new C140243();
 
-        C139440() {
+        C140243() {
             super(2);
         }
 
@@ -1559,12 +1626,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$41 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$44 */
     /* loaded from: classes3.dex */
-    public static final class C139541 extends Lambda implements Function2<Scope, ParametersHolder, WalletSwapProtocolsPresenter> {
-        public static final C139541 INSTANCE = new C139541();
+    public static final class C140344 extends Lambda implements Function2<Scope, ParametersHolder, WalletSwapProtocolsPresenter> {
+        public static final C140344 INSTANCE = new C140344();
 
-        C139541() {
+        C140344() {
             super(2);
         }
 
@@ -1578,12 +1645,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$47 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$50 */
     /* loaded from: classes3.dex */
-    public static final class C140147 extends Lambda implements Function2<Scope, ParametersHolder, WalletAirdropPresenter> {
-        public static final C140147 INSTANCE = new C140147();
+    public static final class C141050 extends Lambda implements Function2<Scope, ParametersHolder, WalletAirdropPresenter> {
+        public static final C141050 INSTANCE = new C141050();
 
-        C140147() {
+        C141050() {
             super(2);
         }
 
@@ -1600,12 +1667,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$48 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$51 */
     /* loaded from: classes3.dex */
-    public static final class C140248 extends Lambda implements Function2<Scope, ParametersHolder, WalletAirdropDialogPresenter> {
-        public static final C140248 INSTANCE = new C140248();
+    public static final class C141151 extends Lambda implements Function2<Scope, ParametersHolder, WalletAirdropDialogPresenter> {
+        public static final C141151 INSTANCE = new C141151();
 
-        C140248() {
+        C141151() {
             super(2);
         }
 
@@ -1621,12 +1688,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$49 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$52 */
     /* loaded from: classes3.dex */
-    public static final class C140349 extends Lambda implements Function2<Scope, ParametersHolder, DebugPresenter> {
-        public static final C140349 INSTANCE = new C140349();
+    public static final class C141252 extends Lambda implements Function2<Scope, ParametersHolder, DebugPresenter> {
+        public static final C141252 INSTANCE = new C141252();
 
-        C140349() {
+        C141252() {
             super(2);
         }
 
@@ -1640,12 +1707,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$62 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$65 */
     /* loaded from: classes3.dex */
-    public static final class C141862 extends Lambda implements Function2<Scope, ParametersHolder, StakingPresenter> {
-        public static final C141862 INSTANCE = new C141862();
+    public static final class C142665 extends Lambda implements Function2<Scope, ParametersHolder, StakingPresenter> {
+        public static final C142665 INSTANCE = new C142665();
 
-        C141862() {
+        C142665() {
             super(2);
         }
 
@@ -1661,10 +1728,10 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$7 */
     /* loaded from: classes3.dex */
-    public static final class C14257 extends Lambda implements Function2<Scope, ParametersHolder, WalletRootPresenter> {
-        public static final C14257 INSTANCE = new C14257();
+    public static final class C14317 extends Lambda implements Function2<Scope, ParametersHolder, WalletRootPresenter> {
+        public static final C14317 INSTANCE = new C14317();
 
-        C14257() {
+        C14317() {
             super(2);
         }
 
@@ -1680,10 +1747,10 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$8 */
     /* loaded from: classes3.dex */
-    public static final class C14268 extends Lambda implements Function2<Scope, ParametersHolder, WalletSettingsPresenter> {
-        public static final C14268 INSTANCE = new C14268();
+    public static final class C14348 extends Lambda implements Function2<Scope, ParametersHolder, WalletSettingsPresenter> {
+        public static final C14348 INSTANCE = new C14348();
 
-        C14268() {
+        C14348() {
             super(2);
         }
 
@@ -1699,10 +1766,10 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$9 */
     /* loaded from: classes3.dex */
-    public static final class C14279 extends Lambda implements Function2<Scope, ParametersHolder, PhotoViewerPresenter> {
-        public static final C14279 INSTANCE = new C14279();
+    public static final class C14359 extends Lambda implements Function2<Scope, ParametersHolder, PhotoViewerPresenter> {
+        public static final C14359 INSTANCE = new C14359();
 
-        C14279() {
+        C14359() {
             super(2);
         }
 
@@ -1718,10 +1785,10 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$10 */
     /* loaded from: classes3.dex */
-    public static final class C136110 extends Lambda implements Function2<Scope, ParametersHolder, WalletHomePresenter> {
-        public static final C136110 INSTANCE = new C136110();
+    public static final class C136610 extends Lambda implements Function2<Scope, ParametersHolder, WalletHomePresenter> {
+        public static final C136610 INSTANCE = new C136610();
 
-        C136110() {
+        C136610() {
             super(2);
         }
 
@@ -1737,10 +1804,10 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$11 */
     /* loaded from: classes3.dex */
-    public static final class C136211 extends Lambda implements Function2<Scope, ParametersHolder, WalletHomeCryptoPresenter> {
-        public static final C136211 INSTANCE = new C136211();
+    public static final class C136711 extends Lambda implements Function2<Scope, ParametersHolder, WalletHomeCryptoPresenter> {
+        public static final C136711 INSTANCE = new C136711();
 
-        C136211() {
+        C136711() {
             super(2);
         }
 
@@ -1756,10 +1823,10 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$13 */
     /* loaded from: classes3.dex */
-    public static final class C136413 extends Lambda implements Function2<Scope, ParametersHolder, WalletHomeServicesPresenter> {
-        public static final C136413 INSTANCE = new C136413();
+    public static final class C136913 extends Lambda implements Function2<Scope, ParametersHolder, WalletHomeServicesPresenter> {
+        public static final C136913 INSTANCE = new C136913();
 
-        C136413() {
+        C136913() {
             super(2);
         }
 
@@ -1775,10 +1842,10 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$20 */
     /* loaded from: classes3.dex */
-    public static final class C137220 extends Lambda implements Function2<Scope, ParametersHolder, ContactsPresenter> {
-        public static final C137220 INSTANCE = new C137220();
+    public static final class C137720 extends Lambda implements Function2<Scope, ParametersHolder, ContactsPresenter> {
+        public static final C137720 INSTANCE = new C137720();
 
-        C137220() {
+        C137720() {
             super(2);
         }
 
@@ -1794,10 +1861,10 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
     /* compiled from: PresenterModule.kt */
     /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$22 */
     /* loaded from: classes3.dex */
-    public static final class C137422 extends Lambda implements Function2<Scope, ParametersHolder, EmojiViewPresenter> {
-        public static final C137422 INSTANCE = new C137422();
+    public static final class C137922 extends Lambda implements Function2<Scope, ParametersHolder, EmojiViewPresenter> {
+        public static final C137922 INSTANCE = new C137922();
 
-        C137422() {
+        C137922() {
             super(2);
         }
 
@@ -1811,12 +1878,31 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$26 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$25 */
     /* loaded from: classes3.dex */
-    public static final class C137826 extends Lambda implements Function2<Scope, ParametersHolder, CreateWalletPasswordPresenter> {
-        public static final C137826 INSTANCE = new C137826();
+    public static final class C138225 extends Lambda implements Function2<Scope, ParametersHolder, TwitterAuthPresenter> {
+        public static final C138225 INSTANCE = new C138225();
 
-        C137826() {
+        C138225() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final TwitterAuthPresenter invoke(Scope factory, ParametersHolder it) {
+            Intrinsics.checkNotNullParameter(factory, "$this$factory");
+            Intrinsics.checkNotNullParameter(it, "it");
+            return new TwitterAuthPresenter((ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: PresenterModule.kt */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$29 */
+    /* loaded from: classes3.dex */
+    public static final class C138629 extends Lambda implements Function2<Scope, ParametersHolder, CreateWalletPasswordPresenter> {
+        public static final C138629 INSTANCE = new C138629();
+
+        C138629() {
             super(2);
         }
 
@@ -1830,12 +1916,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$35 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$38 */
     /* loaded from: classes3.dex */
-    public static final class C138835 extends Lambda implements Function2<Scope, ParametersHolder, SecretWordsCountPresenter> {
-        public static final C138835 INSTANCE = new C138835();
+    public static final class C139638 extends Lambda implements Function2<Scope, ParametersHolder, SecretWordsCountPresenter> {
+        public static final C139638 INSTANCE = new C139638();
 
-        C138835() {
+        C139638() {
             super(2);
         }
 
@@ -1849,12 +1935,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$36 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$39 */
     /* loaded from: classes3.dex */
-    public static final class C138936 extends Lambda implements Function2<Scope, ParametersHolder, WalletAccountSettingsPresenter> {
-        public static final C138936 INSTANCE = new C138936();
+    public static final class C139739 extends Lambda implements Function2<Scope, ParametersHolder, WalletAccountSettingsPresenter> {
+        public static final C139739 INSTANCE = new C139739();
 
-        C138936() {
+        C139739() {
             super(2);
         }
 
@@ -1868,12 +1954,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$37 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$40 */
     /* loaded from: classes3.dex */
-    public static final class C139037 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainsManagementPresenter> {
-        public static final C139037 INSTANCE = new C139037();
+    public static final class C139940 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainsManagementPresenter> {
+        public static final C139940 INSTANCE = new C139940();
 
-        C139037() {
+        C139940() {
             super(2);
         }
 
@@ -1887,12 +1973,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$39 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$42 */
     /* loaded from: classes3.dex */
-    public static final class C139239 extends Lambda implements Function2<Scope, ParametersHolder, BackupWordSwitcherPresenter> {
-        public static final C139239 INSTANCE = new C139239();
+    public static final class C140142 extends Lambda implements Function2<Scope, ParametersHolder, BackupWordSwitcherPresenter> {
+        public static final C140142 INSTANCE = new C140142();
 
-        C139239() {
+        C140142() {
             super(2);
         }
 
@@ -1906,12 +1992,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$45 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$48 */
     /* loaded from: classes3.dex */
-    public static final class C139945 extends Lambda implements Function2<Scope, ParametersHolder, SimplexWebViewProcessingPresenter> {
-        public static final C139945 INSTANCE = new C139945();
+    public static final class C140748 extends Lambda implements Function2<Scope, ParametersHolder, SimplexWebViewProcessingPresenter> {
+        public static final C140748 INSTANCE = new C140748();
 
-        C139945() {
+        C140748() {
             super(2);
         }
 
@@ -1925,12 +2011,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$46 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$49 */
     /* loaded from: classes3.dex */
-    public static final class C140046 extends Lambda implements Function2<Scope, ParametersHolder, WalletAppearanceSettingsPresenter> {
-        public static final C140046 INSTANCE = new C140046();
+    public static final class C140849 extends Lambda implements Function2<Scope, ParametersHolder, WalletAppearanceSettingsPresenter> {
+        public static final C140849 INSTANCE = new C140849();
 
-        C140046() {
+        C140849() {
             super(2);
         }
 
@@ -1944,12 +2030,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$50 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$53 */
     /* loaded from: classes3.dex */
-    public static final class C140550 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectPresenter> {
-        public static final C140550 INSTANCE = new C140550();
+    public static final class C141353 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectPresenter> {
+        public static final C141353 INSTANCE = new C141353();
 
-        C140550() {
+        C141353() {
             super(2);
         }
 
@@ -1963,12 +2049,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$56 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$59 */
     /* loaded from: classes3.dex */
-    public static final class C141156 extends Lambda implements Function2<Scope, ParametersHolder, CatalogRootPresenter> {
-        public static final C141156 INSTANCE = new C141156();
+    public static final class C141959 extends Lambda implements Function2<Scope, ParametersHolder, CatalogRootPresenter> {
+        public static final C141959 INSTANCE = new C141959();
 
-        C141156() {
+        C141959() {
             super(2);
         }
 
@@ -1982,12 +2068,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$57 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$60 */
     /* loaded from: classes3.dex */
-    public static final class C141257 extends Lambda implements Function2<Scope, ParametersHolder, CatalogPresenter> {
-        public static final C141257 INSTANCE = new C141257();
+    public static final class C142160 extends Lambda implements Function2<Scope, ParametersHolder, CatalogPresenter> {
+        public static final C142160 INSTANCE = new C142160();
 
-        C141257() {
+        C142160() {
             super(2);
         }
 
@@ -2001,12 +2087,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$66 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$69 */
     /* loaded from: classes3.dex */
-    public static final class C142266 extends Lambda implements Function2<Scope, ParametersHolder, StakingOperationsPresenter> {
-        public static final C142266 INSTANCE = new C142266();
+    public static final class C143069 extends Lambda implements Function2<Scope, ParametersHolder, StakingOperationsPresenter> {
+        public static final C143069 INSTANCE = new C143069();
 
-        C142266() {
+        C143069() {
             super(2);
         }
 
@@ -2020,12 +2106,12 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PresenterModule.kt */
-    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$68 */
+    /* renamed from: com.smedialink.di.module.PresenterModuleKt$presentationPresenterModule$1$71 */
     /* loaded from: classes3.dex */
-    public static final class C142468 extends Lambda implements Function2<Scope, ParametersHolder, StakingCalculatorProgrammesPresenter> {
-        public static final C142468 INSTANCE = new C142468();
+    public static final class C143371 extends Lambda implements Function2<Scope, ParametersHolder, StakingCalculatorProgrammesPresenter> {
+        public static final C143371 INSTANCE = new C143371();
 
-        C142468() {
+        C143371() {
             super(2);
         }
 

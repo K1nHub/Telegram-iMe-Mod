@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCreateActivity;)V
     .locals 0
 
-    .line 637
+    .line 641
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$7;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 3
 
-    .line 650
+    .line 654
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$7;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$000(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -51,7 +51,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 651
+    .line 655
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$7;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$2200(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;
@@ -68,17 +68,17 @@
 
     if-nez p1, :cond_0
 
-    .line 652
+    .line 656
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$7;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/GroupCreateActivity;->access$2402(Lorg/telegram/ui/GroupCreateActivity;Z)Z
 
-    .line 653
+    .line 657
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$7;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/GroupCreateActivity;->access$2502(Lorg/telegram/ui/GroupCreateActivity;Z)Z
 
-    .line 654
+    .line 658
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$7;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$2200(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;
@@ -87,7 +87,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;->setSearching(Z)V
 
-    .line 655
+    .line 659
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$7;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$2600(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/GroupCreateDividerItemDecoration;
@@ -96,7 +96,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/GroupCreateDividerItemDecoration;->setSearching(Z)V
 
-    .line 656
+    .line 660
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$7;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$700(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -105,7 +105,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setFastScrollVisible(Z)V
 
-    .line 657
+    .line 661
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$7;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$700(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -114,7 +114,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 659
+    .line 663
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$7;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
@@ -138,7 +138,7 @@
 
     invoke-virtual {p1, v2}, Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;->searchDialogs(Ljava/lang/String;)V
 
-    .line 660
+    .line 664
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$7;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$1600(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
@@ -149,7 +149,7 @@
 
     goto :goto_0
 
-    .line 662
+    .line 666
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$7;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 

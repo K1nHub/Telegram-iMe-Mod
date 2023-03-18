@@ -236,48 +236,36 @@
 
     move v8, v4
 
-    goto :goto_5
+    goto :goto_1
 
     :cond_0
-    if-nez v0, :cond_1
-
-    :goto_1
-    move-object v1, v2
-
-    goto :goto_2
+    if-eqz v0, :cond_1
 
     .line 39
-    :cond_1
     invoke-virtual {v0}, Lcom/smedialink/bots/data/model/database/BotsDbModel;->getId()Ljava/lang/String;
 
     move-result-object v1
 
     if-nez v1, :cond_2
 
-    goto :goto_1
+    :cond_1
+    move-object v1, v2
 
     :cond_2
-    :goto_2
-    if-nez v0, :cond_3
-
-    :goto_3
-    move-object v3, v2
-
-    goto :goto_4
+    if-eqz v0, :cond_3
 
     .line 40
-    :cond_3
     invoke-virtual {v0}, Lcom/smedialink/bots/data/model/database/BotsDbModel;->getTitle()Ljava/lang/String;
 
     move-result-object v3
 
     if-nez v3, :cond_4
 
-    goto :goto_3
+    :cond_3
+    move-object v3, v2
 
     .line 41
     :cond_4
-    :goto_4
     iget-object v4, p0, Lcom/smedialink/bots/data/mapper/ResponseMapper;->holidays:Ljava/util/Map;
 
     invoke-virtual {p1}, Lcom/smedialink/bots/data/model/Response;->getTag()Ljava/lang/String;
@@ -290,45 +278,45 @@
 
     check-cast v4, Ljava/lang/Integer;
 
-    if-nez v4, :cond_5
+    if-eqz v4, :cond_5
 
-    const/4 v4, 0x0
-
-    goto :goto_0
-
-    :cond_5
     invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
 
     goto :goto_0
 
+    :cond_5
+    const/4 v4, 0x0
+
+    goto :goto_0
+
     .line 44
-    :goto_5
+    :goto_1
     new-instance v1, Lcom/smedialink/bots/domain/model/SmartBotResponse;
 
-    if-nez v0, :cond_6
-
-    :goto_6
-    move-object v9, v2
-
-    goto :goto_7
+    if-eqz v0, :cond_7
 
     .line 48
-    :cond_6
     invoke-virtual {v0}, Lcom/smedialink/bots/data/model/database/BotsDbModel;->getAvatarOriginal()Ljava/lang/String;
 
     move-result-object v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_6
 
-    goto :goto_6
+    goto :goto_2
 
-    :cond_7
+    :cond_6
     move-object v9, v0
 
+    goto :goto_3
+
+    :cond_7
+    :goto_2
+    move-object v9, v2
+
     .line 49
-    :goto_7
+    :goto_3
     invoke-virtual {p1}, Lcom/smedialink/bots/data/model/Response;->getTag()Ljava/lang/String;
 
     move-result-object v10

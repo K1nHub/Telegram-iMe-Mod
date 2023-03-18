@@ -155,12 +155,12 @@
     :goto_0
     return-object p1
 
-    .line 61
     :cond_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "Unsupported token transaction for cancel"
 
+    .line 61
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -208,7 +208,11 @@
 
     invoke-direct {v1, p0, p1, p2}, Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;-><init>(Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, v1}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 

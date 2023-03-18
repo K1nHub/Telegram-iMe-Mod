@@ -152,7 +152,7 @@ public final class BitMatrix implements Cloneable {
     }
 
     /* renamed from: clone */
-    public BitMatrix m1142clone() {
+    public BitMatrix m1124clone() {
         return new BitMatrix(this.width, this.height, this.rowSize, (int[]) this.bits.clone());
     }
 }

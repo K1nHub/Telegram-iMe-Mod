@@ -66,25 +66,25 @@ public class Sign {
         if (i == -1) {
             throw new RuntimeException("Could not construct a recoverable key. Are your credentials valid?");
         }
-        return new SignatureData(new byte[]{(byte) (i + 27)}, Numeric.toBytesPadded(sign.f1823r, 32), Numeric.toBytesPadded(sign.f1824s, 32));
+        return new SignatureData(new byte[]{(byte) (i + 27)}, Numeric.toBytesPadded(sign.f1834r, 32), Numeric.toBytesPadded(sign.f1835s, 32));
     }
 
     public static BigInteger recoverFromSignature(int i, ECDSASignature eCDSASignature, byte[] bArr) {
         Assertions.verifyPrecondition(i >= 0, "recId must be positive");
-        Assertions.verifyPrecondition(eCDSASignature.f1823r.signum() >= 0, "r must be positive");
-        Assertions.verifyPrecondition(eCDSASignature.f1824s.signum() >= 0, "s must be positive");
+        Assertions.verifyPrecondition(eCDSASignature.f1834r.signum() >= 0, "r must be positive");
+        Assertions.verifyPrecondition(eCDSASignature.f1835s.signum() >= 0, "s must be positive");
         Assertions.verifyPrecondition(bArr != null, "message cannot be null");
         ECDomainParameters eCDomainParameters = CURVE;
         BigInteger n = eCDomainParameters.getN();
-        BigInteger add = eCDSASignature.f1823r.add(BigInteger.valueOf(i / 2).multiply(n));
-        if (add.compareTo(SecP256K1Curve.f1347q) >= 0) {
+        BigInteger add = eCDSASignature.f1834r.add(BigInteger.valueOf(i / 2).multiply(n));
+        if (add.compareTo(SecP256K1Curve.f1352q) >= 0) {
             return null;
         }
         ECPoint decompressKey = decompressKey(add, (i & 1) == 1);
         if (decompressKey.multiply(n).isInfinity()) {
             BigInteger mod = BigInteger.ZERO.subtract(new BigInteger(1, bArr)).mod(n);
-            BigInteger modInverse = eCDSASignature.f1823r.modInverse(n);
-            byte[] encoded = ECAlgorithms.sumOfTwoMultiplies(eCDomainParameters.getG(), modInverse.multiply(mod).mod(n), decompressKey, modInverse.multiply(eCDSASignature.f1824s).mod(n)).getEncoded(false);
+            BigInteger modInverse = eCDSASignature.f1834r.modInverse(n);
+            byte[] encoded = ECAlgorithms.sumOfTwoMultiplies(eCDomainParameters.getG(), modInverse.multiply(mod).mod(n), decompressKey, modInverse.multiply(eCDSASignature.f1835s).mod(n)).getEncoded(false);
             return new BigInteger(1, Arrays.copyOfRange(encoded, 1, encoded.length));
         }
         return null;
@@ -120,30 +120,30 @@ public class Sign {
     public static class SignatureData {
 
         /* renamed from: r */
-        private final byte[] f1826r;
+        private final byte[] f1837r;
 
         /* renamed from: s */
-        private final byte[] f1827s;
+        private final byte[] f1838s;
 
         /* renamed from: v */
-        private final byte[] f1828v;
+        private final byte[] f1839v;
 
         public SignatureData(byte[] bArr, byte[] bArr2, byte[] bArr3) {
-            this.f1828v = bArr;
-            this.f1826r = bArr2;
-            this.f1827s = bArr3;
+            this.f1839v = bArr;
+            this.f1837r = bArr2;
+            this.f1838s = bArr3;
         }
 
         public byte[] getV() {
-            return this.f1828v;
+            return this.f1839v;
         }
 
         public byte[] getR() {
-            return this.f1826r;
+            return this.f1837r;
         }
 
         public byte[] getS() {
-            return this.f1827s;
+            return this.f1838s;
         }
 
         public boolean equals(Object obj) {
@@ -154,14 +154,14 @@ public class Sign {
                 return false;
             }
             SignatureData signatureData = (SignatureData) obj;
-            if (Arrays.equals(this.f1828v, signatureData.f1828v) && Arrays.equals(this.f1826r, signatureData.f1826r)) {
-                return Arrays.equals(this.f1827s, signatureData.f1827s);
+            if (Arrays.equals(this.f1839v, signatureData.f1839v) && Arrays.equals(this.f1837r, signatureData.f1837r)) {
+                return Arrays.equals(this.f1838s, signatureData.f1838s);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((Arrays.hashCode(this.f1828v) * 31) + Arrays.hashCode(this.f1826r)) * 31) + Arrays.hashCode(this.f1827s);
+            return (((Arrays.hashCode(this.f1839v) * 31) + Arrays.hashCode(this.f1837r)) * 31) + Arrays.hashCode(this.f1838s);
         }
     }
 }

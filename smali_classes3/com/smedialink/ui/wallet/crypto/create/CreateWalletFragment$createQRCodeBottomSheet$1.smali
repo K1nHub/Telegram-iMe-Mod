@@ -30,7 +30,7 @@
 
     move-object v4, p3
 
-    .line 637
+    .line 638
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/QRCodeBottomSheet;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     return-void
@@ -41,7 +41,7 @@
 .method public getCustomQrCenterImageRes()I
     .locals 1
 
-    .line 646
+    .line 647
     sget v0, Lorg/telegram/messenger/R$drawable;->fork_ic_internal_logo:I
 
     return v0

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;I)V
     .locals 0
 
-    .line 4844
+    .line 4862
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;
 
     iput p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader$2;->val$state:I
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 4
 
-    .line 4854
+    .line 4872
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;->premiumButtonView:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
@@ -64,7 +64,7 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 4855
+    .line 4873
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;->addButtonView:Landroid/widget/TextView;
@@ -85,7 +85,7 @@
     :goto_1
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 4856
+    .line 4874
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;->removeButtonView:Landroid/widget/TextView;
@@ -110,7 +110,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 4847
+    .line 4865
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;->premiumButtonView:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
@@ -119,14 +119,14 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 4848
+    .line 4866
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;->addButtonView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 4849
+    .line 4867
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;->removeButtonView:Landroid/widget/TextView;

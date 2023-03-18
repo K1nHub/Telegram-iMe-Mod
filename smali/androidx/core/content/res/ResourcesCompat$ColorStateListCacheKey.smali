@@ -24,13 +24,13 @@
 .method constructor <init>(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)V
     .locals 0
 
-    .line 292
+    .line 328
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 293
+    .line 329
     iput-object p1, p0, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;->mResources:Landroid/content/res/Resources;
 
-    .line 294
+    .line 330
     iput-object p2, p0, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;->mTheme:Landroid/content/res/Resources$Theme;
 
     return-void
@@ -52,7 +52,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 300
+    .line 336
     const-class v2, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -63,11 +63,11 @@
 
     goto :goto_1
 
-    .line 301
+    .line 337
     :cond_1
     check-cast p1, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;
 
-    .line 302
+    .line 338
     iget-object v2, p0, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;->mResources:Landroid/content/res/Resources;
 
     iget-object v3, p1, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;->mResources:Landroid/content/res/Resources;
@@ -82,7 +82,7 @@
 
     iget-object p1, p1, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;->mTheme:Landroid/content/res/Resources$Theme;
 
-    .line 303
+    .line 339
     invoke-static {v2, p1}, Landroidx/core/util/ObjectsCompat;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
@@ -109,7 +109,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 308
+    .line 344
     iget-object v1, p0, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;->mResources:Landroid/content/res/Resources;
 
     const/4 v2, 0x0

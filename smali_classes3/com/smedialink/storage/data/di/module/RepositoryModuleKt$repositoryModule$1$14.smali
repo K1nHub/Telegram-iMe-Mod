@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/smedialink/storage/domain/repository/crypto/level/AccountLevelRepository;",
+        "Lcom/smedialink/storage/domain/repository/crypto/permission/CryptoPermissionRepository;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$14\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,145:1\n127#2,5:146\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$14\n*L\n112#1:146,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$14\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,153:1\n127#2,5:154\n127#2,5:159\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$14\n*L\n114#1:154,5\n115#1:159,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/repository/crypto/level/AccountLevelRepository;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/repository/crypto/permission/CryptoPermissionRepository;
     .locals 7
 
     const-string v0, "$this$single"
@@ -73,7 +73,7 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 131
-    const-class p2, Lcom/smedialink/storage/data/network/api/own/AccountLevelApi;
+    const-class p2, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -85,10 +85,26 @@
 
     move-result-object p2
 
-    .line 112
-    move-object v2, p2
+    .line 114
+    move-object v4, p2
 
-    check-cast v2, Lcom/smedialink/storage/data/network/api/own/AccountLevelApi;
+    check-cast v4, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
+
+    .line 131
+    const-class p2, Lcom/smedialink/storage/data/network/api/own/CryptoWalletApi;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 114
+    move-object v3, p2
+
+    check-cast v3, Lcom/smedialink/storage/data/network/api/own/CryptoWalletApi;
 
     .line 131
     const-class p2, Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
@@ -101,7 +117,7 @@
 
     move-result-object p2
 
-    .line 112
+    .line 114
     move-object v6, p2
 
     check-cast v6, Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
@@ -117,29 +133,13 @@
 
     move-result-object p2
 
-    .line 112
+    .line 115
     move-object v5, p2
 
     check-cast v5, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 131
-    const-class p2, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 112
-    move-object v4, p2
-
-    check-cast v4, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
-
-    .line 131
-    const-class p2, Lcom/smedialink/storage/domain/gateway/TelegramGateway;
+    const-class p2, Lcom/smedialink/storage/data/network/api/own/PermissionApi;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -149,16 +149,17 @@
 
     move-result-object p1
 
-    .line 112
-    move-object v3, p1
+    .line 115
+    move-object v2, p1
 
-    check-cast v3, Lcom/smedialink/storage/domain/gateway/TelegramGateway;
+    check-cast v2, Lcom/smedialink/storage/data/network/api/own/PermissionApi;
 
-    new-instance p1, Lcom/smedialink/storage/data/repository/crypto/level/AccountLevelRepositoryImpl;
+    .line 113
+    new-instance p1, Lcom/smedialink/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;
 
     move-object v1, p1
 
-    invoke-direct/range {v1 .. v6}, Lcom/smedialink/storage/data/repository/crypto/level/AccountLevelRepositoryImpl;-><init>(Lcom/smedialink/storage/data/network/api/own/AccountLevelApi;Lcom/smedialink/storage/domain/gateway/TelegramGateway;Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;)V
+    invoke-direct/range {v1 .. v6}, Lcom/smedialink/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;-><init>(Lcom/smedialink/storage/data/network/api/own/PermissionApi;Lcom/smedialink/storage/data/network/api/own/CryptoWalletApi;Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;)V
 
     return-object p1
 .end method
@@ -166,12 +167,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 111
+    .line 112
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$14;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/repository/crypto/level/AccountLevelRepository;
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$14;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/repository/crypto/permission/CryptoPermissionRepository;
 
     move-result-object p1
 

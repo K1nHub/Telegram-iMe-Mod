@@ -9,7 +9,7 @@ import android.widget.ImageView;
 public class ImageViewCompat {
     public static ColorStateList getImageTintList(ImageView imageView) {
         if (Build.VERSION.SDK_INT >= 21) {
-            return imageView.getImageTintList();
+            return Api21Impl.getImageTintList(imageView);
         }
         if (imageView instanceof TintableImageSourceView) {
             return ((TintableImageSourceView) imageView).getSupportImageTintList();
@@ -21,8 +21,8 @@ public class ImageViewCompat {
         Drawable drawable;
         int i = Build.VERSION.SDK_INT;
         if (i >= 21) {
-            imageView.setImageTintList(colorStateList);
-            if (i != 21 || (drawable = imageView.getDrawable()) == null || imageView.getImageTintList() == null) {
+            Api21Impl.setImageTintList(imageView, colorStateList);
+            if (i != 21 || (drawable = imageView.getDrawable()) == null || Api21Impl.getImageTintList(imageView) == null) {
                 return;
             }
             if (drawable.isStateful()) {
@@ -36,7 +36,7 @@ public class ImageViewCompat {
 
     public static PorterDuff.Mode getImageTintMode(ImageView imageView) {
         if (Build.VERSION.SDK_INT >= 21) {
-            return imageView.getImageTintMode();
+            return Api21Impl.getImageTintMode(imageView);
         }
         if (imageView instanceof TintableImageSourceView) {
             return ((TintableImageSourceView) imageView).getSupportImageTintMode();
@@ -48,8 +48,8 @@ public class ImageViewCompat {
         Drawable drawable;
         int i = Build.VERSION.SDK_INT;
         if (i >= 21) {
-            imageView.setImageTintMode(mode);
-            if (i != 21 || (drawable = imageView.getDrawable()) == null || imageView.getImageTintList() == null) {
+            Api21Impl.setImageTintMode(imageView, mode);
+            if (i != 21 || (drawable = imageView.getDrawable()) == null || Api21Impl.getImageTintList(imageView) == null) {
                 return;
             }
             if (drawable.isStateful()) {
@@ -58,6 +58,25 @@ public class ImageViewCompat {
             imageView.setImageDrawable(drawable);
         } else if (imageView instanceof TintableImageSourceView) {
             ((TintableImageSourceView) imageView).setSupportImageTintMode(mode);
+        }
+    }
+
+    /* loaded from: classes.dex */
+    static class Api21Impl {
+        static ColorStateList getImageTintList(ImageView imageView) {
+            return imageView.getImageTintList();
+        }
+
+        static void setImageTintList(ImageView imageView, ColorStateList colorStateList) {
+            imageView.setImageTintList(colorStateList);
+        }
+
+        static PorterDuff.Mode getImageTintMode(ImageView imageView) {
+            return imageView.getImageTintMode();
+        }
+
+        static void setImageTintMode(ImageView imageView, PorterDuff.Mode mode) {
+            imageView.setImageTintMode(mode);
         }
     }
 }

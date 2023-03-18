@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lorg/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter$onCreateViewHolder$2;->this$0:Lorg/fork/ui/view/ChatAttachAlertWalletLayout;
 
-    .line 488
+    .line 481
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -35,7 +35,7 @@
 .method protected onMeasure(II)V
     .locals 0
 
-    .line 490
+    .line 483
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1

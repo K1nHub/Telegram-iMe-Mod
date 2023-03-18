@@ -18,7 +18,7 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ProfileGalleryView;Landroid/content/Context;)V
     .locals 0
 
-    .line 1398
+    .line 1431
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void

@@ -35,7 +35,7 @@
 .method public final invoke()V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->$r8$lambda$CWoh0-BXwQ-9boOi6mj04_EthBw()V
+    invoke-static {}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->$r8$lambda$9yaq9697oSTu5lsGZ75KDm6uN_I()V
 
     return-void
 .end method

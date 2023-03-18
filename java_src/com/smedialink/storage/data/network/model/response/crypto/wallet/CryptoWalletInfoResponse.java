@@ -74,7 +74,7 @@ public final class CryptoWalletInfoResponse {
     }
 
     public String toString() {
-        return "CryptoWalletInfoResponse(myEtherWalletAddress=" + ((Object) this.myEtherWalletAddress) + ", tonWalletAddress=" + ((Object) this.tonWalletAddress) + ", isEtherWalletAddressOpened=" + this.isEtherWalletAddressOpened + ", usersWithAccessToEtherWalletAddress=" + this.usersWithAccessToEtherWalletAddress + ')';
+        return "CryptoWalletInfoResponse(myEtherWalletAddress=" + this.myEtherWalletAddress + ", tonWalletAddress=" + this.tonWalletAddress + ", isEtherWalletAddressOpened=" + this.isEtherWalletAddressOpened + ", usersWithAccessToEtherWalletAddress=" + this.usersWithAccessToEtherWalletAddress + ')';
     }
 
     public CryptoWalletInfoResponse(String str, String str2, boolean z, List<String> usersWithAccessToEtherWalletAddress) {

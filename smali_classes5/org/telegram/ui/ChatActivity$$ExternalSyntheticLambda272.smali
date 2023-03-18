@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback;
+.implements Lorg/fork/utils/Callbacks$Callback2;
 
 
 # instance fields
@@ -22,12 +22,16 @@
 
 
 # virtual methods
-.method public final invoke()V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda272;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$BPjZZx4z5dmD5fsImE4At8xn6B0(Lorg/telegram/ui/ChatActivity;)V
+    check-cast p1, Ljava/util/List;
+
+    check-cast p2, Ljava/util/List;
+
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$EgtjwB5CMNk_Pwe-qPmcag2Tq0I(Lorg/telegram/ui/ChatActivity;Ljava/util/List;Ljava/util/List;)V
 
     return-void
 .end method

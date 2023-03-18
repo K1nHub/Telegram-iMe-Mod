@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/UsersAlertBase;I)V
     .locals 0
 
-    .line 465
+    .line 457
     iput-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$5;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iput p2, p0, Lorg/telegram/ui/Components/UsersAlertBase$5;->val$from:I
@@ -42,7 +42,7 @@
 .method public onPreDraw()Z
     .locals 9
 
-    .line 468
+    .line 460
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$5;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -53,7 +53,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 469
+    .line 461
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$5;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -62,7 +62,7 @@
 
     move-result v0
 
-    .line 470
+    .line 462
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
@@ -76,7 +76,7 @@
 
     if-ge v3, v0, :cond_2
 
-    .line 472
+    .line 464
     iget-object v5, p0, Lorg/telegram/ui/Components/UsersAlertBase$5;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget-object v5, v5, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -85,7 +85,7 @@
 
     move-result-object v5
 
-    .line 473
+    .line 465
     iget-object v6, p0, Lorg/telegram/ui/Components/UsersAlertBase$5;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget-object v6, v6, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -94,7 +94,7 @@
 
     move-result v6
 
-    .line 474
+    .line 466
     iget v7, p0, Lorg/telegram/ui/Components/UsersAlertBase$5;->val$from:I
 
     if-ge v6, v7, :cond_0
@@ -104,7 +104,7 @@
     :cond_0
     if-ne v6, v4, :cond_1
 
-    .line 477
+    .line 469
     iget-object v6, p0, Lorg/telegram/ui/Components/UsersAlertBase$5;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget-object v6, v6, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -123,7 +123,7 @@
 
     if-eqz v6, :cond_1
 
-    .line 478
+    .line 470
     check-cast v5, Lorg/telegram/ui/Cells/GraySectionCell;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Cells/GraySectionCell;->getTextView()Landroid/widget/TextView;
@@ -133,10 +133,10 @@
     :cond_1
     const/4 v6, 0x0
 
-    .line 480
+    .line 472
     invoke-virtual {v5, v6}, Landroid/view/View;->setAlpha(F)V
 
-    .line 481
+    .line 473
     iget-object v6, p0, Lorg/telegram/ui/Components/UsersAlertBase$5;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget-object v6, v6, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -159,7 +159,7 @@
 
     int-to-float v6, v6
 
-    .line 482
+    .line 474
     iget-object v7, p0, Lorg/telegram/ui/Components/UsersAlertBase$5;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget-object v7, v7, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -178,7 +178,7 @@
 
     float-to-int v6, v6
 
-    .line 483
+    .line 475
     sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     const/4 v8, 0x2
@@ -193,19 +193,19 @@
 
     int-to-long v6, v6
 
-    .line 484
+    .line 476
     invoke-virtual {v5, v6, v7}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
 
     const-wide/16 v6, 0xc8
 
-    .line 485
+    .line 477
     invoke-virtual {v5, v6, v7}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
     new-array v4, v4, [Landroid/animation/Animator;
 
     aput-object v5, v4, v2
 
-    .line 486
+    .line 478
     invoke-virtual {v1, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     :goto_1
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 488
+    .line 480
     :cond_2
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 

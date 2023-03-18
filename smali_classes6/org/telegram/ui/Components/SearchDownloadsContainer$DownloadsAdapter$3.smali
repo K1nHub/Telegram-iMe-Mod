@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SearchDownloadsContainer$DownloadsAdapter;)V
     .locals 0
 
-    .line 532
+    .line 533
     iput-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer$DownloadsAdapter$3;->this$1:Lorg/telegram/ui/Components/SearchDownloadsContainer$DownloadsAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 0
 
-    .line 535
+    .line 536
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer$DownloadsAdapter$3;->this$1:Lorg/telegram/ui/Components/SearchDownloadsContainer$DownloadsAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/SearchDownloadsContainer$DownloadsAdapter;->this$0:Lorg/telegram/ui/Components/SearchDownloadsContainer;

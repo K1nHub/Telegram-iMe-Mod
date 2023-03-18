@@ -80,7 +80,7 @@ public final class TokenBalance {
         }
         if (obj instanceof TokenBalance) {
             TokenBalance tokenBalance = (TokenBalance) obj;
-            return this.code == tokenBalance.code && Intrinsics.areEqual(Double.valueOf(this.total), Double.valueOf(tokenBalance.total)) && Intrinsics.areEqual(Float.valueOf(this.totalInDollars), Float.valueOf(tokenBalance.totalInDollars)) && Intrinsics.areEqual(this.info, tokenBalance.info) && Intrinsics.areEqual(this.priceRate, tokenBalance.priceRate) && this.networkType == tokenBalance.networkType;
+            return this.code == tokenBalance.code && Double.compare(this.total, tokenBalance.total) == 0 && Float.compare(this.totalInDollars, tokenBalance.totalInDollars) == 0 && Intrinsics.areEqual(this.info, tokenBalance.info) && Intrinsics.areEqual(this.priceRate, tokenBalance.priceRate) && this.networkType == tokenBalance.networkType;
         }
         return false;
     }

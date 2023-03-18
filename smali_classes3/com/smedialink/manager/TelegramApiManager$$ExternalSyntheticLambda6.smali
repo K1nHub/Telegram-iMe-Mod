@@ -6,18 +6,18 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/tgnet/TLRPC$Chat;
+.field public final synthetic f$0:Ljava/util/List;
 
 .field public final synthetic f$1:Lcom/smedialink/manager/TelegramApiManager;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLRPC$Chat;Lcom/smedialink/manager/TelegramApiManager;)V
+.method public synthetic constructor <init>(Ljava/util/List;Lcom/smedialink/manager/TelegramApiManager;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/smedialink/manager/TelegramApiManager$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/tgnet/TLRPC$Chat;
+    iput-object p1, p0, Lcom/smedialink/manager/TelegramApiManager$$ExternalSyntheticLambda6;->f$0:Ljava/util/List;
 
     iput-object p2, p0, Lcom/smedialink/manager/TelegramApiManager$$ExternalSyntheticLambda6;->f$1:Lcom/smedialink/manager/TelegramApiManager;
 
@@ -29,11 +29,11 @@
 .method public final subscribe(Lio/reactivex/ObservableEmitter;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/smedialink/manager/TelegramApiManager$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/tgnet/TLRPC$Chat;
+    iget-object v0, p0, Lcom/smedialink/manager/TelegramApiManager$$ExternalSyntheticLambda6;->f$0:Ljava/util/List;
 
     iget-object v1, p0, Lcom/smedialink/manager/TelegramApiManager$$ExternalSyntheticLambda6;->f$1:Lcom/smedialink/manager/TelegramApiManager;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/manager/TelegramApiManager;->$r8$lambda$rmor-VEIfvDLLrb7HA2qSZtnfLM(Lorg/telegram/tgnet/TLRPC$Chat;Lcom/smedialink/manager/TelegramApiManager;Lio/reactivex/ObservableEmitter;)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/manager/TelegramApiManager;->$r8$lambda$1AC3tXD6fxbXZtupCSepSp6K_MY(Ljava/util/List;Lcom/smedialink/manager/TelegramApiManager;Lio/reactivex/ObservableEmitter;)V
 
     return-void
 .end method

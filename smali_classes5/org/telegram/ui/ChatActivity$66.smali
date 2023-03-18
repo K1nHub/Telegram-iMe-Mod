@@ -41,7 +41,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 11089
+    .line 11088
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,10 +60,10 @@
 
     if-eqz p1, :cond_0
 
-    .line 11141
+    .line 11140
     invoke-virtual {p2, p3}, Lorg/fork/controller/MultiPanelController;->setMultiPanelEnabled(Z)V
 
-    .line 11142
+    .line 11141
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$22900(Lorg/telegram/ui/ChatActivity;)Lorg/fork/enums/DialogType;
@@ -74,12 +74,12 @@
 
     invoke-virtual {p2, p1, p3, v2}, Lorg/fork/controller/MultiPanelController;->setButtonEnabled(Lorg/fork/enums/DialogType;Lorg/fork/enums/MultiPanelButton;Z)V
 
-    .line 11143
+    .line 11142
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$32000(Lorg/telegram/ui/ChatActivity;)V
 
-    .line 11145
+    .line 11144
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$32700(Lorg/telegram/ui/ChatActivity;)I
@@ -90,7 +90,7 @@
 
     move-result-object p1
 
-    .line 11146
+    .line 11145
     invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p1
@@ -121,14 +121,14 @@
 
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 11147
+    .line 11146
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/ChatActivity;->access$8700(Lorg/telegram/ui/ChatActivity;Z)V
 
     goto :goto_2
 
-    .line 11149
+    .line 11148
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -218,7 +218,7 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 11151
+    .line 11150
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -228,7 +228,7 @@
 
     if-ne p9, p1, :cond_3
 
-    .line 11152
+    .line 11151
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$32102(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Components/Bulletin;)Lorg/telegram/ui/Components/Bulletin;
@@ -244,7 +244,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 11159
+    .line 11158
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBookmarksController()Lorg/fork/controller/BookmarksController;
@@ -261,7 +261,7 @@
 
     goto :goto_1
 
-    .line 11161
+    .line 11160
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -282,7 +282,7 @@
     :cond_1
     if-nez p4, :cond_3
 
-    .line 11165
+    .line 11164
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-boolean p2, p1, Lorg/telegram/ui/ChatActivity;->isTopic:Z
@@ -291,7 +291,7 @@
 
     const/4 p1, 0x0
 
-    .line 11166
+    .line 11165
     :goto_0
     invoke-virtual {p5}, Ljava/util/ArrayList;->size()I
 
@@ -299,7 +299,7 @@
 
     if-ge p1, p2, :cond_3
 
-    .line 11167
+    .line 11166
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -334,7 +334,7 @@
 
     goto :goto_0
 
-    .line 11170
+    .line 11169
     :cond_2
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -348,7 +348,7 @@
 
     invoke-virtual {p1, p3, p2}, Lorg/telegram/messenger/MessagesController;->unpinAllMessages(Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 11173
+    .line 11172
     :cond_3
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -359,7 +359,7 @@
 
     if-ne p6, p1, :cond_4
 
-    .line 11174
+    .line 11173
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 p2, 0x0
@@ -412,31 +412,31 @@
 
     if-eqz p1, :cond_7
 
-    .line 11104
+    .line 11103
     iget-object v0, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMultiPanelController()Lorg/fork/controller/MultiPanelController;
 
     move-result-object v3
 
-    .line 11105
+    .line 11104
     iget-object v0, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$11900(Lorg/telegram/ui/ChatActivity;)I
 
     move-result v8
 
-    .line 11106
+    .line 11105
     invoke-virtual {v3}, Lorg/fork/controller/MultiPanelController;->isMultiPanelEnabled()Z
 
     move-result v4
 
-    .line 11108
+    .line 11107
     new-instance v14, Ljava/util/ArrayList;
 
     invoke-direct {v14, v12}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 11109
+    .line 11108
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-virtual/range {p7 .. p7}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -449,7 +449,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 11111
+    .line 11110
     iget-object v1, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$31900(Lorg/telegram/ui/ChatActivity;)I
@@ -460,7 +460,7 @@
 
     move-result-object v1
 
-    .line 11113
+    .line 11112
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -481,14 +481,14 @@
 
     move-result-object v2
 
-    .line 11114
+    .line 11113
     invoke-interface {v1, v2}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v6
 
     if-eqz v6, :cond_0
 
-    .line 11115
+    .line 11114
     iget-object v4, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$22900(Lorg/telegram/ui/ChatActivity;)Lorg/fork/enums/DialogType;
@@ -499,12 +499,12 @@
 
     invoke-virtual {v3, v4, v5, v13}, Lorg/fork/controller/MultiPanelController;->setButtonEnabled(Lorg/fork/enums/DialogType;Lorg/fork/enums/MultiPanelButton;Z)V
 
-    .line 11116
+    .line 11115
     iget-object v3, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ChatActivity;->access$32000(Lorg/telegram/ui/ChatActivity;)V
 
-    .line 11117
+    .line 11116
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
@@ -515,18 +515,18 @@
 
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 11118
+    .line 11117
     iget-object v1, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v1, v0}, Lorg/telegram/ui/ChatActivity;->access$8700(Lorg/telegram/ui/ChatActivity;Z)V
 
     return-void
 
-    .line 11121
+    .line 11120
     :cond_0
     invoke-virtual {v3, v0}, Lorg/fork/controller/MultiPanelController;->setMultiPanelEnabled(Z)V
 
-    .line 11122
+    .line 11121
     iget-object v2, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$22900(Lorg/telegram/ui/ChatActivity;)Lorg/fork/enums/DialogType;
@@ -537,15 +537,15 @@
 
     invoke-virtual {v3, v2, v6, v0}, Lorg/fork/controller/MultiPanelController;->setButtonEnabled(Lorg/fork/enums/DialogType;Lorg/fork/enums/MultiPanelButton;Z)V
 
-    .line 11123
+    .line 11122
     invoke-virtual {v3}, Lorg/fork/controller/MultiPanelController;->saveConfig()V
 
-    .line 11124
+    .line 11123
     iget-object v2, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$32000(Lorg/telegram/ui/ChatActivity;)V
 
-    .line 11126
+    .line 11125
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
@@ -584,14 +584,14 @@
 
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 11127
+    .line 11126
     iget-object v1, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v1, v0}, Lorg/telegram/ui/ChatActivity;->access$8700(Lorg/telegram/ui/ChatActivity;Z)V
 
     goto :goto_2
 
-    .line 11129
+    .line 11128
     :cond_1
     iget-object v1, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -687,7 +687,7 @@
 
     invoke-virtual {v1, v2, v5}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 11131
+    .line 11130
     :goto_2
     iget-object v1, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -697,7 +697,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 11132
+    .line 11131
     iget-object v1, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$32100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/Bulletin;
@@ -706,27 +706,27 @@
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/Bulletin;->hide()V
 
-    .line 11134
+    .line 11133
     :cond_4
     iget-object v1, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v1, v0}, Lorg/telegram/ui/ChatActivity;->access$32202(Lorg/telegram/ui/ChatActivity;Z)Z
 
-    .line 11135
+    .line 11134
     iget-object v0, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$32304(Lorg/telegram/ui/ChatActivity;)I
 
     move-result v15
 
-    .line 11136
+    .line 11135
     iget-object v0, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$32400(Lorg/telegram/ui/ChatActivity;)I
 
     move-result v9
 
-    .line 11137
+    .line 11136
     iget-object v10, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     if-eqz p3, :cond_5
@@ -809,7 +809,7 @@
 
     if-eqz p3, :cond_9
 
-    .line 11178
+    .line 11177
     iget-object v0, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$32100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/Bulletin;
@@ -818,14 +818,14 @@
 
     if-eqz v0, :cond_9
 
-    .line 11179
+    .line 11178
     iget-object v0, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$32202(Lorg/telegram/ui/ChatActivity;Z)Z
 
-    .line 11180
+    .line 11179
     iget-object v0, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$32100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/Bulletin;
@@ -836,7 +836,7 @@
 
     goto :goto_6
 
-    .line 11184
+    .line 11183
     :cond_7
     iget-object v0, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -858,7 +858,7 @@
 
     if-nez v0, :cond_8
 
-    .line 11186
+    .line 11185
     iget-object v0, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$14400(Lorg/telegram/ui/ChatActivity;)[Landroid/util/SparseArray;
@@ -886,7 +886,7 @@
     :cond_8
     const/4 v1, 0x0
 
-    .line 11188
+    .line 11187
     :goto_5
     iget-object v2, v11, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -900,7 +900,7 @@
 .method public openReplyMessage(I)V
     .locals 7
 
-    .line 11092
+    .line 11091
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v2, 0x0
@@ -923,7 +923,7 @@
 .method public openSearch(Ljava/lang/String;)V
     .locals 1
 
-    .line 11097
+    .line 11096
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$66;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->access$14600(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;)V

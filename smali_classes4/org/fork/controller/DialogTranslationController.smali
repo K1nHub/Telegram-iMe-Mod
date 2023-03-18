@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDialogTranslationController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DialogTranslationController.kt\norg/fork/controller/DialogTranslationController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,102:1\n56#2,6:103\n1192#3,2:109\n1220#3,4:111\n1547#3:115\n1618#3,3:116\n*S KotlinDebug\n*F\n+ 1 DialogTranslationController.kt\norg/fork/controller/DialogTranslationController\n*L\n21#1:103,6\n30#1:109,2\n30#1:111,4\n40#1:115\n40#1:116,3\n*E\n"
+    value = "SMAP\nDialogTranslationController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DialogTranslationController.kt\norg/fork/controller/DialogTranslationController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,102:1\n56#2,6:103\n1194#3,2:109\n1222#3,4:111\n1549#3:115\n1620#3,3:116\n*S KotlinDebug\n*F\n+ 1 DialogTranslationController.kt\norg/fork/controller/DialogTranslationController\n*L\n21#1:103,6\n30#1:109,2\n30#1:111,4\n40#1:115\n40#1:116,3\n*E\n"
 .end annotation
 
 
@@ -60,10 +60,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$lYzPPwVDPaFzgQPq2QNcVC0wJ5w(Lkotlin/jvm/functions/Function0;)V
+.method public static synthetic $r8$lambda$VTm2-MSzKwEUOBjBv7A2Q3pn0XE(Lkotlin/jvm/functions/Function0;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/controller/DialogTranslationController;->setSettings$lambda-3(Lkotlin/jvm/functions/Function0;)V
+    invoke-static {p0}, Lorg/fork/controller/DialogTranslationController;->setSettings$lambda$3(Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
@@ -252,7 +252,7 @@
 
     aput-object v1, v0, v3
 
-    const-string v1, "yue-Hant-HK"
+    const-string/jumbo v1, "yue-Hant-HK"
 
     const-string v3, "Vietnamese (Vietnam)"
 
@@ -265,7 +265,7 @@
 
     aput-object v1, v0, v3
 
-    const-string v1, "vi-VN"
+    const-string/jumbo v1, "vi-VN"
 
     const-string v3, "Chinese, Cantonese (Traditional, Hong Kong)"
 
@@ -278,7 +278,7 @@
 
     aput-object v1, v0, v3
 
-    const-string v1, "zh-TW (cmn-Hant-TW)"
+    const-string/jumbo v1, "zh-TW (cmn-Hant-TW)"
 
     const-string v3, "Chinese, Mandarin (Traditional, Taiwan)"
 
@@ -477,7 +477,7 @@
     return-object p0
 .end method
 
-.method private static final setSettings$lambda-3(Lkotlin/jvm/functions/Function0;)V
+.method private static final setSettings$lambda$3(Lkotlin/jvm/functions/Function0;)V
     .locals 1
 
     const-string v0, "$tmp0"
@@ -645,7 +645,7 @@
 
     move-result-object v1
 
-    .line 1547
+    .line 1549
     new-instance v2, Ljava/util/ArrayList;
 
     const/16 v3, 0xa
@@ -656,7 +656,7 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -672,7 +672,7 @@
 
     move-result-object v3
 
-    .line 1619
+    .line 1621
     check-cast v3, Lcom/smedialink/storage/data/locale/db/model/translation/DialogTranslationSettingsDb;
 
     .line 40
@@ -692,10 +692,12 @@
 
     move-result-object v3
 
+    .line 1621
     invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 40
     :cond_0
     invoke-static {v0, v2}, Lkotlin/collections/MapsKt;->putAll(Ljava/util/Map;Ljava/lang/Iterable;)V
 
@@ -723,7 +725,7 @@
 
     const/16 v1, 0xa
 
-    .line 1192
+    .line 1194
     invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v1
@@ -738,12 +740,12 @@
 
     move-result v1
 
-    .line 1193
+    .line 1195
     new-instance v2, Ljava/util/LinkedHashMap;
 
     invoke-direct {v2, v1}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 1220
+    .line 1222
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -759,7 +761,7 @@
 
     move-result-object v1
 
-    .line 1221
+    .line 1223
     move-object v3, v1
 
     check-cast v3, Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;
@@ -773,10 +775,12 @@
 
     move-result-object v3
 
+    .line 1223
     invoke-interface {v2, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
+    .line 30
     :cond_0
     invoke-static {v2}, Lkotlin/collections/MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 

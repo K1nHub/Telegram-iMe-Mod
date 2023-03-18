@@ -9,7 +9,6 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.Objects;
 import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
 /* compiled from: WrapContentViewPager.kt */
@@ -43,10 +42,9 @@ public final class WrapContentViewPager extends ViewPager {
             adapter.unregisterDataSetObserver(this.dataSetObserver);
         }
         super.setAdapter(pagerAdapter);
-        if (pagerAdapter == null) {
-            return;
+        if (pagerAdapter != null) {
+            pagerAdapter.registerDataSetObserver(this.dataSetObserver);
         }
-        pagerAdapter.registerDataSetObserver(this.dataSetObserver);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -70,23 +68,15 @@ public final class WrapContentViewPager extends ViewPager {
         populateSuper();
         setInLayout(false);
         int childCount = getChildCount();
-        if (childCount > 0) {
-            int i4 = 0;
-            while (true) {
-                int i5 = i4 + 1;
-                View childAt = getChildAt(i4);
-                childAt.measure(makeMeasureSpec2, makeMeasureSpec);
-                ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
-                Objects.requireNonNull(layoutParams, "null cannot be cast to non-null type androidx.viewpager.widget.ViewPager.LayoutParams");
-                clearNeedsMeasure((ViewPager.LayoutParams) layoutParams);
-                int measuredHeight = childAt.getMeasuredHeight();
-                if (measuredHeight > i3) {
-                    i3 = measuredHeight;
-                }
-                if (i5 >= childCount) {
-                    break;
-                }
-                i4 = i5;
+        for (int i4 = 0; i4 < childCount; i4++) {
+            View childAt = getChildAt(i4);
+            childAt.measure(makeMeasureSpec2, makeMeasureSpec);
+            ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
+            Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type androidx.viewpager.widget.ViewPager.LayoutParams");
+            clearNeedsMeasure((ViewPager.LayoutParams) layoutParams);
+            int measuredHeight = childAt.getMeasuredHeight();
+            if (measuredHeight > i3) {
+                i3 = measuredHeight;
             }
         }
         int paddingTop = i3 + getPaddingTop() + getPaddingBottom();

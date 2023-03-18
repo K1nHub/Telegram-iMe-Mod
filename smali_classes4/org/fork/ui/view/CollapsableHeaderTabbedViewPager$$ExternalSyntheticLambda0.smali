@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager$$ExternalSyntheticLambda0;->f$0:Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;
 
-    invoke-static {v0, p1, p2}, Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;->$r8$lambda$fvAWKfDjW-Qo6cZ9klnc1ZBQ8qE(Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-static {v0, p1, p2}, Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;->$r8$lambda$jYhDmkGxo-a0gWOJ0z7I2QytxAU(Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 

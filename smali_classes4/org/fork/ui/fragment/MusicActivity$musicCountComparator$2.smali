@@ -32,10 +32,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$sRkwuM5La1dMY-l6dCqAZBbgAMM(Lorg/fork/ui/fragment/MusicActivity;JJ)I
+.method public static synthetic $r8$lambda$ETpuGrQXQaKooEUnSNsEuYCkqKA(Lorg/fork/ui/fragment/MusicActivity;JJ)I
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/MusicActivity$musicCountComparator$2;->invoke$lambda-0(Lorg/fork/ui/fragment/MusicActivity;JJ)I
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/MusicActivity$musicCountComparator$2;->invoke$lambda$0(Lorg/fork/ui/fragment/MusicActivity;JJ)I
 
     move-result p0
 
@@ -54,7 +54,7 @@
     return-void
 .end method
 
-.method private static final invoke$lambda-0(Lorg/fork/ui/fragment/MusicActivity;JJ)I
+.method private static final invoke$lambda$0(Lorg/fork/ui/fragment/MusicActivity;JJ)I
     .locals 1
 
     const-string v0, "this$0"

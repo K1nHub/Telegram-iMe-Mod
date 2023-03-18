@@ -80,7 +80,7 @@ public final class TopicModel {
     }
 
     public String toString() {
-        return "TopicModel(topicId=" + this.topicId + ", name=" + ((Object) this.name) + ", icon=" + this.icon + ", order=" + this.order + ", presets=" + this.presets + ", dialogs=" + this.dialogs + ", filterDialogs=" + this.filterDialogs + ", filterArchivedDialogs=" + this.filterArchivedDialogs + ')';
+        return "TopicModel(topicId=" + this.topicId + ", name=" + this.name + ", icon=" + this.icon + ", order=" + this.order + ", presets=" + this.presets + ", dialogs=" + this.dialogs + ", filterDialogs=" + this.filterDialogs + ", filterArchivedDialogs=" + this.filterArchivedDialogs + ')';
     }
 
     public TopicModel(long j, String str, Topic topic, int i, Set<Long> presets, Set<Long> dialogs, Set<Long> filterDialogs, Set<Long> filterArchivedDialogs) {

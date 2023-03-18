@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/services/FilteredChatParticipantsProcessingService$$ExternalSyntheticLambda2;->f$0:Lcom/smedialink/services/FilteredChatParticipantsProcessingService;
 
-    invoke-static {v0, p1, p2}, Lcom/smedialink/services/FilteredChatParticipantsProcessingService;->$r8$lambda$dWX8g66pkrsd2-T7LqJrksDGoaE(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, p1, p2}, Lcom/smedialink/services/FilteredChatParticipantsProcessingService;->$r8$lambda$Hev2Xqa5-VHvA5MtA2Xltftk1T0(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

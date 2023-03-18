@@ -19,7 +19,7 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectNewSessionBinding;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.BaseFragment;
@@ -130,9 +130,9 @@ public final class WalletConnectNewSessionBottomSheetDialog extends MvpBottomShe
         Intrinsics.checkNotNullParameter(address, "address");
         Intrinsics.checkNotNullParameter(network, "network");
         ForkContentWalletConnectNewSessionBinding binding = getBinding();
-        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3158R.string.wallet_connect_new_session_title, name), url);
-        binding.viewWalletCell.setupViewData(getResourceManager().getString(C3158R.string.wallet_connect_new_session_wallet), address, C3158R.C3160drawable.fork_ic_nav_wallet_24, true);
-        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3158R.string.wallet_connect_session_details_network), network, C3158R.C3160drawable.msg_language, true);
+        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3286R.string.wallet_connect_new_session_title, name), url);
+        binding.viewWalletCell.setupViewData(getResourceManager().getString(C3286R.string.wallet_connect_new_session_wallet), address, C3286R.C3288drawable.fork_ic_nav_wallet_24, true);
+        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3286R.string.wallet_connect_session_details_network), network, C3286R.C3288drawable.msg_language, true);
     }
 
     @Override // android.app.Dialog
@@ -147,10 +147,10 @@ public final class WalletConnectNewSessionBottomSheetDialog extends MvpBottomShe
         binding.viewWalletCell.setupColors();
         binding.viewNetworkCell.setupColors();
         binding.buttonConnect.applyColors();
-        ActionBarMenuItem actionBarMenuItem = binding.buttonClose;
-        actionBarMenuItem.setIconColor(getThemedColor("windowBackgroundWhiteGrayIcon"));
-        Intrinsics.checkNotNullExpressionValue(actionBarMenuItem, "");
-        ViewExtKt.setCircleRippleBackground(actionBarMenuItem);
+        ActionBarMenuItem setupColors$lambda$2$lambda$1 = binding.buttonClose;
+        setupColors$lambda$2$lambda$1.setIconColor(getThemedColor("windowBackgroundWhiteGrayIcon"));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$2$lambda$1, "setupColors$lambda$2$lambda$1");
+        ViewExtKt.setCircleRippleBackground(setupColors$lambda$2$lambda$1);
         AppCompatTextView textViewBalance = binding.textViewBalance;
         Intrinsics.checkNotNullExpressionValue(textViewBalance, "textViewBalance");
         AppCompatTextView textTransactionsApproval = binding.textTransactionsApproval;
@@ -162,12 +162,12 @@ public final class WalletConnectNewSessionBottomSheetDialog extends MvpBottomShe
 
     private final void setupViews() {
         ForkContentWalletConnectNewSessionBinding binding = getBinding();
-        binding.textViewBalance.setText(getResourceManager().getString(C3158R.string.wallet_connect_new_session_view_balance));
-        binding.textTransactionsApproval.setText(getResourceManager().getString(C3158R.string.wallet_connect_new_transactions_approval));
-        binding.buttonConnect.setText(getResourceManager().getString(C3158R.string.wallet_connect_new_connection));
+        binding.textViewBalance.setText(getResourceManager().getString(C3286R.string.wallet_connect_new_session_view_balance));
+        binding.textTransactionsApproval.setText(getResourceManager().getString(C3286R.string.wallet_connect_new_transactions_approval));
+        binding.buttonConnect.setText(getResourceManager().getString(C3286R.string.wallet_connect_new_connection));
         ActionBarMenuItem actionBarMenuItem = getBinding().buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3158R.C3160drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3286R.C3288drawable.ic_close_white);
     }
 
     private final void setupListeners() {

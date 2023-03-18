@@ -15,13 +15,11 @@ import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
 import com.smedialink.utils.extentions.common.ViewExtKt;
 import java.util.List;
-import java.util.Objects;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.CheckBoxSquare;
 import org.telegram.p048ui.Components.LayoutHelper;
@@ -143,10 +141,9 @@ public final class MovingCheckCell extends FrameLayout {
         listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new View[]{this.titleContainer, this.subtitleView});
         for (View view : listOf) {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-            Objects.requireNonNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
+            Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
             FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) layoutParams;
             layoutParams2.leftMargin = AndroidUtilities.m50dp(108);
-            Unit unit = Unit.INSTANCE;
             view.setLayoutParams(layoutParams2);
         }
     }
@@ -171,7 +168,7 @@ public final class MovingCheckCell extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("stickers_menu"), PorterDuff.Mode.MULTIPLY));
         imageView.setClickable(true);
-        imageView.setImageResource(C3158R.C3160drawable.list_reorder);
+        imageView.setImageResource(C3286R.C3288drawable.list_reorder);
         return imageView;
     }
 
@@ -229,11 +226,10 @@ public final class MovingCheckCell extends FrameLayout {
     private final void setFullHeightTitleView(boolean z) {
         LinearLayout linearLayout = this.titleContainer;
         ViewGroup.LayoutParams layoutParams = linearLayout.getLayoutParams();
-        Objects.requireNonNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
+        Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) layoutParams;
         layoutParams2.height = z ? -1 : -2;
         layoutParams2.topMargin = z ? 0 : AndroidUtilities.m50dp(10);
-        Unit unit = Unit.INSTANCE;
         linearLayout.setLayoutParams(layoutParams2);
     }
 

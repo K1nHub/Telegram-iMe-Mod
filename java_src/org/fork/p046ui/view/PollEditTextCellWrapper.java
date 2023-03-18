@@ -13,7 +13,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.enums.FilterActivityType;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Cells.PollEditTextCell;
@@ -130,20 +130,19 @@ public final class PollEditTextCellWrapper extends LinearLayout {
         linearLayout.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.view.PollEditTextCellWrapper$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PollEditTextCellWrapper.m2112initIconLayout$lambda2$lambda1(PollEditTextCellWrapper.this, view);
+                PollEditTextCellWrapper.initIconLayout$lambda$2$lambda$1(PollEditTextCellWrapper.this, view);
             }
         });
-        linearLayout.addView(getIconView(), LayoutHelper.createLinear(getType().getIconSize(), getType().getIconSize()));
+        linearLayout.addView(getIconView(), LayoutHelper.createLinear(this.type.getIconSize(), this.type.getIconSize()));
         linearLayout.addView(getNoIconTextView(), LayoutHelper.createLinear(-2, -2));
         linearLayout.addView(getArrowImageView(), LayoutHelper.createLinear(16, 16, 17, 6, 0, 0, 0));
         return linearLayout;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initIconLayout$lambda-2$lambda-1  reason: not valid java name */
-    public static final void m2112initIconLayout$lambda2$lambda1(PollEditTextCellWrapper this$0, View view) {
+    public static final void initIconLayout$lambda$2$lambda$1(PollEditTextCellWrapper this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getOnSelectIconClick().run();
+        this$0.onSelectIconClick.run();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -156,7 +155,7 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initNoIconTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3158R.string.no_icon));
+        textView.setText(LocaleController.getInternalString(C3286R.string.no_icon));
         textView.setTextSize(1, 14.0f);
         return textView;
     }
@@ -165,7 +164,7 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     public final ImageView initArrowImageView() {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setImageResource(C3158R.C3160drawable.arrow_more);
+        imageView.setImageResource(C3286R.C3288drawable.arrow_more);
         return imageView;
     }
 

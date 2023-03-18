@@ -2,12 +2,12 @@ package org.fork.enums;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: ChatProfileTelegramIdMode.kt */
 /* loaded from: classes4.dex */
 public enum ChatProfileTelegramIdMode {
-    TELEGRAM_API(C3158R.string.settings_tools_chat_profile_id_telegram_telegram_api),
-    BOT_API(C3158R.string.settings_tools_chat_profile_id_telegram_bot_api);
+    TELEGRAM_API(C3286R.string.settings_tools_chat_profile_id_telegram_telegram_api),
+    BOT_API(C3286R.string.settings_tools_chat_profile_id_telegram_bot_api);
     
     public static final Companion Companion = new Companion(null);
     private final int textResId;

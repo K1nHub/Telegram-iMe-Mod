@@ -100,7 +100,7 @@ public final class GetBuyingCryptoQuoteResponse {
             }
             if (obj instanceof CryptoQuote) {
                 CryptoQuote cryptoQuote = (CryptoQuote) obj;
-                return Intrinsics.areEqual(this.quoteId, cryptoQuote.quoteId) && Intrinsics.areEqual(this.validUntil, cryptoQuote.validUntil) && Intrinsics.areEqual(Float.valueOf(this.digitalMoneyAmount), Float.valueOf(cryptoQuote.digitalMoneyAmount)) && Intrinsics.areEqual(Float.valueOf(this.fiatMoneyAmount), Float.valueOf(cryptoQuote.fiatMoneyAmount));
+                return Intrinsics.areEqual(this.quoteId, cryptoQuote.quoteId) && Intrinsics.areEqual(this.validUntil, cryptoQuote.validUntil) && Float.compare(this.digitalMoneyAmount, cryptoQuote.digitalMoneyAmount) == 0 && Float.compare(this.fiatMoneyAmount, cryptoQuote.fiatMoneyAmount) == 0;
             }
             return false;
         }

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment$$ExternalSyntheticLambda1;->f$1:Lcom/smedialink/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;
 
-    invoke-static {v0, v1, p1, p2, p3}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;->$r8$lambda$_IOgilKBVWoWCbvK_5iUg_hpLpQ(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;Lcom/smedialink/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {v0, v1, p1, p2, p3}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;->$r8$lambda$zqQODTK2mc8JGRTFhaz1Z7lsS3c(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;Lcom/smedialink/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method

@@ -54,7 +54,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    .line 282
+    .line 283
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
@@ -77,10 +77,10 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 283
+    .line 284
     iget-object v1, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$6;->this$0:Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
-    .line 285
+    .line 286
     iget-object v4, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$6;->$sessionStoreItem:Lcom/trustwallet/walletconnect/WCSessionStoreItem;
 
     const/4 v6, 0x0
@@ -89,7 +89,7 @@
 
     move-object v5, p3
 
-    .line 283
+    .line 284
     invoke-static/range {v1 .. v6}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$onTransactionProcessing(Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;JLcom/trustwallet/walletconnect/WCSessionStoreItem;Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumTransaction;Z)V
 
     return-void

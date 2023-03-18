@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter$$ExternalSyntheticLambda0;->f$1:Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;
 
-    invoke-static {v0, v1, p1}, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;->$r8$lambda$-CN5DVz23Tx0qfAN7oGoKeASNaE(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;->$r8$lambda$oJygQ2tYp8JynX5mVV16DjidByg(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Landroid/view/View;)V
 
     return-void
 .end method

@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMovingReactionCell.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovingReactionCell.kt\norg/fork/ui/view/MovingReactionCell\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,181:1\n1#2:182\n254#3,2:183\n*S KotlinDebug\n*F\n+ 1 MovingReactionCell.kt\norg/fork/ui/view/MovingReactionCell\n*L\n149#1:183,2\n*E\n"
+    value = "SMAP\nMovingReactionCell.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovingReactionCell.kt\norg/fork/ui/view/MovingReactionCell\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,181:1\n1#2:182\n262#3,2:183\n*S KotlinDebug\n*F\n+ 1 MovingReactionCell.kt\norg/fork/ui/view/MovingReactionCell\n*L\n149#1:183,2\n*E\n"
 .end annotation
 
 
@@ -142,7 +142,7 @@
 
     iput-object p1, p0, Lorg/fork/ui/view/MovingReactionCell;->emojiTextView$delegate:Lkotlin/Lazy;
 
-    const-string p1, "windowBackgroundWhite"
+    const-string/jumbo p1, "windowBackgroundWhite"
 
     .line 49
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -389,7 +389,7 @@
     .line 114
     invoke-virtual {v1, v0, v2}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    const-string v0, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v0, "windowBackgroundWhiteBlackText"
 
     .line 115
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -398,7 +398,7 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/EditText;->setTextColor(I)V
 
-    const-string v0, "windowBackgroundWhiteHintText"
+    const-string/jumbo v0, "windowBackgroundWhiteHintText"
 
     .line 116
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -486,7 +486,7 @@
     .line 148
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v3, "windowBackgroundWhiteBlueHeader"
+    const-string/jumbo v3, "windowBackgroundWhiteBlueHeader"
 
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
@@ -499,9 +499,7 @@
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 149
-    invoke-virtual {p0}, Lorg/fork/ui/view/MovingReactionCell;->getLinkIconShow()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/ui/view/MovingReactionCell;->linkIconShow:Z
 
     if-eqz v2, :cond_0
 
@@ -510,7 +508,7 @@
     :cond_0
     const/16 v1, 0x8
 
-    .line 254
+    .line 262
     :goto_0
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
@@ -606,7 +604,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v1, "windowBackgroundWhiteGrayText2"
+    const-string/jumbo v1, "windowBackgroundWhiteGrayText2"
 
     .line 132
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1263,7 +1261,7 @@
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "windowBackgroundWhiteBlueHeader"
+    const-string/jumbo v2, "windowBackgroundWhiteBlueHeader"
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 

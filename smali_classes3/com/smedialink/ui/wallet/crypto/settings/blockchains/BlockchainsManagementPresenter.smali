@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBlockchainsManagementPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BlockchainsManagementPresenter.kt\ncom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,135:1\n1547#2:136\n1618#2,3:137\n39#3,6:140\n*S KotlinDebug\n*F\n+ 1 BlockchainsManagementPresenter.kt\ncom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n*L\n85#1:136\n85#1:137,3\n102#1:140,6\n*E\n"
+    value = "SMAP\nBlockchainsManagementPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BlockchainsManagementPresenter.kt\ncom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,135:1\n1549#2:136\n1620#2,3:137\n39#3,8:140\n*S KotlinDebug\n*F\n+ 1 BlockchainsManagementPresenter.kt\ncom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n*L\n85#1:136\n85#1:137,3\n102#1:140,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -245,16 +245,16 @@
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    move-object p1, v0
+    invoke-static {p1}, Lkotlin/text/StringsKt;->toLongOrNull(Ljava/lang/String;)Ljava/lang/Long;
+
+    move-result-object p1
 
     goto :goto_0
 
     :cond_0
-    invoke-static {p1}, Lkotlin/text/StringsKt;->toLongOrNull(Ljava/lang/String;)Ljava/lang/Long;
-
-    move-result-object p1
+    move-object p1, v0
 
     .line 130
     :goto_0
@@ -262,16 +262,16 @@
 
     new-instance v2, Ljava/util/Date;
 
-    if-nez p1, :cond_1
+    if-eqz p1, :cond_1
 
-    invoke-static {}, Lcom/smedialink/storage/data/utils/extentions/DateExtKt;->now()J
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v3
 
     goto :goto_1
 
     :cond_1
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    invoke-static {}, Lcom/smedialink/storage/data/utils/extentions/DateExtKt;->now()J
 
     move-result-wide v3
 
@@ -348,16 +348,27 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter$handleWalletDeletionResult$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;)V
 
-    new-instance v2, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter$handleWalletDeletionResult$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v2, v0}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter$handleWalletDeletionResult$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p1, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v1, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter$handleWalletDeletionResult$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter$handleWalletDeletionResult$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v0, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {p1, v2, v0}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1
@@ -385,7 +396,7 @@
 
     move-result-object v1
 
-    .line 1547
+    .line 1549
     new-instance v2, Ljava/util/ArrayList;
 
     const/16 v3, 0xa
@@ -396,7 +407,7 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -412,7 +423,7 @@
 
     move-result-object v3
 
-    .line 1619
+    .line 1621
     check-cast v3, Lcom/smedialink/storage/domain/model/crypto/Wallet;
 
     .line 87
@@ -449,7 +460,7 @@
     .line 87
     invoke-direct {v4, v5, v6, v7, v3}, Lcom/smedialink/model/wallet/crypto/settings/BlockchainWalletItem;-><init>(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
 
-    .line 86
+    .line 1621
     invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0

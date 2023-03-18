@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 20835
+    .line 20939
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto :goto_0
 
-    .line 20841
+    .line 20945
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueErrorFile;
 
@@ -30,7 +30,7 @@
 
     goto :goto_0
 
-    .line 20847
+    .line 20951
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueErrorFiles;
 
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 20862
+    .line 20966
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueErrorTranslationFiles;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 20844
+    .line 20948
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueErrorFrontSide;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 20859
+    .line 20963
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueErrorData;
 
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 20865
+    .line 20969
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueErrorSelfie;
 
@@ -70,7 +70,7 @@
 
     goto :goto_0
 
-    .line 20853
+    .line 20957
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueErrorTranslationFile;
 
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 20856
+    .line 20960
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueError;
 
@@ -86,7 +86,7 @@
 
     goto :goto_0
 
-    .line 20850
+    .line 20954
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueErrorReverseSide;
 
@@ -99,7 +99,7 @@
 
     goto :goto_1
 
-    .line 20869
+    .line 20973
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -129,7 +129,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 20872
+    .line 20976
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\n_Ranges.kt\nKotlin\n*S Kotlin\n*F\n+ 1 _Ranges.kt\nkotlin/ranges/RangesKt___RangesKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1227:1\n1#2:1228\n*E\n"
+    value = "SMAP\n_Ranges.kt\nKotlin\n*S Kotlin\n*F\n+ 1 _Ranges.kt\nkotlin/ranges/RangesKt___RangesKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1537:1\n1#2:1538\n*E\n"
 .end annotation
 
 
@@ -88,7 +88,7 @@
     :cond_1
     return p0
 
-    .line 1103
+    .line 1413
     :cond_2
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -124,7 +124,7 @@
 .method public static downTo(II)Lkotlin/ranges/IntProgression;
     .locals 2
 
-    .line 518
+    .line 828
     sget-object v0, Lkotlin/ranges/IntProgression;->Companion:Lkotlin/ranges/IntProgression$Companion;
 
     const/4 v1, -0x1
@@ -147,7 +147,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 59
+    .line 191
     :try_start_0
     invoke-static {p1, p0}, Lkotlin/random/RandomKt;->nextInt(Lkotlin/random/Random;Lkotlin/ranges/IntRange;)I
 
@@ -160,7 +160,7 @@
     :catch_0
     move-exception p0
 
-    .line 61
+    .line 193
     new-instance p1, Ljava/util/NoSuchElementException;
 
     invoke-virtual {p0}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
@@ -188,7 +188,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 656
+    .line 966
     :goto_0
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -196,7 +196,7 @@
 
     invoke-static {v0, v1}, Lkotlin/ranges/RangesKt__RangesKt;->checkStepIsPositive(ZLjava/lang/Number;)V
 
-    .line 657
+    .line 967
     sget-object v0, Lkotlin/ranges/IntProgression;->Companion:Lkotlin/ranges/IntProgression$Companion;
 
     invoke-virtual {p0}, Lkotlin/ranges/IntProgression;->getFirst()I
@@ -246,7 +246,7 @@
     :cond_0
     const/4 v2, 0x0
 
-    .line 664
+    .line 974
     :goto_0
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -254,7 +254,7 @@
 
     invoke-static {v2, v3}, Lkotlin/ranges/RangesKt__RangesKt;->checkStepIsPositive(ZLjava/lang/Number;)V
 
-    .line 665
+    .line 975
     sget-object v4, Lkotlin/ranges/LongProgression;->Companion:Lkotlin/ranges/LongProgression$Companion;
 
     invoke-virtual {p0}, Lkotlin/ranges/LongProgression;->getFirst()J
@@ -295,7 +295,7 @@
 
     if-gt p1, v0, :cond_0
 
-    .line 784
+    .line 1094
     sget-object p0, Lkotlin/ranges/IntRange;->Companion:Lkotlin/ranges/IntRange$Companion;
 
     invoke-virtual {p0}, Lkotlin/ranges/IntRange$Companion;->getEMPTY()Lkotlin/ranges/IntRange;
@@ -304,7 +304,7 @@
 
     return-object p0
 
-    .line 785
+    .line 1095
     :cond_0
     new-instance v0, Lkotlin/ranges/IntRange;
 

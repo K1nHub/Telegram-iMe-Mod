@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import java.util.Objects;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.math.MathKt__MathJVMKt;
 /* compiled from: Utils.kt */
@@ -31,7 +30,7 @@ public final class UtilsKt {
         ofObject.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.fxn.util.UtilsKt$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                UtilsKt.m905colorAnimator$lambda2$lambda1(ofObject, imageView, valueAnimator);
+                UtilsKt.colorAnimator$lambda$2$lambda$1(ofObject, imageView, valueAnimator);
             }
         });
         Intrinsics.checkNotNullExpressionValue(ofObject, "ofObject(ArgbEvaluator()…orFilter(color) }\n    }\n}");
@@ -39,11 +38,10 @@ public final class UtilsKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: colorAnimator$lambda-2$lambda-1  reason: not valid java name */
-    public static final void m905colorAnimator$lambda2$lambda1(ValueAnimator valueAnimator, ImageView this_colorAnimator, ValueAnimator valueAnimator2) {
+    public static final void colorAnimator$lambda$2$lambda$1(ValueAnimator valueAnimator, ImageView this_colorAnimator, ValueAnimator valueAnimator2) {
         Intrinsics.checkNotNullParameter(this_colorAnimator, "$this_colorAnimator");
         Object animatedValue = valueAnimator2.getAnimatedValue();
-        Objects.requireNonNull(animatedValue, "null cannot be cast to non-null type kotlin.Int");
+        Intrinsics.checkNotNull(animatedValue, "null cannot be cast to non-null type kotlin.Int");
         this_colorAnimator.setColorFilter(((Integer) animatedValue).intValue());
     }
 
@@ -56,14 +54,6 @@ public final class UtilsKt {
         imageView.refreshDrawableState();
     }
 
-    public static final long getDURATION() {
-        return DURATION;
-    }
-
-    public static final float getALPHA() {
-        return ALPHA;
-    }
-
     public static final void expand(final TextView textView, LinearLayout container, int i) {
         Intrinsics.checkNotNullParameter(textView, "<this>");
         Intrinsics.checkNotNullParameter(container, "container");
@@ -74,24 +64,23 @@ public final class UtilsKt {
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.fxn.util.UtilsKt$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                UtilsKt.m906expand$lambda7$lambda6$lambda5(textView, valueAnimator);
+                UtilsKt.expand$lambda$7$lambda$6$lambda$5(textView, valueAnimator);
             }
         });
         ofInt.setInterpolator(new LinearInterpolator());
-        ofInt.setDuration(getDURATION());
+        ofInt.setDuration(DURATION);
         ofInt.start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: expand$lambda-7$lambda-6$lambda-5  reason: not valid java name */
-    public static final void m906expand$lambda7$lambda6$lambda5(TextView this_expand, ValueAnimator valueAnimator) {
+    public static final void expand$lambda$7$lambda$6$lambda$5(TextView this_expand, ValueAnimator valueAnimator) {
         Intrinsics.checkNotNullParameter(this_expand, "$this_expand");
         if (valueAnimator.getAnimatedFraction() == BitmapDescriptorFactory.HUE_RED) {
             this_expand.setVisibility(4);
         }
         ViewGroup.LayoutParams layoutParams = this_expand.getLayoutParams();
         Object animatedValue = valueAnimator.getAnimatedValue();
-        Objects.requireNonNull(animatedValue, "null cannot be cast to non-null type kotlin.Int");
+        Intrinsics.checkNotNull(animatedValue, "null cannot be cast to non-null type kotlin.Int");
         layoutParams.width = ((Integer) animatedValue).intValue();
         if (valueAnimator.getAnimatedFraction() == 1.0f) {
             this_expand.setVisibility(0);
@@ -106,15 +95,14 @@ public final class UtilsKt {
         alpha.setUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.fxn.util.UtilsKt$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                UtilsKt.m904collapse$lambda10$lambda9(textView, alpha, container, i, valueAnimator);
+                UtilsKt.collapse$lambda$10$lambda$9(textView, alpha, container, i, valueAnimator);
             }
         });
         alpha.start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: collapse$lambda-10$lambda-9  reason: not valid java name */
-    public static final void m904collapse$lambda10$lambda9(TextView this_collapse, ViewPropertyAnimator viewPropertyAnimator, LinearLayout container, int i, ValueAnimator valueAnimator) {
+    public static final void collapse$lambda$10$lambda$9(TextView this_collapse, ViewPropertyAnimator viewPropertyAnimator, LinearLayout container, int i, ValueAnimator valueAnimator) {
         Intrinsics.checkNotNullParameter(this_collapse, "$this_collapse");
         Intrinsics.checkNotNullParameter(container, "$container");
         ViewGroup.LayoutParams layoutParams = this_collapse.getLayoutParams();
@@ -125,8 +113,9 @@ public final class UtilsKt {
             this_collapse.setAlpha(1.0f);
         }
         viewPropertyAnimator.setInterpolator(new LinearInterpolator());
-        viewPropertyAnimator.setDuration(getDURATION());
-        setCustomBackground(container, i, getALPHA() - (getALPHA() * valueAnimator.getAnimatedFraction()));
+        viewPropertyAnimator.setDuration(DURATION);
+        float f = ALPHA;
+        setCustomBackground(container, i, f - (valueAnimator.getAnimatedFraction() * f));
         this_collapse.requestLayout();
     }
 

@@ -35,7 +35,7 @@
 .method public final invoke()V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->$r8$lambda$pafWwrZ2f7P2ghraid2lYf6yacc()V
+    invoke-static {}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->$r8$lambda$8Ol66vr2SxvcMsf7f6Np8-Sn12Y()V
 
     return-void
 .end method

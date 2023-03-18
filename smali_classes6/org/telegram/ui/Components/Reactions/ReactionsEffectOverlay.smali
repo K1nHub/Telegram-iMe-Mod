@@ -1373,7 +1373,7 @@
 
     if-ne v12, v11, :cond_1c
 
-    const/16 v2, 0x10
+    const/16 v2, 0x1010
 
     .line 525
     invoke-static {v2}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z

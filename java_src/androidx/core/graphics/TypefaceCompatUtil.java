@@ -1,5 +1,6 @@
 package androidx.core.graphics;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.net.Uri;
@@ -12,6 +13,7 @@ import androidx.core.provider.FontsContractCompat;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -52,7 +54,7 @@ public class TypefaceCompatUtil {
 
     public static ByteBuffer mmap(Context context, CancellationSignal cancellationSignal, Uri uri) {
         try {
-            ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(uri, "r", cancellationSignal);
+            ParcelFileDescriptor openFileDescriptor = Api19Impl.openFileDescriptor(context.getContentResolver(), uri, "r", cancellationSignal);
             if (openFileDescriptor == null) {
                 if (openFileDescriptor != null) {
                     openFileDescriptor.close();
@@ -174,5 +176,13 @@ public class TypefaceCompatUtil {
             }
         }
         return Collections.unmodifiableMap(hashMap);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api19Impl {
+        static ParcelFileDescriptor openFileDescriptor(ContentResolver contentResolver, Uri uri, String str, CancellationSignal cancellationSignal) throws FileNotFoundException {
+            return contentResolver.openFileDescriptor(uri, str, cancellationSignal);
+        }
     }
 }

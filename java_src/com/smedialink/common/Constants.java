@@ -45,8 +45,11 @@ public final class Constants {
         public final String getShareLinkFor(String username) {
             CharSequence trim;
             Intrinsics.checkNotNullParameter(username, "username");
+            StringBuilder sb = new StringBuilder();
+            sb.append("https://t.me/");
             trim = StringsKt__StringsKt.trim(username);
-            return Intrinsics.stringPlus("https://t.me/", trim.toString());
+            sb.append(trim.toString());
+            return sb.toString();
         }
     }
 }

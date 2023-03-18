@@ -45,7 +45,7 @@
 
     iget-object v3, p0, Lcom/smedialink/utils/dialogs/DialogExtKt$$ExternalSyntheticLambda0;->f$3:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {v0, v1, v2, v3, p1}, Lcom/smedialink/utils/dialogs/DialogExtKt;->$r8$lambda$MJRJsGpb3rfMc7DQ8iOiNZDlRnU(Landroid/widget/TextView;Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Landroid/content/DialogInterface;)V
+    invoke-static {v0, v1, v2, v3, p1}, Lcom/smedialink/utils/dialogs/DialogExtKt;->$r8$lambda$mi3L7Za_kjJ-WLquBZkASVaufM4(Landroid/widget/TextView;Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

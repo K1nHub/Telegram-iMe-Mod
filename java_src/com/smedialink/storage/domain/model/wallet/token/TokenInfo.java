@@ -755,15 +755,15 @@ public abstract class TokenInfo {
             /* compiled from: TokenInfo.kt */
             /* renamed from: com.smedialink.storage.domain.model.wallet.token.TokenInfo$Crypto$Ethereum$GT */
             /* loaded from: classes3.dex */
-            public static final class C1774GT extends Ethereum {
-                public static final C1774GT INSTANCE = new C1774GT();
+            public static final class C1850GT extends Ethereum {
+                public static final C1850GT INSTANCE = new C1850GT();
 
                 /* JADX WARN: Illegal instructions before constructor call */
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
                     To view partially-correct add '--show-bad-code' argument
                 */
-                private C1774GT() {
+                private C1850GT() {
                     /*
                         r14 = this;
                         com.smedialink.storage.domain.model.wallet.token.TokenCode r1 = com.smedialink.storage.domain.model.wallet.token.TokenCode.GT
@@ -783,7 +783,7 @@ public abstract class TokenInfo {
                         r0.<init>(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13)
                         return
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.smedialink.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.C1774GT.<init>():void");
+                    throw new UnsupportedOperationException("Method not decompiled: com.smedialink.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.C1850GT.<init>():void");
                 }
             }
 
@@ -2048,15 +2048,15 @@ public abstract class TokenInfo {
             /* compiled from: TokenInfo.kt */
             /* renamed from: com.smedialink.storage.domain.model.wallet.token.TokenInfo$Crypto$Ethereum$OM */
             /* loaded from: classes3.dex */
-            public static final class C1775OM extends Ethereum {
-                public static final C1775OM INSTANCE = new C1775OM();
+            public static final class C1851OM extends Ethereum {
+                public static final C1851OM INSTANCE = new C1851OM();
 
                 /* JADX WARN: Illegal instructions before constructor call */
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
                     To view partially-correct add '--show-bad-code' argument
                 */
-                private C1775OM() {
+                private C1851OM() {
                     /*
                         r14 = this;
                         com.smedialink.storage.domain.model.wallet.token.TokenCode r1 = com.smedialink.storage.domain.model.wallet.token.TokenCode.OM
@@ -2076,7 +2076,7 @@ public abstract class TokenInfo {
                         r0.<init>(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13)
                         return
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.smedialink.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.C1775OM.<init>():void");
+                    throw new UnsupportedOperationException("Method not decompiled: com.smedialink.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.C1851OM.<init>():void");
                 }
             }
 

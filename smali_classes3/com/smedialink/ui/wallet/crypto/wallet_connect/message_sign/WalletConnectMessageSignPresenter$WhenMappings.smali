@@ -30,6 +30,7 @@
 
     new-array v0, v0, [I
 
+    :try_start_0
     sget-object v1, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage$WCSignType;->PERSONAL_MESSAGE:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage$WCSignType;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
@@ -39,7 +40,10 @@
     const/4 v2, 0x1
 
     aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
+    :catch_0
     sput-object v0, Lcom/smedialink/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter$WhenMappings;->$EnumSwitchMapping$0:[I
 
     return-void

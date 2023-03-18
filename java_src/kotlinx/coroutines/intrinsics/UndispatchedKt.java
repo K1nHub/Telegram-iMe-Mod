@@ -31,7 +31,7 @@ public final class UndispatchedKt {
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 if (invoke != coroutine_suspended) {
                     Result.Companion companion = Result.Companion;
-                    probeCoroutineCreated.resumeWith(Result.m1870constructorimpl(invoke));
+                    probeCoroutineCreated.resumeWith(Result.m1463constructorimpl(invoke));
                     return;
                 }
                 return;
@@ -39,7 +39,7 @@ public final class UndispatchedKt {
             throw new NullPointerException("null cannot be cast to non-null type (kotlin.coroutines.Continuation<T>) -> kotlin.Any?");
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            probeCoroutineCreated.resumeWith(Result.m1870constructorimpl(ResultKt.createFailure(th)));
+            probeCoroutineCreated.resumeWith(Result.m1463constructorimpl(ResultKt.createFailure(th)));
         }
     }
 
@@ -55,7 +55,7 @@ public final class UndispatchedKt {
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 if (invoke != coroutine_suspended) {
                     Result.Companion companion = Result.Companion;
-                    probeCoroutineCreated.resumeWith(Result.m1870constructorimpl(invoke));
+                    probeCoroutineCreated.resumeWith(Result.m1463constructorimpl(invoke));
                     return;
                 }
                 return;
@@ -63,7 +63,7 @@ public final class UndispatchedKt {
             throw new NullPointerException("null cannot be cast to non-null type (R, kotlin.coroutines.Continuation<T>) -> kotlin.Any?");
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            probeCoroutineCreated.resumeWith(Result.m1870constructorimpl(ResultKt.createFailure(th)));
+            probeCoroutineCreated.resumeWith(Result.m1463constructorimpl(ResultKt.createFailure(th)));
         }
     }
 

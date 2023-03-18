@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/SecretMediaViewer;Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;)V
     .locals 0
 
-    .line 1298
+    .line 1304
     iput-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$7;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     iput-object p2, p0, Lorg/telegram/ui/SecretMediaViewer$7;->val$object:Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
@@ -45,7 +45,7 @@
 .method private synthetic lambda$onAnimationEnd$0()V
     .locals 2
 
-    .line 1306
+    .line 1312
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$7;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$2800(Lorg/telegram/ui/SecretMediaViewer;)Ljava/lang/Runnable;
@@ -54,7 +54,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1307
+    .line 1313
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$7;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$2800(Lorg/telegram/ui/SecretMediaViewer;)Ljava/lang/Runnable;
@@ -63,7 +63,7 @@
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 1308
+    .line 1314
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$7;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     const/4 v1, 0x0
@@ -79,19 +79,19 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1301
+    .line 1307
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$7;->val$object:Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
 
     if-eqz p1, :cond_0
 
-    .line 1302
+    .line 1308
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0, v0}, Lorg/telegram/messenger/ImageReceiver;->setVisible(ZZ)V
 
-    .line 1304
+    .line 1310
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$7;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
@@ -99,7 +99,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/SecretMediaViewer;->access$2202(Lorg/telegram/ui/SecretMediaViewer;Z)Z
 
-    .line 1305
+    .line 1311
     new-instance p1, Lorg/telegram/ui/SecretMediaViewer$7$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/SecretMediaViewer$7$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/SecretMediaViewer$7;)V

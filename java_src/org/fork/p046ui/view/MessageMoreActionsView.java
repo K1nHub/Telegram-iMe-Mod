@@ -12,12 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.p046ui.view.MessageMoreActionsView;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.p048ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.RecyclerListView;
@@ -52,7 +51,7 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
         lazy2 = LazyKt__LazyJVMKt.lazy(MessageMoreActionsView$optionItemHeight$2.INSTANCE);
         this.optionItemHeight$delegate = lazy2;
         setTextAndIcon(title, i);
-        setRightIcon(C3158R.C3160drawable.msg_arrowright);
+        setRightIcon(C3286R.C3288drawable.msg_arrowright);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -92,7 +91,7 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
             }
         };
         recyclerListView.setLayoutManager(new LinearLayoutManager(recyclerListView.getContext()));
-        recyclerListView.setAdapter(new SubMenuItemsAdapter(this));
+        recyclerListView.setAdapter(new SubMenuItemsAdapter());
         return recyclerListView;
     }
 
@@ -101,11 +100,7 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
     /* renamed from: org.fork.ui.view.MessageMoreActionsView$SubMenuItemsAdapter */
     /* loaded from: classes4.dex */
     public final class SubMenuItemsAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ MessageMoreActionsView this$0;
-
-        public SubMenuItemsAdapter(MessageMoreActionsView this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public SubMenuItemsAdapter() {
         }
 
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
@@ -120,8 +115,8 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
             if (NumberExtKt.isZero(Integer.valueOf(i))) {
                 return IdFabric$ViewTypes.SUB_ITEM_TOP;
             }
-            lastIndex = CollectionsKt__CollectionsKt.getLastIndex(this.this$0.getItems());
-            return i == lastIndex ? IdFabric$ViewTypes.SUB_ITEM_BOTTOM : this.this$0.getItems().get(i) instanceof SubMenuItem.Gap ? IdFabric$ViewTypes.SUB_ITEM_GAP : IdFabric$ViewTypes.SUB_ITEM_MIDDLE;
+            lastIndex = CollectionsKt__CollectionsKt.getLastIndex(MessageMoreActionsView.this.getItems());
+            return i == lastIndex ? IdFabric$ViewTypes.SUB_ITEM_BOTTOM : MessageMoreActionsView.this.getItems().get(i) instanceof SubMenuItem.Gap ? IdFabric$ViewTypes.SUB_ITEM_GAP : IdFabric$ViewTypes.SUB_ITEM_MIDDLE;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -129,13 +124,11 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
             FrameLayout subMenuItemView;
             Intrinsics.checkNotNullParameter(parent, "parent");
             if (i == IdFabric$ViewTypes.SUB_ITEM_GAP) {
-                subMenuItemView = new FrameLayout(this.this$0.getContext());
-                subMenuItemView.setLayoutParams(new RecyclerView.LayoutParams(-1, this.this$0.getGapItemHeight()));
-                Unit unit = Unit.INSTANCE;
+                subMenuItemView = new FrameLayout(MessageMoreActionsView.this.getContext());
+                subMenuItemView.setLayoutParams(new RecyclerView.LayoutParams(-1, MessageMoreActionsView.this.getGapItemHeight()));
             } else {
-                subMenuItemView = new SubMenuItemView(this.this$0, i);
+                subMenuItemView = new SubMenuItemView(i);
                 subMenuItemView.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-                Unit unit2 = Unit.INSTANCE;
             }
             return new RecyclerListView.Holder(subMenuItemView);
         }
@@ -143,18 +136,22 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            SubMenuItem subMenuItem = this.this$0.getItems().get(i);
+            SubMenuItem subMenuItem = MessageMoreActionsView.this.getItems().get(i);
             if (subMenuItem instanceof SubMenuItem.Option) {
+                View view = holder.itemView;
+                Intrinsics.checkNotNull(view, "null cannot be cast to non-null type org.telegram.ui.ActionBar.ActionBarMenuSubItem");
                 SubMenuItem.Option option = (SubMenuItem.Option) subMenuItem;
-                ((ActionBarMenuSubItem) holder.itemView).setTextAndIcon(option.getTitle(), option.getIconResId());
+                ((ActionBarMenuSubItem) view).setTextAndIcon(option.getTitle(), option.getIconResId());
             } else if (subMenuItem instanceof SubMenuItem.Gap) {
-                ((FrameLayout) holder.itemView).setBackgroundColor(Theme.getColor("actionBarDefaultSubmenuSeparator"));
+                View view2 = holder.itemView;
+                Intrinsics.checkNotNull(view2, "null cannot be cast to non-null type android.widget.FrameLayout");
+                ((FrameLayout) view2).setBackgroundColor(Theme.getColor("actionBarDefaultSubmenuSeparator"));
             }
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            return this.this$0.getItems().size();
+            return MessageMoreActionsView.this.getItems().size();
         }
     }
 
@@ -162,19 +159,14 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
     /* renamed from: org.fork.ui.view.MessageMoreActionsView$SubMenuItemView */
     /* loaded from: classes4.dex */
     private final class SubMenuItemView extends ActionBarMenuSubItem {
-        final /* synthetic */ MessageMoreActionsView this$0;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public SubMenuItemView(MessageMoreActionsView this$0, int i) {
-            super(this$0.getContext(), i == IdFabric$ViewTypes.SUB_ITEM_TOP, i == IdFabric$ViewTypes.SUB_ITEM_BOTTOM);
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public SubMenuItemView(int i) {
+            super(MessageMoreActionsView.this.getContext(), i == IdFabric$ViewTypes.SUB_ITEM_TOP, i == IdFabric$ViewTypes.SUB_ITEM_BOTTOM);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // org.telegram.p048ui.ActionBar.ActionBarMenuSubItem, android.widget.FrameLayout, android.view.View
         public void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(this.this$0.getOptionItemHeight(), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(MessageMoreActionsView.this.getOptionItemHeight(), 1073741824));
         }
     }
 

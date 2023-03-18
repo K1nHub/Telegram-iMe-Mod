@@ -24,24 +24,26 @@
 # instance fields
 .field private final filterProvider:Lcom/smedialink/ui/adapter/provider/FilterProvider;
 
+.field private final headerWithRightButtonProvider:Lcom/smedialink/ui/adapter/provider/HeaderWithRightButtonProvider;
+
 
 # direct methods
-.method public constructor <init>(Lcom/smedialink/ui/adapter/provider/GlobalStateProvider;Lcom/smedialink/ui/adapter/provider/HeaderWithRightButtonProvider;Lcom/smedialink/ui/adapter/provider/StakingProgrammeProvider;Lcom/smedialink/ui/adapter/provider/FilterProvider;)V
+.method public constructor <init>(Lcom/smedialink/ui/adapter/provider/GlobalStateProvider;Lcom/smedialink/ui/adapter/provider/StakingProgrammeProvider;Lcom/smedialink/ui/adapter/provider/FilterProvider;Lcom/smedialink/ui/adapter/provider/HeaderWithRightButtonProvider;)V
     .locals 4
 
     const-string v0, "globalStateProvider"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "headerWithRightButtonProvider"
+    const-string v0, "stakingProgrammeProvider"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "stakingProgrammeProvider"
+    const-string v0, "filterProvider"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "filterProvider"
+    const-string v0, "headerWithRightButtonProvider"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -52,8 +54,11 @@
     .line 24
     invoke-direct {p0, v0, v1, v0}, Lcom/chad/library/adapter/base/BaseNodeAdapter;-><init>(Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
+    .line 22
+    iput-object p3, p0, Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;->filterProvider:Lcom/smedialink/ui/adapter/provider/FilterProvider;
+
     .line 23
-    iput-object p4, p0, Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;->filterProvider:Lcom/smedialink/ui/adapter/provider/FilterProvider;
+    iput-object p4, p0, Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;->headerWithRightButtonProvider:Lcom/smedialink/ui/adapter/provider/HeaderWithRightButtonProvider;
 
     const/4 v0, 0x2
 
@@ -66,7 +71,7 @@
 
     aput v2, v0, v3
 
-    sget v2, Lorg/telegram/messenger/R$id;->image_staking_filters_info:I
+    sget v2, Lorg/telegram/messenger/R$id;->image_info:I
 
     aput v2, v0, v1
 
@@ -80,21 +85,21 @@
     invoke-virtual {p0, p1}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->addItemProvider(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)V
 
     .line 29
-    invoke-static {p2}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->asItem(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseItemProvider;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->addItemProvider(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)V
-
-    .line 30
     invoke-static {p4}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->asItem(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseItemProvider;
 
     move-result-object p1
 
     invoke-virtual {p0, p1}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->addItemProvider(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)V
 
-    .line 31
+    .line 30
     invoke-static {p3}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->asItem(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseItemProvider;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->addItemProvider(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)V
+
+    .line 31
+    invoke-static {p2}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->asItem(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseItemProvider;
 
     move-result-object p1
 
@@ -108,8 +113,17 @@
 .method public final getFilterProvider()Lcom/smedialink/ui/adapter/provider/FilterProvider;
     .locals 1
 
-    .line 23
+    .line 22
     iget-object v0, p0, Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;->filterProvider:Lcom/smedialink/ui/adapter/provider/FilterProvider;
+
+    return-object v0
+.end method
+
+.method public final getHeaderWithRightButtonProvider()Lcom/smedialink/ui/adapter/provider/HeaderWithRightButtonProvider;
+    .locals 1
+
+    .line 23
+    iget-object v0, p0, Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;->headerWithRightButtonProvider:Lcom/smedialink/ui/adapter/provider/HeaderWithRightButtonProvider;
 
     return-object v0
 .end method

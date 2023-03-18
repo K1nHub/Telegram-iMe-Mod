@@ -25,7 +25,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.fork.enums.ParticipantsActionType;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
@@ -81,13 +81,28 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
 
         static {
             int[] iArr = new int[ParticipantsActionType.values().length];
-            iArr[ParticipantsActionType.DELETE.ordinal()] = 1;
-            iArr[ParticipantsActionType.UNBLOCK.ordinal()] = 2;
-            iArr[ParticipantsActionType.RETURN.ordinal()] = 3;
+            try {
+                iArr[ParticipantsActionType.DELETE.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[ParticipantsActionType.UNBLOCK.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[ParticipantsActionType.RETURN.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
             int[] iArr2 = new int[State.values().length];
-            iArr2[State.LOADING.ordinal()] = 1;
-            iArr2[State.DELETING.ordinal()] = 2;
+            try {
+                iArr2[State.LOADING.ordinal()] = 1;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr2[State.DELETING.ordinal()] = 2;
+            } catch (NoSuchFieldError unused5) {
+            }
             $EnumSwitchMapping$1 = iArr2;
         }
     }
@@ -205,7 +220,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
 
     private final void buildNotification() {
         if (this.builder == null) {
-            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_FilteredChatParticipantsProcessingChannel", C3158R.C3160drawable.msg_groups, StopFilteredChatParticipantsProcessingReceiver.class);
+            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_FilteredChatParticipantsProcessingChannel", C3286R.C3288drawable.msg_groups, StopFilteredChatParticipantsProcessingReceiver.class);
         }
     }
 
@@ -221,9 +236,8 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
             tLRPC$TL_channels_getParticipants.channel = messagesController.getInputChannel(this.chatId);
             TLRPC$ChannelParticipantsFilter serverFilter = this.participantsFilter.getServerFilter();
             tLRPC$TL_channels_getParticipants.filter = serverFilter;
-            serverFilter.f1493q = "";
+            serverFilter.f1498q = "";
             tLRPC$TL_channels_getParticipants.limit = 200;
-            Unit unit = Unit.INSTANCE;
             this.req = tLRPC$TL_channels_getParticipants;
         }
         TLRPC$TL_channels_getParticipants tLRPC$TL_channels_getParticipants2 = this.req;
@@ -238,7 +252,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
         int sendRequest = connectionsManager2.sendRequest(this.req, new RequestDelegate() { // from class: com.smedialink.services.FilteredChatParticipantsProcessingService$$ExternalSyntheticLambda2
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                FilteredChatParticipantsProcessingService.m1287loadParticipants$lambda1(FilteredChatParticipantsProcessingService.this, tLObject, tLRPC$TL_error);
+                FilteredChatParticipantsProcessingService.loadParticipants$lambda$1(FilteredChatParticipantsProcessingService.this, tLObject, tLRPC$TL_error);
             }
         });
         ConnectionsManager connectionsManager3 = this.connectionsManager;
@@ -251,8 +265,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: loadParticipants$lambda-1  reason: not valid java name */
-    public static final void m1287loadParticipants$lambda1(FilteredChatParticipantsProcessingService this$0, TLObject response, TLRPC$TL_error tLRPC$TL_error) {
+    public static final void loadParticipants$lambda$1(FilteredChatParticipantsProcessingService this$0, TLObject response, TLRPC$TL_error tLRPC$TL_error) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(response, "response");
         if (tLRPC$TL_error == null) {
@@ -261,7 +274,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
             this$0.onParticipantsPartLoaded(arrayList);
             return;
         }
-        this$0.stopServiceWithToast(C3158R.string.loading_participants_error);
+        this$0.stopServiceWithToast(C3286R.string.loading_participants_error);
     }
 
     private final void onParticipantsPartLoaded(List<? extends TLRPC$ChannelParticipant> list) {
@@ -287,21 +300,20 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
         runWithDelay(new Runnable() { // from class: com.smedialink.services.FilteredChatParticipantsProcessingService$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                FilteredChatParticipantsProcessingService.m1288onParticipantsPartLoaded$lambda3(FilteredChatParticipantsProcessingService.this);
+                FilteredChatParticipantsProcessingService.onParticipantsPartLoaded$lambda$3(FilteredChatParticipantsProcessingService.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onParticipantsPartLoaded$lambda-3  reason: not valid java name */
-    public static final void m1288onParticipantsPartLoaded$lambda3(FilteredChatParticipantsProcessingService this$0) {
+    public static final void onParticipantsPartLoaded$lambda$3(FilteredChatParticipantsProcessingService this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.loadParticipants();
     }
 
     private final void onAllParticipantsLoaded() {
         if (this.participantsFilter == GroupMembersFilter.DELETED) {
-            CollectionsKt__MutableCollectionsKt.removeAll(this.participants, C1482x82e66c83.INSTANCE);
+            CollectionsKt__MutableCollectionsKt.removeAll(this.participants, C1492x82e66c83.INSTANCE);
         }
         processNextChatParticipantsPart();
     }
@@ -311,18 +323,17 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
             runWithDelay(new Runnable() { // from class: com.smedialink.services.FilteredChatParticipantsProcessingService$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FilteredChatParticipantsProcessingService.m1289processNextChatParticipantsPart$lambda4(FilteredChatParticipantsProcessingService.this);
+                    FilteredChatParticipantsProcessingService.processNextChatParticipantsPart$lambda$4(FilteredChatParticipantsProcessingService.this);
                 }
             });
         } else {
-            stopServiceWithToast(C3158R.string.processing_participants_success);
+            stopServiceWithToast(C3286R.string.processing_participants_success);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: processNextChatParticipantsPart$lambda-4  reason: not valid java name */
-    public static final void m1289processNextChatParticipantsPart$lambda4(FilteredChatParticipantsProcessingService this$0) {
-        Function0<Unit> c1483x25afaff6;
+    public static final void processNextChatParticipantsPart$lambda$4(FilteredChatParticipantsProcessingService this$0) {
+        Function0<Unit> c1493x25afaff6;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.updateNotification(true, State.DELETING);
         int size = this$0.participants.size();
@@ -331,15 +342,15 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
         this$0.processedParticipantsCount += subList.size();
         int i = WhenMappings.$EnumSwitchMapping$0[this$0.participantsActionType.ordinal()];
         if (i == 1) {
-            c1483x25afaff6 = new C1483x25afaff6(this$0);
+            c1493x25afaff6 = new C1493x25afaff6(this$0);
         } else if (i == 2) {
-            c1483x25afaff6 = new C1484x25afaff7(this$0);
+            c1493x25afaff6 = new C1494x25afaff7(this$0);
         } else if (i != 3) {
             throw new NoWhenBranchMatchedException();
         } else {
-            c1483x25afaff6 = new C1485x25afaff8(this$0);
+            c1493x25afaff6 = new C1495x25afaff8(this$0);
         }
-        this$0.processParticipantsPartBySingleRequests(c1483x25afaff6);
+        this$0.processParticipantsPartBySingleRequests(c1493x25afaff6);
         this$0.participants.removeAll(this$0.processingParticipants);
     }
 
@@ -403,20 +414,19 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
         }
         int i = WhenMappings.$EnumSwitchMapping$1[state.ordinal()];
         if (i == 1) {
-            formatStringInternal = LocaleController.formatStringInternal(C3158R.string.loading_participants, Integer.valueOf(this.participants.size()));
+            formatStringInternal = LocaleController.formatStringInternal(C3286R.string.loading_participants, Integer.valueOf(this.participants.size()));
         } else if (i == 2) {
-            formatStringInternal = LocaleController.formatStringInternal(C3158R.string.processing_participants, Integer.valueOf(this.processedParticipantsCount), Integer.valueOf(this.participants.size()));
+            formatStringInternal = LocaleController.formatStringInternal(C3286R.string.processing_participants, Integer.valueOf(this.processedParticipantsCount), Integer.valueOf(this.participants.size()));
         } else {
-            formatStringInternal = LocaleController.getString("WaitingForNetwork", C3158R.string.WaitingForNetwork);
+            formatStringInternal = LocaleController.getString("WaitingForNetwork", C3286R.string.WaitingForNetwork);
         }
         NotificationCompat.Builder builder = this.builder;
-        if (builder == null) {
-            return;
-        }
-        builder.setTicker(formatStringInternal);
-        builder.setContentText(formatStringInternal);
-        if (z) {
-            NotificationManagerCompat.from(ApplicationLoader.applicationContext).notify(this.notificationChannelId, builder.build());
+        if (builder != null) {
+            builder.setTicker(formatStringInternal);
+            builder.setContentText(formatStringInternal);
+            if (z) {
+                NotificationManagerCompat.from(ApplicationLoader.applicationContext).notify(this.notificationChannelId, builder.build());
+            }
         }
     }
 

@@ -18,7 +18,7 @@ public abstract class Transaction {
     private final TokenCode feeTokenCode;
 
     /* renamed from: id */
-    private final String f352id;
+    private final String f356id;
     private final TransactionProcessingType processingType;
     private final Status status;
     private final TokenCode tokenCode;
@@ -29,7 +29,7 @@ public abstract class Transaction {
     }
 
     private Transaction(String str, BigDecimal bigDecimal, TransactionType transactionType, TransactionDirection transactionDirection, String str2, TokenCode tokenCode, Status status, TransactionProcessingType transactionProcessingType, BigDecimal bigDecimal2, TokenCode tokenCode2) {
-        this.f352id = str;
+        this.f356id = str;
         this.amount = bigDecimal;
         this.type = transactionType;
         this.direction = transactionDirection;
@@ -42,7 +42,7 @@ public abstract class Transaction {
     }
 
     public String getId() {
-        return this.f352id;
+        return this.f356id;
     }
 
     public BigDecimal getAmount() {
@@ -91,7 +91,7 @@ public abstract class Transaction {
         private final TokenCode feeTokenCode;
 
         /* renamed from: id */
-        private final String f365id;
+        private final String f369id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenCode tokenCode;
@@ -172,7 +172,7 @@ public abstract class Transaction {
 
         @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f365id;
+            return this.f369id;
         }
 
         @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction
@@ -233,7 +233,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-            this.f365id = id;
+            this.f369id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -256,7 +256,7 @@ public abstract class Transaction {
         private final TokenCode feeTokenCode;
 
         /* renamed from: id */
-        private final String f364id;
+        private final String f368id;
         private final TransactionProcessingType processingType;
         private final String recipientUserId;
         private final Status status;
@@ -343,7 +343,7 @@ public abstract class Transaction {
 
         @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f364id;
+            return this.f368id;
         }
 
         @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction
@@ -409,7 +409,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
             Intrinsics.checkNotNullParameter(recipientUserId, "recipientUserId");
-            this.f364id = id;
+            this.f368id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -433,7 +433,7 @@ public abstract class Transaction {
         private final TokenCode feeTokenCode;
 
         /* renamed from: id */
-        private final String f361id;
+        private final String f365id;
         private final String invitedUserId;
         private final TransactionProcessingType processingType;
         private final Status status;
@@ -520,7 +520,7 @@ public abstract class Transaction {
 
         @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f361id;
+            return this.f365id;
         }
 
         @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction
@@ -586,7 +586,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
             Intrinsics.checkNotNullParameter(invitedUserId, "invitedUserId");
-            this.f361id = id;
+            this.f365id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -610,7 +610,7 @@ public abstract class Transaction {
         private final TokenCode feeTokenCode;
 
         /* renamed from: id */
-        private final String f360id;
+        private final String f364id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenCode tokenCode;
@@ -691,7 +691,7 @@ public abstract class Transaction {
 
         @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f360id;
+            return this.f364id;
         }
 
         @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction
@@ -752,7 +752,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-            this.f360id = id;
+            this.f364id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -775,7 +775,7 @@ public abstract class Transaction {
         private final TokenCode feeTokenCode;
 
         /* renamed from: id */
-        private final String f359id;
+        private final String f363id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenCode tokenCode;
@@ -856,7 +856,7 @@ public abstract class Transaction {
 
         @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f359id;
+            return this.f363id;
         }
 
         @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction
@@ -917,7 +917,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-            this.f359id = id;
+            this.f363id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -940,7 +940,7 @@ public abstract class Transaction {
         private final TokenCode feeTokenCode;
 
         /* renamed from: id */
-        private final String f363id;
+        private final String f367id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenCode tokenCode;
@@ -1021,7 +1021,7 @@ public abstract class Transaction {
 
         @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f363id;
+            return this.f367id;
         }
 
         @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction
@@ -1082,7 +1082,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-            this.f363id = id;
+            this.f367id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -1105,7 +1105,7 @@ public abstract class Transaction {
         private final TokenCode feeTokenCode;
 
         /* renamed from: id */
-        private final String f362id;
+        private final String f366id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenCode tokenCode;
@@ -1186,7 +1186,7 @@ public abstract class Transaction {
 
         @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f362id;
+            return this.f366id;
         }
 
         @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction
@@ -1247,7 +1247,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-            this.f362id = id;
+            this.f366id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -1270,7 +1270,7 @@ public abstract class Transaction {
         private final TokenCode feeTokenCode;
 
         /* renamed from: id */
-        private final String f353id;
+        private final String f357id;
         private final NetworkType networkType;
         private final TransactionProcessingType processingType;
         private final Status status;
@@ -1280,7 +1280,7 @@ public abstract class Transaction {
 
         @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f353id;
+            return this.f357id;
         }
 
         @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction
@@ -1351,7 +1351,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
             Intrinsics.checkNotNullParameter(txHash, "txHash");
             Intrinsics.checkNotNullParameter(networkType, "networkType");
-            this.f353id = id;
+            this.f357id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -1375,7 +1375,7 @@ public abstract class Transaction {
             private final TokenCode feeTokenCode;
 
             /* renamed from: id */
-            private final String f355id;
+            private final String f359id;
             private final NetworkType networkType;
             private final TransactionProcessingType processingType;
             private final String receiverAccountId;
@@ -1492,7 +1492,7 @@ public abstract class Transaction {
 
             @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction.Crypto.Transfer, com.smedialink.storage.domain.model.wallet.transaction.Transaction.Crypto, com.smedialink.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f355id;
+                return this.f359id;
             }
 
             @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction.Crypto.Transfer, com.smedialink.storage.domain.model.wallet.transaction.Transaction.Crypto, com.smedialink.storage.domain.model.wallet.transaction.Transaction
@@ -1587,7 +1587,7 @@ public abstract class Transaction {
                 Intrinsics.checkNotNullParameter(networkType, "networkType");
                 Intrinsics.checkNotNullParameter(senderAccountId, "senderAccountId");
                 Intrinsics.checkNotNullParameter(receiverAccountId, "receiverAccountId");
-                this.f355id = id;
+                this.f359id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
@@ -1616,7 +1616,7 @@ public abstract class Transaction {
             private final TokenCode feeTokenCode;
 
             /* renamed from: id */
-            private final String f358id;
+            private final String f362id;
             private final NetworkType networkType;
             private final String payloadMessage;
             private final TransactionProcessingType processingType;
@@ -1629,7 +1629,7 @@ public abstract class Transaction {
 
             @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction.Crypto, com.smedialink.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f358id;
+                return this.f362id;
             }
 
             @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction.Crypto, com.smedialink.storage.domain.model.wallet.transaction.Transaction
@@ -1716,7 +1716,7 @@ public abstract class Transaction {
                 Intrinsics.checkNotNullParameter(networkType, "networkType");
                 Intrinsics.checkNotNullParameter(senderAddress, "senderAddress");
                 Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
-                this.f358id = id;
+                this.f362id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
@@ -1744,7 +1744,7 @@ public abstract class Transaction {
             private final TokenCode feeTokenCode;
 
             /* renamed from: id */
-            private final String f354id;
+            private final String f358id;
             private final NetworkType networkType;
             private final TransactionProcessingType processingType;
             private final Status status;
@@ -1837,7 +1837,7 @@ public abstract class Transaction {
 
             @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction.Crypto, com.smedialink.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f354id;
+                return this.f358id;
             }
 
             @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction.Crypto, com.smedialink.storage.domain.model.wallet.transaction.Transaction
@@ -1910,7 +1910,7 @@ public abstract class Transaction {
                 Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
                 Intrinsics.checkNotNullParameter(txHash, "txHash");
                 Intrinsics.checkNotNullParameter(networkType, "networkType");
-                this.f354id = id;
+                this.f358id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
@@ -1935,7 +1935,7 @@ public abstract class Transaction {
             private final TokenCode feeTokenCode;
 
             /* renamed from: id */
-            private final String f356id;
+            private final String f360id;
             private final NetworkType networkType;
             private final String orderId;
             private final TransactionProcessingType processingType;
@@ -2058,7 +2058,7 @@ public abstract class Transaction {
 
             @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction.Crypto, com.smedialink.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f356id;
+                return this.f360id;
             }
 
             @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction.Crypto, com.smedialink.storage.domain.model.wallet.transaction.Transaction
@@ -2156,7 +2156,7 @@ public abstract class Transaction {
                 Intrinsics.checkNotNullParameter(orderId, "orderId");
                 Intrinsics.checkNotNullParameter(spentAmount, "spentAmount");
                 Intrinsics.checkNotNullParameter(spentFiatCode, "spentFiatCode");
-                this.f356id = id;
+                this.f360id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
@@ -2186,7 +2186,7 @@ public abstract class Transaction {
             private final TokenCode feeTokenCode;
 
             /* renamed from: id */
-            private final String f357id;
+            private final String f361id;
             private final BigDecimal inputAmount;
             private final TokenCode inputTokenCode;
             private final NetworkType networkType;
@@ -2309,7 +2309,7 @@ public abstract class Transaction {
 
             @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction.Crypto, com.smedialink.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f357id;
+                return this.f361id;
             }
 
             @Override // com.smedialink.storage.domain.model.wallet.transaction.Transaction.Crypto, com.smedialink.storage.domain.model.wallet.transaction.Transaction
@@ -2407,7 +2407,7 @@ public abstract class Transaction {
                 Intrinsics.checkNotNullParameter(tradeType, "tradeType");
                 Intrinsics.checkNotNullParameter(inputAmount, "inputAmount");
                 Intrinsics.checkNotNullParameter(outputAmount, "outputAmount");
-                this.f357id = id;
+                this.f361id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;

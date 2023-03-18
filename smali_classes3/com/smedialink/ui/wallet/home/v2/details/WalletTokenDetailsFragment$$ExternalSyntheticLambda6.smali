@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda6;->f$0:Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment;
 
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment;->$r8$lambda$JX36-tpXJJF4Zwrv6Cng9VHm-cM(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment;)V
+    invoke-static {v0}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment;->$r8$lambda$QX5BqszO7iGtmhAYISEjgbWJaLI(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment;)V
 
     return-void
 .end method

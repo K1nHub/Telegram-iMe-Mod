@@ -69,7 +69,7 @@ public final class CryptoTransferMetadata {
     }
 
     public String toString() {
-        return "CryptoTransferMetadata(transactionParams=" + this.transactionParams + ", feeTokenCode=" + this.feeTokenCode + ", contractAddress=" + ((Object) this.contractAddress) + ", sendMode=" + this.sendMode + ')';
+        return "CryptoTransferMetadata(transactionParams=" + this.transactionParams + ", feeTokenCode=" + this.feeTokenCode + ", contractAddress=" + this.contractAddress + ", sendMode=" + this.sendMode + ')';
     }
 
     public CryptoTransferMetadata(TransactionParams transactionParams, TokenCode feeTokenCode, String str, Integer num) {

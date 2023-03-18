@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nContactsActionType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactsActionType.kt\norg/fork/enums/ContactsActionType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,32:1\n1#2:33\n11328#3:34\n11663#3,3:35\n11328#3:38\n11663#3,3:39\n37#4:42\n36#4,3:43\n*S KotlinDebug\n*F\n+ 1 ContactsActionType.kt\norg/fork/enums/ContactsActionType$Companion\n*L\n26#1:34\n26#1:35,3\n30#1:38\n30#1:39,3\n30#1:42\n30#1:43,3\n*E\n"
+    value = "SMAP\nContactsActionType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactsActionType.kt\norg/fork/enums/ContactsActionType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,32:1\n1#2:33\n11335#3:34\n11670#3,3:35\n11335#3:38\n11670#3,3:39\n37#4,2:42\n*S KotlinDebug\n*F\n+ 1 ContactsActionType.kt\norg/fork/enums/ContactsActionType$Companion\n*L\n26#1:34\n26#1:35,3\n30#1:38\n30#1:39,3\n30#1:42,2\n*E\n"
 .end annotation
 
 
@@ -100,14 +100,14 @@
 
     move-result-object v0
 
-    .line 11328
+    .line 11335
     new-instance v1, Ljava/util/ArrayList;
 
     array-length v2, v0
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11663
+    .line 11670
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -126,12 +126,14 @@
 
     move-result-object v4
 
+    .line 11671
     invoke-interface {v1, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 26
     :cond_0
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->toIntArray(Ljava/util/Collection;)[I
 
@@ -148,14 +150,14 @@
 
     move-result-object v0
 
-    .line 11328
+    .line 11335
     new-instance v1, Ljava/util/ArrayList;
 
     array-length v2, v0
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11663
+    .line 11670
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -180,6 +182,7 @@
 
     move-result-object v5
 
+    .line 11671
     invoke-interface {v1, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v4, v4, 0x1
@@ -193,10 +196,6 @@
     invoke-interface {v1, v0}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
-
-    const-string v1, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     check-cast v0, [Ljava/lang/String;
 

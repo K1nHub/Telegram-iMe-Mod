@@ -100,7 +100,7 @@ public final class MetadataInterceptor implements Interceptor, KoinComponent {
 
         public final String formatAuthToken(String token) {
             Intrinsics.checkNotNullParameter(token, "token");
-            return Intrinsics.stringPlus("Bearer ", token);
+            return "Bearer " + token;
         }
     }
 }

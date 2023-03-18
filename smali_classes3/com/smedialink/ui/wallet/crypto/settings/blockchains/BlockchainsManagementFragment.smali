@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBlockchainsManagementFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BlockchainsManagementFragment.kt\ncom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,208:1\n13#2,4:209\n56#3,6:213\n254#4,2:219\n*S KotlinDebug\n*F\n+ 1 BlockchainsManagementFragment.kt\ncom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment\n*L\n34#1:209,4\n35#1:213,6\n55#1:219,2\n*E\n"
+    value = "SMAP\nBlockchainsManagementFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BlockchainsManagementFragment.kt\ncom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,208:1\n13#2,4:209\n56#3,6:213\n262#4,2:219\n*S KotlinDebug\n*F\n+ 1 BlockchainsManagementFragment.kt\ncom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment\n*L\n34#1:209,4\n35#1:213,6\n55#1:219,2\n*E\n"
 .end annotation
 
 
@@ -42,18 +42,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$HStnpJvgQyhaebt83Jook7kkMcs(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;Lcom/smedialink/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$QtDZyPMHtlwhdABenOcl1G5IVZA(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;Lcom/smedialink/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;->setupListeners$lambda-8$lambda-7$lambda-6(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;Lcom/smedialink/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;->setupListeners$lambda$8$lambda$7$lambda$6(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;Lcom/smedialink/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$_IOgilKBVWoWCbvK_5iUg_hpLpQ(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;Lcom/smedialink/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$zqQODTK2mc8JGRTFhaz1Z7lsS3c(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;Lcom/smedialink/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;->setupListeners$lambda-8$lambda-7$lambda-5(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;Lcom/smedialink/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;->setupListeners$lambda$8$lambda$7$lambda$5(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;Lcom/smedialink/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -359,7 +359,7 @@
 .end method
 
 .method private final setupColors()V
-    .locals 6
+    .locals 5
 
     .line 131
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentBlockchainsManagementBinding;
@@ -418,24 +418,26 @@
     .line 138
     invoke-virtual {v1, v2, v2}, Lorg/telegram/ui/Cells/TextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v2, ""
+    const-string v2, "setupColors$lambda$4$lambda$2"
 
     .line 139
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    invoke-static {v1, v3, v4, v5}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setRippleBackground$default(Landroid/view/View;ZILjava/lang/Object;)V
+    invoke-static {v1, v2, v3, v4}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setRippleBackground$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 142
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentBlockchainsManagementBinding;->textWalletsTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
+    const-string v1, "setupColors$lambda$4$lambda$3"
+
     .line 143
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v0}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
@@ -519,7 +521,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-8$lambda-7$lambda-5(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;Lcom/smedialink/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$8$lambda$7$lambda$5(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;Lcom/smedialink/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
@@ -530,11 +532,11 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p2, "$noName_1"
+    const-string p2, "<anonymous parameter 1>"
 
     invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -554,7 +556,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-8$lambda-7$lambda-6(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;Lcom/smedialink/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$8$lambda$7$lambda$6(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;Lcom/smedialink/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
@@ -565,7 +567,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -995,7 +997,7 @@
 .end method
 
 .method public openBackupScreen(Ljava/util/List;Ljava/lang/String;)V
-    .locals 12
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1031,28 +1033,26 @@
     sget-object v0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->Companion:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$Companion;
 
     .line 90
-    new-instance v11, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;
+    new-instance v10, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;
 
     const/4 v6, 0x0
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    const/16 v8, 0xc
 
-    const/16 v9, 0x1c
+    const/4 v9, 0x0
 
-    const/4 v10, 0x0
-
-    move-object v3, v11
+    move-object v3, v10
 
     move-object v4, p1
 
     move-object v5, p2
 
-    invoke-direct/range {v3 .. v10}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;-><init>(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v3 .. v9}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;-><init>(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     .line 89
-    invoke-virtual {v0, v11}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$Companion;->newInstance(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
+    invoke-virtual {v0, v10}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$Companion;->newInstance(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     move-result-object v3
 
@@ -1109,7 +1109,7 @@
     :cond_0
     const/16 v1, 0x8
 
-    .line 254
+    .line 262
     :goto_0
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 

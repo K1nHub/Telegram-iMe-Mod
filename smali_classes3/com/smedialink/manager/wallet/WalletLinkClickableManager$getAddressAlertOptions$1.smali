@@ -70,18 +70,18 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_0
     iget-object v1, p0, Lcom/smedialink/manager/wallet/WalletLinkClickableManager$getAddressAlertOptions$1;->$address:Ljava/lang/String;
 
     invoke-interface {v0, v1}, Lcom/smedialink/manager/wallet/WalletLinkClickableView;->actionCopyToClipboard(Ljava/lang/String;)V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
 
     :goto_0
     return-object v0

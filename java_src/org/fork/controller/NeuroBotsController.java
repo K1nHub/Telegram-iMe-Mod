@@ -3,6 +3,7 @@ package org.fork.controller;
 import android.content.SharedPreferences;
 import com.smedialink.common.TelegramPreferenceKeys;
 import java.util.Objects;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.controller.NeuroBotsController;
@@ -66,19 +67,19 @@ public final class NeuroBotsController extends BaseController {
 
     public final void loadConfig(SharedPreferences preferences) {
         Intrinsics.checkNotNullParameter(preferences, "preferences");
-        setNeuroBotsEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isNeuroBotsEnabled(), TelegramPreferenceKeys.User.Default.isNeuroBotsEnabled()));
-        setNeuroBotsEnabled(false);
-        setNeuroBotsAutoEnabledInPersonalChats(preferences.getBoolean(TelegramPreferenceKeys.User.isNeuroBotsAutoEnabledInPersonalChats(), TelegramPreferenceKeys.User.Default.isNeuroBotsAutoEnabledInPersonalChats()));
-        setNeuroBotsAutoEnabledInGroups(preferences.getBoolean(TelegramPreferenceKeys.User.isNeuroBotsAutoEnabledInGroups(), TelegramPreferenceKeys.User.Default.isNeuroBotsAutoEnabledInGroups()));
-        setShowOftenUsedNeuroBotsEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isShowOftenUsedNeuroBotsEnabled(), TelegramPreferenceKeys.User.Default.isShowOftenUsedNeuroBotsEnabled()));
+        this.isNeuroBotsEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isNeuroBotsEnabled(), TelegramPreferenceKeys.User.Default.isNeuroBotsEnabled());
+        this.isNeuroBotsEnabled = false;
+        this.isNeuroBotsAutoEnabledInPersonalChats = preferences.getBoolean(TelegramPreferenceKeys.User.isNeuroBotsAutoEnabledInPersonalChats(), TelegramPreferenceKeys.User.Default.isNeuroBotsAutoEnabledInPersonalChats());
+        this.isNeuroBotsAutoEnabledInGroups = preferences.getBoolean(TelegramPreferenceKeys.User.isNeuroBotsAutoEnabledInGroups(), TelegramPreferenceKeys.User.Default.isNeuroBotsAutoEnabledInGroups());
+        this.isShowOftenUsedNeuroBotsEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isShowOftenUsedNeuroBotsEnabled(), TelegramPreferenceKeys.User.Default.isShowOftenUsedNeuroBotsEnabled());
     }
 
     public final void saveConfig() {
         SharedPreferences.Editor edit = getUserConfig().getPreferencesPublic().edit();
-        edit.putBoolean(TelegramPreferenceKeys.User.isNeuroBotsEnabled(), isNeuroBotsEnabled());
-        edit.putBoolean(TelegramPreferenceKeys.User.isNeuroBotsAutoEnabledInPersonalChats(), isNeuroBotsAutoEnabledInPersonalChats());
-        edit.putBoolean(TelegramPreferenceKeys.User.isNeuroBotsAutoEnabledInGroups(), isNeuroBotsAutoEnabledInGroups());
-        edit.putBoolean(TelegramPreferenceKeys.User.isShowOftenUsedNeuroBotsEnabled(), isShowOftenUsedNeuroBotsEnabled());
+        edit.putBoolean(TelegramPreferenceKeys.User.isNeuroBotsEnabled(), this.isNeuroBotsEnabled);
+        edit.putBoolean(TelegramPreferenceKeys.User.isNeuroBotsAutoEnabledInPersonalChats(), this.isNeuroBotsAutoEnabledInPersonalChats);
+        edit.putBoolean(TelegramPreferenceKeys.User.isNeuroBotsAutoEnabledInGroups(), this.isNeuroBotsAutoEnabledInGroups);
+        edit.putBoolean(TelegramPreferenceKeys.User.isShowOftenUsedNeuroBotsEnabled(), this.isShowOftenUsedNeuroBotsEnabled);
         edit.apply();
     }
 
@@ -93,14 +94,16 @@ public final class NeuroBotsController extends BaseController {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: getInstance$lambda-0  reason: not valid java name */
-        public static final NeuroBotsController m1929getInstance$lambda0(int i, Integer it) {
-            Intrinsics.checkNotNullParameter(it, "it");
-            return new NeuroBotsController(i);
+        public static final NeuroBotsController getInstance$lambda$0(Function1 tmp0, Object obj) {
+            Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+            return (NeuroBotsController) tmp0.invoke(obj);
         }
 
-        public final NeuroBotsController getInstance(final int i) {
-            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(NeuroBotsController.accountInstances, Integer.valueOf(i), new Function() { // from class: org.fork.controller.NeuroBotsController$Companion$$ExternalSyntheticLambda0
+        public final NeuroBotsController getInstance(int i) {
+            ConcurrentHashMap concurrentHashMap = NeuroBotsController.accountInstances;
+            Integer valueOf = Integer.valueOf(i);
+            final NeuroBotsController$Companion$getInstance$1 neuroBotsController$Companion$getInstance$1 = new NeuroBotsController$Companion$getInstance$1(i);
+            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: org.fork.controller.NeuroBotsController$Companion$$ExternalSyntheticLambda0
                 @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
@@ -108,9 +111,9 @@ public final class NeuroBotsController extends BaseController {
 
                 @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
-                    NeuroBotsController m1929getInstance$lambda0;
-                    m1929getInstance$lambda0 = NeuroBotsController.Companion.m1929getInstance$lambda0(i, (Integer) obj);
-                    return m1929getInstance$lambda0;
+                    NeuroBotsController instance$lambda$0;
+                    instance$lambda$0 = NeuroBotsController.Companion.getInstance$lambda$0(Function1.this, obj);
+                    return instance$lambda$0;
                 }
 
                 @Override // p034j$.util.function.Function
@@ -118,7 +121,7 @@ public final class NeuroBotsController extends BaseController {
                     return Objects.requireNonNull(function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountInstances.compute…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
             return (NeuroBotsController) computeIfAbsent;
         }
     }

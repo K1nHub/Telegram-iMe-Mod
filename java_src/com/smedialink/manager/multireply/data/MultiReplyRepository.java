@@ -7,6 +7,7 @@ import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
 import io.reactivex.Single;
 import io.reactivex.functions.Function;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC$Chat;
@@ -30,34 +31,29 @@ public final class MultiReplyRepository {
     public final Single<MessageLinkPattern> requestPattern(MessageObject message, TLRPC$Chat currentChat) {
         Intrinsics.checkNotNullParameter(message, "message");
         Intrinsics.checkNotNullParameter(currentChat, "currentChat");
-        Single<MessageLinkPattern> subscribeOn = Observable.concat(this.messageLinkCache.getLinkPatternFromCache(currentChat.f1494id), getLinkPatternFromApi(message, currentChat)).firstOrError().subscribeOn(this.schedulersProvider.mo708io());
+        Single<MessageLinkPattern> subscribeOn = Observable.concat(this.messageLinkCache.getLinkPatternFromCache(currentChat.f1499id), getLinkPatternFromApi(message, currentChat)).firstOrError().subscribeOn(this.schedulersProvider.mo708io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "concat(\n            mess…(schedulersProvider.io())");
         return subscribeOn;
     }
 
-    private final Observable<MessageLinkPattern> getLinkPatternFromApi(final MessageObject messageObject, final TLRPC$Chat tLRPC$Chat) {
-        Observable<MessageLinkPattern> subscribeOn = this.telegramApi.getMessageLinkPattern(messageObject, tLRPC$Chat).map(new Function() { // from class: com.smedialink.manager.multireply.data.MultiReplyRepository$$ExternalSyntheticLambda0
+    private final Observable<MessageLinkPattern> getLinkPatternFromApi(MessageObject messageObject, TLRPC$Chat tLRPC$Chat) {
+        Observable<TLRPC$TL_exportedMessageLink> messageLinkPattern = this.telegramApi.getMessageLinkPattern(messageObject, tLRPC$Chat);
+        final MultiReplyRepository$getLinkPatternFromApi$1 multiReplyRepository$getLinkPatternFromApi$1 = new MultiReplyRepository$getLinkPatternFromApi$1(this, messageObject, tLRPC$Chat);
+        Observable<MessageLinkPattern> subscribeOn = messageLinkPattern.map(new Function() { // from class: com.smedialink.manager.multireply.data.MultiReplyRepository$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                MessageLinkPattern m1270getLinkPatternFromApi$lambda0;
-                m1270getLinkPatternFromApi$lambda0 = MultiReplyRepository.m1270getLinkPatternFromApi$lambda0(MultiReplyRepository.this, messageObject, tLRPC$Chat, (TLRPC$TL_exportedMessageLink) obj);
-                return m1270getLinkPatternFromApi$lambda0;
+                MessageLinkPattern linkPatternFromApi$lambda$0;
+                linkPatternFromApi$lambda$0 = MultiReplyRepository.getLinkPatternFromApi$lambda$0(Function1.this, obj);
+                return linkPatternFromApi$lambda$0;
             }
         }).subscribeOn(this.schedulersProvider.mo708io());
-        Intrinsics.checkNotNullExpressionValue(subscribeOn, "telegramApi.getMessageLi…(schedulersProvider.io())");
+        Intrinsics.checkNotNullExpressionValue(subscribeOn, "private fun getLinkPatte…ulersProvider.io())\n    }");
         return subscribeOn;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getLinkPatternFromApi$lambda-0  reason: not valid java name */
-    public static final MessageLinkPattern m1270getLinkPatternFromApi$lambda0(MultiReplyRepository this$0, MessageObject message, TLRPC$Chat currentChat, TLRPC$TL_exportedMessageLink it) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(message, "$message");
-        Intrinsics.checkNotNullParameter(currentChat, "$currentChat");
-        Intrinsics.checkNotNullParameter(it, "it");
-        MessageLinkCache messageLinkCache = this$0.messageLinkCache;
-        String str = it.link;
-        Intrinsics.checkNotNullExpressionValue(str, "it.link");
-        return messageLinkCache.writeLinkToCache(str, message.getId(), currentChat.f1494id);
+    public static final MessageLinkPattern getLinkPatternFromApi$lambda$0(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (MessageLinkPattern) tmp0.invoke(obj);
     }
 }

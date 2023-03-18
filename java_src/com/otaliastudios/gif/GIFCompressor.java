@@ -121,7 +121,7 @@ public class GIFCompressor {
                     r1.onGIFCompressionFailed(r0)
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: com.otaliastudios.gif.GIFCompressor.CallableC12601.call():java.lang.Void");
+                throw new UnsupportedOperationException("Method not decompiled: com.otaliastudios.gif.GIFCompressor.CallableC12551.call():java.lang.Void");
             }
         });
     }

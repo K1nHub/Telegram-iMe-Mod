@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final wallet_buy_button_place_holder:I = 0x7f111fa7
+.field public static final wallet_buy_button_place_holder:I = 0x7f102014
 
 
 # direct methods

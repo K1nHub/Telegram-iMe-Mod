@@ -5,7 +5,7 @@ import io.grpc.KnownLength;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ReadableBuffers {
     static {
         new ByteArrayWrapper(new byte[0]);
@@ -43,7 +43,7 @@ public final class ReadableBuffers {
         };
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class ByteArrayWrapper extends AbstractReadableBuffer {
         final byte[] bytes;
         final int end;
@@ -92,7 +92,7 @@ public final class ReadableBuffers {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class BufferInputStream extends InputStream implements KnownLength {
         final ReadableBuffer buffer;
 

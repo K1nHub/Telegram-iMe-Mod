@@ -195,7 +195,7 @@
 .end method
 
 .method private getCellHeight(I)I
-    .locals 6
+    .locals 7
 
     .line 836
     invoke-virtual {p0}, Lorg/telegram/ui/Components/FlickerLoadingView;->getViewType()I
@@ -221,13 +221,15 @@
 
     move-result v0
 
-    const/16 v2, 0x40
+    const/16 v2, 0x30
 
-    const/16 v3, 0x4e
+    const/16 v3, 0x32
 
-    const/16 v4, 0x30
+    const/16 v4, 0x40
 
-    const/16 v5, 0x3a
+    const/16 v5, 0x4e
+
+    const/16 v6, 0x3a
 
     packed-switch v0, :pswitch_data_0
 
@@ -236,11 +238,9 @@
 
     return p1
 
-    :pswitch_1
-    const/16 p1, 0x32
-
     .line 882
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    :pswitch_1
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
@@ -271,13 +271,13 @@
 
     if-eqz p1, :cond_2
 
-    const/16 v2, 0x4c
+    const/16 v4, 0x4c
 
     :cond_2
-    add-int/lit8 v4, v2, 0x1
+    add-int/lit8 v2, v4, 0x1
 
     :goto_0
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
@@ -293,7 +293,7 @@
 
     .line 876
     :pswitch_5
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
@@ -301,7 +301,7 @@
 
     .line 856
     :pswitch_6
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
@@ -309,7 +309,7 @@
 
     .line 874
     :pswitch_7
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
@@ -347,7 +347,7 @@
 
     .line 863
     :pswitch_b
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
@@ -379,8 +379,6 @@
 
     if-eqz p1, :cond_3
 
-    const/16 v3, 0x30
-
     goto :goto_1
 
     :cond_3
@@ -388,15 +386,17 @@
 
     if-eqz p1, :cond_4
 
+    const/16 v2, 0x4e
+
     goto :goto_1
 
     :cond_4
-    const/16 v3, 0x48
+    const/16 v2, 0x48
 
     :goto_1
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
@@ -404,7 +404,7 @@
 
     .line 859
     :pswitch_f
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
@@ -465,7 +465,7 @@
 
     .line 846
     :pswitch_13
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 

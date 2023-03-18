@@ -31,10 +31,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$UKRyKMDxeCQVS2Zykxr-K12vsVE(Lorg/fork/ui/view/MediaSwitchTopicsBar;ZLandroid/view/View;)V
+.method public static synthetic $r8$lambda$RSfc6cws_eMV03WzelGlc2j_EaU(Lorg/fork/ui/view/MediaSwitchTopicsBar;ZLandroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/MediaSwitchTopicsBar;->initTopic$lambda-1$lambda-0(Lorg/fork/ui/view/MediaSwitchTopicsBar;ZLandroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/MediaSwitchTopicsBar;->initTopic$lambda$1$lambda$0(Lorg/fork/ui/view/MediaSwitchTopicsBar;ZLandroid/view/View;)V
 
     return-void
 .end method
@@ -231,7 +231,7 @@
     return-object v7
 .end method
 
-.method private static final initTopic$lambda-1$lambda-0(Lorg/fork/ui/view/MediaSwitchTopicsBar;ZLandroid/view/View;)V
+.method private static final initTopic$lambda$1$lambda$0(Lorg/fork/ui/view/MediaSwitchTopicsBar;ZLandroid/view/View;)V
     .locals 0
 
     const-string p2, "this$0"
@@ -239,9 +239,7 @@
     invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 44
-    invoke-virtual {p0}, Lorg/fork/ui/view/MediaSwitchTopicsBar;->getCurrentMessagesContextMenu()Z
-
-    move-result p2
+    iget-boolean p2, p0, Lorg/fork/ui/view/MediaSwitchTopicsBar;->currentMessagesContextMenu:Z
 
     if-ne p2, p1, :cond_0
 
@@ -249,22 +247,16 @@
 
     .line 47
     :cond_0
-    invoke-virtual {p0, p1}, Lorg/fork/ui/view/MediaSwitchTopicsBar;->setCurrentMessagesContextMenu(Z)V
+    iput-boolean p1, p0, Lorg/fork/ui/view/MediaSwitchTopicsBar;->currentMessagesContextMenu:Z
 
     .line 48
-    invoke-virtual {p0}, Lorg/fork/ui/view/MediaSwitchTopicsBar;->getDelegate()Lkotlin/jvm/functions/Function1;
+    iget-object p2, p0, Lorg/fork/ui/view/MediaSwitchTopicsBar;->delegate:Lkotlin/jvm/functions/Function1;
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lorg/fork/ui/view/MediaSwitchTopicsBar;->getCurrentMessagesContextMenu()Z
-
-    move-result p2
-
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p2
-
-    invoke-interface {p1, p2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 49
     invoke-virtual {p0}, Lorg/fork/ui/view/MediaSwitchTopicsBar;->updateSelectedTopicAndColors()V

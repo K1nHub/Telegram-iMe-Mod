@@ -4,18 +4,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$AwtebGOPPVmgyJ22dysc1B2O8GY(Lkotlin/jvm/functions/Function1;Landroid/content/DialogInterface;)V
+.method public static synthetic $r8$lambda$2LMB90x1yhEY7cBl4-f_m_X9U2I(Lkotlin/jvm/functions/Function1;Landroid/content/DialogInterface;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/utils/dialogs/DialogExtKt;->makeClickableDescription$lambda-1$lambda-0(Lkotlin/jvm/functions/Function1;Landroid/content/DialogInterface;)V
+    invoke-static {p0, p1}, Lcom/smedialink/utils/dialogs/DialogExtKt;->makeClickableDescription$lambda$1$lambda$0(Lkotlin/jvm/functions/Function1;Landroid/content/DialogInterface;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$MJRJsGpb3rfMc7DQ8iOiNZDlRnU(Landroid/widget/TextView;Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Landroid/content/DialogInterface;)V
+.method public static synthetic $r8$lambda$mi3L7Za_kjJ-WLquBZkASVaufM4(Landroid/widget/TextView;Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Landroid/content/DialogInterface;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/utils/dialogs/DialogExtKt;->makeClickableDescription$lambda-1(Landroid/widget/TextView;Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Landroid/content/DialogInterface;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/utils/dialogs/DialogExtKt;->makeClickableDescription$lambda$1(Landroid/widget/TextView;Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Landroid/content/DialogInterface;)V
 
     return-void
 .end method
@@ -74,7 +74,7 @@
     return-void
 .end method
 
-.method private static final makeClickableDescription$lambda-1(Landroid/widget/TextView;Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Landroid/content/DialogInterface;)V
+.method private static final makeClickableDescription$lambda$1(Landroid/widget/TextView;Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Landroid/content/DialogInterface;)V
     .locals 1
 
     const-string v0, "$this_makeClickableDescription"
@@ -97,23 +97,20 @@
     move-result-object p0
 
     :cond_0
-    if-nez p0, :cond_1
-
-    goto :goto_0
+    if-eqz p0, :cond_1
 
     .line 12
-    :cond_1
     new-instance p1, Lcom/smedialink/utils/dialogs/DialogExtKt$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p3, p4}, Lcom/smedialink/utils/dialogs/DialogExtKt$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;Landroid/content/DialogInterface;)V
 
     invoke-static {p0, p2, p1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setSubstringClickListener(Landroid/widget/TextView;Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback;)V
 
-    :goto_0
+    :cond_1
     return-void
 .end method
 
-.method private static final makeClickableDescription$lambda-1$lambda-0(Lkotlin/jvm/functions/Function1;Landroid/content/DialogInterface;)V
+.method private static final makeClickableDescription$lambda$1$lambda$0(Lkotlin/jvm/functions/Function1;Landroid/content/DialogInterface;)V
     .locals 1
 
     const-string v0, "$action"
@@ -139,7 +136,7 @@
 
     const/4 v0, -0x1
 
-    const-string v1, "dialogTextRed2"
+    const-string v1, "dialogTextRed"
 
     .line 19
     invoke-static {p0, v0, v1}, Lcom/smedialink/utils/dialogs/DialogExtKt;->setButtonColor(Lorg/telegram/ui/ActionBar/AlertDialog;ILjava/lang/String;)V
@@ -175,17 +172,14 @@
     const/4 p0, 0x0
 
     :goto_0
-    if-nez p0, :cond_1
+    if-eqz p0, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p1
 
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    :goto_1
+    :cond_1
     return-void
 .end method

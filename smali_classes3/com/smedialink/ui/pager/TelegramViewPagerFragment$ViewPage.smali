@@ -25,22 +25,22 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$FgseRt2SxQpPpirWTKZ30H9RFA0(Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;IFF)V
+.method public static synthetic $r8$lambda$FtvHf5hYkbodcSI8ve5WhjyoRxQ(Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage$initListView$1;Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;IFF)Z
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;->initListView$lambda-2$lambda-0(Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;IFF)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$HxM1Ia2rSRM7SO6odM-vycNcx9E(Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage$initListView$1;Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;IFF)Z
-    .locals 0
-
-    invoke-static/range {p0 .. p5}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;->initListView$lambda-2$lambda-1(Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage$initListView$1;Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;IFF)Z
+    invoke-static/range {p0 .. p5}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;->initListView$lambda$2$lambda$1(Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage$initListView$1;Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;IFF)Z
 
     move-result p0
 
     return p0
+.end method
+
+.method public static synthetic $r8$lambda$but-GbOWwnqik_xRGzbs-C2D_UE(Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;IFF)V
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;->initListView$lambda$2$lambda$0(Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;IFF)V
+
+    return-void
 .end method
 
 .method public constructor <init>(Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/content/Context;)V
@@ -52,10 +52,6 @@
             ")V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "context"
 
@@ -180,7 +176,7 @@
     return-object v1
 .end method
 
-.method private static final initListView$lambda-2$lambda-0(Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;IFF)V
+.method private static final initListView$lambda$2$lambda$0(Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;IFF)V
     .locals 1
 
     const-string v0, "this$0"
@@ -197,7 +193,7 @@
     return-void
 .end method
 
-.method private static final initListView$lambda-2$lambda-1(Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage$initListView$1;Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;IFF)Z
+.method private static final initListView$lambda$2$lambda$1(Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage$initListView$1;Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;IFF)Z
     .locals 1
 
     const-string v0, "$this_apply"

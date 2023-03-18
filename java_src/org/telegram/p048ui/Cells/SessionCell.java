@@ -19,7 +19,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
@@ -128,7 +128,7 @@ public class SessionCell extends FrameLayout {
             this.nameTextView.setText(sb);
             if ((tLRPC$TL_authorization.flags & 1) != 0) {
                 setTag("windowBackgroundWhiteValueText");
-                stringForMessageListDate = LocaleController.getString("Online", C3158R.string.Online);
+                stringForMessageListDate = LocaleController.getString("Online", C3286R.string.Online);
             } else {
                 setTag("windowBackgroundWhiteGrayText3");
                 stringForMessageListDate = LocaleController.stringForMessageListDate(tLRPC$TL_authorization.date_active);
@@ -164,8 +164,8 @@ public class SessionCell extends FrameLayout {
             this.onlineTextView.setText(LocaleController.stringForMessageListDate(tLRPC$TL_webAuthorization.date_active));
             this.onlineTextView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText3"));
             StringBuilder sb3 = new StringBuilder();
-            if (tLRPC$TL_webAuthorization.f1631ip.length() != 0) {
-                sb3.append(tLRPC$TL_webAuthorization.f1631ip);
+            if (tLRPC$TL_webAuthorization.f1637ip.length() != 0) {
+                sb3.append(tLRPC$TL_webAuthorization.f1637ip);
             }
             if (tLRPC$TL_webAuthorization.region.length() != 0) {
                 if (sb3.length() != 0) {
@@ -209,34 +209,34 @@ public class SessionCell extends FrameLayout {
         String str = "avatar_background2Cyan";
         String str2 = "avatar_backgroundCyan";
         if (lowerCase2.contains("safari")) {
-            i = C3158R.C3160drawable.device_web_safari;
+            i = C3286R.C3288drawable.device_web_safari;
         } else if (lowerCase2.contains("edge")) {
-            i = C3158R.C3160drawable.device_web_edge;
+            i = C3286R.C3288drawable.device_web_edge;
         } else if (lowerCase2.contains("chrome")) {
-            i = C3158R.C3160drawable.device_web_chrome;
+            i = C3286R.C3288drawable.device_web_chrome;
         } else if (lowerCase2.contains("opera")) {
-            i = C3158R.C3160drawable.device_web_opera;
+            i = C3286R.C3288drawable.device_web_opera;
         } else if (lowerCase2.contains("firefox")) {
-            i = C3158R.C3160drawable.device_web_firefox;
+            i = C3286R.C3288drawable.device_web_firefox;
         } else if (lowerCase2.contains("vivaldi")) {
-            i = C3158R.C3160drawable.device_web_other;
+            i = C3286R.C3288drawable.device_web_other;
         } else {
             if (lowerCase.contains("ios")) {
-                i = lowerCase2.contains("ipad") ? C3158R.C3160drawable.device_tablet_ios : C3158R.C3160drawable.device_phone_ios;
+                i = lowerCase2.contains("ipad") ? C3286R.C3288drawable.device_tablet_ios : C3286R.C3288drawable.device_phone_ios;
                 str2 = "avatar_backgroundBlue";
                 str = "avatar_background2Blue";
             } else if (lowerCase.contains("windows")) {
-                i = C3158R.C3160drawable.device_desktop_win;
+                i = C3286R.C3288drawable.device_desktop_win;
             } else if (lowerCase.contains("macos")) {
-                i = C3158R.C3160drawable.device_desktop_osx;
+                i = C3286R.C3288drawable.device_desktop_osx;
             } else if (lowerCase.contains("android")) {
-                i = lowerCase2.contains("tab") ? C3158R.C3160drawable.device_tablet_android : C3158R.C3160drawable.device_phone_android;
+                i = lowerCase2.contains("tab") ? C3286R.C3288drawable.device_tablet_android : C3286R.C3288drawable.device_phone_android;
                 str2 = "avatar_backgroundGreen";
                 str = "avatar_background2Green";
             } else if (tLRPC$TL_authorization.app_name.toLowerCase().contains("desktop")) {
-                i = C3158R.C3160drawable.device_desktop_other;
+                i = C3286R.C3288drawable.device_desktop_other;
             } else {
-                i = C3158R.C3160drawable.device_web_other;
+                i = C3286R.C3288drawable.device_web_other;
             }
             Drawable mutate = ContextCompat.getDrawable(ApplicationLoader.applicationContext, i).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor("avatar_text"), PorterDuff.Mode.SRC_IN));
@@ -336,7 +336,7 @@ public class SessionCell extends FrameLayout {
     public void showStub(FlickerLoadingView flickerLoadingView) {
         this.globalGradient = flickerLoadingView;
         this.showStub = true;
-        Drawable mutate = ContextCompat.getDrawable(ApplicationLoader.applicationContext, AndroidUtilities.isTablet() ? C3158R.C3160drawable.device_tablet_android : C3158R.C3160drawable.device_phone_android).mutate();
+        Drawable mutate = ContextCompat.getDrawable(ApplicationLoader.applicationContext, AndroidUtilities.isTablet() ? C3286R.C3288drawable.device_tablet_android : C3286R.C3288drawable.device_phone_android).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor("avatar_text"), PorterDuff.Mode.SRC_IN));
         CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createCircleDrawable(AndroidUtilities.m50dp(42), Theme.getColor("avatar_backgroundGreen")), mutate);
         BackupImageView backupImageView = this.placeholderImageView;

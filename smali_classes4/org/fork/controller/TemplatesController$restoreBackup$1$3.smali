@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/fork/controller/TemplatesController;->restoreBackup$lambda-8(Lorg/fork/models/backup/Backup;Lorg/fork/controller/TemplatesController;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    value = Lorg/fork/controller/TemplatesController;->restoreBackup(Lorg/fork/models/backup/Backup;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

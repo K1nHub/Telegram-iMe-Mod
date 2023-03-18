@@ -29,7 +29,7 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->$r8$lambda$fIcBIRUIUey47iS1HhwPkVgXo04(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->$r8$lambda$0PTW1pzpxDzgTUhAL1Enm5qP75g(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
 
     return-void
 .end method

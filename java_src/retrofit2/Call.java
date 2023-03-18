@@ -6,7 +6,8 @@ import okhttp3.Request;
 public interface Call<T> extends Cloneable {
     void cancel();
 
-    Call<T> clone();
+    /* renamed from: clone */
+    Call<T> mo3937clone();
 
     void enqueue(Callback<T> callback);
 

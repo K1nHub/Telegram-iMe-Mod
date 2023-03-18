@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlert$12;)V
     .locals 0
 
-    .line 2522
+    .line 2589
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$12$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlert$12;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,12 +35,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 2525
+    .line 2592
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$12$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlert$12;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlert$12;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$12100(Lorg/telegram/ui/Components/ChatAttachAlert;)Lorg/telegram/ui/Components/NumberTextView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$12200(Lorg/telegram/ui/Components/ChatAttachAlert;)Lorg/telegram/ui/Components/NumberTextView;
 
     move-result-object p1
 

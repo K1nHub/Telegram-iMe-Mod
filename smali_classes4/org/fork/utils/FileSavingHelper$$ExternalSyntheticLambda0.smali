@@ -51,7 +51,7 @@
 
     iget-boolean v4, p0, Lorg/fork/utils/FileSavingHelper$$ExternalSyntheticLambda0;->f$4:Z
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/fork/utils/FileSavingHelper;->$r8$lambda$YA2nAf55uBJ4fwPfmz0BLVw-9QA(Landroid/net/Uri;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Ljava/io/File;Z)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/fork/utils/FileSavingHelper;->$r8$lambda$XOAhGevqmvuTf_9nR_zg7SwCj18(Landroid/net/Uri;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Ljava/io/File;Z)V
 
     return-void
 .end method

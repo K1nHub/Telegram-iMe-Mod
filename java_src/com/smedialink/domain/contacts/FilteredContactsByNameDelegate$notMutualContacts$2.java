@@ -24,10 +24,10 @@ public final class FilteredContactsByNameDelegate$notMutualContacts$2 extends La
     /* compiled from: FilteredContactsByNameDelegate.kt */
     /* renamed from: com.smedialink.domain.contacts.FilteredContactsByNameDelegate$notMutualContacts$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C14441 extends Lambda implements Function1<TLRPC$TL_contact, Boolean> {
-        public static final C14441 INSTANCE = new C14441();
+    public static final class C14521 extends Lambda implements Function1<TLRPC$TL_contact, Boolean> {
+        public static final C14521 INSTANCE = new C14521();
 
-        C14441() {
+        C14521() {
             super(1);
         }
 
@@ -41,7 +41,7 @@ public final class FilteredContactsByNameDelegate$notMutualContacts$2 extends La
     @Override // kotlin.jvm.functions.Function0
     public final HashMap<String, ArrayList<TLRPC$TL_contact>> invoke() {
         HashMap<String, ArrayList<TLRPC$TL_contact>> usersByPredicate;
-        usersByPredicate = this.this$0.getUsersByPredicate(C14441.INSTANCE);
+        usersByPredicate = this.this$0.getUsersByPredicate(C14521.INSTANCE);
         return usersByPredicate;
     }
 }

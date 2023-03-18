@@ -17,25 +17,25 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 2
 
-    .line 37
+    .line 38
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 38
+    .line 39
     iput-object p2, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 40
+    .line 41
     new-instance p2, Landroid/widget/ImageView;
 
     invoke-direct {p2, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object p2, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->backgroundView:Landroid/widget/ImageView;
 
-    .line 41
+    .line 42
     sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 43
+    .line 44
     iget-object p2, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->backgroundView:Landroid/widget/ImageView;
 
     const/16 v0, 0x50
@@ -46,26 +46,26 @@
 
     invoke-virtual {p0, p2, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 45
+    .line 46
     new-instance p2, Landroid/widget/ImageView;
 
     invoke-direct {p2, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object p2, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->imageView:Landroid/widget/ImageView;
 
-    .line 46
+    .line 47
     sget-object p1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p2, p1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 47
+    .line 48
     iget-object p1, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->imageView:Landroid/widget/ImageView;
 
     sget p2, Lorg/telegram/messenger/R$drawable;->instant_camera:I
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 48
+    .line 49
     iget-object p1, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->imageView:Landroid/widget/ImageView;
 
     invoke-static {v0, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
@@ -76,12 +76,12 @@
 
     const/4 p1, 0x1
 
-    .line 49
+    .line 50
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
     const/4 p1, 0x0
 
-    .line 51
+    .line 52
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -93,10 +93,23 @@
 
 
 # virtual methods
+.method public getDrawable()Landroid/graphics/drawable/Drawable;
+    .locals 1
+
+    .line 96
+    iget-object v0, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->backgroundView:Landroid/widget/ImageView;
+
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public getImageView()Landroid/widget/ImageView;
     .locals 1
 
-    .line 70
+    .line 71
     iget-object v0, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->imageView:Landroid/widget/ImageView;
 
     return-object v0
@@ -105,7 +118,7 @@
 .method protected getThemedColor(Ljava/lang/String;)I
     .locals 1
 
-    .line 95
+    .line 100
     iget-object v0, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     if-eqz v0, :cond_0
@@ -122,7 +135,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 96
+    .line 101
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
@@ -141,10 +154,10 @@
 .method protected onAttachedToWindow()V
     .locals 4
 
-    .line 75
+    .line 76
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 76
+    .line 77
     iget-object v0, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->imageView:Landroid/widget/ImageView;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
@@ -167,7 +180,7 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 56
+    .line 57
     iget p1, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->itemSize:I
 
     const/4 p2, 0x5
@@ -204,10 +217,10 @@
 .method public setItemSize(I)V
     .locals 1
 
-    .line 60
+    .line 61
     iput p1, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->itemSize:I
 
-    .line 62
+    .line 63
     iget-object p1, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {p1}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -216,14 +229,14 @@
 
     check-cast p1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 63
+    .line 64
     iget v0, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->itemSize:I
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 65
+    .line 66
     iget-object p1, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->backgroundView:Landroid/widget/ImageView;
 
     invoke-virtual {p1}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -232,7 +245,7 @@
 
     check-cast p1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 66
+    .line 67
     iget v0, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->itemSize:I
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->height:I
@@ -245,7 +258,7 @@
 .method public updateBitmap()V
     .locals 3
 
-    .line 82
+    .line 83
     :try_start_0
     new-instance v0, Ljava/io/File;
 
@@ -257,7 +270,7 @@
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 83
+    .line 84
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
@@ -276,14 +289,14 @@
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 88
+    .line 89
     iget-object v1, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->backgroundView:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
     goto :goto_1
 
-    .line 90
+    .line 91
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->backgroundView:Landroid/widget/ImageView;
 

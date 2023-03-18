@@ -20,7 +20,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class ProxyDetectorImpl implements ProxyDetector {
     private final AuthenticationProvider authenticationProvider;
     private final InetSocketAddress overrideProxyAddress;
@@ -47,7 +47,7 @@ class ProxyDetectorImpl implements ProxyDetector {
     };
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface AuthenticationProvider {
         PasswordAuthentication requestPasswordAuthentication(String str, InetAddress inetAddress, int i, String str2, String str3, String str4);
     }

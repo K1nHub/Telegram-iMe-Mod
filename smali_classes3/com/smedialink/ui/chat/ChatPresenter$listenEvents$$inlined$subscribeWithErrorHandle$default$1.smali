@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/ui/chat/ChatPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "RxExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Consumer;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,16 +18,16 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Consumer;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$DonationAddressUpdated;",
+        "Lkotlin/Unit;",
+        ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 ChatPresenter.kt\ncom/smedialink/ui/chat/ChatPresenter\n*L\n1#1,111:1\n228#2,4:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 ChatPresenter.kt\ncom/smedialink/ui/chat/ChatPresenter\n*L\n1#1,111:1\n233#2,4:112\n*E\n"
 .end annotation
 
 
@@ -41,18 +41,33 @@
 
     iput-object p1, p0, Lcom/smedialink/ui/chat/ChatPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/chat/ChatPresenter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 5
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 44
+    invoke-virtual {p0, p1}, Lcom/smedialink/ui/chat/ChatPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
+
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method
+
+.method public final invoke(Ljava/lang/Object;)V
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)V"
+            "(",
+            "Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$DonationAddressUpdated;",
+            ")V"
         }
     .end annotation
 
@@ -64,34 +79,30 @@
     check-cast p1, Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$DonationAddressUpdated;
 
     .line 112
+    iget-object v0, p0, Lcom/smedialink/ui/chat/ChatPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/chat/ChatPresenter;
+
+    invoke-static {v0}, Lcom/smedialink/ui/chat/ChatPresenter;->access$getChat$p(Lcom/smedialink/ui/chat/ChatPresenter;)Lorg/telegram/tgnet/TLRPC$Chat;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$DonationAddressUpdated;->getChatId()J
 
-    move-result-wide v0
+    move-result-wide v2
 
-    iget-object p1, p0, Lcom/smedialink/ui/chat/ChatPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/chat/ChatPresenter;
+    iget-wide v4, v0, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
-    invoke-static {p1}, Lcom/smedialink/ui/chat/ChatPresenter;->access$getChat$p(Lcom/smedialink/ui/chat/ChatPresenter;)Lorg/telegram/tgnet/TLRPC$Chat;
-
-    move-result-object p1
-
-    const/4 v2, 0x0
+    cmp-long p1, v2, v4
 
     if-nez p1, :cond_0
 
-    goto :goto_0
+    const/4 v1, 0x1
 
     :cond_0
-    iget-wide v3, p1, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
-
-    cmp-long p1, v0, v3
-
-    if-nez p1, :cond_1
-
-    const/4 v2, 0x1
-
-    :cond_1
-    :goto_0
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_1
 
     .line 113
     iget-object p1, p0, Lcom/smedialink/ui/chat/ChatPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/chat/ChatPresenter;
@@ -110,6 +121,6 @@
 
     invoke-static {p1, v0, v1}, Lcom/smedialink/ui/chat/ChatPresenter;->access$checkIsDonationEnabled(Lcom/smedialink/ui/chat/ChatPresenter;J)V
 
-    :cond_2
+    :cond_1
     return-void
 .end method

@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 66
+    .line 67
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
@@ -83,7 +83,7 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 66
+    .line 67
     new-instance p1, Lcom/smedialink/storage/data/network/interceptor/MetadataInterceptor;
 
     invoke-direct {p1}, Lcom/smedialink/storage/data/network/interceptor/MetadataInterceptor;-><init>()V

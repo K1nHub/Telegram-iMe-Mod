@@ -13,15 +13,12 @@ import com.smedialink.storage.domain.model.crypto.simplex.CustomPriceLimits;
 import com.smedialink.storage.domain.model.crypto.simplex.DigitalCurrency;
 import com.smedialink.storage.domain.model.crypto.simplex.FiatCurrency;
 import com.smedialink.storage.domain.repository.crypto.simplex.SimplexRepository;
+import com.smedialink.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.functions.Function;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import kotlin.collections.ArraysKt___ArraysKt;
-import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
@@ -77,28 +74,7 @@ public final class SimplexInteractor {
         Intrinsics.checkNotNullParameter(fiatCurrency, "fiatCurrency");
         Intrinsics.checkNotNullParameter(digitalCurrency, "digitalCurrency");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<R> map = this.simplexRepository.getBuyingCryptoQuote(formatQuotesArgs(fiatCurrency, digitalCurrency, networkType)).map(new Function() { // from class: com.smedialink.storage.domain.interactor.crypto.simplex.SimplexInteractor$getAllAvailablePurchasesQuotes$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)TR; */
-            @Override // io.reactivex.functions.Function
-            public final Object apply(Result result) {
-                List withDefaultCustomQuote;
-                Intrinsics.checkNotNullParameter(result, "result");
-                if (!(result instanceof Result.Success)) {
-                    if (result instanceof Result.Error) {
-                        return Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                    }
-                    if (result instanceof Object) {
-                        return result;
-                    }
-                    return null;
-                }
-                SimplexInteractor simplexInteractor = SimplexInteractor.this;
-                Object data = result.getData();
-                Intrinsics.checkNotNull(data);
-                withDefaultCustomQuote = simplexInteractor.withDefaultCustomQuote((List) data);
-                return Result.Companion.success(withDefaultCustomQuote);
-            }
-        });
+        Observable<R> map = this.simplexRepository.getBuyingCryptoQuote(formatQuotesArgs(fiatCurrency, digitalCurrency, networkType)).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1842xd12431bd(this)));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
         Observable<Result<List<BuyingCryptoQuote>>> startWith = map.subscribeOn(this.schedulersProvider.mo708io()).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "simplexRepository\n      …artWith(Result.loading())");
@@ -112,25 +88,12 @@ public final class SimplexInteractor {
         return simplexInteractor.purchase(fiatCurrency, digitalCurrency, f, currency, networkType);
     }
 
-    public final Observable<Result<BuyingCryptoPayment>> purchase(final FiatCurrency fiatCurrency, final DigitalCurrency digitalCurrency, float f, Currency requestedCurrency, final NetworkType networkType) {
+    public final Observable<Result<BuyingCryptoPayment>> purchase(FiatCurrency fiatCurrency, DigitalCurrency digitalCurrency, float f, Currency requestedCurrency, NetworkType networkType) {
         Intrinsics.checkNotNullParameter(fiatCurrency, "fiatCurrency");
         Intrinsics.checkNotNullParameter(digitalCurrency, "digitalCurrency");
         Intrinsics.checkNotNullParameter(requestedCurrency, "requestedCurrency");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<R> flatMap = getBuyingCryptoQuote(digitalCurrency, requestedCurrency, f, networkType).flatMap(new Function() { // from class: com.smedialink.storage.domain.interactor.crypto.simplex.SimplexInteractor$purchase$$inlined$flatMapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lio/reactivex/ObservableSource<+TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final ObservableSource apply(Result result) {
-                Intrinsics.checkNotNullParameter(result, "result");
-                if (!(result instanceof Result.Success)) {
-                    return result instanceof Result.Error ? Observable.just(Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null)) : Observable.empty();
-                }
-                Object data = result.getData();
-                Intrinsics.checkNotNull(data);
-                BuyingCryptoQuote buyingCryptoQuote = (BuyingCryptoQuote) data;
-                return SimplexInteractor.this.purchase(fiatCurrency, digitalCurrency, buyingCryptoQuote.getCryptoMoneyAmount(), (int) buyingCryptoQuote.getFiatMoneyAmount(), buyingCryptoQuote.getQuoteId(), networkType);
-            }
-        });
+        Observable<R> flatMap = getBuyingCryptoQuote(digitalCurrency, requestedCurrency, f, networkType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new SimplexInteractor$purchase$$inlined$flatMapSuccess$1(this, fiatCurrency, digitalCurrency, networkType)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         Observable<Result<BuyingCryptoPayment>> startWith = flatMap.subscribeOn(this.schedulersProvider.mo708io()).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "getBuyingCryptoQuote(dig…artWith(Result.loading())");
@@ -144,63 +107,12 @@ public final class SimplexInteractor {
         return simplexInteractor.purchase(fiatCurrency, currency, f, i, str, networkType);
     }
 
-    public final Observable<Result<BuyingCryptoPayment>> purchase(final FiatCurrency fiatCurrency, final Currency digitalCurrency, float f, final int i, String quoteId, final NetworkType networkType) {
+    public final Observable<Result<BuyingCryptoPayment>> purchase(FiatCurrency fiatCurrency, Currency digitalCurrency, float f, int i, String quoteId, NetworkType networkType) {
         Intrinsics.checkNotNullParameter(fiatCurrency, "fiatCurrency");
         Intrinsics.checkNotNullParameter(digitalCurrency, "digitalCurrency");
         Intrinsics.checkNotNullParameter(quoteId, "quoteId");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<Result<BuyingCryptoPayment>> createBuyingCryptoPayment = this.simplexRepository.createBuyingCryptoPayment(digitalCurrency, fiatCurrency, f, i, quoteId, networkType);
-        final IErrorStatus[] iErrorStatusArr = {FirebaseFunctionsErrorHandler.CryptoErrorStatus.SIMPLEX_QUOTE_ALREADY_USED};
-        Observable<R> flatMap = createBuyingCryptoPayment.flatMap(new Function() { // from class: com.smedialink.storage.domain.interactor.crypto.simplex.SimplexInteractor$purchase$$inlined$flatMapError$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lio/reactivex/ObservableSource<+TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final ObservableSource apply(Result result) {
-                boolean contains;
-                Intrinsics.checkNotNullParameter(result, "result");
-                if (result instanceof Result.Success) {
-                    return Observable.just(result);
-                }
-                if (result instanceof Result.Error) {
-                    Result.Error error = (Result.Error) result;
-                    contains = ArraysKt___ArraysKt.contains(iErrorStatusArr, error.getError().getStatus());
-                    if (!contains) {
-                        Observable just = Observable.just(Result.Companion.error$default(Result.Companion, error.getError(), null, 2, null));
-                        Intrinsics.checkNotNullExpressionValue(just, "just(Result.error<R>(result.error) as R)");
-                        return just;
-                    }
-                    error.getError();
-                    Observable<Result<BuyingCryptoQuote>> buyingCryptoQuote = this.getBuyingCryptoQuote(digitalCurrency, FiatCurrency.USD, i, networkType);
-                    final SimplexInteractor simplexInteractor = this;
-                    final FiatCurrency fiatCurrency2 = fiatCurrency;
-                    final Currency currency = digitalCurrency;
-                    final NetworkType networkType2 = networkType;
-                    Observable<R> flatMap2 = buyingCryptoQuote.flatMap(new Function() { // from class: com.smedialink.storage.domain.interactor.crypto.simplex.SimplexInteractor$purchase$lambda-4$$inlined$flatMapSuccess$1
-                        /* JADX WARN: Incorrect types in method signature: (TT;)Lio/reactivex/ObservableSource<+TR;>; */
-                        @Override // io.reactivex.functions.Function
-                        public final ObservableSource apply(Result result2) {
-                            Intrinsics.checkNotNullParameter(result2, "result");
-                            if (!(result2 instanceof Result.Success)) {
-                                return result2 instanceof Result.Error ? Observable.just(Result.Companion.error$default(Result.Companion, ((Result.Error) result2).getError(), null, 2, null)) : Observable.empty();
-                            }
-                            SimplexInteractor simplexInteractor2 = SimplexInteractor.this;
-                            FiatCurrency fiatCurrency3 = fiatCurrency2;
-                            Currency currency2 = currency;
-                            Object data = result2.getData();
-                            Intrinsics.checkNotNull(data);
-                            float cryptoMoneyAmount = ((BuyingCryptoQuote) data).getCryptoMoneyAmount();
-                            Object data2 = result2.getData();
-                            Intrinsics.checkNotNull(data2);
-                            Object data3 = result2.getData();
-                            Intrinsics.checkNotNull(data3);
-                            return simplexInteractor2.purchase(fiatCurrency3, currency2, cryptoMoneyAmount, (int) ((BuyingCryptoQuote) data2).getFiatMoneyAmount(), ((BuyingCryptoQuote) data3).getQuoteId(), networkType2);
-                        }
-                    });
-                    Intrinsics.checkNotNullExpressionValue(flatMap2, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-                    return flatMap2;
-                }
-                return Observable.empty();
-            }
-        });
+        Observable<R> flatMap = this.simplexRepository.createBuyingCryptoPayment(digitalCurrency, fiatCurrency, f, i, quoteId, networkType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new SimplexInteractor$purchase$$inlined$flatMapError$1(new IErrorStatus[]{FirebaseFunctionsErrorHandler.CryptoErrorStatus.SIMPLEX_QUOTE_ALREADY_USED}, this, digitalCurrency, i, networkType, fiatCurrency)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "vararg errorStatus: IErr…e.empty()\n        }\n    }");
         Observable<Result<BuyingCryptoPayment>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo708io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "simplexRepository\n      …(schedulersProvider.io())");
@@ -214,26 +126,7 @@ public final class SimplexInteractor {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         SimplexRepository simplexRepository = this.simplexRepository;
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new BuyingCryptoQuoteArgs(digitalCurrency, FiatCurrency.USD, requestedCurrency, f, networkType));
-        Observable<R> map = simplexRepository.getBuyingCryptoQuote(mutableListOf).map(new Function() { // from class: com.smedialink.storage.domain.interactor.crypto.simplex.SimplexInteractor$getBuyingCryptoQuote$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)TR; */
-            /* JADX WARN: Multi-variable type inference failed */
-            @Override // io.reactivex.functions.Function
-            public final Object apply(Result result) {
-                Intrinsics.checkNotNullParameter(result, "result");
-                if (!(result instanceof Result.Success)) {
-                    if (result instanceof Result.Error) {
-                        return Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                    }
-                    if (result instanceof Object) {
-                        return result;
-                    }
-                    return null;
-                }
-                Object data = result.getData();
-                Intrinsics.checkNotNull(data);
-                return Result.Companion.success(CollectionsKt.first((List<? extends Object>) data));
-            }
-        });
+        Observable<R> map = simplexRepository.getBuyingCryptoQuote(mutableListOf).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new SimplexInteractor$getBuyingCryptoQuote$$inlined$mapSuccess$1()));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
         Observable<Result<BuyingCryptoQuote>> startWith = map.subscribeOn(this.schedulersProvider.mo708io()).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "simplexRepository\n      …artWith(Result.loading())");

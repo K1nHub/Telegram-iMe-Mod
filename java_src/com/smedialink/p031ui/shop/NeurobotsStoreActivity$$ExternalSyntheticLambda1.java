@@ -12,8 +12,8 @@ public final /* synthetic */ class NeurobotsStoreActivity$$ExternalSyntheticLamb
 
     @Override // io.reactivex.functions.BiFunction
     public final Object apply(Object obj, Object obj2) {
-        List m1492listenForSearchResults$lambda8;
-        m1492listenForSearchResults$lambda8 = NeurobotsStoreActivity.m1492listenForSearchResults$lambda8((List) obj, (String) obj2);
-        return m1492listenForSearchResults$lambda8;
+        List listenForSearchResults$lambda$8;
+        listenForSearchResults$lambda$8 = NeurobotsStoreActivity.listenForSearchResults$lambda$8((List) obj, (String) obj2);
+        return listenForSearchResults$lambda$8;
     }
 }

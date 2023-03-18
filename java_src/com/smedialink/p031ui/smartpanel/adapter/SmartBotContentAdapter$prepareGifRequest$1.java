@@ -1,7 +1,6 @@
 package com.smedialink.p031ui.smartpanel.adapter;
 
 import java.util.ArrayList;
-import java.util.Objects;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
@@ -62,31 +61,29 @@ public final class SmartBotContentAdapter$prepareGifRequest$1 implements Runnabl
             smartBotContentAdapter2.contextUsernameReqId = connectionsManager.sendRequest(tLRPC$TL_contacts_resolveUsername, new RequestDelegate() { // from class: com.smedialink.ui.smartpanel.adapter.SmartBotContentAdapter$prepareGifRequest$1$$ExternalSyntheticLambda1
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                    SmartBotContentAdapter$prepareGifRequest$1.m1537run$lambda1(MessagesController.this, messagesStorage, smartBotContentAdapter3, tLObject, tLRPC$TL_error);
+                    SmartBotContentAdapter$prepareGifRequest$1.run$lambda$1(MessagesController.this, messagesStorage, smartBotContentAdapter3, tLObject, tLRPC$TL_error);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: run$lambda-1  reason: not valid java name */
-    public static final void m1537run$lambda1(final MessagesController messagesController, final MessagesStorage messagesStorage, final SmartBotContentAdapter this$0, final TLObject tLObject, final TLRPC$TL_error tLRPC$TL_error) {
+    public static final void run$lambda$1(final MessagesController messagesController, final MessagesStorage messagesStorage, final SmartBotContentAdapter this$0, final TLObject tLObject, final TLRPC$TL_error tLRPC$TL_error) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.smedialink.ui.smartpanel.adapter.SmartBotContentAdapter$prepareGifRequest$1$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                SmartBotContentAdapter$prepareGifRequest$1.m1538run$lambda1$lambda0(TLRPC$TL_error.this, tLObject, messagesController, messagesStorage, this$0);
+                SmartBotContentAdapter$prepareGifRequest$1.run$lambda$1$lambda$0(TLRPC$TL_error.this, tLObject, messagesController, messagesStorage, this$0);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: run$lambda-1$lambda-0  reason: not valid java name */
-    public static final void m1538run$lambda1$lambda0(TLRPC$TL_error tLRPC$TL_error, TLObject tLObject, MessagesController messagesController, MessagesStorage messagesStorage, SmartBotContentAdapter this$0) {
+    public static final void run$lambda$1$lambda$0(TLRPC$TL_error tLRPC$TL_error, TLObject tLObject, MessagesController messagesController, MessagesStorage messagesStorage, SmartBotContentAdapter this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         TLRPC$User tLRPC$User = null;
         if (tLRPC$TL_error == null) {
-            Objects.requireNonNull(tLObject, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.TL_contacts_resolvedPeer");
+            Intrinsics.checkNotNull(tLObject, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.TL_contacts_resolvedPeer");
             TLRPC$TL_contacts_resolvedPeer tLRPC$TL_contacts_resolvedPeer = (TLRPC$TL_contacts_resolvedPeer) tLObject;
             ArrayList<TLRPC$User> arrayList = tLRPC$TL_contacts_resolvedPeer.users;
             Intrinsics.checkNotNullExpressionValue(arrayList, "res.users");

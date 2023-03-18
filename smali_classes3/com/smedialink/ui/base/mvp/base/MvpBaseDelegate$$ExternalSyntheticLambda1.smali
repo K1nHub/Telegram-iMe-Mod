@@ -45,7 +45,7 @@
 
     iget-object v3, p0, Lcom/smedialink/ui/base/mvp/base/MvpBaseDelegate$$ExternalSyntheticLambda1;->f$3:Lio/reactivex/disposables/Disposable;
 
-    invoke-static {v0, v1, v2, v3}, Lcom/smedialink/ui/base/mvp/base/MvpBaseDelegate;->$r8$lambda$2YQqymUuhxbWhq6r9OYPRo2XozI(Lcom/smedialink/ui/base/mvp/base/MvpBaseDelegate;ZZLio/reactivex/disposables/Disposable;)V
+    invoke-static {v0, v1, v2, v3}, Lcom/smedialink/ui/base/mvp/base/MvpBaseDelegate;->$r8$lambda$JECozBKSjfsMxjd3vDl7YdUqocQ(Lcom/smedialink/ui/base/mvp/base/MvpBaseDelegate;ZZLio/reactivex/disposables/Disposable;)V
 
     return-void
 .end method

@@ -33,7 +33,6 @@
     <string name="SavedMessages">Воблака</string>
     <string name="ShareTelegram">Падзяліцца iMe...</string>
     <string name="TelegramVersion">iMe для Android %1$s</string>
-    <string name="UserRestrictionsSendStickers">Адпраўка стыкераў</string>
     <string name="VoipGroupAudioRecordSaved">Аўдыё захавана ў **Воблака**.</string>
     <string name="VoipGroupVideoRecordSaved">Відэа захавана ў ** Воблака **.</string>
     <string name="abc_action_bar_home_description">Перайсці на галоўную старонку</string>
@@ -777,6 +776,7 @@
     <string name="push_notification_wallet_unsupported">Апавяшчэнне не падтрымліваецца</string>
     <string name="quick_reaction_settings_enable_item_hint">Уключыце, каб выкарыстоўваць хуткія рэакцыі для паведамленняў у чатах</string>
     <string name="recent_chats_clear_history">Вы ўпэўненыя, што хочаце ачысціць гісторыю нядаўніх чатаў?</string>
+    <string name="recent_chats_hint">Уключыце гэта, калі вы хочаце мець хуткі доступ да вашых нядаўнім чатам з магчымасць замацавання неабмежаванай колькасці чатаў. Панэль будзе адлюстроўвацца над спісам чатаў.</string>
     <string name="release_to_go_to_next_unread_bot">Адпусціце, каб перайсці да наступнага боту</string>
     <string name="release_to_go_to_next_unread_group">Адпусціце, каб перайсці да наступнай групе</string>
     <string name="release_to_go_to_next_unread_personal_chat">Адпусціце, каб перайсці да наступнага асабістаму чату</string>
@@ -1064,7 +1064,7 @@
     <string name="stickers_size_small">Маленькі</string>
     <string name="stickers_size_title">Памер стыкераў</string>
     <string name="swipe_to_next_unread_dialog_consider_archive">Ўлічваць архіў</string>
-    <string name="swipe_to_next_unread_dialog_hint">Уключыце, каб наладзіць пераходы да непрачытаных чатам</string>
+    <string name="swipe_to_next_unread_dialog_hint">Уключыце гэта, калі вы хочаце чытаць вашыя чаты, не вяртаючыся ў спіс чатаў. Дайшоўшы да апошняга паведамлення ў чаце, пацягніце экран уверх, каб перайсці да наступнага непрачытанага чату.</string>
     <string name="swipe_to_next_unread_dialog_types">Дыялог топес</string>
     <string name="text_recognition_bottom_sheet_title">Фота → Тэкст</string>
     <string name="topic">Топік</string>
@@ -1287,7 +1287,7 @@
     <string name="wallet_banner_slide_binance_pay_operation_without_fee_long_description">Больше никаких ненужных зборов и комиссий. Плаціце, адпраўляйце і атрымлівайце криптовалюту - і ўсё гэта без камісіі.</string>
     <string name="wallet_banner_slide_binance_pay_operation_without_fee_title">БЕЗ КАМІНАРЫІ</string>
     <string name="wallet_banner_slide_crypto_transfers_description">Via чаты, Тэлеграма ID, адрас QR-код</string>
-    <string name="wallet_banner_slide_crypto_transfers_long_description">Рабіце пераклады криптовалюты прама ў чатах, па Telegram ID, выкарыстоўваючы QR -код або публічныя адрасы.</string>
+    <string name="wallet_banner_slide_crypto_transfers_long_description">Рабіце пераклады криптовалюты прама ў чатах, па Telegram ID, Twitter, выкарыстоўваючы QR -код або публічныя адрасы.</string>
     <string name="wallet_banner_slide_crypto_transfers_title">ПЕРАВОДЫ</string>
     <string name="wallet_banner_slide_faq_description">Апісанне агульнага функцыяналу</string>
     <string name="wallet_banner_slide_faq_long_description">Прачытайце апісанне функцыянальнасці iMe, вы знойдзеце мноства адказаў на свае пытанні.</string>

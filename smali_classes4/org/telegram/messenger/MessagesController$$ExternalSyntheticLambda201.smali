@@ -8,22 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$messages_Dialogs;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$Updates;
 
-.field public final synthetic f$2:I
+.field public final synthetic f$2:Lorg/fork/utils/Callbacks$Callback1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;I)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Updates;Lorg/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda201;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda201;->f$1:Lorg/telegram/tgnet/TLRPC$messages_Dialogs;
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda201;->f$1:Lorg/telegram/tgnet/TLRPC$Updates;
 
-    iput p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda201;->f$2:I
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda201;->f$2:Lorg/fork/utils/Callbacks$Callback1;
 
     return-void
 .end method
@@ -35,11 +35,11 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda201;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda201;->f$1:Lorg/telegram/tgnet/TLRPC$messages_Dialogs;
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda201;->f$1:Lorg/telegram/tgnet/TLRPC$Updates;
 
-    iget v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda201;->f$2:I
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda201;->f$2:Lorg/fork/utils/Callbacks$Callback1;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$h9FZFl1SefyE4xYVGH3R6ZHmEqo(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;I)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$sSlhC1oHcv1ZaggZVQmjE7tGDNY(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Updates;Lorg/fork/utils/Callbacks$Callback1;)V
 
     return-void
 .end method

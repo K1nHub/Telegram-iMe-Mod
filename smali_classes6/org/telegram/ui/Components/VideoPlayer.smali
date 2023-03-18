@@ -98,7 +98,7 @@
 
     const/4 v0, 0x1
 
-    .line 126
+    .line 133
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/VideoPlayer;-><init>(Z)V
 
     return-void
@@ -107,10 +107,10 @@
 .method public constructor <init>(Z)V
     .locals 3
 
-    .line 129
+    .line 136
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 123
+    .line 130
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -121,7 +121,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioUpdateHandler:Landroid/os/Handler;
 
-    .line 130
+    .line 137
     new-instance v0, Lorg/telegram/messenger/secretmedia/ExtendedDefaultDataSourceFactory;
 
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -132,7 +132,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->mediaDataSourceFactory:Lcom/google/android/exoplayer2/upstream/DataSource$Factory;
 
-    .line 131
+    .line 138
     new-instance v0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector;
 
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -143,15 +143,15 @@
 
     const/4 v0, 0x1
 
-    .line 132
+    .line 139
     iput v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->lastReportedPlaybackState:I
 
-    .line 133
+    .line 140
     iput-boolean p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->shouldPauseOther:Z
 
     if-eqz p1, :cond_0
 
-    .line 135
+    .line 142
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -167,7 +167,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/VideoPlayer;)Z
     .locals 0
 
-    .line 63
+    .line 70
     iget-boolean p0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayerReady:Z
 
     return p0
@@ -176,7 +176,7 @@
 .method static synthetic access$002(Lorg/telegram/ui/Components/VideoPlayer;Z)Z
     .locals 0
 
-    .line 63
+    .line 70
     iput-boolean p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayerReady:Z
 
     return p1
@@ -185,7 +185,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/VideoPlayer;)V
     .locals 0
 
-    .line 63
+    .line 70
     invoke-direct {p0}, Lorg/telegram/ui/Components/VideoPlayer;->checkPlayersReady()V
 
     return-void
@@ -194,7 +194,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/VideoPlayer;)Lorg/telegram/ui/Components/VideoPlayer$AudioVisualizerDelegate;
     .locals 0
 
-    .line 63
+    .line 70
     iget-object p0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioVisualizerDelegate:Lorg/telegram/ui/Components/VideoPlayer$AudioVisualizerDelegate;
 
     return-object p0
@@ -203,7 +203,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/VideoPlayer;)Z
     .locals 0
 
-    .line 63
+    .line 70
     iget-boolean p0, p0, Lorg/telegram/ui/Components/VideoPlayer;->mixedPlayWhenReady:Z
 
     return p0
@@ -212,7 +212,7 @@
 .method private checkPlayersReady()V
     .locals 1
 
-    .line 522
+    .line 529
     iget-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayerReady:Z
 
     if-eqz v0, :cond_0
@@ -225,7 +225,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 523
+    .line 530
     invoke-virtual {p0}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
 
     :cond_0
@@ -235,7 +235,7 @@
 .method private ensurePlayerCreated()V
     .locals 11
 
-    .line 150
+    .line 157
     new-instance v10, Lcom/google/android/exoplayer2/DefaultLoadControl;
 
     new-instance v1, Lcom/google/android/exoplayer2/upstream/DefaultAllocator;
@@ -266,17 +266,17 @@
 
     invoke-direct/range {v0 .. v9}, Lcom/google/android/exoplayer2/DefaultLoadControl;-><init>(Lcom/google/android/exoplayer2/upstream/DefaultAllocator;IIIIIZIZ)V
 
-    .line 160
+    .line 167
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-nez v0, :cond_4
 
-    .line 162
+    .line 169
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioVisualizerDelegate:Lorg/telegram/ui/Components/VideoPlayer$AudioVisualizerDelegate;
 
     if-eqz v0, :cond_0
 
-    .line 163
+    .line 170
     new-instance v0, Lorg/telegram/ui/Components/VideoPlayer$AudioVisualizerRenderersFactory;
 
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -285,7 +285,7 @@
 
     goto :goto_0
 
-    .line 165
+    .line 172
     :cond_0
     new-instance v0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;
 
@@ -296,10 +296,10 @@
     :goto_0
     const/4 v1, 0x2
 
-    .line 167
+    .line 174
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->setExtensionRendererMode(I)Lcom/google/android/exoplayer2/DefaultRenderersFactory;
 
-    .line 168
+    .line 175
     new-instance v2, Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     sget-object v3, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -312,12 +312,12 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/VideoPlayer;->trackSelector:Lcom/google/android/exoplayer2/trackselection/MappingTrackSelector;
 
-    .line 169
+    .line 176
     invoke-virtual {v0, v2}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setTrackSelector(Lcom/google/android/exoplayer2/trackselection/TrackSelector;)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     move-result-object v0
 
-    .line 170
+    .line 177
     invoke-virtual {v0, v10}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setLoadControl(Lcom/google/android/exoplayer2/LoadControl;)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     move-result-object v0
@@ -328,43 +328,43 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
-    .line 172
+    .line 179
     invoke-interface {v0, p0}, Lcom/google/android/exoplayer2/ExoPlayer;->addAnalyticsListener(Lcom/google/android/exoplayer2/analytics/AnalyticsListener;)V
 
-    .line 173
+    .line 180
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     invoke-interface {v0, p0}, Lcom/google/android/exoplayer2/Player;->addListener(Lcom/google/android/exoplayer2/Player$Listener;)V
 
-    .line 174
+    .line 181
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     invoke-interface {v0, p0}, Lcom/google/android/exoplayer2/Player;->addVideoListener(Lcom/google/android/exoplayer2/video/VideoListener;)V
 
-    .line 175
+    .line 182
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->textureView:Landroid/view/TextureView;
 
     if-eqz v0, :cond_1
 
-    .line 176
+    .line 183
     iget-object v2, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     invoke-interface {v2, v0}, Lcom/google/android/exoplayer2/Player;->setVideoTextureView(Landroid/view/TextureView;)V
 
     goto :goto_1
 
-    .line 177
+    .line 184
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->surface:Landroid/view/Surface;
 
     if-eqz v0, :cond_2
 
-    .line 178
+    .line 185
     iget-object v2, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     invoke-interface {v2, v0}, Lcom/google/android/exoplayer2/Player;->setVideoSurface(Landroid/view/Surface;)V
 
-    .line 180
+    .line 187
     :cond_2
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
@@ -373,7 +373,7 @@
 
     invoke-interface {v0, v2}, Lcom/google/android/exoplayer2/Player;->setPlayWhenReady(Z)V
 
-    .line 181
+    .line 188
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     iget-boolean v2, p0, Lorg/telegram/ui/Components/VideoPlayer;->looping:Z
@@ -388,18 +388,18 @@
     :goto_2
     invoke-interface {v0, v1}, Lcom/google/android/exoplayer2/Player;->setRepeatMode(I)V
 
-    .line 183
+    .line 190
     :cond_4
     iget-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->mixedAudio:Z
 
     if-eqz v0, :cond_5
 
-    .line 184
+    .line 191
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayer:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-nez v0, :cond_5
 
-    .line 185
+    .line 192
     new-instance v0, Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -408,12 +408,12 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->trackSelector:Lcom/google/android/exoplayer2/trackselection/MappingTrackSelector;
 
-    .line 186
+    .line 193
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setTrackSelector(Lcom/google/android/exoplayer2/trackselection/TrackSelector;)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     move-result-object v0
 
-    .line 187
+    .line 194
     invoke-virtual {v0, v10}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setLoadControl(Lcom/google/android/exoplayer2/LoadControl;)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     move-result-object v0
@@ -424,14 +424,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayer:Lcom/google/android/exoplayer2/ExoPlayer;
 
-    .line 188
+    .line 195
     new-instance v1, Lorg/telegram/ui/Components/VideoPlayer$1;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/VideoPlayer$1;-><init>(Lorg/telegram/ui/Components/VideoPlayer;)V
 
     invoke-interface {v0, v1}, Lcom/google/android/exoplayer2/Player;->addListener(Lcom/google/android/exoplayer2/Player$Listener;)V
 
-    .line 198
+    .line 205
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayer:Lcom/google/android/exoplayer2/ExoPlayer;
 
     iget-boolean v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->autoplay:Z
@@ -445,12 +445,12 @@
 .method private synthetic lambda$onPlayerError$0(Lcom/google/android/exoplayer2/PlaybackException;)V
     .locals 3
 
-    .line 555
+    .line 562
     invoke-virtual {p1}, Ljava/lang/Exception;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
 
-    .line 556
+    .line 563
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->textureView:Landroid/view/TextureView;
 
     if-eqz v1, :cond_4
@@ -471,15 +471,15 @@
     :cond_1
     const/4 p1, 0x1
 
-    .line 557
+    .line 564
     iput-boolean p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->triedReinit:Z
 
-    .line 558
+    .line 565
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz p1, :cond_5
 
-    .line 559
+    .line 566
     invoke-virtual {v1}, Landroid/view/TextureView;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
@@ -488,24 +488,24 @@
 
     if-eqz p1, :cond_2
 
-    .line 561
+    .line 568
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->indexOfChild(Landroid/view/View;)I
 
     move-result v0
 
-    .line 562
+    .line 569
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 563
+    .line 570
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {p1, v1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
-    .line 565
+    .line 572
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
@@ -513,19 +513,19 @@
 
     invoke-interface {p1, v0}, Lcom/google/android/exoplayer2/Player;->clearVideoTextureView(Landroid/view/TextureView;)V
 
-    .line 566
+    .line 573
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->textureView:Landroid/view/TextureView;
 
     invoke-interface {p1, v0}, Lcom/google/android/exoplayer2/Player;->setVideoTextureView(Landroid/view/TextureView;)V
 
-    .line 567
+    .line 574
     iget-boolean p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->loopingMediaSource:Z
 
     if-eqz p1, :cond_3
 
-    .line 568
+    .line 575
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->videoUri:Landroid/net/Uri;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->videoType:Ljava/lang/String;
@@ -538,7 +538,7 @@
 
     goto :goto_0
 
-    .line 570
+    .line 577
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->videoUri:Landroid/net/Uri;
 
@@ -546,13 +546,13 @@
 
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/VideoPlayer;->preparePlayer(Landroid/net/Uri;Ljava/lang/String;)V
 
-    .line 572
+    .line 579
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
 
     goto :goto_1
 
-    .line 575
+    .line 582
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->delegate:Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;
 
@@ -566,27 +566,27 @@
 .method private maybeReportPlayerState()V
     .locals 3
 
-    .line 607
+    .line 614
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 610
+    .line 617
     :cond_0
     invoke-interface {v0}, Lcom/google/android/exoplayer2/Player;->getPlayWhenReady()Z
 
     move-result v0
 
-    .line 611
+    .line 618
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     invoke-interface {v1}, Lcom/google/android/exoplayer2/Player;->getPlaybackState()I
 
     move-result v1
 
-    .line 612
+    .line 619
     iget-boolean v2, p0, Lorg/telegram/ui/Components/VideoPlayer;->lastReportedPlayWhenReady:Z
 
     if-ne v2, v0, :cond_1
@@ -595,16 +595,16 @@
 
     if-eq v2, v1, :cond_2
 
-    .line 613
+    .line 620
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/Components/VideoPlayer;->delegate:Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;
 
     invoke-interface {v2, v0, v1}, Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;->onStateChanged(ZI)V
 
-    .line 614
+    .line 621
     iput-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->lastReportedPlayWhenReady:Z
 
-    .line 615
+    .line 622
     iput v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->lastReportedPlaybackState:I
 
     :cond_2
@@ -614,7 +614,7 @@
 .method private mediaSourceFromUri(Landroid/net/Uri;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/MediaSource;
     .locals 2
 
-    .line 241
+    .line 248
     new-instance v0, Lcom/google/android/exoplayer2/MediaItem$Builder;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/MediaItem$Builder;-><init>()V
@@ -627,7 +627,7 @@
 
     move-result-object p1
 
-    .line 242
+    .line 249
     invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
 
     invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
@@ -689,12 +689,12 @@
     :goto_0
     packed-switch v1, :pswitch_data_0
 
-    .line 259
+    .line 266
     iget-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer;->progressiveMediaSourceFactory:Lcom/google/android/exoplayer2/source/ProgressiveMediaSource$Factory;
 
     if-nez p2, :cond_3
 
-    .line 260
+    .line 267
     new-instance p2, Lcom/google/android/exoplayer2/source/ProgressiveMediaSource$Factory;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->mediaDataSourceFactory:Lcom/google/android/exoplayer2/upstream/DataSource$Factory;
@@ -703,7 +703,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer;->progressiveMediaSourceFactory:Lcom/google/android/exoplayer2/source/ProgressiveMediaSource$Factory;
 
-    .line 262
+    .line 269
     :cond_3
     iget-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer;->progressiveMediaSourceFactory:Lcom/google/android/exoplayer2/source/ProgressiveMediaSource$Factory;
 
@@ -713,13 +713,13 @@
 
     return-object p1
 
-    .line 244
+    .line 251
     :pswitch_0
     iget-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer;->dashMediaSourceFactory:Lcom/google/android/exoplayer2/source/MediaSource$Factory;
 
     if-nez p2, :cond_4
 
-    .line 245
+    .line 252
     new-instance p2, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$Factory;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->mediaDataSourceFactory:Lcom/google/android/exoplayer2/upstream/DataSource$Factory;
@@ -728,7 +728,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer;->dashMediaSourceFactory:Lcom/google/android/exoplayer2/source/MediaSource$Factory;
 
-    .line 247
+    .line 254
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer;->dashMediaSourceFactory:Lcom/google/android/exoplayer2/source/MediaSource$Factory;
 
@@ -738,13 +738,13 @@
 
     return-object p1
 
-    .line 249
+    .line 256
     :pswitch_1
     iget-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer;->hlsMediaSourceFactory:Lcom/google/android/exoplayer2/source/hls/HlsMediaSource$Factory;
 
     if-nez p2, :cond_5
 
-    .line 250
+    .line 257
     new-instance p2, Lcom/google/android/exoplayer2/source/hls/HlsMediaSource$Factory;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->mediaDataSourceFactory:Lcom/google/android/exoplayer2/upstream/DataSource$Factory;
@@ -753,7 +753,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer;->hlsMediaSourceFactory:Lcom/google/android/exoplayer2/source/hls/HlsMediaSource$Factory;
 
-    .line 252
+    .line 259
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer;->hlsMediaSourceFactory:Lcom/google/android/exoplayer2/source/hls/HlsMediaSource$Factory;
 
@@ -763,13 +763,13 @@
 
     return-object p1
 
-    .line 254
+    .line 261
     :pswitch_2
     iget-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer;->ssMediaSourceFactory:Lcom/google/android/exoplayer2/source/smoothstreaming/SsMediaSource$Factory;
 
     if-nez p2, :cond_6
 
-    .line 255
+    .line 262
     new-instance p2, Lcom/google/android/exoplayer2/source/smoothstreaming/SsMediaSource$Factory;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->mediaDataSourceFactory:Lcom/google/android/exoplayer2/upstream/DataSource$Factory;
@@ -778,7 +778,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer;->ssMediaSourceFactory:Lcom/google/android/exoplayer2/source/smoothstreaming/SsMediaSource$Factory;
 
-    .line 257
+    .line 264
     :cond_6
     iget-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer;->ssMediaSourceFactory:Lcom/google/android/exoplayer2/source/smoothstreaming/SsMediaSource$Factory;
 
@@ -808,28 +808,28 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 141
+    .line 148
     sget p2, Lorg/telegram/messenger/NotificationCenter;->playerDidStartPlaying:I
 
     if-ne p1, p2, :cond_0
 
     const/4 p1, 0x0
 
-    .line 142
+    .line 149
     aget-object p1, p3, p1
 
     check-cast p1, Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eq p1, p0, :cond_0
 
-    .line 143
+    .line 150
     invoke-virtual {p0}, Lorg/telegram/ui/Components/VideoPlayer;->isPlaying()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 144
+    .line 151
     invoke-virtual {p0}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
 
     :cond_0
@@ -839,7 +839,7 @@
 .method public getBufferedPosition()J
     .locals 2
 
-    .line 480
+    .line 487
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v0, :cond_1
@@ -871,7 +871,7 @@
 .method public getCurrentPosition()J
     .locals 2
 
-    .line 426
+    .line 433
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v0, :cond_0
@@ -892,7 +892,7 @@
 .method public getCurrentUri()Landroid/net/Uri;
     .locals 1
 
-    .line 354
+    .line 361
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->currentUri:Landroid/net/Uri;
 
     return-object v0
@@ -901,7 +901,7 @@
 .method public getDuration()J
     .locals 2
 
-    .line 422
+    .line 429
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v0, :cond_0
@@ -922,7 +922,7 @@
 .method public getPlayWhenReady()Z
     .locals 1
 
-    .line 346
+    .line 353
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/Player;->getPlayWhenReady()Z
@@ -935,7 +935,7 @@
 .method public getPlaybackState()I
     .locals 1
 
-    .line 350
+    .line 357
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/Player;->getPlaybackState()I
@@ -948,7 +948,7 @@
 .method public isBuffering()Z
     .locals 2
 
-    .line 492
+    .line 499
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v0, :cond_0
@@ -973,7 +973,7 @@
 .method public isLooping()Z
     .locals 1
 
-    .line 518
+    .line 525
     iget-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->looping:Z
 
     return v0
@@ -982,7 +982,7 @@
 .method public isMuted()Z
     .locals 2
 
-    .line 430
+    .line 437
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v0, :cond_0
@@ -1011,7 +1011,7 @@
 .method public isPlayerPrepared()Z
     .locals 1
 
-    .line 285
+    .line 292
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v0, :cond_0
@@ -1030,7 +1030,7 @@
 .method public isPlaying()Z
     .locals 1
 
-    .line 488
+    .line 495
     iget-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->mixedAudio:Z
 
     if-eqz v0, :cond_0
@@ -1599,7 +1599,7 @@
 .method public onPlayerError(Lcom/google/android/exoplayer2/PlaybackException;)V
     .locals 1
 
-    .line 554
+    .line 561
     new-instance v0, Lorg/telegram/ui/Components/VideoPlayer$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/VideoPlayer$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/VideoPlayer;Lcom/google/android/exoplayer2/PlaybackException;)V
@@ -1652,7 +1652,7 @@
 .method public onPlayerStateChanged(ZI)V
     .locals 5
 
-    .line 529
+    .line 536
     invoke-direct {p0}, Lorg/telegram/ui/Components/VideoPlayer;->maybeReportPlayerState()V
 
     const/4 v0, 0x0
@@ -1665,7 +1665,7 @@
 
     if-ne p2, v2, :cond_0
 
-    .line 530
+    .line 537
     invoke-virtual {p0}, Lorg/telegram/ui/Components/VideoPlayer;->isMuted()Z
 
     move-result p1
@@ -1676,7 +1676,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 531
+    .line 538
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -1689,7 +1689,7 @@
 
     invoke-virtual {p1, v3, v4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 533
+    .line 540
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->videoPlayerReady:Z
 
@@ -1697,28 +1697,28 @@
 
     if-ne p2, v2, :cond_1
 
-    .line 534
+    .line 541
     iput-boolean v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->videoPlayerReady:Z
 
-    .line 535
+    .line 542
     invoke-direct {p0}, Lorg/telegram/ui/Components/VideoPlayer;->checkPlayersReady()V
 
     :cond_1
     if-eq p2, v2, :cond_2
 
-    .line 538
+    .line 545
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioUpdateHandler:Landroid/os/Handler;
 
     const/4 p2, 0x0
 
     invoke-virtual {p1, p2}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 539
+    .line 546
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioVisualizerDelegate:Lorg/telegram/ui/Components/VideoPlayer$AudioVisualizerDelegate;
 
     if-eqz p1, :cond_2
 
-    .line 540
+    .line 547
     invoke-interface {p1, v0, v1, p2}, Lorg/telegram/ui/Components/VideoPlayer$AudioVisualizerDelegate;->onVisualizerUpdate(ZZ[F)V
 
     :cond_2
@@ -1754,7 +1754,7 @@
 
     if-nez p3, :cond_0
 
-    .line 548
+    .line 555
     iget p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->repeatCount:I
 
     add-int/lit8 p1, p1, 0x1
@@ -1784,7 +1784,7 @@
 .method public onRenderedFirstFrame()V
     .locals 1
 
-    .line 588
+    .line 595
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->delegate:Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;
 
     invoke-interface {v0}, Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;->onRenderedFirstFrame()V
@@ -1795,12 +1795,12 @@
 .method public onRenderedFirstFrame(Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;Ljava/lang/Object;J)V
     .locals 0
 
-    .line 318
+    .line 325
     iget-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer;->delegate:Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;
 
     if-eqz p2, :cond_0
 
-    .line 319
+    .line 326
     invoke-interface {p2, p1}, Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;->onRenderedFirstFrame(Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;)V
 
     :cond_0
@@ -1864,12 +1864,12 @@
 .method public onSeekProcessed(Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;)V
     .locals 1
 
-    .line 311
+    .line 318
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->delegate:Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;
 
     if-eqz v0, :cond_0
 
-    .line 312
+    .line 319
     invoke-interface {v0, p1}, Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;->onSeekFinished(Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;)V
 
     :cond_0
@@ -1879,12 +1879,12 @@
 .method public onSeekStarted(Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;)V
     .locals 1
 
-    .line 304
+    .line 311
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->delegate:Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;
 
     if-eqz v0, :cond_0
 
-    .line 305
+    .line 312
     invoke-interface {v0, p1}, Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;->onSeekStarted(Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;)V
 
     :cond_0
@@ -1926,7 +1926,7 @@
 .method public onSurfaceDestroyed(Landroid/graphics/SurfaceTexture;)Z
     .locals 1
 
-    .line 593
+    .line 600
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->delegate:Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;
 
     invoke-interface {v0, p1}, Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;->onSurfaceDestroyed(Landroid/graphics/SurfaceTexture;)Z
@@ -1953,7 +1953,7 @@
 .method public onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
     .locals 1
 
-    .line 598
+    .line 605
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->delegate:Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;
 
     invoke-interface {v0, p1}, Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;->onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
@@ -2108,7 +2108,7 @@
 .method public onVideoSizeChanged(Lcom/google/android/exoplayer2/video/VideoSize;)V
     .locals 5
 
-    .line 582
+    .line 589
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->delegate:Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;
 
     iget v1, p1, Lcom/google/android/exoplayer2/video/VideoSize;->width:I
@@ -2121,7 +2121,7 @@
 
     invoke-interface {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;->onVideoSizeChanged(IIIF)V
 
-    .line 583
+    .line 590
     invoke-static {p0, p1}, Lcom/google/android/exoplayer2/Player$Listener$-CC;->$default$onVideoSizeChanged(Lcom/google/android/exoplayer2/Player$Listener;Lcom/google/android/exoplayer2/video/VideoSize;)V
 
     return-void
@@ -2148,40 +2148,40 @@
 
     const/4 v0, 0x0
 
-    .line 379
+    .line 386
     iput-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->mixedPlayWhenReady:Z
 
-    .line 380
+    .line 387
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v1, :cond_0
 
-    .line 381
+    .line 388
     invoke-interface {v1, v0}, Lcom/google/android/exoplayer2/Player;->setPlayWhenReady(Z)V
 
-    .line 383
+    .line 390
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayer:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v1, :cond_1
 
-    .line 384
+    .line 391
     invoke-interface {v1, v0}, Lcom/google/android/exoplayer2/Player;->setPlayWhenReady(Z)V
 
-    .line 387
+    .line 394
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioVisualizerDelegate:Lorg/telegram/ui/Components/VideoPlayer$AudioVisualizerDelegate;
 
     if-eqz v1, :cond_2
 
-    .line 388
+    .line 395
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioUpdateHandler:Landroid/os/Handler;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 389
+    .line 396
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioVisualizerDelegate:Lorg/telegram/ui/Components/VideoPlayer$AudioVisualizerDelegate;
 
     const/4 v3, 0x1
@@ -2197,15 +2197,15 @@
 
     const/4 v0, 0x1
 
-    .line 358
+    .line 365
     iput-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->mixedPlayWhenReady:Z
 
-    .line 359
+    .line 366
     iget-boolean v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->mixedAudio:Z
 
     if-eqz v1, :cond_3
 
-    .line 360
+    .line 367
     iget-boolean v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayerReady:Z
 
     if-eqz v1, :cond_0
@@ -2214,7 +2214,7 @@
 
     if-nez v1, :cond_3
 
-    .line 361
+    .line 368
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
@@ -2222,37 +2222,37 @@
 
     if-eqz v0, :cond_1
 
-    .line 362
+    .line 369
     invoke-interface {v0, v1}, Lcom/google/android/exoplayer2/Player;->setPlayWhenReady(Z)V
 
-    .line 364
+    .line 371
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayer:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v0, :cond_2
 
-    .line 365
+    .line 372
     invoke-interface {v0, v1}, Lcom/google/android/exoplayer2/Player;->setPlayWhenReady(Z)V
 
     :cond_2
     return-void
 
-    .line 370
+    .line 377
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v1, :cond_4
 
-    .line 371
+    .line 378
     invoke-interface {v1, v0}, Lcom/google/android/exoplayer2/Player;->setPlayWhenReady(Z)V
 
-    .line 373
+    .line 380
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayer:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v1, :cond_5
 
-    .line 374
+    .line 381
     invoke-interface {v1, v0}, Lcom/google/android/exoplayer2/Player;->setPlayWhenReady(Z)V
 
     :cond_5
@@ -2262,35 +2262,35 @@
 .method public preparePlayer(Landroid/net/Uri;Ljava/lang/String;)V
     .locals 4
 
-    .line 267
+    .line 274
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->videoUri:Landroid/net/Uri;
 
-    .line 268
+    .line 275
     iput-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer;->videoType:Ljava/lang/String;
 
     const/4 v0, 0x0
 
-    .line 269
+    .line 276
     iput-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioUri:Landroid/net/Uri;
 
-    .line 270
+    .line 277
     iput-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioType:Ljava/lang/String;
 
     const/4 v0, 0x0
 
-    .line 271
+    .line 278
     iput-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->loopingMediaSource:Z
 
-    .line 273
+    .line 280
     iput-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->videoPlayerReady:Z
 
-    .line 274
+    .line 281
     iput-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->mixedAudio:Z
 
-    .line 275
+    .line 282
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->currentUri:Landroid/net/Uri;
 
-    .line 276
+    .line 283
     invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v1
@@ -2301,7 +2301,7 @@
 
     const-string v3, "file"
 
-    .line 277
+    .line 284
     invoke-virtual {v1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
@@ -2313,20 +2313,20 @@
     :cond_0
     iput-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->isStreaming:Z
 
-    .line 278
+    .line 285
     invoke-direct {p0}, Lorg/telegram/ui/Components/VideoPlayer;->ensurePlayerCreated()V
 
-    .line 279
+    .line 286
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/VideoPlayer;->mediaSourceFromUri(Landroid/net/Uri;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/MediaSource;
 
     move-result-object p1
 
-    .line 280
+    .line 287
     iget-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     invoke-interface {p2, p1, v2}, Lcom/google/android/exoplayer2/ExoPlayer;->setMediaSource(Lcom/google/android/exoplayer2/source/MediaSource;Z)V
 
-    .line 281
+    .line 288
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     invoke-interface {p1}, Lcom/google/android/exoplayer2/Player;->prepare()V
@@ -2337,35 +2337,35 @@
 .method public preparePlayerLoop(Landroid/net/Uri;Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
     .locals 6
 
-    .line 204
+    .line 211
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->videoUri:Landroid/net/Uri;
 
-    .line 205
+    .line 212
     iput-object p3, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioUri:Landroid/net/Uri;
 
-    .line 206
+    .line 213
     iput-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer;->videoType:Ljava/lang/String;
 
-    .line 207
+    .line 214
     iput-object p4, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioType:Ljava/lang/String;
 
     const/4 v0, 0x1
 
-    .line 208
+    .line 215
     iput-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->loopingMediaSource:Z
 
-    .line 210
+    .line 217
     iput-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->mixedAudio:Z
 
     const/4 v1, 0x0
 
-    .line 211
+    .line 218
     iput-boolean v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayerReady:Z
 
-    .line 212
+    .line 219
     iput-boolean v1, p0, Lorg/telegram/ui/Components/VideoPlayer;->videoPlayerReady:Z
 
-    .line 213
+    .line 220
     invoke-direct {p0}, Lorg/telegram/ui/Components/VideoPlayer;->ensurePlayerCreated()V
 
     const/4 v2, 0x0
@@ -2390,13 +2390,13 @@
 
     move-object v5, p4
 
-    .line 226
+    .line 233
     :goto_1
     invoke-direct {p0, v4, v5}, Lorg/telegram/ui/Components/VideoPlayer;->mediaSourceFromUri(Landroid/net/Uri;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/MediaSource;
 
     move-result-object v4
 
-    .line 227
+    .line 234
     new-instance v5, Lcom/google/android/exoplayer2/source/LoopingMediaSource;
 
     invoke-direct {v5, v4}, Lcom/google/android/exoplayer2/source/LoopingMediaSource;-><init>(Lcom/google/android/exoplayer2/source/MediaSource;)V
@@ -2415,23 +2415,23 @@
 
     goto :goto_0
 
-    .line 234
+    .line 241
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     invoke-interface {p1, v2, v0}, Lcom/google/android/exoplayer2/ExoPlayer;->setMediaSource(Lcom/google/android/exoplayer2/source/MediaSource;Z)V
 
-    .line 235
+    .line 242
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     invoke-interface {p1}, Lcom/google/android/exoplayer2/Player;->prepare()V
 
-    .line 236
+    .line 243
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayer:Lcom/google/android/exoplayer2/ExoPlayer;
 
     invoke-interface {p1, v3, v0}, Lcom/google/android/exoplayer2/ExoPlayer;->setMediaSource(Lcom/google/android/exoplayer2/source/MediaSource;Z)V
 
-    .line 237
+    .line 244
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayer:Lcom/google/android/exoplayer2/ExoPlayer;
 
     invoke-interface {p1}, Lcom/google/android/exoplayer2/Player;->prepare()V
@@ -2442,38 +2442,38 @@
 .method public releasePlayer(Z)V
     .locals 1
 
-    .line 289
+    .line 296
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     const/4 v0, 0x0
 
     if-eqz p1, :cond_0
 
-    .line 290
+    .line 297
     invoke-interface {p1}, Lcom/google/android/exoplayer2/Player;->release()V
 
-    .line 291
+    .line 298
     iput-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
-    .line 293
+    .line 300
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayer:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz p1, :cond_1
 
-    .line 294
+    .line 301
     invoke-interface {p1}, Lcom/google/android/exoplayer2/Player;->release()V
 
-    .line 295
+    .line 302
     iput-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayer:Lcom/google/android/exoplayer2/ExoPlayer;
 
-    .line 297
+    .line 304
     :cond_1
     iget-boolean p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->shouldPauseOther:Z
 
     if-eqz p1, :cond_2
 
-    .line 298
+    .line 305
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -2489,12 +2489,12 @@
 .method public seekTo(J)V
     .locals 1
 
-    .line 462
+    .line 469
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v0, :cond_0
 
-    .line 463
+    .line 470
     invoke-interface {v0, p1, p2}, Lcom/google/android/exoplayer2/Player;->seekTo(J)V
 
     :cond_0
@@ -2504,7 +2504,7 @@
 .method public setAudioVisualizerDelegate(Lorg/telegram/ui/Components/VideoPlayer$AudioVisualizerDelegate;)V
     .locals 0
 
-    .line 472
+    .line 479
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioVisualizerDelegate:Lorg/telegram/ui/Components/VideoPlayer$AudioVisualizerDelegate;
 
     return-void
@@ -2513,7 +2513,7 @@
 .method public setDelegate(Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;)V
     .locals 0
 
-    .line 468
+    .line 475
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->delegate:Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;
 
     return-void
@@ -2522,15 +2522,15 @@
 .method public setLooping(Z)V
     .locals 1
 
-    .line 509
+    .line 516
     iget-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->looping:Z
 
     if-eq v0, p1, :cond_1
 
-    .line 510
+    .line 517
     iput-boolean p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->looping:Z
 
-    .line 511
+    .line 518
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v0, :cond_1
@@ -2544,7 +2544,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 512
+    .line 519
     :goto_0
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/Player;->setRepeatMode(I)V
 
@@ -2555,7 +2555,7 @@
 .method public setMute(Z)V
     .locals 4
 
-    .line 434
+    .line 441
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     const/4 v1, 0x0
@@ -2573,11 +2573,11 @@
     :cond_0
     const/high16 v3, 0x3f800000    # 1.0f
 
-    .line 435
+    .line 442
     :goto_0
     invoke-interface {v0, v3}, Lcom/google/android/exoplayer2/Player;->setVolume(F)V
 
-    .line 437
+    .line 444
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayer:Lcom/google/android/exoplayer2/ExoPlayer;
 
@@ -2590,7 +2590,7 @@
     :cond_2
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 438
+    .line 445
     :goto_1
     invoke-interface {v0, v1}, Lcom/google/android/exoplayer2/Player;->setVolume(F)V
 
@@ -2601,17 +2601,17 @@
 .method public setPlayWhenReady(Z)V
     .locals 1
 
-    .line 400
+    .line 407
     iput-boolean p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->mixedPlayWhenReady:Z
 
     if-eqz p1, :cond_3
 
-    .line 401
+    .line 408
     iget-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->mixedAudio:Z
 
     if-eqz v0, :cond_3
 
-    .line 402
+    .line 409
     iget-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayerReady:Z
 
     if-eqz v0, :cond_0
@@ -2620,7 +2620,7 @@
 
     if-nez v0, :cond_3
 
-    .line 403
+    .line 410
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
@@ -2628,40 +2628,40 @@
 
     if-eqz p1, :cond_1
 
-    .line 404
+    .line 411
     invoke-interface {p1, v0}, Lcom/google/android/exoplayer2/Player;->setPlayWhenReady(Z)V
 
-    .line 406
+    .line 413
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayer:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz p1, :cond_2
 
-    .line 407
+    .line 414
     invoke-interface {p1, v0}, Lcom/google/android/exoplayer2/Player;->setPlayWhenReady(Z)V
 
     :cond_2
     return-void
 
-    .line 412
+    .line 419
     :cond_3
     iput-boolean p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->autoplay:Z
 
-    .line 413
+    .line 420
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v0, :cond_4
 
-    .line 414
+    .line 421
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/Player;->setPlayWhenReady(Z)V
 
-    .line 416
+    .line 423
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayer:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v0, :cond_5
 
-    .line 417
+    .line 424
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/Player;->setPlayWhenReady(Z)V
 
     :cond_5
@@ -2671,12 +2671,12 @@
 .method public setPlaybackSpeed(F)V
     .locals 4
 
-    .line 394
+    .line 401
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v0, :cond_1
 
-    .line 395
+    .line 402
     new-instance v1, Lcom/google/android/exoplayer2/PlaybackParameters;
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -2699,7 +2699,7 @@
 .method public setStreamType(I)V
     .locals 5
 
-    .line 496
+    .line 503
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     const/4 v1, 0x2
@@ -2708,7 +2708,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 497
+    .line 504
     new-instance v3, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;
 
     invoke-direct {v3}, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;-><init>()V
@@ -2722,29 +2722,29 @@
     :cond_0
     const/4 v4, 0x1
 
-    .line 498
+    .line 505
     :goto_0
     invoke-virtual {v3, v4}, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->setUsage(I)Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;
 
     move-result-object v3
 
-    .line 499
+    .line 506
     invoke-virtual {v3}, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->build()Lcom/google/android/exoplayer2/audio/AudioAttributes;
 
     move-result-object v3
 
     const/4 v4, 0x0
 
-    .line 497
+    .line 504
     invoke-interface {v0, v3, v4}, Lcom/google/android/exoplayer2/ExoPlayer;->setAudioAttributes(Lcom/google/android/exoplayer2/audio/AudioAttributes;Z)V
 
-    .line 501
+    .line 508
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayer:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v0, :cond_3
 
-    .line 502
+    .line 509
     new-instance v3, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;
 
     invoke-direct {v3}, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;-><init>()V
@@ -2756,18 +2756,18 @@
     :cond_2
     const/4 v1, 0x1
 
-    .line 503
+    .line 510
     :goto_1
     invoke-virtual {v3, v1}, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->setUsage(I)Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;
 
     move-result-object p1
 
-    .line 504
+    .line 511
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->build()Lcom/google/android/exoplayer2/audio/AudioAttributes;
 
     move-result-object p1
 
-    .line 502
+    .line 509
     invoke-interface {v0, p1, v2}, Lcom/google/android/exoplayer2/ExoPlayer;->setAudioAttributes(Lcom/google/android/exoplayer2/audio/AudioAttributes;Z)V
 
     :cond_3
@@ -2777,25 +2777,25 @@
 .method public setSurface(Landroid/view/Surface;)V
     .locals 1
 
-    .line 335
+    .line 342
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->surface:Landroid/view/Surface;
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 338
+    .line 345
     :cond_0
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->surface:Landroid/view/Surface;
 
-    .line 339
+    .line 346
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-nez v0, :cond_1
 
     return-void
 
-    .line 342
+    .line 349
     :cond_1
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/Player;->setVideoSurface(Landroid/view/Surface;)V
 
@@ -2805,25 +2805,25 @@
 .method public setTextureView(Landroid/view/TextureView;)V
     .locals 1
 
-    .line 324
+    .line 331
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->textureView:Landroid/view/TextureView;
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 327
+    .line 334
     :cond_0
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer;->textureView:Landroid/view/TextureView;
 
-    .line 328
+    .line 335
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-nez v0, :cond_1
 
     return-void
 
-    .line 331
+    .line 338
     :cond_1
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/Player;->setVideoTextureView(Landroid/view/TextureView;)V
 
@@ -2833,21 +2833,21 @@
 .method public setVolume(F)V
     .locals 1
 
-    .line 453
+    .line 460
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->player:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v0, :cond_0
 
-    .line 454
+    .line 461
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/Player;->setVolume(F)V
 
-    .line 456
+    .line 463
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->audioPlayer:Lcom/google/android/exoplayer2/ExoPlayer;
 
     if-eqz v0, :cond_1
 
-    .line 457
+    .line 464
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/Player;->setVolume(F)V
 
     :cond_1

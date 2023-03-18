@@ -1004,21 +1004,23 @@
 
 .field public static final tooltip_y_offset_touch:I = 0x7f0701ee
 
-.field public static final wallet_account_coin_big_icon_size:I = 0x7f0701ef
+.field public static final tweet_counter_text_width:I = 0x7f0701ef
 
-.field public static final wallet_account_coin_medium_icon_size:I = 0x7f0701f0
+.field public static final wallet_account_coin_big_icon_size:I = 0x7f0701f0
 
-.field public static final wallet_card_elevation:I = 0x7f0701f1
+.field public static final wallet_account_coin_medium_icon_size:I = 0x7f0701f1
 
-.field public static final wallet_enter_pin_height:I = 0x7f0701f2
+.field public static final wallet_card_elevation:I = 0x7f0701f2
 
-.field public static final wallet_icon_shadow:I = 0x7f0701f3
+.field public static final wallet_enter_pin_height:I = 0x7f0701f3
 
-.field public static final wallet_image_info_size:I = 0x7f0701f4
+.field public static final wallet_icon_shadow:I = 0x7f0701f4
 
-.field public static final wallet_navigation_badge:I = 0x7f0701f5
+.field public static final wallet_image_info_size:I = 0x7f0701f5
 
-.field public static final wallet_notification_mark_size:I = 0x7f0701f6
+.field public static final wallet_navigation_badge:I = 0x7f0701f6
+
+.field public static final wallet_notification_mark_size:I = 0x7f0701f7
 
 
 # direct methods

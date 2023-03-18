@@ -29,7 +29,7 @@
 
     check-cast p1, Ljava/util/HashMap;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/Theme;->$r8$lambda$jdxJa8vB5enhbFcOdJH7Vdg-3-8(Ljava/lang/Runnable;Ljava/util/HashMap;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/Theme;->$r8$lambda$QiPCVRK6XUYq-IhQaRyJ3XXfu3E(Ljava/lang/Runnable;Ljava/util/HashMap;)V
 
     return-void
 .end method

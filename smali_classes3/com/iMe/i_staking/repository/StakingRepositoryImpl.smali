@@ -94,7 +94,11 @@
 
     invoke-direct {v0, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$getApprovalInfo$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -110,7 +114,11 @@
 
     invoke-direct {v0, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$getApprovalInfo$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -153,7 +161,11 @@
 
     invoke-direct {v0, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$getStakingDetails$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -169,7 +181,11 @@
 
     invoke-direct {v0, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$getStakingDetails$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -252,7 +268,11 @@
 
     invoke-direct {p3, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$getStakingOperations$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
-    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, p3}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -268,7 +288,11 @@
 
     invoke-direct {p3, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$getStakingOperations$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, p3}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -359,7 +383,11 @@
 
     invoke-direct {p3, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$getStakingOwnProgrammesList$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
-    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, p3}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -375,7 +403,11 @@
 
     invoke-direct {p3, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$getStakingOwnProgrammesList$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, p3}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -448,7 +480,11 @@
 
     invoke-direct {v0, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$getStakingProgrammesList$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -464,7 +500,11 @@
 
     invoke-direct {v0, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$getStakingProgrammesList$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -503,7 +543,11 @@
 
     invoke-direct {v2, v1}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$getStakingTotalStats$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
-    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v1, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v1, v2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v0
 
@@ -519,7 +563,11 @@
 
     invoke-direct {v2, v1}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$getStakingTotalStats$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v1, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v1, v2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v0
 
@@ -610,7 +658,11 @@
 
     invoke-direct {p3, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendApprovalPrepare$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
-    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, p3}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -626,7 +678,11 @@
 
     invoke-direct {p3, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendApprovalPrepare$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, p3}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -704,7 +760,11 @@
 
     invoke-direct {v0, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendClaimPrepare$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -720,7 +780,11 @@
 
     invoke-direct {v0, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendClaimPrepare$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -805,7 +869,11 @@
 
     invoke-direct {p3, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendDepositPrepare$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
-    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, p3}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -821,7 +889,11 @@
 
     invoke-direct {p3, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendDepositPrepare$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, p3}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -906,7 +978,11 @@
 
     invoke-direct {p3, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendWithdrawPrepare$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
-    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, p3}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -922,7 +998,11 @@
 
     invoke-direct {p3, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendWithdrawPrepare$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, p3}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 

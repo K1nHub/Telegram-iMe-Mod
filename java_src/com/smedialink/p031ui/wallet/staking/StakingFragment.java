@@ -44,11 +44,11 @@ import org.fork.utils.Callbacks$Callback;
 import org.fork.utils.TabbedFragmentPage;
 import org.fork.utils.TabbedViewPagerDelegate;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentStakingBinding;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.INavigationLayout;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Components.ViewPagerFixed;
@@ -304,14 +304,14 @@ public final class StakingFragment extends WalletAuthFragment implements Staking
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setCastShadows(false);
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setTitle(getResourceManager().getString(C3158R.string.staking_title));
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.createMenu().addItem(IdFabric$Menu.STAKING_HELP, C3158R.C3160drawable.msg_help);
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.staking.StakingFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setCastShadows(false);
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.staking_title));
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.createMenu().addItem(IdFabric$Menu.STAKING_HELP, C3286R.C3288drawable.msg_help);
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.staking.StakingFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     StakingFragment.this.finishFragment();
@@ -324,19 +324,18 @@ public final class StakingFragment extends WalletAuthFragment implements Staking
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void showInfoDialog() {
-        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, null, getResourceManager().getString(C3158R.string.staking_info_description), getResourceManager().getString(C3158R.string.staking_info_more), new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.staking.StakingFragment$$ExternalSyntheticLambda2
+        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, null, getResourceManager().getString(C3286R.string.staking_info_description), getResourceManager().getString(C3286R.string.staking_info_more), new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.staking.StakingFragment$$ExternalSyntheticLambda3
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                StakingFragment.m1728showInfoDialog$lambda12(StakingFragment.this);
+                StakingFragment.showInfoDialog$lambda$12(StakingFragment.this);
             }
         }, 1, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showInfoDialog$lambda-12  reason: not valid java name */
-    public static final void m1728showInfoDialog$lambda12(StakingFragment this$0) {
+    public static final void showInfoDialog$lambda$12(StakingFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Browser.openUrl(this$0.getParentActivity(), this$0.getResourceManager().getString(C3158R.string.staking_info_site_url));
+        Browser.openUrl(this$0.getParentActivity(), this$0.getResourceManager().getString(C3286R.string.staking_info_site_url));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -351,39 +350,36 @@ public final class StakingFragment extends WalletAuthFragment implements Staking
         getBinding().getRoot().setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: com.smedialink.ui.wallet.staking.StakingFragment$$ExternalSyntheticLambda0
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                StakingFragment.m1725setupListeners$lambda14(StakingFragment.this);
+                StakingFragment.setupListeners$lambda$14(StakingFragment.this);
             }
         });
-        getDashboardView().setupListeners(new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.staking.StakingFragment$$ExternalSyntheticLambda1
+        getDashboardView().setupListeners(new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.staking.StakingFragment$$ExternalSyntheticLambda2
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                StakingFragment.m1726setupListeners$lambda15(StakingFragment.this);
+                StakingFragment.setupListeners$lambda$15(StakingFragment.this);
             }
-        }, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.staking.StakingFragment$$ExternalSyntheticLambda3
+        }, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.staking.StakingFragment$$ExternalSyntheticLambda1
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                StakingFragment.m1727setupListeners$lambda16(StakingFragment.this);
+                StakingFragment.setupListeners$lambda$16(StakingFragment.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-14  reason: not valid java name */
-    public static final void m1725setupListeners$lambda14(StakingFragment this$0) {
+    public static final void setupListeners$lambda$14(StakingFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getPresenter().reload();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-15  reason: not valid java name */
-    public static final void m1726setupListeners$lambda15(StakingFragment this$0) {
+    public static final void setupListeners$lambda$15(StakingFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.presentFragment(ManageLinksActivity.newInstanceForStakingCalculator(null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-16  reason: not valid java name */
-    public static final void m1727setupListeners$lambda16(StakingFragment this$0) {
+    public static final void setupListeners$lambda$16(StakingFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.presentFragment(StakingOperationsFragment.Companion.newInstance());
     }

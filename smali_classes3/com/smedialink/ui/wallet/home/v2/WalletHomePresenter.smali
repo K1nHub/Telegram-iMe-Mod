@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletHomePresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomePresenter.kt\ncom/smedialink/ui/wallet/home/v2/WalletHomePresenter\n+ 2 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,58:1\n16#2,3:59\n39#3,6:62\n*S KotlinDebug\n*F\n+ 1 WalletHomePresenter.kt\ncom/smedialink/ui/wallet/home/v2/WalletHomePresenter\n*L\n41#1:59,3\n42#1:62,6\n*E\n"
+    value = "SMAP\nWalletHomePresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomePresenter.kt\ncom/smedialink/ui/wallet/home/v2/WalletHomePresenter\n+ 2 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,58:1\n16#2,3:59\n39#3,8:62\n*S KotlinDebug\n*F\n+ 1 WalletHomePresenter.kt\ncom/smedialink/ui/wallet/home/v2/WalletHomePresenter\n*L\n41#1:59,3\n42#1:62,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -60,7 +60,7 @@
 .end method
 
 .method private final listenEvents()V
-    .locals 4
+    .locals 5
 
     .line 40
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/WalletHomePresenter;->rxEventBus:Lcom/smedialink/storage/domain/utils/rx/RxEventBus;
@@ -99,18 +99,29 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/home/v2/WalletHomePresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/home/v2/WalletHomePresenter;)V
 
-    new-instance v2, Lcom/smedialink/ui/wallet/home/v2/WalletHomePresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v1, Lcom/smedialink/ui/wallet/home/v2/WalletHomePresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v3}, Lcom/smedialink/ui/wallet/home/v2/WalletHomePresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v3}, Lcom/smedialink/ui/wallet/home/v2/WalletHomePresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 46
+    new-instance v4, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v4, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, v2, v4}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1

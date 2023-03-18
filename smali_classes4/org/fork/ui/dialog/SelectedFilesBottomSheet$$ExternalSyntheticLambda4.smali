@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/dialog/SelectedFilesBottomSheet$$ExternalSyntheticLambda4;->f$0:Lorg/fork/ui/dialog/SelectedFilesBottomSheet;
 
-    invoke-static {v0, p1, p2}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->$r8$lambda$97OhIyjxx0zr6wfmQU0ADWZCxts(Lorg/fork/ui/dialog/SelectedFilesBottomSheet;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->$r8$lambda$znk4ZV-cakxtzN_gdWi_inddfRA(Lorg/fork/ui/dialog/SelectedFilesBottomSheet;Landroid/view/View;I)V
 
     return-void
 .end method

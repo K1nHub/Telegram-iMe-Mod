@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;-><clinit>()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

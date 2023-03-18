@@ -14,7 +14,7 @@ public final /* synthetic */ class WalletHomeCryptoFragment$$ExternalSyntheticLa
     @Override // com.chad.library.adapter.base.listener.GridSpanSizeLookup
     public final int getSpanSize(GridLayoutManager gridLayoutManager, int i, int i2) {
         int checkNotNullParameter;
-        checkNotNullParameter = Intrinsics.checkNotNullParameter(gridLayoutManager, "$noName_0");
+        checkNotNullParameter = Intrinsics.checkNotNullParameter(gridLayoutManager, "<anonymous parameter 0>");
         return checkNotNullParameter;
     }
 }

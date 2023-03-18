@@ -20,7 +20,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChooseIntervalSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChooseIntervalSettingsActivity.kt\norg/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,286:1\n11328#2:287\n11663#2,3:288\n37#3:291\n36#3,3:292\n*S KotlinDebug\n*F\n+ 1 ChooseIntervalSettingsActivity.kt\norg/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter\n*L\n228#1:287\n228#1:288,3\n228#1:291\n228#1:292,3\n*E\n"
+    value = "SMAP\nChooseIntervalSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChooseIntervalSettingsActivity.kt\norg/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,286:1\n11335#2:287\n11670#2,3:288\n37#3,2:291\n*S KotlinDebug\n*F\n+ 1 ChooseIntervalSettingsActivity.kt\norg/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter\n*L\n228#1:287\n228#1:288,3\n228#1:291,2\n*E\n"
 .end annotation
 
 
@@ -29,25 +29,21 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$qM0SLZyvGb2aaDwZexcvXcL4ZZE(Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;I)V
+.method public static synthetic $r8$lambda$1a78dI3yMk7N4NFoCbUTbOv09dE(Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;->onCreateViewHolder$lambda-4$lambda-3(Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;I)V
+    invoke-static {p0, p1}, Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;->onCreateViewHolder$lambda$4$lambda$3(Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;I)V
 
     return-void
 .end method
 
 .method public constructor <init>(Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 183
     iput-object p1, p0, Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;->this$0:Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;
@@ -60,7 +56,7 @@
     return-void
 .end method
 
-.method private static final onCreateViewHolder$lambda-4$lambda-3(Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;I)V
+.method private static final onCreateViewHolder$lambda$4$lambda$3(Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;I)V
     .locals 1
 
     const-string v0, "this$0"
@@ -353,7 +349,7 @@
 
     move-result v0
 
-    const-string v4, "windowBackgroundGrayShadow"
+    const-string/jumbo v4, "windowBackgroundGrayShadow"
 
     if-eqz v0, :cond_6
 
@@ -483,16 +479,13 @@
     .line 220
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;->setType(I)V
 
-    .line 221
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     goto/16 :goto_1
 
     .line 222
     :cond_0
     sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->HEADER:I
 
-    const-string v0, "windowBackgroundWhite"
+    const-string/jumbo v0, "windowBackgroundWhite"
 
     if-ne p2, p1, :cond_1
 
@@ -512,9 +505,6 @@
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 224
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     goto/16 :goto_1
 
@@ -574,14 +564,14 @@
 
     move-result-object v1
 
-    .line 11328
+    .line 11335
     new-instance v2, Ljava/util/ArrayList;
 
     array-length v3, v1
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11663
+    .line 11670
     array-length v3, v1
 
     const/4 v4, 0x0
@@ -602,6 +592,7 @@
 
     move-result-object v6
 
+    .line 11671
     invoke-interface {v2, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v5, v5, 0x1
@@ -615,10 +606,6 @@
     invoke-interface {v2, v1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v1
-
-    const-string v2, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-static {v1, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 228
     check-cast v1, [Ljava/lang/String;
@@ -639,9 +626,6 @@
     invoke-direct {v0, p2}, Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;)V
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/SlideChooseView;->setCallback(Lorg/telegram/ui/Components/SlideChooseView$Callback;)V
-
-    .line 232
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     goto :goto_1
 
@@ -686,9 +670,6 @@
     invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 237
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 218
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;

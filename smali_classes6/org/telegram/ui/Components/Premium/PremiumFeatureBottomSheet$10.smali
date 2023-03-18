@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;Landroid/content/Context;I)V
     .locals 0
 
-    .line 653
+    .line 656
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler;-><init>(Landroid/content/Context;I)V
 
     return-void
@@ -42,11 +42,11 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 656
+    .line 659
     :goto_0
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler;->setAutoPlayEnabled(Z)V
 
-    .line 657
+    .line 660
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler;->setOffset(F)V
 
     return-void

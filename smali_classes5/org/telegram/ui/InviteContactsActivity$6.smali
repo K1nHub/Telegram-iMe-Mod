@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/InviteContactsActivity;)V
     .locals 0
 
-    .line 455
+    .line 456
     iput-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$6;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
     .locals 1
 
-    .line 461
+    .line 462
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
     move-result p1
@@ -51,7 +51,7 @@
 
     if-nez p1, :cond_1
 
-    .line 462
+    .line 463
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$6;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$000(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -74,7 +74,7 @@
 
     goto :goto_1
 
-    .line 463
+    .line 464
     :cond_1
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
@@ -98,7 +98,7 @@
 
     if-nez p1, :cond_2
 
-    .line 464
+    .line 465
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$6;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$1700(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/InviteContactsActivity$SpansContainer;
@@ -131,12 +131,12 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/InviteContactsActivity$SpansContainer;->removeSpan(Lorg/telegram/ui/Components/GroupCreateSpan;)V
 
-    .line 465
+    .line 466
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$6;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$1800(Lorg/telegram/ui/InviteContactsActivity;)V
 
-    .line 466
+    .line 467
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$6;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$1900(Lorg/telegram/ui/InviteContactsActivity;)V

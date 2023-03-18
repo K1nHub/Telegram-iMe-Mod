@@ -32,26 +32,34 @@
 
     new-array v0, v0, [I
 
-    sget-object v1, Lcom/smedialink/bots/domain/model/BotLanguage;->RU:Lcom/smedialink/bots/domain/model/BotLanguage;
+    const/4 v1, 0x1
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    :try_start_0
+    sget-object v2, Lcom/smedialink/bots/domain/model/BotLanguage;->RU:Lcom/smedialink/bots/domain/model/BotLanguage;
 
-    move-result v1
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
-    const/4 v2, 0x1
+    move-result v2
 
-    aput v2, v0, v1
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    sget-object v1, Lcom/smedialink/bots/domain/model/BotLanguage;->EN:Lcom/smedialink/bots/domain/model/BotLanguage;
+    :catch_0
+    const/4 v2, 0x2
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    :try_start_1
+    sget-object v3, Lcom/smedialink/bots/domain/model/BotLanguage;->EN:Lcom/smedialink/bots/domain/model/BotLanguage;
 
-    move-result v1
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
-    const/4 v3, 0x2
+    move-result v3
 
-    aput v3, v0, v1
+    aput v2, v0, v3
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
+    :catch_1
     sput-object v0, Lcom/smedialink/ui/shop/BotInfoActivity$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-static {}, Lcom/smedialink/bots/data/model/BotStatus;->values()[Lcom/smedialink/bots/data/model/BotStatus;
@@ -62,22 +70,31 @@
 
     new-array v0, v0, [I
 
-    sget-object v1, Lcom/smedialink/bots/data/model/BotStatus;->PAID:Lcom/smedialink/bots/data/model/BotStatus;
+    :try_start_2
+    sget-object v3, Lcom/smedialink/bots/data/model/BotStatus;->PAID:Lcom/smedialink/bots/data/model/BotStatus;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v1
+    move-result v3
 
-    aput v2, v0, v1
+    aput v1, v0, v3
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
+    :catch_2
+    :try_start_3
     sget-object v1, Lcom/smedialink/bots/data/model/BotStatus;->AVAILABLE:Lcom/smedialink/bots/data/model/BotStatus;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
-    aput v3, v0, v1
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
+    :catch_3
+    :try_start_4
     sget-object v1, Lcom/smedialink/bots/data/model/BotStatus;->UPDATE_AVAILABLE:Lcom/smedialink/bots/data/model/BotStatus;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
@@ -87,7 +104,11 @@
     const/4 v2, 0x3
 
     aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
+    :catch_4
+    :try_start_5
     sget-object v1, Lcom/smedialink/bots/data/model/BotStatus;->DOWNLOADING:Lcom/smedialink/bots/data/model/BotStatus;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
@@ -97,7 +118,11 @@
     const/4 v2, 0x4
 
     aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
+    :catch_5
+    :try_start_6
     sget-object v1, Lcom/smedialink/bots/data/model/BotStatus;->ENABLED:Lcom/smedialink/bots/data/model/BotStatus;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
@@ -107,7 +132,11 @@
     const/4 v2, 0x5
 
     aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
 
+    :catch_6
+    :try_start_7
     sget-object v1, Lcom/smedialink/bots/data/model/BotStatus;->DISABLED:Lcom/smedialink/bots/data/model/BotStatus;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
@@ -117,7 +146,10 @@
     const/4 v2, 0x6
 
     aput v2, v0, v1
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
 
+    :catch_7
     sput-object v0, Lcom/smedialink/ui/shop/BotInfoActivity$WhenMappings;->$EnumSwitchMapping$1:[I
 
     return-void

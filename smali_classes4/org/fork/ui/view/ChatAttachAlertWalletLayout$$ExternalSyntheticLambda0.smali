@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/view/ChatAttachAlertWalletLayout$$ExternalSyntheticLambda0;->f$0:Lio/reactivex/disposables/Disposable;
 
-    invoke-static {v0, p1}, Lorg/fork/ui/view/ChatAttachAlertWalletLayout;->$r8$lambda$qXUb1Ze0sraUJzP_Infi_8EICvc(Lio/reactivex/disposables/Disposable;Landroid/content/DialogInterface;)V
+    invoke-static {v0, p1}, Lorg/fork/ui/view/ChatAttachAlertWalletLayout;->$r8$lambda$Uw_OuJz0xV7CTMyAjhb8yJ6LNCk(Lio/reactivex/disposables/Disposable;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

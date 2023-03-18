@@ -1,6 +1,6 @@
 package kotlin.text;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import java.nio.charset.Charset;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Charsets.kt */
@@ -8,8 +8,8 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Charsets {
     public static final Charsets INSTANCE = new Charsets();
     public static final Charset UTF_8;
-    private static Charset utf_32be;
-    private static Charset utf_32le;
+    private static volatile Charset utf_32be;
+    private static volatile Charset utf_32le;
 
     private Charsets() {
     }
@@ -18,11 +18,11 @@ public final class Charsets {
         Charset forName = Charset.forName("UTF-8");
         Intrinsics.checkNotNullExpressionValue(forName, "forName(\"UTF-8\")");
         UTF_8 = forName;
-        Intrinsics.checkNotNullExpressionValue(Charset.forName(C0474C.UTF16_NAME), "forName(\"UTF-16\")");
+        Intrinsics.checkNotNullExpressionValue(Charset.forName(C0468C.UTF16_NAME), "forName(\"UTF-16\")");
         Intrinsics.checkNotNullExpressionValue(Charset.forName("UTF-16BE"), "forName(\"UTF-16BE\")");
-        Intrinsics.checkNotNullExpressionValue(Charset.forName(C0474C.UTF16LE_NAME), "forName(\"UTF-16LE\")");
-        Intrinsics.checkNotNullExpressionValue(Charset.forName(C0474C.ASCII_NAME), "forName(\"US-ASCII\")");
-        Intrinsics.checkNotNullExpressionValue(Charset.forName(C0474C.ISO88591_NAME), "forName(\"ISO-8859-1\")");
+        Intrinsics.checkNotNullExpressionValue(Charset.forName(C0468C.UTF16LE_NAME), "forName(\"UTF-16LE\")");
+        Intrinsics.checkNotNullExpressionValue(Charset.forName(C0468C.ASCII_NAME), "forName(\"US-ASCII\")");
+        Intrinsics.checkNotNullExpressionValue(Charset.forName(C0468C.ISO88591_NAME), "forName(\"ISO-8859-1\")");
     }
 
     public final Charset UTF32_LE() {

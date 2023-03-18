@@ -1,7 +1,8 @@
 package org.telegram.tgnet;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
+import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_user extends TLRPC$User {
     public static int constructor = -1885878744;
@@ -29,7 +30,7 @@ public class TLRPC$TL_user extends TLRPC$User {
         this.premium = (268435456 & readInt32) != 0;
         this.attach_menu_enabled = (readInt32 & 536870912) != 0;
         this.flags2 = abstractSerializedData.readInt32(z);
-        this.f1633id = abstractSerializedData.readInt64(z);
+        this.f1639id = abstractSerializedData.readInt64(z);
         if ((this.flags & 1) != 0) {
             this.access_hash = abstractSerializedData.readInt64(z);
         }
@@ -115,7 +116,7 @@ public class TLRPC$TL_user extends TLRPC$User {
         this.flags = i4;
         int i5 = this.bot ? i4 | 16384 : i4 & (-16385);
         this.flags = i5;
-        int i6 = this.bot_chat_history ? i5 | 32768 : i5 & (-32769);
+        int i6 = this.bot_chat_history ? i5 | LiteMode.FLAG_CHAT_SCALE : i5 & (-32769);
         this.flags = i6;
         int i7 = this.bot_nochats ? i6 | 65536 : i6 & (-65537);
         this.flags = i7;
@@ -135,7 +136,7 @@ public class TLRPC$TL_user extends TLRPC$User {
         this.flags = i14;
         int i15 = this.fake ? i14 | ConnectionsManager.FileTypeFile : i14 & (-67108865);
         this.flags = i15;
-        int i16 = this.bot_attach_menu ? i15 | C0474C.BUFFER_FLAG_FIRST_SAMPLE : i15 & (-134217729);
+        int i16 = this.bot_attach_menu ? i15 | C0468C.BUFFER_FLAG_FIRST_SAMPLE : i15 & (-134217729);
         this.flags = i16;
         int i17 = this.premium ? i16 | 268435456 : i16 & (-268435457);
         this.flags = i17;
@@ -143,7 +144,7 @@ public class TLRPC$TL_user extends TLRPC$User {
         this.flags = i18;
         abstractSerializedData.writeInt32(i18);
         abstractSerializedData.writeInt32(this.flags2);
-        abstractSerializedData.writeInt64(this.f1633id);
+        abstractSerializedData.writeInt64(this.f1639id);
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeInt64(this.access_hash);
         }

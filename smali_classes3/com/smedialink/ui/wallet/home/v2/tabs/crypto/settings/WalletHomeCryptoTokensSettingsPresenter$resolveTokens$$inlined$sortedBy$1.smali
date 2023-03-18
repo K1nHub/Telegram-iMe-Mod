@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 WalletHomeCryptoTokensSettingsPresenter.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter\n*L\n1#1,320:1\n173#2:321\n*E\n"
+    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 WalletHomeCryptoTokensSettingsPresenter.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter\n*L\n1#1,328:1\n173#2:329\n*E\n"
 .end annotation
 
 
@@ -74,24 +74,26 @@
 
     const v0, 0x7fffffff
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    const p1, 0x7fffffff
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
+    const p1, 0x7fffffff
 
     :goto_0
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
+    .line 102
     check-cast p2, Lcom/smedialink/model/wallet/select/SelectableToken;
 
+    .line 173
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter$resolveTokens$$inlined$sortedBy$1;->$sortingPosition$inlined:Ljava/util/Map;
 
     invoke-virtual {p2}, Lcom/smedialink/model/wallet/select/SelectableToken;->getId()Ljava/lang/String;
@@ -104,20 +106,18 @@
 
     check-cast p2, Ljava/lang/Integer;
 
-    if-nez p2, :cond_1
+    if-eqz p2, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    :goto_1
+    :cond_1
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
 
+    .line 102
     invoke-static {p1, p2}, Lkotlin/comparisons/ComparisonsKt;->compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 
     move-result p1

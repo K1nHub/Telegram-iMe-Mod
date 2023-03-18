@@ -16,7 +16,7 @@
 
 # direct methods
 .method public static getKoin(Lcom/smedialink/ui/base/mvp/view/ICustomMvpView;)Lorg/koin/core/Koin;
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -28,10 +28,6 @@
         }
     .end annotation
 
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     .line 27
     invoke-static {}, Lorg/koin/java/KoinJavaComponent;->getKoin()Lorg/koin/core/Koin;
 
@@ -41,7 +37,7 @@
 .end method
 
 .method public static getMvpDelegate(Lcom/smedialink/ui/base/mvp/view/ICustomMvpView;)Lmoxy/MvpDelegate;
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -53,10 +49,6 @@
             "TT;>;"
         }
     .end annotation
-
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 14
     invoke-interface {p0}, Lcom/smedialink/ui/base/mvp/view/ICustomMvpView;->getMMvpDelegate()Lmoxy/MvpDelegate;
@@ -78,36 +70,26 @@
         }
     .end annotation
 
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     .line 17
     invoke-interface {p0}, Lcom/smedialink/ui/base/mvp/view/ICustomMvpView;->getMvpDelegate()Lmoxy/MvpDelegate;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lmoxy/MvpDelegate;->onCreate()V
 
     .line 18
-    :goto_0
+    :cond_0
     invoke-interface {p0}, Lcom/smedialink/ui/base/mvp/view/ICustomMvpView;->getMvpDelegate()Lmoxy/MvpDelegate;
 
     move-result-object p0
 
-    if-nez p0, :cond_1
+    if-eqz p0, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {p0}, Lmoxy/MvpDelegate;->onAttach()V
 
-    :goto_1
+    :cond_1
     return-void
 .end method
 
@@ -123,48 +105,35 @@
         }
     .end annotation
 
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     .line 22
     invoke-interface {p0}, Lcom/smedialink/ui/base/mvp/view/ICustomMvpView;->getMvpDelegate()Lmoxy/MvpDelegate;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lmoxy/MvpDelegate;->onDetach()V
 
     .line 23
-    :goto_0
+    :cond_0
     invoke-interface {p0}, Lcom/smedialink/ui/base/mvp/view/ICustomMvpView;->getMvpDelegate()Lmoxy/MvpDelegate;
 
     move-result-object v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {v0}, Lmoxy/MvpDelegate;->onDestroyView()V
 
     .line 24
-    :goto_1
+    :cond_1
     invoke-interface {p0}, Lcom/smedialink/ui/base/mvp/view/ICustomMvpView;->getMvpDelegate()Lmoxy/MvpDelegate;
 
     move-result-object p0
 
-    if-nez p0, :cond_2
+    if-eqz p0, :cond_2
 
-    goto :goto_2
-
-    :cond_2
     invoke-virtual {p0}, Lmoxy/MvpDelegate;->onDestroy()V
 
-    :goto_2
+    :cond_2
     return-void
 .end method

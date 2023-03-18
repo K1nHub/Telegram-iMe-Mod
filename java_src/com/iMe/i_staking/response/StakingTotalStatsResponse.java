@@ -1,6 +1,4 @@
 package com.iMe.i_staking.response;
-
-import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingTotalStatsResponse.kt */
 /* loaded from: classes3.dex */
 public final class StakingTotalStatsResponse {
@@ -35,7 +33,7 @@ public final class StakingTotalStatsResponse {
         }
         if (obj instanceof StakingTotalStatsResponse) {
             StakingTotalStatsResponse stakingTotalStatsResponse = (StakingTotalStatsResponse) obj;
-            return Intrinsics.areEqual(Float.valueOf(this.totalStakedUsd), Float.valueOf(stakingTotalStatsResponse.totalStakedUsd)) && Intrinsics.areEqual(Float.valueOf(this.totalProfitUsd), Float.valueOf(stakingTotalStatsResponse.totalProfitUsd));
+            return Float.compare(this.totalStakedUsd, stakingTotalStatsResponse.totalStakedUsd) == 0 && Float.compare(this.totalProfitUsd, stakingTotalStatsResponse.totalProfitUsd) == 0;
         }
         return false;
     }

@@ -93,7 +93,7 @@ public class TabbedViewPager extends FrameLayout {
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getPager(), ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundGray"), new ThemeDescription(getTabsView(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.fork.ui.view.TabbedViewPager$$ExternalSyntheticLambda0
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                TabbedViewPager.m2118getThemeDescription$lambda0(TabbedViewPager.this);
+                TabbedViewPager.getThemeDescription$lambda$0(TabbedViewPager.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -105,8 +105,7 @@ public class TabbedViewPager extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescription$lambda-0  reason: not valid java name */
-    public static final void m2118getThemeDescription$lambda0(TabbedViewPager this$0) {
+    public static final void getThemeDescription$lambda$0(TabbedViewPager this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getTabsView().updateColors();
     }

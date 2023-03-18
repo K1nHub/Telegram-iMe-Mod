@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/smedialink/storage/data/di/module/NetworkModuleKt$networkModule$1$9\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,174:1\n127#2,5:175\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/smedialink/storage/data/di/module/NetworkModuleKt$networkModule$1$9\n*L\n68#1:175,5\n*E\n"
+    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/smedialink/storage/data/di/module/NetworkModuleKt$networkModule$1$9\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,176:1\n127#2,5:177\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/smedialink/storage/data/di/module/NetworkModuleKt$networkModule$1$9\n*L\n69#1:177,5\n*E\n"
 .end annotation
 
 
@@ -64,7 +64,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 68
+    .line 69
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
@@ -87,7 +87,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 68
+    .line 69
     new-instance p2, Lcom/smedialink/storage/data/network/interceptor/ApiErrorInterceptor;
 
     .line 131
@@ -129,7 +129,7 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/utils/rx/RxEventBus;
 
-    .line 68
+    .line 69
     invoke-direct {p2, v0, v2, p1}, Lcom/smedialink/storage/data/network/interceptor/ApiErrorInterceptor;-><init>(Lcom/google/gson/Gson;Lcom/smedialink/storage/domain/gateway/TelegramGateway;Lcom/smedialink/storage/domain/utils/rx/RxEventBus;)V
 
     return-object p2

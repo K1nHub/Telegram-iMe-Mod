@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nForkTopicsController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ForkTopicsController.kt\norg/fork/controller/ForkTopicsController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 CollectionExt.kt\ncom/smedialink/utils/extentions/common/CollectionExtKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,342:1\n56#2,6:343\n1557#3:349\n1588#3,4:350\n1849#3,2:354\n764#3:367\n855#3,2:368\n1043#3:370\n764#3:371\n855#3,2:372\n1043#3:374\n764#3:375\n855#3,2:376\n1043#3:378\n764#3:379\n855#3,2:380\n1547#3:382\n1618#3,2:383\n1620#3:386\n1895#3,14:387\n1895#3,14:401\n1547#3:415\n1618#3,3:416\n1177#3,2:419\n1251#3,4:421\n764#3:425\n855#3,2:426\n1849#3:428\n1547#3:429\n1618#3,3:430\n764#3:433\n855#3:434\n1720#3,3:435\n856#3:438\n1850#3:439\n1547#3:440\n1618#3,3:441\n10#4,3:356\n10#4,6:359\n14#4,2:365\n1#5:385\n*S KotlinDebug\n*F\n+ 1 ForkTopicsController.kt\norg/fork/controller/ForkTopicsController\n*L\n29#1:343,6\n87#1:349\n87#1:350,4\n99#1:354,2\n186#1:367\n186#1:368,2\n187#1:370\n190#1:371\n190#1:372,2\n191#1:374\n203#1:375\n203#1:376,2\n203#1:378\n204#1:379\n204#1:380,2\n205#1:382\n205#1:383,2\n205#1:386\n231#1:387,14\n233#1:401,14\n235#1:415\n235#1:416,3\n242#1:419,2\n242#1:421,4\n251#1:425\n251#1:426,2\n253#1:428\n256#1:429\n256#1:430,3\n256#1:433\n256#1:434\n256#1:435,3\n256#1:438\n253#1:439\n323#1:440\n323#1:441,3\n153#1:356,3\n156#1:359,6\n153#1:365,2\n*E\n"
+    value = "SMAP\nForkTopicsController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ForkTopicsController.kt\norg/fork/controller/ForkTopicsController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 CollectionExt.kt\ncom/smedialink/utils/extentions/common/CollectionExtKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,342:1\n56#2,6:343\n1559#3:349\n1590#3,4:350\n1855#3,2:354\n766#3:367\n857#3,2:368\n1045#3:370\n766#3:371\n857#3,2:372\n1045#3:374\n766#3:375\n857#3,2:376\n1045#3:378\n766#3:379\n857#3,2:380\n1549#3:382\n1620#3,2:383\n1622#3:386\n1963#3,14:387\n1963#3,14:401\n1549#3:415\n1620#3,3:416\n1179#3,2:419\n1253#3,4:421\n766#3:425\n857#3,2:426\n1855#3:428\n1549#3:429\n1620#3,3:430\n766#3:433\n857#3:434\n1726#3,3:435\n858#3:438\n1856#3:439\n1549#3:440\n1620#3,3:441\n10#4,3:356\n10#4,6:359\n14#4,2:365\n1#5:385\n*S KotlinDebug\n*F\n+ 1 ForkTopicsController.kt\norg/fork/controller/ForkTopicsController\n*L\n29#1:343,6\n87#1:349\n87#1:350,4\n99#1:354,2\n186#1:367\n186#1:368,2\n187#1:370\n190#1:371\n190#1:372,2\n191#1:374\n203#1:375\n203#1:376,2\n203#1:378\n204#1:379\n204#1:380,2\n205#1:382\n205#1:383,2\n205#1:386\n231#1:387,14\n233#1:401,14\n235#1:415\n235#1:416,3\n242#1:419,2\n242#1:421,4\n251#1:425\n251#1:426,2\n253#1:428\n256#1:429\n256#1:430,3\n256#1:433\n256#1:434\n256#1:435,3\n256#1:438\n253#1:439\n323#1:440\n323#1:441,3\n153#1:356,3\n156#1:359,6\n153#1:365,2\n*E\n"
 .end annotation
 
 
@@ -67,34 +67,34 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$2z2MKIr12FVM9ow9fpHQdLZJ-aA(Lorg/fork/controller/ForkTopicsController;Lcom/smedialink/storage/domain/model/topics/TopicModel;)V
+.method public static synthetic $r8$lambda$9QCs5yLeBwGuAfcsXMyo3bMrfrU(Lorg/fork/controller/ForkTopicsController;Lcom/smedialink/storage/domain/model/topics/TopicModel;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/controller/ForkTopicsController;->saveTopic$lambda-33(Lorg/fork/controller/ForkTopicsController;Lcom/smedialink/storage/domain/model/topics/TopicModel;)V
+    invoke-static {p0, p1}, Lorg/fork/controller/ForkTopicsController;->saveTopic$lambda$33(Lorg/fork/controller/ForkTopicsController;Lcom/smedialink/storage/domain/model/topics/TopicModel;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$CGKdr-yOHWyesvr4OoEANUJmfFw(Lorg/fork/controller/ForkTopicsController;Ljava/util/List;)V
+.method public static synthetic $r8$lambda$Jb_HtGXZ_3rfAjseNtNAO2MUJMs(Lorg/fork/controller/ForkTopicsController;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/controller/ForkTopicsController;->insertTopics$lambda-35(Lorg/fork/controller/ForkTopicsController;Ljava/util/List;)V
+    invoke-static {p0}, Lorg/fork/controller/ForkTopicsController;->updateCatalog$lambda$32(Lorg/fork/controller/ForkTopicsController;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$X4ChP_fOSzx0v40pYtR8GY2qVYs(Lorg/fork/controller/ForkTopicsController;)V
+.method public static synthetic $r8$lambda$R_Ewc2ZHav5SHfI5nyOacXYc748(Lorg/fork/controller/ForkTopicsController;Ljava/util/List;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/controller/ForkTopicsController;->updateCatalog$lambda-32(Lorg/fork/controller/ForkTopicsController;)V
+    invoke-static {p0, p1}, Lorg/fork/controller/ForkTopicsController;->insertTopics$lambda$35(Lorg/fork/controller/ForkTopicsController;Ljava/util/List;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$t3WC5CNyVlWA3BvpVYRWrZ-wAn8(Lorg/fork/controller/ForkTopicsController;)V
+.method public static synthetic $r8$lambda$mL9snrrj2JOoMwbc816uCgHXDGs(Lorg/fork/controller/ForkTopicsController;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/controller/ForkTopicsController;->filterTopics$lambda-10(Lorg/fork/controller/ForkTopicsController;)V
+    invoke-static {p0}, Lorg/fork/controller/ForkTopicsController;->filterTopics$lambda$10(Lorg/fork/controller/ForkTopicsController;)V
 
     return-void
 .end method
@@ -247,7 +247,7 @@
     return-object p0
 .end method
 
-.method private static final filterTopics$lambda-10(Lorg/fork/controller/ForkTopicsController;)V
+.method private static final filterTopics$lambda$10(Lorg/fork/controller/ForkTopicsController;)V
     .locals 2
 
     const-string v0, "this$0"
@@ -320,7 +320,7 @@
     return-void
 .end method
 
-.method private static final insertTopics$lambda-35(Lorg/fork/controller/ForkTopicsController;Ljava/util/List;)V
+.method private static final insertTopics$lambda$35(Lorg/fork/controller/ForkTopicsController;Ljava/util/List;)V
     .locals 5
 
     const-string v0, "this$0"
@@ -336,7 +336,7 @@
 
     move-result-object v0
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -347,7 +347,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -363,7 +363,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Lcom/smedialink/storage/domain/model/topics/TopicModel;
 
     .line 323
@@ -377,10 +377,12 @@
 
     move-result-object v2
 
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 323
     :cond_0
     invoke-interface {v0, v1}, Lcom/smedialink/storage/data/locale/db/dao/base/BaseDao;->insert(Ljava/util/List;)V
 
@@ -560,7 +562,7 @@
     return-void
 .end method
 
-.method private static final saveTopic$lambda-33(Lorg/fork/controller/ForkTopicsController;Lcom/smedialink/storage/domain/model/topics/TopicModel;)V
+.method private static final saveTopic$lambda$33(Lorg/fork/controller/ForkTopicsController;Lcom/smedialink/storage/domain/model/topics/TopicModel;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -591,7 +593,7 @@
     return-void
 .end method
 
-.method private static final updateCatalog$lambda-32(Lorg/fork/controller/ForkTopicsController;)V
+.method private static final updateCatalog$lambda$32(Lorg/fork/controller/ForkTopicsController;)V
     .locals 2
 
     const-string v0, "this$0"
@@ -636,7 +638,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -647,7 +649,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -666,12 +668,9 @@
 
     const/4 v4, 0x0
 
-    if-nez v3, :cond_1
-
-    goto :goto_1
+    if-eqz v3, :cond_1
 
     .line 101
-    :cond_1
     invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getTopicId()J
 
     move-result-wide v5
@@ -682,12 +681,11 @@
 
     cmp-long v9, v5, v7
 
-    if-nez v9, :cond_2
+    if-nez v9, :cond_1
 
     const/4 v4, 0x1
 
-    :cond_2
-    :goto_1
+    :cond_1
     if-nez v4, :cond_0
 
     .line 102
@@ -696,7 +694,7 @@
     goto :goto_0
 
     .line 105
-    :cond_3
+    :cond_2
     invoke-direct {p0, p1}, Lorg/fork/controller/ForkTopicsController;->putTopic(Lcom/smedialink/storage/domain/model/topics/TopicModel;)V
 
     .line 106
@@ -806,12 +804,12 @@
 
     move-result-object v0
 
-    .line 1895
+    .line 1963
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 1896
+    .line 1964
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
@@ -822,13 +820,13 @@
 
     goto :goto_1
 
-    .line 1897
+    .line 1965
     :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1898
+    .line 1966
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
@@ -840,7 +838,7 @@
 
     goto :goto_1
 
-    .line 1899
+    .line 1967
     :cond_1
     move-object v2, v1
 
@@ -851,13 +849,13 @@
 
     move-result-wide v2
 
-    .line 1901
+    .line 1969
     :cond_2
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 1902
+    .line 1970
     move-object v5, v4
 
     check-cast v5, Lcom/smedialink/storage/domain/model/topics/TopicModel;
@@ -875,7 +873,7 @@
 
     move-wide v2, v5
 
-    .line 1907
+    .line 1975
     :cond_3
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -889,13 +887,8 @@
     :goto_1
     check-cast v0, Lcom/smedialink/storage/domain/model/topics/TopicModel;
 
-    if-nez v0, :cond_4
+    if-eqz v0, :cond_4
 
-    const-wide/16 v0, 0x0
-
-    goto :goto_2
-
-    :cond_4
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getTopicId()J
 
     move-result-wide v0
@@ -903,6 +896,11 @@
     const-wide/16 v2, 0x1
 
     add-long/2addr v0, v2
+
+    goto :goto_2
+
+    :cond_4
+    const-wide/16 v0, 0x0
 
     :goto_2
     return-wide v0
@@ -916,12 +914,12 @@
 
     move-result-object v0
 
-    .line 1895
+    .line 1963
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 1896
+    .line 1964
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
@@ -932,13 +930,13 @@
 
     goto :goto_1
 
-    .line 1897
+    .line 1965
     :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1898
+    .line 1966
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
@@ -950,7 +948,7 @@
 
     goto :goto_1
 
-    .line 1899
+    .line 1967
     :cond_1
     move-object v2, v1
 
@@ -961,13 +959,13 @@
 
     move-result v2
 
-    .line 1901
+    .line 1969
     :cond_2
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 1902
+    .line 1970
     move-object v4, v3
 
     check-cast v4, Lcom/smedialink/storage/domain/model/topics/TopicModel;
@@ -983,7 +981,7 @@
 
     move v2, v4
 
-    .line 1907
+    .line 1975
     :cond_3
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -997,18 +995,18 @@
     :goto_1
     check-cast v0, Lcom/smedialink/storage/domain/model/topics/TopicModel;
 
-    if-nez v0, :cond_4
+    if-eqz v0, :cond_4
 
-    const/4 v0, 0x0
-
-    goto :goto_2
-
-    :cond_4
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getOrder()I
 
     move-result v0
 
     add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    :cond_4
+    const/4 v0, 0x0
 
     :goto_2
     return v0
@@ -1153,6 +1151,7 @@
     move-result-object v6
 
     .line 11
+    :cond_2
     :goto_2
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
@@ -1184,12 +1183,9 @@
 
     check-cast v9, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    if-nez v9, :cond_2
-
-    goto :goto_2
+    if-eqz v9, :cond_2
 
     .line 158
-    :cond_2
     iget v9, v9, Lorg/telegram/tgnet/TLRPC$Dialog;->folder_id:I
 
     if-nez v9, :cond_3
@@ -1287,12 +1283,12 @@
 
     move-result-object v0
 
-    .line 764
+    .line 766
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1320,11 +1316,12 @@
 
     if-eqz v4, :cond_0
 
+    .line 857
     invoke-interface {v1, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 1043
+    .line 1045
     :cond_1
     new-instance v2, Lorg/fork/controller/ForkTopicsController$getAlertTopics$$inlined$sortedBy$1;
 
@@ -1334,12 +1331,12 @@
 
     move-result-object v1
 
-    .line 764
+    .line 766
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1371,6 +1368,7 @@
 
     if-eqz v4, :cond_2
 
+    .line 857
     invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
@@ -1383,7 +1381,7 @@
 
     move-result-object v0
 
-    .line 1547
+    .line 1549
     new-instance v3, Ljava/util/ArrayList;
 
     const/16 v5, 0xa
@@ -1394,7 +1392,7 @@
 
     invoke-direct {v3, v5}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1410,7 +1408,7 @@
 
     move-result-object v5
 
-    .line 1619
+    .line 1621
     move-object v7, v5
 
     check-cast v7, Lcom/smedialink/storage/data/repository/topics/Topic;
@@ -1476,7 +1474,7 @@
 
     move-result-object v6
 
-    .line 206
+    .line 1621
     :cond_7
     invoke-interface {v3, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
@@ -1507,12 +1505,12 @@
 
     move-result-object v0
 
-    .line 764
+    .line 766
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1569,11 +1567,12 @@
     :goto_1
     if-eqz v5, :cond_0
 
+    .line 857
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 1043
+    .line 1045
     :cond_3
     new-instance v0, Lorg/fork/controller/ForkTopicsController$getAllTopicsNotEmpty$$inlined$sortedBy$1;
 
@@ -1740,7 +1739,7 @@
 
     move-result-object v0
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -1751,7 +1750,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1767,7 +1766,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Lcom/smedialink/storage/domain/model/topics/TopicModel;
 
     .line 235
@@ -1775,10 +1774,12 @@
 
     move-result-object v2
 
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 235
     :cond_0
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
@@ -1824,12 +1825,12 @@
 
     move-result-object v0
 
-    .line 764
+    .line 766
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1888,11 +1889,12 @@
     :goto_1
     if-eqz v4, :cond_0
 
+    .line 857
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 1043
+    .line 1045
     :cond_3
     new-instance p1, Lorg/fork/controller/ForkTopicsController$getTopicsNotEmpty$$inlined$sortedBy$1;
 
@@ -1986,7 +1988,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ForkTopicsController;->setTopicsBarEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ForkTopicsController;->isTopicsBarEnabled:Z
 
     .line 50
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isTopicsBarAtBottomEnabled()Ljava/lang/String;
@@ -2001,7 +2003,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ForkTopicsController;->setTopicsBarAtBottomEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ForkTopicsController;->isTopicsBarAtBottomEnabled:Z
 
     .line 51
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isAutoUpdateTopicsCatalogEnabled()Ljava/lang/String;
@@ -2016,7 +2018,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ForkTopicsController;->setAutoUpdateTopicsCatalogEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ForkTopicsController;->isAutoUpdateTopicsCatalogEnabled:Z
 
     .line 52
     sget-object v0, Lorg/fork/enums/Interval;->Companion:Lorg/fork/enums/Interval$Companion;
@@ -2045,7 +2047,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ForkTopicsController;->setSelectedAutoUpdateTopicsCatalogInterval(Lorg/fork/enums/Interval;)V
+    iput-object v0, p0, Lorg/fork/controller/ForkTopicsController;->selectedAutoUpdateTopicsCatalogInterval:Lorg/fork/enums/Interval;
 
     .line 53
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isNoTopicFirstEnabled()Ljava/lang/String;
@@ -2060,7 +2062,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ForkTopicsController;->setNoTopicFirstEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ForkTopicsController;->isNoTopicFirstEnabled:Z
 
     .line 54
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->lastAutoUpdateTopicsCatalogTime()Ljava/lang/String;
@@ -2303,7 +2305,7 @@
 
     move-result-object p1
 
-    .line 1557
+    .line 1559
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -2316,7 +2318,7 @@
 
     const/4 v1, 0x0
 
-    .line 1589
+    .line 1591
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -2336,7 +2338,7 @@
 
     if-gez v1, :cond_5
 
-    .line 1590
+    .line 1592
     invoke-static {}, Lkotlin/collections/CollectionsKt;->throwIndexOverflow()V
 
     :cond_5
@@ -2355,6 +2357,7 @@
 
     move-result-object v1
 
+    .line 1592
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     move v1, v3
@@ -2406,9 +2409,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ForkTopicsController;->isTopicsBarEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ForkTopicsController;->isTopicsBarEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -2417,9 +2418,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ForkTopicsController;->isTopicsBarAtBottomEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ForkTopicsController;->isTopicsBarAtBottomEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -2428,9 +2427,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ForkTopicsController;->isAutoUpdateTopicsCatalogEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ForkTopicsController;->isAutoUpdateTopicsCatalogEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -2439,9 +2436,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ForkTopicsController;->getSelectedAutoUpdateTopicsCatalogInterval()Lorg/fork/enums/Interval;
-
-    move-result-object v2
+    iget-object v2, p0, Lorg/fork/controller/ForkTopicsController;->selectedAutoUpdateTopicsCatalogInterval:Lorg/fork/enums/Interval;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
@@ -2454,9 +2449,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ForkTopicsController;->isNoTopicFirstEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ForkTopicsController;->isNoTopicFirstEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -2583,7 +2576,7 @@
 
     const/16 v0, 0xa
 
-    .line 1177
+    .line 1179
     invoke-static {p1, v0}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v0
@@ -2598,12 +2591,12 @@
 
     move-result v0
 
-    .line 1178
+    .line 1180
     new-instance v1, Ljava/util/LinkedHashMap;
 
     invoke-direct {v1, v0}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 1251
+    .line 1253
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -2619,7 +2612,7 @@
 
     move-result-object v0
 
-    .line 1252
+    .line 1254
     check-cast v0, Lcom/smedialink/storage/data/locale/db/model/topics/TopicDb;
 
     .line 242
@@ -2639,6 +2632,7 @@
 
     move-result-object v0
 
+    .line 1254
     invoke-virtual {v0}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
 
     move-result-object v2
@@ -2651,6 +2645,7 @@
 
     goto :goto_0
 
+    .line 242
     :cond_0
     invoke-static {v1}, Lkotlin/collections/MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -2690,22 +2685,16 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_0
-
-    goto :goto_0
+    if-eqz p1, :cond_0
 
     .line 130
-    :cond_0
     invoke-virtual {p0, p3, p4}, Lorg/fork/controller/ForkTopicsController;->getTopic(J)Lcom/smedialink/storage/domain/model/topics/TopicModel;
 
     move-result-object p2
 
-    if-nez p2, :cond_1
-
-    goto :goto_0
+    if-eqz p2, :cond_0
 
     .line 131
-    :cond_1
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getOrder()I
 
     move-result p3
@@ -2739,12 +2728,12 @@
 
     invoke-direct {p0, p1}, Lorg/fork/controller/ForkTopicsController;->insertTopics(Ljava/util/List;)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
 .method public final updateCatalog(ZLorg/fork/utils/Callbacks$Callback1;)V
-    .locals 17
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -2785,12 +2774,12 @@
 
     move-result-object v0
 
-    .line 764
+    .line 766
     new-instance v10, Ljava/util/ArrayList;
 
     invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -2818,6 +2807,7 @@
 
     if-eqz v2, :cond_2
 
+    .line 857
     invoke-interface {v10, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -2830,12 +2820,10 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v11
-
-    const/4 v12, 0x0
 
     const/4 v13, 0x0
 
@@ -2865,9 +2853,7 @@
 
     move-result v1
 
-    const/4 v15, 0x0
-
-    const/16 v16, 0x1
+    const/4 v15, 0x1
 
     if-eqz v1, :cond_7
 
@@ -2898,7 +2884,7 @@
     goto :goto_3
 
     :cond_7
-    move-object v1, v15
+    const/4 v1, 0x0
 
     :goto_3
     check-cast v1, Lcom/smedialink/storage/domain/model/topics/TopicModel;
@@ -2927,12 +2913,9 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_9
+    if-eqz v0, :cond_f
 
-    goto/16 :goto_7
-
-    .line 1547
-    :cond_9
+    .line 1549
     new-instance v2, Ljava/util/ArrayList;
 
     const/16 v3, 0xa
@@ -2943,7 +2926,7 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -2953,13 +2936,13 @@
 
     move-result v3
 
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_9
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 1619
+    .line 1621
     check-cast v3, Ljava/lang/Number;
 
     invoke-virtual {v3}, Ljava/lang/Number;->longValue()J
@@ -2973,28 +2956,29 @@
 
     move-result-object v3
 
+    .line 1621
     invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_4
 
-    .line 764
-    :cond_a
+    .line 766
+    :cond_9
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :cond_b
+    :cond_a
     :goto_5
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_e
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3013,34 +2997,34 @@
 
     move-result-object v6
 
-    .line 1720
+    .line 1726
     instance-of v14, v6, Ljava/util/Collection;
 
-    if-eqz v14, :cond_d
+    if-eqz v14, :cond_c
 
     invoke-interface {v6}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v14
 
-    if-eqz v14, :cond_d
+    if-eqz v14, :cond_c
 
-    :cond_c
+    :cond_b
     const/4 v4, 0x1
 
     goto :goto_6
 
-    .line 1721
-    :cond_d
+    .line 1727
+    :cond_c
     invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
 
-    :cond_e
+    :cond_d
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v14
 
-    if-eqz v14, :cond_c
+    if-eqz v14, :cond_b
 
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3055,67 +3039,69 @@
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v15
+    move-result-object v12
 
-    invoke-interface {v14, v15}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v14, v12}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    move-result v14
+    move-result v12
 
-    xor-int/lit8 v14, v14, 0x1
+    xor-int/2addr v12, v15
 
-    if-nez v14, :cond_e
+    if-nez v12, :cond_d
 
     const/4 v4, 0x0
 
     :goto_6
-    if-eqz v4, :cond_b
+    if-eqz v4, :cond_a
 
+    .line 857
     invoke-interface {v0, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_5
 
-    :cond_f
+    .line 256
+    :cond_e
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->sorted(Ljava/lang/Iterable;)Ljava/util/List;
 
-    move-result-object v15
+    move-result-object v0
 
-    :goto_7
-    if-nez v15, :cond_10
+    if-nez v0, :cond_10
 
     .line 257
-    new-instance v15, Ljava/util/ArrayList;
+    :cond_f
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 258
     :cond_10
     invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getPresets()Ljava/util/Set;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->sorted(Ljava/lang/Iterable;)Ljava/util/List;
+    invoke-static {v2}, Lkotlin/collections/CollectionsKt;->sorted(Ljava/lang/Iterable;)Ljava/util/List;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-static {v0, v15}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v2
 
-    if-nez v0, :cond_4
+    if-nez v2, :cond_4
 
     .line 259
     invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getPresets()Ljava/util/Set;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-interface {v0}, Ljava/util/Set;->clear()V
+    invoke-interface {v2}, Ljava/util/Set;->clear()V
 
     .line 260
     invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getPresets()Ljava/util/Set;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-interface {v0, v15}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
+    invoke-interface {v2, v0}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
     .line 261
     invoke-direct {v7, v1}, Lorg/fork/controller/ForkTopicsController;->putTopic(Lcom/smedialink/storage/domain/model/topics/TopicModel;)V
@@ -3134,19 +3120,16 @@
     .line 268
     invoke-direct {v7, v9}, Lorg/fork/controller/ForkTopicsController;->insertTopics(Ljava/util/List;)V
 
-    if-nez v8, :cond_12
-
-    goto :goto_8
+    if-eqz v8, :cond_12
 
     .line 269
-    :cond_12
     invoke-static {v13}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
     invoke-interface {v8, v0}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
-    :goto_8
+    :cond_12
     if-eqz v13, :cond_13
 
     .line 271

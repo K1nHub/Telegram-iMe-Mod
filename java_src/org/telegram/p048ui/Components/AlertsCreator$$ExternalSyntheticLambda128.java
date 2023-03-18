@@ -13,6 +13,6 @@ public final /* synthetic */ class AlertsCreator$$ExternalSyntheticLambda128 imp
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-        AlertsCreator.lambda$createChangeNameAlert$60(tLObject, tLRPC$TL_error);
+        AlertsCreator.lambda$createChangeBioAlert$56(tLObject, tLRPC$TL_error);
     }
 }

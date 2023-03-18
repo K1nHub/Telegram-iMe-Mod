@@ -31,12 +31,12 @@
         }
     .end annotation
 
-    .line 1529
+    .line 1553
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-string v0, "id"
 
-    .line 1530
+    .line 1554
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -45,12 +45,12 @@
 
     const-string v0, "type"
 
-    .line 1531
+    .line 1555
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1533
+    .line 1557
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v1
@@ -152,12 +152,12 @@
     :cond_1
     const-string v0, "dialogTextRed"
 
-    .line 1553
+    .line 1577
     iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:Ljava/lang/String;
 
     goto :goto_3
 
-    .line 1548
+    .line 1572
     :cond_2
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
@@ -169,7 +169,7 @@
 
     goto :goto_2
 
-    .line 1544
+    .line 1568
     :cond_3
     sget v0, Lorg/telegram/messenger/R$string;->Close:I
 
@@ -181,7 +181,7 @@
 
     goto :goto_2
 
-    .line 1540
+    .line 1564
     :cond_4
     sget v0, Lorg/telegram/messenger/R$string;->OK:I
 
@@ -199,7 +199,7 @@
 
     const-string v0, "text"
 
-    .line 1559
+    .line 1583
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1

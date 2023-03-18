@@ -11,7 +11,7 @@ import okio.Buffer;
 import okio.Sink;
 import okio.Timeout;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AsyncSink implements Sink {
     private final SerializingExecutor serializingExecutor;
     private Sink sink;
@@ -149,7 +149,7 @@ public final class AsyncSink implements Sink {
         });
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private abstract class WriteRunnable implements Runnable {
         public abstract void doRun() throws IOException;
 

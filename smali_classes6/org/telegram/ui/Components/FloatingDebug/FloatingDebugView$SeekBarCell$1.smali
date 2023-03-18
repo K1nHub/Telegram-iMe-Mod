@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell;Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)V
     .locals 0
 
-    .line 602
+    .line 595
     iput-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell$1;->this$1:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public getContentDescription()Ljava/lang/CharSequence;
     .locals 3
 
-    .line 617
+    .line 610
     iget-object v0, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell$1;->this$1:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell;->access$1400(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell;)F
@@ -97,7 +97,7 @@
 .method public onSeekBarDrag(ZF)V
     .locals 4
 
-    .line 605
+    .line 598
     iget-object v0, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell$1;->this$1:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell;->access$1400(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell;)F
@@ -126,7 +126,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 607
+    .line 600
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell$1;->this$1:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell;->access$1600(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell;)Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;
@@ -147,7 +147,7 @@
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;->set(Ljava/lang/Object;Ljava/lang/Float;)V
 
-    .line 609
+    .line 602
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell$1;->this$1:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$SeekBarCell;
 

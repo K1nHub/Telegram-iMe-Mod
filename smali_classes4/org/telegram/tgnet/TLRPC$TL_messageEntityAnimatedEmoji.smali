@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 35079
+    .line 35224
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$MessageEntity;-><init>()V
 
     return-void
@@ -34,14 +34,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 35086
+    .line 35231
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityAnimatedEmoji;->offset:I
 
-    .line 35087
+    .line 35232
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -54,17 +54,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 35091
+    .line 35236
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityAnimatedEmoji;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 35092
+    .line 35237
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityAnimatedEmoji;->offset:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 35093
+    .line 35238
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityAnimatedEmoji;->length:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

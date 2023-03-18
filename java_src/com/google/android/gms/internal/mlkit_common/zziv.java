@@ -1,7 +1,6 @@
 package com.google.android.gms.internal.mlkit_common;
 
 import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
-import org.telegram.messenger.LiteMode;
 /* compiled from: com.google.mlkit:common@@17.0.0 */
 /* loaded from: classes.dex */
 final class zziv extends zziq {
@@ -102,7 +101,7 @@ final class zziv extends zziq {
                     }
                 } else {
                     long j10 = j4 + j;
-                    zzip.zza(bArr, j4, (byte) ((charAt3 >>> '\f') | LiteMode.FLAGS_CHAT));
+                    zzip.zza(bArr, j4, (byte) ((charAt3 >>> '\f') | 480));
                     long j11 = j10 + j;
                     zzip.zza(bArr, j10, (byte) (((charAt3 >>> 6) & 63) | 128));
                     zzip.zza(bArr, j11, (byte) ((charAt3 & '?') | 128));

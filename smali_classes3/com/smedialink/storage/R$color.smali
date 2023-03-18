@@ -15,12 +15,12 @@
 
 .field public static final account_level_zero:I = 0x7f060020
 
-.field public static final wallet_network_type_bep20:I = 0x7f06013d
+.field public static final wallet_network_type_bep20:I = 0x7f06013e
 
-.field public static final wallet_network_type_erc20:I = 0x7f06013e
+.field public static final wallet_network_type_erc20:I = 0x7f06013f
 
-.field public static final wallet_network_type_fantom:I = 0x7f06013f
+.field public static final wallet_network_type_fantom:I = 0x7f060140
 
-.field public static final wallet_network_type_polygon:I = 0x7f060141
+.field public static final wallet_network_type_polygon:I = 0x7f060142
 
-.field public static final wallet_network_type_ton:I = 0x7f060142
+.field public static final wallet_network_type_ton:I = 0x7f060143

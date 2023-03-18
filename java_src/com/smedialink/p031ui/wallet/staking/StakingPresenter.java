@@ -1,11 +1,7 @@
 package com.smedialink.p031ui.wallet.staking;
 
 import com.iMe.i_staking.StakingInteractor;
-import com.smedialink.model.staking.StakingDashboardItem;
 import com.smedialink.p031ui.base.mvp.base.BasePresenter;
-import com.smedialink.p031ui.base.mvp.base.BaseView;
-import com.smedialink.p031ui.wallet.staking.StakingPresenter;
-import com.smedialink.storage.data.network.model.error.ErrorModel;
 import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.staking.StakingTabType;
 import com.smedialink.storage.domain.model.staking.StakingTotalStats;
@@ -15,12 +11,11 @@ import com.smedialink.storage.domain.utils.p030rx.RxEventBus;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import timber.log.Timber;
 /* compiled from: StakingPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.staking.StakingPresenter */
@@ -44,8 +39,14 @@ public final class StakingPresenter extends BasePresenter<StakingView> {
 
         static {
             int[] iArr = new int[StakingTabType.values().length];
-            iArr[StakingTabType.ALL.ordinal()] = 1;
-            iArr[StakingTabType.PARTICIPATED.ordinal()] = 2;
+            try {
+                iArr[StakingTabType.ALL.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[StakingTabType.PARTICIPATED.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -109,46 +110,10 @@ public final class StakingPresenter extends BasePresenter<StakingView> {
         stakingPresenter.loadStakingTotalStats(z);
     }
 
-    private final void loadStakingTotalStats(final boolean z) {
+    private final void loadStakingTotalStats(boolean z) {
         Observable<Result<StakingTotalStats>> observeOn = this.stakingInteractor.getStakingTotalStats().observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "stakingInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.staking.StakingPresenter$loadStakingTotalStats$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                ResourceManager resourceManager;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                boolean z2 = result instanceof Result.Loading;
-                StakingPresenter.this.isDashboardRefreshing = z2;
-                StakingPresenter.this.updateRefreshState();
-                if (result instanceof Result.Success) {
-                    StakingTotalStats stakingTotalStats = (StakingTotalStats) ((Result.Success) result).getData();
-                    ((StakingView) StakingPresenter.this.getViewState()).updateDashboardItem(new StakingDashboardItem.Data(stakingTotalStats.getTotalStakedUsd(), stakingTotalStats.getTotalProfitUsd()));
-                } else if (z2) {
-                    if (z) {
-                        ((StakingView) StakingPresenter.this.getViewState()).updateDashboardItem(StakingDashboardItem.Loading.INSTANCE);
-                    }
-                } else if (result instanceof Result.Error) {
-                    ErrorModel error = ((Result.Error) result).getError();
-                    resourceManager = StakingPresenter.this.resourceManager;
-                    ((StakingView) StakingPresenter.this.getViewState()).showToast(error.getMessage(resourceManager));
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.staking.StakingPresenter$loadStakingTotalStats$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2233xdeaf3e3c(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2234xdeaf3e3d(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -157,34 +122,7 @@ public final class StakingPresenter extends BasePresenter<StakingView> {
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.StakingTabRefreshStateChanged.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.staking.StakingPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                DomainRxEvents.StakingTabRefreshStateChanged stakingTabRefreshStateChanged = (DomainRxEvents.StakingTabRefreshStateChanged) it;
-                int i = StakingPresenter.WhenMappings.$EnumSwitchMapping$0[stakingTabRefreshStateChanged.getStakingTabType().ordinal()];
-                if (i == 1) {
-                    StakingPresenter.this.isAllTabRefreshing = stakingTabRefreshStateChanged.isShowRefresh();
-                } else if (i == 2) {
-                    StakingPresenter.this.isParticipatedTabRefreshing = stakingTabRefreshStateChanged.isShowRefresh();
-                }
-                StakingPresenter.this.updateRefreshState();
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.staking.StakingPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2231xf624d8f6(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2232xf624d8f7(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

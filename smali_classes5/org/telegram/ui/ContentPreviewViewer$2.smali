@@ -2568,7 +2568,7 @@
 
     move-result v4
 
-    const-string v10, "dialogTextRed2"
+    const-string v10, "dialogTextRed"
 
     const-string v14, "dialogRedIcon"
 

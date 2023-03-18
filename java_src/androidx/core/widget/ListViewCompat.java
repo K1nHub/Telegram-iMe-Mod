@@ -8,7 +8,7 @@ public final class ListViewCompat {
     public static void scrollListBy(ListView listView, int i) {
         View childAt;
         if (Build.VERSION.SDK_INT >= 19) {
-            listView.scrollListBy(i);
+            Api19Impl.scrollListBy(listView, i);
             return;
         }
         int firstVisiblePosition = listView.getFirstVisiblePosition();
@@ -20,7 +20,7 @@ public final class ListViewCompat {
 
     public static boolean canScrollList(ListView listView, int i) {
         if (Build.VERSION.SDK_INT >= 19) {
-            return listView.canScrollList(i);
+            return Api19Impl.canScrollList(listView, i);
         }
         int childCount = listView.getChildCount();
         if (childCount == 0) {
@@ -31,5 +31,16 @@ public final class ListViewCompat {
             return firstVisiblePosition + childCount < listView.getCount() || listView.getChildAt(childCount + (-1)).getBottom() > listView.getHeight() - listView.getListPaddingBottom();
         }
         return firstVisiblePosition > 0 || listView.getChildAt(0).getTop() < listView.getListPaddingTop();
+    }
+
+    /* loaded from: classes.dex */
+    static class Api19Impl {
+        static void scrollListBy(ListView listView, int i) {
+            listView.scrollListBy(i);
+        }
+
+        static boolean canScrollList(ListView listView, int i) {
+            return listView.canScrollList(i);
+        }
     }
 }

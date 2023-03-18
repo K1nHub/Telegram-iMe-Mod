@@ -29,9 +29,15 @@ public final class GlideHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: loadBinanceImageAsBitmap$lambda-0  reason: not valid java name */
-    public static final Map m1843loadBinanceImageAsBitmap$lambda0() {
+    public static final Map loadBinanceImageAsBitmap$lambda$0() {
         return BinancePayHelper.INSTANCE.getRefererHeader();
+    }
+
+    public static final void loadImageAsBitmap(Context context, String url, Callbacks$Callback1<Bitmap> callback, boolean z) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        Intrinsics.checkNotNullParameter(url, "url");
+        Intrinsics.checkNotNullParameter(callback, "callback");
+        INSTANCE.internalLoad(context, new GlideUrl(url), callback, z);
     }
 
     private final void internalLoad(Context context, GlideUrl glideUrl, final Callbacks$Callback1<Bitmap> callbacks$Callback1, boolean z) {

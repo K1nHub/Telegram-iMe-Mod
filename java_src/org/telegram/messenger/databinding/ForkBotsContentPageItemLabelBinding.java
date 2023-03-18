@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* loaded from: classes4.dex */
 public final class ForkBotsContentPageItemLabelBinding implements ViewBinding {
     public final TextView botName;
@@ -24,7 +24,7 @@ public final class ForkBotsContentPageItemLabelBinding implements ViewBinding {
     }
 
     public static ForkBotsContentPageItemLabelBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3158R.layout.fork_bots_content_page_item_label, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3286R.layout.fork_bots_content_page_item_label, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -32,7 +32,7 @@ public final class ForkBotsContentPageItemLabelBinding implements ViewBinding {
     }
 
     public static ForkBotsContentPageItemLabelBinding bind(View view) {
-        int i = C3158R.C3161id.bot_name;
+        int i = C3286R.C3289id.bot_name;
         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
         if (textView != null) {
             return new ForkBotsContentPageItemLabelBinding((FrameLayout) view, textView);

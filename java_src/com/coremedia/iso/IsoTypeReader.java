@@ -1,6 +1,6 @@
 package com.coremedia.iso;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import org.telegram.tgnet.ConnectionsManager;
@@ -72,7 +72,7 @@ public final class IsoTypeReader {
         byte[] bArr = new byte[4];
         byteBuffer.get(bArr);
         try {
-            return new String(bArr, C0474C.ISO88591_NAME);
+            return new String(bArr, C0468C.ISO88591_NAME);
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException(e);
         }

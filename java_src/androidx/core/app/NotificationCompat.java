@@ -429,7 +429,8 @@ public class NotificationCompat {
     public static class BigPictureStyle extends Style {
         private IconCompat mBigLargeIcon;
         private boolean mBigLargeIconSet;
-        private Bitmap mPicture;
+        private CharSequence mPictureContentDescription;
+        private IconCompat mPictureIcon;
         private boolean mShowBigPictureWhenCollapsed;
 
         @Override // androidx.core.app.NotificationCompat.Style
@@ -438,7 +439,7 @@ public class NotificationCompat {
         }
 
         public BigPictureStyle bigPicture(Bitmap bitmap) {
-            this.mPicture = bitmap;
+            this.mPictureIcon = bitmap == null ? null : IconCompat.createWithBitmap(bitmap);
             return this;
         }
 
@@ -452,24 +453,33 @@ public class NotificationCompat {
         public void apply(NotificationBuilderWithBuilderAccessor notificationBuilderWithBuilderAccessor) {
             int i = Build.VERSION.SDK_INT;
             if (i >= 16) {
-                Notification.BigPictureStyle bigPicture = new Notification.BigPictureStyle(notificationBuilderWithBuilderAccessor.getBuilder()).setBigContentTitle(this.mBigContentTitle).bigPicture(this.mPicture);
-                if (this.mBigLargeIconSet) {
-                    IconCompat iconCompat = this.mBigLargeIcon;
-                    if (iconCompat == null) {
-                        Api16Impl.setBigLargeIcon(bigPicture, null);
-                    } else if (i >= 23) {
-                        Api23Impl.setBigLargeIcon(bigPicture, this.mBigLargeIcon.toIcon(notificationBuilderWithBuilderAccessor instanceof NotificationCompatBuilder ? ((NotificationCompatBuilder) notificationBuilderWithBuilderAccessor).getContext() : null));
+                Notification.BigPictureStyle bigContentTitle = new Notification.BigPictureStyle(notificationBuilderWithBuilderAccessor.getBuilder()).setBigContentTitle(this.mBigContentTitle);
+                IconCompat iconCompat = this.mPictureIcon;
+                if (iconCompat != null) {
+                    if (i >= 31) {
+                        Api31Impl.setBigPicture(bigContentTitle, this.mPictureIcon.toIcon(notificationBuilderWithBuilderAccessor instanceof NotificationCompatBuilder ? ((NotificationCompatBuilder) notificationBuilderWithBuilderAccessor).getContext() : null));
                     } else if (iconCompat.getType() == 1) {
-                        Api16Impl.setBigLargeIcon(bigPicture, this.mBigLargeIcon.getBitmap());
+                        bigContentTitle = bigContentTitle.bigPicture(this.mPictureIcon.getBitmap());
+                    }
+                }
+                if (this.mBigLargeIconSet) {
+                    IconCompat iconCompat2 = this.mBigLargeIcon;
+                    if (iconCompat2 == null) {
+                        Api16Impl.setBigLargeIcon(bigContentTitle, null);
+                    } else if (i >= 23) {
+                        Api23Impl.setBigLargeIcon(bigContentTitle, this.mBigLargeIcon.toIcon(notificationBuilderWithBuilderAccessor instanceof NotificationCompatBuilder ? ((NotificationCompatBuilder) notificationBuilderWithBuilderAccessor).getContext() : null));
+                    } else if (iconCompat2.getType() == 1) {
+                        Api16Impl.setBigLargeIcon(bigContentTitle, this.mBigLargeIcon.getBitmap());
                     } else {
-                        Api16Impl.setBigLargeIcon(bigPicture, null);
+                        Api16Impl.setBigLargeIcon(bigContentTitle, null);
                     }
                 }
                 if (this.mSummaryTextSet) {
-                    Api16Impl.setSummaryText(bigPicture, this.mSummaryText);
+                    Api16Impl.setSummaryText(bigContentTitle, this.mSummaryText);
                 }
                 if (i >= 31) {
-                    Api31Impl.showBigPictureWhenCollapsed(bigPicture, this.mShowBigPictureWhenCollapsed);
+                    Api31Impl.showBigPictureWhenCollapsed(bigContentTitle, this.mShowBigPictureWhenCollapsed);
+                    Api31Impl.setContentDescription(bigContentTitle, this.mPictureContentDescription);
                 }
             }
         }
@@ -496,6 +506,14 @@ public class NotificationCompat {
         private static class Api31Impl {
             static void showBigPictureWhenCollapsed(Notification.BigPictureStyle bigPictureStyle, boolean z) {
                 bigPictureStyle.showBigPictureWhenCollapsed(z);
+            }
+
+            static void setContentDescription(Notification.BigPictureStyle bigPictureStyle, CharSequence charSequence) {
+                bigPictureStyle.setContentDescription(charSequence);
+            }
+
+            static void setBigPicture(Notification.BigPictureStyle bigPictureStyle, Icon icon) {
+                bigPictureStyle.bigPicture(icon);
             }
         }
     }
@@ -874,6 +892,7 @@ public class NotificationCompat {
         @Deprecated
         public int icon;
         private boolean mAllowGeneratedReplies;
+        private boolean mAuthenticationRequired;
         private final RemoteInput[] mDataOnlyRemoteInputs;
         final Bundle mExtras;
         private IconCompat mIcon;
@@ -888,10 +907,10 @@ public class NotificationCompat {
         }
 
         public Action(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent) {
-            this(iconCompat, charSequence, pendingIntent, new Bundle(), null, null, true, 0, true, false);
+            this(iconCompat, charSequence, pendingIntent, new Bundle(), null, null, true, 0, true, false, false);
         }
 
-        Action(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, RemoteInput[] remoteInputArr, RemoteInput[] remoteInputArr2, boolean z, int i, boolean z2, boolean z3) {
+        Action(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, RemoteInput[] remoteInputArr, RemoteInput[] remoteInputArr2, boolean z, int i, boolean z2, boolean z3, boolean z4) {
             this.mShowsUserInterface = true;
             this.mIcon = iconCompat;
             if (iconCompat != null && iconCompat.getType() == 2) {
@@ -906,6 +925,7 @@ public class NotificationCompat {
             this.mSemanticAction = i;
             this.mShowsUserInterface = z2;
             this.mIsContextual = z3;
+            this.mAuthenticationRequired = z4;
         }
 
         public IconCompat getIconCompat() {
@@ -932,6 +952,10 @@ public class NotificationCompat {
             return this.mAllowGeneratedReplies;
         }
 
+        public boolean isAuthenticationRequired() {
+            return this.mAuthenticationRequired;
+        }
+
         public RemoteInput[] getRemoteInputs() {
             return this.mRemoteInputs;
         }
@@ -955,6 +979,7 @@ public class NotificationCompat {
         /* loaded from: classes.dex */
         public static final class Builder {
             private boolean mAllowGeneratedReplies;
+            private boolean mAuthenticationRequired;
             private final Bundle mExtras;
             private final IconCompat mIcon;
             private final PendingIntent mIntent;
@@ -965,10 +990,10 @@ public class NotificationCompat {
             private final CharSequence mTitle;
 
             public Builder(int i, CharSequence charSequence, PendingIntent pendingIntent) {
-                this(i != 0 ? IconCompat.createWithResource(null, "", i) : null, charSequence, pendingIntent, new Bundle(), null, true, 0, true, false);
+                this(i != 0 ? IconCompat.createWithResource(null, "", i) : null, charSequence, pendingIntent, new Bundle(), null, true, 0, true, false, false);
             }
 
-            private Builder(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, RemoteInput[] remoteInputArr, boolean z, int i, boolean z2, boolean z3) {
+            private Builder(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, RemoteInput[] remoteInputArr, boolean z, int i, boolean z2, boolean z3, boolean z4) {
                 this.mAllowGeneratedReplies = true;
                 this.mShowsUserInterface = true;
                 this.mIcon = iconCompat;
@@ -980,6 +1005,7 @@ public class NotificationCompat {
                 this.mSemanticAction = i;
                 this.mShowsUserInterface = z2;
                 this.mIsContextual = z3;
+                this.mAuthenticationRequired = z4;
             }
 
             public Builder addRemoteInput(RemoteInput remoteInput) {
@@ -1030,7 +1056,7 @@ public class NotificationCompat {
                     }
                 }
                 RemoteInput[] remoteInputArr = arrayList.isEmpty() ? null : (RemoteInput[]) arrayList.toArray(new RemoteInput[arrayList.size()]);
-                return new Action(this.mIcon, this.mTitle, this.mIntent, this.mExtras, arrayList2.isEmpty() ? null : (RemoteInput[]) arrayList2.toArray(new RemoteInput[arrayList2.size()]), remoteInputArr, this.mAllowGeneratedReplies, this.mSemanticAction, this.mShowsUserInterface, this.mIsContextual);
+                return new Action(this.mIcon, this.mTitle, this.mIntent, this.mExtras, arrayList2.isEmpty() ? null : (RemoteInput[]) arrayList2.toArray(new RemoteInput[arrayList2.size()]), remoteInputArr, this.mAllowGeneratedReplies, this.mSemanticAction, this.mShowsUserInterface, this.mIsContextual, this.mAuthenticationRequired);
             }
         }
     }
@@ -1149,6 +1175,9 @@ public class NotificationCompat {
             if (i >= 24) {
                 builder.setAllowGeneratedReplies(action.getAllowGeneratedReplies());
             }
+            if (i >= 31) {
+                builder.setAuthenticationRequired(action.isAuthenticationRequired());
+            }
             builder.addExtras(bundle);
             RemoteInput[] remoteInputs = action.getRemoteInputs();
             if (remoteInputs != null) {
@@ -1160,7 +1189,7 @@ public class NotificationCompat {
         }
 
         /* renamed from: clone */
-        public WearableExtender m864clone() {
+        public WearableExtender m865clone() {
             WearableExtender wearableExtender = new WearableExtender();
             wearableExtender.mActions = new ArrayList<>(this.mActions);
             wearableExtender.mFlags = this.mFlags;

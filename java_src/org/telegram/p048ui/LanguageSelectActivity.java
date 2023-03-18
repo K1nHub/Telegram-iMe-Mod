@@ -20,7 +20,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import org.fork.utils.Callbacks$Callback1;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -28,7 +28,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -105,22 +105,22 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
 
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         if (isCatalogType()) {
-            this.actionBar.setTitle(LocaleController.getInternalString(C3158R.string.language_select_startup));
+            this.actionBar.setTitle(LocaleController.getInternalString(C3286R.string.language_select_startup));
         } else {
-            this.actionBar.setTitle(LocaleController.getString("Language", C3158R.string.Language));
+            this.actionBar.setTitle(LocaleController.getString("Language", C3286R.string.Language));
         }
-        this.actionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LanguageSelectActivity.1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LanguageSelectActivity.1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     LanguageSelectActivity.this.finishFragment();
                 }
             }
         });
-        ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, C3158R.C3160drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.LanguageSelectActivity.2
+        ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, C3286R.C3288drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.LanguageSelectActivity.2
             @Override // org.telegram.p048ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchExpand() {
                 LanguageSelectActivity.this.searching = true;
@@ -158,7 +158,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             }
         });
         this.searchItem = actionBarMenuItemSearchListener;
-        actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", C3158R.string.Search));
+        actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", C3286R.string.Search));
         this.listAdapter = new ListAdapter(context, false);
         this.searchListViewAdapter = new ListAdapter(context, true);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -167,7 +167,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context);
         this.emptyView = emptyTextProgressView;
-        emptyTextProgressView.setText(LocaleController.getString("NoResult", C3158R.string.NoResult));
+        emptyTextProgressView.setText(LocaleController.getString("NoResult", C3286R.string.NoResult));
         this.emptyView.showTextView();
         this.emptyView.setShowAtCenter(true);
         frameLayout2.addView(this.emptyView, LayoutHelper.createFrame(-1, -1));
@@ -228,16 +228,16 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:125:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x001a A[Catch: Exception -> 0x0225, TryCatch #0 {Exception -> 0x0225, blocks: (B:2:0x0000, B:4:0x0007, B:6:0x000d, B:11:0x0017, B:13:0x001a, B:17:0x0023, B:26:0x0084, B:28:0x008a, B:34:0x0096, B:38:0x00a1, B:39:0x00a4, B:41:0x00ac, B:43:0x00ba, B:45:0x00be, B:46:0x00c1, B:48:0x00c6, B:50:0x00cb, B:51:0x00d2, B:19:0x0043, B:21:0x004a, B:23:0x0054, B:25:0x005f, B:53:0x00d9, B:55:0x00dd, B:57:0x00e6, B:59:0x00ec, B:61:0x00f0, B:64:0x00f6, B:68:0x0103, B:70:0x0109, B:73:0x0113, B:75:0x0119, B:79:0x0122, B:81:0x012f, B:92:0x016b, B:94:0x0171, B:96:0x018c, B:99:0x0197, B:101:0x01a3, B:102:0x01a8, B:104:0x01bf, B:105:0x01c7, B:107:0x01de, B:109:0x01e4, B:111:0x01ee, B:113:0x01f6, B:114:0x01f9, B:82:0x0138, B:85:0x0142, B:87:0x014a, B:88:0x0153, B:90:0x015b, B:91:0x0163), top: B:120:0x0000 }] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x001a A[Catch: Exception -> 0x0224, TryCatch #0 {Exception -> 0x0224, blocks: (B:2:0x0000, B:4:0x0007, B:6:0x000d, B:11:0x0017, B:13:0x001a, B:17:0x0023, B:26:0x0084, B:28:0x008a, B:34:0x0096, B:38:0x00a1, B:39:0x00a4, B:41:0x00ac, B:43:0x00ba, B:45:0x00be, B:46:0x00c1, B:48:0x00c6, B:50:0x00cb, B:51:0x00d2, B:19:0x0043, B:21:0x004a, B:23:0x0054, B:25:0x005f, B:53:0x00d9, B:55:0x00dd, B:57:0x00e6, B:59:0x00ec, B:61:0x00f0, B:64:0x00f6, B:68:0x0103, B:70:0x0109, B:73:0x0113, B:75:0x0119, B:79:0x0122, B:81:0x012f, B:92:0x016b, B:94:0x0171, B:96:0x018c, B:99:0x0197, B:101:0x01a3, B:102:0x01a8, B:104:0x01be, B:105:0x01c6, B:107:0x01dd, B:109:0x01e3, B:111:0x01ed, B:113:0x01f5, B:114:0x01f8, B:82:0x0138, B:85:0x0142, B:87:0x014a, B:88:0x0153, B:90:0x015b, B:91:0x0163), top: B:120:0x0000 }] */
     /* JADX WARN: Removed duplicated region for block: B:18:0x0041  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0096 A[Catch: Exception -> 0x0225, TryCatch #0 {Exception -> 0x0225, blocks: (B:2:0x0000, B:4:0x0007, B:6:0x000d, B:11:0x0017, B:13:0x001a, B:17:0x0023, B:26:0x0084, B:28:0x008a, B:34:0x0096, B:38:0x00a1, B:39:0x00a4, B:41:0x00ac, B:43:0x00ba, B:45:0x00be, B:46:0x00c1, B:48:0x00c6, B:50:0x00cb, B:51:0x00d2, B:19:0x0043, B:21:0x004a, B:23:0x0054, B:25:0x005f, B:53:0x00d9, B:55:0x00dd, B:57:0x00e6, B:59:0x00ec, B:61:0x00f0, B:64:0x00f6, B:68:0x0103, B:70:0x0109, B:73:0x0113, B:75:0x0119, B:79:0x0122, B:81:0x012f, B:92:0x016b, B:94:0x0171, B:96:0x018c, B:99:0x0197, B:101:0x01a3, B:102:0x01a8, B:104:0x01bf, B:105:0x01c7, B:107:0x01de, B:109:0x01e4, B:111:0x01ee, B:113:0x01f6, B:114:0x01f9, B:82:0x0138, B:85:0x0142, B:87:0x014a, B:88:0x0153, B:90:0x015b, B:91:0x0163), top: B:120:0x0000 }] */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0096 A[Catch: Exception -> 0x0224, TryCatch #0 {Exception -> 0x0224, blocks: (B:2:0x0000, B:4:0x0007, B:6:0x000d, B:11:0x0017, B:13:0x001a, B:17:0x0023, B:26:0x0084, B:28:0x008a, B:34:0x0096, B:38:0x00a1, B:39:0x00a4, B:41:0x00ac, B:43:0x00ba, B:45:0x00be, B:46:0x00c1, B:48:0x00c6, B:50:0x00cb, B:51:0x00d2, B:19:0x0043, B:21:0x004a, B:23:0x0054, B:25:0x005f, B:53:0x00d9, B:55:0x00dd, B:57:0x00e6, B:59:0x00ec, B:61:0x00f0, B:64:0x00f6, B:68:0x0103, B:70:0x0109, B:73:0x0113, B:75:0x0119, B:79:0x0122, B:81:0x012f, B:92:0x016b, B:94:0x0171, B:96:0x018c, B:99:0x0197, B:101:0x01a3, B:102:0x01a8, B:104:0x01be, B:105:0x01c6, B:107:0x01dd, B:109:0x01e3, B:111:0x01ed, B:113:0x01f5, B:114:0x01f8, B:82:0x0138, B:85:0x0142, B:87:0x014a, B:88:0x0153, B:90:0x015b, B:91:0x0163), top: B:120:0x0000 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public /* synthetic */ void lambda$createView$4(android.view.View r14, int r15) {
+    public /* synthetic */ void lambda$createView$4(android.view.View r13, int r14) {
         /*
-            Method dump skipped, instructions count: 554
+            Method dump skipped, instructions count: 553
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.LanguageSelectActivity.lambda$createView$4(android.view.View, int):void");
@@ -295,20 +295,20 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                     }
                     if (localeInfo != null && localeInfo.pathToFile != null && (!localeInfo.isRemote() || localeInfo.serverIndex == Integer.MAX_VALUE)) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-                        builder.setTitle(LocaleController.getString("DeleteLocalizationTitle", C3158R.string.DeleteLocalizationTitle));
-                        builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("DeleteLocalizationText", C3158R.string.DeleteLocalizationText, localeInfo.name)));
-                        builder.setPositiveButton(LocaleController.getString("Delete", C3158R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda1
+                        builder.setTitle(LocaleController.getString("DeleteLocalizationTitle", C3286R.string.DeleteLocalizationTitle));
+                        builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("DeleteLocalizationText", C3286R.string.DeleteLocalizationText, localeInfo.name)));
+                        builder.setPositiveButton(LocaleController.getString("Delete", C3286R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda1
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i2) {
                                 LanguageSelectActivity.this.lambda$createView$5(localeInfo, dialogInterface, i2);
                             }
                         });
-                        builder.setNegativeButton(LocaleController.getString("Cancel", C3158R.string.Cancel), null);
+                        builder.setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null);
                         AlertDialog create = builder.create();
                         showDialog(create);
                         TextView textView = (TextView) create.getButton(-1);
                         if (textView != null) {
-                            textView.setTextColor(Theme.getColor("dialogTextRed2"));
+                            textView.setTextColor(Theme.getColor("dialogTextRed"));
                         }
                     }
                 }
@@ -431,9 +431,9 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
     }
 
     private void updateLanguage() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        if (c3222ActionBar != null) {
-            c3222ActionBar.setTitleAnimated(LocaleController.getString("Language", C3158R.string.Language), true, 350L, CubicBezierInterpolator.EASE_OUT_QUINT);
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        if (c3351ActionBar != null) {
+            c3351ActionBar.setTitleAnimated(LocaleController.getString("Language", C3286R.string.Language), true, 350L, CubicBezierInterpolator.EASE_OUT_QUINT);
         }
         ListAdapter listAdapter = this.listAdapter;
         if (listAdapter != null) {
@@ -576,25 +576,25 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:105:0x028b, code lost:
-            if (r13 == (r11.this$0.unofficialLanguages.size() - 1)) goto L113;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:115:0x02cc, code lost:
-            if (r13 == (r11.this$0.sortedLanguages.size() - 1)) goto L113;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:41:0x011a, code lost:
-            if (r12.getValueTextView().getPaint().measureText(r2) > java.lang.Math.min((org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.m50dp(34)) / 2.0f, (org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.m50dp(84)) - r12.getTextView().getPaint().measureText(r0))) goto L32;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:96:0x0251, code lost:
-            if (r13 == (r11.this$0.searchResult.size() - 1)) goto L113;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:97:0x0253, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:100:0x025d, code lost:
             r13 = true;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:98:0x0256, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:101:0x0260, code lost:
             r13 = false;
          */
-        /* JADX WARN: Removed duplicated region for block: B:46:0x0122  */
+        /* JADX WARN: Code restructure failed: missing block: B:108:0x0295, code lost:
+            if (r13 == (r11.this$0.unofficialLanguages.size() - 1)) goto L116;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:118:0x02d6, code lost:
+            if (r13 == (r11.this$0.sortedLanguages.size() - 1)) goto L116;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:44:0x0124, code lost:
+            if (r12.getValueTextView().getPaint().measureText(r2) > java.lang.Math.min((org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.m50dp(34)) / 2.0f, (org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.m50dp(84)) - r12.getTextView().getPaint().measureText(r0))) goto L32;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:99:0x025b, code lost:
+            if (r13 == (r11.this$0.searchResult.size() - 1)) goto L116;
+         */
+        /* JADX WARN: Removed duplicated region for block: B:49:0x012c  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -602,7 +602,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         */
         public void onBindViewHolder(androidx.recyclerview.widget.RecyclerView.ViewHolder r12, int r13) {
             /*
-                Method dump skipped, instructions count: 812
+                Method dump skipped, instructions count: 822
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.LanguageSelectActivity.ListAdapter.onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder, int):void");

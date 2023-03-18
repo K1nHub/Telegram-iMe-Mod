@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Pair;
 import kotlin.TuplesKt;
@@ -20,7 +19,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: WalletLinkClickableManager.kt */
 /* loaded from: classes3.dex */
 public final class WalletLinkClickableManager {
@@ -38,9 +37,18 @@ public final class WalletLinkClickableManager {
 
         static {
             int[] iArr = new int[LinkedTextType.values().length];
-            iArr[LinkedTextType.USER_ID.ordinal()] = 1;
-            iArr[LinkedTextType.ADDRESS.ordinal()] = 2;
-            iArr[LinkedTextType.NOTING.ordinal()] = 3;
+            try {
+                iArr[LinkedTextType.USER_ID.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[LinkedTextType.ADDRESS.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[LinkedTextType.NOTING.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -70,10 +78,9 @@ public final class WalletLinkClickableManager {
     private final void setupClickableLink() {
         String linkedText = this.clickableItem.getLinkedText();
         WalletLinkClickableView walletLinkClickableView = this.viewState;
-        if (walletLinkClickableView == null) {
-            return;
+        if (walletLinkClickableView != null) {
+            walletLinkClickableView.setupMessageClickableLink(this.clickableItem.getMessageText(this.resourceManager), linkedText, new WalletLinkClickableManager$setupClickableLink$1(this, linkedText));
         }
-        walletLinkClickableView.setupMessageClickableLink(this.clickableItem.getMessageText(this.resourceManager), linkedText, new WalletLinkClickableManager$setupClickableLink$1(this, linkedText));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -102,9 +109,9 @@ public final class WalletLinkClickableManager {
         List<Pair<String, Function0<Unit>>> mutableList;
         int collectionSizeOrDefault;
         Pair[] pairArr = new Pair[3];
-        pairArr[0] = this.telegramGateway.hasUser(j) ? TuplesKt.m100to(this.resourceManager.getString(C3158R.string.wallet_user_id_dialog_go_to_profile_action), new WalletLinkClickableManager$getUserIdAlertOptions$1(this, j)) : null;
-        pairArr[1] = TuplesKt.m100to(this.resourceManager.getString(C3158R.string.wallet_user_id_dialog_copy_id_action), new WalletLinkClickableManager$getUserIdAlertOptions$2(this, j));
-        pairArr[2] = TuplesKt.m100to(this.resourceManager.getString(C3158R.string.wallet_user_id_dialog_transfer_action), new WalletLinkClickableManager$getUserIdAlertOptions$3(this, j));
+        pairArr[0] = this.telegramGateway.hasUser(j) ? TuplesKt.m100to(this.resourceManager.getString(C3286R.string.wallet_user_id_dialog_go_to_profile_action), new WalletLinkClickableManager$getUserIdAlertOptions$1(this, j)) : null;
+        pairArr[1] = TuplesKt.m100to(this.resourceManager.getString(C3286R.string.wallet_user_id_dialog_copy_id_action), new WalletLinkClickableManager$getUserIdAlertOptions$2(this, j));
+        pairArr[2] = TuplesKt.m100to(this.resourceManager.getString(C3286R.string.wallet_user_id_dialog_transfer_action), new WalletLinkClickableManager$getUserIdAlertOptions$3(this, j));
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(pairArr);
         filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(mutableListOf);
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) filterNotNull);
@@ -115,9 +122,7 @@ public final class WalletLinkClickableManager {
         while (it.hasNext()) {
             arrayList.add((String) ((Pair) it.next()).component1());
         }
-        Object[] array = arrayList.toArray(new String[0]);
-        Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-        return (String[]) array;
+        return (String[]) arrayList.toArray(new String[0]);
     }
 
     private final String[] getAddressAlertOptions(String str) {
@@ -126,8 +131,8 @@ public final class WalletLinkClickableManager {
         List<Pair<String, Function0<Unit>>> mutableList;
         int collectionSizeOrDefault;
         Pair[] pairArr = new Pair[2];
-        pairArr[0] = TuplesKt.m100to(this.resourceManager.getString(C3158R.string.wallet_token_details_action_copy_address), new WalletLinkClickableManager$getAddressAlertOptions$1(this, str));
-        pairArr[1] = isTransferAvailable(this.clickableItem.getTokenCode()) ? TuplesKt.m100to(this.resourceManager.getString(C3158R.string.wallet_user_id_dialog_transfer_action), new WalletLinkClickableManager$getAddressAlertOptions$2(this)) : null;
+        pairArr[0] = TuplesKt.m100to(this.resourceManager.getString(C3286R.string.wallet_token_details_action_copy_address), new WalletLinkClickableManager$getAddressAlertOptions$1(this, str));
+        pairArr[1] = isTransferAvailable(this.clickableItem.getTokenCode()) ? TuplesKt.m100to(this.resourceManager.getString(C3286R.string.wallet_user_id_dialog_transfer_action), new WalletLinkClickableManager$getAddressAlertOptions$2(this)) : null;
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(pairArr);
         filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(mutableListOf);
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) filterNotNull);
@@ -138,9 +143,7 @@ public final class WalletLinkClickableManager {
         while (it.hasNext()) {
             arrayList.add((String) ((Pair) it.next()).component1());
         }
-        Object[] array = arrayList.toArray(new String[0]);
-        Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-        return (String[]) array;
+        return (String[]) arrayList.toArray(new String[0]);
     }
 
     private final boolean isTransferAvailable(TokenCode tokenCode) {

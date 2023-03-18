@@ -16,9 +16,9 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/smedialink/storage/domain/model/wallet/Hint$ChangeNetwork$CryptoHomeScreen;,
-        Lcom/smedialink/storage/domain/model/wallet/Hint$ChangeNetwork$WalletConnectScreen;,
+        Lcom/smedialink/storage/domain/model/wallet/Hint$ChangeNetwork$SwapScreen;,
         Lcom/smedialink/storage/domain/model/wallet/Hint$ChangeNetwork$TransactionsScreen;,
-        Lcom/smedialink/storage/domain/model/wallet/Hint$ChangeNetwork$SwapScreen;
+        Lcom/smedialink/storage/domain/model/wallet/Hint$ChangeNetwork$WalletConnectScreen;
     }
 .end annotation
 

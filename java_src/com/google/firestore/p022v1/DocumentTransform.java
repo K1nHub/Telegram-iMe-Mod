@@ -232,7 +232,7 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
         /* renamed from: com.google.firestore.v1.DocumentTransform$FieldTransform$Builder */
         /* loaded from: classes3.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<FieldTransform, Builder> implements MessageLiteOrBuilder {
-            /* synthetic */ Builder(C10601 c10601) {
+            /* synthetic */ Builder(C10531 c10531) {
                 this();
             }
 
@@ -273,7 +273,7 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-            switch (C10601.f208xa1df5c61[methodToInvoke.ordinal()]) {
+            switch (C10531.f208xa1df5c61[methodToInvoke.ordinal()]) {
                 case 1:
                     return new FieldTransform();
                 case 2:
@@ -312,7 +312,7 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
 
     /* renamed from: com.google.firestore.v1.DocumentTransform$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10601 {
+    static /* synthetic */ class C10531 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f208xa1df5c61;
@@ -358,7 +358,7 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
     /* renamed from: com.google.firestore.v1.DocumentTransform$Builder */
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<DocumentTransform, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10601 c10601) {
+        /* synthetic */ Builder(C10531 c10531) {
             this();
         }
 
@@ -369,7 +369,7 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10601.f208xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10531.f208xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new DocumentTransform();
             case 2:

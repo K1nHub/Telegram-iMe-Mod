@@ -1,16 +1,15 @@
 package org.fork.enums;
 
 import java.util.ArrayList;
-import java.util.Objects;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: ContactsActionType.kt */
 /* loaded from: classes4.dex */
 public enum ContactsActionType {
-    DELETE(C3158R.C3160drawable.msg_delete, "Delete", C3158R.string.Delete),
-    UNBLOCK(C3158R.C3160drawable.msg_block, "Unblock", C3158R.string.Unblock);
+    DELETE(C3286R.C3288drawable.msg_delete, "Delete", C3286R.string.Delete),
+    UNBLOCK(C3286R.C3288drawable.msg_block, "Unblock", C3286R.string.Unblock);
     
     public static final Companion Companion = new Companion(null);
     public static ContactsActionType defaultValue;
@@ -98,9 +97,7 @@ public enum ContactsActionType {
             for (ContactsActionType contactsActionType : values) {
                 arrayList.add(LocaleController.getString(contactsActionType.getTextKey(), contactsActionType.getTextResId()));
             }
-            Object[] array = arrayList.toArray(new String[0]);
-            Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-            return (String[]) array;
+            return (String[]) arrayList.toArray(new String[0]);
         }
     }
 }

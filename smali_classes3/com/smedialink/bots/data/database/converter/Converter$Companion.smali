@@ -41,14 +41,9 @@
 .method public final fromDate(Ljava/util/Date;)Ljava/lang/Long;
     .locals 2
 
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    goto :goto_0
+    if-eqz p1, :cond_0
 
     .line 70
-    :cond_0
     invoke-virtual {p1}, Ljava/util/Date;->getTime()J
 
     move-result-wide v0
@@ -56,6 +51,11 @@
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
 
     :goto_0
     return-object p1
@@ -112,14 +112,9 @@
 
     move-result-object v0
 
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    goto :goto_0
+    if-eqz p1, :cond_0
 
     .line 61
-    :cond_0
     invoke-static {}, Lcom/smedialink/bots/data/database/converter/Converter;->access$getGson$cp()Lcom/google/gson/Gson;
 
     move-result-object v1
@@ -129,6 +124,11 @@
     move-result-object p1
 
     check-cast p1, Ljava/util/List;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
 
     :goto_0
     if-nez p1, :cond_1
@@ -172,14 +172,9 @@
 .method public final fromTimeStamp(Ljava/lang/Long;)Ljava/util/Date;
     .locals 2
 
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    goto :goto_0
+    if-eqz p1, :cond_0
 
     .line 66
-    :cond_0
     invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
 
     move-result-wide v0
@@ -187,6 +182,11 @@
     new-instance p1, Ljava/util/Date;
 
     invoke-direct {p1, v0, v1}, Ljava/util/Date;-><init>(J)V
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
 
     :goto_0
     return-object p1
@@ -266,14 +266,9 @@
 
     move-result-object v0
 
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    goto :goto_0
+    if-eqz p1, :cond_0
 
     .line 81
-    :cond_0
     invoke-static {}, Lcom/smedialink/bots/data/database/converter/Converter;->access$getGson$cp()Lcom/google/gson/Gson;
 
     move-result-object v1
@@ -283,6 +278,11 @@
     move-result-object p1
 
     check-cast p1, Ljava/util/Map;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
 
     :goto_0
     if-nez p1, :cond_1

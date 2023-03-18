@@ -1,21 +1,18 @@
 package com.smedialink.p031ui.kikliko;
 
 import com.smedialink.p031ui.base.mvp.base.BasePresenter;
-import com.smedialink.p031ui.base.mvp.base.BaseView;
 import com.smedialink.storage.data.network.model.response.kikliko.SearchResponse;
 import com.smedialink.storage.data.network.model.response.kikliko.TagResponse;
 import com.smedialink.storage.domain.interactor.kikliko.KiklikoInteractor;
 import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import java.util.List;
-import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import timber.log.Timber;
 /* compiled from: EmojiViewPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.kikliko.EmojiViewPresenter */
@@ -38,35 +35,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
     public final void loadKiklikoTags() {
         Observable<Result<List<TagResponse>>> observeOn = this.kiklikoInteractor.getTags().observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.getTag…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.kikliko.EmojiViewPresenter$loadKiklikoTags$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    ((EmojiViewView) EmojiViewPresenter.this.getViewState()).onKiklikoTagsLoaded((List) ((Result.Success) result).getData());
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.kikliko.EmojiViewPresenter$loadKiklikoTags$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1912x8b56867d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1913x8b56867e(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
-    public final void searchByKeyword(final String keyword, final String page) {
+    public final void searchByKeyword(String keyword, String page) {
         Intrinsics.checkNotNullParameter(keyword, "keyword");
         Intrinsics.checkNotNullParameter(page, "page");
         Disposable disposable = this.lastSearchDisposable;
@@ -75,37 +49,13 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         }
         Observable<Result<SearchResponse>> observeOn = this.kiklikoInteractor.searchByKeyword(keyword, page).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.search…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.kikliko.EmojiViewPresenter$searchByKeyword$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    ((EmojiViewView) EmojiViewPresenter.this.getViewState()).onKiklikoSearchResultsLoaded(keyword, page, false, (SearchResponse) ((Result.Success) result).getData());
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.kikliko.EmojiViewPresenter$searchByKeyword$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1920xae9d3566(this, keyword, page)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1921xae9d3567(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         this.lastSearchDisposable = subscribe;
-        Unit unit = Unit.INSTANCE;
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
-    public final void searchByTag(final String tag, final String page) {
+    public final void searchByTag(String tag, String page) {
         Intrinsics.checkNotNullParameter(tag, "tag");
         Intrinsics.checkNotNullParameter(page, "page");
         Disposable disposable = this.lastSearchDisposable;
@@ -114,67 +64,19 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         }
         Observable<Result<SearchResponse>> observeOn = this.kiklikoInteractor.searchByTag(tag, page).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.search…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.kikliko.EmojiViewPresenter$searchByTag$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    ((EmojiViewView) EmojiViewPresenter.this.getViewState()).onKiklikoSearchResultsLoaded(tag, page, true, (SearchResponse) ((Result.Success) result).getData());
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.kikliko.EmojiViewPresenter$searchByTag$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1922xbea5fe97(this, tag, page)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1923xbea5fe98(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         this.lastSearchDisposable = subscribe;
-        Unit unit = Unit.INSTANCE;
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
-    public final void getTrending(final String page) {
+    public final void getTrending(String page) {
         Intrinsics.checkNotNullParameter(page, "page");
         Observable<Result<SearchResponse>> observeOn = this.kiklikoInteractor.getTrending(page).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.getTre…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.kikliko.EmojiViewPresenter$getTrending$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    ((EmojiViewView) EmojiViewPresenter.this.getViewState()).onKiklikoSearchResultsLoaded("", page, false, (SearchResponse) ((Result.Success) result).getData());
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.kikliko.EmojiViewPresenter$getTrending$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1910x46f36637(this, page)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1911x46f36638(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         this.lastSearchDisposable = subscribe;
-        Unit unit = Unit.INSTANCE;
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -182,27 +84,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         Intrinsics.checkNotNullParameter(slug, "slug");
         Observable<Result<Boolean>> observeOn = this.kiklikoInteractor.share(slug).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.share(…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.kikliko.EmojiViewPresenter$onGifWasSent$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.kikliko.EmojiViewPresenter$onGifWasSent$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1916x605e6f86()), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1917x605e6f87(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -211,27 +93,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         Intrinsics.checkNotNullParameter(slug, "slug");
         Observable<Result<Boolean>> observeOn = this.kiklikoInteractor.view(slug).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.view(s…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.kikliko.EmojiViewPresenter$onGifPreviewAsOpened$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.kikliko.EmojiViewPresenter$onGifPreviewAsOpened$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1914x1baa1388()), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1915x1baa1389(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -241,27 +103,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         Intrinsics.checkNotNullParameter(reason, "reason");
         Observable<Result<Boolean>> observeOn = this.kiklikoInteractor.report(slug, reason).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.report…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.kikliko.EmojiViewPresenter$report$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.kikliko.EmojiViewPresenter$report$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1918xb31cfe()), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1919xb31cff(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

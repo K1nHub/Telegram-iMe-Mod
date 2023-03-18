@@ -20,7 +20,7 @@ import org.fork.utils.Callbacks$Callback;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkContentStakingPrognosisBinding;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.StatisticActivity;
@@ -97,16 +97,16 @@ public final class StakingPrognosisView extends FrameLayout implements KoinCompo
             viewGroup.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
         }
         listOf2 = CollectionsKt__CollectionsKt.listOf((Object[]) new TextView[]{forkContentStakingPrognosisBinding.textStatistics, forkContentStakingPrognosisBinding.textDates, forkContentStakingPrognosisBinding.textPercentageValue, forkContentStakingPrognosisBinding.textModeValue});
-        for (TextView textView : listOf2) {
-            textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-            Intrinsics.checkNotNullExpressionValue(textView, "");
-            ViewExtKt.withMediumTypeface(textView);
+        for (TextView setupColors$lambda$5$lambda$2 : listOf2) {
+            setupColors$lambda$5$lambda$2.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+            Intrinsics.checkNotNullExpressionValue(setupColors$lambda$5$lambda$2, "setupColors$lambda$5$lambda$2");
+            ViewExtKt.withMediumTypeface(setupColors$lambda$5$lambda$2);
         }
         listOf3 = CollectionsKt__CollectionsKt.listOf((Object[]) new TextView[]{forkContentStakingPrognosisBinding.textProfitTokenValue, forkContentStakingPrognosisBinding.textProfitUsdValue});
-        for (TextView textView2 : listOf3) {
-            textView2.setTextColor(Theme.getColor("windowBackgroundWhiteGreenText2"));
-            Intrinsics.checkNotNullExpressionValue(textView2, "");
-            ViewExtKt.withMediumTypeface(textView2);
+        for (TextView setupColors$lambda$5$lambda$3 : listOf3) {
+            setupColors$lambda$5$lambda$3.setTextColor(Theme.getColor("windowBackgroundWhiteGreenText2"));
+            Intrinsics.checkNotNullExpressionValue(setupColors$lambda$5$lambda$3, "setupColors$lambda$5$lambda$3");
+            ViewExtKt.withMediumTypeface(setupColors$lambda$5$lambda$3);
         }
         TextView textModeTitle = forkContentStakingPrognosisBinding.textModeTitle;
         Intrinsics.checkNotNullExpressionValue(textModeTitle, "textModeTitle");
@@ -115,24 +115,24 @@ public final class StakingPrognosisView extends FrameLayout implements KoinCompo
         TextView textDepositDescription = forkContentStakingPrognosisBinding.textDepositDescription;
         Intrinsics.checkNotNullExpressionValue(textDepositDescription, "textDepositDescription");
         ViewExtKt.setTextsColor("windowBackgroundWhiteGrayText", textModeTitle, textProfitTitle, textDepositDescription);
-        TextView textView3 = forkContentStakingPrognosisBinding.textDepositTitle;
-        textView3.setTextColor(Theme.getColor("windowBackgroundWhiteBlueText"));
-        Intrinsics.checkNotNullExpressionValue(textView3, "");
-        ViewExtKt.withMediumTypeface(textView3);
+        TextView setupColors$lambda$5$lambda$4 = forkContentStakingPrognosisBinding.textDepositTitle;
+        setupColors$lambda$5$lambda$4.setTextColor(Theme.getColor("windowBackgroundWhiteBlueText"));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$5$lambda$4, "setupColors$lambda$5$lambda$4");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$5$lambda$4);
         forkContentStakingPrognosisBinding.buttonDeposit.applyColors();
     }
 
     private final void setupView() {
         setupColors();
         ForkContentStakingPrognosisBinding forkContentStakingPrognosisBinding = this.binding;
-        forkContentStakingPrognosisBinding.textStatistics.setText(getResourceManager().getString(C3158R.string.staking_calculator_statistics));
-        forkContentStakingPrognosisBinding.textModeTitle.setText(getResourceManager().getString(C3158R.string.staking_calculator_mode));
-        forkContentStakingPrognosisBinding.textProfitTitle.setText(getResourceManager().getString(C3158R.string.staking_calculator_income_profit));
-        forkContentStakingPrognosisBinding.textDepositTitle.setText(getResourceManager().getString(C3158R.string.staking_calculator_deposit_title));
-        forkContentStakingPrognosisBinding.textDepositDescription.setText(getResourceManager().getString(C3158R.string.staking_calculator_deposit_description));
+        forkContentStakingPrognosisBinding.textStatistics.setText(getResourceManager().getString(C3286R.string.staking_calculator_statistics));
+        forkContentStakingPrognosisBinding.textModeTitle.setText(getResourceManager().getString(C3286R.string.staking_calculator_mode));
+        forkContentStakingPrognosisBinding.textProfitTitle.setText(getResourceManager().getString(C3286R.string.staking_calculator_income_profit));
+        forkContentStakingPrognosisBinding.textDepositTitle.setText(getResourceManager().getString(C3286R.string.staking_calculator_deposit_title));
+        forkContentStakingPrognosisBinding.textDepositDescription.setText(getResourceManager().getString(C3286R.string.staking_calculator_deposit_description));
         BigActionButton bigActionButton = forkContentStakingPrognosisBinding.buttonDeposit;
         bigActionButton.setForcedCustomHeight(36);
-        bigActionButton.setText(getResourceManager().getString(C3158R.string.wallet_operation_deposit));
+        bigActionButton.setText(getResourceManager().getString(C3286R.string.wallet_operation_deposit));
         addView(this.binding.getRoot());
     }
 }

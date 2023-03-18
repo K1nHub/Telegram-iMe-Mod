@@ -45,7 +45,7 @@
 
     iget-object v3, p0, Lorg/fork/ui/view/ChatAttachAlertWalletLayout$$ExternalSyntheticLambda1;->f$3:Lio/reactivex/disposables/Disposable;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/fork/ui/view/ChatAttachAlertWalletLayout;->$r8$lambda$o7t_8XJNeRJ50UedYszUEwk_Dg4(Lorg/fork/ui/view/ChatAttachAlertWalletLayout;ZZLio/reactivex/disposables/Disposable;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/fork/ui/view/ChatAttachAlertWalletLayout;->$r8$lambda$Fma4GgSRodcro_25bex9B0bBXN8(Lorg/fork/ui/view/ChatAttachAlertWalletLayout;ZZLio/reactivex/disposables/Disposable;)V
 
     return-void
 .end method

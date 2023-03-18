@@ -1,6 +1,6 @@
 .class public final Lkotlin/ranges/IntRange;
 .super Lkotlin/ranges/IntProgression;
-.source "Ranges.kt"
+.source "PrimitiveRanges.kt"
 
 
 # annotations
@@ -35,7 +35,7 @@
 
     sput-object v0, Lkotlin/ranges/IntRange;->Companion:Lkotlin/ranges/IntRange$Companion;
 
-    .line 68
+    .line 86
     new-instance v0, Lkotlin/ranges/IntRange;
 
     const/4 v1, 0x1
@@ -54,7 +54,7 @@
 
     const/4 v0, 0x1
 
-    .line 44
+    .line 54
     invoke-direct {p0, p1, p2, v0}, Lkotlin/ranges/IntProgression;-><init>(III)V
 
     return-void
@@ -63,7 +63,7 @@
 .method public static final synthetic access$getEMPTY$cp()Lkotlin/ranges/IntRange;
     .locals 1
 
-    .line 44
+    .line 53
     sget-object v0, Lkotlin/ranges/IntRange;->EMPTY:Lkotlin/ranges/IntRange;
 
     return-object v0
@@ -71,10 +71,37 @@
 
 
 # virtual methods
+.method public contains(I)Z
+    .locals 1
+
+    .line 66
+    invoke-virtual {p0}, Lkotlin/ranges/IntProgression;->getFirst()I
+
+    move-result v0
+
+    if-gt v0, p1, :cond_0
+
+    invoke-virtual {p0}, Lkotlin/ranges/IntProgression;->getLast()I
+
+    move-result v0
+
+    if-gt p1, v0, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
 
-    .line 58
+    .line 76
     instance-of v0, p1, Lkotlin/ranges/IntRange;
 
     if-eqz v0, :cond_2
@@ -95,7 +122,7 @@
 
     if-nez v0, :cond_1
 
-    .line 59
+    .line 77
     :cond_0
     invoke-virtual {p0}, Lkotlin/ranges/IntProgression;->getFirst()I
 
@@ -134,7 +161,7 @@
 .method public getEndInclusive()Ljava/lang/Integer;
     .locals 1
 
-    .line 46
+    .line 56
     invoke-virtual {p0}, Lkotlin/ranges/IntProgression;->getLast()I
 
     move-result v0
@@ -149,7 +176,7 @@
 .method public getStart()Ljava/lang/Integer;
     .locals 1
 
-    .line 45
+    .line 55
     invoke-virtual {p0}, Lkotlin/ranges/IntProgression;->getFirst()I
 
     move-result v0
@@ -164,7 +191,7 @@
 .method public hashCode()I
     .locals 2
 
-    .line 62
+    .line 80
     invoke-virtual {p0}, Lkotlin/ranges/IntRange;->isEmpty()Z
 
     move-result v0
@@ -195,7 +222,7 @@
 .method public isEmpty()Z
     .locals 2
 
-    .line 55
+    .line 73
     invoke-virtual {p0}, Lkotlin/ranges/IntProgression;->getFirst()I
 
     move-result v0
@@ -220,7 +247,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 64
+    .line 82
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

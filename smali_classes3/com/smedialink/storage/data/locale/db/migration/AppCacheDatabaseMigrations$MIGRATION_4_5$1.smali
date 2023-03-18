@@ -4,8 +4,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/storage/data/locale/db/migration/AppCacheDatabaseMigrations;-><clinit>()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/smedialink/storage/data/locale/db/migration/AppCacheDatabaseMigrations;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

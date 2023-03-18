@@ -135,10 +135,10 @@ public class Tnaf {
 
     public static BigInteger norm(byte b, ZTauElement zTauElement) {
         BigInteger subtract;
-        BigInteger bigInteger = zTauElement.f1308u;
+        BigInteger bigInteger = zTauElement.f1313u;
         BigInteger multiply = bigInteger.multiply(bigInteger);
-        BigInteger multiply2 = zTauElement.f1308u.multiply(zTauElement.f1309v);
-        BigInteger bigInteger2 = zTauElement.f1309v;
+        BigInteger multiply2 = zTauElement.f1313u.multiply(zTauElement.f1314v);
+        BigInteger bigInteger2 = zTauElement.f1314v;
         BigInteger shiftLeft = bigInteger2.multiply(bigInteger2).shiftLeft(1);
         if (b == 1) {
             subtract = multiply.add(multiply2);
@@ -154,7 +154,7 @@ public class Tnaf {
         BigInteger add = b2 == 1 ? bigIntegerArr[0].add(bigIntegerArr[1]) : bigIntegerArr[0].subtract(bigIntegerArr[1]);
         BigInteger bigInteger2 = getLucas(b2, i, true)[1];
         ZTauElement round = round(approximateDivisionByN(bigInteger, bigIntegerArr[0], bigInteger2, b, i, b3), approximateDivisionByN(bigInteger, bigIntegerArr[1], bigInteger2, b, i, b3), b2);
-        return new ZTauElement(bigInteger.subtract(add.multiply(round.f1308u)).subtract(BigInteger.valueOf(2L).multiply(bigIntegerArr[1]).multiply(round.f1309v)), bigIntegerArr[1].multiply(round.f1308u).subtract(bigIntegerArr[0].multiply(round.f1309v)));
+        return new ZTauElement(bigInteger.subtract(add.multiply(round.f1313u)).subtract(BigInteger.valueOf(2L).multiply(bigIntegerArr[1]).multiply(round.f1314v)), bigIntegerArr[1].multiply(round.f1313u).subtract(bigIntegerArr[0].multiply(round.f1314v)));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:21:0x0066, code lost:
@@ -270,8 +270,8 @@ public class Tnaf {
         int bitLength = norm(b, zTauElement).bitLength();
         byte[] bArr = new byte[bitLength > 30 ? bitLength + 4 + b2 : b2 + 34];
         BigInteger shiftRight = bigInteger.shiftRight(1);
-        BigInteger bigInteger3 = zTauElement.f1308u;
-        BigInteger bigInteger4 = zTauElement.f1309v;
+        BigInteger bigInteger3 = zTauElement.f1313u;
+        BigInteger bigInteger4 = zTauElement.f1314v;
         int i = 0;
         while (true) {
             BigInteger bigInteger5 = ECConstants.ZERO;
@@ -292,11 +292,11 @@ public class Tnaf {
                     z = true;
                 }
                 if (z) {
-                    bigInteger3 = bigInteger3.subtract(zTauElementArr[intValue].f1308u);
-                    bigInteger4 = bigInteger4.subtract(zTauElementArr[intValue].f1309v);
+                    bigInteger3 = bigInteger3.subtract(zTauElementArr[intValue].f1313u);
+                    bigInteger4 = bigInteger4.subtract(zTauElementArr[intValue].f1314v);
                 } else {
-                    bigInteger3 = bigInteger3.add(zTauElementArr[intValue].f1308u);
-                    bigInteger4 = bigInteger4.add(zTauElementArr[intValue].f1309v);
+                    bigInteger3 = bigInteger3.add(zTauElementArr[intValue].f1313u);
+                    bigInteger4 = bigInteger4.add(zTauElementArr[intValue].f1314v);
                 }
             } else {
                 bArr[i] = 0;

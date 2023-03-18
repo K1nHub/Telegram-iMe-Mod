@@ -6,7 +6,7 @@ public class DownloadObject {
     public boolean forceCache;
 
     /* renamed from: id */
-    public long f1420id;
+    public long f1425id;
     public TLObject object;
     public String parent;
     public boolean secret;

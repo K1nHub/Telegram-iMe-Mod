@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFiltersController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FiltersController.kt\norg/fork/controller/FiltersController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,292:1\n56#2,6:293\n764#3:299\n855#3,2:300\n1601#3,9:302\n1849#3:311\n1850#3:313\n1610#3:314\n1000#3,2:315\n1849#3:317\n1858#3,3:318\n1850#3:321\n1547#3:322\n1618#3,3:323\n1547#3:326\n1618#3,3:327\n1547#3:331\n1618#3,3:332\n1177#3,2:335\n1251#3,4:337\n764#3:341\n855#3,2:342\n1849#3,2:344\n1000#3,2:346\n1849#3,2:348\n764#3:350\n855#3,2:351\n1#4:312\n1#4:330\n*S KotlinDebug\n*F\n+ 1 FiltersController.kt\norg/fork/controller/FiltersController\n*L\n27#1:293,6\n92#1:299\n92#1:300,2\n124#1:302,9\n124#1:311\n124#1:313\n124#1:314\n125#1:315,2\n132#1:317\n137#1:318,3\n132#1:321\n146#1:322\n146#1:323,3\n149#1:326\n149#1:327,3\n204#1:331\n204#1:332,3\n228#1:335,2\n228#1:337,4\n239#1:341\n239#1:342,2\n249#1:344,2\n262#1:346,2\n269#1:348,2\n280#1:350\n280#1:351,2\n124#1:312\n*E\n"
+    value = "SMAP\nFiltersController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FiltersController.kt\norg/fork/controller/FiltersController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,292:1\n56#2,6:293\n766#3:299\n857#3,2:300\n1603#3,9:302\n1855#3:311\n1856#3:313\n1612#3:314\n1002#3,2:315\n1855#3:317\n1864#3,3:318\n1856#3:321\n1549#3:322\n1620#3,3:323\n1549#3:326\n1620#3,3:327\n1549#3:331\n1620#3,3:332\n1179#3,2:335\n1253#3,4:337\n766#3:341\n857#3,2:342\n1855#3,2:344\n1002#3,2:346\n1855#3,2:348\n766#3:350\n857#3,2:351\n1#4:312\n1#4:330\n*S KotlinDebug\n*F\n+ 1 FiltersController.kt\norg/fork/controller/FiltersController\n*L\n27#1:293,6\n92#1:299\n92#1:300,2\n124#1:302,9\n124#1:311\n124#1:313\n124#1:314\n125#1:315,2\n132#1:317\n137#1:318,3\n132#1:321\n146#1:322\n146#1:323,3\n149#1:326\n149#1:327,3\n204#1:331\n204#1:332,3\n228#1:335,2\n228#1:337,4\n239#1:341\n239#1:342,2\n249#1:344,2\n262#1:346,2\n269#1:348,2\n280#1:350\n280#1:351,2\n124#1:312\n*E\n"
 .end annotation
 
 
@@ -111,10 +111,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$TeQY_wNic7Lq1r82UEI8I12-aoM(Lorg/fork/controller/FiltersController;Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;)V
+.method public static synthetic $r8$lambda$xApwi2UPyWK6VFatypJekj5nknY(Lorg/fork/controller/FiltersController;Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/controller/FiltersController;->addOrEditFilterSettings$lambda-14(Lorg/fork/controller/FiltersController;Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;)V
+    invoke-static {p0, p1}, Lorg/fork/controller/FiltersController;->addOrEditFilterSettings$lambda$14(Lorg/fork/controller/FiltersController;Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;)V
 
     return-void
 .end method
@@ -265,7 +265,7 @@
     return-object v0
 .end method
 
-.method private static final addOrEditFilterSettings$lambda-14(Lorg/fork/controller/FiltersController;Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;)V
+.method private static final addOrEditFilterSettings$lambda$14(Lorg/fork/controller/FiltersController;Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -354,7 +354,7 @@
 
     move-result-object p1
 
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -471,7 +471,7 @@
 
     goto :goto_0
 
-    .line 1000
+    .line 1002
     :cond_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -481,9 +481,9 @@
 
     if-le p1, p2, :cond_1
 
-    new-instance p1, Lorg/fork/controller/FiltersController$loadSortingTabsConfig$lambda-20$lambda-19$$inlined$sortBy$1;
+    new-instance p1, Lorg/fork/controller/FiltersController$loadSortingTabsConfig$lambda$20$lambda$19$$inlined$sortBy$1;
 
-    invoke-direct {p1}, Lorg/fork/controller/FiltersController$loadSortingTabsConfig$lambda-20$lambda-19$$inlined$sortBy$1;-><init>()V
+    invoke-direct {p1}, Lorg/fork/controller/FiltersController$loadSortingTabsConfig$lambda$20$lambda$19$$inlined$sortBy$1;-><init>()V
 
     invoke-static {v0, p1}, Lkotlin/collections/CollectionsKt;->sortWith(Ljava/util/List;Ljava/util/Comparator;)V
 
@@ -507,12 +507,12 @@
 
     move-result-object p1
 
-    .line 764
+    .line 766
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -540,10 +540,12 @@
 
     if-eqz v3, :cond_0
 
+    .line 857
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 280
     :cond_1
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
@@ -558,7 +560,7 @@
 
     move-result-object p1
 
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -765,7 +767,7 @@
 
     move-result-object p1
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -776,7 +778,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -792,7 +794,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lorg/fork/models/SortingTabState;
 
     .line 146
@@ -800,10 +802,12 @@
 
     move-result-object v1
 
+    .line 1621
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 146
     :cond_0
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
@@ -828,12 +832,12 @@
 
     move-result-object p1
 
-    .line 764
+    .line 766
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -865,6 +869,7 @@
 
     if-eqz v2, :cond_0
 
+    .line 857
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -910,7 +915,7 @@
 .end method
 
 .method public final getPinnedChats(Z)Ljava/util/Map;
-    .locals 10
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
@@ -948,7 +953,7 @@
 
     const/16 v1, 0xa
 
-    .line 1177
+    .line 1179
     invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v1
@@ -963,12 +968,12 @@
 
     move-result v1
 
-    .line 1178
+    .line 1180
     new-instance v2, Ljava/util/LinkedHashMap;
 
     invoke-direct {v2, v1}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 1251
+    .line 1253
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -978,13 +983,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1252
+    .line 1254
     check-cast v1, Lorg/telegram/messenger/MessagesController$DialogFilter;
 
     .line 229
@@ -1006,49 +1011,41 @@
 
     move-result v6
 
-    if-lez v6, :cond_2
-
     :goto_2
-    add-int/lit8 v7, v5, 0x1
+    if-ge v5, v6, :cond_1
 
     .line 232
-    iget-object v8, v1, Lorg/telegram/messenger/MessagesController$DialogFilter;->pinnedDialogs:Lorg/telegram/messenger/support/LongSparseIntArray;
+    iget-object v7, v1, Lorg/telegram/messenger/MessagesController$DialogFilter;->pinnedDialogs:Lorg/telegram/messenger/support/LongSparseIntArray;
 
-    invoke-virtual {v8, v5}, Lorg/telegram/messenger/support/LongSparseIntArray;->keyAt(I)J
+    invoke-virtual {v7, v5}, Lorg/telegram/messenger/support/LongSparseIntArray;->keyAt(I)J
 
-    move-result-wide v8
+    move-result-wide v7
 
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-interface {v3, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 233
-    iget-object v8, v1, Lorg/telegram/messenger/MessagesController$DialogFilter;->pinnedDialogs:Lorg/telegram/messenger/support/LongSparseIntArray;
+    iget-object v7, v1, Lorg/telegram/messenger/MessagesController$DialogFilter;->pinnedDialogs:Lorg/telegram/messenger/support/LongSparseIntArray;
 
-    invoke-virtual {v8, v5}, Lorg/telegram/messenger/support/LongSparseIntArray;->valueAt(I)I
+    invoke-virtual {v7, v5}, Lorg/telegram/messenger/support/LongSparseIntArray;->valueAt(I)I
 
-    move-result v5
+    move-result v7
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    if-lt v7, v6, :cond_1
-
-    goto :goto_3
-
-    :cond_1
-    move v5, v7
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_2
 
     .line 235
-    :cond_2
-    :goto_3
+    :cond_1
     sget-object v5, Lorg/fork/enums/SortingFilter;->Companion:Lorg/fork/enums/SortingFilter$Companion;
 
     iget v1, v1, Lorg/telegram/messenger/MessagesController$DialogFilter;->id:I
@@ -1069,6 +1066,7 @@
 
     move-result-object v1
 
+    .line 1254
     invoke-virtual {v1}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
 
     move-result-object v3
@@ -1082,7 +1080,7 @@
     goto :goto_1
 
     .line 236
-    :cond_3
+    :cond_2
     invoke-static {v2}, Lkotlin/collections/MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object p1
@@ -1330,7 +1328,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/FiltersController;->setHideFoldersEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/FiltersController;->isHideFoldersEnabled:Z
 
     .line 50
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isFoldersFirstEnabled()Ljava/lang/String;
@@ -1345,7 +1343,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/FiltersController;->setFoldersFirstEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/FiltersController;->isFoldersFirstEnabled:Z
 
     .line 51
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isAllChatsTabEnabled()Ljava/lang/String;
@@ -1360,7 +1358,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/FiltersController;->setAllChatsTabEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/FiltersController;->isAllChatsTabEnabled:Z
 
     .line 52
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isIconInsteadAllChatsTabTitleEnabled()Ljava/lang/String;
@@ -1375,7 +1373,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/FiltersController;->setIconInsteadAllChatsTabTitleEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/FiltersController;->isIconInsteadAllChatsTabTitleEnabled:Z
 
     .line 53
     sget-object v0, Lcom/smedialink/storage/domain/model/filters/FilterFab;->Companion:Lcom/smedialink/storage/domain/model/filters/FilterFab$Companion;
@@ -1425,7 +1423,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/FiltersController;->setSelectedAllChatsTabFabs(Ljava/util/Set;)V
+    iput-object v0, p0, Lorg/fork/controller/FiltersController;->selectedAllChatsTabFabs:Ljava/util/Set;
 
     .line 59
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isSortingChatsEnabled()Ljava/lang/String;
@@ -1500,7 +1498,7 @@
 
     move-result-object v1
 
-    .line 1547
+    .line 1549
     new-instance v2, Ljava/util/ArrayList;
 
     const/16 v3, 0xa
@@ -1511,7 +1509,7 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -1527,7 +1525,7 @@
 
     move-result-object v3
 
-    .line 1619
+    .line 1621
     check-cast v3, Lcom/smedialink/storage/data/locale/db/model/filter/FilterSettingsDb;
 
     .line 204
@@ -1547,10 +1545,12 @@
 
     move-result-object v3
 
+    .line 1621
     invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 204
     :cond_0
     invoke-static {v0, v2}, Lkotlin/collections/MapsKt;->putAll(Ljava/util/Map;Ljava/lang/Iterable;)V
 
@@ -1721,12 +1721,12 @@
 
     move-result-object p1
 
-    .line 764
+    .line 766
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -1774,6 +1774,7 @@
     :goto_1
     if-eqz v5, :cond_2
 
+    .line 857
     invoke-interface {v3, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -1871,12 +1872,12 @@
     .line 123
     invoke-interface {v4}, Ljava/util/List;->clear()V
 
-    .line 1601
+    .line 1603
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1849
+    .line 1855
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1893,7 +1894,7 @@
 
     move-result-object v6
 
-    .line 1609
+    .line 1611
     check-cast v6, Lorg/fork/models/backup/SortingTabStateBackup;
 
     .line 124
@@ -1903,7 +1904,7 @@
 
     if-eqz v6, :cond_4
 
-    .line 1609
+    .line 1611
     invoke-interface {v5, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
@@ -1912,7 +1913,7 @@
     :cond_5
     invoke-interface {v4, v5}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 1000
+    .line 1002
     invoke-interface {v4}, Ljava/util/List;->size()I
 
     move-result v2
@@ -1921,9 +1922,9 @@
 
     if-le v2, v5, :cond_6
 
-    new-instance v2, Lorg/fork/controller/FiltersController$restoreSortingBackup$lambda-5$$inlined$sortBy$1;
+    new-instance v2, Lorg/fork/controller/FiltersController$restoreSortingBackup$lambda$5$$inlined$sortBy$1;
 
-    invoke-direct {v2}, Lorg/fork/controller/FiltersController$restoreSortingBackup$lambda-5$$inlined$sortBy$1;-><init>()V
+    invoke-direct {v2}, Lorg/fork/controller/FiltersController$restoreSortingBackup$lambda$5$$inlined$sortBy$1;-><init>()V
 
     invoke-static {v4, v2}, Lkotlin/collections/CollectionsKt;->sortWith(Ljava/util/List;Ljava/util/Comparator;)V
 
@@ -1969,7 +1970,7 @@
     .line 132
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1849
+    .line 1855
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v16
@@ -2018,7 +2019,7 @@
 
     if-nez v4, :cond_a
 
-    goto :goto_6
+    goto :goto_8
 
     .line 137
     :cond_a
@@ -2030,7 +2031,7 @@
 
     const/4 v6, 0x0
 
-    .line 1859
+    .line 1865
     invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
@@ -2123,6 +2124,7 @@
 
     invoke-static/range {v3 .. v15}, Lorg/telegram/ui/FilterCreateActivity;->saveFilterToServer(Lorg/telegram/messenger/MessagesController$DialogFilter;ILjava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Lorg/telegram/messenger/support/LongSparseIntArray;ZZZZZLorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Runnable;)V
 
+    :goto_8
     move-object/from16 v15, p3
 
     goto/16 :goto_6
@@ -2152,9 +2154,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/FiltersController;->isHideFoldersEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/FiltersController;->isHideFoldersEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -2163,9 +2163,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/FiltersController;->isFoldersFirstEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/FiltersController;->isFoldersFirstEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -2174,9 +2172,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/FiltersController;->isAllChatsTabEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/FiltersController;->isAllChatsTabEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -2185,9 +2181,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/FiltersController;->isIconInsteadAllChatsTabTitleEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/FiltersController;->isIconInsteadAllChatsTabTitleEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -2198,9 +2192,7 @@
 
     sget-object v2, Lcom/smedialink/storage/domain/model/filters/FilterFab;->Companion:Lcom/smedialink/storage/domain/model/filters/FilterFab$Companion;
 
-    invoke-virtual {p0}, Lorg/fork/controller/FiltersController;->getSelectedAllChatsTabFabs()Ljava/util/Set;
-
-    move-result-object v3
+    iget-object v3, p0, Lorg/fork/controller/FiltersController;->selectedAllChatsTabFabs:Ljava/util/Set;
 
     invoke-virtual {v2, v3}, Lcom/smedialink/storage/domain/model/filters/FilterFab$Companion;->mapEnumsToNames(Ljava/util/Set;)Ljava/util/Set;
 

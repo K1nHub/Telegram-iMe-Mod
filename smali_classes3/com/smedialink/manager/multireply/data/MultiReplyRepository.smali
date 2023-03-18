@@ -12,10 +12,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$nI3dCOkVIcT0mhwdL1_50P_7sGw(Lcom/smedialink/manager/multireply/data/MultiReplyRepository;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$TL_exportedMessageLink;)Lcom/smedialink/manager/multireply/message/MessageLinkPattern;
+.method public static synthetic $r8$lambda$7Pu1O3N7Rgr3TmmPhR_BkB9gBx0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/manager/multireply/message/MessageLinkPattern;
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/manager/multireply/data/MultiReplyRepository;->getLinkPatternFromApi$lambda-0(Lcom/smedialink/manager/multireply/data/MultiReplyRepository;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$TL_exportedMessageLink;)Lcom/smedialink/manager/multireply/message/MessageLinkPattern;
+    invoke-static {p0, p1}, Lcom/smedialink/manager/multireply/data/MultiReplyRepository;->getLinkPatternFromApi$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/manager/multireply/message/MessageLinkPattern;
 
     move-result-object p0
 
@@ -52,6 +52,15 @@
     return-void
 .end method
 
+.method public static final synthetic access$getMessageLinkCache$p(Lcom/smedialink/manager/multireply/data/MultiReplyRepository;)Lcom/smedialink/manager/multireply/message/MessageLinkCache;
+    .locals 0
+
+    .line 12
+    iget-object p0, p0, Lcom/smedialink/manager/multireply/data/MultiReplyRepository;->messageLinkCache:Lcom/smedialink/manager/multireply/message/MessageLinkCache;
+
+    return-object p0
+.end method
+
 .method private final getLinkPatternFromApi(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$Chat;)Lio/reactivex/Observable;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -74,11 +83,15 @@
     move-result-object v0
 
     .line 29
-    new-instance v1, Lcom/smedialink/manager/multireply/data/MultiReplyRepository$$ExternalSyntheticLambda0;
+    new-instance v1, Lcom/smedialink/manager/multireply/data/MultiReplyRepository$getLinkPatternFromApi$1;
 
-    invoke-direct {v1, p0, p1, p2}, Lcom/smedialink/manager/multireply/data/MultiReplyRepository$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/manager/multireply/data/MultiReplyRepository;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$Chat;)V
+    invoke-direct {v1, p0, p1, p2}, Lcom/smedialink/manager/multireply/data/MultiReplyRepository$getLinkPatternFromApi$1;-><init>(Lcom/smedialink/manager/multireply/data/MultiReplyRepository;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/manager/multireply/data/MultiReplyRepository$$ExternalSyntheticLambda0;
+
+    invoke-direct {p1, v1}, Lcom/smedialink/manager/multireply/data/MultiReplyRepository$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -93,54 +106,27 @@
 
     move-result-object p1
 
-    const-string p2, "telegramApi.getMessageLi\u2026(schedulersProvider.io())"
+    const-string p2, "private fun getLinkPatte\u2026ulersProvider.io())\n    }"
 
+    .line 29
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 .end method
 
-.method private static final getLinkPatternFromApi$lambda-0(Lcom/smedialink/manager/multireply/data/MultiReplyRepository;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$TL_exportedMessageLink;)Lcom/smedialink/manager/multireply/message/MessageLinkPattern;
-    .locals 2
+.method private static final getLinkPatternFromApi$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/manager/multireply/message/MessageLinkPattern;
+    .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$message"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "$currentChat"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "it"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 30
-    iget-object p0, p0, Lcom/smedialink/manager/multireply/data/MultiReplyRepository;->messageLinkCache:Lcom/smedialink/manager/multireply/message/MessageLinkCache;
-
-    .line 31
-    iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$TL_exportedMessageLink;->link:Ljava/lang/String;
-
-    const-string v0, "it.link"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 32
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
-
-    move-result p1
-
-    .line 33
-    iget-wide v0, p2, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
-
-    .line 30
-    invoke-virtual {p0, p3, p1, v0, v1}, Lcom/smedialink/manager/multireply/message/MessageLinkCache;->writeLinkToCache(Ljava/lang/String;IJ)Lcom/smedialink/manager/multireply/message/MessageLinkPattern;
+    .line 29
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Lcom/smedialink/manager/multireply/message/MessageLinkPattern;
 
     return-object p0
 .end method

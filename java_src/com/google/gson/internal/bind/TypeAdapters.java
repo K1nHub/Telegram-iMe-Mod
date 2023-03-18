@@ -118,7 +118,7 @@ public final class TypeAdapters {
                 JsonToken peek = jsonReader.peek();
                 int i = 0;
                 while (peek != JsonToken.END_ARRAY) {
-                    int i2 = C117435.$SwitchMap$com$google$gson$stream$JsonToken[peek.ordinal()];
+                    int i2 = C116735.$SwitchMap$com$google$gson$stream$JsonToken[peek.ordinal()];
                     boolean z = true;
                     if (i2 == 1 || i2 == 2) {
                         int nextInt = jsonReader.nextInt();
@@ -732,7 +732,7 @@ public final class TypeAdapters {
         LOCALE_FACTORY = newFactory(Locale.class, typeAdapter14);
         TypeAdapter<JsonElement> typeAdapter15 = new TypeAdapter<JsonElement>() { // from class: com.google.gson.internal.bind.TypeAdapters.28
             private JsonElement tryBeginNesting(JsonReader jsonReader, JsonToken jsonToken) throws IOException {
-                int i = C117435.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
+                int i = C116735.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
                 if (i == 4) {
                     jsonReader.beginArray();
                     return new JsonArray();
@@ -745,7 +745,7 @@ public final class TypeAdapters {
             }
 
             private JsonElement readTerminal(JsonReader jsonReader, JsonToken jsonToken) throws IOException {
-                int i = C117435.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
+                int i = C116735.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
                 if (i != 1) {
                     if (i != 2) {
                         if (i != 3) {
@@ -858,7 +858,7 @@ public final class TypeAdapters {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.gson.internal.bind.TypeAdapters$35 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C117435 {
+    public static /* synthetic */ class C116735 {
         static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
 
         static {

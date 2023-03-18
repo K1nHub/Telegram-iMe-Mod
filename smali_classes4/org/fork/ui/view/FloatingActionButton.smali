@@ -112,9 +112,6 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/animation/StateListAnimator;->addState([ILandroid/animation/Animator;)V
 
-    .line 30
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 27
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setStateListAnimator(Landroid/animation/StateListAnimator;)V
 

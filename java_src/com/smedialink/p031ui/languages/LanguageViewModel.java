@@ -9,7 +9,7 @@ public final class LanguageViewModel {
     private boolean checked;
 
     /* renamed from: id */
-    private final String f369id;
+    private final String f373id;
     private final String name;
 
     public boolean equals(Object obj) {
@@ -18,14 +18,14 @@ public final class LanguageViewModel {
         }
         if (obj instanceof LanguageViewModel) {
             LanguageViewModel languageViewModel = (LanguageViewModel) obj;
-            return Intrinsics.areEqual(this.f369id, languageViewModel.f369id) && Intrinsics.areEqual(this.name, languageViewModel.name) && this.checked == languageViewModel.checked;
+            return Intrinsics.areEqual(this.f373id, languageViewModel.f373id) && Intrinsics.areEqual(this.name, languageViewModel.name) && this.checked == languageViewModel.checked;
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((this.f369id.hashCode() * 31) + this.name.hashCode()) * 31;
+        int hashCode = ((this.f373id.hashCode() * 31) + this.name.hashCode()) * 31;
         boolean z = this.checked;
         int i = z;
         if (z != 0) {
@@ -35,13 +35,13 @@ public final class LanguageViewModel {
     }
 
     public String toString() {
-        return "LanguageViewModel(id=" + this.f369id + ", name=" + this.name + ", checked=" + this.checked + ')';
+        return "LanguageViewModel(id=" + this.f373id + ", name=" + this.name + ", checked=" + this.checked + ')';
     }
 
     public LanguageViewModel(String id, String name, boolean z) {
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(name, "name");
-        this.f369id = id;
+        this.f373id = id;
         this.name = name;
         this.checked = z;
     }
@@ -51,7 +51,7 @@ public final class LanguageViewModel {
     }
 
     public final String getId() {
-        return this.f369id;
+        return this.f373id;
     }
 
     public final String getName() {

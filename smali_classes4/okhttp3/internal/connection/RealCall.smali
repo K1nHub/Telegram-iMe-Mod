@@ -599,7 +599,7 @@
 
     if-eqz v1, :cond_1
 
-    const-string v1, "web socket"
+    const-string/jumbo v1, "web socket"
 
     goto :goto_1
 

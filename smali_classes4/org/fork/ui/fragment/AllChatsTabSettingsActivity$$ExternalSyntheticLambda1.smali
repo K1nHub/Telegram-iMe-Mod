@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/AllChatsTabSettingsActivity$$ExternalSyntheticLambda1;->f$0:Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;
 
-    invoke-static {v0}, Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;->$r8$lambda$B_H8r3icdpo32xwl91kt0jhxvzM(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;)V
+    invoke-static {v0}, Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;->$r8$lambda$aD_0DSfs-lDK49LnhdooOCDETeE(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;)V
 
     return-void
 .end method

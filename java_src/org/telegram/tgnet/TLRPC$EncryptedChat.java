@@ -16,7 +16,7 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
     public boolean history_deleted;
 
     /* renamed from: id */
-    public int f1506id;
+    public int f1511id;
     public int in_seq_no;
     public int key_create_date;
     public long key_fingerprint;
@@ -41,13 +41,13 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1506id = abstractSerializedData2.readInt32(z2);
+                        this.f1511id = abstractSerializedData2.readInt32(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.f1506id);
+                        abstractSerializedData2.writeInt32(this.f1511id);
                     }
                 };
                 break;
@@ -57,7 +57,7 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1506id = abstractSerializedData2.readInt32(z2);
+                        this.f1511id = abstractSerializedData2.readInt32(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.admin_id = abstractSerializedData2.readInt32(z2);
@@ -68,7 +68,7 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.f1506id);
+                        abstractSerializedData2.writeInt32(this.f1511id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt32((int) this.admin_id);
@@ -83,7 +83,7 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChat, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1506id = abstractSerializedData2.readInt32(z2);
+                        this.f1511id = abstractSerializedData2.readInt32(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.admin_id = abstractSerializedData2.readInt32(z2);
@@ -95,7 +95,7 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChat, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.f1506id);
+                        abstractSerializedData2.writeInt32(this.f1511id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt32((int) this.admin_id);
@@ -111,7 +111,7 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChatRequested, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1506id = abstractSerializedData2.readInt32(z2);
+                        this.f1511id = abstractSerializedData2.readInt32(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.admin_id = abstractSerializedData2.readInt32(z2);
@@ -123,7 +123,7 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChatRequested, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.f1506id);
+                        abstractSerializedData2.writeInt32(this.f1511id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt32((int) this.admin_id);
@@ -139,13 +139,13 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChatDiscarded, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1506id = abstractSerializedData2.readInt32(z2);
+                        this.f1511id = abstractSerializedData2.readInt32(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChatDiscarded, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.f1506id);
+                        abstractSerializedData2.writeInt32(this.f1511id);
                     }
                 };
                 break;
@@ -158,7 +158,7 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChatWaiting, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1506id = abstractSerializedData2.readInt32(z2);
+                        this.f1511id = abstractSerializedData2.readInt32(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.admin_id = abstractSerializedData2.readInt32(z2);
@@ -168,7 +168,7 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChatWaiting, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.f1506id);
+                        abstractSerializedData2.writeInt32(this.f1511id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt32((int) this.admin_id);
@@ -193,7 +193,7 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
                         if ((readInt32 & 1) != 0) {
                             this.folder_id = abstractSerializedData2.readInt32(z2);
                         }
-                        this.f1506id = abstractSerializedData2.readInt32(z2);
+                        this.f1511id = abstractSerializedData2.readInt32(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.admin_id = abstractSerializedData2.readInt32(z2);
@@ -208,7 +208,7 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.folder_id);
                         }
-                        abstractSerializedData2.writeInt32(this.f1506id);
+                        abstractSerializedData2.writeInt32(this.f1511id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt32((int) this.admin_id);
@@ -223,7 +223,7 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChat, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1506id = abstractSerializedData2.readInt32(z2);
+                        this.f1511id = abstractSerializedData2.readInt32(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.admin_id = abstractSerializedData2.readInt32(z2);
@@ -236,7 +236,7 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChat, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.f1506id);
+                        abstractSerializedData2.writeInt32(this.f1511id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt32((int) this.admin_id);

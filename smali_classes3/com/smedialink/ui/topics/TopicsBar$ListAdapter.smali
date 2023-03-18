@@ -20,16 +20,12 @@
 
 # direct methods
 .method public constructor <init>(Lcom/smedialink/ui/topics/TopicsBar;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 229
     iput-object p1, p0, Lcom/smedialink/ui/topics/TopicsBar$ListAdapter;->this$0:Lcom/smedialink/ui/topics/TopicsBar;
@@ -88,11 +84,8 @@
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getTopicId()J
 
     move-result-wide v1
@@ -101,12 +94,11 @@
 
     cmp-long p1, v1, v3
 
-    if-nez p1, :cond_1
+    if-nez p1, :cond_0
 
     const/4 v0, 0x1
 
-    :cond_1
-    :goto_0
+    :cond_0
     return v0
 .end method
 
@@ -119,6 +111,10 @@
 
     .line 268
     iget-object p2, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    const-string v0, "null cannot be cast to non-null type com.smedialink.ui.topics.TopicView"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p2, Lcom/smedialink/ui/topics/TopicView;
 
@@ -221,9 +217,6 @@
     move-result-object p1
 
     invoke-virtual {p2, p1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 264
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 251
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;

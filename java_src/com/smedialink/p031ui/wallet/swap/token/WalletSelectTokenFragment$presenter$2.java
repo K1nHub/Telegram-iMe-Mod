@@ -29,11 +29,11 @@ public final class WalletSelectTokenFragment$presenter$2 extends Lambda implemen
     /* compiled from: WalletSelectTokenFragment.kt */
     /* renamed from: com.smedialink.ui.wallet.swap.token.WalletSelectTokenFragment$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C21751 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C22991 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WalletSelectTokenFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C21751(WalletSelectTokenFragment walletSelectTokenFragment) {
+        C22991(WalletSelectTokenFragment walletSelectTokenFragment) {
             super(0);
             this.this$0 = walletSelectTokenFragment;
         }
@@ -59,7 +59,7 @@ public final class WalletSelectTokenFragment$presenter$2 extends Lambda implemen
     public final WalletSelectTokenPresenter invoke() {
         Lazy lazy;
         WalletSelectTokenFragment walletSelectTokenFragment = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2174x3527022a(walletSelectTokenFragment, null, new C21751(walletSelectTokenFragment)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2298x3527022a(walletSelectTokenFragment, null, new C22991(walletSelectTokenFragment)));
         return (WalletSelectTokenPresenter) lazy.getValue();
     }
 }

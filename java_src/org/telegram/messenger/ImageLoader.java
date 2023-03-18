@@ -320,7 +320,7 @@ public class ImageLoader {
                     try {
                         ByteArrayOutputStream byteArrayOutputStream2 = new ByteArrayOutputStream();
                         try {
-                            byte[] bArr = new byte[32768];
+                            byte[] bArr = new byte[LiteMode.FLAG_CHAT_SCALE];
                             while (!isCancelled() && (read = inputStream2.read(bArr)) > 0) {
                                 byteArrayOutputStream2.write(bArr, 0, read);
                             }
@@ -761,7 +761,7 @@ public class ImageLoader {
                     removeTask();
                     return;
                 }
-                final String str = "q_" + this.info.parentDocument.dc_id + "_" + this.info.parentDocument.f1502id;
+                final String str = "q_" + this.info.parentDocument.dc_id + "_" + this.info.parentDocument.f1507id;
                 File file = new File(FileLoader.getDirectory(4), str + ".jpg");
                 if (!file.exists() && this.originalPath.exists()) {
                     if (this.info.big) {
@@ -899,81 +899,97 @@ public class ImageLoader {
             this.cacheImage = cacheImage;
         }
 
-        /* JADX WARN: Can't wrap try/catch for region: R(10:932|(2:934|(8:936|937|938|(1:940)(1:947)|941|(1:943)|944|945))|950|937|938|(0)(0)|941|(0)|944|945) */
+        /* JADX WARN: Can't wrap try/catch for region: R(10:963|(2:965|(8:967|968|969|(1:971)(1:978)|972|(1:974)|975|976))|981|968|969|(0)(0)|972|(0)|975|976) */
         /* JADX WARN: Can't wrap try/catch for region: R(14:71|(6:72|73|74|75|(1:77)(1:117)|78)|(3:80|81|(7:83|84|85|(1:111)(1:88)|(2:97|(1:110)(4:100|(1:104)|105|(1:109)))(1:92)|(1:94)(1:96)|95))|116|84|85|(0)|111|(0)|97|(0)|110|(0)(0)|95) */
-        /* JADX WARN: Can't wrap try/catch for region: R(21:302|(28:888|889|890|891|(1:893)(1:906)|894|(2:896|(21:898|899|900|305|(19:307|(3:309|(1:311)(1:876)|312)(2:877|(16:879|(1:881)(1:883)|882|314|315|(1:317)|318|319|320|(15:322|(7:324|325|326|327|328|329|330)(1:843)|331|332|(1:334)(2:824|(1:826)(2:827|(1:829)(1:830)))|335|336|337|338|339|340|341|(1:343)|(1:814)(11:349|350|351|352|(2:773|(12:780|781|(1:802)(1:785)|(1:787)|788|789|790|791|(3:796|797|(1:799))|800|797|(0))(3:775|(1:777)(1:779)|778))(2:(7:756|757|758|759|760|761|762)(1:356)|357)|358|(1:755)(1:362)|363|(1:365)|366|(1:754)(4:372|(1:373)|375|376))|377)(3:845|(11:847|848|849|(1:851)(1:870)|852|853|854|(1:856)|857|(4:859|(1:860)|862|863)(1:866)|864)(1:873)|865)|378|379|(3:624|625|856)(7:381|(1:383)|(3:613|614|(5:616|(2:618|(1:620))(1:621)|386|387|ab0))|385|386|387|ab0)|435|(3:438|(1:440)(1:442)|441)|(3:(1:450)|451|452)(3:(1:446)|447|448))(2:884|(1:886)))|313|314|315|(0)|318|319|320|(0)(0)|378|379|(0)(0)|435|(3:438|(0)(0)|441)|(0)|(0)|451|452)|887|315|(0)|318|319|320|(0)(0)|378|379|(0)(0)|435|(0)|(0)|(0)|451|452))|905|899|900|305|(0)|887|315|(0)|318|319|320|(0)(0)|378|379|(0)(0)|435|(0)|(0)|(0)|451|452)|304|305|(0)|887|315|(0)|318|319|320|(0)(0)|378|379|(0)(0)|435|(0)|(0)|(0)|451|452) */
-        /* JADX WARN: Can't wrap try/catch for region: R(23:(6:888|889|890|891|(1:893)(1:906)|894)|(2:896|(21:898|899|900|305|(19:307|(3:309|(1:311)(1:876)|312)(2:877|(16:879|(1:881)(1:883)|882|314|315|(1:317)|318|319|320|(15:322|(7:324|325|326|327|328|329|330)(1:843)|331|332|(1:334)(2:824|(1:826)(2:827|(1:829)(1:830)))|335|336|337|338|339|340|341|(1:343)|(1:814)(11:349|350|351|352|(2:773|(12:780|781|(1:802)(1:785)|(1:787)|788|789|790|791|(3:796|797|(1:799))|800|797|(0))(3:775|(1:777)(1:779)|778))(2:(7:756|757|758|759|760|761|762)(1:356)|357)|358|(1:755)(1:362)|363|(1:365)|366|(1:754)(4:372|(1:373)|375|376))|377)(3:845|(11:847|848|849|(1:851)(1:870)|852|853|854|(1:856)|857|(4:859|(1:860)|862|863)(1:866)|864)(1:873)|865)|378|379|(3:624|625|856)(7:381|(1:383)|(3:613|614|(5:616|(2:618|(1:620))(1:621)|386|387|ab0))|385|386|387|ab0)|435|(3:438|(1:440)(1:442)|441)|(3:(1:450)|451|452)(3:(1:446)|447|448))(2:884|(1:886)))|313|314|315|(0)|318|319|320|(0)(0)|378|379|(0)(0)|435|(3:438|(0)(0)|441)|(0)|(0)|451|452)|887|315|(0)|318|319|320|(0)(0)|378|379|(0)(0)|435|(0)|(0)|(0)|451|452))|905|899|900|305|(0)|887|315|(0)|318|319|320|(0)(0)|378|379|(0)(0)|435|(0)|(0)|(0)|451|452) */
-        /* JADX WARN: Can't wrap try/catch for region: R(7:381|(1:383)|(3:613|614|(5:616|(2:618|(1:620))(1:621)|386|387|ab0))|385|386|387|ab0) */
-        /* JADX WARN: Code restructure failed: missing block: B:116:0x0206, code lost:
+        /* JADX WARN: Can't wrap try/catch for region: R(21:302|(28:919|920|921|922|(1:924)(1:937)|925|(2:927|(21:929|930|931|305|(19:307|(3:309|(1:311)(1:907)|312)(2:908|(16:910|(1:912)(1:914)|913|314|315|(1:317)|318|319|320|(15:322|(7:324|325|326|327|328|329|330)(1:874)|331|332|(1:334)(2:855|(1:857)(2:858|(1:860)(1:861)))|335|336|337|338|339|340|341|(1:343)|(1:845)(11:349|350|351|352|(2:804|(12:811|812|(1:833)(1:816)|(1:818)|819|820|821|822|(3:827|828|(1:830))|831|828|(0))(3:806|(1:808)(1:810)|809))(2:(7:787|788|789|790|791|792|793)(1:356)|357)|358|(1:786)(1:362)|363|(1:365)|366|(1:785)(4:372|(1:373)|375|376))|377)(3:876|(11:878|879|880|(1:882)(1:901)|883|884|885|(1:887)|888|(4:890|(1:891)|893|894)(1:897)|895)(1:904)|896)|378|379|(3:661|662|854)(7:381|(1:383)|(3:645|646|(6:648|649|(3:652|653|(1:655))(1:651)|386|387|aab))|385|386|387|aab)|424|(3:427|(1:429)(1:431)|430)|(3:(1:439)|440|441)(3:(1:435)|436|437))(2:915|(1:917)))|313|314|315|(0)|318|319|320|(0)(0)|378|379|(0)(0)|424|(3:427|(0)(0)|430)|(0)|(0)|440|441)|918|315|(0)|318|319|320|(0)(0)|378|379|(0)(0)|424|(0)|(0)|(0)|440|441))|936|930|931|305|(0)|918|315|(0)|318|319|320|(0)(0)|378|379|(0)(0)|424|(0)|(0)|(0)|440|441)|304|305|(0)|918|315|(0)|318|319|320|(0)(0)|378|379|(0)(0)|424|(0)|(0)|(0)|440|441) */
+        /* JADX WARN: Can't wrap try/catch for region: R(23:(6:919|920|921|922|(1:924)(1:937)|925)|(2:927|(21:929|930|931|305|(19:307|(3:309|(1:311)(1:907)|312)(2:908|(16:910|(1:912)(1:914)|913|314|315|(1:317)|318|319|320|(15:322|(7:324|325|326|327|328|329|330)(1:874)|331|332|(1:334)(2:855|(1:857)(2:858|(1:860)(1:861)))|335|336|337|338|339|340|341|(1:343)|(1:845)(11:349|350|351|352|(2:804|(12:811|812|(1:833)(1:816)|(1:818)|819|820|821|822|(3:827|828|(1:830))|831|828|(0))(3:806|(1:808)(1:810)|809))(2:(7:787|788|789|790|791|792|793)(1:356)|357)|358|(1:786)(1:362)|363|(1:365)|366|(1:785)(4:372|(1:373)|375|376))|377)(3:876|(11:878|879|880|(1:882)(1:901)|883|884|885|(1:887)|888|(4:890|(1:891)|893|894)(1:897)|895)(1:904)|896)|378|379|(3:661|662|854)(7:381|(1:383)|(3:645|646|(6:648|649|(3:652|653|(1:655))(1:651)|386|387|aab))|385|386|387|aab)|424|(3:427|(1:429)(1:431)|430)|(3:(1:439)|440|441)(3:(1:435)|436|437))(2:915|(1:917)))|313|314|315|(0)|318|319|320|(0)(0)|378|379|(0)(0)|424|(3:427|(0)(0)|430)|(0)|(0)|440|441)|918|315|(0)|318|319|320|(0)(0)|378|379|(0)(0)|424|(0)|(0)|(0)|440|441))|936|930|931|305|(0)|918|315|(0)|318|319|320|(0)(0)|378|379|(0)(0)|424|(0)|(0)|(0)|440|441) */
+        /* JADX WARN: Can't wrap try/catch for region: R(7:381|(1:383)|(3:645|646|(6:648|649|(3:652|653|(1:655))(1:651)|386|387|aab))|385|386|387|aab) */
+        /* JADX WARN: Code restructure failed: missing block: B:116:0x0207, code lost:
             r0 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:117:0x0207, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:117:0x0208, code lost:
             org.telegram.messenger.FileLog.m45e(r0);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:319:0x051c, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:319:0x051e, code lost:
             r0 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:320:0x051d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:320:0x051f, code lost:
             org.telegram.messenger.FileLog.m45e(r0);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:518:0x0823, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:518:0x0827, code lost:
             r0 = th;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:519:0x0824, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:519:0x0828, code lost:
             r25 = r14;
             r36 = r15;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:869:0x0d4f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:801:0x0cf2, code lost:
+            if (r41.cacheImage.encryptionKeyPath != null) goto L578;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:893:0x0e25, code lost:
             r0 = th;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:905:0x0de2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:929:0x0eb8, code lost:
             r0 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:906:0x0de3, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:930:0x0eb9, code lost:
             org.telegram.messenger.FileLog.m45e(r0);
             r2 = null;
          */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Removed duplicated region for block: B:133:0x0227 A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:138:0x022f A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:144:0x023d A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:157:0x0266  */
-        /* JADX WARN: Removed duplicated region for block: B:158:0x0284  */
-        /* JADX WARN: Removed duplicated region for block: B:193:0x0306  */
-        /* JADX WARN: Removed duplicated region for block: B:204:0x032c  */
-        /* JADX WARN: Removed duplicated region for block: B:268:0x0435  */
-        /* JADX WARN: Removed duplicated region for block: B:269:0x0438  */
-        /* JADX WARN: Removed duplicated region for block: B:280:0x047c  */
-        /* JADX WARN: Removed duplicated region for block: B:284:0x0499  */
-        /* JADX WARN: Removed duplicated region for block: B:344:0x0553  */
-        /* JADX WARN: Removed duplicated region for block: B:366:0x05bd  */
-        /* JADX WARN: Removed duplicated region for block: B:370:0x05cf A[Catch: all -> 0x0823, TRY_LEAVE, TryCatch #1 {all -> 0x0823, blocks: (B:368:0x05c9, B:370:0x05cf), top: B:917:0x05c9 }] */
-        /* JADX WARN: Removed duplicated region for block: B:444:0x06f5 A[Catch: all -> 0x076b, TryCatch #23 {all -> 0x076b, blocks: (B:454:0x0722, B:458:0x0730, B:463:0x074a, B:470:0x075a, B:472:0x0764, B:473:0x0767, B:459:0x0739, B:435:0x06dd, B:437:0x06e3, B:442:0x06ed, B:444:0x06f5, B:451:0x070c, B:453:0x071b, B:452:0x0716), top: B:950:0x0656 }] */
-        /* JADX WARN: Removed duplicated region for block: B:492:0x07a9  */
-        /* JADX WARN: Removed duplicated region for block: B:661:0x0a65  */
-        /* JADX WARN: Removed duplicated region for block: B:710:0x0b31  */
+        /* JADX WARN: Removed duplicated region for block: B:1004:0x02b8 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:1015:0x0aac A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:133:0x0228 A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:138:0x0230 A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:144:0x023e A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:157:0x0267  */
+        /* JADX WARN: Removed duplicated region for block: B:158:0x0285  */
+        /* JADX WARN: Removed duplicated region for block: B:193:0x0307  */
+        /* JADX WARN: Removed duplicated region for block: B:204:0x032d  */
+        /* JADX WARN: Removed duplicated region for block: B:268:0x0436  */
+        /* JADX WARN: Removed duplicated region for block: B:269:0x0439  */
+        /* JADX WARN: Removed duplicated region for block: B:280:0x047d  */
+        /* JADX WARN: Removed duplicated region for block: B:284:0x049a  */
+        /* JADX WARN: Removed duplicated region for block: B:344:0x0555  */
+        /* JADX WARN: Removed duplicated region for block: B:366:0x05c0  */
+        /* JADX WARN: Removed duplicated region for block: B:370:0x05d2 A[Catch: all -> 0x0827, TRY_LEAVE, TryCatch #5 {all -> 0x0827, blocks: (B:368:0x05cc, B:370:0x05d2), top: B:947:0x05cc }] */
+        /* JADX WARN: Removed duplicated region for block: B:444:0x06f8 A[Catch: all -> 0x076e, TryCatch #22 {all -> 0x076e, blocks: (B:454:0x0725, B:458:0x0733, B:463:0x074d, B:470:0x075d, B:472:0x0767, B:473:0x076a, B:459:0x073c, B:435:0x06e0, B:437:0x06e6, B:442:0x06f0, B:444:0x06f8, B:451:0x070f, B:453:0x071e, B:452:0x0719), top: B:970:0x0659 }] */
+        /* JADX WARN: Removed duplicated region for block: B:492:0x07ac  */
+        /* JADX WARN: Removed duplicated region for block: B:652:0x0a5b  */
         /* JADX WARN: Removed duplicated region for block: B:77:0x0155  */
-        /* JADX WARN: Removed duplicated region for block: B:783:0x0c42  */
-        /* JADX WARN: Removed duplicated region for block: B:790:0x0c5a A[Catch: all -> 0x0d45, TryCatch #10 {all -> 0x0d45, blocks: (B:784:0x0c44, B:786:0x0c4e, B:788:0x0c54, B:790:0x0c5a, B:792:0x0c60, B:798:0x0c76, B:804:0x0c84, B:806:0x0c8a, B:812:0x0ca9, B:807:0x0c94, B:809:0x0c9a, B:815:0x0cb1, B:817:0x0cbf, B:819:0x0cca, B:823:0x0cd1, B:778:0x0c32), top: B:932:0x0c32 }] */
-        /* JADX WARN: Removed duplicated region for block: B:812:0x0ca9 A[Catch: all -> 0x0d45, TryCatch #10 {all -> 0x0d45, blocks: (B:784:0x0c44, B:786:0x0c4e, B:788:0x0c54, B:790:0x0c5a, B:792:0x0c60, B:798:0x0c76, B:804:0x0c84, B:806:0x0c8a, B:812:0x0ca9, B:807:0x0c94, B:809:0x0c9a, B:815:0x0cb1, B:817:0x0cbf, B:819:0x0cca, B:823:0x0cd1, B:778:0x0c32), top: B:932:0x0c32 }] */
-        /* JADX WARN: Removed duplicated region for block: B:878:0x0d64 A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:881:0x0d72  */
-        /* JADX WARN: Removed duplicated region for block: B:882:0x0d74  */
-        /* JADX WARN: Removed duplicated region for block: B:885:0x0d89 A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:891:0x0d99  */
-        /* JADX WARN: Removed duplicated region for block: B:901:0x0dda  */
-        /* JADX WARN: Removed duplicated region for block: B:902:0x0ddc  */
-        /* JADX WARN: Removed duplicated region for block: B:908:0x0de9  */
-        /* JADX WARN: Removed duplicated region for block: B:934:0x0ab1 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:943:0x084b A[EXC_TOP_SPLITTER, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:986:0x02b7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:807:0x0d13  */
+        /* JADX WARN: Removed duplicated region for block: B:814:0x0d2b A[Catch: all -> 0x0e1b, TryCatch #46 {all -> 0x0e1b, blocks: (B:798:0x0ce5, B:800:0x0cee, B:808:0x0d15, B:810:0x0d1f, B:812:0x0d25, B:814:0x0d2b, B:816:0x0d31, B:822:0x0d47, B:828:0x0d55, B:830:0x0d5b, B:836:0x0d7b, B:831:0x0d66, B:833:0x0d6c, B:839:0x0d83, B:841:0x0d91, B:843:0x0d9c, B:847:0x0da3, B:802:0x0cf4), top: B:1012:0x0ce5 }] */
+        /* JADX WARN: Removed duplicated region for block: B:836:0x0d7b A[Catch: all -> 0x0e1b, TryCatch #46 {all -> 0x0e1b, blocks: (B:798:0x0ce5, B:800:0x0cee, B:808:0x0d15, B:810:0x0d1f, B:812:0x0d25, B:814:0x0d2b, B:816:0x0d31, B:822:0x0d47, B:828:0x0d55, B:830:0x0d5b, B:836:0x0d7b, B:831:0x0d66, B:833:0x0d6c, B:839:0x0d83, B:841:0x0d91, B:843:0x0d9c, B:847:0x0da3, B:802:0x0cf4), top: B:1012:0x0ce5 }] */
+        /* JADX WARN: Removed duplicated region for block: B:902:0x0e3a A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:905:0x0e48  */
+        /* JADX WARN: Removed duplicated region for block: B:906:0x0e4a  */
+        /* JADX WARN: Removed duplicated region for block: B:909:0x0e5f A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:915:0x0e6f  */
+        /* JADX WARN: Removed duplicated region for block: B:925:0x0eb0  */
+        /* JADX WARN: Removed duplicated region for block: B:926:0x0eb2  */
+        /* JADX WARN: Removed duplicated region for block: B:932:0x0ebf  */
+        /* JADX WARN: Removed duplicated region for block: B:963:0x0849 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:999:0x0b31 A[EXC_TOP_SPLITTER, SYNTHETIC] */
         /* JADX WARN: Type inference failed for: r1v36 */
         /* JADX WARN: Type inference failed for: r1v67 */
         /* JADX WARN: Type inference failed for: r1v68 */
-        /* JADX WARN: Type inference failed for: r42v0, types: [org.telegram.messenger.ImageLoader$CacheOutTask] */
-        /* JADX WARN: Type inference failed for: r8v7 */
-        /* JADX WARN: Type inference failed for: r8v8 */
-        /* JADX WARN: Type inference failed for: r8v9 */
+        /* JADX WARN: Type inference failed for: r41v0, types: [org.telegram.messenger.ImageLoader$CacheOutTask] */
+        /* JADX WARN: Type inference failed for: r4v112 */
+        /* JADX WARN: Type inference failed for: r4v113 */
+        /* JADX WARN: Type inference failed for: r4v115 */
+        /* JADX WARN: Type inference failed for: r4v30 */
+        /* JADX WARN: Type inference failed for: r4v31 */
+        /* JADX WARN: Type inference failed for: r4v32 */
+        /* JADX WARN: Type inference failed for: r4v33 */
+        /* JADX WARN: Type inference failed for: r4v34 */
+        /* JADX WARN: Type inference failed for: r4v55 */
+        /* JADX WARN: Type inference failed for: r4v56 */
+        /* JADX WARN: Type inference failed for: r4v62, types: [android.graphics.Rect] */
+        /* JADX WARN: Type inference failed for: r4v63 */
+        /* JADX WARN: Type inference failed for: r4v67 */
+        /* JADX WARN: Type inference failed for: r4v72 */
+        /* JADX WARN: Type inference failed for: r4v74 */
+        /* JADX WARN: Type inference failed for: r4v75 */
         @Override // java.lang.Runnable
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -981,7 +997,7 @@ public class ImageLoader {
         */
         public void run() {
             /*
-                Method dump skipped, instructions count: 3573
+                Method dump skipped, instructions count: 3787
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.ImageLoader.CacheOutTask.run():void");
@@ -1534,10 +1550,10 @@ public class ImageLoader {
         AndroidUtilities.createEmptyFile(new File(cacheDir, ".nomedia"));
         sparseArray.put(4, cacheDir);
         for (int i = 0; i < 5; i++) {
-            FileLoader.getInstance(i).setDelegate(new C31185(i));
+            FileLoader.getInstance(i).setDelegate(new C32455(i));
         }
         FileLoader.setMediaDirs(sparseArray);
-        C31196 c31196 = new C31196();
+        C32466 c32466 = new C32466();
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("android.intent.action.MEDIA_BAD_REMOVAL");
         intentFilter.addAction("android.intent.action.MEDIA_CHECKING");
@@ -1550,7 +1566,7 @@ public class ImageLoader {
         intentFilter.addAction("android.intent.action.MEDIA_UNMOUNTED");
         intentFilter.addDataScheme("file");
         try {
-            ApplicationLoader.applicationContext.registerReceiver(c31196, intentFilter);
+            ApplicationLoader.applicationContext.registerReceiver(c32466, intentFilter);
         } catch (Throwable unused) {
         }
         checkMediaPaths();
@@ -1559,10 +1575,10 @@ public class ImageLoader {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.ImageLoader$5 */
     /* loaded from: classes4.dex */
-    public class C31185 implements FileLoader.FileLoaderDelegate {
+    public class C32455 implements FileLoader.FileLoaderDelegate {
         final /* synthetic */ int val$currentAccount;
 
-        C31185(int i) {
+        C32455(int i) {
             this.val$currentAccount = i;
         }
 
@@ -1577,7 +1593,7 @@ public class ImageLoader {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ImageLoader$5$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ImageLoader.C31185.lambda$fileUploadProgressChanged$0(i, str, j, j2, z);
+                        ImageLoader.C32455.lambda$fileUploadProgressChanged$0(i, str, j, j2, z);
                     }
                 });
             }
@@ -1595,7 +1611,7 @@ public class ImageLoader {
             dispatchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ImageLoader$5$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ImageLoader.C31185.this.lambda$fileDidUploaded$2(i, str, tLRPC$InputFile, tLRPC$InputEncryptedFile, bArr, bArr2, j);
+                    ImageLoader.C32455.this.lambda$fileDidUploaded$2(i, str, tLRPC$InputFile, tLRPC$InputEncryptedFile, bArr, bArr2, j);
                 }
             });
         }
@@ -1610,7 +1626,7 @@ public class ImageLoader {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ImageLoader$5$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ImageLoader.C31185.lambda$fileDidUploaded$1(i, str, tLRPC$InputFile, tLRPC$InputEncryptedFile, bArr, bArr2, j);
+                    ImageLoader.C32455.lambda$fileDidUploaded$1(i, str, tLRPC$InputFile, tLRPC$InputEncryptedFile, bArr, bArr2, j);
                 }
             });
             ImageLoader.this.fileProgresses.remove(str);
@@ -1623,7 +1639,7 @@ public class ImageLoader {
             dispatchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ImageLoader$5$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ImageLoader.C31185.this.lambda$fileDidFailedUpload$4(i, str, z);
+                    ImageLoader.C32455.this.lambda$fileDidFailedUpload$4(i, str, z);
                 }
             });
         }
@@ -1638,7 +1654,7 @@ public class ImageLoader {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ImageLoader$5$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ImageLoader.C31185.lambda$fileDidFailedUpload$3(i, str, z);
+                    ImageLoader.C32455.lambda$fileDidFailedUpload$3(i, str, z);
                 }
             });
             ImageLoader.this.fileProgresses.remove(str);
@@ -1651,7 +1667,7 @@ public class ImageLoader {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ImageLoader$5$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ImageLoader.C31185.this.lambda$fileDidLoaded$5(file, str, i2, obj, i);
+                    ImageLoader.C32455.this.lambda$fileDidLoaded$5(file, str, i2, obj, i);
                 }
             });
         }
@@ -1683,7 +1699,7 @@ public class ImageLoader {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ImageLoader$5$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ImageLoader.C31185.this.lambda$fileDidFailedLoad$6(str, i, i2);
+                    ImageLoader.C32455.this.lambda$fileDidFailedLoad$6(str, i, i2);
                 }
             });
         }
@@ -1705,7 +1721,7 @@ public class ImageLoader {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ImageLoader$5$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ImageLoader.C31185.lambda$fileLoadProgressChanged$7(i, str, j, j2);
+                        ImageLoader.C32455.lambda$fileLoadProgressChanged$7(i, str, j, j2);
                     }
                 });
             }
@@ -1720,8 +1736,8 @@ public class ImageLoader {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.ImageLoader$6 */
     /* loaded from: classes4.dex */
-    public class C31196 extends BroadcastReceiver {
-        C31196() {
+    public class C32466 extends BroadcastReceiver {
+        C32466() {
         }
 
         @Override // android.content.BroadcastReceiver
@@ -1732,7 +1748,7 @@ public class ImageLoader {
             Runnable runnable = new Runnable() { // from class: org.telegram.messenger.ImageLoader$6$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ImageLoader.C31196.this.lambda$onReceive$0();
+                    ImageLoader.C32466.this.lambda$onReceive$0();
                 }
             };
             if ("android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
@@ -1749,23 +1765,35 @@ public class ImageLoader {
     }
 
     public void checkMediaPaths() {
-        this.cacheOutQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ImageLoader$$ExternalSyntheticLambda1
+        checkMediaPaths(null);
+    }
+
+    public void checkMediaPaths(final Runnable runnable) {
+        this.cacheOutQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ImageLoader$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                ImageLoader.this.lambda$checkMediaPaths$1();
+                ImageLoader.this.lambda$checkMediaPaths$1(runnable);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkMediaPaths$1() {
+    public /* synthetic */ void lambda$checkMediaPaths$1(final Runnable runnable) {
         final SparseArray<File> createMediaPaths = createMediaPaths();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ImageLoader$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                FileLoader.setMediaDirs(createMediaPaths);
+                ImageLoader.lambda$checkMediaPaths$0(createMediaPaths, runnable);
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$checkMediaPaths$0(SparseArray sparseArray, Runnable runnable) {
+        FileLoader.setMediaDirs(sparseArray);
+        if (runnable != null) {
+            runnable.run();
+        }
     }
 
     public void addTestWebFile(String str, WebFile webFile) {
@@ -1820,27 +1848,40 @@ public class ImageLoader {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x00cb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00c7, code lost:
         if (r2.mkdirs() != false) goto L29;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x00d1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x00cd, code lost:
         if (r2.canWrite() == false) goto L138;
      */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x0289 A[Catch: Exception -> 0x029c, TRY_LEAVE, TryCatch #7 {Exception -> 0x029c, blocks: (B:122:0x026c, B:124:0x027a, B:126:0x0280, B:128:0x0289), top: B:164:0x026c, outer: #11 }] */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x02bd A[Catch: Exception -> 0x02d0, TRY_LEAVE, TryCatch #0 {Exception -> 0x02d0, blocks: (B:132:0x02a0, B:134:0x02ae, B:136:0x02b4, B:138:0x02bd), top: B:150:0x02a0, outer: #11 }] */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x0139 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x0128 A[EDGE_INSN: B:177:0x0128->B:66:0x0128 ?: BREAK  , SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00fe A[Catch: Exception -> 0x02e2, TryCatch #11 {Exception -> 0x02e2, blocks: (B:11:0x003d, B:13:0x0049, B:15:0x0056, B:17:0x005c, B:19:0x0063, B:22:0x0077, B:23:0x007a, B:40:0x00ab, B:52:0x00e0, B:54:0x00eb, B:56:0x00f3, B:58:0x00fe, B:60:0x0106, B:62:0x010e, B:64:0x011a, B:65:0x0125, B:66:0x0128, B:118:0x0261, B:108:0x0220, B:98:0x01df, B:88:0x019e, B:120:0x0266, B:141:0x02d1, B:131:0x029d, B:145:0x02de, B:78:0x016a, B:39:0x00a8, B:41:0x00ba, B:43:0x00c0, B:48:0x00cd, B:51:0x00d9, B:50:0x00d3, B:46:0x00c7, B:142:0x02d5, B:144:0x02d9, B:132:0x02a0, B:134:0x02ae, B:136:0x02b4, B:138:0x02bd, B:109:0x0223, B:111:0x0235, B:113:0x023c, B:115:0x024b, B:99:0x01e2, B:101:0x01f4, B:103:0x01fb, B:105:0x020a, B:89:0x01a1, B:91:0x01b3, B:93:0x01ba, B:95:0x01c9, B:79:0x016d, B:81:0x017d, B:83:0x0183, B:85:0x018a, B:122:0x026c, B:124:0x027a, B:126:0x0280, B:128:0x0289, B:69:0x0139, B:71:0x0149, B:73:0x014f, B:75:0x0156), top: B:172:0x003d, inners: #0, #1, #2, #4, #5, #7, #8 }] */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x0286 A[Catch: Exception -> 0x0299, TRY_LEAVE, TryCatch #7 {Exception -> 0x0299, blocks: (B:122:0x0269, B:124:0x0277, B:126:0x027d, B:128:0x0286), top: B:164:0x0269, outer: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x02ba A[Catch: Exception -> 0x02cd, TRY_LEAVE, TryCatch #1 {Exception -> 0x02cd, blocks: (B:132:0x029d, B:134:0x02ab, B:136:0x02b1, B:138:0x02ba), top: B:152:0x029d, outer: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x0136 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x0124 A[EDGE_INSN: B:177:0x0124->B:66:0x0124 ?: BREAK  , SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00fa A[Catch: Exception -> 0x02df, TryCatch #0 {Exception -> 0x02df, blocks: (B:11:0x003d, B:13:0x0049, B:15:0x0056, B:17:0x005c, B:19:0x0063, B:22:0x0077, B:23:0x007a, B:40:0x00a7, B:52:0x00dc, B:54:0x00e7, B:56:0x00ef, B:58:0x00fa, B:60:0x0102, B:62:0x010a, B:64:0x0116, B:65:0x0121, B:66:0x0124, B:118:0x025e, B:108:0x021d, B:98:0x01dc, B:88:0x019b, B:120:0x0263, B:141:0x02ce, B:131:0x029a, B:145:0x02db, B:78:0x0167, B:39:0x00a4, B:41:0x00b6, B:43:0x00bc, B:48:0x00c9, B:51:0x00d5, B:50:0x00cf, B:46:0x00c3, B:142:0x02d2, B:144:0x02d6, B:132:0x029d, B:134:0x02ab, B:136:0x02b1, B:138:0x02ba, B:109:0x0220, B:111:0x0232, B:113:0x0239, B:115:0x0248, B:99:0x01df, B:101:0x01f1, B:103:0x01f8, B:105:0x0207, B:89:0x019e, B:91:0x01b0, B:93:0x01b7, B:95:0x01c6, B:79:0x016a, B:81:0x017a, B:83:0x0180, B:85:0x0187, B:122:0x0269, B:124:0x0277, B:126:0x027d, B:128:0x0286, B:69:0x0136, B:71:0x0146, B:73:0x014c, B:75:0x0153), top: B:150:0x003d, inners: #1, #2, #3, #4, #6, #7, #9 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public android.util.SparseArray<java.io.File> createMediaPaths() {
         /*
-            Method dump skipped, instructions count: 743
+            Method dump skipped, instructions count: 740
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.ImageLoader.createMediaPaths():android.util.SparseArray");
+    }
+
+    private File getPublicStorageDir() {
+        File file = ApplicationLoader.applicationContext.getExternalMediaDirs()[0];
+        if (!TextUtils.isEmpty(SharedConfig.storageCacheDir)) {
+            for (int i = 0; i < ApplicationLoader.applicationContext.getExternalMediaDirs().length; i++) {
+                File file2 = ApplicationLoader.applicationContext.getExternalMediaDirs()[i];
+                if (file2 != null && file2.getPath().startsWith(SharedConfig.storageCacheDir)) {
+                    file = ApplicationLoader.applicationContext.getExternalMediaDirs()[i];
+                }
+            }
+        }
+        return file;
     }
 
     private boolean canMoveFiles(File file, File file2, int i) {
@@ -2046,7 +2087,7 @@ public class ImageLoader {
             public final void run() {
                 ImageLoader.this.lambda$cancelLoadingForImageReceiver$3(z, imageReceiver);
             }
-        }, imageReceiver.getFileLoadingPriority() == 0 ? 0L : 1L);
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2091,10 +2132,10 @@ public class ImageLoader {
             str3 = tLRPC$FileLocation.volume_id + "_" + tLRPC$FileLocation.local_id;
         } else if (tLObject instanceof TLRPC$Document) {
             TLRPC$Document tLRPC$Document = (TLRPC$Document) tLObject;
-            str3 = tLRPC$Document.dc_id + "_" + tLRPC$Document.f1502id;
+            str3 = tLRPC$Document.dc_id + "_" + tLRPC$Document.f1507id;
         } else if (tLObject instanceof SecureDocument) {
             SecureDocument secureDocument = (SecureDocument) tLObject;
-            str3 = secureDocument.secureFile.dc_id + "_" + secureDocument.secureFile.f1619id;
+            str3 = secureDocument.secureFile.dc_id + "_" + secureDocument.secureFile.f1625id;
         } else if (tLObject instanceof WebFile) {
             str3 = Utilities.MD5(((WebFile) tLObject).url);
         }
@@ -2198,7 +2239,7 @@ public class ImageLoader {
         final boolean isShouldGenerateQualityThumb = imageReceiver.isShouldGenerateQualityThumb();
         final int currentAccount = imageReceiver.getCurrentAccount();
         final boolean z = i2 == 0 && imageReceiver.isCurrentKeyQuality();
-        Runnable runnable = new Runnable() { // from class: org.telegram.messenger.ImageLoader$$ExternalSyntheticLambda2
+        Runnable runnable = new Runnable() { // from class: org.telegram.messenger.ImageLoader$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 ImageLoader.this.lambda$createLoadOperationForImageReceiver$6(i3, str2, str, i6, imageReceiver, i4, str4, i2, imageLocation, z, parentObject, currentAccount, qualityThumbDocument, isNeedsQualityThumb, isShouldGenerateQualityThumb, str3, i, j);
@@ -2209,32 +2250,32 @@ public class ImageLoader {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:153:0x0313, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:153:0x0316, code lost:
         if (r7 == false) goto L150;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:197:0x03eb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:197:0x03ee, code lost:
         if (r7.equals(r8) != false) goto L181;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:240:0x04c5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:240:0x04c8, code lost:
         if (r10.exists() == false) goto L204;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x01b8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x01b9, code lost:
         if (r8.exists() == false) goto L284;
      */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x0423  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x0434  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x01ad  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x01bd  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x01c0  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x01c3  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0214  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x0426  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x0437  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01ae  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x01be  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x01c1  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x01c4  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0215  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public /* synthetic */ void lambda$createLoadOperationForImageReceiver$6(int r25, java.lang.String r26, java.lang.String r27, int r28, org.telegram.messenger.ImageReceiver r29, int r30, java.lang.String r31, int r32, org.telegram.messenger.ImageLocation r33, boolean r34, java.lang.Object r35, int r36, org.telegram.tgnet.TLRPC$Document r37, boolean r38, boolean r39, java.lang.String r40, int r41, long r42) {
         /*
-            Method dump skipped, instructions count: 1667
+            Method dump skipped, instructions count: 1670
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.ImageLoader.lambda$createLoadOperationForImageReceiver$6(int, java.lang.String, java.lang.String, int, org.telegram.messenger.ImageReceiver, int, java.lang.String, int, org.telegram.messenger.ImageLocation, boolean, java.lang.Object, int, org.telegram.tgnet.TLRPC$Document, boolean, boolean, java.lang.String, int, long):void");
@@ -2291,17 +2332,17 @@ public class ImageLoader {
     /* JADX WARN: Removed duplicated region for block: B:120:0x01ce  */
     /* JADX WARN: Removed duplicated region for block: B:122:0x01d2  */
     /* JADX WARN: Removed duplicated region for block: B:126:0x01e7  */
-    /* JADX WARN: Removed duplicated region for block: B:210:0x03a5  */
-    /* JADX WARN: Removed duplicated region for block: B:228:0x0410  */
-    /* JADX WARN: Removed duplicated region for block: B:231:0x0418 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x0433 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:239:0x044e A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x046f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:249:0x048d A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x04a7  */
-    /* JADX WARN: Removed duplicated region for block: B:261:0x04e5  */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x04ea  */
-    /* JADX WARN: Removed duplicated region for block: B:278:0x0554  */
+    /* JADX WARN: Removed duplicated region for block: B:210:0x03a7  */
+    /* JADX WARN: Removed duplicated region for block: B:228:0x0412  */
+    /* JADX WARN: Removed duplicated region for block: B:231:0x041a A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:235:0x0435 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:239:0x0450 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:244:0x0471 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x048f A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x04a9  */
+    /* JADX WARN: Removed duplicated region for block: B:261:0x04e7  */
+    /* JADX WARN: Removed duplicated region for block: B:263:0x04ec  */
+    /* JADX WARN: Removed duplicated region for block: B:278:0x0556  */
     /* JADX WARN: Removed duplicated region for block: B:41:0x009f A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:44:0x00ab  */
     /* JADX WARN: Removed duplicated region for block: B:45:0x00b0  */
@@ -2316,7 +2357,7 @@ public class ImageLoader {
     */
     public void loadImageForImageReceiver(org.telegram.messenger.ImageReceiver r38) {
         /*
-            Method dump skipped, instructions count: 1426
+            Method dump skipped, instructions count: 1428
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.ImageLoader.loadImageForImageReceiver(org.telegram.messenger.ImageReceiver):void");
@@ -2679,18 +2720,18 @@ public class ImageLoader {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:33:0x009a  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00bd  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00cd  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00e3  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00a2  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00c0  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00e6  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private static org.telegram.tgnet.TLRPC$PhotoSize scaleAndSaveImageInternal(org.telegram.tgnet.TLRPC$PhotoSize r2, android.graphics.Bitmap r3, android.graphics.Bitmap.CompressFormat r4, boolean r5, int r6, int r7, float r8, float r9, float r10, int r11, boolean r12, boolean r13, boolean r14) throws java.lang.Exception {
         /*
-            Method dump skipped, instructions count: 231
+            Method dump skipped, instructions count: 234
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.ImageLoader.scaleAndSaveImageInternal(org.telegram.tgnet.TLRPC$PhotoSize, android.graphics.Bitmap, android.graphics.Bitmap$CompressFormat, boolean, int, int, float, float, float, int, boolean, boolean, boolean):org.telegram.tgnet.TLRPC$PhotoSize");
@@ -2827,8 +2868,8 @@ public class ImageLoader {
             randomAccessFile2.close();
         }
         TLRPC$TL_photoSize_layer127 tLRPC$TL_photoSize_layer127 = new TLRPC$TL_photoSize_layer127();
-        tLRPC$TL_photoSize_layer127.f1525w = findPhotoCachedSize.f1525w;
-        tLRPC$TL_photoSize_layer127.f1524h = findPhotoCachedSize.f1524h;
+        tLRPC$TL_photoSize_layer127.f1530w = findPhotoCachedSize.f1530w;
+        tLRPC$TL_photoSize_layer127.f1529h = findPhotoCachedSize.f1529h;
         tLRPC$TL_photoSize_layer127.location = findPhotoCachedSize.location;
         tLRPC$TL_photoSize_layer127.size = findPhotoCachedSize.size;
         tLRPC$TL_photoSize_layer127.type = findPhotoCachedSize.type;
@@ -2928,24 +2969,24 @@ public class ImageLoader {
         if (findPhotoCachedSize != null && (bArr = findPhotoCachedSize.bytes) != null && bArr.length != 0) {
             File pathToAttach = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(findPhotoCachedSize, true);
             TLRPC$TL_photoSize_layer127 tLRPC$TL_photoSize_layer127 = new TLRPC$TL_photoSize_layer127();
-            tLRPC$TL_photoSize_layer127.f1525w = findPhotoCachedSize.f1525w;
-            tLRPC$TL_photoSize_layer127.f1524h = findPhotoCachedSize.f1524h;
+            tLRPC$TL_photoSize_layer127.f1530w = findPhotoCachedSize.f1530w;
+            tLRPC$TL_photoSize_layer127.f1529h = findPhotoCachedSize.f1529h;
             tLRPC$TL_photoSize_layer127.location = findPhotoCachedSize.location;
             tLRPC$TL_photoSize_layer127.size = findPhotoCachedSize.size;
             tLRPC$TL_photoSize_layer127.type = findPhotoCachedSize.type;
             if (pathToAttach.exists() && tLRPC$Message.grouped_id == 0) {
-                org.telegram.p048ui.Components.Point messageSize = ChatMessageCell.getMessageSize(findPhotoCachedSize.f1525w, findPhotoCachedSize.f1524h);
-                String format = String.format(Locale.US, "%d_%d@%d_%d_b", Long.valueOf(findPhotoCachedSize.location.volume_id), Integer.valueOf(findPhotoCachedSize.location.local_id), Integer.valueOf((int) (messageSize.f1746x / AndroidUtilities.density)), Integer.valueOf((int) (messageSize.f1747y / AndroidUtilities.density)));
+                org.telegram.p048ui.Components.Point messageSize = ChatMessageCell.getMessageSize(findPhotoCachedSize.f1530w, findPhotoCachedSize.f1529h);
+                String format = String.format(Locale.US, "%d_%d@%d_%d_b", Long.valueOf(findPhotoCachedSize.location.volume_id), Integer.valueOf(findPhotoCachedSize.location.local_id), Integer.valueOf((int) (messageSize.f1757x / AndroidUtilities.density)), Integer.valueOf((int) (messageSize.f1758y / AndroidUtilities.density)));
                 if (!getInstance().isInMemCache(format, false)) {
                     String path = pathToAttach.getPath();
-                    float f = messageSize.f1746x;
+                    float f = messageSize.f1757x;
                     float f2 = AndroidUtilities.density;
-                    Bitmap loadBitmap = loadBitmap(path, null, (int) (f / f2), (int) (messageSize.f1747y / f2), false);
+                    Bitmap loadBitmap = loadBitmap(path, null, (int) (f / f2), (int) (messageSize.f1758y / f2), false);
                     if (loadBitmap != null) {
                         Utilities.blurBitmap(loadBitmap, 3, 1, loadBitmap.getWidth(), loadBitmap.getHeight(), loadBitmap.getRowBytes());
-                        float f3 = messageSize.f1746x;
+                        float f3 = messageSize.f1757x;
                         float f4 = AndroidUtilities.density;
-                        Bitmap createScaledBitmap = Bitmaps.createScaledBitmap(loadBitmap, (int) (f3 / f4), (int) (messageSize.f1747y / f4), true);
+                        Bitmap createScaledBitmap = Bitmaps.createScaledBitmap(loadBitmap, (int) (f3 / f4), (int) (messageSize.f1758y / f4), true);
                         if (createScaledBitmap != loadBitmap) {
                             loadBitmap.recycle();
                             loadBitmap = createScaledBitmap;
@@ -2971,24 +3012,24 @@ public class ImageLoader {
                                     break;
                                 } else if (tLRPC$Message.media.document.attributes.get(i4) instanceof TLRPC$TL_documentAttributeVideo) {
                                     TLRPC$TL_documentAttributeVideo tLRPC$TL_documentAttributeVideo = (TLRPC$TL_documentAttributeVideo) tLRPC$Message.media.document.attributes.get(i4);
-                                    i2 = tLRPC$TL_documentAttributeVideo.f1504h;
-                                    i = tLRPC$TL_documentAttributeVideo.f1505w;
+                                    i2 = tLRPC$TL_documentAttributeVideo.f1509h;
+                                    i = tLRPC$TL_documentAttributeVideo.f1510w;
                                     break;
                                 } else {
                                     i4++;
                                 }
                             }
                         } else {
-                            i2 = closestPhotoSizeWithSize.f1524h;
-                            i = closestPhotoSizeWithSize.f1525w;
+                            i2 = closestPhotoSizeWithSize.f1529h;
+                            i = closestPhotoSizeWithSize.f1530w;
                         }
                         org.telegram.p048ui.Components.Point messageSize2 = ChatMessageCell.getMessageSize(i, i2);
-                        String format2 = String.format(Locale.US, "%s_false@%d_%d_b", ImageLocation.getStrippedKey(tLRPC$Message, tLRPC$Message, tLRPC$PhotoSize), Integer.valueOf((int) (messageSize2.f1746x / AndroidUtilities.density)), Integer.valueOf((int) (messageSize2.f1747y / AndroidUtilities.density)));
+                        String format2 = String.format(Locale.US, "%s_false@%d_%d_b", ImageLocation.getStrippedKey(tLRPC$Message, tLRPC$Message, tLRPC$PhotoSize), Integer.valueOf((int) (messageSize2.f1757x / AndroidUtilities.density)), Integer.valueOf((int) (messageSize2.f1758y / AndroidUtilities.density)));
                         if (!getInstance().isInMemCache(format2, false) && (strippedPhotoBitmap = getStrippedPhotoBitmap(tLRPC$PhotoSize.bytes, null)) != null) {
                             Utilities.blurBitmap(strippedPhotoBitmap, 3, 1, strippedPhotoBitmap.getWidth(), strippedPhotoBitmap.getHeight(), strippedPhotoBitmap.getRowBytes());
-                            float f5 = messageSize2.f1746x;
+                            float f5 = messageSize2.f1757x;
                             float f6 = AndroidUtilities.density;
-                            Bitmap createScaledBitmap2 = Bitmaps.createScaledBitmap(strippedPhotoBitmap, (int) (f5 / f6), (int) (messageSize2.f1747y / f6), true);
+                            Bitmap createScaledBitmap2 = Bitmaps.createScaledBitmap(strippedPhotoBitmap, (int) (f5 / f6), (int) (messageSize2.f1758y / f6), true);
                             if (createScaledBitmap2 != strippedPhotoBitmap) {
                                 strippedPhotoBitmap.recycle();
                                 strippedPhotoBitmap = createScaledBitmap2;

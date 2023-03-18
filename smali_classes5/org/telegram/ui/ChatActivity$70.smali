@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/view/View;)V
     .locals 0
 
-    .line 11329
+    .line 11328
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$70;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$70;->val$topViewFinal:Landroid/view/View;
@@ -39,14 +39,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 11332
+    .line 11331
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$70;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$31202(Lorg/telegram/ui/ChatActivity;F)F
 
-    .line 11333
+    .line 11332
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$70;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$33400(Lorg/telegram/ui/ChatActivity;)Landroid/animation/Animator;
@@ -55,7 +55,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 11334
+    .line 11333
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$70;->val$topViewFinal:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -66,12 +66,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 11336
+    .line 11335
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$70;->val$topViewFinal:Landroid/view/View;
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 11338
+    .line 11337
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$70;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -79,7 +79,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$33502(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Cells/ChatActionCell;)Lorg/telegram/ui/Cells/ChatActionCell;
 
-    .line 11339
+    .line 11338
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$70;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$33402(Lorg/telegram/ui/ChatActivity;Landroid/animation/Animator;)Landroid/animation/Animator;

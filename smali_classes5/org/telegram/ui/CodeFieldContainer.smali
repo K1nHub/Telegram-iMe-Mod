@@ -72,7 +72,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 242
+    .line 247
     invoke-virtual {p0}, Lorg/telegram/ui/CodeFieldContainer;->processNextPressed()V
 
     const/4 p1, 0x1
@@ -529,7 +529,7 @@
 .method public getCode()Ljava/lang/String;
     .locals 4
 
-    .line 260
+    .line 265
     iget-object v0, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     if-nez v0, :cond_0
@@ -538,7 +538,7 @@
 
     return-object v0
 
-    .line 263
+    .line 268
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -546,7 +546,7 @@
 
     const/4 v1, 0x0
 
-    .line 264
+    .line 269
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
@@ -554,7 +554,7 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 265
+    .line 270
     aget-object v2, v2, v1
 
     invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -575,7 +575,7 @@
 
     goto :goto_0
 
-    .line 267
+    .line 272
     :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -617,7 +617,7 @@
 .method public setCode(Ljava/lang/String;)V
     .locals 2
 
-    .line 271
+    .line 276
     iget-object v0, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     const/4 v1, 0x0
@@ -639,22 +639,22 @@
 
     if-eqz v0, :cond_1
 
-    array-length v0, v0
+    array-length v2, v0
 
-    if-eq v0, p1, :cond_0
+    if-eq v2, p1, :cond_0
 
     goto :goto_1
 
-    .line 249
+    .line 254
     :cond_0
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     array-length p2, p1
 
-    if-ge v1, p2, :cond_6
+    if-ge v1, p2, :cond_7
 
-    .line 250
+    .line 255
     aget-object p1, p1, v1
 
     const-string p2, ""
@@ -665,19 +665,39 @@
 
     goto :goto_0
 
-    .line 112
     :cond_1
     :goto_1
+    if-eqz v0, :cond_2
+
+    .line 113
+    array-length v2, v0
+
+    const/4 v3, 0x0
+
+    :goto_2
+    if-ge v3, v2, :cond_2
+
+    aget-object v4, v0, v3
+
+    .line 114
+    invoke-virtual {p0, v4}, Landroid/widget/LinearLayout;->removeView(Landroid/view/View;)V
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_2
+
+    .line 117
+    :cond_2
     new-array v0, p1, [Lorg/telegram/ui/CodeNumberField;
 
     iput-object v0, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     const/4 v0, 0x0
 
-    :goto_2
-    if-ge v0, p1, :cond_6
+    :goto_3
+    if-ge v0, p1, :cond_7
 
-    .line 115
+    .line 120
     iget-object v2, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     new-instance v3, Lorg/telegram/ui/CodeFieldContainer$1;
@@ -690,7 +710,7 @@
 
     aput-object v3, v2, v0
 
-    .line 166
+    .line 171
     iget-object v2, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v2, v2, v0
@@ -699,7 +719,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 167
+    .line 172
     iget-object v2, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v2, v2, v0
@@ -710,14 +730,14 @@
 
     invoke-virtual {v2, v4, v3}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    .line 168
+    .line 173
     iget-object v2, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v2, v2, v0
 
     invoke-virtual {v2, v4}, Landroid/widget/EditText;->setMaxLines(I)V
 
-    .line 169
+    .line 174
     iget-object v2, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v2, v2, v0
@@ -730,14 +750,14 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 170
+    .line 175
     iget-object v2, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v2, v2, v0
 
     invoke-virtual {v2, v1, v1, v1, v1}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    .line 171
+    .line 176
     iget-object v2, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v2, v2, v0
@@ -748,23 +768,23 @@
 
     const/4 v2, 0x3
 
-    if-ne p2, v2, :cond_2
+    if-ne p2, v2, :cond_3
 
-    .line 173
+    .line 178
     iget-object v2, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v2, v2, v0
 
     invoke-virtual {v2, v1}, Landroid/widget/EditText;->setEnabled(Z)V
 
-    .line 174
+    .line 179
     iget-object v2, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v2, v2, v0
 
     invoke-virtual {v2, v1}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 175
+    .line 180
     iget-object v2, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v2, v2, v0
@@ -773,24 +793,24 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setVisibility(I)V
 
-    goto :goto_3
+    goto :goto_4
 
-    .line 177
-    :cond_2
+    .line 182
+    :cond_3
     iget-object v3, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v3, v3, v0
 
     invoke-virtual {v3, v2}, Landroid/widget/EditText;->setInputType(I)V
 
-    :goto_3
+    :goto_4
     const/16 v2, 0x22
 
     const/16 v3, 0x2a
 
     const/16 v4, 0xa
 
-    if-ne p2, v4, :cond_3
+    if-ne p2, v4, :cond_4
 
     const/16 v2, 0x2f
 
@@ -798,12 +818,12 @@
 
     const/16 v6, 0x2f
 
-    goto :goto_4
+    goto :goto_5
 
-    :cond_3
+    :cond_4
     const/16 v4, 0xb
 
-    if-ne p2, v4, :cond_4
+    if-ne p2, v4, :cond_5
 
     const/16 v3, 0x1c
 
@@ -813,17 +833,17 @@
 
     const/16 v6, 0x22
 
-    goto :goto_4
+    goto :goto_5
 
-    :cond_4
+    :cond_5
     const/4 v4, 0x7
 
     const/16 v5, 0x22
 
     const/16 v6, 0x2a
 
-    .line 195
-    :goto_4
+    .line 200
+    :goto_5
     iget-object v2, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v2, v2, v0
@@ -836,16 +856,16 @@
 
     add-int/lit8 v3, p1, -0x1
 
-    if-eq v0, v3, :cond_5
+    if-eq v0, v3, :cond_6
 
     move v10, v4
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_5
+    :cond_6
     const/4 v10, 0x0
 
-    :goto_5
+    :goto_6
     const/4 v11, 0x0
 
     invoke-static/range {v5 .. v11}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
@@ -854,7 +874,7 @@
 
     invoke-virtual {p0, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 196
+    .line 201
     iget-object v2, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v2, v2, v0
@@ -865,7 +885,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 240
+    .line 245
     iget-object v2, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v2, v2, v0
@@ -878,9 +898,9 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
-    :cond_6
+    :cond_7
     return-void
 .end method
 
@@ -889,7 +909,7 @@
 
     const/4 v0, 0x0
 
-    .line 275
+    .line 280
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/CodeFieldContainer;->setText(Ljava/lang/String;Z)V
 
     return-void
@@ -898,7 +918,7 @@
 .method public setText(Ljava/lang/String;Z)V
     .locals 3
 
-    .line 279
+    .line 284
     iget-object v0, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     if-nez v0, :cond_0
@@ -912,7 +932,7 @@
 
     const/4 p2, 0x0
 
-    .line 284
+    .line 289
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
@@ -920,7 +940,7 @@
 
     if-ge p2, v2, :cond_2
 
-    .line 285
+    .line 290
     aget-object v1, v1, p2
 
     invoke-virtual {v1}, Landroid/widget/EditText;->isFocused()Z
@@ -942,7 +962,7 @@
     :goto_1
     move p2, v0
 
-    .line 291
+    .line 296
     :goto_2
     iget-object v1, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
@@ -960,7 +980,7 @@
 
     if-ge p2, v1, :cond_3
 
-    .line 292
+    .line 297
     iget-object v1, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v1, v1, p2

@@ -52,7 +52,7 @@
 
     const-string p3, "null cannot be cast to non-null type org.telegram.ui.Components.RecyclerListView.Holder"
 
-    invoke-static {p2, p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

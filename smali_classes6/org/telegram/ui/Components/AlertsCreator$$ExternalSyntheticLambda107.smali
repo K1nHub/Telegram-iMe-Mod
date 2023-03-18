@@ -35,7 +35,7 @@
 .method public final onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
     .locals 0
 
-    invoke-static {p1, p2, p3}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$pUwvdKz1m4mpU2rncB4VJ2LQcdc(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
+    invoke-static {p1, p2, p3}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$Wvy2raLNV_X_OqoyuUkGUN8B9Aw(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
 
     move-result p1
 

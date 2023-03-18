@@ -29,7 +29,6 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -41,9 +40,9 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkFragmentWalletBinancePayHistoryBinding;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 /* compiled from: WalletBinancePayHistoryFragment.kt */
@@ -68,7 +67,7 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthFragment im
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
         this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletBinancePayHistoryPresenter.class.getName() + ".presenter", walletBinancePayHistoryFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2053xc9259482(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2174xc9259482(this, null, null));
         this.binancePayHistoryAdapter$delegate = lazy;
         this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletBinancePayHistoryFragment$binding$2(this), 1, (Object) null);
     }
@@ -180,7 +179,7 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthFragment im
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$$ExternalSyntheticLambda3
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                WalletBinancePayHistoryFragment.m1671getThemeDescriptions$lambda0(WalletBinancePayHistoryFragment.this);
+                WalletBinancePayHistoryFragment.getThemeDescriptions$lambda$0(WalletBinancePayHistoryFragment.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -191,20 +190,19 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthFragment im
         return arrayListOf;
     }
 
-    /* renamed from: getThemeDescriptions$lambda-0 */
-    public static final void m1671getThemeDescriptions$lambda0(WalletBinancePayHistoryFragment this$0) {
+    public static final void getThemeDescriptions$lambda$0(WalletBinancePayHistoryFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getBinancePayHistoryAdapter().notifyDataSetChanged();
         this$0.setupColors();
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setTitle(getResourceManager().getString(C3158R.string.wallet_binance_pay_action_history));
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.wallet_binance_pay_action_history));
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletBinancePayHistoryFragment.this.finishFragment();
@@ -218,7 +216,6 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthFragment im
         BinancePayHistoryRecycleAdapter binancePayHistoryAdapter = getBinancePayHistoryAdapter();
         binancePayHistoryAdapter.setDiffCallback(new BinancePayHistoryDiffCallback());
         setupLoadMore(binancePayHistoryAdapter);
-        Unit unit = Unit.INSTANCE;
         recyclerView.setAdapter(binancePayHistoryAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getParentActivity()));
     }
@@ -229,13 +226,12 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthFragment im
         loadMoreModule.setOnLoadMoreListener(new OnLoadMoreListener() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$$ExternalSyntheticLambda2
             @Override // com.chad.library.adapter.base.listener.OnLoadMoreListener
             public final void onLoadMore() {
-                WalletBinancePayHistoryFragment.m1674setupLoadMore$lambda6$lambda5$lambda4(BinancePayHistoryRecycleAdapter.this, this);
+                WalletBinancePayHistoryFragment.setupLoadMore$lambda$6$lambda$5$lambda$4(BinancePayHistoryRecycleAdapter.this, this);
             }
         });
     }
 
-    /* renamed from: setupLoadMore$lambda-6$lambda-5$lambda-4 */
-    public static final void m1674setupLoadMore$lambda6$lambda5$lambda4(BinancePayHistoryRecycleAdapter this_with, WalletBinancePayHistoryFragment this$0) {
+    public static final void setupLoadMore$lambda$6$lambda$5$lambda$4(BinancePayHistoryRecycleAdapter this_with, WalletBinancePayHistoryFragment this$0) {
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         BaseNode baseNode = (BaseNode) CollectionsKt.lastOrNull(this_with.getData());
@@ -256,28 +252,26 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthFragment im
         binding.getRoot().setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$$ExternalSyntheticLambda0
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                WalletBinancePayHistoryFragment.m1673setupListeners$lambda9$lambda8(WalletBinancePayHistoryFragment.this);
+                WalletBinancePayHistoryFragment.setupListeners$lambda$9$lambda$8(WalletBinancePayHistoryFragment.this);
             }
         });
         getBinancePayHistoryAdapter().setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$$ExternalSyntheticLambda1
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                WalletBinancePayHistoryFragment.m1672setupListeners$lambda10(WalletBinancePayHistoryFragment.this, baseQuickAdapter, view, i);
+                WalletBinancePayHistoryFragment.setupListeners$lambda$10(WalletBinancePayHistoryFragment.this, baseQuickAdapter, view, i);
             }
         });
     }
 
-    /* renamed from: setupListeners$lambda-9$lambda-8 */
-    public static final void m1673setupListeners$lambda9$lambda8(WalletBinancePayHistoryFragment this$0) {
+    public static final void setupListeners$lambda$9$lambda$8(WalletBinancePayHistoryFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         WalletBinancePayHistoryPresenter.loadTransactions$default(this$0.getPresenter(), true, null, 2, null);
     }
 
-    /* renamed from: setupListeners$lambda-10 */
-    public static final void m1672setupListeners$lambda10(WalletBinancePayHistoryFragment this$0, BaseQuickAdapter noName_0, View noName_1, int i) {
+    public static final void setupListeners$lambda$10(WalletBinancePayHistoryFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         BaseNode baseNode = (BaseNode) this$0.getBinancePayHistoryAdapter().getItem(i);
         if (baseNode instanceof BinanceTransactionItem) {
             BinanceTransactionItem binanceTransactionItem = (BinanceTransactionItem) baseNode;

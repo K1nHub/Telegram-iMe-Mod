@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletLinkClickableManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletLinkClickableManager.kt\ncom/smedialink/manager/wallet/WalletLinkClickableManager\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,97:1\n1547#2:98\n1618#2,3:99\n1547#2:106\n1618#2,3:107\n37#3:102\n36#3,3:103\n37#3:110\n36#3,3:111\n*S KotlinDebug\n*F\n+ 1 WalletLinkClickableManager.kt\ncom/smedialink/manager/wallet/WalletLinkClickableManager\n*L\n72#1:98\n72#1:99,3\n87#1:106\n87#1:107,3\n72#1:102\n72#1:103,3\n87#1:110\n87#1:111,3\n*E\n"
+    value = "SMAP\nWalletLinkClickableManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletLinkClickableManager.kt\ncom/smedialink/manager/wallet/WalletLinkClickableManager\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,97:1\n1549#2:98\n1620#2,3:99\n1549#2:104\n1620#2,3:105\n37#3,2:102\n37#3,2:108\n*S KotlinDebug\n*F\n+ 1 WalletLinkClickableManager.kt\ncom/smedialink/manager/wallet/WalletLinkClickableManager\n*L\n72#1:98\n72#1:99,3\n87#1:104\n87#1:105,3\n72#1:102,2\n87#1:108,2\n*E\n"
 .end annotation
 
 
@@ -216,7 +216,7 @@
     .line 76
     iput-object p1, p0, Lcom/smedialink/manager/wallet/WalletLinkClickableManager;->dialogsOptions:Ljava/util/List;
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -227,7 +227,7 @@
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -243,7 +243,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Lkotlin/Pair;
 
     .line 87
@@ -253,6 +253,7 @@
 
     check-cast v2, Ljava/lang/String;
 
+    .line 1621
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
@@ -264,10 +265,6 @@
     invoke-interface {v0, p1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p1
-
-    const-string v0, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     check-cast p1, [Ljava/lang/String;
 
@@ -434,7 +431,7 @@
     .line 59
     iput-object p1, p0, Lcom/smedialink/manager/wallet/WalletLinkClickableManager;->dialogsOptions:Ljava/util/List;
 
-    .line 1547
+    .line 1549
     new-instance p2, Ljava/util/ArrayList;
 
     const/16 v0, 0xa
@@ -445,7 +442,7 @@
 
     invoke-direct {p2, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -461,7 +458,7 @@
 
     move-result-object v0
 
-    .line 1619
+    .line 1621
     check-cast v0, Lkotlin/Pair;
 
     .line 72
@@ -471,6 +468,7 @@
 
     check-cast v0, Ljava/lang/String;
 
+    .line 1621
     invoke-interface {p2, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
@@ -482,10 +480,6 @@
     invoke-interface {p2, p1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p1
-
-    const-string p2, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-static {p1, p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     check-cast p1, [Ljava/lang/String;
 
@@ -553,11 +547,8 @@
     .line 39
     iget-object v1, p0, Lcom/smedialink/manager/wallet/WalletLinkClickableManager;->viewState:Lcom/smedialink/manager/wallet/WalletLinkClickableView;
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     iget-object v2, p0, Lcom/smedialink/manager/wallet/WalletLinkClickableManager;->clickableItem:Lcom/smedialink/model/wallet/transaction/ClickableItem;
 
     iget-object v3, p0, Lcom/smedialink/manager/wallet/WalletLinkClickableManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -572,7 +563,7 @@
 
     invoke-interface {v1, v2, v0, v3}, Lcom/smedialink/manager/wallet/WalletLinkClickableView;->setupMessageClickableLink(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 

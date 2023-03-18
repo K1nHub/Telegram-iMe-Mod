@@ -70,7 +70,7 @@
 
     float-to-int v1, v1
 
-    invoke-static {v4}, Lorg/telegram/ui/PremiumPreviewFragment;->access$800(Lorg/telegram/ui/PremiumPreviewFragment;)I
+    invoke-static {v4}, Lorg/telegram/ui/PremiumPreviewFragment;->access$900(Lorg/telegram/ui/PremiumPreviewFragment;)I
 
     move-result v3
 

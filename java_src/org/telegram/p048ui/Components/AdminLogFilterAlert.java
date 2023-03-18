@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
@@ -90,7 +90,7 @@ public class AdminLogFilterAlert extends BottomSheet {
             tLRPC$TL_channelAdminLogEventsFilter2.invites = tLRPC$TL_channelAdminLogEventsFilter.invites;
         }
         if (longSparseArray != null) {
-            this.selectedAdmins = longSparseArray.m861clone();
+            this.selectedAdmins = longSparseArray.m862clone();
         }
         this.isMegagroup = z;
         if (z) {
@@ -122,7 +122,7 @@ public class AdminLogFilterAlert extends BottomSheet {
         this.leavingRow = i7;
         this.callsRow = i8;
         this.allAdminsRow = i8 + 1 + 1;
-        Drawable mutate = context.getResources().getDrawable(C3158R.C3160drawable.sheet_shadow_round).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3286R.C3288drawable.sheet_shadow_round).mutate();
         this.shadowDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor("dialogBackground"), PorterDuff.Mode.MULTIPLY));
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.AdminLogFilterAlert.1
@@ -230,12 +230,12 @@ public class AdminLogFilterAlert extends BottomSheet {
         });
         this.containerView.addView(this.listView, LayoutHelper.createFrame(-1, -1, 51, 0, 0, 0, 48));
         View view = new View(context);
-        view.setBackgroundResource(C3158R.C3160drawable.header_shadow_reverse);
+        view.setBackgroundResource(C3286R.C3288drawable.header_shadow_reverse);
         this.containerView.addView(view, LayoutHelper.createFrame(-1, 3, 83, 0, 0, 0, 48));
         BottomSheet.BottomSheetCell bottomSheetCell = new BottomSheet.BottomSheetCell(context, 1);
         this.saveButton = bottomSheetCell;
         bottomSheetCell.setBackgroundDrawable(Theme.getSelectorDrawable(false));
-        this.saveButton.setTextAndIcon(LocaleController.getString("Save", C3158R.string.Save).toUpperCase(), 0);
+        this.saveButton.setTextAndIcon(LocaleController.getString("Save", C3286R.string.Save).toUpperCase(), 0);
         this.saveButton.setTextColor(Theme.getColor("dialogTextBlue2"));
         this.saveButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AdminLogFilterAlert$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -386,15 +386,15 @@ public class AdminLogFilterAlert extends BottomSheet {
                 }
                 for (int i4 = 0; i4 < this.currentAdmins.size(); i4++) {
                     TLRPC$User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(MessageObject.getPeerId(this.currentAdmins.get(i4).peer)));
-                    this.selectedAdmins.put(user.f1633id, user);
+                    this.selectedAdmins.put(user.f1639id, user);
                 }
             }
             boolean isChecked2 = checkBoxUserCell.isChecked();
             TLRPC$User currentUser = checkBoxUserCell.getCurrentUser();
             if (isChecked2) {
-                this.selectedAdmins.remove(currentUser.f1633id);
+                this.selectedAdmins.remove(currentUser.f1639id);
             } else {
-                this.selectedAdmins.put(currentUser.f1633id, currentUser);
+                this.selectedAdmins.put(currentUser.f1639id, currentUser);
             }
             checkBoxUserCell.setChecked(!isChecked2, true);
         }
@@ -523,42 +523,42 @@ public class AdminLogFilterAlert extends BottomSheet {
             }
             TextCell textCell = (TextCell) viewHolder.itemView;
             if (i == 0) {
-                textCell.setTextAndCheck(LocaleController.getString("EventLogFilterAll", C3158R.string.EventLogFilterAll), AdminLogFilterAlert.this.currentFilter == null, true);
+                textCell.setTextAndCheck(LocaleController.getString("EventLogFilterAll", C3286R.string.EventLogFilterAll), AdminLogFilterAlert.this.currentFilter == null, true);
             } else if (i != AdminLogFilterAlert.this.restrictionsRow) {
                 if (i != AdminLogFilterAlert.this.adminsRow) {
                     if (i != AdminLogFilterAlert.this.membersRow) {
                         if (i == AdminLogFilterAlert.this.infoRow) {
                             if (AdminLogFilterAlert.this.isMegagroup) {
-                                textCell.setTextAndCheck(LocaleController.getString("EventLogFilterGroupInfo", C3158R.string.EventLogFilterGroupInfo), (AdminLogFilterAlert.this.currentFilter == null || AdminLogFilterAlert.this.currentFilter.info) ? true : true, true);
+                                textCell.setTextAndCheck(LocaleController.getString("EventLogFilterGroupInfo", C3286R.string.EventLogFilterGroupInfo), (AdminLogFilterAlert.this.currentFilter == null || AdminLogFilterAlert.this.currentFilter.info) ? true : true, true);
                                 return;
                             } else {
-                                textCell.setTextAndCheck(LocaleController.getString("EventLogFilterChannelInfo", C3158R.string.EventLogFilterChannelInfo), (AdminLogFilterAlert.this.currentFilter == null || AdminLogFilterAlert.this.currentFilter.info) ? true : true, true);
+                                textCell.setTextAndCheck(LocaleController.getString("EventLogFilterChannelInfo", C3286R.string.EventLogFilterChannelInfo), (AdminLogFilterAlert.this.currentFilter == null || AdminLogFilterAlert.this.currentFilter.info) ? true : true, true);
                                 return;
                             }
                         } else if (i == AdminLogFilterAlert.this.deleteRow) {
-                            textCell.setTextAndCheck(LocaleController.getString("EventLogFilterDeletedMessages", C3158R.string.EventLogFilterDeletedMessages), (AdminLogFilterAlert.this.currentFilter == null || AdminLogFilterAlert.this.currentFilter.delete) ? true : true, true);
+                            textCell.setTextAndCheck(LocaleController.getString("EventLogFilterDeletedMessages", C3286R.string.EventLogFilterDeletedMessages), (AdminLogFilterAlert.this.currentFilter == null || AdminLogFilterAlert.this.currentFilter.delete) ? true : true, true);
                             return;
                         } else if (i == AdminLogFilterAlert.this.editRow) {
-                            textCell.setTextAndCheck(LocaleController.getString("EventLogFilterEditedMessages", C3158R.string.EventLogFilterEditedMessages), (AdminLogFilterAlert.this.currentFilter == null || AdminLogFilterAlert.this.currentFilter.edit) ? true : true, true);
+                            textCell.setTextAndCheck(LocaleController.getString("EventLogFilterEditedMessages", C3286R.string.EventLogFilterEditedMessages), (AdminLogFilterAlert.this.currentFilter == null || AdminLogFilterAlert.this.currentFilter.edit) ? true : true, true);
                             return;
                         } else if (i == AdminLogFilterAlert.this.pinnedRow) {
-                            textCell.setTextAndCheck(LocaleController.getString("EventLogFilterPinnedMessages", C3158R.string.EventLogFilterPinnedMessages), (AdminLogFilterAlert.this.currentFilter == null || AdminLogFilterAlert.this.currentFilter.pinned) ? true : true, true);
+                            textCell.setTextAndCheck(LocaleController.getString("EventLogFilterPinnedMessages", C3286R.string.EventLogFilterPinnedMessages), (AdminLogFilterAlert.this.currentFilter == null || AdminLogFilterAlert.this.currentFilter.pinned) ? true : true, true);
                             return;
                         } else if (i == AdminLogFilterAlert.this.leavingRow) {
-                            textCell.setTextAndCheck(LocaleController.getString("EventLogFilterLeavingMembers", C3158R.string.EventLogFilterLeavingMembers), AdminLogFilterAlert.this.currentFilter == null || AdminLogFilterAlert.this.currentFilter.leave, AdminLogFilterAlert.this.callsRow != -1);
+                            textCell.setTextAndCheck(LocaleController.getString("EventLogFilterLeavingMembers", C3286R.string.EventLogFilterLeavingMembers), AdminLogFilterAlert.this.currentFilter == null || AdminLogFilterAlert.this.currentFilter.leave, AdminLogFilterAlert.this.callsRow != -1);
                             return;
                         } else if (i != AdminLogFilterAlert.this.callsRow) {
                             if (i == AdminLogFilterAlert.this.invitesRow) {
-                                textCell.setTextAndCheck(LocaleController.getString("EventLogFilterInvites", C3158R.string.EventLogFilterInvites), (AdminLogFilterAlert.this.currentFilter == null || AdminLogFilterAlert.this.currentFilter.invites) ? true : true, true);
+                                textCell.setTextAndCheck(LocaleController.getString("EventLogFilterInvites", C3286R.string.EventLogFilterInvites), (AdminLogFilterAlert.this.currentFilter == null || AdminLogFilterAlert.this.currentFilter.invites) ? true : true, true);
                                 return;
                             } else if (i == AdminLogFilterAlert.this.allAdminsRow) {
-                                textCell.setTextAndCheck(LocaleController.getString("EventLogAllAdmins", C3158R.string.EventLogAllAdmins), AdminLogFilterAlert.this.selectedAdmins == null, true);
+                                textCell.setTextAndCheck(LocaleController.getString("EventLogAllAdmins", C3286R.string.EventLogAllAdmins), AdminLogFilterAlert.this.selectedAdmins == null, true);
                                 return;
                             } else {
                                 return;
                             }
                         } else {
-                            String string = LocaleController.getString("EventLogFilterCalls", C3158R.string.EventLogFilterCalls);
+                            String string = LocaleController.getString("EventLogFilterCalls", C3286R.string.EventLogFilterCalls);
                             if (AdminLogFilterAlert.this.currentFilter != null && !AdminLogFilterAlert.this.currentFilter.group_call) {
                                 z = false;
                             }
@@ -566,20 +566,20 @@ public class AdminLogFilterAlert extends BottomSheet {
                             return;
                         }
                     }
-                    String string2 = LocaleController.getString("EventLogFilterNewMembers", C3158R.string.EventLogFilterNewMembers);
+                    String string2 = LocaleController.getString("EventLogFilterNewMembers", C3286R.string.EventLogFilterNewMembers);
                     if (AdminLogFilterAlert.this.currentFilter == null || (AdminLogFilterAlert.this.currentFilter.invite && AdminLogFilterAlert.this.currentFilter.join)) {
                         r1 = true;
                     }
                     textCell.setTextAndCheck(string2, r1, true);
                     return;
                 }
-                String string3 = LocaleController.getString("EventLogFilterNewAdmins", C3158R.string.EventLogFilterNewAdmins);
+                String string3 = LocaleController.getString("EventLogFilterNewAdmins", C3286R.string.EventLogFilterNewAdmins);
                 if (AdminLogFilterAlert.this.currentFilter == null || (AdminLogFilterAlert.this.currentFilter.promote && AdminLogFilterAlert.this.currentFilter.demote)) {
                     r1 = true;
                 }
                 textCell.setTextAndCheck(string3, r1, true);
             } else {
-                String string4 = LocaleController.getString("EventLogFilterNewRestrictions", C3158R.string.EventLogFilterNewRestrictions);
+                String string4 = LocaleController.getString("EventLogFilterNewRestrictions", C3286R.string.EventLogFilterNewRestrictions);
                 if (AdminLogFilterAlert.this.currentFilter == null || (AdminLogFilterAlert.this.currentFilter.kick && AdminLogFilterAlert.this.currentFilter.ban && AdminLogFilterAlert.this.currentFilter.unkick && AdminLogFilterAlert.this.currentFilter.unban)) {
                     r1 = true;
                 }

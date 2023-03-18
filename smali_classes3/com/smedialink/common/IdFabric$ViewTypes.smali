@@ -30,6 +30,8 @@
 
 .field public static final CHOOSE_FEE:I
 
+.field public static final CHOOSE_RECIPIENT_OPTIONS:I
+
 .field public static final CONTACTS_FILTER:I
 
 .field public static final CONTACTS_INPUT_ADDRESS:I
@@ -146,7 +148,7 @@
 
 .field public static final TEXT_CHECK_BOX:I
 
-.field public static final TEXT_DETAIL_WITH_RANGE:I
+.field public static final TEXT_DETAIL_WITH_RANK:I
 
 .field public static final TEXT_INFO_PRIVACY:I
 
@@ -166,7 +168,21 @@
 
 .field public static final TRANSACTION:I
 
+.field public static final TWEET:I
+
+.field public static final TWEETS_DATE:I
+
+.field public static final TWITTER:I
+
+.field public static final TWITTER_INVITE:I
+
+.field public static final TWITTER_USER:I
+
 .field public static final URL_BUTTON:I
+
+.field public static final VIEW_TYPE_EXPANDABLE_SWITCH:I
+
+.field public static final VIEW_TYPE_INNER_CHECK:I
 
 .field public static final WALLET_CONNECT_SESSION:I
 
@@ -593,7 +609,7 @@
     .line 77
     sput v0, Lcom/smedialink/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/smedialink/common/IdFabric$ViewTypes;->TEXT_DETAIL_WITH_RANGE:I
+    sput v1, Lcom/smedialink/common/IdFabric$ViewTypes;->TEXT_DETAIL_WITH_RANK:I
 
     add-int/lit8 v1, v0, 0x1
 
@@ -762,6 +778,62 @@
     sput v0, Lcom/smedialink/common/IdFabric$ViewTypes;->id:I
 
     sput v1, Lcom/smedialink/common/IdFabric$ViewTypes;->FILTERS_LIST:I
+
+    add-int/lit8 v1, v0, 0x1
+
+    .line 102
+    sput v1, Lcom/smedialink/common/IdFabric$ViewTypes;->id:I
+
+    sput v0, Lcom/smedialink/common/IdFabric$ViewTypes;->VIEW_TYPE_EXPANDABLE_SWITCH:I
+
+    add-int/lit8 v0, v1, 0x1
+
+    .line 103
+    sput v0, Lcom/smedialink/common/IdFabric$ViewTypes;->id:I
+
+    sput v1, Lcom/smedialink/common/IdFabric$ViewTypes;->VIEW_TYPE_INNER_CHECK:I
+
+    add-int/lit8 v1, v0, 0x1
+
+    .line 104
+    sput v1, Lcom/smedialink/common/IdFabric$ViewTypes;->id:I
+
+    sput v0, Lcom/smedialink/common/IdFabric$ViewTypes;->TWITTER:I
+
+    add-int/lit8 v0, v1, 0x1
+
+    .line 105
+    sput v0, Lcom/smedialink/common/IdFabric$ViewTypes;->id:I
+
+    sput v1, Lcom/smedialink/common/IdFabric$ViewTypes;->TWITTER_USER:I
+
+    add-int/lit8 v1, v0, 0x1
+
+    .line 106
+    sput v1, Lcom/smedialink/common/IdFabric$ViewTypes;->id:I
+
+    sput v0, Lcom/smedialink/common/IdFabric$ViewTypes;->TWITTER_INVITE:I
+
+    add-int/lit8 v0, v1, 0x1
+
+    .line 107
+    sput v0, Lcom/smedialink/common/IdFabric$ViewTypes;->id:I
+
+    sput v1, Lcom/smedialink/common/IdFabric$ViewTypes;->TWEET:I
+
+    add-int/lit8 v1, v0, 0x1
+
+    .line 108
+    sput v1, Lcom/smedialink/common/IdFabric$ViewTypes;->id:I
+
+    sput v0, Lcom/smedialink/common/IdFabric$ViewTypes;->TWEETS_DATE:I
+
+    add-int/lit8 v0, v1, 0x1
+
+    .line 109
+    sput v0, Lcom/smedialink/common/IdFabric$ViewTypes;->id:I
+
+    sput v1, Lcom/smedialink/common/IdFabric$ViewTypes;->CHOOSE_RECIPIENT_OPTIONS:I
 
     return-void
 .end method

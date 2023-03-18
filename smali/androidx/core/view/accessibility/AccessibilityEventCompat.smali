@@ -3,19 +3,27 @@
 .source "AccessibilityEventCompat.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/core/view/accessibility/AccessibilityEventCompat$Api19Impl;
+    }
+.end annotation
+
+
 # direct methods
 .method public static getContentChangeTypes(Landroid/view/accessibility/AccessibilityEvent;)I
     .locals 2
 
-    .line 343
+    .line 381
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x13
 
     if-lt v0, v1, :cond_0
 
-    .line 344
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityEvent;->getContentChangeTypes()I
+    .line 382
+    invoke-static {p0}, Landroidx/core/view/accessibility/AccessibilityEventCompat$Api19Impl;->getContentChangeTypes(Landroid/view/accessibility/AccessibilityEvent;)I
 
     move-result p0
 
@@ -30,15 +38,15 @@
 .method public static setContentChangeTypes(Landroid/view/accessibility/AccessibilityEvent;I)V
     .locals 2
 
-    .line 322
+    .line 360
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x13
 
     if-lt v0, v1, :cond_0
 
-    .line 323
-    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityEvent;->setContentChangeTypes(I)V
+    .line 361
+    invoke-static {p0, p1}, Landroidx/core/view/accessibility/AccessibilityEventCompat$Api19Impl;->setContentChangeTypes(Landroid/view/accessibility/AccessibilityEvent;I)V
 
     :cond_0
     return-void

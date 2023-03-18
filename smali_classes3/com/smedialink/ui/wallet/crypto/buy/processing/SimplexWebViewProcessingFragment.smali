@@ -66,10 +66,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$XbMIswqfAzGmVIQUkVA6a5hKEYU(Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;)V
+.method public static synthetic $r8$lambda$DFmES5HjkL2vnKyTxurWY8z5bbc(Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;)V
 
     return-void
 .end method
@@ -449,7 +449,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;)V
+.method private static final getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -802,7 +802,7 @@
 
     if-nez v1, :cond_0
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_0
     const/4 p1, -0x1
@@ -865,22 +865,19 @@
     :goto_0
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->mFilePathCallback:Landroid/webkit/ValueCallback;
 
-    if-nez p1, :cond_3
+    if-eqz p1, :cond_3
 
-    goto :goto_1
-
-    :cond_3
     invoke-interface {p1, p3}, Landroid/webkit/ValueCallback;->onReceiveValue(Ljava/lang/Object;)V
 
     .line 105
-    :goto_1
+    :cond_3
     iput-object v1, p0, Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->mFilePathCallback:Landroid/webkit/ValueCallback;
 
     return-void
 
     .line 83
     :cond_4
-    :goto_2
+    :goto_1
     invoke-super {p0, p1, p2, p3}, Lorg/telegram/ui/ActionBar/BaseFragment;->onActivityResultFragment(IILandroid/content/Intent;)V
 
     return-void

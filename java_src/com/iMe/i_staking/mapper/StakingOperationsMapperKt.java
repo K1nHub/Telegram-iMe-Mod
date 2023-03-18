@@ -41,11 +41,11 @@ public final class StakingOperationsMapperKt {
         String settledAt = stakingOperationResponse.getSettledAt();
         String failReason = stakingOperationResponse.getFailReason();
         StakingOperationCostResponse amount = stakingOperationResponse.getAmount();
-        StakingOperationCost mapToDomain = amount == null ? null : StakingOperationCostMapperKt.mapToDomain(amount);
+        StakingOperationCost mapToDomain = amount != null ? StakingOperationCostMapperKt.mapToDomain(amount) : null;
         StakingOperationCostResponse fee = stakingOperationResponse.getFee();
-        StakingOperationCost mapToDomain2 = fee == null ? null : StakingOperationCostMapperKt.mapToDomain(fee);
+        StakingOperationCost mapToDomain2 = fee != null ? StakingOperationCostMapperKt.mapToDomain(fee) : null;
         Boolean safe = stakingOperationResponse.getSafe();
         StakingTokenResponse approvedToken = stakingOperationResponse.getApprovedToken();
-        return new StakingOperation(id, stakingId, transaction, map, map2, issuer, issuedAt, settledAt, failReason, mapToDomain, mapToDomain2, safe, approvedToken == null ? null : StakingTokenMapperKt.mapToDomain(approvedToken), stakingOperationResponse.getToken(), NetworkType.Companion.map(stakingOperationResponse.getNetwork()));
+        return new StakingOperation(id, stakingId, transaction, map, map2, issuer, issuedAt, settledAt, failReason, mapToDomain, mapToDomain2, safe, approvedToken != null ? StakingTokenMapperKt.mapToDomain(approvedToken) : null, stakingOperationResponse.getToken(), NetworkType.Companion.map(stakingOperationResponse.getNetwork()));
     }
 }

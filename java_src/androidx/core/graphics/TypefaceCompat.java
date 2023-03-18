@@ -33,12 +33,12 @@ public class TypefaceCompat {
         sTypefaceCache = new LruCache<>(16);
     }
 
-    public static Typeface findFromCache(Resources resources, int i, int i2) {
-        return sTypefaceCache.get(createResourceUid(resources, i, i2));
+    public static Typeface findFromCache(Resources resources, int i, String str, int i2, int i3) {
+        return sTypefaceCache.get(createResourceUid(resources, i, str, i2, i3));
     }
 
-    private static String createResourceUid(Resources resources, int i, int i2) {
-        return resources.getResourcePackageName(i) + "-" + i + "-" + i2;
+    private static String createResourceUid(Resources resources, int i, String str, int i2, int i3) {
+        return resources.getResourcePackageName(i) + '-' + str + '-' + i2 + '-' + i + '-' + i3;
     }
 
     private static Typeface getSystemFontFamily(String str) {
@@ -53,7 +53,7 @@ public class TypefaceCompat {
         return create;
     }
 
-    public static Typeface createFromResourcesFamilyXml(Context context, FontResourcesParserCompat.FamilyResourceEntry familyResourceEntry, Resources resources, int i, int i2, ResourcesCompat.FontCallback fontCallback, Handler handler, boolean z) {
+    public static Typeface createFromResourcesFamilyXml(Context context, FontResourcesParserCompat.FamilyResourceEntry familyResourceEntry, Resources resources, int i, String str, int i2, int i3, ResourcesCompat.FontCallback fontCallback, Handler handler, boolean z) {
         Typeface createFromFontFamilyFilesResourceEntry;
         if (familyResourceEntry instanceof FontResourcesParserCompat.ProviderResourceEntry) {
             FontResourcesParserCompat.ProviderResourceEntry providerResourceEntry = (FontResourcesParserCompat.ProviderResourceEntry) familyResourceEntry;
@@ -64,9 +64,9 @@ public class TypefaceCompat {
                 }
                 return systemFontFamily;
             }
-            createFromFontFamilyFilesResourceEntry = FontsContractCompat.requestFont(context, providerResourceEntry.getRequest(), i2, !z ? fontCallback != null : providerResourceEntry.getFetchStrategy() != 0, z ? providerResourceEntry.getTimeout() : -1, ResourcesCompat.FontCallback.getHandler(handler), new ResourcesCallbackAdapter(fontCallback));
+            createFromFontFamilyFilesResourceEntry = FontsContractCompat.requestFont(context, providerResourceEntry.getRequest(), i3, !z ? fontCallback != null : providerResourceEntry.getFetchStrategy() != 0, z ? providerResourceEntry.getTimeout() : -1, ResourcesCompat.FontCallback.getHandler(handler), new ResourcesCallbackAdapter(fontCallback));
         } else {
-            createFromFontFamilyFilesResourceEntry = sTypefaceCompatImpl.createFromFontFamilyFilesResourceEntry(context, (FontResourcesParserCompat.FontFamilyFilesResourceEntry) familyResourceEntry, resources, i2);
+            createFromFontFamilyFilesResourceEntry = sTypefaceCompatImpl.createFromFontFamilyFilesResourceEntry(context, (FontResourcesParserCompat.FontFamilyFilesResourceEntry) familyResourceEntry, resources, i3);
             if (fontCallback != null) {
                 if (createFromFontFamilyFilesResourceEntry != null) {
                     fontCallback.callbackSuccessAsync(createFromFontFamilyFilesResourceEntry, handler);
@@ -76,15 +76,15 @@ public class TypefaceCompat {
             }
         }
         if (createFromFontFamilyFilesResourceEntry != null) {
-            sTypefaceCache.put(createResourceUid(resources, i, i2), createFromFontFamilyFilesResourceEntry);
+            sTypefaceCache.put(createResourceUid(resources, i, str, i2, i3), createFromFontFamilyFilesResourceEntry);
         }
         return createFromFontFamilyFilesResourceEntry;
     }
 
-    public static Typeface createFromResourcesFontFile(Context context, Resources resources, int i, String str, int i2) {
-        Typeface createFromResourcesFontFile = sTypefaceCompatImpl.createFromResourcesFontFile(context, resources, i, str, i2);
+    public static Typeface createFromResourcesFontFile(Context context, Resources resources, int i, String str, int i2, int i3) {
+        Typeface createFromResourcesFontFile = sTypefaceCompatImpl.createFromResourcesFontFile(context, resources, i, str, i3);
         if (createFromResourcesFontFile != null) {
-            sTypefaceCache.put(createResourceUid(resources, i, i2), createFromResourcesFontFile);
+            sTypefaceCache.put(createResourceUid(resources, i, str, i2, i3), createFromResourcesFontFile);
         }
         return createFromResourcesFontFile;
     }
@@ -122,7 +122,7 @@ public class TypefaceCompat {
         public void onTypefaceRetrieved(Typeface typeface) {
             ResourcesCompat.FontCallback fontCallback = this.mFontCallback;
             if (fontCallback != null) {
-                fontCallback.onFontRetrieved(typeface);
+                fontCallback.lambda$callbackSuccessAsync$0(typeface);
             }
         }
 
@@ -130,7 +130,7 @@ public class TypefaceCompat {
         public void onTypefaceRequestFailed(int i) {
             ResourcesCompat.FontCallback fontCallback = this.mFontCallback;
             if (fontCallback != null) {
-                fontCallback.onFontRetrievalFailed(i);
+                fontCallback.lambda$callbackFailAsync$1(i);
             }
         }
     }

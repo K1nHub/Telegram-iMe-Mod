@@ -139,7 +139,7 @@ public class MentionsContainerView extends BlurredFrameLayout {
                 TLRPC$PhotoSize closestPhotoSizeWithSize;
                 if (i2 != 0) {
                     int i3 = i2 - 1;
-                    if (MentionsContainerView.this.adapter.getBotContextSwitch() != null) {
+                    if (MentionsContainerView.this.adapter.getBotContextSwitch() != null || MentionsContainerView.this.adapter.getBotWebViewSwitch() != null) {
                         i3++;
                     }
                     Size size = this.size;
@@ -153,14 +153,14 @@ public class MentionsContainerView extends BlurredFrameLayout {
                         if (tLRPC$Document != null) {
                             TLRPC$PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(tLRPC$Document.thumbs, 90);
                             Size size2 = this.size;
-                            size2.width = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.f1525w : 100.0f;
-                            size2.height = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.f1524h : 100.0f;
+                            size2.width = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.f1530w : 100.0f;
+                            size2.height = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.f1529h : 100.0f;
                             while (i4 < tLRPC$BotInlineResult.document.attributes.size()) {
                                 TLRPC$DocumentAttribute tLRPC$DocumentAttribute = tLRPC$BotInlineResult.document.attributes.get(i4);
                                 if ((tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeVideo)) {
                                     Size size3 = this.size;
-                                    size3.width = tLRPC$DocumentAttribute.f1505w;
-                                    size3.height = tLRPC$DocumentAttribute.f1504h;
+                                    size3.width = tLRPC$DocumentAttribute.f1510w;
+                                    size3.height = tLRPC$DocumentAttribute.f1509h;
                                     break;
                                 }
                                 i4++;
@@ -170,8 +170,8 @@ public class MentionsContainerView extends BlurredFrameLayout {
                                 TLRPC$DocumentAttribute tLRPC$DocumentAttribute2 = tLRPC$BotInlineResult.content.attributes.get(i4);
                                 if ((tLRPC$DocumentAttribute2 instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute2 instanceof TLRPC$TL_documentAttributeVideo)) {
                                     Size size4 = this.size;
-                                    size4.width = tLRPC$DocumentAttribute2.f1505w;
-                                    size4.height = tLRPC$DocumentAttribute2.f1504h;
+                                    size4.width = tLRPC$DocumentAttribute2.f1510w;
+                                    size4.height = tLRPC$DocumentAttribute2.f1509h;
                                     break;
                                 }
                                 i4++;
@@ -181,8 +181,8 @@ public class MentionsContainerView extends BlurredFrameLayout {
                                 TLRPC$DocumentAttribute tLRPC$DocumentAttribute3 = tLRPC$BotInlineResult.thumb.attributes.get(i4);
                                 if ((tLRPC$DocumentAttribute3 instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute3 instanceof TLRPC$TL_documentAttributeVideo)) {
                                     Size size5 = this.size;
-                                    size5.width = tLRPC$DocumentAttribute3.f1505w;
-                                    size5.height = tLRPC$DocumentAttribute3.f1504h;
+                                    size5.width = tLRPC$DocumentAttribute3.f1510w;
+                                    size5.height = tLRPC$DocumentAttribute3.f1509h;
                                     break;
                                 }
                                 i4++;
@@ -191,8 +191,8 @@ public class MentionsContainerView extends BlurredFrameLayout {
                             TLRPC$Photo tLRPC$Photo = tLRPC$BotInlineResult.photo;
                             if (tLRPC$Photo != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLRPC$Photo.sizes, AndroidUtilities.photoSize.intValue())) != null) {
                                 Size size6 = this.size;
-                                size6.width = closestPhotoSizeWithSize.f1525w;
-                                size6.height = closestPhotoSizeWithSize.f1524h;
+                                size6.width = closestPhotoSizeWithSize.f1530w;
+                                size6.height = closestPhotoSizeWithSize.f1529h;
                             }
                         }
                     }
@@ -206,7 +206,7 @@ public class MentionsContainerView extends BlurredFrameLayout {
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // org.telegram.p048ui.Components.ExtendedGridLayoutManager
             public int getFlowItemCount() {
-                if (MentionsContainerView.this.adapter.getBotContextSwitch() != null) {
+                if (MentionsContainerView.this.adapter.getBotContextSwitch() != null || MentionsContainerView.this.adapter.getBotWebViewSwitch() != null) {
                     return getItemCount() - 2;
                 }
                 return super.getFlowItemCount() - 1;
@@ -227,7 +227,7 @@ public class MentionsContainerView extends BlurredFrameLayout {
                 if (item instanceof TLRPC$Document) {
                     return 20;
                 }
-                if (MentionsContainerView.this.adapter.getBotContextSwitch() != null) {
+                if (MentionsContainerView.this.adapter.getBotContextSwitch() != null || MentionsContainerView.this.adapter.getBotWebViewSwitch() != null) {
                     i3--;
                 }
                 return MentionsContainerView.this.gridLayoutManager.getSpanSizeForItem(i3);
@@ -345,7 +345,7 @@ public class MentionsContainerView extends BlurredFrameLayout {
         float min;
         PaddedListAdapter paddedListAdapter2;
         boolean isReversed = isReversed();
-        this.containerPadding = AndroidUtilities.m50dp(((this.adapter.isStickers() || this.adapter.isBotContext()) && this.adapter.isMediaLayout() && this.adapter.getBotContextSwitch() == null ? 2 : 0) + 2);
+        this.containerPadding = AndroidUtilities.m50dp(((this.adapter.isStickers() || this.adapter.isBotContext()) && this.adapter.isMediaLayout() && this.adapter.getBotContextSwitch() == null && this.adapter.getBotWebViewSwitch() == null ? 2 : 0) + 2);
         float m50dp = AndroidUtilities.m50dp(4);
         if (isReversed) {
             float min2 = Math.min(Math.max((float) BitmapDescriptorFactory.HUE_RED, (this.paddedAdapter.paddingViewAttached ? paddedListAdapter2.paddingView.getTop() : getHeight()) + this.listView.getTranslationY()) + this.containerPadding, (1.0f - this.hideT) * getHeight());
@@ -626,7 +626,7 @@ public class MentionsContainerView extends BlurredFrameLayout {
                     if (MentionsContainerView.this.adapter.isStickers()) {
                         return;
                     }
-                    if (MentionsContainerView.this.adapter.getBotContextSwitch() == null) {
+                    if (MentionsContainerView.this.adapter.getBotContextSwitch() == null && MentionsContainerView.this.adapter.getBotWebViewSwitch() == null) {
                         rect.top = AndroidUtilities.m50dp(2);
                     } else if (i == 0) {
                         return;

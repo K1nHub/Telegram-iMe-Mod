@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContactsActivity;)V
     .locals 0
 
-    .line 1318
+    .line 1313
     iput-object p1, p0, Lorg/telegram/ui/ContactsActivity$12;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onGlobalLayout()V
     .locals 2
 
-    .line 1321
+    .line 1316
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$12;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$800(Lorg/telegram/ui/ContactsActivity;)Landroid/widget/FrameLayout;
@@ -69,7 +69,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1322
+    .line 1317
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$12;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$800(Lorg/telegram/ui/ContactsActivity;)Landroid/widget/FrameLayout;
@@ -86,7 +86,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setClickable(Z)V
 
-    .line 1323
+    .line 1318
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$12;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$800(Lorg/telegram/ui/ContactsActivity;)Landroid/widget/FrameLayout;
@@ -95,7 +95,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1324
+    .line 1319
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$12;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$800(Lorg/telegram/ui/ContactsActivity;)Landroid/widget/FrameLayout;

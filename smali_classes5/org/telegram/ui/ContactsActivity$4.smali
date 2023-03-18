@@ -26,7 +26,7 @@
 
     move-object v0, p1
 
-    .line 758
+    .line 753
     iput-object v0, v10, Lorg/telegram/ui/ContactsActivity$4;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     move-object v0, p0
@@ -59,7 +59,7 @@
 .method protected onSearchProgressChanged()V
     .locals 3
 
-    .line 761
+    .line 756
     invoke-virtual {p0}, Lorg/telegram/ui/Adapters/SearchAdapter;->searchInProgress()Z
 
     move-result v0
@@ -72,7 +72,7 @@
 
     if-nez v0, :cond_0
 
-    .line 762
+    .line 757
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$4;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$1500(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
@@ -85,7 +85,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/StickerEmptyView;->showProgress(ZZ)V
 
-    .line 764
+    .line 759
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$4;->this$0:Lorg/telegram/ui/ContactsActivity;
 

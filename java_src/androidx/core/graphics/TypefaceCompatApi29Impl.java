@@ -15,6 +15,25 @@ import java.io.IOException;
 import java.io.InputStream;
 /* loaded from: classes.dex */
 public class TypefaceCompatApi29Impl extends TypefaceCompatBaseImpl {
+    private static int getMatchScore(FontStyle fontStyle, FontStyle fontStyle2) {
+        return (Math.abs(fontStyle.getWeight() - fontStyle2.getWeight()) / 100) + (fontStyle.getSlant() == fontStyle2.getSlant() ? 0 : 2);
+    }
+
+    private Font findBaseFont(FontFamily fontFamily, int i) {
+        FontStyle fontStyle = new FontStyle((i & 1) != 0 ? 700 : 400, (i & 2) != 0 ? 1 : 0);
+        Font font = fontFamily.getFont(0);
+        int matchScore = getMatchScore(fontStyle, font.getStyle());
+        for (int i2 = 1; i2 < fontFamily.getSize(); i2++) {
+            Font font2 = fontFamily.getFont(i2);
+            int matchScore2 = getMatchScore(fontStyle, font2.getStyle());
+            if (matchScore2 < matchScore) {
+                font = font2;
+                matchScore = matchScore2;
+            }
+        }
+        return font;
+    }
+
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.core.graphics.TypefaceCompatBaseImpl
     public FontsContractCompat.FontInfo findBestInfo(FontsContractCompat.FontInfo[] fontInfoArr, int i) {
@@ -35,14 +54,7 @@ public class TypefaceCompatApi29Impl extends TypefaceCompatBaseImpl {
         try {
             int length = fontInfoArr.length;
             FontFamily.Builder builder = null;
-            while (true) {
-                int i3 = 1;
-                if (i2 >= length) {
-                    if (builder == null) {
-                        return null;
-                    }
-                    return new Typeface.CustomFallbackBuilder(builder.build()).setStyle(new FontStyle((i & 1) != 0 ? 700 : 400, (i & 2) != 0 ? 1 : 0)).build();
-                }
+            while (i2 < length) {
                 FontsContractCompat.FontInfo fontInfo = fontInfoArr[i2];
                 try {
                     openFileDescriptor = contentResolver.openFileDescriptor(fontInfo.getUri(), "r", cancellationSignal);
@@ -50,11 +62,7 @@ public class TypefaceCompatApi29Impl extends TypefaceCompatBaseImpl {
                 }
                 if (openFileDescriptor != null) {
                     try {
-                        Font.Builder weight = new Font.Builder(openFileDescriptor).setWeight(fontInfo.getWeight());
-                        if (!fontInfo.isItalic()) {
-                            i3 = 0;
-                        }
-                        Font build = weight.setSlant(i3).setTtcIndex(fontInfo.getTtcIndex()).build();
+                        Font build = new Font.Builder(openFileDescriptor).setWeight(fontInfo.getWeight()).setSlant(fontInfo.isItalic() ? 1 : 0).setTtcIndex(fontInfo.getTtcIndex()).build();
                         if (builder == null) {
                             builder = new FontFamily.Builder(build);
                         } else {
@@ -74,6 +82,11 @@ public class TypefaceCompatApi29Impl extends TypefaceCompatBaseImpl {
                 }
                 openFileDescriptor.close();
             }
+            if (builder == null) {
+                return null;
+            }
+            FontFamily build2 = builder.build();
+            return new Typeface.CustomFallbackBuilder(build2).setStyle(findBaseFont(build2, i).getStyle()).build();
         } catch (Exception unused2) {
             return null;
         }
@@ -81,23 +94,12 @@ public class TypefaceCompatApi29Impl extends TypefaceCompatBaseImpl {
 
     @Override // androidx.core.graphics.TypefaceCompatBaseImpl
     public Typeface createFromFontFamilyFilesResourceEntry(Context context, FontResourcesParserCompat.FontFamilyFilesResourceEntry fontFamilyFilesResourceEntry, Resources resources, int i) {
+        FontResourcesParserCompat.FontFileResourceEntry[] entries;
         try {
-            FontResourcesParserCompat.FontFileResourceEntry[] entries = fontFamilyFilesResourceEntry.getEntries();
-            int length = entries.length;
             FontFamily.Builder builder = null;
-            int i2 = 0;
-            while (true) {
-                int i3 = 1;
-                if (i2 >= length) {
-                    break;
-                }
-                FontResourcesParserCompat.FontFileResourceEntry fontFileResourceEntry = entries[i2];
+            for (FontResourcesParserCompat.FontFileResourceEntry fontFileResourceEntry : fontFamilyFilesResourceEntry.getEntries()) {
                 try {
-                    Font.Builder weight = new Font.Builder(resources, fontFileResourceEntry.getResourceId()).setWeight(fontFileResourceEntry.getWeight());
-                    if (!fontFileResourceEntry.isItalic()) {
-                        i3 = 0;
-                    }
-                    Font build = weight.setSlant(i3).setTtcIndex(fontFileResourceEntry.getTtcIndex()).setFontVariationSettings(fontFileResourceEntry.getVariationSettings()).build();
+                    Font build = new Font.Builder(resources, fontFileResourceEntry.getResourceId()).setWeight(fontFileResourceEntry.getWeight()).setSlant(fontFileResourceEntry.isItalic() ? 1 : 0).setTtcIndex(fontFileResourceEntry.getTtcIndex()).setFontVariationSettings(fontFileResourceEntry.getVariationSettings()).build();
                     if (builder == null) {
                         builder = new FontFamily.Builder(build);
                     } else {
@@ -105,12 +107,12 @@ public class TypefaceCompatApi29Impl extends TypefaceCompatBaseImpl {
                     }
                 } catch (IOException unused) {
                 }
-                i2++;
             }
             if (builder == null) {
                 return null;
             }
-            return new Typeface.CustomFallbackBuilder(builder.build()).setStyle(new FontStyle((i & 1) != 0 ? 700 : 400, (i & 2) != 0 ? 1 : 0)).build();
+            FontFamily build2 = builder.build();
+            return new Typeface.CustomFallbackBuilder(build2).setStyle(findBaseFont(build2, i).getStyle()).build();
         } catch (Exception unused2) {
             return null;
         }

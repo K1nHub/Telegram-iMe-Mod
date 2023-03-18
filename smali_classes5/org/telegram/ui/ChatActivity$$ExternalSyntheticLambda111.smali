@@ -6,16 +6,24 @@
 
 
 # instance fields
-.field public final synthetic f$0:[Lorg/telegram/ui/Cells/CheckBoxCell;
+.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
+
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+
+.field public final synthetic f$2:I
 
 
 # direct methods
-.method public synthetic constructor <init>([Lorg/telegram/ui/Cells/CheckBoxCell;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda111;->f$0:[Lorg/telegram/ui/Cells/CheckBoxCell;
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda111;->f$0:Lorg/telegram/ui/ChatActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda111;->f$1:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+
+    iput p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda111;->f$2:I
 
     return-void
 .end method
@@ -23,11 +31,15 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 1
+    .locals 3
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda111;->f$0:[Lorg/telegram/ui/Cells/CheckBoxCell;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda111;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$HF_oyR9-0WIL0Fx8KUmfY9l5RMM([Lorg/telegram/ui/Cells/CheckBoxCell;Landroid/view/View;)V
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda111;->f$1:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+
+    iget v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda111;->f$2:I
+
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$TkJ4moIHd5zYY9_DhhCwY13vrH0(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILandroid/view/View;)V
 
     return-void
 .end method

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda6;->f$0:Lcom/smedialink/bots/data/repository/BotsRepository;
 
-    invoke-static {v0, p1}, Lcom/smedialink/bots/data/repository/BotsRepository;->$r8$lambda$yD6kzcxp4A3g14uZ4ulWxoQrcWU(Lcom/smedialink/bots/data/repository/BotsRepository;Lio/reactivex/ObservableEmitter;)V
+    invoke-static {v0, p1}, Lcom/smedialink/bots/data/repository/BotsRepository;->$r8$lambda$hiHjL1gyf5-JdO0AvXi775A61yw(Lcom/smedialink/bots/data/repository/BotsRepository;Lio/reactivex/ObservableEmitter;)V
 
     return-void
 .end method

@@ -1321,25 +1321,33 @@
     invoke-virtual {p1, v0, v4, v5, v6}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     .line 322
+    iget v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
+
+    cmpl-float v0, v0, v1
+
+    if-eqz v0, :cond_7
+
+    .line 323
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 323
+    .line 325
+    :cond_7
     iget v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
 
     cmpl-float v0, v0, v2
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_8
 
-    .line 324
+    .line 326
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AvatarDrawable;->getColor()I
 
     move-result v0
 
-    .line 325
+    .line 327
     invoke-static {v0}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v2
@@ -1350,12 +1358,12 @@
 
     div-float/2addr v2, v4
 
-    .line 326
+    .line 328
     sget-object v5, Lorg/telegram/ui/Components/GroupCreateSpan;->backPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v5, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 327
+    .line 329
     sget-object v0, Lorg/telegram/ui/Components/GroupCreateSpan;->backPaint:Landroid/graphics/Paint;
 
     iget v5, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
@@ -1368,7 +1376,7 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 328
+    .line 330
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1391,12 +1399,12 @@
 
     invoke-virtual {p1, v0, v2, v5, v6}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 329
+    .line 331
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/high16 v0, 0x42340000    # 45.0f
 
-    .line 330
+    .line 332
     iget v2, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
 
     sub-float/2addr v1, v2
@@ -1417,7 +1425,7 @@
 
     invoke-virtual {p1, v1, v0, v2}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 331
+    .line 333
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleteDrawable:Landroid/graphics/drawable/Drawable;
 
     const/16 v1, 0xb
@@ -1442,7 +1450,7 @@
 
     invoke-virtual {v0, v2, v1, v5, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 332
+    .line 334
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleteDrawable:Landroid/graphics/drawable/Drawable;
 
     iget v1, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
@@ -1453,16 +1461,16 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 333
+    .line 335
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleteDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 334
+    .line 336
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 336
-    :cond_7
+    .line 338
+    :cond_8
     iget v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->textX:F
 
     const/16 v1, 0x29
@@ -1487,19 +1495,19 @@
 
     const-string v0, "groupcreate_spanText"
 
-    .line 337
+    .line 339
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
 
     const-string v1, "avatar_text"
 
-    .line 338
+    .line 340
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 339
+    .line 341
     sget-object v2, Lorg/telegram/ui/Components/GroupCreateSpan;->textPaint:Landroid/text/TextPaint;
 
     iget v3, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
@@ -1510,12 +1518,12 @@
 
     invoke-virtual {v2, v0}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 341
+    .line 343
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->nameLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 342
+    .line 344
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -1524,10 +1532,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 4
 
-    .line 347
+    .line 349
     invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 348
+    .line 350
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->nameLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
@@ -1536,7 +1544,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
-    .line 349
+    .line 351
     invoke-virtual {p0}, Lorg/telegram/ui/Components/GroupCreateSpan;->isDeleting()Z
 
     move-result v0
@@ -1549,7 +1557,7 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 350
+    .line 352
     new-instance v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     sget-object v1, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_CLICK:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;

@@ -10,7 +10,6 @@ import com.smedialink.p031ui.drawer.DrawerSwitchableItem;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.Set;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
@@ -18,7 +17,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
@@ -57,7 +56,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
     public final FrameLayout initRootView() {
         int collectionSizeOrDefault;
         FrameLayout frameLayout = new FrameLayout(getContext());
-        setTitle(LocaleController.getInternalString(C3158R.string.settings_interface_drawer_items), true);
+        setTitle(LocaleController.getInternalString(C3286R.string.settings_interface_drawer_items), true);
         ScrollView scrollView = new ScrollView(frameLayout.getContext());
         LinearLayout linearLayout = new LinearLayout(frameLayout.getContext());
         linearLayout.setOrientation(1);
@@ -72,7 +71,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
             textCheckBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.DrawerItemsSettingsBottomSheet$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DrawerItemsSettingsBottomSheet.m1987initRootView$lambda13$lambda4$lambda2$lambda1(TextCheckBoxCell.this, view);
+                    DrawerItemsSettingsBottomSheet.initRootView$lambda$13$lambda$4$lambda$2$lambda$1(TextCheckBoxCell.this, view);
                 }
             });
             linearLayout.addView(textCheckBoxCell, LayoutHelper.createLinear(-1, 50));
@@ -85,7 +84,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
         frameLayout.addView(view, LayoutHelper.createFrame(-1, 1, 80, 0, 0, 0, 52));
         TextView textView = new TextView(frameLayout.getContext());
         textView.setGravity(17);
-        String string = LocaleController.getString("Cancel", C3158R.string.Cancel);
+        String string = LocaleController.getString("Cancel", C3286R.string.Cancel);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Cancel\", R.string.Cancel)");
         Locale locale = Locale.ROOT;
         String upperCase = string.toUpperCase(locale);
@@ -98,12 +97,12 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.DrawerItemsSettingsBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                DrawerItemsSettingsBottomSheet.m1988initRootView$lambda13$lambda7$lambda6(DrawerItemsSettingsBottomSheet.this, view2);
+                DrawerItemsSettingsBottomSheet.initRootView$lambda$13$lambda$7$lambda$6(DrawerItemsSettingsBottomSheet.this, view2);
             }
         });
         TextView textView2 = new TextView(frameLayout.getContext());
         textView2.setGravity(17);
-        String string2 = LocaleController.getString("Save", C3158R.string.Save);
+        String string2 = LocaleController.getString("Save", C3286R.string.Save);
         Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Save\", R.string.Save)");
         String upperCase2 = string2.toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase2, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -115,7 +114,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
         textView2.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.DrawerItemsSettingsBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                DrawerItemsSettingsBottomSheet.m1986initRootView$lambda13$lambda11$lambda10(DrawerItemsSettingsBottomSheet.this, arrayList, view2);
+                DrawerItemsSettingsBottomSheet.initRootView$lambda$13$lambda$11$lambda$10(DrawerItemsSettingsBottomSheet.this, arrayList, view2);
             }
         });
         FrameLayout frameLayout2 = new FrameLayout(frameLayout.getContext());
@@ -128,22 +127,19 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initRootView$lambda-13$lambda-4$lambda-2$lambda-1  reason: not valid java name */
-    public static final void m1987initRootView$lambda13$lambda4$lambda2$lambda1(TextCheckBoxCell this_apply, View view) {
+    public static final void initRootView$lambda$13$lambda$4$lambda$2$lambda$1(TextCheckBoxCell this_apply, View view) {
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         this_apply.setChecked(!this_apply.isChecked());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initRootView$lambda-13$lambda-7$lambda-6  reason: not valid java name */
-    public static final void m1988initRootView$lambda13$lambda7$lambda6(DrawerItemsSettingsBottomSheet this$0, View view) {
+    public static final void initRootView$lambda$13$lambda$7$lambda$6(DrawerItemsSettingsBottomSheet this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initRootView$lambda-13$lambda-11$lambda-10  reason: not valid java name */
-    public static final void m1986initRootView$lambda13$lambda11$lambda10(DrawerItemsSettingsBottomSheet this$0, List cells, View view) {
+    public static final void initRootView$lambda$13$lambda$11$lambda$10(DrawerItemsSettingsBottomSheet this$0, List cells, View view) {
         int collectionSizeOrDefault;
         Set mutableSet;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
@@ -159,7 +155,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
         ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault);
         for (TextCheckBoxCell textCheckBoxCell : arrayList) {
             Object tag = textCheckBoxCell.getTag();
-            Objects.requireNonNull(tag, "null cannot be cast to non-null type com.smedialink.ui.drawer.DrawerSwitchableItem");
+            Intrinsics.checkNotNull(tag, "null cannot be cast to non-null type com.smedialink.ui.drawer.DrawerSwitchableItem");
             arrayList2.add((DrawerSwitchableItem) tag);
         }
         mutableSet = CollectionsKt___CollectionsKt.toMutableSet(arrayList2);

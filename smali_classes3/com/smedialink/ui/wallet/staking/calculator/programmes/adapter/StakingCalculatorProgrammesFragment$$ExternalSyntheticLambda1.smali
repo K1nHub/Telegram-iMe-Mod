@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/staking/calculator/programmes/adapter/StakingCalculatorProgrammesFragment$$ExternalSyntheticLambda1;->f$1:Lcom/smedialink/ui/wallet/staking/calculator/programmes/adapter/StakingCalculatorProgrammesFragment;
 
-    invoke-static {v0, v1, p1, p2, p3}, Lcom/smedialink/ui/wallet/staking/calculator/programmes/adapter/StakingCalculatorProgrammesFragment;->$r8$lambda$XMt5rKszRfqa3j7ps_-gPgk4kfQ(Lcom/smedialink/ui/wallet/staking/calculator/programmes/adapter/StakingCalculatorProgrammesRecycleAdapter;Lcom/smedialink/ui/wallet/staking/calculator/programmes/adapter/StakingCalculatorProgrammesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {v0, v1, p1, p2, p3}, Lcom/smedialink/ui/wallet/staking/calculator/programmes/adapter/StakingCalculatorProgrammesFragment;->$r8$lambda$lMxVwBCzl_DcZUeclacmrir8lzY(Lcom/smedialink/ui/wallet/staking/calculator/programmes/adapter/StakingCalculatorProgrammesRecycleAdapter;Lcom/smedialink/ui/wallet/staking/calculator/programmes/adapter/StakingCalculatorProgrammesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method

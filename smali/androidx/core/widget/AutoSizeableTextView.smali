@@ -5,13 +5,16 @@
 
 # static fields
 .field public static final PLATFORM_SUPPORTS_AUTOSIZE:Z
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 44
+    .line 46
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1b

@@ -57,7 +57,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 82
+    .line 81
     sget-object v0, Lorg/telegram/ui/PhotoPickerSearchActivity$$ExternalSyntheticLambda0;->INSTANCE:Lorg/telegram/ui/PhotoPickerSearchActivity$$ExternalSyntheticLambda0;
 
     sput-object v0, Lorg/telegram/ui/PhotoPickerSearchActivity;->interpolator:Landroid/view/animation/Interpolator;
@@ -84,15 +84,15 @@
 
     move-object/from16 v0, p0
 
-    .line 88
+    .line 87
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
 
     const/4 v1, 0x1
 
-    .line 70
+    .line 69
     iput-boolean v1, v0, Lorg/telegram/ui/PhotoPickerSearchActivity;->swipeBackEnabled:Z
 
-    .line 74
+    .line 73
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
@@ -103,10 +103,10 @@
 
     new-array v1, v1, [Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
-    .line 76
+    .line 75
     iput-object v1, v0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
-    .line 90
+    .line 89
     new-instance v1, Lorg/telegram/ui/PhotoPickerActivity;
 
     const/4 v3, 0x0
@@ -131,7 +131,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
-    .line 91
+    .line 90
     new-instance v1, Lorg/telegram/ui/PhotoPickerActivity;
 
     const/4 v12, 0x1
@@ -162,7 +162,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/PhotoPickerActivity;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     return-object p0
@@ -171,7 +171,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/PhotoPickerActivity;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->gifsSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     return-object p0
@@ -180,7 +180,7 @@
 .method static synthetic access$1000(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -189,7 +189,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/Components/EditTextEmoji;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     return-object p0
@@ -198,7 +198,7 @@
 .method static synthetic access$1200(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -207,7 +207,7 @@
 .method static synthetic access$1400(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -216,7 +216,7 @@
 .method static synthetic access$1500(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -225,7 +225,7 @@
 .method static synthetic access$1600(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -234,7 +234,7 @@
 .method static synthetic access$1700(Lorg/telegram/ui/PhotoPickerSearchActivity;)Z
     .locals 0
 
-    .line 47
+    .line 46
     iget-boolean p0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->tabsAnimationInProgress:Z
 
     return p0
@@ -243,7 +243,7 @@
 .method static synthetic access$1702(Lorg/telegram/ui/PhotoPickerSearchActivity;Z)Z
     .locals 0
 
-    .line 47
+    .line 46
     iput-boolean p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->tabsAnimationInProgress:Z
 
     return p1
@@ -252,7 +252,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/PhotoPickerSearchActivity;)Z
     .locals 0
 
-    .line 47
+    .line 46
     iget-boolean p0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->backAnimation:Z
 
     return p0
@@ -261,7 +261,7 @@
 .method static synthetic access$1802(Lorg/telegram/ui/PhotoPickerSearchActivity;Z)Z
     .locals 0
 
-    .line 47
+    .line 46
     iput-boolean p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->backAnimation:Z
 
     return p1
@@ -270,7 +270,7 @@
 .method static synthetic access$1900(Lorg/telegram/ui/PhotoPickerSearchActivity;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     return-object p0
@@ -279,7 +279,7 @@
 .method static synthetic access$1902(Lorg/telegram/ui/PhotoPickerSearchActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 47
+    .line 46
     iput-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     return-object p1
@@ -288,7 +288,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     return-object p0
@@ -297,7 +297,7 @@
 .method static synthetic access$2000(Lorg/telegram/ui/PhotoPickerSearchActivity;)Landroid/graphics/Paint;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->backgroundPaint:Landroid/graphics/Paint;
 
     return-object p0
@@ -306,7 +306,7 @@
 .method static synthetic access$2100(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -315,7 +315,7 @@
 .method static synthetic access$2200(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -324,7 +324,7 @@
 .method static synthetic access$2300(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     return-object p0
@@ -333,7 +333,7 @@
 .method static synthetic access$2400(Lorg/telegram/ui/PhotoPickerSearchActivity;)I
     .locals 0
 
-    .line 47
+    .line 46
     iget p0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->maximumVelocity:I
 
     return p0
@@ -342,7 +342,7 @@
 .method static synthetic access$2500()Landroid/view/animation/Interpolator;
     .locals 1
 
-    .line 47
+    .line 46
     sget-object v0, Lorg/telegram/ui/PhotoPickerSearchActivity;->interpolator:Landroid/view/animation/Interpolator;
 
     return-object v0
@@ -351,7 +351,7 @@
 .method static synthetic access$2800(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -360,7 +360,7 @@
 .method static synthetic access$2900(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -369,7 +369,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/PhotoPickerSearchActivity;)[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     return-object p0
@@ -378,7 +378,7 @@
 .method static synthetic access$3300(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -387,7 +387,7 @@
 .method static synthetic access$3400(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -396,7 +396,7 @@
 .method static synthetic access$3500(Lorg/telegram/ui/PhotoPickerSearchActivity;F)V
     .locals 0
 
-    .line 47
+    .line 46
     invoke-direct {p0, p1}, Lorg/telegram/ui/PhotoPickerSearchActivity;->setScrollY(F)V
 
     return-void
@@ -405,7 +405,7 @@
 .method static synthetic access$3600(Lorg/telegram/ui/PhotoPickerSearchActivity;Ljava/lang/String;)V
     .locals 0
 
-    .line 47
+    .line 46
     invoke-direct {p0, p1}, Lorg/telegram/ui/PhotoPickerSearchActivity;->searchText(Ljava/lang/String;)V
 
     return-void
@@ -414,7 +414,7 @@
 .method static synthetic access$502(Lorg/telegram/ui/PhotoPickerSearchActivity;Z)Z
     .locals 0
 
-    .line 47
+    .line 46
     iput-boolean p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->swipeBackEnabled:Z
 
     return p1
@@ -423,7 +423,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
     return-object p0
@@ -432,7 +432,7 @@
 .method static synthetic access$700(Lorg/telegram/ui/PhotoPickerSearchActivity;Z)V
     .locals 0
 
-    .line 47
+    .line 46
     invoke-direct {p0, p1}, Lorg/telegram/ui/PhotoPickerSearchActivity;->switchToCurrentSelectedMode(Z)V
 
     return-void
@@ -441,7 +441,7 @@
 .method static synthetic access$800(Lorg/telegram/ui/PhotoPickerSearchActivity;)Z
     .locals 0
 
-    .line 47
+    .line 46
     iget-boolean p0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->animatingForward:Z
 
     return p0
@@ -450,7 +450,7 @@
 .method static synthetic access$802(Lorg/telegram/ui/PhotoPickerSearchActivity;Z)Z
     .locals 0
 
-    .line 47
+    .line 46
     iput-boolean p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->animatingForward:Z
 
     return p1
@@ -459,7 +459,7 @@
 .method static synthetic access$900(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -488,7 +488,7 @@
 .method private searchText(Ljava/lang/String;)V
     .locals 1
 
-    .line 741
+    .line 740
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getSearchField()Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -497,7 +497,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 742
+    .line 741
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getSearchField()Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -510,7 +510,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
-    .line 743
+    .line 742
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->onSearchPressed()V
@@ -521,14 +521,14 @@
 .method private setScrollY(F)V
     .locals 3
 
-    .line 733
+    .line 732
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTranslationY(F)V
 
     const/4 v0, 0x0
 
-    .line 734
+    .line 733
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
@@ -536,7 +536,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 735
+    .line 734
     aget-object v1, v1, v0
 
     invoke-static {v1}, Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;->access$1300(Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -551,7 +551,7 @@
 
     goto :goto_0
 
-    .line 737
+    .line 736
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
@@ -567,7 +567,7 @@
 
     const/4 v1, 0x0
 
-    .line 796
+    .line 795
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
@@ -575,7 +575,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 797
+    .line 796
     aget-object v2, v2, v1
 
     invoke-static {v2}, Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;->access$1300(Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -588,7 +588,7 @@
 
     goto :goto_0
 
-    .line 800
+    .line 799
     :cond_0
     aget-object v1, v2, p1
 
@@ -598,7 +598,7 @@
 
     invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
-    .line 801
+    .line 800
     iget-object v1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object v1, v1, p1
@@ -611,7 +611,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setPinnedHeaderShadowDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 802
+    .line 801
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getTranslationY()F
@@ -624,7 +624,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 803
+    .line 802
     iget-object v1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object p1, v1, p1
@@ -639,7 +639,7 @@
 
     check-cast p1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    .line 804
+    .line 803
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getTranslationY()F
@@ -657,14 +657,14 @@
 .method private updateTabs()V
     .locals 5
 
-    .line 781
+    .line 780
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 784
+    .line 783
     :cond_0
     sget v1, Lorg/telegram/messenger/R$string;->ImagesTab2:I
 
@@ -678,7 +678,7 @@
 
     invoke-virtual {v0, v2, v1}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->addTextTab(ILjava/lang/CharSequence;)V
 
-    .line 785
+    .line 784
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
     const/4 v1, 0x1
@@ -693,12 +693,12 @@
 
     invoke-virtual {v0, v1, v3}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->addTextTab(ILjava/lang/CharSequence;)V
 
-    .line 786
+    .line 785
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
     invoke-virtual {v0, v2}, Landroid/widget/HorizontalScrollView;->setVisibility(I)V
 
-    .line 787
+    .line 786
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/16 v1, 0x2c
@@ -709,7 +709,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setExtraHeight(I)V
 
-    .line 788
+    .line 787
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->getCurrentTabId()I
@@ -718,14 +718,14 @@
 
     if-ltz v0, :cond_1
 
-    .line 790
+    .line 789
     iget-object v1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object v1, v1, v2
 
     invoke-static {v1, v0}, Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;->access$402(Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;I)I
 
-    .line 792
+    .line 791
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
@@ -739,7 +739,7 @@
 .method public createView(Landroid/content/Context;)Landroid/view/View;
     .locals 14
 
-    .line 96
+    .line 95
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const-string v1, "dialogBackground"
@@ -750,7 +750,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackgroundColor(I)V
 
-    .line 97
+    .line 96
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const-string v2, "dialogTextBlack"
@@ -761,7 +761,7 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitleColor(I)V
 
-    .line 98
+    .line 97
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -772,7 +772,7 @@
 
     invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
 
-    .line 99
+    .line 98
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const-string v3, "dialogButtonSelector"
@@ -783,26 +783,26 @@
 
     invoke-virtual {v0, v5, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsBackgroundColor(IZ)V
 
-    .line 100
+    .line 99
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v5, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
-    .line 101
+    .line 100
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 102
+    .line 101
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setOccupyStatusBar(Z)V
 
-    .line 104
+    .line 103
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -814,24 +814,24 @@
 
     invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/ActionBar;->setExtraHeight(I)V
 
-    .line 105
+    .line 104
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 106
+    .line 105
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setAddToContainer(Z)V
 
-    .line 107
+    .line 106
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/4 v6, 0x1
 
     invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/ActionBar;->setClipContent(Z)V
 
-    .line 108
+    .line 107
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     new-instance v7, Lorg/telegram/ui/PhotoPickerSearchActivity$1;
@@ -840,17 +840,17 @@
 
     invoke-virtual {v0, v7}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
-    .line 116
+    .line 115
     iput-boolean v6, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->hasOwnBackground:Z
 
-    .line 118
+    .line 117
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     move-result-object v0
 
-    .line 119
+    .line 118
     sget v7, Lorg/telegram/messenger/R$drawable;->ic_ab_search:I
 
     invoke-virtual {v0, v4, v7}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->addItem(II)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -871,7 +871,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 145
+    .line 144
     sget v7, Lorg/telegram/messenger/R$string;->SearchImagesTitle:I
 
     const-string v8, "SearchImagesTitle"
@@ -882,21 +882,21 @@
 
     invoke-virtual {v0, v7}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setSearchFieldHint(Ljava/lang/CharSequence;)V
 
-    .line 146
+    .line 145
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getSearchField()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v0
 
-    .line 147
+    .line 146
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v7
 
     invoke-virtual {v0, v7}, Landroid/widget/EditText;->setTextColor(I)V
 
-    .line 148
+    .line 147
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v2
@@ -905,24 +905,24 @@
 
     const-string v2, "chat_messagePanelHint"
 
-    .line 149
+    .line 148
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    .line 151
+    .line 150
     new-instance v0, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
-    .line 152
+    .line 151
     invoke-virtual {v0, v6}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->setUseSameWidth(Z)V
 
-    .line 153
+    .line 152
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
     const-string v2, "chat_attachActiveTab"
@@ -931,7 +931,7 @@
 
     invoke-virtual {v0, v2, v2, v7, v3}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 154
+    .line 153
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     iget-object v2, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
@@ -946,7 +946,7 @@
 
     invoke-virtual {v0, v2, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 155
+    .line 154
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
     new-instance v2, Lorg/telegram/ui/PhotoPickerSearchActivity$3;
@@ -955,41 +955,41 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->setDelegate(Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip$ScrollSlidingTabStripDelegate;)V
 
-    .line 194
+    .line 193
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v0
 
-    .line 195
+    .line 194
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledMaximumFlingVelocity()I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->maximumVelocity:I
 
-    .line 198
+    .line 197
     new-instance v0, Lorg/telegram/ui/PhotoPickerSearchActivity$4;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/PhotoPickerSearchActivity$4;-><init>(Lorg/telegram/ui/PhotoPickerSearchActivity;Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
-    .line 557
+    .line 556
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 559
+    .line 558
     iget-object v2, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     invoke-virtual {v2, p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->setParentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    .line 560
+    .line 559
     iget-object v2, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/PhotoPickerActivity;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     iput-object v2, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
-    .line 561
+    .line 560
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/EditTextEmoji;->setSizeNotifierLayout(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
 
     const/4 v2, 0x0
@@ -1007,14 +1007,14 @@
 
     if-eq v2, v5, :cond_1
 
-    .line 576
+    .line 575
     iget-object v5, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     iget-object v5, v5, Lorg/telegram/ui/PhotoPickerActivity;->shadow:Landroid/view/View;
 
     goto :goto_1
 
-    .line 572
+    .line 571
     :cond_1
     iget-object v5, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
@@ -1022,7 +1022,7 @@
 
     goto :goto_1
 
-    .line 569
+    .line 568
     :cond_2
     iget-object v5, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
@@ -1030,13 +1030,13 @@
 
     goto :goto_1
 
-    .line 566
+    .line 565
     :cond_3
     iget-object v5, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     iget-object v5, v5, Lorg/telegram/ui/PhotoPickerActivity;->frameLayout2:Landroid/widget/FrameLayout;
 
-    .line 579
+    .line 578
     :goto_1
     invoke-virtual {v5}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -1044,14 +1044,14 @@
 
     check-cast v8, Landroid/view/ViewGroup;
 
-    .line 580
+    .line 579
     invoke-virtual {v8, v5}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 582
+    .line 581
     :cond_4
     iget-object v8, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->gifsSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
@@ -1069,14 +1069,14 @@
 
     invoke-virtual/range {v8 .. v13}, Lorg/telegram/ui/PhotoPickerActivity;->setLayoutViews(Landroid/widget/FrameLayout;Landroid/widget/FrameLayout;Landroid/view/View;Landroid/view/View;Lorg/telegram/ui/Components/EditTextEmoji;)V
 
-    .line 583
+    .line 582
     iget-object v2, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->gifsSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     invoke-virtual {v2, p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->setParentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     const/4 v2, 0x0
 
-    .line 585
+    .line 584
     :goto_2
     iget-object v5, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
@@ -1086,14 +1086,14 @@
 
     if-ge v2, v8, :cond_7
 
-    .line 586
+    .line 585
     new-instance v8, Lorg/telegram/ui/PhotoPickerSearchActivity$5;
 
     invoke-direct {v8, p0, p1}, Lorg/telegram/ui/PhotoPickerSearchActivity$5;-><init>(Lorg/telegram/ui/PhotoPickerSearchActivity;Landroid/content/Context;)V
 
     aput-object v8, v5, v2
 
-    .line 598
+    .line 597
     iget-object v5, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object v5, v5, v2
@@ -1108,7 +1108,7 @@
 
     if-nez v2, :cond_5
 
-    .line 600
+    .line 599
     iget-object v8, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object v8, v8, v2
@@ -1117,7 +1117,7 @@
 
     invoke-static {v8, v10}, Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;->access$3002(Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 601
+    .line 600
     iget-object v8, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object v8, v8, v2
@@ -1135,7 +1135,7 @@
     :cond_5
     if-ne v2, v6, :cond_6
 
-    .line 603
+    .line 602
     iget-object v8, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object v8, v8, v2
@@ -1144,7 +1144,7 @@
 
     invoke-static {v8, v10}, Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;->access$3002(Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 604
+    .line 603
     iget-object v8, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object v8, v8, v2
@@ -1157,14 +1157,14 @@
 
     invoke-static {v8, v10}, Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;->access$1302(Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;Lorg/telegram/ui/Components/RecyclerListView;)Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 605
+    .line 604
     iget-object v8, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object v8, v8, v2
 
     invoke-virtual {v8, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 607
+    .line 606
     :cond_6
     :goto_3
     iget-object v8, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
@@ -1177,7 +1177,7 @@
 
     invoke-virtual {v8, v6}, Landroidx/recyclerview/widget/RecyclerView;->setScrollingTouchSlop(I)V
 
-    .line 608
+    .line 607
     iget-object v8, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object v10, v8, v2
@@ -1196,7 +1196,7 @@
 
     invoke-static {v10, v8}, Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;->access$3102(Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;Landroid/widget/FrameLayout;)Landroid/widget/FrameLayout;
 
-    .line 609
+    .line 608
     iget-object v8, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object v8, v8, v2
@@ -1207,7 +1207,7 @@
 
     invoke-virtual {v8, v4}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
-    .line 610
+    .line 609
     iget-object v8, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object v10, v8, v2
@@ -1224,7 +1224,7 @@
 
     invoke-static {v10, v8}, Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;->access$3202(Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;Lorg/telegram/ui/ActionBar/ActionBar;)Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 611
+    .line 610
     iget-object v8, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object v10, v8, v2
@@ -1241,7 +1241,7 @@
 
     invoke-virtual {v10, v8, v11}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 612
+    .line 611
     iget-object v8, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object v10, v8, v2
@@ -1258,7 +1258,7 @@
 
     invoke-virtual {v10, v8, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 613
+    .line 612
     iget-object v8, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object v8, v8, v2
@@ -1269,7 +1269,7 @@
 
     invoke-virtual {v8, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 615
+    .line 614
     iget-object v5, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object v5, v5, v2
@@ -1282,7 +1282,7 @@
 
     move-result-object v5
 
-    .line 616
+    .line 615
     iget-object v8, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->viewPages:[Lorg/telegram/ui/PhotoPickerSearchActivity$ViewPage;
 
     aget-object v8, v8, v2
@@ -1301,7 +1301,7 @@
 
     goto/16 :goto_2
 
-    .line 652
+    .line 651
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -1311,7 +1311,7 @@
 
     invoke-virtual {v0, p1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 655
+    .line 654
     iget-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoPickerActivity;->frameLayout2:Landroid/widget/FrameLayout;
@@ -1324,7 +1324,7 @@
 
     invoke-virtual {v0, p1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 656
+    .line 655
     iget-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoPickerActivity;->writeButtonContainer:Landroid/widget/FrameLayout;
@@ -1349,7 +1349,7 @@
 
     invoke-virtual {v0, p1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 657
+    .line 656
     iget-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoPickerActivity;->selectedCountView:Landroid/view/View;
@@ -1368,13 +1368,13 @@
 
     invoke-virtual {v0, p1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 659
+    .line 658
     invoke-direct {p0}, Lorg/telegram/ui/PhotoPickerSearchActivity;->updateTabs()V
 
-    .line 660
+    .line 659
     invoke-direct {p0, v4}, Lorg/telegram/ui/PhotoPickerSearchActivity;->switchToCurrentSelectedMode(Z)V
 
-    .line 661
+    .line 660
     iget-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->getCurrentTabId()I
@@ -1394,12 +1394,12 @@
     :cond_8
     iput-boolean v4, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->swipeBackEnabled:Z
 
-    .line 663
+    .line 662
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p1
 
-    .line 664
+    .line 663
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
@@ -1416,20 +1416,20 @@
 
     if-ltz p1, :cond_9
 
-    .line 665
+    .line 664
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
-    .line 666
+    .line 665
     invoke-virtual {p1}, Landroid/view/View;->getSystemUiVisibility()I
 
     move-result v0
 
     or-int/lit16 v0, v0, 0x2000
 
-    .line 665
+    .line 664
     invoke-virtual {p1, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    .line 670
+    .line 669
     :cond_9
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
@@ -1449,12 +1449,12 @@
 
     move-object/from16 v0, p0
 
-    .line 810
+    .line 809
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 812
+    .line 811
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -1477,7 +1477,7 @@
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 813
+    .line 812
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1500,7 +1500,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 814
+    .line 813
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1517,7 +1517,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 815
+    .line 814
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1532,7 +1532,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 816
+    .line 815
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1547,7 +1547,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 817
+    .line 816
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1562,7 +1562,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 818
+    .line 817
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1577,7 +1577,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 819
+    .line 818
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PhotoPickerSearchActivity;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -1596,7 +1596,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 821
+    .line 820
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PhotoPickerSearchActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
@@ -1629,7 +1629,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 822
+    .line 821
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PhotoPickerSearchActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
@@ -1664,7 +1664,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 823
+    .line 822
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PhotoPickerSearchActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
@@ -1701,7 +1701,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 824
+    .line 823
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     new-array v3, v11, [Landroid/graphics/drawable/Drawable;
@@ -1730,7 +1730,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 826
+    .line 825
     iget-object v2, v0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/PhotoPickerActivity;->getThemeDescriptions()Ljava/util/ArrayList;
@@ -1739,7 +1739,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 827
+    .line 826
     iget-object v2, v0, Lorg/telegram/ui/PhotoPickerSearchActivity;->gifsSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/PhotoPickerActivity;->getThemeDescriptions()Ljava/util/ArrayList;
@@ -1754,7 +1754,7 @@
 .method public isSwipeBackEnabled(Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 707
+    .line 706
     iget-boolean p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->swipeBackEnabled:Z
 
     return p1
@@ -1763,24 +1763,24 @@
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 1
 
-    .line 723
+    .line 722
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 724
+    .line 723
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     if-eqz v0, :cond_0
 
-    .line 725
+    .line 724
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 727
+    .line 726
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->gifsSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     if-eqz v0, :cond_1
 
-    .line 728
+    .line 727
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
     :cond_1
@@ -1790,24 +1790,24 @@
 .method public onFragmentDestroy()V
     .locals 1
 
-    .line 712
+    .line 711
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     if-eqz v0, :cond_0
 
-    .line 713
+    .line 712
     invoke-virtual {v0}, Lorg/telegram/ui/PhotoPickerActivity;->onFragmentDestroy()V
 
-    .line 715
+    .line 714
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->gifsSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     if-eqz v0, :cond_1
 
-    .line 716
+    .line 715
     invoke-virtual {v0}, Lorg/telegram/ui/PhotoPickerActivity;->onFragmentDestroy()V
 
-    .line 718
+    .line 717
     :cond_1
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentDestroy()V
 
@@ -1817,24 +1817,24 @@
 .method public onPause()V
     .locals 1
 
-    .line 696
+    .line 695
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onPause()V
 
-    .line 697
+    .line 696
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     if-eqz v0, :cond_0
 
-    .line 698
+    .line 697
     invoke-virtual {v0}, Lorg/telegram/ui/PhotoPickerActivity;->onPause()V
 
-    .line 700
+    .line 699
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->gifsSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     if-eqz v0, :cond_1
 
-    .line 701
+    .line 700
     invoke-virtual {v0}, Lorg/telegram/ui/PhotoPickerActivity;->onPause()V
 
     :cond_1
@@ -1844,20 +1844,20 @@
 .method public onResume()V
     .locals 2
 
-    .line 675
+    .line 674
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onResume()V
 
-    .line 676
+    .line 675
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x1
 
-    .line 677
+    .line 676
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->openSearch(Z)V
 
-    .line 678
+    .line 677
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -1866,51 +1866,41 @@
 
     move-result-object v0
 
-    sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->smoothKeyboard:Z
-
-    if-eqz v1, :cond_0
-
     const/16 v1, 0x20
 
-    goto :goto_0
-
-    :cond_0
-    const/16 v1, 0x10
-
-    :goto_0
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
-    .line 680
-    :cond_1
+    .line 679
+    :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
+
+    if-eqz v0, :cond_1
+
+    .line 680
+    invoke-virtual {v0}, Lorg/telegram/ui/PhotoPickerActivity;->onResume()V
+
+    .line 682
+    :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->gifsSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     if-eqz v0, :cond_2
 
-    .line 681
-    invoke-virtual {v0}, Lorg/telegram/ui/PhotoPickerActivity;->onResume()V
-
     .line 683
-    :cond_2
-    iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->gifsSearch:Lorg/telegram/ui/PhotoPickerActivity;
-
-    if-eqz v0, :cond_3
-
-    .line 684
     invoke-virtual {v0}, Lorg/telegram/ui/PhotoPickerActivity;->onResume()V
 
-    :cond_3
+    :cond_2
     return-void
 .end method
 
 .method public setCaption(Ljava/lang/CharSequence;)V
     .locals 1
 
-    .line 689
+    .line 688
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     if-eqz v0, :cond_0
 
-    .line 690
+    .line 689
     invoke-virtual {v0, p1}, Lorg/telegram/ui/PhotoPickerActivity;->setCaption(Ljava/lang/CharSequence;)V
 
     :cond_0
@@ -1920,17 +1910,17 @@
 .method public setDelegate(Lorg/telegram/ui/PhotoPickerActivity$PhotoPickerActivityDelegate;)V
     .locals 1
 
-    .line 747
+    .line 746
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/PhotoPickerActivity;->setDelegate(Lorg/telegram/ui/PhotoPickerActivity$PhotoPickerActivityDelegate;)V
 
-    .line 748
+    .line 747
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->gifsSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/PhotoPickerActivity;->setDelegate(Lorg/telegram/ui/PhotoPickerActivity$PhotoPickerActivityDelegate;)V
 
-    .line 749
+    .line 748
     iget-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     new-instance v0, Lorg/telegram/ui/PhotoPickerSearchActivity$7;
@@ -1939,7 +1929,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/PhotoPickerActivity;->setSearchDelegate(Lorg/telegram/ui/PhotoPickerActivity$PhotoPickerActivitySearchDelegate;)V
 
-    .line 761
+    .line 760
     iget-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->gifsSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     new-instance v0, Lorg/telegram/ui/PhotoPickerSearchActivity$8;
@@ -1954,12 +1944,12 @@
 .method public setMaxSelectedPhotos(IZ)V
     .locals 1
 
-    .line 776
+    .line 775
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->imagesSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/PhotoPickerActivity;->setMaxSelectedPhotos(IZ)V
 
-    .line 777
+    .line 776
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->gifsSearch:Lorg/telegram/ui/PhotoPickerActivity;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/PhotoPickerActivity;->setMaxSelectedPhotos(IZ)V

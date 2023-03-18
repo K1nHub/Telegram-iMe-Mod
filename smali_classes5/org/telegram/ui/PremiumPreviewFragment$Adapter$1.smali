@@ -40,7 +40,7 @@
 
     iget-object p2, p2, Lorg/telegram/ui/PremiumPreviewFragment$Adapter;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
-    invoke-static {p2}, Lorg/telegram/ui/PremiumPreviewFragment;->access$400(Lorg/telegram/ui/PremiumPreviewFragment;)Z
+    invoke-static {p2}, Lorg/telegram/ui/PremiumPreviewFragment;->access$500(Lorg/telegram/ui/PremiumPreviewFragment;)Z
 
     move-result p2
 
@@ -59,7 +59,7 @@
 
     move-result v0
 
-    invoke-static {p2, v0}, Lorg/telegram/ui/PremiumPreviewFragment;->access$1002(Lorg/telegram/ui/PremiumPreviewFragment;I)I
+    invoke-static {p2, v0}, Lorg/telegram/ui/PremiumPreviewFragment;->access$1102(Lorg/telegram/ui/PremiumPreviewFragment;I)I
 
     goto :goto_0
 
@@ -74,7 +74,7 @@
     if-eqz v0, :cond_1
 
     .line 1073
-    invoke-static {p2}, Lorg/telegram/ui/PremiumPreviewFragment;->access$200(Lorg/telegram/ui/PremiumPreviewFragment;)I
+    invoke-static {p2}, Lorg/telegram/ui/PremiumPreviewFragment;->access$300(Lorg/telegram/ui/PremiumPreviewFragment;)I
 
     move-result v0
 
@@ -100,7 +100,7 @@
 
     sub-int/2addr v0, v1
 
-    invoke-static {p2, v0}, Lorg/telegram/ui/PremiumPreviewFragment;->access$1002(Lorg/telegram/ui/PremiumPreviewFragment;I)I
+    invoke-static {p2, v0}, Lorg/telegram/ui/PremiumPreviewFragment;->access$1102(Lorg/telegram/ui/PremiumPreviewFragment;I)I
 
     goto :goto_0
 
@@ -116,7 +116,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
-    invoke-static {v0}, Lorg/telegram/ui/PremiumPreviewFragment;->access$200(Lorg/telegram/ui/PremiumPreviewFragment;)I
+    invoke-static {v0}, Lorg/telegram/ui/PremiumPreviewFragment;->access$300(Lorg/telegram/ui/PremiumPreviewFragment;)I
 
     move-result v0
 
@@ -166,7 +166,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
-    invoke-static {v0, p2}, Lorg/telegram/ui/PremiumPreviewFragment;->access$1002(Lorg/telegram/ui/PremiumPreviewFragment;I)I
+    invoke-static {v0, p2}, Lorg/telegram/ui/PremiumPreviewFragment;->access$1102(Lorg/telegram/ui/PremiumPreviewFragment;I)I
 
     .line 1081
     :goto_0
@@ -174,7 +174,7 @@
 
     iget-object p2, p2, Lorg/telegram/ui/PremiumPreviewFragment$Adapter;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
-    invoke-static {p2}, Lorg/telegram/ui/PremiumPreviewFragment;->access$1000(Lorg/telegram/ui/PremiumPreviewFragment;)I
+    invoke-static {p2}, Lorg/telegram/ui/PremiumPreviewFragment;->access$1100(Lorg/telegram/ui/PremiumPreviewFragment;)I
 
     move-result p2
 

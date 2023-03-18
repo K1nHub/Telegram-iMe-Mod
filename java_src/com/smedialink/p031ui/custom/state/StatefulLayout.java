@@ -76,7 +76,7 @@ public class StatefulLayout extends FrameLayout {
             removeView(this.mStateViews.get(state));
         }
         this.mStateViews.put(state, view);
-        if ((view == null ? null : view.getParent()) == null) {
+        if ((view != null ? view.getParent() : null) == null) {
             addView(view);
         }
         if (view != null) {

@@ -8,18 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
 
-.field public final synthetic f$1:Z
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$User;
+
+.field public final synthetic f$2:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$User;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda353;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iput-boolean p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda353;->f$1:Z
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda353;->f$1:Lorg/telegram/tgnet/TLRPC$User;
+
+    iput p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda353;->f$2:I
 
     return-void
 .end method
@@ -27,13 +31,15 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda353;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iget-boolean v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda353;->f$1:Z
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda353;->f$1:Lorg/telegram/tgnet/TLRPC$User;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$PiyBpaMripkEHdFSpjJSe118_bY(Lorg/telegram/messenger/MessagesController;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda353;->f$2:I
+
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$HGUa3jML-atyri5aGS9Ya2ow9TI(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$User;ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

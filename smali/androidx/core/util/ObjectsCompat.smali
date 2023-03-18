@@ -3,19 +3,27 @@
 .source "ObjectsCompat.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/core/util/ObjectsCompat$Api19Impl;
+    }
+.end annotation
+
+
 # direct methods
 .method public static equals(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 2
 
-    .line 51
+    .line 54
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x13
 
     if-lt v0, v1, :cond_0
 
-    .line 52
-    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .line 55
+    invoke-static {p0, p1}, Landroidx/core/util/ObjectsCompat$Api19Impl;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -26,7 +34,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 54
+    .line 57
     invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -51,27 +59,43 @@
 .method public static varargs hash([Ljava/lang/Object;)I
     .locals 2
 
-    .line 93
+    .line 96
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x13
 
     if-lt v0, v1, :cond_0
 
-    .line 94
-    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+    .line 97
+    invoke-static {p0}, Landroidx/core/util/ObjectsCompat$Api19Impl;->hash([Ljava/lang/Object;)I
 
     move-result p0
 
     return p0
 
-    .line 96
+    .line 99
     :cond_0
     invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
     move-result p0
 
     return p0
+.end method
+
+.method public static requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(TT;)TT;"
+        }
+    .end annotation
+
+    .line 134
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p0
 .end method
 
 .method public static requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -86,7 +110,7 @@
         }
     .end annotation
 
-    .line 156
+    .line 159
     invoke-static {p0, p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     return-object p0

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,145:1\n127#2,5:146\n127#2,5:151\n127#2,5:156\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$3\n*L\n65#1:146,5\n66#1:151,5\n67#1:156,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,153:1\n127#2,5:154\n127#2,5:159\n127#2,5:164\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$3\n*L\n67#1:154,5\n68#1:159,5\n69#1:164,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 65
+    .line 67
     move-object v2, p2
 
     check-cast v2, Lcom/smedialink/storage/data/network/api/own/WalletApi;
@@ -101,7 +101,7 @@
 
     move-result-object p2
 
-    .line 65
+    .line 67
     move-object v4, p2
 
     check-cast v4, Lcom/smedialink/storage/data/locale/db/dao/minor/wallet/WalletTokenBalanceDao;
@@ -117,7 +117,7 @@
 
     move-result-object p2
 
-    .line 65
+    .line 67
     move-object v6, p2
 
     check-cast v6, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
@@ -133,7 +133,7 @@
 
     move-result-object p2
 
-    .line 66
+    .line 68
     move-object v7, p2
 
     check-cast v7, Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
@@ -149,7 +149,7 @@
 
     move-result-object p2
 
-    .line 66
+    .line 68
     move-object v5, p2
 
     check-cast v5, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
@@ -165,7 +165,7 @@
 
     move-result-object p2
 
-    .line 66
+    .line 68
     move-object v8, p2
 
     check-cast v8, Lcom/smedialink/storage/domain/gateway/TelegramGateway;
@@ -181,12 +181,12 @@
 
     move-result-object p1
 
-    .line 67
+    .line 69
     move-object v3, p1
 
     check-cast v3, Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSourceFactory;
 
-    .line 64
+    .line 66
     new-instance p1, Lcom/smedialink/storage/data/repository/wallet/WalletRepositoryImpl;
 
     move-object v1, p1
@@ -199,7 +199,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 63
+    .line 65
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

@@ -616,15 +616,15 @@ public final class Format implements Bundleable {
                     break;
                 }
                 UUID uuid = drmInitData.get(i).uuid;
-                if (uuid.equals(C0474C.COMMON_PSSH_UUID)) {
-                    linkedHashSet.add(C0474C.CENC_TYPE_cenc);
-                } else if (uuid.equals(C0474C.CLEARKEY_UUID)) {
+                if (uuid.equals(C0468C.COMMON_PSSH_UUID)) {
+                    linkedHashSet.add(C0468C.CENC_TYPE_cenc);
+                } else if (uuid.equals(C0468C.CLEARKEY_UUID)) {
                     linkedHashSet.add("clearkey");
-                } else if (uuid.equals(C0474C.PLAYREADY_UUID)) {
+                } else if (uuid.equals(C0468C.PLAYREADY_UUID)) {
                     linkedHashSet.add("playready");
-                } else if (uuid.equals(C0474C.WIDEVINE_UUID)) {
+                } else if (uuid.equals(C0468C.WIDEVINE_UUID)) {
                     linkedHashSet.add("widevine");
-                } else if (uuid.equals(C0474C.UUID_NIL)) {
+                } else if (uuid.equals(C0468C.UUID_NIL)) {
                     linkedHashSet.add("universal");
                 } else {
                     linkedHashSet.add("unknown (" + uuid + ")");

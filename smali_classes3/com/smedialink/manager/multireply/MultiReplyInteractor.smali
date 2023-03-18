@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMultiReplyInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiReplyInteractor.kt\ncom/smedialink/manager/multireply/MultiReplyInteractor\n+ 2 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 SparseArray.kt\nandroidx/core/util/SparseArrayKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,100:1\n20#2:101\n13536#3:102\n13537#3:107\n76#4,4:103\n1858#5,3:108\n8#6:111\n*S KotlinDebug\n*F\n+ 1 MultiReplyInteractor.kt\ncom/smedialink/manager/multireply/MultiReplyInteractor\n*L\n34#1:101\n54#1:102\n54#1:107\n55#1:103,4\n40#1:108,3\n48#1:111\n*E\n"
+    value = "SMAP\nMultiReplyInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiReplyInteractor.kt\ncom/smedialink/manager/multireply/MultiReplyInteractor\n+ 2 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 SparseArray.kt\nandroidx/core/util/SparseArrayKt\n*L\n1#1,100:1\n20#2:101\n13579#3:102\n13580#3:107\n76#4,4:103\n*S KotlinDebug\n*F\n+ 1 MultiReplyInteractor.kt\ncom/smedialink/manager/multireply/MultiReplyInteractor\n*L\n34#1:101\n54#1:102\n54#1:107\n55#1:103,4\n*E\n"
 .end annotation
 
 
@@ -14,10 +14,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$pp077w3E4L7aBa1a9-KMNw9sDkg(Ljava/util/List;Lcom/smedialink/manager/multireply/MultiReplyInteractor;Lcom/smedialink/manager/multireply/message/MessageLinkPattern;)Lcom/smedialink/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$N2if9gzdTYzdLbO4O--VyJ01vj0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/manager/multireply/MultiReplyInteractor;->buildMultiReplyMessage$lambda-1(Ljava/util/List;Lcom/smedialink/manager/multireply/MultiReplyInteractor;Lcom/smedialink/manager/multireply/message/MessageLinkPattern;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/smedialink/manager/multireply/MultiReplyInteractor;->buildMultiReplyMessage$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p0
 
@@ -38,6 +38,17 @@
     iput-object p1, p0, Lcom/smedialink/manager/multireply/MultiReplyInteractor;->multiReplyRepo:Lcom/smedialink/manager/multireply/data/MultiReplyRepository;
 
     return-void
+.end method
+
+.method public static final synthetic access$buildMultiReplyMessageForMessageObject(Lcom/smedialink/manager/multireply/MultiReplyInteractor;Lorg/telegram/messenger/MessageObject;Lcom/smedialink/manager/multireply/message/MessageLinkPattern;)Ljava/lang/CharSequence;
+    .locals 0
+
+    .line 26
+    invoke-direct {p0, p1, p2}, Lcom/smedialink/manager/multireply/MultiReplyInteractor;->buildMultiReplyMessageForMessageObject(Lorg/telegram/messenger/MessageObject;Lcom/smedialink/manager/multireply/message/MessageLinkPattern;)Ljava/lang/CharSequence;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method private final addUrlSpan(Landroid/text/SpannableString;Ljava/lang/String;II)V
@@ -154,17 +165,21 @@
     .line 78
     new-instance v7, Landroid/text/SpannableString;
 
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const/16 v1, 0x20
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
 
-    move-result v0
+    move-result v1
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    const-string v1, " "
-
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -205,99 +220,19 @@
     return-object v7
 .end method
 
-.method private static final buildMultiReplyMessage$lambda-1(Ljava/util/List;Lcom/smedialink/manager/multireply/MultiReplyInteractor;Lcom/smedialink/manager/multireply/message/MessageLinkPattern;)Lcom/smedialink/storage/domain/model/Result;
-    .locals 5
+.method private static final buildMultiReplyMessage$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+    .locals 1
 
-    const-string v0, "$selectedMessages"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "pattern"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 1859
-    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    .line 37
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    const/4 v0, 0x0
-
-    const-string v1, ""
-
-    const/4 v2, 0x0
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    add-int/lit8 v4, v2, 0x1
-
-    if-gez v2, :cond_0
-
-    invoke-static {}, Lkotlin/collections/CollectionsKt;->throwIndexOverflow()V
-
-    :cond_0
-    check-cast v3, Lorg/telegram/messenger/MessageObject;
-
-    const/4 v2, 0x3
-
-    new-array v2, v2, [Ljava/lang/CharSequence;
-
-    aput-object v1, v2, v0
-
-    .line 43
-    invoke-direct {p1, v3, p2}, Lcom/smedialink/manager/multireply/MultiReplyInteractor;->buildMultiReplyMessageForMessageObject(Lorg/telegram/messenger/MessageObject;Lcom/smedialink/manager/multireply/message/MessageLinkPattern;)Ljava/lang/CharSequence;
-
-    move-result-object v1
-
-    const/4 v3, 0x1
-
-    aput-object v1, v2, v3
-
-    const-string v1, "\n"
-
-    const/4 v3, 0x2
-
-    .line 44
-    invoke-static {v1, v3}, Lkotlin/text/StringsKt;->repeat(Ljava/lang/CharSequence;I)Ljava/lang/String;
-
-    move-result-object v1
-
-    aput-object v1, v2, v3
-
-    .line 41
-    invoke-static {v2}, Landroid/text/TextUtils;->concat([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-
-    move-result-object v1
-
-    const-string v2, "concat(\n                \u2026                        )"
-
-    .line 43
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    move v2, v4
-
-    goto :goto_0
-
-    .line 8
-    :cond_1
-    sget-object p0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
-
-    invoke-virtual {p0, v1}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
-
-    move-result-object p0
+    check-cast p0, Lcom/smedialink/storage/domain/model/Result;
 
     return-object p0
 .end method
@@ -330,16 +265,18 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    const-string v1, ""
+    invoke-direct {p0, v1}, Lcom/smedialink/manager/multireply/MultiReplyInteractor;->buildSpannableStringUser(Lorg/telegram/tgnet/TLRPC$User;)Landroid/text/SpannableString;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-direct {p0, v1}, Lcom/smedialink/manager/multireply/MultiReplyInteractor;->buildSpannableStringUser(Lorg/telegram/tgnet/TLRPC$User;)Landroid/text/SpannableString;
-
-    move-result-object v1
+    const-string v1, ""
 
     :goto_0
     const/4 v2, 0x0
@@ -374,13 +311,21 @@
     .line 73
     new-instance v7, Landroid/text/SpannableString;
 
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-static {p1}, Lcom/smedialink/utils/extentions/model/telegram/UserExtKt;->getPrivacySafeName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, ":"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    const/16 v1, 0x3a
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -482,17 +427,20 @@
     move-result-object p2
 
     .line 37
-    new-instance v0, Lcom/smedialink/manager/multireply/MultiReplyInteractor$$ExternalSyntheticLambda0;
+    new-instance v0, Lcom/smedialink/manager/multireply/MultiReplyInteractor$buildMultiReplyMessage$1;
 
-    invoke-direct {v0, p1, p0}, Lcom/smedialink/manager/multireply/MultiReplyInteractor$$ExternalSyntheticLambda0;-><init>(Ljava/util/List;Lcom/smedialink/manager/multireply/MultiReplyInteractor;)V
+    invoke-direct {v0, p1, p0}, Lcom/smedialink/manager/multireply/MultiReplyInteractor$buildMultiReplyMessage$1;-><init>(Ljava/util/List;Lcom/smedialink/manager/multireply/MultiReplyInteractor;)V
 
-    invoke-virtual {p2, v0}, Lio/reactivex/Single;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Single;
+    new-instance p1, Lcom/smedialink/manager/multireply/MultiReplyInteractor$$ExternalSyntheticLambda0;
+
+    invoke-direct {p1, v0}, Lcom/smedialink/manager/multireply/MultiReplyInteractor$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p2, p1}, Lio/reactivex/Single;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Single;
 
     move-result-object p1
 
-    const-string p2, "{\n            multiReply\u2026              }\n        }"
+    const-string p2, "fun buildMultiReplyMessa\u2026        }\n        }\n    }"
 
-    .line 35
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_0
@@ -522,7 +470,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 13536
+    .line 13579
     array-length v1, p1
 
     const/4 v2, 0x0
@@ -530,7 +478,7 @@
     const/4 v3, 0x0
 
     :goto_0
-    if-ge v3, v1, :cond_2
+    if-ge v3, v1, :cond_1
 
     aget-object v4, p1, v3
 
@@ -539,40 +487,32 @@
 
     move-result v5
 
-    if-lez v5, :cond_1
-
     const/4 v6, 0x0
 
     :goto_1
-    add-int/lit8 v7, v6, 0x1
+    if-ge v6, v5, :cond_0
 
     .line 77
     invoke-virtual {v4, v6}, Landroid/util/SparseArray;->keyAt(I)I
 
     invoke-virtual {v4, v6}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v7
 
-    check-cast v6, Lorg/telegram/messenger/MessageObject;
+    check-cast v7, Lorg/telegram/messenger/MessageObject;
 
     .line 56
-    invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    if-lt v7, v5, :cond_0
-
-    goto :goto_2
-
-    :cond_0
-    move v6, v7
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
-    :cond_1
-    :goto_2
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     return-object v0
 .end method

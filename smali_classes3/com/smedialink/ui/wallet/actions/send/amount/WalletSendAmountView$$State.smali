@@ -13,6 +13,7 @@
         Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowLoadingDialogCommand;,
         Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowToastCommand;,
         Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowBalanceCommand;,
+        Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$UpdateSelectedUserCommand;,
         Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$UpdateFeeViewCommand;,
         Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$SetupScreenStateCommand;,
         Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ResetScreenCommand;,
@@ -173,17 +174,17 @@
 .method public setupReplenishAddress()V
     .locals 3
 
-    .line 282
+    .line 298
     new-instance v0, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$SetupReplenishAddressCommand;
 
     invoke-direct {v0, p0}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$SetupReplenishAddressCommand;-><init>(Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State;)V
 
-    .line 283
+    .line 299
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 285
+    .line 301
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -196,7 +197,7 @@
 
     return-void
 
-    .line 289
+    .line 305
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -217,12 +218,12 @@
 
     check-cast v2, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView;
 
-    .line 290
+    .line 306
     invoke-interface {v2}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/replenish/WalletBinancePayReplenishView;->setupReplenishAddress()V
 
     goto :goto_0
 
-    .line 293
+    .line 309
     :cond_1
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -295,17 +296,17 @@
 .method public showBalance(Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;)V
     .locals 3
 
-    .line 201
+    .line 217
     new-instance v0, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowBalanceCommand;
 
     invoke-direct {v0, p0, p1}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowBalanceCommand;-><init>(Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State;Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;)V
 
-    .line 202
+    .line 218
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 204
+    .line 220
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -318,7 +319,7 @@
 
     return-void
 
-    .line 208
+    .line 224
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -339,12 +340,12 @@
 
     check-cast v2, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView;
 
-    .line 209
+    .line 225
     invoke-interface {v2, p1}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView;->showBalance(Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;)V
 
     goto :goto_0
 
-    .line 212
+    .line 228
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -430,17 +431,17 @@
 .method public showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
     .locals 3
 
-    .line 233
+    .line 249
     new-instance v0, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowLoadingDialogCommand;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowLoadingDialogCommand;-><init>(Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State;ZZLio/reactivex/disposables/Disposable;)V
 
-    .line 234
+    .line 250
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 236
+    .line 252
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -453,7 +454,7 @@
 
     return-void
 
-    .line 240
+    .line 256
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -474,12 +475,12 @@
 
     check-cast v2, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView;
 
-    .line 241
+    .line 257
     invoke-interface {v2, p1, p2, p3}, Lcom/smedialink/ui/base/mvp/base/BaseView;->showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
 
     goto :goto_0
 
-    .line 244
+    .line 260
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -839,17 +840,17 @@
 .method public showToast(Ljava/lang/String;)V
     .locals 3
 
-    .line 217
+    .line 233
     new-instance v0, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowToastCommand;
 
     invoke-direct {v0, p0, p1}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowToastCommand;-><init>(Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State;Ljava/lang/String;)V
 
-    .line 218
+    .line 234
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 220
+    .line 236
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -862,7 +863,7 @@
 
     return-void
 
-    .line 224
+    .line 240
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -883,12 +884,12 @@
 
     check-cast v2, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView;
 
-    .line 225
+    .line 241
     invoke-interface {v2, p1}, Lcom/smedialink/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 228
+    .line 244
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -950,6 +951,67 @@
     goto :goto_0
 
     .line 196
+    :cond_1
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
+
+    return-void
+.end method
+
+.method public updateSelectedUser()V
+    .locals 3
+
+    .line 201
+    new-instance v0, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$UpdateSelectedUserCommand;
+
+    invoke-direct {v0, p0}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$UpdateSelectedUserCommand;-><init>(Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State;)V
+
+    .line 202
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
+
+    .line 204
+    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    return-void
+
+    .line 208
+    :cond_0
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView;
+
+    .line 209
+    invoke-interface {v2}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView;->updateSelectedUser()V
+
+    goto :goto_0
+
+    .line 212
     :cond_1
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 

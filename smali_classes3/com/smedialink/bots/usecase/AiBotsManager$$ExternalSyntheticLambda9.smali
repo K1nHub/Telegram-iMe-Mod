@@ -51,7 +51,7 @@
 
     iget v5, p0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda9;->f$4:I
 
-    invoke-static/range {v0 .. v5}, Lcom/smedialink/bots/usecase/AiBotsManager;->$r8$lambda$oySQAxSqnm5mL4ELvNjZRtJxa00(Ljava/lang/String;Lcom/smedialink/bots/usecase/AiBotsManager;JLjava/lang/String;I)V
+    invoke-static/range {v0 .. v5}, Lcom/smedialink/bots/usecase/AiBotsManager;->$r8$lambda$4UO5mC1nsyJBZ3eEQfz-f3o0T44(Ljava/lang/String;Lcom/smedialink/bots/usecase/AiBotsManager;JLjava/lang/String;I)V
 
     return-void
 .end method

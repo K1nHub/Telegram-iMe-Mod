@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoPickerSearchActivity;)V
     .locals 0
 
-    .line 108
+    .line 107
     iput-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$1;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 112
+    .line 111
     iget-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$1;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V

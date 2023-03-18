@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/storage/data/di/module/DatabaseModuleKt;-><clinit>()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/smedialink/storage/data/di/module/DatabaseModuleKt;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

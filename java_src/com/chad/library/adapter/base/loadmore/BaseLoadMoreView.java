@@ -15,10 +15,22 @@ public abstract class BaseLoadMoreView {
 
         static {
             int[] iArr = new int[LoadMoreStatus.values().length];
-            iArr[LoadMoreStatus.Complete.ordinal()] = 1;
-            iArr[LoadMoreStatus.Loading.ordinal()] = 2;
-            iArr[LoadMoreStatus.Fail.ordinal()] = 3;
-            iArr[LoadMoreStatus.End.ordinal()] = 4;
+            try {
+                iArr[LoadMoreStatus.Complete.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[LoadMoreStatus.Loading.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[LoadMoreStatus.Fail.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[LoadMoreStatus.End.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }

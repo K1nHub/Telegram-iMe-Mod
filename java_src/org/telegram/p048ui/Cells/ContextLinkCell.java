@@ -17,7 +17,7 @@ import android.widget.FrameLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
@@ -81,6 +81,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
     private TLRPC$User inlineBot;
     private TLRPC$BotInlineResult inlineResult;
     private boolean isForceGif;
+    private boolean isKeyboard;
     private long lastUpdateTime;
     private LetterDrawable letterDrawable;
     private ImageReceiver linkImageView;
@@ -163,6 +164,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
     /* JADX WARN: Code restructure failed: missing block: B:80:0x01de, code lost:
         if (r0 == r40.currentPhotoObject) goto L39;
      */
+    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:106:0x023c  */
     /* JADX WARN: Removed duplicated region for block: B:119:0x026b  */
     /* JADX WARN: Removed duplicated region for block: B:120:0x0287  */
@@ -174,17 +176,18 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
     /* JADX WARN: Removed duplicated region for block: B:146:0x02eb  */
     /* JADX WARN: Removed duplicated region for block: B:150:0x02fe A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:154:0x0309  */
-    /* JADX WARN: Removed duplicated region for block: B:160:0x0315  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x0370  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x037e  */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x0380  */
-    /* JADX WARN: Removed duplicated region for block: B:171:0x0388  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x0428  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x0537  */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x0576  */
-    /* JADX WARN: Removed duplicated region for block: B:231:0x0643  */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x012d A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:246:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:160:0x0317  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x039b  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x03a9  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x03ab  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x03b3  */
+    /* JADX WARN: Removed duplicated region for block: B:201:0x0489  */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x0594  */
+    /* JADX WARN: Removed duplicated region for block: B:227:0x05b8  */
+    /* JADX WARN: Removed duplicated region for block: B:231:0x05f7  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x06c4  */
+    /* JADX WARN: Removed duplicated region for block: B:260:0x012d A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:271:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:54:0x016e  */
     /* JADX WARN: Removed duplicated region for block: B:59:0x017c  */
     /* JADX WARN: Removed duplicated region for block: B:75:0x01c6  */
@@ -200,7 +203,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
     */
     protected void onMeasure(int r41, int r42) {
         /*
-            Method dump skipped, instructions count: 1615
+            Method dump skipped, instructions count: 1744
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Cells.ContextLinkCell.onMeasure(int, int):void");
@@ -236,7 +239,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         if (i == 3 || i == 5) {
             TLRPC$TL_message tLRPC$TL_message = new TLRPC$TL_message();
             tLRPC$TL_message.out = true;
-            tLRPC$TL_message.f1518id = -Utilities.random.nextInt();
+            tLRPC$TL_message.f1523id = -Utilities.random.nextInt();
             tLRPC$TL_message.peer_id = new TLRPC$TL_peerUser();
             TLRPC$TL_peerUser tLRPC$TL_peerUser = new TLRPC$TL_peerUser();
             tLRPC$TL_message.from_id = tLRPC$TL_peerUser;
@@ -260,7 +263,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
             } else {
                 String httpUrlExtension = ImageLoader.getHttpUrlExtension(this.inlineResult.content.url, this.documentAttachType == 5 ? "mp3" : "ogg");
                 TLRPC$Document tLRPC$Document3 = tLRPC$TL_message.media.document;
-                tLRPC$Document3.f1502id = 0L;
+                tLRPC$Document3.f1507id = 0L;
                 tLRPC$Document3.access_hash = 0L;
                 tLRPC$Document3.date = tLRPC$TL_message.date;
                 tLRPC$Document3.mime_type = "audio/" + httpUrlExtension;
@@ -397,6 +400,10 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
 
     public void setCanPreviewGif(boolean z) {
         this.canPreviewGif = z;
+    }
+
+    public void setIsKeyboard(boolean z) {
+        this.isKeyboard = z;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -682,7 +689,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
             int i = this.resolveFileNameId;
             this.resolveFileNameId = i + 1;
             this.resolveFileNameId = i;
-            Utilities.searchQueue.postRunnable(new RunnableC34951(i, z));
+            Utilities.searchQueue.postRunnable(new RunnableC36261(i, z));
             this.radialProgress.setIcon(4, z, false);
         } else if (TextUtils.isEmpty(str)) {
             this.buttonState = -1;
@@ -738,11 +745,11 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Cells.ContextLinkCell$1 */
     /* loaded from: classes5.dex */
-    public class RunnableC34951 implements Runnable {
+    public class RunnableC36261 implements Runnable {
         final /* synthetic */ boolean val$ifSame;
         final /* synthetic */ int val$localId;
 
-        RunnableC34951(int i, boolean z) {
+        RunnableC36261(int i, boolean z) {
             this.val$localId = i;
             this.val$ifSame = z;
         }
@@ -758,7 +765,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
                 Method dump skipped, instructions count: 593
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Cells.ContextLinkCell.RunnableC34951.run():void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Cells.ContextLinkCell.RunnableC36261.run():void");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -821,28 +828,28 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         StringBuilder sb = new StringBuilder();
         switch (this.documentAttachType) {
             case 1:
-                sb.append(LocaleController.getString("AttachDocument", C3158R.string.AttachDocument));
+                sb.append(LocaleController.getString("AttachDocument", C3286R.string.AttachDocument));
                 break;
             case 2:
-                sb.append(LocaleController.getString("AttachGif", C3158R.string.AttachGif));
+                sb.append(LocaleController.getString("AttachGif", C3286R.string.AttachGif));
                 break;
             case 3:
-                sb.append(LocaleController.getString("AttachAudio", C3158R.string.AttachAudio));
+                sb.append(LocaleController.getString("AttachAudio", C3286R.string.AttachAudio));
                 break;
             case 4:
-                sb.append(LocaleController.getString("AttachVideo", C3158R.string.AttachVideo));
+                sb.append(LocaleController.getString("AttachVideo", C3286R.string.AttachVideo));
                 break;
             case 5:
-                sb.append(LocaleController.getString("AttachMusic", C3158R.string.AttachMusic));
+                sb.append(LocaleController.getString("AttachMusic", C3286R.string.AttachMusic));
                 break;
             case 6:
-                sb.append(LocaleController.getString("AttachSticker", C3158R.string.AttachSticker));
+                sb.append(LocaleController.getString("AttachSticker", C3286R.string.AttachSticker));
                 break;
             case 7:
-                sb.append(LocaleController.getString("AttachPhoto", C3158R.string.AttachPhoto));
+                sb.append(LocaleController.getString("AttachPhoto", C3286R.string.AttachPhoto));
                 break;
             case 8:
-                sb.append(LocaleController.getString("AttachLocation", C3158R.string.AttachLocation));
+                sb.append(LocaleController.getString("AttachLocation", C3286R.string.AttachLocation));
                 break;
         }
         StaticLayout staticLayout = this.titleLayout;
@@ -851,7 +858,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         boolean z2 = (staticLayout2 == null || TextUtils.isEmpty(staticLayout2.getText())) ? false : true;
         if (this.documentAttachType == 5 && z && z2) {
             sb.append(", ");
-            sb.append(LocaleController.formatString("AccDescrMusicInfo", C3158R.string.AccDescrMusicInfo, this.descriptionLayout.getText(), this.titleLayout.getText()));
+            sb.append(LocaleController.formatString("AccDescrMusicInfo", C3286R.string.AccDescrMusicInfo, this.descriptionLayout.getText(), this.titleLayout.getText()));
         } else {
             if (z) {
                 if (sb.length() > 0) {

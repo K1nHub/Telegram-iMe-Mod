@@ -29,7 +29,7 @@
 
     check-cast p1, Landroid/graphics/Bitmap;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$XFZmvdE4KDTBFn5yaqRuzcaC13s(Lorg/telegram/ui/Components/LinkActionView;Landroid/graphics/Bitmap;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$ViDnWCYIJFI7zkSiQKFMe-rFuns(Lorg/telegram/ui/Components/LinkActionView;Landroid/graphics/Bitmap;)V
 
     return-void
 .end method

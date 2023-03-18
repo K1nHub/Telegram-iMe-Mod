@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;->translate$lambda-4(Ljava/util/List;)Lcom/smedialink/storage/domain/model/Result;
+    value = Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$translate$2;->invoke(Ljava/util/List;)Lcom/smedialink/storage/domain/model/Result;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -89,11 +89,19 @@
 
     .line 71
     :goto_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/translation/Translation;->getText()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 

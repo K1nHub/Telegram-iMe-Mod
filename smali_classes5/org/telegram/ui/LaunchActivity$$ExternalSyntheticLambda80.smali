@@ -2,32 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+
+.field public final synthetic f$2:Ljava/io/File;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Ljava/io/File;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda80;->f$0:Lorg/telegram/ui/LaunchActivity;
 
+    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda80;->f$1:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+
+    iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda80;->f$2:Ljava/io/File;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()V
-    .locals 1
+.method public final run()V
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda80;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/LaunchActivity;->openWalletScreen()V
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda80;->f$1:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+
+    iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda80;->f$2:Ljava/io/File;
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$h1yh95l_XDRFXvx86pN9XNU8QZU(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Ljava/io/File;)V
 
     return-void
 .end method

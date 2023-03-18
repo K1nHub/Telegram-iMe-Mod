@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/manager/TelegramApiManager$$ExternalSyntheticLambda14;->f$0:Lio/reactivex/ObservableEmitter;
 
-    invoke-static {v0, p1, p2}, Lcom/smedialink/manager/TelegramApiManager;->$r8$lambda$_M7QpsCQw3m0MZfBRaSpdrxw1k4(Lio/reactivex/ObservableEmitter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, p1, p2}, Lcom/smedialink/manager/TelegramApiManager;->$r8$lambda$bbZAX48_KMne9UwG0CJfjmvXWBY(Lio/reactivex/ObservableEmitter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

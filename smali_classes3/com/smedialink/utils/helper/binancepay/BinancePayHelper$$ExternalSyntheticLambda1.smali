@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/utils/helper/binancepay/BinancePayHelper$$ExternalSyntheticLambda1;->f$1:Lorg/fork/utils/Callbacks$Callback;
 
-    invoke-static {v0, v1}, Lcom/smedialink/utils/helper/binancepay/BinancePayHelper;->$r8$lambda$ZYe9W4j_6C52fOSRrlWNaEJUwDo(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-static {v0, v1}, Lcom/smedialink/utils/helper/binancepay/BinancePayHelper;->$r8$lambda$ZirtOiSSmKft3BOegCe5otKbfZ8(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback;)V
 
     return-void
 .end method

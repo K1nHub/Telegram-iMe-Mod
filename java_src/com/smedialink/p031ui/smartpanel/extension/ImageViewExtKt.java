@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: ImageViewExt.kt */
 /* renamed from: com.smedialink.ui.smartpanel.extension.ImageViewExtKt */
 /* loaded from: classes3.dex */
@@ -46,7 +46,7 @@ public final class ImageViewExtKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r4v4, types: [android.graphics.drawable.Drawable] */
-    public static final void loadFrom(ImageView imageView, String url, Context context, Integer num, boolean z) {
+    public static final void loadFromWithPlaceholderResId(ImageView imageView, String url, Context context, Integer num, boolean z) {
         GradientDrawable gradientDrawable;
         Intrinsics.checkNotNullParameter(imageView, "<this>");
         Intrinsics.checkNotNullParameter(url, "url");
@@ -56,7 +56,7 @@ public final class ImageViewExtKt {
         } else {
             GradientDrawable gradientDrawable2 = new GradientDrawable();
             gradientDrawable2.setShape(1);
-            gradientDrawable2.setColor(ColorStateList.valueOf(ContextCompat.getColor(context, C3158R.C3159color.placeholder_color)));
+            gradientDrawable2.setColor(ColorStateList.valueOf(ContextCompat.getColor(context, C3286R.C3287color.placeholder_color)));
             gradientDrawable = gradientDrawable2;
         }
         loadFrom(imageView, url, context, gradientDrawable, z);

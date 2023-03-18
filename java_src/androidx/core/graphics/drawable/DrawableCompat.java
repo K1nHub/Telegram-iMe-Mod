@@ -28,32 +28,32 @@ public final class DrawableCompat {
 
     public static void setAutoMirrored(Drawable drawable, boolean z) {
         if (Build.VERSION.SDK_INT >= 19) {
-            drawable.setAutoMirrored(z);
+            Api19Impl.setAutoMirrored(drawable, z);
         }
     }
 
     public static boolean isAutoMirrored(Drawable drawable) {
         if (Build.VERSION.SDK_INT >= 19) {
-            return drawable.isAutoMirrored();
+            return Api19Impl.isAutoMirrored(drawable);
         }
         return false;
     }
 
     public static void setHotspot(Drawable drawable, float f, float f2) {
         if (Build.VERSION.SDK_INT >= 21) {
-            drawable.setHotspot(f, f2);
+            Api21Impl.setHotspot(drawable, f, f2);
         }
     }
 
     public static void setHotspotBounds(Drawable drawable, int i, int i2, int i3, int i4) {
         if (Build.VERSION.SDK_INT >= 21) {
-            drawable.setHotspotBounds(i, i2, i3, i4);
+            Api21Impl.setHotspotBounds(drawable, i, i2, i3, i4);
         }
     }
 
     public static void setTint(Drawable drawable, int i) {
         if (Build.VERSION.SDK_INT >= 21) {
-            drawable.setTint(i);
+            Api21Impl.setTint(drawable, i);
         } else if (drawable instanceof TintAwareDrawable) {
             ((TintAwareDrawable) drawable).setTint(i);
         }
@@ -61,7 +61,7 @@ public final class DrawableCompat {
 
     public static void setTintList(Drawable drawable, ColorStateList colorStateList) {
         if (Build.VERSION.SDK_INT >= 21) {
-            drawable.setTintList(colorStateList);
+            Api21Impl.setTintList(drawable, colorStateList);
         } else if (drawable instanceof TintAwareDrawable) {
             ((TintAwareDrawable) drawable).setTintList(colorStateList);
         }
@@ -69,7 +69,7 @@ public final class DrawableCompat {
 
     public static void setTintMode(Drawable drawable, PorterDuff.Mode mode) {
         if (Build.VERSION.SDK_INT >= 21) {
-            drawable.setTintMode(mode);
+            Api21Impl.setTintMode(drawable, mode);
         } else if (drawable instanceof TintAwareDrawable) {
             ((TintAwareDrawable) drawable).setTintMode(mode);
         }
@@ -77,27 +77,27 @@ public final class DrawableCompat {
 
     public static int getAlpha(Drawable drawable) {
         if (Build.VERSION.SDK_INT >= 19) {
-            return drawable.getAlpha();
+            return Api19Impl.getAlpha(drawable);
         }
         return 0;
     }
 
     public static void applyTheme(Drawable drawable, Resources.Theme theme) {
         if (Build.VERSION.SDK_INT >= 21) {
-            drawable.applyTheme(theme);
+            Api21Impl.applyTheme(drawable, theme);
         }
     }
 
     public static boolean canApplyTheme(Drawable drawable) {
         if (Build.VERSION.SDK_INT >= 21) {
-            return drawable.canApplyTheme();
+            return Api21Impl.canApplyTheme(drawable);
         }
         return false;
     }
 
     public static ColorFilter getColorFilter(Drawable drawable) {
         if (Build.VERSION.SDK_INT >= 21) {
-            return drawable.getColorFilter();
+            return Api21Impl.getColorFilter(drawable);
         }
         return null;
     }
@@ -110,13 +110,13 @@ public final class DrawableCompat {
         } else if (i >= 21) {
             drawable.clearColorFilter();
             if (drawable instanceof InsetDrawable) {
-                clearColorFilter(((InsetDrawable) drawable).getDrawable());
+                clearColorFilter(Api19Impl.getDrawable((InsetDrawable) drawable));
             } else if (drawable instanceof WrappedDrawable) {
                 clearColorFilter(((WrappedDrawable) drawable).getWrappedDrawable());
             } else if ((drawable instanceof DrawableContainer) && (drawableContainerState = (DrawableContainer.DrawableContainerState) ((DrawableContainer) drawable).getConstantState()) != null) {
                 int childCount = drawableContainerState.getChildCount();
                 for (int i2 = 0; i2 < childCount; i2++) {
-                    Drawable child = drawableContainerState.getChild(i2);
+                    Drawable child = Api19Impl.getChild(drawableContainerState, i2);
                     if (child != null) {
                         clearColorFilter(child);
                     }
@@ -129,7 +129,7 @@ public final class DrawableCompat {
 
     public static void inflate(Drawable drawable, Resources resources, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) throws XmlPullParserException, IOException {
         if (Build.VERSION.SDK_INT >= 21) {
-            drawable.inflate(resources, xmlPullParser, attributeSet, theme);
+            Api21Impl.inflate(drawable, resources, xmlPullParser, attributeSet, theme);
         } else {
             drawable.inflate(resources, xmlPullParser, attributeSet);
         }
@@ -148,7 +148,7 @@ public final class DrawableCompat {
     public static boolean setLayoutDirection(Drawable drawable, int i) {
         int i2 = Build.VERSION.SDK_INT;
         if (i2 >= 23) {
-            return drawable.setLayoutDirection(i);
+            return Api23Impl.setLayoutDirection(drawable, i);
         }
         if (i2 >= 17) {
             if (!sSetLayoutDirectionMethodFetched) {
@@ -178,7 +178,7 @@ public final class DrawableCompat {
     public static int getLayoutDirection(Drawable drawable) {
         int i = Build.VERSION.SDK_INT;
         if (i >= 23) {
-            return drawable.getLayoutDirection();
+            return Api23Impl.getLayoutDirection(drawable);
         }
         if (i >= 17) {
             if (!sGetLayoutDirectionMethodFetched) {
@@ -202,5 +202,79 @@ public final class DrawableCompat {
             }
         }
         return 0;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api19Impl {
+        static void setAutoMirrored(Drawable drawable, boolean z) {
+            drawable.setAutoMirrored(z);
+        }
+
+        static boolean isAutoMirrored(Drawable drawable) {
+            return drawable.isAutoMirrored();
+        }
+
+        static int getAlpha(Drawable drawable) {
+            return drawable.getAlpha();
+        }
+
+        static Drawable getChild(DrawableContainer.DrawableContainerState drawableContainerState, int i) {
+            return drawableContainerState.getChild(i);
+        }
+
+        static Drawable getDrawable(InsetDrawable insetDrawable) {
+            return insetDrawable.getDrawable();
+        }
+    }
+
+    /* loaded from: classes.dex */
+    static class Api21Impl {
+        static void setHotspot(Drawable drawable, float f, float f2) {
+            drawable.setHotspot(f, f2);
+        }
+
+        static void setTint(Drawable drawable, int i) {
+            drawable.setTint(i);
+        }
+
+        static void setTintList(Drawable drawable, ColorStateList colorStateList) {
+            drawable.setTintList(colorStateList);
+        }
+
+        static void setTintMode(Drawable drawable, PorterDuff.Mode mode) {
+            drawable.setTintMode(mode);
+        }
+
+        static void applyTheme(Drawable drawable, Resources.Theme theme) {
+            drawable.applyTheme(theme);
+        }
+
+        static boolean canApplyTheme(Drawable drawable) {
+            return drawable.canApplyTheme();
+        }
+
+        static ColorFilter getColorFilter(Drawable drawable) {
+            return drawable.getColorFilter();
+        }
+
+        static void inflate(Drawable drawable, Resources resources, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) throws XmlPullParserException, IOException {
+            drawable.inflate(resources, xmlPullParser, attributeSet, theme);
+        }
+
+        static void setHotspotBounds(Drawable drawable, int i, int i2, int i3, int i4) {
+            drawable.setHotspotBounds(i, i2, i3, i4);
+        }
+    }
+
+    /* loaded from: classes.dex */
+    static class Api23Impl {
+        static boolean setLayoutDirection(Drawable drawable, int i) {
+            return drawable.setLayoutDirection(i);
+        }
+
+        static int getLayoutDirection(Drawable drawable) {
+            return drawable.getLayoutDirection();
+        }
     }
 }

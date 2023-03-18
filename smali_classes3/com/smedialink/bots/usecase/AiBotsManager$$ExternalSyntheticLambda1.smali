@@ -33,7 +33,7 @@
 
     iget-wide v1, p0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda1;->f$1:J
 
-    invoke-static {v0, v1, v2}, Lcom/smedialink/bots/usecase/AiBotsManager;->$r8$lambda$pXF94oHOfg8HVhrekJC6VDuLmqs(Lcom/smedialink/bots/usecase/AiBotsManager$AppInstalledCallback;J)V
+    invoke-static {v0, v1, v2}, Lcom/smedialink/bots/usecase/AiBotsManager;->$r8$lambda$Z_HuSVTrIfaucQJPLNNOI-z1FP0(Lcom/smedialink/bots/usecase/AiBotsManager$AppInstalledCallback;J)V
 
     return-void
 .end method

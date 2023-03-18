@@ -55,10 +55,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$TLaRiTeGeI2mh-lyxP4_fziBJ9c(Lcom/smedialink/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$lUKDr0ufMX4fDKB85oGlfGhQg6Q(Lcom/smedialink/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog;->setupAdapter$lambda-1$lambda-0(Lcom/smedialink/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog;->setupAdapter$lambda$1$lambda$0(Lcom/smedialink/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -326,18 +326,18 @@
     return-void
 .end method
 
-.method private static final setupAdapter$lambda-1$lambda-0(Lcom/smedialink/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupAdapter$lambda$1$lambda$0(Lcom/smedialink/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "$noName_1"
+    const-string p1, "<anonymous parameter 1>"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -371,27 +371,29 @@
     .line 70
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkSecretWordsCountLayoutBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, ""
+    const-string v2, "setupColors$lambda$4$lambda$2"
 
     .line 71
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    const-string v3, "dialogTextBlue2"
+    const-string v2, "dialogTextBlue2"
 
     .line 72
-    invoke-virtual {p0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
 
-    move-result v3
+    move-result v2
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 74
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkSecretWordsCountLayoutBinding;->textActionCancel:Landroidx/appcompat/widget/AppCompatTextView;
 
+    const-string v1, "setupColors$lambda$4$lambda$3"
+
     .line 75
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x0
 

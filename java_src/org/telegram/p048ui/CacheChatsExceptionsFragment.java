@@ -12,7 +12,7 @@ import com.google.android.exoplayer2.source.rtsp.SessionDescription;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.CacheByChatsController;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
@@ -20,7 +20,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BackDrawable;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Cells.ShadowSectionCell;
 import org.telegram.p048ui.Cells.TextCell;
@@ -53,15 +53,15 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         this.actionBar.setBackButtonDrawable(new BackDrawable(false));
-        this.actionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CacheChatsExceptionsFragment.1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CacheChatsExceptionsFragment.1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     CacheChatsExceptionsFragment.this.finishFragment();
                 }
             }
         });
-        this.actionBar.setTitle(LocaleController.getString(C3158R.string.NotificationsExceptions));
+        this.actionBar.setTitle(LocaleController.getString(C3286R.string.NotificationsExceptions));
         this.recyclerListView = new RecyclerListView(context);
         DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
         defaultItemAnimator.setDelayAnimations(false);
@@ -131,7 +131,7 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
                 }
             });
         } else if (this.items.get(i).viewType == 4) {
-            AlertDialog create = AlertsCreator.createSimpleAlert(getContext(), LocaleController.getString("NotificationsDeleteAllExceptionTitle", C3158R.string.NotificationsDeleteAllExceptionTitle), LocaleController.getString("NotificationsDeleteAllExceptionAlert", C3158R.string.NotificationsDeleteAllExceptionAlert), LocaleController.getString("Delete", C3158R.string.Delete), new Runnable() { // from class: org.telegram.ui.CacheChatsExceptionsFragment$$ExternalSyntheticLambda0
+            AlertDialog create = AlertsCreator.createSimpleAlert(getContext(), LocaleController.getString("NotificationsDeleteAllExceptionTitle", C3286R.string.NotificationsDeleteAllExceptionTitle), LocaleController.getString("NotificationsDeleteAllExceptionAlert", C3286R.string.NotificationsDeleteAllExceptionAlert), LocaleController.getString("Delete", C3286R.string.Delete), new Runnable() { // from class: org.telegram.ui.CacheChatsExceptionsFragment$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     CacheChatsExceptionsFragment.this.lambda$createView$2();
@@ -319,7 +319,7 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
             TextCell textCell = null;
             if (i == 1) {
                 TextCell textCell2 = new TextCell(viewGroup.getContext());
-                textCell2.setTextAndIcon(LocaleController.getString("NotificationsAddAnException", C3158R.string.NotificationsAddAnException), C3158R.C3160drawable.msg_contact_add, true);
+                textCell2.setTextAndIcon(LocaleController.getString("NotificationsAddAnException", C3286R.string.NotificationsAddAnException), C3286R.C3288drawable.msg_contact_add, true);
                 textCell2.setColors("windowBackgroundWhiteBlueIcon", "windowBackgroundWhiteBlueButton");
                 textCell2.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
                 textCell = textCell2;
@@ -331,7 +331,7 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
                 textCell = new ShadowSectionCell(viewGroup.getContext());
             } else if (i == 4) {
                 TextCell textCell3 = new TextCell(viewGroup.getContext());
-                textCell3.setText(LocaleController.getString("NotificationsDeleteAllException", C3158R.string.NotificationsDeleteAllException), false);
+                textCell3.setText(LocaleController.getString("NotificationsDeleteAllException", C3286R.string.NotificationsDeleteAllException), false);
                 textCell3.setColors(null, "windowBackgroundWhiteRedText5");
                 textCell3.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
                 textCell = textCell3;
@@ -350,7 +350,7 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
                 if (userOrChat instanceof TLRPC$User) {
                     TLRPC$User tLRPC$User = (TLRPC$User) userOrChat;
                     if (tLRPC$User.self) {
-                        str = LocaleController.getString("SavedMessages", C3158R.string.SavedMessages);
+                        str = LocaleController.getString("SavedMessages", C3286R.string.SavedMessages);
                     } else {
                         str = ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name);
                     }

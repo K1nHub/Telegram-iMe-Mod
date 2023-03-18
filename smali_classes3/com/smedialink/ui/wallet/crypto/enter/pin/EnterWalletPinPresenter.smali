@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nEnterWalletPinPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EnterWalletPinPresenter.kt\ncom/smedialink/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,100:1\n39#2,6:101\n*S KotlinDebug\n*F\n+ 1 EnterWalletPinPresenter.kt\ncom/smedialink/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter\n*L\n44#1:101,6\n*E\n"
+    value = "SMAP\nEnterWalletPinPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EnterWalletPinPresenter.kt\ncom/smedialink/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,101:1\n39#2,8:102\n*S KotlinDebug\n*F\n+ 1 EnterWalletPinPresenter.kt\ncom/smedialink/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter\n*L\n44#1:102,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -116,7 +116,7 @@
 .method private final isValidPinCode(Ljava/lang/String;)Z
     .locals 1
 
-    .line 92
+    .line 93
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result p1
@@ -139,7 +139,7 @@
 .method private final savePinEncryptedIfNeeded(Ljava/lang/String;)V
     .locals 5
 
-    .line 66
+    .line 67
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter;->telegramControllersGateway:Lcom/smedialink/gateway/TelegramControllersGateway;
 
     const/4 v1, 0x0
@@ -152,7 +152,7 @@
 
     move-result-object v0
 
-    .line 67
+    .line 68
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v4, 0x17
@@ -176,11 +176,11 @@
 
     goto :goto_0
 
-    .line 68
+    .line 69
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/FingerprintController;->createCipher()Z
 
-    .line 70
+    .line 71
     invoke-static {p1}, Lorg/telegram/messenger/FingerprintController;->encode(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
@@ -192,7 +192,7 @@
     :cond_2
     invoke-virtual {v0, p1}, Lorg/fork/controller/WalletFingerprintController;->setWalletPinCodeEncrypted(Ljava/lang/String;)V
 
-    .line 71
+    .line 72
     invoke-virtual {v0}, Lorg/fork/controller/WalletFingerprintController;->saveConfig()V
 
     :cond_3
@@ -215,12 +215,12 @@
 
     if-nez p1, :cond_0
 
-    .line 78
+    .line 79
     invoke-virtual {p0, v0}, Lcom/smedialink/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter;->validatePin(Ljava/lang/String;)V
 
     return-void
 
-    .line 82
+    .line 83
     :cond_0
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter;->telegramControllersGateway:Lcom/smedialink/gateway/TelegramControllersGateway;
 
@@ -238,7 +238,7 @@
 
     move-result-object v1
 
-    .line 81
+    .line 82
     invoke-static {v1, p1}, Lorg/telegram/messenger/FingerprintController;->decode(Ljava/lang/String;Ljavax/crypto/Cipher;)Ljava/lang/String;
 
     move-result-object p1
@@ -250,7 +250,7 @@
     :cond_1
     move-object v0, p1
 
-    .line 85
+    .line 86
     :goto_0
     invoke-virtual {p0, v0}, Lcom/smedialink/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter;->validatePin(Ljava/lang/String;)V
 
@@ -351,21 +351,32 @@
 
     invoke-direct {v2, p0, p1}, Lcom/smedialink/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter$validatePin$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter;Ljava/lang/String;)V
 
-    new-instance p1, Lcom/smedialink/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter$validatePin$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {p1, v1}, Lcom/smedialink/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter$validatePin$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {p1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v2, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v2, Lcom/smedialink/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter$validatePin$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter$validatePin$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, p1, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
-    .line 62
+    .line 63
     invoke-static {p0, p1, v0, v7, v0}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void

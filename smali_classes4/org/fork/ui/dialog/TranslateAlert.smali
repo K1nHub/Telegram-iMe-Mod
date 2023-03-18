@@ -3278,7 +3278,7 @@
     .line 292
     iget-object v0, p0, Lorg/fork/ui/dialog/TranslateAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v1, "windowBackgroundWhiteBlackText"
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
@@ -3289,7 +3289,7 @@
     .line 293
     iget-object v0, p0, Lorg/fork/ui/dialog/TranslateAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const-string v1, "windowBackgroundWhiteHintText"
+    const-string/jumbo v1, "windowBackgroundWhiteHintText"
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
@@ -6404,7 +6404,7 @@
     .line 1288
     invoke-virtual {p1, v1}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    const-string v1, "windowBackgroundWhite"
+    const-string/jumbo v1, "windowBackgroundWhite"
 
     .line 1290
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I

@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onPageSelected(I)V
-    .locals 8
+    .locals 6
 
     .line 146
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupViewPager$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;
@@ -65,8 +65,6 @@
 
     move-result v0
 
-    const-string v1, ""
-
     if-ne p1, v0, :cond_1
 
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupViewPager$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;
@@ -75,37 +73,39 @@
 
     move-result-object p1
 
-    iget-object v2, p1, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthTutorialBinding;->buttonAction:Lcom/smedialink/ui/custom/ActionButton;
+    iget-object v0, p1, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthTutorialBinding;->buttonAction:Lcom/smedialink/ui/custom/ActionButton;
 
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupViewPager$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;
 
     .line 150
     invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;->access$getResourceManager(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v0
+    move-result-object v1
 
-    sget v3, Lorg/telegram/messenger/R$string;->common_create:I
+    sget v2, Lorg/telegram/messenger/R$string;->common_create:I
 
-    invoke-interface {v0, v3}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v2}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    const-string v1, "onPageSelected$lambda$0"
 
     .line 151
-    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v1, 0x0
 
-    new-instance v5, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupViewPager$1$1$onPageSelected$1$1;
+    new-instance v3, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupViewPager$1$1$onPageSelected$1$1;
 
-    invoke-direct {v5, p1}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupViewPager$1$1$onPageSelected$1$1;-><init>(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
+    invoke-direct {v3, p1}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupViewPager$1$1$onPageSelected$1$1;-><init>(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
 
-    const/4 v6, 0x1
+    const/4 v4, 0x1
 
-    const/4 v7, 0x0
+    const/4 v5, 0x0
 
-    invoke-static/range {v2 .. v7}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+    invoke-static/range {v0 .. v5}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
     goto :goto_1
 
@@ -117,37 +117,39 @@
 
     move-result-object p1
 
-    iget-object v2, p1, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthTutorialBinding;->buttonAction:Lcom/smedialink/ui/custom/ActionButton;
+    iget-object v0, p1, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthTutorialBinding;->buttonAction:Lcom/smedialink/ui/custom/ActionButton;
 
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupViewPager$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;
 
     .line 154
     invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;->access$getResourceManager(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v0
+    move-result-object v1
 
-    sget v3, Lorg/telegram/messenger/R$string;->common_next:I
+    sget v2, Lorg/telegram/messenger/R$string;->common_next:I
 
-    invoke-interface {v0, v3}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v2}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    const-string v1, "onPageSelected$lambda$1"
 
     .line 155
-    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v1, 0x0
 
-    new-instance v5, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupViewPager$1$1$onPageSelected$2$1;
+    new-instance v3, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupViewPager$1$1$onPageSelected$2$1;
 
-    invoke-direct {v5, p1}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupViewPager$1$1$onPageSelected$2$1;-><init>(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
+    invoke-direct {v3, p1}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupViewPager$1$1$onPageSelected$2$1;-><init>(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
 
-    const/4 v6, 0x1
+    const/4 v4, 0x1
 
-    const/4 v7, 0x0
+    const/4 v5, 0x0
 
-    invoke-static/range {v2 .. v7}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+    invoke-static/range {v0 .. v5}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
     :goto_1
     return-void

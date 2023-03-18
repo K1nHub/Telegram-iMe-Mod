@@ -33,7 +33,7 @@
 
     iget-wide v1, p0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda8;->f$1:J
 
-    invoke-static {v0, v1, v2}, Lcom/smedialink/bots/usecase/AiBotsManager;->$r8$lambda$woRuauEPOD5cTuk1PmQtvKsLdfM(Ljava/lang/String;J)V
+    invoke-static {v0, v1, v2}, Lcom/smedialink/bots/usecase/AiBotsManager;->$r8$lambda$1AN_pWB_u-a0U0FNuVpi5jmZgL8(Ljava/lang/String;J)V
 
     return-void
 .end method

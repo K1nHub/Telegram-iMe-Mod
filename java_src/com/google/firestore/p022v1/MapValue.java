@@ -71,7 +71,7 @@ public final class MapValue extends GeneratedMessageLite<MapValue, Builder> impl
     /* renamed from: com.google.firestore.v1.MapValue$Builder */
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<MapValue, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10661 c10661) {
+        /* synthetic */ Builder(C10591 c10591) {
             this();
         }
 
@@ -108,7 +108,7 @@ public final class MapValue extends GeneratedMessageLite<MapValue, Builder> impl
 
     /* renamed from: com.google.firestore.v1.MapValue$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10661 {
+    static /* synthetic */ class C10591 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f212xa1df5c61;
@@ -149,7 +149,7 @@ public final class MapValue extends GeneratedMessageLite<MapValue, Builder> impl
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10661.f212xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10591.f212xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new MapValue();
             case 2:

@@ -6,12 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/storage/domain/model/crypto/Chain$Ethereum;,
         Lcom/smedialink/storage/domain/model/crypto/Chain$BSC;,
-        Lcom/smedialink/storage/domain/model/crypto/Chain$Polygon;,
+        Lcom/smedialink/storage/domain/model/crypto/Chain$Companion;,
+        Lcom/smedialink/storage/domain/model/crypto/Chain$Ethereum;,
         Lcom/smedialink/storage/domain/model/crypto/Chain$Fantom;,
-        Lcom/smedialink/storage/domain/model/crypto/Chain$Unknown;,
-        Lcom/smedialink/storage/domain/model/crypto/Chain$Companion;
+        Lcom/smedialink/storage/domain/model/crypto/Chain$Polygon;,
+        Lcom/smedialink/storage/domain/model/crypto/Chain$Unknown;
     }
 .end annotation
 

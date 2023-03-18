@@ -15,10 +15,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$tCSLbW3uJOsVhGDNmlC_fHpq7M4(ILjava/lang/Integer;)Lorg/fork/controller/BackupController;
+.method public static synthetic $r8$lambda$2dese5z9JGKLdt7SYjY75KBnJeo(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lorg/fork/controller/BackupController;
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/controller/BackupController$Companion;->getInstance$lambda-0(ILjava/lang/Integer;)Lorg/fork/controller/BackupController;
+    invoke-static {p0, p1}, Lorg/fork/controller/BackupController$Companion;->getInstance$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lorg/fork/controller/BackupController;
 
     move-result-object p0
 
@@ -42,19 +42,21 @@
     return-void
 .end method
 
-.method private static final getInstance$lambda-0(ILjava/lang/Integer;)Lorg/fork/controller/BackupController;
+.method private static final getInstance$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lorg/fork/controller/BackupController;
     .locals 1
 
-    const-string v0, "it"
+    const-string v0, "$tmp0"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 564
-    new-instance p1, Lorg/fork/controller/BackupController;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {p1, p0}, Lorg/fork/controller/BackupController;-><init>(I)V
+    move-result-object p0
 
-    return-object p1
+    check-cast p0, Lorg/fork/controller/BackupController;
+
+    return-object p0
 .end method
 
 
@@ -71,15 +73,19 @@
 
     move-result-object v1
 
-    new-instance v2, Lorg/fork/controller/BackupController$Companion$$ExternalSyntheticLambda0;
+    new-instance v2, Lorg/fork/controller/BackupController$Companion$getInstance$1;
 
-    invoke-direct {v2, p1}, Lorg/fork/controller/BackupController$Companion$$ExternalSyntheticLambda0;-><init>(I)V
+    invoke-direct {v2, p1}, Lorg/fork/controller/BackupController$Companion$getInstance$1;-><init>(I)V
 
-    invoke-static {v0, v1, v2}, Lj$/util/concurrent/ConcurrentMap$-EL;->computeIfAbsent(Ljava/util/concurrent/ConcurrentMap;Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
+    new-instance p1, Lorg/fork/controller/BackupController$Companion$$ExternalSyntheticLambda0;
+
+    invoke-direct {p1, v2}, Lorg/fork/controller/BackupController$Companion$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-static {v0, v1, p1}, Lj$/util/concurrent/ConcurrentMap$-EL;->computeIfAbsent(Ljava/util/concurrent/ConcurrentMap;Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
 
     move-result-object p1
 
-    const-string v0, "accountInstances.compute\u2026ontroller(accountIndex) }"
+    const-string v0, "accountIndex: Int) = acc\u2026ontroller(accountIndex) }"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

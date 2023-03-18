@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/controller/AlbumsController$$ExternalSyntheticLambda4;->f$1:Lorg/fork/models/backup/Backup;
 
-    invoke-static {v0, v1}, Lorg/fork/controller/AlbumsController;->$r8$lambda$UuPU_OUsTrB5O6ImXC5_RuDpbe8(Lorg/fork/controller/AlbumsController;Lorg/fork/models/backup/Backup;)V
+    invoke-static {v0, v1}, Lorg/fork/controller/AlbumsController;->$r8$lambda$m07aBLKFmQJhsxzdzg7j9Ogei5s(Lorg/fork/controller/AlbumsController;Lorg/fork/models/backup/Backup;)V
 
     return-void
 .end method

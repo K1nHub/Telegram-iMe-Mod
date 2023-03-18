@@ -42,13 +42,8 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_3
 
-    const/4 p1, 0x0
-
-    goto :goto_2
-
-    :cond_0
     const-string v0, "ru"
 
     .line 10
@@ -56,7 +51,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-virtual {p1}, Lcom/smedialink/bots/data/model/database/TagDbModel;->getTitle()Ljava/lang/String;
 
@@ -65,7 +60,7 @@
     goto :goto_0
 
     .line 11
-    :cond_1
+    :cond_0
     invoke-virtual {p1}, Lcom/smedialink/bots/data/model/database/TagDbModel;->getLocales()Ljava/util/Map;
 
     move-result-object v0
@@ -76,7 +71,7 @@
 
     check-cast p2, Ljava/lang/String;
 
-    if-nez p2, :cond_2
+    if-nez p2, :cond_1
 
     invoke-virtual {p1}, Lcom/smedialink/bots/data/model/database/TagDbModel;->getLocales()Ljava/util/Map;
 
@@ -90,7 +85,7 @@
 
     check-cast p2, Ljava/lang/String;
 
-    if-nez p2, :cond_2
+    if-nez p2, :cond_1
 
     .line 12
     invoke-virtual {p1}, Lcom/smedialink/bots/data/model/database/TagDbModel;->getTitle()Ljava/lang/String;
@@ -98,7 +93,7 @@
     move-result-object p2
 
     .line 13
-    :cond_2
+    :cond_1
     :goto_0
     new-instance v0, Lcom/smedialink/bots/domain/model/SmartTag;
 
@@ -114,19 +109,22 @@
 
     const/4 v2, 0x1
 
-    if-ne p1, v2, :cond_3
+    if-ne p1, v2, :cond_2
 
     goto :goto_1
 
-    :cond_3
+    :cond_2
     const/4 v2, 0x0
 
     .line 13
     :goto_1
     invoke-direct {v0, v1, p2, v2}, Lcom/smedialink/bots/domain/model/SmartTag;-><init>(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    move-object p1, v0
+    goto :goto_2
+
+    :cond_3
+    const/4 v0, 0x0
 
     :goto_2
-    return-object p1
+    return-object v0
 .end method

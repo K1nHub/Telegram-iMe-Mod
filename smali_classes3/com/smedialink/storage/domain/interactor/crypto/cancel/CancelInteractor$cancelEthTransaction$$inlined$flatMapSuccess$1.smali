@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "ObservableExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Function;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,13 +18,18 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        "R:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Function;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/crypto/cancel/CryptoCancelMetadata;",
+        ">;",
+        "Lio/reactivex/ObservableSource<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Ljava/lang/String;",
+        ">;>;>;"
     }
 .end annotation
 
@@ -51,20 +56,30 @@
 
     iput-object p3, p0, Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;->$txHash$inlined:Ljava/lang/String;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Lcom/smedialink/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
+.method public final invoke(Lcom/smedialink/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
     .locals 20
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)",
+            "(",
+            "Lcom/smedialink/storage/domain/model/Result<",
+            "+",
+            "Lcom/smedialink/storage/domain/model/crypto/cancel/CryptoCancelMetadata;",
+            ">;)",
             "Lio/reactivex/ObservableSource<",
-            "+TR;>;"
+            "+",
+            "Lcom/smedialink/storage/domain/model/Result<",
+            "+",
+            "Ljava/lang/String;",
+            ">;>;"
         }
     .end annotation
 
@@ -187,29 +202,26 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
 
     move-result-object v3
 
-    :goto_0
+    :cond_0
     if-nez v3, :cond_1
 
     const-string v1, ""
 
     move-object v11, v1
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
     move-object v11, v3
 
     .line 89
-    :goto_1
+    :goto_0
     new-instance v1, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;
 
     const/16 v17, 0x0
@@ -249,7 +261,7 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto :goto_2
+    goto :goto_1
 
     .line 18
     :cond_2
@@ -271,11 +283,15 @@
 
     move-result-object v1
 
+    const-string v2, "null cannot be cast to non-null type R of com.smedialink.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-static {v1}, Lio/reactivex/Observable;->just(Ljava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object v1
 
-    goto :goto_2
+    goto :goto_1
 
     .line 19
     :cond_3
@@ -283,17 +299,17 @@
 
     move-result-object v1
 
-    :goto_2
+    :goto_1
     return-object v1
 .end method
 
-.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     .line 15
     check-cast p1, Lcom/smedialink/storage/domain/model/Result;
 
-    invoke-virtual {p0, p1}, Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;->apply(Lcom/smedialink/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
+    invoke-virtual {p0, p1}, Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;->invoke(Lcom/smedialink/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
 
     move-result-object p1
 

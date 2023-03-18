@@ -63,10 +63,10 @@ final class DataSourceModuleKt$dataSourceModule$1 extends Lambda implements Func
     /* compiled from: DataSourceModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C14931 extends Lambda implements Function2<Scope, ParametersHolder, WalletTransferDataSourceFactory> {
-        public static final C14931 INSTANCE = new C14931();
+    public static final class C15031 extends Lambda implements Function2<Scope, ParametersHolder, WalletTransferDataSourceFactory> {
+        public static final C15031 INSTANCE = new C15031();
 
-        C14931() {
+        C15031() {
             super(2);
         }
 
@@ -92,107 +92,107 @@ final class DataSourceModuleKt$dataSourceModule$1 extends Lambda implements Func
         List emptyList10;
         List emptyList11;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C14931 c14931 = C14931.INSTANCE;
+        C15031 c15031 = C15031.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Singleton;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(WalletTransferDataSourceFactory.class), null, c14931, kind, emptyList));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(WalletTransferDataSourceFactory.class), null, c15031, kind, emptyList));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         new Pair(module, singleInstanceFactory);
-        C14962 c14962 = C14962.INSTANCE;
+        C15062 c15062 = C15062.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(WalletSwapDataSourceFactory.class), null, c14962, kind, emptyList2));
+        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(WalletSwapDataSourceFactory.class), null, c15062, kind, emptyList2));
         module.indexPrimaryType(singleInstanceFactory2);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory2);
         }
         new Pair(module, singleInstanceFactory2);
-        C14973 c14973 = C14973.INSTANCE;
+        C15073 c15073 = C15073.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(WalletApproveDataSourceFactory.class), null, c14973, kind, emptyList3));
+        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(WalletApproveDataSourceFactory.class), null, c15073, kind, emptyList3));
         module.indexPrimaryType(singleInstanceFactory3);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory3);
         }
         new Pair(module, singleInstanceFactory3);
-        C14984 c14984 = C14984.INSTANCE;
+        C15084 c15084 = C15084.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(WalletCancelDataSourceFactory.class), null, c14984, kind, emptyList4));
+        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(WalletCancelDataSourceFactory.class), null, c15084, kind, emptyList4));
         module.indexPrimaryType(singleInstanceFactory4);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory4);
         }
         new Pair(module, singleInstanceFactory4);
-        C14995 c14995 = C14995.INSTANCE;
+        C15095 c15095 = C15095.INSTANCE;
         StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
         emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(WalletBoostDataSourceFactory.class), null, c14995, kind, emptyList5));
+        SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(WalletBoostDataSourceFactory.class), null, c15095, kind, emptyList5));
         module.indexPrimaryType(singleInstanceFactory5);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory5);
         }
         new Pair(module, singleInstanceFactory5);
         StringQualifier evm_crypto_transfer_data_source = DataSourceModuleKt.getEVM_CRYPTO_TRANSFER_DATA_SOURCE();
-        C15006 c15006 = C15006.INSTANCE;
+        C15106 c15106 = C15106.INSTANCE;
         StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
         emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(WalletTransferDataSource.class), evm_crypto_transfer_data_source, c15006, kind, emptyList6));
+        SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(WalletTransferDataSource.class), evm_crypto_transfer_data_source, c15106, kind, emptyList6));
         module.indexPrimaryType(singleInstanceFactory6);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory6);
         }
         new Pair(module, singleInstanceFactory6);
         StringQualifier ton_crypto_transfer_data_source = DataSourceModuleKt.getTON_CRYPTO_TRANSFER_DATA_SOURCE();
-        C15017 c15017 = C15017.INSTANCE;
+        C15117 c15117 = C15117.INSTANCE;
         StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
         emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(WalletTransferDataSource.class), ton_crypto_transfer_data_source, c15017, kind, emptyList7));
+        SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(WalletTransferDataSource.class), ton_crypto_transfer_data_source, c15117, kind, emptyList7));
         module.indexPrimaryType(singleInstanceFactory7);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory7);
         }
         new Pair(module, singleInstanceFactory7);
         StringQualifier dex_swap_data_source = DataSourceModuleKt.getDEX_SWAP_DATA_SOURCE();
-        C15028 c15028 = C15028.INSTANCE;
+        C15128 c15128 = C15128.INSTANCE;
         StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
         emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(WalletSwapDataSource.class), dex_swap_data_source, c15028, kind, emptyList8));
+        SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(WalletSwapDataSource.class), dex_swap_data_source, c15128, kind, emptyList8));
         module.indexPrimaryType(singleInstanceFactory8);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory8);
         }
         new Pair(module, singleInstanceFactory8);
         StringQualifier eth_approve_data_source = DataSourceModuleKt.getETH_APPROVE_DATA_SOURCE();
-        C15039 c15039 = C15039.INSTANCE;
+        C15139 c15139 = C15139.INSTANCE;
         StringQualifier rootScopeQualifier9 = companion.getRootScopeQualifier();
         emptyList9 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(WalletApproveDataSource.class), eth_approve_data_source, c15039, kind, emptyList9));
+        SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(WalletApproveDataSource.class), eth_approve_data_source, c15139, kind, emptyList9));
         module.indexPrimaryType(singleInstanceFactory9);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory9);
         }
         new Pair(module, singleInstanceFactory9);
         StringQualifier eth_cancel_data_source = DataSourceModuleKt.getETH_CANCEL_DATA_SOURCE();
-        C149410 c149410 = C149410.INSTANCE;
+        C150410 c150410 = C150410.INSTANCE;
         StringQualifier rootScopeQualifier10 = companion.getRootScopeQualifier();
         emptyList10 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(WalletCancelDataSource.class), eth_cancel_data_source, c149410, kind, emptyList10));
+        SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(WalletCancelDataSource.class), eth_cancel_data_source, c150410, kind, emptyList10));
         module.indexPrimaryType(singleInstanceFactory10);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory10);
         }
         new Pair(module, singleInstanceFactory10);
-        C149511 c149511 = C149511.INSTANCE;
+        C150511 c150511 = C150511.INSTANCE;
         StringQualifier rootScopeQualifier11 = companion.getRootScopeQualifier();
         emptyList11 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(WalletConnectDataSource.class), null, c149511, kind, emptyList11));
+        SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(WalletConnectDataSource.class), null, c150511, kind, emptyList11));
         module.indexPrimaryType(singleInstanceFactory11);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory11);
@@ -204,10 +204,10 @@ final class DataSourceModuleKt$dataSourceModule$1 extends Lambda implements Func
     /* compiled from: DataSourceModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C14962 extends Lambda implements Function2<Scope, ParametersHolder, WalletSwapDataSourceFactory> {
-        public static final C14962 INSTANCE = new C14962();
+    public static final class C15062 extends Lambda implements Function2<Scope, ParametersHolder, WalletSwapDataSourceFactory> {
+        public static final C15062 INSTANCE = new C15062();
 
-        C14962() {
+        C15062() {
             super(2);
         }
 
@@ -223,10 +223,10 @@ final class DataSourceModuleKt$dataSourceModule$1 extends Lambda implements Func
     /* compiled from: DataSourceModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C14973 extends Lambda implements Function2<Scope, ParametersHolder, WalletApproveDataSourceFactory> {
-        public static final C14973 INSTANCE = new C14973();
+    public static final class C15073 extends Lambda implements Function2<Scope, ParametersHolder, WalletApproveDataSourceFactory> {
+        public static final C15073 INSTANCE = new C15073();
 
-        C14973() {
+        C15073() {
             super(2);
         }
 
@@ -242,10 +242,10 @@ final class DataSourceModuleKt$dataSourceModule$1 extends Lambda implements Func
     /* compiled from: DataSourceModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C14984 extends Lambda implements Function2<Scope, ParametersHolder, WalletCancelDataSourceFactory> {
-        public static final C14984 INSTANCE = new C14984();
+    public static final class C15084 extends Lambda implements Function2<Scope, ParametersHolder, WalletCancelDataSourceFactory> {
+        public static final C15084 INSTANCE = new C15084();
 
-        C14984() {
+        C15084() {
             super(2);
         }
 
@@ -261,10 +261,10 @@ final class DataSourceModuleKt$dataSourceModule$1 extends Lambda implements Func
     /* compiled from: DataSourceModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1$5 */
     /* loaded from: classes3.dex */
-    public static final class C14995 extends Lambda implements Function2<Scope, ParametersHolder, WalletBoostDataSourceFactory> {
-        public static final C14995 INSTANCE = new C14995();
+    public static final class C15095 extends Lambda implements Function2<Scope, ParametersHolder, WalletBoostDataSourceFactory> {
+        public static final C15095 INSTANCE = new C15095();
 
-        C14995() {
+        C15095() {
             super(2);
         }
 
@@ -281,10 +281,10 @@ final class DataSourceModuleKt$dataSourceModule$1 extends Lambda implements Func
     /* compiled from: DataSourceModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1$6 */
     /* loaded from: classes3.dex */
-    public static final class C15006 extends Lambda implements Function2<Scope, ParametersHolder, WalletTransferDataSource> {
-        public static final C15006 INSTANCE = new C15006();
+    public static final class C15106 extends Lambda implements Function2<Scope, ParametersHolder, WalletTransferDataSource> {
+        public static final C15106 INSTANCE = new C15106();
 
-        C15006() {
+        C15106() {
             super(2);
         }
 
@@ -300,10 +300,10 @@ final class DataSourceModuleKt$dataSourceModule$1 extends Lambda implements Func
     /* compiled from: DataSourceModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1$7 */
     /* loaded from: classes3.dex */
-    public static final class C15017 extends Lambda implements Function2<Scope, ParametersHolder, WalletTransferDataSource> {
-        public static final C15017 INSTANCE = new C15017();
+    public static final class C15117 extends Lambda implements Function2<Scope, ParametersHolder, WalletTransferDataSource> {
+        public static final C15117 INSTANCE = new C15117();
 
-        C15017() {
+        C15117() {
             super(2);
         }
 
@@ -319,10 +319,10 @@ final class DataSourceModuleKt$dataSourceModule$1 extends Lambda implements Func
     /* compiled from: DataSourceModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1$11 */
     /* loaded from: classes3.dex */
-    public static final class C149511 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectDataSource> {
-        public static final C149511 INSTANCE = new C149511();
+    public static final class C150511 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectDataSource> {
+        public static final C150511 INSTANCE = new C150511();
 
-        C149511() {
+        C150511() {
             super(2);
         }
 
@@ -338,10 +338,10 @@ final class DataSourceModuleKt$dataSourceModule$1 extends Lambda implements Func
     /* compiled from: DataSourceModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1$10 */
     /* loaded from: classes3.dex */
-    public static final class C149410 extends Lambda implements Function2<Scope, ParametersHolder, WalletCancelDataSource> {
-        public static final C149410 INSTANCE = new C149410();
+    public static final class C150410 extends Lambda implements Function2<Scope, ParametersHolder, WalletCancelDataSource> {
+        public static final C150410 INSTANCE = new C150410();
 
-        C149410() {
+        C150410() {
             super(2);
         }
 
@@ -357,10 +357,10 @@ final class DataSourceModuleKt$dataSourceModule$1 extends Lambda implements Func
     /* compiled from: DataSourceModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1$8 */
     /* loaded from: classes3.dex */
-    public static final class C15028 extends Lambda implements Function2<Scope, ParametersHolder, WalletSwapDataSource> {
-        public static final C15028 INSTANCE = new C15028();
+    public static final class C15128 extends Lambda implements Function2<Scope, ParametersHolder, WalletSwapDataSource> {
+        public static final C15128 INSTANCE = new C15128();
 
-        C15028() {
+        C15128() {
             super(2);
         }
 
@@ -376,10 +376,10 @@ final class DataSourceModuleKt$dataSourceModule$1 extends Lambda implements Func
     /* compiled from: DataSourceModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1$9 */
     /* loaded from: classes3.dex */
-    public static final class C15039 extends Lambda implements Function2<Scope, ParametersHolder, WalletApproveDataSource> {
-        public static final C15039 INSTANCE = new C15039();
+    public static final class C15139 extends Lambda implements Function2<Scope, ParametersHolder, WalletApproveDataSource> {
+        public static final C15139 INSTANCE = new C15139();
 
-        C15039() {
+        C15139() {
             super(2);
         }
 

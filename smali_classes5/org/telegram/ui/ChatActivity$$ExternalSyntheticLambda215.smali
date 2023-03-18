@@ -8,26 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
-.field public final synthetic f$1:Lorg/telegram/messenger/MessagesController;
+.field public final synthetic f$1:Lorg/telegram/messenger/MessageObject;
 
-.field public final synthetic f$2:Ljava/lang/CharSequence;
-
-.field public final synthetic f$3:Z
+.field public final synthetic f$2:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessagesController;Ljava/lang/CharSequence;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda215;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda215;->f$1:Lorg/telegram/messenger/MessagesController;
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda215;->f$1:Lorg/telegram/messenger/MessageObject;
 
-    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda215;->f$2:Ljava/lang/CharSequence;
-
-    iput-boolean p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda215;->f$3:Z
+    iput p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda215;->f$2:I
 
     return-void
 .end method
@@ -35,17 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda215;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda215;->f$1:Lorg/telegram/messenger/MessagesController;
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda215;->f$1:Lorg/telegram/messenger/MessageObject;
 
-    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda215;->f$2:Ljava/lang/CharSequence;
+    iget v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda215;->f$2:I
 
-    iget-boolean v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda215;->f$3:Z
-
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$uVAQq-gMWp8K3B-CCns2DzirDiE(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessagesController;Ljava/lang/CharSequence;Z)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$BuEv41y8OedduYKtrqe7mn6ZPAk(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;I)V
 
     return-void
 .end method

@@ -71,9 +71,9 @@ public final class UserAnswersRepository {
         Intrinsics.checkNotNullParameter(botId, "botId");
         Intrinsics.checkNotNullParameter(tag, "tag");
         Integer counter = this.recentDao.getCounter(botId, tag, i);
-        if (counter == null) {
-            return 0;
+        if (counter != null) {
+            return counter.intValue();
         }
-        return counter.intValue();
+        return 0;
     }
 }

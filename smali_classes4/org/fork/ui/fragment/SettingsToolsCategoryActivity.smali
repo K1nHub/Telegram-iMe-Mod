@@ -111,50 +111,50 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$BmRKT507N_86miY0h8W9YRgnh9g(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$7bm1lK5TVcUDkpns0mw_bAjNfTg(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->createChooseSelectedIconHolidayDesignSideMenuDialog$lambda-15$lambda-14(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+    invoke-static {p0}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->initListView$lambda$12$lambda$11$lambda$8(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$EQSt4pQ_xWlSVIEH3iklX7qLK98(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;ILandroid/content/DialogInterface;)V
+.method public static synthetic $r8$lambda$95hUcV8_Eu2ipfUeKZ1tYykZ608(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;ILandroid/content/DialogInterface;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->initListView$lambda-12$lambda-11$lambda-9(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;ILandroid/content/DialogInterface;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->initListView$lambda$12$lambda$11$lambda$9(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;ILandroid/content/DialogInterface;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$GVxcM5J9oiLIslUc-sYT1fie4FA(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;ILandroid/content/DialogInterface;)V
+.method public static synthetic $r8$lambda$OwKcWvKShQfgtiUS0DbJq7-46DM(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/content/DialogInterface;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->initListView$lambda-12$lambda-11$lambda-10(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;ILandroid/content/DialogInterface;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->showChooseVideoVoiceCameraDialog$lambda$3(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/content/DialogInterface;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$L0b8BEMhuYsrLceW5JboyUsrY9o(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;)V
+.method public static synthetic $r8$lambda$XUw7KJDwHD23YiVVJDXVeFr7xJI(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->initListView$lambda-12$lambda-11$lambda-8(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->createChooseSelectedIconHolidayDesignSideMenuDialog$lambda$15$lambda$14(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$WNO3gKSJeAnp_JtwELZrvwLZE6s(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/view/View;IFF)V
+.method public static synthetic $r8$lambda$dQFLH68cupRq1Ql_BWf2mYV4tfw(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;ILandroid/content/DialogInterface;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->initListView$lambda-12$lambda-11(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/view/View;IFF)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->initListView$lambda$12$lambda$11$lambda$10(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;ILandroid/content/DialogInterface;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$aqK4Jq4PPO7Pa2dbx-yXa_GQEJ0(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/content/DialogInterface;)V
+.method public static synthetic $r8$lambda$zZQtf9oh77AirN-l_DzXMLOYYco(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/view/View;IFF)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->showChooseVideoVoiceCameraDialog$lambda-3(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/content/DialogInterface;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->initListView$lambda$12$lambda$11(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/view/View;IFF)V
 
     return-void
 .end method
@@ -996,7 +996,7 @@
 .method private final createChooseSelectedIconHolidayDesignSideMenuDialog()Lorg/telegram/ui/ActionBar/AlertDialog;
     .locals 11
 
-    .line 293
+    .line 294
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1005,7 +1005,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 294
+    .line 295
     sget v1, Lorg/telegram/messenger/R$string;->settings_tools_design_icon:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1014,7 +1014,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 295
+    .line 296
     sget v1, Lorg/telegram/messenger/R$string;->common_cancel:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1025,7 +1025,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 296
+    .line 297
     new-instance v1, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1036,10 +1036,10 @@
 
     const/4 v2, 0x1
 
-    .line 297
+    .line 298
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 298
+    .line 299
     invoke-static {}, Lorg/fork/enums/DrawerHolidayIconType;->values()[Lorg/fork/enums/DrawerHolidayIconType;
 
     move-result-object v3
@@ -1055,9 +1055,7 @@
 
     aget-object v7, v3, v6
 
-    add-int/lit8 v6, v6, 0x1
-
-    .line 299
+    .line 300
     new-instance v8, Lorg/telegram/ui/Cells/RadioColorCell;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -1066,12 +1064,12 @@
 
     invoke-direct {v8, v9}, Lorg/telegram/ui/Cells/RadioColorCell;-><init>(Landroid/content/Context;)V
 
-    .line 300
+    .line 301
     invoke-virtual {v8, v7}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
     const/4 v9, 0x4
 
-    .line 301
+    .line 302
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -1084,7 +1082,7 @@
 
     const-string v9, "radioBackground"
 
-    .line 302
+    .line 303
     invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v9
@@ -1097,7 +1095,7 @@
 
     invoke-virtual {v8, v9, v10}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
-    .line 303
+    .line 304
     invoke-virtual {v7}, Lorg/fork/enums/DrawerHolidayIconType;->getTitle()Ljava/lang/String;
 
     move-result-object v9
@@ -1116,22 +1114,21 @@
     :goto_1
     invoke-virtual {v8, v9, v7}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
 
-    .line 304
+    .line 305
     new-instance v7, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity$$ExternalSyntheticLambda3;
 
     invoke-direct {v7, v0}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
 
     invoke-virtual {v8, v7}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 313
-    sget-object v7, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    .line 299
+    .line 300
     invoke-virtual {v1, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 315
+    .line 316
     :cond_1
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -1144,40 +1141,40 @@
     return-object v0
 .end method
 
-.method private static final createChooseSelectedIconHolidayDesignSideMenuDialog$lambda-15$lambda-14(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+.method private static final createChooseSelectedIconHolidayDesignSideMenuDialog$lambda$15$lambda$14(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 2
 
     const-string v0, "$builder"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "view"
+    const-string/jumbo v0, "view"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 305
+    .line 306
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p1
 
     const-string v0, "null cannot be cast to non-null type org.fork.enums.DrawerHolidayIconType"
 
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lorg/fork/enums/DrawerHolidayIconType;
 
-    .line 306
+    .line 307
     sget-object v0, Lorg/telegram/messenger/SharedConfig;->drawerHolidayIconType:Lorg/fork/enums/DrawerHolidayIconType;
 
     if-ne p1, v0, :cond_0
 
     return-void
 
-    .line 309
+    .line 310
     :cond_0
     invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->setDrawerHolidayIconType(Lorg/fork/enums/DrawerHolidayIconType;)V
 
-    .line 310
+    .line 311
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -1192,7 +1189,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 311
+    .line 312
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -1375,7 +1372,7 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda-12$lambda-11(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/view/View;IFF)V
+.method private static final initListView$lambda$12$lambda$11(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/view/View;IFF)V
     .locals 3
 
     const-string p4, "this$0"
@@ -1923,25 +1920,38 @@
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->checkSwitchLocation(F)Z
 
-    move-result p1
+    move-result p3
 
-    if-eqz p1, :cond_19
+    if-eqz p3, :cond_19
 
     .line 241
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getRecentChatsController()Lorg/fork/controller/RecentChatsController;
+
+    move-result-object p3
+
+    invoke-virtual {p3}, Lorg/fork/controller/RecentChatsController;->isRecentChatsEnabled()Z
+
+    move-result p3
+
+    xor-int/2addr p3, v1
+
+    invoke-virtual {p1, p3}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setChecked(Z)V
+
+    .line 242
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getRecentChatsController()Lorg/fork/controller/RecentChatsController;
 
     move-result-object p1
 
     invoke-virtual {p1}, Lorg/fork/controller/RecentChatsController;->toggleEnabled()V
 
-    .line 242
+    .line 243
     invoke-direct {p0}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->getListAdapter()Lorg/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;
 
     move-result-object p1
 
     invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    .line 243
+    .line 244
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -1954,23 +1964,23 @@
 
     goto/16 :goto_0
 
-    .line 245
+    .line 246
     :cond_19
-    new-instance p1, Lorg/fork/ui/fragment/RecentChatsDialogTypesSettingsActivity;
+    new-instance p1, Lorg/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
-    invoke-direct {p1}, Lorg/fork/ui/fragment/RecentChatsDialogTypesSettingsActivity;-><init>()V
+    invoke-direct {p1}, Lorg/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;-><init>()V
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     goto/16 :goto_0
 
-    .line 249
+    .line 250
     :cond_1a
     instance-of p3, p1, Lorg/telegram/ui/Cells/TextCell;
 
     if-eqz p3, :cond_24
 
-    .line 250
+    .line 251
     iget p1, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->drawerHeaderSettingsRow:I
 
     if-ne p2, p1, :cond_1b
@@ -1979,7 +1989,7 @@
 
     goto/16 :goto_0
 
-    .line 251
+    .line 252
     :cond_1b
     iget p1, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->drawerItemsRow:I
 
@@ -2001,7 +2011,7 @@
 
     goto/16 :goto_0
 
-    .line 252
+    .line 253
     :cond_1c
     iget p1, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->chatFolderAndChatSortingRow:I
 
@@ -2015,7 +2025,7 @@
 
     goto/16 :goto_0
 
-    .line 253
+    .line 254
     :cond_1d
     iget p1, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->settingsTopicsRow:I
 
@@ -2031,7 +2041,7 @@
 
     goto/16 :goto_0
 
-    .line 254
+    .line 255
     :cond_1e
     iget p1, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->chatAttachMenuButtonsRow:I
 
@@ -2045,7 +2055,7 @@
 
     goto/16 :goto_0
 
-    .line 255
+    .line 256
     :cond_1f
     iget p1, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->chatExtendedAvatarPreviewerRow:I
 
@@ -2059,7 +2069,7 @@
 
     goto/16 :goto_0
 
-    .line 256
+    .line 257
     :cond_20
     iget p1, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->reactionSettingsRow:I
 
@@ -2073,7 +2083,7 @@
 
     goto :goto_0
 
-    .line 257
+    .line 258
     :cond_21
     iget p1, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->messagesTranslate:I
 
@@ -2087,7 +2097,7 @@
 
     goto :goto_0
 
-    .line 258
+    .line 259
     :cond_22
     iget p1, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->messagesContextMenu:I
 
@@ -2101,7 +2111,7 @@
 
     goto :goto_0
 
-    .line 259
+    .line 260
     :cond_23
     iget p1, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->sendMessages:I
 
@@ -2115,13 +2125,13 @@
 
     goto :goto_0
 
-    .line 261
+    .line 262
     :cond_24
     instance-of p1, p1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
     if-eqz p1, :cond_28
 
-    .line 262
+    .line 263
     iget p1, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->chatProfileTelegramIdRow:I
 
     if-ne p2, p1, :cond_25
@@ -2134,7 +2144,7 @@
 
     goto :goto_0
 
-    .line 265
+    .line 266
     :cond_25
     iget p1, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->chatsTemplatesRow:I
 
@@ -2156,7 +2166,7 @@
 
     goto :goto_0
 
-    .line 266
+    .line 267
     :cond_26
     iget p1, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->confirmationVideoVoiceCameraRow:I
 
@@ -2166,7 +2176,7 @@
 
     goto :goto_0
 
-    .line 267
+    .line 268
     :cond_27
     iget p1, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->drawerHolidayIconType:I
 
@@ -2187,14 +2197,14 @@
     return-void
 .end method
 
-.method private static final initListView$lambda-12$lambda-11$lambda-10(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;ILandroid/content/DialogInterface;)V
+.method private static final initListView$lambda$12$lambda$11$lambda$10(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;ILandroid/content/DialogInterface;)V
     .locals 0
 
     const-string p2, "this$0"
 
     invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 267
+    .line 268
     invoke-direct {p0}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->getListAdapter()Lorg/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;
 
     move-result-object p0
@@ -2204,14 +2214,14 @@
     return-void
 .end method
 
-.method private static final initListView$lambda-12$lambda-11$lambda-8(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;)V
+.method private static final initListView$lambda$12$lambda$11$lambda$8(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;)V
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 263
+    .line 264
     invoke-direct {p0}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->getListAdapter()Lorg/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;
 
     move-result-object v0
@@ -2223,14 +2233,14 @@
     return-void
 .end method
 
-.method private static final initListView$lambda-12$lambda-11$lambda-9(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;ILandroid/content/DialogInterface;)V
+.method private static final initListView$lambda$12$lambda$11$lambda$9(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;ILandroid/content/DialogInterface;)V
     .locals 0
 
     const-string p2, "this$0"
 
     invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 265
+    .line 266
     invoke-direct {p0}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->getListAdapter()Lorg/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;
 
     move-result-object p0
@@ -2252,7 +2262,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundGray"
+    const-string/jumbo v1, "windowBackgroundGray"
 
     .line 142
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -2267,23 +2277,21 @@
 .method private final setupActionBar()V
     .locals 2
 
-    .line 274
+    .line 275
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 275
+    .line 276
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
     const/4 v1, 0x1
 
-    .line 276
+    .line 277
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 277
-    invoke-virtual {p0}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->getCategory()Lorg/fork/enums/SettingsToolsCategory;
-
-    move-result-object v1
+    .line 278
+    iget-object v1, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->category:Lorg/fork/enums/SettingsToolsCategory;
 
     invoke-virtual {v1}, Lorg/fork/enums/SettingsToolsCategory;->getTitle()Ljava/lang/String;
 
@@ -2291,7 +2299,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 278
+    .line 279
     new-instance v1, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity$setupActionBar$1$1;
 
     invoke-direct {v1, p0}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity$setupActionBar$1$1;-><init>(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;)V
@@ -2304,7 +2312,7 @@
 .method private final showChooseDrawerAccountDataDialog()V
     .locals 3
 
-    .line 289
+    .line 290
     new-instance v0, Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2343,7 +2351,7 @@
     return-void
 .end method
 
-.method private static final showChooseVideoVoiceCameraDialog$lambda-3(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/content/DialogInterface;)V
+.method private static final showChooseVideoVoiceCameraDialog$lambda$3(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/content/DialogInterface;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -2391,8 +2399,6 @@
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     .line 157
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -2446,7 +2452,7 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "windowBackgroundGray"
+    const-string/jumbo v9, "windowBackgroundGray"
 
     move-object v2, v10
 
@@ -2577,7 +2583,7 @@
 
     const/4 v14, 0x0
 
-    const-string v5, "windowBackgroundWhite"
+    const-string/jumbo v5, "windowBackgroundWhite"
 
     move-object v8, v3
 
@@ -2610,7 +2616,7 @@
 
     const/16 v21, 0x0
 
-    const-string v22, "windowBackgroundGrayShadow"
+    const-string/jumbo v22, "windowBackgroundGrayShadow"
 
     move-object v15, v3
 
@@ -2714,7 +2720,7 @@
 
     const/4 v13, 0x0
 
-    const-string v14, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v14, "windowBackgroundWhiteBlackText"
 
     move-object v6, v3
 
@@ -2737,7 +2743,7 @@
 
     aput-object v6, v10, v2
 
-    const-string v6, "valueTextView"
+    const-string/jumbo v6, "valueTextView"
 
     filled-new-array {v6}, [Ljava/lang/String;
 
@@ -2747,7 +2753,7 @@
 
     const/4 v14, 0x0
 
-    const-string v15, "windowBackgroundWhiteValueText"
+    const-string/jumbo v15, "windowBackgroundWhiteValueText"
 
     move-object v7, v3
 
@@ -2778,7 +2784,7 @@
 
     const/4 v15, 0x0
 
-    const-string v16, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v16, "windowBackgroundWhiteBlackText"
 
     move-object v8, v3
 
@@ -2805,7 +2811,7 @@
 
     move-result-object v12
 
-    const-string v16, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v16, "windowBackgroundWhiteBlackText"
 
     move-object v8, v3
 
@@ -2832,7 +2838,7 @@
 
     move-result-object v12
 
-    const-string v16, "windowBackgroundWhiteGrayText2"
+    const-string/jumbo v16, "windowBackgroundWhiteGrayText2"
 
     move-object v8, v3
 
@@ -2919,7 +2925,7 @@
 
     move-result-object v13
 
-    const-string v17, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v17, "windowBackgroundWhiteBlackText"
 
     move-object v9, v3
 
@@ -2950,7 +2956,7 @@
 
     const/4 v13, 0x0
 
-    const-string v16, "windowBackgroundWhiteGrayText2"
+    const-string/jumbo v16, "windowBackgroundWhiteGrayText2"
 
     move-object v8, v3
 

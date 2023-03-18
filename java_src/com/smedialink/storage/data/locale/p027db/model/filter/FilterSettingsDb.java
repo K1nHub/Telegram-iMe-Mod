@@ -30,7 +30,7 @@ public final class FilterSettingsDb {
     }
 
     public String toString() {
-        return "FilterSettingsDb(filterId=" + this.filterId + ", fabs=" + this.fabs + ", icon=" + ((Object) this.icon) + ", userId=" + this.userId + ')';
+        return "FilterSettingsDb(filterId=" + this.filterId + ", fabs=" + this.fabs + ", icon=" + this.icon + ", userId=" + this.userId + ')';
     }
 
     public FilterSettingsDb(int i, List<String> fabs, String str, long j) {

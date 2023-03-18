@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -93,7 +92,6 @@ public abstract class CircleCheckCell extends FrameLayout {
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setShape(1);
         gradientDrawable.setColor(i);
-        Unit unit = Unit.INSTANCE;
         circleView.setBackground(gradientDrawable);
     }
 
@@ -114,7 +112,7 @@ public abstract class CircleCheckCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final ImageView initIconView() {
         ImageView imageView = new ImageView(getContext());
-        imageView.setScaleType(getIconScaleType());
+        imageView.setScaleType(this.iconScaleType);
         return imageView;
     }
 
@@ -140,15 +138,14 @@ public abstract class CircleCheckCell extends FrameLayout {
         checkBox2.setProgressDelegate(new CheckBoxBase.ProgressDelegate() { // from class: org.fork.ui.view.CircleCheckCell$$ExternalSyntheticLambda0
             @Override // org.telegram.p048ui.Components.CheckBoxBase.ProgressDelegate
             public final void setProgress(float f) {
-                CircleCheckCell.m2101initCheckBox$lambda4$lambda3(CheckBox2.this, this, f);
+                CircleCheckCell.initCheckBox$lambda$4$lambda$3(CheckBox2.this, this, f);
             }
         });
         return checkBox2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initCheckBox$lambda-4$lambda-3  reason: not valid java name */
-    public static final void m2101initCheckBox$lambda4$lambda3(CheckBox2 this_apply, CircleCheckCell this$0, float f) {
+    public static final void initCheckBox$lambda$4$lambda$3(CheckBox2 this_apply, CircleCheckCell this$0, float f) {
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         float progress = 1.0f - (this_apply.getProgress() * 0.143f);

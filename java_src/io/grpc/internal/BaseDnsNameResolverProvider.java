@@ -6,7 +6,7 @@ import io.grpc.InternalServiceProviders;
 import io.grpc.NameResolver;
 import io.grpc.NameResolverProvider;
 import java.net.URI;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class BaseDnsNameResolverProvider extends NameResolverProvider {
     @Override // io.grpc.NameResolver.Factory
     public String getDefaultScheme() {

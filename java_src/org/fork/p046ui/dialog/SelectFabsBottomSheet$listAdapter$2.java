@@ -18,6 +18,6 @@ final class SelectFabsBottomSheet$listAdapter$2 extends Lambda implements Functi
 
     @Override // kotlin.jvm.functions.Function0
     public final SelectFabsBottomSheet.ListAdapter invoke() {
-        return new SelectFabsBottomSheet.ListAdapter(this.this$0);
+        return new SelectFabsBottomSheet.ListAdapter();
     }
 }

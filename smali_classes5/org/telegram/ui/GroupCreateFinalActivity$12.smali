@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCreateFinalActivity;Z)V
     .locals 0
 
-    .line 894
+    .line 897
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$12;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/GroupCreateFinalActivity$12;->val$show:Z
@@ -39,7 +39,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 908
+    .line 911
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateFinalActivity$12;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$1100(Lorg/telegram/ui/GroupCreateFinalActivity;)Landroid/animation/AnimatorSet;
@@ -60,7 +60,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 909
+    .line 912
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$12;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     const/4 v0, 0x0
@@ -74,7 +74,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 897
+    .line 900
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateFinalActivity$12;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$1100(Lorg/telegram/ui/GroupCreateFinalActivity;)Landroid/animation/AnimatorSet;
@@ -95,14 +95,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 898
+    .line 901
     iget-boolean p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$12;->val$show:Z
 
     const/4 v0, 0x4
 
     if-nez p1, :cond_0
 
-    .line 899
+    .line 902
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$12;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$1200(Lorg/telegram/ui/GroupCreateFinalActivity;)Lorg/telegram/ui/Components/ContextProgressView;
@@ -113,7 +113,7 @@
 
     goto :goto_0
 
-    .line 901
+    .line 904
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$12;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 

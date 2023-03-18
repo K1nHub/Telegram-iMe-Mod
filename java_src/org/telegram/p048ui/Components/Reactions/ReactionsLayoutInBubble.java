@@ -30,6 +30,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Cells.ChatMessageCell;
 import org.telegram.p048ui.Components.AnimatedEmojiDrawable;
@@ -82,10 +83,10 @@ public class ReactionsLayoutInBubble {
     public int width;
 
     /* renamed from: x */
-    public int f1783x;
+    public int f1794x;
 
     /* renamed from: y */
-    public int f1784y;
+    public int f1795y;
     private static Paint paint = new Paint(1);
     private static TextPaint textPaint = new TextPaint(1);
     private static final ButtonsComparator comparator = new ButtonsComparator();
@@ -103,7 +104,7 @@ public class ReactionsLayoutInBubble {
         if (tLRPC$User == null || tLRPC$User2 == null) {
             return 0;
         }
-        return (int) (tLRPC$User.f1633id - tLRPC$User2.f1633id);
+        return (int) (tLRPC$User.f1639id - tLRPC$User2.f1639id);
     }
 
     public ReactionsLayoutInBubble(ChatMessageCell chatMessageCell) {
@@ -147,7 +148,7 @@ public class ReactionsLayoutInBubble {
                     ReactionButton reactionButton = new ReactionButton(null, tLRPC$ReactionCount, z);
                     this.reactionButtons.add(reactionButton);
                     if (!z && messageObject.messageOwner.reactions.recent_reactions != null) {
-                        if (messageObject.getDialogId() > 0) {
+                        if (messageObject.getDialogId() > 0 && !UserObject.isReplyUser(messageObject.getDialogId())) {
                             ArrayList<TLRPC$User> arrayList2 = new ArrayList<>();
                             TLRPC$User currentUser = UserConfig.getInstance(this.currentAccount).getCurrentUser();
                             TLRPC$User user2 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.getDialogId()));
@@ -256,31 +257,31 @@ public class ReactionsLayoutInBubble {
                 i4 += reactionButton.height + AndroidUtilities.m50dp(4);
                 i3 = 0;
             }
-            reactionButton.f1785x = i3;
-            reactionButton.f1786y = i4;
+            reactionButton.f1796x = i3;
+            reactionButton.f1797y = i4;
             i3 += reactionButton.width + AndroidUtilities.m50dp(4);
             if (i3 > i5) {
                 i5 = i3;
             }
         }
         if (i2 == 5 && !this.reactionButtons.isEmpty()) {
-            int i7 = this.reactionButtons.get(0).f1786y;
+            int i7 = this.reactionButtons.get(0).f1797y;
             int i8 = 0;
             for (int i9 = 0; i9 < this.reactionButtons.size(); i9++) {
-                if (this.reactionButtons.get(i9).f1786y != i7) {
+                if (this.reactionButtons.get(i9).f1797y != i7) {
                     int i10 = i9 - 1;
-                    int i11 = i - (this.reactionButtons.get(i10).f1785x + this.reactionButtons.get(i10).width);
+                    int i11 = i - (this.reactionButtons.get(i10).f1796x + this.reactionButtons.get(i10).width);
                     while (i8 < i9) {
-                        this.reactionButtons.get(i8).f1785x += i11;
+                        this.reactionButtons.get(i8).f1796x += i11;
                         i8++;
                     }
                     i8 = i9;
                 }
             }
             int size = this.reactionButtons.size() - 1;
-            int i12 = i - (this.reactionButtons.get(size).f1785x + this.reactionButtons.get(size).width);
+            int i12 = i - (this.reactionButtons.get(size).f1796x + this.reactionButtons.get(size).width);
             while (i8 <= size) {
-                this.reactionButtons.get(i8).f1785x += i12;
+                this.reactionButtons.get(i8).f1796x += i12;
                 i8++;
             }
         }
@@ -299,8 +300,8 @@ public class ReactionsLayoutInBubble {
         if (this.isEmpty && this.outButtons.isEmpty()) {
             return;
         }
-        float f3 = this.f1783x;
-        float f4 = this.f1784y;
+        float f3 = this.f1794x;
+        float f4 = this.f1795y;
         if (this.isEmpty) {
             f3 = this.lastDrawnX;
             f4 = this.lastDrawnY;
@@ -315,9 +316,9 @@ public class ReactionsLayoutInBubble {
             ReactionButton reactionButton = this.reactionButtons.get(i);
             if (!reactionButton.reaction.equals(this.scrimViewReaction) && (str == null || reactionButton.reaction.equals(str))) {
                 canvas.save();
-                int i2 = reactionButton.f1785x;
+                int i2 = reactionButton.f1796x;
                 float f6 = i2;
-                int i3 = reactionButton.f1786y;
+                int i3 = reactionButton.f1797y;
                 float f7 = i3;
                 int i4 = (f > 1.0f ? 1 : (f == 1.0f ? 0 : -1));
                 if (i4 != 0 && reactionButton.animationType == 3) {
@@ -340,7 +341,7 @@ public class ReactionsLayoutInBubble {
         for (int i5 = 0; i5 < this.outButtons.size(); i5++) {
             ReactionButton reactionButton2 = this.outButtons.get(i5);
             canvas.save();
-            canvas.translate(reactionButton2.f1785x, reactionButton2.f1786y);
+            canvas.translate(reactionButton2.f1796x, reactionButton2.f1797y);
             float f10 = 1.0f - f;
             float f11 = (f10 * 0.5f) + 0.5f;
             canvas.scale(f11, f11, reactionButton2.width / 2.0f, reactionButton2.height / 2.0f);
@@ -356,8 +357,8 @@ public class ReactionsLayoutInBubble {
             this.lastDrawingReactionButtons.put(this.reactionButtons.get(i).key, this.reactionButtons.get(i));
         }
         this.wasDrawn = !this.isEmpty;
-        this.lastDrawnX = this.f1783x;
-        this.lastDrawnY = this.f1784y;
+        this.lastDrawnX = this.f1794x;
+        this.lastDrawnY = this.f1795y;
         this.lastDrawnWidth = this.width;
         this.lastDrawTotalHeight = this.totalHeight;
     }
@@ -381,11 +382,11 @@ public class ReactionsLayoutInBubble {
             }
             if (reactionButton2 != null) {
                 this.lastDrawingReactionButtonsTmp.remove(reactionButton.key);
-                int i3 = reactionButton.f1785x;
-                int i4 = reactionButton2.f1785x;
-                if (i3 != i4 || reactionButton.f1786y != reactionButton2.f1786y || reactionButton.width != reactionButton2.width || reactionButton.count != reactionButton2.count || reactionButton.choosen != reactionButton2.choosen || reactionButton.avatarsDrawable != null || reactionButton2.avatarsDrawable != null) {
+                int i3 = reactionButton.f1796x;
+                int i4 = reactionButton2.f1796x;
+                if (i3 != i4 || reactionButton.f1797y != reactionButton2.f1797y || reactionButton.width != reactionButton2.width || reactionButton.count != reactionButton2.count || reactionButton.choosen != reactionButton2.choosen || reactionButton.avatarsDrawable != null || reactionButton2.avatarsDrawable != null) {
                     reactionButton.animateFromX = i4;
-                    reactionButton.animateFromY = reactionButton2.f1786y;
+                    reactionButton.animateFromY = reactionButton2.f1797y;
                     reactionButton.animateFromWidth = reactionButton2.width;
                     reactionButton.fromTextColor = reactionButton2.lastDrawnTextColor;
                     reactionButton.fromBackgroundColor = reactionButton2.lastDrawnBackgroundColor;
@@ -426,7 +427,7 @@ public class ReactionsLayoutInBubble {
         }
         if (this.wasDrawn) {
             float f = this.lastDrawnX;
-            if (f != this.f1783x || this.lastDrawnY != this.f1784y) {
+            if (f != this.f1794x || this.lastDrawnY != this.f1795y) {
                 this.animateMove = true;
                 this.fromX = f;
                 this.fromY = this.lastDrawnY;
@@ -455,7 +456,7 @@ public class ReactionsLayoutInBubble {
         for (int i = 0; i < arrayList.size(); i++) {
             TLRPC$User tLRPC$User = arrayList.get(i);
             TLRPC$User tLRPC$User2 = arrayList2.get(i);
-            if (tLRPC$User == null || tLRPC$User2 == null || tLRPC$User.f1633id != tLRPC$User2.f1633id) {
+            if (tLRPC$User == null || tLRPC$User2 == null || tLRPC$User.f1639id != tLRPC$User2.f1639id) {
                 return false;
             }
         }
@@ -533,10 +534,10 @@ public class ReactionsLayoutInBubble {
         public int width;
 
         /* renamed from: x */
-        public int f1785x;
+        public int f1796x;
 
         /* renamed from: y */
-        public int f1786y;
+        public int f1797y;
 
         public ReactionButton(ReactionButton reactionButton, TLRPC$ReactionCount tLRPC$ReactionCount, boolean z) {
             if (reactionButton != null) {
@@ -802,14 +803,14 @@ public class ReactionsLayoutInBubble {
         if (this.isEmpty || this.isSmall || (messageObject = this.messageObject) == null || (tLRPC$Message = messageObject.messageOwner) == null || tLRPC$Message.reactions == null) {
             return false;
         }
-        float x = motionEvent.getX() - this.f1783x;
-        float y = motionEvent.getY() - this.f1784y;
+        float x = motionEvent.getX() - this.f1794x;
+        float y = motionEvent.getY() - this.f1795y;
         if (motionEvent.getAction() == 0) {
             int size = this.reactionButtons.size();
             while (true) {
                 if (i >= size) {
                     break;
-                } else if (x <= this.reactionButtons.get(i).f1785x || x >= this.reactionButtons.get(i).f1785x + this.reactionButtons.get(i).width || y <= this.reactionButtons.get(i).f1786y || y >= this.reactionButtons.get(i).f1786y + this.reactionButtons.get(i).height) {
+                } else if (x <= this.reactionButtons.get(i).f1796x || x >= this.reactionButtons.get(i).f1796x + this.reactionButtons.get(i).width || y <= this.reactionButtons.get(i).f1797y || y >= this.reactionButtons.get(i).f1797y + this.reactionButtons.get(i).height) {
                     i++;
                 } else {
                     this.lastX = motionEvent.getX();

@@ -8,18 +8,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$YA2nAf55uBJ4fwPfmz0BLVw-9QA(Landroid/net/Uri;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Ljava/io/File;Z)V
+.method public static synthetic $r8$lambda$XOAhGevqmvuTf_9nR_zg7SwCj18(Landroid/net/Uri;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Ljava/io/File;Z)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/utils/FileSavingHelper;->saveDocumentFileToCustomDirectory$lambda-6(Landroid/net/Uri;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Ljava/io/File;Z)V
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/utils/FileSavingHelper;->saveDocumentFileToCustomDirectory$lambda$6(Landroid/net/Uri;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Ljava/io/File;Z)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$gcewHFd_gjNnevZeqUFUqiFZXfU()V
+.method public static synthetic $r8$lambda$qUgmseWv24ehZOP0l1hLQp1xi3Y()V
     .locals 0
 
-    invoke-static {}, Lorg/fork/utils/FileSavingHelper;->saveDocumentFileToCustomDirectory$lambda-6$lambda-5$lambda-4()V
+    invoke-static {}, Lorg/fork/utils/FileSavingHelper;->saveDocumentFileToCustomDirectory$lambda$6$lambda$5$lambda$4()V
 
     return-void
 .end method
@@ -134,8 +134,8 @@
     return-void
 .end method
 
-.method private static final saveDocumentFileToCustomDirectory$lambda-6(Landroid/net/Uri;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Ljava/io/File;Z)V
-    .locals 3
+.method private static final saveDocumentFileToCustomDirectory$lambda$6(Landroid/net/Uri;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Ljava/io/File;Z)V
+    .locals 2
 
     const-string v0, "$directoryUri"
 
@@ -160,29 +160,21 @@
 
     move-result-object p0
 
-    const/4 v0, 0x0
-
-    if-nez p0, :cond_0
-
-    move-object p0, v0
-
-    goto :goto_0
+    if-eqz p0, :cond_4
 
     .line 28
-    :cond_0
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Landroidx/documentfile/provider/DocumentFile;->createFile(Ljava/lang/String;Ljava/lang/String;)Landroidx/documentfile/provider/DocumentFile;
 
     move-result-object p0
 
-    :goto_0
-    if-nez p0, :cond_1
+    if-nez p0, :cond_0
 
-    return-void
+    goto/16 :goto_2
 
     .line 30
-    :cond_1
+    :cond_0
     :try_start_0
     sget-object p1, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
 
@@ -215,67 +207,72 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    if-nez p0, :cond_2
-
-    move-object p2, v0
-
-    goto :goto_1
-
-    :cond_2
     const/4 p2, 0x0
+
+    if-eqz p0, :cond_1
+
+    :try_start_2
+    const-string v0, "output"
+
+    .line 33
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v0, 0x0
 
     const/4 v1, 0x2
 
-    .line 33
-    :try_start_2
-    invoke-static {p1, p0, p2, v1, v0}, Lkotlin/io/ByteStreamsKt;->copyTo$default(Ljava/io/InputStream;Ljava/io/OutputStream;IILjava/lang/Object;)J
+    invoke-static {p1, p0, v0, v1, p2}, Lkotlin/io/ByteStreamsKt;->copyTo$default(Ljava/io/InputStream;Ljava/io/OutputStream;IILjava/lang/Object;)J
 
-    move-result-wide v1
+    move-result-wide v0
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object p2
+    move-result-object v0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 32
     :try_start_3
-    invoke-static {p0, v0}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {p0, p2}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
-    .line 31
-    :goto_1
-    :try_start_4
-    invoke-static {p1, v0}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
-
-    .line 30
-    invoke-static {p2}, Lkotlin/Result;->constructor-impl(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_4
-
-    goto :goto_2
+    goto :goto_0
 
     :catchall_0
     move-exception p2
 
-    .line 32
-    :try_start_5
+    :try_start_4
     throw p2
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     :catchall_1
     move-exception v0
 
-    :try_start_6
+    :try_start_5
     invoke-static {p0, p2}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
+
+    :cond_1
+    move-object v0, p2
+
+    .line 31
+    :goto_0
+    :try_start_6
+    invoke-static {p1, p2}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+
+    .line 30
+    invoke-static {v0}, Lkotlin/Result;->constructor-impl(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
     :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_2
+    .catchall {:try_start_6 .. :try_end_6} :catchall_4
+
+    goto :goto_1
 
     :catchall_2
     move-exception p0
@@ -311,12 +308,12 @@
     move-result-object p0
 
     .line 36
-    :goto_2
+    :goto_1
     invoke-static {p0}, Lkotlin/Result;->exceptionOrNull-impl(Ljava/lang/Object;)Ljava/lang/Throwable;
 
     move-result-object p1
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     .line 37
     new-instance p2, Lorg/fork/utils/FileSavingHelper$$ExternalSyntheticLambda1;
@@ -329,31 +326,32 @@
     invoke-static {p1}, Ltimber/log/Timber;->e(Ljava/lang/Throwable;)V
 
     .line 39
-    :cond_3
+    :cond_2
     invoke-static {p0}, Lkotlin/Result;->isSuccess-impl(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_4
 
     check-cast p0, Ljava/lang/Long;
 
-    if-eqz p4, :cond_4
+    if-eqz p4, :cond_3
 
     .line 41
     invoke-virtual {p3}, Ljava/io/File;->delete()Z
 
-    :cond_4
+    :cond_3
     sget-object p0, Lorg/fork/utils/FileSavingHelper$$ExternalSyntheticLambda2;->INSTANCE:Lorg/fork/utils/FileSavingHelper$$ExternalSyntheticLambda2;
 
     .line 43
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    :cond_5
+    :cond_4
+    :goto_2
     return-void
 .end method
 
-.method private static final saveDocumentFileToCustomDirectory$lambda-6$lambda-5$lambda-4()V
+.method private static final saveDocumentFileToCustomDirectory$lambda$6$lambda$5$lambda$4()V
     .locals 2
 
     .line 44

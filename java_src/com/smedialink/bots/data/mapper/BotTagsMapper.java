@@ -14,18 +14,18 @@ public final class BotTagsMapper {
     public final SmartTag map(TagDbModel tagDbModel, String language) {
         String str;
         Intrinsics.checkNotNullParameter(language, "language");
-        if (tagDbModel == null) {
-            return null;
-        }
-        if (Intrinsics.areEqual(language, "ru")) {
-            str = tagDbModel.getTitle();
-        } else {
-            str = tagDbModel.getLocales().get(language);
-            if (str == null && (str = tagDbModel.getLocales().get("en")) == null) {
+        if (tagDbModel != null) {
+            if (Intrinsics.areEqual(language, "ru")) {
                 str = tagDbModel.getTitle();
+            } else {
+                str = tagDbModel.getLocales().get(language);
+                if (str == null && (str = tagDbModel.getLocales().get("en")) == null) {
+                    str = tagDbModel.getTitle();
+                }
             }
+            return new SmartTag(tagDbModel.getId(), str, tagDbModel.getHidden() == 1);
         }
-        return new SmartTag(tagDbModel.getId(), str, tagDbModel.getHidden() == 1);
+        return null;
     }
 
     /* compiled from: BotTagsMapper.kt */

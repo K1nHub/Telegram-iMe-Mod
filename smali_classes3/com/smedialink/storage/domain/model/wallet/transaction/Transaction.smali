@@ -6,14 +6,14 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Unsupported;,
-        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Transfer;,
-        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Referral;,
-        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Purchase;,
+        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto;,
         Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Lottery;,
-        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Registration;,
+        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Purchase;,
+        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Referral;,
         Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Refund;,
-        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto;
+        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Registration;,
+        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Transfer;,
+        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Unsupported;
     }
 .end annotation
 

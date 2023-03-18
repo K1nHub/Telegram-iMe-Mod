@@ -45,7 +45,7 @@
 
     iget v3, p0, Lcom/fxn/util/UtilsKt$$ExternalSyntheticLambda2;->f$3:I
 
-    invoke-static {v0, v1, v2, v3, p1}, Lcom/fxn/util/UtilsKt;->$r8$lambda$3pgHyqLYLnUqPXJfwxWL6diBVko(Landroid/widget/TextView;Landroid/view/ViewPropertyAnimator;Landroid/widget/LinearLayout;ILandroid/animation/ValueAnimator;)V
+    invoke-static {v0, v1, v2, v3, p1}, Lcom/fxn/util/UtilsKt;->$r8$lambda$Hlhrt0CuHivMSMj5m2dTO18nVdY(Landroid/widget/TextView;Landroid/view/ViewPropertyAnimator;Landroid/widget/LinearLayout;ILandroid/animation/ValueAnimator;)V
 
     return-void
 .end method

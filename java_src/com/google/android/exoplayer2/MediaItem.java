@@ -659,9 +659,9 @@ public final class MediaItem implements Bundleable {
             private long targetOffsetMs;
 
             public Builder() {
-                this.targetOffsetMs = C0474C.TIME_UNSET;
-                this.minOffsetMs = C0474C.TIME_UNSET;
-                this.maxOffsetMs = C0474C.TIME_UNSET;
+                this.targetOffsetMs = C0468C.TIME_UNSET;
+                this.minOffsetMs = C0468C.TIME_UNSET;
+                this.maxOffsetMs = C0468C.TIME_UNSET;
                 this.minPlaybackSpeed = -3.4028235E38f;
                 this.maxPlaybackSpeed = -3.4028235E38f;
             }

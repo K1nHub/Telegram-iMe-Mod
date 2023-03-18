@@ -927,7 +927,10 @@
     .line 1200
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
+    .line 1202
     :cond_2
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
+
     return-void
 .end method
 
@@ -1536,7 +1539,7 @@
 .method public setSecondParent(Landroid/view/View;)V
     .locals 0
 
-    .line 1205
+    .line 1206
     iput-object p1, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->secondParent:Landroid/view/View;
 
     return-void

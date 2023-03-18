@@ -72,7 +72,7 @@
 .method public final invoke(Lcom/smedialink/model/wallet/crypto/swap/SwapFeeScreenArgs;)V
     .locals 1
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

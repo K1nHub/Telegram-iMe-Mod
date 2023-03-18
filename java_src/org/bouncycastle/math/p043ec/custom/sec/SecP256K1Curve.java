@@ -13,14 +13,14 @@ import org.bouncycastle.util.encoders.Hex;
 public class SecP256K1Curve extends ECCurve.AbstractFp {
 
     /* renamed from: q */
-    public static final BigInteger f1347q = new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F"));
+    public static final BigInteger f1352q = new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F"));
     protected SecP256K1Point infinity;
 
     public SecP256K1Curve() {
-        super(f1347q);
+        super(f1352q);
         this.infinity = new SecP256K1Point(this, null, null);
-        this.f1302a = fromBigInteger(ECConstants.ZERO);
-        this.f1303b = fromBigInteger(BigInteger.valueOf(7L));
+        this.f1307a = fromBigInteger(ECConstants.ZERO);
+        this.f1308b = fromBigInteger(BigInteger.valueOf(7L));
         this.order = new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141"));
         this.cofactor = BigInteger.valueOf(1L);
         this.coord = 2;
@@ -37,9 +37,9 @@ public class SecP256K1Curve extends ECCurve.AbstractFp {
         int i3 = 0;
         for (int i4 = 0; i4 < i2; i4++) {
             ECPoint eCPoint = eCPointArr[i + i4];
-            Nat256.copy(((SecP256K1FieldElement) eCPoint.getRawXCoord()).f1350x, 0, iArr, i3);
+            Nat256.copy(((SecP256K1FieldElement) eCPoint.getRawXCoord()).f1355x, 0, iArr, i3);
             int i5 = i3 + 8;
-            Nat256.copy(((SecP256K1FieldElement) eCPoint.getRawYCoord()).f1350x, 0, iArr, i5);
+            Nat256.copy(((SecP256K1FieldElement) eCPoint.getRawYCoord()).f1355x, 0, iArr, i5);
             i3 = i5 + 8;
         }
         return new ECLookupTable() { // from class: org.bouncycastle.math.ec.custom.sec.SecP256K1Curve.1
@@ -87,7 +87,7 @@ public class SecP256K1Curve extends ECCurve.AbstractFp {
 
     @Override // org.bouncycastle.math.p043ec.ECCurve
     public int getFieldSize() {
-        return f1347q.bitLength();
+        return f1352q.bitLength();
     }
 
     @Override // org.bouncycastle.math.p043ec.ECCurve

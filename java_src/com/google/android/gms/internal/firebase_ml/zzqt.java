@@ -8,7 +8,6 @@ import com.google.firebase.p021ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.p021ml.vision.label.FirebaseVisionImageLabel;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.LiteMode;
 /* loaded from: classes.dex */
 public final class zzqt extends zzqd<List<FirebaseVisionImageLabel>> {
     public zzqt(FirebaseApp firebaseApp, FirebaseVisionCloudDetectorOptions firebaseVisionCloudDetectorOptions) {
@@ -23,7 +22,7 @@ public final class zzqt extends zzqd<List<FirebaseVisionImageLabel>> {
 
     @Override // com.google.android.gms.internal.firebase_ml.zzqd
     protected final int zznk() {
-        return LiteMode.FLAGS_CHAT;
+        return 480;
     }
 
     public final Task<List<FirebaseVisionImageLabel>> detectInImage(FirebaseVisionImage firebaseVisionImage) {

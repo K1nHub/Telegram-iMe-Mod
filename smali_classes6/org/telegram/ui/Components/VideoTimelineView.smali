@@ -17,7 +17,7 @@
 
 
 # instance fields
-.field private backgroundGrayPaint:Landroid/graphics/Paint;
+.field private final backgroundGrayPaint:Landroid/graphics/Paint;
 
 .field private currentTask:Landroid/os/AsyncTask;
     .annotation system Ldalvik/annotation/Signature;
@@ -71,9 +71,7 @@
 
 .field private minProgressDiff:F
 
-.field private paint:Landroid/graphics/Paint;
-
-.field private paint2:Landroid/graphics/Paint;
+.field private final paint2:Landroid/graphics/Paint;
 
 .field private pressDx:F
 
@@ -95,8 +93,6 @@
 
 .field thumbPaint:Landroid/graphics/Paint;
 
-.field thumbRipplePaint:Landroid/graphics/Paint;
-
 .field private timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
 
 .field private videoLength:J
@@ -106,7 +102,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 53
+    .line 52
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -119,7 +115,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
 
-    .line 87
+    .line 85
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     const/high16 p1, 0x3f800000    # 1.0f
@@ -127,81 +123,64 @@
     .line 42
     iput p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
-    .line 51
-    new-instance v0, Ljava/util/ArrayList;
+    .line 43
+    new-instance v0, Landroid/graphics/Paint;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frames:Ljava/util/ArrayList;
+    iput-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->paint2:Landroid/graphics/Paint;
 
-    .line 58
+    .line 44
+    new-instance v1, Landroid/graphics/Paint;
+
+    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->backgroundGrayPaint:Landroid/graphics/Paint;
+
+    .line 50
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frames:Ljava/util/ArrayList;
+
+    .line 57
     iput p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->maxProgressDiff:F
 
     const/4 p1, 0x0
 
-    .line 59
+    .line 58
     iput p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->minProgressDiff:F
 
-    .line 67
+    .line 66
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->keyframes:Ljava/util/ArrayList;
 
-    .line 71
+    .line 70
     new-instance p1, Landroid/graphics/Paint;
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    invoke-direct {p1, v0}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {p1, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->thumbPaint:Landroid/graphics/Paint;
 
-    .line 72
-    new-instance p1, Landroid/graphics/Paint;
+    const/high16 p1, 0x7f000000
 
-    invoke-direct {p1, v0}, Landroid/graphics/Paint;-><init>(I)V
+    .line 87
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->thumbRipplePaint:Landroid/graphics/Paint;
-
-    .line 88
-    new-instance p1, Landroid/graphics/Paint;
-
-    invoke-direct {p1, v0}, Landroid/graphics/Paint;-><init>(I)V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->paint:Landroid/graphics/Paint;
+    .line 89
+    iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->thumbPaint:Landroid/graphics/Paint;
 
     const/4 v0, -0x1
 
-    .line 89
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 91
-    new-instance p1, Landroid/graphics/Paint;
-
-    invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->paint2:Landroid/graphics/Paint;
-
-    const/high16 v1, 0x7f000000
-
-    .line 92
-    invoke-virtual {p1, v1}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 94
-    new-instance p1, Landroid/graphics/Paint;
-
-    invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->backgroundGrayPaint:Landroid/graphics/Paint;
-
-    .line 96
-    iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->thumbPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 97
+    .line 90
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->thumbPaint:Landroid/graphics/Paint;
 
     const/high16 v0, 0x40000000    # 2.0f
@@ -212,21 +191,21 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 98
+    .line 91
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->thumbPaint:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 99
+    .line 92
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->thumbPaint:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 101
+    .line 94
     invoke-virtual {p0}, Lorg/telegram/ui/Components/VideoTimelineView;->updateColors()V
 
     return-void
@@ -309,7 +288,7 @@
 
     const/4 v0, 0x6
 
-    .line 454
+    .line 441
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -320,14 +299,14 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 455
+    .line 442
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     iput v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->roundCornersSize:I
 
-    .line 456
+    .line 443
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -344,24 +323,24 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->roundCornerBitmap:Landroid/graphics/Bitmap;
 
-    .line 457
+    .line 444
     new-instance v0, Landroid/graphics/Canvas;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->roundCornerBitmap:Landroid/graphics/Bitmap;
 
     invoke-direct {v0, v1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 459
+    .line 446
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1, v3}, Landroid/graphics/Paint;-><init>(I)V
 
     const/4 v2, 0x0
 
-    .line 460
+    .line 447
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 461
+    .line 448
     new-instance v2, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v4, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
@@ -372,14 +351,14 @@
 
     const-string v2, "chat_messagePanelBackground"
 
-    .line 463
+    .line 450
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 464
+    .line 451
     iget v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->roundCornersSize:I
 
     int-to-float v4, v2
@@ -390,16 +369,16 @@
 
     invoke-virtual {v0, v4, v5, v2, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 467
+    .line 454
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->roundCornersSize:I
 
     shr-int/2addr v0, v3
 
-    .line 468
+    .line 455
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 469
+    .line 456
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->roundCornerBitmap:Landroid/graphics/Bitmap;
 
     int-to-float v2, p4
@@ -422,10 +401,10 @@
 
     int-to-float v6, v6
 
-    .line 470
+    .line 457
     invoke-virtual {p1, v1, v5, v6}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 471
+    .line 458
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->roundCornerBitmap:Landroid/graphics/Bitmap;
 
     iget v5, p0, Lorg/telegram/ui/Components/VideoTimelineView;->roundCornersSize:I
@@ -436,10 +415,10 @@
 
     invoke-virtual {p1, v1, v2, v5, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 472
+    .line 459
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 473
+    .line 460
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/high16 v1, 0x43340000    # 180.0f
@@ -450,10 +429,10 @@
 
     int-to-float p3, p3
 
-    .line 474
+    .line 461
     invoke-virtual {p1, v1, p3, v6}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 475
+    .line 462
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->roundCornerBitmap:Landroid/graphics/Bitmap;
 
     iget v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->roundCornersSize:I
@@ -468,10 +447,10 @@
 
     invoke-virtual {p1, v1, v5, p2, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 476
+    .line 463
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 477
+    .line 464
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/high16 p2, 0x42b40000    # 90.0f
@@ -480,10 +459,10 @@
 
     int-to-float p5, p5
 
-    .line 478
+    .line 465
     invoke-virtual {p1, p2, p3, p5}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 479
+    .line 466
     iget-object p2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->roundCornerBitmap:Landroid/graphics/Bitmap;
 
     iget p3, p0, Lorg/telegram/ui/Components/VideoTimelineView;->roundCornersSize:I
@@ -494,7 +473,7 @@
 
     invoke-virtual {p1, p2, p3, v3, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 480
+    .line 467
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -503,7 +482,7 @@
 .method private reloadFrames(I)V
     .locals 6
 
-    .line 282
+    .line 269
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->mediaMetadataRetriever:Landroid/media/MediaMetadataRetriever;
 
     if-nez v0, :cond_0
@@ -517,7 +496,7 @@
 
     if-nez p1, :cond_3
 
-    .line 286
+    .line 273
     iget-boolean v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->isRoundFrames:Z
 
     const/16 v3, 0x10
@@ -526,7 +505,7 @@
 
     const/16 v2, 0x38
 
-    .line 287
+    .line 274
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -535,7 +514,7 @@
 
     iput v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frameHeight:I
 
-    .line 288
+    .line 275
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
@@ -577,14 +556,14 @@
     :cond_1
     const/16 v2, 0x28
 
-    .line 290
+    .line 277
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     iput v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frameHeight:I
 
-    .line 291
+    .line 278
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
@@ -605,7 +584,7 @@
 
     iput v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->framesToLoad:I
 
-    .line 292
+    .line 279
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
@@ -634,7 +613,7 @@
 
     iput v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frameWidth:I
 
-    .line 294
+    .line 281
     :goto_0
     iget-wide v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->videoLength:J
 
@@ -646,7 +625,7 @@
 
     iput-wide v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frameTimeOffset:J
 
-    .line 296
+    .line 283
     iget-object v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->keyframes:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
@@ -655,7 +634,7 @@
 
     if-nez v2, :cond_3
 
-    .line 297
+    .line 284
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->keyframes:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -664,7 +643,7 @@
 
     int-to-float p1, p1
 
-    .line 298
+    .line 285
     iget v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->framesToLoad:I
 
     int-to-float v1, v1
@@ -673,13 +652,13 @@
 
     const/4 v1, 0x0
 
-    .line 300
+    .line 287
     :goto_1
     iget v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->framesToLoad:I
 
     if-ge v0, v2, :cond_2
 
-    .line 301
+    .line 288
     iget-object v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frames:Ljava/util/ArrayList;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/VideoTimelineView;->keyframes:Ljava/util/ArrayList;
@@ -703,18 +682,18 @@
     :cond_2
     return-void
 
-    .line 307
+    .line 294
     :cond_3
     iput-boolean v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->framesLoaded:Z
 
-    .line 308
+    .line 295
     new-instance v2, Lorg/telegram/ui/Components/VideoTimelineView$1;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/Components/VideoTimelineView$1;-><init>(Lorg/telegram/ui/Components/VideoTimelineView;)V
 
     iput-object v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->currentTask:Landroid/os/AsyncTask;
 
-    .line 356
+    .line 343
     sget-object v3, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     const/4 v4, 0x3
@@ -745,7 +724,7 @@
 .method public clearFrames()V
     .locals 2
 
-    .line 395
+    .line 382
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->keyframes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -756,7 +735,7 @@
 
     const/4 v0, 0x0
 
-    .line 396
+    .line 383
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frames:Ljava/util/ArrayList;
 
@@ -766,7 +745,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 397
+    .line 384
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frames:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -777,7 +756,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 399
+    .line 386
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
     :cond_0
@@ -785,28 +764,28 @@
 
     goto :goto_0
 
-    .line 403
+    .line 390
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frames:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 404
+    .line 391
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->currentTask:Landroid/os/AsyncTask;
 
     if-eqz v0, :cond_2
 
     const/4 v1, 0x1
 
-    .line 405
+    .line 392
     invoke-virtual {v0, v1}, Landroid/os/AsyncTask;->cancel(Z)Z
 
     const/4 v0, 0x0
 
-    .line 406
+    .line 393
     iput-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->currentTask:Landroid/os/AsyncTask;
 
-    .line 408
+    .line 395
     :cond_2
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
@@ -816,23 +795,23 @@
 .method public destroy()V
     .locals 3
 
-    .line 360
+    .line 347
     sget-object v0, Lorg/telegram/ui/Components/VideoTimelineView;->sync:Ljava/lang/Object;
 
     monitor-enter v0
 
     const/4 v1, 0x0
 
-    .line 362
+    .line 349
     :try_start_0
     iget-object v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->mediaMetadataRetriever:Landroid/media/MediaMetadataRetriever;
 
     if-eqz v2, :cond_0
 
-    .line 363
+    .line 350
     invoke-virtual {v2}, Landroid/media/MediaMetadataRetriever;->release()V
 
-    .line 364
+    .line 351
     iput-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->mediaMetadataRetriever:Landroid/media/MediaMetadataRetriever;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -848,18 +827,18 @@
     :catch_0
     move-exception v2
 
-    .line 367
+    .line 354
     :try_start_1
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 369
+    .line 356
     :cond_0
     :goto_0
     monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 370
+    .line 357
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->keyframes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -870,7 +849,7 @@
 
     if-nez v0, :cond_2
 
-    .line 371
+    .line 358
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->keyframes:Ljava/util/ArrayList;
 
@@ -880,7 +859,7 @@
 
     if-ge v2, v0, :cond_4
 
-    .line 372
+    .line 359
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->keyframes:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -891,7 +870,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 374
+    .line 361
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
     :cond_1
@@ -899,7 +878,7 @@
 
     goto :goto_1
 
-    .line 378
+    .line 365
     :cond_2
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frames:Ljava/util/ArrayList;
@@ -910,7 +889,7 @@
 
     if-ge v2, v0, :cond_4
 
-    .line 379
+    .line 366
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frames:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -921,7 +900,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 381
+    .line 368
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
     :cond_3
@@ -929,34 +908,34 @@
 
     goto :goto_2
 
-    .line 385
+    .line 372
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->keyframes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 386
+    .line 373
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frames:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 388
+    .line 375
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->currentTask:Landroid/os/AsyncTask;
 
     if-eqz v0, :cond_5
 
     const/4 v2, 0x1
 
-    .line 389
+    .line 376
     invoke-virtual {v0, v2}, Landroid/os/AsyncTask;->cancel(Z)Z
 
-    .line 390
+    .line 377
     iput-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->currentTask:Landroid/os/AsyncTask;
 
     :cond_5
     return-void
 
-    .line 369
+    .line 356
     :goto_3
     :try_start_2
     monitor-exit v0
@@ -969,7 +948,7 @@
 .method public getLeftProgress()F
     .locals 1
 
-    .line 114
+    .line 106
     iget v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressLeft:F
 
     return v0
@@ -978,7 +957,7 @@
 .method public getRightProgress()F
     .locals 1
 
-    .line 118
+    .line 110
     iget v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
     return v0
@@ -987,7 +966,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 12
 
-    .line 413
+    .line 400
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -1002,7 +981,7 @@
 
     int-to-float v0, v0
 
-    .line 414
+    .line 401
     iget v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressLeft:F
 
     mul-float v1, v1, v0
@@ -1017,7 +996,7 @@
 
     add-int v6, v1, v3
 
-    .line 415
+    .line 402
     iget v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
     mul-float v0, v0, v1
@@ -1030,7 +1009,7 @@
 
     add-int v7, v0, v1
 
-    .line 416
+    .line 403
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
@@ -1045,7 +1024,7 @@
 
     shr-int/lit8 v9, v0, 0x1
 
-    .line 419
+    .line 406
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frames:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1060,10 +1039,10 @@
 
     if-nez v0, :cond_0
 
-    .line 420
+    .line 407
     invoke-direct {p0, v10}, Lorg/telegram/ui/Components/VideoTimelineView;->reloadFrames(I)V
 
-    .line 422
+    .line 409
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frames:Ljava/util/ArrayList;
 
@@ -1073,7 +1052,7 @@
 
     if-nez v0, :cond_6
 
-    .line 423
+    .line 410
     iget-boolean v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->framesLoaded:Z
 
     if-nez v0, :cond_1
@@ -1082,7 +1061,7 @@
 
     int-to-float v2, v9
 
-    .line 424
+    .line 411
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -1106,7 +1085,7 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 427
+    .line 414
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frames:Ljava/util/ArrayList;
 
@@ -1116,7 +1095,7 @@
 
     if-ge v10, v1, :cond_5
 
-    .line 428
+    .line 415
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frames:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1127,7 +1106,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 430
+    .line 417
     iget-boolean v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->isRoundFrames:Z
 
     iget v3, p0, Lorg/telegram/ui/Components/VideoTimelineView;->frameWidth:I
@@ -1143,7 +1122,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 432
+    .line 419
     iget-object v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->rect2:Landroid/graphics/Rect;
 
     const/16 v5, 0x1c
@@ -1162,7 +1141,7 @@
 
     invoke-virtual {v2, v3, v9, v5, v11}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 433
+    .line 420
     iget-object v2, p0, Lorg/telegram/ui/Components/VideoTimelineView;->rect1:Landroid/graphics/Rect;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/VideoTimelineView;->rect2:Landroid/graphics/Rect;
@@ -1176,7 +1155,7 @@
 
     int-to-float v3, v9
 
-    .line 435
+    .line 422
     invoke-virtual {p1, v1, v2, v3, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     :cond_4
@@ -1194,7 +1173,7 @@
 
     int-to-float v3, v6
 
-    .line 444
+    .line 431
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
@@ -1213,7 +1192,7 @@
 
     int-to-float v1, v7
 
-    .line 445
+    .line 432
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -1236,7 +1215,7 @@
 
     const/4 v8, 0x4
 
-    .line 447
+    .line 434
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1283,7 +1262,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 448
+    .line 435
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1328,7 +1307,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 450
+    .line 437
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
@@ -1364,18 +1343,18 @@
 
     return v0
 
-    .line 146
+    .line 138
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
 
-    .line 147
+    .line 139
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
 
-    .line 149
+    .line 141
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
@@ -1390,7 +1369,7 @@
 
     int-to-float v5, v3
 
-    .line 150
+    .line 142
     iget v6, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressLeft:F
 
     mul-float v6, v6, v5
@@ -1405,7 +1384,7 @@
 
     add-int/2addr v6, v8
 
-    .line 151
+    .line 143
     iget v8, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
     mul-float v8, v8, v5
@@ -1418,7 +1397,7 @@
 
     add-int/2addr v8, v7
 
-    .line 153
+    .line 145
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v7
@@ -1433,21 +1412,21 @@
 
     if-nez v7, :cond_6
 
-    .line 154
+    .line 146
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
 
     invoke-interface {p1, v12}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 155
+    .line 147
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->mediaMetadataRetriever:Landroid/media/MediaMetadataRetriever;
 
     if-nez p1, :cond_1
 
     return v0
 
-    .line 158
+    .line 150
     :cond_1
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1473,7 +1452,7 @@
 
     if-ltz v3, :cond_3
 
-    .line 159
+    .line 151
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v3
@@ -1484,15 +1463,15 @@
 
     if-gtz v3, :cond_3
 
-    .line 160
+    .line 152
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->delegate:Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;
 
     if-eqz p1, :cond_2
 
-    .line 161
+    .line 153
     invoke-interface {p1}, Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;->didStartDragging()V
 
-    .line 163
+    .line 155
     :cond_2
     iput-boolean v12, p0, Lorg/telegram/ui/Components/VideoTimelineView;->pressedLeft:Z
 
@@ -1504,10 +1483,10 @@
 
     int-to-float p1, p1
 
-    .line 164
+    .line 156
     iput p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->pressDx:F
 
-    .line 165
+    .line 157
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
 
     iget-wide v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->videoLength:J
@@ -1524,7 +1503,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->setTime(I)V
 
-    .line 166
+    .line 158
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
 
     invoke-virtual {p0}, Landroid/view/View;->getLeft()I
@@ -1543,12 +1522,12 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->setCx(F)V
 
-    .line 167
+    .line 159
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
 
     invoke-virtual {p1, v12}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->show(Z)V
 
-    .line 168
+    .line 160
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return v12
@@ -1574,7 +1553,7 @@
 
     if-ltz p1, :cond_5
 
-    .line 170
+    .line 162
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result p1
@@ -1585,15 +1564,15 @@
 
     if-gtz p1, :cond_5
 
-    .line 171
+    .line 163
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->delegate:Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;
 
     if-eqz p1, :cond_4
 
-    .line 172
+    .line 164
     invoke-interface {p1}, Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;->didStartDragging()V
 
-    .line 174
+    .line 166
     :cond_4
     iput-boolean v12, p0, Lorg/telegram/ui/Components/VideoTimelineView;->pressedRight:Z
 
@@ -1605,10 +1584,10 @@
 
     int-to-float p1, p1
 
-    .line 175
+    .line 167
     iput p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->pressDx:F
 
-    .line 176
+    .line 168
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
 
     iget-wide v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->videoLength:J
@@ -1625,7 +1604,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->setTime(I)V
 
-    .line 177
+    .line 169
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
 
     invoke-virtual {p0}, Landroid/view/View;->getLeft()I
@@ -1644,17 +1623,17 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->setCx(F)V
 
-    .line 178
+    .line 170
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
 
     invoke-virtual {p1, v12}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->show(Z)V
 
-    .line 179
+    .line 171
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return v12
 
-    .line 182
+    .line 174
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
 
@@ -1662,7 +1641,7 @@
 
     goto/16 :goto_5
 
-    .line 184
+    .line 176
     :cond_6
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -1680,7 +1659,7 @@
 
     goto/16 :goto_4
 
-    .line 202
+    .line 194
     :cond_7
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -1690,7 +1669,7 @@
 
     if-ne p1, v2, :cond_17
 
-    .line 203
+    .line 195
     iget-boolean p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->pressedLeft:Z
 
     const/high16 v2, 0x41400000    # 12.0f
@@ -1699,21 +1678,21 @@
 
     if-eqz p1, :cond_d
 
-    .line 204
+    .line 196
     iget p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->pressDx:F
 
     sub-float/2addr v1, p1
 
     float-to-int p1, v1
 
-    .line 205
+    .line 197
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     if-ge p1, v0, :cond_8
 
-    .line 206
+    .line 198
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -1728,7 +1707,7 @@
     :cond_9
     move v8, p1
 
-    .line 210
+    .line 202
     :goto_0
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1742,7 +1721,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressLeft:F
 
-    .line 211
+    .line 203
     iget v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
     sub-float v1, v0, p1
@@ -1755,12 +1734,12 @@
 
     add-float/2addr p1, v3
 
-    .line 212
+    .line 204
     iput p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
     goto :goto_1
 
-    .line 213
+    .line 205
     :cond_a
     iget v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->minProgressDiff:F
 
@@ -1776,17 +1755,17 @@
 
     sub-float/2addr v0, v1
 
-    .line 214
+    .line 206
     iput v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressLeft:F
 
     cmpg-float p1, v0, v11
 
     if-gez p1, :cond_b
 
-    .line 216
+    .line 208
     iput v11, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressLeft:F
 
-    .line 219
+    .line 211
     :cond_b
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
@@ -1819,7 +1798,7 @@
 
     invoke-virtual {p1, v5}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->setCx(F)V
 
-    .line 220
+    .line 212
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
 
     iget-wide v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->videoLength:J
@@ -1836,34 +1815,34 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->setTime(I)V
 
-    .line 221
+    .line 213
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
 
     invoke-virtual {p1, v12}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->show(Z)V
 
-    .line 222
+    .line 214
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->delegate:Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;
 
     if-eqz p1, :cond_c
 
-    .line 223
+    .line 215
     iget v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressLeft:F
 
     invoke-interface {p1, v0}, Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;->onLeftProgressChanged(F)V
 
-    .line 225
+    .line 217
     :cond_c
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return v12
 
-    .line 227
+    .line 219
     :cond_d
     iget-boolean p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->pressedRight:Z
 
     if-eqz p1, :cond_17
 
-    .line 228
+    .line 220
     iget p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->pressDx:F
 
     sub-float/2addr v1, p1
@@ -1874,7 +1853,7 @@
 
     goto :goto_2
 
-    .line 231
+    .line 223
     :cond_e
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1884,7 +1863,7 @@
 
     if-le p1, v0, :cond_f
 
-    .line 232
+    .line 224
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -1896,7 +1875,7 @@
     :cond_f
     move v6, p1
 
-    .line 234
+    .line 226
     :goto_2
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1910,7 +1889,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
-    .line 235
+    .line 227
     iget v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressLeft:F
 
     sub-float v1, p1, v0
@@ -1923,12 +1902,12 @@
 
     sub-float/2addr p1, v3
 
-    .line 236
+    .line 228
     iput p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressLeft:F
 
     goto :goto_3
 
-    .line 237
+    .line 229
     :cond_10
     iget v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->minProgressDiff:F
 
@@ -1944,7 +1923,7 @@
 
     add-float/2addr v0, v1
 
-    .line 238
+    .line 230
     iput v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
     const/high16 p1, 0x3f800000    # 1.0f
@@ -1953,10 +1932,10 @@
 
     if-lez v0, :cond_11
 
-    .line 240
+    .line 232
     iput p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
-    .line 244
+    .line 236
     :cond_11
     :goto_3
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
@@ -1989,12 +1968,12 @@
 
     invoke-virtual {p1, v5}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->setCx(F)V
 
-    .line 245
+    .line 237
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
 
     invoke-virtual {p1, v12}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->show(Z)V
 
-    .line 246
+    .line 238
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
 
     iget-wide v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->videoLength:J
@@ -2011,40 +1990,68 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->setTime(I)V
 
-    .line 247
+    .line 239
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->delegate:Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;
 
     if-eqz p1, :cond_12
 
-    .line 248
+    .line 240
     iget v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
     invoke-interface {p1, v0}, Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;->onRightProgressChanged(F)V
 
-    .line 250
+    .line 242
     :cond_12
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return v12
 
-    .line 185
+    .line 177
     :cond_13
     :goto_4
     iget-boolean p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->pressedLeft:Z
 
     if-eqz p1, :cond_15
 
-    .line 186
+    .line 178
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->delegate:Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;
 
     if-eqz p1, :cond_14
+
+    .line 179
+    invoke-interface {p1}, Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;->didStopDragging()V
+
+    .line 181
+    :cond_14
+    iput-boolean v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->pressedLeft:Z
+
+    .line 182
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 183
+    iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
+
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->show(Z)V
+
+    return v12
+
+    .line 185
+    :cond_15
+    iget-boolean p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->pressedRight:Z
+
+    if-eqz p1, :cond_17
+
+    .line 186
+    iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->delegate:Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;
+
+    if-eqz p1, :cond_16
 
     .line 187
     invoke-interface {p1}, Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;->didStopDragging()V
 
     .line 189
-    :cond_14
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->pressedLeft:Z
+    :cond_16
+    iput-boolean v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->pressedRight:Z
 
     .line 190
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
@@ -2056,57 +2063,15 @@
 
     return v12
 
-    .line 193
-    :cond_15
-    iget-boolean p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->pressedRight:Z
-
-    if-eqz p1, :cond_17
-
-    .line 194
-    iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->delegate:Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;
-
-    if-eqz p1, :cond_16
-
-    .line 195
-    invoke-interface {p1}, Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;->didStopDragging()V
-
-    .line 197
-    :cond_16
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->pressedRight:Z
-
-    .line 198
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    .line 199
-    iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
-
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->show(Z)V
-
-    return v12
-
     :cond_17
     :goto_5
     return v0
 .end method
 
-.method public setColor(I)V
-    .locals 1
-
-    .line 258
-    iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->paint:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 259
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    return-void
-.end method
-
 .method public setDelegate(Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;)V
     .locals 0
 
-    .line 278
+    .line 265
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->delegate:Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;
 
     return-void
@@ -2123,12 +2088,12 @@
         }
     .end annotation
 
-    .line 75
+    .line 73
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->keyframes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 76
+    .line 74
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->keyframes:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
@@ -2139,10 +2104,10 @@
 .method public setMaxProgressDiff(F)V
     .locals 2
 
-    .line 126
+    .line 118
     iput p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->maxProgressDiff:F
 
-    .line 127
+    .line 119
     iget v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
     iget v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressLeft:F
@@ -2155,10 +2120,10 @@
 
     add-float/2addr v1, p1
 
-    .line 128
+    .line 120
     iput v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
-    .line 129
+    .line 121
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_0
@@ -2168,7 +2133,7 @@
 .method public setMinProgressDiff(F)V
     .locals 0
 
-    .line 122
+    .line 114
     iput p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->minProgressDiff:F
 
     return-void
@@ -2177,12 +2142,12 @@
 .method public setRoundFrames(Z)V
     .locals 4
 
-    .line 134
+    .line 126
     iput-boolean p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->isRoundFrames:Z
 
     if-eqz p1, :cond_0
 
-    .line 136
+    .line 128
     new-instance p1, Landroid/graphics/Rect;
 
     const/16 v0, 0xe
@@ -2209,7 +2174,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->rect1:Landroid/graphics/Rect;
 
-    .line 137
+    .line 129
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -2223,7 +2188,7 @@
 .method public setTimeHintView(Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;)V
     .locals 0
 
-    .line 484
+    .line 471
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
 
     return-void
@@ -2232,10 +2197,10 @@
 .method public setVideoPath(Ljava/lang/String;)V
     .locals 2
 
-    .line 263
+    .line 250
     invoke-virtual {p0}, Lorg/telegram/ui/Components/VideoTimelineView;->destroy()V
 
-    .line 264
+    .line 251
     new-instance v0, Landroid/media/MediaMetadataRetriever;
 
     invoke-direct {v0}, Landroid/media/MediaMetadataRetriever;-><init>()V
@@ -2244,19 +2209,19 @@
 
     const/4 v1, 0x0
 
-    .line 265
+    .line 252
     iput v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressLeft:F
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 266
+    .line 253
     iput v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
-    .line 268
+    .line 255
     :try_start_0
     invoke-virtual {v0, p1}, Landroid/media/MediaMetadataRetriever;->setDataSource(Ljava/lang/String;)V
 
-    .line 269
+    .line 256
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->mediaMetadataRetriever:Landroid/media/MediaMetadataRetriever;
 
     const/16 v0, 0x9
@@ -2265,7 +2230,7 @@
 
     move-result-object p1
 
-    .line 270
+    .line 257
     invoke-static {p1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v0
@@ -2279,10 +2244,10 @@
     :catch_0
     move-exception p1
 
-    .line 272
+    .line 259
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 274
+    .line 261
     :goto_0
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
@@ -2292,7 +2257,7 @@
 .method public updateColors()V
     .locals 2
 
-    .line 105
+    .line 98
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->backgroundGrayPaint:Landroid/graphics/Paint;
 
     const-string v1, "windowBackgroundGray"
@@ -2303,28 +2268,17 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 106
-    iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->thumbRipplePaint:Landroid/graphics/Paint;
-
-    const-string v1, "key_chat_recordedVoiceHighlight"
-
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
-
     const/4 v0, 0x0
 
-    .line 107
+    .line 99
     iput v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->roundCornersSize:I
 
-    .line 108
+    .line 100
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->timeHintView:Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;
 
     if-eqz v0, :cond_0
 
-    .line 109
+    .line 101
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->updateColors()V
 
     :cond_0

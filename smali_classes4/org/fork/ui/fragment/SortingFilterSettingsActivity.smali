@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSortingFilterSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SortingFilterSettingsActivity.kt\norg/fork/ui/fragment/SortingFilterSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 ViewExt.kt\ncom/smedialink/utils/extentions/common/ViewExtKt\n*L\n1#1,320:1\n1#2:321\n187#3,4:322\n*S KotlinDebug\n*F\n+ 1 SortingFilterSettingsActivity.kt\norg/fork/ui/fragment/SortingFilterSettingsActivity\n*L\n65#1:322,4\n*E\n"
+    value = "SMAP\nSortingFilterSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SortingFilterSettingsActivity.kt\norg/fork/ui/fragment/SortingFilterSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 ViewExt.kt\ncom/smedialink/utils/extentions/common/ViewExtKt\n*L\n1#1,320:1\n1#2:321\n191#3,4:322\n*S KotlinDebug\n*F\n+ 1 SortingFilterSettingsActivity.kt\norg/fork/ui/fragment/SortingFilterSettingsActivity\n*L\n65#1:322,4\n*E\n"
 .end annotation
 
 
@@ -43,18 +43,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$WwO4-l_jx8LJ96FKjQ1a7PNGUU0(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;)V
+.method public static synthetic $r8$lambda$ZjQdGf9DaFqgHqhf43vWta4NuWM(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Landroid/view/View;IFF)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity;->getThemeDescriptions$lambda-3(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity;->initListView$lambda$8$lambda$7(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Landroid/view/View;IFF)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$qGzTJg5uA6xLLGqf5M32Qw9dZwQ(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Landroid/view/View;IFF)V
+.method public static synthetic $r8$lambda$ndZgZRGAZW6LvYunHpFRwMzG7Ts(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity;->initListView$lambda-8$lambda-7(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Landroid/view/View;IFF)V
+    invoke-static {p0}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity;->getThemeDescriptions$lambda$3(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;)V
 
     return-void
 .end method
@@ -384,7 +384,7 @@
     return p1
 .end method
 
-.method private static final getThemeDescriptions$lambda-3(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;)V
+.method private static final getThemeDescriptions$lambda$3(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;)V
     .locals 5
 
     const-string v0, "this$0"
@@ -414,57 +414,46 @@
 
     const/4 v0, 0x0
 
-    .line 187
+    .line 191
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
 
-    if-lez v2, :cond_4
-
     :goto_0
-    add-int/lit8 v3, v0, 0x1
+    if-ge v0, v2, :cond_3
 
-    .line 188
+    .line 192
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v3
 
     const-string v4, "getChildAt(i)"
 
-    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 65
-    instance-of v4, v0, Lorg/fork/ui/view/SortingFilterCell;
+    instance-of v4, v3, Lorg/fork/ui/view/SortingFilterCell;
 
     if-eqz v4, :cond_1
 
-    check-cast v0, Lorg/fork/ui/view/SortingFilterCell;
+    check-cast v3, Lorg/fork/ui/view/SortingFilterCell;
 
     goto :goto_1
 
     :cond_1
-    move-object v0, v1
+    move-object v3, v1
 
     :goto_1
-    if-nez v0, :cond_2
+    if-eqz v3, :cond_2
 
-    goto :goto_2
+    invoke-virtual {v3}, Lorg/fork/ui/view/SortingFilterCell;->updateColors()V
 
     :cond_2
-    invoke-virtual {v0}, Lorg/fork/ui/view/SortingFilterCell;->updateColors()V
-
-    :goto_2
-    if-lt v3, v2, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    move v0, v3
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    :cond_4
-    :goto_3
+    :cond_3
     return-void
 .end method
 
@@ -524,7 +513,7 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda-8$lambda-7(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Landroid/view/View;IFF)V
+.method private static final initListView$lambda$8$lambda$7(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Landroid/view/View;IFF)V
     .locals 1
 
     const-string p4, "this$0"
@@ -548,9 +537,7 @@
 
     move-result-object p2
 
-    invoke-virtual {p0}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity;->getCurrentArchive()Z
-
-    move-result p3
+    iget-boolean p3, p0, Lorg/fork/ui/fragment/SortingFilterSettingsActivity;->currentArchive:Z
 
     invoke-virtual {p2, p3}, Lorg/fork/controller/FiltersController;->toggleSortingEnabled(Z)V
 
@@ -652,9 +639,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity;->getCurrentArchive()Z
-
-    move-result p3
+    iget-boolean p3, p0, Lorg/fork/ui/fragment/SortingFilterSettingsActivity;->currentArchive:Z
 
     invoke-direct {p0, p2}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity;->getSortingIndexByPosition(I)I
 
@@ -693,7 +678,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundGray"
+    const-string/jumbo v1, "windowBackgroundGray"
 
     .line 107
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -967,7 +952,7 @@
 
     const/4 v7, 0x0
 
-    const-string v9, "windowBackgroundGray"
+    const-string/jumbo v9, "windowBackgroundGray"
 
     move-object v2, v10
 
@@ -1150,7 +1135,7 @@
 
     const/4 v10, 0x0
 
-    const-string v13, "windowBackgroundChecked"
+    const-string/jumbo v13, "windowBackgroundChecked"
 
     move-object v6, v3
 
@@ -1179,7 +1164,7 @@
 
     aput-object v5, v9, v2
 
-    const-string v13, "windowBackgroundUnchecked"
+    const-string/jumbo v13, "windowBackgroundUnchecked"
 
     move-object v6, v3
 
@@ -1212,7 +1197,7 @@
 
     const/4 v13, 0x0
 
-    const-string v14, "windowBackgroundCheckText"
+    const-string/jumbo v14, "windowBackgroundCheckText"
 
     move-object v6, v3
 
@@ -1409,7 +1394,7 @@
 
     const/4 v11, 0x0
 
-    const-string v13, "windowBackgroundGrayShadow"
+    const-string/jumbo v13, "windowBackgroundGrayShadow"
 
     move-object v6, v3
 

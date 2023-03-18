@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.view.GestureDetectorCompat;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.p048ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.CustomPhoneKeyboardView */
 /* loaded from: classes6.dex */
@@ -29,6 +29,7 @@ public class CustomPhoneKeyboardView extends ViewGroup {
     private Runnable onBackButton;
     private boolean postedLongClick;
     private boolean runningLongClick;
+    private View viewToFindFocus;
     private View[] views;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -42,6 +43,7 @@ public class CustomPhoneKeyboardView extends ViewGroup {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0() {
+        checkFindEditText();
         EditText editText = this.editText;
         if (editText != null) {
             if (editText.length() != 0 || this.dispatchBackWhenEmpty) {
@@ -142,7 +144,7 @@ public class CustomPhoneKeyboardView extends ViewGroup {
             }
         };
         this.backButton = imageView;
-        imageView.setImageResource(C3158R.C3160drawable.msg_clear_input);
+        imageView.setImageResource(C3286R.C3288drawable.msg_clear_input);
         this.backButton.setColorFilter(Theme.getColor("windowBackgroundWhiteBlackText"));
         this.backButton.setBackground(getButtonDrawable());
         int m50dp = AndroidUtilities.m50dp(11);
@@ -156,6 +158,7 @@ public class CustomPhoneKeyboardView extends ViewGroup {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2(String str, View view) {
+        checkFindEditText();
         if (this.editText == null) {
             return;
         }
@@ -218,6 +221,21 @@ public class CustomPhoneKeyboardView extends ViewGroup {
                 return false;
             }
         });
+    }
+
+    public void setViewToFindFocus(View view) {
+        this.viewToFindFocus = view;
+    }
+
+    public void checkFindEditText() {
+        View view;
+        if (this.editText != null || (view = this.viewToFindFocus) == null) {
+            return;
+        }
+        View findFocus = view.findFocus();
+        if (findFocus instanceof EditText) {
+            this.editText = (EditText) findFocus;
+        }
     }
 
     public void setEditText(EditText editText) {

@@ -9,10 +9,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$Companion;,
         Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter;,
-        Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$TouchHelperCallback;,
         Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType;,
-        Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$Companion;
+        Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$TouchHelperCallback;
     }
 .end annotation
 
@@ -55,18 +55,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$6pEGNOZ2GPkzXKsaWiiPcYUgSmE(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;)V
+.method public static synthetic $r8$lambda$PztZLqhZvaut8NhPjG1FVMj3Io4(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;->getThemeDescriptions$lambda-1(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;->getThemeDescriptions$lambda$1(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$o-rLhsP5j2olpyYbBD8pKLaEg1c(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Landroid/view/View;IFF)V
+.method public static synthetic $r8$lambda$VO1pQbFth3F0M2JB8y2gVkhWwWU(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Landroid/view/View;IFF)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;->initListView$lambda-6$lambda-5(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Landroid/view/View;IFF)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;->initListView$lambda$6$lambda$5(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Landroid/view/View;IFF)V
 
     return-void
 .end method
@@ -350,7 +350,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-1(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;)V
+.method private static final getThemeDescriptions$lambda$1(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -423,7 +423,7 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda-6$lambda-5(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Landroid/view/View;IFF)V
+.method private static final initListView$lambda$6$lambda$5(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Landroid/view/View;IFF)V
     .locals 0
 
     const-string p3, "this$0"

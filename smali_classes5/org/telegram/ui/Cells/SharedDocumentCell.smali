@@ -4317,11 +4317,11 @@
     .line 281
     sget p3, Lorg/telegram/messenger/R$drawable;->files_storage:I
 
+    const-string p4, "chat_attachIcon"
+
     if-ne p5, p3, :cond_5
 
     const-string p3, "chat_attachLocationBackground"
-
-    const-string p4, "chat_attachLocationIcon"
 
     goto :goto_3
 
@@ -4333,8 +4333,6 @@
 
     const-string p3, "chat_attachContactBackground"
 
-    const-string p4, "chat_attachContactIcon"
-
     goto :goto_3
 
     .line 287
@@ -4345,8 +4343,6 @@
 
     const-string p3, "chat_attachAudioBackground"
 
-    const-string p4, "chat_attachAudioIcon"
-
     goto :goto_3
 
     .line 290
@@ -4356,8 +4352,6 @@
     if-ne p5, p3, :cond_8
 
     const-string p3, "chat_attachGalleryBackground"
-
-    const-string p4, "chat_attachGalleryIcon"
 
     goto :goto_3
 

@@ -26,12 +26,11 @@ import com.smedialink.utils.extentions.common.ViewExtKt;
 import java.util.ArrayList;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.utils.Callbacks$Callback1;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -86,14 +85,6 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
         return false;
     }
 
-    public final BaseFragment getParentFragment() {
-        return this.parentFragment;
-    }
-
-    public final Delegate getForwardCloudDelegate() {
-        return this.forwardCloudDelegate;
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ForwardCloudBottomSheet(BaseFragment parentFragment, Delegate forwardCloudDelegate) {
         super(parentFragment.getParentActivity(), false);
@@ -120,7 +111,6 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
         customContainerView.addView(getShadow(), LayoutHelper.createFrame(-1, AndroidUtilities.getShadowHeight(), 3, 0, 48, 0, 0));
         customContainerView.addView(getListView(), LayoutHelper.createFrame(-1, -1, 3, 0, 48, 0, 0));
         customContainerView.addView(getTitleTextView(), LayoutHelper.createFrame(-1, 50, 3, 0, 0, 40, 0));
-        Unit unit = Unit.INSTANCE;
         this.containerView = customContainerView;
     }
 
@@ -151,7 +141,7 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
         textView.setHighlightColor(Theme.getColor("dialogLinkSelection"));
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
-        textView.setText(LocaleController.getInternalString(C3158R.string.cloud_albums_bottom_sheet_title));
+        textView.setText(LocaleController.getInternalString(C3286R.string.cloud_albums_bottom_sheet_title));
         textView.setTextColor(Theme.getColor("dialogTextBlack"));
         textView.setTextSize(1, 20.0f);
         textView.setLinkTextColor(Theme.getColor("dialogTextLink"));
@@ -199,36 +189,34 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
         r1.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.fork.ui.dialog.ForwardCloudBottomSheet$$ExternalSyntheticLambda1
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                ForwardCloudBottomSheet.m1989initListView$lambda5$lambda4(ForwardCloudBottomSheet.this, view, i);
+                ForwardCloudBottomSheet.initListView$lambda$5$lambda$4(ForwardCloudBottomSheet.this, view, i);
             }
         });
         return r1;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-5$lambda-4  reason: not valid java name */
-    public static final void m1989initListView$lambda5$lambda4(final ForwardCloudBottomSheet this$0, View view, int i) {
+    public static final void initListView$lambda$5$lambda$4(final ForwardCloudBottomSheet this$0, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         long albumId = this$0.getListAdapter().getAlbumId(i);
         if (albumId == -1) {
-            this$0.getParentFragment().presentFragment(ChannelCreateActivity.newInstanceInAlbumMode(new Callbacks$Callback1() { // from class: org.fork.ui.dialog.ForwardCloudBottomSheet$$ExternalSyntheticLambda0
+            this$0.parentFragment.presentFragment(ChannelCreateActivity.newInstanceInAlbumMode(new Callbacks$Callback1() { // from class: org.fork.ui.dialog.ForwardCloudBottomSheet$$ExternalSyntheticLambda0
                 @Override // org.fork.utils.Callbacks$Callback1
                 public final void invoke(Object obj) {
-                    ForwardCloudBottomSheet.m1990initListView$lambda5$lambda4$lambda3(ForwardCloudBottomSheet.this, ((Long) obj).longValue());
+                    ForwardCloudBottomSheet.initListView$lambda$5$lambda$4$lambda$3(ForwardCloudBottomSheet.this, ((Long) obj).longValue());
                 }
             }));
-            this$0.getForwardCloudDelegate().onAlbumCreatorOpened();
+            this$0.forwardCloudDelegate.onAlbumCreatorOpened();
         } else {
-            this$0.getForwardCloudDelegate().didSelectCloudDialog(albumId);
+            this$0.forwardCloudDelegate.didSelectCloudDialog(albumId);
         }
         this$0.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-5$lambda-4$lambda-3  reason: not valid java name */
-    public static final void m1990initListView$lambda5$lambda4$lambda3(ForwardCloudBottomSheet this$0, long j) {
+    public static final void initListView$lambda$5$lambda$4$lambda$3(ForwardCloudBottomSheet this$0, long j) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getForwardCloudDelegate().didSelectCloudDialog(j);
+        this$0.forwardCloudDelegate.didSelectCloudDialog(j);
     }
 
     private final void setScrollOffsetY(int i) {
@@ -317,7 +305,6 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
             }
         });
         animatorSet2.start();
-        Unit unit = Unit.INSTANCE;
         this.shadowAnimation = animatorSet2;
     }
 
@@ -339,12 +326,11 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
             return true;
         }
 
-        public ListAdapter(ForwardCloudBottomSheet this$0, Context context) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
+        public ListAdapter(ForwardCloudBottomSheet forwardCloudBottomSheet, Context context) {
             Intrinsics.checkNotNullParameter(context, "context");
-            this.this$0 = this$0;
+            this.this$0 = forwardCloudBottomSheet;
             this.context = context;
-            this.cloudAlbums = MessagesController.getInstance(((BottomSheet) this$0).currentAccount).dialogsAlbumsOnly;
+            this.cloudAlbums = MessagesController.getInstance(((BottomSheet) forwardCloudBottomSheet).currentAccount).dialogsAlbumsOnly;
             updateRows();
         }
 
@@ -355,7 +341,7 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
             if (i == this.cloudRow) {
                 return UserConfig.getInstance(((BottomSheet) this.this$0).currentAccount).getClientUserId();
             }
-            return this.cloudAlbums.get(i - this.albumsStartRow).f1500id;
+            return this.cloudAlbums.get(i - this.albumsStartRow).f1505id;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -386,21 +372,25 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             if (i == this.newAlbumRow) {
-                BottomSheet.BottomSheetCell bottomSheetCell = (BottomSheet.BottomSheetCell) holder.itemView;
+                View view = holder.itemView;
+                Intrinsics.checkNotNull(view, "null cannot be cast to non-null type org.telegram.ui.ActionBar.BottomSheet.BottomSheetCell");
+                BottomSheet.BottomSheetCell bottomSheetCell = (BottomSheet.BottomSheetCell) view;
                 bottomSheetCell.getImageView().setColorFilter((ColorFilter) null);
-                Drawable drawable = AppCompatResources.getDrawable(this.context, C3158R.C3160drawable.poll_add_circle);
-                Drawable drawable2 = AppCompatResources.getDrawable(this.context, C3158R.C3160drawable.poll_add_plus);
+                Drawable drawable = AppCompatResources.getDrawable(this.context, C3286R.C3288drawable.poll_add_circle);
+                Drawable drawable2 = AppCompatResources.getDrawable(this.context, C3286R.C3288drawable.poll_add_plus);
                 if (drawable != null && drawable2 != null) {
                     drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor("switchTrackChecked"), PorterDuff.Mode.MULTIPLY));
                     drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor("checkboxCheck"), PorterDuff.Mode.MULTIPLY));
                 }
                 CombinedDrawable combinedDrawable = new CombinedDrawable(drawable, drawable2);
                 bottomSheetCell.setTextColor(Theme.getColor("windowBackgroundWhiteBlueText4"));
-                bottomSheetCell.setTextAndIcon(LocaleController.getInternalString(C3158R.string.cloud_albums_bottom_sheet_create_new_album), combinedDrawable);
+                bottomSheetCell.setTextAndIcon(LocaleController.getInternalString(C3286R.string.cloud_albums_bottom_sheet_create_new_album), combinedDrawable);
                 bottomSheetCell.getImageView().setPadding(AndroidUtilities.m50dp(11), 0, 0, 0);
                 return;
             }
-            ProfileSearchCell profileSearchCell = (ProfileSearchCell) holder.itemView;
+            View view2 = holder.itemView;
+            Intrinsics.checkNotNull(view2, "null cannot be cast to non-null type org.telegram.ui.Cells.ProfileSearchCell");
+            ProfileSearchCell profileSearchCell = (ProfileSearchCell) view2;
             profileSearchCell.albumMode = true;
             profileSearchCell.useSeparator = i != getItemCount() - 1;
             long albumId = getAlbumId(i);
@@ -429,14 +419,13 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
         final /* synthetic */ ForwardCloudBottomSheet this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public CustomContainerView(ForwardCloudBottomSheet this$0, Context context) {
+        public CustomContainerView(ForwardCloudBottomSheet forwardCloudBottomSheet, Context context) {
             super(context);
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullParameter(context, "context");
-            this.this$0 = this$0;
+            this.this$0 = forwardCloudBottomSheet;
             this.rect = new RectF();
             setWillNotDraw(false);
-            setPadding(((BottomSheet) this$0).backgroundPaddingLeft, 0, ((BottomSheet) this$0).backgroundPaddingLeft, 0);
+            setPadding(((BottomSheet) forwardCloudBottomSheet).backgroundPaddingLeft, 0, ((BottomSheet) forwardCloudBottomSheet).backgroundPaddingLeft, 0);
         }
 
         @Override // android.view.ViewGroup

@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletAccountSettingsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAccountSettingsFragment.kt\ncom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 5 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,144:1\n13#2,4:145\n56#3,6:149\n16#4,3:155\n39#5,6:158\n*S KotlinDebug\n*F\n+ 1 WalletAccountSettingsFragment.kt\ncom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment\n*L\n30#1:145,4\n31#1:149,6\n123#1:155,3\n124#1:158,6\n*E\n"
+    value = "SMAP\nWalletAccountSettingsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAccountSettingsFragment.kt\ncom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 5 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,145:1\n13#2,4:146\n56#3,6:150\n16#4,3:156\n39#5,8:159\n*S KotlinDebug\n*F\n+ 1 WalletAccountSettingsFragment.kt\ncom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment\n*L\n30#1:146,4\n31#1:150,6\n123#1:156,3\n124#1:159,8\n*E\n"
 .end annotation
 
 
@@ -42,18 +42,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$gV6T-7BEPJp34TeLf1xa_6IEiw0(Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;)V
+.method public static synthetic $r8$lambda$5hMPTqBNt8YjsQkC9fXKCJb_RwM(Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;->getThemeDescriptions$lambda-1(Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;->getThemeDescriptions$lambda$1(Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$qr4l7auZuK3jX2sjcN_risj613g(Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$WDNRKkY54_eCj7Lw4p8mTVRtDKw(Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;->setupListeners$lambda-5(Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;->setupListeners$lambda$5(Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -270,7 +270,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-1(Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;)V
+.method private static final getThemeDescriptions$lambda$1(Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -408,38 +408,49 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;)V
 
-    new-instance v2, Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v1, Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2;
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v3}, Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v3}, Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 46
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v3, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 134
+    .line 135
     invoke-virtual {p0, v0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->autoDispose(Lio/reactivex/disposables/Disposable;)V
 
     return-void
 .end method
 
-.method private static final setupListeners$lambda-5(Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$5(Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "$noName_1"
+    const-string p1, "<anonymous parameter 1>"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

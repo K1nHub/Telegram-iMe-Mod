@@ -40,10 +40,10 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkFragmentBlockchainsManagementBinding;
 import org.telegram.p048ui.ActionBar.AlertDialog;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.INavigationLayout;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.TextCell;
@@ -147,7 +147,7 @@ public final class BlockchainsManagementFragment extends WalletAuthFragment impl
         PinCodeCoordinator pinCodeCoordinator = getPinCodeCoordinator();
         INavigationLayout parentLayout = this.parentLayout;
         Intrinsics.checkNotNullExpressionValue(parentLayout, "parentLayout");
-        PinCodeCoordinator.start$default(pinCodeCoordinator, parentLayout, CreateWalletFragment.Companion.newInstance(new CreateWalletFragment.ScreenType.SecretWords(secretWords, address, null, null, false, 28, null)), null, false, 12, null);
+        PinCodeCoordinator.start$default(pinCodeCoordinator, parentLayout, CreateWalletFragment.Companion.newInstance(new CreateWalletFragment.ScreenType.SecretWords(secretWords, address, null, null, 12, null)), null, false, 12, null);
     }
 
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
@@ -171,13 +171,13 @@ public final class BlockchainsManagementFragment extends WalletAuthFragment impl
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setTitle(getResourceManager().getString(C3158R.string.wallet_crypto_blockchains_title));
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.createMenu();
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.wallet_crypto_blockchains_title));
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.createMenu();
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     BlockchainsManagementFragment.this.finishFragment();
@@ -192,14 +192,14 @@ public final class BlockchainsManagementFragment extends WalletAuthFragment impl
         binding.linearAddSession.setBackgroundColor(getThemedColor("windowBackgroundWhite"));
         binding.linearWallets.setBackgroundColor(getThemedColor("windowBackgroundWhite"));
         binding.textDescription.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
-        TextCell textCell = binding.buttonResetAll;
-        textCell.setColors("windowBackgroundWhiteRedText2", "windowBackgroundWhiteRedText2");
-        Intrinsics.checkNotNullExpressionValue(textCell, "");
-        ViewExtKt.setRippleBackground$default(textCell, false, 1, null);
-        AppCompatTextView appCompatTextView = binding.textWalletsTitle;
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView, "");
-        ViewExtKt.withMediumTypeface(appCompatTextView);
-        appCompatTextView.setTextColor(getThemedColor("windowBackgroundWhiteBlueHeader"));
+        TextCell setupColors$lambda$4$lambda$2 = binding.buttonResetAll;
+        setupColors$lambda$4$lambda$2.setColors("windowBackgroundWhiteRedText2", "windowBackgroundWhiteRedText2");
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$4$lambda$2, "setupColors$lambda$4$lambda$2");
+        ViewExtKt.setRippleBackground$default(setupColors$lambda$4$lambda$2, false, 1, null);
+        AppCompatTextView setupColors$lambda$4$lambda$3 = binding.textWalletsTitle;
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$4$lambda$3, "setupColors$lambda$4$lambda$3");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$4$lambda$3);
+        setupColors$lambda$4$lambda$3.setTextColor(getThemedColor("windowBackgroundWhiteBlueHeader"));
     }
 
     private final void setupListeners() {
@@ -214,35 +214,33 @@ public final class BlockchainsManagementFragment extends WalletAuthFragment impl
         walletsAdapter.setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$$ExternalSyntheticLambda1
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                BlockchainsManagementFragment.m1603setupListeners$lambda8$lambda7$lambda5(BlockchainsManagementFragment.this, walletsAdapter, baseQuickAdapter, view, i);
+                BlockchainsManagementFragment.setupListeners$lambda$8$lambda$7$lambda$5(BlockchainsManagementFragment.this, walletsAdapter, baseQuickAdapter, view, i);
             }
         });
         walletsAdapter.setOnItemChildClickListener(new OnItemChildClickListener() { // from class: com.smedialink.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$$ExternalSyntheticLambda0
             @Override // com.chad.library.adapter.base.listener.OnItemChildClickListener
             public final void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                BlockchainsManagementFragment.m1604setupListeners$lambda8$lambda7$lambda6(BlockchainsManagementFragment.this, walletsAdapter, baseQuickAdapter, view, i);
+                BlockchainsManagementFragment.setupListeners$lambda$8$lambda$7$lambda$6(BlockchainsManagementFragment.this, walletsAdapter, baseQuickAdapter, view, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-8$lambda-7$lambda-5  reason: not valid java name */
-    public static final void m1603setupListeners$lambda8$lambda7$lambda5(BlockchainsManagementFragment this$0, BlockchainsWalletsRecycleAdapter this_with, BaseQuickAdapter noName_0, View noName_1, int i) {
+    public static final void setupListeners$lambda$8$lambda$7$lambda$5(BlockchainsManagementFragment this$0, BlockchainsWalletsRecycleAdapter this_with, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         this$0.getPresenter().onWalletItemClick(this_with.getItem(i));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-8$lambda-7$lambda-6  reason: not valid java name */
-    public static final void m1604setupListeners$lambda8$lambda7$lambda6(BlockchainsManagementFragment this$0, BlockchainsWalletsRecycleAdapter this_with, BaseQuickAdapter noName_0, View view, int i) {
+    public static final void setupListeners$lambda$8$lambda$7$lambda$6(BlockchainsManagementFragment this$0, BlockchainsWalletsRecycleAdapter this_with, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
-        if (view.getId() == C3158R.C3161id.image_info) {
+        if (view.getId() == C3286R.C3289id.image_info) {
             this$0.getPresenter().showInfoDialog(this_with.getItem(i));
         }
     }
@@ -267,12 +265,12 @@ public final class BlockchainsManagementFragment extends WalletAuthFragment impl
         ForkFragmentBlockchainsManagementBinding binding = getBinding();
         RLottieImageView rLottieImageView = binding.imageHeader;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3158R.C3164raw.fork_multi_networking, 300, 170);
+        rLottieImageView.setAnimation(C3286R.C3291raw.fork_multi_networking, 300, 170);
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
         rLottieImageView.playAnimation();
-        binding.textWalletsTitle.setText(getResourceManager().getString(C3158R.string.wallet_crypto_blockchains_active_wallets));
-        binding.textDescription.setText(getResourceManager().getString(C3158R.string.wallet_crypto_blockchains_description));
-        binding.buttonResetAll.setTextAndIcon(getResourceManager().getString(C3158R.string.wallet_reset_all_title), C3158R.C3160drawable.msg_block2, false);
+        binding.textWalletsTitle.setText(getResourceManager().getString(C3286R.string.wallet_crypto_blockchains_active_wallets));
+        binding.textDescription.setText(getResourceManager().getString(C3286R.string.wallet_crypto_blockchains_description));
+        binding.buttonResetAll.setTextAndIcon(getResourceManager().getString(C3286R.string.wallet_reset_all_title), C3286R.C3288drawable.msg_block2, false);
     }
 
     /* compiled from: BlockchainsManagementFragment.kt */

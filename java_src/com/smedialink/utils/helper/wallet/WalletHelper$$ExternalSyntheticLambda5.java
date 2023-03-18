@@ -10,6 +10,6 @@ public final /* synthetic */ class WalletHelper$$ExternalSyntheticLambda5 implem
 
     @Override // org.fork.utils.Callbacks$Callback
     public final void invoke() {
-        WalletHelper.m1858safeRunWalletScreen$lambda4();
+        WalletHelper.safeRunWalletScreen$lambda$4();
     }
 }

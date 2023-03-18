@@ -7,7 +7,7 @@ import com.smedialink.storage.domain.model.wallet.token.TokenInfo;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.formatter.BalanceFormatter;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: GasPriceItem.kt */
 /* loaded from: classes3.dex */
 public final class GasPriceItem implements DialogChooseItem {
@@ -90,13 +90,13 @@ public final class GasPriceItem implements DialogChooseItem {
     @Override // com.smedialink.model.common.DialogChooseItem
     public String getTitle(ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-        return resourceManager.getString(C3158R.string.wallet_amount_send_fee_title, resourceManager.getString(this.speedLevel.getTitle()), Integer.valueOf(this.info.getDuration()));
+        return resourceManager.getString(C3286R.string.wallet_amount_send_fee_title, resourceManager.getString(this.speedLevel.getTitle()), Integer.valueOf(this.info.getDuration()));
     }
 
     @Override // com.smedialink.model.common.DialogChooseItem
     public String getValue(ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-        int i = C3158R.string.wallet_amount_send_fee_value;
+        int i = C3286R.string.wallet_amount_send_fee_value;
         Float valueOf = Float.valueOf(this.info.getFeeInDollars());
         TokenInfo.Fiat.USD usd = TokenInfo.Fiat.USD.INSTANCE;
         return resourceManager.getString(i, BalanceFormatter.formatBalance(Double.valueOf(this.info.getFee()), this.feeTokenInfo.getDecimals()), resourceManager.getString(this.feeTokenInfo.getShortName()), BalanceFormatter.formatBalance(valueOf, usd.getDecimals()), resourceManager.getString(usd.getShortName()));

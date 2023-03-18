@@ -198,7 +198,7 @@ public class InvalidationTracker {
             Lcf:
                 throw r1
             */
-            throw new UnsupportedOperationException("Method not decompiled: androidx.room.InvalidationTracker.RunnableC03071.run():void");
+            throw new UnsupportedOperationException("Method not decompiled: androidx.room.InvalidationTracker.RunnableC03011.run():void");
         }
 
         private Set<Integer> checkUpdatedTable() {

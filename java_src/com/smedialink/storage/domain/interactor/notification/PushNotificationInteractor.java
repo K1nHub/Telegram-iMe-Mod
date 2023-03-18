@@ -29,7 +29,7 @@ public final class PushNotificationInteractor {
 
     public final Observable<Result<Boolean>> savePushToken(List<String> accounts) {
         Intrinsics.checkNotNullParameter(accounts, "accounts");
-        if (this.walletSessionInteractor.isHasActiveUser()) {
+        if (this.walletSessionInteractor.hasActiveUser()) {
             Observable<Result<Boolean>> subscribeOn = this.pushNotificationRepository.savePushToken(accounts).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo708io());
             Intrinsics.checkNotNullExpressionValue(subscribeOn, "{\n            pushNotifi…sProvider.io())\n        }");
             return subscribeOn;

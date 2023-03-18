@@ -67,7 +67,7 @@ public final class GetWalletTransactionsRequest {
     }
 
     public String toString() {
-        return "GetWalletTransactionsRequest(lastItemId=" + ((Object) this.lastItemId) + ", limit=" + this.limit + ", networkType=" + this.networkType + ", filterByToken=" + ((Object) this.filterByToken) + ')';
+        return "GetWalletTransactionsRequest(lastItemId=" + this.lastItemId + ", limit=" + this.limit + ", networkType=" + this.networkType + ", filterByToken=" + this.filterByToken + ')';
     }
 
     public GetWalletTransactionsRequest(String str, int i, String networkType, String str2) {

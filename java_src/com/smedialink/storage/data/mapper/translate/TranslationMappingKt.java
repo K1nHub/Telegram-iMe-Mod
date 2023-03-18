@@ -17,12 +17,14 @@ public final class TranslationMappingKt {
         List<ArrayList> filterNotNull;
         String joinToString$default;
         Intrinsics.checkNotNullParameter(arrayList, "<this>");
-        filterNotNull = CollectionsKt___CollectionsKt.filterNotNull((Iterable) arrayList.get(0));
+        Object obj = arrayList.get(0);
+        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.Iterable<java.util.ArrayList<kotlin.Any?>{ kotlin.collections.TypeAliasesKt.ArrayList<kotlin.Any?> }>");
+        filterNotNull = CollectionsKt___CollectionsKt.filterNotNull((Iterable) obj);
         ArrayList arrayList2 = new ArrayList();
         for (ArrayList arrayList3 : filterNotNull) {
-            Object obj = arrayList3.get(0);
-            if (obj != null) {
-                arrayList2.add(obj);
+            Object obj2 = arrayList3.get(0);
+            if (obj2 != null) {
+                arrayList2.add(obj2);
             }
         }
         joinToString$default = CollectionsKt___CollectionsKt.joinToString$default(arrayList2, "", null, null, 0, null, null, 62, null);

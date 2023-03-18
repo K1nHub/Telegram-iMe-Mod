@@ -1,6 +1,7 @@
 package org.telegram.p048ui.Cells;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -12,8 +13,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.smedialink.utils.helper.GlideHelper;
+import java.util.Objects;
+import org.fork.utils.Callbacks$Callback1;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
@@ -73,6 +77,22 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         layoutParams.setMargins(layoutParams.leftMargin, AndroidUtilities.m50dp(36), layoutParams.rightMargin, layoutParams.bottomMargin);
     }
 
+    public void setAvatar(String str) {
+        Context context = getContext();
+        final BackupImageView backupImageView = this.avatarImageView;
+        Objects.requireNonNull(backupImageView);
+        GlideHelper.loadImageAsBitmap(context, str, new Callbacks$Callback1() { // from class: org.telegram.ui.Cells.UserCell$$ExternalSyntheticLambda0
+            @Override // org.fork.utils.Callbacks$Callback1
+            public final void invoke(Object obj) {
+                BackupImageView.this.setImageBitmap((Bitmap) obj);
+            }
+        }, true);
+    }
+
+    public void hideNameDrawable() {
+        this.nameTextView.setRightDrawable((Drawable) null);
+    }
+
     public UserCell(Context context, int i, int i2, boolean z) {
         this(context, i, i2, z, false, null);
     }
@@ -100,7 +120,7 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
             this.addButton.setTextSize(1, 14.0f);
             this.addButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.addButton.setBackgroundDrawable(Theme.AdaptiveRipple.filledRect("featuredStickers_addButton", 4.0f));
-            this.addButton.setText(LocaleController.getString("Add", C3158R.string.Add));
+            this.addButton.setText(LocaleController.getString("Add", C3286R.string.Add));
             this.addButton.setPadding(AndroidUtilities.m50dp(17), 0, AndroidUtilities.m50dp(17), 0);
             View view = this.addButton;
             boolean z3 = LocaleController.isRTL;
@@ -160,7 +180,7 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
             boolean z8 = LocaleController.isRTL;
             addView(checkBoxSquare, LayoutHelper.createFrame(18, 18, (z8 ? 3 : 5) | 16, z8 ? 19 : 0, 0, z8 ? 0 : 19, 0));
         } else if (i2 == 1) {
-            CheckBox checkBox = new CheckBox(context, C3158R.C3160drawable.round_check2);
+            CheckBox checkBox = new CheckBox(context, C3286R.C3288drawable.round_check2);
             this.checkBox = checkBox;
             checkBox.setVisibility(4);
             this.checkBox.setColor(Theme.getColor("checkbox", resourcesProvider), Theme.getColor("checkboxCheck", resourcesProvider));
@@ -291,28 +311,28 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
                 z3 = false;
             }
             if (z3 && z2) {
-                string = LocaleController.getString("NotificationsCustom", C3158R.string.NotificationsCustom);
+                string = LocaleController.getString("NotificationsCustom", C3286R.string.NotificationsCustom);
             } else {
-                string = z3 ? LocaleController.getString("NotificationsUnmuted", C3158R.string.NotificationsUnmuted) : LocaleController.getString("NotificationsMuted", C3158R.string.NotificationsMuted);
+                string = z3 ? LocaleController.getString("NotificationsUnmuted", C3286R.string.NotificationsUnmuted) : LocaleController.getString("NotificationsMuted", C3286R.string.NotificationsMuted);
             }
         } else {
             int currentTime = i2 - ConnectionsManager.getInstance(this.currentAccount).getCurrentTime();
             if (currentTime <= 0) {
                 if (z2) {
-                    string = LocaleController.getString("NotificationsCustom", C3158R.string.NotificationsCustom);
+                    string = LocaleController.getString("NotificationsCustom", C3286R.string.NotificationsCustom);
                 } else {
-                    string = LocaleController.getString("NotificationsUnmuted", C3158R.string.NotificationsUnmuted);
+                    string = LocaleController.getString("NotificationsUnmuted", C3286R.string.NotificationsUnmuted);
                 }
             } else if (currentTime < 3600) {
-                string = LocaleController.formatString("WillUnmuteIn", C3158R.string.WillUnmuteIn, LocaleController.formatPluralString("Minutes", currentTime / 60, new Object[0]));
+                string = LocaleController.formatString("WillUnmuteIn", C3286R.string.WillUnmuteIn, LocaleController.formatPluralString("Minutes", currentTime / 60, new Object[0]));
             } else if (currentTime < 86400) {
-                string = LocaleController.formatString("WillUnmuteIn", C3158R.string.WillUnmuteIn, LocaleController.formatPluralString("Hours", (int) Math.ceil((currentTime / 60.0f) / 60.0f), new Object[0]));
+                string = LocaleController.formatString("WillUnmuteIn", C3286R.string.WillUnmuteIn, LocaleController.formatPluralString("Hours", (int) Math.ceil((currentTime / 60.0f) / 60.0f), new Object[0]));
             } else {
-                string = currentTime < 31536000 ? LocaleController.formatString("WillUnmuteIn", C3158R.string.WillUnmuteIn, LocaleController.formatPluralString("Days", (int) Math.ceil(((currentTime / 60.0f) / 60.0f) / 24.0f), new Object[0])) : null;
+                string = currentTime < 31536000 ? LocaleController.formatString("WillUnmuteIn", C3286R.string.WillUnmuteIn, LocaleController.formatPluralString("Days", (int) Math.ceil(((currentTime / 60.0f) / 60.0f) / 24.0f), new Object[0])) : null;
             }
         }
         if (string == null) {
-            string = LocaleController.getString("NotificationsOff", C3158R.string.NotificationsOff);
+            string = LocaleController.getString("NotificationsOff", C3286R.string.NotificationsOff);
         }
         String str = string;
         if (DialogObject.isEncryptedDialog(notificationException.did)) {

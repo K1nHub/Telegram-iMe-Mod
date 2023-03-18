@@ -7,10 +7,10 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/smedialink/storage/domain/model/Result$Companion;,
-        Lcom/smedialink/storage/domain/model/Result$Success;,
-        Lcom/smedialink/storage/domain/model/Result$Loading;,
+        Lcom/smedialink/storage/domain/model/Result$Error;,
         Lcom/smedialink/storage/domain/model/Result$Fail;,
-        Lcom/smedialink/storage/domain/model/Result$Error;
+        Lcom/smedialink/storage/domain/model/Result$Loading;,
+        Lcom/smedialink/storage/domain/model/Result$Success;
     }
 .end annotation
 
@@ -537,18 +537,18 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_0
     sget-object v1, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 
     invoke-virtual {v1, v0}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
 
     :goto_0
     return-object v0

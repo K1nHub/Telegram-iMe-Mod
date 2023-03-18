@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Adapters/MentionsAdapter;IJI)V
     .locals 0
 
-    .line 1635
+    .line 1654
     iput-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$8;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;-><init>(IJI)V
@@ -35,7 +35,7 @@
 .method public isShown()Z
     .locals 1
 
-    .line 1638
+    .line 1657
     iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$8;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Adapters/MentionsAdapter;->isStickers()Z

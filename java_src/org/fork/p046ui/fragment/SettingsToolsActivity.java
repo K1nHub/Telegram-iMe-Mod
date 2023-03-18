@@ -14,16 +14,15 @@ import com.smedialink.utils.extentions.delegate.ResettableLazy;
 import com.smedialink.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.smedialink.utils.extentions.delegate.ResettableLazyManager;
 import java.util.ArrayList;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import org.fork.enums.SettingsToolsCategory;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.TextCell;
@@ -91,26 +90,25 @@ public final class SettingsToolsActivity extends MvpFragment {
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.fork.ui.fragment.SettingsToolsActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                SettingsToolsActivity.m2068initListView$lambda3$lambda2(SettingsToolsActivity.this, view, i);
+                SettingsToolsActivity.initListView$lambda$3$lambda$2(SettingsToolsActivity.this, view, i);
             }
         });
         return recyclerListView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-3$lambda-2  reason: not valid java name */
-    public static final void m2068initListView$lambda3$lambda2(SettingsToolsActivity this$0, View view, int i) {
+    public static final void initListView$lambda$3$lambda$2(SettingsToolsActivity this$0, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.presentFragment(new SettingsToolsCategoryActivity(SettingsToolsCategory.values()[i]));
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.setTitle(LocaleController.getInternalString(C3158R.string.settings_tools));
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.SettingsToolsActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.setTitle(LocaleController.getInternalString(C3286R.string.settings_tools));
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.SettingsToolsActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SettingsToolsActivity.this.finishFragment();
@@ -124,16 +122,12 @@ public final class SettingsToolsActivity extends MvpFragment {
     /* renamed from: org.fork.ui.fragment.SettingsToolsActivity$ListAdapter */
     /* loaded from: classes4.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ SettingsToolsActivity this$0;
-
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
             return true;
         }
 
-        public ListAdapter(SettingsToolsActivity this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public ListAdapter() {
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -144,9 +138,8 @@ public final class SettingsToolsActivity extends MvpFragment {
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
             Intrinsics.checkNotNullParameter(parent, "parent");
-            TextCell textCell = new TextCell(this.this$0.getContext());
+            TextCell textCell = new TextCell(SettingsToolsActivity.this.getContext());
             textCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-            Unit unit = Unit.INSTANCE;
             textCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
             return new RecyclerListView.Holder(textCell);
         }
@@ -154,7 +147,9 @@ public final class SettingsToolsActivity extends MvpFragment {
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            TextCell textCell = (TextCell) holder.itemView;
+            View view = holder.itemView;
+            Intrinsics.checkNotNull(view, "null cannot be cast to non-null type org.telegram.ui.Cells.TextCell");
+            TextCell textCell = (TextCell) view;
             SettingsToolsCategory settingsToolsCategory = SettingsToolsCategory.values()[i];
             textCell.setTextAndIcon(settingsToolsCategory.getTitle(), settingsToolsCategory.getIconResId(), i < getItemCount() - 1);
         }

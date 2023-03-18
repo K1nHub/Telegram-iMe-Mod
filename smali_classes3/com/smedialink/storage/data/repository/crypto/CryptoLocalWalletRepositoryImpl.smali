@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCryptoLocalWalletRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoLocalWalletRepositoryImpl.kt\ncom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,131:1\n27#2:132\n27#2:134\n27#2:143\n15#2:144\n27#2:145\n26#3:133\n26#3:135\n26#3:146\n3785#4:136\n4300#4,2:137\n4091#4,11:147\n1547#5:139\n1618#5,3:140\n1547#5:158\n1618#5,3:159\n8#6:162\n8#6:163\n8#6:164\n8#6:165\n8#6:166\n*S KotlinDebug\n*F\n+ 1 CryptoLocalWalletRepositoryImpl.kt\ncom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl\n*L\n32#1:132\n49#1:134\n72#1:143\n109#1:144\n121#1:145\n38#1:133\n55#1:135\n127#1:146\n59#1:136\n59#1:137,2\n79#1:147,11\n62#1:139\n62#1:140,3\n79#1:158\n79#1:159,3\n83#1:162\n100#1:163\n104#1:164\n105#1:165\n116#1:166\n*E\n"
+    value = "SMAP\nCryptoLocalWalletRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoLocalWalletRepositoryImpl.kt\ncom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,131:1\n27#2:132\n27#2:134\n27#2:143\n15#2:144\n27#2:145\n26#3:133\n26#3:135\n26#3:146\n3792#4:136\n4307#4,2:137\n1549#5:139\n1620#5,3:140\n8#6:147\n*S KotlinDebug\n*F\n+ 1 CryptoLocalWalletRepositoryImpl.kt\ncom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl\n*L\n32#1:132\n49#1:134\n72#1:143\n109#1:144\n121#1:145\n38#1:133\n55#1:135\n127#1:146\n59#1:136\n59#1:137,2\n62#1:139\n62#1:140,3\n100#1:147\n*E\n"
 .end annotation
 
 
@@ -29,50 +29,50 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$DTVQgAOCCzSTFRTjSf4hPovmndg(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$-DrLAQEKLV8IH9v8Uryxpp87VPs(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;->isValidSeed$lambda-8(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;->isValidSeed$lambda$7(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$_BuMNpu9MdlyyCT6__t55494YbQ(Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$12c8sk5Lw_3zH4dJtugiBhT57-s(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;->isValidRestoredAddress$lambda-13(Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {p0}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;->isValidSeed$lambda$6(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$hQKcKnXhv7E1luCjVG5MpopI1q4(Lcom/smedialink/storage/domain/model/Result;)Lcom/smedialink/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$HZ1vm1yoIJtvA8y-LHpbYmZ0rZs(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;->isValidSeed$lambda-9(Lcom/smedialink/storage/domain/model/Result;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;->isValidSeed$lambda$8(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$j0qv3BaTxRAhq35vEwfRLmdL3-w(Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;Ljava/lang/String;[Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$d1QYZ1E6dzP1duH4WKHjGtHhkr8(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;->unlockAllWallets$lambda-7(Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;Ljava/lang/String;[Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;->unlockAllWallets$lambda$5(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$wEI6mIfi8M37_xZCOq9Ndmzh_3Q(Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$qOO0omir-vhZQF0Nibik1kUof4E(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;->isValidSeed$lambda-10(Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;->isValidRestoredAddress$lambda$11(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p0
 
@@ -134,47 +134,24 @@
     return-object p0
 .end method
 
-.method private static final isValidRestoredAddress$lambda-13(Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
+.method private static final isValidRestoredAddress$lambda$11(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 1
 
-    const-string v0, "it"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 116
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    .line 8
-    sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
-
-    invoke-virtual {v0, p0}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Lcom/smedialink/storage/domain/model/Result;
 
     return-object p0
 .end method
 
-.method private static final isValidSeed$lambda-10(Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
-    .locals 1
-
-    const-string v0, "it"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 105
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    .line 8
-    sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
-
-    invoke-virtual {v0, p0}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method private static final isValidSeed$lambda-8(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/Result;
+.method private static final isValidSeed$lambda$6(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/Result;
     .locals 1
 
     const-string v0, "$seed"
@@ -200,128 +177,53 @@
     return-object p0
 .end method
 
-.method private static final isValidSeed$lambda-9(Lcom/smedialink/storage/domain/model/Result;)Lcom/smedialink/storage/domain/model/Result;
+.method private static final isValidSeed$lambda$7(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 1
 
-    const-string v0, "it"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 104
-    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/Result;->isSuccess()Z
-
-    move-result p0
-
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 8
-    sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
-
-    invoke-virtual {v0, p0}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
-
-    move-result-object p0
+    check-cast p0, Lcom/smedialink/storage/domain/model/Result;
 
     return-object p0
 .end method
 
-.method private static final unlockAllWallets$lambda-7(Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;Ljava/lang/String;[Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
-    .locals 5
+.method private static final isValidSeed$lambda$8(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+    .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$password"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "results"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 4091
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    .line 4100
-    array-length v1, p2
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v1, :cond_1
-
-    aget-object v3, p2, v2
-
-    instance-of v4, v3, Lcom/smedialink/storage/domain/model/Result$Success;
-
-    if-eqz v4, :cond_0
-
-    invoke-interface {v0, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    :cond_0
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    .line 1547
-    :cond_1
-    new-instance p2, Ljava/util/ArrayList;
-
-    const/16 v1, 0xa
-
-    invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
-
-    move-result v1
-
-    invoke-direct {p2, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 1618
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_1
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    .line 1619
-    check-cast v1, Lcom/smedialink/storage/domain/model/Result$Success;
-
-    .line 80
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/Result$Success;->getData()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/smedialink/storage/domain/model/crypto/Wallet;
-
-    .line 81
-    iget-object v2, p0, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;->cryptoAccessManager:Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
-
-    invoke-interface {v2, v1, p1}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->setWallet(Lcom/smedialink/storage/domain/model/crypto/Wallet;Ljava/lang/String;)V
-
-    .line 80
-    invoke-interface {p2, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    .line 8
-    :cond_2
-    sget-object p0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
-
-    invoke-virtual {p0, p2}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+    .line 105
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Lcom/smedialink/storage/domain/model/Result;
+
+    return-object p0
+.end method
+
+.method private static final unlockAllWallets$lambda$5(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 78
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lcom/smedialink/storage/domain/model/Result;
 
     return-object p0
 .end method
@@ -369,7 +271,11 @@
 
     invoke-direct {p3, p0, p2}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$createWallet$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;Ljava/lang/String;)V
 
-    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, p3}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -381,11 +287,15 @@
     iget-object p2, p0, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance p3, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance p3, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$createWallet$$inlined$handleError$1;
 
-    invoke-direct {p3, p2}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {p3, p2}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$createWallet$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, p3}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -480,7 +390,11 @@
 
     invoke-direct {p2, p0, p3}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$importWallet$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;Ljava/lang/String;)V
 
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p3, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p3, p2}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -492,11 +406,15 @@
     iget-object p2, p0, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance p3, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance p3, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$importWallet$$inlined$handleError$1;
 
-    invoke-direct {p3, p2}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {p3, p2}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$importWallet$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, p3}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -630,7 +548,11 @@
 
     invoke-direct {v1, p0, p1, p3, p2}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$isValidRestoredAddress$$inlined$flatMapSuccess$1;-><init>(Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/BlockchainType;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, v1}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -638,10 +560,14 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object p2, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda2;->INSTANCE:Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda2;
-
     .line 116
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    sget-object p2, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$isValidRestoredAddress$2;->INSTANCE:Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$isValidRestoredAddress$2;
+
+    new-instance p3, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda3;
+
+    invoke-direct {p3, p2}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda3;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -700,10 +626,14 @@
 
     move-result-object p1
 
-    sget-object p2, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda1;->INSTANCE:Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda1;
-
     .line 104
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    sget-object p2, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$isValidSeed$2;->INSTANCE:Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$isValidSeed$2;
+
+    new-instance v0, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda0;
+
+    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -726,12 +656,15 @@
 
     move-result-object p1
 
-    .line 104
-    :goto_0
-    sget-object p2, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda3;->INSTANCE:Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda3;
-
     .line 105
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    :goto_0
+    sget-object p2, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$isValidSeed$3;->INSTANCE:Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$isValidSeed$3;
+
+    new-instance v0, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda1;
+
+    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -776,12 +709,12 @@
 
     move-result-object v0
 
-    .line 3785
+    .line 3792
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4300
+    .line 4307
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -816,6 +749,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 4307
     invoke-interface {v1, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     :cond_0
@@ -823,7 +757,7 @@
 
     goto :goto_0
 
-    .line 1547
+    .line 1549
     :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
@@ -835,7 +769,7 @@
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -851,7 +785,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     move-object v8, v2
 
     check-cast v8, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
@@ -881,6 +815,7 @@
 
     move-result-object v2
 
+    .line 1621
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
@@ -905,7 +840,11 @@
 
     invoke-direct {p2, p0, p3}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$unlockAllWallets$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;Ljava/lang/String;)V
 
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p3, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p3, p2}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -917,17 +856,20 @@
 
     .line 78
     :cond_3
-    new-instance p1, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda0;
+    new-instance p1, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$unlockAllWallets$2;
 
-    invoke-direct {p1, p0, p3}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;Ljava/lang/String;)V
+    invoke-direct {p1, p0, p3}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$unlockAllWallets$2;-><init>(Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;Ljava/lang/String;)V
 
-    invoke-static {v0, p1}, Lio/reactivex/Observable;->zip(Ljava/lang/Iterable;Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda2;
+
+    invoke-direct {p2, p1}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda2;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-static {v0, p2}, Lio/reactivex/Observable;->zip(Ljava/lang/Iterable;Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    const-string p2, "{\n            Observable\u2026)\n            }\n        }"
+    const-string p2, "override fun unlockAllWa\u2026        }\n        }\n    }"
 
-    .line 77
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_2

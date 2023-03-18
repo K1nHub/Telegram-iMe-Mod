@@ -337,13 +337,21 @@
     move-result-object v1
 
     .line 52
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-virtual/range {p2 .. p2}, Lcom/smedialink/model/staking/StakingProgrammeItem;->getApy()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v14
 
-    const-string v14, "%"
+    invoke-virtual {v6, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v6, v14}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    const/16 v14, 0x25
+
+    invoke-virtual {v6, v14}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
@@ -354,97 +362,107 @@
     .line 53
     iget-object v6, v0, Lcom/smedialink/ui/adapter/provider/StakingProgrammeProvider;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    sget v2, Lorg/telegram/messenger/R$string;->staking_programme_apr:I
+    sget v14, Lorg/telegram/messenger/R$string;->staking_programme_apr:I
 
-    invoke-interface {v6, v2}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v6, v14}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
-    invoke-virtual {v1, v12, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v1, v12, v6}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
     .line 54
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-virtual/range {p2 .. p2}, Lcom/smedialink/model/staking/StakingProgrammeItem;->getApr()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v14
 
-    invoke-static {v2, v14}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v6, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    const/16 v14, 0x25
 
-    invoke-virtual {v1, v7, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v6, v14}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v1, v7, v6}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
     .line 55
-    iget-object v2, v0, Lcom/smedialink/ui/adapter/provider/StakingProgrammeProvider;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    iget-object v6, v0, Lcom/smedialink/ui/adapter/provider/StakingProgrammeProvider;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    sget v6, Lorg/telegram/messenger/R$string;->staking_programme_expires:I
+    sget v14, Lorg/telegram/messenger/R$string;->staking_programme_expires:I
 
-    invoke-interface {v2, v6}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v6, v14}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
-    invoke-virtual {v1, v10, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v1, v10, v6}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
     .line 56
     invoke-virtual/range {p2 .. p2}, Lcom/smedialink/model/staking/StakingProgrammeItem;->getEndsAt()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
-    invoke-virtual {v1, v9, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v1, v9, v6}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
     .line 57
     invoke-virtual/range {p2 .. p2}, Lcom/smedialink/model/staking/StakingProgrammeItem;->getName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
-    invoke-virtual {v1, v5, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v1, v5, v6}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
     .line 58
     invoke-virtual/range {p2 .. p2}, Lcom/smedialink/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-static {v2}, Lcom/smedialink/utils/extentions/model/wallet/TokenBalanceExtKt;->getTotalBalance(Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;)Ljava/lang/String;
+    invoke-static {v5}, Lcom/smedialink/utils/extentions/model/wallet/TokenBalanceExtKt;->getTotalBalance(Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-virtual {v1, v8, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v1, v8, v5}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
     .line 59
     invoke-virtual/range {p2 .. p2}, Lcom/smedialink/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;
 
-    move-result-object v2
+    move-result-object v5
 
-    iget-object v5, v0, Lcom/smedialink/ui/adapter/provider/StakingProgrammeProvider;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    iget-object v6, v0, Lcom/smedialink/ui/adapter/provider/StakingProgrammeProvider;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    invoke-static {v2, v5}, Lcom/smedialink/utils/extentions/model/wallet/TokenBalanceExtKt;->getDollarsBalanceText(Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;Lcom/smedialink/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
+    invoke-static {v5, v6}, Lcom/smedialink/utils/extentions/model/wallet/TokenBalanceExtKt;->getDollarsBalanceText(Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;Lcom/smedialink/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-virtual {v1, v13, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v1, v13, v5}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    const/4 v2, 0x1
+    const/4 v5, 0x1
 
     .line 60
-    invoke-virtual {v1, v4, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setVisible(IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v1, v4, v5}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setVisible(IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
     .line 61
-    invoke-virtual {v1, v3, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setVisible(IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v1, v3, v5}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setVisible(IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
@@ -453,19 +471,19 @@
 
     move-result v3
 
-    xor-int/2addr v3, v2
+    xor-int/2addr v3, v5
 
-    const/4 v5, 0x2
+    const/4 v6, 0x2
 
-    new-array v6, v5, [I
+    new-array v9, v6, [I
 
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
-    aput v8, v6, v9
+    aput v8, v9, v10
 
-    aput v13, v6, v2
+    aput v13, v9, v5
 
-    invoke-static {v1, v3, v6}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->setGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Z[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v1, v3, v9}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->setGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Z[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
@@ -474,32 +492,32 @@
 
     invoke-virtual/range {p2 .. p2}, Lcom/smedialink/model/staking/StakingProgrammeItem;->getApy()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-virtual {v3, v6}, Lcom/smedialink/utils/formatter/BalanceFormatter;->parseFormattedString(Ljava/lang/String;)Ljava/lang/Number;
+    invoke-virtual {v3, v8}, Lcom/smedialink/utils/formatter/BalanceFormatter;->parseFormattedString(Ljava/lang/String;)Ljava/lang/Number;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-static {v6}, Lcom/smedialink/storage/data/utils/extentions/NumberExtKt;->isZero(Ljava/lang/Number;)Z
+    invoke-static {v8}, Lcom/smedialink/storage/data/utils/extentions/NumberExtKt;->isZero(Ljava/lang/Number;)Z
 
-    move-result v6
+    move-result v8
 
-    new-array v8, v5, [I
+    new-array v9, v6, [I
 
-    aput v15, v8, v9
+    aput v15, v9, v10
 
-    aput v11, v8, v2
+    aput v11, v9, v5
 
-    invoke-static {v1, v6, v8}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->setGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Z[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v1, v8, v9}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->setGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Z[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
     .line 64
     invoke-virtual/range {p2 .. p2}, Lcom/smedialink/model/staking/StakingProgrammeItem;->getApr()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-virtual {v3, v6}, Lcom/smedialink/utils/formatter/BalanceFormatter;->parseFormattedString(Ljava/lang/String;)Ljava/lang/Number;
+    invoke-virtual {v3, v8}, Lcom/smedialink/utils/formatter/BalanceFormatter;->parseFormattedString(Ljava/lang/String;)Ljava/lang/Number;
 
     move-result-object v3
 
@@ -507,26 +525,24 @@
 
     move-result v3
 
-    new-array v5, v5, [I
+    new-array v6, v6, [I
 
-    aput v12, v5, v9
+    aput v12, v6, v10
 
-    aput v7, v5, v2
+    aput v7, v6, v5
 
-    invoke-static {v1, v3, v5}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->setGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Z[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v1, v3, v6}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->setGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Z[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
     .line 65
-    sget v2, Lorg/telegram/messenger/R$id;->text_coin_ticker:I
+    sget v3, Lorg/telegram/messenger/R$id;->text_coin_ticker:I
 
-    new-instance v3, Lcom/smedialink/ui/adapter/provider/StakingProgrammeProvider$convert$1$1;
+    new-instance v5, Lcom/smedialink/ui/adapter/provider/StakingProgrammeProvider$convert$1$1;
 
-    move-object/from16 v5, p2
+    invoke-direct {v5, v2, v0}, Lcom/smedialink/ui/adapter/provider/StakingProgrammeProvider$convert$1$1;-><init>(Lcom/smedialink/model/staking/StakingProgrammeItem;Lcom/smedialink/ui/adapter/provider/StakingProgrammeProvider;)V
 
-    invoke-direct {v3, v5, v0}, Lcom/smedialink/ui/adapter/provider/StakingProgrammeProvider$convert$1$1;-><init>(Lcom/smedialink/model/staking/StakingProgrammeItem;Lcom/smedialink/ui/adapter/provider/StakingProgrammeProvider;)V
-
-    invoke-static {v1, v2, v3}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->applyForView(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILkotlin/jvm/functions/Function1;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v1, v3, v5}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->applyForView(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILkotlin/jvm/functions/Function1;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 

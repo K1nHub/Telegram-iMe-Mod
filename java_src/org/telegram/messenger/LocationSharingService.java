@@ -113,17 +113,17 @@ public class LocationSharingService extends Service implements NotificationCente
             int i = sharingLocationInfo.messageObject.currentAccount;
             if (DialogObject.isUserDialog(dialogId)) {
                 formatPluralString = UserObject.getFirstName(MessagesController.getInstance(i).getUser(Long.valueOf(dialogId)));
-                string = LocaleController.getString("AttachLiveLocationIsSharing", C3158R.string.AttachLiveLocationIsSharing);
+                string = LocaleController.getString("AttachLiveLocationIsSharing", C3286R.string.AttachLiveLocationIsSharing);
             } else {
                 TLRPC$Chat chat = MessagesController.getInstance(i).getChat(Long.valueOf(-dialogId));
                 formatPluralString = chat != null ? chat.title : "";
-                string = LocaleController.getString("AttachLiveLocationIsSharingChat", C3158R.string.AttachLiveLocationIsSharingChat);
+                string = LocaleController.getString("AttachLiveLocationIsSharingChat", C3286R.string.AttachLiveLocationIsSharingChat);
             }
         } else {
             formatPluralString = LocaleController.formatPluralString("Chats", infos.size(), new Object[0]);
-            string = LocaleController.getString("AttachLiveLocationIsSharingChats", C3158R.string.AttachLiveLocationIsSharingChats);
+            string = LocaleController.getString("AttachLiveLocationIsSharingChats", C3286R.string.AttachLiveLocationIsSharingChats);
         }
-        String format = String.format(string, LocaleController.getString("AttachLiveLocation", C3158R.string.AttachLiveLocation), formatPluralString);
+        String format = String.format(string, LocaleController.getString("AttachLiveLocation", C3286R.string.AttachLiveLocation), formatPluralString);
         this.builder.setTicker(format);
         this.builder.setContentText(format);
         if (z) {
@@ -145,12 +145,12 @@ public class LocationSharingService extends Service implements NotificationCente
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(ApplicationLoader.applicationContext);
                 this.builder = builder;
                 builder.setWhen(System.currentTimeMillis());
-                this.builder.setSmallIcon(C3158R.C3160drawable.live_loc);
+                this.builder.setSmallIcon(C3286R.C3288drawable.live_loc);
                 this.builder.setContentIntent(activity);
                 NotificationsController.checkOtherNotificationsChannel();
                 this.builder.setChannelId(NotificationsController.OTHER_NOTIFICATIONS_CHANNEL);
-                this.builder.setContentTitle(LocaleController.getString("AppName", C3158R.string.AppName));
-                this.builder.addAction(0, LocaleController.getString("StopLiveLocation", C3158R.string.StopLiveLocation), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 2, new Intent(ApplicationLoader.applicationContext, StopLiveLocationReceiver.class), 167772160));
+                this.builder.setContentTitle(LocaleController.getString("AppName", C3286R.string.AppName));
+                this.builder.addAction(0, LocaleController.getString("StopLiveLocation", C3286R.string.StopLiveLocation), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 2, new Intent(ApplicationLoader.applicationContext, StopLiveLocationReceiver.class), 167772160));
             }
             updateNotification(false);
             startForeground(6, this.builder.build());

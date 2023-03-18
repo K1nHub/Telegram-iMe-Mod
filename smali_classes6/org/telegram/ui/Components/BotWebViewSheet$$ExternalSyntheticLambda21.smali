@@ -2,32 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/SizeNotifierFrameLayout$SizeNotifierFrameLayoutDelegate;
+.implements Lorg/telegram/ui/Components/SimpleFloatPropertyCompat$Getter;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/BotWebViewSheet;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda21;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/BotWebViewSheet;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda21;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda21;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda21;->INSTANCE:Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda21;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onSizeChanged(IZ)V
-    .locals 1
+.method public final get(Ljava/lang/Object;)F
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/Components/BotWebViewSheet;
+    check-cast p1, Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->$r8$lambda$hKH9Dus7WRVBVQ9KUzrjSz-qBhE(Lorg/telegram/ui/Components/BotWebViewSheet;IZ)V
+    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->$r8$lambda$OzktqmusNGHkZVwSdYetA7GCFNY(Lorg/telegram/ui/Components/BotWebViewSheet;)F
 
-    return-void
+    move-result p1
+
+    return p1
 .end method

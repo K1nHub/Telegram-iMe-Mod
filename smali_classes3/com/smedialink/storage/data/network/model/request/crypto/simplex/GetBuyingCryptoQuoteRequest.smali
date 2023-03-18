@@ -263,21 +263,13 @@
     :cond_4
     iget v1, p0, Lcom/smedialink/storage/data/network/model/request/crypto/simplex/GetBuyingCryptoQuoteRequest;->requestedAmount:F
 
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
     iget v3, p1, Lcom/smedialink/storage/data/network/model/request/crypto/simplex/GetBuyingCryptoQuoteRequest;->requestedAmount:F
 
-    invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
 
     move-result v1
 
-    if-nez v1, :cond_5
+    if-eqz v1, :cond_5
 
     return v2
 

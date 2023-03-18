@@ -64,7 +64,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ManagedChannelImpl extends ManagedChannel implements InternalInstrumented<Object> {
     private static final ServiceConfigHolder EMPTY_SERVICE_CONFIG;
     static final Status SHUTDOWN_NOW_STATUS;
@@ -133,7 +133,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
     static final Pattern URI_PATTERN = Pattern.compile("[a-zA-Z][a-zA-Z0-9+.-]*:/.*");
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum ResolutionState {
         NO_RESOLUTION,
         SUCCESS,
@@ -165,7 +165,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         return this.logId;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private class IdleModeTimer implements Runnable {
         private IdleModeTimer() {
         }
@@ -195,7 +195,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         }
         LbHelperImpl lbHelperImpl = this.lbHelper;
         if (lbHelperImpl != null) {
-            lbHelperImpl.f425lb.shutdown();
+            lbHelperImpl.f430lb.shutdown();
             this.lbHelper = null;
         }
         this.subchannelPicker = null;
@@ -216,7 +216,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         }
         this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "Exiting idle mode");
         LbHelperImpl lbHelperImpl = new LbHelperImpl();
-        lbHelperImpl.f425lb = this.loadBalancerFactory.newLoadBalancer(lbHelperImpl);
+        lbHelperImpl.f430lb = this.loadBalancerFactory.newLoadBalancer(lbHelperImpl);
         this.lbHelper = lbHelperImpl;
         this.nameResolver.start((NameResolver.Listener2) new NameResolverListener(lbHelperImpl, this.nameResolver));
         this.nameResolverStarted = true;
@@ -248,7 +248,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class DelayedNameResolverRefresh implements Runnable {
         DelayedNameResolverRefresh() {
         }
@@ -285,7 +285,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private final class ChannelTransportProvider implements ClientCallImpl.ClientTransportProvider {
         private ChannelTransportProvider() {
         }
@@ -352,7 +352,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ManagedChannelImpl(AbstractManagedChannelImplBuilder<?> abstractManagedChannelImplBuilder, ClientTransportFactory clientTransportFactory, BackoffPolicy.Provider provider, ObjectPool<? extends Executor> objectPool, Supplier<Stopwatch> supplier, List<ClientInterceptor> list, final TimeProvider timeProvider) {
-        C23111 c23111;
+        C24351 c24351;
         SynchronizationContext synchronizationContext = new SynchronizationContext(new Thread.UncaughtExceptionHandler() { // from class: io.grpc.internal.ManagedChannelImpl.1
             @Override // java.lang.Thread.UncaughtExceptionHandler
             public void uncaughtException(Thread thread, Throwable th) {
@@ -430,9 +430,9 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             ServiceConfigHolder serviceConfigHolder = new ServiceConfigHolder(abstractManagedChannelImplBuilder.defaultServiceConfig, (ManagedChannelServiceConfig) parseServiceConfig.getConfig());
             this.defaultServiceConfig = serviceConfigHolder;
             this.lastServiceConfig = serviceConfigHolder;
-            c23111 = null;
+            c24351 = null;
         } else {
-            c23111 = null;
+            c24351 = null;
             this.defaultServiceConfig = null;
         }
         boolean z2 = abstractManagedChannelImplBuilder.lookUpServiceConfig;
@@ -603,7 +603,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         return executor == null ? this.executor : executor;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private class RealChannel extends Channel {
         private final String authority;
 
@@ -655,7 +655,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
                         ManagedChannelImpl.this.subchannelPicker.requestConnection();
                     }
                     if (ManagedChannelImpl.this.lbHelper != null) {
-                        ManagedChannelImpl.this.lbHelper.f425lb.requestConnection();
+                        ManagedChannelImpl.this.lbHelper.f430lb.requestConnection();
                     }
                 }
             });
@@ -710,7 +710,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class UncommittedRetriableStreamsRegistry {
         final Object lock;
         Status shutdownStatus;
@@ -775,11 +775,11 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class LbHelperImpl extends LoadBalancer.Helper {
 
         /* renamed from: lb */
-        AutoConfiguredLoadBalancerFactory.AutoConfiguredLoadBalancer f425lb;
+        AutoConfiguredLoadBalancerFactory.AutoConfiguredLoadBalancer f430lb;
 
         private LbHelperImpl() {
         }
@@ -828,7 +828,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class NameResolverListener extends NameResolver.Listener2 {
         final LbHelperImpl helper;
         final NameResolver resolver;
@@ -904,7 +904,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
                         if (serviceConfigHolder != r4) {
                             attributes = attributes.toBuilder().set(GrpcAttributes.NAME_RESOLVER_SERVICE_CONFIG, serviceConfigHolder.rawServiceConfig).build();
                         }
-                        Status tryHandleResolvedAddresses = NameResolverListener.this.helper.f425lb.tryHandleResolvedAddresses(LoadBalancer.ResolvedAddresses.newBuilder().setAddresses(addresses).setAttributes(attributes).setLoadBalancingPolicyConfig(serviceConfigHolder.managedChannelServiceConfig.getLoadBalancingConfig()).build());
+                        Status tryHandleResolvedAddresses = NameResolverListener.this.helper.f430lb.tryHandleResolvedAddresses(LoadBalancer.ResolvedAddresses.newBuilder().setAddresses(addresses).setAttributes(attributes).setLoadBalancingPolicyConfig(serviceConfigHolder.managedChannelServiceConfig.getLoadBalancingConfig()).build());
                         if (tryHandleResolvedAddresses.isOk()) {
                             return;
                         }
@@ -941,7 +941,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             if (this.helper != ManagedChannelImpl.this.lbHelper) {
                 return;
             }
-            this.helper.f425lb.handleNameResolutionError(status);
+            this.helper.f430lb.handleNameResolutionError(status);
             scheduleExponentialBackOffInSyncContext();
         }
 
@@ -961,7 +961,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class SubchannelImpl extends AbstractSubchannel {
         final LoadBalancer.CreateSubchannelArgs args;
         SynchronizationContext.ScheduledHandle delayedShutdownTask;
@@ -1119,7 +1119,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         return MoreObjects.toStringHelper(this).add("logId", this.logId.getId()).add("target", this.target).toString();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private final class DelayedTransportListener implements ManagedClientTransport.Listener {
         @Override // io.grpc.internal.ManagedClientTransport.Listener
         public void transportReady() {
@@ -1149,7 +1149,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private final class IdleModeStateAggregator extends InUseStateAggregator<Object> {
         private IdleModeStateAggregator() {
         }
@@ -1169,7 +1169,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ExecutorHolder {
         private Executor executor;
         private final ObjectPool<? extends Executor> pool;
@@ -1193,7 +1193,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class RestrictedScheduledExecutor implements ScheduledExecutorService {
         final ScheduledExecutorService delegate;
 
@@ -1287,7 +1287,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class ScParser extends NameResolver.ServiceConfigParser {
         private final AutoConfiguredLoadBalancerFactory autoLoadBalancerFactory;
         private final ChannelLogger channelLogger;
@@ -1334,7 +1334,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ServiceConfigHolder {
         ManagedChannelServiceConfig managedChannelServiceConfig;
         Map<String, ?> rawServiceConfig;

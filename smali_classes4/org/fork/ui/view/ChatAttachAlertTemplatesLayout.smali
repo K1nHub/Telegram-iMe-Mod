@@ -9,13 +9,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout$ListAdapter;,
-        Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout$EmptyView;
+        Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout$EmptyView;,
+        Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout$ListAdapter;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChatAttachAlertTemplatesLayout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatAttachAlertTemplatesLayout.kt\norg/fork/ui/view/ChatAttachAlertTemplatesLayout\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,406:1\n254#2,2:407\n252#2:411\n254#2,2:412\n13536#3,2:409\n*S KotlinDebug\n*F\n+ 1 ChatAttachAlertTemplatesLayout.kt\norg/fork/ui/view/ChatAttachAlertTemplatesLayout\n*L\n323#1:407,2\n335#1:411\n343#1:412,2\n325#1:409,2\n*E\n"
+    value = "SMAP\nChatAttachAlertTemplatesLayout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatAttachAlertTemplatesLayout.kt\norg/fork/ui/view/ChatAttachAlertTemplatesLayout\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,406:1\n262#2,2:407\n260#2:411\n262#2,2:412\n13579#3,2:409\n*S KotlinDebug\n*F\n+ 1 ChatAttachAlertTemplatesLayout.kt\norg/fork/ui/view/ChatAttachAlertTemplatesLayout\n*L\n323#1:407,2\n335#1:411\n343#1:412,2\n325#1:409,2\n*E\n"
 .end annotation
 
 
@@ -60,32 +60,32 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$AuucDagOi0bjqoeXOJrdfVH7W8w(Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;Landroid/view/View;I)Z
+.method public static synthetic $r8$lambda$65Na3sn0on_HQdNMYIjeesfr_LY(Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;Landroid/view/View;I)Z
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;->setupListView$lambda-10$lambda-9(Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;Landroid/view/View;I)Z
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;->setupListView$lambda$10$lambda$9(Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;Landroid/view/View;I)Z
 
     move-result p0
 
     return p0
 .end method
 
-.method public static synthetic $r8$lambda$FQyRbxOFpiOJIX3gZAKikZSbvEA(Landroid/view/View;Landroid/view/MotionEvent;)Z
+.method public static synthetic $r8$lambda$8Fze1PXnX_aeewkQn5ceMhSnxyQ(Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;->initEmptyView$lambda-6$lambda-5(Landroid/view/View;Landroid/view/MotionEvent;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static synthetic $r8$lambda$scVR4jqZIzfJhMgpHsSl80bQXD0(Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;Landroid/view/View;I)V
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;->setupListView$lambda-10$lambda-8(Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;->setupListView$lambda$10$lambda$8(Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;Landroid/view/View;I)V
 
     return-void
+.end method
+
+.method public static synthetic $r8$lambda$FYNXECRlrDpap_nxrw7en62mFPI(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;->initEmptyView$lambda$6$lambda$5(Landroid/view/View;Landroid/view/MotionEvent;)Z
+
+    move-result p0
+
+    return p0
 .end method
 
 .method public constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlert;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;)V
@@ -576,7 +576,7 @@
     return-object v0
 .end method
 
-.method private static final initEmptyView$lambda-6$lambda-5(Landroid/view/View;Landroid/view/MotionEvent;)Z
+.method private static final initEmptyView$lambda$6$lambda$5(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
     const/4 p0, 0x1
@@ -760,14 +760,14 @@
     return-void
 .end method
 
-.method private static final setupListView$lambda-10$lambda-8(Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;Landroid/view/View;I)V
+.method private static final setupListView$lambda$10$lambda$8(Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;Landroid/view/View;I)V
     .locals 0
 
     const-string p2, "this$0"
 
     invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p2, "view"
+    const-string/jumbo p2, "view"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -777,9 +777,7 @@
     if-eqz p2, :cond_0
 
     .line 278
-    invoke-virtual {p0}, Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;->getDelegate()Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
-
-    move-result-object p0
+    iget-object p0, p0, Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;->delegate:Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
 
     check-cast p1, Lorg/fork/ui/view/TemplateCell;
 
@@ -795,14 +793,14 @@
     return-void
 .end method
 
-.method private static final setupListView$lambda-10$lambda-9(Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;Landroid/view/View;I)Z
+.method private static final setupListView$lambda$10$lambda$9(Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;Landroid/view/View;I)Z
     .locals 1
 
     const-string p2, "this$0"
 
     invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p2, "view"
+    const-string/jumbo p2, "view"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -814,9 +812,7 @@
     if-eqz p2, :cond_0
 
     .line 283
-    invoke-virtual {p0}, Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;->getDelegate()Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
-
-    move-result-object p0
+    iget-object p0, p0, Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;->delegate:Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
 
     check-cast p1, Lorg/fork/ui/view/TemplateCell;
 
@@ -853,7 +849,7 @@
     :cond_0
     const/16 v1, 0x8
 
-    .line 254
+    .line 262
     :goto_0
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
@@ -871,7 +867,7 @@
 
     move-result-object v0
 
-    .line 252
+    .line 260
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
@@ -1031,7 +1027,7 @@
 
     move-result-object v0
 
-    const-string v1, ""
+    const-string v1, "updateSortItem$lambda$14"
 
     .line 323
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1065,7 +1061,7 @@
     :cond_1
     const/16 v1, 0x8
 
-    .line 254
+    .line 262
     :goto_1
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
@@ -1077,7 +1073,7 @@
 
     move-result-object v1
 
-    .line 13536
+    .line 13579
     array-length v4, v1
 
     const/4 v5, 0x0
@@ -1239,17 +1235,11 @@
 
     const/4 v3, 0x0
 
-    if-lez v0, :cond_4
+    if-lez v0, :cond_3
 
-    if-nez v1, :cond_3
-
-    :cond_2
-    const/4 v4, 0x0
-
-    goto :goto_0
+    if-eqz v1, :cond_2
 
     .line 96
-    :cond_3
     invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v4
@@ -1258,40 +1248,44 @@
 
     const/4 v4, 0x1
 
+    goto :goto_0
+
+    :cond_2
+    const/4 v4, 0x0
+
     :goto_0
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_3
 
     move v4, v0
 
     goto :goto_1
 
-    :cond_4
+    :cond_3
     const/4 v4, 0x0
 
     :goto_1
-    if-ltz v0, :cond_7
+    if-ltz v0, :cond_5
 
-    if-nez v1, :cond_6
-
-    :cond_5
-    const/4 v2, 0x0
-
-    goto :goto_2
+    if-eqz v1, :cond_4
 
     .line 97
-    :cond_6
     invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v1
 
-    if-ne v1, v2, :cond_5
+    if-ne v1, v2, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    const/4 v2, 0x0
 
     :goto_2
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_5
 
     goto :goto_3
 
-    :cond_7
+    :cond_5
     move v0, v4
 
     :goto_3
@@ -1409,7 +1403,7 @@
 
     const/16 v16, 0x0
 
-    const-string v17, "windowBackgroundGray"
+    const-string/jumbo v17, "windowBackgroundGray"
 
     move-object v10, v2
 
@@ -1444,7 +1438,7 @@
 
     const/16 v25, 0x0
 
-    const-string v26, "windowBackgroundWhiteBlueHeader"
+    const-string/jumbo v26, "windowBackgroundWhiteBlueHeader"
 
     move-object/from16 v18, v2
 
@@ -1483,7 +1477,7 @@
 
     const/4 v12, 0x0
 
-    const-string v13, "windowBackgroundWhiteRedText5"
+    const-string/jumbo v13, "windowBackgroundWhiteRedText5"
 
     move-object v5, v2
 
@@ -1514,7 +1508,7 @@
 
     const/4 v13, 0x0
 
-    const-string v14, "windowBackgroundWhiteGrayText3"
+    const-string/jumbo v14, "windowBackgroundWhiteGrayText3"
 
     move-object v6, v2
 

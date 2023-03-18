@@ -35,7 +35,11 @@
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    invoke-static {p1, p2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$CjDVAfQOPOfAYed8ZtChb3SDd-k(Ljava/lang/Object;Ljava/lang/Object;)I
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_contact;
+
+    check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_contact;
+
+    invoke-static {p1, p2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$RcV6d7nd-mBpLwpDvPDKrG8VRFg(Lorg/telegram/tgnet/TLRPC$TL_contact;Lorg/telegram/tgnet/TLRPC$TL_contact;)I
 
     move-result p1
 

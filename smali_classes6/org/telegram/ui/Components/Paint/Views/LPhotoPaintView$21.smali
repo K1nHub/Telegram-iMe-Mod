@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;Z)V
     .locals 0
 
-    .line 3267
+    .line 3266
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;-><init>(Landroid/view/View;Z)V
@@ -35,7 +35,7 @@
 .method protected heightAnimationEnabled()Z
     .locals 1
 
-    .line 3301
+    .line 3300
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$4000(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Z
@@ -66,7 +66,7 @@
 .method protected onPanTranslationUpdate(FFZ)V
     .locals 7
 
-    .line 3289
+    .line 3288
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$5700(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/widget/FrameLayout;
@@ -75,7 +75,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 3290
+    .line 3289
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -84,7 +84,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$5802(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;F)F
 
-    .line 3291
+    .line 3290
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     const/high16 v1, 0x40000000    # 2.0f
@@ -93,7 +93,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$5002(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;F)F
 
-    .line 3292
+    .line 3291
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2700(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/widget/FrameLayout;
@@ -112,7 +112,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 3293
+    .line 3292
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$700(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
@@ -121,7 +121,7 @@
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->updatePanTransition(FF)V
 
-    .line 3294
+    .line 3293
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$5200(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)F
@@ -154,10 +154,10 @@
 
     invoke-virtual/range {v1 .. v6}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->setTransform(FFFFF)V
 
-    .line 3295
+    .line 3294
     invoke-super {p0, p1, p2, p3}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->onPanTranslationUpdate(FFZ)V
 
-    .line 3296
+    .line 3295
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -174,21 +174,21 @@
 .method protected onTransitionEnd()V
     .locals 8
 
-    .line 3280
+    .line 3279
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$5002(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;F)F
 
-    .line 3281
+    .line 3280
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$5102(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Z)Z
 
-    .line 3282
+    .line 3281
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$5200(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)F
@@ -221,10 +221,10 @@
 
     invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->setTransform(FFFFF)V
 
-    .line 3283
+    .line 3282
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->onTransitionEnd()V
 
-    .line 3284
+    .line 3283
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$700(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
@@ -239,10 +239,10 @@
 .method protected onTransitionStart(ZII)V
     .locals 0
 
-    .line 3270
+    .line 3269
     invoke-super {p0, p1, p3}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->onTransitionStart(ZI)V
 
-    .line 3271
+    .line 3270
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$700(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
@@ -251,7 +251,7 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->startPanTransition(II)V
 
-    .line 3273
+    .line 3272
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$4800(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Z
@@ -260,7 +260,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 3274
+    .line 3273
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     const/4 p2, 0x0

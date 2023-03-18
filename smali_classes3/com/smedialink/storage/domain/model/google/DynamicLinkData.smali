@@ -7,8 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/smedialink/storage/domain/model/google/DynamicLinkData$BinancePayment;,
-        Lcom/smedialink/storage/domain/model/google/DynamicLinkData$NotSupported;,
-        Lcom/smedialink/storage/domain/model/google/DynamicLinkData$Companion;
+        Lcom/smedialink/storage/domain/model/google/DynamicLinkData$Companion;,
+        Lcom/smedialink/storage/domain/model/google/DynamicLinkData$NotSupported;
     }
 .end annotation
 

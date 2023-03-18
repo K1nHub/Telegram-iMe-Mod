@@ -22,6 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.ConnectionsManager;
 /* loaded from: classes.dex */
 public final class MediaCodecUtil {
@@ -90,7 +91,7 @@ public final class MediaCodecUtil {
             case 14:
                 return 16384;
             case 15:
-                return 32768;
+                return LiteMode.FLAG_CHAT_SCALE;
             case 16:
                 return 65536;
             case 17:
@@ -151,7 +152,7 @@ public final class MediaCodecUtil {
                                             case 50:
                                                 return 16384;
                                             case 51:
-                                                return 32768;
+                                                return LiteMode.FLAG_CHAT_SCALE;
                                             case 52:
                                                 return 65536;
                                             default:
@@ -188,7 +189,7 @@ public final class MediaCodecUtil {
                 return 2228224;
             case 16384:
                 return 5652480;
-            case 32768:
+            case LiteMode.FLAG_CHAT_SCALE /* 32768 */:
             case 65536:
                 return 9437184;
             case 131072:
@@ -1229,7 +1230,7 @@ public final class MediaCodecUtil {
             case 11:
                 return 8192;
             case '\f':
-                return 32768;
+                return Integer.valueOf((int) LiteMode.FLAG_CHAT_SCALE);
             case '\r':
                 return 131072;
             case 14:

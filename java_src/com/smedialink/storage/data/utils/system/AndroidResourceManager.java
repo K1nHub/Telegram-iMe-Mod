@@ -9,7 +9,6 @@ import com.smedialink.storage.domain.utils.system.ResourceManager;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
-import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 import kotlin.text.StringsKt__StringsKt;
@@ -35,7 +34,6 @@ public final class AndroidResourceManager implements ResourceManager {
         if (isLanguageConfigurationChanged()) {
             Configuration configuration = new Configuration(this.context.getResources().getConfiguration());
             configuration.setLocale(resolveCorrectLocale());
-            Unit unit = Unit.INSTANCE;
             this.config = configuration;
             Context createConfigurationContext = this.context.createConfigurationContext(configuration);
             Intrinsics.checkNotNullExpressionValue(createConfigurationContext, "context.createConfigurationContext(config)");

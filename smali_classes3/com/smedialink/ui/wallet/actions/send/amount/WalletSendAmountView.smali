@@ -83,3 +83,8 @@
     .annotation runtime Lmoxy/viewstate/strategy/alias/AddToEndSingle;
     .end annotation
 .end method
+
+.method public abstract updateSelectedUser()V
+    .annotation runtime Lmoxy/viewstate/strategy/alias/AddToEndSingle;
+    .end annotation
+.end method

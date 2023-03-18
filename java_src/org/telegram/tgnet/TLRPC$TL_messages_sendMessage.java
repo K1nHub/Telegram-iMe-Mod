@@ -1,6 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
+import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_messages_sendMessage extends TLObject {
     public static int constructor = 482476935;
@@ -39,7 +40,7 @@ public class TLRPC$TL_messages_sendMessage extends TLObject {
         this.flags = i4;
         int i5 = this.noforwards ? i4 | 16384 : i4 & (-16385);
         this.flags = i5;
-        int i6 = this.update_stickersets_order ? i5 | 32768 : i5 & (-32769);
+        int i6 = this.update_stickersets_order ? i5 | LiteMode.FLAG_CHAT_SCALE : i5 & (-32769);
         this.flags = i6;
         abstractSerializedData.writeInt32(i6);
         this.peer.serializeToStream(abstractSerializedData);

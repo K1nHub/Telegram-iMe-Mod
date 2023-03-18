@@ -45,22 +45,22 @@ public class SvgHelper {
     public static class Line {
 
         /* renamed from: x1 */
-        float f1462x1;
+        float f1467x1;
 
         /* renamed from: x2 */
-        float f1463x2;
+        float f1468x2;
 
         /* renamed from: y1 */
-        float f1464y1;
+        float f1469y1;
 
         /* renamed from: y2 */
-        float f1465y2;
+        float f1470y2;
 
         public Line(float f, float f2, float f3, float f4) {
-            this.f1462x1 = f;
-            this.f1464y1 = f2;
-            this.f1463x2 = f3;
-            this.f1465y2 = f4;
+            this.f1467x1 = f;
+            this.f1469y1 = f2;
+            this.f1468x2 = f3;
+            this.f1470y2 = f4;
         }
     }
 
@@ -69,14 +69,14 @@ public class SvgHelper {
         float rad;
 
         /* renamed from: x1 */
-        float f1460x1;
+        float f1465x1;
 
         /* renamed from: y1 */
-        float f1461y1;
+        float f1466y1;
 
         public Circle(float f, float f2, float f3) {
-            this.f1460x1 = f;
-            this.f1461y1 = f2;
+            this.f1465x1 = f;
+            this.f1466y1 = f2;
             this.rad = f3;
         }
     }
@@ -97,11 +97,11 @@ public class SvgHelper {
         RectF rect;
 
         /* renamed from: rx */
-        float f1468rx;
+        float f1473rx;
 
         public RoundRect(RectF rectF, float f) {
             this.rect = rectF;
-            this.f1468rx = f;
+            this.f1473rx = f;
         }
     }
 
@@ -277,16 +277,16 @@ public class SvgHelper {
                         canvas.drawRect((RectF) obj, paint);
                     } else if (obj instanceof Line) {
                         Line line = (Line) obj;
-                        canvas.drawLine(line.f1462x1, line.f1464y1, line.f1463x2, line.f1465y2, paint);
+                        canvas.drawLine(line.f1467x1, line.f1469y1, line.f1468x2, line.f1470y2, paint);
                     } else if (obj instanceof Circle) {
                         Circle circle = (Circle) obj;
-                        canvas.drawCircle(circle.f1460x1, circle.f1461y1, circle.rad, paint);
+                        canvas.drawCircle(circle.f1465x1, circle.f1466y1, circle.rad, paint);
                     } else if (obj instanceof Oval) {
                         canvas.drawOval(((Oval) obj).rect, paint);
                     } else if (obj instanceof RoundRect) {
                         RoundRect roundRect = (RoundRect) obj;
                         RectF rectF = roundRect.rect;
-                        float f10 = roundRect.f1468rx;
+                        float f10 = roundRect.f1473rx;
                         canvas.drawRoundRect(rectF, f10, f10, paint);
                     }
                     paint.setAlpha(alpha);
@@ -1560,22 +1560,22 @@ public class SvgHelper {
         private char current;
 
         /* renamed from: n */
-        private int f1466n;
+        private int f1471n;
         public int pos;
 
         /* renamed from: s */
-        private CharSequence f1467s;
+        private CharSequence f1472s;
 
         public ParserHelper(CharSequence charSequence, int i) {
-            this.f1467s = charSequence;
+            this.f1472s = charSequence;
             this.pos = i;
-            this.f1466n = charSequence.length();
+            this.f1471n = charSequence.length();
             this.current = charSequence.charAt(i);
         }
 
         private char read() {
             int i = this.pos;
-            int i2 = this.f1466n;
+            int i2 = this.f1471n;
             if (i < i2) {
                 this.pos = i + 1;
             }
@@ -1583,13 +1583,13 @@ public class SvgHelper {
             if (i3 == i2) {
                 return (char) 0;
             }
-            return this.f1467s.charAt(i3);
+            return this.f1472s.charAt(i3);
         }
 
         public void skipWhitespace() {
             while (true) {
                 int i = this.pos;
-                if (i >= this.f1466n || !Character.isWhitespace(this.f1467s.charAt(i))) {
+                if (i >= this.f1471n || !Character.isWhitespace(this.f1472s.charAt(i))) {
                     return;
                 }
                 advance();
@@ -1599,10 +1599,10 @@ public class SvgHelper {
         public void skipNumberSeparator() {
             while (true) {
                 int i = this.pos;
-                if (i >= this.f1466n) {
+                if (i >= this.f1471n) {
                     return;
                 }
-                char charAt = this.f1467s.charAt(i);
+                char charAt = this.f1472s.charAt(i);
                 if (charAt != '\t' && charAt != '\n' && charAt != ' ' && charAt != ',') {
                     return;
                 }

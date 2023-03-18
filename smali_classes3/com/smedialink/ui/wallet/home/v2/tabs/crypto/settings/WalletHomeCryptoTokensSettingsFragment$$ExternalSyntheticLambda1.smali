@@ -45,7 +45,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;->$r8$lambda$o-rLhsP5j2olpyYbBD8pKLaEg1c(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Landroid/view/View;IFF)V
+    invoke-static {v0, p1, p2, p3, p4}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;->$r8$lambda$VO1pQbFth3F0M2JB8y2gVkhWwWU(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Landroid/view/View;IFF)V
 
     return-void
 .end method

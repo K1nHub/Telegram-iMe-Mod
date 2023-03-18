@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletSessionInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSessionInteractor.kt\ncom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,82:1\n15#2:83\n15#2:84\n*S KotlinDebug\n*F\n+ 1 WalletSessionInteractor.kt\ncom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor\n*L\n30#1:83\n69#1:84\n*E\n"
+    value = "SMAP\nWalletSessionInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSessionInteractor.kt\ncom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,79:1\n15#2:80\n15#2:81\n*S KotlinDebug\n*F\n+ 1 WalletSessionInteractor.kt\ncom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor\n*L\n29#1:80\n67#1:81\n*E\n"
 .end annotation
 
 
@@ -45,22 +45,22 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 17
+    .line 16
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 18
+    .line 17
     iput-object p1, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->preferenceHelper:Lcom/smedialink/storage/domain/storage/PreferenceHelper;
 
-    .line 19
+    .line 18
     iput-object p2, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->walletSessionRepository:Lcom/smedialink/storage/domain/repository/wallet/WalletSessionRepository;
 
-    .line 20
+    .line 19
     iput-object p3, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->walletRepository:Lcom/smedialink/storage/domain/repository/wallet/WalletRepository;
 
-    .line 21
+    .line 20
     iput-object p4, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->notificationRepository:Lcom/smedialink/storage/domain/repository/notification/PushNotificationRepository;
 
-    .line 22
+    .line 21
     iput-object p5, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     return-void
@@ -69,7 +69,7 @@
 .method public static final synthetic access$getNotificationRepository$p(Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;)Lcom/smedialink/storage/domain/repository/notification/PushNotificationRepository;
     .locals 0
 
-    .line 17
+    .line 16
     iget-object p0, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->notificationRepository:Lcom/smedialink/storage/domain/repository/notification/PushNotificationRepository;
 
     return-object p0
@@ -78,7 +78,7 @@
 .method public static final synthetic access$getPreferenceHelper$p(Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;)Lcom/smedialink/storage/domain/storage/PreferenceHelper;
     .locals 0
 
-    .line 17
+    .line 16
     iget-object p0, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->preferenceHelper:Lcom/smedialink/storage/domain/storage/PreferenceHelper;
 
     return-object p0
@@ -87,7 +87,7 @@
 .method public static final synthetic access$getSchedulersProvider$p(Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;)Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
     .locals 0
 
-    .line 17
+    .line 16
     iget-object p0, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     return-object p0
@@ -96,7 +96,7 @@
 .method public static final synthetic access$getWalletRepository$p(Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;)Lcom/smedialink/storage/domain/repository/wallet/WalletRepository;
     .locals 0
 
-    .line 17
+    .line 16
     iget-object p0, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->walletRepository:Lcom/smedialink/storage/domain/repository/wallet/WalletRepository;
 
     return-object p0
@@ -107,7 +107,7 @@
 .method public final getCurrentAccount()Lcom/smedialink/storage/domain/model/wallet/User;
     .locals 1
 
-    .line 45
+    .line 43
     iget-object v0, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->walletSessionRepository:Lcom/smedialink/storage/domain/repository/wallet/WalletSessionRepository;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/repository/wallet/WalletSessionRepository;->getCurrentAccount()Lcom/smedialink/storage/domain/model/wallet/User;
@@ -117,7 +117,7 @@
     return-object v0
 .end method
 
-.method public final isHasActiveUser()Z
+.method public final hasActiveUser()Z
     .locals 1
 
     .line 48
@@ -139,7 +139,7 @@
 .end method
 
 .method public final login(Ljava/lang/String;)Lio/reactivex/Observable;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -156,10 +156,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 67
+    .line 65
     iget-object v0, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->walletSessionRepository:Lcom/smedialink/storage/domain/repository/wallet/WalletSessionRepository;
 
-    .line 68
+    .line 66
     invoke-interface {v0, p1}, Lcom/smedialink/storage/domain/repository/wallet/WalletSessionRepository;->login(Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
@@ -169,7 +169,11 @@
 
     invoke-direct {v0, p0}, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor$login$$inlined$flatMapSuccess$1;-><init>(Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v1, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -177,7 +181,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 77
+    .line 75
     iget-object v0, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -196,7 +200,7 @@
 .end method
 
 .method public final refreshToken(Ljava/lang/String;)Lio/reactivex/Observable;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -213,10 +217,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 28
+    .line 27
     iget-object v0, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->walletSessionRepository:Lcom/smedialink/storage/domain/repository/wallet/WalletSessionRepository;
 
-    .line 29
+    .line 28
     invoke-interface {v0, p1}, Lcom/smedialink/storage/domain/repository/wallet/WalletSessionRepository;->refreshToken(Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
@@ -226,7 +230,11 @@
 
     invoke-direct {v0, p0}, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor$refreshToken$$inlined$flatMapSuccess$1;-><init>(Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v1, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -234,7 +242,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 41
+    .line 40
     iget-object v0, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -255,27 +263,27 @@
 .method public final tgAccountLogout()Lio/reactivex/Completable;
     .locals 2
 
-    .line 57
-    invoke-virtual {p0}, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->isHasActiveUser()Z
+    .line 56
+    invoke-virtual {p0}, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->hasActiveUser()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 58
+    .line 57
     iget-object v0, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->notificationRepository:Lcom/smedialink/storage/domain/repository/notification/PushNotificationRepository;
 
-    .line 59
+    .line 58
     invoke-interface {v0}, Lcom/smedialink/storage/domain/repository/notification/PushNotificationRepository;->deletePushToken()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 60
+    .line 59
     invoke-virtual {v0}, Lio/reactivex/Observable;->ignoreElements()Lio/reactivex/Completable;
 
     move-result-object v0
 
-    .line 61
+    .line 60
     iget-object v1, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->walletSessionRepository:Lcom/smedialink/storage/domain/repository/wallet/WalletSessionRepository;
 
     invoke-interface {v1}, Lcom/smedialink/storage/domain/repository/wallet/WalletSessionRepository;->logout()Lio/reactivex/Completable;
@@ -286,7 +294,7 @@
 
     move-result-object v0
 
-    .line 62
+    .line 61
     iget-object v1, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -297,14 +305,14 @@
 
     move-result-object v0
 
-    const-string v1, "{\n            notificati\u2026sProvider.io())\n        }"
+    const-string v1, "{\n                notifi\u2026vider.io())\n            }"
 
-    .line 57
+    .line 56
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 63
+    .line 62
     :cond_0
     invoke-static {}, Lio/reactivex/Completable;->complete()Lio/reactivex/Completable;
 

@@ -26,7 +26,7 @@ public class SpeedLineParticles$Drawable {
     public long minLifeTime = ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS;
 
     /* renamed from: dt */
-    private final float f1766dt = 1000.0f / AndroidUtilities.screenRefreshRate;
+    private final float f1777dt = 1000.0f / AndroidUtilities.screenRefreshRate;
 
     public SpeedLineParticles$Drawable(int i) {
         this.count = i;
@@ -66,7 +66,7 @@ public class SpeedLineParticles$Drawable {
             } else {
                 particle.draw(canvas, i, currentTimeMillis);
             }
-            if (currentTimeMillis > particle.lifeTime || !this.screenRect.contains(particle.f1767x, particle.f1768y)) {
+            if (currentTimeMillis > particle.lifeTime || !this.screenRect.contains(particle.f1778x, particle.f1779y)) {
                 particle.genPosition(currentTimeMillis, false);
             }
         }
@@ -82,31 +82,31 @@ public class SpeedLineParticles$Drawable {
         private float vecY;
 
         /* renamed from: x */
-        private float f1767x;
+        private float f1778x;
 
         /* renamed from: y */
-        private float f1768y;
+        private float f1779y;
 
         private Particle() {
         }
 
         public void draw(Canvas canvas, int i, long j) {
             int i2 = i * 4;
-            SpeedLineParticles$Drawable.this.lines[i2] = this.f1767x;
-            SpeedLineParticles$Drawable.this.lines[i2 + 1] = this.f1768y;
-            SpeedLineParticles$Drawable.this.lines[i2 + 2] = this.f1767x + (AndroidUtilities.m50dp(30) * this.vecX);
-            SpeedLineParticles$Drawable.this.lines[i2 + 3] = this.f1768y + (AndroidUtilities.m50dp(30) * this.vecY);
+            SpeedLineParticles$Drawable.this.lines[i2] = this.f1778x;
+            SpeedLineParticles$Drawable.this.lines[i2 + 1] = this.f1779y;
+            SpeedLineParticles$Drawable.this.lines[i2 + 2] = this.f1778x + (AndroidUtilities.m50dp(30) * this.vecX);
+            SpeedLineParticles$Drawable.this.lines[i2 + 3] = this.f1779y + (AndroidUtilities.m50dp(30) * this.vecY);
             if (SpeedLineParticles$Drawable.this.paused) {
                 return;
             }
-            float m50dp = AndroidUtilities.m50dp(4) * (SpeedLineParticles$Drawable.this.f1766dt / 660.0f);
+            float m50dp = AndroidUtilities.m50dp(4) * (SpeedLineParticles$Drawable.this.f1777dt / 660.0f);
             SpeedLineParticles$Drawable speedLineParticles$Drawable = SpeedLineParticles$Drawable.this;
             float f = m50dp * speedLineParticles$Drawable.speedScale;
-            this.f1767x += this.vecX * f;
-            this.f1768y += this.vecY * f;
+            this.f1778x += this.vecX * f;
+            this.f1779y += this.vecY * f;
             float f2 = this.inProgress;
             if (f2 != 1.0f) {
-                float f3 = f2 + (speedLineParticles$Drawable.f1766dt / 200.0f);
+                float f3 = f2 + (speedLineParticles$Drawable.f1777dt / 200.0f);
                 this.inProgress = f3;
                 if (f3 > 1.0f) {
                     this.inProgress = 1.0f;
@@ -119,9 +119,9 @@ public class SpeedLineParticles$Drawable {
             SpeedLineParticles$Drawable speedLineParticles$Drawable = SpeedLineParticles$Drawable.this;
             RectF rectF = z ? speedLineParticles$Drawable.screenRect : speedLineParticles$Drawable.rect;
             float abs = rectF.left + Math.abs(Utilities.fastRandom.nextInt() % rectF.width());
-            this.f1767x = abs;
-            this.f1768y = rectF.top + Math.abs(Utilities.fastRandom.nextInt() % rectF.height());
-            double atan2 = Math.atan2(abs - SpeedLineParticles$Drawable.this.rect.centerX(), this.f1768y - SpeedLineParticles$Drawable.this.rect.centerY());
+            this.f1778x = abs;
+            this.f1779y = rectF.top + Math.abs(Utilities.fastRandom.nextInt() % rectF.height());
+            double atan2 = Math.atan2(abs - SpeedLineParticles$Drawable.this.rect.centerX(), this.f1779y - SpeedLineParticles$Drawable.this.rect.centerY());
             this.vecX = (float) Math.sin(atan2);
             this.vecY = (float) Math.cos(atan2);
             Utilities.fastRandom.nextInt(50);

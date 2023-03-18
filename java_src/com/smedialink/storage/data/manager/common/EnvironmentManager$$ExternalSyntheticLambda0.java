@@ -8,6 +8,6 @@ public final /* synthetic */ class EnvironmentManager$$ExternalSyntheticLambda0 
 
     @Override // java.lang.Runnable
     public final void run() {
-        EnvironmentManager.m1294exitRunnable$lambda0();
+        EnvironmentManager.exitRunnable$lambda$0();
     }
 }

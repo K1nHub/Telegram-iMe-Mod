@@ -134,7 +134,7 @@ public class AccessibilityDelegateCompat {
 
     public AccessibilityNodeProviderCompat getAccessibilityNodeProvider(View view) {
         AccessibilityNodeProvider accessibilityNodeProvider;
-        if (Build.VERSION.SDK_INT < 16 || (accessibilityNodeProvider = this.mOriginalDelegate.getAccessibilityNodeProvider(view)) == null) {
+        if (Build.VERSION.SDK_INT < 16 || (accessibilityNodeProvider = Api16Impl.getAccessibilityNodeProvider(this.mOriginalDelegate, view)) == null) {
             return null;
         }
         return new AccessibilityNodeProviderCompat(accessibilityNodeProvider);
@@ -156,9 +156,9 @@ public class AccessibilityDelegateCompat {
             i2++;
         }
         if (!z && Build.VERSION.SDK_INT >= 16) {
-            z = this.mOriginalDelegate.performAccessibilityAction(view, i, bundle);
+            z = Api16Impl.performAccessibilityAction(this.mOriginalDelegate, view, i, bundle);
         }
-        return (z || i != R$id.accessibility_action_clickable_span) ? z : performClickableSpanAction(bundle.getInt("ACCESSIBILITY_CLICKABLE_SPAN_ID", -1), view);
+        return (z || i != R$id.accessibility_action_clickable_span || bundle == null) ? z : performClickableSpanAction(bundle.getInt("ACCESSIBILITY_CLICKABLE_SPAN_ID", -1), view);
     }
 
     private boolean performClickableSpanAction(int i, View view) {
@@ -190,5 +190,17 @@ public class AccessibilityDelegateCompat {
     static List<AccessibilityNodeInfoCompat.AccessibilityActionCompat> getActionList(View view) {
         List<AccessibilityNodeInfoCompat.AccessibilityActionCompat> list = (List) view.getTag(R$id.tag_accessibility_actions);
         return list == null ? Collections.emptyList() : list;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api16Impl {
+        static AccessibilityNodeProvider getAccessibilityNodeProvider(View.AccessibilityDelegate accessibilityDelegate, View view) {
+            return accessibilityDelegate.getAccessibilityNodeProvider(view);
+        }
+
+        static boolean performAccessibilityAction(View.AccessibilityDelegate accessibilityDelegate, View view, int i, Bundle bundle) {
+            return accessibilityDelegate.performAccessibilityAction(view, i, bundle);
+        }
     }
 }

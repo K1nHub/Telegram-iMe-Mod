@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/smedialink/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;",
+        "Lcom/smedialink/storage/domain/interactor/crypto/boost/BoostInteractor;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$18\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,75:1\n127#2,5:76\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$18\n*L\n64#1:76,5\n*E\n"
+    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$18\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,77:1\n127#2,5:78\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$18\n*L\n65#1:78,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/interactor/crypto/boost/BoostInteractor;
     .locals 3
 
     const-string v0, "$this$single"
@@ -72,11 +72,11 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 64
-    new-instance p2, Lcom/smedialink/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;
+    .line 65
+    new-instance p2, Lcom/smedialink/storage/domain/interactor/crypto/boost/BoostInteractor;
 
     .line 131
-    const-class v0, Lcom/smedialink/storage/domain/repository/crypto/permission/CryptoPermissionRepository;
+    const-class v0, Lcom/smedialink/storage/domain/repository/crypto/boost/BoostRepository;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -88,7 +88,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/storage/domain/repository/crypto/permission/CryptoPermissionRepository;
+    check-cast v0, Lcom/smedialink/storage/domain/repository/crypto/boost/BoostRepository;
 
     const-class v2, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
@@ -102,8 +102,8 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 64
-    invoke-direct {p2, v0, p1}, Lcom/smedialink/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;-><init>(Lcom/smedialink/storage/domain/repository/crypto/permission/CryptoPermissionRepository;Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;)V
+    .line 65
+    invoke-direct {p2, v0, p1}, Lcom/smedialink/storage/domain/interactor/crypto/boost/BoostInteractor;-><init>(Lcom/smedialink/storage/domain/repository/crypto/boost/BoostRepository;Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;)V
 
     return-object p2
 .end method
@@ -111,12 +111,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 64
+    .line 65
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$18;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$18;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/interactor/crypto/boost/BoostInteractor;
 
     move-result-object p1
 

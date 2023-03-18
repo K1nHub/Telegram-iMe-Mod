@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChain.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Chain.kt\ncom/smedialink/storage/domain/model/crypto/Chain$Companion\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,41:1\n286#2,2:42\n*S KotlinDebug\n*F\n+ 1 Chain.kt\ncom/smedialink/storage/domain/model/crypto/Chain$Companion\n*L\n38#1:42,2\n*E\n"
+    value = "SMAP\nChain.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Chain.kt\ncom/smedialink/storage/domain/model/crypto/Chain$Companion\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,41:1\n288#2,2:42\n*S KotlinDebug\n*F\n+ 1 Chain.kt\ncom/smedialink/storage/domain/model/crypto/Chain$Companion\n*L\n38#1:42,2\n*E\n"
 .end annotation
 
 
@@ -71,7 +71,7 @@
 
     move-result-object v0
 
-    .line 286
+    .line 288
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0

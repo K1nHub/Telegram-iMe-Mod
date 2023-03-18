@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "ObservableExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Function;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,13 +18,22 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        "R:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Function;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Ljava/util/List<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;",
+        ">;>;",
+        "Lio/reactivex/ObservableSource<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Ljava/util/List<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;",
+        ">;>;>;>;"
     }
 .end annotation
 
@@ -55,20 +64,34 @@
 
     iput-object p4, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;->$networkType$inlined:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Lcom/smedialink/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
+.method public final invoke(Lcom/smedialink/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)",
+            "(",
+            "Lcom/smedialink/storage/domain/model/Result<",
+            "+",
+            "Ljava/util/List<",
+            "+",
+            "Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;",
+            ">;>;)",
             "Lio/reactivex/ObservableSource<",
-            "+TR;>;"
+            "+",
+            "Lcom/smedialink/storage/domain/model/Result<",
+            "+",
+            "Ljava/util/List<",
+            "+",
+            "Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;",
+            ">;>;>;"
         }
     .end annotation
 
@@ -137,7 +160,11 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$1$1;-><init>(Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor;ZLcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v1, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor$sam$io_reactivex_functions_Function$0;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor$sam$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -158,6 +185,7 @@
 
     const-string v0, "fun getWalletBalance(for\u2026(schedulersProvider.io())"
 
+    .line 84
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_0
@@ -177,6 +205,10 @@
     invoke-static {v0, p1, v2, v1, v2}, Lcom/smedialink/storage/domain/model/Result$Companion;->error$default(Lcom/smedialink/storage/domain/model/Result$Companion;Lcom/smedialink/storage/data/network/model/error/ErrorModel;Ljava/lang/Object;ILjava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p1
+
+    const-string v0, "null cannot be cast to non-null type R of com.smedialink.storage.domain.utils.extentions.ObservableExtKt.flatMapError"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1}, Lio/reactivex/Observable;->just(Ljava/lang/Object;)Lio/reactivex/Observable;
 
@@ -198,13 +230,13 @@
     return-object p1
 .end method
 
-.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     .line 49
     check-cast p1, Lcom/smedialink/storage/domain/model/Result;
 
-    invoke-virtual {p0, p1}, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;->apply(Lcom/smedialink/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
+    invoke-virtual {p0, p1}, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;->invoke(Lcom/smedialink/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
 
     move-result-object p1
 

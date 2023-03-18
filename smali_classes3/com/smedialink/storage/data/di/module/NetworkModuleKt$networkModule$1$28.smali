@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/smedialink/storage/data/network/api/google/DynamicLinksApi;",
+        "Lcom/smedialink/storage/data/network/api/own/GoogleServicesApi;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/smedialink/storage/data/di/module/NetworkModuleKt$networkModule$1$28\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,174:1\n127#2,5:175\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/smedialink/storage/data/di/module/NetworkModuleKt$networkModule$1$28\n*L\n95#1:175,5\n*E\n"
+    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/smedialink/storage/data/di/module/NetworkModuleKt$networkModule$1$28\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,176:1\n127#2,5:177\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/smedialink/storage/data/di/module/NetworkModuleKt$networkModule$1$28\n*L\n96#1:177,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/network/api/google/DynamicLinksApi;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/network/api/own/GoogleServicesApi;
     .locals 2
 
     const-string v0, "$this$single"
@@ -72,11 +72,13 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 95
-    new-instance p2, Lcom/smedialink/storage/data/network/api/google/DynamicLinksApi;
+    .line 96
+    invoke-static {}, Lcom/smedialink/storage/data/di/module/NetworkModuleKt;->getSERVER_RETROFIT()Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object p2
 
     .line 131
-    const-class v0, Lcom/google/firebase/dynamiclinks/FirebaseDynamicLinks;
+    const-class v0, Lretrofit2/Retrofit;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -84,27 +86,37 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, p2, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lcom/google/firebase/dynamiclinks/FirebaseDynamicLinks;
+    check-cast p1, Lretrofit2/Retrofit;
 
-    .line 95
-    invoke-direct {p2, p1}, Lcom/smedialink/storage/data/network/api/google/DynamicLinksApi;-><init>(Lcom/google/firebase/dynamiclinks/FirebaseDynamicLinks;)V
+    const-class p2, Lcom/smedialink/storage/data/network/api/own/GoogleServicesApi;
 
-    return-object p2
+    .line 96
+    invoke-virtual {p1, p2}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    const-string p2, "get<Retrofit>(SERVER_RET\u2026eServicesApi::class.java)"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast p1, Lcom/smedialink/storage/data/network/api/own/GoogleServicesApi;
+
+    return-object p1
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 95
+    .line 96
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/di/module/NetworkModuleKt$networkModule$1$28;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/network/api/google/DynamicLinksApi;
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/di/module/NetworkModuleKt$networkModule$1$28;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/network/api/own/GoogleServicesApi;
 
     move-result-object p1
 

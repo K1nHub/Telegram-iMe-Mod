@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFiltersDao.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FiltersDao.kt\ncom/smedialink/storage/data/locale/db/dao/main/FiltersDao\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,27:1\n1547#2:28\n1618#2,3:29\n*S KotlinDebug\n*F\n+ 1 FiltersDao.kt\ncom/smedialink/storage/data/locale/db/dao/main/FiltersDao\n*L\n25#1:28\n25#1:29,3\n*E\n"
+    value = "SMAP\nFiltersDao.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FiltersDao.kt\ncom/smedialink/storage/data/locale/db/dao/main/FiltersDao\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,27:1\n1549#2:28\n1620#2,3:29\n*S KotlinDebug\n*F\n+ 1 FiltersDao.kt\ncom/smedialink/storage/data/locale/db/dao/main/FiltersDao\n*L\n25#1:28\n25#1:29,3\n*E\n"
 .end annotation
 
 
@@ -68,7 +68,7 @@
     .line 24
     invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/locale/db/dao/main/FiltersDao;->resetSettings(J)V
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -79,7 +79,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p3
@@ -95,7 +95,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;
 
     .line 25
@@ -103,10 +103,12 @@
 
     move-result-object v1
 
+    .line 1621
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 25
     :cond_0
     invoke-interface {p0, v0}, Lcom/smedialink/storage/data/locale/db/dao/base/BaseDao;->insert(Ljava/util/List;)V
 

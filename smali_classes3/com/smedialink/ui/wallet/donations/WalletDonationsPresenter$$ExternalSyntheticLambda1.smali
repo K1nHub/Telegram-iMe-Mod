@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter$$ExternalSyntheticLambda1;->f$1:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter;->$r8$lambda$0O0YVd9PgzTuTdg-OAagBQzLncM(Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter;->$r8$lambda$7Ginu8y77587H-Yvyhuqc8mzYTo(Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter;Ljava/lang/String;)V
 
     return-void
 .end method

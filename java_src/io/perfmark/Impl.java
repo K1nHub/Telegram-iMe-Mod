@@ -1,5 +1,5 @@
 package io.perfmark;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Impl {
     static final Tag NO_TAG = new Tag("", Long.MIN_VALUE);
     static final Link NO_LINK = new Link(Long.MIN_VALUE);

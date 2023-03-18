@@ -5,21 +5,27 @@
 .implements Ljava/lang/Runnable;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/TopicsFragment;
-
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLObject;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda15;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/TopicsFragment;Lorg/telegram/tgnet/TLObject;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda15;
+
+    invoke-direct {v0}, Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda15;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda15;->INSTANCE:Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda15;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/ui/TopicsFragment;
-
-    iput-object p2, p0, Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda15;->f$1:Lorg/telegram/tgnet/TLObject;
 
     return-void
 .end method
@@ -27,13 +33,9 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/ui/TopicsFragment;
-
-    iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda15;->f$1:Lorg/telegram/tgnet/TLObject;
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/TopicsFragment;->$r8$lambda$7UNNYWxczeybcLFdLLqIqYw-EEA(Lorg/telegram/ui/TopicsFragment;Lorg/telegram/tgnet/TLObject;)V
+    invoke-static {}, Lorg/telegram/ui/TopicsFragment;->$r8$lambda$TCcloE2UuFZkkw04sgBKCC0hOLo()V
 
     return-void
 .end method

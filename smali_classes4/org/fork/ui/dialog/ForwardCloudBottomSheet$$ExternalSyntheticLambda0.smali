@@ -33,7 +33,7 @@
 
     move-result-wide v1
 
-    invoke-static {v0, v1, v2}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->$r8$lambda$9qUoEtAUqHeu9xsfLchsiQ5qOJQ(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;J)V
+    invoke-static {v0, v1, v2}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->$r8$lambda$inE57jZnoJ-nZvlzK-aqQz2xO6c(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;J)V
 
     return-void
 .end method

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/bots/usecase/AiBotsManager;->getAllBotsObservable$lambda-17(Ljava/util/List;)Ljava/util/List;
+    value = Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$5;->invoke(Ljava/util/List;)Ljava/util/List;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

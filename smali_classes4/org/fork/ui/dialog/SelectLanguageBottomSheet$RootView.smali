@@ -26,16 +26,12 @@
 
 # direct methods
 .method public constructor <init>(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 234
     iput-object p1, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet$RootView;->this$0:Lorg/fork/ui/dialog/SelectLanguageBottomSheet;

@@ -23,7 +23,6 @@ final class WalletAuthFragment$listenGlobalRxEvents$1$2 extends Lambda implement
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         WalletHelper.safeRunWalletScreen$default(this.this$0, null, null, null, 7, null);

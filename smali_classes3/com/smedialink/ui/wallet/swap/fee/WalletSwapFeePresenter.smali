@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletSwapFeePresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSwapFeePresenter.kt\ncom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,142:1\n39#2,6:143\n11328#3:149\n11663#3,3:150\n11328#3:157\n11663#3,3:158\n11328#3:165\n11663#3,3:166\n37#4:153\n36#4,3:154\n37#4:161\n36#4,3:162\n37#4:169\n36#4,3:170\n*S KotlinDebug\n*F\n+ 1 WalletSwapFeePresenter.kt\ncom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter\n*L\n111#1:143,6\n126#1:149\n126#1:150,3\n128#1:157\n128#1:158,3\n132#1:165\n132#1:166,3\n126#1:153\n126#1:154,3\n130#1:161\n130#1:162,3\n134#1:169\n134#1:170,3\n*E\n"
+    value = "SMAP\nWalletSwapFeePresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSwapFeePresenter.kt\ncom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,143:1\n39#2,8:144\n11335#3:152\n11670#3,3:153\n11335#3:158\n11670#3,3:159\n11335#3:164\n11670#3,3:165\n37#4,2:156\n37#4,2:162\n37#4,2:168\n*S KotlinDebug\n*F\n+ 1 WalletSwapFeePresenter.kt\ncom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter\n*L\n111#1:144,8\n127#1:152\n127#1:153,3\n129#1:158\n129#1:159,3\n133#1:164\n133#1:165,3\n127#1:156,2\n131#1:162,2\n135#1:168,2\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -67,10 +67,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$o1NP4Wz1R4R7lcgmaSmfvDwJtB0(Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;Lcom/smedialink/storage/domain/model/wallet/swap/SwapSlippage;)Lio/reactivex/ObservableSource;
+.method public static synthetic $r8$lambda$8PbX3EWL9umEePf_i7p_4LJMN5M(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->subscribeToChangeEvents$lambda-0(Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;Lcom/smedialink/storage/domain/model/wallet/swap/SwapSlippage;)Lio/reactivex/ObservableSource;
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->subscribeToChangeEvents$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p0
 
@@ -225,11 +225,29 @@
     return-void
 .end method
 
+.method public static final synthetic access$getArgs$p(Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;)Lcom/smedialink/model/wallet/crypto/swap/SwapFeeScreenArgs;
+    .locals 0
+
+    .line 24
+    iget-object p0, p0, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->args:Lcom/smedialink/model/wallet/crypto/swap/SwapFeeScreenArgs;
+
+    return-object p0
+.end method
+
 .method public static final synthetic access$getResourceManager$p(Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;)Lcom/smedialink/storage/domain/utils/system/ResourceManager;
     .locals 0
 
     .line 24
     iget-object p0, p0, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$getSwapInteractor$p(Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;)Lcom/smedialink/storage/domain/interactor/crypto/swap/SwapInteractor;
+    .locals 0
+
+    .line 24
+    iget-object p0, p0, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->swapInteractor:Lcom/smedialink/storage/domain/interactor/crypto/swap/SwapInteractor;
 
     return-object p0
 .end method
@@ -270,19 +288,19 @@
 .method private final initDeadlineTitles()[Ljava/lang/String;
     .locals 9
 
-    .line 128
+    .line 129
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->getDeadlineOptions()[Lcom/smedialink/storage/domain/model/wallet/swap/SwapDeadline;
 
     move-result-object v0
 
-    .line 11328
+    .line 11335
     new-instance v1, Ljava/util/ArrayList;
 
     array-length v2, v0
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11663
+    .line 11670
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -294,7 +312,7 @@
 
     aget-object v5, v0, v4
 
-    .line 129
+    .line 130
     iget-object v6, p0, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v7, Lorg/telegram/messenger/R$string;->wallet_swap_transaction_options_deadline:I
@@ -317,6 +335,7 @@
 
     move-result-object v5
 
+    .line 11671
     invoke-interface {v1, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v4, v4, 0x1
@@ -331,10 +350,6 @@
 
     move-result-object v0
 
-    const-string v1, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     check-cast v0, [Ljava/lang/String;
 
     return-object v0
@@ -343,19 +358,19 @@
 .method private final initFeesTitles()[Ljava/lang/String;
     .locals 7
 
-    .line 126
+    .line 127
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->getFeesOptions()[Lcom/smedialink/storage/domain/model/crypto/send/TransactionSpeedLevel;
 
     move-result-object v0
 
-    .line 11328
+    .line 11335
     new-instance v1, Ljava/util/ArrayList;
 
     array-length v2, v0
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11663
+    .line 11670
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -367,7 +382,7 @@
 
     aget-object v5, v0, v4
 
-    .line 126
+    .line 127
     iget-object v6, p0, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {v5}, Lcom/smedialink/storage/domain/model/crypto/send/TransactionSpeedLevel;->getTitle()I
@@ -378,6 +393,7 @@
 
     move-result-object v5
 
+    .line 11671
     invoke-interface {v1, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v4, v4, 0x1
@@ -392,10 +408,6 @@
 
     move-result-object v0
 
-    const-string v1, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     check-cast v0, [Ljava/lang/String;
 
     return-object v0
@@ -404,19 +416,19 @@
 .method private final initSlipTitles()[Ljava/lang/String;
     .locals 11
 
-    .line 132
+    .line 133
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->getSlipOptions()[Lcom/smedialink/storage/domain/model/wallet/swap/SwapSlippage;
 
     move-result-object v0
 
-    .line 11328
+    .line 11335
     new-instance v1, Ljava/util/ArrayList;
 
     array-length v2, v0
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11663
+    .line 11670
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -428,7 +440,7 @@
 
     aget-object v5, v0, v4
 
-    .line 133
+    .line 134
     iget-object v6, p0, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v7, Lorg/telegram/messenger/R$string;->wallet_swap_transaction_options_slip:I
@@ -457,6 +469,7 @@
 
     move-result-object v5
 
+    .line 11671
     invoke-interface {v1, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v4, v4, 0x1
@@ -471,17 +484,13 @@
 
     move-result-object v0
 
-    const-string v1, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     check-cast v0, [Ljava/lang/String;
 
     return-object v0
 .end method
 
 .method private final subscribeToChangeEvents()V
-    .locals 4
+    .locals 5
 
     .line 91
     iget-object v0, p0, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->slipChangeEvent:Lio/reactivex/subjects/PublishSubject;
@@ -501,11 +510,15 @@
     move-result-object v0
 
     .line 94
-    new-instance v1, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter$$ExternalSyntheticLambda0;
+    new-instance v1, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter$subscribeToChangeEvents$1;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;)V
+    invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter$subscribeToChangeEvents$1;-><init>(Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v2, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter$$ExternalSyntheticLambda0;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v0
 
@@ -531,8 +544,9 @@
 
     move-result-object v0
 
-    const-string v1, "slipChangeEvent\n        \u2026(schedulersProvider.ui())"
+    const-string v1, "private fun subscribeToC\u2026     .autoDispose()\n    }"
 
+    .line 94
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 44
@@ -540,140 +554,52 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter$subscribeToChangeEvents$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;)V
 
-    new-instance v2, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter$subscribeToChangeEvents$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v1, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter$subscribeToChangeEvents$$inlined$subscribeWithErrorHandle$default$2;
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v3}, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter$subscribeToChangeEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v3}, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter$subscribeToChangeEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 46
+    new-instance v4, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v4, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, v2, v4}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
-    .line 123
+    .line 124
     invoke-static {p0, v0, v3, v1, v3}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
 .end method
 
-.method private static final subscribeToChangeEvents$lambda-0(Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;Lcom/smedialink/storage/domain/model/wallet/swap/SwapSlippage;)Lio/reactivex/ObservableSource;
-    .locals 10
+.method private static final subscribeToChangeEvents$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "slippage"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 95
-    invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->setSelectedSlip(Lcom/smedialink/storage/domain/model/wallet/swap/SwapSlippage;)V
-
-    .line 96
-    iget-object v1, p0, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->swapInteractor:Lcom/smedialink/storage/domain/interactor/crypto/swap/SwapInteractor;
-
-    .line 98
-    iget-object v0, p0, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->args:Lcom/smedialink/model/wallet/crypto/swap/SwapFeeScreenArgs;
-
-    invoke-virtual {v0}, Lcom/smedialink/model/wallet/crypto/swap/SwapFeeScreenArgs;->getMetadata()Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getInputTokenCode()Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v2
-
-    .line 99
-    iget-object v0, p0, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->args:Lcom/smedialink/model/wallet/crypto/swap/SwapFeeScreenArgs;
-
-    invoke-virtual {v0}, Lcom/smedialink/model/wallet/crypto/swap/SwapFeeScreenArgs;->getMetadata()Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getOutputTokenCode()Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v3
-
-    .line 100
-    iget-object v0, p0, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->args:Lcom/smedialink/model/wallet/crypto/swap/SwapFeeScreenArgs;
-
-    invoke-virtual {v0}, Lcom/smedialink/model/wallet/crypto/swap/SwapFeeScreenArgs;->getMetadata()Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getAmountIn()Ljava/math/BigDecimal;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/math/BigDecimal;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string v0, "args.metadata.amountIn.toString()"
-
-    invoke-static {v4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 101
-    sget-object v5, Lcom/smedialink/storage/domain/model/wallet/swap/TradeType;->EXACT_INPUT:Lcom/smedialink/storage/domain/model/wallet/swap/TradeType;
-
-    .line 102
-    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/wallet/swap/SwapSlippage;->getPercent()F
-
-    move-result v6
-
-    .line 103
-    iget-object p1, p0, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->args:Lcom/smedialink/model/wallet/crypto/swap/SwapFeeScreenArgs;
-
-    invoke-virtual {p1}, Lcom/smedialink/model/wallet/crypto/swap/SwapFeeScreenArgs;->getNetworkType()Lcom/smedialink/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v7
-
-    .line 104
-    iget-object p1, p0, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->args:Lcom/smedialink/model/wallet/crypto/swap/SwapFeeScreenArgs;
-
-    invoke-virtual {p1}, Lcom/smedialink/model/wallet/crypto/swap/SwapFeeScreenArgs;->getOutputNetworkType()Lcom/smedialink/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v8
-
-    .line 105
-    iget-object p1, p0, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->args:Lcom/smedialink/model/wallet/crypto/swap/SwapFeeScreenArgs;
-
-    invoke-virtual {p1}, Lcom/smedialink/model/wallet/crypto/swap/SwapFeeScreenArgs;->getProtocol()Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocol;
-
-    move-result-object v9
-
-    .line 97
-    invoke-virtual/range {v1 .. v9}, Lcom/smedialink/storage/domain/interactor/crypto/swap/SwapInteractor;->getQuoteToSwap(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/swap/TradeType;FLcom/smedialink/storage/domain/model/crypto/NetworkType;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocol;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    .line 107
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+    .line 94
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    const-string v0, "viewState"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    check-cast p0, Lcom/smedialink/ui/base/mvp/base/BaseView;
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x0
-
-    invoke-static {p1, p0, v0, v1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt;->withLoadingDialog$default(Lio/reactivex/Observable;Lcom/smedialink/ui/base/mvp/base/BaseView;ZILjava/lang/Object;)Lio/reactivex/Observable;
-
-    move-result-object p0
+    check-cast p0, Lio/reactivex/ObservableSource;
 
     return-object p0
 .end method

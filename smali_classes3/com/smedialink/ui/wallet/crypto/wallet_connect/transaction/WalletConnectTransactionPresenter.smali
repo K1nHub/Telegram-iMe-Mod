@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletConnectTransactionPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectTransactionPresenter.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,175:1\n39#2,6:176\n1#3:182\n*S KotlinDebug\n*F\n+ 1 WalletConnectTransactionPresenter.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter\n*L\n127#1:176,6\n*E\n"
+    value = "SMAP\nWalletConnectTransactionPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectTransactionPresenter.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,176:1\n39#2,8:177\n1#3:185\n*S KotlinDebug\n*F\n+ 1 WalletConnectTransactionPresenter.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter\n*L\n127#1:177,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -192,15 +192,15 @@
 .method private final getChooseFeeType()Lcom/smedialink/ui/custom/FeeView$ChooseFeeType;
     .locals 7
 
-    .line 143
+    .line 144
     new-instance v6, Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Default;
 
-    .line 144
+    .line 145
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->getFeeDialogModel()Lcom/smedialink/model/dialog/DialogModel;
 
     move-result-object v1
 
-    .line 145
+    .line 146
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->screenType:Lcom/smedialink/model/wallet/crypto/wallet_connect/WalletConnectTransactionScreenType;
 
     invoke-virtual {v0}, Lcom/smedialink/model/wallet/crypto/wallet_connect/WalletConnectTransactionScreenType;->getTransaction()Lcom/smedialink/storage/domain/model/crypto/wallet_connect/WalletConnectProcessedTransaction;
@@ -211,7 +211,7 @@
 
     move-result-object v2
 
-    .line 146
+    .line 147
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;
 
     iget-object v3, p0, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->screenType:Lcom/smedialink/model/wallet/crypto/wallet_connect/WalletConnectTransactionScreenType;
@@ -228,17 +228,17 @@
 
     move-result-object v3
 
-    .line 147
+    .line 148
     iget-object v4, p0, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->selectedFee:Lcom/smedialink/model/wallet/crypto/send/fee/GasPriceItem;
 
-    .line 148
+    .line 149
     new-instance v5, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter$getChooseFeeType$1;
 
     invoke-direct {v5, p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter$getChooseFeeType$1;-><init>(Ljava/lang/Object;)V
 
     move-object v0, v6
 
-    .line 143
+    .line 144
     invoke-direct/range {v0 .. v5}, Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Default;-><init>(Lcom/smedialink/model/dialog/DialogModel;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;Lcom/smedialink/model/wallet/crypto/send/fee/GasPriceItem;Lkotlin/jvm/functions/Function1;)V
 
     return-object v6
@@ -247,13 +247,13 @@
 .method private final getConfirmMessage()Ljava/lang/String;
     .locals 6
 
-    .line 161
+    .line 162
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    .line 162
+    .line 163
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->screenType:Lcom/smedialink/model/wallet/crypto/wallet_connect/WalletConnectTransactionScreenType;
 
-    .line 163
+    .line 164
     instance-of v2, v1, Lcom/smedialink/model/wallet/crypto/wallet_connect/WalletConnectTransactionScreenType$Send;
 
     if-eqz v2, :cond_0
@@ -262,7 +262,7 @@
 
     goto :goto_0
 
-    .line 164
+    .line 165
     :cond_0
     instance-of v1, v1, Lcom/smedialink/model/wallet/crypto/wallet_connect/WalletConnectTransactionScreenType$Sign;
 
@@ -277,7 +277,7 @@
 
     const/4 v3, 0x0
 
-    .line 166
+    .line 167
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->getAmount()Ljava/math/BigDecimal;
 
     move-result-object v4
@@ -306,7 +306,7 @@
 
     const/4 v3, 0x1
 
-    .line 167
+    .line 168
     iget-object v4, p0, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->getTokenInfo()Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
@@ -323,14 +323,14 @@
 
     aput-object v4, v2, v3
 
-    .line 161
+    .line 162
     invoke-interface {v0, v1, v2}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 164
+    .line 165
     :cond_1
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
@@ -342,10 +342,10 @@
 .method private final getFeeDialogModel()Lcom/smedialink/model/dialog/DialogModel;
     .locals 8
 
-    .line 156
+    .line 157
     new-instance v7, Lcom/smedialink/model/dialog/DialogModel;
 
-    .line 157
+    .line 158
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->wallet_amount_send_fee_dialog_title:I
@@ -354,7 +354,7 @@
 
     move-result-object v1
 
-    .line 158
+    .line 159
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->common_cancel:I
@@ -373,7 +373,7 @@
 
     move-object v0, v7
 
-    .line 156
+    .line 157
     invoke-direct/range {v0 .. v6}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-object v7
@@ -397,7 +397,7 @@
 .method private final getTransactionAmountText()Ljava/lang/String;
     .locals 2
 
-    .line 171
+    .line 172
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -438,10 +438,10 @@
 .method private final onTransactionProcessingSuccess(Ljava/lang/String;)V
     .locals 5
 
-    .line 136
+    .line 137
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->screenType:Lcom/smedialink/model/wallet/crypto/wallet_connect/WalletConnectTransactionScreenType;
 
-    .line 137
+    .line 138
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->walletConnectManager:Lcom/smedialink/storage/domain/manager/wallet_connect/WalletConnectManager;
 
     invoke-virtual {v0}, Lcom/smedialink/model/wallet/crypto/wallet_connect/WalletConnectTransactionScreenType;->getSessionItem()Lcom/smedialink/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;
@@ -458,7 +458,7 @@
 
     invoke-interface {v1, v2, v3, v4, p1}, Lcom/smedialink/storage/domain/manager/wallet_connect/WalletConnectManager;->approveRequest(Ljava/lang/String;JLjava/lang/Object;)V
 
-    .line 139
+    .line 140
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -521,10 +521,10 @@
 .method private final selectFee(Lcom/smedialink/model/wallet/crypto/send/fee/GasPriceItem;)V
     .locals 1
 
-    .line 152
+    .line 153
     iput-object p1, p0, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->selectedFee:Lcom/smedialink/model/wallet/crypto/send/fee/GasPriceItem;
 
-    .line 153
+    .line 154
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -596,21 +596,32 @@
 
     invoke-direct {v2, p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter$subscribeToTransactionProcessingWithResultsHandle$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;)V
 
-    new-instance v3, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter$subscribeToTransactionProcessingWithResultsHandle$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v3, v0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter$subscribeToTransactionProcessingWithResultsHandle$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v3, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p1, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v2, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter$subscribeToTransactionProcessingWithResultsHandle$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v2, v0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter$subscribeToTransactionProcessingWithResultsHandle$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v0, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {p1, v3, v0}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
-    .line 132
+    .line 133
     invoke-static {p0, p1, v0, v1, v0}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -849,12 +860,12 @@
 
     move-result-object v2
 
+    new-instance v3, Ljava/math/BigInteger;
+
     .line 70
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/wallet_connect/WalletConnectProcessedTransaction;->getValue()Ljava/lang/String;
 
     move-result-object v1
-
-    new-instance v3, Ljava/math/BigInteger;
 
     invoke-direct {v3, v1}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
 

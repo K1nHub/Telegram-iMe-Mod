@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State;Ljava/lang/String;Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback;)V
     .locals 1
 
-    .line 272
+    .line 233
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showRequestPermissionSuccessDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 274
+    .line 235
     iput-object p2, p0, Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowRequestPermissionSuccessDialogCommand;->title:Ljava/lang/String;
 
-    .line 275
+    .line 236
     iput-object p3, p0, Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowRequestPermissionSuccessDialogCommand;->message:Ljava/lang/String;
 
-    .line 276
+    .line 237
     iput-object p4, p0, Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowRequestPermissionSuccessDialogCommand;->action:Lorg/fork/utils/Callbacks$Callback;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientView;)V
     .locals 3
 
-    .line 281
+    .line 242
     iget-object v0, p0, Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowRequestPermissionSuccessDialogCommand;->title:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowRequestPermissionSuccessDialogCommand;->message:Ljava/lang/String;
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 263
+    .line 224
     check-cast p1, Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowRequestPermissionSuccessDialogCommand;->apply(Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientView;)V

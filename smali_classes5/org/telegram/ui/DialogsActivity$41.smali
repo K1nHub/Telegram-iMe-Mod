@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 7202
+    .line 7192
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/UndoView;-><init>(Landroid/content/Context;)V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$onRemoveDialogAction$0(ILorg/telegram/tgnet/TLRPC$Dialog;)V
     .locals 1
 
-    .line 7246
+    .line 7236
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$21100(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
@@ -52,7 +52,7 @@
 
     if-ltz p1, :cond_1
 
-    .line 7247
+    .line 7237
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$21100(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
@@ -67,7 +67,7 @@
 
     goto :goto_0
 
-    .line 7250
+    .line 7240
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -77,7 +77,7 @@
 
     invoke-virtual {v0, p1, p2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 7251
+    .line 7241
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$3700(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -108,7 +108,7 @@
 
     const/4 v1, 0x0
 
-    .line 7219
+    .line 7209
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -120,7 +120,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 7220
+    .line 7210
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/DialogsActivity;->access$3700(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -163,18 +163,18 @@
 
     if-ne p3, v1, :cond_5
 
-    .line 7230
+    .line 7220
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p3, v0}, Lorg/telegram/ui/DialogsActivity;->access$28002(Lorg/telegram/ui/DialogsActivity;I)I
 
-    .line 7231
+    .line 7221
     iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p3, v0}, Lorg/telegram/ui/DialogsActivity;->access$21000(Lorg/telegram/ui/DialogsActivity;Z)V
 
-    .line 7232
+    .line 7222
     iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/DialogsActivity;->access$21100(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
@@ -189,7 +189,7 @@
 
     const/4 v1, 0x0
 
-    .line 7234
+    .line 7224
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -203,7 +203,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 7235
+    .line 7225
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/DialogsActivity;->access$21100(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
@@ -235,7 +235,7 @@
     :goto_1
     if-ltz p3, :cond_3
 
-    .line 7242
+    .line 7232
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$21100(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
@@ -248,7 +248,7 @@
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    .line 7243
+    .line 7233
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$3700(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -263,7 +263,7 @@
 
     invoke-virtual {p2}, Lorg/telegram/ui/Adapters/DialogsAdapter;->notifyDataSetChanged()V
 
-    .line 7245
+    .line 7235
     new-instance p2, Lorg/telegram/ui/DialogsActivity$41$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0, p3, p1}, Lorg/telegram/ui/DialogsActivity$41$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/DialogsActivity$41;ILorg/telegram/tgnet/TLRPC$Dialog;)V
@@ -272,13 +272,13 @@
 
     goto :goto_2
 
-    .line 7255
+    .line 7245
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$21000(Lorg/telegram/ui/DialogsActivity;Z)V
 
-    .line 7258
+    .line 7248
     :cond_4
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -292,10 +292,10 @@
 .method public setTranslationY(F)V
     .locals 3
 
-    .line 7205
+    .line 7195
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 7206
+    .line 7196
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$27900(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/Components/UndoView;
@@ -324,7 +324,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 7207
+    .line 7197
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -345,7 +345,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->access$32902(Lorg/telegram/ui/DialogsActivity;F)F
 
-    .line 7208
+    .line 7198
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$32900(Lorg/telegram/ui/DialogsActivity;)F
@@ -358,12 +358,12 @@
 
     if-gez p1, :cond_0
 
-    .line 7209
+    .line 7199
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$32902(Lorg/telegram/ui/DialogsActivity;F)F
 
-    .line 7211
+    .line 7201
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -373,7 +373,7 @@
 
     if-nez p1, :cond_1
 
-    .line 7212
+    .line 7202
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$41;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$23800(Lorg/telegram/ui/DialogsActivity;)V

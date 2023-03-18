@@ -26,18 +26,18 @@
 .method public constructor <init>(JJLjava/lang/String;)V
     .locals 0
 
-    .line 966
+    .line 1057
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 967
+    .line 1058
     iput-wide p1, p0, Lorg/telegram/messenger/MessagesController$EmojiSound;->id:J
 
-    .line 968
+    .line 1059
     iput-wide p3, p0, Lorg/telegram/messenger/MessagesController$EmojiSound;->accessHash:J
 
     const/16 p1, 0x8
 
-    .line 969
+    .line 1060
     invoke-static {p5, p1}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
 
     move-result-object p1
@@ -50,16 +50,16 @@
 .method public constructor <init>(JJ[B)V
     .locals 0
 
-    .line 972
+    .line 1063
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 973
+    .line 1064
     iput-wide p1, p0, Lorg/telegram/messenger/MessagesController$EmojiSound;->id:J
 
-    .line 974
+    .line 1065
     iput-wide p3, p0, Lorg/telegram/messenger/MessagesController$EmojiSound;->accessHash:J
 
-    .line 975
+    .line 1066
     iput-object p5, p0, Lorg/telegram/messenger/MessagesController$EmojiSound;->fileReference:[B
 
     return-void
@@ -70,7 +70,7 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 6
 
-    .line 980
+    .line 1071
     instance-of v0, p1, Lorg/telegram/messenger/MessagesController$EmojiSound;
 
     const/4 v1, 0x0
@@ -79,11 +79,11 @@
 
     return v1
 
-    .line 983
+    .line 1074
     :cond_0
     check-cast p1, Lorg/telegram/messenger/MessagesController$EmojiSound;
 
-    .line 984
+    .line 1075
     iget-wide v2, p0, Lorg/telegram/messenger/MessagesController$EmojiSound;->id:J
 
     iget-wide v4, p1, Lorg/telegram/messenger/MessagesController$EmojiSound;->id:J

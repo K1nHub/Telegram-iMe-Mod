@@ -21,7 +21,7 @@ import androidx.core.util.Consumer;
 import androidx.core.util.Preconditions;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.ImageLocation;
@@ -156,17 +156,17 @@ public class AvatarPreviewer {
         }
 
         static {
-            MenuItem menuItem = new MenuItem("OPEN_PROFILE", 0, "OpenProfile", C3158R.string.OpenProfile, C3158R.C3160drawable.msg_openprofile);
+            MenuItem menuItem = new MenuItem("OPEN_PROFILE", 0, "OpenProfile", C3286R.string.OpenProfile, C3286R.C3288drawable.msg_openprofile);
             OPEN_PROFILE = menuItem;
-            MenuItem menuItem2 = new MenuItem("OPEN_CHANNEL", 1, "OpenChannel2", C3158R.string.OpenChannel2, C3158R.C3160drawable.msg_channel);
+            MenuItem menuItem2 = new MenuItem("OPEN_CHANNEL", 1, "OpenChannel2", C3286R.string.OpenChannel2, C3286R.C3288drawable.msg_channel);
             OPEN_CHANNEL = menuItem2;
-            int i = C3158R.string.OpenGroup2;
-            int i2 = C3158R.C3160drawable.msg_discussion;
+            int i = C3286R.string.OpenGroup2;
+            int i2 = C3286R.C3288drawable.msg_discussion;
             MenuItem menuItem3 = new MenuItem("OPEN_GROUP", 2, "OpenGroup2", i, i2);
             OPEN_GROUP = menuItem3;
-            MenuItem menuItem4 = new MenuItem("SEND_MESSAGE", 3, "SendMessage", C3158R.string.SendMessage, i2);
+            MenuItem menuItem4 = new MenuItem("SEND_MESSAGE", 3, "SendMessage", C3286R.string.SendMessage, i2);
             SEND_MESSAGE = menuItem4;
-            MenuItem menuItem5 = new MenuItem("MENTION", 4, "Mention", C3158R.string.Mention, C3158R.C3160drawable.msg_mention);
+            MenuItem menuItem5 = new MenuItem("MENTION", 4, "Mention", C3286R.string.Mention, C3286R.C3288drawable.msg_mention);
             MENTION = menuItem5;
             $VALUES = new MenuItem[]{menuItem, menuItem2, menuItem3, menuItem4, menuItem5};
         }
@@ -278,7 +278,7 @@ public class AvatarPreviewer {
 
         @Override // org.telegram.p048ui.AvatarPreviewer.InfoLoadTask
         protected void onReceiveNotification(Object... objArr) {
-            if (((Long) objArr[0]).longValue() == ((TLRPC$User) this.argument).f1633id) {
+            if (((Long) objArr[0]).longValue() == ((TLRPC$User) this.argument).f1639id) {
                 onResult((TLRPC$UserFull) objArr[1]);
             }
         }
@@ -294,13 +294,13 @@ public class AvatarPreviewer {
 
         @Override // org.telegram.p048ui.AvatarPreviewer.InfoLoadTask
         protected void load() {
-            MessagesController.getInstance(UserConfig.selectedAccount).loadFullChat(((TLRPC$Chat) this.argument).f1494id, this.classGuid, false);
+            MessagesController.getInstance(UserConfig.selectedAccount).loadFullChat(((TLRPC$Chat) this.argument).f1499id, this.classGuid, false);
         }
 
         @Override // org.telegram.p048ui.AvatarPreviewer.InfoLoadTask
         protected void onReceiveNotification(Object... objArr) {
             TLRPC$ChatFull tLRPC$ChatFull = (TLRPC$ChatFull) objArr[0];
-            if (tLRPC$ChatFull == null || tLRPC$ChatFull.f1495id != ((TLRPC$Chat) this.argument).f1494id) {
+            if (tLRPC$ChatFull == null || tLRPC$ChatFull.f1500id != ((TLRPC$Chat) this.argument).f1499id) {
                 return;
             }
             onResult(tLRPC$ChatFull);
@@ -411,7 +411,7 @@ public class AvatarPreviewer {
             radialProgress2.setOverrideAlpha(BitmapDescriptorFactory.HUE_RED);
             radialProgress2.setIcon(10, false, false);
             radialProgress2.setColors(1107296256, 1107296256, -1, -1);
-            this.arrowDrawable = ContextCompat.getDrawable(context, C3158R.C3160drawable.preview_arrow);
+            this.arrowDrawable = ContextCompat.getDrawable(context, C3286R.C3288drawable.preview_arrow);
         }
 
         @Override // android.view.ViewGroup, android.view.View

@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/model/wallet/crypto/send/AddressAccessState$Granted;,
         Lcom/smedialink/model/wallet/crypto/send/AddressAccessState$Denied;,
+        Lcom/smedialink/model/wallet/crypto/send/AddressAccessState$Granted;,
         Lcom/smedialink/model/wallet/crypto/send/AddressAccessState$NotAvailable;
     }
 .end annotation

@@ -4818,8 +4818,8 @@ Haz clic aquí para añadir un bot de forma rápida."</string>
     <string name="chat_templates_info">Envía mensajes desde aquí y ponle nombre para enviar plantillas recibidas en los chats de forma rápida</string>
     <string name="chat_templates_list_header">No hay plantillas</string>
     <string name="chat_templates_mode_attach">Adjuntar menú</string>
-    <string name="chat_templates_mode_hint">"Puedes cambiarlo desde
-Ajustes > Interfaz > Plantillas en cualquier momento"</string>
+    <string name="chat_templates_mode_hint">"Siempre puedes cambiar esto en
+Configuración > Herramientas > Chats > Plantillas"</string>
     <string name="chat_templates_mode_oval">Óvalo</string>
     <string name="choose_tokens_order_alphabet">Por orden alfabético</string>
     <string name="choose_tokens_order_balance">Por saldo</string>
@@ -5350,6 +5350,7 @@ Debes estar en sus contactos de Telegram para volver a agregarlos, de lo contrar
     <string name="push_notification_wallet_simplex_payment">Solicitud de compra %1$s %2$s -> %3$s %4$s. Estado: %5$s</string>
     <string name="push_notification_wallet_unsupported">Notificación no compatible</string>
     <string name="quick_reaction_settings_enable_item_hint">Activa esto para usar reacciones rápidas en los mensajes de texto.</string>
+    <string name="recent_chats_hint">Actívelo si desea tener un acceso rápido a sus chats recientes con la capacidad de anclar una cantidad ilimitada de chats. El panel se mostrará encima de la lista de chat.</string>
     <string name="release_to_go_to_next_unread_bot">Suelte para ir al siguiente bot no leído</string>
     <string name="release_to_go_to_next_unread_group">Suelte para ir al siguiente grupo no leído</string>
     <string name="release_to_go_to_next_unread_personal_chat">Suelte para ir al siguiente chat personal no leído</string>
@@ -5634,7 +5635,7 @@ Tu saldo se actualizará cuando se haya confirmado la transacción en la cadena 
     <string name="stickers_size_small">Pequeño</string>
     <string name="stickers_size_title">Tamaño de pegatinas</string>
     <string name="swipe_to_next_unread_dialog_consider_archive">Considere los chats archivados</string>
-    <string name="swipe_to_next_unread_dialog_hint">Active esta opción para pasar a los chats no leídos deslizando el dedo</string>
+    <string name="swipe_to_next_unread_dialog_hint">Actívelo si desea desplazarse por sus chats sin volver a su lista de chat. Cuando llegue al final de un chat, tire hacia arriba para ir al siguiente chat sin leer.</string>
     <string name="swipe_to_next_unread_dialog_types">Topes de diálogo</string>
     <string name="text_recognition_bottom_sheet_title">Imagen → Texto</string>
     <string name="topic">Tema</string>

@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/UserCell;Landroid/graphics/drawable/Drawable;II)V
     .locals 0
 
-    .line 514
+    .line 523
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;-><init>(Landroid/graphics/drawable/Drawable;II)V
 
     return-void
@@ -29,12 +29,12 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 517
+    .line 526
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/4 v0, 0x1
 
-    .line 518
+    .line 527
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -45,10 +45,10 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 519
+    .line 528
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 520
+    .line 529
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void

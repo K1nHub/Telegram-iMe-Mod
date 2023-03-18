@@ -44,4 +44,7 @@ public interface WalletSendAmountView extends BaseView, WalletBinancePayReplenis
 
     @AddToEndSingle
     void updateFeeView();
+
+    @AddToEndSingle
+    void updateSelectedUser();
 }

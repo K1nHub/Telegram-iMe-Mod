@@ -7,7 +7,7 @@ public final class WCBinanceTxConfirmParam {
     private final String errorMsg;
 
     /* renamed from: ok */
-    private final boolean f384ok;
+    private final boolean f389ok;
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -15,7 +15,7 @@ public final class WCBinanceTxConfirmParam {
         }
         if (obj instanceof WCBinanceTxConfirmParam) {
             WCBinanceTxConfirmParam wCBinanceTxConfirmParam = (WCBinanceTxConfirmParam) obj;
-            return this.f384ok == wCBinanceTxConfirmParam.f384ok && Intrinsics.areEqual(this.errorMsg, wCBinanceTxConfirmParam.errorMsg);
+            return this.f389ok == wCBinanceTxConfirmParam.f389ok && Intrinsics.areEqual(this.errorMsg, wCBinanceTxConfirmParam.errorMsg);
         }
         return false;
     }
@@ -25,7 +25,7 @@ public final class WCBinanceTxConfirmParam {
     /* JADX WARN: Type inference failed for: r0v4 */
     /* JADX WARN: Type inference failed for: r0v5 */
     public int hashCode() {
-        boolean z = this.f384ok;
+        boolean z = this.f389ok;
         ?? r0 = z;
         if (z) {
             r0 = 1;
@@ -36,6 +36,6 @@ public final class WCBinanceTxConfirmParam {
     }
 
     public String toString() {
-        return "WCBinanceTxConfirmParam(ok=" + this.f384ok + ", errorMsg=" + this.errorMsg + ')';
+        return "WCBinanceTxConfirmParam(ok=" + this.f389ok + ", errorMsg=" + this.errorMsg + ')';
     }
 }

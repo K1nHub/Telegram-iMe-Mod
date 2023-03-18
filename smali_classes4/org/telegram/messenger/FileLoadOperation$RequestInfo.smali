@@ -19,6 +19,8 @@
 
 .field private offset:J
 
+.field public requestStartTime:J
+
 .field private requestToken:I
 
 .field private response:Lorg/telegram/tgnet/TLRPC$TL_upload_file;

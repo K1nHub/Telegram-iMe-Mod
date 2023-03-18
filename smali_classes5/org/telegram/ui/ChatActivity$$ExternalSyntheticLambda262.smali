@@ -27,9 +27,9 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda262;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    check-cast p1, Ljava/util/EnumMap;
+    check-cast p1, Ljava/util/ArrayList;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$HlYE2mREupLZxHe9gnjfhPIXfZY(Lorg/telegram/ui/ChatActivity;Ljava/util/EnumMap;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$IZGH1Xiwp9u41W0q8bFimrvs-gI(Lorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;)V
 
     return-void
 .end method

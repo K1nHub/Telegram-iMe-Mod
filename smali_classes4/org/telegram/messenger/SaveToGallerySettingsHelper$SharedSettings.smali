@@ -93,46 +93,53 @@
 
     const/4 v0, 0x0
 
-    if-eqz p2, :cond_0
+    if-eqz p2, :cond_1
 
     .line 172
     invoke-virtual {p2}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_0
 
-    return v0
+    invoke-virtual {p2}, Lorg/telegram/messenger/MessageObject;->isSecretMedia()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
 
     :cond_0
+    return v0
+
+    :cond_1
     const/4 v1, 0x1
 
-    if-eqz p2, :cond_1
+    if-eqz p2, :cond_2
 
     .line 175
     invoke-virtual {p2}, Lorg/telegram/messenger/MessageObject;->isVideo()Z
 
     move-result v2
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_3
 
-    :cond_1
+    :cond_2
     iget v2, p1, Lorg/telegram/messenger/FilePathDatabase$FileMeta;->messageType:I
 
     const/4 v3, 0x3
 
-    if-ne v2, v3, :cond_3
+    if-ne v2, v3, :cond_4
 
-    :cond_2
+    :cond_3
     const/4 v2, 0x1
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     const/4 v2, 0x0
 
     :goto_0
-    if-eqz p2, :cond_4
+    if-eqz p2, :cond_5
 
     .line 176
     invoke-virtual {p2}, Lorg/telegram/messenger/MessageObject;->getSize()J
@@ -141,7 +148,7 @@
 
     goto :goto_1
 
-    :cond_4
+    :cond_5
     iget-wide p1, p1, Lorg/telegram/messenger/FilePathDatabase$FileMeta;->messageSize:J
 
     .line 177
@@ -154,7 +161,7 @@
     .line 179
     iget-wide v5, p0, Lorg/telegram/messenger/SaveToGallerySettingsHelper$Settings;->limitVideo:J
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_6
 
     .line 181
     iget-boolean v3, p3, Lorg/telegram/messenger/SaveToGallerySettingsHelper$Settings;->saveVideo:Z
@@ -165,30 +172,30 @@
     .line 183
     iget-wide v5, p3, Lorg/telegram/messenger/SaveToGallerySettingsHelper$Settings;->limitVideo:J
 
-    :cond_5
-    if-eqz v2, :cond_7
+    :cond_6
+    if-eqz v2, :cond_8
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_9
 
     const-wide/16 v2, -0x1
 
     cmp-long p3, v5, v2
 
-    if-eqz p3, :cond_6
+    if-eqz p3, :cond_7
 
     cmp-long p3, p1, v5
 
-    if-gez p3, :cond_8
-
-    :cond_6
-    return v1
+    if-gez p3, :cond_9
 
     :cond_7
-    if-eqz v4, :cond_8
-
     return v1
 
     :cond_8
+    if-eqz v4, :cond_9
+
+    return v1
+
+    :cond_9
     return v0
 .end method
 

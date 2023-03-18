@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda43;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda43;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda43;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda43;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->updateCombineMessages()V
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$74RxOKewrFfgDUnO5ITYb0GXrCc(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method

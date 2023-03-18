@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/dialog/FullscreenContentDialog$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/ui/dialog/FullscreenContentDialog;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/dialog/FullscreenContentDialog;->$r8$lambda$T5fN3qNqiXhgGPcUap92SWNWM0A(Lcom/smedialink/ui/dialog/FullscreenContentDialog;Landroid/content/DialogInterface;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/dialog/FullscreenContentDialog;->$r8$lambda$85t4RhmYlHeZ2p_4beZX9xsImvQ(Lcom/smedialink/ui/dialog/FullscreenContentDialog;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

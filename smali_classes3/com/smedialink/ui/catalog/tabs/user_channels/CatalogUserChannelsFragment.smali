@@ -15,7 +15,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCatalogUserChannelsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogUserChannelsFragment.kt\ncom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 CollectionExt.kt\ncom/smedialink/utils/extentions/common/CollectionExtKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,162:1\n13#2,4:163\n56#3,6:167\n56#3,6:173\n4#4:179\n5#4,2:182\n2478#5:180\n1#6:181\n*S KotlinDebug\n*F\n+ 1 CatalogUserChannelsFragment.kt\ncom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment\n*L\n31#1:163,4\n34#1:167,6\n35#1:173,6\n88#1:179\n88#1:182,2\n88#1:180\n88#1:181\n*E\n"
+    value = "SMAP\nCatalogUserChannelsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogUserChannelsFragment.kt\ncom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 CollectionExt.kt\ncom/smedialink/utils/extentions/common/CollectionExtKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,162:1\n13#2,4:163\n56#3,6:167\n56#3,6:173\n4#4:179\n5#4,2:182\n2634#5:180\n1#6:181\n*S KotlinDebug\n*F\n+ 1 CatalogUserChannelsFragment.kt\ncom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment\n*L\n31#1:163,4\n34#1:167,6\n35#1:173,6\n88#1:179\n88#1:182,2\n88#1:180\n88#1:181\n*E\n"
 .end annotation
 
 
@@ -47,18 +47,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$pgPF5e79HkzJASEYDPdk4xMsKAk(Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$SEveCZNz5piwHLhHA8ZIZRBC4Ak(Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;->setupListeners$lambda-8$lambda-7(Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;->setupListeners$lambda$8$lambda$7(Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$qq9vqk_9cLGQM3E6bquSgSPGc-4(Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;)V
+.method public static synthetic $r8$lambda$fy-TdKpAFRtuBtFtx5p3vABLKaE(Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;->getThemeDescriptions$lambda-0(Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;->getThemeDescriptions$lambda$0(Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;)V
 
     return-void
 .end method
@@ -299,7 +299,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-0(Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;)V
+.method private static final getThemeDescriptions$lambda$0(Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -354,7 +354,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const-string v2, ""
+    const-string v2, "setupColors$lambda$4$lambda$3"
 
     .line 106
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -421,18 +421,18 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-8$lambda-7(Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$8$lambda$7(Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
     const-string p3, "this$0"
 
     invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p3, "$noName_0"
+    const-string p3, "<anonymous parameter 0>"
 
     invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "$noName_1"
+    const-string p1, "<anonymous parameter 1>"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -505,9 +505,7 @@
     invoke-virtual {v1}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
     .line 140
-    invoke-virtual {p0}, Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;->getChatType()Lcom/smedialink/storage/domain/model/catalog/ChatType;
-
-    move-result-object v1
+    iget-object v1, p0, Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;->chatType:Lcom/smedialink/storage/domain/model/catalog/ChatType;
 
     sget-object v3, Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment$WhenMappings;->$EnumSwitchMapping$0:[I
 
@@ -813,7 +811,7 @@
 
     move-result-object v0
 
-    .line 2478
+    .line 2634
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0

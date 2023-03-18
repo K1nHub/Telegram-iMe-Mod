@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletConnectSwitchNetworkBottomSheetDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectSwitchNetworkBottomSheetDialog.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,140:1\n13#2,4:141\n56#3,6:145\n*S KotlinDebug\n*F\n+ 1 WalletConnectSwitchNetworkBottomSheetDialog.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog\n*L\n30#1:141,4\n33#1:145,6\n*E\n"
+    value = "SMAP\nWalletConnectSwitchNetworkBottomSheetDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectSwitchNetworkBottomSheetDialog.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,141:1\n13#2,4:142\n56#3,6:146\n*S KotlinDebug\n*F\n+ 1 WalletConnectSwitchNetworkBottomSheetDialog.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog\n*L\n30#1:142,4\n33#1:146,6\n*E\n"
 .end annotation
 
 
@@ -244,14 +244,14 @@
 .method private final approveNetworkChange()V
     .locals 1
 
-    .line 115
+    .line 116
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getPresenter()Lcom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkPresenter;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkPresenter;->approveNetworkChange()V
 
-    .line 116
+    .line 117
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
@@ -337,14 +337,14 @@
 .method private final rejectNetworkChange()V
     .locals 1
 
-    .line 120
+    .line 121
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getPresenter()Lcom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkPresenter;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkPresenter;->rejectNetworkChange()V
 
-    .line 121
+    .line 122
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
@@ -353,41 +353,41 @@
 .method private final setupColors()V
     .locals 2
 
-    .line 85
+    .line 86
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;
 
     move-result-object v0
 
-    .line 86
+    .line 87
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->viewHeader:Lcom/smedialink/ui/custom/ImageHeaderView;
 
     invoke-virtual {v1}, Lcom/smedialink/ui/custom/ImageHeaderView;->setupColors()V
 
-    .line 87
+    .line 88
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->viewNetworkCell:Lcom/smedialink/ui/custom/DetailsIconCellView;
 
     invoke-virtual {v1}, Lcom/smedialink/ui/custom/DetailsIconCellView;->setupColors()V
 
-    .line 88
+    .line 89
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->buttonChangeNetwork:Lcom/smedialink/ui/custom/BigActionButton;
 
     invoke-virtual {v1}, Lcom/smedialink/ui/custom/ActionButton;->applyColors()V
 
-    .line 89
+    .line 90
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const-string v1, "windowBackgroundWhiteGrayIcon"
 
-    .line 90
+    .line 91
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIconColor(I)V
 
-    const-string v1, ""
+    const-string v1, "setupColors$lambda$2$lambda$1"
 
-    .line 91
+    .line 92
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v0}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setCircleRippleBackground(Landroid/view/View;)V
@@ -398,12 +398,12 @@
 .method private final setupListeners()V
     .locals 13
 
-    .line 108
+    .line 109
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;
 
     move-result-object v0
 
-    .line 109
+    .line 110
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->buttonChangeNetwork:Lcom/smedialink/ui/custom/BigActionButton;
 
     const-string v2, "buttonChangeNetwork"
@@ -422,7 +422,7 @@
 
     invoke-static/range {v1 .. v6}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
-    .line 110
+    .line 111
     iget-object v7, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const-string v0, "buttonClose"
@@ -447,19 +447,19 @@
 .method private final setupViews()V
     .locals 4
 
-    .line 97
+    .line 98
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;
 
     move-result-object v0
 
-    .line 98
+    .line 99
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->viewNetworkCell:Lcom/smedialink/ui/custom/DetailsIconCellView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/smedialink/ui/custom/DetailsIconCellView;->setIconTinted(Z)V
 
-    .line 99
+    .line 100
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->buttonChangeNetwork:Lcom/smedialink/ui/custom/BigActionButton;
 
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -474,17 +474,17 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 100
+    .line 101
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;
 
     move-result-object v0
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 101
+    .line 102
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setLongClickEnabled(Z)V
 
-    .line 102
+    .line 103
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_close_white:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIcon(I)V
@@ -513,10 +513,10 @@
 .method public onBackPressed()V
     .locals 0
 
-    .line 76
+    .line 77
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->rejectNetworkChange()V
 
-    .line 77
+    .line 78
     invoke-super {p0}, Landroid/app/Dialog;->onBackPressed()V
 
     return-void

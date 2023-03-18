@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.util.Pair;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.PlaybackParameters;
@@ -780,7 +780,7 @@ public final class DefaultAudioSink implements AudioSink {
                     writeNonBlockingV21 = 0;
                 }
             } else if (this.tunneling) {
-                Assertions.checkState(j != C0474C.TIME_UNSET);
+                Assertions.checkState(j != C0468C.TIME_UNSET);
                 writeNonBlockingV21 = writeNonBlockingWithAvSyncV21(this.audioTrack, byteBuffer, remaining2, j);
             } else {
                 writeNonBlockingV21 = writeNonBlockingV21(this.audioTrack, byteBuffer, remaining2);
@@ -1134,7 +1134,7 @@ public final class DefaultAudioSink implements AudioSink {
         if (playbackParameters.equals(mediaPositionParameters.playbackParameters) && z == mediaPositionParameters.skipSilence) {
             return;
         }
-        MediaPositionParameters mediaPositionParameters2 = new MediaPositionParameters(playbackParameters, z, C0474C.TIME_UNSET, C0474C.TIME_UNSET);
+        MediaPositionParameters mediaPositionParameters2 = new MediaPositionParameters(playbackParameters, z, C0468C.TIME_UNSET, C0468C.TIME_UNSET);
         if (isAudioTrackInitialized()) {
             this.afterDrainParameters = mediaPositionParameters2;
         } else {
@@ -1424,7 +1424,7 @@ public final class DefaultAudioSink implements AudioSink {
         public void register(AudioTrack audioTrack) {
             Handler handler = this.handler;
             Objects.requireNonNull(handler);
-            audioTrack.registerStreamEventCallback(new ExecutorC0517x59586989(handler), this.callback);
+            audioTrack.registerStreamEventCallback(new ExecutorC0511x59586989(handler), this.callback);
         }
 
         public void unregister(AudioTrack audioTrack) {

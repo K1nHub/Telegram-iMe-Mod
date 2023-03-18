@@ -27,11 +27,9 @@ import com.smedialink.utils.extentions.common.BaseFragmentExtKt;
 import com.smedialink.utils.helper.GlideHelper;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Pair;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -43,11 +41,11 @@ import moxy.ktx.MoxyKtxDelegate;
 import org.fork.p046ui.view.MovingCheckCell;
 import org.fork.utils.Callbacks$Callback1;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Components.CheckBoxSquare;
@@ -127,7 +125,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$$ExternalSyntheticLambda0
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                WalletHomeCryptoTokensSettingsFragment.m1700getThemeDescriptions$lambda1(WalletHomeCryptoTokensSettingsFragment.this);
+                WalletHomeCryptoTokensSettingsFragment.getThemeDescriptions$lambda$1(WalletHomeCryptoTokensSettingsFragment.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -139,8 +137,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescriptions$lambda-1  reason: not valid java name */
-    public static final void m1700getThemeDescriptions$lambda1(WalletHomeCryptoTokensSettingsFragment this$0) {
+    public static final void getThemeDescriptions$lambda$1(WalletHomeCryptoTokensSettingsFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getListAdapter().notifyDataSetChanged();
     }
@@ -164,15 +161,15 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.setTitle(LocaleController.getInternalString(C3158R.string.wallet_home_crypto_tokens_settings_toolbar_title));
-        ActionBarMenuItem addItem = c3222ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3158R.C3160drawable.ic_ab_other);
-        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3158R.string.AccDescrMoreOptions));
-        addItem.addSubItem(IdFabric$Menu.RESET, C3158R.C3160drawable.msg_reset, LocaleController.getString("ThemeResetToDefaults", C3158R.string.ThemeResetToDefaults));
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$setupActionBar$1$2
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.setTitle(LocaleController.getInternalString(C3286R.string.wallet_home_crypto_tokens_settings_toolbar_title));
+        ActionBarMenuItem addItem = c3351ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3286R.C3288drawable.ic_ab_other);
+        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions));
+        addItem.addSubItem(IdFabric$Menu.RESET, C3286R.C3288drawable.msg_reset, LocaleController.getString("ThemeResetToDefaults", C3286R.string.ThemeResetToDefaults));
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$setupActionBar$1$2
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletHomeCryptoTokensSettingsFragment.this.finishFragment();
@@ -190,7 +187,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
         recyclerListView.setFocusable(true);
         recyclerListView.setLayoutManager(new LinearLayoutManager(recyclerListView.getContext()));
         recyclerListView.setAdapter(getListAdapter());
-        new ItemTouchHelper(new TouchHelperCallback(this)).attachToRecyclerView(recyclerListView);
+        new ItemTouchHelper(new TouchHelperCallback()).attachToRecyclerView(recyclerListView);
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$$ExternalSyntheticLambda1
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListenerExtended
             public /* synthetic */ boolean hasDoubleTap(View view, int i) {
@@ -204,15 +201,14 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
 
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListenerExtended
             public final void onItemClick(View view, int i, float f, float f2) {
-                WalletHomeCryptoTokensSettingsFragment.m1701initListView$lambda6$lambda5(WalletHomeCryptoTokensSettingsFragment.this, view, i, f, f2);
+                WalletHomeCryptoTokensSettingsFragment.initListView$lambda$6$lambda$5(WalletHomeCryptoTokensSettingsFragment.this, view, i, f, f2);
             }
         });
         return recyclerListView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-6$lambda-5  reason: not valid java name */
-    public static final void m1701initListView$lambda6$lambda5(WalletHomeCryptoTokensSettingsFragment this$0, View view, int i, float f, float f2) {
+    public static final void initListView$lambda$6$lambda$5(WalletHomeCryptoTokensSettingsFragment this$0, View view, int i, float f, float f2) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (view instanceof MovingCheckCell) {
             this$0.getPresenter().switchTokenEnabled(i - this$0.tokensStartRow);
@@ -226,15 +222,11 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
     /* renamed from: com.smedialink.ui.wallet.home.v2.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$ListAdapter */
     /* loaded from: classes3.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ WalletHomeCryptoTokensSettingsFragment this$0;
-
-        public ListAdapter(WalletHomeCryptoTokensSettingsFragment this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public ListAdapter() {
         }
 
         public final void swapElements(int i, int i2) {
-            this.this$0.getPresenter().swapTokensPositions(i - this.this$0.tokensStartRow, i2 - this.this$0.tokensStartRow);
+            WalletHomeCryptoTokensSettingsFragment.this.getPresenter().swapTokensPositions(i - WalletHomeCryptoTokensSettingsFragment.this.tokensStartRow, i2 - WalletHomeCryptoTokensSettingsFragment.this.tokensStartRow);
             notifyItemMoved(i, i2);
         }
 
@@ -246,12 +238,12 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            return this.this$0.rowCount;
+            return WalletHomeCryptoTokensSettingsFragment.this.rowCount;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
-            return i == this.this$0.headerRow ? IdFabric$ViewTypes.HEADER : IdFabric$ViewTypes.MOVING_CHECK;
+            return i == WalletHomeCryptoTokensSettingsFragment.this.headerRow ? IdFabric$ViewTypes.HEADER : IdFabric$ViewTypes.MOVING_CHECK;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -259,49 +251,45 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
             RelativeLayout relativeLayout;
             Intrinsics.checkNotNullParameter(parent, "parent");
             if (i == IdFabric$ViewTypes.HEADER) {
-                final ForkItemWalletHomeCryptoTokensSettingsHeaderBinding inflate = ForkItemWalletHomeCryptoTokensSettingsHeaderBinding.inflate(BaseFragmentExtKt.getLayoutInflater(this.this$0));
-                final WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment = this.this$0;
+                final ForkItemWalletHomeCryptoTokensSettingsHeaderBinding inflate = ForkItemWalletHomeCryptoTokensSettingsHeaderBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletHomeCryptoTokensSettingsFragment.this));
+                final WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment = WalletHomeCryptoTokensSettingsFragment.this;
                 inflate.onlyPositiveCheckboxContainer.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$ListAdapter$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        WalletHomeCryptoTokensSettingsFragment.ListAdapter.m1704onCreateViewHolder$lambda3$lambda0(WalletHomeCryptoTokensSettingsFragment.this, inflate, view);
+                        WalletHomeCryptoTokensSettingsFragment.ListAdapter.onCreateViewHolder$lambda$3$lambda$0(WalletHomeCryptoTokensSettingsFragment.this, inflate, view);
                     }
                 });
                 inflate.networkTypeViewContainer.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$ListAdapter$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        WalletHomeCryptoTokensSettingsFragment.ListAdapter.m1705onCreateViewHolder$lambda3$lambda2(WalletHomeCryptoTokensSettingsFragment.this, inflate, view);
+                        WalletHomeCryptoTokensSettingsFragment.ListAdapter.onCreateViewHolder$lambda$3$lambda$2(WalletHomeCryptoTokensSettingsFragment.this, inflate, view);
                     }
                 });
-                Unit unit = Unit.INSTANCE;
                 RelativeLayout root = inflate.getRoot();
                 Intrinsics.checkNotNullExpressionValue(root, "inflate(layoutInflater).…     }\n            }.root");
                 relativeLayout = root;
             } else {
-                Activity parentActivity = this.this$0.getParentActivity();
+                Activity parentActivity = WalletHomeCryptoTokensSettingsFragment.this.getParentActivity();
                 Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
                 MovingCheckCell movingCheckCell = new MovingCheckCell(parentActivity);
                 movingCheckCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
                 AppCompatImageView iconView = movingCheckCell.getIconView();
-                iconView.setBackgroundResource(C3158R.C3160drawable.fork_bg_white_circle);
+                iconView.setBackgroundResource(C3286R.C3288drawable.fork_bg_white_circle);
                 ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
-                Objects.requireNonNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
+                Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
                 FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) layoutParams;
                 int m51dp = AndroidUtilities.m51dp(35.0f);
                 layoutParams2.width = m51dp;
                 layoutParams2.height = m51dp;
-                Unit unit2 = Unit.INSTANCE;
                 iconView.setLayoutParams(layoutParams2);
                 relativeLayout = movingCheckCell;
             }
             relativeLayout.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-            Unit unit3 = Unit.INSTANCE;
             return new RecyclerListView.Holder(relativeLayout);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: onCreateViewHolder$lambda-3$lambda-0  reason: not valid java name */
-        public static final void m1704onCreateViewHolder$lambda3$lambda0(WalletHomeCryptoTokensSettingsFragment this$0, ForkItemWalletHomeCryptoTokensSettingsHeaderBinding this_apply, View view) {
+        public static final void onCreateViewHolder$lambda$3$lambda$0(WalletHomeCryptoTokensSettingsFragment this$0, ForkItemWalletHomeCryptoTokensSettingsHeaderBinding this_apply, View view) {
             Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
             this$0.getPresenter().switchOnlyPositiveTokens();
@@ -310,8 +298,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: onCreateViewHolder$lambda-3$lambda-2  reason: not valid java name */
-        public static final void m1705onCreateViewHolder$lambda3$lambda2(final WalletHomeCryptoTokensSettingsFragment this$0, final ForkItemWalletHomeCryptoTokensSettingsHeaderBinding this_apply, View view) {
+        public static final void onCreateViewHolder$lambda$3$lambda$2(final WalletHomeCryptoTokensSettingsFragment this$0, final ForkItemWalletHomeCryptoTokensSettingsHeaderBinding this_apply, View view) {
             Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
             Activity parentActivity = this$0.getParentActivity();
@@ -319,14 +306,13 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
             this$0.showDialog(DialogsFactoryKt.createSelectNetworkTypeDialog(parentActivity, NetworkType.Companion.getNetworksByBlockchains(this$0.getCryptoAccessManager().getCreatedWalletsBlockchains()), this_apply.networkTypeView.getNetworkType(), new Callbacks$Callback1() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$ListAdapter$$ExternalSyntheticLambda3
                 @Override // org.fork.utils.Callbacks$Callback1
                 public final void invoke(Object obj) {
-                    WalletHomeCryptoTokensSettingsFragment.ListAdapter.m1706onCreateViewHolder$lambda3$lambda2$lambda1(ForkItemWalletHomeCryptoTokensSettingsHeaderBinding.this, this$0, (NetworkType) obj);
+                    WalletHomeCryptoTokensSettingsFragment.ListAdapter.onCreateViewHolder$lambda$3$lambda$2$lambda$1(ForkItemWalletHomeCryptoTokensSettingsHeaderBinding.this, this$0, (NetworkType) obj);
                 }
             }));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: onCreateViewHolder$lambda-3$lambda-2$lambda-1  reason: not valid java name */
-        public static final void m1706onCreateViewHolder$lambda3$lambda2$lambda1(ForkItemWalletHomeCryptoTokensSettingsHeaderBinding this_apply, WalletHomeCryptoTokensSettingsFragment this$0, NetworkType selectedNetworkType) {
+        public static final void onCreateViewHolder$lambda$3$lambda$2$lambda$1(ForkItemWalletHomeCryptoTokensSettingsHeaderBinding this_apply, WalletHomeCryptoTokensSettingsFragment this$0, NetworkType selectedNetworkType) {
             Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
             Intrinsics.checkNotNullParameter(this$0, "this$0");
             NetworkTypeView networkTypeView = this_apply.networkTypeView;
@@ -341,18 +327,20 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
             int itemViewType = holder.getItemViewType();
             if (itemViewType == IdFabric$ViewTypes.HEADER) {
                 ForkItemWalletHomeCryptoTokensSettingsHeaderBinding bind = ForkItemWalletHomeCryptoTokensSettingsHeaderBinding.bind(holder.itemView);
-                WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment = this.this$0;
+                WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment = WalletHomeCryptoTokensSettingsFragment.this;
                 bind.onlyPositiveCheckbox.setChecked(walletHomeCryptoTokensSettingsFragment.getPresenter().getOnlyPositiveTokens(), false);
                 AppCompatTextView appCompatTextView = bind.onlyPositiveCheckboxText;
                 appCompatTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-                appCompatTextView.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3158R.string.wallet_home_crypto_tokens_settings_only_positive));
-                NetworkTypeView networkTypeView = bind.networkTypeView;
-                networkTypeView.setNetworkType(walletHomeCryptoTokensSettingsFragment.getPresenter().getCurrentNetworkType());
-                Intrinsics.checkNotNullExpressionValue(networkTypeView, "");
-                networkTypeView.setVisibility(walletHomeCryptoTokensSettingsFragment.getScreenType() instanceof ScreenType.Crypto ? 0 : 8);
+                appCompatTextView.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3286R.string.wallet_home_crypto_tokens_settings_only_positive));
+                NetworkTypeView onBindViewHolder$lambda$10$lambda$9 = bind.networkTypeView;
+                onBindViewHolder$lambda$10$lambda$9.setNetworkType(walletHomeCryptoTokensSettingsFragment.getPresenter().getCurrentNetworkType());
+                Intrinsics.checkNotNullExpressionValue(onBindViewHolder$lambda$10$lambda$9, "onBindViewHolder$lambda$10$lambda$9");
+                onBindViewHolder$lambda$10$lambda$9.setVisibility(walletHomeCryptoTokensSettingsFragment.getScreenType() instanceof ScreenType.Crypto ? 0 : 8);
             } else if (itemViewType == IdFabric$ViewTypes.MOVING_CHECK) {
-                final MovingCheckCell movingCheckCell = (MovingCheckCell) holder.itemView;
-                WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment2 = this.this$0;
+                View view = holder.itemView;
+                Intrinsics.checkNotNull(view, "null cannot be cast to non-null type org.fork.ui.view.MovingCheckCell");
+                final MovingCheckCell movingCheckCell = (MovingCheckCell) view;
+                WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment2 = WalletHomeCryptoTokensSettingsFragment.this;
                 Pair<SelectableToken, WalletCryptoTokensSettingsTokenState> tokenSetting = walletHomeCryptoTokensSettingsFragment2.getPresenter().getTokenSetting(i - walletHomeCryptoTokensSettingsFragment2.tokensStartRow);
                 SelectableToken component1 = tokenSetting.component1();
                 WalletCryptoTokensSettingsTokenState component2 = tokenSetting.component2();
@@ -364,7 +352,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
                     GlideHelper.loadBinanceImageAsBitmap(parentActivity, ((SelectableToken.WithLogoUrl.Binance) component1).getLogoUrl(), new Callbacks$Callback1() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$ListAdapter$$ExternalSyntheticLambda2
                         @Override // org.fork.utils.Callbacks$Callback1
                         public final void invoke(Object obj) {
-                            WalletHomeCryptoTokensSettingsFragment.ListAdapter.m1703onBindViewHolder$lambda12$lambda11(MovingCheckCell.this, (Bitmap) obj);
+                            WalletHomeCryptoTokensSettingsFragment.ListAdapter.onBindViewHolder$lambda$12$lambda$11(MovingCheckCell.this, (Bitmap) obj);
                         }
                     });
                 } else if (component1 instanceof SelectableToken.WithResLogo) {
@@ -374,8 +362,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: onBindViewHolder$lambda-12$lambda-11  reason: not valid java name */
-        public static final void m1703onBindViewHolder$lambda12$lambda11(MovingCheckCell this_with, Bitmap it) {
+        public static final void onBindViewHolder$lambda$12$lambda$11(MovingCheckCell this_with, Bitmap it) {
             Intrinsics.checkNotNullParameter(this_with, "$this_with");
             Intrinsics.checkNotNullExpressionValue(it, "it");
             this_with.setImage(it);
@@ -386,8 +373,6 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
     /* renamed from: com.smedialink.ui.wallet.home.v2.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$TouchHelperCallback */
     /* loaded from: classes3.dex */
     public final class TouchHelperCallback extends ItemTouchHelper.Callback {
-        final /* synthetic */ WalletHomeCryptoTokensSettingsFragment this$0;
-
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
         public boolean isLongPressDragEnabled() {
             return true;
@@ -398,9 +383,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
             Intrinsics.checkNotNullParameter(viewHolder, "viewHolder");
         }
 
-        public TouchHelperCallback(WalletHomeCryptoTokensSettingsFragment this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public TouchHelperCallback() {
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
@@ -418,15 +401,15 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
             if (source.getItemViewType() != target.getItemViewType()) {
                 return false;
             }
-            this.this$0.getListAdapter().swapElements(source.getAdapterPosition(), target.getAdapterPosition());
+            WalletHomeCryptoTokensSettingsFragment.this.getListAdapter().swapElements(source.getAdapterPosition(), target.getAdapterPosition());
             return true;
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
         public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int i) {
             if (i != 0) {
-                this.this$0.getListView().cancelClickRunnables(false);
-                View view = viewHolder == null ? null : viewHolder.itemView;
+                WalletHomeCryptoTokensSettingsFragment.this.getListView().cancelClickRunnables(false);
+                View view = viewHolder != null ? viewHolder.itemView : null;
                 if (view != null) {
                     view.setPressed(true);
                 }

@@ -18,6 +18,6 @@ final class AllChatsTabSettingsActivity$listAdapter$2 extends Lambda implements 
 
     @Override // kotlin.jvm.functions.Function0
     public final AllChatsTabSettingsActivity.ListAdapter invoke() {
-        return new AllChatsTabSettingsActivity.ListAdapter(this.this$0);
+        return new AllChatsTabSettingsActivity.ListAdapter();
     }
 }

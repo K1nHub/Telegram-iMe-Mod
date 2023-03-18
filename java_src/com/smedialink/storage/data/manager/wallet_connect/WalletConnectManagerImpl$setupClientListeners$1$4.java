@@ -22,7 +22,10 @@ public final class WalletConnectManagerImpl$setupClientListeners$1$4 extends Lam
 
         static {
             int[] iArr = new int[WCEthereumSignMessage.WCSignType.values().length];
-            iArr[WCEthereumSignMessage.WCSignType.TYPED_MESSAGE.ordinal()] = 1;
+            try {
+                iArr[WCEthereumSignMessage.WCSignType.TYPED_MESSAGE.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }

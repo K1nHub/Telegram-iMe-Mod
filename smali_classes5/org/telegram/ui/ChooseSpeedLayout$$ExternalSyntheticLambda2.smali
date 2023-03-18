@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/ChooseSpeedLayout$Callback;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChooseSpeedLayout;->$r8$lambda$9y070vsvMEi84dCnYl08cceJ0KE(Lorg/telegram/ui/ChooseSpeedLayout$Callback;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChooseSpeedLayout;->$r8$lambda$bEa9t3XknQqonKfg_3shhtp4rzY(Lorg/telegram/ui/ChooseSpeedLayout$Callback;Landroid/view/View;)V
 
     return-void
 .end method

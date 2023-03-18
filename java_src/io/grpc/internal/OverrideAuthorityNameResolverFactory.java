@@ -2,7 +2,7 @@ package io.grpc.internal;
 
 import io.grpc.NameResolver;
 import java.net.URI;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class OverrideAuthorityNameResolverFactory extends NameResolver.Factory {
     private final String authorityOverride;
     private final NameResolver.Factory delegate;

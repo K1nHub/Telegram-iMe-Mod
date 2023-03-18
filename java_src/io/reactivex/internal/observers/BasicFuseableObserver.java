@@ -6,13 +6,13 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.QueueDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public abstract class BasicFuseableObserver<T, R> implements Observer<T>, QueueDisposable<R> {
     protected boolean done;
     protected final Observer<? super R> downstream;
 
     /* renamed from: qd */
-    protected QueueDisposable<T> f438qd;
+    protected QueueDisposable<T> f443qd;
     protected int sourceMode;
     protected Disposable upstream;
 
@@ -32,7 +32,7 @@ public abstract class BasicFuseableObserver<T, R> implements Observer<T>, QueueD
         if (DisposableHelper.validate(this.upstream, disposable)) {
             this.upstream = disposable;
             if (disposable instanceof QueueDisposable) {
-                this.f438qd = (QueueDisposable) disposable;
+                this.f443qd = (QueueDisposable) disposable;
             }
             if (beforeDownstream()) {
                 this.downstream.onSubscribe(this);
@@ -69,7 +69,7 @@ public abstract class BasicFuseableObserver<T, R> implements Observer<T>, QueueD
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final int transitiveBoundaryFusion(int i) {
-        QueueDisposable<T> queueDisposable = this.f438qd;
+        QueueDisposable<T> queueDisposable = this.f443qd;
         if (queueDisposable == null || (i & 4) != 0) {
             return 0;
         }
@@ -92,12 +92,12 @@ public abstract class BasicFuseableObserver<T, R> implements Observer<T>, QueueD
 
     @Override // io.reactivex.internal.fuseable.SimpleQueue
     public boolean isEmpty() {
-        return this.f438qd.isEmpty();
+        return this.f443qd.isEmpty();
     }
 
     @Override // io.reactivex.internal.fuseable.SimpleQueue
     public void clear() {
-        this.f438qd.clear();
+        this.f443qd.clear();
     }
 
     @Override // io.reactivex.internal.fuseable.SimpleQueue

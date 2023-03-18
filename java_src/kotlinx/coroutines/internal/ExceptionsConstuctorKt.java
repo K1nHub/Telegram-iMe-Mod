@@ -25,7 +25,7 @@ public final class ExceptionsConstuctorKt {
     private static final WeakHashMap<Class<? extends Throwable>, Function1<Throwable, Throwable>> exceptionCtors = new WeakHashMap<>();
 
     public static final <E extends Throwable> E tryCopyException(E e) {
-        Object m1870constructorimpl;
+        Object m1463constructorimpl;
         List sortedWith;
         ReentrantReadWriteLock.ReadLock readLock;
         int readHoldCount;
@@ -33,12 +33,12 @@ public final class ExceptionsConstuctorKt {
         if (e instanceof CopyableThrowable) {
             try {
                 Result.Companion companion = Result.Companion;
-                m1870constructorimpl = Result.m1870constructorimpl(((CopyableThrowable) e).createCopy());
+                m1463constructorimpl = Result.m1463constructorimpl(((CopyableThrowable) e).createCopy());
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m1870constructorimpl = Result.m1870constructorimpl(ResultKt.createFailure(th));
+                m1463constructorimpl = Result.m1463constructorimpl(ResultKt.createFailure(th));
             }
-            return (E) (Result.m1872isFailureimpl(m1870constructorimpl) ? null : m1870constructorimpl);
+            return (E) (Result.m1465isFailureimpl(m1463constructorimpl) ? null : m1463constructorimpl);
         }
         ReentrantReadWriteLock reentrantReadWriteLock = cacheLock;
         ReentrantReadWriteLock.ReadLock readLock2 = reentrantReadWriteLock.readLock();
@@ -136,20 +136,20 @@ public final class ExceptionsConstuctorKt {
     }
 
     private static final int fieldsCountOrDefault(Class<?> cls, int i) {
-        Integer m1870constructorimpl;
+        Integer m1463constructorimpl;
         JvmClassMappingKt.getKotlinClass(cls);
         try {
             Result.Companion companion = Result.Companion;
-            m1870constructorimpl = Result.m1870constructorimpl(Integer.valueOf(fieldsCount$default(cls, 0, 1, null)));
+            m1463constructorimpl = Result.m1463constructorimpl(Integer.valueOf(fieldsCount$default(cls, 0, 1, null)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1870constructorimpl = Result.m1870constructorimpl(ResultKt.createFailure(th));
+            m1463constructorimpl = Result.m1463constructorimpl(ResultKt.createFailure(th));
         }
         Integer valueOf = Integer.valueOf(i);
-        if (Result.m1872isFailureimpl(m1870constructorimpl)) {
-            m1870constructorimpl = valueOf;
+        if (Result.m1465isFailureimpl(m1463constructorimpl)) {
+            m1463constructorimpl = valueOf;
         }
-        return ((Number) m1870constructorimpl).intValue();
+        return ((Number) m1463constructorimpl).intValue();
     }
 
     static /* synthetic */ int fieldsCount$default(Class cls, int i, int i2, Object obj) {

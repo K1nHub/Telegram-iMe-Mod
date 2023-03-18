@@ -33,7 +33,7 @@ public final class ErrorModel {
     }
 
     public String toString() {
-        return "ErrorModel(errorMessage=" + ((Object) this.errorMessage) + ", code=" + this.code + ", status=" + this.status + ", originThrowable=" + this.originThrowable + ')';
+        return "ErrorModel(errorMessage=" + this.errorMessage + ", code=" + this.code + ", status=" + this.status + ", originThrowable=" + this.originThrowable + ')';
     }
 
     public ErrorModel(String str, Integer num, IErrorStatus status, Throwable th) {

@@ -6,6 +6,10 @@
 # instance fields
 .field public big:Z
 
+.field public date:I
+
+.field public dateIsSeen:Z
+
 .field public flags:I
 
 .field public peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
@@ -19,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2682
+    .line 2679
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -28,53 +32,51 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;
     .locals 1
 
-    const v0, -0x6cd7bb06
-
-    if-eq p1, v0, :cond_2
-
-    const v0, -0x4ea90164
-
-    if-eq p1, v0, :cond_1
-
-    const v0, 0x51b67eff
-
-    if-eq p1, v0, :cond_0
+    sparse-switch p1, :sswitch_data_0
 
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 2697
-    :cond_0
+    .line 2699
+    :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messagePeerReaction_layer144;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messagePeerReaction_layer144;-><init>()V
 
     goto :goto_0
 
-    .line 2694
-    :cond_1
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messagePeerReaction;
+    .line 2696
+    :sswitch_1
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messagePeerReaction_layer154;
 
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messagePeerReaction;-><init>()V
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messagePeerReaction_layer154;-><init>()V
 
     goto :goto_0
 
-    .line 2700
-    :cond_2
+    .line 2702
+    :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messagePeerReaction_layer137;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messagePeerReaction_layer137;-><init>()V
 
-    :goto_0
-    if-nez v0, :cond_4
+    goto :goto_0
 
-    if-nez p2, :cond_3
+    .line 2693
+    :sswitch_3
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messagePeerReaction;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messagePeerReaction;-><init>()V
+
+    :goto_0
+    if-nez v0, :cond_1
+
+    if-nez p2, :cond_0
 
     goto :goto_1
 
-    .line 2704
-    :cond_3
+    .line 2706
+    :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
     const/4 p2, 0x1
@@ -99,13 +101,23 @@
 
     throw p0
 
-    :cond_4
+    :cond_1
     :goto_1
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_2
 
-    .line 2707
+    .line 2709
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
-    :cond_5
+    :cond_2
     return-object v0
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        -0x738649c4 -> :sswitch_3
+        -0x6cd7bb06 -> :sswitch_2
+        -0x4ea90164 -> :sswitch_1
+        0x51b67eff -> :sswitch_0
+    .end sparse-switch
 .end method

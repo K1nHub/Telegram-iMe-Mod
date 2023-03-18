@@ -112,7 +112,7 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
             };
             this.reactionsContainerLayout = reactionsContainerLayout;
             reactionsContainerLayout.setPadding(AndroidUtilities.m50dp(4) + (LocaleController.isRTL ? 0 : this.mSidePadding), AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4) + (LocaleController.isRTL ? this.mSidePadding : 0), AndroidUtilities.m50dp(this.mPadding));
-            this.reactionsContainerLayout.setDelegate(new C48393());
+            this.reactionsContainerLayout.setDelegate(new C49763());
             this.reactionsContainerLayout.setClipChildren(false);
             this.reactionsContainerLayout.setClipToPadding(false);
             addView(this.reactionsContainerLayout, LayoutHelper.createFrame(-2, this.mPadding + 70, 5));
@@ -122,8 +122,8 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Reactions.ChatSelectionReactionMenuOverlay$3 */
     /* loaded from: classes6.dex */
-    public class C48393 implements ReactionsContainerLayout.ReactionsContainerDelegate {
-        C48393() {
+    public class C49763 implements ReactionsContainerLayout.ReactionsContainerDelegate {
+        C49763() {
         }
 
         @Override // org.telegram.p048ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
@@ -132,14 +132,16 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Reactions.ChatSelectionReactionMenuOverlay$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatSelectionReactionMenuOverlay.C48393.this.lambda$onReactionClicked$0();
+                    ChatSelectionReactionMenuOverlay.C49763.this.lambda$onReactionClicked$0();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onReactionClicked$0() {
-            ChatSelectionReactionMenuOverlay.this.reactionsContainerLayout.dismissParent(true);
+            if (ChatSelectionReactionMenuOverlay.this.reactionsContainerLayout != null) {
+                ChatSelectionReactionMenuOverlay.this.reactionsContainerLayout.dismissParent(true);
+            }
             hideMenu();
         }
 

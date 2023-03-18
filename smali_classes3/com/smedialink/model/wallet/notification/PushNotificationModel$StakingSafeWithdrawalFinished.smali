@@ -445,26 +445,26 @@
 
     aput-object v2, v1, v3
 
+    new-instance v2, Ljava/math/BigDecimal;
+
     .line 127
-    iget-object v2, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->amount:Ljava/lang/String;
+    iget-object v3, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->amount:Ljava/lang/String;
 
-    new-instance v3, Ljava/math/BigDecimal;
+    invoke-direct {v2, v3}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v3, v2}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
-
-    sget-object v2, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;
+    sget-object v3, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;
 
     iget-object v4, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->stakingToken:Ljava/lang/String;
 
-    invoke-virtual {v2, v4}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
+    invoke-virtual {v3, v4}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->getDecimals()I
+    invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->getDecimals()I
 
-    move-result v2
+    move-result v3
 
-    invoke-static {v3, v2}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v2, v3}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
 
     move-result-object v2
 

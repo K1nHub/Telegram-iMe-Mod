@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda1;->f$1:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->$r8$lambda$d2OdnDBslNaB_6B0030fqrMGBeQ(Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->$r8$lambda$8x9Fb7lWIu0KDWkxL29aSU4E2Ms(Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Ljava/lang/String;)V
 
     return-void
 .end method

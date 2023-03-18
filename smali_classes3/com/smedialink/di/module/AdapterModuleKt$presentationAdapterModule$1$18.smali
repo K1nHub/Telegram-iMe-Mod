@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/smedialink/ui/wallet/transaction/details/adapter/WalletActionAdapter;",
+        "Lcom/smedialink/ui/wallet/crypto/settings/adapter/WalletAccountSettingsRecycleAdapter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$18\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,114:1\n127#2,5:115\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$18\n*L\n97#1:115,5\n*E\n"
+    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$18\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,118:1\n127#2,5:119\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$18\n*L\n99#1:119,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/ui/wallet/transaction/details/adapter/WalletActionAdapter;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/ui/wallet/crypto/settings/adapter/WalletAccountSettingsRecycleAdapter;
     .locals 2
 
     const-string v0, "$this$factory"
@@ -72,8 +72,8 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 97
-    new-instance p2, Lcom/smedialink/ui/wallet/transaction/details/adapter/WalletActionAdapter;
+    .line 99
+    new-instance p2, Lcom/smedialink/ui/wallet/crypto/settings/adapter/WalletAccountSettingsRecycleAdapter;
 
     .line 131
     const-class v0, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -90,8 +90,8 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    .line 97
-    invoke-direct {p2, p1}, Lcom/smedialink/ui/wallet/transaction/details/adapter/WalletActionAdapter;-><init>(Lcom/smedialink/storage/domain/utils/system/ResourceManager;)V
+    .line 99
+    invoke-direct {p2, p1}, Lcom/smedialink/ui/wallet/crypto/settings/adapter/WalletAccountSettingsRecycleAdapter;-><init>(Lcom/smedialink/storage/domain/utils/system/ResourceManager;)V
 
     return-object p2
 .end method
@@ -99,12 +99,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 97
+    .line 99
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$18;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/ui/wallet/transaction/details/adapter/WalletActionAdapter;
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$18;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/ui/wallet/crypto/settings/adapter/WalletAccountSettingsRecycleAdapter;
 
     move-result-object p1
 

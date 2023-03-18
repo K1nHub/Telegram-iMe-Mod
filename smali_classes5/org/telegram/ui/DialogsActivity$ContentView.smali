@@ -3668,7 +3668,7 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_4
+    if-eqz p2, :cond_6
 
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$ContentView;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -3680,7 +3680,7 @@
 
     move-result p2
 
-    if-nez p2, :cond_4
+    if-nez p2, :cond_6
 
     .line 2920
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$ContentView;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -3708,7 +3708,7 @@
 
     array-length v1, v1
 
-    if-ge v0, v1, :cond_4
+    if-ge v0, v1, :cond_6
 
     .line 2924
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$ContentView;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -3719,7 +3719,7 @@
 
     aget-object v1, v1, v0
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_5
 
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$ContentView;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -3733,7 +3733,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_5
 
     const/4 v1, 0x0
 
@@ -3755,7 +3755,7 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_3
+    if-ge v1, v2, :cond_5
 
     .line 2926
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$ContentView;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -3805,7 +3805,7 @@
 
     cmpg-float v3, v3, v4
 
-    if-gez v3, :cond_2
+    if-gez v3, :cond_4
 
     .line 2928
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
@@ -3866,43 +3866,56 @@
     .line 2930
     instance-of v4, v2, Lorg/telegram/ui/Cells/DialogCell;
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_2
 
     .line 2931
     check-cast v2, Lorg/telegram/ui/Cells/DialogCell;
 
+    .line 2932
+    invoke-virtual {v2}, Lorg/telegram/ui/Cells/DialogCell;->isFolderCell()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    sget-boolean v4, Lorg/telegram/messenger/SharedConfig;->archiveHidden:Z
+
+    if-nez v4, :cond_3
+
+    :cond_1
     const/4 v4, 0x1
 
-    .line 2932
+    .line 2933
     iput-boolean v4, v2, Lorg/telegram/ui/Cells/DialogCell;->drawingForBlur:Z
 
-    .line 2933
+    .line 2934
     invoke-virtual {v2, p1}, Landroid/view/ViewGroup;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2934
+    .line 2935
     iput-boolean p2, v2, Lorg/telegram/ui/Cells/DialogCell;->drawingForBlur:Z
 
     goto :goto_2
 
-    .line 2936
-    :cond_1
+    .line 2938
+    :cond_2
     invoke-virtual {v2, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2938
+    .line 2940
+    :cond_3
     :goto_2
     invoke-virtual {p1, v3}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    :cond_2
+    :cond_4
     add-int/lit8 v1, v1, 0x1
 
     goto/16 :goto_1
 
-    :cond_3
+    :cond_5
     add-int/lit8 v0, v0, 0x1
 
     goto/16 :goto_0
 
-    :cond_4
+    :cond_6
     :goto_3
     return-void
 .end method
@@ -4089,10 +4102,10 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 2948
+    .line 2950
     invoke-super {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->onAttachedToWindow()V
 
-    .line 2949
+    .line 2951
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$ContentView;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$15200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
@@ -4101,7 +4114,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2950
+    .line 2952
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$ContentView;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$15200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
@@ -4117,10 +4130,10 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 2956
+    .line 2958
     invoke-super {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->onDetachedFromWindow()V
 
-    .line 2957
+    .line 2959
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$ContentView;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$15200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
@@ -4129,7 +4142,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2958
+    .line 2960
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$ContentView;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$15200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
@@ -5799,10 +5812,6 @@
 
     .line 2386
     :goto_2
-    sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->smoothKeyboard:Z
-
-    if-eqz v0, :cond_8
-
     iget-object v0, v6, Lorg/telegram/ui/DialogsActivity$ContentView;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ChatActivityEnterView;

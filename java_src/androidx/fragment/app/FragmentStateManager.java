@@ -82,7 +82,7 @@ public class FragmentStateManager {
             return fragment.mState;
         }
         int i = this.mFragmentManagerState;
-        int i2 = C02192.$SwitchMap$androidx$lifecycle$Lifecycle$State[fragment.mMaxState.ordinal()];
+        int i2 = C02132.$SwitchMap$androidx$lifecycle$Lifecycle$State[fragment.mMaxState.ordinal()];
         if (i2 != 1) {
             if (i2 == 2) {
                 i = Math.min(i, 5);
@@ -139,7 +139,7 @@ public class FragmentStateManager {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: androidx.fragment.app.FragmentStateManager$2 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C02192 {
+    public static /* synthetic */ class C02132 {
         static final /* synthetic */ int[] $SwitchMap$androidx$lifecycle$Lifecycle$State;
 
         static {

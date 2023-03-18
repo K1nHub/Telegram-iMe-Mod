@@ -10,9 +10,7 @@ import com.smedialink.model.dialog.EditTextDialogModel;
 import com.smedialink.model.dialog.ListDialogModel;
 import com.smedialink.model.dialog.RadioCellsListDialogModel;
 import com.smedialink.utils.extentions.common.ViewExtKt;
-import java.util.Objects;
 import kotlin.Pair;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
@@ -52,16 +50,16 @@ public final class DialogUtils {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(model.getTitle());
         builder.setMessage(model.getMessage());
-        builder.setNegativeButton(model.getNegativeButtonText(), new DialogInterface.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda4
+        builder.setNegativeButton(model.getNegativeButtonText(), new DialogInterface.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda2
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                DialogUtils.m1812createDialog$lambda2$lambda0(Callbacks$Callback.this, dialogInterface, i);
+                DialogUtils.createDialog$lambda$2$lambda$0(Callbacks$Callback.this, dialogInterface, i);
             }
         });
-        builder.setPositiveButton(model.getPositiveButtonText(), new DialogInterface.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda1
+        builder.setPositiveButton(model.getPositiveButtonText(), new DialogInterface.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda4
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                DialogUtils.m1813createDialog$lambda2$lambda1(Callbacks$Callback.this, dialogInterface, i);
+                DialogUtils.createDialog$lambda$2$lambda$1(Callbacks$Callback.this, dialogInterface, i);
             }
         });
         AlertDialog create = builder.create();
@@ -69,20 +67,16 @@ public final class DialogUtils {
         return create;
     }
 
-    /* renamed from: createDialog$lambda-2$lambda-0 */
-    public static final void m1812createDialog$lambda2$lambda0(Callbacks$Callback callbacks$Callback, DialogInterface dialogInterface, int i) {
-        if (callbacks$Callback == null) {
-            return;
+    public static final void createDialog$lambda$2$lambda$0(Callbacks$Callback callbacks$Callback, DialogInterface dialogInterface, int i) {
+        if (callbacks$Callback != null) {
+            callbacks$Callback.invoke();
         }
-        callbacks$Callback.invoke();
     }
 
-    /* renamed from: createDialog$lambda-2$lambda-1 */
-    public static final void m1813createDialog$lambda2$lambda1(Callbacks$Callback callbacks$Callback, DialogInterface dialogInterface, int i) {
-        if (callbacks$Callback == null) {
-            return;
+    public static final void createDialog$lambda$2$lambda$1(Callbacks$Callback callbacks$Callback, DialogInterface dialogInterface, int i) {
+        if (callbacks$Callback != null) {
+            callbacks$Callback.invoke();
         }
-        callbacks$Callback.invoke();
     }
 
     public static final AlertDialog createDialogWithSelectableList(Context context, ListDialogModel model, final Callbacks$Callback1<Integer> itemSelectedListener, final Callbacks$Callback callbacks$Callback, final Callbacks$Callback callbacks$Callback2) {
@@ -93,24 +87,22 @@ public final class DialogUtils {
         builder.setTitle(model.getTitle());
         builder.setSubtitle(model.getSubtitle());
         builder.setMessage(model.getMessage());
-        Object[] array = model.getItems().toArray(new CharSequence[0]);
-        Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-        builder.setItems((CharSequence[]) array, new DialogInterface.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda0
+        builder.setItems((CharSequence[]) model.getItems().toArray(new CharSequence[0]), new DialogInterface.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                DialogUtils.m1815createDialogWithSelectableList$lambda9$lambda6(Callbacks$Callback1.this, dialogInterface, i);
+                DialogUtils.createDialogWithSelectableList$lambda$9$lambda$6(Callbacks$Callback1.this, dialogInterface, i);
             }
         });
-        builder.setNegativeButton(model.getNegativeButtonText(), new DialogInterface.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda2
+        builder.setNegativeButton(model.getNegativeButtonText(), new DialogInterface.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda3
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                DialogUtils.m1816createDialogWithSelectableList$lambda9$lambda7(Callbacks$Callback.this, dialogInterface, i);
+                DialogUtils.createDialogWithSelectableList$lambda$9$lambda$7(Callbacks$Callback.this, dialogInterface, i);
             }
         });
-        builder.setPositiveButton(model.getPositiveButtonText(), new DialogInterface.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda3
+        builder.setPositiveButton(model.getPositiveButtonText(), new DialogInterface.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                DialogUtils.m1817createDialogWithSelectableList$lambda9$lambda8(Callbacks$Callback.this, dialogInterface, i);
+                DialogUtils.createDialogWithSelectableList$lambda$9$lambda$8(Callbacks$Callback.this, dialogInterface, i);
             }
         });
         AlertDialog create = builder.create();
@@ -118,26 +110,21 @@ public final class DialogUtils {
         return create;
     }
 
-    /* renamed from: createDialogWithSelectableList$lambda-9$lambda-6 */
-    public static final void m1815createDialogWithSelectableList$lambda9$lambda6(Callbacks$Callback1 itemSelectedListener, DialogInterface dialogInterface, int i) {
+    public static final void createDialogWithSelectableList$lambda$9$lambda$6(Callbacks$Callback1 itemSelectedListener, DialogInterface dialogInterface, int i) {
         Intrinsics.checkNotNullParameter(itemSelectedListener, "$itemSelectedListener");
         itemSelectedListener.invoke(Integer.valueOf(i));
     }
 
-    /* renamed from: createDialogWithSelectableList$lambda-9$lambda-7 */
-    public static final void m1816createDialogWithSelectableList$lambda9$lambda7(Callbacks$Callback callbacks$Callback, DialogInterface dialogInterface, int i) {
-        if (callbacks$Callback == null) {
-            return;
+    public static final void createDialogWithSelectableList$lambda$9$lambda$7(Callbacks$Callback callbacks$Callback, DialogInterface dialogInterface, int i) {
+        if (callbacks$Callback != null) {
+            callbacks$Callback.invoke();
         }
-        callbacks$Callback.invoke();
     }
 
-    /* renamed from: createDialogWithSelectableList$lambda-9$lambda-8 */
-    public static final void m1817createDialogWithSelectableList$lambda9$lambda8(Callbacks$Callback callbacks$Callback, DialogInterface dialogInterface, int i) {
-        if (callbacks$Callback == null) {
-            return;
+    public static final void createDialogWithSelectableList$lambda$9$lambda$8(Callbacks$Callback callbacks$Callback, DialogInterface dialogInterface, int i) {
+        if (callbacks$Callback != null) {
+            callbacks$Callback.invoke();
         }
-        callbacks$Callback.invoke();
     }
 
     public static /* synthetic */ AlertDialog createDialogWithRadioCellsList$default(Context context, RadioCellsListDialogModel radioCellsListDialogModel, Callbacks$Callback1 callbacks$Callback1, Callbacks$Callback callbacks$Callback, int i, Object obj) {
@@ -171,19 +158,17 @@ public final class DialogUtils {
             radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DialogUtils.m705xc81ce18e(Callbacks$Callback1.this, i, builder, view);
+                    DialogUtils.m705x4de0a121(Callbacks$Callback1.this, i, builder, view);
                 }
             });
-            Unit unit = Unit.INSTANCE;
             linearLayout.addView(radioColorCell);
             i = i2;
         }
-        Unit unit2 = Unit.INSTANCE;
         builder.setView(linearLayout);
         builder.setNegativeButton(model.getNegativeButtonText(), new DialogInterface.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda5
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i3) {
-                DialogUtils.m1814createDialogWithRadioCellsList$lambda15$lambda14(Callbacks$Callback.this, dialogInterface, i3);
+                DialogUtils.createDialogWithRadioCellsList$lambda$15$lambda$14(Callbacks$Callback.this, dialogInterface, i3);
             }
         });
         AlertDialog create = builder.create();
@@ -191,20 +176,18 @@ public final class DialogUtils {
         return create;
     }
 
-    /* renamed from: createDialogWithRadioCellsList$lambda-15$lambda-13$lambda-12$lambda-11$lambda-10 */
-    public static final void m705xc81ce18e(Callbacks$Callback1 itemSelectedListener, int i, AlertDialog.Builder this_apply, View view) {
+    /* renamed from: createDialogWithRadioCellsList$lambda$15$lambda$13$lambda$12$lambda$11$lambda$10 */
+    public static final void m705x4de0a121(Callbacks$Callback1 itemSelectedListener, int i, AlertDialog.Builder this_apply, View view) {
         Intrinsics.checkNotNullParameter(itemSelectedListener, "$itemSelectedListener");
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         itemSelectedListener.invoke(Integer.valueOf(i));
         this_apply.getDismissRunnable().run();
     }
 
-    /* renamed from: createDialogWithRadioCellsList$lambda-15$lambda-14 */
-    public static final void m1814createDialogWithRadioCellsList$lambda15$lambda14(Callbacks$Callback callbacks$Callback, DialogInterface dialogInterface, int i) {
-        if (callbacks$Callback == null) {
-            return;
+    public static final void createDialogWithRadioCellsList$lambda$15$lambda$14(Callbacks$Callback callbacks$Callback, DialogInterface dialogInterface, int i) {
+        if (callbacks$Callback != null) {
+            callbacks$Callback.invoke();
         }
-        callbacks$Callback.invoke();
     }
 
     public static final AlertDialog createEditTextAlert(BaseFragment parentFragment, final EditTextDialogModel model, final Callbacks$Callback1<String> positiveClickListener, final Callbacks$Callback callbacks$Callback) {
@@ -235,30 +218,29 @@ public final class DialogUtils {
         ViewExtKt.onAction(editTextBoldCursor, 6, new Callbacks$Callback() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda10
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                DialogUtils.m1818createEditTextAlert$lambda22$lambda17$lambda16(EditTextBoldCursor.this, positiveClickListener);
+                DialogUtils.createEditTextAlert$lambda$22$lambda$17$lambda$16(EditTextBoldCursor.this, positiveClickListener);
             }
         });
         LinearLayout linearLayout = new LinearLayout(parentFragment.getContext());
         linearLayout.setOrientation(1);
         linearLayout.addView(editTextBoldCursor, LayoutHelper.createLinear(-1, -2, 23, 12, 23, 21));
-        Unit unit = Unit.INSTANCE;
         builder.setView(linearLayout);
         builder.setNegativeButton(model.getNegativeButtonText(), new DialogInterface.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda6
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                DialogUtils.m1819createEditTextAlert$lambda22$lambda19(Callbacks$Callback.this, builder, dialogInterface, i);
+                DialogUtils.createEditTextAlert$lambda$22$lambda$19(Callbacks$Callback.this, builder, dialogInterface, i);
             }
         });
         builder.setPositiveButton(model.getPositiveButtonText(), new DialogInterface.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda7
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                DialogUtils.m1820createEditTextAlert$lambda22$lambda20(EditTextBoldCursor.this, positiveClickListener, builder, dialogInterface, i);
+                DialogUtils.createEditTextAlert$lambda$22$lambda$20(EditTextBoldCursor.this, positiveClickListener, builder, dialogInterface, i);
             }
         });
         builder.setOnPreDismissListener(new DialogInterface.OnDismissListener() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda8
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                DialogUtils.m1821createEditTextAlert$lambda22$lambda21(EditTextDialogModel.this, editTextBoldCursor, dialogInterface);
+                DialogUtils.createEditTextAlert$lambda$22$lambda$21(EditTextDialogModel.this, editTextBoldCursor, dialogInterface);
             }
         });
         AlertDialog create = builder.create();
@@ -267,8 +249,7 @@ public final class DialogUtils {
         return create;
     }
 
-    /* renamed from: createEditTextAlert$lambda-22$lambda-17$lambda-16 */
-    public static final void m1818createEditTextAlert$lambda22$lambda17$lambda16(EditTextBoldCursor this_apply, Callbacks$Callback1 positiveClickListener) {
+    public static final void createEditTextAlert$lambda$22$lambda$17$lambda$16(EditTextBoldCursor this_apply, Callbacks$Callback1 positiveClickListener) {
         CharSequence trim;
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         Intrinsics.checkNotNullParameter(positiveClickListener, "$positiveClickListener");
@@ -283,8 +264,7 @@ public final class DialogUtils {
         }
     }
 
-    /* renamed from: createEditTextAlert$lambda-22$lambda-19 */
-    public static final void m1819createEditTextAlert$lambda22$lambda19(Callbacks$Callback callbacks$Callback, AlertDialog.Builder this_apply, DialogInterface dialogInterface, int i) {
+    public static final void createEditTextAlert$lambda$22$lambda$19(Callbacks$Callback callbacks$Callback, AlertDialog.Builder this_apply, DialogInterface dialogInterface, int i) {
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         if (callbacks$Callback != null) {
             callbacks$Callback.invoke();
@@ -292,8 +272,7 @@ public final class DialogUtils {
         this_apply.getDismissRunnable().run();
     }
 
-    /* renamed from: createEditTextAlert$lambda-22$lambda-20 */
-    public static final void m1820createEditTextAlert$lambda22$lambda20(EditTextBoldCursor mentionEditTextView, Callbacks$Callback1 positiveClickListener, AlertDialog.Builder this_apply, DialogInterface dialogInterface, int i) {
+    public static final void createEditTextAlert$lambda$22$lambda$20(EditTextBoldCursor mentionEditTextView, Callbacks$Callback1 positiveClickListener, AlertDialog.Builder this_apply, DialogInterface dialogInterface, int i) {
         CharSequence trim;
         Intrinsics.checkNotNullParameter(mentionEditTextView, "$mentionEditTextView");
         Intrinsics.checkNotNullParameter(positiveClickListener, "$positiveClickListener");
@@ -310,8 +289,7 @@ public final class DialogUtils {
         this_apply.getDismissRunnable().run();
     }
 
-    /* renamed from: createEditTextAlert$lambda-22$lambda-21 */
-    public static final void m1821createEditTextAlert$lambda22$lambda21(EditTextDialogModel model, EditTextBoldCursor mentionEditTextView, DialogInterface dialogInterface) {
+    public static final void createEditTextAlert$lambda$22$lambda$21(EditTextDialogModel model, EditTextBoldCursor mentionEditTextView, DialogInterface dialogInterface) {
         Intrinsics.checkNotNullParameter(model, "$model");
         Intrinsics.checkNotNullParameter(mentionEditTextView, "$mentionEditTextView");
         if (model.getShouldHideKeyboardOnDismiss()) {

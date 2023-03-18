@@ -18,7 +18,7 @@
 .method public onClosed(Lokhttp3/WebSocket;ILjava/lang/String;)V
     .locals 0
 
-    const-string p2, "webSocket"
+    const-string/jumbo p2, "webSocket"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -32,7 +32,7 @@
 .method public onClosing(Lokhttp3/WebSocket;ILjava/lang/String;)V
     .locals 0
 
-    const-string p2, "webSocket"
+    const-string/jumbo p2, "webSocket"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -46,7 +46,7 @@
 .method public onFailure(Lokhttp3/WebSocket;Ljava/lang/Throwable;Lokhttp3/Response;)V
     .locals 0
 
-    const-string p3, "webSocket"
+    const-string/jumbo p3, "webSocket"
 
     invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -60,7 +60,7 @@
 .method public onMessage(Lokhttp3/WebSocket;Ljava/lang/String;)V
     .locals 1
 
-    const-string v0, "webSocket"
+    const-string/jumbo v0, "webSocket"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -74,7 +74,7 @@
 .method public onMessage(Lokhttp3/WebSocket;Lokio/ByteString;)V
     .locals 1
 
-    const-string v0, "webSocket"
+    const-string/jumbo v0, "webSocket"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -88,7 +88,7 @@
 .method public onOpen(Lokhttp3/WebSocket;Lokhttp3/Response;)V
     .locals 1
 
-    const-string v0, "webSocket"
+    const-string/jumbo v0, "webSocket"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

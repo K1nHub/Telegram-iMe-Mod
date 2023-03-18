@@ -148,6 +148,19 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
     }
 
     @Override // com.smedialink.p031ui.wallet.actions.send.amount.WalletSendAmountView
+    public void updateSelectedUser() {
+        UpdateSelectedUserCommand updateSelectedUserCommand = new UpdateSelectedUserCommand(this);
+        this.viewCommands.beforeApply(updateSelectedUserCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.updateSelectedUser();
+        }
+        this.viewCommands.afterApply(updateSelectedUserCommand);
+    }
+
+    @Override // com.smedialink.p031ui.wallet.actions.send.amount.WalletSendAmountView
     public void showBalance(TokenBalance tokenBalance) {
         ShowBalanceCommand showBalanceCommand = new ShowBalanceCommand(this, tokenBalance);
         this.viewCommands.beforeApply(showBalanceCommand);
@@ -368,6 +381,20 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletSendAmountView walletSendAmountView) {
             walletSendAmountView.updateFeeView();
+        }
+    }
+
+    /* compiled from: WalletSendAmountView$$State.java */
+    /* renamed from: com.smedialink.ui.wallet.actions.send.amount.WalletSendAmountView$$State$UpdateSelectedUserCommand */
+    /* loaded from: classes3.dex */
+    public class UpdateSelectedUserCommand extends ViewCommand<WalletSendAmountView> {
+        UpdateSelectedUserCommand(WalletSendAmountView$$State walletSendAmountView$$State) {
+            super("updateSelectedUser", AddToEndSingleStrategy.class);
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSendAmountView walletSendAmountView) {
+            walletSendAmountView.updateSelectedUser();
         }
     }
 

@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingCalculatorProgrammesPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingCalculatorProgrammesPresenter.kt\ncom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,108:1\n39#2,6:109\n1#3:115\n*S KotlinDebug\n*F\n+ 1 StakingCalculatorProgrammesPresenter.kt\ncom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter\n*L\n49#1:109,6\n*E\n"
+    value = "SMAP\nStakingCalculatorProgrammesPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingCalculatorProgrammesPresenter.kt\ncom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,109:1\n39#2,8:110\n1#3:118\n*S KotlinDebug\n*F\n+ 1 StakingCalculatorProgrammesPresenter.kt\ncom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter\n*L\n49#1:110,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -150,7 +150,7 @@
 .method private final renderGlobalStateItemsList(Lcom/smedialink/model/state/GlobalState;)V
     .locals 3
 
-    .line 103
+    .line 104
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -250,22 +250,33 @@
 
     invoke-direct {v2, p0, p2, p1}, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter$loadStakingProgrammes$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter;ZZ)V
 
-    new-instance p1, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter$loadStakingProgrammes$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    const/4 p2, 0x0
+    invoke-direct {p1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-direct {p1, p2}, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter$loadStakingProgrammes$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    new-instance p2, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter$loadStakingProgrammes$$inlined$subscribeWithErrorHandle$default$2;
 
-    invoke-virtual {v1, v2, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    const/4 v2, 0x0
+
+    invoke-direct {p2, v2}, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter$loadStakingProgrammes$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v3, p2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v1, p1, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
-    const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
+    const-string p2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    .line 46
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 75
-    invoke-static {p0, p1, p2, v0, p2}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
+    .line 76
+    invoke-static {p0, p1, v2, v0, v2}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
 .end method
@@ -281,20 +292,20 @@
 
     const/4 v3, 0x0
 
-    .line 95
+    .line 96
     invoke-static {p0, v0, v1, v2, v3}, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter;->loadStakingProgrammes$default(Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter;ZZILjava/lang/Object;)V
 
     return-void
 .end method
 
 .method public final onStakingInfoClick(Lcom/smedialink/model/staking/StakingProgrammeItem;)V
-    .locals 8
+    .locals 7
 
     const-string v0, "stakingProgrammeItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 85
+    .line 86
     iget-object v0, p0, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter;->stakingProgrammes:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -306,83 +317,79 @@
 
     move-result v1
 
-    const/4 v2, 0x0
-
     if-eqz v1, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    move-object v3, v1
+    move-object v2, v1
 
-    check-cast v3, Lcom/smedialink/storage/domain/model/staking/StakingMetadata;
+    check-cast v2, Lcom/smedialink/storage/domain/model/staking/StakingMetadata;
 
-    invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/staking/StakingMetadata;->getId()J
+    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/staking/StakingMetadata;->getId()J
 
-    move-result-wide v3
+    move-result-wide v2
 
     invoke-virtual {p1}, Lcom/smedialink/model/staking/StakingProgrammeItem;->getId()J
 
-    move-result-wide v5
+    move-result-wide v4
 
-    cmp-long v7, v3, v5
+    cmp-long v6, v2, v4
 
-    if-nez v7, :cond_1
+    if-nez v6, :cond_1
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     :goto_0
-    if-eqz v3, :cond_0
+    if-eqz v2, :cond_0
 
     goto :goto_1
 
     :cond_2
-    move-object v1, v2
+    const/4 v1, 0x0
 
     :goto_1
     check-cast v1, Lcom/smedialink/storage/domain/model/staking/StakingMetadata;
 
-    if-nez v1, :cond_3
+    if-eqz v1, :cond_4
 
-    goto :goto_2
-
-    :cond_3
     invoke-static {v1}, Lcom/smedialink/mapper/staking/StakingDetailedMetadataUiMappingKt;->mapToUi(Lcom/smedialink/storage/domain/model/staking/StakingMetadata;)Lcom/smedialink/model/staking/StakingDetailsItem;
-
-    move-result-object v2
-
-    :goto_2
-    if-nez v2, :cond_4
-
-    return-void
-
-    .line 87
-    :cond_4
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
 
-    check-cast p1, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesView;
+    if-nez p1, :cond_3
 
-    invoke-interface {p1, v2}, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesView;->showStakingConditionsDialog(Lcom/smedialink/model/staking/StakingDetailsItem;)V
+    goto :goto_2
 
+    .line 88
+    :cond_3
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesView;
+
+    invoke-interface {v0, p1}, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesView;->showStakingConditionsDialog(Lcom/smedialink/model/staking/StakingDetailsItem;)V
+
+    :cond_4
+    :goto_2
     return-void
 .end method
 
 .method public final onStakingProgrammeClick(Lcom/smedialink/model/staking/StakingProgrammeItem;)V
-    .locals 8
+    .locals 7
 
     const-string v0, "stakingProgrammeItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 79
+    .line 80
     iget-object v0, p0, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter;->stakingProgrammes:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -394,71 +401,67 @@
 
     move-result v1
 
-    const/4 v2, 0x0
-
     if-eqz v1, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    move-object v3, v1
+    move-object v2, v1
 
-    check-cast v3, Lcom/smedialink/storage/domain/model/staking/StakingMetadata;
+    check-cast v2, Lcom/smedialink/storage/domain/model/staking/StakingMetadata;
 
-    invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/staking/StakingMetadata;->getId()J
+    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/staking/StakingMetadata;->getId()J
 
-    move-result-wide v3
+    move-result-wide v2
 
     invoke-virtual {p1}, Lcom/smedialink/model/staking/StakingProgrammeItem;->getId()J
 
-    move-result-wide v5
+    move-result-wide v4
 
-    cmp-long v7, v3, v5
+    cmp-long v6, v2, v4
 
-    if-nez v7, :cond_1
+    if-nez v6, :cond_1
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     :goto_0
-    if-eqz v3, :cond_0
+    if-eqz v2, :cond_0
 
     goto :goto_1
 
     :cond_2
-    move-object v1, v2
+    const/4 v1, 0x0
 
     :goto_1
     check-cast v1, Lcom/smedialink/storage/domain/model/staking/StakingMetadata;
 
-    if-nez v1, :cond_3
+    if-eqz v1, :cond_4
 
-    goto :goto_2
-
-    :cond_3
     invoke-static {v1}, Lcom/smedialink/mapper/staking/StakingDetailedMetadataUiMappingKt;->mapToUi(Lcom/smedialink/storage/domain/model/staking/StakingMetadata;)Lcom/smedialink/model/staking/StakingDetailsItem;
-
-    move-result-object v2
-
-    :goto_2
-    if-nez v2, :cond_4
-
-    return-void
-
-    .line 81
-    :cond_4
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
 
-    check-cast p1, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesView;
+    if-nez p1, :cond_3
 
-    invoke-interface {p1, v2}, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesView;->onStakingSelected(Lcom/smedialink/model/staking/StakingDetailsItem;)V
+    goto :goto_2
 
+    .line 82
+    :cond_3
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesView;
+
+    invoke-interface {v0, p1}, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesView;->onStakingSelected(Lcom/smedialink/model/staking/StakingDetailsItem;)V
+
+    :cond_4
+    :goto_2
     return-void
 .end method

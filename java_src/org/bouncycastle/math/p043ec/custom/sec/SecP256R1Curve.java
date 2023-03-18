@@ -12,14 +12,14 @@ import org.bouncycastle.util.encoders.Hex;
 public class SecP256R1Curve extends ECCurve.AbstractFp {
 
     /* renamed from: q */
-    public static final BigInteger f1351q = new BigInteger(1, Hex.decode("FFFFFFFF00000001000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF"));
+    public static final BigInteger f1356q = new BigInteger(1, Hex.decode("FFFFFFFF00000001000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF"));
     protected SecP256R1Point infinity;
 
     public SecP256R1Curve() {
-        super(f1351q);
+        super(f1356q);
         this.infinity = new SecP256R1Point(this, null, null);
-        this.f1302a = fromBigInteger(new BigInteger(1, Hex.decode("FFFFFFFF00000001000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFC")));
-        this.f1303b = fromBigInteger(new BigInteger(1, Hex.decode("5AC635D8AA3A93E7B3EBBD55769886BC651D06B0CC53B0F63BCE3C3E27D2604B")));
+        this.f1307a = fromBigInteger(new BigInteger(1, Hex.decode("FFFFFFFF00000001000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFC")));
+        this.f1308b = fromBigInteger(new BigInteger(1, Hex.decode("5AC635D8AA3A93E7B3EBBD55769886BC651D06B0CC53B0F63BCE3C3E27D2604B")));
         this.order = new BigInteger(1, Hex.decode("FFFFFFFF00000000FFFFFFFFFFFFFFFFBCE6FAADA7179E84F3B9CAC2FC632551"));
         this.cofactor = BigInteger.valueOf(1L);
         this.coord = 2;
@@ -36,9 +36,9 @@ public class SecP256R1Curve extends ECCurve.AbstractFp {
         int i3 = 0;
         for (int i4 = 0; i4 < i2; i4++) {
             ECPoint eCPoint = eCPointArr[i + i4];
-            Nat256.copy(((SecP256R1FieldElement) eCPoint.getRawXCoord()).f1354x, 0, iArr, i3);
+            Nat256.copy(((SecP256R1FieldElement) eCPoint.getRawXCoord()).f1359x, 0, iArr, i3);
             int i5 = i3 + 8;
-            Nat256.copy(((SecP256R1FieldElement) eCPoint.getRawYCoord()).f1354x, 0, iArr, i5);
+            Nat256.copy(((SecP256R1FieldElement) eCPoint.getRawYCoord()).f1359x, 0, iArr, i5);
             i3 = i5 + 8;
         }
         return new ECLookupTable() { // from class: org.bouncycastle.math.ec.custom.sec.SecP256R1Curve.1
@@ -86,7 +86,7 @@ public class SecP256R1Curve extends ECCurve.AbstractFp {
 
     @Override // org.bouncycastle.math.p043ec.ECCurve
     public int getFieldSize() {
-        return f1351q.bitLength();
+        return f1356q.bitLength();
     }
 
     @Override // org.bouncycastle.math.p043ec.ECCurve

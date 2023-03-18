@@ -12,7 +12,7 @@ import com.smedialink.p031ui.wallet.home.p032v2.adapter.BannersRecycleAdapter;
 import com.smedialink.p031ui.wallet.home.p032v2.adapter.diff.BannerSlideDiffCallback;
 import com.smedialink.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: BannerProvider.kt */
 /* renamed from: com.smedialink.ui.adapter.provider.BannerProvider */
 /* loaded from: classes3.dex */
@@ -33,7 +33,7 @@ public final class BannerProvider extends BaseNodeProvider<BannerItem> {
         Intrinsics.checkNotNullParameter(bannersRecycleAdapter, "bannersRecycleAdapter");
         this.bannersRecycleAdapter = bannersRecycleAdapter;
         this.itemViewType = IdFabric$ViewTypes.BANNERS;
-        this.layoutId = C3158R.layout.fork_recycle_item_wallet_banners;
+        this.layoutId = C3286R.layout.fork_recycle_item_wallet_banners;
         this.bannerSnapHelper = new PagerSnapHelper();
         this.bannersDiffCallback = new BannerSlideDiffCallback();
     }
@@ -59,8 +59,8 @@ public final class BannerProvider extends BaseNodeProvider<BannerItem> {
     public final void onViewRecycled(BaseViewHolder holder) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         if (BaseQuickAdapterExtKt.isViewType(holder, getItemViewType())) {
-            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3158R.C3161id.recycle_banners)).getLayoutManager();
-            this.bannerScrollState = layoutManager == null ? null : layoutManager.onSaveInstanceState();
+            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3286R.C3289id.recycle_banners)).getLayoutManager();
+            this.bannerScrollState = layoutManager != null ? layoutManager.onSaveInstanceState() : null;
         }
     }
 
@@ -68,6 +68,6 @@ public final class BannerProvider extends BaseNodeProvider<BannerItem> {
     public void convert(BaseViewHolder helper, BannerItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(helper, C3158R.C3161id.recycle_banners, new BannerProvider$convert$1(this, item)), C3158R.C3161id.banner_slide_indicator, new BannerProvider$convert$2(helper));
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(helper, C3286R.C3289id.recycle_banners, new BannerProvider$convert$1(this, item)), C3286R.C3289id.banner_slide_indicator, new BannerProvider$convert$2(helper));
     }
 }

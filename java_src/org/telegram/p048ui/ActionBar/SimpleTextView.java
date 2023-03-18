@@ -555,6 +555,11 @@ public class SimpleTextView extends View {
         invalidate();
     }
 
+    @Override // android.view.View
+    protected boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.rightDrawable || drawable == this.leftDrawable || super.verifyDrawable(drawable);
+    }
+
     public void replaceTextWithDrawable(Drawable drawable, String str) {
         Drawable drawable2 = this.replacedDrawable;
         if (drawable2 == drawable) {

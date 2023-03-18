@@ -32,10 +32,9 @@ public abstract class BottomNavigationTabFragment extends WalletAuthFragment {
     public void onResume() {
         super.onResume();
         BottomNavigationDelegate bottomNavigationDelegate = this.bottomNavigationDelegate;
-        if (bottomNavigationDelegate == null) {
-            return;
+        if (bottomNavigationDelegate != null) {
+            bottomNavigationDelegate.getBottomNavigationPadding(new BottomNavigationTabFragment$onResume$1(this));
         }
-        bottomNavigationDelegate.getBottomNavigationPadding(new BottomNavigationTabFragment$onResume$1(this));
     }
 
     @Override // com.smedialink.p031ui.base.mvp.MvpFragment, org.telegram.p048ui.ActionBar.BaseFragment

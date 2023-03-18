@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMultiPanelController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiPanelController.kt\norg/fork/controller/MultiPanelController\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,100:1\n13536#2:101\n13537#2:107\n13536#2:143\n13537#2:146\n1858#3,3:102\n1000#3,2:105\n1858#3,3:109\n1177#3,2:113\n1251#3,2:115\n1547#3:117\n1618#3,3:118\n1254#3:121\n764#3:122\n855#3,2:123\n1177#3,2:125\n1251#3,2:127\n1601#3,9:129\n1849#3:138\n1850#3:140\n1610#3:141\n1254#3:142\n1849#3,2:144\n1741#3,3:150\n211#4:108\n212#4:112\n125#4:157\n152#4,3:158\n1#5:139\n1#5:168\n511#6:147\n496#6,2:148\n498#6,4:153\n357#6,7:161\n*S KotlinDebug\n*F\n+ 1 MultiPanelController.kt\norg/fork/controller/MultiPanelController\n*L\n30#1:101\n30#1:107\n74#1:143\n74#1:146\n32#1:102,3\n37#1:105,2\n48#1:109,3\n56#1:113,2\n56#1:115,2\n56#1:117\n56#1:118,3\n56#1:121\n66#1:122\n66#1:123,2\n66#1:125,2\n66#1:127,2\n66#1:129,9\n66#1:138\n66#1:140\n66#1:141\n66#1:142\n75#1:144,2\n84#1:150,3\n47#1:108\n47#1:112\n84#1:157\n84#1:158,3\n66#1:139\n84#1:147\n84#1:148,2\n84#1:153,4\n86#1:161,7\n*E\n"
+    value = "SMAP\nMultiPanelController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiPanelController.kt\norg/fork/controller/MultiPanelController\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,100:1\n13579#2:101\n13580#2:107\n13579#2:143\n13580#2:146\n1864#3,3:102\n1002#3,2:105\n1864#3,3:109\n1179#3,2:113\n1253#3,2:115\n1549#3:117\n1620#3,3:118\n1256#3:121\n766#3:122\n857#3,2:123\n1179#3,2:125\n1253#3,2:127\n1603#3,9:129\n1855#3:138\n1856#3:140\n1612#3:141\n1256#3:142\n1855#3,2:144\n1747#3,3:150\n215#4:108\n216#4:112\n125#4:157\n152#4,3:158\n1#5:139\n1#5:168\n515#6:147\n500#6,2:148\n502#6,4:153\n361#6,7:161\n*S KotlinDebug\n*F\n+ 1 MultiPanelController.kt\norg/fork/controller/MultiPanelController\n*L\n30#1:101\n30#1:107\n74#1:143\n74#1:146\n32#1:102,3\n37#1:105,2\n48#1:109,3\n56#1:113,2\n56#1:115,2\n56#1:117\n56#1:118,3\n56#1:121\n66#1:122\n66#1:123,2\n66#1:125,2\n66#1:127,2\n66#1:129,9\n66#1:138\n66#1:140\n66#1:141\n66#1:142\n75#1:144,2\n84#1:150,3\n47#1:108\n47#1:112\n84#1:157\n84#1:158,3\n66#1:139\n84#1:147\n84#1:148,2\n84#1:153,4\n86#1:161,7\n*E\n"
 .end annotation
 
 
@@ -139,12 +139,12 @@
     .line 84
     iget-object v0, p0, Lorg/fork/controller/MultiPanelController;->buttonStates:Ljava/util/Map;
 
-    .line 511
+    .line 515
     new-instance v1, Ljava/util/LinkedHashMap;
 
     invoke-direct {v1}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 496
+    .line 500
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -174,7 +174,7 @@
 
     check-cast v3, Ljava/lang/Iterable;
 
-    .line 1741
+    .line 1747
     instance-of v4, v3, Ljava/util/Collection;
 
     const/4 v5, 0x0
@@ -193,7 +193,7 @@
 
     goto :goto_1
 
-    .line 1742
+    .line 1748
     :cond_1
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -225,7 +225,7 @@
     :goto_1
     if-eqz v5, :cond_0
 
-    .line 498
+    .line 502
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -285,6 +285,7 @@
 
     move-result-object v2
 
+    .line 153
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
@@ -315,7 +316,7 @@
 
     const/16 v1, 0xa
 
-    .line 1177
+    .line 1179
     invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v2
@@ -330,12 +331,12 @@
 
     move-result v2
 
-    .line 1178
+    .line 1180
     new-instance v3, Ljava/util/LinkedHashMap;
 
     invoke-direct {v3, v2}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 1251
+    .line 1253
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -351,7 +352,7 @@
 
     move-result-object v2
 
-    .line 1252
+    .line 1254
     check-cast v2, Ljava/util/Map$Entry;
 
     .line 56
@@ -371,7 +372,7 @@
 
     check-cast v2, Ljava/lang/Iterable;
 
-    .line 1547
+    .line 1549
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-static {v2, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
@@ -380,7 +381,7 @@
 
     invoke-direct {v5, v6}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -396,7 +397,7 @@
 
     move-result-object v6
 
-    .line 1619
+    .line 1621
     check-cast v6, Lorg/fork/models/MultiPanelButtonState;
 
     .line 56
@@ -404,10 +405,12 @@
 
     move-result-object v6
 
+    .line 1621
     invoke-interface {v5, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
+    .line 56
     :cond_0
     invoke-static {v5}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
@@ -417,6 +420,7 @@
 
     move-result-object v2
 
+    .line 1254
     invoke-virtual {v2}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
 
     move-result-object v4
@@ -429,6 +433,7 @@
 
     goto :goto_0
 
+    .line 56
     :cond_1
     invoke-static {v3}, Lkotlin/collections/MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -476,7 +481,7 @@
     .line 86
     iget-object v0, p0, Lorg/fork/controller/MultiPanelController;->buttonStates:Ljava/util/Map;
 
-    .line 357
+    .line 361
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -488,10 +493,10 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 360
+    .line 364
     invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 358
+    .line 362
     :cond_0
     check-cast v1, Ljava/util/List;
 
@@ -541,7 +546,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/MultiPanelController;->setMultiPanelEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/MultiPanelController;->isMultiPanelEnabled:Z
 
     .line 29
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isHideMultiPanelOnScrollEnabled()Ljava/lang/String;
@@ -556,14 +561,14 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/MultiPanelController;->setHideMultiPanelOnScrollEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/MultiPanelController;->isHideMultiPanelOnScrollEnabled:Z
 
     .line 30
     invoke-static {}, Lorg/fork/enums/DialogType;->values()[Lorg/fork/enums/DialogType;
 
     move-result-object v0
 
-    .line 13536
+    .line 13579
     array-length v1, v0
 
     const/4 v2, 0x0
@@ -585,7 +590,7 @@
 
     move-result-object v6
 
-    .line 1859
+    .line 1865
     invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
@@ -645,7 +650,7 @@
 
     goto :goto_1
 
-    .line 1000
+    .line 1002
     :cond_1
     invoke-interface {v5}, Ljava/util/List;->size()I
 
@@ -655,17 +660,15 @@
 
     if-le v6, v7, :cond_2
 
-    new-instance v6, Lorg/fork/controller/MultiPanelController$loadConfig$lambda-3$lambda-2$$inlined$sortBy$1;
+    new-instance v6, Lorg/fork/controller/MultiPanelController$loadConfig$lambda$3$lambda$2$$inlined$sortBy$1;
 
-    invoke-direct {v6}, Lorg/fork/controller/MultiPanelController$loadConfig$lambda-3$lambda-2$$inlined$sortBy$1;-><init>()V
+    invoke-direct {v6}, Lorg/fork/controller/MultiPanelController$loadConfig$lambda$3$lambda$2$$inlined$sortBy$1;-><init>()V
 
     invoke-static {v5, v6}, Lkotlin/collections/CollectionsKt;->sortWith(Ljava/util/List;Ljava/util/Comparator;)V
 
     .line 38
     :cond_2
-    invoke-virtual {p0}, Lorg/fork/controller/MultiPanelController;->getButtonStates()Ljava/util/Map;
-
-    move-result-object v6
+    iget-object v6, p0, Lorg/fork/controller/MultiPanelController;->buttonStates:Ljava/util/Map;
 
     invoke-interface {v6, v4, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -705,7 +708,7 @@
 
     move-result-object v1
 
-    .line 13536
+    .line 13579
     array-length v2, v1
 
     const/4 v3, 0x0
@@ -720,7 +723,7 @@
 
     move-result-object v5
 
-    .line 1849
+    .line 1855
     invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
@@ -842,12 +845,12 @@
 
     move-result-object p1
 
-    .line 764
+    .line 766
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -893,6 +896,7 @@
     :goto_1
     if-eqz v2, :cond_2
 
+    .line 857
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -900,7 +904,7 @@
     :cond_4
     const/16 p1, 0xa
 
-    .line 1177
+    .line 1179
     invoke-static {v0, p1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result p1
@@ -915,12 +919,12 @@
 
     move-result p1
 
-    .line 1178
+    .line 1180
     new-instance v1, Ljava/util/LinkedHashMap;
 
     invoke-direct {v1, p1}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 1251
+    .line 1253
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -936,7 +940,7 @@
 
     move-result-object v0
 
-    .line 1252
+    .line 1254
     check-cast v0, Ljava/util/Map$Entry;
 
     .line 66
@@ -954,7 +958,7 @@
 
     const-string v3, "null cannot be cast to non-null type org.fork.enums.DialogType"
 
-    invoke-static {v2, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -962,12 +966,12 @@
 
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 1601
+    .line 1603
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -984,7 +988,7 @@
 
     move-result-object v4
 
-    .line 1609
+    .line 1611
     check-cast v4, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
     .line 66
@@ -994,7 +998,7 @@
 
     if-eqz v4, :cond_5
 
-    .line 1609
+    .line 1611
     invoke-interface {v3, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
@@ -1009,6 +1013,7 @@
 
     move-result-object v0
 
+    .line 1254
     invoke-virtual {v0}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
 
     move-result-object v2
@@ -1021,6 +1026,7 @@
 
     goto :goto_2
 
+    .line 66
     :cond_7
     invoke-static {v1}, Lkotlin/collections/MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -1056,9 +1062,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/MultiPanelController;->isMultiPanelEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/MultiPanelController;->isMultiPanelEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -1067,18 +1071,14 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/MultiPanelController;->isHideMultiPanelOnScrollEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/MultiPanelController;->isHideMultiPanelOnScrollEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     .line 47
-    invoke-virtual {p0}, Lorg/fork/controller/MultiPanelController;->getButtonStates()Ljava/util/Map;
+    iget-object v1, p0, Lorg/fork/controller/MultiPanelController;->buttonStates:Ljava/util/Map;
 
-    move-result-object v1
-
-    .line 211
+    .line 215
     invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v1
@@ -1115,7 +1115,7 @@
 
     const/4 v4, 0x0
 
-    .line 1859
+    .line 1865
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1199,21 +1199,18 @@
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_3
 
-    goto :goto_1
-
-    :cond_0
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :cond_1
+    :cond_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1227,32 +1224,32 @@
 
     move-result-object v2
 
-    if-ne v2, p2, :cond_2
+    if-ne v2, p2, :cond_1
 
     const/4 v2, 0x1
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     const/4 v2, 0x0
 
     :goto_0
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
     move-object v0, v1
 
-    :cond_3
+    :cond_2
     check-cast v0, Lorg/fork/models/MultiPanelButtonState;
 
-    :goto_1
+    :cond_3
     if-nez v0, :cond_4
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_4
     invoke-virtual {v0, p3}, Lorg/fork/models/MultiPanelButtonState;->setEnabled(Z)V
 
-    :goto_2
+    :goto_1
     return-void
 .end method
 

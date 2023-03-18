@@ -24,8 +24,9 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.zxing.common.detector.MathUtils;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.AnimatedTextView;
@@ -93,9 +94,9 @@ public class CacheChart extends View {
     }
 
     static {
-        int i = C3158R.C3164raw.cache_videos;
-        int i2 = C3158R.C3164raw.cache_other;
-        DEFAULT_PARTICLES = new int[]{C3158R.C3164raw.cache_photos, i, C3158R.C3164raw.cache_documents, C3158R.C3164raw.cache_music, i, C3158R.C3164raw.cache_stickers, C3158R.C3164raw.cache_profile_photos, i2, i2};
+        int i = C3286R.C3291raw.cache_videos;
+        int i2 = C3286R.C3291raw.cache_other;
+        DEFAULT_PARTICLES = new int[]{C3286R.C3291raw.cache_photos, i, C3286R.C3291raw.cache_documents, C3286R.C3291raw.cache_music, i, C3286R.C3291raw.cache_stickers, C3286R.C3291raw.cache_profile_photos, i2, i2};
         particlesStart = -1L;
     }
 
@@ -232,7 +233,7 @@ public class CacheChart extends View {
 
         private void drawParticles(Canvas canvas, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10) {
             double d;
-            if (f10 <= BitmapDescriptorFactory.HUE_RED) {
+            if (f10 <= BitmapDescriptorFactory.HUE_RED || !LiteMode.isEnabled(LiteMode.FLAGS_CHAT)) {
                 return;
             }
             long currentTimeMillis = System.currentTimeMillis();
@@ -915,9 +916,9 @@ public class CacheChart extends View {
                 drawable.distributionAlgorithm = false;
                 drawable.excludeRadius = AndroidUtilities.m50dp(80);
                 StarParticlesView.Drawable drawable2 = this.completeDrawable;
-                drawable2.f1775k3 = 0.85f;
-                drawable2.f1774k2 = 0.85f;
-                drawable2.f1773k1 = 0.85f;
+                drawable2.f1786k3 = 0.85f;
+                drawable2.f1785k2 = 0.85f;
+                drawable2.f1784k1 = 0.85f;
                 drawable2.init();
                 z = true;
             } else {

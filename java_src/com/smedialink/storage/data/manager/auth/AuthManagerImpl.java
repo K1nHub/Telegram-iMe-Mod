@@ -67,17 +67,17 @@ public final class AuthManagerImpl implements AuthManager {
     @Override // com.smedialink.storage.domain.manager.auth.AuthManager
     public String getAccessToken() {
         SessionTokens authTokens = this.cryptoPreferenceHelper.getAuthSession().getAuthTokens();
-        if (authTokens == null) {
-            return null;
+        if (authTokens != null) {
+            return authTokens.getToken();
         }
-        return authTokens.getToken();
+        return null;
     }
 
     @Override // com.smedialink.storage.domain.manager.auth.AuthManager
     public String getRefreshToken() {
+        String refreshToken;
         SessionTokens authTokens = this.cryptoPreferenceHelper.getAuthSession().getAuthTokens();
-        String refreshToken = authTokens == null ? null : authTokens.getRefreshToken();
-        return refreshToken == null ? getOldRefreshToken() : refreshToken;
+        return (authTokens == null || (refreshToken = authTokens.getRefreshToken()) == null) ? getOldRefreshToken() : refreshToken;
     }
 
     public String getOldRefreshToken() {

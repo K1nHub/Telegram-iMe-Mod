@@ -45,7 +45,7 @@
 
     iget-boolean v4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda113;->f$3:Z
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$_ZvRA3ljxdwYyiIo0bdvYRuLQP4(Lorg/telegram/messenger/MessagesStorage;JLjava/util/List;Z)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$8ECsFRMa4-p4iJ9RAW_Ijb0vc2A(Lorg/telegram/messenger/MessagesStorage;JLjava/util/List;Z)V
 
     return-void
 .end method

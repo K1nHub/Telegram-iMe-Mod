@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment$ListAdapter;,
-        Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment$Companion;
+        Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment$Companion;,
+        Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment$ListAdapter;
     }
 .end annotation
 

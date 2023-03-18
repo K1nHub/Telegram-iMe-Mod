@@ -27,12 +27,12 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
     .locals 0
 
-    .line 523
+    .line 527
     iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$2;->val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 525
+    .line 529
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -47,14 +47,14 @@
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 529
+    .line 533
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 530
+    .line 534
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz v0, :cond_0
@@ -65,12 +65,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 531
+    .line 535
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->popupRect:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 532
+    .line 536
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$2;->popupRect:Landroid/graphics/Rect;
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
@@ -91,7 +91,7 @@
 
     if-nez p1, :cond_0
 
-    .line 533
+    .line 537
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$2;->val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V

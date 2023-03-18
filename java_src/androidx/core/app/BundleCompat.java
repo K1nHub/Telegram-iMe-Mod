@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
 public final class BundleCompat {
 
     /* loaded from: classes.dex */
-    static class BundleCompatBaseImpl {
+    static class BeforeApi18Impl {
         private static Method sPutIBinderMethod;
         private static boolean sPutIBinderMethodFetched;
 
@@ -39,9 +39,20 @@ public final class BundleCompat {
 
     public static void putBinder(Bundle bundle, String str, IBinder iBinder) {
         if (Build.VERSION.SDK_INT >= 18) {
-            bundle.putBinder(str, iBinder);
+            Api18Impl.putBinder(bundle, str, iBinder);
         } else {
-            BundleCompatBaseImpl.putBinder(bundle, str, iBinder);
+            BeforeApi18Impl.putBinder(bundle, str, iBinder);
+        }
+    }
+
+    /* loaded from: classes.dex */
+    static class Api18Impl {
+        static IBinder getBinder(Bundle bundle, String str) {
+            return bundle.getBinder(str);
+        }
+
+        static void putBinder(Bundle bundle, String str, IBinder iBinder) {
+            bundle.putBinder(str, iBinder);
         }
     }
 }

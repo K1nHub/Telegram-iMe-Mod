@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/ui/dialog/PromoSubscribeAlert$$ExternalSyntheticLambda5;->f$1:Lkotlin/jvm/internal/Ref$IntRef;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->$r8$lambda$WhYGg5gM795dKUrlyK6lVYScqa8(Lorg/fork/ui/dialog/PromoSubscribeAlert;Lkotlin/jvm/internal/Ref$IntRef;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, v1, p1, p2}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->$r8$lambda$0_G-YL4fsKh_hOSiFa8yFJolGxA(Lorg/fork/ui/dialog/PromoSubscribeAlert;Lkotlin/jvm/internal/Ref$IntRef;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

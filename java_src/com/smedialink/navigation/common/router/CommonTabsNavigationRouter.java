@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.TuplesKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.Intrinsics;
@@ -40,7 +39,6 @@ public class CommonTabsNavigationRouter<T extends MvpFragment> extends BaseNavig
                 MvpFragment fragment = navigationTab.getFragment();
                 fragment.setParentFragment(settings.getViewConfiguration().getParentFragment());
                 fragment.onViewCreated();
-                Unit unit = Unit.INSTANCE;
                 arrayList.add(TuplesKt.m100to(valueOf, fragment));
             }
             MapsKt__MapsKt.putAll(fragmentsStack, arrayList);

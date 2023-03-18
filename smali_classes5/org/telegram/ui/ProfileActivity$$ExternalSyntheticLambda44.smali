@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/MessagesStorage$BooleanCallback;
+.implements Lj$/util/function/Consumer;
 
 
 # instance fields
@@ -22,12 +22,24 @@
 
 
 # virtual methods
-.method public final run(Z)V
+.method public final accept(Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda44;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$sB2oi1aC1iMI2z6eDa9aQ9uNO1g(Lorg/telegram/ui/ProfileActivity;Z)V
+    check-cast p1, Ljava/util/HashSet;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$bgv9xcLpnoCVtRG7E3_MSAwTSS4(Lorg/telegram/ui/ProfileActivity;Ljava/util/HashSet;)V
 
     return-void
+.end method
+
+.method public synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    return-object p1
 .end method

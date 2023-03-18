@@ -15,8 +15,8 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/model/wallet/crypto/swap/SwapUiState$Swap$Crypto;,
-        Lcom/smedialink/model/wallet/crypto/swap/SwapUiState$Swap$Binance;
+        Lcom/smedialink/model/wallet/crypto/swap/SwapUiState$Swap$Binance;,
+        Lcom/smedialink/model/wallet/crypto/swap/SwapUiState$Swap$Crypto;
     }
 .end annotation
 

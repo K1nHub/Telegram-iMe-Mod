@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 10203
+    .line 10307
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 10214
+    .line 10318
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputGeoPoint;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 10217
+    .line 10321
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputGeoPointEmpty;
 
@@ -59,7 +59,7 @@
 
     goto :goto_1
 
-    .line 10221
+    .line 10325
     :cond_2
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -89,7 +89,7 @@
     :goto_1
     if-eqz v0, :cond_4
 
-    .line 10224
+    .line 10328
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_4

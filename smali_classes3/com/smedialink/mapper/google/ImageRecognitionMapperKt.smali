@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nImageRecognitionMapper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ImageRecognitionMapper.kt\ncom/smedialink/mapper/google/ImageRecognitionMapperKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,13:1\n1849#2,2:14\n*S KotlinDebug\n*F\n+ 1 ImageRecognitionMapper.kt\ncom/smedialink/mapper/google/ImageRecognitionMapperKt\n*L\n7#1:14,2\n*E\n"
+    value = "SMAP\nImageRecognitionMapper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ImageRecognitionMapper.kt\ncom/smedialink/mapper/google/ImageRecognitionMapperKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,13:1\n1855#2,2:14\n*S KotlinDebug\n*F\n+ 1 ImageRecognitionMapper.kt\ncom/smedialink/mapper/google/ImageRecognitionMapperKt\n*L\n7#1:14,2\n*E\n"
 .end annotation
 
 
@@ -70,7 +70,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1849
+    .line 1855
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -89,13 +89,21 @@
     check-cast v1, Lcom/smedialink/storage/domain/model/google/RecognizedImageModel;
 
     .line 8
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-static {v1}, Lcom/smedialink/mapper/google/ImageRecognitionMapperKt;->toUi(Lcom/smedialink/storage/domain/model/google/RecognizedImageModel;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, " \n"
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    const-string v1, " \n"
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 

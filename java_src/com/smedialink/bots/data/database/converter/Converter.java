@@ -115,8 +115,8 @@ public final class Converter {
 
         public final List<String> fromString(String str) {
             List<String> emptyList;
-            List<String> list = str == null ? null : (List) Converter.gson.fromJson(str, new TypeToken<ArrayList<String>>() { // from class: com.smedialink.bots.data.database.converter.Converter$Companion$fromString$listType$1
-            }.getType());
+            List<String> list = str != null ? (List) Converter.gson.fromJson(str, new TypeToken<ArrayList<String>>() { // from class: com.smedialink.bots.data.database.converter.Converter$Companion$fromString$listType$1
+            }.getType()) : null;
             if (list == null) {
                 emptyList = CollectionsKt__CollectionsKt.emptyList();
                 return emptyList;
@@ -125,17 +125,17 @@ public final class Converter {
         }
 
         public final Date fromTimeStamp(Long l) {
-            if (l == null) {
-                return null;
+            if (l != null) {
+                return new Date(l.longValue());
             }
-            return new Date(l.longValue());
+            return null;
         }
 
         public final Long fromDate(Date date) {
-            if (date == null) {
-                return null;
+            if (date != null) {
+                return Long.valueOf(date.getTime());
             }
-            return Long.valueOf(date.getTime());
+            return null;
         }
 
         public final String fromMap(Map<String, String> map) {
@@ -146,8 +146,8 @@ public final class Converter {
 
         public final Map<String, String> toMap(String str) {
             Map<String, String> emptyMap;
-            Map<String, String> map = str == null ? null : (Map) Converter.gson.fromJson(str, new TypeToken<Map<String, ? extends String>>() { // from class: com.smedialink.bots.data.database.converter.Converter$Companion$toMap$listType$1
-            }.getType());
+            Map<String, String> map = str != null ? (Map) Converter.gson.fromJson(str, new TypeToken<Map<String, ? extends String>>() { // from class: com.smedialink.bots.data.database.converter.Converter$Companion$toMap$listType$1
+            }.getType()) : null;
             if (map == null) {
                 emptyMap = MapsKt__MapsKt.emptyMap();
                 return emptyMap;

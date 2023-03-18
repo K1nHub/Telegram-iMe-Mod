@@ -157,8 +157,9 @@ public class PopupAudioView extends BaseCell implements SeekBar.SeekBarDelegate,
             this.progressView.draw(canvas);
         }
         canvas.restore();
+        int i6 = this.buttonState;
         this.timePaint.setColor(-6182221);
-        Drawable drawable = Theme.chat_fileStatesDrawable[this.buttonState + 5][this.buttonPressed];
+        Drawable drawable = Theme.chat_fileStatesDrawable[i6][this.buttonPressed];
         int m50dp = AndroidUtilities.m50dp(36);
         BaseCell.setDrawableBounds(drawable, ((m50dp - drawable.getIntrinsicWidth()) / 2) + this.buttonX, ((m50dp - drawable.getIntrinsicHeight()) / 2) + this.buttonY);
         drawable.draw(canvas);

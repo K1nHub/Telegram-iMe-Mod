@@ -41,7 +41,6 @@ public interface WalletHomeCryptoView extends BaseView, SwipeRefreshView, Wallet
     /* loaded from: classes3.dex */
     public static final class DefaultImpls {
         public static void showSelectOptionsDialog(WalletHomeCryptoView walletHomeCryptoView, String title, String[] items, DialogInterface.OnClickListener listener) {
-            Intrinsics.checkNotNullParameter(walletHomeCryptoView, "this");
             Intrinsics.checkNotNullParameter(title, "title");
             Intrinsics.checkNotNullParameter(items, "items");
             Intrinsics.checkNotNullParameter(listener, "listener");

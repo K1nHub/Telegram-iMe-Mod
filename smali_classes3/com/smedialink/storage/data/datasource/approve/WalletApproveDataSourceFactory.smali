@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public getDataSource(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)Lcom/smedialink/storage/data/datasource/approve/WalletApproveDataSource;
-    .locals 1
+    .locals 2
 
     const-string v0, "arg"
 
@@ -59,19 +59,19 @@
 
     return-object p1
 
-    .line 15
     :cond_0
-    sget-object v0, Lcom/smedialink/storage/data/datasource/base/DataSourceFactory;->Companion:Lcom/smedialink/storage/data/datasource/base/DataSourceFactory$Companion;
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    .line 15
+    sget-object v1, Lcom/smedialink/storage/data/datasource/base/DataSourceFactory;->Companion:Lcom/smedialink/storage/data/datasource/base/DataSourceFactory$Companion;
 
     invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Lcom/smedialink/storage/data/datasource/base/DataSourceFactory$Companion;->unsupportedDataSource(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1, p1}, Lcom/smedialink/storage/data/datasource/base/DataSourceFactory$Companion;->unsupportedDataSource(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
-
-    new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

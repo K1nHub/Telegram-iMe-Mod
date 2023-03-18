@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher$$ExternalSyntheticLambda0;->f$2:Lcom/smedialink/ui/custom/backup/BackupWordView;
 
-    invoke-static {v0, v1, v2, p1}, Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher;->$r8$lambda$sKKYKwsd8PcO7-_d-18ZJ6qMlLE(Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher;Lcom/smedialink/ui/custom/backup/BackupWordView;Lcom/smedialink/ui/custom/backup/BackupWordView;Landroid/view/View;)V
+    invoke-static {v0, v1, v2, p1}, Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher;->$r8$lambda$5dB9fylc5x4i2dI2X_ic90JJqr0(Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher;Lcom/smedialink/ui/custom/backup/BackupWordView;Lcom/smedialink/ui/custom/backup/BackupWordView;Landroid/view/View;)V
 
     return-void
 .end method

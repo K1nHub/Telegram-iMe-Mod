@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Landroid/content/Context;Lorg/telegram/ui/LoginActivity;)V
     .locals 0
 
-    .line 6052
+    .line 6063
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$1;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/CodeFieldContainer;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected processNextPressed()V
     .locals 2
 
-    .line 6055
+    .line 6066
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$1;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
 
     const/4 v1, 0x0

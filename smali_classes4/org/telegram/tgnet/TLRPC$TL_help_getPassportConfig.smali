@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 51584
+    .line 51827
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 51590
+    .line 51833
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$help_PassportConfig;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$help_PassportConfig;
 
     move-result-object p1
@@ -43,12 +43,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 51594
+    .line 51837
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_help_getPassportConfig;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 51595
+    .line 51838
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_getPassportConfig;->hash:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

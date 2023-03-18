@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout$$ExternalSyntheticLambda2;->f$0:Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
-    invoke-static {v0, p1, p2}, Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;->$r8$lambda$AuucDagOi0bjqoeXOJrdfVH7W8w(Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;Landroid/view/View;I)Z
+    invoke-static {v0, p1, p2}, Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;->$r8$lambda$65Na3sn0on_HQdNMYIjeesfr_LY(Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;Landroid/view/View;I)Z
 
     move-result p1
 

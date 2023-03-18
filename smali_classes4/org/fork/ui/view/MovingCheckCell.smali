@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMovingCheckCell.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovingCheckCell.kt\norg/fork/ui/view/MovingCheckCell\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,237:1\n1849#2,2:238\n252#3:240\n*S KotlinDebug\n*F\n+ 1 MovingCheckCell.kt\norg/fork/ui/view/MovingCheckCell\n*L\n131#1:238,2\n146#1:240\n*E\n"
+    value = "SMAP\nMovingCheckCell.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovingCheckCell.kt\norg/fork/ui/view/MovingCheckCell\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,237:1\n1855#2,2:238\n260#3:240\n*S KotlinDebug\n*F\n+ 1 MovingCheckCell.kt\norg/fork/ui/view/MovingCheckCell\n*L\n131#1:238,2\n146#1:240\n*E\n"
 .end annotation
 
 
@@ -352,7 +352,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    const-string v2, "windowBackgroundWhiteGrayText2"
+    const-string/jumbo v2, "windowBackgroundWhiteGrayText2"
 
     .line 196
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -402,7 +402,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    const-string v2, "windowBackgroundWhiteGrayText2"
+    const-string/jumbo v2, "windowBackgroundWhiteGrayText2"
 
     .line 206
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -467,7 +467,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    const-string v2, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v2, "windowBackgroundWhiteBlackText"
 
     .line 186
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -499,7 +499,7 @@
 
     const-string v2, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams"
 
-    invoke-static {v1, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
@@ -532,9 +532,6 @@
 
     :goto_1
     iput p1, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
-
-    .line 217
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 214
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -591,7 +588,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -616,7 +613,7 @@
 
     const-string v3, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams"
 
-    invoke-static {v2, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
 
@@ -628,9 +625,6 @@
     move-result v3
 
     iput v3, v2, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
-
-    .line 134
-    sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 132
     invoke-virtual {v1, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -734,7 +728,7 @@
     .line 146
     iget-object v0, p0, Lorg/fork/ui/view/MovingCheckCell;->subtitleView:Landroid/widget/TextView;
 
-    .line 252
+    .line 260
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
@@ -921,7 +915,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "value"
+    const-string/jumbo v0, "value"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

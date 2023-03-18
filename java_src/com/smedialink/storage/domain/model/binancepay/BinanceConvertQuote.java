@@ -55,7 +55,7 @@ public final class BinanceConvertQuote {
         }
         if (obj instanceof BinanceConvertQuote) {
             BinanceConvertQuote binanceConvertQuote = (BinanceConvertQuote) obj;
-            return Intrinsics.areEqual(this.quoteId, binanceConvertQuote.quoteId) && Intrinsics.areEqual(Double.valueOf(this.inputAmount), Double.valueOf(binanceConvertQuote.inputAmount)) && Intrinsics.areEqual(this.inputToken, binanceConvertQuote.inputToken) && Intrinsics.areEqual(Double.valueOf(this.outputAmount), Double.valueOf(binanceConvertQuote.outputAmount)) && Intrinsics.areEqual(this.outputToken, binanceConvertQuote.outputToken) && Intrinsics.areEqual(this.inputTokenShortName, binanceConvertQuote.inputTokenShortName) && Intrinsics.areEqual(this.outputTokenShortName, binanceConvertQuote.outputTokenShortName);
+            return Intrinsics.areEqual(this.quoteId, binanceConvertQuote.quoteId) && Double.compare(this.inputAmount, binanceConvertQuote.inputAmount) == 0 && Intrinsics.areEqual(this.inputToken, binanceConvertQuote.inputToken) && Double.compare(this.outputAmount, binanceConvertQuote.outputAmount) == 0 && Intrinsics.areEqual(this.outputToken, binanceConvertQuote.outputToken) && Intrinsics.areEqual(this.inputTokenShortName, binanceConvertQuote.inputTokenShortName) && Intrinsics.areEqual(this.outputTokenShortName, binanceConvertQuote.outputTokenShortName);
         }
         return false;
     }

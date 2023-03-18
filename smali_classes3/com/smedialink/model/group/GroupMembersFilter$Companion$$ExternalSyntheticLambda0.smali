@@ -6,20 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Z
-
-.field public final synthetic f$1:Z
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method public synthetic constructor <init>(ZZ)V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p1, p0, Lcom/smedialink/model/group/GroupMembersFilter$Companion$$ExternalSyntheticLambda0;->f$0:Z
-
-    iput-boolean p2, p0, Lcom/smedialink/model/group/GroupMembersFilter$Companion$$ExternalSyntheticLambda0;->f$1:Z
+    iput-object p1, p0, Lcom/smedialink/model/group/GroupMembersFilter$Companion$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -57,15 +53,11 @@
 .end method
 
 .method public final test(Ljava/lang/Object;)Z
-    .locals 2
+    .locals 1
 
-    iget-boolean v0, p0, Lcom/smedialink/model/group/GroupMembersFilter$Companion$$ExternalSyntheticLambda0;->f$0:Z
+    iget-object v0, p0, Lcom/smedialink/model/group/GroupMembersFilter$Companion$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
 
-    iget-boolean v1, p0, Lcom/smedialink/model/group/GroupMembersFilter$Companion$$ExternalSyntheticLambda0;->f$1:Z
-
-    check-cast p1, Lcom/smedialink/model/group/GroupMembersFilter;
-
-    invoke-static {v0, v1, p1}, Lcom/smedialink/model/group/GroupMembersFilter$Companion;->$r8$lambda$K8Dc75L-bpVyD0hm3woYIbNsY30(ZZLcom/smedialink/model/group/GroupMembersFilter;)Z
+    invoke-static {v0, p1}, Lcom/smedialink/model/group/GroupMembersFilter$Companion;->$r8$lambda$hkiWBHwZB-fQr7uQr1P7WzBGJIw(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
 
     move-result p1
 

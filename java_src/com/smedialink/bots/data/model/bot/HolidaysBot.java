@@ -58,9 +58,9 @@ public final class HolidaysBot implements AigramBot {
             }
         }
         Response response = (Response) obj;
-        if (response == null) {
-            return null;
+        if (response != null) {
+            return new Response(getBotId(), response.getTag(), null, null, response.getAnswers(), 12, null);
         }
-        return new Response(getBotId(), response.getTag(), null, null, response.getAnswers(), 12, null);
+        return null;
     }
 }

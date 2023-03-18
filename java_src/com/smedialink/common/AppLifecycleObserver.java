@@ -34,7 +34,7 @@ public final class AppLifecycleObserver implements LifecycleObserver, KoinCompon
         this.logoutWalletRunnable = new Runnable() { // from class: com.smedialink.common.AppLifecycleObserver$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                AppLifecycleObserver.m1233logoutWalletRunnable$lambda0(AppLifecycleObserver.this);
+                AppLifecycleObserver.logoutWalletRunnable$lambda$0(AppLifecycleObserver.this);
             }
         };
     }
@@ -49,8 +49,7 @@ public final class AppLifecycleObserver implements LifecycleObserver, KoinCompon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: logoutWalletRunnable$lambda-0  reason: not valid java name */
-    public static final void m1233logoutWalletRunnable$lambda0(AppLifecycleObserver this$0) {
+    public static final void logoutWalletRunnable$lambda$0(AppLifecycleObserver this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getAccessManager().logoutAllWallets();
     }

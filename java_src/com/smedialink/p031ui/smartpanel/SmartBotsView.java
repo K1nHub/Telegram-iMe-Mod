@@ -28,12 +28,11 @@ import io.reactivex.disposables.CompositeDisposable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.controller.NeuroBotsController;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.databinding.ForkPanelViewBinding;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -197,10 +196,9 @@ public final class SmartBotsView extends FrameLayout {
     public void setTranslationY(float f) {
         super.setTranslationY(f);
         Listener listener = this.listener;
-        if (listener == null) {
-            return;
+        if (listener != null) {
+            listener.onTranslationYChanged(f);
         }
-        listener.onTranslationYChanged(f);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -236,8 +234,8 @@ public final class SmartBotsView extends FrameLayout {
                 CollectionsKt__CollectionsKt.throwIndexOverflow();
             }
             SmartBotTab smartBotTab = (SmartBotTab) obj;
-            View inflate = View.inflate(getContext(), C3158R.layout.fork_panel_custom_tab_header, null);
-            ImageView avatar = (ImageView) inflate.findViewById(C3158R.C3161id.avatar);
+            View inflate = View.inflate(getContext(), C3286R.layout.fork_panel_custom_tab_header, null);
+            ImageView avatar = (ImageView) inflate.findViewById(C3286R.C3289id.avatar);
             if (smartBotTab.getIconRes() != 0) {
                 avatar.setImageResource(smartBotTab.getIconRes());
             } else if (smartBotTab.getIconUrl().length() > 0) {
@@ -247,7 +245,7 @@ public final class SmartBotsView extends FrameLayout {
                 Intrinsics.checkNotNullExpressionValue(context, "context");
                 ImageViewExtKt.loadFrom$default(avatar, iconUrl, context, null, false, 12, null);
             } else {
-                avatar.setImageResource(C3158R.C3160drawable.bot_avatar_any);
+                avatar.setImageResource(C3286R.C3288drawable.bot_avatar_any);
             }
             TabLayout.Tab tabAt = this.binding.tabs.getTabAt(i);
             if (tabAt != null) {
@@ -274,12 +272,9 @@ public final class SmartBotsView extends FrameLayout {
                 gradientDrawable.setStroke(AndroidUtilities.m51dp(2.0f), Theme.getColor("chats_actionBackground"));
             }
             TabLayout.Tab tabAt = this.binding.tabs.getTabAt(i);
-            View view = null;
-            if (tabAt != null && (customView = tabAt.getCustomView()) != null) {
-                view = customView.findViewById(C3158R.C3161id.avatar_bg);
-            }
-            if (view != null) {
-                view.setBackground(gradientDrawable);
+            View findViewById = (tabAt == null || (customView = tabAt.getCustomView()) == null) ? null : customView.findViewById(C3286R.C3289id.avatar_bg);
+            if (findViewById != null) {
+                findViewById.setBackground(gradientDrawable);
             }
             i = i2;
         }
@@ -306,15 +301,15 @@ public final class SmartBotsView extends FrameLayout {
             GradientDrawable gradientDrawable = new GradientDrawable();
             gradientDrawable.setShape(1);
             if (this.binding.viewpager.getCurrentItem() == i) {
-                themedDrawable = Theme.getThemedDrawable(getContext(), C3158R.C3160drawable.ic_bots_recent, Theme.getColor("chats_actionBackground"));
+                themedDrawable = Theme.getThemedDrawable(getContext(), C3286R.C3288drawable.ic_bots_recent, Theme.getColor("chats_actionBackground"));
                 Intrinsics.checkNotNullExpressionValue(themedDrawable, "getThemedDrawable(contex…_chats_actionBackground))");
                 gradientDrawable.setColor(Color.parseColor("#33cccccc"));
             } else {
-                themedDrawable = Theme.getThemedDrawable(getContext(), C3158R.C3160drawable.ic_bots_recent, Color.parseColor("#A8A8A8"));
+                themedDrawable = Theme.getThemedDrawable(getContext(), C3286R.C3288drawable.ic_bots_recent, Color.parseColor("#A8A8A8"));
                 Intrinsics.checkNotNullExpressionValue(themedDrawable, "getThemedDrawable(contex…or.parseColor(\"#A8A8A8\"))");
             }
             TabLayout.Tab tabAt = this.binding.tabs.getTabAt(i);
-            if (tabAt == null || (customView = tabAt.getCustomView()) == null || (imageView = (ImageView) customView.findViewById(C3158R.C3161id.avatar)) == null) {
+            if (tabAt == null || (customView = tabAt.getCustomView()) == null || (imageView = (ImageView) customView.findViewById(C3286R.C3289id.avatar)) == null) {
                 return;
             }
             imageView.setImageDrawable(themedDrawable);
@@ -323,39 +318,31 @@ public final class SmartBotsView extends FrameLayout {
     }
 
     private final void updateTabListeners() {
-        ViewGroup viewGroup;
-        int childCount;
-        int i = 0;
         final View childAt = this.binding.tabs.getChildAt(0);
-        if (!(childAt instanceof ViewGroup) || (childCount = (viewGroup = (ViewGroup) childAt).getChildCount()) <= 0) {
-            return;
-        }
-        while (true) {
-            int i2 = i + 1;
-            viewGroup.getChildAt(i).setOnLongClickListener(new View.OnLongClickListener() { // from class: com.smedialink.ui.smartpanel.SmartBotsView$$ExternalSyntheticLambda4
-                @Override // android.view.View.OnLongClickListener
-                public final boolean onLongClick(View view) {
-                    boolean m1533updateTabListeners$lambda7;
-                    m1533updateTabListeners$lambda7 = SmartBotsView.m1533updateTabListeners$lambda7(childAt, this, view);
-                    return m1533updateTabListeners$lambda7;
-                }
-            });
-            if (i2 >= childCount) {
-                return;
+        if (childAt instanceof ViewGroup) {
+            ViewGroup viewGroup = (ViewGroup) childAt;
+            int childCount = viewGroup.getChildCount();
+            for (int i = 0; i < childCount; i++) {
+                viewGroup.getChildAt(i).setOnLongClickListener(new View.OnLongClickListener() { // from class: com.smedialink.ui.smartpanel.SmartBotsView$$ExternalSyntheticLambda4
+                    @Override // android.view.View.OnLongClickListener
+                    public final boolean onLongClick(View view) {
+                        boolean updateTabListeners$lambda$7;
+                        updateTabListeners$lambda$7 = SmartBotsView.updateTabListeners$lambda$7(childAt, this, view);
+                        return updateTabListeners$lambda$7;
+                    }
+                });
             }
-            i = i2;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: updateTabListeners$lambda-7  reason: not valid java name */
-    public static final boolean m1533updateTabListeners$lambda7(View view, SmartBotsView this$0, View view2) {
+    public static final boolean updateTabListeners$lambda$7(View view, SmartBotsView this$0, View view2) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         SmartBotTab smartBotTab = this$0.content.get(((ViewGroup) view).indexOfChild(view2));
         if (Intrinsics.areEqual(smartBotTab.getBotId(), "recent")) {
             return false;
         }
-        NotificationCenter.getInstance(this$0.getCurrentAccount()).postNotificationName(NotificationCenter.botContextMenu, smartBotTab.getBotId(), smartBotTab.getBotName());
+        NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.botContextMenu, smartBotTab.getBotId(), smartBotTab.getBotName());
         return true;
     }
 
@@ -365,22 +352,14 @@ public final class SmartBotsView extends FrameLayout {
         if (childAt instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) childAt;
             int childCount = viewGroup.getChildCount();
-            if (childCount > 0) {
-                int i = 0;
-                while (true) {
-                    int i2 = i + 1;
-                    View childAt2 = viewGroup.getChildAt(i);
-                    childAt2.setMinimumWidth(0);
-                    childAt2.setPadding(floatToDp, childAt2.getPaddingTop(), floatToDp, childAt2.getPaddingBottom());
-                    if (childAt2.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
-                        ViewGroup.LayoutParams layoutParams = childAt2.getLayoutParams();
-                        Objects.requireNonNull(layoutParams, "null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
-                        setTabMargin((ViewGroup.MarginLayoutParams) layoutParams);
-                    }
-                    if (i2 >= childCount) {
-                        break;
-                    }
-                    i = i2;
+            for (int i = 0; i < childCount; i++) {
+                View childAt2 = viewGroup.getChildAt(i);
+                childAt2.setMinimumWidth(0);
+                childAt2.setPadding(floatToDp, childAt2.getPaddingTop(), floatToDp, childAt2.getPaddingBottom());
+                if (childAt2.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+                    ViewGroup.LayoutParams layoutParams = childAt2.getLayoutParams();
+                    Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
+                    setTabMargin((ViewGroup.MarginLayoutParams) layoutParams);
                 }
             }
             this.binding.tabs.requestLayout();
@@ -397,11 +376,11 @@ public final class SmartBotsView extends FrameLayout {
     private final void setupLayoutBottom() {
         final ForkPanelViewBinding forkPanelViewBinding = this.binding;
         forkPanelViewBinding.layoutBottom.setBackgroundColor(Theme.getColor("chat_emojiPanelBackground"));
-        Drawable createEmojiIconSelectorVectorDrawable = Theme.createEmojiIconSelectorVectorDrawable(getContext(), C3158R.C3160drawable.fork_ic_bots_responses, Theme.getColor("chat_emojiBottomPanelIcon"), Theme.getColor("chat_emojiPanelIconSelected"));
+        Drawable createEmojiIconSelectorVectorDrawable = Theme.createEmojiIconSelectorVectorDrawable(getContext(), C3286R.C3288drawable.fork_ic_bots_responses, Theme.getColor("chat_emojiBottomPanelIcon"), Theme.getColor("chat_emojiPanelIconSelected"));
         Theme.setEmojiVectorDrawableColor(createEmojiIconSelectorVectorDrawable, Theme.getColor("chat_emojiBottomPanelIcon"), false);
         Theme.setEmojiVectorDrawableColor(createEmojiIconSelectorVectorDrawable, Theme.getColor("chat_emojiPanelIconSelected"), true);
         forkPanelViewBinding.imageTextResponses.setImageDrawable(createEmojiIconSelectorVectorDrawable);
-        Drawable createEmojiIconSelectorDrawable = Theme.createEmojiIconSelectorDrawable(getContext(), C3158R.C3160drawable.smiles_tab_gif, Theme.getColor("chat_emojiBottomPanelIcon"), Theme.getColor("chat_emojiPanelIconSelected"));
+        Drawable createEmojiIconSelectorDrawable = Theme.createEmojiIconSelectorDrawable(getContext(), C3286R.C3288drawable.smiles_tab_gif, Theme.getColor("chat_emojiBottomPanelIcon"), Theme.getColor("chat_emojiPanelIconSelected"));
         Theme.setEmojiDrawableColor(createEmojiIconSelectorDrawable, Theme.getColor("chat_emojiBottomPanelIcon"), false);
         Theme.setEmojiDrawableColor(createEmojiIconSelectorDrawable, Theme.getColor("chat_emojiPanelIconSelected"), true);
         forkPanelViewBinding.imageGifResponses.setImageDrawable(createEmojiIconSelectorDrawable);
@@ -409,28 +388,28 @@ public final class SmartBotsView extends FrameLayout {
         forkPanelViewBinding.imageTextResponses.setSelected(true);
         forkPanelViewBinding.imageBots.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chat_emojiPanelBackspace"), PorterDuff.Mode.SRC_IN));
         forkPanelViewBinding.imageSettings.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chat_emojiPanelBackspace"), PorterDuff.Mode.MULTIPLY));
-        forkPanelViewBinding.imageTextResponses.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.smartpanel.SmartBotsView$$ExternalSyntheticLambda2
+        forkPanelViewBinding.imageTextResponses.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.smartpanel.SmartBotsView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SmartBotsView.m1532setupLayoutBottom$lambda14$lambda9(ForkPanelViewBinding.this, this, view);
+                SmartBotsView.setupLayoutBottom$lambda$14$lambda$9(ForkPanelViewBinding.this, this, view);
             }
         });
-        forkPanelViewBinding.imageGifResponses.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.smartpanel.SmartBotsView$$ExternalSyntheticLambda3
+        forkPanelViewBinding.imageGifResponses.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.smartpanel.SmartBotsView$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SmartBotsView.m1529setupLayoutBottom$lambda14$lambda11(ForkPanelViewBinding.this, this, view);
+                SmartBotsView.setupLayoutBottom$lambda$14$lambda$11(ForkPanelViewBinding.this, this, view);
             }
         });
         forkPanelViewBinding.imageBots.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.smartpanel.SmartBotsView$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SmartBotsView.m1530setupLayoutBottom$lambda14$lambda12(SmartBotsView.this, view);
+                SmartBotsView.setupLayoutBottom$lambda$14$lambda$12(SmartBotsView.this, view);
             }
         });
         forkPanelViewBinding.imageSettings.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.smartpanel.SmartBotsView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SmartBotsView.m1531setupLayoutBottom$lambda14$lambda13(SmartBotsView.this, view);
+                SmartBotsView.setupLayoutBottom$lambda$14$lambda$13(SmartBotsView.this, view);
             }
         });
         forkPanelViewBinding.imageGifResponses.setSelected(this.currentBotResponseType == SmartBotContentView.BotResponseType.GIF);
@@ -442,8 +421,7 @@ public final class SmartBotsView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupLayoutBottom$lambda-14$lambda-9  reason: not valid java name */
-    public static final void m1532setupLayoutBottom$lambda14$lambda9(ForkPanelViewBinding this_with, SmartBotsView this$0, View view) {
+    public static final void setupLayoutBottom$lambda$14$lambda$9(ForkPanelViewBinding this_with, SmartBotsView this$0, View view) {
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this_with.imageTextResponses.setSelected(true);
@@ -455,8 +433,7 @@ public final class SmartBotsView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupLayoutBottom$lambda-14$lambda-11  reason: not valid java name */
-    public static final void m1529setupLayoutBottom$lambda14$lambda11(ForkPanelViewBinding this_with, SmartBotsView this$0, View view) {
+    public static final void setupLayoutBottom$lambda$14$lambda$11(ForkPanelViewBinding this_with, SmartBotsView this$0, View view) {
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this_with.imageTextResponses.setSelected(false);
@@ -468,25 +445,21 @@ public final class SmartBotsView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupLayoutBottom$lambda-14$lambda-12  reason: not valid java name */
-    public static final void m1530setupLayoutBottom$lambda14$lambda12(SmartBotsView this$0, View view) {
+    public static final void setupLayoutBottom$lambda$14$lambda$12(SmartBotsView this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Listener listener = this$0.listener;
-        if (listener == null) {
-            return;
+        if (listener != null) {
+            listener.onShopClick();
         }
-        listener.onShopClick();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupLayoutBottom$lambda-14$lambda-13  reason: not valid java name */
-    public static final void m1531setupLayoutBottom$lambda14$lambda13(SmartBotsView this$0, View view) {
+    public static final void setupLayoutBottom$lambda$14$lambda$13(SmartBotsView this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Listener listener = this$0.listener;
-        if (listener == null) {
-            return;
+        if (listener != null) {
+            listener.onBotsSettingsClick();
         }
-        listener.onBotsSettingsClick();
     }
 
     private final void moveToInitialPosition() {
@@ -497,14 +470,13 @@ public final class SmartBotsView extends FrameLayout {
         this.binding.viewpager.post(new Runnable() { // from class: com.smedialink.ui.smartpanel.SmartBotsView$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                SmartBotsView.m1528firePageSelectedEvent$lambda15(SmartBotsView.this);
+                SmartBotsView.firePageSelectedEvent$lambda$15(SmartBotsView.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: firePageSelectedEvent$lambda-15  reason: not valid java name */
-    public static final void m1528firePageSelectedEvent$lambda15(SmartBotsView this$0) {
+    public static final void firePageSelectedEvent$lambda$15(SmartBotsView this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.updateBaseIcons();
         this$0.updateIndicator();

@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChatLanguageSettingsBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatLanguageSettingsBottomSheet.kt\norg/fork/ui/dialog/ChatLanguageSettingsBottomSheet\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,223:1\n169#2,2:224\n1#3:226\n*S KotlinDebug\n*F\n+ 1 ChatLanguageSettingsBottomSheet.kt\norg/fork/ui/dialog/ChatLanguageSettingsBottomSheet\n*L\n105#1:224,2\n*E\n"
+    value = "SMAP\nChatLanguageSettingsBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatLanguageSettingsBottomSheet.kt\norg/fork/ui/dialog/ChatLanguageSettingsBottomSheet\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,223:1\n177#2,2:224\n1#3:226\n*S KotlinDebug\n*F\n+ 1 ChatLanguageSettingsBottomSheet.kt\norg/fork/ui/dialog/ChatLanguageSettingsBottomSheet\n*L\n105#1:224,2\n*E\n"
 .end annotation
 
 
@@ -65,26 +65,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$4xeXxUJyTRzKL04j5JAIiqyB5IY(ZLorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$CebTLl_ZhICLLd2j_um3Cg5VD1I(ZLorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;->createBottomButton$lambda-5$lambda-4(ZLorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;->createBottomButton$lambda$5$lambda$4(ZLorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$XNiwSNvW_nUuYjC6Y2grFaEYZ84(Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Landroid/view/View;IFF)V
+.method public static synthetic $r8$lambda$beoG4HpfqHDn5byjoAxneEFQtyU(ILorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Ljava/lang/String;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;->initListView$lambda-2$lambda-1(Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Landroid/view/View;IFF)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;->showLanguageSelector$lambda$6(ILorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$uAU2nkTfVVMJy7Dtvp3qnz__KL8(ILorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Ljava/lang/String;)V
+.method public static synthetic $r8$lambda$yoNCpdVWI6eMoS88LPZM4oY3v0k(Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Landroid/view/View;IFF)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;->showLanguageSelector$lambda-6(ILorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Ljava/lang/String;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;->initListView$lambda$2$lambda$1(Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Landroid/view/View;IFF)V
 
     return-void
 .end method
@@ -479,7 +479,7 @@
     return-object v0
 .end method
 
-.method private static final createBottomButton$lambda-5$lambda-4(ZLorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Landroid/view/View;)V
+.method private static final createBottomButton$lambda$5$lambda$4(ZLorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Landroid/view/View;)V
     .locals 1
 
     const-string p2, "this$0"
@@ -636,7 +636,7 @@
 
     move-result v1
 
-    .line 169
+    .line 177
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/View;->setPadding(IIII)V
 
     const/4 v1, 0x1
@@ -726,7 +726,7 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda-2$lambda-1(Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Landroid/view/View;IFF)V
+.method private static final initListView$lambda$2$lambda$1(Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Landroid/view/View;IFF)V
     .locals 0
 
     const-string p4, "this$0"
@@ -840,7 +840,7 @@
     .line 75
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    const-string v1, "windowBackgroundWhite"
+    const-string/jumbo v1, "windowBackgroundWhite"
 
     .line 76
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -937,15 +937,13 @@
     .line 140
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
 
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 134
     iput-object v1, p0, Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;->languageSelector:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     return-void
 .end method
 
-.method private static final showLanguageSelector$lambda-6(ILorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Ljava/lang/String;)V
+.method private static final showLanguageSelector$lambda$6(ILorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Ljava/lang/String;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1039,14 +1037,11 @@
     .line 62
     iget-object v0, p0, Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;->languageSelector:Lorg/telegram/ui/ActionBar/BottomSheet;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    :goto_0
+    :cond_0
     const/4 v0, 0x0
 
     .line 63

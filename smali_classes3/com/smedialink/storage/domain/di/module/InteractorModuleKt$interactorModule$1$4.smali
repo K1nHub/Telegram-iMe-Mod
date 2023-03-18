@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$4\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,75:1\n127#2,5:76\n127#2,5:81\n127#2,5:86\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$4\n*L\n37#1:76,5\n38#1:81,5\n39#1:86,5\n*E\n"
+    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$4\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,77:1\n127#2,5:78\n127#2,5:83\n127#2,5:88\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$4\n*L\n38#1:78,5\n39#1:83,5\n40#1:88,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 36
+    .line 37
     new-instance p2, Lcom/smedialink/storage/domain/interactor/notification/PushNotificationInteractor;
 
     .line 131
@@ -116,7 +116,7 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 36
+    .line 37
     invoke-direct {p2, v0, v2, p1}, Lcom/smedialink/storage/domain/interactor/notification/PushNotificationInteractor;-><init>(Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;Lcom/smedialink/storage/domain/repository/notification/PushNotificationRepository;Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;)V
 
     return-object p2
@@ -125,7 +125,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 35
+    .line 36
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

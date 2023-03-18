@@ -21,10 +21,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$Fn-Xv7p0D0GTirqcb-_dFQeFas4(Lorg/telegram/ui/Components/RecyclerListView$Holder;Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment;I)V
+.method public static synthetic $r8$lambda$yupc0_eQdnWNUWLl55qO2pwJxJA(Lorg/telegram/ui/Components/RecyclerListView$Holder;Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment$ListAdapter;->setupChooser$lambda-5$lambda-4(Lorg/telegram/ui/Components/RecyclerListView$Holder;Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment;I)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment$ListAdapter;->setupChooser$lambda$5$lambda$4(Lorg/telegram/ui/Components/RecyclerListView$Holder;Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment;I)V
 
     return-void
 .end method
@@ -38,10 +38,6 @@
             ")V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "mContext"
 
@@ -89,7 +85,7 @@
     return-void
 .end method
 
-.method private static final setupChooser$lambda-5$lambda-4(Lorg/telegram/ui/Components/RecyclerListView$Holder;Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment;I)V
+.method private static final setupChooser$lambda$5$lambda$4(Lorg/telegram/ui/Components/RecyclerListView$Holder;Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment;I)V
     .locals 1
 
     const-string v0, "$holder"
@@ -854,9 +850,6 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 167
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     goto :goto_0
 
     .line 168
@@ -873,9 +866,6 @@
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 170
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 163
     :goto_0

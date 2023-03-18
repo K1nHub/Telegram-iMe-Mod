@@ -108,15 +108,11 @@
 
     move-result-object v1
 
-    sget-object v2, Lcom/smedialink/storage/domain/model/common/Environment;->PRODUCTION:Lcom/smedialink/storage/domain/model/common/Environment;
+    const-string v2, "app_environment"
 
-    invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    const-string v3, "PRODUCTION"
 
-    move-result-object v2
-
-    const-string v3, "app_environment"
-
-    invoke-interface {v1, v3, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -392,17 +388,17 @@
 
     move-result-object v0
 
-    if-nez p1, :cond_0
-
-    const-wide/16 v1, -0x1
-
-    goto :goto_0
+    if-eqz p1, :cond_0
 
     .line 60
-    :cond_0
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v1
+
+    goto :goto_0
+
+    :cond_0
+    const-wide/16 v1, -0x1
 
     :goto_0
     const-string p1, "catalog_selected_language_id"

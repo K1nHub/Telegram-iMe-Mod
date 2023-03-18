@@ -11,7 +11,7 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import p034j$.util.concurrent.ConcurrentHashMap;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ManagedChannelOrphanWrapper extends ForwardingManagedChannel {
     private final ManagedChannelReference phantom;
     private static final ReferenceQueue<ManagedChannelOrphanWrapper> refqueue = new ReferenceQueue<>();
@@ -35,7 +35,7 @@ public final class ManagedChannelOrphanWrapper extends ForwardingManagedChannel 
         return super.shutdownNow();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class ManagedChannelReference extends WeakReference<ManagedChannelOrphanWrapper> {
         private static final boolean ENABLE_ALLOCATION_TRACKING = Boolean.parseBoolean(System.getProperty("io.grpc.ManagedChannel.enableAllocationTracking", "true"));
         private static final RuntimeException missingCallSite = missingCallSite();

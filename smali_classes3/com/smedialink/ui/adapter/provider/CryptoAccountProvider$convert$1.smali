@@ -34,10 +34,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$pWIqzrnf6zrSvJNX9FIOnD8xjpE(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$gzbph1vUjh7qVpuvVUVLL0qC9WU(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/adapter/provider/CryptoAccountProvider$convert$1;->invoke$lambda-0(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/adapter/provider/CryptoAccountProvider$convert$1;->invoke$lambda$0(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
 
     return-void
 .end method
@@ -56,7 +56,7 @@
     return-void
 .end method
 
-.method private static final invoke$lambda-0(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
+.method private static final invoke$lambda$0(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$this_applyForView"

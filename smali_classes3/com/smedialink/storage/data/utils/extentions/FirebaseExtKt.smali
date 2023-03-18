@@ -4,42 +4,42 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$A9iXulyz1bttPU-D6FMIK-au7JA(Lio/reactivex/ObservableEmitter;Ljava/lang/Object;)V
+.method public static synthetic $r8$lambda$QD24EFdByCYYgk4KvOQXVe450a0()V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->asObservableTask$lambda-9$lambda-6(Lio/reactivex/ObservableEmitter;Ljava/lang/Object;)V
+    invoke-static {}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->asObservableTask$lambda$9$lambda$8()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$gCzx6YudNt7ro5c6rmUZpSvMtB8(Lcom/google/android/gms/tasks/Task;Landroid/app/Activity;Lio/reactivex/ObservableEmitter;)V
+.method public static synthetic $r8$lambda$SEvLYrwgwtwC5FRU81w-Rsoo88g(Lcom/google/android/gms/tasks/Task;Landroid/app/Activity;Lio/reactivex/ObservableEmitter;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->asObservableTask$lambda-9(Lcom/google/android/gms/tasks/Task;Landroid/app/Activity;Lio/reactivex/ObservableEmitter;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->asObservableTask$lambda$9(Lcom/google/android/gms/tasks/Task;Landroid/app/Activity;Lio/reactivex/ObservableEmitter;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$je-YNJfM6a6_ry7vjVYL1yUpPyI(Lio/reactivex/ObservableEmitter;Lcom/google/android/gms/tasks/Task;)V
+.method public static synthetic $r8$lambda$SKYfCURqG0suXcFjYjQcyCRY6w4(Lio/reactivex/ObservableEmitter;Ljava/lang/Exception;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->asObservableTask$lambda-9$lambda-7(Lio/reactivex/ObservableEmitter;Lcom/google/android/gms/tasks/Task;)V
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->asObservableTask$lambda$9$lambda$5(Lio/reactivex/ObservableEmitter;Ljava/lang/Exception;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$vpNN_X0vCF8rpQTYRspO-X7dFSs(Lio/reactivex/ObservableEmitter;Ljava/lang/Exception;)V
+.method public static synthetic $r8$lambda$TVjrEQ_PLzMKWHiLLdS6BPU2AWY(Lio/reactivex/ObservableEmitter;Lcom/google/android/gms/tasks/Task;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->asObservableTask$lambda-9$lambda-5(Lio/reactivex/ObservableEmitter;Ljava/lang/Exception;)V
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->asObservableTask$lambda$9$lambda$7(Lio/reactivex/ObservableEmitter;Lcom/google/android/gms/tasks/Task;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$yEiumAmtHgO0QpPCq-eZqWRDpDY()V
+.method public static synthetic $r8$lambda$URudmReh2kXnSaiUGhPmfteOFJw(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->asObservableTask$lambda-9$lambda-8()V
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->asObservableTask$lambda$9$lambda$6(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -84,8 +84,8 @@
     return-object p0
 .end method
 
-.method private static final asObservableTask$lambda-9(Lcom/google/android/gms/tasks/Task;Landroid/app/Activity;Lio/reactivex/ObservableEmitter;)V
-    .locals 1
+.method private static final asObservableTask$lambda$9(Lcom/google/android/gms/tasks/Task;Landroid/app/Activity;Lio/reactivex/ObservableEmitter;)V
+    .locals 2
 
     const-string v0, "$this_asObservableTask"
 
@@ -107,11 +107,15 @@
     invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/tasks/Task;->addOnFailureListener(Landroid/app/Activity;Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
 
     .line 39
-    new-instance v0, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$$ExternalSyntheticLambda3;
+    new-instance v0, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$asObservableTask$2$2;
 
-    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$$ExternalSyntheticLambda3;-><init>(Lio/reactivex/ObservableEmitter;)V
+    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$asObservableTask$2$2;-><init>(Lio/reactivex/ObservableEmitter;)V
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Landroid/app/Activity;Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
+    new-instance v1, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$$ExternalSyntheticLambda3;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$$ExternalSyntheticLambda3;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p0, p1, v1}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Landroid/app/Activity;Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
 
     .line 43
     new-instance v0, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$$ExternalSyntheticLambda1;
@@ -128,7 +132,7 @@
     return-void
 .end method
 
-.method private static final asObservableTask$lambda-9$lambda-5(Lio/reactivex/ObservableEmitter;Ljava/lang/Exception;)V
+.method private static final asObservableTask$lambda$9$lambda$5(Lio/reactivex/ObservableEmitter;Ljava/lang/Exception;)V
     .locals 1
 
     const-string v0, "$emitter"
@@ -148,35 +152,20 @@
     return-void
 .end method
 
-.method private static final asObservableTask$lambda-9$lambda-6(Lio/reactivex/ObservableEmitter;Ljava/lang/Object;)V
+.method private static final asObservableTask$lambda$9$lambda$6(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string v0, "$emitter"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p1, :cond_0
+    .line 39
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 40
-    invoke-interface {p0, p1}, Lio/reactivex/Emitter;->onNext(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    .line 41
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Observables can\'t emit null values"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    invoke-interface {p0, p1}, Lio/reactivex/Emitter;->onError(Ljava/lang/Throwable;)V
-
-    :goto_0
     return-void
 .end method
 
-.method private static final asObservableTask$lambda-9$lambda-7(Lio/reactivex/ObservableEmitter;Lcom/google/android/gms/tasks/Task;)V
+.method private static final asObservableTask$lambda$9$lambda$7(Lio/reactivex/ObservableEmitter;Lcom/google/android/gms/tasks/Task;)V
     .locals 0
 
     const-string p1, "$emitter"
@@ -189,7 +178,7 @@
     return-void
 .end method
 
-.method private static final asObservableTask$lambda-9$lambda-8()V
+.method private static final asObservableTask$lambda$9$lambda$8()V
     .locals 2
 
     const/4 v0, 0x0

@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSimplexInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SimplexInteractor.kt\ncom/smedialink/storage/domain/interactor/crypto/simplex/SimplexInteractor\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,174:1\n27#2:175\n15#2:176\n49#2:177\n27#2:178\n1547#3:179\n1618#3,3:180\n*S KotlinDebug\n*F\n+ 1 SimplexInteractor.kt\ncom/smedialink/storage/domain/interactor/crypto/simplex/SimplexInteractor\n*L\n51#1:175\n66#1:176\n99#1:177\n133#1:178\n147#1:179\n147#1:180,3\n*E\n"
+    value = "SMAP\nSimplexInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SimplexInteractor.kt\ncom/smedialink/storage/domain/interactor/crypto/simplex/SimplexInteractor\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,174:1\n27#2:175\n15#2:176\n49#2:177\n27#2:178\n1549#3:179\n1620#3,3:180\n*S KotlinDebug\n*F\n+ 1 SimplexInteractor.kt\ncom/smedialink/storage/domain/interactor/crypto/simplex/SimplexInteractor\n*L\n51#1:175\n66#1:176\n99#1:177\n133#1:178\n147#1:179\n147#1:180,3\n*E\n"
 .end annotation
 
 
@@ -90,7 +90,7 @@
 
     move-result-object v0
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -101,7 +101,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -117,7 +117,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Lcom/smedialink/storage/domain/model/billing/CryptoProduct;
 
     .line 151
@@ -140,6 +140,7 @@
 
     invoke-direct/range {v3 .. v8}, Lcom/smedialink/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;-><init>(Lcom/smedialink/storage/domain/model/crypto/simplex/Currency;Lcom/smedialink/storage/domain/model/crypto/simplex/Currency;Lcom/smedialink/storage/domain/model/crypto/simplex/Currency;FLcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -355,7 +356,11 @@
 
     invoke-direct {p2, p0}, Lcom/smedialink/storage/domain/interactor/crypto/simplex/SimplexInteractor$getAllAvailablePurchasesQuotes$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/domain/interactor/crypto/simplex/SimplexInteractor;)V
 
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p3, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p3, p2}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -469,7 +474,11 @@
 
     invoke-direct {p2}, Lcom/smedialink/storage/domain/interactor/crypto/simplex/SimplexInteractor$getBuyingCryptoQuote$$inlined$mapSuccess$1;-><init>()V
 
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p3, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p3, p2}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -659,7 +668,11 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/smedialink/storage/domain/interactor/crypto/simplex/SimplexInteractor$purchase$$inlined$flatMapError$1;-><init>([Lcom/smedialink/storage/data/network/model/error/IErrorStatus;Lcom/smedialink/storage/domain/interactor/crypto/simplex/SimplexInteractor;Lcom/smedialink/storage/domain/model/crypto/simplex/Currency;ILcom/smedialink/storage/domain/model/crypto/NetworkType;Lcom/smedialink/storage/domain/model/crypto/simplex/FiatCurrency;)V
 
-    invoke-virtual {p3, p5}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, p5}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p3, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -729,7 +742,11 @@
 
     invoke-direct {p4, p0, p1, p2, p5}, Lcom/smedialink/storage/domain/interactor/crypto/simplex/SimplexInteractor$purchase$$inlined$flatMapSuccess$1;-><init>(Lcom/smedialink/storage/domain/interactor/crypto/simplex/SimplexInteractor;Lcom/smedialink/storage/domain/model/crypto/simplex/FiatCurrency;Lcom/smedialink/storage/domain/model/crypto/simplex/DigitalCurrency;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
-    invoke-virtual {p3, p4}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, p4}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p3, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 

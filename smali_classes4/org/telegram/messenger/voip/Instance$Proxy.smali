@@ -28,19 +28,19 @@
 .method public constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 247
+    .line 258
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 248
+    .line 259
     iput-object p1, p0, Lorg/telegram/messenger/voip/Instance$Proxy;->host:Ljava/lang/String;
 
-    .line 249
+    .line 260
     iput p2, p0, Lorg/telegram/messenger/voip/Instance$Proxy;->port:I
 
-    .line 250
+    .line 261
     iput-object p3, p0, Lorg/telegram/messenger/voip/Instance$Proxy;->login:Ljava/lang/String;
 
-    .line 251
+    .line 262
     iput-object p4, p0, Lorg/telegram/messenger/voip/Instance$Proxy;->password:Ljava/lang/String;
 
     return-void
@@ -51,7 +51,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 256
+    .line 267
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

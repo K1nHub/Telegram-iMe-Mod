@@ -37,10 +37,6 @@
         }
     .end annotation
 
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "context"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -468,7 +464,7 @@
     .line 474
     invoke-virtual {v0, v2, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v2, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v2, "windowBackgroundWhiteBlackText"
 
     .line 475
     invoke-static {v1, v2}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->access$getThemedColor(Lorg/fork/ui/dialog/SelectedFilesBottomSheet;Ljava/lang/String;)I
@@ -512,7 +508,7 @@
     .line 482
     invoke-virtual {v0, v2, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v2, "windowBackgroundWhiteGrayText"
+    const-string/jumbo v2, "windowBackgroundWhiteGrayText"
 
     .line 483
     invoke-static {v1, v2}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->access$getThemedColor(Lorg/fork/ui/dialog/SelectedFilesBottomSheet;Ljava/lang/String;)I

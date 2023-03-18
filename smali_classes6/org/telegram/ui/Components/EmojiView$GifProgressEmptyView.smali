@@ -32,16 +32,16 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;Z)V
     .locals 11
 
-    .line 9539
+    .line 9558
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    .line 9540
+    .line 9559
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 9541
+    .line 9560
     iput-boolean p3, p0, Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;->kikliko:Z
 
-    .line 9543
+    .line 9562
     new-instance p3, Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -52,17 +52,17 @@
 
     iput-object p3, p0, Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;->imageView:Landroid/widget/ImageView;
 
-    .line 9544
+    .line 9563
     sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p3, v0}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 9545
+    .line 9564
     sget v0, Lorg/telegram/messenger/R$drawable;->gif_empty:I
 
     invoke-virtual {p3, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 9546
+    .line 9565
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     const-string v1, "chat_emojiPanelEmptyText"
@@ -91,14 +91,14 @@
 
     const/4 v10, 0x0
 
-    .line 9547
+    .line 9566
     invoke-static/range {v4 .. v10}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {p0, p3, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 9549
+    .line 9568
     new-instance p3, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -109,7 +109,7 @@
 
     iput-object p3, p0, Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;->textView:Landroid/widget/TextView;
 
-    .line 9550
+    .line 9569
     sget v0, Lorg/telegram/messenger/R$string;->NoGIFsFound:I
 
     const-string v2, "NoGIFsFound"
@@ -124,10 +124,10 @@
 
     const/high16 v2, 0x41800000    # 16.0f
 
-    .line 9551
+    .line 9570
     invoke-virtual {p3, v0, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 9552
+    .line 9571
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/EmojiView;->access$2300(Lorg/telegram/ui/Components/EmojiView;Ljava/lang/String;)I
 
     move-result v0
@@ -146,14 +146,14 @@
 
     const/4 v6, 0x0
 
-    .line 9553
+    .line 9572
     invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {p0, p3, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 9555
+    .line 9574
     new-instance p3, Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$1200(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -166,12 +166,12 @@
 
     const/16 p2, 0x8
 
-    .line 9556
+    .line 9575
     invoke-virtual {p3, p2}, Landroid/view/View;->setVisibility(I)V
 
     const-string p2, "progressCircle"
 
-    .line 9557
+    .line 9576
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/EmojiView;->access$2300(Lorg/telegram/ui/Components/EmojiView;Ljava/lang/String;)I
 
     move-result p1
@@ -182,7 +182,7 @@
 
     const/16 p2, 0x11
 
-    .line 9558
+    .line 9577
     invoke-static {p1, p1, p2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p1
@@ -195,7 +195,7 @@
 .method static synthetic access$17500(Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;)Landroid/widget/ImageView;
     .locals 0
 
-    .line 9524
+    .line 9543
     iget-object p0, p0, Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;->imageView:Landroid/widget/ImageView;
 
     return-object p0
@@ -204,7 +204,7 @@
 .method static synthetic access$17600(Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;)Landroid/widget/TextView;
     .locals 0
 
-    .line 9524
+    .line 9543
     iget-object p0, p0, Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;->textView:Landroid/widget/TextView;
 
     return-object p0
@@ -213,7 +213,7 @@
 .method static synthetic access$17700(Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;)Lorg/telegram/ui/Components/RadialProgressView;
     .locals 0
 
-    .line 9524
+    .line 9543
     iget-object p0, p0, Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     return-object p0
@@ -224,7 +224,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 9563
+    .line 9582
     iget-boolean p2, p0, Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;->kikliko:Z
 
     if-eqz p2, :cond_0
@@ -244,18 +244,18 @@
 
     move-result-object p2
 
-    .line 9564
+    .line 9583
     :goto_0
     invoke-virtual {p2}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
     move-result p2
 
-    .line 9566
+    .line 9585
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;->loadingState:Z
 
     if-nez v0, :cond_1
 
-    .line 9567
+    .line 9586
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$2500(Lorg/telegram/ui/Components/EmojiView;)I
@@ -287,7 +287,7 @@
     :cond_1
     const/16 v0, 0x50
 
-    .line 9569
+    .line 9588
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -297,7 +297,7 @@
     :goto_1
     const/high16 v0, 0x40000000    # 2.0f
 
-    .line 9572
+    .line 9591
     invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
@@ -310,15 +310,15 @@
 .method public setLoadingState(Z)V
     .locals 4
 
-    .line 9580
+    .line 9599
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;->loadingState:Z
 
     if-eq v0, p1, :cond_3
 
-    .line 9581
+    .line 9600
     iput-boolean p1, p0, Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;->loadingState:Z
 
-    .line 9582
+    .line 9601
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;->imageView:Landroid/widget/ImageView;
 
     const/16 v1, 0x8
@@ -337,7 +337,7 @@
     :goto_0
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 9583
+    .line 9602
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;->textView:Landroid/widget/TextView;
 
     if-eqz p1, :cond_1
@@ -352,7 +352,7 @@
     :goto_1
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 9584
+    .line 9603
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$GifProgressEmptyView;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     if-eqz p1, :cond_2

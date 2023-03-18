@@ -53,7 +53,7 @@ import org.fork.utils.Callbacks$Callback1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Bitmaps;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
@@ -70,7 +70,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.p048ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p048ui.ActionBar.AdjustPanLayoutHelper;
 import org.telegram.p048ui.ActionBar.AlertDialog;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.BubbleActivity;
 import org.telegram.p048ui.Components.AnimatedEmojiDrawable;
@@ -497,7 +497,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
                     Method dump skipped, instructions count: 237
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.Paint.Views.LPhotoPaintView.C46626.onDraw(android.graphics.Canvas):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.Paint.Views.LPhotoPaintView.C47986.onDraw(android.graphics.Canvas):void");
             }
         };
         this.entitiesView = entitiesContainerView;
@@ -546,8 +546,8 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
                     b = 1;
                     b2 = 2;
                 }
-                stickerView.setX((mediaEntity.f1471x * this.paintingSize.width) - ((mediaEntity.viewWidth * (1.0f - mediaEntity.scale)) / 2.0f));
-                stickerView.setY((mediaEntity.f1472y * this.paintingSize.height) - ((mediaEntity.viewHeight * (1.0f - mediaEntity.scale)) / 2.0f));
+                stickerView.setX((mediaEntity.f1476x * this.paintingSize.width) - ((mediaEntity.viewWidth * (1.0f - mediaEntity.scale)) / 2.0f));
+                stickerView.setY((mediaEntity.f1477y * this.paintingSize.height) - ((mediaEntity.viewHeight * (1.0f - mediaEntity.scale)) / 2.0f));
                 stickerView.setPosition(new Point(stickerView.getX() + (mediaEntity.viewWidth / 2.0f), stickerView.getY() + (mediaEntity.viewHeight / 2.0f)));
                 stickerView.setScaleX(mediaEntity.scale);
                 stickerView.setScaleY(mediaEntity.scale);
@@ -573,7 +573,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         addView(this.topLayout, LayoutHelper.createFrame(-1, -2, 48));
         ImageView imageView = new ImageView(context);
         this.undoButton = imageView;
-        imageView.setImageResource(C3158R.C3160drawable.photo_undo2);
+        imageView.setImageResource(C3286R.C3288drawable.photo_undo2);
         this.undoButton.setPadding(AndroidUtilities.m50dp(3), AndroidUtilities.m50dp(3), AndroidUtilities.m50dp(3), AndroidUtilities.m50dp(3));
         this.undoButton.setBackground(Theme.createSelectorDrawable(1090519039));
         this.undoButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.LPhotoPaintView$$ExternalSyntheticLambda11
@@ -595,10 +595,10 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         textView.setTextColor(-1);
         this.zoomOutText.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.zoomOutText.setTextSize(1, 16.0f);
-        this.zoomOutText.setText(LocaleController.getString(C3158R.string.PhotoEditorZoomOut));
+        this.zoomOutText.setText(LocaleController.getString(C3286R.string.PhotoEditorZoomOut));
         ImageView imageView2 = new ImageView(context);
         this.zoomOutImage = imageView2;
-        imageView2.setImageResource(C3158R.C3160drawable.photo_zoomout);
+        imageView2.setImageResource(C3286R.C3288drawable.photo_zoomout);
         this.zoomOutButton.addView(this.zoomOutImage, LayoutHelper.createLinear(24, 24, 16, 0, 0, 8, 0));
         this.zoomOutButton.addView(this.zoomOutText, LayoutHelper.createLinear(-2, -2, 16));
         this.zoomOutButton.setAlpha(BitmapDescriptorFactory.HUE_RED);
@@ -608,7 +608,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         this.undoAllButton = textView2;
         textView2.setBackground(Theme.createSelectorDrawable(822083583, 7));
         this.undoAllButton.setPadding(AndroidUtilities.m50dp(8), 0, AndroidUtilities.m50dp(8), 0);
-        this.undoAllButton.setText(LocaleController.getString(C3158R.string.PhotoEditorClearAll));
+        this.undoAllButton.setText(LocaleController.getString(C3286R.string.PhotoEditorClearAll));
         this.undoAllButton.setGravity(16);
         this.undoAllButton.setTextColor(-1);
         this.undoAllButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
@@ -624,7 +624,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         TextView textView3 = new TextView(context);
         this.cancelTextButton = textView3;
         textView3.setBackground(Theme.createSelectorDrawable(822083583, 7));
-        this.cancelTextButton.setText(LocaleController.getString(C3158R.string.Clear));
+        this.cancelTextButton.setText(LocaleController.getString(C3286R.string.Clear));
         this.cancelTextButton.setPadding(AndroidUtilities.m50dp(8), 0, AndroidUtilities.m50dp(8), 0);
         this.cancelTextButton.setGravity(16);
         this.cancelTextButton.setTextColor(-1);
@@ -642,7 +642,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         TextView textView4 = new TextView(context);
         this.doneTextButton = textView4;
         textView4.setBackground(Theme.createSelectorDrawable(822083583, 7));
-        this.doneTextButton.setText(LocaleController.getString(C3158R.string.Done));
+        this.doneTextButton.setText(LocaleController.getString(C3286R.string.Done));
         this.doneTextButton.setPadding(AndroidUtilities.m50dp(8), 0, AndroidUtilities.m50dp(8), 0);
         this.doneTextButton.setGravity(16);
         this.doneTextButton.setTextColor(-1);
@@ -1225,10 +1225,10 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         Size paintingSize = getPaintingSize();
         Point startPositionRelativeToEntity = startPositionRelativeToEntity(null);
         TextPaintView textPaintView = new TextPaintView(getContext(), startPositionRelativeToEntity, (int) (paintingSize.width / 9.0f), "", this.colorSwatch, this.selectedTextType);
-        if (startPositionRelativeToEntity.f1746x == this.entitiesView.getMeasuredWidth() / 2.0f) {
+        if (startPositionRelativeToEntity.f1757x == this.entitiesView.getMeasuredWidth() / 2.0f) {
             textPaintView.setHasStickyX(true);
         }
-        if (startPositionRelativeToEntity.f1747y == this.entitiesView.getMeasuredHeight() / 2.0f) {
+        if (startPositionRelativeToEntity.f1758y == this.entitiesView.getMeasuredHeight() / 2.0f) {
             textPaintView.setHasStickyY(true);
         }
         textPaintView.setDelegate(this);
@@ -1398,7 +1398,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
             if (Build.VERSION.SDK_INT >= 21 && !this.inBubbleMode) {
                 i = AndroidUtilities.statusBarHeight;
             }
-            int currentActionBarHeight = C3222ActionBar.getCurrentActionBarHeight() + i;
+            int currentActionBarHeight = C3351ActionBar.getCurrentActionBarHeight() + i;
             int measuredWidth = view.getMeasuredWidth();
             int measuredHeight = view.getMeasuredHeight();
             MediaController.CropState cropState = this.currentCropState;
@@ -1466,7 +1466,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         this.bottomLayout.addView(this.tabsLayout, LayoutHelper.createFrame(-1, 40, 80, 52, 0, 52, 0));
         TextView textView = new TextView(context);
         this.drawTab = textView;
-        textView.setText(LocaleController.getString(C3158R.string.PhotoEditorDraw).toUpperCase());
+        textView.setText(LocaleController.getString(C3286R.string.PhotoEditorDraw).toUpperCase());
         this.drawTab.setBackground(Theme.createSelectorDrawable(getThemedColor("listSelectorSDK21"), 7));
         this.drawTab.setPadding(0, AndroidUtilities.m50dp(8), 0, AndroidUtilities.m50dp(8));
         this.drawTab.setTextColor(-1);
@@ -1483,7 +1483,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         this.tabsLayout.addView(this.drawTab, LayoutHelper.createLinear(0, -2, 1.0f));
         TextView textView2 = new TextView(context);
         this.stickerTab = textView2;
-        textView2.setText(LocaleController.getString(C3158R.string.PhotoEditorSticker).toUpperCase());
+        textView2.setText(LocaleController.getString(C3286R.string.PhotoEditorSticker).toUpperCase());
         this.stickerTab.setBackground(Theme.createSelectorDrawable(getThemedColor("listSelectorSDK21"), 7));
         this.stickerTab.setPadding(0, AndroidUtilities.m50dp(8), 0, AndroidUtilities.m50dp(8));
         this.stickerTab.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.LPhotoPaintView$$ExternalSyntheticLambda10
@@ -1501,7 +1501,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         this.tabsLayout.addView(this.stickerTab, LayoutHelper.createLinear(0, -2, 1.0f));
         TextView textView3 = new TextView(context);
         this.textTab = textView3;
-        textView3.setText(LocaleController.getString(C3158R.string.PhotoEditorText).toUpperCase());
+        textView3.setText(LocaleController.getString(C3286R.string.PhotoEditorText).toUpperCase());
         this.textTab.setBackground(Theme.createSelectorDrawable(getThemedColor("listSelectorSDK21"), 7));
         this.textTab.setPadding(0, AndroidUtilities.m50dp(8), 0, AndroidUtilities.m50dp(8));
         this.textTab.setTextColor(-1);
@@ -1705,13 +1705,13 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         int size = View.MeasureSpec.getSize(i);
         int size2 = View.MeasureSpec.getSize(i2);
         setMeasuredDimension(size, size2);
-        int currentActionBarHeight2 = (((AndroidUtilities.displaySize.y - C3222ActionBar.getCurrentActionBarHeight()) - getAdditionalTop()) - getAdditionalBottom()) - AndroidUtilities.m50dp(48);
+        int currentActionBarHeight2 = (((AndroidUtilities.displaySize.y - C3351ActionBar.getCurrentActionBarHeight()) - getAdditionalTop()) - getAdditionalBottom()) - AndroidUtilities.m50dp(48);
         Bitmap bitmap = this.bitmapToEdit;
         if (bitmap != null) {
             f = bitmap.getWidth();
             currentActionBarHeight = this.bitmapToEdit.getHeight();
         } else {
-            currentActionBarHeight = (size2 - C3222ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.m50dp(48);
+            currentActionBarHeight = (size2 - C3351ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.m50dp(48);
             f = size;
         }
         float f2 = size;
@@ -1743,13 +1743,12 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         frameLayout.setPadding(frameLayout.getPaddingLeft(), AndroidUtilities.m50dp(12) + AndroidUtilities.statusBarHeight, this.topLayout.getPaddingRight(), this.topLayout.getPaddingBottom());
         measureChild(this.topLayout, i, i2);
         this.ignoreLayout = false;
-        int measureKeyboardHeight = SharedConfig.smoothKeyboard ? 0 : measureKeyboardHeight();
-        if (!this.waitingForKeyboardOpen && measureKeyboardHeight <= AndroidUtilities.m50dp(20) && !this.emojiViewVisible && !this.isAnimatePopupClosing) {
+        if (!this.waitingForKeyboardOpen && AndroidUtilities.m50dp(20) >= 0 && !this.emojiViewVisible && !this.isAnimatePopupClosing) {
             this.ignoreLayout = true;
             hideEmojiView();
             this.ignoreLayout = false;
         }
-        if (measureKeyboardHeight > AndroidUtilities.m50dp(20)) {
+        if (AndroidUtilities.m50dp(20) < 0) {
             hideEmojiView();
         }
         EmojiView emojiView = this.emojiView;
@@ -1779,7 +1778,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
             i7 = AndroidUtilities.statusBarHeight;
         }
         int ceil = (int) Math.ceil((i5 - this.renderView.getMeasuredWidth()) / 2.0f);
-        int currentActionBarHeight = ((((i6 - (C3222ActionBar.getCurrentActionBarHeight() + i7)) - AndroidUtilities.m50dp(48)) - this.renderView.getMeasuredHeight()) / 2) + AndroidUtilities.m50dp(8) + i7 + ((getAdditionalTop() - getAdditionalBottom()) / 2);
+        int currentActionBarHeight = ((((i6 - (C3351ActionBar.getCurrentActionBarHeight() + i7)) - AndroidUtilities.m50dp(48)) - this.renderView.getMeasuredHeight()) / 2) + AndroidUtilities.m50dp(8) + i7 + ((getAdditionalTop() - getAdditionalBottom()) / 2);
         RenderView renderView = this.renderView;
         renderView.layout(ceil, currentActionBarHeight, renderView.getMeasuredWidth() + ceil, this.renderView.getMeasuredHeight() + currentActionBarHeight);
         View view = this.renderInputView;
@@ -2073,8 +2072,8 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
                         mediaEntity.viewHeight = childAt.getHeight();
                         mediaEntity.width = (childAt.getWidth() * scaleX) / lPhotoPaintView.entitiesView.getMeasuredWidth();
                         mediaEntity.height = (childAt.getHeight() * scaleY) / lPhotoPaintView.entitiesView.getMeasuredHeight();
-                        mediaEntity.f1471x = (((childAt.getWidth() * (1.0f - scaleX)) / 2.0f) + x) / lPhotoPaintView.entitiesView.getMeasuredWidth();
-                        mediaEntity.f1472y = (((childAt.getHeight() * (1.0f - scaleY)) / 2.0f) + y) / lPhotoPaintView.entitiesView.getMeasuredHeight();
+                        mediaEntity.f1476x = (((childAt.getWidth() * (1.0f - scaleX)) / 2.0f) + x) / lPhotoPaintView.entitiesView.getMeasuredWidth();
+                        mediaEntity.f1477y = (((childAt.getHeight() * (1.0f - scaleY)) / 2.0f) + y) / lPhotoPaintView.entitiesView.getMeasuredHeight();
                         mediaEntity.rotation = (float) ((-childAt.getRotation()) * 0.017453292519943295d);
                         mediaEntity.textViewX = (x + (childAt.getWidth() / 2.0f)) / lPhotoPaintView.entitiesView.getMeasuredWidth();
                         mediaEntity.textViewY = (y + (childAt.getHeight() / 2.0f)) / lPhotoPaintView.entitiesView.getMeasuredHeight();
@@ -2105,7 +2104,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
                         } else {
                             canvas6.save();
                             point2 = point;
-                            canvas6.translate(point2.f1746x, point2.f1747y);
+                            canvas6.translate(point2.f1757x, point2.f1758y);
                             canvas6.scale(childAt.getScaleX(), childAt.getScaleY());
                             canvas6.rotate(childAt.getRotation());
                             canvas6.translate((-entityView.getWidth()) / 2.0f, (-entityView.getHeight()) / 2.0f);
@@ -2183,15 +2182,15 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         } else if (activity == null) {
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(activity, this.resourcesProvider);
-            builder.setMessage(LocaleController.getString("PhotoEditorDiscardAlert", C3158R.string.PhotoEditorDiscardAlert));
-            builder.setTitle(LocaleController.getString("DiscardChanges", C3158R.string.DiscardChanges));
-            builder.setPositiveButton(LocaleController.getString("PassportDiscard", C3158R.string.PassportDiscard), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.LPhotoPaintView$$ExternalSyntheticLambda4
+            builder.setMessage(LocaleController.getString("PhotoEditorDiscardAlert", C3286R.string.PhotoEditorDiscardAlert));
+            builder.setTitle(LocaleController.getString("DiscardChanges", C3286R.string.DiscardChanges));
+            builder.setPositiveButton(LocaleController.getString("PassportDiscard", C3286R.string.PassportDiscard), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.LPhotoPaintView$$ExternalSyntheticLambda4
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     runnable.run();
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3158R.string.Cancel), null);
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null);
             photoViewer.showAlertDialog(builder);
         }
     }
@@ -2319,7 +2318,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
                     arrayList = new ArrayList();
                 }
                 TLRPC$TL_inputDocument tLRPC$TL_inputDocument = new TLRPC$TL_inputDocument();
-                tLRPC$TL_inputDocument.f1510id = sticker.f1502id;
+                tLRPC$TL_inputDocument.f1515id = sticker.f1507id;
                 tLRPC$TL_inputDocument.access_hash = sticker.access_hash;
                 byte[] bArr = sticker.file_reference;
                 tLRPC$TL_inputDocument.file_reference = bArr;
@@ -2341,7 +2340,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
                                     arrayList = new ArrayList();
                                 }
                                 TLRPC$TL_inputDocument tLRPC$TL_inputDocument2 = new TLRPC$TL_inputDocument();
-                                tLRPC$TL_inputDocument2.f1510id = tLRPC$Document.f1502id;
+                                tLRPC$TL_inputDocument2.f1515id = tLRPC$Document.f1507id;
                                 tLRPC$TL_inputDocument2.access_hash = tLRPC$Document.access_hash;
                                 byte[] bArr2 = tLRPC$Document.file_reference;
                                 tLRPC$TL_inputDocument2.file_reference = bArr2;
@@ -2563,14 +2562,14 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         for (final int i2 = 0; i2 < 3; i2++) {
             boolean z = true;
             if (i2 == 0) {
-                string = LocaleController.getString("PaintOutlined", C3158R.string.PaintOutlined);
-                i = C3158R.C3160drawable.msg_text_outlined;
+                string = LocaleController.getString("PaintOutlined", C3286R.string.PaintOutlined);
+                i = C3286R.C3288drawable.msg_text_outlined;
             } else if (i2 == 1) {
-                string = LocaleController.getString("PaintRegular", C3158R.string.PaintRegular);
-                i = C3158R.C3160drawable.msg_text_regular;
+                string = LocaleController.getString("PaintRegular", C3286R.string.PaintRegular);
+                i = C3286R.C3288drawable.msg_text_regular;
             } else {
-                string = LocaleController.getString("PaintFramed", C3158R.string.PaintFramed);
-                i = C3158R.C3160drawable.msg_text_framed;
+                string = LocaleController.getString("PaintFramed", C3286R.string.PaintFramed);
+                i = C3286R.C3288drawable.msg_text_framed;
             }
             ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = this.popupLayout;
             if (this.selectedTextType != i2) {
@@ -2662,7 +2661,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
             addView(this.textView, LayoutHelper.createLinear(-2, -2, 19, 0, 0, 16, 0));
             ImageView imageView3 = new ImageView(context);
             this.checkView = imageView3;
-            imageView3.setImageResource(C3158R.C3160drawable.msg_text_check);
+            imageView3.setImageResource(C3286R.C3288drawable.msg_text_check);
             this.checkView.setScaleType(ImageView.ScaleType.CENTER);
             this.checkView.setColorFilter(new PorterDuffColorFilter(LPhotoPaintView.this.getThemedColor("radioBackgroundChecked"), PorterDuff.Mode.MULTIPLY));
             this.checkView.setVisibility(8);
@@ -2879,7 +2878,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         textView.setPadding(AndroidUtilities.m50dp(16), 0, AndroidUtilities.m50dp(14), 0);
         textView.setTextSize(1, 16.0f);
         textView.setTag(0);
-        textView.setText(LocaleController.getString("PaintDelete", C3158R.string.PaintDelete));
+        textView.setText(LocaleController.getString("PaintDelete", C3286R.string.PaintDelete));
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.LPhotoPaintView$$ExternalSyntheticLambda17
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -2895,7 +2894,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
             textView2.setPadding(AndroidUtilities.m50dp(16), 0, AndroidUtilities.m50dp(16), 0);
             textView2.setTextSize(1, 16.0f);
             textView2.setTag(1);
-            textView2.setText(LocaleController.getString("PaintEdit", C3158R.string.PaintEdit));
+            textView2.setText(LocaleController.getString("PaintEdit", C3286R.string.PaintEdit));
             textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.LPhotoPaintView$$ExternalSyntheticLambda13
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -2911,7 +2910,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         textView3.setPadding(AndroidUtilities.m50dp(14), 0, AndroidUtilities.m50dp(16), 0);
         textView3.setTextSize(1, 16.0f);
         textView3.setTag(2);
-        textView3.setText(LocaleController.getString("PaintDuplicate", C3158R.string.PaintDuplicate));
+        textView3.setText(LocaleController.getString("PaintDuplicate", C3286R.string.PaintDuplicate));
         textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.LPhotoPaintView$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -2985,7 +2984,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         float f = cropState != null ? 200.0f / cropState.cropScale : 200.0f;
         if (entityView != null) {
             Point position = entityView.getPosition();
-            return new Point(position.f1746x + f, position.f1747y + f);
+            return new Point(position.f1757x + f, position.f1758y + f);
         }
         float f2 = cropState != null ? 100.0f / cropState.cropScale : 100.0f;
         Point centerPositionForEntity = centerPositionForEntity();
@@ -2995,7 +2994,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
                 View childAt = this.entitiesView.getChildAt(i);
                 if (childAt instanceof EntityView) {
                     Point position2 = ((EntityView) childAt).getPosition();
-                    if (((float) Math.sqrt(Math.pow(position2.f1746x - centerPositionForEntity.f1746x, 2.0d) + Math.pow(position2.f1747y - centerPositionForEntity.f1747y, 2.0d))) < f2) {
+                    if (((float) Math.sqrt(Math.pow(position2.f1757x - centerPositionForEntity.f1757x, 2.0d) + Math.pow(position2.f1758y - centerPositionForEntity.f1758y, 2.0d))) < f2) {
                         z = true;
                     }
                 }
@@ -3003,7 +3002,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
             if (!z) {
                 return centerPositionForEntity;
             }
-            centerPositionForEntity = new Point(centerPositionForEntity.f1746x + f, centerPositionForEntity.f1747y + f);
+            centerPositionForEntity = new Point(centerPositionForEntity.f1757x + f, centerPositionForEntity.f1758y + f);
         }
     }
 
@@ -3041,7 +3040,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
             ActionBarPopupWindow actionBarPopupWindow2 = new ActionBarPopupWindow(this.popupLayout, -2, -2);
             this.popupWindow = actionBarPopupWindow2;
             actionBarPopupWindow2.setAnimationEnabled(true);
-            this.popupWindow.setAnimationStyle(C3158R.style.PopupAnimation);
+            this.popupWindow.setAnimationStyle(C3286R.style.PopupAnimation);
             this.popupWindow.setOutsideTouchable(true);
             this.popupWindow.setClippingEnabled(true);
             this.popupWindow.setInputMethodMode(2);
@@ -3149,7 +3148,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
             f = BitmapDescriptorFactory.HUE_RED;
         }
         StickerPosition stickerPosition = new StickerPosition(centerPositionForEntity(), f2, f);
-        if (tLRPC$TL_maskCoords == null || (arrayList = this.faces) == null || arrayList.size() == 0 || (randomFaceWithVacantAnchor = getRandomFaceWithVacantAnchor((i = tLRPC$TL_maskCoords.f1570n), tLRPC$Document.f1502id, tLRPC$TL_maskCoords)) == null) {
+        if (tLRPC$TL_maskCoords == null || (arrayList = this.faces) == null || arrayList.size() == 0 || (randomFaceWithVacantAnchor = getRandomFaceWithVacantAnchor((i = tLRPC$TL_maskCoords.f1576n), tLRPC$Document.f1507id, tLRPC$TL_maskCoords)) == null) {
             return stickerPosition;
         }
         Point pointForAnchor = randomFaceWithVacantAnchor.getPointForAnchor(i);
@@ -3159,7 +3158,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         double d = 1.5707963267948966d - radians;
         double d2 = widthForAnchor;
         double d3 = radians + 1.5707963267948966d;
-        return new StickerPosition(new Point(pointForAnchor.f1746x + ((float) (Math.sin(d) * d2 * tLRPC$TL_maskCoords.f1571x)) + ((float) (Math.cos(d3) * d2 * tLRPC$TL_maskCoords.f1572y)), pointForAnchor.f1747y + ((float) (Math.cos(d) * d2 * tLRPC$TL_maskCoords.f1571x)) + ((float) (Math.sin(d3) * d2 * tLRPC$TL_maskCoords.f1572y))), (float) ((widthForAnchor / baseStickerSize().width) * tLRPC$TL_maskCoords.zoom), angle);
+        return new StickerPosition(new Point(pointForAnchor.f1757x + ((float) (Math.sin(d) * d2 * tLRPC$TL_maskCoords.f1577x)) + ((float) (Math.cos(d3) * d2 * tLRPC$TL_maskCoords.f1578y)), pointForAnchor.f1758y + ((float) (Math.cos(d) * d2 * tLRPC$TL_maskCoords.f1577x)) + ((float) (Math.sin(d3) * d2 * tLRPC$TL_maskCoords.f1578y))), (float) ((widthForAnchor / baseStickerSize().width) * tLRPC$TL_maskCoords.zoom), angle);
     }
 
     private PhotoFace getRandomFaceWithVacantAnchor(int i, long j, TLRPC$TL_maskCoords tLRPC$TL_maskCoords) {
@@ -3191,8 +3190,8 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
                     continue;
                 } else {
                     Point position = stickerView.getPosition();
-                    float hypot = (float) Math.hypot(position.f1746x - pointForAnchor.f1746x, position.f1747y - pointForAnchor.f1747y);
-                    if ((j == stickerView.getSticker().f1502id || this.faces.size() > 1) && hypot < widthForAnchor) {
+                    float hypot = (float) Math.hypot(position.f1757x - pointForAnchor.f1757x, position.f1758y - pointForAnchor.f1758y);
+                    if ((j == stickerView.getSticker().f1507id || this.faces.size() > 1) && hypot < widthForAnchor) {
                         return true;
                     }
                 }
@@ -3209,10 +3208,10 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
                 LPhotoPaintView.this.didSetAnimatedSticker(rLottieDrawable);
             }
         };
-        if (calculateStickerPosition.position.f1746x == this.entitiesView.getMeasuredWidth() / 2.0f) {
+        if (calculateStickerPosition.position.f1757x == this.entitiesView.getMeasuredWidth() / 2.0f) {
             stickerView.setHasStickyX(true);
         }
-        if (calculateStickerPosition.position.f1747y == this.entitiesView.getMeasuredHeight() / 2.0f) {
+        if (calculateStickerPosition.position.f1758y == this.entitiesView.getMeasuredHeight() / 2.0f) {
             stickerView.setHasStickyY(true);
         }
         stickerView.setDelegate(this);
@@ -3383,7 +3382,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
                 emojiButton.setState(ChatActivityEnterViewAnimatedIconView.State.KEYBOARD, true);
             }
             onWindowSizeChanged();
-            if (!z2 && SharedConfig.smoothKeyboard) {
+            if (!z2) {
                 if (this.keyboardVisible) {
                     this.translateBottomPanelAfterResize = true;
                     PaintWeightChooserView paintWeightChooserView = this.weightChooserView;
@@ -3453,12 +3452,12 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
     }
 
     private void hideEmojiPopup(boolean z) {
-        EmojiView emojiView;
         if (this.emojiViewVisible) {
             showEmojiPopup(0);
         }
         if (z) {
-            if (SharedConfig.smoothKeyboard && (emojiView = this.emojiView) != null && emojiView.getVisibility() == 0 && !this.waitingForKeyboardOpen) {
+            EmojiView emojiView = this.emojiView;
+            if (emojiView != null && emojiView.getVisibility() == 0 && !this.waitingForKeyboardOpen) {
                 final int measuredHeight = this.emojiView.getMeasuredHeight();
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(BitmapDescriptorFactory.HUE_RED, measuredHeight);
                 final boolean z2 = this.bottomPanelIgnoreOnce;
@@ -3610,11 +3609,11 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         PaintTextOptionsView paintTextOptionsView = this.textOptionsView;
         if (paintTextOptionsView != null) {
             if (this.keyboardVisible) {
-                paintTextOptionsView.animatePlusToIcon(C3158R.C3160drawable.input_smile);
+                paintTextOptionsView.animatePlusToIcon(C3286R.C3288drawable.input_smile);
             } else if (this.emojiViewVisible) {
-                paintTextOptionsView.animatePlusToIcon(C3158R.C3160drawable.input_keyboard);
+                paintTextOptionsView.animatePlusToIcon(C3286R.C3288drawable.input_keyboard);
             } else {
-                paintTextOptionsView.animatePlusToIcon(C3158R.C3160drawable.msg_add);
+                paintTextOptionsView.animatePlusToIcon(C3286R.C3288drawable.msg_add);
             }
         }
         AndroidUtilities.updateViewShow(this.undoAllButton, (this.keyboardVisible || this.emojiViewVisible) ? false : true, false, 1.0f, true, null);
@@ -3639,14 +3638,14 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         if (AndroidUtilities.isTablet()) {
             this.emojiView.setForseMultiwindowLayout(true);
         }
-        this.emojiView.setDelegate(new C465720());
+        this.emojiView.setDelegate(new C479320());
         addView(this.emojiView);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Paint.Views.LPhotoPaintView$20 */
     /* loaded from: classes6.dex */
-    public class C465720 implements EmojiView.EmojiViewDelegate {
+    public class C479320 implements EmojiView.EmojiViewDelegate {
         @Override // org.telegram.p048ui.Components.EmojiView.EmojiViewDelegate
         public /* synthetic */ boolean canSchedule() {
             return EmojiView.EmojiViewDelegate.CC.$default$canSchedule(this);
@@ -3778,7 +3777,7 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
             EmojiView.EmojiViewDelegate.CC.$default$showTrendingStickersAlert(this, trendingStickersLayout);
         }
 
-        C465720() {
+        C479320() {
         }
 
         @Override // org.telegram.p048ui.Components.EmojiView.EmojiViewDelegate
@@ -3841,15 +3840,15 @@ public class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPh
         @Override // org.telegram.p048ui.Components.EmojiView.EmojiViewDelegate
         public void onClearEmojiRecent() {
             AlertDialog.Builder builder = new AlertDialog.Builder(LPhotoPaintView.this.getContext(), LPhotoPaintView.this.resourcesProvider);
-            builder.setTitle(LocaleController.getString("ClearRecentEmojiTitle", C3158R.string.ClearRecentEmojiTitle));
-            builder.setMessage(LocaleController.getString("ClearRecentEmojiText", C3158R.string.ClearRecentEmojiText));
-            builder.setPositiveButton(LocaleController.getString("ClearButton", C3158R.string.ClearButton), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.LPhotoPaintView$20$$ExternalSyntheticLambda0
+            builder.setTitle(LocaleController.getString("ClearRecentEmojiTitle", C3286R.string.ClearRecentEmojiTitle));
+            builder.setMessage(LocaleController.getString("ClearRecentEmojiText", C3286R.string.ClearRecentEmojiText));
+            builder.setPositiveButton(LocaleController.getString("ClearButton", C3286R.string.ClearButton), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.LPhotoPaintView$20$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
-                    LPhotoPaintView.C465720.this.lambda$onClearEmojiRecent$0(dialogInterface, i);
+                    LPhotoPaintView.C479320.this.lambda$onClearEmojiRecent$0(dialogInterface, i);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3158R.string.Cancel), null);
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null);
             builder.show();
         }
 

@@ -35,11 +35,11 @@
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    check-cast p1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+    check-cast p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
-    check-cast p2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+    check-cast p2, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/ActionBar/Theme;->$r8$lambda$Ywqj9JQytc_IBGqdVuFsghzB1FQ(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)I
+    invoke-static {p1, p2}, Lorg/telegram/ui/ActionBar/Theme;->$r8$lambda$pP_HZFWB46rWzbN3jEvVKvg_Qv8(Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;)I
 
     move-result p1
 

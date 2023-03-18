@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ReactedUsersListView$ReactedUserHolderView;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;Landroid/content/Context;)V
+    value = Lorg/telegram/ui/Components/ReactedUsersListView$ReactedUserHolderView;-><init>(ILandroid/content/Context;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,10 +15,10 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ReactedUsersListView$ReactedUserHolderView;Landroid/content/Context;Lorg/telegram/ui/Components/ReactedUsersListView;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ReactedUsersListView$ReactedUserHolderView;Landroid/content/Context;)V
     .locals 0
 
-    .line 385
+    .line 412
     invoke-direct {p0, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public setText(Ljava/lang/CharSequence;)Z
     .locals 3
 
-    .line 388
+    .line 415
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getPaint()Landroid/graphics/Paint;
 
     move-result-object v0
@@ -50,7 +50,7 @@
 
     move-result-object p1
 
-    .line 389
+    .line 416
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
     move-result p1

@@ -51,24 +51,24 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 18124
+    .line 18228
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 18130
+    .line 18234
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$Page;->blocks:Ljava/util/ArrayList;
 
-    .line 18131
+    .line 18235
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$Page;->photos:Ljava/util/ArrayList;
 
-    .line 18132
+    .line 18236
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -87,7 +87,7 @@
 
     goto :goto_0
 
-    .line 18149
+    .line 18253
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageFull_layer82;
 
@@ -95,7 +95,7 @@
 
     goto :goto_0
 
-    .line 18146
+    .line 18250
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageFull_layer67;
 
@@ -103,7 +103,7 @@
 
     goto :goto_0
 
-    .line 18152
+    .line 18256
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_page_layer110;
 
@@ -111,7 +111,7 @@
 
     goto :goto_0
 
-    .line 18155
+    .line 18259
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_page;
 
@@ -119,7 +119,7 @@
 
     goto :goto_0
 
-    .line 18143
+    .line 18247
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pagePart_layer82;
 
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 18140
+    .line 18244
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pagePart_layer67;
 
@@ -140,7 +140,7 @@
 
     goto :goto_1
 
-    .line 18159
+    .line 18263
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -170,7 +170,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 18162
+    .line 18266
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

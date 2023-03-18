@@ -1,6 +1,5 @@
 package com.smedialink.p031ui.catalog.details;
 
-import android.net.Uri;
 import com.smedialink.gateway.TelegramControllersGateway;
 import com.smedialink.manager.TelegramApi;
 import com.smedialink.model.catalog.CampaignItem;
@@ -9,19 +8,19 @@ import com.smedialink.p031ui.base.mvp.base.BaseView;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.utils.extentions.common.ContextExtKt;
 import com.smedialink.utils.extentions.p033rx.RxExtKt;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringBuilderKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC$Chat;
-import timber.log.Timber;
 /* compiled from: ChannelDetailsPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.catalog.details.ChannelDetailsPresenter */
@@ -56,54 +55,26 @@ public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsV
         Intrinsics.checkNotNullExpressionValue(observeOn, "telegramApi.getChatInfoB…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable flatMap = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).flatMap(new Function() { // from class: com.smedialink.ui.catalog.details.ChannelDetailsPresenter$$ExternalSyntheticLambda0
+        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
+        final ChannelDetailsPresenter$onSubscribeClick$1 channelDetailsPresenter$onSubscribeClick$1 = new ChannelDetailsPresenter$onSubscribeClick$1(this);
+        Observable flatMap = withLoadingDialog$default.flatMap(new Function() { // from class: com.smedialink.ui.catalog.details.ChannelDetailsPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                ObservableSource m1418onSubscribeClick$lambda0;
-                m1418onSubscribeClick$lambda0 = ChannelDetailsPresenter.m1418onSubscribeClick$lambda0(ChannelDetailsPresenter.this, (TLRPC$Chat) obj);
-                return m1418onSubscribeClick$lambda0;
+                ObservableSource onSubscribeClick$lambda$0;
+                onSubscribeClick$lambda$0 = ChannelDetailsPresenter.onSubscribeClick$lambda$0(Function1.this, obj);
+                return onSubscribeClick$lambda$0;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(flatMap, "telegramApi.getChatInfoB…tusChangeObservable(it) }");
-        Disposable subscribe = flatMap.subscribe(new Consumer() { // from class: com.smedialink.ui.catalog.details.ChannelDetailsPresenter$onSubscribeClick$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                CampaignItem campaignItem;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Boolean bool = (Boolean) it;
-                if (!bool.booleanValue()) {
-                    campaignItem = ChannelDetailsPresenter.this.campaign;
-                    Uri parse = Uri.parse(Intrinsics.stringPlus("https://t.me/", campaignItem.getShortname()));
-                    Intrinsics.checkNotNullExpressionValue(parse, "parse(Constants.Telegram…INT + campaign.shortname)");
-                    ((ChannelDetailsView) ChannelDetailsPresenter.this.getViewState()).onSubscribedToChannel(parse);
-                }
-                ((ChannelDetailsView) ChannelDetailsPresenter.this.getViewState()).setupSubscribeButton(bool.booleanValue());
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.catalog.details.ChannelDetailsPresenter$onSubscribeClick$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Intrinsics.checkNotNullExpressionValue(flatMap, "fun onSubscribeClick() {…     .autoDispose()\n    }");
+        Disposable subscribe = flatMap.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1868x14036c9b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1869x14036c9c(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onSubscribeClick$lambda-0  reason: not valid java name */
-    public static final ObservableSource m1418onSubscribeClick$lambda0(ChannelDetailsPresenter this$0, TLRPC$Chat it) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(it, "it");
-        return this$0.getSubscriptionStatusChangeObservable(it);
+    public static final ObservableSource onSubscribeClick$lambda$0(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (ObservableSource) tmp0.invoke(obj);
     }
 
     public final void shareChannelLink() {
@@ -125,13 +96,13 @@ public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsV
     }
 
     public final void copyChannelLink() {
-        String string = LocaleController.getString("LinkCopied", C3158R.string.LinkCopied);
+        String string = LocaleController.getString("LinkCopied", C3286R.string.LinkCopied);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"LinkCopied\", R.string.LinkCopied)");
-        ContextExtKt.copyToClipboard("https://" + ((Object) TelegramControllersGateway.DefaultImpls.getMessagesController$default(this.telegramControllersGateway, 0, 1, null).linkPrefix) + '/' + this.campaign.getShortname(), string);
+        ContextExtKt.copyToClipboard("https://" + TelegramControllersGateway.DefaultImpls.getMessagesController$default(this.telegramControllersGateway, 0, 1, null).linkPrefix + '/' + this.campaign.getShortname(), string);
     }
 
     public final void createChannelQr() {
-        ((ChannelDetailsView) getViewState()).showChannelQr(this.chat.f1494id);
+        ((ChannelDetailsView) getViewState()).showChannelQr(this.chat.f1499id);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -146,30 +117,31 @@ public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsV
         return ChatObject.isNotInChat(tLRPC$Chat);
     }
 
-    private final Observable<Boolean> getSubscriptionStatusChangeObservable(TLRPC$Chat tLRPC$Chat) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final Observable<Boolean> getSubscriptionStatusChangeObservable(TLRPC$Chat tLRPC$Chat) {
         Observable<TLRPC$Chat> unsubscribeFromChannel;
-        final boolean canSubscribe = canSubscribe(tLRPC$Chat);
+        boolean canSubscribe = canSubscribe(tLRPC$Chat);
         if (canSubscribe) {
             unsubscribeFromChannel = this.telegramApi.subscribeToChannel(tLRPC$Chat);
         } else {
             unsubscribeFromChannel = this.telegramApi.unsubscribeFromChannel(tLRPC$Chat);
         }
+        final ChannelDetailsPresenter$getSubscriptionStatusChangeObservable$1 channelDetailsPresenter$getSubscriptionStatusChangeObservable$1 = new ChannelDetailsPresenter$getSubscriptionStatusChangeObservable$1(canSubscribe);
         Observable map = unsubscribeFromChannel.map(new Function() { // from class: com.smedialink.ui.catalog.details.ChannelDetailsPresenter$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                Boolean m1417getSubscriptionStatusChangeObservable$lambda4;
-                m1417getSubscriptionStatusChangeObservable$lambda4 = ChannelDetailsPresenter.m1417getSubscriptionStatusChangeObservable$lambda4(canSubscribe, (TLRPC$Chat) obj);
-                return m1417getSubscriptionStatusChangeObservable$lambda4;
+                Boolean subscriptionStatusChangeObservable$lambda$4;
+                subscriptionStatusChangeObservable$lambda$4 = ChannelDetailsPresenter.getSubscriptionStatusChangeObservable$lambda$4(Function1.this, obj);
+                return subscriptionStatusChangeObservable$lambda$4;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(map, "if (isNotSubscribed) {\n …ubscribed.not()\n        }");
+        Intrinsics.checkNotNullExpressionValue(map, "isNotSubscribed = canSub…ubscribed.not()\n        }");
         return map;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getSubscriptionStatusChangeObservable$lambda-4  reason: not valid java name */
-    public static final Boolean m1417getSubscriptionStatusChangeObservable$lambda4(boolean z, TLRPC$Chat it) {
-        Intrinsics.checkNotNullParameter(it, "it");
-        return Boolean.valueOf(!z);
+    public static final Boolean getSubscriptionStatusChangeObservable$lambda$4(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (Boolean) tmp0.invoke(obj);
     }
 }

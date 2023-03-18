@@ -2,62 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroidx/core/util/Consumer;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ChatUsersActivity$9;
-
-.field public final synthetic f$1:[I
-
-.field public final synthetic f$2:I
-
-.field public final synthetic f$3:Ljava/util/ArrayList;
-
-.field public final synthetic f$4:Ljava/lang/Runnable;
-
-.field public final synthetic f$5:Lorg/telegram/tgnet/TLRPC$User;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatUsersActivity$9;[IILjava/util/ArrayList;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$User;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;
+
+    invoke-direct {v0}, Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;->INSTANCE:Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/ChatUsersActivity$9;
-
-    iput-object p2, p0, Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;->f$1:[I
-
-    iput p3, p0, Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;->f$2:I
-
-    iput-object p4, p0, Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;->f$3:Ljava/util/ArrayList;
-
-    iput-object p5, p0, Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;->f$4:Ljava/lang/Runnable;
-
-    iput-object p6, p0, Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;->f$5:Lorg/telegram/tgnet/TLRPC$User;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 6
+.method public final accept(Ljava/lang/Object;)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/ChatUsersActivity$9;
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$User;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;->f$1:[I
-
-    iget v2, p0, Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;->f$2:I
-
-    iget-object v3, p0, Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;->f$3:Ljava/util/ArrayList;
-
-    iget-object v4, p0, Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;->f$4:Ljava/lang/Runnable;
-
-    iget-object v5, p0, Lorg/telegram/ui/ChatUsersActivity$9$$ExternalSyntheticLambda1;->f$5:Lorg/telegram/tgnet/TLRPC$User;
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ChatUsersActivity$9;->$r8$lambda$q4y8CJiOivhhBT_BOCOFXIAEAds(Lorg/telegram/ui/ChatUsersActivity$9;[IILjava/util/ArrayList;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$User;)V
+    invoke-static {p1}, Lorg/telegram/ui/ChatUsersActivity$9;->$r8$lambda$EBg5QTsd0Wi4hEEkYHKz9m71e_Q(Lorg/telegram/tgnet/TLRPC$User;)V
 
     return-void
 .end method

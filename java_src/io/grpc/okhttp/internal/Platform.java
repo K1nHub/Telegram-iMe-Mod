@@ -22,14 +22,14 @@ import javax.net.ssl.SSLEngine;
 import javax.net.ssl.SSLParameters;
 import javax.net.ssl.SSLSocket;
 import okio.Buffer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Platform {
     private final Provider sslProvider;
     public static final Logger logger = Logger.getLogger(Platform.class.getName());
     private static final String[] ANDROID_SECURITY_PROVIDERS = {"com.google.android.gms.org.conscrypt.OpenSSLProvider", "org.conscrypt.OpenSSLProvider", "com.android.org.conscrypt.OpenSSLProvider", "org.apache.harmony.xnet.provider.jsse.OpenSSLProvider", "com.google.android.libraries.stitch.sslguard.SslGuardProvider"};
     private static final Platform PLATFORM = findPlatform();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum TlsExtensionType {
         ALPN_AND_NPN,
         NPN,
@@ -170,7 +170,7 @@ public class Platform {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Android extends Platform {
         private final OptionalMethod<Socket> getAlpnSelectedProtocol;
         private final OptionalMethod<Socket> setAlpnProtocols;
@@ -214,7 +214,7 @@ public class Platform {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class JdkAlpnPlatform extends Platform {
         private final Method getApplicationProtocol;
         private final Method setApplicationProtocols;
@@ -262,7 +262,7 @@ public class Platform {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class JdkWithJettyBootPlatform extends Platform {
         private final Class<?> clientProviderClass;
         private final Method getMethod;
@@ -333,7 +333,7 @@ public class Platform {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class JettyNegoProvider implements InvocationHandler {
         private final List<String> protocols;
         private String selected;

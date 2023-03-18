@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSmartContentMapper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SmartContentMapper.kt\ncom/smedialink/ui/smartpanel/mapper/SmartContentMapper\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,54:1\n1849#2,2:55\n1547#2:57\n1618#2,3:58\n*S KotlinDebug\n*F\n+ 1 SmartContentMapper.kt\ncom/smedialink/ui/smartpanel/mapper/SmartContentMapper\n*L\n16#1:55,2\n44#1:57\n44#1:58,3\n*E\n"
+    value = "SMAP\nSmartContentMapper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SmartContentMapper.kt\ncom/smedialink/ui/smartpanel/mapper/SmartContentMapper\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,54:1\n1855#2,2:55\n1549#2:57\n1620#2,3:58\n*S KotlinDebug\n*F\n+ 1 SmartContentMapper.kt\ncom/smedialink/ui/smartpanel/mapper/SmartContentMapper\n*L\n16#1:55,2\n44#1:57\n44#1:58,3\n*E\n"
 .end annotation
 
 
@@ -37,7 +37,7 @@
 
     move-result-object v0
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -48,7 +48,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -64,7 +64,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     move-object v6, v2
 
     check-cast v6, Ljava/lang/String;
@@ -95,6 +95,7 @@
     .line 45
     invoke-direct/range {v3 .. v8}, Lcom/smedialink/ui/smartpanel/model/content/TabBotAnswerItem;-><init>(Lcom/smedialink/ui/smartpanel/model/SmartPanelTabContent$Type;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -124,23 +125,20 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_2
 
-    goto :goto_1
-
-    .line 1849
-    :cond_0
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :cond_1
+    :cond_0
     :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -173,9 +171,9 @@
 
     invoke-interface {v8, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    if-nez p2, :cond_2
-
     if-nez p2, :cond_1
+
+    if-nez p2, :cond_0
 
     .line 24
     invoke-virtual {v1}, Lcom/smedialink/bots/domain/model/SmartBotResponse;->getId()Ljava/lang/String;
@@ -188,10 +186,10 @@
 
     move-result v2
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_0
 
     .line 26
-    :cond_2
+    :cond_1
     new-instance v9, Lcom/smedialink/ui/smartpanel/model/SmartBotTab;
 
     .line 27
@@ -229,7 +227,6 @@
 
     goto :goto_0
 
-    :cond_3
-    :goto_1
+    :cond_2
     return-object v0
 .end method

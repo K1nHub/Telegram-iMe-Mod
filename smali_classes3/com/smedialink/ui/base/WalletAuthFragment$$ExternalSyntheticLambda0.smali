@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/base/WalletAuthFragment$$ExternalSyntheticLambda0;->f$1:Lkotlin/jvm/functions/Function0;
 
-    invoke-static {v0, v1}, Lcom/smedialink/ui/base/WalletAuthFragment;->$r8$lambda$cTRKPdNXzjZxPJHZ2x1km_oyyjw(Lcom/smedialink/ui/base/WalletAuthFragment;Lkotlin/jvm/functions/Function0;)V
+    invoke-static {v0, v1}, Lcom/smedialink/ui/base/WalletAuthFragment;->$r8$lambda$Ks_ZzsBgjNIs1NQMI1jV4gLd53o(Lcom/smedialink/ui/base/WalletAuthFragment;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method

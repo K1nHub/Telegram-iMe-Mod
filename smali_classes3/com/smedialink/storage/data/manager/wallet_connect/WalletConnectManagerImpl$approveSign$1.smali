@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 169
+    .line 170
     invoke-virtual {p0}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -71,7 +71,7 @@
 .method public final invoke()V
     .locals 5
 
-    .line 170
+    .line 171
     iget-object v0, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->this$0:Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     invoke-static {v0}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getCryptoAccessManager$p(Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
@@ -86,10 +86,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 171
+    .line 172
     sget-object v0, Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;->INSTANCE:Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;
 
-    .line 172
+    .line 173
     iget-object v1, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->this$0:Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     invoke-static {v1}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getWallet(Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;
@@ -100,7 +100,7 @@
 
     return-void
 
-    .line 173
+    .line 174
     :cond_0
     iget-object v2, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->$message:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;
 
@@ -108,19 +108,19 @@
 
     move-result-object v2
 
-    .line 174
+    .line 175
     iget-object v3, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->$message:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;
 
     invoke-virtual {v3}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;->getType()Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage$WCSignType;
 
     move-result-object v3
 
-    .line 171
+    .line 172
     invoke-virtual {v0, v1, v2, v3}, Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;->signMessage(Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;Ljava/lang/String;Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage$WCSignType;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 176
+    .line 177
     iget-object v1, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->this$0:Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     iget-object v2, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->$sessionKey:Ljava/lang/String;

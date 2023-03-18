@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/smedialink/storage/domain/repository/crypto/nft/avatar/NftAvatarRepository;",
+        "Lcom/smedialink/storage/domain/repository/crypto/airdrop/AirdropRepository;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$23\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,145:1\n127#2,5:146\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$23\n*L\n135#1:146,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$23\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,153:1\n127#2,5:154\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$23\n*L\n142#1:154,5\n*E\n"
 .end annotation
 
 
@@ -61,8 +61,8 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/repository/crypto/nft/avatar/NftAvatarRepository;
-    .locals 3
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/repository/crypto/airdrop/AirdropRepository;
+    .locals 4
 
     const-string v0, "$this$single"
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 135
+    .line 142
     check-cast p2, Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 131
@@ -99,11 +99,11 @@
 
     move-result-object v1
 
-    .line 135
+    .line 142
     check-cast v1, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 131
-    const-class v2, Lcom/smedialink/storage/data/network/api/own/NftAvatarApi;
+    const-class v2, Lcom/smedialink/storage/data/network/api/own/AirdropApi;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -111,14 +111,28 @@
 
     invoke-virtual {p1, v2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
+    move-result-object v2
+
+    .line 142
+    check-cast v2, Lcom/smedialink/storage/data/network/api/own/AirdropApi;
+
+    .line 131
+    const-class v3, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
+
+    invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v3, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
     move-result-object p1
 
-    .line 135
-    check-cast p1, Lcom/smedialink/storage/data/network/api/own/NftAvatarApi;
+    .line 142
+    check-cast p1, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
-    new-instance v0, Lcom/smedialink/storage/data/repository/crypto/nft/avatar/NftAvatarRepositoryImpl;
+    new-instance v0, Lcom/smedialink/storage/data/repository/crypto/airdrop/AirdropRepositoryImpl;
 
-    invoke-direct {v0, p1, v1, p2}, Lcom/smedialink/storage/data/repository/crypto/nft/avatar/NftAvatarRepositoryImpl;-><init>(Lcom/smedialink/storage/data/network/api/own/NftAvatarApi;Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;)V
+    invoke-direct {v0, v2, p1, v1, p2}, Lcom/smedialink/storage/data/repository/crypto/airdrop/AirdropRepositoryImpl;-><init>(Lcom/smedialink/storage/data/network/api/own/AirdropApi;Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;)V
 
     return-object v0
 .end method
@@ -126,12 +140,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 135
+    .line 142
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$23;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/repository/crypto/nft/avatar/NftAvatarRepository;
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$23;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/repository/crypto/airdrop/AirdropRepository;
 
     move-result-object p1
 

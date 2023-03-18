@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ReactedUsersListView;)V
     .locals 0
 
-    .line 304
+    .line 323
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView$5;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 307
+    .line 326
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView$5;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ReactedUsersListView;->access$700(Lorg/telegram/ui/Components/ReactedUsersListView;)Lorg/telegram/ui/Components/FlickerLoadingView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ReactedUsersListView;->access$600(Lorg/telegram/ui/Components/ReactedUsersListView;)Lorg/telegram/ui/Components/FlickerLoadingView;
 
     move-result-object p1
 

@@ -17,7 +17,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -62,7 +62,7 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
             ProgressButton progressButton = new ProgressButton(context);
             this.addButton = progressButton;
             this.currentButton = progressButton;
-            progressButton.setText(LocaleController.getString("Add", C3158R.string.Add));
+            progressButton.setText(LocaleController.getString("Add", C3286R.string.Add));
             progressButton.setTextColor(Theme.getColor("featuredStickers_buttonText"));
             progressButton.setProgressColor(Theme.getColor("featuredStickers_buttonProgress"));
             progressButton.setBackgroundRoundRect(Theme.getColor("featuredStickers_addButton"), Theme.getColor("featuredStickers_addButtonPressed"));
@@ -75,7 +75,7 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
             progressButton2.setMinimumWidth(m50dp);
             progressButton2.setTextSize(1, 14.0f);
             progressButton2.setTextColor(Theme.getColor("featuredStickers_removeButtonText"));
-            progressButton2.setText(LocaleController.getString("StickersRemove", C3158R.string.StickersRemove));
+            progressButton2.setText(LocaleController.getString("StickersRemove", C3286R.string.StickersRemove));
             progressButton2.setBackground(Theme.getRoundRectSelectorDrawable(Theme.getColor("featuredStickers_removeButtonText")));
             progressButton2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             ViewHelper.setPadding(progressButton2, 8.0f, BitmapDescriptorFactory.HUE_RED, 8.0f, BitmapDescriptorFactory.HUE_RED);

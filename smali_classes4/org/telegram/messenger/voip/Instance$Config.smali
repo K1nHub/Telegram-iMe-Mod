@@ -44,43 +44,43 @@
 .method public constructor <init>(DDIZZZZZZLjava/lang/String;Ljava/lang/String;I)V
     .locals 0
 
-    .line 158
+    .line 160
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 159
+    .line 161
     iput-wide p1, p0, Lorg/telegram/messenger/voip/Instance$Config;->initializationTimeout:D
 
-    .line 160
+    .line 162
     iput-wide p3, p0, Lorg/telegram/messenger/voip/Instance$Config;->receiveTimeout:D
 
-    .line 161
+    .line 163
     iput p5, p0, Lorg/telegram/messenger/voip/Instance$Config;->dataSaving:I
 
-    .line 162
+    .line 164
     iput-boolean p6, p0, Lorg/telegram/messenger/voip/Instance$Config;->enableP2p:Z
 
-    .line 163
+    .line 165
     iput-boolean p7, p0, Lorg/telegram/messenger/voip/Instance$Config;->enableAec:Z
 
-    .line 164
+    .line 166
     iput-boolean p8, p0, Lorg/telegram/messenger/voip/Instance$Config;->enableNs:Z
 
-    .line 165
+    .line 167
     iput-boolean p9, p0, Lorg/telegram/messenger/voip/Instance$Config;->enableAgc:Z
 
-    .line 166
+    .line 168
     iput-boolean p10, p0, Lorg/telegram/messenger/voip/Instance$Config;->enableCallUpgrade:Z
 
-    .line 167
+    .line 169
     iput-object p12, p0, Lorg/telegram/messenger/voip/Instance$Config;->logPath:Ljava/lang/String;
 
-    .line 168
+    .line 170
     iput-object p13, p0, Lorg/telegram/messenger/voip/Instance$Config;->statsLogPath:Ljava/lang/String;
 
-    .line 169
+    .line 171
     iput p14, p0, Lorg/telegram/messenger/voip/Instance$Config;->maxApiLayer:I
 
-    .line 170
+    .line 172
     iput-boolean p11, p0, Lorg/telegram/messenger/voip/Instance$Config;->enableSm:Z
 
     return-void
@@ -91,7 +91,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 175
+    .line 177
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

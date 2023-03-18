@@ -140,16 +140,16 @@
 
     const/4 v7, 0x0
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    move-object v1, v7
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+
+    move-result-object v1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
-
-    move-result-object v1
+    move-object v1, v7
 
     :goto_0
     if-nez v1, :cond_1

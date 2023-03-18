@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/ui/Components/SeekBarWaveform;)V
     .locals 0
 
-    .line 10048
+    .line 10061
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$8;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/TranscribeButton;-><init>(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/ui/Components/SeekBarWaveform;)V
@@ -35,7 +35,7 @@
 .method public drawGradientBackground(Landroid/graphics/Canvas;Landroid/graphics/Rect;F)V
     .locals 5
 
-    .line 10052
+    .line 10065
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$8;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -50,7 +50,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 10053
+    .line 10066
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$8;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$4900(Lorg/telegram/ui/Cells/ChatMessageCell;Ljava/lang/String;)Landroid/graphics/Paint;
@@ -59,7 +59,7 @@
 
     goto :goto_0
 
-    .line 10055
+    .line 10068
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$8;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -69,7 +69,7 @@
 
     move-result-object v0
 
-    .line 10057
+    .line 10070
     :goto_0
     invoke-virtual {v0}, Landroid/graphics/Paint;->getAlpha()I
 
@@ -81,18 +81,18 @@
 
     float-to-int v3, v3
 
-    .line 10058
+    .line 10071
     invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 10060
+    .line 10073
     iget-object v3, p0, Lorg/telegram/ui/Cells/ChatMessageCell$8;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->applyServiceShaderMatrix()V
 
-    .line 10061
+    .line 10074
     invoke-virtual {p1, p2, v0}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 10062
+    .line 10075
     iget-object v3, p0, Lorg/telegram/ui/Cells/ChatMessageCell$8;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v3, v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$4900(Lorg/telegram/ui/Cells/ChatMessageCell;Ljava/lang/String;)Landroid/graphics/Paint;
@@ -109,14 +109,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 10063
+    .line 10076
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1}, Landroid/graphics/Paint;->getAlpha()I
 
     move-result v1
 
-    .line 10064
+    .line 10077
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
 
     int-to-float v4, v1
@@ -127,17 +127,17 @@
 
     invoke-virtual {v3, p3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 10065
+    .line 10078
     sget-object p3, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, p2, p3}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 10066
+    .line 10079
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 10068
+    .line 10081
     :cond_1
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
@@ -147,7 +147,7 @@
 .method protected onOpen()V
     .locals 2
 
-    .line 10073
+    .line 10086
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$8;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const/4 v1, 0x1

@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;Landroid/content/Context;Landroid/view/View;I)V
     .locals 0
 
-    .line 1315
+    .line 1319
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/StickerEmptyView;-><init>(Landroid/content/Context;Landroid/view/View;I)V
 
     return-void
@@ -29,10 +29,10 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 1318
+    .line 1322
     invoke-super {p0}, Lorg/telegram/ui/Components/StickerEmptyView;->onAttachedToWindow()V
 
-    .line 1319
+    .line 1323
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerEmptyView;->stickerView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;

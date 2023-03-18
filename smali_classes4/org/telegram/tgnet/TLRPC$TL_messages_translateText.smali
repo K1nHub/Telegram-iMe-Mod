@@ -45,17 +45,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 55624
+    .line 55870
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 55629
+    .line 55875
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->id:Ljava/util/ArrayList;
 
-    .line 55630
+    .line 55876
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -70,7 +70,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 55634
+    .line 55880
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$TL_messages_translateResult;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_messages_translateResult;
 
     move-result-object p1
@@ -81,29 +81,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 5
 
-    .line 55638
+    .line 55884
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 55639
+    .line 55885
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 55640
+    .line 55886
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 55641
+    .line 55887
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 55643
+    .line 55889
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->flags:I
 
@@ -115,17 +115,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 55644
+    .line 55890
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 55645
+    .line 55891
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->id:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 55646
+    .line 55892
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v3, 0x0
@@ -133,7 +133,7 @@
     :goto_0
     if-ge v3, v0, :cond_1
 
-    .line 55648
+    .line 55894
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->id:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -152,7 +152,7 @@
 
     goto :goto_0
 
-    .line 55651
+    .line 55897
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->flags:I
 
@@ -160,23 +160,23 @@
 
     if-eqz v0, :cond_2
 
-    .line 55652
+    .line 55898
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 55653
+    .line 55899
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->text:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 55654
+    .line 55900
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 55656
+    .line 55902
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->text:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -191,7 +191,7 @@
 
     goto :goto_1
 
-    .line 55659
+    .line 55905
     :cond_2
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->to_lang:Ljava/lang/String;
 

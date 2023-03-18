@@ -30,26 +30,26 @@
 .method public constructor <init>(Lorg/telegram/ui/ThemeActivity;Landroid/content/Context;)V
     .locals 7
 
-    .line 357
+    .line 361
     iput-object p1, p0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;->this$0:Lorg/telegram/ui/ThemeActivity;
 
-    .line 358
+    .line 362
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v0, 0x0
 
-    .line 352
+    .line 356
     iput v0, p0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;->startRadius:I
 
     const/16 v1, 0x11
 
-    .line 353
+    .line 357
     iput v1, p0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;->endRadius:I
 
-    .line 360
+    .line 364
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 362
+    .line 366
     new-instance v0, Landroid/text/TextPaint;
 
     const/4 v1, 0x1
@@ -60,7 +60,7 @@
 
     const/16 v2, 0x10
 
-    .line 363
+    .line 367
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -69,17 +69,17 @@
 
     invoke-virtual {v0, v2}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 365
+    .line 369
     new-instance v0, Lorg/telegram/ui/Components/SeekBarView;
 
     invoke-direct {v0, p2}, Lorg/telegram/ui/Components/SeekBarView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
-    .line 366
+    .line 370
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/SeekBarView;->setReportChanges(Z)V
 
-    .line 367
+    .line 371
     iget-object p2, p0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
     iget v0, p0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;->endRadius:I
@@ -92,7 +92,7 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/SeekBarView;->setSeparatorsCount(I)V
 
-    .line 368
+    .line 372
     iget-object p2, p0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
     new-instance v0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell$1;
@@ -101,14 +101,14 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/SeekBarView;->setDelegate(Lorg/telegram/ui/Components/SeekBarView$SeekBarViewDelegate;)V
 
-    .line 388
+    .line 392
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
     const/4 p2, 0x2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
 
-    .line 389
+    .line 393
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
     const/4 v0, -0x1
@@ -137,7 +137,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;)Lorg/telegram/ui/Components/SeekBarView;
     .locals 0
 
-    .line 349
+    .line 353
     iget-object p0, p0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
     return-object p0
@@ -146,7 +146,7 @@
 .method static synthetic access$800(Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;)I
     .locals 0
 
-    .line 349
+    .line 353
     iget p0, p0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;->startRadius:I
 
     return p0
@@ -155,7 +155,7 @@
 .method static synthetic access$900(Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;)I
     .locals 0
 
-    .line 349
+    .line 353
     iget p0, p0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;->endRadius:I
 
     return p0
@@ -166,10 +166,10 @@
 .method public invalidate()V
     .locals 1
 
-    .line 406
+    .line 410
     invoke-super {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 407
+    .line 411
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
@@ -180,7 +180,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 394
+    .line 398
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;->textPaint:Landroid/text/TextPaint;
 
     const-string v1, "windowBackgroundWhiteValueText"
@@ -191,7 +191,7 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 395
+    .line 399
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -240,10 +240,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 412
+    .line 416
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 413
+    .line 417
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/SeekBarView;->getSeekBarAccessibilityDelegate()Lorg/telegram/ui/Components/SeekBarAccessibilityDelegate;
@@ -258,7 +258,7 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 400
+    .line 404
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -271,7 +271,7 @@
 
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 401
+    .line 405
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$BubbleRadiusCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
     sget p2, Lorg/telegram/messenger/SharedConfig;->bubbleRadius:I
@@ -298,7 +298,7 @@
 .method public performAccessibilityAction(ILandroid/os/Bundle;)Z
     .locals 1
 
-    .line 418
+    .line 422
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->performAccessibilityAction(ILandroid/os/Bundle;)Z
 
     move-result v0

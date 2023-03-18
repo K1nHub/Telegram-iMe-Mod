@@ -49,13 +49,10 @@
 
     const/4 v3, 0x0
 
-    :cond_0
     :goto_0
     if-ge v3, v2, :cond_1
 
     aget-object v4, v1, v3
-
-    add-int/lit8 v3, v3, 0x1
 
     .line 424
     invoke-static {v4}, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$ErasingPeriod;->access$getCode$p(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$ErasingPeriod;)I
@@ -65,6 +62,9 @@
     if-ne v5, p1, :cond_0
 
     move-object v0, v4
+
+    :cond_0
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 

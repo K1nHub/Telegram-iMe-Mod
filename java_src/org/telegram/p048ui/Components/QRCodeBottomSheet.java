@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -103,7 +103,7 @@ public class QRCodeBottomSheet extends BottomSheet implements NotificationCenter
 
     public void setupLoginTokenType(LoginTokenCallback loginTokenCallback) {
         this.loginTokenCallback = loginTokenCallback;
-        this.buttonTextView.setText(LocaleController.getString("Close", C3158R.string.Close));
+        this.buttonTextView.setText(LocaleController.getString("Close", C3286R.string.Close));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -151,7 +151,7 @@ public class QRCodeBottomSheet extends BottomSheet implements NotificationCenter
         ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(getContext(), null, 0, Theme.getColor("key_sheet_other"));
         this.optionsButton = actionBarMenuItem;
         actionBarMenuItem.setSubMenuOpenSide(2);
-        this.optionsButton.setIcon(C3158R.C3160drawable.ic_ab_other);
+        this.optionsButton.setIcon(C3286R.C3288drawable.ic_ab_other);
         this.optionsButton.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor("player_actionBarSelector")));
         this.optionsButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
@@ -159,9 +159,9 @@ public class QRCodeBottomSheet extends BottomSheet implements NotificationCenter
                 QRCodeBottomSheet.this.lambda$addOptionMenu$0(view);
             }
         });
-        this.optionsButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3158R.string.AccDescrMoreOptions));
+        this.optionsButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions));
         if (getType() == 1) {
-            this.optionsButton.addSubItem(IdFabric$Menu.COPY, C3158R.C3160drawable.msg_copy, LocaleController.getInternalString(C3158R.string.wallet_transaction_details_action_copy_address));
+            this.optionsButton.addSubItem(IdFabric$Menu.COPY, C3286R.C3288drawable.msg_copy, LocaleController.getInternalString(C3286R.string.wallet_transaction_details_action_copy_address));
             this.optionsButton.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda7
                 @Override // org.telegram.p048ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
                 public final void onItemClick(int i) {
@@ -180,7 +180,7 @@ public class QRCodeBottomSheet extends BottomSheet implements NotificationCenter
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addOptionMenu$1(int i) {
         if (i == IdFabric$Menu.COPY) {
-            ContextExtKt.copyToClipboard(this.address, LocaleController.getString("TextCopied", C3158R.string.TextCopied));
+            ContextExtKt.copyToClipboard(this.address, LocaleController.getString("TextCopied", C3286R.string.TextCopied));
         }
     }
 
@@ -356,7 +356,7 @@ public class QRCodeBottomSheet extends BottomSheet implements NotificationCenter
         textView2.setGravity(17);
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView2.setText(LocaleController.getString("ShareQrCode", C3158R.string.ShareQrCode));
+        textView2.setText(LocaleController.getString("ShareQrCode", C3286R.string.ShareQrCode));
         textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -370,7 +370,7 @@ public class QRCodeBottomSheet extends BottomSheet implements NotificationCenter
             textView3.setPadding(AndroidUtilities.m50dp(34), 0, AndroidUtilities.m50dp(34), 0);
             this.button2TextView.setGravity(17);
             this.button2TextView.setTextSize(1, 14.0f);
-            this.button2TextView.setText(LocaleController.getString("ShareLink", C3158R.string.ShareLink));
+            this.button2TextView.setText(LocaleController.getString("ShareLink", C3286R.string.ShareLink));
             this.button2TextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -416,7 +416,7 @@ public class QRCodeBottomSheet extends BottomSheet implements NotificationCenter
         Intent intent = new Intent("android.intent.action.SEND");
         intent.setType("text/plain");
         intent.putExtra("android.intent.extra.TEXT", str);
-        Intent createChooser = Intent.createChooser(intent, LocaleController.getString("ShareLink", C3158R.string.ShareLink));
+        Intent createChooser = Intent.createChooser(intent, LocaleController.getString("ShareLink", C3286R.string.ShareLink));
         createChooser.setFlags(268435456);
         context.startActivity(createChooser);
     }

@@ -1,7 +1,7 @@
 package io.grpc.internal;
 
 import io.grpc.internal.SharedResourceHolder;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SharedResourcePool<T> implements ObjectPool<T> {
     private final SharedResourceHolder.Resource<T> resource;
 

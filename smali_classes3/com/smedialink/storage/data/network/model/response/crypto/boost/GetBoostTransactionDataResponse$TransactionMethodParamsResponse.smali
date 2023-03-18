@@ -15,9 +15,9 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse$TransferMethodParamsResponse;,
+        Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse$ApproveMethodParamsResponse;,
         Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse$SwapMethodParamsResponse;,
-        Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse$ApproveMethodParamsResponse;
+        Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse$TransferMethodParamsResponse;
     }
 .end annotation
 

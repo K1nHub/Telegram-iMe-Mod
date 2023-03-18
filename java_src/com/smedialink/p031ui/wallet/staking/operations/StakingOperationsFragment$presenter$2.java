@@ -22,7 +22,7 @@ final class StakingOperationsFragment$presenter$2 extends Lambda implements Func
     @Override // kotlin.jvm.functions.Function0
     public final StakingOperationsPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2123x92f0fb2b(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2246x92f0fb2b(this.this$0, null, null));
         return (StakingOperationsPresenter) lazy.getValue();
     }
 }

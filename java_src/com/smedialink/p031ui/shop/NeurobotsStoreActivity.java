@@ -28,25 +28,24 @@ import com.smedialink.p031ui.shop.view.ListBotsPageView;
 import com.smedialink.p031ui.shop.view.adapter.BotsAdapter;
 import com.smedialink.p031ui.shop.view.custom.CustomTabLayout;
 import com.smedialink.p031ui.shop.view.custom.NonSwipeableViewPager;
+import io.reactivex.Completable;
 import io.reactivex.Observable;
+import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subjects.PublishSubject;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__IterablesKt;
-import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.SetsKt__SetsKt;
-import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
@@ -54,7 +53,7 @@ import kotlin.text.StringsKt__StringsKt;
 import org.solovyev.android.checkout.Purchase;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
@@ -62,7 +61,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.p048ui.ActionBar.ActionBarMenu;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.LayoutHelper;
 import org.telegram.p048ui.Components.RecyclerListView;
@@ -91,7 +90,7 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
     private NonSwipeableViewPager viewPager;
 
     /* renamed from: me */
-    private TLRPC$User f371me = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()));
+    private TLRPC$User f375me = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()));
     private final Map<Integer, View> tabViews = new LinkedHashMap();
     private final CompositeDisposable disposable = new CompositeDisposable();
 
@@ -104,22 +103,42 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
 
         static {
             int[] iArr = new int[BotStatus.values().length];
-            iArr[BotStatus.DISABLED.ordinal()] = 1;
-            iArr[BotStatus.ENABLED.ordinal()] = 2;
-            iArr[BotStatus.PAID.ordinal()] = 3;
-            iArr[BotStatus.AVAILABLE.ordinal()] = 4;
-            iArr[BotStatus.UPDATE_AVAILABLE.ordinal()] = 5;
-            iArr[BotStatus.DOWNLOADING.ordinal()] = 6;
+            try {
+                iArr[BotStatus.DISABLED.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[BotStatus.ENABLED.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[BotStatus.PAID.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[BotStatus.AVAILABLE.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[BotStatus.UPDATE_AVAILABLE.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr[BotStatus.DOWNLOADING.ordinal()] = 6;
+            } catch (NoSuchFieldError unused6) {
+            }
             $EnumSwitchMapping$0 = iArr;
             int[] iArr2 = new int[StoreTab.values().length];
-            iArr2[StoreTab.ALL.ordinal()] = 1;
+            try {
+                iArr2[StoreTab.ALL.ordinal()] = 1;
+            } catch (NoSuchFieldError unused7) {
+            }
             $EnumSwitchMapping$1 = iArr2;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: updateBotStatus$lambda-14  reason: not valid java name */
-    public static final void m1495updateBotStatus$lambda14() {
+    public static final void updateBotStatus$lambda$13() {
     }
 
     public NeurobotsStoreActivity() {
@@ -133,10 +152,10 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
     /* renamed from: com.smedialink.ui.shop.NeurobotsStoreActivity$StoreTab */
     /* loaded from: classes3.dex */
     public enum StoreTab {
-        ALL(C3158R.string.neurobots_store_tab_all),
-        POPULAR(C3158R.string.neurobots_store_tab_popular),
-        FREE(C3158R.string.neurobots_store_tab_free),
-        MY(C3158R.string.neurobots_store_tab_my);
+        ALL(C3286R.string.neurobots_store_tab_all),
+        POPULAR(C3286R.string.neurobots_store_tab_popular),
+        FREE(C3286R.string.neurobots_store_tab_free),
+        MY(C3286R.string.neurobots_store_tab_my);
         
         private final int resId;
 
@@ -195,7 +214,7 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
         Intrinsics.checkNotNullParameter(context, "context");
         BotLanguage.Companion companion = BotLanguage.Companion;
         CountriesRepository companion2 = CountriesRepository.Companion.getInstance(context);
-        String str = this.f371me.phone;
+        String str = this.f375me.phone;
         Intrinsics.checkNotNullExpressionValue(str, "me.phone");
         String langCode = LocaleController.getInstance().getCurrentLocaleInfo().getLangCode();
         Intrinsics.checkNotNullExpressionValue(langCode, "getInstance().currentLocaleInfo.langCode");
@@ -301,7 +320,7 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
             customTabLayout8 = null;
         }
         ViewGroup.LayoutParams layoutParams = customTabLayout8.getLayoutParams();
-        Objects.requireNonNull(layoutParams, "null cannot be cast to non-null type com.google.android.material.appbar.AppBarLayout.LayoutParams");
+        Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type com.google.android.material.appbar.AppBarLayout.LayoutParams");
         ((AppBarLayout.LayoutParams) layoutParams).setScrollFlags(21);
         CoordinatorLayout coordinatorLayout2 = this.baseViewsContainer;
         if (coordinatorLayout2 == null) {
@@ -326,7 +345,7 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
             nonSwipeableViewPager5 = null;
         }
         ViewGroup.LayoutParams layoutParams2 = nonSwipeableViewPager5.getLayoutParams();
-        Objects.requireNonNull(layoutParams2, "null cannot be cast to non-null type androidx.coordinatorlayout.widget.CoordinatorLayout.LayoutParams");
+        Intrinsics.checkNotNull(layoutParams2, "null cannot be cast to non-null type androidx.coordinatorlayout.widget.CoordinatorLayout.LayoutParams");
         ((CoordinatorLayout.LayoutParams) layoutParams2).setBehavior(new AppBarLayout.ScrollingViewBehavior());
         NonSwipeableViewPager nonSwipeableViewPager6 = this.viewPager;
         if (nonSwipeableViewPager6 == null) {
@@ -341,26 +360,25 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
         }
         this.fragmentView = sizeNotifierFrameLayout2;
         ActionBarMenu createMenu = this.actionBar.createMenu();
-        int i4 = C3158R.C3160drawable.ic_ab_search;
+        int i4 = C3286R.C3288drawable.ic_ab_search;
         this.searchMenuItem = createMenu.addItem(104, i4);
-        this.changeCountryItem = createMenu.addItem(105, C3158R.C3160drawable.fork_ic_language);
+        this.changeCountryItem = createMenu.addItem(105, C3286R.C3288drawable.fork_ic_language);
         ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(0, i4).setIsSearchField(true).setActionBarMenuItemSearchListener(new NeurobotsStoreActivity$createView$2(this));
         this.searchItem = actionBarMenuItemSearchListener;
         if (actionBarMenuItemSearchListener != null) {
-            actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", C3158R.string.Search));
-            Unit unit = Unit.INSTANCE;
+            actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", C3286R.string.Search));
         }
         ActionBarMenuItem actionBarMenuItem = this.searchItem;
         if (actionBarMenuItem != null) {
             actionBarMenuItem.setVisibility(8);
         }
-        this.actionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        this.actionBar.setTitle(LocaleController.getInternalString(C3158R.string.neurobots_store_screen_title));
+        this.actionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getInternalString(C3286R.string.neurobots_store_screen_title));
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.shop.NeurobotsStoreActivity$createView$3
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.shop.NeurobotsStoreActivity$createView$3
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i5) {
-                C3222ActionBar c3222ActionBar;
+                C3351ActionBar c3351ActionBar;
                 SizeNotifierFrameLayout sizeNotifierFrameLayout3;
                 if (i5 == -1) {
                     NeurobotsStoreActivity.this.finishFragment();
@@ -370,8 +388,8 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
                     }
                     NeurobotsStoreActivity.this.presentFragment(new LanguagesActivity());
                 } else {
-                    c3222ActionBar = ((BaseFragment) NeurobotsStoreActivity.this).actionBar;
-                    c3222ActionBar.openSearchField("", false);
+                    c3351ActionBar = ((BaseFragment) NeurobotsStoreActivity.this).actionBar;
+                    c3351ActionBar.openSearchField("", false);
                     sizeNotifierFrameLayout3 = NeurobotsStoreActivity.this.rootContainer;
                     if (sizeNotifierFrameLayout3 == null) {
                         Intrinsics.throwUninitializedPropertyAccessException("rootContainer");
@@ -384,7 +402,6 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
         this.searchResultsList = new RecyclerListView(context);
         BotsAdapter botsAdapter = new BotsAdapter(this.currentAccount);
         botsAdapter.setHasStableIds(true);
-        Unit unit2 = Unit.INSTANCE;
         this.searchResultsAdapter = botsAdapter;
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context) { // from class: com.smedialink.ui.shop.NeurobotsStoreActivity$createView$5
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
@@ -444,7 +461,7 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
         sizeNotifierFrameLayout3.addView(recyclerListView4, LayoutHelper.createLinear(-1, -1));
         TextView textView2 = new TextView(context);
         this.nothingFoundPlaceholder = textView2;
-        textView2.setText(LocaleController.getInternalString(C3158R.string.neurobots_store_search_empty));
+        textView2.setText(LocaleController.getInternalString(C3286R.string.neurobots_store_search_empty));
         TextView textView3 = this.nothingFoundPlaceholder;
         if (textView3 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("nothingFoundPlaceholder");
@@ -528,7 +545,7 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
         int i3 = 0;
         if (i == NotificationCenter.botButtonClicked) {
             Object obj = args[0];
-            Objects.requireNonNull(obj, "null cannot be cast to non-null type com.smedialink.bots.domain.model.ShopItem");
+            Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type com.smedialink.bots.domain.model.ShopItem");
             ShopItem shopItem = (ShopItem) obj;
             int i4 = WhenMappings.$EnumSwitchMapping$0[shopItem.getStatus().ordinal()];
             if (i4 == 1) {
@@ -541,14 +558,13 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
                 }
             } else {
                 String sku = shopItem.getSku();
-                if (sku == null) {
-                    return;
+                if (sku != null) {
+                    purchaseItem(sku);
                 }
-                purchaseItem(sku);
             }
         } else if (i == NotificationCenter.botItemClicked) {
             Object obj2 = args[0];
-            Objects.requireNonNull(obj2, "null cannot be cast to non-null type com.smedialink.bots.domain.model.ShopItem");
+            Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type com.smedialink.bots.domain.model.ShopItem");
             ShopItem shopItem2 = (ShopItem) obj2;
             Bundle bundle = new Bundle();
             bundle.putString("botId", shopItem2.getBotId());
@@ -560,7 +576,7 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
             Activity parentActivity = getParentActivity();
             Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
             CountriesRepository companion3 = companion2.getInstance(parentActivity);
-            String str = this.f371me.phone;
+            String str = this.f375me.phone;
             Intrinsics.checkNotNullExpressionValue(str, "me.phone");
             String langCode = LocaleController.getInstance().getCurrentLocaleInfo().getLangCode();
             Intrinsics.checkNotNullExpressionValue(langCode, "getInstance().currentLocaleInfo.langCode");
@@ -572,13 +588,13 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
                 int i6 = i5 + 1;
                 if (WhenMappings.$EnumSwitchMapping$1[values[i3].ordinal()] == 1) {
                     View view = this.tabViews.get(Integer.valueOf(i5));
-                    Objects.requireNonNull(view, "null cannot be cast to non-null type com.smedialink.ui.shop.view.GridBotsPageView");
+                    Intrinsics.checkNotNull(view, "null cannot be cast to non-null type com.smedialink.ui.shop.view.GridBotsPageView");
                     GridBotsPageView gridBotsPageView = (GridBotsPageView) view;
                     gridBotsPageView.setBotLanguage(fromValue);
                     gridBotsPageView.subscribeToContent();
                 } else {
                     View view2 = this.tabViews.get(Integer.valueOf(i5));
-                    Objects.requireNonNull(view2, "null cannot be cast to non-null type com.smedialink.ui.shop.view.ListBotsPageView");
+                    Intrinsics.checkNotNull(view2, "null cannot be cast to non-null type com.smedialink.ui.shop.view.ListBotsPageView");
                     ListBotsPageView listBotsPageView = (ListBotsPageView) view2;
                     listBotsPageView.setBotLanguage(fromValue);
                     listBotsPageView.subscribeToContent();
@@ -601,113 +617,57 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         CountriesRepository companion3 = companion2.getInstance(parentActivity);
-        String str = this.f371me.phone;
+        String str = this.f375me.phone;
         Intrinsics.checkNotNullExpressionValue(str, "me.phone");
         String langCode = LocaleController.getInstance().getCurrentLocaleInfo().getLangCode();
         Intrinsics.checkNotNullExpressionValue(langCode, "getInstance().currentLocaleInfo.langCode");
         BotLanguage fromValue = companion.fromValue(companion3.getCurrentBotLanguage(str, langCode));
         String langCode2 = LocaleController.getInstance().getCurrentLocaleInfo().getLangCode();
         Intrinsics.checkNotNullExpressionValue(langCode2, "getInstance().currentLocaleInfo.langCode");
-        Disposable subscribe = Observable.combineLatest(aiBotsManager.getAllBotsObservable(fromValue, langCode2).distinctUntilChanged().subscribeOn(Schedulers.m694io()), this.searchSubject.subscribeOn(Schedulers.m694io()), NeurobotsStoreActivity$$ExternalSyntheticLambda1.INSTANCE).map(NeurobotsStoreActivity$$ExternalSyntheticLambda7.INSTANCE).subscribeOn(Schedulers.m694io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer() { // from class: com.smedialink.ui.shop.NeurobotsStoreActivity$$ExternalSyntheticLambda2
+        Observable combineLatest = Observable.combineLatest(aiBotsManager.getAllBotsObservable(fromValue, langCode2).distinctUntilChanged().subscribeOn(Schedulers.m694io()), this.searchSubject.subscribeOn(Schedulers.m694io()), NeurobotsStoreActivity$$ExternalSyntheticLambda1.INSTANCE);
+        final NeurobotsStoreActivity$listenForSearchResults$2 neurobotsStoreActivity$listenForSearchResults$2 = NeurobotsStoreActivity$listenForSearchResults$2.INSTANCE;
+        Observable observeOn = combineLatest.map(new Function() { // from class: com.smedialink.ui.shop.NeurobotsStoreActivity$$ExternalSyntheticLambda7
+            @Override // io.reactivex.functions.Function
+            public final Object apply(Object obj) {
+                List listenForSearchResults$lambda$9;
+                listenForSearchResults$lambda$9 = NeurobotsStoreActivity.listenForSearchResults$lambda$9(Function1.this, obj);
+                return listenForSearchResults$lambda$9;
+            }
+        }).subscribeOn(Schedulers.m694io()).observeOn(AndroidSchedulers.mainThread());
+        final NeurobotsStoreActivity$listenForSearchResults$3 neurobotsStoreActivity$listenForSearchResults$3 = new NeurobotsStoreActivity$listenForSearchResults$3(this);
+        Consumer consumer = new Consumer() { // from class: com.smedialink.ui.shop.NeurobotsStoreActivity$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                NeurobotsStoreActivity.m1490listenForSearchResults$lambda11(NeurobotsStoreActivity.this, (List) obj);
+                NeurobotsStoreActivity.listenForSearchResults$lambda$10(Function1.this, obj);
             }
-        }, NeurobotsStoreActivity$$ExternalSyntheticLambda4.INSTANCE);
+        };
+        final NeurobotsStoreActivity$listenForSearchResults$4 neurobotsStoreActivity$listenForSearchResults$4 = NeurobotsStoreActivity$listenForSearchResults$4.INSTANCE;
+        Disposable subscribe = observeOn.subscribe(consumer, new Consumer() { // from class: com.smedialink.ui.shop.NeurobotsStoreActivity$$ExternalSyntheticLambda2
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                NeurobotsStoreActivity.listenForSearchResults$lambda$11(Function1.this, obj);
+            }
+        });
         this.disposable.add(subscribe);
         this.searchDisposable = subscribe;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: listenForSearchResults$lambda-11  reason: not valid java name */
-    public static final void m1490listenForSearchResults$lambda11(NeurobotsStoreActivity this$0, List items) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(items, "items");
-        CoordinatorLayout coordinatorLayout = this$0.baseViewsContainer;
-        TextView textView = null;
-        BotsAdapter botsAdapter = null;
-        if (coordinatorLayout == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("baseViewsContainer");
-            coordinatorLayout = null;
-        }
-        if (coordinatorLayout.getVisibility() != 8) {
-            CoordinatorLayout coordinatorLayout2 = this$0.baseViewsContainer;
-            if (coordinatorLayout2 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("baseViewsContainer");
-                coordinatorLayout2 = null;
-            }
-            coordinatorLayout2.setVisibility(8);
-        }
-        if (!items.isEmpty()) {
-            TextView textView2 = this$0.nothingFoundPlaceholder;
-            if (textView2 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("nothingFoundPlaceholder");
-                textView2 = null;
-            }
-            if (textView2.getVisibility() != 8) {
-                TextView textView3 = this$0.nothingFoundPlaceholder;
-                if (textView3 == null) {
-                    Intrinsics.throwUninitializedPropertyAccessException("nothingFoundPlaceholder");
-                    textView3 = null;
-                }
-                textView3.setVisibility(8);
-            }
-            RecyclerListView recyclerListView = this$0.searchResultsList;
-            if (recyclerListView == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("searchResultsList");
-                recyclerListView = null;
-            }
-            if (recyclerListView.getVisibility() != 0) {
-                RecyclerListView recyclerListView2 = this$0.searchResultsList;
-                if (recyclerListView2 == null) {
-                    Intrinsics.throwUninitializedPropertyAccessException("searchResultsList");
-                    recyclerListView2 = null;
-                }
-                recyclerListView2.setVisibility(0);
-            }
-            BotsAdapter botsAdapter2 = this$0.searchResultsAdapter;
-            if (botsAdapter2 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("searchResultsAdapter");
-            } else {
-                botsAdapter = botsAdapter2;
-            }
-            botsAdapter.setContent(items);
-            return;
-        }
-        RecyclerListView recyclerListView3 = this$0.searchResultsList;
-        if (recyclerListView3 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("searchResultsList");
-            recyclerListView3 = null;
-        }
-        if (recyclerListView3.getVisibility() != 8) {
-            RecyclerListView recyclerListView4 = this$0.searchResultsList;
-            if (recyclerListView4 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("searchResultsList");
-                recyclerListView4 = null;
-            }
-            recyclerListView4.setVisibility(8);
-        }
-        TextView textView4 = this$0.nothingFoundPlaceholder;
-        if (textView4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("nothingFoundPlaceholder");
-            textView4 = null;
-        }
-        if (textView4.getVisibility() != 0) {
-            TextView textView5 = this$0.nothingFoundPlaceholder;
-            if (textView5 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("nothingFoundPlaceholder");
-            } else {
-                textView = textView5;
-            }
-            textView.setVisibility(0);
-        }
+    public static final List listenForSearchResults$lambda$9(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (List) tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: listenForSearchResults$lambda-12  reason: not valid java name */
-    public static final void m1491listenForSearchResults$lambda12(Throwable t) {
-        Intrinsics.checkNotNullParameter(t, "t");
-        t.printStackTrace();
+    public static final void listenForSearchResults$lambda$10(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void listenForSearchResults$lambda$11(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     private final void initiateBotDownloading(ShopItem shopItem) {
@@ -715,26 +675,51 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
     }
 
     private final void updateBotStatus(String str, BotStatus botStatus) {
-        this.disposable.add(ApplicationLoader.smartBotsManager.updateBotStatus(str, botStatus).subscribeOn(Schedulers.m694io()).subscribe(NeurobotsStoreActivity$$ExternalSyntheticLambda0.INSTANCE, NeurobotsStoreActivity$$ExternalSyntheticLambda6.INSTANCE));
-    }
-
-    private final void purchaseItem(String str) {
-        this.disposable.add(ApplicationLoader.purchaseHelper.purchase(str).subscribeOn(Schedulers.m694io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer() { // from class: com.smedialink.ui.shop.NeurobotsStoreActivity$$ExternalSyntheticLambda3
+        Completable subscribeOn = ApplicationLoader.smartBotsManager.updateBotStatus(str, botStatus).subscribeOn(Schedulers.m694io());
+        NeurobotsStoreActivity$$ExternalSyntheticLambda0 neurobotsStoreActivity$$ExternalSyntheticLambda0 = NeurobotsStoreActivity$$ExternalSyntheticLambda0.INSTANCE;
+        final NeurobotsStoreActivity$updateBotStatus$2 neurobotsStoreActivity$updateBotStatus$2 = NeurobotsStoreActivity$updateBotStatus$2.INSTANCE;
+        this.disposable.add(subscribeOn.subscribe(neurobotsStoreActivity$$ExternalSyntheticLambda0, new Consumer() { // from class: com.smedialink.ui.shop.NeurobotsStoreActivity$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                NeurobotsStoreActivity.m1493purchaseItem$lambda17(NeurobotsStoreActivity.this, (Purchase) obj);
+                NeurobotsStoreActivity.updateBotStatus$lambda$14(Function1.this, obj);
             }
-        }, NeurobotsStoreActivity$$ExternalSyntheticLambda5.INSTANCE));
+        }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: purchaseItem$lambda-17  reason: not valid java name */
-    public static final void m1493purchaseItem$lambda17(NeurobotsStoreActivity this$0, Purchase purchase) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        AiBotsManager aiBotsManager = ApplicationLoader.smartBotsManager;
-        String str = purchase.sku;
-        Intrinsics.checkNotNullExpressionValue(str, "purchase.sku");
-        aiBotsManager.downloadPurchase(str, this$0.userId);
+    public static final void updateBotStatus$lambda$14(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
+    }
+
+    private final void purchaseItem(String str) {
+        Single<Purchase> observeOn = ApplicationLoader.purchaseHelper.purchase(str).subscribeOn(Schedulers.m694io()).observeOn(AndroidSchedulers.mainThread());
+        final NeurobotsStoreActivity$purchaseItem$1 neurobotsStoreActivity$purchaseItem$1 = new NeurobotsStoreActivity$purchaseItem$1(this);
+        Consumer<? super Purchase> consumer = new Consumer() { // from class: com.smedialink.ui.shop.NeurobotsStoreActivity$$ExternalSyntheticLambda3
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                NeurobotsStoreActivity.purchaseItem$lambda$16(Function1.this, obj);
+            }
+        };
+        final NeurobotsStoreActivity$purchaseItem$2 neurobotsStoreActivity$purchaseItem$2 = NeurobotsStoreActivity$purchaseItem$2.INSTANCE;
+        this.disposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: com.smedialink.ui.shop.NeurobotsStoreActivity$$ExternalSyntheticLambda5
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                NeurobotsStoreActivity.purchaseItem$lambda$17(Function1.this, obj);
+            }
+        }));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void purchaseItem$lambda$16(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void purchaseItem$lambda$17(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     private final PagerAdapter buildNewTabsAdapter() {
@@ -760,7 +745,7 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
                 map = NeurobotsStoreActivity.this.tabViews;
                 View view = (View) map.get(Integer.valueOf(i));
                 container.addView(view);
-                Objects.requireNonNull(view, "null cannot be cast to non-null type android.view.View");
+                Intrinsics.checkNotNull(view, "null cannot be cast to non-null type android.view.View");
                 return view;
             }
 
@@ -780,8 +765,7 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: listenForSearchResults$lambda-8  reason: not valid java name */
-    public static final List m1492listenForSearchResults$lambda8(List items, String query) {
+    public static final List listenForSearchResults$lambda$8(List items, String query) {
         boolean contains$default;
         Intrinsics.checkNotNullParameter(items, "items");
         Intrinsics.checkNotNullParameter(query, "query");
@@ -795,21 +779,5 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
             }
         }
         return arrayList;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: listenForSearchResults$lambda-10  reason: not valid java name */
-    public static final List m1489listenForSearchResults$lambda10(List it) {
-        List sortedWith;
-        Intrinsics.checkNotNullParameter(it, "it");
-        sortedWith = CollectionsKt___CollectionsKt.sortedWith(it, new Comparator() { // from class: com.smedialink.ui.shop.NeurobotsStoreActivity$listenForSearchResults$lambda-10$$inlined$sortedByDescending$1
-            @Override // java.util.Comparator
-            public final int compare(T t, T t2) {
-                int compareValues;
-                compareValues = ComparisonsKt__ComparisonsKt.compareValues(Long.valueOf(((ShopItem) t2).getInstalls()), Long.valueOf(((ShopItem) t).getInstalls()));
-                return compareValues;
-            }
-        });
-        return sortedWith;
     }
 }

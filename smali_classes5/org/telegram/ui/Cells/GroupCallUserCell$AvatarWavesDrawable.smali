@@ -42,23 +42,23 @@
 .method public constructor <init>(II)V
     .locals 2
 
-    .line 951
+    .line 957
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 939
+    .line 945
     iput v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->wavesEnter:F
 
-    .line 947
+    .line 953
     iput v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->progressToMuted:F
 
     const/4 v0, 0x1
 
-    .line 949
+    .line 955
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->invalidateColor:Z
 
-    .line 952
+    .line 958
     new-instance v0, Lorg/telegram/ui/Components/BlobDrawable;
 
     const/4 v1, 0x6
@@ -67,7 +67,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->blobDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
-    .line 953
+    .line 959
     new-instance v0, Lorg/telegram/ui/Components/BlobDrawable;
 
     const/16 v1, 0x8
@@ -76,7 +76,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->blobDrawable2:Lorg/telegram/ui/Components/BlobDrawable;
 
-    .line 954
+    .line 960
     iget-object v1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->blobDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     int-to-float p1, p1
@@ -85,24 +85,24 @@
 
     int-to-float p2, p2
 
-    .line 955
+    .line 961
     iput p2, v1, Lorg/telegram/ui/Components/BlobDrawable;->maxRadius:F
 
-    .line 956
+    .line 962
     iput p1, v0, Lorg/telegram/ui/Components/BlobDrawable;->minRadius:F
 
-    .line 957
+    .line 963
     iput p2, v0, Lorg/telegram/ui/Components/BlobDrawable;->maxRadius:F
 
-    .line 958
+    .line 964
     invoke-virtual {v1}, Lorg/telegram/ui/Components/BlobDrawable;->generateBlob()V
 
-    .line 959
+    .line 965
     iget-object p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->blobDrawable2:Lorg/telegram/ui/Components/BlobDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/BlobDrawable;->generateBlob()V
 
-    .line 960
+    .line 966
     iget-object p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->blobDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/BlobDrawable;->paint:Landroid/graphics/Paint;
@@ -121,7 +121,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 961
+    .line 967
     iget-object p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->blobDrawable2:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/BlobDrawable;->paint:Landroid/graphics/Paint;
@@ -146,7 +146,7 @@
 
     const/16 v0, 0x200
 
-    .line 992
+    .line 998
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v0
@@ -160,14 +160,14 @@
 
     const v1, 0x3ecccccd    # 0.4f
 
-    .line 995
+    .line 1001
     iget v2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->amplitude:F
 
     mul-float v2, v2, v1
 
     add-float/2addr v2, v0
 
-    .line 996
+    .line 1002
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->showWaves:Z
 
     const/4 v1, 0x0
@@ -180,11 +180,11 @@
 
     if-eqz v0, :cond_8
 
-    .line 997
+    .line 1003
     :cond_1
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 998
+    .line 1004
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     iget v3, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->wavesEnter:F
@@ -195,17 +195,17 @@
 
     mul-float v2, v2, v0
 
-    .line 1000
+    .line 1006
     invoke-virtual {p1, v2, v2, p2, p3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 1002
+    .line 1008
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->hasCustomColor:Z
 
     const/high16 v2, 0x3f800000    # 1.0f
 
     if-nez v0, :cond_7
 
-    .line 1003
+    .line 1009
     iget v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->isMuted:I
 
     const v3, 0x3dda740e
@@ -222,17 +222,17 @@
 
     add-float/2addr v5, v3
 
-    .line 1004
+    .line 1010
     iput v5, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->progressToMuted:F
 
     cmpl-float v0, v5, v2
 
     if-lez v0, :cond_2
 
-    .line 1006
+    .line 1012
     iput v2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->progressToMuted:F
 
-    .line 1008
+    .line 1014
     :cond_2
     iput-boolean v4, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->invalidateColor:Z
 
@@ -241,7 +241,7 @@
     :cond_3
     if-ne v0, v4, :cond_5
 
-    .line 1009
+    .line 1015
     iget v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->progressToMuted:F
 
     cmpl-float v5, v0, v1
@@ -250,21 +250,21 @@
 
     sub-float/2addr v0, v3
 
-    .line 1010
+    .line 1016
     iput v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->progressToMuted:F
 
     cmpg-float v0, v0, v1
 
     if-gez v0, :cond_4
 
-    .line 1012
+    .line 1018
     iput v1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->progressToMuted:F
 
-    .line 1014
+    .line 1020
     :cond_4
     iput-boolean v4, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->invalidateColor:Z
 
-    .line 1017
+    .line 1023
     :cond_5
     :goto_0
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->invalidateColor:Z
@@ -273,7 +273,7 @@
 
     const-string v0, "voipgroup_speakingText"
 
-    .line 1018
+    .line 1024
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
@@ -302,7 +302,7 @@
 
     move-result v0
 
-    .line 1019
+    .line 1025
     iget-object v3, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->blobDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget-object v3, v3, Lorg/telegram/ui/Components/BlobDrawable;->paint:Landroid/graphics/Paint;
@@ -315,7 +315,7 @@
 
     invoke-virtual {v3, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1023
+    .line 1029
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->blobDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
@@ -323,21 +323,21 @@
 
     invoke-virtual {v0, v3, v2}, Lorg/telegram/ui/Components/BlobDrawable;->update(FF)V
 
-    .line 1024
+    .line 1030
     iget-object v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->blobDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/BlobDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p2, p3, p1, v3}, Lorg/telegram/ui/Components/BlobDrawable;->draw(FFLandroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
-    .line 1026
+    .line 1032
     iget-object v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->blobDrawable2:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget v3, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->amplitude:F
 
     invoke-virtual {v0, v3, v2}, Lorg/telegram/ui/Components/BlobDrawable;->update(FF)V
 
-    .line 1027
+    .line 1033
     iget-object v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->blobDrawable2:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget-object v2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->blobDrawable:Lorg/telegram/ui/Components/BlobDrawable;
@@ -346,10 +346,10 @@
 
     invoke-virtual {v0, p2, p3, p1, v2}, Lorg/telegram/ui/Components/BlobDrawable;->draw(FFLandroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
-    .line 1028
+    .line 1034
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1031
+    .line 1037
     :cond_8
     iget p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->wavesEnter:F
 
@@ -357,7 +357,7 @@
 
     if-eqz p1, :cond_9
 
-    .line 1032
+    .line 1038
     invoke-virtual {p4}, Landroid/view/View;->invalidate()V
 
     :cond_9
@@ -367,7 +367,7 @@
 .method public getAvatarScale()F
     .locals 3
 
-    .line 1037
+    .line 1043
     iget v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->amplitude:F
 
     const v1, 0x3e4ccccd    # 0.2f
@@ -378,7 +378,7 @@
 
     add-float/2addr v0, v1
 
-    .line 1038
+    .line 1044
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     iget v2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->wavesEnter:F
@@ -409,7 +409,7 @@
 
     div-float/2addr p1, p2
 
-    .line 1051
+    .line 1057
     iget-boolean p2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->showWaves:Z
 
     const/4 v0, 0x0
@@ -439,11 +439,11 @@
     :cond_2
     move v0, p1
 
-    .line 1059
+    .line 1065
     :goto_0
     iput v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->animateToAmplitude:F
 
-    .line 1060
+    .line 1066
     iget p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->amplitude:F
 
     sub-float/2addr v0, p1
@@ -462,10 +462,10 @@
 
     const/4 v0, 0x1
 
-    .line 1064
+    .line 1070
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->hasCustomColor:Z
 
-    .line 1065
+    .line 1071
     iget-object v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->blobDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/BlobDrawable;->paint:Landroid/graphics/Paint;
@@ -478,7 +478,7 @@
 .method public setMuted(IZ)V
     .locals 1
 
-    .line 1069
+    .line 1075
     iput p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->isMuted:I
 
     const/4 v0, 0x1
@@ -494,11 +494,11 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 1071
+    .line 1077
     :goto_0
     iput p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->progressToMuted:F
 
-    .line 1073
+    .line 1079
     :cond_1
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->invalidateColor:Z
 
@@ -508,15 +508,15 @@
 .method public setShowWaves(ZLandroid/view/View;)V
     .locals 1
 
-    .line 1043
+    .line 1049
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->showWaves:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 1044
+    .line 1050
     invoke-virtual {p2}, Landroid/view/View;->invalidate()V
 
-    .line 1046
+    .line 1052
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->showWaves:Z
 
@@ -526,7 +526,7 @@
 .method public update()V
     .locals 6
 
-    .line 965
+    .line 971
     iget v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->animateToAmplitude:F
 
     iget v1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->amplitude:F
@@ -537,7 +537,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 966
+    .line 972
     iget v3, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->animateAmplitudeDiff:F
 
     const/high16 v4, 0x41800000    # 16.0f
@@ -556,7 +556,7 @@
 
     if-lez v1, :cond_1
 
-    .line 969
+    .line 975
     iput v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->amplitude:F
 
     goto :goto_0
@@ -566,10 +566,10 @@
 
     if-gez v1, :cond_1
 
-    .line 973
+    .line 979
     iput v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->amplitude:F
 
-    .line 978
+    .line 984
     :cond_1
     :goto_0
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->showWaves:Z
@@ -588,14 +588,14 @@
 
     add-float/2addr v3, v1
 
-    .line 979
+    .line 985
     iput v3, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->wavesEnter:F
 
     cmpl-float v0, v3, v4
 
     if-lez v0, :cond_3
 
-    .line 981
+    .line 987
     iput v4, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->wavesEnter:F
 
     goto :goto_1
@@ -603,7 +603,7 @@
     :cond_2
     if-nez v0, :cond_3
 
-    .line 983
+    .line 989
     iget v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->wavesEnter:F
 
     cmpl-float v3, v0, v2
@@ -612,14 +612,14 @@
 
     sub-float/2addr v0, v1
 
-    .line 984
+    .line 990
     iput v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->wavesEnter:F
 
     cmpg-float v0, v0, v2
 
     if-gez v0, :cond_3
 
-    .line 986
+    .line 992
     iput v2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->wavesEnter:F
 
     :cond_3

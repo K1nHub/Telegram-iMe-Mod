@@ -36,29 +36,16 @@ public class WalletSendRecipientView$$State extends MvpViewState<WalletSendRecip
     }
 
     @Override // com.smedialink.manager.crypto.recipient.CryptoRecipientView
-    public void showRecipientWalletNotActivatedError(String str, String str2, String str3) {
-        ShowRecipientWalletNotActivatedErrorCommand showRecipientWalletNotActivatedErrorCommand = new ShowRecipientWalletNotActivatedErrorCommand(this, str, str2, str3);
-        this.viewCommands.beforeApply(showRecipientWalletNotActivatedErrorCommand);
+    public void showErrorDialog(String str, String str2, String str3) {
+        ShowErrorDialogCommand showErrorDialogCommand = new ShowErrorDialogCommand(this, str, str2, str3);
+        this.viewCommands.beforeApply(showErrorDialogCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.showRecipientWalletNotActivatedError(str, str2, str3);
+            view.showErrorDialog(str, str2, str3);
         }
-        this.viewCommands.afterApply(showRecipientWalletNotActivatedErrorCommand);
-    }
-
-    @Override // com.smedialink.manager.crypto.recipient.CryptoRecipientView
-    public void showRecipientEthWalletNotActivatedError(String str, String str2, String str3) {
-        ShowRecipientEthWalletNotActivatedErrorCommand showRecipientEthWalletNotActivatedErrorCommand = new ShowRecipientEthWalletNotActivatedErrorCommand(this, str, str2, str3);
-        this.viewCommands.beforeApply(showRecipientEthWalletNotActivatedErrorCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.showRecipientEthWalletNotActivatedError(str, str2, str3);
-        }
-        this.viewCommands.afterApply(showRecipientEthWalletNotActivatedErrorCommand);
+        this.viewCommands.afterApply(showErrorDialogCommand);
     }
 
     @Override // com.smedialink.manager.crypto.recipient.CryptoRecipientView
@@ -121,18 +108,18 @@ public class WalletSendRecipientView$$State extends MvpViewState<WalletSendRecip
         public final boolean contactSelected;
 
         /* renamed from: id */
-        public final String f373id;
+        public final String f378id;
 
         OnRecipientSelectedCommand(WalletSendRecipientView$$State walletSendRecipientView$$State, String str, String str2, boolean z) {
             super("onRecipientSelected", OneExecutionStateStrategy.class);
-            this.f373id = str;
+            this.f378id = str;
             this.address = str2;
             this.contactSelected = z;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletSendRecipientView walletSendRecipientView) {
-            walletSendRecipientView.onRecipientSelected(this.f373id, this.address, this.contactSelected);
+            walletSendRecipientView.onRecipientSelected(this.f378id, this.address, this.contactSelected);
         }
     }
 
@@ -158,15 +145,15 @@ public class WalletSendRecipientView$$State extends MvpViewState<WalletSendRecip
     }
 
     /* compiled from: WalletSendRecipientView$$State.java */
-    /* renamed from: com.smedialink.ui.wallet.actions.send.recipient.WalletSendRecipientView$$State$ShowRecipientWalletNotActivatedErrorCommand */
+    /* renamed from: com.smedialink.ui.wallet.actions.send.recipient.WalletSendRecipientView$$State$ShowErrorDialogCommand */
     /* loaded from: classes3.dex */
-    public class ShowRecipientWalletNotActivatedErrorCommand extends ViewCommand<WalletSendRecipientView> {
+    public class ShowErrorDialogCommand extends ViewCommand<WalletSendRecipientView> {
         public final String buttonText;
         public final String description;
         public final String title;
 
-        ShowRecipientWalletNotActivatedErrorCommand(WalletSendRecipientView$$State walletSendRecipientView$$State, String str, String str2, String str3) {
-            super("showRecipientWalletNotActivatedError", OneExecutionStateStrategy.class);
+        ShowErrorDialogCommand(WalletSendRecipientView$$State walletSendRecipientView$$State, String str, String str2, String str3) {
+            super("showErrorDialog", OneExecutionStateStrategy.class);
             this.title = str;
             this.description = str2;
             this.buttonText = str3;
@@ -174,28 +161,7 @@ public class WalletSendRecipientView$$State extends MvpViewState<WalletSendRecip
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletSendRecipientView walletSendRecipientView) {
-            walletSendRecipientView.showRecipientWalletNotActivatedError(this.title, this.description, this.buttonText);
-        }
-    }
-
-    /* compiled from: WalletSendRecipientView$$State.java */
-    /* renamed from: com.smedialink.ui.wallet.actions.send.recipient.WalletSendRecipientView$$State$ShowRecipientEthWalletNotActivatedErrorCommand */
-    /* loaded from: classes3.dex */
-    public class ShowRecipientEthWalletNotActivatedErrorCommand extends ViewCommand<WalletSendRecipientView> {
-        public final String btnText;
-        public final String description;
-        public final String title;
-
-        ShowRecipientEthWalletNotActivatedErrorCommand(WalletSendRecipientView$$State walletSendRecipientView$$State, String str, String str2, String str3) {
-            super("showRecipientEthWalletNotActivatedError", OneExecutionStateStrategy.class);
-            this.title = str;
-            this.description = str2;
-            this.btnText = str3;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(WalletSendRecipientView walletSendRecipientView) {
-            walletSendRecipientView.showRecipientEthWalletNotActivatedError(this.title, this.description, this.btnText);
+            walletSendRecipientView.showErrorDialog(this.title, this.description, this.buttonText);
         }
     }
 

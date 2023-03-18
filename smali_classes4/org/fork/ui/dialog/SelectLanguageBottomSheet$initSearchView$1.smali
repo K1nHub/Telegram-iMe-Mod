@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSelectLanguageBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectLanguageBottomSheet.kt\norg/fork/ui/dialog/SelectLanguageBottomSheet$initSearchView$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,416:1\n764#2:417\n855#2,2:418\n*S KotlinDebug\n*F\n+ 1 SelectLanguageBottomSheet.kt\norg/fork/ui/dialog/SelectLanguageBottomSheet$initSearchView$1\n*L\n97#1:417\n97#1:418,2\n*E\n"
+    value = "SMAP\nSelectLanguageBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectLanguageBottomSheet.kt\norg/fork/ui/dialog/SelectLanguageBottomSheet$initSearchView$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,416:1\n766#2:417\n857#2,2:418\n*S KotlinDebug\n*F\n+ 1 SelectLanguageBottomSheet.kt\norg/fork/ui/dialog/SelectLanguageBottomSheet$initSearchView$1\n*L\n97#1:417\n97#1:418,2\n*E\n"
 .end annotation
 
 
@@ -75,12 +75,12 @@
 
     move-result-object v1
 
-    .line 764
+    .line 766
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -112,10 +112,12 @@
 
     if-eqz v5, :cond_1
 
+    .line 857
     invoke-interface {v3, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 97
     :cond_2
     invoke-static {v0, v3}, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->access$setFilteredLanguages$p(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;Ljava/util/List;)V
 

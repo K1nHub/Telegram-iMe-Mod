@@ -67,7 +67,7 @@ public class UserDataWriter {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.UserDataWriter$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10071 {
+    public static /* synthetic */ class C10001 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$DocumentSnapshot$ServerTimestampBehavior */
         static final /* synthetic */ int[] f166x1f31a5ae;
@@ -87,7 +87,7 @@ public class UserDataWriter {
     }
 
     private Object convertServerTimestamp(Value value) {
-        int i = C10071.f166x1f31a5ae[this.serverTimestampBehavior.ordinal()];
+        int i = C10001.f166x1f31a5ae[this.serverTimestampBehavior.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 return null;

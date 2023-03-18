@@ -9,13 +9,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/fork/ui/dialog/AccountLevelAlert$OnVisibilityChangedListener;,
-        Lorg/fork/ui/dialog/AccountLevelAlert$Companion;
+        Lorg/fork/ui/dialog/AccountLevelAlert$Companion;,
+        Lorg/fork/ui/dialog/AccountLevelAlert$OnVisibilityChangedListener;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAccountLevelAlert.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AccountLevelAlert.kt\norg/fork/ui/dialog/AccountLevelAlert\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,73:1\n56#2,6:74\n13536#3,2:80\n*S KotlinDebug\n*F\n+ 1 AccountLevelAlert.kt\norg/fork/ui/dialog/AccountLevelAlert\n*L\n31#1:74,6\n37#1:80,2\n*E\n"
+    value = "SMAP\nAccountLevelAlert.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AccountLevelAlert.kt\norg/fork/ui/dialog/AccountLevelAlert\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,73:1\n56#2,6:74\n13579#3,2:80\n*S KotlinDebug\n*F\n+ 1 AccountLevelAlert.kt\norg/fork/ui/dialog/AccountLevelAlert\n*L\n31#1:74,6\n37#1:80,2\n*E\n"
 .end annotation
 
 
@@ -28,10 +28,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$feXVjHP3EhBYYWFSyakCYFD7r3k(Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/fork/ui/dialog/AccountLevelAlert;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$dkTvjaCnHl5yUJEHTAABrKtuCAg(Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/fork/ui/dialog/AccountLevelAlert;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/AccountLevelAlert;->lambda-5$lambda-4$lambda-3(Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/fork/ui/dialog/AccountLevelAlert;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/AccountLevelAlert;->lambda$5$lambda$4$lambda$3(Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/fork/ui/dialog/AccountLevelAlert;Landroid/view/View;)V
 
     return-void
 .end method
@@ -67,7 +67,7 @@
 
     invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v4, "visibilityChangedListener"
+    const-string/jumbo v4, "visibilityChangedListener"
 
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -143,7 +143,7 @@
 
     move-result-object v3
 
-    .line 13536
+    .line 13579
     array-length v6, v3
 
     const/4 v8, 0x0
@@ -153,7 +153,7 @@
 
     const/4 v10, 0x2
 
-    if-ge v8, v6, :cond_2
+    if-ge v8, v6, :cond_1
 
     aget-object v11, v3, v8
 
@@ -207,24 +207,15 @@
 
     move-result-object v9
 
-    if-nez v9, :cond_0
+    if-eqz v9, :cond_0
 
-    :goto_1
-    move-object v9, v5
-
-    goto :goto_2
-
-    :cond_0
     invoke-virtual {v9}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
     move-result-object v9
 
-    if-nez v9, :cond_1
-
-    goto :goto_1
+    if-eqz v9, :cond_0
 
     .line 42
-    :cond_1
     new-instance v10, Landroid/graphics/PorterDuffColorFilter;
 
     invoke-virtual {v11}, Lcom/smedialink/storage/domain/model/crypto/level/AccountLevel;->getColorResId()I
@@ -241,11 +232,13 @@
 
     invoke-virtual {v9, v10}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 43
-    sget-object v10, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    goto :goto_1
+
+    :cond_0
+    move-object v9, v5
 
     .line 41
-    :goto_2
+    :goto_1
     invoke-virtual {v12, v9, v5, v5, v5}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     const/high16 v9, 0x41800000    # 16.0f
@@ -288,7 +281,7 @@
     goto :goto_0
 
     .line 49
-    :cond_2
+    :cond_1
     new-instance v1, Lorg/telegram/ui/Cells/CheckBoxCell;
 
     invoke-virtual {v2}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
@@ -383,7 +376,7 @@
     return-object v0
 .end method
 
-.method private static final lambda-5$lambda-4$lambda-3(Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/fork/ui/dialog/AccountLevelAlert;Landroid/view/View;)V
+.method private static final lambda$5$lambda$4$lambda$3(Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/fork/ui/dialog/AccountLevelAlert;Landroid/view/View;)V
     .locals 1
 
     const-string p2, "$this_apply"

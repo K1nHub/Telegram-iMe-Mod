@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda96;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$TneWREwAfKCUj6XW3Tuzw_35v0w(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Landroid/view/View;ILandroid/view/KeyEvent;)Z
+    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$f8FXz2f73Mvlb5InZMRhTbSvFtA(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Landroid/view/View;ILandroid/view/KeyEvent;)Z
 
     move-result p1
 

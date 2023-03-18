@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/storage/data/di/module/FirebaseModuleKt;-><clinit>()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/smedialink/storage/data/di/module/FirebaseModuleKt;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

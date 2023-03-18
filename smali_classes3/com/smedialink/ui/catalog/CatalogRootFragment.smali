@@ -16,7 +16,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCatalogRootFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogRootFragment.kt\ncom/smedialink/ui/catalog/CatalogRootFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 ViewExt.kt\ncom/smedialink/utils/extentions/common/ViewExtKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,239:1\n13#2,4:240\n56#3,6:244\n56#3,6:250\n1849#4,2:256\n1849#4,2:258\n1849#4,2:269\n1849#4,2:271\n2478#4:273\n215#5,9:260\n1#6:274\n*S KotlinDebug\n*F\n+ 1 CatalogRootFragment.kt\ncom/smedialink/ui/catalog/CatalogRootFragment\n*L\n45#1:240,4\n46#1:244,6\n47#1:250,6\n78#1:256,2\n83#1:258,2\n116#1:269,2\n138#1:271,2\n198#1:273\n87#1:260,9\n198#1:274\n*E\n"
+    value = "SMAP\nCatalogRootFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogRootFragment.kt\ncom/smedialink/ui/catalog/CatalogRootFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 ViewExt.kt\ncom/smedialink/utils/extentions/common/ViewExtKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,239:1\n13#2,4:240\n56#3,6:244\n56#3,6:250\n1855#4,2:256\n1855#4,2:258\n1855#4,2:269\n1855#4,2:271\n2634#4:273\n219#5,9:260\n1#6:274\n*S KotlinDebug\n*F\n+ 1 CatalogRootFragment.kt\ncom/smedialink/ui/catalog/CatalogRootFragment\n*L\n45#1:240,4\n46#1:244,6\n47#1:250,6\n78#1:256,2\n83#1:258,2\n116#1:269,2\n138#1:271,2\n198#1:273\n87#1:260,9\n198#1:274\n*E\n"
 .end annotation
 
 
@@ -48,18 +48,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$Mii7-GI7DhKlxyMDZy4CMUICHfQ(Lcom/smedialink/ui/catalog/CatalogRootFragment;Ljava/lang/Integer;)V
+.method public static synthetic $r8$lambda$3k5HtneIwng4fP0R3l0zHIrYUMk(Lcom/smedialink/ui/catalog/CatalogRootFragment;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/catalog/CatalogRootFragment;->openSelectLanguageScreen$lambda-7(Lcom/smedialink/ui/catalog/CatalogRootFragment;Ljava/lang/Integer;)V
+    invoke-static {p0}, Lcom/smedialink/ui/catalog/CatalogRootFragment;->getThemeDescriptions$lambda$4(Lcom/smedialink/ui/catalog/CatalogRootFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$kFbyb8HzViz10PHy_DeZYR2jQmE(Lcom/smedialink/ui/catalog/CatalogRootFragment;)V
+.method public static synthetic $r8$lambda$huFwHlt3tF31OgtdiO3Wyp0CST4(Lcom/smedialink/ui/catalog/CatalogRootFragment;Ljava/lang/Integer;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/catalog/CatalogRootFragment;->getThemeDescriptions$lambda-4(Lcom/smedialink/ui/catalog/CatalogRootFragment;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/catalog/CatalogRootFragment;->openSelectLanguageScreen$lambda$7(Lcom/smedialink/ui/catalog/CatalogRootFragment;Ljava/lang/Integer;)V
 
     return-void
 .end method
@@ -367,7 +367,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-4(Lcom/smedialink/ui/catalog/CatalogRootFragment;)V
+.method private static final getThemeDescriptions$lambda$4(Lcom/smedialink/ui/catalog/CatalogRootFragment;)V
     .locals 2
 
     const-string v0, "this$0"
@@ -403,7 +403,7 @@
 
     const/16 v1, 0x37
 
-    invoke-static {v0, v1}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+    invoke-static {v0, v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withAlpha(II)I
 
     move-result v0
 
@@ -475,7 +475,7 @@
 
     move-result-object v0
 
-    .line 2478
+    .line 2634
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -520,7 +520,7 @@
     return-object v0
 .end method
 
-.method private static final openSelectLanguageScreen$lambda-7(Lcom/smedialink/ui/catalog/CatalogRootFragment;Ljava/lang/Integer;)V
+.method private static final openSelectLanguageScreen$lambda$7(Lcom/smedialink/ui/catalog/CatalogRootFragment;Ljava/lang/Integer;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -746,7 +746,7 @@
 
     const/16 v4, 0x37
 
-    invoke-static {v3, v4}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+    invoke-static {v3, v4}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withAlpha(II)I
 
     move-result v3
 
@@ -841,7 +841,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 215
+    .line 219
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v1
@@ -1037,7 +1037,7 @@
 
     move-result-object v2
 
-    .line 1849
+    .line 1855
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1082,16 +1082,16 @@
 
     check-cast v0, Lcom/smedialink/ui/catalog/tabs/CatalogFragment;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 p1, 0x1
+    invoke-virtual {v0, p1}, Lcom/smedialink/ui/catalog/tabs/CatalogFragment;->isSwipeBackEnabled(Landroid/view/MotionEvent;)Z
+
+    move-result p1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0, p1}, Lcom/smedialink/ui/catalog/tabs/CatalogFragment;->isSwipeBackEnabled(Landroid/view/MotionEvent;)Z
-
-    move-result p1
+    const/4 p1, 0x1
 
     :goto_0
     return p1
@@ -1112,7 +1112,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1186,7 +1186,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1246,14 +1246,11 @@
 
     check-cast v0, Lcom/smedialink/ui/catalog/tabs/CatalogFragment;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lcom/smedialink/ui/catalog/tabs/CatalogFragment;->onPause()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -1274,14 +1271,11 @@
 
     check-cast v0, Lcom/smedialink/ui/catalog/tabs/CatalogFragment;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lcom/smedialink/ui/catalog/tabs/CatalogFragment;->onResume()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -1293,7 +1287,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0

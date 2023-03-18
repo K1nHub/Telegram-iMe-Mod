@@ -7,10 +7,10 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/smedialink/model/common/TelegramStatisticsChartData$Colors;,
+        Lcom/smedialink/model/common/TelegramStatisticsChartData$Companion;,
         Lcom/smedialink/model/common/TelegramStatisticsChartData$Names;,
         Lcom/smedialink/model/common/TelegramStatisticsChartData$Subchart;,
-        Lcom/smedialink/model/common/TelegramStatisticsChartData$Types;,
-        Lcom/smedialink/model/common/TelegramStatisticsChartData$Companion;
+        Lcom/smedialink/model/common/TelegramStatisticsChartData$Types;
     }
 .end annotation
 
@@ -1217,7 +1217,7 @@
 
     iget-object v1, p0, Lcom/smedialink/model/common/TelegramStatisticsChartData;->xTooltipFormatter:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", yTickFormatter="
 
@@ -1225,7 +1225,7 @@
 
     iget-object v1, p0, Lcom/smedialink/model/common/TelegramStatisticsChartData;->yTickFormatter:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", yTooltipFormatter="
 

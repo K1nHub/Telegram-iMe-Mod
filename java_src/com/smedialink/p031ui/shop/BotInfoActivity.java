@@ -21,6 +21,7 @@ import com.smedialink.bots.domain.model.SmartTag;
 import com.smedialink.bots.usecase.AiBotsManager;
 import com.smedialink.p031ui.shop.util.ContextExtKt;
 import com.smedialink.p031ui.smartpanel.extension.ImageViewExtKt;
+import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
@@ -28,20 +29,18 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.ListIterator;
-import java.util.Objects;
 import kotlin.NoWhenBranchMatchedException;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.StringsKt__StringsJVMKt;
 import me.zhanghai.android.materialratingbar.MaterialRatingBar;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.SizeNotifierFrameLayout;
 /* compiled from: BotInfoActivity.kt */
@@ -87,16 +86,40 @@ public final class BotInfoActivity extends BaseFragment {
 
         static {
             int[] iArr = new int[BotLanguage.values().length];
-            iArr[BotLanguage.RU.ordinal()] = 1;
-            iArr[BotLanguage.EN.ordinal()] = 2;
+            try {
+                iArr[BotLanguage.RU.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[BotLanguage.EN.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
             int[] iArr2 = new int[BotStatus.values().length];
-            iArr2[BotStatus.PAID.ordinal()] = 1;
-            iArr2[BotStatus.AVAILABLE.ordinal()] = 2;
-            iArr2[BotStatus.UPDATE_AVAILABLE.ordinal()] = 3;
-            iArr2[BotStatus.DOWNLOADING.ordinal()] = 4;
-            iArr2[BotStatus.ENABLED.ordinal()] = 5;
-            iArr2[BotStatus.DISABLED.ordinal()] = 6;
+            try {
+                iArr2[BotStatus.PAID.ordinal()] = 1;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr2[BotStatus.AVAILABLE.ordinal()] = 2;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr2[BotStatus.UPDATE_AVAILABLE.ordinal()] = 3;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr2[BotStatus.DOWNLOADING.ordinal()] = 4;
+            } catch (NoSuchFieldError unused6) {
+            }
+            try {
+                iArr2[BotStatus.ENABLED.ordinal()] = 5;
+            } catch (NoSuchFieldError unused7) {
+            }
+            try {
+                iArr2[BotStatus.DISABLED.ordinal()] = 6;
+            } catch (NoSuchFieldError unused8) {
+            }
             $EnumSwitchMapping$1 = iArr2;
         }
     }
@@ -142,7 +165,7 @@ public final class BotInfoActivity extends BaseFragment {
     public View createView(Context context) {
         this.rootContainer = new SizeNotifierFrameLayout(context);
         LayoutInflater from = LayoutInflater.from(context);
-        int i = C3158R.layout.fork_bots_description_content;
+        int i = C3286R.layout.fork_bots_description_content;
         SizeNotifierFrameLayout sizeNotifierFrameLayout = this.rootContainer;
         SizeNotifierFrameLayout fragmentView = null;
         if (sizeNotifierFrameLayout == null) {
@@ -151,11 +174,11 @@ public final class BotInfoActivity extends BaseFragment {
         }
         initViewIds(from.inflate(i, (ViewGroup) sizeNotifierFrameLayout, true));
         this.actionBar.createMenu();
-        this.actionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
         this.actionBar.setTitle(this.title);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.shop.BotInfoActivity$createView$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.shop.BotInfoActivity$createView$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     BotInfoActivity.this.finishFragment();
@@ -180,29 +203,29 @@ public final class BotInfoActivity extends BaseFragment {
     }
 
     private final void initViewIds(View view) {
-        this.avatar = view == null ? null : (ImageView) view.findViewById(C3158R.C3161id.bot_avatar);
-        this.botName = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.bot_name);
-        this.botDescription = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.bot_description);
-        this.tagsContainer = view == null ? null : (FlexboxLayout) view.findViewById(C3158R.C3161id.tags_container);
-        this.ratingValue = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.rating_number);
-        this.ratingLabel = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.rating_label);
-        this.instalsLabel = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.installs_label);
-        this.themesLabel = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.themes_label);
-        this.developerLabel = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.bot_developer);
-        this.botCurrentLanguage = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.bot_current_language);
-        this.botAnalogLanguage = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.bot_analog_language);
-        this.phrasesLabel = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.phrases_label);
-        this.installsValue = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.installs_counter);
-        this.themesValue = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.themes_counter);
-        this.phrasesValue = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.phrases_counter);
-        this.dateAdded = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.bot_date_added);
-        this.dateUpdated = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.bot_date_updated);
-        this.ratingBar = view == null ? null : (MaterialRatingBar) view.findViewById(C3158R.C3161id.rating);
-        this.button = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.bot_info_button);
-        this.rateLabel = view == null ? null : (TextView) view.findViewById(C3158R.C3161id.textRateBot);
-        this.layoutContainer = view == null ? null : (ConstraintLayout) view.findViewById(C3158R.C3161id.layoutContainer);
-        this.progressBar = view == null ? null : (ProgressBar) view.findViewById(C3158R.C3161id.progressBar);
-        this.statsContainer = view != null ? view.findViewById(C3158R.C3161id.stats_container) : null;
+        this.avatar = view != null ? (ImageView) view.findViewById(C3286R.C3289id.bot_avatar) : null;
+        this.botName = view != null ? (TextView) view.findViewById(C3286R.C3289id.bot_name) : null;
+        this.botDescription = view != null ? (TextView) view.findViewById(C3286R.C3289id.bot_description) : null;
+        this.tagsContainer = view != null ? (FlexboxLayout) view.findViewById(C3286R.C3289id.tags_container) : null;
+        this.ratingValue = view != null ? (TextView) view.findViewById(C3286R.C3289id.rating_number) : null;
+        this.ratingLabel = view != null ? (TextView) view.findViewById(C3286R.C3289id.rating_label) : null;
+        this.instalsLabel = view != null ? (TextView) view.findViewById(C3286R.C3289id.installs_label) : null;
+        this.themesLabel = view != null ? (TextView) view.findViewById(C3286R.C3289id.themes_label) : null;
+        this.developerLabel = view != null ? (TextView) view.findViewById(C3286R.C3289id.bot_developer) : null;
+        this.botCurrentLanguage = view != null ? (TextView) view.findViewById(C3286R.C3289id.bot_current_language) : null;
+        this.botAnalogLanguage = view != null ? (TextView) view.findViewById(C3286R.C3289id.bot_analog_language) : null;
+        this.phrasesLabel = view != null ? (TextView) view.findViewById(C3286R.C3289id.phrases_label) : null;
+        this.installsValue = view != null ? (TextView) view.findViewById(C3286R.C3289id.installs_counter) : null;
+        this.themesValue = view != null ? (TextView) view.findViewById(C3286R.C3289id.themes_counter) : null;
+        this.phrasesValue = view != null ? (TextView) view.findViewById(C3286R.C3289id.phrases_counter) : null;
+        this.dateAdded = view != null ? (TextView) view.findViewById(C3286R.C3289id.bot_date_added) : null;
+        this.dateUpdated = view != null ? (TextView) view.findViewById(C3286R.C3289id.bot_date_updated) : null;
+        this.ratingBar = view != null ? (MaterialRatingBar) view.findViewById(C3286R.C3289id.rating) : null;
+        this.button = view != null ? (TextView) view.findViewById(C3286R.C3289id.bot_info_button) : null;
+        this.rateLabel = view != null ? (TextView) view.findViewById(C3286R.C3289id.textRateBot) : null;
+        this.layoutContainer = view != null ? (ConstraintLayout) view.findViewById(C3286R.C3289id.layoutContainer) : null;
+        this.progressBar = view != null ? (ProgressBar) view.findViewById(C3286R.C3289id.progressBar) : null;
+        this.statsContainer = view != null ? view.findViewById(C3286R.C3289id.stats_container) : null;
     }
 
     private final void showProgress(boolean z) {
@@ -227,23 +250,37 @@ public final class BotInfoActivity extends BaseFragment {
         String str = this.botId;
         String langCode = LocaleController.getInstance().getCurrentLocaleInfo().getLangCode();
         Intrinsics.checkNotNullExpressionValue(langCode, "getInstance().currentLocaleInfo.langCode");
-        this.disposable.add(aiBotsManager.getSingleBotObservable(str, langCode).subscribeOn(Schedulers.m694io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer() { // from class: com.smedialink.ui.shop.BotInfoActivity$$ExternalSyntheticLambda2
+        Observable<ShopItem> observeOn = aiBotsManager.getSingleBotObservable(str, langCode).subscribeOn(Schedulers.m694io()).observeOn(AndroidSchedulers.mainThread());
+        final BotInfoActivity$subscribeToBotContent$1 botInfoActivity$subscribeToBotContent$1 = new BotInfoActivity$subscribeToBotContent$1(this);
+        Consumer<? super ShopItem> consumer = new Consumer() { // from class: com.smedialink.ui.shop.BotInfoActivity$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                BotInfoActivity.m1484subscribeToBotContent$lambda0(BotInfoActivity.this, (ShopItem) obj);
+                BotInfoActivity.subscribeToBotContent$lambda$0(Function1.this, obj);
             }
-        }, BotInfoActivity$$ExternalSyntheticLambda4.INSTANCE));
+        };
+        final BotInfoActivity$subscribeToBotContent$2 botInfoActivity$subscribeToBotContent$2 = BotInfoActivity$subscribeToBotContent$2.INSTANCE;
+        this.disposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: com.smedialink.ui.shop.BotInfoActivity$$ExternalSyntheticLambda3
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                BotInfoActivity.subscribeToBotContent$lambda$1(Function1.this, obj);
+            }
+        }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: subscribeToBotContent$lambda-0  reason: not valid java name */
-    public static final void m1484subscribeToBotContent$lambda0(BotInfoActivity this$0, ShopItem item) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullExpressionValue(item, "item");
-        this$0.displayBotItem(item);
+    public static final void subscribeToBotContent$lambda$0(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
-    private final void displayBotItem(final ShopItem shopItem) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void subscribeToBotContent$lambda$1(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void displayBotItem(final ShopItem shopItem) {
         String internalString;
         String price;
         showProgress(false);
@@ -279,23 +316,23 @@ public final class BotInfoActivity extends BaseFragment {
         }
         TextView textView6 = this.ratingLabel;
         if (textView6 != null) {
-            textView6.setText(LocaleController.formatPluralStringInternal(C3158R.string.plural_info_votes, (int) shopItem.getReviews()));
+            textView6.setText(LocaleController.formatPluralStringInternal(C3286R.string.plural_info_votes, (int) shopItem.getReviews()));
         }
         TextView textView7 = this.themesLabel;
         if (textView7 != null) {
-            textView7.setText(LocaleController.getInternalString(C3158R.string.neurobots_store_bot_info_themes));
+            textView7.setText(LocaleController.getInternalString(C3286R.string.neurobots_store_bot_info_themes));
         }
         TextView textView8 = this.phrasesLabel;
         if (textView8 != null) {
-            textView8.setText(LocaleController.getInternalString(C3158R.string.neurobots_store_bot_info_phrases));
+            textView8.setText(LocaleController.getInternalString(C3286R.string.neurobots_store_bot_info_phrases));
         }
         TextView textView9 = this.developerLabel;
         if (textView9 != null) {
-            textView9.setText(LocaleController.getInternalString(C3158R.string.neurobots_store_bot_info_developer));
+            textView9.setText(LocaleController.getInternalString(C3286R.string.neurobots_store_bot_info_developer));
         }
         TextView textView10 = this.instalsLabel;
         if (textView10 != null) {
-            textView10.setText(LocaleController.getInternalString(C3158R.string.neurobots_store_bot_info_installs));
+            textView10.setText(LocaleController.getInternalString(C3286R.string.neurobots_store_bot_info_installs));
         }
         TextView textView11 = this.themesValue;
         if (textView11 != null) {
@@ -311,19 +348,19 @@ public final class BotInfoActivity extends BaseFragment {
         }
         TextView textView14 = this.rateLabel;
         if (textView14 != null) {
-            textView14.setText(LocaleController.getInternalString(C3158R.string.neurobots_store_bot_info_rate));
+            textView14.setText(LocaleController.getInternalString(C3286R.string.neurobots_store_bot_info_rate));
         }
         int i = WhenMappings.$EnumSwitchMapping$0[shopItem.getLanguage().ordinal()];
         if (i == 1) {
-            internalString = LocaleController.getInternalString(C3158R.string.neurobots_store_bot_info_supported_language_ru);
+            internalString = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_info_supported_language_ru);
         } else if (i != 2) {
             throw new NoWhenBranchMatchedException();
         } else {
-            internalString = LocaleController.getInternalString(C3158R.string.neurobots_store_bot_info_supported_language_en);
+            internalString = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_info_supported_language_en);
         }
         TextView textView15 = this.botCurrentLanguage;
         if (textView15 != null) {
-            textView15.setText(((Object) LocaleController.getInternalString(C3158R.string.neurobots_store_bot_info_supported_languages)) + ": \n" + ((Object) internalString));
+            textView15.setText(LocaleController.getInternalString(C3286R.string.neurobots_store_bot_info_supported_languages) + ": \n" + internalString);
         }
         TextView textView16 = this.botAnalogLanguage;
         if (textView16 != null) {
@@ -334,7 +371,7 @@ public final class BotInfoActivity extends BaseFragment {
             textView17.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.shop.BotInfoActivity$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    BotInfoActivity.m1479displayBotItem$lambda4(BotInfoActivity.this, view);
+                    BotInfoActivity.displayBotItem$lambda$4(BotInfoActivity.this, view);
                 }
             });
         }
@@ -352,7 +389,7 @@ public final class BotInfoActivity extends BaseFragment {
                 materialRatingBar3.setOnRatingChangeListener(new MaterialRatingBar.OnRatingChangeListener() { // from class: com.smedialink.ui.shop.BotInfoActivity$$ExternalSyntheticLambda6
                     @Override // me.zhanghai.android.materialratingbar.MaterialRatingBar.OnRatingChangeListener
                     public final void onRatingChanged(MaterialRatingBar materialRatingBar4, float f) {
-                        BotInfoActivity.m1480displayBotItem$lambda5(BotInfoActivity.this, materialRatingBar4, f);
+                        BotInfoActivity.displayBotItem$lambda$5(BotInfoActivity.this, materialRatingBar4, f);
                     }
                 });
             }
@@ -374,11 +411,11 @@ public final class BotInfoActivity extends BaseFragment {
         if (parentActivity2 != null) {
             TextView textView18 = this.dateAdded;
             if (textView18 != null) {
-                textView18.setText(((Object) LocaleController.getInternalString(C3158R.string.neurobots_store_bot_added)) + ' ' + shopItem.getCreated());
+                textView18.setText(LocaleController.getInternalString(C3286R.string.neurobots_store_bot_added) + ' ' + shopItem.getCreated());
             }
             TextView textView19 = this.dateUpdated;
             if (textView19 != null) {
-                textView19.setText(((Object) LocaleController.getInternalString(C3158R.string.neurobots_store_bot_updated)) + ' ' + shopItem.getUpdated());
+                textView19.setText(LocaleController.getInternalString(C3286R.string.neurobots_store_bot_updated) + ' ' + shopItem.getUpdated());
             }
             int pxToDp = ContextExtKt.pxToDp(parentActivity2, 16);
             List<SmartTag> tags = shopItem.getTags();
@@ -402,7 +439,7 @@ public final class BotInfoActivity extends BaseFragment {
                     flexboxLayout2.addView(textView20);
                 }
                 ViewGroup.LayoutParams layoutParams = textView20.getLayoutParams();
-                Objects.requireNonNull(layoutParams, "null cannot be cast to non-null type com.google.android.flexbox.FlexboxLayout.LayoutParams");
+                Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type com.google.android.flexbox.FlexboxLayout.LayoutParams");
                 FlexboxLayout.LayoutParams layoutParams2 = (FlexboxLayout.LayoutParams) layoutParams;
                 layoutParams2.setMargins(pxToDp, pxToDp, pxToDp, pxToDp);
                 textView20.setLayoutParams(layoutParams2);
@@ -418,19 +455,19 @@ public final class BotInfoActivity extends BaseFragment {
                         }
                         break;
                     case 2:
-                        price = LocaleController.getInternalString(C3158R.string.neurobots_store_bot_action_download);
+                        price = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_action_download);
                         break;
                     case 3:
-                        price = LocaleController.getInternalString(C3158R.string.neurobots_store_bot_action_update);
+                        price = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_action_update);
                         break;
                     case 4:
-                        price = LocaleController.getInternalString(C3158R.string.neurobots_store_bot_status_downloading);
+                        price = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_status_downloading);
                         break;
                     case 5:
-                        price = LocaleController.getInternalString(C3158R.string.neurobots_store_bot_action_disable);
+                        price = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_action_disable);
                         break;
                     case 6:
-                        price = LocaleController.getInternalString(C3158R.string.neurobots_store_bot_action_enable);
+                        price = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_action_enable);
                         break;
                     default:
                         throw new NoWhenBranchMatchedException();
@@ -439,34 +476,30 @@ public final class BotInfoActivity extends BaseFragment {
             }
         }
         TextView textView22 = this.button;
-        if (textView22 == null) {
-            return;
+        if (textView22 != null) {
+            textView22.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.shop.BotInfoActivity$$ExternalSyntheticLambda1
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    BotInfoActivity.displayBotItem$lambda$9(BotInfoActivity.this, shopItem, view);
+                }
+            });
         }
-        textView22.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.shop.BotInfoActivity$$ExternalSyntheticLambda1
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                BotInfoActivity.m1481displayBotItem$lambda9(BotInfoActivity.this, shopItem, view);
-            }
-        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: displayBotItem$lambda-4  reason: not valid java name */
-    public static final void m1479displayBotItem$lambda4(BotInfoActivity this$0, View view) {
+    public static final void displayBotItem$lambda$4(BotInfoActivity this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ShopItem shopItem = this$0.botAnalog;
-        if (shopItem == null) {
-            return;
+        if (shopItem != null) {
+            Bundle bundle = new Bundle();
+            bundle.putString("botId", shopItem.getBotId());
+            bundle.putString("title", shopItem.getTitle());
+            this$0.presentFragment(new BotInfoActivity(bundle), true);
         }
-        Bundle bundle = new Bundle();
-        bundle.putString("botId", shopItem.getBotId());
-        bundle.putString("title", shopItem.getTitle());
-        this$0.presentFragment(new BotInfoActivity(bundle), true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: displayBotItem$lambda-5  reason: not valid java name */
-    public static final void m1480displayBotItem$lambda5(BotInfoActivity this$0, MaterialRatingBar materialRatingBar, float f) {
+    public static final void displayBotItem$lambda$5(BotInfoActivity this$0, MaterialRatingBar materialRatingBar, float f) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         materialRatingBar.setRating(f);
         materialRatingBar.setIsIndicator(true);
@@ -474,73 +507,42 @@ public final class BotInfoActivity extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: displayBotItem$lambda-9  reason: not valid java name */
-    public static final void m1481displayBotItem$lambda9(BotInfoActivity this$0, ShopItem item, View view) {
+    public static final void displayBotItem$lambda$9(BotInfoActivity this$0, ShopItem item, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
         NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.botButtonClicked, item);
     }
 
-    private final void observeBotAnalog(final ShopItem shopItem) {
+    private final void observeBotAnalog(ShopItem shopItem) {
         AiBotsManager aiBotsManager = ApplicationLoader.smartBotsManager;
         String langCode = LocaleController.getInstance().getCurrentLocaleInfo().getLangCode();
         Intrinsics.checkNotNullExpressionValue(langCode, "getInstance().currentLocaleInfo.langCode");
-        this.disposable.add(aiBotsManager.getAllBotsObservable(langCode).subscribeOn(Schedulers.m694io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer() { // from class: com.smedialink.ui.shop.BotInfoActivity$$ExternalSyntheticLambda3
+        Observable<List<ShopItem>> observeOn = aiBotsManager.getAllBotsObservable(langCode).subscribeOn(Schedulers.m694io()).observeOn(AndroidSchedulers.mainThread());
+        final BotInfoActivity$observeBotAnalog$1 botInfoActivity$observeBotAnalog$1 = new BotInfoActivity$observeBotAnalog$1(this, shopItem);
+        Consumer<? super List<ShopItem>> consumer = new Consumer() { // from class: com.smedialink.ui.shop.BotInfoActivity$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                BotInfoActivity.m1482observeBotAnalog$lambda12(BotInfoActivity.this, shopItem, (List) obj);
+                BotInfoActivity.observeBotAnalog$lambda$10(Function1.this, obj);
             }
-        }, BotInfoActivity$$ExternalSyntheticLambda5.INSTANCE));
+        };
+        final BotInfoActivity$observeBotAnalog$2 botInfoActivity$observeBotAnalog$2 = BotInfoActivity$observeBotAnalog$2.INSTANCE;
+        this.disposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: com.smedialink.ui.shop.BotInfoActivity$$ExternalSyntheticLambda5
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                BotInfoActivity.observeBotAnalog$lambda$11(Function1.this, obj);
+            }
+        }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: observeBotAnalog$lambda-12  reason: not valid java name */
-    public static final void m1482observeBotAnalog$lambda12(BotInfoActivity this$0, ShopItem currentBot, List items) {
-        Object obj;
-        TextView textView;
-        String internalString;
-        boolean areEqual;
-        String replace$default;
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(currentBot, "$currentBot");
-        Intrinsics.checkNotNullExpressionValue(items, "items");
-        ListIterator listIterator = items.listIterator(items.size());
-        while (true) {
-            if (!listIterator.hasPrevious()) {
-                obj = null;
-                break;
-            }
-            obj = listIterator.previous();
-            ShopItem shopItem = (ShopItem) obj;
-            int i = WhenMappings.$EnumSwitchMapping$0[currentBot.getLanguage().ordinal()];
-            if (i == 1) {
-                areEqual = Intrinsics.areEqual(shopItem.getBotId(), Intrinsics.stringPlus(currentBot.getBotId(), "_eng"));
-                continue;
-            } else if (i != 2) {
-                throw new NoWhenBranchMatchedException();
-            } else {
-                String botId = shopItem.getBotId();
-                replace$default = StringsKt__StringsJVMKt.replace$default(currentBot.getBotId(), "_eng", "", false, 4, (Object) null);
-                areEqual = Intrinsics.areEqual(botId, replace$default);
-                continue;
-            }
-            if (areEqual) {
-                break;
-            }
-        }
-        ShopItem shopItem2 = (ShopItem) obj;
-        this$0.botAnalog = shopItem2;
-        if (shopItem2 == null || (textView = this$0.botAnalogLanguage) == null) {
-            return;
-        }
-        int i2 = WhenMappings.$EnumSwitchMapping$0[shopItem2.getLanguage().ordinal()];
-        if (i2 == 1) {
-            internalString = LocaleController.getInternalString(C3158R.string.neurobots_store_bot_info_supported_language_ru);
-        } else if (i2 != 2) {
-            throw new NoWhenBranchMatchedException();
-        } else {
-            internalString = LocaleController.getInternalString(C3158R.string.neurobots_store_bot_info_supported_language_en);
-        }
-        textView.setText(internalString);
+    public static final void observeBotAnalog$lambda$10(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void observeBotAnalog$lambda$11(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 }

@@ -18,7 +18,7 @@
 .method static getColor(Landroid/content/Context;I)I
     .locals 0
 
-    .line 886
+    .line 1034
     invoke-virtual {p0, p1}, Landroid/content/Context;->getColor(I)I
 
     move-result p0
@@ -39,7 +39,7 @@
         }
     .end annotation
 
-    .line 891
+    .line 1039
     invoke-virtual {p0, p1}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object p0
@@ -59,7 +59,7 @@
         }
     .end annotation
 
-    .line 896
+    .line 1044
     invoke-virtual {p0, p1}, Landroid/content/Context;->getSystemServiceName(Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object p0

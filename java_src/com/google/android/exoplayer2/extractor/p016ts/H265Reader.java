@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p016ts;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
@@ -39,7 +39,7 @@ public final class H265Reader implements ElementaryStreamReader {
     private final NalUnitTargetBuffer pps = new NalUnitTargetBuffer(34, 128);
     private final NalUnitTargetBuffer prefixSei = new NalUnitTargetBuffer(39, 128);
     private final NalUnitTargetBuffer suffixSei = new NalUnitTargetBuffer(40, 128);
-    private long pesTimeUs = C0474C.TIME_UNSET;
+    private long pesTimeUs = C0468C.TIME_UNSET;
     private final ParsableByteArray seiWrapper = new ParsableByteArray();
 
     @Override // com.google.android.exoplayer2.extractor.p016ts.ElementaryStreamReader
@@ -53,7 +53,7 @@ public final class H265Reader implements ElementaryStreamReader {
     @Override // com.google.android.exoplayer2.extractor.p016ts.ElementaryStreamReader
     public void seek() {
         this.totalBytesWritten = 0L;
-        this.pesTimeUs = C0474C.TIME_UNSET;
+        this.pesTimeUs = C0468C.TIME_UNSET;
         NalUnitUtil.clearPrefixFlags(this.prefixFlags);
         this.vps.reset();
         this.sps.reset();
@@ -78,7 +78,7 @@ public final class H265Reader implements ElementaryStreamReader {
 
     @Override // com.google.android.exoplayer2.extractor.p016ts.ElementaryStreamReader
     public void packetStarted(long j, int i) {
-        if (j != C0474C.TIME_UNSET) {
+        if (j != C0468C.TIME_UNSET) {
             this.pesTimeUs = j;
         }
     }
@@ -437,7 +437,7 @@ public final class H265Reader implements ElementaryStreamReader {
 
         private void outputSample(int i) {
             long j = this.sampleTimeUs;
-            if (j == C0474C.TIME_UNSET) {
+            if (j == C0468C.TIME_UNSET) {
                 return;
             }
             boolean z = this.sampleIsKeyframe;

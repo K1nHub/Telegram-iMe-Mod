@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/ProfileActivity$36;
-.super Lorg/telegram/ui/Components/ShareAlert;
+.super Ljava/lang/Object;
 .source "ProfileActivity.java"
+
+# interfaces
+.implements Lorg/telegram/ui/ChatRightsEditActivity$ChatRightsEditActivityDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ProfileActivity;->processOnClickOrPress(ILandroid/view/View;FF)Z
+    value = Lorg/telegram/ui/ProfileActivity;->openRightsEdit(ILorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$ChatParticipant;Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,131 +20,500 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ProfileActivity;
 
+.field final synthetic val$action:I
+
+.field final synthetic val$editingAdmin:Z
+
+.field final synthetic val$needShowBulletin:[Z
+
+.field final synthetic val$participant:Lorg/telegram/tgnet/TLRPC$ChatParticipant;
+
 
 # direct methods
-.method public static synthetic $r8$lambda$DQa2WWC28fb7WpkXXQ8RisG2yH0(Lorg/telegram/ui/ProfileActivity$36;Landroidx/collection/LongSparseArray;I)V
+.method constructor <init>(Lorg/telegram/ui/ProfileActivity;ILorg/telegram/tgnet/TLRPC$ChatParticipant;Z[Z)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ProfileActivity$36;->lambda$onSend$0(Landroidx/collection/LongSparseArray;I)V
-
-    return-void
-.end method
-
-.method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;Ljava/util/ArrayList;Ljava/lang/String;ZLjava/lang/String;Z)V
-    .locals 7
-
-    .line 5376
+    .line 5434
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    move-object v0, p0
+    iput p2, p0, Lorg/telegram/ui/ProfileActivity$36;->val$action:I
 
-    move-object v1, p2
+    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$36;->val$participant:Lorg/telegram/tgnet/TLRPC$ChatParticipant;
 
-    move-object v2, p3
+    iput-boolean p4, p0, Lorg/telegram/ui/ProfileActivity$36;->val$editingAdmin:Z
 
-    move-object v3, p4
+    iput-object p5, p0, Lorg/telegram/ui/ProfileActivity$36;->val$needShowBulletin:[Z
 
-    move v4, p5
-
-    move-object v5, p6
-
-    move v6, p7
-
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/ShareAlert;-><init>(Landroid/content/Context;Ljava/util/ArrayList;Ljava/lang/String;ZLjava/lang/String;Z)V
-
-    return-void
-.end method
-
-.method private synthetic lambda$onSend$0(Landroidx/collection/LongSparseArray;I)V
-    .locals 9
-
-    .line 5380
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
-
-    move-result-object v1
-
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$1200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Landroidx/collection/LongSparseArray;->size()I
-
-    move-result v3
-
-    invoke-virtual {p1}, Landroidx/collection/LongSparseArray;->size()I
-
-    move-result v0
-
-    const/4 v4, 0x1
-
-    if-ne v0, v4, :cond_0
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroidx/collection/LongSparseArray;->valueAt(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$Dialog;
-
-    iget-wide v4, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
-
-    goto :goto_0
-
-    :cond_0
-    const-wide/16 v4, 0x0
-
-    :goto_0
-    const-string p1, "undo_background"
-
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
-
-    move-result v7
-
-    const-string p1, "undo_infoColor"
-
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
-
-    move-result v8
-
-    move v6, p2
-
-    invoke-static/range {v1 .. v8}, Lorg/telegram/ui/Components/BulletinFactory;->createInviteSentBulletin(Landroid/content/Context;Landroid/widget/FrameLayout;IJIII)Lorg/telegram/ui/Components/Bulletin;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onSend(Landroidx/collection/LongSparseArray;ILorg/telegram/tgnet/TLRPC$TL_forumTopic;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroidx/collection/LongSparseArray<",
-            "Lorg/telegram/tgnet/TLRPC$Dialog;",
-            ">;I",
-            "Lorg/telegram/tgnet/TLRPC$TL_forumTopic;",
-            ")V"
-        }
-    .end annotation
+.method public didChangeOwner(Lorg/telegram/tgnet/TLRPC$User;)V
+    .locals 4
 
-    .line 5379
-    new-instance p3, Lorg/telegram/ui/ProfileActivity$36$$ExternalSyntheticLambda0;
+    .line 5506
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-direct {p3, p0, p1, p2}, Lorg/telegram/ui/ProfileActivity$36$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ProfileActivity$36;Landroidx/collection/LongSparseArray;I)V
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$6900(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/UndoView;
 
-    const-wide/16 p1, 0xfa
+    move-result-object v0
 
-    invoke-static {p3, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
 
+    invoke-static {v1}, Lorg/telegram/ui/ProfileActivity;->access$300(Lorg/telegram/ui/ProfileActivity;)J
+
+    move-result-wide v1
+
+    neg-long v1, v1
+
+    iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$4800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$Chat;
+
+    move-result-object v3
+
+    iget-boolean v3, v3, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
+
+    if-eqz v3, :cond_0
+
+    const/16 v3, 0xa
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v3, 0x9
+
+    :goto_0
+    invoke-virtual {v0, v1, v2, v3, p1}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public didSetRights(ILorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;)V
+    .locals 7
+
+    .line 5437
+    iget v0, p0, Lorg/telegram/ui/ProfileActivity$36;->val$action:I
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    if-nez v0, :cond_4
+
+    .line 5438
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$36;->val$participant:Lorg/telegram/tgnet/TLRPC$ChatParticipant;
+
+    instance-of v3, v0, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
+
+    if-eqz v3, :cond_1
+
+    .line 5439
+    check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
+
+    if-ne p1, v2, :cond_0
+
+    .line 5441
+    new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantAdmin;
+
+    invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantAdmin;-><init>()V
+
+    iput-object v3, v0, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;->channelParticipant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
+
+    .line 5442
+    iget v4, v3, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->flags:I
+
+    or-int/lit8 v4, v4, 0x4
+
+    iput v4, v3, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->flags:I
+
+    goto :goto_0
+
+    .line 5444
+    :cond_0
+    new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_channelParticipant;
+
+    invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_channelParticipant;-><init>()V
+
+    iput-object v3, v0, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;->channelParticipant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
+
+    .line 5446
+    :goto_0
+    iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;->channelParticipant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
+
+    iget-object v4, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
+
+    move-result-wide v4
+
+    iput-wide v4, v3, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->inviter_id:J
+
+    .line 5447
+    iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;->channelParticipant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
+
+    new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
+
+    invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
+
+    iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    .line 5448
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;->channelParticipant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
+
+    iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    iget-object v4, p0, Lorg/telegram/ui/ProfileActivity$36;->val$participant:Lorg/telegram/tgnet/TLRPC$ChatParticipant;
+
+    iget-wide v5, v4, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->user_id:J
+
+    iput-wide v5, v3, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
+
+    .line 5449
+    iget v3, v4, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->date:I
+
+    iput v3, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->date:I
+
+    .line 5450
+    iput-object p3, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+
+    .line 5451
+    iput-object p2, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
+
+    .line 5452
+    iput-object p4, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->rank:Ljava/lang/String;
+
+    goto :goto_2
+
+    :cond_1
+    if-eqz v0, :cond_3
+
+    if-ne p1, v2, :cond_2
+
+    .line 5456
+    new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_chatParticipantAdmin;
+
+    invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_chatParticipantAdmin;-><init>()V
+
+    goto :goto_1
+
+    .line 5458
+    :cond_2
+    new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_chatParticipant;
+
+    invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_chatParticipant;-><init>()V
+
+    .line 5460
+    :goto_1
+    iget-object p3, p0, Lorg/telegram/ui/ProfileActivity$36;->val$participant:Lorg/telegram/tgnet/TLRPC$ChatParticipant;
+
+    iget-wide v3, p3, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->user_id:J
+
+    iput-wide v3, p2, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->user_id:J
+
+    .line 5461
+    iget p4, p3, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->date:I
+
+    iput p4, p2, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->date:I
+
+    .line 5462
+    iget-wide p3, p3, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->inviter_id:J
+
+    iput-wide p3, p2, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->inviter_id:J
+
+    .line 5463
+    iget-object p3, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p3}, Lorg/telegram/ui/ProfileActivity;->access$4700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    move-result-object p3
+
+    iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
+
+    iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
+
+    iget-object p4, p0, Lorg/telegram/ui/ProfileActivity$36;->val$participant:Lorg/telegram/tgnet/TLRPC$ChatParticipant;
+
+    invoke-virtual {p3, p4}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
+
+    move-result p3
+
+    if-ltz p3, :cond_3
+
+    .line 5465
+    iget-object p4, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p4}, Lorg/telegram/ui/ProfileActivity;->access$4700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    move-result-object p4
+
+    iget-object p4, p4, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
+
+    iget-object p4, p4, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
+
+    invoke-virtual {p4, p3, p2}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    :cond_3
+    :goto_2
+    if-ne p1, v2, :cond_9
+
+    .line 5468
+    iget-boolean p1, p0, Lorg/telegram/ui/ProfileActivity$36;->val$editingAdmin:Z
+
+    if-nez p1, :cond_9
+
+    .line 5469
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$36;->val$needShowBulletin:[Z
+
+    aput-boolean v2, p1, v1
+
+    goto/16 :goto_7
+
+    :cond_4
+    if-ne v0, v2, :cond_9
+
+    if-nez p1, :cond_9
+
+    .line 5473
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$4800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$Chat;
+
+    move-result-object p1
+
+    iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
+
+    if-eqz p1, :cond_9
+
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$4700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_9
+
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$4700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
+
+    if-eqz p1, :cond_9
+
+    const/4 p1, 0x0
+
+    .line 5475
+    :goto_3
+    iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$4700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    move-result-object p2
+
+    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
+
+    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
+
+    invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
+
+    move-result p2
+
+    if-ge p1, p2, :cond_6
+
+    .line 5476
+    iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$4700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    move-result-object p2
+
+    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
+
+    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
+
+    invoke-virtual {p2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
+
+    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;->channelParticipant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
+
+    .line 5477
+    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    invoke-static {p2}, Lorg/telegram/messenger/MessageObject;->getPeerId(Lorg/telegram/tgnet/TLRPC$Peer;)J
+
+    move-result-wide p2
+
+    iget-object p4, p0, Lorg/telegram/ui/ProfileActivity$36;->val$participant:Lorg/telegram/tgnet/TLRPC$ChatParticipant;
+
+    iget-wide v3, p4, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->user_id:J
+
+    cmp-long p4, p2, v3
+
+    if-nez p4, :cond_5
+
+    .line 5478
+    iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$4700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    move-result-object p2
+
+    iget p3, p2, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants_count:I
+
+    sub-int/2addr p3, v2
+
+    iput p3, p2, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants_count:I
+
+    .line 5479
+    iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$4700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    move-result-object p2
+
+    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
+
+    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
+
+    invoke-virtual {p2, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+
+    const/4 p1, 0x1
+
+    goto :goto_4
+
+    :cond_5
+    add-int/lit8 p1, p1, 0x1
+
+    goto :goto_3
+
+    :cond_6
+    const/4 p1, 0x0
+
+    .line 5484
+    :goto_4
+    iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$4700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_8
+
+    iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$4700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    move-result-object p2
+
+    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
+
+    if-eqz p2, :cond_8
+
+    .line 5485
+    :goto_5
+    iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$4700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    move-result-object p2
+
+    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
+
+    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
+
+    invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
+
+    move-result p2
+
+    if-ge v1, p2, :cond_8
+
+    .line 5486
+    iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$4700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    move-result-object p2
+
+    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
+
+    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
+
+    invoke-virtual {p2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lorg/telegram/tgnet/TLRPC$ChatParticipant;
+
+    .line 5487
+    iget-wide p2, p2, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->user_id:J
+
+    iget-object p4, p0, Lorg/telegram/ui/ProfileActivity$36;->val$participant:Lorg/telegram/tgnet/TLRPC$ChatParticipant;
+
+    iget-wide v3, p4, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->user_id:J
+
+    cmp-long p4, p2, v3
+
+    if-nez p4, :cond_7
+
+    .line 5488
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$4700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
+
+    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
+
+    invoke-virtual {p1, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+
+    const/4 p1, 0x1
+
+    goto :goto_6
+
+    :cond_7
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_5
+
+    :cond_8
+    :goto_6
+    if-eqz p1, :cond_9
+
+    .line 5495
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1, v2}, Lorg/telegram/ui/ProfileActivity;->access$19100(Lorg/telegram/ui/ProfileActivity;Z)V
+
+    .line 5496
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$15400(Lorg/telegram/ui/ProfileActivity;)V
+
+    .line 5497
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$9400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$ListAdapter;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
+
+    :cond_9
+    :goto_7
     return-void
 .end method

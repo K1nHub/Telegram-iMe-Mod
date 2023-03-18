@@ -5,7 +5,7 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.text.Cue;
 import com.google.android.exoplayer2.text.SimpleSubtitleDecoder;
 import com.google.android.exoplayer2.text.Subtitle;
@@ -50,7 +50,7 @@ public final class Tx3gDecoder extends SimpleSubtitleDecoder {
             byte[] bArr = list.get(0);
             this.defaultFontFace = bArr[24];
             this.defaultColorRgba = ((bArr[26] & 255) << 24) | ((bArr[27] & 255) << 16) | ((bArr[28] & 255) << 8) | (bArr[29] & 255);
-            this.defaultFontFamily = TX3G_SERIF.equals(Util.fromUtf8Bytes(bArr, 43, bArr.length - 43)) ? C0474C.SERIF_NAME : "sans-serif";
+            this.defaultFontFamily = TX3G_SERIF.equals(Util.fromUtf8Bytes(bArr, 43, bArr.length - 43)) ? C0468C.SERIF_NAME : "sans-serif";
             int i = bArr[25] * 20;
             this.calculatedVideoTrackHeight = i;
             boolean z = (bArr[0] & 32) != 0;

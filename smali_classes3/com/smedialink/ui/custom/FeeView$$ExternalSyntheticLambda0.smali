@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/custom/FeeView$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Custom;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/custom/FeeView;->$r8$lambda$4cn5v5kumI3qZ7PAqOKXQdaeI_o(Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Custom;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/custom/FeeView;->$r8$lambda$qeDi1zu7519Vr8IgOpCKru1rKo4(Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Custom;Landroid/view/View;)V
 
     return-void
 .end method

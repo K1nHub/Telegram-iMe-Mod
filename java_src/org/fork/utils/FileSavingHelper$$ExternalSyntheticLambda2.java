@@ -8,6 +8,6 @@ public final /* synthetic */ class FileSavingHelper$$ExternalSyntheticLambda2 im
 
     @Override // java.lang.Runnable
     public final void run() {
-        FileSavingHelper.m2128saveDocumentFileToCustomDirectory$lambda6$lambda5$lambda4();
+        FileSavingHelper.saveDocumentFileToCustomDirectory$lambda$6$lambda$5$lambda$4();
     }
 }

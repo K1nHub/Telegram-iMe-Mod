@@ -26,14 +26,14 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InstantCameraView;Landroid/content/Context;Landroid/graphics/Paint;)V
     .locals 0
 
-    .line 379
+    .line 386
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$7;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/InstantCameraView$7;->val$blackoutPaint:Landroid/graphics/Paint;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
-    .line 381
+    .line 388
     new-instance p1, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     invoke-direct {p1}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;-><init>()V
@@ -48,10 +48,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 385
+    .line 392
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BackupImageView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 386
+    .line 393
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$7;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$100(Lorg/telegram/ui/Components/InstantCameraView;)Z
@@ -60,7 +60,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 387
+    .line 394
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$7;->flickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$7;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
@@ -71,7 +71,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->setParentWidth(I)V
 
-    .line 388
+    .line 395
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$7;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
@@ -94,7 +94,7 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 389
+    .line 396
     invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
 
     move-result v1
@@ -103,14 +103,14 @@
 
     div-float/2addr v1, v2
 
-    .line 390
+    .line 397
     iget-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView$7;->val$blackoutPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v1, v1, v2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     const/4 v2, 0x1
 
-    .line 391
+    .line 398
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -125,14 +125,14 @@
 
     invoke-virtual {v0, v3, v2}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 392
+    .line 399
     iget-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView$7;->flickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, p1, v0, v1, v3}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;FLandroid/view/View;)V
 
-    .line 393
+    .line 400
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_0

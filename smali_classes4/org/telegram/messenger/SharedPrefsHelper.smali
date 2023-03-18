@@ -117,7 +117,7 @@
 .method public static init(Landroid/content/Context;)V
     .locals 2
 
-    const-string v0, "webview_bots"
+    const-string/jumbo v0, "webview_bots"
 
     const/4 v1, 0x0
 

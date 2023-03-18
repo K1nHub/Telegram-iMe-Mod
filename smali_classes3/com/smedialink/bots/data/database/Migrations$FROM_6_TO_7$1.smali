@@ -4,8 +4,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/bots/data/database/Migrations;-><clinit>()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/smedialink/bots/data/database/Migrations;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMigrations.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Migrations.kt\ncom/smedialink/bots/data/database/Migrations$FROM_6_TO_7$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,99:1\n1849#2,2:100\n*S KotlinDebug\n*F\n+ 1 Migrations.kt\ncom/smedialink/bots/data/database/Migrations$FROM_6_TO_7$1\n*L\n19#1:100,2\n*E\n"
+    value = "SMAP\nMigrations.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Migrations.kt\ncom/smedialink/bots/data/database/Migrations$FROM_6_TO_7$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,99:1\n1855#2,2:100\n*S KotlinDebug\n*F\n+ 1 Migrations.kt\ncom/smedialink/bots/data/database/Migrations$FROM_6_TO_7$1\n*L\n19#1:100,2\n*E\n"
 .end annotation
 
 
@@ -78,7 +78,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0

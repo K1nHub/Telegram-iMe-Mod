@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda10;->f$0:Lorg/fork/utils/Callbacks$Callback;
 
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->$r8$lambda$1igrjIHwM0xfeUZh0q3uDFScNOI(Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-static {v0}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->$r8$lambda$IKV-Y4LGjWv7MyBm2M7wJ-FqxDM(Lorg/fork/utils/Callbacks$Callback;)V
 
     return-void
 .end method

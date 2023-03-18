@@ -24,22 +24,25 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import org.fork.controller.RecentChatsController;
-import org.fork.enums.DialogType;
+import org.fork.enums.DrawStatusType;
+import org.fork.enums.RecentChatsDialogType;
 import org.fork.models.backup.Backup;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p047mp.KoinPlatformTools;
 import org.telegram.messenger.BaseController;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
+import p034j$.util.Collection$EL;
 import p034j$.util.concurrent.ConcurrentHashMap;
 import p034j$.util.concurrent.ConcurrentMap$EL;
 import p034j$.util.function.Function;
+import p034j$.util.function.Predicate;
 /* compiled from: RecentChatsController.kt */
 /* loaded from: classes4.dex */
 public final class RecentChatsController extends BaseController implements KoinComponent {
@@ -48,7 +51,9 @@ public final class RecentChatsController extends BaseController implements KoinC
     private final Lazy dao$delegate;
     private Map<Long, HistoryDialogModel> historyDialogs;
     private boolean isRecentChatsEnabled;
-    private Set<DialogType> selectedRecentChatsDialogTypes;
+    private boolean isSaveArchiveRecentChatsEnabled;
+    private Set<DrawStatusType> selectedDrawStatusTypes;
+    private Set<RecentChatsDialogType> selectedRecentChatsDialogTypes;
 
     public static final RecentChatsController getInstance(int i) {
         return Companion.getInstance(i);
@@ -61,6 +66,8 @@ public final class RecentChatsController extends BaseController implements KoinC
         this.dao$delegate = lazy;
         this.isRecentChatsEnabled = TelegramPreferenceKeys.User.Default.isRecentChatsEnabled();
         this.selectedRecentChatsDialogTypes = new LinkedHashSet();
+        this.selectedDrawStatusTypes = new LinkedHashSet();
+        this.isSaveArchiveRecentChatsEnabled = TelegramPreferenceKeys.User.Default.INSTANCE.isSaveArchiveRecentChatsEnabled();
         this.historyDialogs = new LinkedHashMap();
     }
 
@@ -81,25 +88,46 @@ public final class RecentChatsController extends BaseController implements KoinC
         this.isRecentChatsEnabled = z;
     }
 
-    public final Set<DialogType> getSelectedRecentChatsDialogTypes() {
+    public final Set<RecentChatsDialogType> getSelectedRecentChatsDialogTypes() {
         return this.selectedRecentChatsDialogTypes;
     }
 
-    public final void setSelectedRecentChatsDialogTypes(Set<DialogType> set) {
+    public final void setSelectedRecentChatsDialogTypes(Set<RecentChatsDialogType> set) {
         Intrinsics.checkNotNullParameter(set, "<set-?>");
         this.selectedRecentChatsDialogTypes = set;
     }
 
+    public final Set<DrawStatusType> getSelectedDrawStatusTypes() {
+        return this.selectedDrawStatusTypes;
+    }
+
+    public final void setSelectedDrawStatusTypes(Set<DrawStatusType> set) {
+        Intrinsics.checkNotNullParameter(set, "<set-?>");
+        this.selectedDrawStatusTypes = set;
+    }
+
+    public final boolean isSaveArchiveRecentChatsEnabled() {
+        return this.isSaveArchiveRecentChatsEnabled;
+    }
+
+    public final void setSaveArchiveRecentChatsEnabled(boolean z) {
+        this.isSaveArchiveRecentChatsEnabled = z;
+    }
+
     public final void loadConfig(SharedPreferences preferences) {
         Intrinsics.checkNotNullParameter(preferences, "preferences");
-        setRecentChatsEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isRecentChatsEnabled(), TelegramPreferenceKeys.User.Default.isRecentChatsEnabled()));
-        setSelectedRecentChatsDialogTypes(DialogType.Companion.mapNamesToEnums(preferences.getStringSet(TelegramPreferenceKeys.User.selectedRecentChatsDialogTypes(), TelegramPreferenceKeys.User.Default.selectedRecentChatsDialogTypes())));
+        this.isRecentChatsEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isRecentChatsEnabled(), TelegramPreferenceKeys.User.Default.isRecentChatsEnabled());
+        this.selectedRecentChatsDialogTypes = RecentChatsDialogType.Companion.mapNamesToEnums(preferences.getStringSet(TelegramPreferenceKeys.User.selectedRecentChatsDialogTypes(), TelegramPreferenceKeys.User.Default.selectedRecentChatsDialogTypes()));
+        this.isSaveArchiveRecentChatsEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isSaveArchiveRecentChatsEnabled(), TelegramPreferenceKeys.User.Default.INSTANCE.isSaveArchiveRecentChatsEnabled());
+        this.selectedDrawStatusTypes = DrawStatusType.Companion.mapNamesToEnums(preferences.getStringSet(TelegramPreferenceKeys.User.selectedDrawStatusTypes(), TelegramPreferenceKeys.User.Default.selectedDrawStatusTypes()));
     }
 
     public final void saveConfig() {
         SharedPreferences.Editor edit = getUserConfig().getPreferencesPublic().edit();
-        edit.putBoolean(TelegramPreferenceKeys.User.isRecentChatsEnabled(), isRecentChatsEnabled()).apply();
-        edit.putStringSet(TelegramPreferenceKeys.User.selectedRecentChatsDialogTypes(), DialogType.Companion.mapEnumsToNames(getSelectedRecentChatsDialogTypes())).apply();
+        edit.putBoolean(TelegramPreferenceKeys.User.isRecentChatsEnabled(), this.isRecentChatsEnabled).apply();
+        edit.putStringSet(TelegramPreferenceKeys.User.selectedRecentChatsDialogTypes(), RecentChatsDialogType.Companion.mapEnumsToNames(this.selectedRecentChatsDialogTypes)).apply();
+        edit.putBoolean(TelegramPreferenceKeys.User.isSaveArchiveRecentChatsEnabled(), this.isSaveArchiveRecentChatsEnabled).apply();
+        edit.putStringSet(TelegramPreferenceKeys.User.selectedDrawStatusTypes(), DrawStatusType.Companion.mapEnumsToNames(this.selectedDrawStatusTypes)).apply();
     }
 
     public final void restoreBackup(Backup backup) {
@@ -108,7 +136,13 @@ public final class RecentChatsController extends BaseController implements KoinC
             this.isRecentChatsEnabled = backup.isRecentChatsEnabled().booleanValue();
         }
         if (backup.getSelectedRecentChatsDialogTypes() != null) {
-            this.selectedRecentChatsDialogTypes = DialogType.Companion.mapNamesToEnums(backup.getSelectedRecentChatsDialogTypes());
+            this.selectedRecentChatsDialogTypes = RecentChatsDialogType.Companion.mapNamesToEnums(backup.getSelectedRecentChatsDialogTypes());
+        }
+        if (backup.isSaveArchiveRecentChatsEnabled() != null) {
+            this.isSaveArchiveRecentChatsEnabled = backup.isSaveArchiveRecentChatsEnabled().booleanValue();
+        }
+        if (backup.getSelectedDrawStatusTypes() != null) {
+            this.selectedDrawStatusTypes = DrawStatusType.Companion.mapNamesToEnums(backup.getSelectedDrawStatusTypes());
         }
         saveConfig();
     }
@@ -116,7 +150,8 @@ public final class RecentChatsController extends BaseController implements KoinC
     public final void updateCreationDate(long j, boolean z) {
         if (!z) {
             HistoryDialogModel historyDialogModel = this.historyDialogs.get(Long.valueOf(j));
-            if (historyDialogModel != null && historyDialogModel.isPinned()) {
+            boolean z2 = true;
+            if ((historyDialogModel == null || !historyDialogModel.isPinned()) ? false : false) {
                 return;
             }
         }
@@ -129,15 +164,14 @@ public final class RecentChatsController extends BaseController implements KoinC
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.RecentChatsController$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                RecentChatsController.m1935updateCreationDate$lambda2(RecentChatsController.this, historyDialogModel2);
+                RecentChatsController.updateCreationDate$lambda$2(RecentChatsController.this, historyDialogModel2);
             }
         });
         getNotificationCenter().postNotificationName(NotificationCenter.recentChatsDidLoad, new Object[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: updateCreationDate$lambda-2  reason: not valid java name */
-    public static final void m1935updateCreationDate$lambda2(RecentChatsController this$0, HistoryDialogModel newModel) {
+    public static final void updateCreationDate$lambda$2(RecentChatsController this$0, HistoryDialogModel newModel) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(newModel, "$newModel");
         this$0.getDao().insert((HistoryDialogDao) RecentChatsMappingKt.mapToDb(newModel, this$0.getUserConfig().clientUserId));
@@ -161,15 +195,14 @@ public final class RecentChatsController extends BaseController implements KoinC
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.RecentChatsController$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                RecentChatsController.m1936updatePin$lambda3(RecentChatsController.this, j, isPinned);
+                RecentChatsController.updatePin$lambda$3(RecentChatsController.this, j, isPinned);
             }
         });
         updateCreationDate(j, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: updatePin$lambda-3  reason: not valid java name */
-    public static final void m1936updatePin$lambda3(RecentChatsController this$0, long j, boolean z) {
+    public static final void updatePin$lambda$3(RecentChatsController this$0, long j, boolean z) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getDao().updatePinned(this$0.getUserConfig().clientUserId, j, !z);
     }
@@ -212,6 +245,11 @@ public final class RecentChatsController extends BaseController implements KoinC
         return plus;
     }
 
+    public final boolean isDrawStatusType(DrawStatusType drawStatusType) {
+        Intrinsics.checkNotNullParameter(drawStatusType, "drawStatusType");
+        return this.selectedDrawStatusTypes.contains(drawStatusType);
+    }
+
     public final void loadRecentChats() {
         int collectionSizeOrDefault;
         int mapCapacity;
@@ -235,48 +273,67 @@ public final class RecentChatsController extends BaseController implements KoinC
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.RecentChatsController$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                RecentChatsController.m1934removeRecentChat$lambda9(RecentChatsController.this, j);
+                RecentChatsController.removeRecentChat$lambda$9(RecentChatsController.this, j);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: removeRecentChat$lambda-9  reason: not valid java name */
-    public static final void m1934removeRecentChat$lambda9(RecentChatsController this$0, long j) {
+    public static final void removeRecentChat$lambda$9(RecentChatsController this$0, long j) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getDao().removeRecentChatHistory(this$0.getUserConfig().clientUserId, j);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: deleteByIdList$lambda-11  reason: not valid java name */
-    public static final void m1933deleteByIdList$lambda11(RecentChatsController this$0, List idsLong) {
+    public static final void deleteByIdList$lambda$11(RecentChatsController this$0, List idsLong) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(idsLong, "$idsLong");
         this$0.getDao().deleteByIdList(idsLong, this$0.getUserConfig().clientUserId);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean clearRecentChatsHistory$lambda$12(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return ((Boolean) tmp0.invoke(obj)).booleanValue();
+    }
+
     public final void clearRecentChatsHistory() {
-        Map<Long, HistoryDialogModel> mutableMap;
-        Map<Long, HistoryDialogModel> map = this.historyDialogs;
-        LinkedHashMap linkedHashMap = new LinkedHashMap();
-        for (Map.Entry<Long, HistoryDialogModel> entry : map.entrySet()) {
-            if (entry.getValue().isPinned()) {
-                linkedHashMap.put(entry.getKey(), entry.getValue());
+        Collection<HistoryDialogModel> values = this.historyDialogs.values();
+        final RecentChatsController$clearRecentChatsHistory$1 recentChatsController$clearRecentChatsHistory$1 = RecentChatsController$clearRecentChatsHistory$1.INSTANCE;
+        Collection$EL.removeIf(values, new Predicate() { // from class: org.fork.controller.RecentChatsController$$ExternalSyntheticLambda5
+            @Override // p034j$.util.function.Predicate
+            public /* synthetic */ Predicate and(Predicate predicate) {
+                return Objects.requireNonNull(predicate);
             }
-        }
-        mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
-        this.historyDialogs = mutableMap;
+
+            @Override // p034j$.util.function.Predicate
+            public /* synthetic */ Predicate negate() {
+                return Predicate.CC.$default$negate(this);
+            }
+
+            @Override // p034j$.util.function.Predicate
+            /* renamed from: or */
+            public /* synthetic */ Predicate mo21or(Predicate predicate) {
+                return Objects.requireNonNull(predicate);
+            }
+
+            @Override // p034j$.util.function.Predicate
+            public final boolean test(Object obj) {
+                boolean clearRecentChatsHistory$lambda$12;
+                clearRecentChatsHistory$lambda$12 = RecentChatsController.clearRecentChatsHistory$lambda$12(Function1.this, obj);
+                return clearRecentChatsHistory$lambda$12;
+            }
+        });
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.RecentChatsController$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                RecentChatsController.m1932clearRecentChatsHistory$lambda13(RecentChatsController.this);
+                RecentChatsController.clearRecentChatsHistory$lambda$13(RecentChatsController.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: clearRecentChatsHistory$lambda-13  reason: not valid java name */
-    public static final void m1932clearRecentChatsHistory$lambda13(RecentChatsController this$0) {
+    public static final void clearRecentChatsHistory$lambda$13(RecentChatsController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         HistoryDialogDao.clearRecentChatHistory$default(this$0.getDao(), false, 1, null);
     }
@@ -286,20 +343,20 @@ public final class RecentChatsController extends BaseController implements KoinC
     }
 
     public final List<String> getDialogTypesSettingsRecentChats() {
-        List<DialogType> sortedWith;
+        List<RecentChatsDialogType> sortedWith;
         int collectionSizeOrDefault;
         sortedWith = CollectionsKt___CollectionsKt.sortedWith(this.selectedRecentChatsDialogTypes, new Comparator() { // from class: org.fork.controller.RecentChatsController$getDialogTypesSettingsRecentChats$$inlined$sortedBy$1
             @Override // java.util.Comparator
             public final int compare(T t, T t2) {
                 int compareValues;
-                compareValues = ComparisonsKt__ComparisonsKt.compareValues(Integer.valueOf(((DialogType) t).ordinal()), Integer.valueOf(((DialogType) t2).ordinal()));
+                compareValues = ComparisonsKt__ComparisonsKt.compareValues(Integer.valueOf(((RecentChatsDialogType) t).ordinal()), Integer.valueOf(((RecentChatsDialogType) t2).ordinal()));
                 return compareValues;
             }
         });
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(sortedWith, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-        for (DialogType dialogType : sortedWith) {
-            arrayList.add(LocaleController.getInternalString(dialogType.getNameResId()));
+        for (RecentChatsDialogType recentChatsDialogType : sortedWith) {
+            arrayList.add(recentChatsDialogType.getTitle());
         }
         return arrayList;
     }
@@ -315,14 +372,16 @@ public final class RecentChatsController extends BaseController implements KoinC
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: getInstance$lambda-0  reason: not valid java name */
-        public static final RecentChatsController m1937getInstance$lambda0(int i, Integer it) {
-            Intrinsics.checkNotNullParameter(it, "it");
-            return new RecentChatsController(i);
+        public static final RecentChatsController getInstance$lambda$0(Function1 tmp0, Object obj) {
+            Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+            return (RecentChatsController) tmp0.invoke(obj);
         }
 
-        public final RecentChatsController getInstance(final int i) {
-            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(RecentChatsController.accountInstances, Integer.valueOf(i), new Function() { // from class: org.fork.controller.RecentChatsController$Companion$$ExternalSyntheticLambda0
+        public final RecentChatsController getInstance(int i) {
+            ConcurrentHashMap concurrentHashMap = RecentChatsController.accountInstances;
+            Integer valueOf = Integer.valueOf(i);
+            final RecentChatsController$Companion$getInstance$1 recentChatsController$Companion$getInstance$1 = new RecentChatsController$Companion$getInstance$1(i);
+            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: org.fork.controller.RecentChatsController$Companion$$ExternalSyntheticLambda0
                 @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
@@ -330,9 +389,9 @@ public final class RecentChatsController extends BaseController implements KoinC
 
                 @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
-                    RecentChatsController m1937getInstance$lambda0;
-                    m1937getInstance$lambda0 = RecentChatsController.Companion.m1937getInstance$lambda0(i, (Integer) obj);
-                    return m1937getInstance$lambda0;
+                    RecentChatsController instance$lambda$0;
+                    instance$lambda$0 = RecentChatsController.Companion.getInstance$lambda$0(Function1.this, obj);
+                    return instance$lambda$0;
                 }
 
                 @Override // p034j$.util.function.Function
@@ -340,7 +399,7 @@ public final class RecentChatsController extends BaseController implements KoinC
                     return Objects.requireNonNull(function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountInstances.compute…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
             return (RecentChatsController) computeIfAbsent;
         }
     }
@@ -353,7 +412,7 @@ public final class RecentChatsController extends BaseController implements KoinC
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.RecentChatsController$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                RecentChatsController.m1933deleteByIdList$lambda11(RecentChatsController.this, idsLong);
+                RecentChatsController.deleteByIdList$lambda$11(RecentChatsController.this, idsLong);
             }
         });
     }

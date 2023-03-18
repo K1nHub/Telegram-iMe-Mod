@@ -6,7 +6,6 @@ import android.util.AttributeSet;
 import androidx.appcompat.widget.AppCompatTextView;
 import com.smedialink.storage.domain.model.wallet.token.TokenInfo;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
-import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
@@ -52,7 +51,6 @@ public final class CoinTickerView extends AppCompatTextView {
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setCornerRadius(AndroidUtilities.m51dp(2.0f));
         gradientDrawable.setStroke(AndroidUtilities.m51dp(1.0f), Theme.getColor("windowBackgroundWhiteGrayText2"));
-        Unit unit = Unit.INSTANCE;
         setBackground(gradientDrawable);
         setTextSize(9.0f);
         setPadding(AndroidUtilities.m51dp(6.0f), AndroidUtilities.m51dp(2.0f), AndroidUtilities.m51dp(6.0f), AndroidUtilities.m51dp(2.0f));

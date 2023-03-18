@@ -1,6 +1,7 @@
 package org.telegram.tgnet;
 
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
+import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_chatBannedRights extends TLObject {
     public static int constructor = -1626209256;
@@ -110,7 +111,7 @@ public class TLRPC$TL_chatBannedRights extends TLObject {
         this.flags = i9;
         int i10 = this.change_info ? i9 | 1024 : i9 & (-1025);
         this.flags = i10;
-        int i11 = this.invite_users ? i10 | 32768 : i10 & (-32769);
+        int i11 = this.invite_users ? i10 | LiteMode.FLAG_CHAT_SCALE : i10 & (-32769);
         this.flags = i11;
         int i12 = this.pin_messages ? i11 | 131072 : i11 & (-131073);
         this.flags = i12;

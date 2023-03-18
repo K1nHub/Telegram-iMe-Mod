@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
+.implements Lorg/telegram/tgnet/ResultCallback;
 
 
 # instance fields
@@ -22,20 +22,22 @@
 
 
 # virtual methods
-.method public final didSetColor()V
+.method public final onComplete(Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda312;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$C34kjf3eu2_jvYXO0yxSsekTb7A(Lorg/telegram/ui/ChatActivity;)V
+    check-cast p1, Lorg/telegram/ui/ActionBar/EmojiThemes;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$4TTai6pdzwhYAknLtDS5JTAJ6QU(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ActionBar/EmojiThemes;)V
 
     return-void
 .end method
 
-.method public synthetic onAnimationProgress(F)V
+.method public synthetic onError(Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
+    invoke-static {p0, p1}, Lorg/telegram/tgnet/ResultCallback$-CC;->$default$onError(Lorg/telegram/tgnet/ResultCallback;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

@@ -1,14 +1,11 @@
 .class Lorg/telegram/messenger/MessagesController$1;
-.super Ljava/lang/Object;
+.super Lorg/telegram/messenger/Fetcher;
 .source "MessagesController.java"
-
-# interfaces
-.implements Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/messenger/MessagesController;->ensureMessagesLoaded(JILorg/telegram/messenger/MessagesController$MessagesLoadedCallback;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/telegram/messenger/MessagesController;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,302 +13,557 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lorg/telegram/messenger/Fetcher<",
+        "Ljava/lang/Integer;",
+        "Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;",
+        ">;"
+    }
+.end annotation
+
 
 # instance fields
 .field final synthetic this$0:Lorg/telegram/messenger/MessagesController;
 
-.field final synthetic val$callback:Lorg/telegram/messenger/MessagesController$MessagesLoadedCallback;
-
-.field final synthetic val$classGuid:I
-
-.field final synthetic val$count:I
-
-.field final synthetic val$dialogId:J
-
-.field final synthetic val$finalMessageId:I
-
 
 # direct methods
-.method constructor <init>(Lorg/telegram/messenger/MessagesController;IIIJLorg/telegram/messenger/MessagesController$MessagesLoadedCallback;)V
+.method public static synthetic $r8$lambda$1SA80cLmstV75WF4qRESzVl4A0s(ILorg/telegram/messenger/Utilities$Callback2;)V
     .locals 0
 
-    .line 17529
+    invoke-static {p0, p1}, Lorg/telegram/messenger/MessagesController$1;->lambda$getLocal$1(ILorg/telegram/messenger/Utilities$Callback2;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$p6Ii3GGkPIUMjzYSP8ifyN1Atr0(ILorg/telegram/tgnet/TLRPC$TL_help_appConfig;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/messenger/MessagesController$1;->lambda$setLocal$2(ILorg/telegram/tgnet/TLRPC$TL_help_appConfig;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$zghpepLhgC3ED_5iO1Wh78Z1k9s(Lorg/telegram/messenger/Utilities$Callback3;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lorg/telegram/messenger/MessagesController$1;->lambda$getRemote$0(Lorg/telegram/messenger/Utilities$Callback3;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+
+    return-void
+.end method
+
+.method constructor <init>(Lorg/telegram/messenger/MessagesController;)V
+    .locals 0
+
+    .line 545
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$1;->this$0:Lorg/telegram/messenger/MessagesController;
 
-    iput p2, p0, Lorg/telegram/messenger/MessagesController$1;->val$classGuid:I
+    invoke-direct {p0}, Lorg/telegram/messenger/Fetcher;-><init>()V
 
-    iput p3, p0, Lorg/telegram/messenger/MessagesController$1;->val$count:I
+    return-void
+.end method
 
-    iput p4, p0, Lorg/telegram/messenger/MessagesController$1;->val$finalMessageId:I
+.method private static synthetic lambda$getLocal$1(ILorg/telegram/messenger/Utilities$Callback2;)V
+    .locals 7
 
-    iput-wide p5, p0, Lorg/telegram/messenger/MessagesController$1;->val$dialogId:J
+    const-wide/16 v0, 0x0
 
-    iput-object p7, p0, Lorg/telegram/messenger/MessagesController$1;->val$callback:Lorg/telegram/messenger/MessagesController$MessagesLoadedCallback;
+    const/4 v2, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 567
+    :try_start_0
+    invoke-static {p0}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
+    move-result-object p0
+
+    invoke-virtual {p0}, Lorg/telegram/messenger/MessagesStorage;->getDatabase()Lorg/telegram/SQLite/SQLiteDatabase;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_2
+
+    const-string v3, "SELECT data FROM app_config"
+
+    const/4 v4, 0x0
+
+    new-array v5, v4, [Ljava/lang/Object;
+
+    .line 570
+    invoke-virtual {p0, v3, v5}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
+
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 571
+    :try_start_1
+    invoke-virtual {p0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 572
+    invoke-virtual {p0, v4}, Lorg/telegram/SQLite/SQLiteCursor;->byteBufferValue(I)Lorg/telegram/tgnet/NativeByteBuffer;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_0
+
+    .line 574
+    invoke-virtual {v3, v4}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
+
+    move-result v4
+
+    const/4 v5, 0x1
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/tgnet/TLRPC$help_AppConfig;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$help_AppConfig;
+
+    move-result-object v4
+
+    .line 575
+    invoke-virtual {v3}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
+
+    goto :goto_0
+
+    :cond_0
+    move-object v4, v2
+
+    .line 579
+    :goto_0
+    instance-of v3, v4, Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;
+
+    if-eqz v3, :cond_1
+
+    .line 580
+    check-cast v4, Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;
+
+    .line 581
+    iget v3, v4, Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;->hash:I
+
+    int-to-long v5, v3
+
+    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-interface {p1, v3, v4}, Lorg/telegram/messenger/Utilities$Callback2;->run(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    .line 583
+    :cond_1
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-interface {p1, v3, v2}, Lorg/telegram/messenger/Utilities$Callback2;->run(Ljava/lang/Object;Ljava/lang/Object;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :goto_1
+    move-object v2, p0
+
+    goto :goto_2
+
+    :catch_0
+    move-exception v3
+
+    goto :goto_3
+
+    :cond_2
+    :goto_2
+    if-eqz v2, :cond_3
+
+    .line 591
+    invoke-virtual {v2}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
+
+    goto :goto_4
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_5
+
+    :catch_1
+    move-exception v3
+
+    move-object p0, v2
+
+    .line 587
+    :goto_3
+    :try_start_2
+    invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    .line 588
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0, v2}, Lorg/telegram/messenger/Utilities$Callback2;->run(Ljava/lang/Object;Ljava/lang/Object;)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    if-eqz p0, :cond_3
+
+    .line 591
+    invoke-virtual {p0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
+
+    :cond_3
+    :goto_4
+    return-void
+
+    :catchall_1
+    move-exception p1
+
+    move-object v2, p0
+
+    :goto_5
+    if-eqz v2, :cond_4
+
+    invoke-virtual {v2}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
+
+    .line 593
+    :cond_4
+    throw p1
+.end method
+
+.method private static synthetic lambda$getRemote$0(Lorg/telegram/messenger/Utilities$Callback3;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 4
+
+    .line 551
+    instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_help_appConfigNotModified;
+
+    const-wide/16 v1, 0x0
+
+    .line 552
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    if-eqz v0, :cond_0
+
+    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-interface {p0, p1, v2, v1}, Lorg/telegram/messenger/Utilities$Callback3;->run(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    .line 553
+    :cond_0
+    instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;
+
+    if-eqz v0, :cond_1
+
+    .line 554
+    sget-object p2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;
+
+    iget v0, p1, Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;->hash:I
+
+    int-to-long v0, v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-interface {p0, p2, p1, v0}, Lorg/telegram/messenger/Utilities$Callback3;->run(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    .line 556
+    :cond_1
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "getting appconfig error "
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-eqz p2, :cond_2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget v3, p2, Lorg/telegram/tgnet/TLRPC$TL_error;->code:I
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v3, " "
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    goto :goto_0
+
+    :cond_2
+    const-string p2, ""
+
+    :goto_0
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
+
+    .line 557
+    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    invoke-interface {p0, p1, v2, v1}, Lorg/telegram/messenger/Utilities$Callback3;->run(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    :goto_1
+    return-void
+.end method
+
+.method private static synthetic lambda$setLocal$2(ILorg/telegram/tgnet/TLRPC$TL_help_appConfig;)V
+    .locals 2
+
+    .line 601
+    :try_start_0
+    invoke-static {p0}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lorg/telegram/messenger/MessagesStorage;->getDatabase()Lorg/telegram/SQLite/SQLiteDatabase;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_1
+
+    if-nez p1, :cond_0
+
+    const-string p1, "DELETE FROM app_config"
+
+    .line 604
+    invoke-virtual {p0, p1}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    goto :goto_0
+
+    :cond_0
+    const-string v0, "REPLACE INTO app_config VALUES(?)"
+
+    .line 606
+    invoke-virtual {p0, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object p0
+
+    .line 607
+    invoke-virtual {p0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
+
+    .line 608
+    new-instance v0, Lorg/telegram/tgnet/NativeByteBuffer;
+
+    invoke-virtual {p1}, Lorg/telegram/tgnet/TLObject;->getObjectSize()I
+
+    move-result v1
+
+    invoke-direct {v0, v1}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(I)V
+
+    .line 609
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
+
+    const/4 p1, 0x1
+
+    .line 610
+    invoke-virtual {p0, p1, v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
+
+    .line 611
+    invoke-virtual {p0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
+
+    .line 612
+    invoke-virtual {v0}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
+
+    .line 613
+    invoke-virtual {p0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p0
+
+    .line 617
+    invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
-.method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
-    .locals 31
+.method protected getLocal(ILjava/lang/Integer;Lorg/telegram/messenger/Utilities$Callback2;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I",
+            "Ljava/lang/Integer;",
+            "Lorg/telegram/messenger/Utilities$Callback2<",
+            "Ljava/lang/Long;",
+            "Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;",
+            ">;)V"
+        }
+    .end annotation
 
-    move-object/from16 v0, p0
+    .line 564
+    iget-object p2, p0, Lorg/telegram/messenger/MessagesController$1;->this$0:Lorg/telegram/messenger/MessagesController;
 
-    move/from16 v1, p1
+    invoke-virtual {p2}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
-    .line 17532
-    sget v2, Lorg/telegram/messenger/NotificationCenter;->messagesDidLoadWithoutProcess:I
+    move-result-object p2
 
-    const/4 v3, 0x0
+    invoke-virtual {p2}, Lorg/telegram/messenger/MessagesStorage;->getStorageQueue()Lorg/telegram/messenger/DispatchQueue;
 
-    if-ne v1, v2, :cond_2
+    move-result-object p2
 
-    aget-object v4, p3, v3
+    new-instance v0, Lorg/telegram/messenger/MessagesController$1$$ExternalSyntheticLambda0;
 
-    check-cast v4, Ljava/lang/Integer;
+    invoke-direct {v0, p1, p3}, Lorg/telegram/messenger/MessagesController$1$$ExternalSyntheticLambda0;-><init>(ILorg/telegram/messenger/Utilities$Callback2;)V
 
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {p2, v0}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    move-result v4
-
-    iget v5, v0, Lorg/telegram/messenger/MessagesController$1;->val$classGuid:I
-
-    if-ne v4, v5, :cond_2
-
-    const/4 v1, 0x1
-
-    .line 17533
-    aget-object v1, p3, v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    const/4 v3, 0x2
-
-    .line 17534
-    aget-object v3, p3, v3
-
-    check-cast v3, Ljava/lang/Boolean;
-
-    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v3
-
-    const/4 v4, 0x3
-
-    .line 17535
-    aget-object v4, p3, v4
-
-    check-cast v4, Ljava/lang/Boolean;
-
-    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v4
-
-    const/4 v5, 0x4
-
-    .line 17536
-    aget-object v5, p3, v5
-
-    check-cast v5, Ljava/lang/Integer;
-
-    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
-
-    move-result v19
-
-    .line 17537
-    iget v12, v0, Lorg/telegram/messenger/MessagesController$1;->val$count:I
-
-    div-int/lit8 v5, v12, 0x2
-
-    if-ge v1, v5, :cond_1
-
-    if-nez v4, :cond_1
-
-    if-eqz v3, :cond_1
-
-    .line 17538
-    iget v13, v0, Lorg/telegram/messenger/MessagesController$1;->val$finalMessageId:I
-
-    if-eqz v13, :cond_0
-
-    .line 17539
-    iget-object v6, v0, Lorg/telegram/messenger/MessagesController$1;->this$0:Lorg/telegram/messenger/MessagesController;
-
-    iget-wide v7, v0, Lorg/telegram/messenger/MessagesController$1;->val$dialogId:J
-
-    const-wide/16 v9, 0x0
-
-    const/4 v11, 0x0
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    iget v1, v0, Lorg/telegram/messenger/MessagesController$1;->val$classGuid:I
-
-    move/from16 v17, v1
-
-    const/16 v18, 0x3
-
-    const/16 v20, 0x0
-
-    const/16 v21, 0x0
-
-    const/16 v22, -0x1
-
-    const/16 v23, 0x0
-
-    const/16 v24, 0x0
-
-    const/16 v25, 0x0
-
-    const/16 v26, 0x0
-
-    const/16 v27, 0x0
-
-    const/16 v28, 0x1
-
-    const/16 v29, 0x0
-
-    const/16 v30, 0x0
-
-    invoke-static/range {v6 .. v30}, Lorg/telegram/messenger/MessagesController;->access$600(Lorg/telegram/messenger/MessagesController;JJZIIIZIIIIIIIIIIZIZZZ)V
-
-    goto :goto_0
-
-    .line 17541
-    :cond_0
-    iget-object v6, v0, Lorg/telegram/messenger/MessagesController$1;->this$0:Lorg/telegram/messenger/MessagesController;
-
-    iget-wide v7, v0, Lorg/telegram/messenger/MessagesController$1;->val$dialogId:J
-
-    const-wide/16 v9, 0x0
-
-    const/4 v11, 0x0
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    iget v1, v0, Lorg/telegram/messenger/MessagesController$1;->val$classGuid:I
-
-    move/from16 v17, v1
-
-    const/16 v18, 0x2
-
-    const/16 v20, 0x0
-
-    const/16 v21, 0x0
-
-    const/16 v22, -0x1
-
-    const/16 v23, 0x0
-
-    const/16 v24, 0x0
-
-    const/16 v25, 0x0
-
-    const/16 v26, 0x0
-
-    const/16 v27, 0x0
-
-    const/16 v28, 0x1
-
-    const/16 v29, 0x0
-
-    const/16 v30, 0x0
-
-    invoke-static/range {v6 .. v30}, Lorg/telegram/messenger/MessagesController;->access$600(Lorg/telegram/messenger/MessagesController;JJZIIIZIIIIIIIIIIZIZZZ)V
-
-    goto :goto_0
-
-    .line 17544
-    :cond_1
-    iget-object v1, v0, Lorg/telegram/messenger/MessagesController$1;->this$0:Lorg/telegram/messenger/MessagesController;
-
-    invoke-virtual {v1}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0, v2}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
-
-    .line 17545
-    iget-object v1, v0, Lorg/telegram/messenger/MessagesController$1;->this$0:Lorg/telegram/messenger/MessagesController;
-
-    invoke-virtual {v1}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object v1
-
-    sget v2, Lorg/telegram/messenger/NotificationCenter;->loadingMessagesFailed:I
-
-    invoke-virtual {v1, v0, v2}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
-
-    .line 17546
-    iget-object v1, v0, Lorg/telegram/messenger/MessagesController$1;->val$callback:Lorg/telegram/messenger/MessagesController$MessagesLoadedCallback;
-
-    if-eqz v1, :cond_3
-
-    .line 17547
-    invoke-interface {v1, v3}, Lorg/telegram/messenger/MessagesController$MessagesLoadedCallback;->onMessagesLoaded(Z)V
-
-    goto :goto_0
-
-    .line 17550
-    :cond_2
-    sget v4, Lorg/telegram/messenger/NotificationCenter;->loadingMessagesFailed:I
-
-    if-ne v1, v4, :cond_3
-
-    aget-object v1, p3, v3
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    iget v3, v0, Lorg/telegram/messenger/MessagesController$1;->val$classGuid:I
-
-    if-ne v1, v3, :cond_3
-
-    .line 17551
-    iget-object v1, v0, Lorg/telegram/messenger/MessagesController$1;->this$0:Lorg/telegram/messenger/MessagesController;
-
-    invoke-virtual {v1}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0, v2}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
-
-    .line 17552
-    iget-object v1, v0, Lorg/telegram/messenger/MessagesController$1;->this$0:Lorg/telegram/messenger/MessagesController;
-
-    invoke-virtual {v1}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0, v4}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
-
-    .line 17553
-    iget-object v1, v0, Lorg/telegram/messenger/MessagesController$1;->val$callback:Lorg/telegram/messenger/MessagesController$MessagesLoadedCallback;
-
-    if-eqz v1, :cond_3
-
-    .line 17554
-    invoke-interface {v1}, Lorg/telegram/messenger/MessagesController$MessagesLoadedCallback;->onError()V
-
-    :cond_3
-    :goto_0
     return-void
+.end method
+
+.method protected bridge synthetic getLocal(ILjava/lang/Object;Lorg/telegram/messenger/Utilities$Callback2;)V
+    .locals 0
+
+    .line 545
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/messenger/MessagesController$1;->getLocal(ILjava/lang/Integer;Lorg/telegram/messenger/Utilities$Callback2;)V
+
+    return-void
+.end method
+
+.method protected getRemote(ILjava/lang/Integer;JLorg/telegram/messenger/Utilities$Callback3;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I",
+            "Ljava/lang/Integer;",
+            "J",
+            "Lorg/telegram/messenger/Utilities$Callback3<",
+            "Ljava/lang/Boolean;",
+            "Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;",
+            "Ljava/lang/Long;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 548
+    new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_help_getAppConfig;
+
+    invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_help_getAppConfig;-><init>()V
+
+    long-to-int p2, p3
+
+    .line 549
+    iput p2, p1, Lorg/telegram/tgnet/TLRPC$TL_help_getAppConfig;->hash:I
+
+    .line 550
+    iget-object p2, p0, Lorg/telegram/messenger/MessagesController$1;->this$0:Lorg/telegram/messenger/MessagesController;
+
+    invoke-virtual {p2}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
+
+    move-result-object p2
+
+    new-instance p3, Lorg/telegram/messenger/MessagesController$1$$ExternalSyntheticLambda2;
+
+    invoke-direct {p3, p5}, Lorg/telegram/messenger/MessagesController$1$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/messenger/Utilities$Callback3;)V
+
+    invoke-virtual {p2, p1, p3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+
+    return-void
+.end method
+
+.method protected bridge synthetic getRemote(ILjava/lang/Object;JLorg/telegram/messenger/Utilities$Callback3;)V
+    .locals 0
+
+    .line 545
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-virtual/range {p0 .. p5}, Lorg/telegram/messenger/MessagesController$1;->getRemote(ILjava/lang/Integer;JLorg/telegram/messenger/Utilities$Callback3;)V
+
+    return-void
+.end method
+
+.method protected setLocal(ILjava/lang/Integer;Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;J)V
+    .locals 0
+
+    .line 599
+    invoke-static {p1}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Lorg/telegram/messenger/MessagesStorage;->getStorageQueue()Lorg/telegram/messenger/DispatchQueue;
+
+    move-result-object p2
+
+    new-instance p4, Lorg/telegram/messenger/MessagesController$1$$ExternalSyntheticLambda1;
+
+    invoke-direct {p4, p1, p3}, Lorg/telegram/messenger/MessagesController$1$$ExternalSyntheticLambda1;-><init>(ILorg/telegram/tgnet/TLRPC$TL_help_appConfig;)V
+
+    invoke-virtual {p2, p4}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
+
+    return-void
+.end method
+
+.method protected bridge synthetic setLocal(ILjava/lang/Object;Ljava/lang/Object;J)V
+    .locals 0
+
+    .line 545
+    check-cast p2, Ljava/lang/Integer;
+
+    check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;
+
+    invoke-virtual/range {p0 .. p5}, Lorg/telegram/messenger/MessagesController$1;->setLocal(ILjava/lang/Integer;Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;J)V
+
+    return-void
+.end method
+
+.method protected useCache(Ljava/lang/Integer;)Z
+    .locals 0
+
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method protected bridge synthetic useCache(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 545
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p0, p1}, Lorg/telegram/messenger/MessagesController$1;->useCache(Ljava/lang/Integer;)Z
+
+    move-result p1
+
+    return p1
 .end method

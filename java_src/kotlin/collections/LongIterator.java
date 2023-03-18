@@ -4,7 +4,7 @@ import java.util.Iterator;
 import kotlin.jvm.internal.markers.KMappedMarker;
 import p034j$.util.Iterator;
 import p034j$.util.function.Consumer;
-/* compiled from: Iterators.kt */
+/* compiled from: PrimitiveIterators.kt */
 /* loaded from: classes4.dex */
 public abstract class LongIterator implements Iterator<Long>, KMappedMarker, p034j$.util.Iterator {
     @Override // p034j$.util.Iterator

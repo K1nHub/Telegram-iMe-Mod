@@ -46,7 +46,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 65
+    .line 66
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/TranslateAlert2;->cutInBlocks(Ljava/lang/CharSequence;I)Ljava/util/ArrayList;
 
     move-result-object p1
@@ -168,7 +168,7 @@
 .method public getWalletRefreshToken()Ljava/lang/String;
     .locals 2
 
-    .line 46
+    .line 47
     sget-object v0, Lorg/fork/controller/ForkCommonController;->Companion:Lorg/fork/controller/ForkCommonController$Companion;
 
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
@@ -187,7 +187,7 @@
 .method public hasUser(J)Z
     .locals 1
 
-    .line 63
+    .line 64
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -218,7 +218,7 @@
 .method public setAppVersionRequiredUpdate(Ljava/lang/String;)V
     .locals 2
 
-    .line 57
+    .line 58
     sget-object v0, Lorg/fork/controller/ForkCommonController;->Companion:Lorg/fork/controller/ForkCommonController$Companion;
 
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
@@ -227,10 +227,10 @@
 
     move-result-object v0
 
-    .line 58
+    .line 59
     invoke-virtual {v0, p1}, Lorg/fork/controller/ForkCommonController;->setAppVersionRequiredUpdate(Ljava/lang/String;)V
 
-    .line 59
+    .line 60
     invoke-virtual {v0}, Lorg/fork/controller/ForkCommonController;->saveConfig()V
 
     return-void
@@ -239,7 +239,7 @@
 .method public setWalletRefreshToken(Ljava/lang/String;)V
     .locals 2
 
-    .line 48
+    .line 49
     sget-object v0, Lorg/fork/controller/ForkCommonController;->Companion:Lorg/fork/controller/ForkCommonController$Companion;
 
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
@@ -248,10 +248,10 @@
 
     move-result-object v0
 
-    .line 49
+    .line 50
     invoke-virtual {v0, p1}, Lorg/fork/controller/ForkCommonController;->setWalletRefreshToken(Ljava/lang/String;)V
 
-    .line 50
+    .line 51
     invoke-virtual {v0}, Lorg/fork/controller/ForkCommonController;->saveConfig()V
 
     return-void

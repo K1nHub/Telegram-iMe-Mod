@@ -21,18 +21,18 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 1
 
-    .line 28
+    .line 38
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 29
+    .line 39
     iput-object p2, p0, Lorg/telegram/ui/Components/CounterView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     const/16 p1, 0x8
 
-    .line 30
+    .line 40
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 31
+    .line 41
     new-instance p1, Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     const/4 v0, 0x1
@@ -41,7 +41,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
-    .line 32
+    .line 42
     iput-boolean v0, p1, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->updateVisibility:Z
 
     return-void
@@ -52,7 +52,7 @@
 .method public getEnterProgress()F
     .locals 5
 
-    .line 442
+    .line 515
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     iget v1, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countChangeProgress:F
@@ -81,7 +81,7 @@
 
     return v2
 
-    .line 449
+    .line 522
     :cond_2
     iget v0, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->currentCount:I
 
@@ -96,7 +96,7 @@
 .method public isInOutAnimation()Z
     .locals 2
 
-    .line 454
+    .line 527
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     iget v0, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->animationType:I
@@ -120,7 +120,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 1
 
-    .line 44
+    .line 54
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->draw(Landroid/graphics/Canvas;)V
@@ -131,10 +131,10 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 37
+    .line 47
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
-    .line 38
+    .line 48
     iget-object p1, p0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
@@ -153,12 +153,12 @@
 .method public setColors(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 49
+    .line 59
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->access$002(Lorg/telegram/ui/Components/CounterView$CounterDrawable;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 50
+    .line 60
     iget-object p1, p0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->access$102(Lorg/telegram/ui/Components/CounterView$CounterDrawable;Ljava/lang/String;)Ljava/lang/String;
@@ -169,7 +169,7 @@
 .method public setCount(IZ)V
     .locals 1
 
-    .line 62
+    .line 72
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->setCount(IZ)V
@@ -177,10 +177,21 @@
     return-void
 .end method
 
+.method public setCountResentChats(ZZFF)V
+    .locals 1
+
+    .line 29
+    iget-object v0, p0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->setCountResentChats(ZZFF)V
+
+    return-void
+.end method
+
 .method public setGravity(I)V
     .locals 1
 
-    .line 54
+    .line 64
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     iput p1, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->gravity:I
@@ -191,7 +202,7 @@
 .method public setReverse(Z)V
     .locals 1
 
-    .line 58
+    .line 68
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->access$202(Lorg/telegram/ui/Components/CounterView$CounterDrawable;Z)Z

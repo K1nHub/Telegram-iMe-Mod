@@ -3,7 +3,6 @@ package com.smedialink.p031ui.wallet.actions.send.recipient;
 import com.smedialink.manager.crypto.recipient.CryptoRecipientManager;
 import com.smedialink.manager.crypto.recipient.CryptoRecipientView;
 import com.smedialink.p031ui.base.mvp.base.BasePresenter;
-import com.smedialink.p031ui.base.mvp.base.BaseView;
 import com.smedialink.storage.domain.interactor.crypto.CryptoWalletInteractor;
 import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.crypto.BlockchainType;
@@ -11,14 +10,12 @@ import com.smedialink.storage.domain.model.crypto.NetworkType;
 import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.smedialink.utils.helper.wallet.CryptoHelper;
 import io.reactivex.Observable;
-import io.reactivex.functions.Consumer;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3158R;
-import timber.log.Timber;
 /* compiled from: WalletSendRecipientPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.actions.send.recipient.WalletSendRecipientPresenter */
@@ -85,36 +82,6 @@ public final class WalletSendRecipientPresenter extends BasePresenter<WalletSend
         }
         Observable<Result<String>> observeOn = CryptoHelper.extractAddress(str, getCurrentNetworkType().getBlockchainType(), this.cryptoWalletInteractor).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "extractAddress(\n        …(schedulersProvider.ui())");
-        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.actions.send.recipient.WalletSendRecipientPresenter$validateRecipientAddress$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                ResourceManager resourceManager;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    Result.Success success = (Result.Success) result;
-                    if (!(((CharSequence) success.getData()).length() > 0)) {
-                        resourceManager = WalletSendRecipientPresenter.this.resourceManager;
-                        ((WalletSendRecipientView) WalletSendRecipientPresenter.this.getViewState()).showToast(resourceManager.getString(C3158R.string.wallet_recipient_validation_address_error));
-                        return;
-                    }
-                    ((WalletSendRecipientView) WalletSendRecipientPresenter.this.getViewState()).onRecipientSelected("", (String) success.getData(), false);
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.actions.send.recipient.WalletSendRecipientPresenter$validateRecipientAddress$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        }), "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2002xbc0d2688(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2003xbc0d2689(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
     }
 }

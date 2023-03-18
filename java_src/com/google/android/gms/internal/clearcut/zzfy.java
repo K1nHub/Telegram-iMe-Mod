@@ -1,12 +1,12 @@
 package com.google.android.gms.internal.clearcut;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 /* loaded from: classes.dex */
 public final class zzfy {
     private static final Charset UTF_8 = Charset.forName("UTF-8");
-    private static final Charset ISO_8859_1 = Charset.forName(C0474C.ISO88591_NAME);
+    private static final Charset ISO_8859_1 = Charset.forName(C0468C.ISO88591_NAME);
     public static final Object zzrr = new Object();
 
     public static boolean equals(int[] iArr, int[] iArr2) {

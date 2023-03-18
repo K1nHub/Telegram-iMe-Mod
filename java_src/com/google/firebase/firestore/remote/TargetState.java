@@ -50,7 +50,7 @@ final class TargetState {
         for (Map.Entry<DocumentKey, DocumentViewChange.Type> entry : this.documentChanges.entrySet()) {
             DocumentKey key = entry.getKey();
             DocumentViewChange.Type value = entry.getValue();
-            int i = C10331.f193x33862af7[value.ordinal()];
+            int i = C10261.f193x33862af7[value.ordinal()];
             if (i == 1) {
                 immutableSortedSet = immutableSortedSet.insert(key);
             } else if (i == 2) {
@@ -66,7 +66,7 @@ final class TargetState {
 
     /* renamed from: com.google.firebase.firestore.remote.TargetState$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10331 {
+    static /* synthetic */ class C10261 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$core$DocumentViewChange$Type */
         static final /* synthetic */ int[] f193x33862af7;

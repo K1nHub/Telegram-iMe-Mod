@@ -27,7 +27,7 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import org.fork.utils.Callbacks$Callback;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkContentWalletNotificationDetailsLayoutBinding;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BaseFragment;
@@ -145,14 +145,13 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
         WalletHelper.runWithCheckIsCryptoWalletCreated(this.fragment, null, networkType.getBlockchainType(), new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$$ExternalSyntheticLambda1
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletNotificationDetailsBottomSheetDialog.m1715actionMakeTransfer$lambda1(WalletNotificationDetailsBottomSheetDialog.this, code, address, networkType);
+                WalletNotificationDetailsBottomSheetDialog.actionMakeTransfer$lambda$1(WalletNotificationDetailsBottomSheetDialog.this, code, address, networkType);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: actionMakeTransfer$lambda-1  reason: not valid java name */
-    public static final void m1715actionMakeTransfer$lambda1(WalletNotificationDetailsBottomSheetDialog this$0, TokenCode code, String address, NetworkType networkType) {
+    public static final void actionMakeTransfer$lambda$1(WalletNotificationDetailsBottomSheetDialog this$0, TokenCode code, String address, NetworkType networkType) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(code, "$code");
         Intrinsics.checkNotNullParameter(address, "$address");
@@ -175,22 +174,21 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
         Intrinsics.checkNotNullParameter(message, "message");
         Intrinsics.checkNotNullParameter(clickableText, "clickableText");
         Intrinsics.checkNotNullParameter(action, "action");
-        AppCompatTextView appCompatTextView = getBinding().textMessage;
-        appCompatTextView.setText(message);
+        AppCompatTextView setupMessageClickableLink$lambda$4 = getBinding().textMessage;
+        setupMessageClickableLink$lambda$4.setText(message);
         if (clickableText.length() > 0) {
-            Intrinsics.checkNotNullExpressionValue(appCompatTextView, "");
-            ViewExtKt.setSubstringClickListener(appCompatTextView, clickableText, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$$ExternalSyntheticLambda2
+            Intrinsics.checkNotNullExpressionValue(setupMessageClickableLink$lambda$4, "setupMessageClickableLink$lambda$4");
+            ViewExtKt.setSubstringClickListener(setupMessageClickableLink$lambda$4, clickableText, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$$ExternalSyntheticLambda2
                 @Override // org.fork.utils.Callbacks$Callback
                 public final void invoke() {
-                    WalletNotificationDetailsBottomSheetDialog.m1716setupMessageClickableLink$lambda4$lambda3(Function0.this);
+                    WalletNotificationDetailsBottomSheetDialog.setupMessageClickableLink$lambda$4$lambda$3(Function0.this);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupMessageClickableLink$lambda-4$lambda-3  reason: not valid java name */
-    public static final void m1716setupMessageClickableLink$lambda4$lambda3(Function0 action) {
+    public static final void setupMessageClickableLink$lambda$4$lambda$3(Function0 action) {
         Intrinsics.checkNotNullParameter(action, "$action");
         action.invoke();
     }
@@ -203,18 +201,16 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
         builder.setItems(items, new DialogInterface.OnClickListener() { // from class: com.smedialink.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                WalletNotificationDetailsBottomSheetDialog.m1717showClickableTextDialog$lambda6$lambda5(Function1.this, dialogInterface, i);
+                WalletNotificationDetailsBottomSheetDialog.showClickableTextDialog$lambda$6$lambda$5(Function1.this, dialogInterface, i);
             }
         });
-        Unit unit = Unit.INSTANCE;
         AlertDialog create = builder.create();
         Intrinsics.checkNotNullExpressionValue(create, "Builder(fragment.parentA…                .create()");
         showDialog(create);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showClickableTextDialog$lambda-6$lambda-5  reason: not valid java name */
-    public static final void m1717showClickableTextDialog$lambda6$lambda5(Function1 action, DialogInterface dialogInterface, int i) {
+    public static final void showClickableTextDialog$lambda$6$lambda$5(Function1 action, DialogInterface dialogInterface, int i) {
         Intrinsics.checkNotNullParameter(action, "$action");
         action.invoke(Integer.valueOf(i));
     }
@@ -224,19 +220,19 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
         binding.linearRoot.setBackgroundColor(Theme.getColor("dialogBackground"));
         binding.textMessage.setTextColor(Theme.getColor("chats_message"));
         binding.textDate.setTextColor(Theme.getColor("chats_date"));
-        AppCompatTextView appCompatTextView = binding.textActionCancel;
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView, "");
-        ViewExtKt.setRippleBackground$default(appCompatTextView, false, 1, null);
-        ViewExtKt.withMediumTypeface(appCompatTextView);
-        appCompatTextView.setTextColor(Theme.getColor("chats_actionBackground"));
-        AppCompatTextView appCompatTextView2 = binding.textCategory;
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView2, "");
-        ViewExtKt.withMediumTypeface(appCompatTextView2);
-        appCompatTextView2.setTextColor(Theme.getColor("chats_name"));
+        AppCompatTextView setupColors$lambda$9$lambda$7 = binding.textActionCancel;
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$9$lambda$7, "setupColors$lambda$9$lambda$7");
+        ViewExtKt.setRippleBackground$default(setupColors$lambda$9$lambda$7, false, 1, null);
+        ViewExtKt.withMediumTypeface(setupColors$lambda$9$lambda$7);
+        setupColors$lambda$9$lambda$7.setTextColor(Theme.getColor("chats_actionBackground"));
+        AppCompatTextView setupColors$lambda$9$lambda$8 = binding.textCategory;
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$9$lambda$8, "setupColors$lambda$9$lambda$8");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$9$lambda$8);
+        setupColors$lambda$9$lambda$8.setTextColor(Theme.getColor("chats_name"));
     }
 
     private final void setupTexts() {
-        getBinding().textActionCancel.setText(getResourceManager().getString(C3158R.string.common_ok));
+        getBinding().textActionCancel.setText(getResourceManager().getString(C3286R.string.common_ok));
     }
 
     private final void setupListeners() {

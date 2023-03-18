@@ -33,7 +33,7 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.databinding.ForkFragmentCatalogUserChannelsBinding;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
@@ -59,8 +59,14 @@ public final class CatalogUserChannelsFragment extends CatalogTabFragment implem
 
         static {
             int[] iArr = new int[ChatType.values().length];
-            iArr[ChatType.CHANNEL.ordinal()] = 1;
-            iArr[ChatType.GROUP.ordinal()] = 2;
+            try {
+                iArr[ChatType.CHANNEL.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[ChatType.GROUP.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -125,7 +131,7 @@ public final class CatalogUserChannelsFragment extends CatalogTabFragment implem
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.smedialink.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$$ExternalSyntheticLambda1
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                CatalogUserChannelsFragment.m1433getThemeDescriptions$lambda0(CatalogUserChannelsFragment.this);
+                CatalogUserChannelsFragment.getThemeDescriptions$lambda$0(CatalogUserChannelsFragment.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -137,8 +143,7 @@ public final class CatalogUserChannelsFragment extends CatalogTabFragment implem
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescriptions$lambda-0  reason: not valid java name */
-    public static final void m1433getThemeDescriptions$lambda0(CatalogUserChannelsFragment this$0) {
+    public static final void getThemeDescriptions$lambda$0(CatalogUserChannelsFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.setupColors();
         this$0.getUserChannelsRecycleAdapter().notifyDataSetChanged();
@@ -171,10 +176,10 @@ public final class CatalogUserChannelsFragment extends CatalogTabFragment implem
 
     private final void setupColors() {
         ForkFragmentCatalogUserChannelsBinding binding = getBinding();
-        AppCompatTextView appCompatTextView = binding.textEmptyTitle;
-        appCompatTextView.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView, "");
-        ViewExtKt.withMediumTypeface(appCompatTextView);
+        AppCompatTextView setupColors$lambda$4$lambda$3 = binding.textEmptyTitle;
+        setupColors$lambda$4$lambda$3.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$4$lambda$3, "setupColors$lambda$4$lambda$3");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$4$lambda$3);
         binding.textEmptyDescription.setTextColor(getThemedColor("windowBackgroundWhiteGrayText"));
         binding.buttonAdd.applyColors();
     }
@@ -192,17 +197,16 @@ public final class CatalogUserChannelsFragment extends CatalogTabFragment implem
         getUserChannelsRecycleAdapter().setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$$ExternalSyntheticLambda0
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                CatalogUserChannelsFragment.m1434setupListeners$lambda8$lambda7(CatalogUserChannelsFragment.this, baseQuickAdapter, view, i);
+                CatalogUserChannelsFragment.setupListeners$lambda$8$lambda$7(CatalogUserChannelsFragment.this, baseQuickAdapter, view, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-8$lambda-7  reason: not valid java name */
-    public static final void m1434setupListeners$lambda8$lambda7(CatalogUserChannelsFragment this$0, BaseQuickAdapter noName_0, View noName_1, int i) {
+    public static final void setupListeners$lambda$8$lambda$7(CatalogUserChannelsFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         this$0.getPresenter().onAddChannelClick();
     }
 
@@ -210,18 +214,18 @@ public final class CatalogUserChannelsFragment extends CatalogTabFragment implem
         ForkFragmentCatalogUserChannelsBinding binding = getBinding();
         RLottieImageView rLottieImageView = binding.imageEmpty;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3158R.C3164raw.fork_catalog_empty, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        rLottieImageView.setAnimation(C3286R.C3291raw.fork_catalog_empty, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         rLottieImageView.playAnimation();
-        int i = WhenMappings.$EnumSwitchMapping$0[getChatType().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[this.chatType.ordinal()];
         if (i == 1) {
-            binding.textEmptyTitle.setText(getResourceManager().getString(C3158R.string.catalog_user_channels_empty_title));
-            binding.textEmptyDescription.setText(getResourceManager().getString(C3158R.string.catalog_user_channels_empty_description));
-            binding.buttonAdd.setText(getResourceManager().getString(C3158R.string.catalog_user_channels_empty_create));
+            binding.textEmptyTitle.setText(getResourceManager().getString(C3286R.string.catalog_user_channels_empty_title));
+            binding.textEmptyDescription.setText(getResourceManager().getString(C3286R.string.catalog_user_channels_empty_description));
+            binding.buttonAdd.setText(getResourceManager().getString(C3286R.string.catalog_user_channels_empty_create));
         } else if (i != 2) {
         } else {
-            binding.textEmptyTitle.setText(getResourceManager().getString(C3158R.string.catalog_user_groups_empty_title));
-            binding.textEmptyDescription.setText(getResourceManager().getString(C3158R.string.catalog_user_groups_empty_description));
-            binding.buttonAdd.setText(getResourceManager().getString(C3158R.string.catalog_user_groups_empty_create));
+            binding.textEmptyTitle.setText(getResourceManager().getString(C3286R.string.catalog_user_groups_empty_title));
+            binding.textEmptyDescription.setText(getResourceManager().getString(C3286R.string.catalog_user_groups_empty_description));
+            binding.buttonAdd.setText(getResourceManager().getString(C3286R.string.catalog_user_groups_empty_create));
         }
     }
 

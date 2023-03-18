@@ -2,16 +2,14 @@ package com.smedialink.p031ui.base;
 
 import com.smedialink.navigation.wallet.coordinator.PinCodeCoordinator;
 import com.smedialink.p031ui.base.mvp.MvpFragment;
-import com.smedialink.p031ui.base.mvp.base.BaseView;
 import com.smedialink.storage.domain.manager.crypto.CryptoAccessManager;
 import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
 import com.smedialink.storage.domain.utils.p030rx.RxEventBus;
-import com.smedialink.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.smedialink.storage.domain.utils.p030rx.event.RxEvent;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt;
@@ -23,7 +21,6 @@ import org.fork.utils.Callbacks$Callback;
 import org.koin.p047mp.KoinPlatformTools;
 import org.telegram.p048ui.ActionBar.BaseFragment;
 import org.telegram.p048ui.ActionBar.INavigationLayout;
-import timber.log.Timber;
 /* compiled from: WalletAuthFragment.kt */
 /* renamed from: com.smedialink.ui.base.WalletAuthFragment */
 /* loaded from: classes3.dex */
@@ -80,7 +77,7 @@ public abstract class WalletAuthFragment extends MvpFragment {
             postViewActionDelayed(300L, new Callbacks$Callback() { // from class: com.smedialink.ui.base.WalletAuthFragment$$ExternalSyntheticLambda0
                 @Override // org.fork.utils.Callbacks$Callback
                 public final void invoke() {
-                    WalletAuthFragment.m1406closeAllWalletFragments$lambda0(WalletAuthFragment.this, endAction);
+                    WalletAuthFragment.closeAllWalletFragments$lambda$0(WalletAuthFragment.this, endAction);
                 }
             });
         } else {
@@ -89,8 +86,7 @@ public abstract class WalletAuthFragment extends MvpFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: closeAllWalletFragments$lambda-0  reason: not valid java name */
-    public static final void m1406closeAllWalletFragments$lambda0(WalletAuthFragment this$0, Function0 endAction) {
+    public static final void closeAllWalletFragments$lambda$0(WalletAuthFragment this$0, Function0 endAction) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(endAction, "$endAction");
         this$0.finishFragment();
@@ -112,34 +108,7 @@ public abstract class WalletAuthFragment extends MvpFragment {
         RxEventBus rxEventBus = getRxEventBus();
         Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.base.WalletAuthFragment$listenGlobalRxEvents$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                RxEvent rxEvent = (RxEvent) it;
-                if (rxEvent instanceof DomainRxEvents.ForceWalletLogout) {
-                    WalletAuthFragment walletAuthFragment = WalletAuthFragment.this;
-                    walletAuthFragment.closeAllWalletFragments(new WalletAuthFragment$listenGlobalRxEvents$1$1(walletAuthFragment));
-                } else if (rxEvent instanceof DomainRxEvents.AppUpdateRequired) {
-                    WalletAuthFragment walletAuthFragment2 = WalletAuthFragment.this;
-                    walletAuthFragment2.closeAllWalletFragments(new WalletAuthFragment$listenGlobalRxEvents$1$2(walletAuthFragment2));
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.base.WalletAuthFragment$listenGlobalRxEvents$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1859x905d501f(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1860x905d5020(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         autoDispose(subscribe);
     }

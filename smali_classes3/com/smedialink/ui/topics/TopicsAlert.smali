@@ -6,15 +6,15 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/ui/topics/TopicsAlert$RootView;,
+        Lcom/smedialink/ui/topics/TopicsAlert$Companion;,
         Lcom/smedialink/ui/topics/TopicsAlert$ListAdapter;,
-        Lcom/smedialink/ui/topics/TopicsAlert$TopicsAlertDelegate;,
-        Lcom/smedialink/ui/topics/TopicsAlert$Companion;
+        Lcom/smedialink/ui/topics/TopicsAlert$RootView;,
+        Lcom/smedialink/ui/topics/TopicsAlert$TopicsAlertDelegate;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTopicsAlert.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TopicsAlert.kt\ncom/smedialink/ui/topics/TopicsAlert\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,402:1\n296#2,2:403\n1849#3,2:405\n*S KotlinDebug\n*F\n+ 1 TopicsAlert.kt\ncom/smedialink/ui/topics/TopicsAlert\n*L\n95#1:403,2\n179#1:405,2\n*E\n"
+    value = "SMAP\nTopicsAlert.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TopicsAlert.kt\ncom/smedialink/ui/topics/TopicsAlert\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,402:1\n304#2,2:403\n1855#3,2:405\n*S KotlinDebug\n*F\n+ 1 TopicsAlert.kt\ncom/smedialink/ui/topics/TopicsAlert\n*L\n95#1:403,2\n179#1:405,2\n*E\n"
 .end annotation
 
 
@@ -63,34 +63,34 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$JfH_p1uJQxoO5VNxCsj3Rw5ZTYQ(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$Bm9ixwrLrFQnuU3P2TjTuY531Po(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/topics/TopicsAlert;->initBottomButton$lambda-7$lambda-5(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/topics/TopicsAlert;->initBottomButton$lambda$7$lambda$6(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Lr9rHrhXb79lvKtyQEb5nAYRim0(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$LTU-76lRY-DWZrKgxdLqI6-ehx8(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/topics/TopicsAlert;->setupListeners$lambda-10$lambda-9(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;I)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/topics/TopicsAlert;->initBottomButton$lambda$7$lambda$5(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$qPuetZyD0Cgxf_-jdmz5X32YsM4(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$ezpGwd5RG_dlkFSbs_qANx7H_Hc(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/topics/TopicsAlert;->initBottomButton$lambda-7$lambda-6(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/topics/TopicsAlert;->setupListeners$lambda$10$lambda$9(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ubGx-5MWCE1O4zMHDjtbCpPt_v8(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$imWyOlT_Y0Q93q4VreEFx6mqgmk(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/topics/TopicsAlert;->initBottomButton$lambda-7$lambda-4(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/topics/TopicsAlert;->initBottomButton$lambda$7$lambda$4(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
 
     return-void
 .end method
@@ -260,13 +260,8 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
-
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getTopicId()J
 
     move-result-wide p1
@@ -274,6 +269,11 @@
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
 
     :goto_0
     iput-object p1, p0, Lcom/smedialink/ui/topics/TopicsAlert;->selectedTopicId:Ljava/lang/Long;
@@ -397,9 +397,6 @@
     move-result-object p3
 
     invoke-virtual {p1, p2, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 82
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 73
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
@@ -840,9 +837,9 @@
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 155
-    new-instance p1, Lcom/smedialink/ui/topics/TopicsAlert$$ExternalSyntheticLambda0;
+    new-instance p1, Lcom/smedialink/ui/topics/TopicsAlert$$ExternalSyntheticLambda1;
 
-    invoke-direct {p1, p0}, Lcom/smedialink/ui/topics/TopicsAlert$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/topics/TopicsAlert;)V
+    invoke-direct {p1, p0}, Lcom/smedialink/ui/topics/TopicsAlert$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/topics/TopicsAlert;)V
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -868,9 +865,9 @@
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 160
-    new-instance p1, Lcom/smedialink/ui/topics/TopicsAlert$$ExternalSyntheticLambda1;
+    new-instance p1, Lcom/smedialink/ui/topics/TopicsAlert$$ExternalSyntheticLambda0;
 
-    invoke-direct {p1, p0}, Lcom/smedialink/ui/topics/TopicsAlert$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/topics/TopicsAlert;)V
+    invoke-direct {p1, p0}, Lcom/smedialink/ui/topics/TopicsAlert$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/topics/TopicsAlert;)V
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -878,7 +875,7 @@
     return-object v0
 .end method
 
-.method private static final initBottomButton$lambda-7$lambda-4(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
+.method private static final initBottomButton$lambda$7$lambda$4(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
     .locals 4
 
     const-string p1, "this$0"
@@ -889,15 +886,11 @@
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     .line 148
-    invoke-virtual {p0}, Lcom/smedialink/ui/topics/TopicsAlert;->getParentFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    move-result-object p1
+    iget-object p1, p0, Lcom/smedialink/ui/topics/TopicsAlert;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     new-instance v0, Lorg/telegram/ui/FilterCreateActivity;
 
-    invoke-virtual {p0}, Lcom/smedialink/ui/topics/TopicsAlert;->getDialogIds()Ljava/util/List;
-
-    move-result-object v1
+    iget-object v1, p0, Lcom/smedialink/ui/topics/TopicsAlert;->dialogIds:Ljava/util/List;
 
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
@@ -912,22 +905,17 @@
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     .line 149
-    invoke-virtual {p0}, Lcom/smedialink/ui/topics/TopicsAlert;->getTopicsAlertDelegate()Lcom/smedialink/ui/topics/TopicsAlert$TopicsAlertDelegate;
+    iget-object p0, p0, Lcom/smedialink/ui/topics/TopicsAlert;->topicsAlertDelegate:Lcom/smedialink/ui/topics/TopicsAlert$TopicsAlertDelegate;
 
-    move-result-object p0
+    if-eqz p0, :cond_0
 
-    if-nez p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
     invoke-interface {p0}, Lcom/smedialink/ui/topics/TopicsAlert$TopicsAlertDelegate;->onTopicSelected()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
-.method private static final initBottomButton$lambda-7$lambda-5(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
+.method private static final initBottomButton$lambda$7$lambda$5(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -940,7 +928,7 @@
     return-void
 .end method
 
-.method private static final initBottomButton$lambda-7$lambda-6(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
+.method private static final initBottomButton$lambda$7$lambda$6(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
     .locals 2
 
     const-string p1, "this$0"
@@ -959,9 +947,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lcom/smedialink/ui/topics/TopicsAlert;->getDialogIds()Ljava/util/List;
-
-    move-result-object p0
+    iget-object p0, p0, Lcom/smedialink/ui/topics/TopicsAlert;->dialogIds:Ljava/util/List;
 
     const/4 v0, 0x0
 
@@ -1154,7 +1140,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 296
+    .line 304
     :goto_0
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
@@ -1194,15 +1180,12 @@
     :cond_0
     iget-object v0, p0, Lcom/smedialink/ui/topics/TopicsAlert;->shadowAnimation:Landroid/animation/AnimatorSet;
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    goto :goto_0
-
-    :cond_1
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
     .line 225
-    :goto_0
+    :cond_1
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
@@ -1224,12 +1207,12 @@
 
     const/high16 v5, 0x3f800000    # 1.0f
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_2
     const/4 v5, 0x0
 
-    :goto_1
+    :goto_0
     const/4 v6, 0x0
 
     aput v5, v1, v6
@@ -1256,9 +1239,6 @@
 
     .line 244
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
-
-    .line 245
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 225
     iput-object v0, p0, Lcom/smedialink/ui/topics/TopicsAlert;->shadowAnimation:Landroid/animation/AnimatorSet;
@@ -1329,7 +1309,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-10$lambda-9(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$10$lambda$9(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;I)V
     .locals 5
 
     const-string p1, "this$0"
@@ -1371,11 +1351,9 @@
     .line 179
     :cond_1
     :goto_0
-    invoke-virtual {p0}, Lcom/smedialink/ui/topics/TopicsAlert;->getDialogIds()Ljava/util/List;
+    iget-object p1, p0, Lcom/smedialink/ui/topics/TopicsAlert;->dialogIds:Ljava/util/List;
 
-    move-result-object p1
-
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -1386,7 +1364,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1420,9 +1398,7 @@
     invoke-virtual {v2, v3, v0, v1}, Lorg/fork/controller/ForkTopicsController;->addTopicDialog(Lcom/smedialink/storage/domain/model/topics/TopicModel;J)V
 
     .line 181
-    invoke-virtual {p0}, Lcom/smedialink/ui/topics/TopicsAlert;->getDialogIds()Ljava/util/List;
-
-    move-result-object v2
+    iget-object v2, p0, Lcom/smedialink/ui/topics/TopicsAlert;->dialogIds:Ljava/util/List;
 
     invoke-static {v2}, Lkotlin/collections/CollectionsKt;->last(Ljava/util/List;)Ljava/lang/Object;
 
@@ -1442,20 +1418,15 @@
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     .line 183
-    invoke-virtual {p0}, Lcom/smedialink/ui/topics/TopicsAlert;->getTopicsAlertDelegate()Lcom/smedialink/ui/topics/TopicsAlert$TopicsAlertDelegate;
+    iget-object v0, p0, Lcom/smedialink/ui/topics/TopicsAlert;->topicsAlertDelegate:Lcom/smedialink/ui/topics/TopicsAlert$TopicsAlertDelegate;
 
-    move-result-object v0
+    if-eqz v0, :cond_2
 
-    if-nez v0, :cond_3
-
-    goto :goto_1
-
-    :cond_3
     invoke-interface {v0}, Lcom/smedialink/ui/topics/TopicsAlert$TopicsAlertDelegate;->onTopicSelected()V
 
     goto :goto_1
 
-    :cond_4
+    :cond_3
     return-void
 .end method
 
@@ -1561,37 +1532,11 @@
     return v0
 .end method
 
-.method public final getDialogIds()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "Ljava/lang/Long;",
-            ">;"
-        }
-    .end annotation
-
-    .line 48
-    iget-object v0, p0, Lcom/smedialink/ui/topics/TopicsAlert;->dialogIds:Ljava/util/List;
-
-    return-object v0
-.end method
-
 .method public final getParentFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
     .locals 1
 
     .line 47
     iget-object v0, p0, Lcom/smedialink/ui/topics/TopicsAlert;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    return-object v0
-.end method
-
-.method public final getTopicsAlertDelegate()Lcom/smedialink/ui/topics/TopicsAlert$TopicsAlertDelegate;
-    .locals 1
-
-    .line 50
-    iget-object v0, p0, Lcom/smedialink/ui/topics/TopicsAlert;->topicsAlertDelegate:Lcom/smedialink/ui/topics/TopicsAlert$TopicsAlertDelegate;
 
     return-object v0
 .end method

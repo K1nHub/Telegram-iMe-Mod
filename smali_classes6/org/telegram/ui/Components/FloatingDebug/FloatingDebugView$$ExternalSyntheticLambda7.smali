@@ -2,40 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda7;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda7;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda7;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda7;->INSTANCE:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda7;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 0
+.method public final onItemClick(Landroid/view/View;I)V
+    .locals 1
 
-    invoke-static {}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->$r8$lambda$ytsN5ArF8Cr9AVoudggbwxSK_3U()V
+    iget-object v0, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
+
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->$r8$lambda$NCwsqPriol4dX18rzcph5TYS0J8(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;Landroid/view/View;I)V
 
     return-void
 .end method

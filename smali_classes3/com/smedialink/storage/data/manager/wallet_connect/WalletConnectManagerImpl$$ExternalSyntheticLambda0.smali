@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
-    invoke-static {v0}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->$r8$lambda$nSxU2xO8ubuioYmIq3wCgNCEQQ4(Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V
+    invoke-static {v0}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->$r8$lambda$N7YeM6ldGCqLS9VaXKoCGcxfw8k(Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V
 
     return-void
 .end method

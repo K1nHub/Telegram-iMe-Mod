@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/domain/contacts/ContactSelectAction$OpenActionMode;,
-        Lcom/smedialink/domain/contacts/ContactSelectAction$CloseActionMode;,
+        Lcom/smedialink/domain/contacts/ContactSelectAction$ChangeSelectedQty;,
         Lcom/smedialink/domain/contacts/ContactSelectAction$ClearSelectedContacts;,
-        Lcom/smedialink/domain/contacts/ContactSelectAction$ChangeSelectedQty;
+        Lcom/smedialink/domain/contacts/ContactSelectAction$CloseActionMode;,
+        Lcom/smedialink/domain/contacts/ContactSelectAction$OpenActionMode;
     }
 .end annotation
 

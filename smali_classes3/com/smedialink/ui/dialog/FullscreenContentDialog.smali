@@ -20,10 +20,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$T5fN3qNqiXhgGPcUap92SWNWM0A(Lcom/smedialink/ui/dialog/FullscreenContentDialog;Landroid/content/DialogInterface;)V
+.method public static synthetic $r8$lambda$85t4RhmYlHeZ2p_4beZX9xsImvQ(Lcom/smedialink/ui/dialog/FullscreenContentDialog;Landroid/content/DialogInterface;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/dialog/FullscreenContentDialog;->_init_$lambda-3(Lcom/smedialink/ui/dialog/FullscreenContentDialog;Landroid/content/DialogInterface;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/dialog/FullscreenContentDialog;->_init_$lambda$3(Lcom/smedialink/ui/dialog/FullscreenContentDialog;Landroid/content/DialogInterface;)V
 
     return-void
 .end method
@@ -127,7 +127,7 @@
 
     if-eq p4, p2, :cond_1
 
-    const-string p2, ""
+    const-string p2, "lambda$2$lambda$0"
 
     .line 45
     invoke-static {v0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -191,7 +191,7 @@
     return-void
 .end method
 
-.method private static final _init_$lambda-3(Lcom/smedialink/ui/dialog/FullscreenContentDialog;Landroid/content/DialogInterface;)V
+.method private static final _init_$lambda$3(Lcom/smedialink/ui/dialog/FullscreenContentDialog;Landroid/content/DialogInterface;)V
     .locals 0
 
     const-string p1, "this$0"

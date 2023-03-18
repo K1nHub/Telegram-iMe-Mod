@@ -19,6 +19,6 @@ public final class DbErrorHandler implements ErrorHandler<Throwable> {
     @Override // com.smedialink.storage.data.network.handlers.ErrorHandler
     public ErrorModel handleError(Throwable th) {
         Timber.tag("ErrorHandler").mo0e(th);
-        return new ErrorModel(th == null ? null : th.getMessage(), th instanceof EmptyResultSetException ? ErrorStatus.EMPTY : ErrorStatus.UNKNOWN, th);
+        return new ErrorModel(th != null ? th.getMessage() : null, th instanceof EmptyResultSetException ? ErrorStatus.EMPTY : ErrorStatus.UNKNOWN, th);
     }
 }

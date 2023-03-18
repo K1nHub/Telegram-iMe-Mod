@@ -35,7 +35,7 @@
 .method public final invoke()V
     .locals 0
 
-    invoke-static {}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$wV0PRhgGb95FL9cOTkfp1XlC3tY()V
+    invoke-static {}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$UrAH4qWpLNMHwWnvUOzp__YYJwE()V
 
     return-void
 .end method

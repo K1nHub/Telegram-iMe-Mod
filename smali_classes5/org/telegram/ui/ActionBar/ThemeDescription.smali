@@ -555,7 +555,7 @@
 
     const/4 v1, 0x0
 
-    .line 550
+    .line 547
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->listClasses:[Ljava/lang/Class;
 
@@ -563,7 +563,7 @@
 
     if-ge v1, v3, :cond_49
 
-    .line 551
+    .line 548
     aget-object v2, v2, v1
 
     invoke-virtual {v2, p1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
@@ -572,10 +572,10 @@
 
     if-eqz v2, :cond_48
 
-    .line 552
+    .line 549
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 554
+    .line 551
     iget v2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKTAG:I
@@ -605,12 +605,12 @@
 
     goto/16 :goto_7
 
-    .line 556
+    .line 553
     :cond_1
     :goto_1
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 557
+    .line 554
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->listClassesFieldName:[Ljava/lang/String;
 
     if-nez v2, :cond_7
@@ -623,14 +623,14 @@
 
     if-eqz v2, :cond_7
 
-    .line 558
+    .line 555
     invoke-virtual {p1}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     if-eqz v2, :cond_f
 
-    .line 560
+    .line 557
     iget v6, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v7, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CELLBACKGROUNDCOLOR:I
@@ -639,37 +639,37 @@
 
     if-eqz v7, :cond_2
 
-    .line 561
+    .line 558
     instance-of v6, v2, Lorg/telegram/ui/Components/CombinedDrawable;
 
     if-eqz v6, :cond_f
 
-    .line 562
+    .line 559
     check-cast v2, Lorg/telegram/ui/Components/CombinedDrawable;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/CombinedDrawable;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    .line 563
+    .line 560
     instance-of v6, v2, Landroid/graphics/drawable/ColorDrawable;
 
     if-eqz v6, :cond_f
 
-    .line 564
+    .line 561
     check-cast v2, Landroid/graphics/drawable/ColorDrawable;
 
     invoke-virtual {v2, p2}, Landroid/graphics/drawable/ColorDrawable;->setColor(I)V
 
     goto/16 :goto_6
 
-    .line 568
+    .line 565
     :cond_2
     instance-of v7, v2, Lorg/telegram/ui/Components/CombinedDrawable;
 
     if-eqz v7, :cond_3
 
-    .line 569
+    .line 566
     check-cast v2, Lorg/telegram/ui/Components/CombinedDrawable;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/CombinedDrawable;->getIcon()Landroid/graphics/drawable/Drawable;
@@ -678,7 +678,7 @@
 
     goto :goto_3
 
-    .line 570
+    .line 567
     :cond_3
     instance-of v7, v2, Landroid/graphics/drawable/StateListDrawable;
 
@@ -692,7 +692,7 @@
 
     if-eqz v7, :cond_6
 
-    .line 571
+    .line 568
     :cond_4
     sget v7, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_DRAWABLESELECTEDSTATE:I
 
@@ -710,7 +710,7 @@
     :goto_2
     invoke-static {v2, p2, v6}, Lorg/telegram/ui/ActionBar/Theme;->setSelectorDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
-    .line 573
+    .line 570
     :cond_6
     :goto_3
     new-instance v6, Landroid/graphics/PorterDuffColorFilter;
@@ -723,7 +723,7 @@
 
     goto :goto_6
 
-    .line 576
+    .line 573
     :cond_7
     iget v2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
@@ -733,12 +733,12 @@
 
     if-eqz v6, :cond_8
 
-    .line 577
+    .line 574
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
     goto :goto_6
 
-    .line 578
+    .line 575
     :cond_8
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
@@ -746,12 +746,12 @@
 
     if-eqz v6, :cond_c
 
-    .line 579
+    .line 576
     instance-of v2, p1, Landroid/widget/TextView;
 
     if-eqz v2, :cond_9
 
-    .line 580
+    .line 577
     move-object v2, p1
 
     check-cast v2, Landroid/widget/TextView;
@@ -760,7 +760,7 @@
 
     goto :goto_6
 
-    .line 581
+    .line 578
     :cond_9
     instance-of v2, p1, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;
 
@@ -771,7 +771,7 @@
     :goto_4
     if-ge v2, v4, :cond_f
 
-    .line 583
+    .line 580
     move-object v6, p1
 
     check-cast v6, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;
@@ -792,7 +792,7 @@
     :goto_5
     if-eqz v6, :cond_b
 
-    .line 585
+    .line 582
     invoke-virtual {v6, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_b
@@ -800,7 +800,7 @@
 
     goto :goto_4
 
-    .line 589
+    .line 586
     :cond_c
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_SERVICEBACKGROUND:I
 
@@ -810,7 +810,7 @@
 
     goto :goto_6
 
-    .line 591
+    .line 588
     :cond_d
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_SELECTOR:I
 
@@ -818,7 +818,7 @@
 
     if-eqz v6, :cond_e
 
-    .line 592
+    .line 589
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
@@ -827,7 +827,7 @@
 
     goto :goto_6
 
-    .line 593
+    .line 590
     :cond_e
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_SELECTORWHITE:I
 
@@ -835,7 +835,7 @@
 
     if-eqz v2, :cond_f
 
-    .line 594
+    .line 591
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
@@ -846,13 +846,13 @@
     :goto_6
     const/4 v2, 0x1
 
-    .line 599
+    .line 596
     :goto_7
     iget-object v6, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->listClassesFieldName:[Ljava/lang/String;
 
     if-eqz v6, :cond_47
 
-    .line 600
+    .line 597
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -877,7 +877,7 @@
 
     move-result-object v6
 
-    .line 601
+    .line 598
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->notFoundCachedFields:Ljava/util/HashMap;
 
     if-eqz v7, :cond_10
@@ -890,7 +890,7 @@
 
     goto/16 :goto_12
 
-    .line 605
+    .line 602
     :cond_10
     :try_start_0
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->cachedFields:Ljava/util/HashMap;
@@ -903,7 +903,7 @@
 
     if-nez v7, :cond_11
 
-    .line 607
+    .line 604
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->listClasses:[Ljava/lang/Class;
 
     aget-object v7, v7, v1
@@ -918,10 +918,10 @@
 
     if-eqz v7, :cond_11
 
-    .line 609
+    .line 606
     invoke-virtual {v7, v5}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 610
+    .line 607
     iget-object v8, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->cachedFields:Ljava/util/HashMap;
 
     invoke-virtual {v8, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -929,7 +929,7 @@
     :cond_11
     if-eqz v7, :cond_48
 
-    .line 614
+    .line 611
     invoke-virtual {v7, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v8
@@ -938,7 +938,7 @@
 
     if-nez v2, :cond_12
 
-    .line 616
+    .line 613
     instance-of v2, v8, Landroid/view/View;
 
     if-eqz v2, :cond_12
@@ -957,20 +957,20 @@
 
     goto/16 :goto_12
 
-    .line 619
+    .line 616
     :cond_12
     instance-of v2, v8, Landroid/view/View;
 
     if-eqz v2, :cond_13
 
-    .line 620
+    .line 617
     move-object v2, v8
 
     check-cast v2, Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->invalidate()V
 
-    .line 622
+    .line 619
     :cond_13
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->lottieLayerName:Ljava/lang/String;
 
@@ -980,7 +980,7 @@
 
     if-eqz v2, :cond_14
 
-    .line 623
+    .line 620
     move-object v2, v8
 
     check-cast v2, Lorg/telegram/ui/Components/RLottieImageView;
@@ -1003,7 +1003,7 @@
 
     invoke-virtual {v2, v9, p2}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 625
+    .line 622
     :cond_14
     iget v2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
@@ -1017,27 +1017,27 @@
 
     if-eqz v2, :cond_15
 
-    .line 626
+    .line 623
     check-cast v8, Landroid/view/View;
 
     invoke-virtual {v8}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v8
 
-    .line 629
+    .line 626
     :cond_15
     instance-of v2, v8, Lorg/telegram/ui/Components/AnimatedTextView;
 
     if-eqz v2, :cond_16
 
-    .line 630
+    .line 627
     check-cast v8, Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v8, p2}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
     goto/16 :goto_12
 
-    .line 632
+    .line 629
     :cond_16
     iget v2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
@@ -1051,27 +1051,27 @@
 
     if-eqz v9, :cond_18
 
-    .line 633
+    .line 630
     check-cast v8, Landroid/view/View;
 
-    .line 634
+    .line 631
     invoke-virtual {v8}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    .line 635
+    .line 632
     instance-of v3, v2, Lorg/telegram/ui/Components/MessageBackgroundDrawable;
 
     if-eqz v3, :cond_17
 
-    .line 636
+    .line 633
     move-object v3, v2
 
     check-cast v3, Lorg/telegram/ui/Components/MessageBackgroundDrawable;
 
     invoke-virtual {v3, p2}, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->setColor(I)V
 
-    .line 637
+    .line 634
     check-cast v2, Lorg/telegram/ui/Components/MessageBackgroundDrawable;
 
     const/4 v3, 0x0
@@ -1080,40 +1080,40 @@
 
     goto/16 :goto_12
 
-    .line 639
+    .line 636
     :cond_17
     invoke-virtual {v8, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
     goto/16 :goto_12
 
-    .line 641
+    .line 638
     :cond_18
     instance-of v9, v8, Lorg/telegram/ui/Components/EditTextCaption;
 
     if-eqz v9, :cond_1b
 
-    .line 642
+    .line 639
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_HINTTEXTCOLOR:I
 
     and-int/2addr v3, v2
 
     if-eqz v3, :cond_19
 
-    .line 643
+    .line 640
     move-object v2, v8
 
     check-cast v2, Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v2, p2}, Lorg/telegram/ui/Components/EditTextCaption;->setHintColor(I)V
 
-    .line 644
+    .line 641
     check-cast v8, Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v8, p2}, Landroid/widget/EditText;->setHintTextColor(I)V
 
     goto/16 :goto_12
 
-    .line 645
+    .line 642
     :cond_19
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CURSORCOLOR:I
 
@@ -1121,14 +1121,14 @@
 
     if-eqz v2, :cond_1a
 
-    .line 646
+    .line 643
     check-cast v8, Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v8, p2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
     goto/16 :goto_12
 
-    .line 648
+    .line 645
     :cond_1a
     check-cast v8, Lorg/telegram/ui/Components/EditTextCaption;
 
@@ -1136,27 +1136,27 @@
 
     goto/16 :goto_12
 
-    .line 650
+    .line 647
     :cond_1b
     instance-of v9, v8, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     if-eqz v9, :cond_1d
 
-    .line 651
+    .line 648
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_LINKCOLOR:I
 
     and-int/2addr v2, v3
 
     if-eqz v2, :cond_1c
 
-    .line 652
+    .line 649
     check-cast v8, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v8, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setLinkTextColor(I)V
 
     goto/16 :goto_12
 
-    .line 654
+    .line 651
     :cond_1c
     check-cast v8, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -1164,23 +1164,23 @@
 
     goto/16 :goto_12
 
-    .line 656
+    .line 653
     :cond_1d
     instance-of v9, v8, Landroid/widget/TextView;
 
     if-eqz v9, :cond_22
 
-    .line 657
+    .line 654
     check-cast v8, Landroid/widget/TextView;
 
-    .line 658
+    .line 655
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_IMAGECOLOR:I
 
     and-int/2addr v3, v2
 
     if-eqz v3, :cond_1f
 
-    .line 659
+    .line 656
     invoke-virtual {v8}, Landroid/widget/TextView;->getCompoundDrawables()[Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
@@ -1189,18 +1189,18 @@
 
     const/4 v3, 0x0
 
-    .line 661
+    .line 658
     :goto_8
     array-length v4, v2
 
     if-ge v3, v4, :cond_48
 
-    .line 662
+    .line 659
     aget-object v4, v2, v3
 
     if-eqz v4, :cond_1e
 
-    .line 663
+    .line 660
     aget-object v4, v2, v3
 
     new-instance v5, Landroid/graphics/PorterDuffColorFilter;
@@ -1216,7 +1216,7 @@
 
     goto :goto_8
 
-    .line 667
+    .line 664
     :cond_1f
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_LINKCOLOR:I
 
@@ -1224,19 +1224,19 @@
 
     if-eqz v3, :cond_20
 
-    .line 668
+    .line 665
     invoke-virtual {v8}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
 
     move-result-object v2
 
     iput p2, v2, Landroid/text/TextPaint;->linkColor:I
 
-    .line 669
+    .line 666
     invoke-virtual {v8}, Landroid/widget/TextView;->invalidate()V
 
     goto/16 :goto_12
 
-    .line 670
+    .line 667
     :cond_20
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_FASTSCROLL:I
 
@@ -1244,17 +1244,17 @@
 
     if-eqz v2, :cond_21
 
-    .line 671
+    .line 668
     invoke-virtual {v8}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    .line 672
+    .line 669
     instance-of v3, v2, Landroid/text/SpannedString;
 
     if-eqz v3, :cond_48
 
-    .line 673
+    .line 670
     move-object v3, v2
 
     check-cast v3, Landroid/text/SpannedString;
@@ -1273,20 +1273,20 @@
 
     if-eqz v2, :cond_48
 
-    .line 674
+    .line 671
     array-length v3, v2
 
     if-lez v3, :cond_48
 
     const/4 v3, 0x0
 
-    .line 675
+    .line 672
     :goto_9
     array-length v4, v2
 
     if-ge v3, v4, :cond_48
 
-    .line 676
+    .line 673
     aget-object v4, v2, v3
 
     invoke-virtual {v4, p2}, Lorg/telegram/ui/Components/TypefaceSpan;->setColor(I)V
@@ -1295,32 +1295,32 @@
 
     goto :goto_9
 
-    .line 681
+    .line 678
     :cond_21
     invoke-virtual {v8, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
     goto/16 :goto_12
 
-    .line 683
+    .line 680
     :cond_22
     instance-of v9, v8, Landroid/widget/ImageView;
 
     if-eqz v9, :cond_25
 
-    .line 684
+    .line 681
     check-cast v8, Landroid/widget/ImageView;
 
-    .line 685
+    .line 682
     invoke-virtual {v8}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    .line 686
+    .line 683
     instance-of v3, v2, Lorg/telegram/ui/Components/CombinedDrawable;
 
     if-eqz v3, :cond_24
 
-    .line 687
+    .line 684
     iget v3, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
@@ -1329,7 +1329,7 @@
 
     if-eqz v3, :cond_23
 
-    .line 688
+    .line 685
     check-cast v2, Lorg/telegram/ui/Components/CombinedDrawable;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/CombinedDrawable;->getBackground()Landroid/graphics/drawable/Drawable;
@@ -1346,7 +1346,7 @@
 
     goto/16 :goto_12
 
-    .line 690
+    .line 687
     :cond_23
     check-cast v2, Lorg/telegram/ui/Components/CombinedDrawable;
 
@@ -1364,7 +1364,7 @@
 
     goto/16 :goto_12
 
-    .line 693
+    .line 690
     :cond_24
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
@@ -1376,13 +1376,13 @@
 
     goto/16 :goto_12
 
-    .line 695
+    .line 692
     :cond_25
     instance-of v9, v8, Lorg/telegram/ui/Components/BackupImageView;
 
     if-eqz v9, :cond_28
 
-    .line 696
+    .line 693
     check-cast v8, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v8}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -1393,12 +1393,12 @@
 
     move-result-object v2
 
-    .line 697
+    .line 694
     instance-of v3, v2, Lorg/telegram/ui/Components/CombinedDrawable;
 
     if-eqz v3, :cond_27
 
-    .line 698
+    .line 695
     iget v3, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
@@ -1407,7 +1407,7 @@
 
     if-eqz v3, :cond_26
 
-    .line 699
+    .line 696
     check-cast v2, Lorg/telegram/ui/Components/CombinedDrawable;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/CombinedDrawable;->getBackground()Landroid/graphics/drawable/Drawable;
@@ -1424,7 +1424,7 @@
 
     goto/16 :goto_12
 
-    .line 701
+    .line 698
     :cond_26
     check-cast v2, Lorg/telegram/ui/Components/CombinedDrawable;
 
@@ -1445,7 +1445,7 @@
     :cond_27
     if-eqz v2, :cond_48
 
-    .line 704
+    .line 701
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v4, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
@@ -1456,18 +1456,18 @@
 
     goto/16 :goto_12
 
-    .line 706
+    .line 703
     :cond_28
     instance-of v9, v8, Landroid/graphics/drawable/Drawable;
 
     if-eqz v9, :cond_32
 
-    .line 708
+    .line 705
     instance-of v4, v8, Landroid/graphics/drawable/ShapeDrawable;
 
     if-eqz v4, :cond_29
 
-    .line 709
+    .line 706
     check-cast v8, Landroid/graphics/drawable/ShapeDrawable;
 
     invoke-virtual {v8}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
@@ -1478,27 +1478,27 @@
 
     goto/16 :goto_12
 
-    .line 711
+    .line 708
     :cond_29
     instance-of v4, v8, Lorg/telegram/ui/Components/LetterDrawable;
 
     if-eqz v4, :cond_2b
 
-    .line 712
+    .line 709
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
     and-int/2addr v2, v3
 
     if-eqz v2, :cond_2a
 
-    .line 713
+    .line 710
     check-cast v8, Lorg/telegram/ui/Components/LetterDrawable;
 
     invoke-virtual {v8, p2}, Lorg/telegram/ui/Components/LetterDrawable;->setBackgroundColor(I)V
 
     goto/16 :goto_12
 
-    .line 715
+    .line 712
     :cond_2a
     check-cast v8, Lorg/telegram/ui/Components/LetterDrawable;
 
@@ -1506,20 +1506,20 @@
 
     goto/16 :goto_12
 
-    .line 717
+    .line 714
     :cond_2b
     instance-of v4, v8, Lorg/telegram/ui/Components/CombinedDrawable;
 
     if-eqz v4, :cond_2d
 
-    .line 718
+    .line 715
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
     and-int/2addr v2, v3
 
     if-eqz v2, :cond_2c
 
-    .line 719
+    .line 716
     check-cast v8, Lorg/telegram/ui/Components/CombinedDrawable;
 
     invoke-virtual {v8}, Lorg/telegram/ui/Components/CombinedDrawable;->getBackground()Landroid/graphics/drawable/Drawable;
@@ -1536,7 +1536,7 @@
 
     goto/16 :goto_12
 
-    .line 721
+    .line 718
     :cond_2c
     check-cast v8, Lorg/telegram/ui/Components/CombinedDrawable;
 
@@ -1554,7 +1554,7 @@
 
     goto/16 :goto_12
 
-    .line 723
+    .line 720
     :cond_2d
     instance-of v4, v8, Landroid/graphics/drawable/StateListDrawable;
 
@@ -1570,20 +1570,20 @@
 
     goto :goto_a
 
-    .line 725
+    .line 722
     :cond_2e
     instance-of v2, v8, Landroid/graphics/drawable/GradientDrawable;
 
     if-eqz v2, :cond_2f
 
-    .line 726
+    .line 723
     check-cast v8, Landroid/graphics/drawable/GradientDrawable;
 
     invoke-virtual {v8, p2}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
 
     goto/16 :goto_12
 
-    .line 728
+    .line 725
     :cond_2f
     check-cast v8, Landroid/graphics/drawable/Drawable;
 
@@ -1597,7 +1597,7 @@
 
     goto/16 :goto_12
 
-    .line 724
+    .line 721
     :cond_30
     :goto_a
     check-cast v8, Landroid/graphics/drawable/Drawable;
@@ -1618,27 +1618,27 @@
 
     goto/16 :goto_12
 
-    .line 730
+    .line 727
     :cond_32
     instance-of v3, v8, Lorg/telegram/ui/Components/CheckBox;
 
     if-eqz v3, :cond_34
 
-    .line 731
+    .line 728
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKBOX:I
 
     and-int/2addr v3, v2
 
     if-eqz v3, :cond_33
 
-    .line 732
+    .line 729
     check-cast v8, Lorg/telegram/ui/Components/CheckBox;
 
     invoke-virtual {v8, p2}, Lorg/telegram/ui/Components/CheckBox;->setBackgroundColor(I)V
 
     goto/16 :goto_12
 
-    .line 733
+    .line 730
     :cond_33
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKBOXCHECK:I
 
@@ -1646,33 +1646,33 @@
 
     if-eqz v2, :cond_48
 
-    .line 734
+    .line 731
     check-cast v8, Lorg/telegram/ui/Components/CheckBox;
 
     invoke-virtual {v8, p2}, Lorg/telegram/ui/Components/CheckBox;->setCheckColor(I)V
 
     goto/16 :goto_12
 
-    .line 736
+    .line 733
     :cond_34
     instance-of v3, v8, Lorg/telegram/ui/Components/GroupCreateCheckBox;
 
     if-eqz v3, :cond_35
 
-    .line 737
+    .line 734
     check-cast v8, Lorg/telegram/ui/Components/GroupCreateCheckBox;
 
     invoke-virtual {v8}, Lorg/telegram/ui/Components/GroupCreateCheckBox;->updateColors()V
 
     goto/16 :goto_12
 
-    .line 738
+    .line 735
     :cond_35
     instance-of v3, v8, Ljava/lang/Integer;
 
     if-eqz v3, :cond_36
 
-    .line 739
+    .line 736
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -1681,25 +1681,47 @@
 
     goto/16 :goto_12
 
-    .line 740
+    .line 737
     :cond_36
     instance-of v3, v8, Lorg/telegram/ui/Components/RadioButton;
 
     if-eqz v3, :cond_38
 
-    .line 741
+    .line 738
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKBOX:I
 
     and-int/2addr v3, v2
 
     if-eqz v3, :cond_37
 
-    .line 742
+    .line 739
     move-object v2, v8
 
     check-cast v2, Lorg/telegram/ui/Components/RadioButton;
 
     invoke-virtual {v2, p2}, Lorg/telegram/ui/Components/RadioButton;->setBackgroundColor(I)V
+
+    .line 740
+    check-cast v8, Lorg/telegram/ui/Components/RadioButton;
+
+    invoke-virtual {v8}, Landroid/view/View;->invalidate()V
+
+    goto/16 :goto_12
+
+    .line 741
+    :cond_37
+    sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKBOXCHECK:I
+
+    and-int/2addr v2, v3
+
+    if-eqz v2, :cond_48
+
+    .line 742
+    move-object v2, v8
+
+    check-cast v2, Lorg/telegram/ui/Components/RadioButton;
+
+    invoke-virtual {v2, p2}, Lorg/telegram/ui/Components/RadioButton;->setCheckedColor(I)V
 
     .line 743
     check-cast v8, Lorg/telegram/ui/Components/RadioButton;
@@ -1708,49 +1730,27 @@
 
     goto/16 :goto_12
 
-    .line 744
-    :cond_37
-    sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKBOXCHECK:I
-
-    and-int/2addr v2, v3
-
-    if-eqz v2, :cond_48
-
     .line 745
-    move-object v2, v8
-
-    check-cast v2, Lorg/telegram/ui/Components/RadioButton;
-
-    invoke-virtual {v2, p2}, Lorg/telegram/ui/Components/RadioButton;->setCheckedColor(I)V
-
-    .line 746
-    check-cast v8, Lorg/telegram/ui/Components/RadioButton;
-
-    invoke-virtual {v8}, Landroid/view/View;->invalidate()V
-
-    goto/16 :goto_12
-
-    .line 748
     :cond_38
     instance-of v3, v8, Landroid/text/TextPaint;
 
     if-eqz v3, :cond_3a
 
-    .line 749
+    .line 746
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_LINKCOLOR:I
 
     and-int/2addr v2, v3
 
     if-eqz v2, :cond_39
 
-    .line 750
+    .line 747
     check-cast v8, Landroid/text/TextPaint;
 
     iput p2, v8, Landroid/text/TextPaint;->linkColor:I
 
     goto/16 :goto_12
 
-    .line 752
+    .line 749
     :cond_39
     check-cast v8, Landroid/text/TextPaint;
 
@@ -1758,27 +1758,27 @@
 
     goto/16 :goto_12
 
-    .line 754
+    .line 751
     :cond_3a
     instance-of v3, v8, Lorg/telegram/ui/Components/LineProgressView;
 
     if-eqz v3, :cond_3c
 
-    .line 755
+    .line 752
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_PROGRESSBAR:I
 
     and-int/2addr v2, v3
 
     if-eqz v2, :cond_3b
 
-    .line 756
+    .line 753
     check-cast v8, Lorg/telegram/ui/Components/LineProgressView;
 
     invoke-virtual {v8, p2}, Lorg/telegram/ui/Components/LineProgressView;->setProgressColor(I)V
 
     goto/16 :goto_12
 
-    .line 758
+    .line 755
     :cond_3b
     check-cast v8, Lorg/telegram/ui/Components/LineProgressView;
 
@@ -1786,56 +1786,56 @@
 
     goto/16 :goto_12
 
-    .line 760
+    .line 757
     :cond_3c
     instance-of v3, v8, Lorg/telegram/ui/Components/RadialProgressView;
 
     if-eqz v3, :cond_3d
 
-    .line 761
+    .line 758
     check-cast v8, Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual {v8, p2}, Lorg/telegram/ui/Components/RadialProgressView;->setProgressColor(I)V
 
     goto/16 :goto_12
 
-    .line 762
+    .line 759
     :cond_3d
     instance-of v3, v8, Landroid/graphics/Paint;
 
     if-eqz v3, :cond_3e
 
-    .line 763
+    .line 760
     check-cast v8, Landroid/graphics/Paint;
 
     invoke-virtual {v8, p2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 764
+    .line 761
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
     goto/16 :goto_12
 
-    .line 765
+    .line 762
     :cond_3e
     instance-of v3, v8, Lorg/telegram/ui/Components/SeekBarView;
 
     if-eqz v3, :cond_40
 
-    .line 766
+    .line 763
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_PROGRESSBAR:I
 
     and-int/2addr v2, v3
 
     if-eqz v2, :cond_3f
 
-    .line 767
+    .line 764
     check-cast v8, Lorg/telegram/ui/Components/SeekBarView;
 
     invoke-virtual {v8, p2}, Lorg/telegram/ui/Components/SeekBarView;->setOuterColor(I)V
 
     goto/16 :goto_12
 
-    .line 769
+    .line 766
     :cond_3f
     check-cast v8, Lorg/telegram/ui/Components/SeekBarView;
 
@@ -1843,13 +1843,13 @@
 
     goto/16 :goto_12
 
-    .line 771
+    .line 768
     :cond_40
     instance-of v3, v8, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;
 
     if-eqz v3, :cond_48
 
-    .line 772
+    .line 769
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_FASTSCROLL:I
 
     and-int/2addr v3, v2
@@ -1863,7 +1863,7 @@
 
     if-nez v2, :cond_41
 
-    .line 774
+    .line 771
     move-object v3, v8
 
     check-cast v3, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;
@@ -1886,17 +1886,17 @@
     :goto_d
     if-eqz v3, :cond_42
 
-    .line 776
+    .line 773
     invoke-virtual {v3}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
 
-    .line 777
+    .line 774
     instance-of v5, v3, Landroid/text/SpannedString;
 
     if-eqz v5, :cond_42
 
-    .line 778
+    .line 775
     move-object v5, v3
 
     check-cast v5, Landroid/text/SpannedString;
@@ -1915,20 +1915,20 @@
 
     if-eqz v3, :cond_42
 
-    .line 779
+    .line 776
     array-length v5, v3
 
     if-lez v5, :cond_42
 
     const/4 v5, 0x0
 
-    .line 780
+    .line 777
     :goto_e
     array-length v7, v3
 
     if-ge v5, v7, :cond_42
 
-    .line 781
+    .line 778
     aget-object v7, v3, v5
 
     invoke-virtual {v7, p2}, Lorg/telegram/ui/Components/TypefaceSpan;->setColor(I)V
@@ -1942,7 +1942,7 @@
 
     goto :goto_c
 
-    .line 787
+    .line 784
     :cond_43
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
@@ -1950,7 +1950,7 @@
 
     if-eqz v3, :cond_48
 
-    .line 788
+    .line 785
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKTAG:I
 
     and-int/2addr v2, v3
@@ -1977,7 +1977,7 @@
 
     if-nez v2, :cond_45
 
-    .line 790
+    .line 787
     move-object v3, v8
 
     check-cast v3, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;
@@ -2000,20 +2000,20 @@
     :goto_10
     if-eqz v3, :cond_46
 
-    .line 792
+    .line 789
     invoke-virtual {v3, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 793
+    .line 790
     invoke-virtual {v3}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
 
-    .line 794
+    .line 791
     instance-of v5, v3, Landroid/text/SpannedString;
 
     if-eqz v5, :cond_46
 
-    .line 795
+    .line 792
     move-object v5, v3
 
     check-cast v5, Landroid/text/SpannedString;
@@ -2032,20 +2032,20 @@
 
     if-eqz v3, :cond_46
 
-    .line 796
+    .line 793
     array-length v5, v3
 
     if-lez v5, :cond_46
 
     const/4 v5, 0x0
 
-    .line 797
+    .line 794
     :goto_11
     array-length v7, v3
 
     if-ge v5, v7, :cond_46
 
-    .line 798
+    .line 795
     aget-object v7, v3, v5
 
     invoke-virtual {v7, p2}, Lorg/telegram/ui/Components/TypefaceSpan;->setColor(I)V
@@ -2064,10 +2064,10 @@
     :catchall_0
     move-exception v2
 
-    .line 810
+    .line 807
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 811
+    .line 808
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->notFoundCachedFields:Ljava/util/HashMap;
 
     sget-object v3, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
@@ -2076,13 +2076,13 @@
 
     goto :goto_12
 
-    .line 813
+    .line 810
     :cond_47
     instance-of v2, p1, Lorg/telegram/ui/Components/GroupCreateSpan;
 
     if-eqz v2, :cond_48
 
-    .line 814
+    .line 811
     move-object v2, p1
 
     check-cast v2, Lorg/telegram/ui/Components/GroupCreateSpan;
@@ -2104,7 +2104,7 @@
 .method public getCurrentColor()I
     .locals 1
 
-    .line 829
+    .line 826
     iget v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->currentColor:I
 
     return v0
@@ -2113,7 +2113,7 @@
 .method public getCurrentKey()Ljava/lang/String;
     .locals 1
 
-    .line 821
+    .line 818
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->currentKey:Ljava/lang/String;
 
     return-object v0
@@ -2122,7 +2122,7 @@
 .method public getSetColor()I
     .locals 2
 
-    .line 833
+    .line 830
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     if-eqz v0, :cond_0
@@ -2141,7 +2141,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 834
+    .line 831
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -2162,7 +2162,7 @@
 .method public getTitle()Ljava/lang/String;
     .locals 1
 
-    .line 854
+    .line 851
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->currentKey:Ljava/lang/String;
 
     return-object v0
@@ -2171,12 +2171,12 @@
 .method public setAnimatedColor(I)V
     .locals 2
 
-    .line 838
+    .line 835
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     if-eqz v0, :cond_0
 
-    .line 839
+    .line 836
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ThemeDescription;->getCurrentKey()Ljava/lang/String;
 
     move-result-object v1
@@ -2185,7 +2185,7 @@
 
     goto :goto_0
 
-    .line 841
+    .line 838
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ThemeDescription;->getCurrentKey()Ljava/lang/String;
 
@@ -2943,133 +2943,120 @@
     :cond_25
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->viewToInvalidate:Landroid/view/View;
 
-    instance-of v2, p2, Lorg/telegram/ui/Components/VideoTimelineView;
-
-    if-eqz v2, :cond_26
-
-    .line 385
-    check-cast p2, Lorg/telegram/ui/Components/VideoTimelineView;
-
-    invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/VideoTimelineView;->setColor(I)V
-
-    .line 387
-    :cond_26
-    iget-object p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->viewToInvalidate:Landroid/view/View;
-
     instance-of v2, p2, Lorg/telegram/ui/Components/EmptyTextProgressView;
 
-    if-eqz v2, :cond_28
+    if-eqz v2, :cond_27
 
-    .line 388
+    .line 385
     iget v2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
     and-int/2addr v3, v2
 
-    if-eqz v3, :cond_27
+    if-eqz v3, :cond_26
 
-    .line 389
+    .line 386
     check-cast p2, Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/EmptyTextProgressView;->setTextColor(I)V
 
     goto :goto_a
 
-    .line 390
-    :cond_27
+    .line 387
+    :cond_26
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_PROGRESSBAR:I
 
     and-int/2addr v2, v3
 
-    if-eqz v2, :cond_28
+    if-eqz v2, :cond_27
 
-    .line 391
+    .line 388
     check-cast p2, Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/EmptyTextProgressView;->setProgressBarColor(I)V
 
-    .line 394
-    :cond_28
+    .line 391
+    :cond_27
     :goto_a
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->viewToInvalidate:Landroid/view/View;
 
     instance-of v2, p2, Lorg/telegram/ui/Components/RadialProgressView;
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_28
 
-    .line 395
+    .line 392
     check-cast p2, Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/RadialProgressView;->setProgressColor(I)V
 
     goto :goto_b
 
-    .line 396
-    :cond_29
+    .line 393
+    :cond_28
     instance-of v2, p2, Lorg/telegram/ui/Components/LineProgressView;
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_2a
 
-    .line 397
+    .line 394
     iget v2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_PROGRESSBAR:I
 
     and-int/2addr v2, v3
 
-    if-eqz v2, :cond_2a
+    if-eqz v2, :cond_29
 
-    .line 398
+    .line 395
     check-cast p2, Lorg/telegram/ui/Components/LineProgressView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/LineProgressView;->setProgressColor(I)V
 
     goto :goto_b
 
-    .line 400
-    :cond_2a
+    .line 397
+    :cond_29
     check-cast p2, Lorg/telegram/ui/Components/LineProgressView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/LineProgressView;->setBackColor(I)V
 
     goto :goto_b
 
-    .line 402
-    :cond_2b
+    .line 399
+    :cond_2a
     instance-of v2, p2, Lorg/telegram/ui/Components/ContextProgressView;
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_2b
 
-    .line 403
+    .line 400
     check-cast p2, Lorg/telegram/ui/Components/ContextProgressView;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/ContextProgressView;->updateColors()V
 
     goto :goto_b
 
-    .line 404
-    :cond_2c
+    .line 401
+    :cond_2b
     instance-of v2, p2, Lorg/telegram/ui/Components/SeekBarView;
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_2c
 
-    .line 405
+    .line 402
     iget v2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_PROGRESSBAR:I
 
     and-int/2addr v2, v3
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_2c
 
-    .line 406
+    .line 403
     check-cast p2, Lorg/telegram/ui/Components/SeekBarView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/SeekBarView;->setOuterColor(I)V
 
-    .line 409
-    :cond_2d
+    .line 406
+    :cond_2c
     :goto_b
     iget p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
@@ -3077,14 +3064,14 @@
 
     and-int/2addr v2, p2
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_31
 
-    .line 410
+    .line 407
     sget v2, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKTAG:I
 
     and-int/2addr p2, v2
 
-    if-eqz p2, :cond_2e
+    if-eqz p2, :cond_2d
 
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->currentKey:Ljava/lang/String;
 
@@ -3094,62 +3081,62 @@
 
     move-result p2
 
-    if-eqz p2, :cond_32
+    if-eqz p2, :cond_31
 
-    .line 411
-    :cond_2e
+    .line 408
+    :cond_2d
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->viewToInvalidate:Landroid/view/View;
 
     instance-of v2, p2, Landroid/widget/TextView;
 
-    if-eqz v2, :cond_2f
+    if-eqz v2, :cond_2e
 
-    .line 412
+    .line 409
     check-cast p2, Landroid/widget/TextView;
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
     goto :goto_c
 
-    .line 413
-    :cond_2f
+    .line 410
+    :cond_2e
     instance-of v2, p2, Lorg/telegram/ui/Components/NumberTextView;
 
-    if-eqz v2, :cond_30
+    if-eqz v2, :cond_2f
 
-    .line 414
+    .line 411
     check-cast p2, Lorg/telegram/ui/Components/NumberTextView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/NumberTextView;->setTextColor(I)V
 
     goto :goto_c
 
-    .line 415
-    :cond_30
+    .line 412
+    :cond_2f
     instance-of v2, p2, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    if-eqz v2, :cond_31
+    if-eqz v2, :cond_30
 
-    .line 416
+    .line 413
     check-cast p2, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
     goto :goto_c
 
-    .line 417
-    :cond_31
+    .line 414
+    :cond_30
     instance-of v2, p2, Lorg/telegram/ui/Components/ChatBigEmptyView;
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_31
 
-    .line 418
+    .line 415
     check-cast p2, Lorg/telegram/ui/Components/ChatBigEmptyView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/ChatBigEmptyView;->setTextColor(I)V
 
-    .line 422
-    :cond_32
+    .line 419
+    :cond_31
     :goto_c
     iget p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
@@ -3157,90 +3144,90 @@
 
     and-int/2addr p2, v2
 
-    if-eqz p2, :cond_33
+    if-eqz p2, :cond_32
 
-    .line 423
+    .line 420
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->viewToInvalidate:Landroid/view/View;
 
     instance-of v2, p2, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_32
 
-    .line 424
+    .line 421
     check-cast p2, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    .line 427
-    :cond_33
+    .line 424
+    :cond_32
     iget p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v2, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_HINTTEXTCOLOR:I
 
     and-int/2addr v2, p2
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_35
 
-    .line 428
+    .line 425
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->viewToInvalidate:Landroid/view/View;
 
     instance-of v3, v2, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    if-eqz v3, :cond_35
+    if-eqz v3, :cond_34
 
-    .line 429
+    .line 426
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_PROGRESSBAR:I
 
     and-int/2addr p2, v3
 
-    if-eqz p2, :cond_34
+    if-eqz p2, :cond_33
 
-    .line 430
+    .line 427
     check-cast v2, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v2, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHeaderHintColor(I)V
 
     goto :goto_d
 
-    .line 432
-    :cond_34
+    .line 429
+    :cond_33
     check-cast v2, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v2, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintColor(I)V
 
     goto :goto_d
 
-    .line 434
-    :cond_35
+    .line 431
+    :cond_34
     instance-of p2, v2, Landroid/widget/EditText;
 
-    if-eqz p2, :cond_36
+    if-eqz p2, :cond_35
 
-    .line 435
+    .line 432
     check-cast v2, Landroid/widget/EditText;
 
     invoke-virtual {v2, p1}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    .line 438
-    :cond_36
+    .line 435
+    :cond_35
     :goto_d
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->viewToInvalidate:Landroid/view/View;
 
     iget v2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
-    .line 441
+    .line 438
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_IMAGECOLOR:I
 
     and-int/2addr v3, v2
 
-    if-eqz v3, :cond_3f
+    if-eqz v3, :cond_3e
 
-    .line 442
+    .line 439
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKTAG:I
 
     and-int/2addr v2, v3
 
-    if-eqz v2, :cond_37
+    if-eqz v2, :cond_36
 
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->currentKey:Ljava/lang/String;
 
@@ -3248,60 +3235,60 @@
 
     move-result p2
 
-    if-eqz p2, :cond_3f
+    if-eqz p2, :cond_3e
 
-    .line 443
-    :cond_37
+    .line 440
+    :cond_36
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->viewToInvalidate:Landroid/view/View;
 
     instance-of v2, p2, Landroid/widget/ImageView;
 
-    if-eqz v2, :cond_3b
+    if-eqz v2, :cond_3a
 
-    .line 444
+    .line 441
     iget v2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_USEBACKGROUNDDRAWABLE:I
 
     and-int/2addr v2, v3
 
-    if-eqz v2, :cond_3a
+    if-eqz v2, :cond_39
 
-    .line 445
+    .line 442
     check-cast p2, Landroid/widget/ImageView;
 
     invoke-virtual {p2}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
-    .line 446
+    .line 443
     instance-of v2, p2, Landroid/graphics/drawable/StateListDrawable;
 
-    if-nez v2, :cond_38
+    if-nez v2, :cond_37
 
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v2, v0, :cond_3f
+    if-lt v2, v0, :cond_3e
 
     instance-of v0, p2, Landroid/graphics/drawable/RippleDrawable;
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_3e
 
-    .line 447
-    :cond_38
+    .line 444
+    :cond_37
     iget v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v2, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_DRAWABLESELECTEDSTATE:I
 
     and-int/2addr v0, v2
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_38
 
     const/4 v0, 0x1
 
     goto :goto_e
 
-    :cond_39
+    :cond_38
     const/4 v0, 0x0
 
     :goto_e
@@ -3309,8 +3296,8 @@
 
     goto :goto_10
 
-    .line 450
-    :cond_3a
+    .line 447
+    :cond_39
     check-cast p2, Landroid/widget/ImageView;
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
@@ -3323,57 +3310,57 @@
 
     goto :goto_10
 
-    .line 452
-    :cond_3b
+    .line 449
+    :cond_3a
     instance-of v0, p2, Lorg/telegram/ui/Components/BackupImageView;
 
+    if-eqz v0, :cond_3b
+
+    goto :goto_10
+
+    .line 451
+    :cond_3b
+    instance-of v0, p2, Lorg/telegram/ui/ActionBar/SimpleTextView;
+
     if-eqz v0, :cond_3c
+
+    .line 452
+    check-cast p2, Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    .line 453
+    invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setSideDrawablesColor(I)V
 
     goto :goto_10
 
     .line 454
     :cond_3c
-    instance-of v0, p2, Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    if-eqz v0, :cond_3d
-
-    .line 455
-    check-cast p2, Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    .line 456
-    invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setSideDrawablesColor(I)V
-
-    goto :goto_10
-
-    .line 457
-    :cond_3d
     instance-of v0, p2, Landroid/widget/TextView;
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_3e
 
-    .line 458
+    .line 455
     check-cast p2, Landroid/widget/TextView;
 
     invoke-virtual {p2}, Landroid/widget/TextView;->getCompoundDrawables()[Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
-    if-eqz p2, :cond_3f
+    if-eqz p2, :cond_3e
 
     const/4 v0, 0x0
 
-    .line 460
+    .line 457
     :goto_f
     array-length v2, p2
 
-    if-ge v0, v2, :cond_3f
+    if-ge v0, v2, :cond_3e
 
-    .line 461
+    .line 458
     aget-object v2, p2, v0
 
-    if-eqz v2, :cond_3e
+    if-eqz v2, :cond_3d
 
-    .line 462
+    .line 459
     aget-object v2, p2, v0
 
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
@@ -3384,133 +3371,133 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    :cond_3e
+    :cond_3d
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_f
 
-    .line 469
-    :cond_3f
+    .line 466
+    :cond_3e
     :goto_10
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->viewToInvalidate:Landroid/view/View;
 
     instance-of v0, p2, Landroid/widget/ScrollView;
 
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_3f
 
-    .line 470
+    .line 467
     iget v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v2, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_LISTGLOWCOLOR:I
 
     and-int/2addr v0, v2
 
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_3f
 
-    .line 471
+    .line 468
     check-cast p2, Landroid/widget/ScrollView;
 
     invoke-static {p2, p1}, Lorg/telegram/messenger/AndroidUtilities;->setScrollViewEdgeEffectColor(Landroid/widget/ScrollView;I)V
 
-    .line 474
-    :cond_40
+    .line 471
+    :cond_3f
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->viewToInvalidate:Landroid/view/View;
 
     instance-of v0, p2, Landroidx/viewpager/widget/ViewPager;
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_40
 
-    .line 475
+    .line 472
     iget v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v2, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_LISTGLOWCOLOR:I
 
     and-int/2addr v0, v2
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_40
 
-    .line 476
+    .line 473
     check-cast p2, Landroidx/viewpager/widget/ViewPager;
 
     invoke-static {p2, p1}, Lorg/telegram/messenger/AndroidUtilities;->setViewPagerEdgeEffectColor(Landroidx/viewpager/widget/ViewPager;I)V
 
-    .line 479
-    :cond_41
+    .line 476
+    :cond_40
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->viewToInvalidate:Landroid/view/View;
 
     instance-of v0, p2, Lorg/telegram/ui/Components/RecyclerListView;
 
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_46
 
-    .line 480
+    .line 477
     check-cast p2, Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 481
+    .line 478
     iget v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v1, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_SELECTOR:I
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_41
 
-    .line 482
+    .line 479
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView;->setListSelectorColor(I)V
 
-    .line 484
-    :cond_42
+    .line 481
+    :cond_41
     iget v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v1, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_FASTSCROLL:I
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_42
 
-    .line 485
+    .line 482
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RecyclerListView;->updateFastScrollColors()V
 
-    .line 487
-    :cond_43
+    .line 484
+    :cond_42
     iget v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v1, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_LISTGLOWCOLOR:I
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_44
+    if-eqz v0, :cond_43
 
-    .line 488
+    .line 485
     invoke-virtual {p2, p1}, Landroidx/recyclerview/widget/RecyclerView;->setGlowColor(I)V
 
-    .line 490
-    :cond_44
+    .line 487
+    :cond_43
     iget v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v1, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_SECTIONS:I
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_49
 
-    .line 491
+    .line 488
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RecyclerListView;->getHeaders()Ljava/util/ArrayList;
 
     move-result-object v0
 
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_44
 
     const/4 v1, 0x0
 
-    .line 493
+    .line 490
     :goto_11
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_45
+    if-ge v1, v2, :cond_44
 
-    .line 494
+    .line 491
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -3523,25 +3510,25 @@
 
     goto :goto_11
 
-    .line 497
-    :cond_45
+    .line 494
+    :cond_44
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RecyclerListView;->getHeadersCache()Ljava/util/ArrayList;
 
     move-result-object v0
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_45
 
     const/4 v1, 0x0
 
-    .line 499
+    .line 496
     :goto_12
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_46
+    if-ge v1, v2, :cond_45
 
-    .line 500
+    .line 497
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -3554,42 +3541,42 @@
 
     goto :goto_12
 
-    .line 503
-    :cond_46
+    .line 500
+    :cond_45
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RecyclerListView;->getPinnedHeader()Landroid/view/View;
 
     move-result-object p2
 
-    if-eqz p2, :cond_4a
+    if-eqz p2, :cond_49
 
-    .line 505
+    .line 502
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription;->processViewColor(Landroid/view/View;I)V
 
     goto :goto_13
 
-    :cond_47
-    if-eqz p2, :cond_4a
+    :cond_46
+    if-eqz p2, :cond_49
 
-    .line 508
+    .line 505
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->listClasses:[Ljava/lang/Class;
 
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_47
 
     array-length v0, v0
 
-    if-nez v0, :cond_4a
+    if-nez v0, :cond_49
 
-    .line 509
-    :cond_48
+    .line 506
+    :cond_47
     iget v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->changeFlags:I
 
     sget v2, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_SELECTOR:I
 
     and-int/2addr v2, v0
 
-    if-eqz v2, :cond_49
+    if-eqz v2, :cond_48
 
-    .line 510
+    .line 507
     invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -3598,46 +3585,46 @@
 
     goto :goto_13
 
-    .line 511
-    :cond_49
+    .line 508
+    :cond_48
     sget v2, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_SELECTORWHITE:I
 
     and-int/2addr v0, v2
 
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_49
 
-    .line 512
+    .line 509
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 515
-    :cond_4a
+    .line 512
+    :cond_49
     :goto_13
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->listClasses:[Ljava/lang/Class;
 
-    if-eqz p2, :cond_4f
+    if-eqz p2, :cond_4e
 
-    .line 516
+    .line 513
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->viewToInvalidate:Landroid/view/View;
 
     instance-of v0, p2, Lorg/telegram/ui/Components/RecyclerListView;
 
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_4c
 
-    .line 517
+    .line 514
     check-cast p2, Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 518
+    .line 515
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getRecycledViewPool()Landroidx/recyclerview/widget/RecyclerView$RecycledViewPool;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$RecycledViewPool;->clear()V
 
-    .line 519
+    .line 516
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getHiddenChildCount()I
 
     move-result v0
@@ -3645,9 +3632,9 @@
     const/4 v1, 0x0
 
     :goto_14
-    if-ge v1, v0, :cond_4b
+    if-ge v1, v0, :cond_4a
 
-    .line 521
+    .line 518
     invoke-virtual {p2, v1}, Landroidx/recyclerview/widget/RecyclerView;->getHiddenChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -3658,8 +3645,8 @@
 
     goto :goto_14
 
-    .line 523
-    :cond_4b
+    .line 520
+    :cond_4a
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getCachedChildCount()I
 
     move-result v0
@@ -3667,9 +3654,9 @@
     const/4 v1, 0x0
 
     :goto_15
-    if-ge v1, v0, :cond_4c
+    if-ge v1, v0, :cond_4b
 
-    .line 525
+    .line 522
     invoke-virtual {p2, v1}, Landroidx/recyclerview/widget/RecyclerView;->getCachedChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -3680,8 +3667,8 @@
 
     goto :goto_15
 
-    .line 527
-    :cond_4c
+    .line 524
+    :cond_4b
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getAttachedScrapChildCount()I
 
     move-result v0
@@ -3689,9 +3676,9 @@
     const/4 v1, 0x0
 
     :goto_16
-    if-ge v1, v0, :cond_4d
+    if-ge v1, v0, :cond_4c
 
-    .line 529
+    .line 526
     invoke-virtual {p2, v1}, Landroidx/recyclerview/widget/RecyclerView;->getAttachedScrapChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -3702,26 +3689,26 @@
 
     goto :goto_16
 
-    .line 532
-    :cond_4d
+    .line 529
+    :cond_4c
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->viewToInvalidate:Landroid/view/View;
 
     instance-of v0, p2, Landroid/view/ViewGroup;
 
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_4d
 
-    .line 533
+    .line 530
     check-cast p2, Landroid/view/ViewGroup;
 
-    .line 534
+    .line 531
     invoke-virtual {p2}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
     :goto_17
-    if-ge p3, v0, :cond_4e
+    if-ge p3, v0, :cond_4d
 
-    .line 536
+    .line 533
     invoke-virtual {p2, p3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
@@ -3732,38 +3719,38 @@
 
     goto :goto_17
 
-    .line 539
-    :cond_4e
+    .line 536
+    :cond_4d
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->viewToInvalidate:Landroid/view/View;
 
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription;->processViewColor(Landroid/view/View;I)V
 
+    .line 538
+    :cond_4e
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->delegate:Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
+
+    if-eqz p1, :cond_4f
+
+    .line 539
+    invoke-interface {p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;->didSetColor()V
+
     .line 541
     :cond_4f
-    iget-object p1, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->delegate:Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->viewToInvalidate:Landroid/view/View;
 
     if-eqz p1, :cond_50
 
     .line 542
-    invoke-interface {p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;->didSetColor()V
-
-    .line 544
-    :cond_50
-    iget-object p1, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->viewToInvalidate:Landroid/view/View;
-
-    if-eqz p1, :cond_51
-
-    .line 545
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    :cond_51
+    :cond_50
     return-void
 .end method
 
 .method public setDefaultColor()V
     .locals 2
 
-    .line 846
+    .line 843
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->currentKey:Ljava/lang/String;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getDefaultColor(Ljava/lang/String;)I
@@ -3794,7 +3781,7 @@
 .method public setPreviousColor()V
     .locals 3
 
-    .line 850
+    .line 847
     iget v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->previousColor:I
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->previousIsDefault:[Z
@@ -3811,7 +3798,7 @@
 .method public startEditing()V
     .locals 2
 
-    .line 825
+    .line 822
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->currentKey:Ljava/lang/String;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ThemeDescription;->previousIsDefault:[Z

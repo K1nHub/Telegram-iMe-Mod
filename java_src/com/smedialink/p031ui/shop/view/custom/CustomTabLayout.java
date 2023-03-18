@@ -7,7 +7,6 @@ import android.view.Display;
 import android.view.WindowManager;
 import com.google.android.material.tabs.TabLayout;
 import java.lang.reflect.Field;
-import java.util.Objects;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CustomTabLayout.kt */
@@ -48,7 +47,7 @@ public final class CustomTabLayout extends TabLayout {
     private final int[] getScreenSize(Context context) {
         int[] iArr = {0, 0};
         Object systemService = context.getSystemService("window");
-        Objects.requireNonNull(systemService, "null cannot be cast to non-null type android.view.WindowManager");
+        Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.WindowManager");
         Display defaultDisplay = ((WindowManager) systemService).getDefaultDisplay();
         Point point = new Point();
         defaultDisplay.getSize(point);

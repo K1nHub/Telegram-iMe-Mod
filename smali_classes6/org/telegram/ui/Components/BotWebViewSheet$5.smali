@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 441
+    .line 509
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RadialProgressView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,17 +29,17 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 444
+    .line 512
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
-    .line 446
+    .line 514
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p1
 
     check-cast p1, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 447
+    .line 515
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result p2
@@ -58,7 +58,7 @@
 
     if-nez p2, :cond_0
 
-    .line 448
+    .line 516
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -89,7 +89,7 @@
 
     goto :goto_0
 
-    .line 450
+    .line 518
     :cond_0
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 

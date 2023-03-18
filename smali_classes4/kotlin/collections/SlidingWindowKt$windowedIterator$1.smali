@@ -229,7 +229,6 @@
 
     goto :goto_0
 
-    .line 61
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -239,7 +238,6 @@
 
     throw p1
 
-    .line 24
     :cond_1
     iget-object v1, p0, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;->L$1:Ljava/lang/Object;
 

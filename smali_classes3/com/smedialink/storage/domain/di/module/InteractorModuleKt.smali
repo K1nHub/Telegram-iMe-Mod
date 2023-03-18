@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 28
+    .line 29
     sget-object v0, Lcom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1;->INSTANCE:Lcom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1;
 
     const/4 v1, 0x0
@@ -32,7 +32,7 @@
 .method public static final getInteractorModule()Lorg/koin/core/module/Module;
     .locals 1
 
-    .line 28
+    .line 29
     sget-object v0, Lcom/smedialink/storage/domain/di/module/InteractorModuleKt;->interactorModule:Lorg/koin/core/module/Module;
 
     return-object v0

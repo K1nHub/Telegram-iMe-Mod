@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SecretMediaViewer;)V
     .locals 0
 
-    .line 882
+    .line 888
     iput-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$5;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 885
+    .line 891
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$5;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/SecretMediaViewer;->access$2800(Lorg/telegram/ui/SecretMediaViewer;)Ljava/lang/Runnable;
@@ -44,7 +44,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 886
+    .line 892
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$5;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/SecretMediaViewer;->access$2800(Lorg/telegram/ui/SecretMediaViewer;)Ljava/lang/Runnable;
@@ -53,7 +53,7 @@
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 887
+    .line 893
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$5;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     const/4 v0, 0x0

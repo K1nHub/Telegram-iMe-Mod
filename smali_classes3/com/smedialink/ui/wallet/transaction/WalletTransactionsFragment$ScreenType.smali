@@ -16,9 +16,9 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$Fullscreen;,
-        Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$TokenDetailsTab;,
         Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$StakingDetailsTab;,
-        Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$StakingOperationsTab;
+        Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$StakingOperationsTab;,
+        Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$TokenDetailsTab;
     }
 .end annotation
 

@@ -956,7 +956,7 @@
     .line 193
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    const-string v2, "player_actionBar"
+    const-string v2, "dialogBackground"
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
@@ -1425,7 +1425,7 @@
 
     const/16 v17, 0x0
 
-    const-string v18, "player_actionBar"
+    const-string v18, "dialogBackground"
 
     move-object v11, v2
 

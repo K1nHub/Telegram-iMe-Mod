@@ -11,8 +11,8 @@ public final /* synthetic */ class TelegramViewPagerFragment$$ExternalSyntheticL
 
     @Override // android.animation.TimeInterpolator
     public final float getInterpolation(float f) {
-        float m1462interpolator$lambda13;
-        m1462interpolator$lambda13 = TelegramViewPagerFragment.m1462interpolator$lambda13(f);
-        return m1462interpolator$lambda13;
+        float interpolator$lambda$13;
+        interpolator$lambda$13 = TelegramViewPagerFragment.interpolator$lambda$13(f);
+        return interpolator$lambda$13;
     }
 }

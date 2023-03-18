@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/Cells/TextCheckBoxCell;
 
-    invoke-static {v0, p1}, Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;->$r8$lambda$4_3CoOeR7N5zxqkSayUU6NdI6Hc(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;->$r8$lambda$s2_QGYX8O8hJgvEHjGZgdBh9Bv4(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
 
     return-void
 .end method

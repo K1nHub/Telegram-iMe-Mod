@@ -10,7 +10,7 @@ import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.zip.DataFormatException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MessageDeframer implements Closeable, Deframer {
     private boolean compressedFlag;
     private Decompressor decompressor;
@@ -32,7 +32,7 @@ public class MessageDeframer implements Closeable, Deframer {
     private boolean closeWhenComplete = false;
     private volatile boolean stopDelivery = false;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface Listener {
         void bytesRead(int i);
 
@@ -44,7 +44,7 @@ public class MessageDeframer implements Closeable, Deframer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum State {
         HEADER,
         BODY
@@ -194,7 +194,7 @@ public class MessageDeframer implements Closeable, Deframer {
                 if (this.stopDelivery || this.pendingDeliveries <= 0 || !readRequiredBytes()) {
                     break;
                 }
-                int i = C23161.$SwitchMap$io$grpc$internal$MessageDeframer$State[this.state.ordinal()];
+                int i = C24401.$SwitchMap$io$grpc$internal$MessageDeframer$State[this.state.ordinal()];
                 if (i == 1) {
                     processHeader();
                 } else if (i == 2) {
@@ -218,8 +218,8 @@ public class MessageDeframer implements Closeable, Deframer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: io.grpc.internal.MessageDeframer$1 */
-    /* loaded from: classes3.dex */
-    public static /* synthetic */ class C23161 {
+    /* loaded from: classes4.dex */
+    public static /* synthetic */ class C24401 {
         static final /* synthetic */ int[] $SwitchMap$io$grpc$internal$MessageDeframer$State;
 
         static {
@@ -384,7 +384,7 @@ public class MessageDeframer implements Closeable, Deframer {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class SizeEnforcingInputStream extends FilterInputStream {
         private long count;
         private long mark;
@@ -467,11 +467,11 @@ public class MessageDeframer implements Closeable, Deframer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SingleMessageProducer implements StreamListener.MessageProducer {
         private InputStream message;
 
-        /* synthetic */ SingleMessageProducer(InputStream inputStream, C23161 c23161) {
+        /* synthetic */ SingleMessageProducer(InputStream inputStream, C24401 c24401) {
             this(inputStream);
         }
 

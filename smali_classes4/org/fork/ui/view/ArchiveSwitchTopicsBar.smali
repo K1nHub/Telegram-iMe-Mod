@@ -31,10 +31,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$dEpcl-_Ag00YH5NeVtcxGziTodU(Lorg/fork/ui/view/ArchiveSwitchTopicsBar;ZLandroid/view/View;)V
+.method public static synthetic $r8$lambda$q5mB7K82aGmgvby3QMO2e0nK-34(Lorg/fork/ui/view/ArchiveSwitchTopicsBar;ZLandroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/ArchiveSwitchTopicsBar;->initTopic$lambda-1$lambda-0(Lorg/fork/ui/view/ArchiveSwitchTopicsBar;ZLandroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/ArchiveSwitchTopicsBar;->initTopic$lambda$1$lambda$0(Lorg/fork/ui/view/ArchiveSwitchTopicsBar;ZLandroid/view/View;)V
 
     return-void
 .end method
@@ -231,7 +231,7 @@
     return-object v7
 .end method
 
-.method private static final initTopic$lambda-1$lambda-0(Lorg/fork/ui/view/ArchiveSwitchTopicsBar;ZLandroid/view/View;)V
+.method private static final initTopic$lambda$1$lambda$0(Lorg/fork/ui/view/ArchiveSwitchTopicsBar;ZLandroid/view/View;)V
     .locals 0
 
     const-string p2, "this$0"
@@ -239,9 +239,7 @@
     invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 44
-    invoke-virtual {p0}, Lorg/fork/ui/view/ArchiveSwitchTopicsBar;->getCurrentArchive()Z
-
-    move-result p2
+    iget-boolean p2, p0, Lorg/fork/ui/view/ArchiveSwitchTopicsBar;->currentArchive:Z
 
     if-ne p2, p1, :cond_0
 
@@ -249,22 +247,16 @@
 
     .line 47
     :cond_0
-    invoke-virtual {p0, p1}, Lorg/fork/ui/view/ArchiveSwitchTopicsBar;->setCurrentArchive(Z)V
+    iput-boolean p1, p0, Lorg/fork/ui/view/ArchiveSwitchTopicsBar;->currentArchive:Z
 
     .line 48
-    invoke-virtual {p0}, Lorg/fork/ui/view/ArchiveSwitchTopicsBar;->getDelegate()Lkotlin/jvm/functions/Function1;
+    iget-object p2, p0, Lorg/fork/ui/view/ArchiveSwitchTopicsBar;->delegate:Lkotlin/jvm/functions/Function1;
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lorg/fork/ui/view/ArchiveSwitchTopicsBar;->getCurrentArchive()Z
-
-    move-result p2
-
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p2
-
-    invoke-interface {p1, p2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 49
     invoke-virtual {p0}, Lorg/fork/ui/view/ArchiveSwitchTopicsBar;->updateSelectedTopicAndColors()V

@@ -3891,32 +3891,32 @@
 .end method
 
 .method protected invalidateInternal()V
-    .locals 2
-
-    const/4 v0, 0x0
+    .locals 3
 
     .line 825
+    iget-object v0, p0, Lorg/telegram/ui/Components/RLottieDrawable;->parentViews:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
     :goto_0
-    iget-object v1, p0, Lorg/telegram/ui/Components/RLottieDrawable;->parentViews:Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
-
-    if-ge v0, v1, :cond_0
+    if-ge v1, v0, :cond_0
 
     .line 826
-    iget-object v1, p0, Lorg/telegram/ui/Components/RLottieDrawable;->parentViews:Ljava/util/ArrayList;
+    iget-object v2, p0, Lorg/telegram/ui/Components/RLottieDrawable;->parentViews:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Lorg/telegram/messenger/ImageReceiver;
+    check-cast v2, Lorg/telegram/messenger/ImageReceiver;
 
-    invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->invalidate()V
+    invoke-virtual {v2}, Lorg/telegram/messenger/ImageReceiver;->invalidate()V
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 

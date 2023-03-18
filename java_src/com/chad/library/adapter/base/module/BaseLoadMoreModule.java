@@ -49,10 +49,6 @@ public class BaseLoadMoreModule {
         this.loadMoreView = baseLoadMoreView;
     }
 
-    public final boolean getEnableLoadMoreEndClick() {
-        return this.enableLoadMoreEndClick;
-    }
-
     public final void setPreLoadNumber(int i) {
         if (i > 1) {
             this.preLoadNumber = i;
@@ -87,20 +83,20 @@ public class BaseLoadMoreModule {
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: com.chad.library.adapter.base.module.BaseLoadMoreModule$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BaseLoadMoreModule.m902setupViewHolder$lambda1(BaseLoadMoreModule.this, view);
+                BaseLoadMoreModule.setupViewHolder$lambda$1(BaseLoadMoreModule.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupViewHolder$lambda-1  reason: not valid java name */
-    public static final void m902setupViewHolder$lambda1(BaseLoadMoreModule this$0, View view) {
+    public static final void setupViewHolder$lambda$1(BaseLoadMoreModule this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        if (this$0.getLoadMoreStatus() == LoadMoreStatus.Fail) {
+        LoadMoreStatus loadMoreStatus = this$0.loadMoreStatus;
+        if (loadMoreStatus == LoadMoreStatus.Fail) {
             this$0.loadMoreToLoading();
-        } else if (this$0.getLoadMoreStatus() == LoadMoreStatus.Complete) {
+        } else if (loadMoreStatus == LoadMoreStatus.Complete) {
             this$0.loadMoreToLoading();
-        } else if (this$0.getEnableLoadMoreEndClick() && this$0.getLoadMoreStatus() == LoadMoreStatus.End) {
+        } else if (this$0.enableLoadMoreEndClick && loadMoreStatus == LoadMoreStatus.End) {
             this$0.loadMoreToLoading();
         }
     }
@@ -134,29 +130,30 @@ public class BaseLoadMoreModule {
     }
 
     private final void invokeLoadMoreListener() {
-        OnLoadMoreListener onLoadMoreListener;
         this.loadMoreStatus = LoadMoreStatus.Loading;
         RecyclerView mRecyclerView$TMessagesProj_release = this.baseQuickAdapter.getMRecyclerView$TMessagesProj_release();
-        if ((mRecyclerView$TMessagesProj_release == null ? null : Boolean.valueOf(mRecyclerView$TMessagesProj_release.post(new Runnable() { // from class: com.chad.library.adapter.base.module.BaseLoadMoreModule$$ExternalSyntheticLambda2
-            @Override // java.lang.Runnable
-            public final void run() {
-                BaseLoadMoreModule.m901invokeLoadMoreListener$lambda3$lambda2(BaseLoadMoreModule.this);
-            }
-        }))) != null || (onLoadMoreListener = this.mLoadMoreListener) == null) {
+        if (mRecyclerView$TMessagesProj_release != null) {
+            mRecyclerView$TMessagesProj_release.post(new Runnable() { // from class: com.chad.library.adapter.base.module.BaseLoadMoreModule$$ExternalSyntheticLambda2
+                @Override // java.lang.Runnable
+                public final void run() {
+                    BaseLoadMoreModule.invokeLoadMoreListener$lambda$3$lambda$2(BaseLoadMoreModule.this);
+                }
+            });
             return;
         }
-        onLoadMoreListener.onLoadMore();
+        OnLoadMoreListener onLoadMoreListener = this.mLoadMoreListener;
+        if (onLoadMoreListener != null) {
+            onLoadMoreListener.onLoadMore();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: invokeLoadMoreListener$lambda-3$lambda-2  reason: not valid java name */
-    public static final void m901invokeLoadMoreListener$lambda3$lambda2(BaseLoadMoreModule this$0) {
+    public static final void invokeLoadMoreListener$lambda$3$lambda$2(BaseLoadMoreModule this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         OnLoadMoreListener onLoadMoreListener = this$0.mLoadMoreListener;
-        if (onLoadMoreListener == null) {
-            return;
+        if (onLoadMoreListener != null) {
+            onLoadMoreListener.onLoadMore();
         }
-        onLoadMoreListener.onLoadMore();
     }
 
     public final void checkDisableLoadMoreIfNotFullPage() {
@@ -173,22 +170,21 @@ public class BaseLoadMoreModule {
             mRecyclerView$TMessagesProj_release.postDelayed(new Runnable() { // from class: com.chad.library.adapter.base.module.BaseLoadMoreModule$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BaseLoadMoreModule.m899checkDisableLoadMoreIfNotFullPage$lambda4(BaseLoadMoreModule.this, layoutManager);
+                    BaseLoadMoreModule.checkDisableLoadMoreIfNotFullPage$lambda$4(BaseLoadMoreModule.this, layoutManager);
                 }
             }, 50L);
         } else if (layoutManager instanceof StaggeredGridLayoutManager) {
             mRecyclerView$TMessagesProj_release.postDelayed(new Runnable() { // from class: com.chad.library.adapter.base.module.BaseLoadMoreModule$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BaseLoadMoreModule.m900checkDisableLoadMoreIfNotFullPage$lambda5(RecyclerView.LayoutManager.this, this);
+                    BaseLoadMoreModule.checkDisableLoadMoreIfNotFullPage$lambda$5(RecyclerView.LayoutManager.this, this);
                 }
             }, 50L);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: checkDisableLoadMoreIfNotFullPage$lambda-4  reason: not valid java name */
-    public static final void m899checkDisableLoadMoreIfNotFullPage$lambda4(BaseLoadMoreModule this$0, RecyclerView.LayoutManager manager) {
+    public static final void checkDisableLoadMoreIfNotFullPage$lambda$4(BaseLoadMoreModule this$0, RecyclerView.LayoutManager manager) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(manager, "$manager");
         if (this$0.isFullScreen((LinearLayoutManager) manager)) {
@@ -197,8 +193,7 @@ public class BaseLoadMoreModule {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: checkDisableLoadMoreIfNotFullPage$lambda-5  reason: not valid java name */
-    public static final void m900checkDisableLoadMoreIfNotFullPage$lambda5(RecyclerView.LayoutManager manager, BaseLoadMoreModule this$0) {
+    public static final void checkDisableLoadMoreIfNotFullPage$lambda$5(RecyclerView.LayoutManager manager, BaseLoadMoreModule this$0) {
         Intrinsics.checkNotNullParameter(manager, "$manager");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         StaggeredGridLayoutManager staggeredGridLayoutManager = (StaggeredGridLayoutManager) manager;
@@ -216,14 +211,10 @@ public class BaseLoadMoreModule {
     private final int getTheBiggestNumber(int[] iArr) {
         int i = -1;
         if (iArr != null) {
-            int i2 = 0;
             if (!(iArr.length == 0)) {
-                int length = iArr.length;
-                while (i2 < length) {
-                    int i3 = iArr[i2];
-                    i2++;
-                    if (i3 > i) {
-                        i = i3;
+                for (int i2 : iArr) {
+                    if (i2 > i) {
+                        i = i2;
                     }
                 }
             }

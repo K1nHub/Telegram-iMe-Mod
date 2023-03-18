@@ -12,6 +12,7 @@ import android.os.Looper;
 import android.util.Log;
 import android.util.SparseArray;
 import android.util.TypedValue;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.core.util.ObjectsCompat;
 import androidx.core.util.Preconditions;
 import java.lang.reflect.InvocationTargetException;
@@ -25,7 +26,7 @@ public final class ResourcesCompat {
 
     public static Drawable getDrawable(Resources resources, int i, Resources.Theme theme) throws Resources.NotFoundException {
         if (Build.VERSION.SDK_INT >= 21) {
-            return resources.getDrawable(i, theme);
+            return Api21Impl.getDrawable(resources, i, theme);
         }
         return resources.getDrawable(i);
     }
@@ -33,10 +34,10 @@ public final class ResourcesCompat {
     public static Drawable getDrawableForDensity(Resources resources, int i, int i2, Resources.Theme theme) throws Resources.NotFoundException {
         int i3 = Build.VERSION.SDK_INT;
         if (i3 >= 21) {
-            return resources.getDrawableForDensity(i, i2, theme);
+            return Api21Impl.getDrawableForDensity(resources, i, i2, theme);
         }
         if (i3 >= 15) {
-            return resources.getDrawableForDensity(i, i2);
+            return Api15Impl.getDrawableForDensity(resources, i, i2);
         }
         return resources.getDrawable(i);
     }
@@ -49,7 +50,7 @@ public final class ResourcesCompat {
         }
         ColorStateList inflateColorStateList = inflateColorStateList(resources, i, theme);
         if (inflateColorStateList != null) {
-            addColorStateListToCache(colorStateListCacheKey, i, inflateColorStateList);
+            addColorStateListToCache(colorStateListCacheKey, i, inflateColorStateList, theme);
             return inflateColorStateList;
         } else if (Build.VERSION.SDK_INT >= 23) {
             return Api23Impl.getColorStateList(resources, i, theme);
@@ -72,10 +73,11 @@ public final class ResourcesCompat {
 
     private static ColorStateList getCachedColorStateList(ColorStateListCacheKey colorStateListCacheKey, int i) {
         ColorStateListCacheEntry colorStateListCacheEntry;
+        Resources.Theme theme;
         synchronized (sColorStateCacheLock) {
             SparseArray<ColorStateListCacheEntry> sparseArray = sColorStateCaches.get(colorStateListCacheKey);
             if (sparseArray != null && sparseArray.size() > 0 && (colorStateListCacheEntry = sparseArray.get(i)) != null) {
-                if (colorStateListCacheEntry.mConfiguration.equals(colorStateListCacheKey.mResources.getConfiguration())) {
+                if (colorStateListCacheEntry.mConfiguration.equals(colorStateListCacheKey.mResources.getConfiguration()) && (((theme = colorStateListCacheKey.mTheme) == null && colorStateListCacheEntry.mThemeHash == 0) || (theme != null && colorStateListCacheEntry.mThemeHash == theme.hashCode()))) {
                     return colorStateListCacheEntry.mValue;
                 }
                 sparseArray.remove(i);
@@ -84,7 +86,7 @@ public final class ResourcesCompat {
         }
     }
 
-    private static void addColorStateListToCache(ColorStateListCacheKey colorStateListCacheKey, int i, ColorStateList colorStateList) {
+    private static void addColorStateListToCache(ColorStateListCacheKey colorStateListCacheKey, int i, ColorStateList colorStateList, Resources.Theme theme) {
         synchronized (sColorStateCacheLock) {
             WeakHashMap<ColorStateListCacheKey, SparseArray<ColorStateListCacheEntry>> weakHashMap = sColorStateCaches;
             SparseArray<ColorStateListCacheEntry> sparseArray = weakHashMap.get(colorStateListCacheKey);
@@ -92,7 +94,7 @@ public final class ResourcesCompat {
                 sparseArray = new SparseArray<>();
                 weakHashMap.put(colorStateListCacheKey, sparseArray);
             }
-            sparseArray.append(i, new ColorStateListCacheEntry(colorStateList, colorStateListCacheKey.mResources.getConfiguration()));
+            sparseArray.append(i, new ColorStateListCacheEntry(colorStateList, colorStateListCacheKey.mResources.getConfiguration(), theme));
         }
     }
 
@@ -145,11 +147,13 @@ public final class ResourcesCompat {
     /* loaded from: classes.dex */
     public static class ColorStateListCacheEntry {
         final Configuration mConfiguration;
+        final int mThemeHash;
         final ColorStateList mValue;
 
-        ColorStateListCacheEntry(ColorStateList colorStateList, Configuration configuration) {
+        ColorStateListCacheEntry(ColorStateList colorStateList, Configuration configuration, Resources.Theme theme) {
             this.mValue = colorStateList;
             this.mConfiguration = configuration;
+            this.mThemeHash = theme == null ? 0 : theme.hashCode();
         }
     }
 
@@ -169,24 +173,26 @@ public final class ResourcesCompat {
 
     /* loaded from: classes.dex */
     public static abstract class FontCallback {
-        public abstract void onFontRetrievalFailed(int i);
+        /* renamed from: onFontRetrievalFailed */
+        public abstract void lambda$callbackFailAsync$1(int i);
 
-        public abstract void onFontRetrieved(Typeface typeface);
+        /* renamed from: onFontRetrieved */
+        public abstract void lambda$callbackSuccessAsync$0(Typeface typeface);
 
         public final void callbackSuccessAsync(final Typeface typeface, Handler handler) {
-            getHandler(handler).post(new Runnable() { // from class: androidx.core.content.res.ResourcesCompat.FontCallback.1
+            getHandler(handler).post(new Runnable() { // from class: androidx.core.content.res.ResourcesCompat$FontCallback$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
-                public void run() {
-                    FontCallback.this.onFontRetrieved(typeface);
+                public final void run() {
+                    ResourcesCompat.FontCallback.this.lambda$callbackSuccessAsync$0(typeface);
                 }
             });
         }
 
         public final void callbackFailAsync(final int i, Handler handler) {
-            getHandler(handler).post(new Runnable() { // from class: androidx.core.content.res.ResourcesCompat.FontCallback.2
+            getHandler(handler).post(new Runnable() { // from class: androidx.core.content.res.ResourcesCompat$FontCallback$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
-                public void run() {
-                    FontCallback.this.onFontRetrievalFailed(i);
+                public final void run() {
+                    ResourcesCompat.FontCallback.this.lambda$callbackFailAsync$1(i);
                 }
             });
         }
@@ -222,102 +228,110 @@ public final class ResourcesCompat {
         return loadFont;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00a6  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00b7  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private static android.graphics.Typeface loadFont(android.content.Context r15, android.content.res.Resources r16, android.util.TypedValue r17, int r18, int r19, androidx.core.content.res.ResourcesCompat.FontCallback r20, android.os.Handler r21, boolean r22, boolean r23) {
+    private static android.graphics.Typeface loadFont(android.content.Context r17, android.content.res.Resources r18, android.util.TypedValue r19, int r20, int r21, androidx.core.content.res.ResourcesCompat.FontCallback r22, android.os.Handler r23, boolean r24, boolean r25) {
         /*
-            r0 = r16
-            r1 = r17
-            r4 = r18
-            r5 = r19
-            r9 = r20
-            r10 = r21
-            java.lang.String r11 = "ResourcesCompat"
+            r0 = r18
+            r1 = r19
+            r4 = r20
+            r11 = r22
+            r12 = r23
+            java.lang.String r13 = "ResourcesCompat"
             java.lang.CharSequence r2 = r1.string
-            if (r2 == 0) goto Laa
-            java.lang.String r12 = r2.toString()
-            java.lang.String r1 = "res/"
-            boolean r1 = r12.startsWith(r1)
-            r13 = -3
-            r14 = 0
-            if (r1 != 0) goto L26
-            if (r9 == 0) goto L25
-            r9.callbackFailAsync(r13, r10)
+            if (r2 == 0) goto Lbb
+            java.lang.String r14 = r2.toString()
+            java.lang.String r2 = "res/"
+            boolean r2 = r14.startsWith(r2)
+            r15 = -3
+            r16 = 0
+            if (r2 != 0) goto L25
+            if (r11 == 0) goto L24
+            r11.callbackFailAsync(r15, r12)
+        L24:
+            return r16
         L25:
-            return r14
-        L26:
-            android.graphics.Typeface r1 = androidx.core.graphics.TypefaceCompat.findFromCache(r0, r4, r5)
-            if (r1 == 0) goto L32
-            if (r9 == 0) goto L31
-            r9.callbackSuccessAsync(r1, r10)
-        L31:
-            return r1
-        L32:
-            if (r23 == 0) goto L35
-            return r14
+            int r2 = r1.assetCookie
+            r7 = r21
+            android.graphics.Typeface r2 = androidx.core.graphics.TypefaceCompat.findFromCache(r0, r4, r14, r2, r7)
+            if (r2 == 0) goto L35
+            if (r11 == 0) goto L34
+            r11.callbackSuccessAsync(r2, r12)
+        L34:
+            return r2
         L35:
-            java.lang.String r1 = r12.toLowerCase()     // Catch: java.io.IOException -> L79 org.xmlpull.v1.XmlPullParserException -> L8f
-            java.lang.String r2 = ".xml"
-            boolean r1 = r1.endsWith(r2)     // Catch: java.io.IOException -> L79 org.xmlpull.v1.XmlPullParserException -> L8f
-            if (r1 == 0) goto L68
-            android.content.res.XmlResourceParser r1 = r0.getXml(r4)     // Catch: java.io.IOException -> L79 org.xmlpull.v1.XmlPullParserException -> L8f
-            androidx.core.content.res.FontResourcesParserCompat$FamilyResourceEntry r2 = androidx.core.content.res.FontResourcesParserCompat.parse(r1, r0)     // Catch: java.io.IOException -> L79 org.xmlpull.v1.XmlPullParserException -> L8f
-            if (r2 != 0) goto L56
+            if (r25 == 0) goto L38
+            return r16
+        L38:
+            java.lang.String r2 = r14.toLowerCase()     // Catch: java.io.IOException -> L8a org.xmlpull.v1.XmlPullParserException -> La0
+            java.lang.String r3 = ".xml"
+            boolean r2 = r2.endsWith(r3)     // Catch: java.io.IOException -> L8a org.xmlpull.v1.XmlPullParserException -> La0
+            if (r2 == 0) goto L6f
+            android.content.res.XmlResourceParser r2 = r0.getXml(r4)     // Catch: java.io.IOException -> L8a org.xmlpull.v1.XmlPullParserException -> La0
+            androidx.core.content.res.FontResourcesParserCompat$FamilyResourceEntry r2 = androidx.core.content.res.FontResourcesParserCompat.parse(r2, r0)     // Catch: java.io.IOException -> L8a org.xmlpull.v1.XmlPullParserException -> La0
+            if (r2 != 0) goto L59
             java.lang.String r0 = "Failed to find font-family tag"
-            android.util.Log.e(r11, r0)     // Catch: java.io.IOException -> L79 org.xmlpull.v1.XmlPullParserException -> L8f
-            if (r9 == 0) goto L55
-            r9.callbackFailAsync(r13, r10)     // Catch: java.io.IOException -> L79 org.xmlpull.v1.XmlPullParserException -> L8f
-        L55:
-            return r14
-        L56:
-            r1 = r15
-            r3 = r16
-            r4 = r18
-            r5 = r19
-            r6 = r20
+            android.util.Log.e(r13, r0)     // Catch: java.io.IOException -> L8a org.xmlpull.v1.XmlPullParserException -> La0
+            if (r11 == 0) goto L58
+            r11.callbackFailAsync(r15, r12)     // Catch: java.io.IOException -> L8a org.xmlpull.v1.XmlPullParserException -> La0
+        L58:
+            return r16
+        L59:
+            int r6 = r1.assetCookie     // Catch: java.io.IOException -> L8a org.xmlpull.v1.XmlPullParserException -> La0
+            r1 = r17
+            r3 = r18
+            r4 = r20
+            r5 = r14
             r7 = r21
             r8 = r22
-            android.graphics.Typeface r0 = androidx.core.graphics.TypefaceCompat.createFromResourcesFamilyXml(r1, r2, r3, r4, r5, r6, r7, r8)     // Catch: java.io.IOException -> L79 org.xmlpull.v1.XmlPullParserException -> L8f
+            r9 = r23
+            r10 = r24
+            android.graphics.Typeface r0 = androidx.core.graphics.TypefaceCompat.createFromResourcesFamilyXml(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10)     // Catch: java.io.IOException -> L8a org.xmlpull.v1.XmlPullParserException -> La0
             return r0
-        L68:
-            r1 = r15
-            android.graphics.Typeface r0 = androidx.core.graphics.TypefaceCompat.createFromResourcesFontFile(r15, r0, r4, r12, r5)     // Catch: java.io.IOException -> L79 org.xmlpull.v1.XmlPullParserException -> L8f
-            if (r9 == 0) goto L78
-            if (r0 == 0) goto L75
-            r9.callbackSuccessAsync(r0, r10)     // Catch: java.io.IOException -> L79 org.xmlpull.v1.XmlPullParserException -> L8f
-            goto L78
-        L75:
-            r9.callbackFailAsync(r13, r10)     // Catch: java.io.IOException -> L79 org.xmlpull.v1.XmlPullParserException -> L8f
-        L78:
+        L6f:
+            int r5 = r1.assetCookie     // Catch: java.io.IOException -> L8a org.xmlpull.v1.XmlPullParserException -> La0
+            r1 = r17
+            r2 = r18
+            r3 = r20
+            r4 = r14
+            r6 = r21
+            android.graphics.Typeface r0 = androidx.core.graphics.TypefaceCompat.createFromResourcesFontFile(r1, r2, r3, r4, r5, r6)     // Catch: java.io.IOException -> L8a org.xmlpull.v1.XmlPullParserException -> La0
+            if (r11 == 0) goto L89
+            if (r0 == 0) goto L86
+            r11.callbackSuccessAsync(r0, r12)     // Catch: java.io.IOException -> L8a org.xmlpull.v1.XmlPullParserException -> La0
+            goto L89
+        L86:
+            r11.callbackFailAsync(r15, r12)     // Catch: java.io.IOException -> L8a org.xmlpull.v1.XmlPullParserException -> La0
+        L89:
             return r0
-        L79:
+        L8a:
             r0 = move-exception
             java.lang.StringBuilder r1 = new java.lang.StringBuilder
             r1.<init>()
             java.lang.String r2 = "Failed to read xml resource "
             r1.append(r2)
-            r1.append(r12)
+            r1.append(r14)
             java.lang.String r1 = r1.toString()
-            android.util.Log.e(r11, r1, r0)
-            goto La4
-        L8f:
+            android.util.Log.e(r13, r1, r0)
+            goto Lb5
+        La0:
             r0 = move-exception
             java.lang.StringBuilder r1 = new java.lang.StringBuilder
             r1.<init>()
             java.lang.String r2 = "Failed to parse xml resource "
             r1.append(r2)
-            r1.append(r12)
+            r1.append(r14)
             java.lang.String r1 = r1.toString()
-            android.util.Log.e(r11, r1, r0)
-        La4:
-            if (r9 == 0) goto La9
-            r9.callbackFailAsync(r13, r10)
-        La9:
-            return r14
-        Laa:
+            android.util.Log.e(r13, r1, r0)
+        Lb5:
+            if (r11 == 0) goto Lba
+            r11.callbackFailAsync(r15, r12)
+        Lba:
+            return r16
+        Lbb:
             android.content.res.Resources$NotFoundException r2 = new android.content.res.Resources$NotFoundException
             java.lang.StringBuilder r3 = new java.lang.StringBuilder
             r3.<init>()
@@ -327,7 +341,7 @@ public final class ResourcesCompat {
             r3.append(r0)
             java.lang.String r0 = "\" ("
             r3.append(r0)
-            java.lang.String r0 = java.lang.Integer.toHexString(r18)
+            java.lang.String r0 = java.lang.Integer.toHexString(r20)
             r3.append(r0)
             java.lang.String r0 = ") is not a Font: "
             r3.append(r0)
@@ -339,11 +353,32 @@ public final class ResourcesCompat {
         throw new UnsupportedOperationException("Method not decompiled: androidx.core.content.res.ResourcesCompat.loadFont(android.content.Context, android.content.res.Resources, android.util.TypedValue, int, int, androidx.core.content.res.ResourcesCompat$FontCallback, android.os.Handler, boolean, boolean):android.graphics.Typeface");
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    public static class Api23Impl {
+    static class Api23Impl {
         static ColorStateList getColorStateList(Resources resources, int i, Resources.Theme theme) {
             return resources.getColorStateList(i, theme);
+        }
+
+        static int getColor(Resources resources, int i, Resources.Theme theme) {
+            return resources.getColor(i, theme);
+        }
+    }
+
+    /* loaded from: classes.dex */
+    static class Api21Impl {
+        static Drawable getDrawable(Resources resources, int i, Resources.Theme theme) {
+            return resources.getDrawable(i, theme);
+        }
+
+        static Drawable getDrawableForDensity(Resources resources, int i, int i2, Resources.Theme theme) {
+            return resources.getDrawableForDensity(i, i2, theme);
+        }
+    }
+
+    /* loaded from: classes.dex */
+    static class Api15Impl {
+        static Drawable getDrawableForDensity(Resources resources, int i, int i2) {
+            return resources.getDrawableForDensity(i, i2);
         }
     }
 
@@ -352,21 +387,21 @@ public final class ResourcesCompat {
         public static void rebase(Resources.Theme theme) {
             int i = Build.VERSION.SDK_INT;
             if (i >= 29) {
-                ImplApi29.rebase(theme);
+                Api29Impl.rebase(theme);
             } else if (i >= 23) {
-                ImplApi23.rebase(theme);
+                Api23Impl.rebase(theme);
             }
         }
 
         /* loaded from: classes.dex */
-        static class ImplApi29 {
+        static class Api29Impl {
             static void rebase(Resources.Theme theme) {
                 theme.rebase();
             }
         }
 
         /* loaded from: classes.dex */
-        static class ImplApi23 {
+        static class Api23Impl {
             private static Method sRebaseMethod;
             private static boolean sRebaseMethodFetched;
             private static final Object sRebaseMethodLock = new Object();

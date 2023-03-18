@@ -8,7 +8,7 @@ import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityManager;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewConfigurationCompat;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 /* loaded from: classes.dex */
 class TooltipCompatHandler implements View.OnLongClickListener, View.OnHoverListener, View.OnAttachStateChangeListener {
     private static TooltipCompatHandler sActiveHandler;
@@ -118,10 +118,10 @@ class TooltipCompatHandler implements View.OnLongClickListener, View.OnHoverList
                 j2 = 2500;
             } else {
                 if ((ViewCompat.getWindowSystemUiVisibility(this.mAnchor) & 1) == 1) {
-                    j = C0474C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
+                    j = C0468C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
                     longPressTimeout = ViewConfiguration.getLongPressTimeout();
                 } else {
-                    j = C0474C.DEFAULT_SEEK_FORWARD_INCREMENT_MS;
+                    j = C0468C.DEFAULT_SEEK_FORWARD_INCREMENT_MS;
                     longPressTimeout = ViewConfiguration.getLongPressTimeout();
                 }
                 j2 = j - longPressTimeout;

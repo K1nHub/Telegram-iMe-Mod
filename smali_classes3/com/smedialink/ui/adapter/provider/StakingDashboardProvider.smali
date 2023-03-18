@@ -24,18 +24,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$-o8R37FP9ikif1AbDWllmlIaxxY()V
+.method public static synthetic $r8$lambda$SDFEE7shoTWfqbOhil7b8DkmCqc()V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/ui/adapter/provider/StakingDashboardProvider;->onHistoryClick$lambda-1()V
+    invoke-static {}, Lcom/smedialink/ui/adapter/provider/StakingDashboardProvider;->onHistoryClick$lambda$1()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Fp-mBjKOGykicjGL23UfhYpVH6E()V
+.method public static synthetic $r8$lambda$aR9xNQn1M9mV_Oe552ILCsnhJk0()V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/ui/adapter/provider/StakingDashboardProvider;->onCalculatorClick$lambda-0()V
+    invoke-static {}, Lcom/smedialink/ui/adapter/provider/StakingDashboardProvider;->onCalculatorClick$lambda$0()V
 
     return-void
 .end method
@@ -87,13 +87,13 @@
     return-object p0
 .end method
 
-.method private static final onCalculatorClick$lambda-0()V
+.method private static final onCalculatorClick$lambda$0()V
     .locals 0
 
     return-void
 .end method
 
-.method private static final onHistoryClick$lambda-1()V
+.method private static final onHistoryClick$lambda$1()V
     .locals 0
 
     return-void

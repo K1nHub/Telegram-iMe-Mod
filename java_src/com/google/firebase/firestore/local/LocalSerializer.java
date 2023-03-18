@@ -43,7 +43,7 @@ public final class LocalSerializer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public MutableDocument decodeMaybeDocument(MaybeDocument maybeDocument) {
-        int i = C10131.f170xe45654f0[maybeDocument.getDocumentTypeCase().ordinal()];
+        int i = C10061.f170xe45654f0[maybeDocument.getDocumentTypeCase().ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
@@ -145,7 +145,7 @@ public final class LocalSerializer {
         SnapshotVersion decodeVersion2 = this.rpcSerializer.decodeVersion(target.getLastLimboFreeSnapshotVersion());
         ByteString resumeToken = target.getResumeToken();
         long lastListenSequenceNumber = target.getLastListenSequenceNumber();
-        int i = C10131.f171x5167ea64[target.getTargetTypeCase().ordinal()];
+        int i = C10061.f171x5167ea64[target.getTargetTypeCase().ordinal()];
         if (i == 1) {
             decodeDocumentsTarget = this.rpcSerializer.decodeDocumentsTarget(target.getDocuments());
         } else if (i != 2) {
@@ -159,7 +159,7 @@ public final class LocalSerializer {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.local.LocalSerializer$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10131 {
+    public static /* synthetic */ class C10061 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$proto$MaybeDocument$DocumentTypeCase */
         static final /* synthetic */ int[] f170xe45654f0;

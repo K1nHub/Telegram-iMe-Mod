@@ -8,7 +8,7 @@ import com.smedialink.storage.domain.model.crypto.Wallet;
 import com.smedialink.utils.extentions.common.StringExtKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: WalletConnectSessionDetailsPresenter.kt */
 @InjectViewState
@@ -26,7 +26,7 @@ public final class WalletConnectSessionDetailsPresenter extends BasePresenter<Wa
     }
 
     public final DialogModel getDisconnectConfirmationDialogModel() {
-        return new DialogModel(LocaleController.getString("AreYouSureSessionTitle", C3158R.string.AreYouSureSessionTitle), LocaleController.getString("TerminateSessionText", C3158R.string.TerminateSessionText), LocaleController.getString("Cancel", C3158R.string.Cancel), LocaleController.getString("Terminate", C3158R.string.Terminate));
+        return new DialogModel(LocaleController.getString("AreYouSureSessionTitle", C3286R.string.AreYouSureSessionTitle), LocaleController.getString("TerminateSessionText", C3286R.string.TerminateSessionText), LocaleController.getString("Cancel", C3286R.string.Cancel), LocaleController.getString("Terminate", C3286R.string.Terminate));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -39,7 +39,7 @@ public final class WalletConnectSessionDetailsPresenter extends BasePresenter<Wa
         String peerUrl = walletConnectSessionItem.getPeerUrl();
         String date = walletConnectSessionItem.getDate();
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        String address = eVMWallet == null ? null : eVMWallet.getAddress();
+        String address = eVMWallet != null ? eVMWallet.getAddress() : null;
         if (address == null) {
             address = "";
         }

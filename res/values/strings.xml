@@ -64,6 +64,8 @@
     <string name="AccDescrIVHeading">Heading</string>
     <string name="AccDescrIVTitle">Title</string>
     <string name="AccDescrInstantCamera">Instant camera</string>
+    <string name="AccDescrLiteBatteryLevelAnnounce">%s%%</string>
+    <string name="AccDescrLiteBatteryWhenBelow">enabled when below %s%%</string>
     <string name="AccDescrLocationNotify">Notify when in range</string>
     <string name="AccDescrMentionCount_few">%1$d mentions</string>
     <string name="AccDescrMentionCount_many">%1$d mentions</string>
@@ -122,6 +124,8 @@
     <string name="AccDescrQuizCorrectAnswer">Correct answer</string>
     <string name="AccDescrQuizExplanation">Explanation</string>
     <string name="AccDescrQuizIncorrectAnswer">Incorrect answer</string>
+    <string name="AccDescrRateTranscriptionDown">Rate down</string>
+    <string name="AccDescrRateTranscriptionUp">Rate up</string>
     <string name="AccDescrReactedWith">%1$s reacted with %2$s</string>
     <string name="AccDescrReactionMentionDown">Go to next unread reactions</string>
     <string name="AccDescrReceivedDate">Received %s</string>
@@ -161,6 +165,7 @@
     <string name="AccDescrShowAccounts">Show accounts</string>
     <string name="AccDescrShowKeyboard">Show keyboard</string>
     <string name="AccDescrShutter">Shutter</string>
+    <string name="AccDescrSpeedSlider">Choose speed</string>
     <string name="AccDescrStickerSet">Sticker set</string>
     <string name="AccDescrStickers">Stickers</string>
     <string name="AccDescrStopLiveLocation">Stop sharing live location</string>
@@ -297,6 +302,7 @@ to: %2$s"</string>
     <string name="ActionRequestedPeerChat">You shared a chat with un2</string>
     <string name="ActionRequestedPeerUser">You shared a user with un2</string>
     <string name="ActionRevokedInviteLinkClickable">un1 revoked invite link un2</string>
+    <string name="ActionSkip">Skip</string>
     <string name="ActionSuggestPhoto">Suggested Photo</string>
     <string name="ActionSuggestPhotoFromYouDescription">You suggested %s to use this photo for their account.</string>
     <string name="ActionSuggestPhotoShort">Suggested profile photo</string>
@@ -695,6 +701,7 @@ Please take a look at the &lt;a href=\"https://telegram.org/faq#general-question
     <string name="AttachVoiceRestrictedForever">The admins of this group have restricted you from sending voice messages here.</string>
     <string name="AudioAutodownload">Voice messages</string>
     <string name="AudioSavedHint">File saved to music</string>
+    <string name="AudioSpeedCustom">Audio will play at %1$sx speed.</string>
     <string name="AudioSpeedFast">Audio will play two times faster.</string>
     <string name="AudioSpeedMedium">Audio will play at 1.5x speed.</string>
     <string name="AudioSpeedNormal">Audio will play at normal speed.</string>
@@ -821,6 +828,7 @@ deleted %1$s after they are sent."</string>
     <string name="AutoNightSchedule">Schedule</string>
     <string name="AutoNightScheduled">Scheduled</string>
     <string name="AutoNightSystemDefault">System Default</string>
+    <string name="AutoNightSystemModeOff">System Default theme is disabled</string>
     <string name="AutoNightTheme">Auto-Night Mode</string>
     <string name="AutoNightThemeOff">Off</string>
     <string name="AutoNightTo">To</string>
@@ -954,6 +962,9 @@ It will be able to access your **IP address** and basic device info."</string>
     <string name="BotSettings">Settings</string>
     <string name="BotShare">Share</string>
     <string name="BotStart">START</string>
+    <string name="BotStartAppPermission">"Do you want to start app **%1$s** from bot **%2$s**?
+
+It will be able to access your **IP address** and basic device info."</string>
     <string name="BotStatusCantRead">has no access to messages</string>
     <string name="BotStatusRead">has access to messages</string>
     <string name="BotStop">Stop bot</string>
@@ -1143,6 +1154,7 @@ Note: if you forget the passcode, you'll need to delete and reinstall the app. A
     <string name="ChannelBroadcast">Broadcast</string>
     <string name="ChannelCantOpenBanned">Unfortunately, you were banned from participating in public groups.</string>
     <string name="ChannelCantOpenBannedByAdmin">"Sorry, you can't access this chat because you were banned by an admin."</string>
+    <string name="ChannelCantOpenBannedByAdminTitle">"Can't access the chat"</string>
     <string name="ChannelCantOpenNa">Sorry, this chat is no longer accessible.</string>
     <string name="ChannelCantOpenPrivate">Sorry, this channel is private, so you can’t view its content.</string>
     <string name="ChannelCantOpenPrivate2">Sorry, this channel is private.</string>
@@ -1171,6 +1183,9 @@ Note: if you forget the passcode, you'll need to delete and reinstall the app. A
     <string name="ChannelHideMembersInfo">Switch on to hide the list of members in this group. Admins will remain visible.</string>
     <string name="ChannelInviteLinkTitle">Invite Link</string>
     <string name="ChannelInviteViaLink">Invite via Link</string>
+    <string name="ChannelInviteViaLinkRestricted">"You can't create a link"</string>
+    <string name="ChannelInviteViaLinkRestricted2">"This user can't be invited"</string>
+    <string name="ChannelInviteViaLinkRestricted3">"This users can't be invited"</string>
     <string name="ChannelJoin">JOIN</string>
     <string name="ChannelJoinRequest">APPLY TO JOIN GROUP</string>
     <string name="ChannelJoinRequestSent">JOIN REQUEST SENT</string>
@@ -1300,6 +1315,7 @@ Minimum length is 5 characters."</string>
     <string name="ChatListDefault">Two lines</string>
     <string name="ChatListExpanded">Three lines</string>
     <string name="ChatListSwipeGesture">Chat list swipe gesture</string>
+    <string name="ChatListSwipeGestureInfo">Set up which action you want to perform each time you swipe to left in the chat list.</string>
     <string name="ChatLocation">Location</string>
     <string name="ChatNoTheme">No Theme</string>
     <string name="ChatPerFolderLimitSubtitle">Add up to %d chats into each of your folders</string>
@@ -1679,18 +1695,17 @@ You can always switch back to the default Telegram theme here."</string>
     <string name="DebugMenuClearMediaCache">Clear sent media cache</string>
     <string name="DebugMenuClearWebViewCache">Clear WebView cache</string>
     <string name="DebugMenuDisableCamera">Disable in-app camera</string>
-    <string name="DebugMenuDisableForceRtmpStreamFlag">Disable forced RTMP Stream Flag</string>
     <string name="DebugMenuDisableLogs">Disable Logs</string>
     <string name="DebugMenuDisablePauseMusic">Disable pause music on record</string>
     <string name="DebugMenuDisableSmoothKeyboard">Disable smooth keyboard</string>
     <string name="DebugMenuDisableWebViewDebug">Disable WebView debug</string>
     <string name="DebugMenuEnableCamera">Enable in-app camera</string>
-    <string name="DebugMenuEnableForceRtmpStreamFlag">Enable forced RTMP Stream Flag</string>
     <string name="DebugMenuEnableLogs">Enable Logs</string>
     <string name="DebugMenuEnablePauseMusic">Enable pause music on record</string>
     <string name="DebugMenuEnableSmoothKeyboard">Enable smooth keyboard</string>
     <string name="DebugMenuEnableWebViewDebug">Enable WebView debug</string>
     <string name="DebugMenuImportContacts">Import Contacts</string>
+    <string name="DebugMenuLongPress">Long press again for debug menu</string>
     <string name="DebugMenuReadAllDialogs">Read all Chats</string>
     <string name="DebugMenuReloadContacts">Reload Contacts</string>
     <string name="DebugMenuResetContacts">Reset Imported Contacts</string>
@@ -1921,6 +1936,8 @@ Anyone from the channel will be able to see messages in this group."</string>
     <string name="Draft">Draft</string>
     <string name="DynamicPackOrder">Dynamic Pack Order</string>
     <string name="DynamicPackOrderInfo">Automatically place recently used sticker packs at the front of the panel.</string>
+    <string name="DynamicPackOrderOff">Dynamic Order Off</string>
+    <string name="DynamicPackOrderOffInfo">Sticker packs will no longer be placed first every time you use a sticker.</string>
     <string name="Edit">Edit</string>
     <string name="EditAdmin">Admin Rights</string>
     <string name="EditAdminAddAdmins">Add New Admins</string>
@@ -2825,6 +2842,18 @@ until the import is completed."</string>
     <string name="Invitations_zero">%1$d invitations</string>
     <string name="Invite">Invite</string>
     <string name="InviteByQRCode">Invite by QR Code</string>
+    <string name="InviteChannelRestrictedUsers2One">**%s** can only be invited via link. However admin of this channel restricts you from sharing invite links.</string>
+    <string name="InviteChannelRestrictedUsers2_few">**%d users** can only be invited via link. However admin of this channel restricts you from sharing invite links.</string>
+    <string name="InviteChannelRestrictedUsers2_many">**%d users** can only be invited via link. However admin of this channel restricts you from sharing invite links.</string>
+    <string name="InviteChannelRestrictedUsers2_one">**%d user** can only be invited via link. However admin of this channel restricts you from sharing invite links.</string>
+    <string name="InviteChannelRestrictedUsers2_other">**%d users** can only be invited via link. However admin of this channel restricts you from sharing invite links.</string>
+    <string name="InviteChannelRestrictedUsers2_two">**%d users** can only be invited via link. However admin of this channel restricts you from sharing invite links.</string>
+    <string name="InviteChannelRestrictedUsersOne">**%s** restrict adding them to channels. You can send them an invite link as message instead.</string>
+    <string name="InviteChannelRestrictedUsers_few">**%d users** restrict adding them to channels. You can send them an invite link as message instead.</string>
+    <string name="InviteChannelRestrictedUsers_many">**%d users** restrict adding them to channels. You can send them an invite link as message instead.</string>
+    <string name="InviteChannelRestrictedUsers_one">**%d user** restrict adding them to channels. You can send them an invite link as message instead.</string>
+    <string name="InviteChannelRestrictedUsers_other">**%d users** restrict adding them to channels. You can send them an invite link as message instead.</string>
+    <string name="InviteChannelRestrictedUsers_two">**%d users** restrict adding them to channels. You can send them an invite link as message instead.</string>
     <string name="InviteExpired">This invite link has expired.</string>
     <string name="InviteFriends">Invite Friends</string>
     <string name="InviteFriendsHelp">Select contacts to invite them to iMe</string>
@@ -2835,7 +2864,25 @@ until the import is completed."</string>
     <string name="InviteLinkCount_other">%1$d invite links</string>
     <string name="InviteLinkCount_two">%1$d invite links</string>
     <string name="InviteLinkCount_zero">%1$d invite links</string>
+    <string name="InviteLinkSentSingle">Invitation link sent to **%s**</string>
+    <string name="InviteLinkSent_few">Invitation link sent to %d users</string>
+    <string name="InviteLinkSent_many">Invitation link sent to %d users</string>
+    <string name="InviteLinkSent_one">Invitation link sent to %d user</string>
+    <string name="InviteLinkSent_other">Invitation link sent to %d users</string>
+    <string name="InviteLinkSent_two">Invitation link sent to %d users</string>
     <string name="InviteLinks">Invite Links</string>
+    <string name="InviteRestrictedUsers2One">**%s** can only be invited via link. However admin of this group restricts you from sharing invite links.</string>
+    <string name="InviteRestrictedUsers2_few">**%d users** can only be invited via link. However admin of this group restricts you from sharing invite links.</string>
+    <string name="InviteRestrictedUsers2_many">**%d users** can only be invited via link. However admin of this group restricts you from sharing invite links.</string>
+    <string name="InviteRestrictedUsers2_one">**%d user** can only be invited via link. However admin of this group restricts you from sharing invite links.</string>
+    <string name="InviteRestrictedUsers2_other">**%d users** can only be invited via link. However admin of this group restricts you from sharing invite links.</string>
+    <string name="InviteRestrictedUsers2_two">**%d users** can only be invited via link. However admin of this group restricts you from sharing invite links.</string>
+    <string name="InviteRestrictedUsersOne">**%s** restrict adding them to groups. You can send them an invite link as message instead.</string>
+    <string name="InviteRestrictedUsers_few">**%d users** restrict adding them to groups. You can send them an invite link as message instead.</string>
+    <string name="InviteRestrictedUsers_many">**%d users** restrict adding them to groups. You can send them an invite link as message instead.</string>
+    <string name="InviteRestrictedUsers_one">**%d user** restrict adding them to groups. You can send them an invite link as message instead.</string>
+    <string name="InviteRestrictedUsers_other">**%d users** restrict adding them to groups. You can send them an invite link as message instead.</string>
+    <string name="InviteRestrictedUsers_two">**%d users** restrict adding them to groups. You can send them an invite link as message instead.</string>
     <string name="InviteRevokedHint">The invite link has been revoked.</string>
     <string name="InviteText2">"Hi, I'm here to chat with you using an advanced Telegram client. Download iMe and keep communicating with Telegram users in a new format! %1$s"</string>
     <string name="InviteTextNum_few">"Hey, I'm using Telegram to chat – and so are %1$d of our other contacts. Join us! Download it here: %2$s"</string>
@@ -3049,6 +3096,18 @@ This link will only work for members of this chat."</string>
     <string name="Links_two">%1$d links</string>
     <string name="Links_zero">%1$d links</string>
     <string name="Listening">listening</string>
+    <string name="LiteBatteryAlwaysDisabled">Always Disabled</string>
+    <string name="LiteBatteryAlwaysEnabled">Always Enabled</string>
+    <string name="LiteBatteryDisabled">Off</string>
+    <string name="LiteBatteryEnabled">On</string>
+    <string name="LiteBatteryInfoBelow">Automatically reduce power usage and animations when your battery is below %s.</string>
+    <string name="LiteBatteryInfoDisabled">Never reduce power usage and keep all animations even when your battery is low.</string>
+    <string name="LiteBatteryInfoEnabled">Always reduce power usage regardless of your battery level.</string>
+    <string name="LiteBatteryRestricted">Please turn off Low Power Mode to change these settings.</string>
+    <string name="LiteBatteryTitle">Low power mode</string>
+    <string name="LiteBatteryWhenBelow">When below %s</string>
+    <string name="LiteMode">Animations</string>
+    <string name="LiteModeInfo">Reduce motion effects to save power.</string>
     <string name="LiteOptionsAutoplayChat">Autoplay in chat</string>
     <string name="LiteOptionsAutoplayGifs">Autoplay GIFs</string>
     <string name="LiteOptionsAutoplayKeyboard">Autoplay in keyboard</string>
@@ -3058,13 +3117,14 @@ This link will only work for members of this chat."</string>
     <string name="LiteOptionsBlur">Night theme blur</string>
     <string name="LiteOptionsCalls">Animations in Calls</string>
     <string name="LiteOptionsChat">Animations in Chats</string>
+    <string name="LiteOptionsEmoji">Animated Emoji</string>
+    <string name="LiteOptionsScale">Zoom animations</string>
     <string name="LiteOptionsSpoiler">Animated spoiler effect</string>
+    <string name="LiteOptionsStickers">Animated Stickers</string>
     <string name="LiteOptionsTitle">Power saving options</string>
     <string name="LiteOptionsTopics">Side menu in topics</string>
     <string name="LitePowerSaver">Save Power on Low Battery</string>
     <string name="LitePowerSaverInfo">Automatically switch to low power usage when your devices is in Battery Saving Mode.</string>
-    <string name="LitePresetInfo">You can switch to low power mode to increase battery life. Recommended for weak devices.</string>
-    <string name="LitePresetTitle">Power usage</string>
     <string name="LiteSmoothTransitions">Enable Smooth Transitions</string>
     <string name="LiteSmoothTransitionsInfo">You can disable animated transitions between different sections of the apps.</string>
     <string name="LiveLocationAlertGroup">Choose for how long people in this chat will see your live location.</string>
@@ -3124,6 +3184,8 @@ This operation can take a few minutes to complete."</string>
     <string name="LowDiskSpaceNeverRemove">Never remove</string>
     <string name="LowDiskSpaceTitle">Attention</string>
     <string name="LowDiskSpaceTitle2">Remove media after</string>
+    <string name="LowPowerEnabledSubtitle">%s battery remaining</string>
+    <string name="LowPowerEnabledTitle">Low Power Mode enabled</string>
     <string name="MainChannelProfilePhotoSetHint">This is the main channel photo now.</string>
     <string name="MainChannelProfileVideoSetHint">This is the main channel video now.</string>
     <string name="MainGroupProfilePhotoSetHint">This is the main group photo now.</string>
@@ -5078,6 +5140,7 @@ You may need to restart the app for this to take effect."</string>
     <string name="SendGameToGroupText">Do you want to share this game to **%1$s**?</string>
     <string name="SendGameToText">Do you want to share this game to **%1$s**?</string>
     <string name="SendGifPreview">Send GIF</string>
+    <string name="SendInviteLink">Send Invite Link</string>
     <string name="SendItems">Send %1$s</string>
     <string name="SendLiveLocation">Share My Live Location for...</string>
     <string name="SendLiveLocationFor15m">for 15 minutes</string>
@@ -5363,6 +5426,7 @@ messages?"</string>
     <string name="SponsoredMessageInfoDescription3">Telegram offers free and unlimited service to hundreds of millions of users, which involves significant server and traffic costs. In order to remain independent and stay true to its values, Telegram developed a paid tool to promote messages with user privacy in mind. We welcome responsible advertisers at:</string>
     <string name="SponsoredMessageInfoDescription4">Ads should no longer be synonymous with abuse of user privacy. Let us redefine how a tech company should operate – together.</string>
     <string name="SponsoredMessageRecommended">recommended</string>
+    <string name="SponsoredMessageSponsor">Advertiser Info</string>
     <string name="Start">Start</string>
     <string name="StartDayAt">"'Start on' MMM d 'at' HH:mm"</string>
     <string name="StartDayYearAt">"'Start on' MMM d yyyy 'at' HH:mm"</string>
@@ -5401,11 +5465,13 @@ messages?"</string>
     <string name="StickersCopy">Copy link</string>
     <string name="StickersHide">Archive</string>
     <string name="StickersName">Stickers</string>
+    <string name="StickersNameInfo">Manage your sticker packs, emoji and reactions.</string>
     <string name="StickersRemove">Remove</string>
     <string name="StickersRemoved">Stickers removed.</string>
     <string name="StickersRemovedInfo">%1$s is no longer in your stickers.</string>
     <string name="StickersReorder">Reorder</string>
     <string name="StickersReorderHint">Move stickers to reorder.</string>
+    <string name="StickersSettings">Settings</string>
     <string name="StickersShare">Share</string>
     <string name="Stickers_few">%1$d stickers</string>
     <string name="Stickers_many">%1$d stickers</string>
@@ -5434,6 +5500,8 @@ messages?"</string>
     <string name="StorageCleared">Storage Cleared</string>
     <string name="StorageCleared2">All media can be re-downloaded from the Telegram cloud if you need it again.</string>
     <string name="StoragePath">Storage Path</string>
+    <string name="StoragePathFree">%1$s free</string>
+    <string name="StoragePathFreeValue">%1$s free, %2$s</string>
     <string name="StorageUsage">Storage Usage</string>
     <string name="StorageUsageCalculating">Calculating cache size...</string>
     <string name="StorageUsageInfo">All media will stay in the Telegram cloud and can be re-downloaded if you need it again.</string>
@@ -5875,6 +5943,7 @@ But if you're generally not OK with Telegram's modest needs, it won't be possibl
     <string name="UserBlocked">User blocked</string>
     <string name="UserChannelTooMuchJoin">Sorry, the target user is a member of too many groups and channels. Please ask them to leave some first.</string>
     <string name="UserCustomPhotoSeted">"You will now always see this photo for **%s's** account."</string>
+    <string name="UserRead">read %s</string>
     <string name="UserRemovedBy">Removed by %1$s</string>
     <string name="UserRemovedFromChatHint">**%1$s** removed from **%2$s**</string>
     <string name="UserRestricted">Sorry, you are not allowed to do this.</string>
@@ -6003,6 +6072,12 @@ However, it is currently available for purchase. **Learn more…**"</string>
     <string name="VideoQualityIsTooLow">Video quality is too low to change compression settings.</string>
     <string name="VideoSavedHint">Video saved to gallery</string>
     <string name="VideoSavedToDownloadsHint">Video saved to downloads</string>
+    <string name="VideoSpeedCustom">Custom %s</string>
+    <string name="VideoSpeedFast">Fast</string>
+    <string name="VideoSpeedNormal">Normal</string>
+    <string name="VideoSpeedSlow">Slow</string>
+    <string name="VideoSpeedVeryFast">Very fast</string>
+    <string name="VideoSpeedVerySlow">Very slow</string>
     <string name="VideosSavedHint_few">%1$d videos saved to gallery</string>
     <string name="VideosSavedHint_many">%1$d videos saved to gallery</string>
     <string name="VideosSavedHint_one">Video saved to gallery</string>
@@ -6846,7 +6921,7 @@ Settings > Tools > Chats > Templates"</string>
     <string name="collection_tab_all">All</string>
     <string name="collection_tab_categories">Categories</string>
     <string name="collection_tab_my">My</string>
-    <string name="com.crashlytics.android.build_id">ab25464acaf0465991a25f93624b5323</string>
+    <string name="com.crashlytics.android.build_id">1fb48ec70ef94f8297ef91818399f5e9</string>
     <string name="combine_messages_alert_message">"You send messages in a row and this can annoy other users.
 
 Enable the option so that your messages sent in a row within 30 seconds will be combined into one message?"</string>
@@ -7590,6 +7665,25 @@ You need to be in their Telegram contacts to add them back, otherwise they will 
     <string name="profile_group_filter_title">Members filter</string>
     <string name="profile_group_id_item_title">Group ID</string>
     <string name="profile_my_id_item_title">My ID</string>
+    <string name="profile_twitter_account_actions_title">Twitter account</string>
+    <string name="profile_twitter_auth_to_use_feature_description">To use this functionality, you must authorize your Telegram account via our iMe Wallet bot.</string>
+    <string name="profile_twitter_bot_confirmation_alert_description">To connect Twitter, please add %s bot as a group admin to confirm that you are the owner of the chat</string>
+    <string name="profile_twitter_bot_confirmation_alert_title">Owner verification</string>
+    <string name="profile_twitter_link_confirmation_alert_description">Your Twitter account is linked to another account, if you link it to the current one, the other connections will be reset</string>
+    <string name="profile_twitter_link_confirmation_alert_title">Confirmation</string>
+    <string name="profile_twitter_not_connected">Not connected</string>
+    <string name="profile_twitter_reset_confirmation_alert_description">"Are you sure you want to reset your Twitter account?
+
+After reset you can link a new account."</string>
+    <string name="profile_twitter_reset_confirmation_alert_title">Reset Twitter account</string>
+    <string name="profile_twitter_unlinked_error_alert_description">"Previously, your Twitter account was linked to Telegram from another device, that is why your connection was reset.
+
+Please log out or link the Twitter account again."</string>
+    <string name="profile_twitter_unlinked_error_alert_link">Link</string>
+    <string name="profile_twitter_unlinked_error_alert_log_out">Log out</string>
+    <string name="profile_twitter_unlinked_error_alert_title">Account unlinked</string>
+    <string name="profile_twitter_vpn_alert_description">Please, enable VPN if Twitter is limited in your region.</string>
+    <string name="profile_twitter_vpn_alert_title">VPN</string>
     <string name="profile_user_id_action_copy">Copy</string>
     <string name="profile_user_id_action_transfer">Make a transfer</string>
     <string name="profile_user_id_item_title">User ID</string>
@@ -7620,6 +7714,13 @@ You need to be in their Telegram contacts to add them back, otherwise they will 
     <string name="push_notification_wallet_unsupported">Unsupported notification</string>
     <string name="quick_reaction_settings_enable_item_hint">Turn this ON to use quick reactions for chat messages</string>
     <string name="recent_chats_clear_history">Are you sure you want to clear recent chats history?</string>
+    <string name="recent_chats_counters_and_reactions">Counters and reactions</string>
+    <string name="recent_chats_hint">Turn this ON if you want to have a quick access to your recent chats with the ability to pin unlimited amount of chats. The panel will be shown above the chat list.</string>
+    <string name="recent_chats_live">Video chats</string>
+    <string name="recent_chats_mentions">Mentions</string>
+    <string name="recent_chats_new_messages">New messages</string>
+    <string name="recent_chats_online_status">Online status</string>
+    <string name="recent_chats_reactions">Reactions</string>
     <string name="release_to_go_to_next_unread_bot">Release to go to the next unread bot</string>
     <string name="release_to_go_to_next_unread_group">Release to go to the next unread group</string>
     <string name="release_to_go_to_next_unread_personal_chat">Release to go to the next unread personal chat</string>
@@ -7948,7 +8049,7 @@ Your balance will be updated after the transaction is confirmed in the blockchai
     <string name="stickers_size_small">Small</string>
     <string name="stickers_size_title">Sticker Size</string>
     <string name="swipe_to_next_unread_dialog_consider_archive">Consider archived chats</string>
-    <string name="swipe_to_next_unread_dialog_hint">Turn this ON to move to unread chats by swipe</string>
+    <string name="swipe_to_next_unread_dialog_hint">Turn this ON if you want to you to scroll your chats without going back to your chat list. When you reach the bottom of a chat, pull up to go to the next unread chat.</string>
     <string name="swipe_to_next_unread_dialog_types">Dialog types</string>
     <string name="text_recognition_bottom_sheet_title">Photo → Text</string>
     <string name="topic">Topic</string>
@@ -8052,6 +8153,20 @@ Your balance will be updated after the transaction is confirmed in the blockchai
     <string name="translation_rate_limit_error">Google API has temporarily limited translation due to too frequent requests. Try later, or change your IP address.</string>
     <string name="translation_search_language">Search translation language</string>
     <string name="translation_search_language_empty">There are no matching languages</string>
+    <string name="twitter_auth_title">Twitter authorization</string>
+    <string name="twitter_empty_state_subtitle">There are no Tweets yet</string>
+    <string name="twitter_empty_state_title">"The user doesn't have any Tweets yet"</string>
+    <string name="twitter_open_in_twitter">Open in Twitter</string>
+    <string name="twitter_search_hint">"Enter recipient's username"</string>
+    <string name="twitter_search_invite_confirmation_description">Are you sure you want to send invitation to %s?</string>
+    <string name="twitter_search_invite_confirmation_title">Send invitation</string>
+    <string name="twitter_search_invite_direct_messages_error">The error occurred when sending invitation. The user disabled direct messages.</string>
+    <string name="twitter_search_invite_subtitle">Not found in iMe</string>
+    <string name="twitter_search_invite_success">Invitation was successfully sent</string>
+    <string name="twitter_search_open_in_twitter">Open in Twitter</string>
+    <string name="twitter_search_subtitle">"Enter recipient's Twitter username in the search pole"</string>
+    <string name="twitter_search_title">Twitter search</string>
+    <string name="twitter_title">Tweets</string>
     <string name="unlock_premium_transcription_hint">To transcribe voice for more than 1 min, Telegram Premium is required.</string>
     <string name="user_restrictions_send_games">Games</string>
     <string name="user_restrictions_send_gifs">GIFs</string>
@@ -8182,7 +8297,7 @@ Please enter the words **%d**, **%d** and **%d** below:"</string>
     <string name="wallet_banner_slide_binance_pay_operation_without_fee_long_description">No more unnecessary fees and commissions. Pay, send and receive crypto - it’s all without commissions.</string>
     <string name="wallet_banner_slide_binance_pay_operation_without_fee_title">NO FEES</string>
     <string name="wallet_banner_slide_crypto_transfers_description">Via chats, Telegram ID, address, QR code</string>
-    <string name="wallet_banner_slide_crypto_transfers_long_description">Make cryptocurrency transfers right in chats, by Telegram ID, using QR code or public addresses.</string>
+    <string name="wallet_banner_slide_crypto_transfers_long_description">Make cryptocurrency transfers right in chats, by Telegram ID, Twitter ID, using QR code or public addresses.</string>
     <string name="wallet_banner_slide_crypto_transfers_title">CRYPTO TRANSFERS</string>
     <string name="wallet_banner_slide_faq_description">General functionality description</string>
     <string name="wallet_banner_slide_faq_long_description">Please read the iMe functionality description, you will find a lot of answers to your questions.</string>

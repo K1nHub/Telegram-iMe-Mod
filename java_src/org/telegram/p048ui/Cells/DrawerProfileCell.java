@@ -15,16 +15,16 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.smedialink.p031ui.drawer.DrawerAccountData;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.fork.controller.ForkCommonController;
 import org.fork.models.DrawerHeaderSettings;
-import org.telegram.PhoneFormat.C3078PhoneFormat;
+import org.telegram.PhoneFormat.C3204PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLocation;
@@ -147,9 +147,9 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
                     str2 = charSequence2;
                 } else if (drawerAccountData3 == DrawerAccountData.USERNAME) {
                     if (TextUtils.isEmpty(this.currentUser.username)) {
-                        str2 = LocaleController.getInternalString(C3158R.string.drawer_profile_cell_alert_username);
+                        str2 = LocaleController.getInternalString(C3286R.string.drawer_profile_cell_alert_username);
                     } else {
-                        str2 = LocaleController.formatStringInternal(C3158R.string.common_username, this.currentUser.username);
+                        str2 = LocaleController.formatStringInternal(C3286R.string.common_username, this.currentUser.username);
                     }
                     drawerAccountData = title;
                     drawerAccountData2 = subtitle;
@@ -160,7 +160,7 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
                 } else if (drawerAccountData3 == DrawerAccountData.USER_ID) {
                     drawerAccountData = title;
                     drawerAccountData2 = subtitle;
-                    str2 = LocaleController.formatStringInternal(C3158R.string.common_id, Long.valueOf(this.currentUser.f1633id));
+                    str2 = LocaleController.formatStringInternal(C3286R.string.common_id, Long.valueOf(this.currentUser.f1639id));
                 } else {
                     drawerAccountData = title;
                     drawerAccountData2 = subtitle;
@@ -199,7 +199,7 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         ImageView imageView = new ImageView(context);
         this.editButton = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.editButton.setImageResource(C3158R.C3160drawable.fork_filter_icon_eye);
+        this.editButton.setImageResource(C3286R.C3288drawable.fork_filter_icon_eye);
         this.editButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_menuName"), PorterDuff.Mode.SRC_IN));
         addView(this.editButton, LayoutHelper.createFrame(59, 59, 8388693, 0, 0, 59, 0));
     }
@@ -208,7 +208,7 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         ImageView imageView = new ImageView(context);
         this.archiveButton = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.archiveButton.setImageResource(C3158R.C3160drawable.msg_archive);
+        this.archiveButton.setImageResource(C3286R.C3288drawable.msg_archive);
         this.archiveButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_menuName"), PorterDuff.Mode.MULTIPLY));
         addView(this.archiveButton, LayoutHelper.createFrame(48, 48, 8388693, 0, 0, 64, 90));
     }
@@ -228,7 +228,7 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         this.shadowView = imageView;
         imageView.setVisibility(4);
         this.shadowView.setScaleType(ImageView.ScaleType.FIT_XY);
-        this.shadowView.setImageResource(C3158R.C3160drawable.bottom_shadow);
+        this.shadowView.setImageResource(C3286R.C3288drawable.bottom_shadow);
         addView(this.shadowView, LayoutHelper.createFrame(-1, 70, 83));
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
@@ -273,12 +273,12 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         this.arrowView = imageView2;
         imageView2.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_menuName"), PorterDuff.Mode.MULTIPLY));
         this.arrowView.setScaleType(ImageView.ScaleType.CENTER);
-        this.arrowView.setImageResource(C3158R.C3160drawable.msg_expand);
+        this.arrowView.setImageResource(C3286R.C3288drawable.msg_expand);
         addView(this.arrowView, LayoutHelper.createFrame(59, 59, 85));
         setArrowState(false);
         boolean z2 = sunDrawable == null;
         if (z2) {
-            int i = C3158R.C3164raw.sun;
+            int i = C3286R.C3291raw.sun;
             RLottieDrawable rLottieDrawable = new RLottieDrawable(i, "" + i, AndroidUtilities.m50dp(28), AndroidUtilities.m50dp(28), true, null);
             sunDrawable = rLottieDrawable;
             rLottieDrawable.setPlayInDirectionOfCustomEndFrame(true);
@@ -295,9 +295,9 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
             public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 if (Theme.isCurrentThemeDark()) {
-                    accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToDayTheme", C3158R.string.AccDescrSwitchToDayTheme));
+                    accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToDayTheme", C3286R.string.AccDescrSwitchToDayTheme));
                 } else {
-                    accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToNightTheme", C3158R.string.AccDescrSwitchToNightTheme));
+                    accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToNightTheme", C3286R.string.AccDescrSwitchToNightTheme));
                 }
             }
         };
@@ -323,15 +323,15 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         this.darkThemeView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.DrawerProfileCell$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DrawerProfileCell.this.lambda$new$1(z, view);
+                DrawerProfileCell.this.lambda$new$2(z, drawerLayoutContainer, view);
             }
         });
         this.darkThemeView.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Cells.DrawerProfileCell$$ExternalSyntheticLambda2
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
-                boolean lambda$new$2;
-                lambda$new$2 = DrawerProfileCell.lambda$new$2(DrawerLayoutContainer.this, view);
-                return lambda$new$2;
+                boolean lambda$new$3;
+                lambda$new$3 = DrawerProfileCell.lambda$new$3(DrawerLayoutContainer.this, view);
+                return lambda$new$3;
             }
         });
         addView(this.darkThemeView, LayoutHelper.createFrame(48, 48, 85, 0, 0, 6, 90));
@@ -368,12 +368,13 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:30:0x0072  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x007e  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0090  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0091  */
+    /* JADX WARN: Removed duplicated region for block: B:40:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public /* synthetic */ void lambda$new$1(boolean r6, android.view.View r7) {
+    public /* synthetic */ void lambda$new$2(boolean r6, final org.telegram.p048ui.ActionBar.DrawerLayoutContainer r7, android.view.View r8) {
         /*
             r5 = this;
             if (r6 == 0) goto L3
@@ -386,19 +387,19 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
             r6 = 1
             org.telegram.p048ui.Cells.DrawerProfileCell.switchingTheme = r6
             android.content.Context r6 = org.telegram.messenger.ApplicationLoader.applicationContext
-            java.lang.String r7 = "themeconfig"
+            java.lang.String r8 = "themeconfig"
             r0 = 0
-            android.content.SharedPreferences r6 = r6.getSharedPreferences(r7, r0)
-            java.lang.String r7 = "lastDayTheme"
+            android.content.SharedPreferences r6 = r6.getSharedPreferences(r8, r0)
+            java.lang.String r8 = "lastDayTheme"
             java.lang.String r1 = "Blue"
-            java.lang.String r7 = r6.getString(r7, r1)
-            org.telegram.ui.ActionBar.Theme$ThemeInfo r2 = org.telegram.p048ui.ActionBar.Theme.getTheme(r7)
+            java.lang.String r8 = r6.getString(r8, r1)
+            org.telegram.ui.ActionBar.Theme$ThemeInfo r2 = org.telegram.p048ui.ActionBar.Theme.getTheme(r8)
             if (r2 == 0) goto L2c
-            org.telegram.ui.ActionBar.Theme$ThemeInfo r2 = org.telegram.p048ui.ActionBar.Theme.getTheme(r7)
+            org.telegram.ui.ActionBar.Theme$ThemeInfo r2 = org.telegram.p048ui.ActionBar.Theme.getTheme(r8)
             boolean r2 = r2.isDark()
             if (r2 == 0) goto L2d
         L2c:
-            r7 = r1
+            r8 = r1
         L2d:
             java.lang.String r2 = "lastDarkTheme"
             java.lang.String r3 = "Dark Blue"
@@ -412,14 +413,14 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
             r6 = r3
         L46:
             org.telegram.ui.ActionBar.Theme$ThemeInfo r2 = org.telegram.p048ui.ActionBar.Theme.getActiveTheme()
-            boolean r4 = r7.equals(r6)
+            boolean r4 = r8.equals(r6)
             if (r4 == 0) goto L66
             boolean r4 = r2.isDark()
             if (r4 != 0) goto L64
-            boolean r4 = r7.equals(r3)
+            boolean r4 = r8.equals(r3)
             if (r4 != 0) goto L64
             java.lang.String r4 = "Night"
-            boolean r4 = r7.equals(r4)
+            boolean r4 = r8.equals(r4)
             if (r4 == 0) goto L67
         L64:
             r3 = r6
@@ -427,43 +428,51 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         L66:
             r3 = r6
         L67:
-            r1 = r7
+            r1 = r8
         L68:
             java.lang.String r6 = r2.getKey()
             boolean r6 = r1.equals(r6)
             if (r6 == 0) goto L7e
-            org.telegram.ui.ActionBar.Theme$ThemeInfo r7 = org.telegram.p048ui.ActionBar.Theme.getTheme(r3)
-            org.telegram.ui.Components.RLottieDrawable r1 = org.telegram.p048ui.Cells.DrawerProfileCell.sunDrawable
-            r2 = 36
-            r1.setCustomEndFrame(r2)
+            org.telegram.ui.ActionBar.Theme$ThemeInfo r8 = org.telegram.p048ui.ActionBar.Theme.getTheme(r3)
+            org.telegram.ui.Components.RLottieDrawable r0 = org.telegram.p048ui.Cells.DrawerProfileCell.sunDrawable
+            r1 = 36
+            r0.setCustomEndFrame(r1)
             goto L87
         L7e:
-            org.telegram.ui.ActionBar.Theme$ThemeInfo r7 = org.telegram.p048ui.ActionBar.Theme.getTheme(r1)
+            org.telegram.ui.ActionBar.Theme$ThemeInfo r8 = org.telegram.p048ui.ActionBar.Theme.getTheme(r1)
             org.telegram.ui.Components.RLottieDrawable r1 = org.telegram.p048ui.Cells.DrawerProfileCell.sunDrawable
             r1.setCustomEndFrame(r0)
         L87:
-            org.telegram.ui.Components.RLottieImageView r1 = r5.darkThemeView
-            r1.playAnimation()
-            int r1 = org.telegram.p048ui.ActionBar.Theme.selectedAutoNightType
-            if (r1 == 0) goto Lab
-            android.content.Context r1 = r5.getContext()
-            int r2 = org.telegram.messenger.C3158R.string.AutoNightModeOff
-            java.lang.String r3 = "AutoNightModeOff"
-            java.lang.String r2 = org.telegram.messenger.LocaleController.getString(r3, r2)
-            android.widget.Toast r1 = android.widget.Toast.makeText(r1, r2, r0)
-            r1.show()
-            org.telegram.p048ui.ActionBar.Theme.selectedAutoNightType = r0
-            org.telegram.p048ui.ActionBar.Theme.saveAutoNightThemeConfig()
-            org.telegram.p048ui.ActionBar.Theme.cancelAutoNightThemeCallbacks()
-        Lab:
-            r5.switchTheme(r7, r6)
+            org.telegram.ui.Components.RLottieImageView r0 = r5.darkThemeView
+            r0.playAnimation()
+            r5.switchTheme(r8, r6)
+            if (r7 == 0) goto La9
+            android.view.ViewParent r6 = r7.getParent()
+            boolean r6 = r6 instanceof android.widget.FrameLayout
+            if (r6 == 0) goto La0
+            android.view.ViewParent r6 = r7.getParent()
+            android.widget.FrameLayout r6 = (android.widget.FrameLayout) r6
+            goto La1
+        La0:
+            r6 = 0
+        La1:
+            org.telegram.ui.Cells.DrawerProfileCell$$ExternalSyntheticLambda3 r8 = new org.telegram.ui.Cells.DrawerProfileCell$$ExternalSyntheticLambda3
+            r8.<init>()
+            org.telegram.p048ui.ActionBar.Theme.turnOffAutoNight(r6, r8)
+        La9:
             return
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Cells.DrawerProfileCell.lambda$new$1(boolean, android.view.View):void");
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Cells.DrawerProfileCell.lambda$new$2(boolean, org.telegram.ui.ActionBar.DrawerLayoutContainer, android.view.View):void");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$new$2(DrawerLayoutContainer drawerLayoutContainer, View view) {
+    public static /* synthetic */ void lambda$new$1(DrawerLayoutContainer drawerLayoutContainer) {
+        drawerLayoutContainer.closeDrawer(false);
+        drawerLayoutContainer.presentFragment(new ThemeActivity(1));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ boolean lambda$new$3(DrawerLayoutContainer drawerLayoutContainer, View view) {
         if (drawerLayoutContainer != null) {
             drawerLayoutContainer.presentFragment(new ThemeActivity(0));
             return true;
@@ -482,10 +491,10 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         private int stateSize;
 
         /* renamed from: y1 */
-        private float f1661y1;
+        private float f1667y1;
 
         /* renamed from: y2 */
-        private float f1662y2;
+        private float f1668y2;
 
         public AnimatedStatusView(Context context, int i, int i2) {
             super(context);
@@ -503,13 +512,13 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         public void translate(float f, float f2) {
             setTranslationX(f - (getMeasuredWidth() / 2.0f));
             float measuredHeight = f2 - (getMeasuredHeight() / 2.0f);
-            this.f1661y1 = measuredHeight;
-            setTranslationY(measuredHeight + this.f1662y2);
+            this.f1667y1 = measuredHeight;
+            setTranslationY(measuredHeight + this.f1668y2);
         }
 
         public void translateY2(float f) {
-            float f2 = this.f1661y1;
-            this.f1662y2 = f;
+            float f2 = this.f1667y1;
+            this.f1668y2 = f;
             setTranslationY(f2 + f);
         }
 
@@ -701,7 +710,7 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
                 drawable.init();
                 StarParticlesView.Drawable drawable2 = this.starParticlesDrawable;
                 drawable2.speedScale = 0.8f;
-                drawable2.minLifeTime = C0474C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
+                drawable2.minLifeTime = C0468C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
             }
             this.starParticlesDrawable.rect.set(this.avatarImageView.getLeft(), this.avatarImageView.getTop(), this.avatarImageView.getRight(), this.avatarImageView.getBottom());
             this.starParticlesDrawable.rect.inset(-AndroidUtilities.m50dp(20), -AndroidUtilities.m50dp(20));
@@ -794,7 +803,7 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
             }
             this.nameTextView.setDrawablePadding(AndroidUtilities.m50dp(4));
             if (this.premiumStar == null) {
-                this.premiumStar = getResources().getDrawable(C3158R.C3160drawable.msg_premium_liststar).mutate();
+                this.premiumStar = getResources().getDrawable(C3286R.C3288drawable.msg_premium_liststar).mutate();
             }
             this.premiumStar.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_menuPhoneCats"), PorterDuff.Mode.MULTIPLY));
             this.status.set(this.premiumStar, !this.previewMode);
@@ -810,8 +819,8 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         this.animatedStatus.setColor(Theme.getColor(Theme.isCurrentThemeDark() ? "chats_verifiedBackground" : "chats_menuPhoneCats"));
         this.status.setColor(Integer.valueOf(Theme.getColor(Theme.isCurrentThemeDark() ? "chats_verifiedBackground" : "chats_menuPhoneCats")));
         TextView textView = this.phoneTextView;
-        C3078PhoneFormat c3078PhoneFormat = C3078PhoneFormat.getInstance();
-        textView.setText(c3078PhoneFormat.format("+" + tLRPC$User.phone));
+        C3204PhoneFormat c3204PhoneFormat = C3204PhoneFormat.getInstance();
+        textView.setText(c3204PhoneFormat.format("+" + tLRPC$User.phone));
         AvatarDrawable avatarDrawable = new AvatarDrawable(tLRPC$User);
         avatarDrawable.setColor(Theme.getColor("avatar_backgroundInProfileBlue"));
         this.avatarImageView.setForUserOrChat(tLRPC$User, avatarDrawable);
@@ -858,10 +867,10 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         }
         ImageView imageView = this.arrowView;
         if (this.accountsShown) {
-            i = C3158R.string.AccDescrHideAccounts;
+            i = C3286R.string.AccDescrHideAccounts;
             str = "AccDescrHideAccounts";
         } else {
-            i = C3158R.string.AccDescrShowAccounts;
+            i = C3286R.string.AccDescrShowAccounts;
             str = "AccDescrShowAccounts";
         }
         imageView.setContentDescription(LocaleController.getString(str, i));

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStorageModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StorageModule.kt\ncom/smedialink/storage/data/di/module/StorageModuleKt$dataStorageModule$1$1\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,22:1\n127#2,5:23\n*S KotlinDebug\n*F\n+ 1 StorageModule.kt\ncom/smedialink/storage/data/di/module/StorageModuleKt$dataStorageModule$1$1\n*L\n13#1:23,5\n*E\n"
+    value = "SMAP\nStorageModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StorageModule.kt\ncom/smedialink/storage/data/di/module/StorageModuleKt$dataStorageModule$1$1\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,27:1\n127#2,5:28\n*S KotlinDebug\n*F\n+ 1 StorageModule.kt\ncom/smedialink/storage/data/di/module/StorageModuleKt$dataStorageModule$1$1\n*L\n15#1:28,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 13
+    .line 15
     new-instance p2, Lcom/smedialink/storage/data/locale/prefs/impl/AppPreference;
 
     .line 131
@@ -90,7 +90,7 @@
 
     check-cast v0, Lcom/smedialink/storage/domain/gateway/TelegramGateway;
 
-    .line 13
+    .line 15
     invoke-static {p1}, Lorg/koin/android/ext/koin/ModuleExtKt;->androidContext(Lorg/koin/core/scope/Scope;)Landroid/content/Context;
 
     move-result-object v2
@@ -108,7 +108,7 @@
 
     check-cast p1, Lcom/google/gson/Gson;
 
-    .line 13
+    .line 15
     invoke-direct {p2, v0, v2, p1}, Lcom/smedialink/storage/data/locale/prefs/impl/AppPreference;-><init>(Lcom/smedialink/storage/domain/gateway/TelegramGateway;Landroid/content/Context;Lcom/google/gson/Gson;)V
 
     return-object p2
@@ -117,7 +117,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 13
+    .line 15
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

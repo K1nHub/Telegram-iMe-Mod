@@ -5226,8 +5226,6 @@ Telegram 更新到最新版本。"</string>
     <string name="chat_templates_info">在此處傳送訊息並將其命名，以便在聊天中快速傳送接收的模板</string>
     <string name="chat_templates_list_header">沒有模板</string>
     <string name="chat_templates_mode_attach">附加選單</string>
-    <string name="chat_templates_mode_hint">"您可以隨時在
-設定 > 介面 > 模板中變更此設定"</string>
     <string name="chat_templates_mode_oval">橢圓</string>
     <string name="choose_tokens_order_alphabet">依照字母</string>
     <string name="choose_tokens_order_balance">依照餘額</string>

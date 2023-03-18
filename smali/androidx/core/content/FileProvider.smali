@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroidx/core/content/FileProvider$Api21Impl;,
         Landroidx/core/content/FileProvider$SimplePathStrategy;,
         Landroidx/core/content/FileProvider$PathStrategy;
     }
@@ -17,7 +18,7 @@
 
 .field private static final DEVICE_ROOT:Ljava/io/File;
 
-.field private static sCache:Ljava/util/HashMap;
+.field private static final sCache:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -30,6 +31,8 @@
 
 
 # instance fields
+.field private mResourceId:I
+
 .field private mStrategy:Landroidx/core/content/FileProvider$PathStrategy;
 
 
@@ -41,14 +44,14 @@
 
     const-string v1, "_size"
 
-    .line 361
+    .line 355
     filled-new-array {v0, v1}, [Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Landroidx/core/content/FileProvider;->COLUMNS:[Ljava/lang/String;
 
-    .line 380
+    .line 374
     new-instance v0, Ljava/io/File;
 
     const-string v1, "/"
@@ -57,7 +60,7 @@
 
     sput-object v0, Landroidx/core/content/FileProvider;->DEVICE_ROOT:Ljava/io/File;
 
-    .line 383
+    .line 377
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -68,10 +71,15 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
-    .line 360
+    .line 382
     invoke-direct {p0}, Landroid/content/ContentProvider;-><init>()V
+
+    const/4 v0, 0x0
+
+    .line 383
+    iput v0, p0, Landroidx/core/content/FileProvider;->mResourceId:I
 
     return-void
 .end method
@@ -79,7 +87,7 @@
 .method private static varargs buildPath(Ljava/io/File;[Ljava/lang/String;)Ljava/io/File;
     .locals 4
 
-    .line 876
+    .line 901
     array-length v0, p1
 
     const/4 v1, 0x0
@@ -91,7 +99,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 878
+    .line 903
     new-instance v3, Ljava/io/File;
 
     invoke-direct {v3, p0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
@@ -110,12 +118,12 @@
 .method private static copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
     .locals 2
 
-    .line 891
+    .line 916
     new-array v0, p1, [Ljava/lang/Object;
 
     const/4 v1, 0x0
 
-    .line 892
+    .line 917
     invoke-static {p0, v1, v0, v1, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     return-object v0
@@ -124,30 +132,102 @@
 .method private static copyOf([Ljava/lang/String;I)[Ljava/lang/String;
     .locals 2
 
-    .line 885
+    .line 910
     new-array v0, p1, [Ljava/lang/String;
 
     const/4 v1, 0x0
 
-    .line 886
+    .line 911
     invoke-static {p0, v1, v0, v1, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     return-object v0
 .end method
 
-.method private static getPathStrategy(Landroid/content/Context;Ljava/lang/String;)Landroidx/core/content/FileProvider$PathStrategy;
+.method static getFileProviderPathsMetaData(Landroid/content/Context;Ljava/lang/String;Landroid/content/pm/ProviderInfo;I)Landroid/content/res/XmlResourceParser;
     .locals 2
 
-    .line 631
+    if-eqz p2, :cond_2
+
+    .line 668
+    iget-object p1, p2, Landroid/content/pm/ProviderInfo;->metaData:Landroid/os/Bundle;
+
+    const-string v0, "android.support.FILE_PROVIDER_PATHS"
+
+    if-nez p1, :cond_0
+
+    if-eqz p3, :cond_0
+
+    .line 669
+    new-instance p1, Landroid/os/Bundle;
+
+    const/4 v1, 0x1
+
+    invoke-direct {p1, v1}, Landroid/os/Bundle;-><init>(I)V
+
+    iput-object p1, p2, Landroid/content/pm/ProviderInfo;->metaData:Landroid/os/Bundle;
+
+    .line 670
+    invoke-virtual {p1, v0, p3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    .line 674
+    :cond_0
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object p0
+
+    .line 673
+    invoke-virtual {p2, p0, v0}, Landroid/content/pm/ProviderInfo;->loadXmlMetaData(Landroid/content/pm/PackageManager;Ljava/lang/String;)Landroid/content/res/XmlResourceParser;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_1
+
+    return-object p0
+
+    .line 676
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "Missing android.support.FILE_PROVIDER_PATHS meta-data"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    .line 664
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string p3, "Couldn\'t find meta-data for provider with authority "
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method private static getPathStrategy(Landroid/content/Context;Ljava/lang/String;I)Landroidx/core/content/FileProvider$PathStrategy;
+    .locals 2
+
+    .line 641
     sget-object v0, Landroidx/core/content/FileProvider;->sCache:Ljava/util/HashMap;
 
     monitor-enter v0
 
-    .line 632
+    .line 642
     :try_start_0
-    sget-object v1, Landroidx/core/content/FileProvider;->sCache:Ljava/util/HashMap;
-
-    invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -157,9 +237,9 @@
 
     if-nez v1, :cond_0
 
-    .line 635
+    .line 645
     :try_start_1
-    invoke-static {p0, p1}, Landroidx/core/content/FileProvider;->parsePathStrategy(Landroid/content/Context;Ljava/lang/String;)Landroidx/core/content/FileProvider$PathStrategy;
+    invoke-static {p0, p1, p2}, Landroidx/core/content/FileProvider;->parsePathStrategy(Landroid/content/Context;Ljava/lang/String;I)Landroidx/core/content/FileProvider$PathStrategy;
 
     move-result-object v1
     :try_end_1
@@ -167,39 +247,37 @@
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 643
+    .line 653
     :try_start_2
-    sget-object p0, Landroidx/core/content/FileProvider;->sCache:Ljava/util/HashMap;
-
-    invoke-virtual {p0, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
     :catch_0
     move-exception p0
 
-    .line 640
+    .line 650
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "Failed to parse android.support.FILE_PROVIDER_PATHS meta-data"
+    const-string p2, "Failed to parse android.support.FILE_PROVIDER_PATHS meta-data"
 
-    invoke-direct {p1, v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {p1, p2, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw p1
 
     :catch_1
     move-exception p0
 
-    .line 637
+    .line 647
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "Failed to parse android.support.FILE_PROVIDER_PATHS meta-data"
+    const-string p2, "Failed to parse android.support.FILE_PROVIDER_PATHS meta-data"
 
-    invoke-direct {p1, v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {p1, p2, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw p1
 
-    .line 645
+    .line 655
     :cond_0
     :goto_0
     monitor-exit v0
@@ -217,14 +295,16 @@
 .end method
 
 .method public static getUriForFile(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;)Landroid/net/Uri;
-    .locals 0
+    .locals 1
 
-    .line 441
-    invoke-static {p0, p1}, Landroidx/core/content/FileProvider;->getPathStrategy(Landroid/content/Context;Ljava/lang/String;)Landroidx/core/content/FileProvider$PathStrategy;
+    const/4 v0, 0x0
+
+    .line 449
+    invoke-static {p0, p1, v0}, Landroidx/core/content/FileProvider;->getPathStrategy(Landroid/content/Context;Ljava/lang/String;I)Landroidx/core/content/FileProvider$PathStrategy;
 
     move-result-object p0
 
-    .line 442
+    .line 450
     invoke-interface {p0, p2}, Landroidx/core/content/FileProvider$PathStrategy;->getUriForFile(Ljava/io/File;)Landroid/net/Uri;
 
     move-result-object p0
@@ -237,7 +317,7 @@
 
     const-string v0, "r"
 
-    .line 851
+    .line 876
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -251,7 +331,7 @@
     :cond_0
     const-string v0, "w"
 
-    .line 853
+    .line 878
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -271,7 +351,7 @@
     :cond_1
     const-string v0, "wa"
 
-    .line 857
+    .line 882
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -285,7 +365,7 @@
     :cond_2
     const-string v0, "rw"
 
-    .line 861
+    .line 886
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -299,7 +379,7 @@
     :cond_3
     const-string v0, "rwt"
 
-    .line 864
+    .line 889
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -310,7 +390,7 @@
 
     goto :goto_1
 
-    .line 869
+    .line 894
     :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -340,8 +420,8 @@
     return p0
 .end method
 
-.method private static parsePathStrategy(Landroid/content/Context;Ljava/lang/String;)Landroidx/core/content/FileProvider$PathStrategy;
-    .locals 9
+.method private static parsePathStrategy(Landroid/content/Context;Ljava/lang/String;I)Landroidx/core/content/FileProvider$PathStrategy;
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -349,273 +429,230 @@
         }
     .end annotation
 
-    .line 657
+    .line 691
     new-instance v0, Landroidx/core/content/FileProvider$SimplePathStrategy;
 
     invoke-direct {v0, p1}, Landroidx/core/content/FileProvider$SimplePathStrategy;-><init>(Ljava/lang/String;)V
 
-    .line 659
+    .line 693
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
 
     const/16 v2, 0x80
 
-    .line 660
+    .line 694
     invoke-virtual {v1, p1, v2}, Landroid/content/pm/PackageManager;->resolveContentProvider(Ljava/lang/String;I)Landroid/content/pm/ProviderInfo;
 
     move-result-object v1
 
-    if-eqz v1, :cond_a
-
-    .line 667
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    .line 695
+    invoke-static {p0, p1, v1, p2}, Landroidx/core/content/FileProvider;->getFileProviderPathsMetaData(Landroid/content/Context;Ljava/lang/String;Landroid/content/pm/ProviderInfo;I)Landroid/content/res/XmlResourceParser;
 
     move-result-object p1
 
-    const-string v2, "android.support.FILE_PROVIDER_PATHS"
-
-    .line 666
-    invoke-virtual {v1, p1, v2}, Landroid/content/pm/ProviderInfo;->loadXmlMetaData(Landroid/content/pm/PackageManager;Ljava/lang/String;)Landroid/content/res/XmlResourceParser;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_9
-
-    .line 674
+    .line 699
     :cond_0
     :goto_0
     invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->next()I
 
-    move-result v1
+    move-result p2
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    if-eq v1, v2, :cond_8
+    if-eq p2, v1, :cond_8
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    if-ne v1, v3, :cond_0
+    if-ne p2, v2, :cond_0
 
-    .line 676
+    .line 701
     invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p2
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    const-string v4, "name"
+    const-string v3, "name"
 
-    .line 678
-    invoke-interface {p1, v3, v4}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 703
+    invoke-interface {p1, v2, v3}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "path"
+
+    .line 704
+    invoke-interface {p1, v2, v4}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    const-string v5, "path"
+    const-string v5, "root-path"
 
-    .line 679
-    invoke-interface {p1, v3, v5}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 707
+    invoke-virtual {v5, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v5
+    move-result v5
 
-    const-string v6, "root-path"
+    const/4 v6, 0x0
 
-    .line 682
-    invoke-virtual {v6, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v5, :cond_1
 
-    move-result v6
-
-    const/4 v7, 0x0
-
-    if-eqz v6, :cond_1
-
-    .line 683
-    sget-object v3, Landroidx/core/content/FileProvider;->DEVICE_ROOT:Ljava/io/File;
+    .line 708
+    sget-object v2, Landroidx/core/content/FileProvider;->DEVICE_ROOT:Ljava/io/File;
 
     goto :goto_1
 
     :cond_1
-    const-string v6, "files-path"
+    const-string v5, "files-path"
 
-    .line 684
-    invoke-virtual {v6, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 709
+    invoke-virtual {v5, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_2
+    if-eqz v5, :cond_2
 
-    .line 685
+    .line 710
     invoke-virtual {p0}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
 
-    move-result-object v3
+    move-result-object v2
 
     goto :goto_1
 
     :cond_2
-    const-string v6, "cache-path"
+    const-string v5, "cache-path"
 
-    .line 686
-    invoke-virtual {v6, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 711
+    invoke-virtual {v5, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_3
+    if-eqz v5, :cond_3
 
-    .line 687
+    .line 712
     invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
 
-    move-result-object v3
+    move-result-object v2
 
     goto :goto_1
 
     :cond_3
-    const-string v6, "external-path"
+    const-string v5, "external-path"
 
-    .line 688
-    invoke-virtual {v6, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 713
+    invoke-virtual {v5, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_4
+    if-eqz v5, :cond_4
 
-    .line 689
+    .line 714
     invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
 
-    move-result-object v3
+    move-result-object v2
 
     goto :goto_1
 
     :cond_4
-    const-string v6, "external-files-path"
+    const-string v5, "external-files-path"
 
-    .line 690
-    invoke-virtual {v6, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 715
+    invoke-virtual {v5, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_5
+    if-eqz v5, :cond_5
 
-    .line 691
-    invoke-static {p0, v3}, Landroidx/core/content/ContextCompat;->getExternalFilesDirs(Landroid/content/Context;Ljava/lang/String;)[Ljava/io/File;
+    .line 716
+    invoke-static {p0, v2}, Landroidx/core/content/ContextCompat;->getExternalFilesDirs(Landroid/content/Context;Ljava/lang/String;)[Ljava/io/File;
 
-    move-result-object v1
+    move-result-object p2
 
-    .line 692
-    array-length v6, v1
+    .line 717
+    array-length v5, p2
 
-    if-lez v6, :cond_7
+    if-lez v5, :cond_7
 
-    .line 693
-    aget-object v3, v1, v7
+    .line 718
+    aget-object v2, p2, v6
 
     goto :goto_1
 
     :cond_5
-    const-string v6, "external-cache-path"
+    const-string v5, "external-cache-path"
 
-    .line 695
-    invoke-virtual {v6, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 720
+    invoke-virtual {v5, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_6
+    if-eqz v5, :cond_6
 
-    .line 696
+    .line 721
     invoke-static {p0}, Landroidx/core/content/ContextCompat;->getExternalCacheDirs(Landroid/content/Context;)[Ljava/io/File;
 
-    move-result-object v1
+    move-result-object p2
 
-    .line 697
-    array-length v6, v1
+    .line 722
+    array-length v5, p2
 
-    if-lez v6, :cond_7
+    if-lez v5, :cond_7
 
-    .line 698
-    aget-object v3, v1, v7
+    .line 723
+    aget-object v2, p2, v6
 
     goto :goto_1
 
-    .line 700
+    .line 725
     :cond_6
-    sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v8, 0x15
+    const/16 v7, 0x15
 
-    if-lt v6, v8, :cond_7
+    if-lt v5, v7, :cond_7
 
-    const-string v6, "external-media-path"
+    const-string v5, "external-media-path"
 
-    .line 701
-    invoke-virtual {v6, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 726
+    invoke-virtual {v5, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result p2
 
-    if-eqz v1, :cond_7
+    if-eqz p2, :cond_7
 
-    .line 702
-    invoke-virtual {p0}, Landroid/content/Context;->getExternalMediaDirs()[Ljava/io/File;
+    .line 727
+    invoke-static {p0}, Landroidx/core/content/FileProvider$Api21Impl;->getExternalMediaDirs(Landroid/content/Context;)[Ljava/io/File;
 
-    move-result-object v1
+    move-result-object p2
 
-    .line 703
-    array-length v6, v1
+    .line 728
+    array-length v5, p2
 
-    if-lez v6, :cond_7
+    if-lez v5, :cond_7
 
-    .line 704
-    aget-object v3, v1, v7
+    .line 729
+    aget-object v2, p2, v6
 
     :cond_7
     :goto_1
-    if-eqz v3, :cond_0
+    if-eqz v2, :cond_0
 
-    new-array v1, v2, [Ljava/lang/String;
+    new-array p2, v1, [Ljava/lang/String;
 
-    aput-object v5, v1, v7
+    aput-object v4, p2, v6
 
-    .line 709
-    invoke-static {v3, v1}, Landroidx/core/content/FileProvider;->buildPath(Ljava/io/File;[Ljava/lang/String;)Ljava/io/File;
+    .line 734
+    invoke-static {v2, p2}, Landroidx/core/content/FileProvider;->buildPath(Ljava/io/File;[Ljava/lang/String;)Ljava/io/File;
 
-    move-result-object v1
+    move-result-object p2
 
-    invoke-virtual {v0, v4, v1}, Landroidx/core/content/FileProvider$SimplePathStrategy;->addRoot(Ljava/lang/String;Ljava/io/File;)V
+    invoke-virtual {v0, v3, p2}, Landroidx/core/content/FileProvider$SimplePathStrategy;->addRoot(Ljava/lang/String;Ljava/io/File;)V
 
     goto/16 :goto_0
 
     :cond_8
     return-object v0
-
-    .line 669
-    :cond_9
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Missing android.support.FILE_PROVIDER_PATHS meta-data"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    .line 662
-    :cond_a
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Couldn\'t find meta-data for provider with authority "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 
@@ -623,20 +660,20 @@
 .method public attachInfo(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
     .locals 1
 
-    .line 406
+    .line 409
     invoke-super {p0, p1, p2}, Landroid/content/ContentProvider;->attachInfo(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
 
-    .line 409
+    .line 412
     iget-boolean v0, p2, Landroid/content/pm/ProviderInfo;->exported:Z
 
     if-nez v0, :cond_1
 
-    .line 412
+    .line 415
     iget-boolean v0, p2, Landroid/content/pm/ProviderInfo;->grantUriPermissions:Z
 
     if-eqz v0, :cond_0
 
-    .line 416
+    .line 419
     iget-object p2, p2, Landroid/content/pm/ProviderInfo;->authority:Ljava/lang/String;
 
     const-string v0, ";"
@@ -649,7 +686,24 @@
 
     aget-object p2, p2, v0
 
-    invoke-static {p1, p2}, Landroidx/core/content/FileProvider;->getPathStrategy(Landroid/content/Context;Ljava/lang/String;)Landroidx/core/content/FileProvider$PathStrategy;
+    .line 420
+    sget-object v0, Landroidx/core/content/FileProvider;->sCache:Ljava/util/HashMap;
+
+    monitor-enter v0
+
+    .line 421
+    :try_start_0
+    invoke-virtual {v0, p2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 422
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 424
+    iget v0, p0, Landroidx/core/content/FileProvider;->mResourceId:I
+
+    invoke-static {p1, p2, v0}, Landroidx/core/content/FileProvider;->getPathStrategy(Landroid/content/Context;Ljava/lang/String;I)Landroidx/core/content/FileProvider$PathStrategy;
 
     move-result-object p1
 
@@ -657,7 +711,18 @@
 
     return-void
 
-    .line 413
+    :catchall_0
+    move-exception p1
+
+    .line 422
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+
+    .line 416
     :cond_0
     new-instance p1, Ljava/lang/SecurityException;
 
@@ -667,7 +732,7 @@
 
     throw p1
 
-    .line 410
+    .line 413
     :cond_1
     new-instance p1, Ljava/lang/SecurityException;
 
@@ -681,14 +746,14 @@
 .method public delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
     .locals 0
 
-    .line 596
+    .line 606
     iget-object p2, p0, Landroidx/core/content/FileProvider;->mStrategy:Landroidx/core/content/FileProvider$PathStrategy;
 
     invoke-interface {p2, p1}, Landroidx/core/content/FileProvider$PathStrategy;->getFileForUri(Landroid/net/Uri;)Ljava/io/File;
 
     move-result-object p1
 
-    .line 597
+    .line 607
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
     move-result p1
@@ -699,14 +764,14 @@
 .method public getType(Landroid/net/Uri;)Ljava/lang/String;
     .locals 2
 
-    .line 548
+    .line 558
     iget-object v0, p0, Landroidx/core/content/FileProvider;->mStrategy:Landroidx/core/content/FileProvider$PathStrategy;
 
     invoke-interface {v0, p1}, Landroidx/core/content/FileProvider$PathStrategy;->getFileForUri(Landroid/net/Uri;)Ljava/io/File;
 
     move-result-object p1
 
-    .line 550
+    .line 560
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v0
@@ -719,7 +784,7 @@
 
     if-ltz v0, :cond_0
 
-    .line 552
+    .line 562
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object p1
@@ -730,7 +795,7 @@
 
     move-result-object p1
 
-    .line 553
+    .line 563
     invoke-static {}, Landroid/webkit/MimeTypeMap;->getSingleton()Landroid/webkit/MimeTypeMap;
 
     move-result-object v0
@@ -752,7 +817,7 @@
 .method public insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
     .locals 0
 
-    .line 568
+    .line 578
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string p2, "No external inserts"
@@ -778,19 +843,19 @@
         }
     .end annotation
 
-    .line 620
+    .line 630
     iget-object v0, p0, Landroidx/core/content/FileProvider;->mStrategy:Landroidx/core/content/FileProvider$PathStrategy;
 
     invoke-interface {v0, p1}, Landroidx/core/content/FileProvider$PathStrategy;->getFileForUri(Landroid/net/Uri;)Ljava/io/File;
 
     move-result-object p1
 
-    .line 621
+    .line 631
     invoke-static {p2}, Landroidx/core/content/FileProvider;->modeToMode(Ljava/lang/String;)I
 
     move-result p2
 
-    .line 622
+    .line 632
     invoke-static {p1, p2}, Landroid/os/ParcelFileDescriptor;->open(Ljava/io/File;I)Landroid/os/ParcelFileDescriptor;
 
     move-result-object p1
@@ -801,7 +866,7 @@
 .method public query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
     .locals 6
 
-    .line 508
+    .line 517
     iget-object p3, p0, Landroidx/core/content/FileProvider;->mStrategy:Landroidx/core/content/FileProvider$PathStrategy;
 
     invoke-interface {p3, p1}, Landroidx/core/content/FileProvider$PathStrategy;->getFileForUri(Landroid/net/Uri;)Ljava/io/File;
@@ -810,28 +875,28 @@
 
     const-string p4, "displayName"
 
-    .line 509
+    .line 518
     invoke-virtual {p1, p4}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     if-nez p2, :cond_0
 
-    .line 512
+    .line 521
     sget-object p2, Landroidx/core/content/FileProvider;->COLUMNS:[Ljava/lang/String;
 
-    .line 515
+    .line 524
     :cond_0
     array-length p4, p2
 
     new-array p4, p4, [Ljava/lang/String;
 
-    .line 516
+    .line 525
     array-length p5, p2
 
     new-array p5, p5, [Ljava/lang/Object;
 
-    .line 518
+    .line 527
     array-length v0, p2
 
     const/4 v1, 0x0
@@ -845,21 +910,21 @@
 
     const-string v4, "_display_name"
 
-    .line 519
+    .line 528
     invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_2
 
-    .line 520
+    .line 529
     aput-object v4, p4, v2
 
     add-int/lit8 v3, v2, 0x1
 
     if-nez p1, :cond_1
 
-    .line 521
+    .line 530
     invoke-virtual {p3}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v4
@@ -877,19 +942,19 @@
     :cond_2
     const-string v4, "_size"
 
-    .line 522
+    .line 531
     invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    .line 523
+    .line 532
     aput-object v4, p4, v2
 
     add-int/lit8 v3, v2, 0x1
 
-    .line 524
+    .line 533
     invoke-virtual {p3}, Ljava/io/File;->length()J
 
     move-result-wide v4
@@ -908,25 +973,25 @@
 
     goto :goto_0
 
-    .line 528
+    .line 537
     :cond_4
     invoke-static {p4, v2}, Landroidx/core/content/FileProvider;->copyOf([Ljava/lang/String;I)[Ljava/lang/String;
 
     move-result-object p1
 
-    .line 529
+    .line 538
     invoke-static {p5, v2}, Landroidx/core/content/FileProvider;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object p2
 
-    .line 531
+    .line 540
     new-instance p3, Landroid/database/MatrixCursor;
 
     const/4 p4, 0x1
 
     invoke-direct {p3, p1, p4}, Landroid/database/MatrixCursor;-><init>([Ljava/lang/String;I)V
 
-    .line 532
+    .line 541
     invoke-virtual {p3, p2}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
     return-object p3
@@ -935,7 +1000,7 @@
 .method public update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
     .locals 0
 
-    .line 578
+    .line 588
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string p2, "No external updates"

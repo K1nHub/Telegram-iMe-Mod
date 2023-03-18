@@ -6,7 +6,7 @@ import io.reactivex.internal.observers.BlockingMultiObserver;
 import io.reactivex.internal.operators.maybe.MaybeFromCallable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public abstract class Maybe<T> implements MaybeSource<T> {
     protected abstract void subscribeActual(MaybeObserver<? super T> maybeObserver);
 

@@ -26,23 +26,19 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingProgrammesFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingProgrammesFragment.kt\ncom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,172:1\n56#2,6:173\n*S KotlinDebug\n*F\n+ 1 StakingProgrammesFragment.kt\ncom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2\n*L\n42#1:173,6\n*E\n"
+    value = "SMAP\nStakingProgrammesFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingProgrammesFragment.kt\ncom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,173:1\n56#2,6:174\n*S KotlinDebug\n*F\n+ 1 StakingProgrammesFragment.kt\ncom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2\n*L\n42#1:174,6\n*E\n"
 .end annotation
 
 
 # instance fields
-.field final synthetic $stakingTabType:Lcom/smedialink/storage/domain/model/staking/StakingTabType;
-
 .field final synthetic this$0:Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;
 
 
 # direct methods
-.method constructor <init>(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/smedialink/storage/domain/model/staking/StakingTabType;)V
+.method constructor <init>(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
     .locals 0
 
     iput-object p1, p0, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2;->this$0:Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;
-
-    iput-object p2, p0, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2;->$stakingTabType:Lcom/smedialink/storage/domain/model/staking/StakingTabType;
 
     const/4 p1, 0x0
 
@@ -61,9 +57,7 @@
 
     new-instance v1, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2$1;
 
-    iget-object v2, p0, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2;->$stakingTabType:Lcom/smedialink/storage/domain/model/staking/StakingTabType;
-
-    invoke-direct {v1, v2}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2$1;-><init>(Lcom/smedialink/storage/domain/model/staking/StakingTabType;)V
+    invoke-direct {v1, v0}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2$1;-><init>(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
 
     .line 58
     sget-object v2, Lorg/koin/mp/KoinPlatformTools;->INSTANCE:Lorg/koin/mp/KoinPlatformTools;

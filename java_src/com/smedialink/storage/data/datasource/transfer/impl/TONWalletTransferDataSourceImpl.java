@@ -1,12 +1,10 @@
 package com.smedialink.storage.data.datasource.transfer.impl;
 
 import com.smedialink.storage.data.datasource.transfer.WalletTransferDataSource;
-import com.smedialink.storage.data.mapper.crypto.TransferMappingKt;
 import com.smedialink.storage.data.network.api.own.TonApi;
 import com.smedialink.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.smedialink.storage.data.network.model.request.crypto.ton.GetParamsForTonCryptoTransferRequest;
-import com.smedialink.storage.data.network.model.response.base.ApiBaseResponse;
-import com.smedialink.storage.data.network.model.response.crypto.ton.ParamsForTonCryptoTransferResponse;
+import com.smedialink.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.smedialink.storage.data.utils.extentions.NumberExtKt;
 import com.smedialink.storage.data.utils.extentions.StringExtKt;
 import com.smedialink.storage.domain.manager.crypto.CryptoAccessManager;
@@ -20,7 +18,6 @@ import com.smedialink.storage.domain.model.crypto.send.TransactionArgs;
 import com.smedialink.storage.domain.model.crypto.send.TransferArgs;
 import com.smedialink.storage.domain.model.wallet.token.TokenCode;
 import io.reactivex.Observable;
-import io.reactivex.functions.Function;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TONWalletTransferDataSourceImpl.kt */
 /* loaded from: classes3.dex */
@@ -58,19 +55,7 @@ public final class TONWalletTransferDataSourceImpl implements WalletTransferData
         if (str == null) {
             str = "";
         }
-        Observable<ApiBaseResponse<ParamsForTonCryptoTransferResponse>> paramsForCryptoTransfer = tonApi.getParamsForCryptoTransfer(new GetParamsForTonCryptoTransferRequest(name, str, StringExtKt.orZero(str2)));
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable map = paramsForCryptoTransfer.map(new Function() { // from class: com.smedialink.storage.data.datasource.transfer.impl.TONWalletTransferDataSourceImpl$getTransferMetadata$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (response.isSuccess()) {
-                    return Result.Companion.success(TransferMappingKt.mapToDomain((ParamsForTonCryptoTransferResponse) response.getPayload()));
-                }
-                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-            }
-        });
+        Observable map = tonApi.getParamsForCryptoTransfer(new GetParamsForTonCryptoTransferRequest(name, str, StringExtKt.orZero(str2))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1500xf1226d95(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         return map;
     }
@@ -84,7 +69,7 @@ public final class TONWalletTransferDataSourceImpl implements WalletTransferData
         TransferArgs.TON ton = (TransferArgs.TON) args;
         TonController tonController = this.tonController;
         Wallet wallet = this.cryptoAccessManager.getWallet(BlockchainType.TON);
-        String address = wallet == null ? null : wallet.getAddress();
+        String address = wallet != null ? wallet.getAddress() : null;
         if (address == null) {
             address = "";
         }

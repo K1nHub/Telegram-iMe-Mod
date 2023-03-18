@@ -893,8 +893,9 @@ public abstract class Transition implements Cloneable {
         return toString("");
     }
 
+    @Override // 
     /* renamed from: clone */
-    public Transition m880clone() {
+    public Transition mo882clone() {
         try {
             Transition transition = (Transition) super.clone();
             transition.mAnimators = new ArrayList<>();

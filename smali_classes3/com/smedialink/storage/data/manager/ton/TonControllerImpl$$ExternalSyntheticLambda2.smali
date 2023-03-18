@@ -27,9 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda2;->f$0:Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;
 
-    check-cast p1, Lcom/smedialink/storage/domain/model/Result;
-
-    invoke-static {v0, p1}, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;->$r8$lambda$RvhqmGkL_Y5G8wSj3n18FtbTX1U(Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;Lcom/smedialink/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
+    invoke-static {v0, p1}, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;->$r8$lambda$W2DFImN41WlJ2WfYiYQCnLdAxJA(Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p1
 

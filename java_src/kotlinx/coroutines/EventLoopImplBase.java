@@ -149,7 +149,8 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform {
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
-    public final void dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    /* renamed from: dispatch */
+    public final void mo1471dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         enqueue(runnable);
     }
 

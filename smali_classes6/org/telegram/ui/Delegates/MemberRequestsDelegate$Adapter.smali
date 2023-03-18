@@ -22,7 +22,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)V
     .locals 0
 
-    .line 546
+    .line 547
     iput-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;Lorg/telegram/ui/Delegates/MemberRequestsDelegate$1;)V
     .locals 0
 
-    .line 546
+    .line 547
     invoke-direct {p0, p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;-><init>(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)V
 
     return-void
@@ -42,7 +42,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;)I
     .locals 0
 
-    .line 546
+    .line 547
     invoke-direct {p0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->extraFirstHolders()I
 
     move-result p0
@@ -53,7 +53,7 @@
 .method private extraFirstHolders()I
     .locals 1
 
-    .line 648
+    .line 671
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$900(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Z
@@ -68,7 +68,7 @@
 .method private extraLastHolders()I
     .locals 1
 
-    .line 652
+    .line 675
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$900(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Z
@@ -103,7 +103,7 @@
 
 # virtual methods
 .method public appendItems(Ljava/util/List;)V
-    .locals 2
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -113,7 +113,82 @@
         }
     .end annotation
 
-    .line 623
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    .line 635
+    :goto_0
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_2
+
+    .line 636
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;
+
+    iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;->user_id:J
+
+    const/4 v4, 0x0
+
+    .line 637
+    :goto_1
+    iget-object v5, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
+
+    invoke-static {v5}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$800(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Ljava/util/List;
+
+    move-result-object v5
+
+    invoke-interface {v5}, Ljava/util/List;->size()I
+
+    move-result v5
+
+    if-ge v4, v5, :cond_1
+
+    .line 638
+    iget-object v5, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
+
+    invoke-static {v5}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$800(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Ljava/util/List;
+
+    move-result-object v5
+
+    invoke-interface {v5, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;
+
+    iget-wide v5, v5, Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;->user_id:J
+
+    cmp-long v7, v5, v2
+
+    if-nez v7, :cond_0
+
+    .line 640
+    invoke-interface {p1, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_2
+
+    :cond_0
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    :goto_2
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 646
+    :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$800(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Ljava/util/List;
@@ -122,7 +197,7 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 624
+    .line 647
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$800(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Ljava/util/List;
@@ -137,9 +212,9 @@
 
     move-result v1
 
-    if-le v0, v1, :cond_0
+    if-le v0, v1, :cond_3
 
-    .line 625
+    .line 648
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$800(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Ljava/util/List;
@@ -160,8 +235,8 @@
 
     invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    .line 627
-    :cond_0
+    .line 650
+    :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$800(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Ljava/util/List;
@@ -190,7 +265,7 @@
 .method public getItemCount()I
     .locals 2
 
-    .line 596
+    .line 597
     invoke-direct {p0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->extraFirstHolders()I
 
     move-result v0
@@ -219,7 +294,7 @@
 .method public getItemViewType(I)I
     .locals 2
 
-    .line 601
+    .line 602
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$900(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Z
@@ -230,7 +305,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 602
+    .line 603
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$800(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Ljava/util/List;
@@ -264,7 +339,7 @@
 
     return p1
 
-    .line 608
+    .line 609
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->getItemCount()I
 
@@ -287,7 +362,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 0
 
-    .line 591
+    .line 592
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -308,26 +383,26 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 4
 
-    .line 580
+    .line 581
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 581
+    .line 582
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/MemberRequestCell;
 
-    .line 582
+    .line 583
     invoke-direct {p0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->extraFirstHolders()I
 
     move-result v0
 
     sub-int/2addr p2, v0
 
-    .line 583
+    .line 584
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$700(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Landroid/util/LongSparseArray;
@@ -372,7 +447,7 @@
 
     goto :goto_1
 
-    .line 584
+    .line 585
     :cond_1
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -382,7 +457,7 @@
 
     if-ne p2, v0, :cond_2
 
-    .line 585
+    .line 586
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->requestLayout()V
@@ -395,7 +470,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 546
+    .line 547
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -418,7 +493,7 @@
 
     if-eq p2, v0, :cond_0
 
-    .line 555
+    .line 556
     new-instance p2, Lorg/telegram/ui/Cells/MemberRequestCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -431,7 +506,7 @@
 
     invoke-direct {p2, p1, v0, v1}, Lorg/telegram/ui/Cells/MemberRequestCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/Cells/MemberRequestCell$OnClickListener;Z)V
 
-    .line 556
+    .line 557
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$600(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -452,7 +527,7 @@
 
     goto :goto_0
 
-    .line 572
+    .line 573
     :cond_0
     new-instance p2, Landroid/view/View;
 
@@ -464,7 +539,7 @@
 
     goto :goto_0
 
-    .line 564
+    .line 565
     :cond_1
     new-instance p2, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter$1;
 
@@ -476,7 +551,7 @@
 
     goto :goto_0
 
-    .line 560
+    .line 561
     :cond_2
     new-instance p2, Landroid/view/View;
 
@@ -486,7 +561,7 @@
 
     invoke-direct {p2, v0}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 561
+    .line 562
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -501,7 +576,7 @@
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 575
+    .line 576
     :goto_0
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -515,7 +590,7 @@
 
     const/4 v0, 0x0
 
-    .line 632
+    .line 655
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
@@ -529,7 +604,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 633
+    .line 656
     iget-object v1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {v1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$800(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Ljava/util/List;
@@ -563,7 +638,7 @@
     :goto_1
     if-ltz v0, :cond_2
 
-    .line 639
+    .line 662
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$800(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Ljava/util/List;
@@ -572,7 +647,7 @@
 
     invoke-interface {p1, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 640
+    .line 663
     invoke-direct {p0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->extraFirstHolders()I
 
     move-result p1
@@ -581,7 +656,7 @@
 
     invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRemoved(I)V
 
-    .line 641
+    .line 664
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$800(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Ljava/util/List;
@@ -596,7 +671,7 @@
 
     const/4 p1, 0x1
 
-    .line 642
+    .line 665
     invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRemoved(I)V
 
     :cond_2
@@ -604,7 +679,7 @@
 .end method
 
 .method public setItems(Ljava/util/List;)V
-    .locals 1
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -614,7 +689,68 @@
         }
     .end annotation
 
-    .line 617
+    const/4 v0, 0x0
+
+    .line 618
+    :goto_0
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_2
+
+    .line 619
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;
+
+    iget-wide v1, v1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;->user_id:J
+
+    add-int/lit8 v3, v0, 0x1
+
+    .line 620
+    :goto_1
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    if-ge v3, v4, :cond_1
+
+    .line 621
+    invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;
+
+    iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;->user_id:J
+
+    cmp-long v6, v4, v1
+
+    if-nez v6, :cond_0
+
+    .line 623
+    invoke-interface {p1, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_2
+
+    :cond_0
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    :goto_2
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 629
+    :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$800(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Ljava/util/List;
@@ -623,7 +759,7 @@
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 618
+    .line 630
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$Adapter;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$800(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Ljava/util/List;
@@ -632,7 +768,7 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 619
+    .line 631
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void

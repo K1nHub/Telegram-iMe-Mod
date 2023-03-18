@@ -145,7 +145,7 @@
     .line 21
     iget-object v0, p0, Lcom/smedialink/storage/domain/interactor/notification/PushNotificationInteractor;->walletSessionInteractor:Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;
 
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->isHasActiveUser()Z
+    invoke-virtual {v0}, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->hasActiveUser()Z
 
     move-result v0
 

@@ -52,10 +52,10 @@ public final class BrvahAsyncDiffer<T> {
         final int i = this.mMaxScheduledGeneration + 1;
         this.mMaxScheduledGeneration = i;
         if (list == this.adapter.getData()) {
-            if (runnable == null) {
+            if (runnable != null) {
+                runnable.run();
                 return;
             }
-            runnable.run();
             return;
         }
         final List<? extends T> data = this.adapter.getData();
@@ -72,15 +72,14 @@ public final class BrvahAsyncDiffer<T> {
             this.config.getBackgroundThreadExecutor().execute(new Runnable() { // from class: com.chad.library.adapter.base.diff.BrvahAsyncDiffer$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BrvahAsyncDiffer.m894submitList$lambda1(BrvahAsyncDiffer.this, data, list, i, runnable);
+                    BrvahAsyncDiffer.submitList$lambda$1(BrvahAsyncDiffer.this, data, list, i, runnable);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: submitList$lambda-1  reason: not valid java name */
-    public static final void m894submitList$lambda1(final BrvahAsyncDiffer this$0, final List oldList, final List list, final int i, final Runnable runnable) {
+    public static final void submitList$lambda$1(final BrvahAsyncDiffer this$0, final List oldList, final List list, final int i, final Runnable runnable) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(oldList, "$oldList");
         final DiffUtil.DiffResult calculateDiff = DiffUtil.calculateDiff(new DiffUtil.Callback() { // from class: com.chad.library.adapter.base.diff.BrvahAsyncDiffer$submitList$1$result$1
@@ -137,14 +136,13 @@ public final class BrvahAsyncDiffer<T> {
         this$0.mMainThreadExecutor.execute(new Runnable() { // from class: com.chad.library.adapter.base.diff.BrvahAsyncDiffer$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                BrvahAsyncDiffer.m895submitList$lambda1$lambda0(BrvahAsyncDiffer.this, i, list, calculateDiff, runnable);
+                BrvahAsyncDiffer.submitList$lambda$1$lambda$0(BrvahAsyncDiffer.this, i, list, calculateDiff, runnable);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: submitList$lambda-1$lambda-0  reason: not valid java name */
-    public static final void m895submitList$lambda1$lambda0(BrvahAsyncDiffer this$0, int i, List list, DiffUtil.DiffResult result, Runnable runnable) {
+    public static final void submitList$lambda$1$lambda$0(BrvahAsyncDiffer this$0, int i, List list, DiffUtil.DiffResult result, Runnable runnable) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(result, "$result");
         if (this$0.mMaxScheduledGeneration == i) {
@@ -163,9 +161,8 @@ public final class BrvahAsyncDiffer<T> {
         for (ListChangeListener<T> listChangeListener : this.mListeners) {
             listChangeListener.onCurrentListChanged(list, this.adapter.getData());
         }
-        if (runnable == null) {
-            return;
+        if (runnable != null) {
+            runnable.run();
         }
-        runnable.run();
     }
 }

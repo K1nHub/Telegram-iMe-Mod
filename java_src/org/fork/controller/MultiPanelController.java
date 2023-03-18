@@ -20,6 +20,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
@@ -79,8 +80,8 @@ public final class MultiPanelController extends BaseController {
         DialogType[] values;
         Intrinsics.checkNotNullParameter(preferences, "preferences");
         this.buttonStates.clear();
-        setMultiPanelEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isMultiPanelEnabled(), TelegramPreferenceKeys.User.Default.isMultiPanelEnabled()));
-        setHideMultiPanelOnScrollEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isHideMultiPanelOnScrollEnabled(), TelegramPreferenceKeys.User.Default.isHideMultiPanelOnScrollEnabled()));
+        this.isMultiPanelEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isMultiPanelEnabled(), TelegramPreferenceKeys.User.Default.isMultiPanelEnabled());
+        this.isHideMultiPanelOnScrollEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isHideMultiPanelOnScrollEnabled(), TelegramPreferenceKeys.User.Default.isHideMultiPanelOnScrollEnabled());
         for (DialogType dialogType : DialogType.values()) {
             ArrayList arrayList = new ArrayList();
             int i = 0;
@@ -94,7 +95,7 @@ public final class MultiPanelController extends BaseController {
                 i = i2;
             }
             if (arrayList.size() > 1) {
-                CollectionsKt__MutableCollectionsJVMKt.sortWith(arrayList, new Comparator() { // from class: org.fork.controller.MultiPanelController$loadConfig$lambda-3$lambda-2$$inlined$sortBy$1
+                CollectionsKt__MutableCollectionsJVMKt.sortWith(arrayList, new Comparator() { // from class: org.fork.controller.MultiPanelController$loadConfig$lambda$3$lambda$2$$inlined$sortBy$1
                     @Override // java.util.Comparator
                     public final int compare(T t, T t2) {
                         int compareValues;
@@ -103,15 +104,15 @@ public final class MultiPanelController extends BaseController {
                     }
                 });
             }
-            getButtonStates().put(dialogType, arrayList);
+            this.buttonStates.put(dialogType, arrayList);
         }
     }
 
     public final void saveConfig() {
         SharedPreferences.Editor edit = getUserConfig().getPreferencesPublic().edit();
-        edit.putBoolean(TelegramPreferenceKeys.User.isMultiPanelEnabled(), isMultiPanelEnabled());
-        edit.putBoolean(TelegramPreferenceKeys.User.isHideMultiPanelOnScrollEnabled(), isHideMultiPanelOnScrollEnabled());
-        for (Map.Entry<DialogType, List<MultiPanelButtonState>> entry : getButtonStates().entrySet()) {
+        edit.putBoolean(TelegramPreferenceKeys.User.isMultiPanelEnabled(), this.isMultiPanelEnabled);
+        edit.putBoolean(TelegramPreferenceKeys.User.isHideMultiPanelOnScrollEnabled(), this.isHideMultiPanelOnScrollEnabled);
+        for (Map.Entry<DialogType, List<MultiPanelButtonState>> entry : this.buttonStates.entrySet()) {
             DialogType key = entry.getKey();
             int i = 0;
             for (Object obj : entry.getValue()) {
@@ -185,7 +186,7 @@ public final class MultiPanelController extends BaseController {
             LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
             for (Map.Entry entry : arrayList) {
                 DialogType mapNameToEnum = DialogType.Companion.mapNameToEnum((String) entry.getKey());
-                Objects.requireNonNull(mapNameToEnum, "null cannot be cast to non-null type org.fork.enums.DialogType");
+                Intrinsics.checkNotNull(mapNameToEnum, "null cannot be cast to non-null type org.fork.enums.DialogType");
                 ArrayList arrayList2 = new ArrayList();
                 for (MultiPanelButtonStateBackup multiPanelButtonStateBackup : (Iterable) entry.getValue()) {
                     MultiPanelButtonState mapToDomain = BackupMappingKt.mapToDomain(multiPanelButtonStateBackup);
@@ -305,14 +306,16 @@ public final class MultiPanelController extends BaseController {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: getInstance$lambda-0  reason: not valid java name */
-        public static final MultiPanelController m1919getInstance$lambda0(int i, Integer it) {
-            Intrinsics.checkNotNullParameter(it, "it");
-            return new MultiPanelController(i);
+        public static final MultiPanelController getInstance$lambda$0(Function1 tmp0, Object obj) {
+            Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+            return (MultiPanelController) tmp0.invoke(obj);
         }
 
-        public final MultiPanelController getInstance(final int i) {
-            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(MultiPanelController.accountInstances, Integer.valueOf(i), new Function() { // from class: org.fork.controller.MultiPanelController$Companion$$ExternalSyntheticLambda0
+        public final MultiPanelController getInstance(int i) {
+            ConcurrentHashMap concurrentHashMap = MultiPanelController.accountInstances;
+            Integer valueOf = Integer.valueOf(i);
+            final MultiPanelController$Companion$getInstance$1 multiPanelController$Companion$getInstance$1 = new MultiPanelController$Companion$getInstance$1(i);
+            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: org.fork.controller.MultiPanelController$Companion$$ExternalSyntheticLambda0
                 @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
@@ -320,9 +323,9 @@ public final class MultiPanelController extends BaseController {
 
                 @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
-                    MultiPanelController m1919getInstance$lambda0;
-                    m1919getInstance$lambda0 = MultiPanelController.Companion.m1919getInstance$lambda0(i, (Integer) obj);
-                    return m1919getInstance$lambda0;
+                    MultiPanelController instance$lambda$0;
+                    instance$lambda$0 = MultiPanelController.Companion.getInstance$lambda$0(Function1.this, obj);
+                    return instance$lambda$0;
                 }
 
                 @Override // p034j$.util.function.Function
@@ -330,7 +333,7 @@ public final class MultiPanelController extends BaseController {
                     return Objects.requireNonNull(function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountInstances.compute…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
             return (MultiPanelController) computeIfAbsent;
         }
     }

@@ -375,7 +375,11 @@ public class WebRtcAudioTrack {
         Logging.m18d(TAG, "releaseAudioResources");
         AudioTrack audioTrack = this.audioTrack;
         if (audioTrack != null) {
-            audioTrack.release();
+            try {
+                audioTrack.release();
+            } catch (Throwable th) {
+                FileLog.m45e(th);
+            }
             this.audioTrack = null;
         }
     }

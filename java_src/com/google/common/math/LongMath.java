@@ -6,7 +6,7 @@ public final class LongMath {
 
     /* renamed from: com.google.common.math.LongMath$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C09241 {
+    static /* synthetic */ class C09171 {
         static final /* synthetic */ int[] $SwitchMap$java$math$RoundingMode;
 
         static {
@@ -75,7 +75,7 @@ public final class LongMath {
             int r10 = (int) r9
             r9 = 1
             r10 = r10 | r9
-            int[] r7 = com.google.common.math.LongMath.C09241.$SwitchMap$java$math$RoundingMode
+            int[] r7 = com.google.common.math.LongMath.C09171.$SwitchMap$java$math$RoundingMode
             int r8 = r13.ordinal()
             r7 = r7[r8]
             r8 = 0

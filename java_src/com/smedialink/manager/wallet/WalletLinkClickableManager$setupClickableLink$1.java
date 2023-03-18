@@ -24,11 +24,11 @@ public final class WalletLinkClickableManager$setupClickableLink$1 extends Lambd
     /* compiled from: WalletLinkClickableManager.kt */
     /* renamed from: com.smedialink.manager.wallet.WalletLinkClickableManager$setupClickableLink$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C14721 extends Lambda implements Function1<Integer, Unit> {
+    public static final class C14821 extends Lambda implements Function1<Integer, Unit> {
         final /* synthetic */ WalletLinkClickableManager this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C14721(WalletLinkClickableManager walletLinkClickableManager) {
+        C14821(WalletLinkClickableManager walletLinkClickableManager) {
             super(1);
             this.this$0 = walletLinkClickableManager;
         }
@@ -50,20 +50,18 @@ public final class WalletLinkClickableManager$setupClickableLink$1 extends Lambd
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         WalletLinkClickableView walletLinkClickableView;
         ClickableItem clickableItem;
         String[] alertOptionsByType;
         walletLinkClickableView = this.this$0.viewState;
-        if (walletLinkClickableView == null) {
-            return;
+        if (walletLinkClickableView != null) {
+            WalletLinkClickableManager walletLinkClickableManager = this.this$0;
+            String str = this.$clickableText;
+            clickableItem = walletLinkClickableManager.clickableItem;
+            alertOptionsByType = walletLinkClickableManager.getAlertOptionsByType(str, clickableItem.getLinkedTextType());
+            walletLinkClickableView.showClickableTextDialog(alertOptionsByType, new C14821(this.this$0));
         }
-        WalletLinkClickableManager walletLinkClickableManager = this.this$0;
-        String str = this.$clickableText;
-        clickableItem = walletLinkClickableManager.clickableItem;
-        alertOptionsByType = walletLinkClickableManager.getAlertOptionsByType(str, clickableItem.getLinkedTextType());
-        walletLinkClickableView.showClickableTextDialog(alertOptionsByType, new C14721(this.this$0));
     }
 }

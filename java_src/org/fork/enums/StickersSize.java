@@ -1,17 +1,16 @@
 package org.fork.enums;
 
 import java.util.ArrayList;
-import java.util.Objects;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: StickersSize.kt */
 /* loaded from: classes4.dex */
 public enum StickersSize {
-    SMALL(0.5d, C3158R.string.stickers_size_small),
-    MEDIUM(1.0d, C3158R.string.stickers_size_medium),
-    LARGE(1.5d, C3158R.string.stickers_size_large);
+    SMALL(0.5d, C3286R.string.stickers_size_small),
+    MEDIUM(1.0d, C3286R.string.stickers_size_medium),
+    LARGE(1.5d, C3286R.string.stickers_size_large);
     
     public static final Companion Companion = new Companion(null);
     private final double sizeRatio;
@@ -73,9 +72,7 @@ public enum StickersSize {
             for (StickersSize stickersSize : values) {
                 arrayList.add(LocaleController.getInternalString(stickersSize.getTitleResId()));
             }
-            Object[] array = arrayList.toArray(new String[0]);
-            Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-            return (String[]) array;
+            return (String[]) arrayList.toArray(new String[0]);
         }
     }
 }

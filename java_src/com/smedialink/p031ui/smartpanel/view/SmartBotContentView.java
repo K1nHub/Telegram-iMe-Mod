@@ -14,11 +14,13 @@ import com.smedialink.p031ui.smartpanel.model.SmartBotTab;
 import com.smedialink.p031ui.smartpanel.model.SmartPanelTabContent;
 import com.smedialink.p031ui.smartpanel.model.content.TabBotAnswerItem;
 import com.smedialink.p031ui.smartpanel.model.content.TabBotMediaAnswerItem;
+import java.util.ArrayList;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
+import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.p048ui.Components.ExtendedGridLayoutManager;
@@ -27,6 +29,13 @@ import org.telegram.p048ui.Components.RecyclerListView;
 import org.telegram.p048ui.Components.Size;
 import org.telegram.p048ui.PhotoViewer;
 import org.telegram.tgnet.TLRPC$BotInlineResult;
+import org.telegram.tgnet.TLRPC$Document;
+import org.telegram.tgnet.TLRPC$DocumentAttribute;
+import org.telegram.tgnet.TLRPC$Photo;
+import org.telegram.tgnet.TLRPC$PhotoSize;
+import org.telegram.tgnet.TLRPC$TL_documentAttributeImageSize;
+import org.telegram.tgnet.TLRPC$TL_documentAttributeVideo;
+import org.telegram.tgnet.TLRPC$WebDocument;
 /* compiled from: SmartBotContentView.kt */
 /* renamed from: com.smedialink.ui.smartpanel.view.SmartBotContentView */
 /* loaded from: classes3.dex */
@@ -69,33 +78,89 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
         ExtendedGridLayoutManager extendedGridLayoutManager = new ExtendedGridLayoutManager(context) { // from class: com.smedialink.ui.smartpanel.view.SmartBotContentView$listViewLayoutManager$1
             private final Size size = new Size();
 
-            /* JADX WARN: Code restructure failed: missing block: B:27:0x0083, code lost:
-                r6 = r5.size;
-                r6.width = r1.f1505w;
-                r6.height = r1.f1504h;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:53:0x00ef, code lost:
-                r6 = r5.size;
-                r6.width = r1.f1505w;
-                r6.height = r1.f1504h;
-             */
             @Override // org.telegram.p048ui.Components.ExtendedGridLayoutManager
-            /*
-                Code decompiled incorrectly, please refer to instructions dump.
-                To view partially-correct add '--show-bad-code' argument
-            */
-            protected org.telegram.p048ui.Components.Size getSizeForItem(int r6) {
-                /*
-                    Method dump skipped, instructions count: 290
-                    To view this dump add '--comments-level debug' option
-                */
-                throw new UnsupportedOperationException("Method not decompiled: com.smedialink.p031ui.smartpanel.view.SmartBotContentView$listViewLayoutManager$1.getSizeForItem(int):org.telegram.ui.Components.Size");
+            protected Size getSizeForItem(int i) {
+                RecyclerListView recyclerListView2;
+                RecyclerListView recyclerListView3;
+                Size size = this.size;
+                recyclerListView2 = this.listView;
+                size.width = recyclerListView2.getWidth();
+                Size size2 = this.size;
+                recyclerListView3 = this.listView;
+                size2.height = recyclerListView3.getWidth() / 2.0f;
+                SmartPanelTabContent item = this.listViewAdapter.getItem(i);
+                TLRPC$BotInlineResult media = item instanceof TabBotMediaAnswerItem ? ((TabBotMediaAnswerItem) item).getMedia() : null;
+                if (media != null) {
+                    TLRPC$Document tLRPC$Document = media.document;
+                    int i2 = 0;
+                    if (tLRPC$Document != null) {
+                        TLRPC$PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLRPC$Document.thumbs, 90);
+                        Size size3 = this.size;
+                        size3.width = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.f1530w : 100;
+                        size3.height = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.f1529h : 100;
+                        int size4 = media.document.attributes.size();
+                        while (i2 < size4) {
+                            TLRPC$DocumentAttribute tLRPC$DocumentAttribute = media.document.attributes.get(i2);
+                            if ((tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeVideo)) {
+                                Size size5 = this.size;
+                                size5.width = tLRPC$DocumentAttribute.f1510w;
+                                size5.height = tLRPC$DocumentAttribute.f1509h;
+                                break;
+                            }
+                            i2++;
+                        }
+                    } else {
+                        TLRPC$WebDocument tLRPC$WebDocument = media.content;
+                        if (tLRPC$WebDocument != null) {
+                            int size6 = tLRPC$WebDocument.attributes.size();
+                            while (i2 < size6) {
+                                TLRPC$DocumentAttribute tLRPC$DocumentAttribute2 = media.content.attributes.get(i2);
+                                if ((tLRPC$DocumentAttribute2 instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute2 instanceof TLRPC$TL_documentAttributeVideo)) {
+                                    Size size7 = this.size;
+                                    size7.width = tLRPC$DocumentAttribute2.f1510w;
+                                    size7.height = tLRPC$DocumentAttribute2.f1509h;
+                                    break;
+                                }
+                                i2++;
+                            }
+                        } else {
+                            TLRPC$WebDocument tLRPC$WebDocument2 = media.thumb;
+                            if (tLRPC$WebDocument2 != null) {
+                                int size8 = tLRPC$WebDocument2.attributes.size();
+                                while (i2 < size8) {
+                                    TLRPC$DocumentAttribute tLRPC$DocumentAttribute3 = media.thumb.attributes.get(i2);
+                                    if ((tLRPC$DocumentAttribute3 instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute3 instanceof TLRPC$TL_documentAttributeVideo)) {
+                                        Size size9 = this.size;
+                                        size9.width = tLRPC$DocumentAttribute3.f1510w;
+                                        size9.height = tLRPC$DocumentAttribute3.f1509h;
+                                        break;
+                                    }
+                                    i2++;
+                                }
+                            } else {
+                                TLRPC$Photo tLRPC$Photo = media.photo;
+                                if (tLRPC$Photo != null) {
+                                    ArrayList<TLRPC$PhotoSize> arrayList = tLRPC$Photo.sizes;
+                                    Integer photoSize = AndroidUtilities.photoSize;
+                                    Intrinsics.checkNotNullExpressionValue(photoSize, "photoSize");
+                                    TLRPC$PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(arrayList, photoSize.intValue());
+                                    if (closestPhotoSizeWithSize2 != null) {
+                                        Size size10 = this.size;
+                                        size10.width = closestPhotoSizeWithSize2.f1530w;
+                                        size10.height = closestPhotoSizeWithSize2.f1529h;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                return this.size;
             }
         };
         this.listViewLayoutManager = extendedGridLayoutManager;
         this.gifContextProvider = new PhotoViewer.EmptyPhotoViewerProvider() { // from class: com.smedialink.ui.smartpanel.view.SmartBotContentView$gifContextProvider$1
-            /* JADX WARN: Removed duplicated region for block: B:19:0x0083  */
-            /* JADX WARN: Removed duplicated region for block: B:24:0x0058 A[SYNTHETIC] */
+            /* JADX WARN: Removed duplicated region for block: B:18:0x0080 A[LOOP:0: B:8:0x0030->B:18:0x0080, LOOP_END] */
+            /* JADX WARN: Removed duplicated region for block: B:21:0x0055 A[SYNTHETIC] */
             @Override // org.telegram.p048ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.p048ui.PhotoViewer.PhotoViewerProvider
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -105,14 +170,14 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
                 /*
                     r4 = this;
                     r5 = 0
-                    if (r7 < 0) goto L88
+                    if (r7 < 0) goto L83
                     com.smedialink.ui.smartpanel.view.SmartBotContentView r6 = com.smedialink.p031ui.smartpanel.view.SmartBotContentView.this
                     com.smedialink.ui.smartpanel.adapter.SmartBotContentAdapter r6 = com.smedialink.p031ui.smartpanel.view.SmartBotContentView.access$getListViewAdapter$p(r6)
                     java.util.List r6 = r6.getMediaContent()
                     int r6 = r6.size()
-                    if (r7 < r6) goto L15
-                    goto L88
-                L15:
+                    if (r7 < r6) goto L14
+                    goto L83
+                L14:
                     com.smedialink.ui.smartpanel.view.SmartBotContentView r6 = com.smedialink.p031ui.smartpanel.view.SmartBotContentView.this
                     com.smedialink.ui.smartpanel.adapter.SmartBotContentAdapter r6 = com.smedialink.p031ui.smartpanel.view.SmartBotContentView.access$getListViewAdapter$p(r6)
                     int r6 = r6.getItemCount()
@@ -121,30 +186,29 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
                     java.util.List r8 = r8.getMediaContent()
                     java.lang.Object r7 = r8.get(r7)
                     org.telegram.tgnet.TLRPC$BotInlineResult r7 = (org.telegram.tgnet.TLRPC$BotInlineResult) r7
-                    if (r6 <= 0) goto L88
                     r8 = 0
                     r0 = 0
-                L33:
-                    int r1 = r0 + 1
-                    com.smedialink.ui.smartpanel.view.SmartBotContentView r2 = com.smedialink.p031ui.smartpanel.view.SmartBotContentView.this
-                    org.telegram.ui.Components.RecyclerListView r2 = com.smedialink.p031ui.smartpanel.view.SmartBotContentView.access$getListView$p(r2)
-                    android.view.View r0 = r2.getChildAt(r0)
-                    boolean r2 = r0 instanceof org.telegram.p048ui.Cells.ContextLinkCell
-                    if (r2 == 0) goto L55
-                    r2 = r0
+                L30:
+                    if (r0 >= r6) goto L83
+                    com.smedialink.ui.smartpanel.view.SmartBotContentView r1 = com.smedialink.p031ui.smartpanel.view.SmartBotContentView.this
+                    org.telegram.ui.Components.RecyclerListView r1 = com.smedialink.p031ui.smartpanel.view.SmartBotContentView.access$getListView$p(r1)
+                    android.view.View r1 = r1.getChildAt(r0)
+                    boolean r2 = r1 instanceof org.telegram.p048ui.Cells.ContextLinkCell
+                    if (r2 == 0) goto L52
+                    r2 = r1
                     org.telegram.ui.Cells.ContextLinkCell r2 = (org.telegram.p048ui.Cells.ContextLinkCell) r2
                     org.telegram.tgnet.TLRPC$BotInlineResult r3 = r2.getResult()
                     boolean r3 = kotlin.jvm.internal.Intrinsics.areEqual(r3, r7)
-                    if (r3 == 0) goto L55
+                    if (r3 == 0) goto L52
                     org.telegram.messenger.ImageReceiver r2 = r2.getPhotoImage()
-                    goto L56
-                L55:
+                    goto L53
+                L52:
                     r2 = r5
-                L56:
-                    if (r2 == 0) goto L83
+                L53:
+                    if (r2 == 0) goto L80
                     r5 = 2
                     int[] r5 = new int[r5]
-                    r0.getLocationInWindow(r5)
+                    r1.getLocationInWindow(r5)
                     org.telegram.ui.PhotoViewer$PlaceProviderObject r6 = new org.telegram.ui.PhotoViewer$PlaceProviderObject
                     r6.<init>()
                     r7 = r5[r8]
@@ -161,13 +225,10 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
                     int[] r5 = r2.getRoundRadius()
                     r6.radius = r5
                     return r6
+                L80:
+                    int r0 = r0 + 1
+                    goto L30
                 L83:
-                    if (r1 < r6) goto L86
-                    goto L88
-                L86:
-                    r0 = r1
-                    goto L33
-                L88:
                     return r5
                 */
                 throw new UnsupportedOperationException("Method not decompiled: com.smedialink.p031ui.smartpanel.view.SmartBotContentView$gifContextProvider$1.getPlaceForPhoto(org.telegram.messenger.MessageObject, org.telegram.tgnet.TLRPC$FileLocation, int, boolean):org.telegram.ui.PhotoViewer$PlaceProviderObject");
@@ -176,16 +237,15 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
             @Override // org.telegram.p048ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.p048ui.PhotoViewer.PhotoViewerProvider
             public void sendButtonPressed(int i, VideoEditedInfo videoEditedInfo, boolean z, int i2, boolean z2, String str, boolean z3) {
                 SmartBotsView.Listener listener2 = listener;
-                if (listener2 == null) {
-                    return;
+                if (listener2 != null) {
+                    listener2.sendChosenGif(i, SmartBotContentView.this.listViewAdapter.getGifBotId(), SmartBotContentView.this.listViewAdapter.getGifBotName());
                 }
-                listener2.sendChosenGif(i, SmartBotContentView.this.listViewAdapter.getGifBotId(), SmartBotContentView.this.listViewAdapter.getGifBotName());
             }
         };
         smartBotContentAdapter.setHasStableIds(true);
         smartBotContentAdapter.setTextData(content, this.currentBotResponseType);
-        textView.setText(LocaleController.getInternalString(C3158R.string.chat_send_panel_neurobot_not_have_gifs));
-        textView.setTextColor(ContextCompat.getColor(context, C3158R.C3159color.gray_message));
+        textView.setText(LocaleController.getInternalString(C3286R.string.chat_send_panel_neurobot_not_have_gifs));
+        textView.setTextColor(ContextCompat.getColor(context, C3286R.C3287color.gray_message));
         textView.setTextSize(14.0f);
         textView.setVisibility(8);
         recyclerListView.setAdapter(smartBotContentAdapter);
@@ -213,7 +273,7 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.smedialink.ui.smartpanel.view.SmartBotContentView$$ExternalSyntheticLambda0
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                SmartBotContentView.m1539_init_$lambda1(SmartBotContentView.this, listener, view, i);
+                SmartBotContentView._init_$lambda$1(SmartBotContentView.this, listener, view, i);
             }
         });
         recyclerListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.smedialink.ui.smartpanel.view.SmartBotContentView.3
@@ -253,8 +313,7 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: _init_$lambda-1  reason: not valid java name */
-    public static final void m1539_init_$lambda1(SmartBotContentView this$0, SmartBotsView.Listener listener, View view, int i) {
+    public static final void _init_$lambda$1(SmartBotContentView this$0, SmartBotsView.Listener listener, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (i < this$0.listViewAdapter.getMediaContentOffset()) {
             SmartPanelTabContent smartPanelTabContent = this$0.listViewAdapter.getTextContent().get(i);
@@ -267,10 +326,9 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
         }
         List<TLRPC$BotInlineResult> mediaContent = this$0.listViewAdapter.getMediaContent();
         int mediaContentOffset = i - this$0.listViewAdapter.getMediaContentOffset();
-        if (listener == null) {
-            return;
+        if (listener != null) {
+            listener.onGifAnswerSelected(this$0.gifContextProvider, mediaContent, mediaContentOffset);
         }
-        listener.onGifAnswerSelected(this$0.gifContextProvider, mediaContent, mediaContentOffset);
     }
 
     @Override // android.view.ViewGroup, android.view.View

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,410:1\n127#2,5:411\n127#2,5:416\n127#2,5:421\n127#2,5:426\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$11\n*L\n153#1:411,5\n154#1:416,5\n155#1:421,5\n156#1:426,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n127#2,5:434\n127#2,5:439\n127#2,5:444\n127#2,5:449\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$11\n*L\n157#1:434,5\n158#1:439,5\n159#1:444,5\n160#1:449,5\n*E\n"
 .end annotation
 
 
@@ -76,7 +76,7 @@
 
     invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 152
+    .line 156
     new-instance v1, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
 
     .line 131
@@ -277,7 +277,7 @@
 
     move-object v14, v0
 
-    .line 152
+    .line 156
     invoke-direct/range {v2 .. v14}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;-><init>(Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/smedialink/storage/domain/storage/HintsPreferenceHelper;Lcom/smedialink/storage/domain/interactor/crypto/nft/avatar/NftAvatarInteractor;Lcom/smedialink/storage/domain/utils/system/ResourceManager;Lcom/smedialink/storage/domain/utils/rx/RxEventBus;Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;Lcom/smedialink/gateway/TelegramControllersGateway;Lcom/smedialink/storage/domain/gateway/TelegramGateway;Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor;)V
 
     return-object v1
@@ -286,7 +286,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 151
+    .line 155
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

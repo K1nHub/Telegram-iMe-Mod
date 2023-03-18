@@ -47,7 +47,7 @@ public class LinearChartView extends BaseChartView<ChartData, LineViewData> {
                 if (lineViewData.enabled || lineViewData.alpha != BitmapDescriptorFactory.HUE_RED) {
                     lineViewData.bottomLinePath.reset();
                     int length = this.chartData.xPercentage.length;
-                    int[] iArr = lineViewData.line.f1667y;
+                    int[] iArr = lineViewData.line.f1673y;
                     lineViewData.chartPath.reset();
                     int i2 = 0;
                     for (int i3 = 0; i3 < length; i3++) {

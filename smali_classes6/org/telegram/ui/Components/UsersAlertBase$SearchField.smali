@@ -50,13 +50,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/UsersAlertBase;Landroid/content/Context;)V
     .locals 11
 
-    .line 214
+    .line 206
     iput-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    .line 215
+    .line 207
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 217
+    .line 209
     new-instance v0, Landroid/view/View;
 
     invoke-direct {v0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -65,7 +65,7 @@
 
     const/16 v1, 0x12
 
-    .line 218
+    .line 210
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -96,31 +96,31 @@
 
     const/4 v8, 0x0
 
-    .line 219
+    .line 211
     invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 221
+    .line 213
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchIconImageView:Landroid/widget/ImageView;
 
-    .line 222
+    .line 214
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 223
+    .line 215
     sget v1, Lorg/telegram/messenger/R$drawable;->smiles_inputsearch:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 224
+    .line 216
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     iget-object v2, p1, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchPlaceholder:Ljava/lang/String;
@@ -149,26 +149,26 @@
 
     const/4 v10, 0x0
 
-    .line 225
+    .line 217
     invoke-static/range {v4 .. v10}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 227
+    .line 219
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->clearSearchImageView:Landroid/widget/ImageView;
 
-    .line 228
+    .line 220
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 229
+    .line 221
     new-instance v1, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$1;
 
     invoke-direct {v1, p0, p1}, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$1;-><init>(Lorg/telegram/ui/Components/UsersAlertBase$SearchField;Lorg/telegram/ui/Components/UsersAlertBase;)V
@@ -179,7 +179,7 @@
 
     const/4 v2, 0x7
 
-    .line 235
+    .line 227
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -188,15 +188,15 @@
 
     const v1, 0x3dcccccd    # 0.1f
 
-    .line 236
+    .line 228
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 237
+    .line 229
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleY(F)V
 
     const/4 v1, 0x0
 
-    .line 238
+    .line 230
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
     const/16 v2, 0x24
@@ -213,21 +213,21 @@
 
     const/4 v8, 0x0
 
-    .line 239
+    .line 231
     invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 240
+    .line 232
     new-instance v1, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/UsersAlertBase$SearchField;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 245
+    .line 237
     new-instance v0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$2;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$2;-><init>(Lorg/telegram/ui/Components/UsersAlertBase$SearchField;Landroid/content/Context;Lorg/telegram/ui/Components/UsersAlertBase;)V
@@ -238,10 +238,10 @@
 
     const/high16 v1, 0x41800000    # 16.0f
 
-    .line 258
+    .line 250
     invoke-virtual {v0, p2, v1}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    .line 259
+    .line 251
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     iget-object v1, p1, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchPlaceholder:Ljava/lang/String;
@@ -252,7 +252,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    .line 260
+    .line 252
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     iget-object v1, p1, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchText:Ljava/lang/String;
@@ -263,43 +263,43 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setTextColor(I)V
 
-    .line 261
+    .line 253
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 262
+    .line 254
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    .line 263
+    .line 255
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0, p2}, Landroid/widget/EditText;->setMaxLines(I)V
 
-    .line 264
+    .line 256
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0, p2}, Landroid/widget/EditText;->setLines(I)V
 
-    .line 265
+    .line 257
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0, p2}, Landroid/widget/EditText;->setSingleLine(Z)V
 
-    .line 266
+    .line 258
     iget-object p2, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const v0, 0x10000003
 
     invoke-virtual {p2, v0}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 267
+    .line 259
     iget-object p2, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget v0, Lorg/telegram/messenger/R$string;->VoipGroupSearchMembers:I
@@ -312,7 +312,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
-    .line 268
+    .line 260
     iget-object p2, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchText:Ljava/lang/String;
@@ -323,7 +323,7 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    .line 269
+    .line 261
     iget-object p2, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/16 v0, 0x14
@@ -334,14 +334,14 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
 
-    .line 270
+    .line 262
     iget-object p2, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/high16 v0, 0x3fc00000    # 1.5f
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
-    .line 271
+    .line 263
     iget-object p2, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v0, -0x1
@@ -364,7 +364,7 @@
 
     invoke-virtual {p0, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 272
+    .line 264
     iget-object p2, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     new-instance v0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$3;
@@ -373,7 +373,7 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 309
+    .line 301
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     new-instance p2, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$$ExternalSyntheticLambda1;
@@ -385,10 +385,10 @@
     return-void
 .end method
 
-.method static synthetic access$200(Lorg/telegram/ui/Components/UsersAlertBase$SearchField;)Landroid/widget/ImageView;
+.method static synthetic access$100(Lorg/telegram/ui/Components/UsersAlertBase$SearchField;)Landroid/widget/ImageView;
     .locals 0
 
-    .line 206
+    .line 198
     iget-object p0, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->clearSearchImageView:Landroid/widget/ImageView;
 
     return-object p0
@@ -397,14 +397,14 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 1
 
-    .line 241
+    .line 233
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const-string v0, ""
 
     invoke-virtual {p1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 242
+    .line 234
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
@@ -417,7 +417,7 @@
 
     if-eqz p3, :cond_2
 
-    .line 310
+    .line 302
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
     move-result p1
@@ -449,7 +449,7 @@
 
     if-ne p1, p2, :cond_2
 
-    .line 311
+    .line 303
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -466,12 +466,12 @@
 .method public closeSearch()V
     .locals 1
 
-    .line 328
+    .line 320
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->clearSearchImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->callOnClick()Z
 
-    .line 329
+    .line 321
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
@@ -482,14 +482,14 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 323
+    .line 315
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/UsersAlertBase;->onSearchViewTouched(Landroid/view/MotionEvent;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
 
-    .line 324
+    .line 316
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1

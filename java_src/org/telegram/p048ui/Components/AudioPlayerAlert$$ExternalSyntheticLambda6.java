@@ -12,8 +12,8 @@ public final /* synthetic */ class AudioPlayerAlert$$ExternalSyntheticLambda6 im
 
     @Override // android.view.View.OnTouchListener
     public final boolean onTouch(View view, MotionEvent motionEvent) {
-        boolean lambda$new$10;
-        lambda$new$10 = AudioPlayerAlert.lambda$new$10(view, motionEvent);
-        return lambda$new$10;
+        boolean lambda$new$11;
+        lambda$new$11 = AudioPlayerAlert.lambda$new$11(view, motionEvent);
+        return lambda$new$11;
     }
 }

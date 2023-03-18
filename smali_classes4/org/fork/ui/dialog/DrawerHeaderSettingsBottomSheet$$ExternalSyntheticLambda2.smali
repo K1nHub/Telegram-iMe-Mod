@@ -59,7 +59,7 @@
 
     move v5, p4
 
-    invoke-static/range {v0 .. v5}, Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->$r8$lambda$15wiz26FV1q3pQ6eO4MW04-fIQo(Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Lorg/telegram/ui/Components/RecyclerListView;Landroid/view/View;IFF)V
+    invoke-static/range {v0 .. v5}, Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->$r8$lambda$iI8lYsKFsqH7tdzOxNXnPoM33LE(Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Lorg/telegram/ui/Components/RecyclerListView;Landroid/view/View;IFF)V
 
     return-void
 .end method

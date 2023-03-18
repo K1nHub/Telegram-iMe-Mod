@@ -1,4 +1,6 @@
 package com.google.android.gms.internal.measurement;
+
+import com.google.android.exoplayer2.analytics.AnalyticsListener;
 /* compiled from: com.google.android.gms:play-services-measurement-base@@19.0.2 */
 /* loaded from: classes.dex */
 final class zzmt {
@@ -9,7 +11,7 @@ final class zzmt {
         }
         int i2 = ((b & 7) << 18) | ((b2 & 63) << 12) | ((b3 & 63) << 6) | (b4 & 63);
         cArr[i] = (char) ((i2 >>> 10) + 55232);
-        cArr[i + 1] = (char) ((i2 & 1023) + 56320);
+        cArr[i + 1] = (char) ((i2 & AnalyticsListener.EVENT_DRM_KEYS_LOADED) + 56320);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

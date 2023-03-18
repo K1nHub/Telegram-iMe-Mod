@@ -6,7 +6,7 @@ import java.io.OutputStream;
 public class ASN1OutputStream {
 
     /* renamed from: os */
-    private OutputStream f1227os;
+    private OutputStream f1232os;
 
     /* loaded from: classes4.dex */
     private class ImplicitOutputStream extends ASN1OutputStream {
@@ -28,31 +28,31 @@ public class ASN1OutputStream {
     }
 
     public ASN1OutputStream(OutputStream outputStream) {
-        this.f1227os = outputStream;
+        this.f1232os = outputStream;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ASN1OutputStream getDERSubStream() {
-        return new DEROutputStream(this.f1227os);
+        return new DEROutputStream(this.f1232os);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ASN1OutputStream getDLSubStream() {
-        return new DLOutputStream(this.f1227os);
+        return new DLOutputStream(this.f1232os);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void write(int i) throws IOException {
-        this.f1227os.write(i);
+        this.f1232os.write(i);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void write(byte[] bArr) throws IOException {
-        this.f1227os.write(bArr);
+        this.f1232os.write(bArr);
     }
 
     void write(byte[] bArr, int i, int i2) throws IOException {
-        this.f1227os.write(bArr, i, i2);
+        this.f1232os.write(bArr, i, i2);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -74,7 +74,7 @@ public class ASN1OutputStream {
         if (aSN1Primitive == null) {
             throw new IOException("null object detected");
         }
-        aSN1Primitive.encode(new ImplicitOutputStream(this, this.f1227os));
+        aSN1Primitive.encode(new ImplicitOutputStream(this, this.f1232os));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

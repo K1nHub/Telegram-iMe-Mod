@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/storage/domain/model/common/EnvironmentInformation$Production;,
-        Lcom/smedialink/storage/domain/model/common/EnvironmentInformation$Stage;,
+        Lcom/smedialink/storage/domain/model/common/EnvironmentInformation$Companion;,
         Lcom/smedialink/storage/domain/model/common/EnvironmentInformation$Development;,
-        Lcom/smedialink/storage/domain/model/common/EnvironmentInformation$Companion;
+        Lcom/smedialink/storage/domain/model/common/EnvironmentInformation$Production;,
+        Lcom/smedialink/storage/domain/model/common/EnvironmentInformation$Stage;
     }
 .end annotation
 

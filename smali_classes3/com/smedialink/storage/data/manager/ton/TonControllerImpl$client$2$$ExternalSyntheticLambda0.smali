@@ -35,7 +35,7 @@
 .method public final onResult(Ldrinkless/org/ton/TonApi$Object;)V
     .locals 0
 
-    invoke-static {p1}, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$client$2;->$r8$lambda$AGNkBkKCM6nVwOc0y9SCmZUCS04(Ldrinkless/org/ton/TonApi$Object;)V
+    invoke-static {p1}, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$client$2;->$r8$lambda$sU1KtOJrqYjdl3LRhs32Bg851YE(Ldrinkless/org/ton/TonApi$Object;)V
 
     return-void
 .end method

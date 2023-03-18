@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/view/PollEditTextCellWrapper$$ExternalSyntheticLambda0;->f$0:Lorg/fork/ui/view/PollEditTextCellWrapper;
 
-    invoke-static {v0, p1}, Lorg/fork/ui/view/PollEditTextCellWrapper;->$r8$lambda$su_SeBS1RRQZMzXgMlJjEmVV2L0(Lorg/fork/ui/view/PollEditTextCellWrapper;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/fork/ui/view/PollEditTextCellWrapper;->$r8$lambda$m98_h8KxGK4Vizv74xoz36cXE7I(Lorg/fork/ui/view/PollEditTextCellWrapper;Landroid/view/View;)V
 
     return-void
 .end method

@@ -68,10 +68,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$Vut8nwFeL_8AFOkBf-yhGEGqTBE(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsBottomSheetDialog;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;I)V
+.method public static synthetic $r8$lambda$7eTwZ5JkzVTznEkgJDZxNRpNaoM(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsBottomSheetDialog;->setupActionItem$lambda-4$lambda-3(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsBottomSheetDialog;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;I)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsBottomSheetDialog;->setupActionItem$lambda$4$lambda$2(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$GACllCM9Wnym4lMF7sZtJ3hdN_w(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsBottomSheetDialog;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;I)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsBottomSheetDialog;->setupActionItem$lambda$4$lambda$3(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsBottomSheetDialog;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;I)V
 
     return-void
 .end method
@@ -80,14 +88,6 @@
     .locals 0
 
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsBottomSheetDialog;->resetWallet()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$otao3PsqVQS_M5uOKCfJ4znl0uw(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsBottomSheetDialog;->setupActionItem$lambda-4$lambda-2(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
 
     return-void
 .end method
@@ -429,7 +429,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIcon(I)V
 
-    const-string v1, ""
+    const-string v1, "setupActionItem$lambda$4"
 
     .line 109
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -498,7 +498,7 @@
     return-void
 .end method
 
-.method private static final setupActionItem$lambda-4$lambda-2(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
+.method private static final setupActionItem$lambda$4$lambda$2(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$this_with"
@@ -511,7 +511,7 @@
     return-void
 .end method
 
-.method private static final setupActionItem$lambda-4$lambda-3(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsBottomSheetDialog;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;I)V
+.method private static final setupActionItem$lambda$4$lambda$3(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsBottomSheetDialog;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;I)V
     .locals 7
 
     const-string v0, "this$0"
@@ -639,7 +639,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    const-string v1, ""
+    const-string v1, "setupColors$lambda$6$lambda$5"
 
     .line 137
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

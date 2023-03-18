@@ -33,7 +33,7 @@
 
     iget-boolean v1, p0, Lorg/fork/ui/view/MediaSwitchTopicsBar$$ExternalSyntheticLambda0;->f$1:Z
 
-    invoke-static {v0, v1, p1}, Lorg/fork/ui/view/MediaSwitchTopicsBar;->$r8$lambda$UKRyKMDxeCQVS2Zykxr-K12vsVE(Lorg/fork/ui/view/MediaSwitchTopicsBar;ZLandroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/fork/ui/view/MediaSwitchTopicsBar;->$r8$lambda$RSfc6cws_eMV03WzelGlc2j_EaU(Lorg/fork/ui/view/MediaSwitchTopicsBar;ZLandroid/view/View;)V
 
     return-void
 .end method

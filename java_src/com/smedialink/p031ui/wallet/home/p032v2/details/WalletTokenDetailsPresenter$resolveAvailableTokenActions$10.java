@@ -25,7 +25,6 @@ final class WalletTokenDetailsPresenter$resolveAvailableTokenActions$10 extends 
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         ((WalletTokenDetailsView) this.this$0.getViewState()).openStakingWithdrawScreen(((TokenDetailsArgs.Staking) this.$args).getStakingDetails());

@@ -12,9 +12,7 @@ public interface CryptoRecipientView extends BaseView {
 
     void openChatScreen(long j);
 
-    void showRecipientEthWalletNotActivatedError(String str, String str2, String str3);
-
-    void showRecipientWalletNotActivatedError(String str, String str2, String str3);
+    void showErrorDialog(String str, String str2, String str3);
 
     void showRequestPermissionDialog(String str, DialogModel dialogModel, Callbacks$Callback callbacks$Callback);
 

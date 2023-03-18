@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback2;
+.implements Lorg/fork/utils/Callbacks$Callback1;
 
 
 # instance fields
@@ -26,18 +26,16 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public final invoke(Ljava/lang/Object;)V
     .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda26;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda26;->f$1:Lorg/telegram/ui/Components/LinkActionView;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$User;
+    check-cast p1, Lcom/smedialink/model/wallet/select/SelectableToken;
 
-    check-cast p2, Ljava/lang/String;
-
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$9NwjXqJTwbOcGVUkDsgAW5Y_5Sk(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$MhDjBtna249h52OBBHntZpyPCt0(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;Lcom/smedialink/model/wallet/select/SelectableToken;)V
 
     return-void
 .end method

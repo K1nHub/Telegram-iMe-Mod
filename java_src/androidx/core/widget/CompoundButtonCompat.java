@@ -14,7 +14,7 @@ public final class CompoundButtonCompat {
 
     public static void setButtonTintList(CompoundButton compoundButton, ColorStateList colorStateList) {
         if (Build.VERSION.SDK_INT >= 21) {
-            compoundButton.setButtonTintList(colorStateList);
+            Api21Impl.setButtonTintList(compoundButton, colorStateList);
         } else if (compoundButton instanceof TintableCompoundButton) {
             ((TintableCompoundButton) compoundButton).setSupportButtonTintList(colorStateList);
         }
@@ -22,7 +22,7 @@ public final class CompoundButtonCompat {
 
     public static ColorStateList getButtonTintList(CompoundButton compoundButton) {
         if (Build.VERSION.SDK_INT >= 21) {
-            return compoundButton.getButtonTintList();
+            return Api21Impl.getButtonTintList(compoundButton);
         }
         if (compoundButton instanceof TintableCompoundButton) {
             return ((TintableCompoundButton) compoundButton).getSupportButtonTintList();
@@ -32,7 +32,7 @@ public final class CompoundButtonCompat {
 
     public static void setButtonTintMode(CompoundButton compoundButton, PorterDuff.Mode mode) {
         if (Build.VERSION.SDK_INT >= 21) {
-            compoundButton.setButtonTintMode(mode);
+            Api21Impl.setButtonTintMode(compoundButton, mode);
         } else if (compoundButton instanceof TintableCompoundButton) {
             ((TintableCompoundButton) compoundButton).setSupportButtonTintMode(mode);
         }
@@ -40,7 +40,7 @@ public final class CompoundButtonCompat {
 
     public static Drawable getButtonDrawable(CompoundButton compoundButton) {
         if (Build.VERSION.SDK_INT >= 23) {
-            return compoundButton.getButtonDrawable();
+            return Api23Impl.getButtonDrawable(compoundButton);
         }
         if (!sButtonDrawableFieldFetched) {
             try {
@@ -62,5 +62,31 @@ public final class CompoundButtonCompat {
             }
         }
         return null;
+    }
+
+    /* loaded from: classes.dex */
+    static class Api21Impl {
+        static void setButtonTintList(CompoundButton compoundButton, ColorStateList colorStateList) {
+            compoundButton.setButtonTintList(colorStateList);
+        }
+
+        static ColorStateList getButtonTintList(CompoundButton compoundButton) {
+            return compoundButton.getButtonTintList();
+        }
+
+        static void setButtonTintMode(CompoundButton compoundButton, PorterDuff.Mode mode) {
+            compoundButton.setButtonTintMode(mode);
+        }
+
+        static PorterDuff.Mode getButtonTintMode(CompoundButton compoundButton) {
+            return compoundButton.getButtonTintMode();
+        }
+    }
+
+    /* loaded from: classes.dex */
+    static class Api23Impl {
+        static Drawable getButtonDrawable(CompoundButton compoundButton) {
+            return compoundButton.getButtonDrawable();
+        }
     }
 }

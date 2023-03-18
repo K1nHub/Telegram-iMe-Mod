@@ -6,6 +6,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
+import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityNodeInfo;
@@ -19,21 +20,26 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
 import org.telegram.p048ui.ActionBar.SimpleTextView;
 import org.telegram.p048ui.ActionBar.Theme;
+import org.telegram.p048ui.Components.AnimatedEmojiDrawable;
 import org.telegram.p048ui.Components.AvatarDrawable;
 import org.telegram.p048ui.Components.AvatarsImageView;
 import org.telegram.p048ui.Components.BackupImageView;
 import org.telegram.p048ui.Components.FlickerLoadingView;
 import org.telegram.p048ui.Components.HideViewAfterAnimation;
 import org.telegram.p048ui.Components.LayoutHelper;
+import org.telegram.p048ui.Components.MessageSeenCheckDrawable;
 import org.telegram.p048ui.Components.RecyclerListView;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
@@ -47,6 +53,7 @@ import org.telegram.tgnet.TLRPC$TL_error;
 import org.telegram.tgnet.TLRPC$TL_messages_chatFull;
 import org.telegram.tgnet.TLRPC$TL_messages_getFullChat;
 import org.telegram.tgnet.TLRPC$TL_messages_getMessageReadParticipants;
+import org.telegram.tgnet.TLRPC$TL_readParticipantDate;
 import org.telegram.tgnet.TLRPC$User;
 import org.telegram.tgnet.TLRPC$Vector;
 /* renamed from: org.telegram.ui.MessageSeenView */
@@ -54,10 +61,12 @@ import org.telegram.tgnet.TLRPC$Vector;
 public class MessageSeenView extends FrameLayout {
     AvatarsImageView avatarsImageView;
     int currentAccount;
+    ArrayList<Integer> dates;
     FlickerLoadingView flickerLoadingView;
     ImageView iconView;
     boolean ignoreLayout;
     boolean isVoice;
+    private RecyclerListView listView;
     ArrayList<Long> peerIds;
     SimpleTextView titleView;
     public ArrayList<TLRPC$User> users;
@@ -65,6 +74,7 @@ public class MessageSeenView extends FrameLayout {
     public MessageSeenView(Context context, final int i, MessageObject messageObject, final TLRPC$Chat tLRPC$Chat) {
         super(context);
         this.peerIds = new ArrayList<>();
+        this.dates = new ArrayList<>();
         this.users = new ArrayList<>();
         this.currentAccount = i;
         this.isVoice = messageObject.isRoundVideo() || messageObject.isVoice();
@@ -92,7 +102,7 @@ public class MessageSeenView extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.iconView = imageView;
         addView(imageView, LayoutHelper.createFrame(24, 24, 19, 11, 0, 0, 0));
-        Drawable mutate = ContextCompat.getDrawable(context, this.isVoice ? C3158R.C3160drawable.msg_played : C3158R.C3160drawable.msg_seen).mutate();
+        Drawable mutate = ContextCompat.getDrawable(context, this.isVoice ? C3286R.C3288drawable.msg_played : C3286R.C3288drawable.msg_seen).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor("actionBarDefaultSubmenuItemIcon"), PorterDuff.Mode.MULTIPLY));
         this.iconView.setImageDrawable(mutate);
         this.avatarsImageView.setAlpha(BitmapDescriptorFactory.HUE_RED);
@@ -129,19 +139,30 @@ public class MessageSeenView extends FrameLayout {
             int size = tLRPC$Vector.objects.size();
             for (int i2 = 0; i2 < size; i2++) {
                 Object obj = tLRPC$Vector.objects.get(i2);
-                if (obj instanceof Long) {
+                if (obj instanceof TLRPC$TL_readParticipantDate) {
+                    TLRPC$TL_readParticipantDate tLRPC$TL_readParticipantDate = (TLRPC$TL_readParticipantDate) obj;
+                    int i3 = tLRPC$TL_readParticipantDate.date;
+                    Long valueOf = Long.valueOf(tLRPC$TL_readParticipantDate.user_id);
+                    if (j != valueOf.longValue()) {
+                        MessagesController.getInstance(i).getUser(valueOf);
+                        arrayList2.add(new Pair(valueOf, Integer.valueOf(i3)));
+                        arrayList.add(valueOf);
+                    }
+                } else if (obj instanceof Long) {
                     Long l = (Long) obj;
                     if (j != l.longValue()) {
                         MessagesController.getInstance(i).getUser(l);
-                        arrayList2.add(l);
+                        arrayList2.add(new Pair(l, 0));
                         arrayList.add(l);
                     }
                 }
             }
             if (arrayList.isEmpty()) {
-                for (int i3 = 0; i3 < arrayList2.size(); i3++) {
-                    this.peerIds.add((Long) arrayList2.get(i3));
-                    this.users.add((TLRPC$User) hashMap.get(arrayList2.get(i3)));
+                for (int i4 = 0; i4 < arrayList2.size(); i4++) {
+                    Pair pair = (Pair) arrayList2.get(i4);
+                    this.peerIds.add((Long) pair.first);
+                    this.dates.add((Integer) pair.second);
+                    this.users.add((TLRPC$User) hashMap.get(pair.first));
                 }
                 updateView();
                 return;
@@ -150,7 +171,7 @@ public class MessageSeenView extends FrameLayout {
                 tLRPC$TL_channels_getParticipants.limit = MessagesController.getInstance(i).chatReadMarkSizeThreshold;
                 tLRPC$TL_channels_getParticipants.offset = 0;
                 tLRPC$TL_channels_getParticipants.filter = new TLRPC$TL_channelParticipantsRecent();
-                tLRPC$TL_channels_getParticipants.channel = MessagesController.getInstance(i).getInputChannel(tLRPC$Chat.f1494id);
+                tLRPC$TL_channels_getParticipants.channel = MessagesController.getInstance(i).getInputChannel(tLRPC$Chat.f1499id);
                 ConnectionsManager.getInstance(i).sendRequest(tLRPC$TL_channels_getParticipants, new RequestDelegate() { // from class: org.telegram.ui.MessageSeenView$$ExternalSyntheticLambda4
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject2, TLRPC$TL_error tLRPC$TL_error2) {
@@ -160,7 +181,7 @@ public class MessageSeenView extends FrameLayout {
                 return;
             } else {
                 TLRPC$TL_messages_getFullChat tLRPC$TL_messages_getFullChat = new TLRPC$TL_messages_getFullChat();
-                tLRPC$TL_messages_getFullChat.chat_id = tLRPC$Chat.f1494id;
+                tLRPC$TL_messages_getFullChat.chat_id = tLRPC$Chat.f1499id;
                 ConnectionsManager.getInstance(i).sendRequest(tLRPC$TL_messages_getFullChat, new RequestDelegate() { // from class: org.telegram.ui.MessageSeenView$$ExternalSyntheticLambda3
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject2, TLRPC$TL_error tLRPC$TL_error2) {
@@ -190,11 +211,13 @@ public class MessageSeenView extends FrameLayout {
             for (int i2 = 0; i2 < tLRPC$TL_channels_channelParticipants.users.size(); i2++) {
                 TLRPC$User tLRPC$User = tLRPC$TL_channels_channelParticipants.users.get(i2);
                 MessagesController.getInstance(i).putUser(tLRPC$User, false);
-                hashMap.put(Long.valueOf(tLRPC$User.f1633id), tLRPC$User);
+                hashMap.put(Long.valueOf(tLRPC$User.f1639id), tLRPC$User);
             }
             for (int i3 = 0; i3 < arrayList.size(); i3++) {
-                this.peerIds.add((Long) arrayList.get(i3));
-                this.users.add((TLRPC$User) hashMap.get(arrayList.get(i3)));
+                Pair pair = (Pair) arrayList.get(i3);
+                this.peerIds.add((Long) pair.first);
+                this.dates.add((Integer) pair.second);
+                this.users.add((TLRPC$User) hashMap.get(pair.first));
             }
         }
         updateView();
@@ -217,11 +240,13 @@ public class MessageSeenView extends FrameLayout {
             for (int i2 = 0; i2 < tLRPC$TL_messages_chatFull.users.size(); i2++) {
                 TLRPC$User tLRPC$User = tLRPC$TL_messages_chatFull.users.get(i2);
                 MessagesController.getInstance(i).putUser(tLRPC$User, false);
-                hashMap.put(Long.valueOf(tLRPC$User.f1633id), tLRPC$User);
+                hashMap.put(Long.valueOf(tLRPC$User.f1639id), tLRPC$User);
             }
             for (int i3 = 0; i3 < arrayList.size(); i3++) {
-                this.peerIds.add((Long) arrayList.get(i3));
-                this.users.add((TLRPC$User) hashMap.get(arrayList.get(i3)));
+                Pair pair = (Pair) arrayList.get(i3);
+                this.peerIds.add((Long) pair.first);
+                this.dates.add((Integer) pair.second);
+                this.users.add((TLRPC$User) hashMap.get(pair.first));
             }
         }
         updateView();
@@ -279,42 +304,47 @@ public class MessageSeenView extends FrameLayout {
         if (this.peerIds.size() == 1 && this.users.get(0) != null) {
             this.titleView.setText(ContactsController.formatName(this.users.get(0).first_name, this.users.get(0).last_name));
         } else if (this.peerIds.size() == 0) {
-            this.titleView.setText(LocaleController.getString("NobodyViewed", C3158R.string.NobodyViewed));
+            this.titleView.setText(LocaleController.getString("NobodyViewed", C3286R.string.NobodyViewed));
         } else {
             this.titleView.setText(LocaleController.formatPluralString(this.isVoice ? "MessagePlayed" : "MessageSeen", this.peerIds.size(), new Object[0]));
         }
         this.titleView.animate().alpha(1.0f).setDuration(220L).start();
         this.avatarsImageView.animate().alpha(1.0f).setDuration(220L).start();
         this.flickerLoadingView.animate().alpha(BitmapDescriptorFactory.HUE_RED).setDuration(220L).setListener(new HideViewAfterAnimation(this.flickerLoadingView)).start();
+        RecyclerListView recyclerListView = this.listView;
+        if (recyclerListView != null) {
+            recyclerListView.getAdapter();
+        }
     }
 
     public RecyclerListView createListView() {
-        RecyclerListView recyclerListView = new RecyclerListView(this, getContext()) { // from class: org.telegram.ui.MessageSeenView.1
+        RecyclerListView recyclerListView = this.listView;
+        if (recyclerListView != null) {
+            return recyclerListView;
+        }
+        RecyclerListView recyclerListView2 = new RecyclerListView(this, getContext()) { // from class: org.telegram.ui.MessageSeenView.1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // org.telegram.p048ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
             public void onMeasure(int i, int i2) {
                 int size = View.MeasureSpec.getSize(i2);
-                int m50dp = AndroidUtilities.m50dp(8) + (AndroidUtilities.m50dp(44) * getAdapter().getItemCount());
+                int m50dp = AndroidUtilities.m50dp(4) + (AndroidUtilities.m50dp(50) * getAdapter().getItemCount());
                 if (m50dp <= size) {
                     size = m50dp;
                 }
                 super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, 1073741824));
             }
         };
-        recyclerListView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerListView.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: org.telegram.ui.MessageSeenView.2
+        this.listView = recyclerListView2;
+        recyclerListView2.setLayoutManager(new LinearLayoutManager(getContext()));
+        this.listView.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: org.telegram.ui.MessageSeenView.2
             @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
             public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
-                int childAdapterPosition = recyclerView.getChildAdapterPosition(view);
-                if (childAdapterPosition == 0) {
-                    rect.top = AndroidUtilities.m50dp(4);
-                }
-                if (childAdapterPosition == MessageSeenView.this.users.size() - 1) {
+                if (recyclerView.getChildAdapterPosition(view) == MessageSeenView.this.users.size() - 1) {
                     rect.bottom = AndroidUtilities.m50dp(4);
                 }
             }
         });
-        recyclerListView.setAdapter(new RecyclerListView.SelectionAdapter() { // from class: org.telegram.ui.MessageSeenView.3
+        this.listView.setAdapter(new RecyclerListView.SelectionAdapter() { // from class: org.telegram.ui.MessageSeenView.3
             @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
             public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
                 return true;
@@ -323,13 +353,13 @@ public class MessageSeenView extends FrameLayout {
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
                 UserCell userCell = new UserCell(viewGroup.getContext());
-                userCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
+                userCell.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.m50dp(50)));
                 return new RecyclerListView.Holder(userCell);
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-                ((UserCell) viewHolder.itemView).setUser(MessageSeenView.this.users.get(i));
+                ((UserCell) viewHolder.itemView).setUser(MessageSeenView.this.users.get(i), MessageSeenView.this.dates.get(i).intValue());
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -337,50 +367,122 @@ public class MessageSeenView extends FrameLayout {
                 return MessageSeenView.this.users.size();
             }
         });
-        return recyclerListView;
+        return this.listView;
     }
 
     /* renamed from: org.telegram.ui.MessageSeenView$UserCell */
     /* loaded from: classes5.dex */
-    private static class UserCell extends FrameLayout {
+    private static class UserCell extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+        private static MessageSeenCheckDrawable seenDrawable = new MessageSeenCheckDrawable(C3286R.C3288drawable.msg_mini_checks, "windowBackgroundWhiteGrayText");
         AvatarDrawable avatarDrawable;
         BackupImageView avatarImageView;
-        TextView nameView;
+        private int currentAccount;
+        SimpleTextView nameView;
+        TextView readView;
+        AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable rightDrawable;
+        TLRPC$User user;
 
         public UserCell(Context context) {
             super(context);
+            this.currentAccount = UserConfig.selectedAccount;
             this.avatarDrawable = new AvatarDrawable();
             BackupImageView backupImageView = new BackupImageView(context);
             this.avatarImageView = backupImageView;
-            addView(backupImageView, LayoutHelper.createFrame(32, 32, 16, 13, 0, 0, 0));
-            this.avatarImageView.setRoundRadius(AndroidUtilities.m50dp(16));
-            TextView textView = new TextView(context);
-            this.nameView = textView;
-            textView.setTextSize(1, 16.0f);
-            this.nameView.setLines(1);
-            this.nameView.setEllipsize(TextUtils.TruncateAt.END);
+            backupImageView.setRoundRadius(AndroidUtilities.m50dp(18));
+            addView(this.avatarImageView, LayoutHelper.createFrame(34, 34.0f, 16, 10.0f, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED));
+            SimpleTextView simpleTextView = new SimpleTextView(context);
+            this.nameView = simpleTextView;
+            simpleTextView.setTextSize(16);
+            this.nameView.setEllipsizeByGradient(true);
             this.nameView.setImportantForAccessibility(2);
-            addView(this.nameView, LayoutHelper.createFrame(-2, -2, 19, 59, 0, 13, 0));
             this.nameView.setTextColor(Theme.getColor("actionBarDefaultSubmenuItem"));
+            addView(this.nameView, LayoutHelper.createFrame(-2, -2.0f, 51, 55.0f, 6.33f, 8.0f, (float) BitmapDescriptorFactory.HUE_RED));
+            this.rightDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(this, AndroidUtilities.m50dp(18));
+            this.nameView.setDrawablePadding(AndroidUtilities.m50dp(3));
+            this.nameView.setRightDrawable(this.rightDrawable);
+            TextView textView = new TextView(context);
+            this.readView = textView;
+            textView.setTextSize(1, 13.0f);
+            this.readView.setLines(1);
+            this.readView.setEllipsize(TextUtils.TruncateAt.END);
+            this.readView.setImportantForAccessibility(2);
+            this.readView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText"));
+            addView(this.readView, LayoutHelper.createFrame(-2, -2, 51, 55, 20, 13, 0));
         }
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(44), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(50), 1073741824));
         }
 
-        public void setUser(TLRPC$User tLRPC$User) {
+        public void setUser(TLRPC$User tLRPC$User, int i) {
+            this.user = tLRPC$User;
+            updateStatus(false);
             if (tLRPC$User != null) {
                 this.avatarDrawable.setInfo(tLRPC$User);
                 this.avatarImageView.setImage(ImageLocation.getForUser(tLRPC$User, 1), "50_50", this.avatarDrawable, tLRPC$User);
                 this.nameView.setText(ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name));
             }
+            if (i <= 0) {
+                this.readView.setVisibility(8);
+                this.nameView.setTranslationY(AndroidUtilities.m50dp(9));
+                return;
+            }
+            this.readView.setText(TextUtils.concat(seenDrawable.getSpanned(getContext()), LocaleController.formatSeenDate(i)));
+            this.readView.setVisibility(0);
+            this.nameView.setTranslationY(BitmapDescriptorFactory.HUE_RED);
         }
 
         @Override // android.view.View
         public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
             super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-            accessibilityNodeInfo.setText(LocaleController.formatString("AccDescrPersonHasSeen", C3158R.string.AccDescrPersonHasSeen, this.nameView.getText()));
+            String formatString = LocaleController.formatString("AccDescrPersonHasSeen", C3286R.string.AccDescrPersonHasSeen, this.nameView.getText());
+            if (this.readView.getVisibility() == 0) {
+                formatString = formatString + " " + ((Object) this.readView.getText());
+            }
+            accessibilityNodeInfo.setText(formatString);
+        }
+
+        @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+        public void didReceivedNotification(int i, int i2, Object... objArr) {
+            if (i == NotificationCenter.userEmojiStatusUpdated) {
+                TLRPC$User tLRPC$User = (TLRPC$User) objArr[0];
+                TLRPC$User tLRPC$User2 = this.user;
+                if (tLRPC$User2 == null || tLRPC$User == null || tLRPC$User2.f1639id != tLRPC$User.f1639id) {
+                    return;
+                }
+                this.user = tLRPC$User;
+                updateStatus(true);
+            }
+        }
+
+        private void updateStatus(boolean z) {
+            Long emojiStatusDocumentId = UserObject.getEmojiStatusDocumentId(this.user);
+            if (emojiStatusDocumentId == null) {
+                this.rightDrawable.set((Drawable) null, z);
+            } else {
+                this.rightDrawable.set(emojiStatusDocumentId.longValue(), z);
+            }
+        }
+
+        @Override // android.view.ViewGroup, android.view.View
+        protected void onAttachedToWindow() {
+            super.onAttachedToWindow();
+            AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable = this.rightDrawable;
+            if (swapAnimatedEmojiDrawable != null) {
+                swapAnimatedEmojiDrawable.attach();
+            }
+            NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.userEmojiStatusUpdated);
+        }
+
+        @Override // android.view.ViewGroup, android.view.View
+        protected void onDetachedFromWindow() {
+            super.onDetachedFromWindow();
+            AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable = this.rightDrawable;
+            if (swapAnimatedEmojiDrawable != null) {
+                swapAnimatedEmojiDrawable.detach();
+            }
+            NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.userEmojiStatusUpdated);
         }
     }
 }

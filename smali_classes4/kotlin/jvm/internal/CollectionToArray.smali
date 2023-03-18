@@ -254,7 +254,7 @@
 
     const-string v3, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>"
 
-    invoke-static {v0, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v0, [Ljava/lang/Object;
 

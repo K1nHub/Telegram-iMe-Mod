@@ -84,9 +84,6 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/graphics/drawable/GradientDrawable;->setStroke(II)V
 
-    .line 31
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 28
     invoke-virtual {p0, v1}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 

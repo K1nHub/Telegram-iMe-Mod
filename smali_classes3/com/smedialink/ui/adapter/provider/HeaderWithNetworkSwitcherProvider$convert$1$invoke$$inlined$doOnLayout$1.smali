@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 View.kt\nandroidx/core/view/ViewKt$doOnNextLayout$1\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 HeaderWithNetworkSwitcherProvider.kt\ncom/smedialink/ui/adapter/provider/HeaderWithNetworkSwitcherProvider$convert$1\n*L\n1#1,411:1\n70#2:412\n71#2:414\n37#3:413\n*E\n"
+    value = "SMAP\nView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 View.kt\nandroidx/core/view/ViewKt$doOnNextLayout$1\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 HeaderWithNetworkSwitcherProvider.kt\ncom/smedialink/ui/adapter/provider/HeaderWithNetworkSwitcherProvider$convert$1\n*L\n1#1,432:1\n72#2:433\n73#2:435\n37#3:434\n*E\n"
 .end annotation
 
 
@@ -31,7 +31,7 @@
 
     iput-object p1, p0, Lcom/smedialink/ui/adapter/provider/HeaderWithNetworkSwitcherProvider$convert$1$invoke$$inlined$doOnLayout$1;->this$0:Lcom/smedialink/ui/adapter/provider/HeaderWithNetworkSwitcherProvider;
 
-    .line 38
+    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,7 +46,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 50
+    .line 52
     invoke-virtual {p1, p0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
     .line 37
@@ -56,13 +56,10 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {p1}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method

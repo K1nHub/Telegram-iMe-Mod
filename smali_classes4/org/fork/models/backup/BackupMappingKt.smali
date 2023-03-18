@@ -139,16 +139,16 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    const/4 v1, 0x0
+    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object v1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v1
+    const/4 v1, 0x0
 
     :goto_0
     move-object v5, v1
@@ -246,14 +246,9 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
-
-    const/4 p0, 0x0
-
-    goto :goto_0
+    if-eqz v0, :cond_0
 
     .line 24
-    :cond_0
     new-instance v1, Lorg/fork/models/SortingTabState;
 
     invoke-virtual {p0}, Lorg/fork/models/backup/SortingTabStateBackup;->getFabs()Ljava/util/Set;
@@ -270,8 +265,11 @@
 
     invoke-direct {v1, v0, v2, v3, p0}, Lorg/fork/models/SortingTabState;-><init>(Lorg/fork/enums/SortingFilter;Ljava/util/Set;IZ)V
 
-    move-object p0, v1
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
 
     :goto_0
-    return-object p0
+    return-object v1
 .end method

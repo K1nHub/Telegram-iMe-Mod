@@ -27,12 +27,24 @@ public final class TraceCompat {
 
     public static void beginSection(String str) {
         if (Build.VERSION.SDK_INT >= 18) {
-            Trace.beginSection(str);
+            Api18Impl.beginSection(str);
         }
     }
 
     public static void endSection() {
         if (Build.VERSION.SDK_INT >= 18) {
+            Api18Impl.endSection();
+        }
+    }
+
+    /* renamed from: androidx.core.os.TraceCompat$Api18Impl */
+    /* loaded from: classes.dex */
+    static class Api18Impl {
+        static void beginSection(String str) {
+            Trace.beginSection(str);
+        }
+
+        static void endSection() {
             Trace.endSection();
         }
     }

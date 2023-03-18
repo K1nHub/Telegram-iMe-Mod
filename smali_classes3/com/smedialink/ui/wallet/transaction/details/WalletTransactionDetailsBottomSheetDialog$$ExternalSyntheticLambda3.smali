@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$$ExternalSyntheticLambda3;->f$0:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;
 
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->$r8$lambda$uC6a_77JDfdM264B1z_78rNV1nI(Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;)V
+    invoke-static {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->$r8$lambda$Vq_bTYLYtCtX0IFzJANoam94qCQ(Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;)V
 
     return-void
 .end method

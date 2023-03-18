@@ -14,7 +14,7 @@ public final class LifecycleViewModelScopeDelegate {
     /* compiled from: LifecycleViewModelScopeDelegate.kt */
     /* renamed from: org.koin.androidx.scope.LifecycleViewModelScopeDelegate$3 */
     /* loaded from: classes4.dex */
-    public final class C30553 implements DefaultLifecycleObserver {
+    public final class C31813 implements DefaultLifecycleObserver {
         final /* synthetic */ LifecycleViewModelScopeDelegate this$0;
 
         @Override // androidx.lifecycle.FullLifecycleObserver

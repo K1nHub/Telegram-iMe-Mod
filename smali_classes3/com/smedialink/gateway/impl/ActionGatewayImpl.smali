@@ -7,10 +7,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$Dk__cOttI7hmsj8zD2hu16b-yUg(Lkotlin/jvm/functions/Function0;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$1i3JQuAZ_hrwMKWb1yNaBy7Y_es(Lkotlin/jvm/functions/Function0;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/gateway/impl/ActionGatewayImpl;->showInfinitySnackBar$lambda-1$lambda-0(Lkotlin/jvm/functions/Function0;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/gateway/impl/ActionGatewayImpl;->showInfinitySnackBar$lambda$1$lambda$0(Lkotlin/jvm/functions/Function0;Landroid/view/View;)V
 
     return-void
 .end method
@@ -28,7 +28,7 @@
     return-void
 .end method
 
-.method private static final showInfinitySnackBar$lambda-1$lambda-0(Lkotlin/jvm/functions/Function0;Landroid/view/View;)V
+.method private static final showInfinitySnackBar$lambda$1$lambda$0(Lkotlin/jvm/functions/Function0;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$action"

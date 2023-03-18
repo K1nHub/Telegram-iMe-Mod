@@ -24,13 +24,11 @@ public final class CreateWalletFragment$setupViewsContents$1$1 extends Lambda im
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         CreateWalletFragment createWalletFragment = this.this$0;
         CreateWalletFragment newInstance = CreateWalletFragment.Companion.newInstance(CreateWalletFragment.ScreenType.TooBad.INSTANCE);
         newInstance.fragmentToRemove = this.this$0;
-        Unit unit = Unit.INSTANCE;
         createWalletFragment.presentFragment(newInstance);
     }
 }

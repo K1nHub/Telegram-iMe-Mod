@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "FirebaseExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Function;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,13 +18,15 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
         "Ljava/lang/Object;",
-        "R:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Function;"
+        ">;",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Ljava/lang/Boolean;",
+        ">;>;"
     }
 .end annotation
 
@@ -55,20 +57,26 @@
 
     iput-object p4, p0, Lcom/smedialink/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;->$whitelistUsers$inlined:Ljava/util/List;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/smedialink/storage/domain/model/Result;
+.method public final invoke(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/smedialink/storage/domain/model/Result;
     .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)",
+            "(",
+            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Ljava/lang/Object;",
+            ">;)",
             "Lcom/smedialink/storage/domain/model/Result<",
-            "TR;>;"
+            "Ljava/lang/Boolean;",
+            ">;"
         }
     .end annotation
 
@@ -100,11 +108,8 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_0
+    if-eqz v2, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     const/4 v3, 0x0
 
     const/4 v4, 0x0
@@ -125,7 +130,7 @@
     move-result-object v1
 
     .line 91
-    :goto_0
+    :cond_0
     iget-object p1, p0, Lcom/smedialink/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;->this$0:Lcom/smedialink/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;
 
     invoke-static {p1}, Lcom/smedialink/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->access$getCryptoPreferenceHelper$p(Lcom/smedialink/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;)Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
@@ -152,7 +157,7 @@
 
     move-result-object p1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 72
     :cond_1
@@ -171,17 +176,17 @@
 
     move-result-object p1
 
-    :goto_1
+    :goto_0
     return-object p1
 .end method
 
-.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     .line 70
     check-cast p1, Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;
 
-    invoke-virtual {p0, p1}, Lcom/smedialink/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;->apply(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-virtual {p0, p1}, Lcom/smedialink/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;->invoke(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p1
 

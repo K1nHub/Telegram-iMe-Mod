@@ -383,7 +383,7 @@
 .method public getMainGradientPaint()Landroid/graphics/Paint;
     .locals 2
 
-    .line 128
+    .line 136
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -394,12 +394,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 129
+    .line 137
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient;->lockedPremiumPaint:Landroid/graphics/Paint;
 
     if-nez v0, :cond_0
 
-    .line 130
+    .line 138
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -408,7 +408,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient;->lockedPremiumPaint:Landroid/graphics/Paint;
 
-    .line 132
+    .line 140
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient;->lockedPremiumPaint:Landroid/graphics/Paint;
 
@@ -420,14 +420,49 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 133
+    .line 141
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient;->lockedPremiumPaint:Landroid/graphics/Paint;
 
     return-object v0
 
-    .line 135
+    .line 143
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient;->mainGradientPaint:Landroid/graphics/Paint;
+
+    return-object v0
+.end method
+
+.method public getPremiumLocakedPaint()Landroid/graphics/Paint;
+    .locals 2
+
+    .line 105
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient;->lockedPremiumPaint:Landroid/graphics/Paint;
+
+    if-nez v0, :cond_0
+
+    .line 106
+    new-instance v0, Landroid/graphics/Paint;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
+
+    iput-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient;->lockedPremiumPaint:Landroid/graphics/Paint;
+
+    .line 108
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient;->lockedPremiumPaint:Landroid/graphics/Paint;
+
+    const-string v1, "featuredStickers_addButton"
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 109
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient;->lockedPremiumPaint:Landroid/graphics/Paint;
 
     return-object v0
 .end method

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lio/reactivex/functions/Consumer;
+.implements Lio/reactivex/functions/Function;
 
 
 # instance fields
@@ -26,16 +26,18 @@
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
     iget-object v0, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda16;->f$0:Lcom/smedialink/bots/data/repository/BotsRepository;
 
     iget-object v1, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda16;->f$1:Ljava/lang/String;
 
-    check-cast p1, Ljava/lang/Integer;
+    check-cast p1, Ljava/lang/Throwable;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/bots/data/repository/BotsRepository;->$r8$lambda$5yYM6CQ534Jy8zGsWG5gk8OXpxE(Lcom/smedialink/bots/data/repository/BotsRepository;Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/bots/data/repository/BotsRepository;->$r8$lambda$y1l8cVPuTldLyDdGt7W9KkrMNOg(Lcom/smedialink/bots/data/repository/BotsRepository;Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/Integer;
 
-    return-void
+    move-result-object p1
+
+    return-object p1
 .end method

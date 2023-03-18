@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/utils/helper/reaction/ReactionHelper$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-static {v0}, Lcom/smedialink/utils/helper/reaction/ReactionHelper;->$r8$lambda$ML4pSKd9lquhz4XgdJNNVAlWbpU(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {v0}, Lcom/smedialink/utils/helper/reaction/ReactionHelper;->$r8$lambda$hOhPMqpg1BhfPIcT4LOHTAyNGAw(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method

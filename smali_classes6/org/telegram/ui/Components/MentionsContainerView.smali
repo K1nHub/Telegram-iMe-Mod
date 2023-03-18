@@ -1123,6 +1123,14 @@
 
     if-nez v0, :cond_1
 
+    iget-object v0, p0, Lorg/telegram/ui/Components/MentionsContainerView;->adapter:Lorg/telegram/ui/Adapters/MentionsAdapter;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Adapters/MentionsAdapter;->getBotWebViewSwitch()Lorg/telegram/tgnet/TLRPC$TL_inlineBotWebView;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
     const/4 v0, 0x1
 
     goto :goto_0

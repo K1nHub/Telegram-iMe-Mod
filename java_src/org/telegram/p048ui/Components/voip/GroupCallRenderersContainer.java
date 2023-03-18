@@ -21,12 +21,12 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -34,7 +34,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.p048ui.ActionBar.BackDrawable;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.AlertsCreator;
 import org.telegram.p048ui.Components.AvatarsImageView;
@@ -146,7 +146,7 @@ public class GroupCallRenderersContainer extends FrameLayout {
             @Override // java.lang.Runnable
             public void run() {
                 if (!GroupCallRenderersContainer.this.canHideUI()) {
-                    AndroidUtilities.runOnUIThread(GroupCallRenderersContainer.this.hideUiRunnable, C0474C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
+                    AndroidUtilities.runOnUIThread(GroupCallRenderersContainer.this.hideUiRunnable, C0468C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
                     return;
                 }
                 GroupCallRenderersContainer groupCallRenderersContainer = GroupCallRenderersContainer.this;
@@ -164,7 +164,7 @@ public class GroupCallRenderersContainer extends FrameLayout {
         ImageView imageView = new ImageView(this, context) { // from class: org.telegram.ui.Components.voip.GroupCallRenderersContainer.2
             @Override // android.widget.ImageView, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(C3222ActionBar.getCurrentActionBarHeight(), 1073741824));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(C3351ActionBar.getCurrentActionBarHeight(), 1073741824));
             }
         };
         this.backButton = imageView;
@@ -204,7 +204,7 @@ public class GroupCallRenderersContainer extends FrameLayout {
 
             @Override // android.widget.ImageView, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(C3222ActionBar.getCurrentActionBarHeight(), 1073741824));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(C3351ActionBar.getCurrentActionBarHeight(), 1073741824));
             }
         };
         this.pinButton = imageView2;
@@ -245,7 +245,7 @@ public class GroupCallRenderersContainer extends FrameLayout {
         });
         createSimpleSelectorRoundRectDrawable.setCallback(this.pinContainer);
         addView(this.pinContainer);
-        CrossOutDrawable crossOutDrawable = new CrossOutDrawable(context, C3158R.C3160drawable.msg_pin_filled, null);
+        CrossOutDrawable crossOutDrawable = new CrossOutDrawable(context, C3286R.C3288drawable.msg_pin_filled, null);
         this.pinDrawable = crossOutDrawable;
         crossOutDrawable.setOffsets(-AndroidUtilities.m50dp(1), AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(1));
         imageView2.setImageDrawable(this.pinDrawable);
@@ -256,21 +256,21 @@ public class GroupCallRenderersContainer extends FrameLayout {
         textView.setTextColor(-1);
         this.pinTextView.setTextSize(1, 15.0f);
         this.pinTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.pinTextView.setText(LocaleController.getString("CallVideoPin", C3158R.string.CallVideoPin));
+        this.pinTextView.setText(LocaleController.getString("CallVideoPin", C3286R.string.CallVideoPin));
         TextView textView2 = new TextView(context);
         this.unpinTextView = textView2;
         textView2.setTextColor(-1);
         this.unpinTextView.setTextSize(1, 15.0f);
         this.unpinTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.unpinTextView.setText(LocaleController.getString("CallVideoUnpin", C3158R.string.CallVideoUnpin));
+        this.unpinTextView.setText(LocaleController.getString("CallVideoUnpin", C3286R.string.CallVideoUnpin));
         addView(this.pinTextView, LayoutHelper.createFrame(-2, -2, 51));
         addView(this.unpinTextView, LayoutHelper.createFrame(-2, -2, 51));
         ImageView imageView3 = new ImageView(context);
         this.pipView = imageView3;
         imageView3.setVisibility(4);
         this.pipView.setAlpha(BitmapDescriptorFactory.HUE_RED);
-        this.pipView.setImageResource(C3158R.C3160drawable.ic_goinline);
-        this.pipView.setContentDescription(LocaleController.getString(C3158R.string.AccDescrPipMode));
+        this.pipView.setImageResource(C3286R.C3288drawable.ic_goinline);
+        this.pipView.setContentDescription(LocaleController.getString(C3286R.string.AccDescrPipMode));
         int m50dp = AndroidUtilities.m50dp(4);
         this.pipView.setPadding(m50dp, m50dp, m50dp, m50dp);
         this.pipView.setBackground(Theme.createSelectorDrawable(ColorUtils.setAlphaComponent(-1, 55)));
@@ -378,7 +378,7 @@ public class GroupCallRenderersContainer extends FrameLayout {
             layoutParams.rightMargin = z ? AndroidUtilities.m50dp(328) : 0;
             layoutParams.bottomMargin = z ? -AndroidUtilities.m50dp(8) : 0;
             if (this.isTablet) {
-                this.backButton.setImageDrawable(ContextCompat.getDrawable(getContext(), C3158R.C3160drawable.msg_calls_minimize));
+                this.backButton.setImageDrawable(ContextCompat.getDrawable(getContext(), C3286R.C3288drawable.msg_calls_minimize));
                 return;
             }
             BackDrawable backDrawable = new BackDrawable(false);
@@ -548,7 +548,7 @@ public class GroupCallRenderersContainer extends FrameLayout {
             if (z && this.inFullscreenMode) {
                 if (!this.hideUiRunnableIsScheduled) {
                     this.hideUiRunnableIsScheduled = true;
-                    AndroidUtilities.runOnUIThread(this.hideUiRunnable, C0474C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
+                    AndroidUtilities.runOnUIThread(this.hideUiRunnable, C0468C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
                 }
             } else {
                 this.hideUiRunnableIsScheduled = false;
@@ -696,7 +696,7 @@ public class GroupCallRenderersContainer extends FrameLayout {
         if (this.hideUiRunnableIsScheduled) {
             AndroidUtilities.cancelRunOnUIThread(this.hideUiRunnable);
         }
-        AndroidUtilities.runOnUIThread(this.hideUiRunnable, C0474C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
+        AndroidUtilities.runOnUIThread(this.hideUiRunnable, C0468C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
         this.hideUiRunnableIsScheduled = true;
     }
 

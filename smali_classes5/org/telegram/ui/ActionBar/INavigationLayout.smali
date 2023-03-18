@@ -41,9 +41,6 @@
 .method public abstract closeLastFragment(Z)V
 .end method
 
-.method public abstract closeLastFragment(ZZ)V
-.end method
-
 .method public abstract dismissDialogs()V
 .end method
 
@@ -91,7 +88,7 @@
 .method public abstract getMessageDrawableOutStart()Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 .end method
 
-.method public abstract getOverlayContainerView()Landroid/view/ViewGroup;
+.method public abstract getOverlayContainerView()Landroid/widget/FrameLayout;
 .end method
 
 .method public abstract getParentActivity()Landroid/app/Activity;

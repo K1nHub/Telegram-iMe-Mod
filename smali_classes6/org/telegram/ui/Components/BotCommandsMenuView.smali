@@ -50,17 +50,17 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 9
 
-    .line 105
+    .line 107
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 68
+    .line 70
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->rectTmp:Landroid/graphics/RectF;
 
-    .line 69
+    .line 71
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -69,21 +69,21 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->paint:Landroid/graphics/Paint;
 
-    .line 70
+    .line 72
     new-instance p1, Landroid/text/TextPaint;
 
     invoke-direct {p1, v0}, Landroid/text/TextPaint;-><init>(I)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->textPaint:Landroid/text/TextPaint;
 
-    .line 71
+    .line 73
     new-instance v1, Lorg/telegram/ui/Components/BotCommandsMenuView$1;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/BotCommandsMenuView$1;-><init>(Lorg/telegram/ui/Components/BotCommandsMenuView;)V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->backDrawable:Lorg/telegram/ui/ActionBar/MenuDrawable;
 
-    .line 78
+    .line 80
     new-instance v8, Lorg/telegram/ui/Components/BotCommandsMenuView$2;
 
     sget v4, Lorg/telegram/messenger/R$raw;->bot_webview_sheet_to_cross:I
@@ -126,7 +126,7 @@
 
     iput-object v8, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->webViewAnimation:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 94
+    .line 96
     sget v2, Lorg/telegram/messenger/R$string;->BotsMenuTitle:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -135,43 +135,43 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->menuText:Ljava/lang/String;
 
-    .line 102
+    .line 104
     iput-boolean v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->drawBackgroundDrawable:Z
 
-    .line 106
+    .line 108
     invoke-direct {p0}, Lorg/telegram/ui/Components/BotCommandsMenuView;->updateColors()V
 
-    .line 107
+    .line 109
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/MenuDrawable;->setMiniIcon(Z)V
 
     const/4 v0, 0x0
 
-    .line 108
+    .line 110
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/MenuDrawable;->setRotateToBack(Z)V
 
     const/4 v2, 0x0
 
-    .line 109
+    .line 111
     invoke-virtual {v1, v2, v0}, Lorg/telegram/ui/ActionBar/MenuDrawable;->setRotation(FZ)V
 
-    .line 110
+    .line 112
     invoke-virtual {v1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
     const-string v2, "fonts/rmedium.ttf"
 
-    .line 111
+    .line 113
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v2
 
     invoke-virtual {p1, v2}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 112
+    .line 114
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/MenuDrawable;->setRoundCap()V
 
     const/16 p1, 0x10
 
-    .line 113
+    .line 115
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -188,10 +188,10 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 114
+    .line 116
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 115
+    .line 117
     sget p1, Lorg/telegram/messenger/R$string;->AccDescrBotMenu:I
 
     const-string v0, "AccDescrBotMenu"
@@ -206,9 +206,9 @@
 .end method
 
 .method private updateColors()V
-    .locals 2
+    .locals 4
 
-    .line 142
+    .line 144
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->paint:Landroid/graphics/Paint;
 
     const-string v1, "chat_messagePanelVoiceBackground"
@@ -219,24 +219,39 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    const-string v0, "chat_messagePanelVoicePressed"
+    const-string v0, "chat_messagePanelVoiceDuration"
 
-    .line 143
+    .line 145
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 144
+    .line 146
     iget-object v1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->backDrawable:Lorg/telegram/ui/ActionBar/MenuDrawable;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/MenuDrawable;->setBackColor(I)V
 
-    .line 145
+    .line 147
     iget-object v1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->backDrawable:Lorg/telegram/ui/ActionBar/MenuDrawable;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/MenuDrawable;->setIconColor(I)V
 
-    .line 146
+    .line 148
+    iget-object v1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->webViewAnimation:Lorg/telegram/ui/Components/RLottieDrawable;
+
+    if-eqz v1, :cond_0
+
+    .line 149
+    new-instance v2, Landroid/graphics/PorterDuffColorFilter;
+
+    sget-object v3, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v2, v0, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v1, v2}, Landroid/graphics/drawable/BitmapDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+
+    .line 151
+    :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v1, v0}, Landroid/text/TextPaint;->setColor(I)V
@@ -249,12 +264,12 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 13
 
-    .line 177
+    .line 182
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->menuTextLayout:Landroid/text/StaticLayout;
 
     if-eqz v0, :cond_c
 
-    .line 179
+    .line 184
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->expanded:Z
 
     const v1, 0x3dda740e
@@ -277,19 +292,19 @@
 
     add-float/2addr v5, v1
 
-    .line 180
+    .line 185
     iput v5, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->expandProgress:F
 
     cmpl-float v0, v5, v6
 
     if-lez v0, :cond_0
 
-    .line 182
+    .line 187
     iput v6, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->expandProgress:F
 
     goto :goto_0
 
-    .line 184
+    .line 189
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
@@ -301,7 +316,7 @@
     :cond_1
     if-nez v0, :cond_3
 
-    .line 187
+    .line 192
     iget v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->expandProgress:F
 
     cmpl-float v5, v0, v4
@@ -310,19 +325,19 @@
 
     sub-float/2addr v0, v1
 
-    .line 188
+    .line 193
     iput v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->expandProgress:F
 
     cmpg-float v0, v0, v4
 
     if-gez v0, :cond_2
 
-    .line 190
+    .line 195
     iput v4, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->expandProgress:F
 
     goto :goto_0
 
-    .line 192
+    .line 197
     :cond_2
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
@@ -331,7 +346,7 @@
     :cond_3
     const/4 v0, 0x0
 
-    .line 197
+    .line 202
     :goto_1
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
@@ -349,7 +364,7 @@
 
     if-lez v6, :cond_4
 
-    .line 199
+    .line 204
     iget-object v6, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->textPaint:Landroid/text/TextPaint;
 
     mul-float v7, v1, v5
@@ -358,7 +373,7 @@
 
     invoke-virtual {v6, v7}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 202
+    .line 207
     :cond_4
     iget-boolean v6, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->drawBackgroundDrawable:Z
 
@@ -368,7 +383,7 @@
 
     if-eqz v6, :cond_7
 
-    .line 203
+    .line 208
     iget-object v6, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->rectTmp:Landroid/graphics/RectF;
 
     const/16 v9, 0x28
@@ -419,21 +434,21 @@
 
     invoke-virtual {v6, v4, v4, v9, v10}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 205
+    .line 210
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BotCommandsMenuView;->isTemplatesMode()Z
 
     move-result v6
 
     if-eqz v6, :cond_6
 
-    .line 206
+    .line 211
     iget-object v6, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->paint:Landroid/graphics/Paint;
 
     const/16 v9, 0xff
 
     invoke-virtual {v6, v9}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 209
+    .line 214
     :cond_6
     iget-object v6, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->rectTmp:Landroid/graphics/RectF;
 
@@ -453,7 +468,7 @@
 
     invoke-virtual {p1, v6, v9, v10, v11}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 210
+    .line 215
     iget-object v6, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     iget-object v9, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->rectTmp:Landroid/graphics/RectF;
@@ -476,23 +491,23 @@
 
     invoke-virtual {v6, v10, v11, v12, v9}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 211
+    .line 216
     iget-object v6, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v6, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 214
+    .line 219
     :cond_7
     iget-boolean v6, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->isWebView:Z
 
     if-eqz v6, :cond_8
 
-    .line 215
+    .line 220
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/high16 v2, 0x41180000    # 9.5f
 
-    .line 216
+    .line 221
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
@@ -509,35 +524,35 @@
 
     invoke-virtual {p1, v2, v5}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 217
+    .line 222
     iget-object v2, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->webViewAnimation:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 218
+    .line 223
     iget v5, v2, Lorg/telegram/ui/Components/RLottieDrawable;->width:I
 
     iget v6, v2, Lorg/telegram/ui/Components/RLottieDrawable;->height:I
 
     invoke-virtual {v2, v3, v3, v5, v6}, Landroid/graphics/drawable/BitmapDrawable;->setBounds(IIII)V
 
-    .line 219
+    .line 224
     invoke-virtual {v2, p1}, Lorg/telegram/ui/Components/RLottieDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 220
+    .line 225
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 222
+    .line 227
     invoke-virtual {v2}, Lorg/telegram/ui/Components/RLottieDrawable;->isRunning()Z
 
     move-result v2
 
     if-eqz v2, :cond_a
 
-    .line 223
+    .line 228
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     goto :goto_3
 
-    .line 227
+    .line 232
     :cond_8
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BotCommandsMenuView;->isTemplatesMode()Z
 
@@ -547,12 +562,12 @@
 
     const/16 v6, 0x20
 
-    .line 228
+    .line 233
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
-    .line 229
+    .line 234
     iget-object v9, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {v9}, Landroid/graphics/RectF;->width()F
@@ -573,19 +588,19 @@
 
     add-int/2addr v9, v2
 
-    .line 230
+    .line 235
     iget-object v2, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->templatesDrawable:Landroid/graphics/drawable/Drawable;
 
     add-int v10, v9, v6
 
     invoke-virtual {v2, v9, v3, v10, v6}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 231
+    .line 236
     iget-object v2, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->templatesDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 232
+    .line 237
     iget-object v2, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->backDrawable:Lorg/telegram/ui/ActionBar/MenuDrawable;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/MenuDrawable;->getCurrentRotation()F
@@ -596,12 +611,12 @@
 
     float-to-int v2, v2
 
-    .line 233
+    .line 238
     iget-object v3, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v3, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 234
+    .line 239
     iget-object v3, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->rectTmp:Landroid/graphics/RectF;
 
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -620,18 +635,18 @@
 
     invoke-virtual {p1, v3, v5, v6, v8}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 235
+    .line 240
     iget-object v3, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->backDrawable:Lorg/telegram/ui/ActionBar/MenuDrawable;
 
     invoke-virtual {v3, v2}, Lorg/telegram/ui/ActionBar/MenuDrawable;->setAlpha(I)V
 
-    .line 238
+    .line 243
     :cond_9
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/16 v2, 0x8
 
-    .line 239
+    .line 244
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -646,12 +661,12 @@
 
     invoke-virtual {p1, v2, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 240
+    .line 245
     iget-object v2, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->backDrawable:Lorg/telegram/ui/ActionBar/MenuDrawable;
 
     invoke-virtual {v2, p1}, Lorg/telegram/ui/ActionBar/MenuDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 241
+    .line 246
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_a
@@ -660,12 +675,12 @@
 
     if-lez v2, :cond_b
 
-    .line 245
+    .line 250
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/16 v2, 0x22
 
-    .line 246
+    .line 251
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -692,18 +707,18 @@
 
     invoke-virtual {p1, v2, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 247
+    .line 252
     iget-object v2, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->menuTextLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 248
+    .line 253
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_b
     if-eqz v0, :cond_c
 
-    .line 252
+    .line 257
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->menuTextLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getWidth()I
@@ -722,7 +737,7 @@
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/BotCommandsMenuView;->onTranslationChanged(F)V
 
-    .line 255
+    .line 260
     :cond_c
     invoke-super {p0, p1}, Landroid/view/View;->dispatchDraw(Landroid/graphics/Canvas;)V
 
@@ -732,10 +747,10 @@
 .method protected drawableStateChanged()V
     .locals 2
 
-    .line 500
+    .line 505
     invoke-super {p0}, Landroid/view/View;->drawableStateChanged()V
 
-    .line 501
+    .line 506
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/view/View;->getDrawableState()[I
@@ -750,7 +765,7 @@
 .method public enableTemplatesMode()V
     .locals 2
 
-    .line 57
+    .line 59
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -769,7 +784,7 @@
 .method public isOpened()Z
     .locals 1
 
-    .line 285
+    .line 290
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->isOpened:Z
 
     return v0
@@ -778,7 +793,7 @@
 .method public isTemplatesMode()Z
     .locals 1
 
-    .line 61
+    .line 63
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->templatesDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
@@ -797,10 +812,10 @@
 .method public jumpDrawablesToCurrentState()V
     .locals 1
 
-    .line 506
+    .line 511
     invoke-super {p0}, Landroid/view/View;->jumpDrawablesToCurrentState()V
 
-    .line 507
+    .line 512
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
@@ -811,15 +826,15 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 125
+    .line 127
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    .line 126
+    .line 128
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->webViewAnimation:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/RLottieDrawable;->setMasterParent(Landroid/view/View;)V
 
-    .line 127
+    .line 129
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->webViewAnimation:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentParentView(Landroid/view/View;)V
@@ -830,10 +845,10 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 132
+    .line 134
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
-    .line 133
+    .line 135
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->webViewAnimation:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/RLottieDrawable;->setMasterParent(Landroid/view/View;)V
@@ -844,7 +859,7 @@
 .method protected onMeasure(II)V
     .locals 10
 
-    .line 153
+    .line 158
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -857,7 +872,7 @@
 
     shl-int/lit8 p1, p1, 0x10
 
-    .line 154
+    .line 159
     iget p2, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->lastSize:I
 
     if-ne p2, p1, :cond_0
@@ -866,7 +881,7 @@
 
     if-nez p2, :cond_2
 
-    .line 155
+    .line 160
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->backDrawable:Lorg/telegram/ui/ActionBar/MenuDrawable;
 
@@ -882,7 +897,7 @@
 
     invoke-virtual {p2, v2, v2, v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 156
+    .line 161
     iget-object p2, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->textPaint:Landroid/text/TextPaint;
 
     const/16 v0, 0xf
@@ -895,10 +910,10 @@
 
     invoke-virtual {p2, v0}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 157
+    .line 162
     iput p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->lastSize:I
 
-    .line 159
+    .line 164
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BotCommandsMenuView;->isTemplatesMode()Z
 
     move-result p1
@@ -907,10 +922,10 @@
 
     const-string p1, ""
 
-    .line 160
+    .line 165
     iput-object p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->menuText:Ljava/lang/String;
 
-    .line 163
+    .line 168
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->textPaint:Landroid/text/TextPaint;
 
@@ -922,7 +937,7 @@
 
     float-to-int v8, p1
 
-    .line 164
+    .line 169
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->menuText:Ljava/lang/String;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->textPaint:Landroid/text/TextPaint;
@@ -947,7 +962,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->menuTextLayout:Landroid/text/StaticLayout;
 
-    .line 166
+    .line 171
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->menuTextLayout:Landroid/text/StaticLayout;
 
@@ -973,17 +988,17 @@
 
     const/16 p1, 0x28
 
-    .line 167
+    .line 172
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 168
+    .line 173
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->expanded:Z
 
     if-eqz v0, :cond_3
 
-    .line 169
+    .line 174
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->menuTextLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getWidth()I
@@ -1001,7 +1016,7 @@
     :cond_3
     const/high16 p2, 0x40000000    # 2.0f
 
-    .line 172
+    .line 177
     invoke-static {p1, p2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
@@ -1030,10 +1045,10 @@
 .method public setDrawBackgroundDrawable(Z)V
     .locals 0
 
-    .line 119
+    .line 121
     iput-boolean p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->drawBackgroundDrawable:Z
 
-    .line 120
+    .line 122
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -1042,12 +1057,12 @@
 .method public setExpanded(ZZ)V
     .locals 1
 
-    .line 274
+    .line 279
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->expanded:Z
 
     if-eq v0, p1, :cond_2
 
-    .line 275
+    .line 280
     iput-boolean p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->expanded:Z
 
     if-nez p2, :cond_1
@@ -1061,15 +1076,15 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 277
+    .line 282
     :goto_0
     iput p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->expandProgress:F
 
-    .line 279
+    .line 284
     :cond_1
     invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
-    .line 280
+    .line 285
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_2
@@ -1081,14 +1096,14 @@
 
     if-nez p1, :cond_0
 
-    .line 264
+    .line 269
     sget p1, Lorg/telegram/messenger/R$string;->BotsMenuTitle:I
 
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 266
+    .line 271
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->menuText:Ljava/lang/String;
 
@@ -1111,16 +1126,16 @@
     :goto_0
     const/4 v0, 0x1
 
-    .line 267
+    .line 272
     :goto_1
     iput-object p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->menuText:Ljava/lang/String;
 
     const/4 p1, 0x0
 
-    .line 268
+    .line 273
     iput-object p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->menuTextLayout:Landroid/text/StaticLayout;
 
-    .line 269
+    .line 274
     invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     return v0
@@ -1129,15 +1144,15 @@
 .method public setOpened(Z)V
     .locals 2
 
-    .line 440
+    .line 445
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->isOpened:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 441
+    .line 446
     iput-boolean p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->isOpened:Z
 
-    .line 443
+    .line 448
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->isWebView:Z
 
@@ -1145,23 +1160,23 @@
 
     if-eqz v0, :cond_2
 
-    .line 444
+    .line 449
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->isWebViewOpened:Z
 
     if-eq v0, p1, :cond_4
 
-    .line 445
+    .line 450
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->webViewAnimation:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 446
+    .line 451
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->stop()V
 
-    .line 447
+    .line 452
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setPlayInDirectionOfCustomEndFrame(Z)V
 
     if-eqz p1, :cond_1
 
-    .line 448
+    .line 453
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->getFramesCount()I
 
     move-result v1
@@ -1169,15 +1184,15 @@
     :cond_1
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 449
+    .line 454
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
 
-    .line 450
+    .line 455
     iput-boolean p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->isWebViewOpened:Z
 
     goto :goto_1
 
-    .line 453
+    .line 458
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->backDrawable:Lorg/telegram/ui/ActionBar/MenuDrawable;
 
@@ -1201,10 +1216,10 @@
 .method public setWebView(Z)V
     .locals 0
 
-    .line 137
+    .line 139
     iput-boolean p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->isWebView:Z
 
-    .line 138
+    .line 140
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -1213,7 +1228,7 @@
 .method protected verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .locals 1
 
-    .line 495
+    .line 500
     invoke-super {p0, p1}, Landroid/view/View;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
 
     move-result v0

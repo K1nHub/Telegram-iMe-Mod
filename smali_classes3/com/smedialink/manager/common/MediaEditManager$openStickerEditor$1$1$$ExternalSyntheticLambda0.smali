@@ -57,7 +57,7 @@
 
     move-result v5
 
-    invoke-static/range {v0 .. v5}, Lcom/smedialink/manager/common/MediaEditManager$openStickerEditor$1$1;->$r8$lambda$E9CM0PraBiaBKram9FQfBzLHDZ0(Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Lcom/smedialink/manager/common/MediaEditManager;ZILjava/lang/String;I)V
+    invoke-static/range {v0 .. v5}, Lcom/smedialink/manager/common/MediaEditManager$openStickerEditor$1$1;->$r8$lambda$xkvGNreKm2EcMXO2me4tPJc8Nwg(Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Lcom/smedialink/manager/common/MediaEditManager;ZILjava/lang/String;I)V
 
     return-void
 .end method

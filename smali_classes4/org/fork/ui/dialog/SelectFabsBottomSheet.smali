@@ -6,13 +6,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/fork/ui/dialog/SelectFabsBottomSheet$ListAdapter;,
-        Lorg/fork/ui/dialog/SelectFabsBottomSheet$Companion;
+        Lorg/fork/ui/dialog/SelectFabsBottomSheet$Companion;,
+        Lorg/fork/ui/dialog/SelectFabsBottomSheet$ListAdapter;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSelectFabsBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectFabsBottomSheet.kt\norg/fork/ui/dialog/SelectFabsBottomSheet\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 ViewGroup.kt\nandroidx/core/view/ViewGroupKt\n*L\n1#1,182:1\n1#2:183\n61#3,4:184\n*S KotlinDebug\n*F\n+ 1 SelectFabsBottomSheet.kt\norg/fork/ui/dialog/SelectFabsBottomSheet\n*L\n131#1:184,4\n*E\n"
+    value = "SMAP\nSelectFabsBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectFabsBottomSheet.kt\norg/fork/ui/dialog/SelectFabsBottomSheet\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 ViewGroup.kt\nandroidx/core/view/ViewGroupKt\n*L\n1#1,182:1\n1#2:183\n62#3,4:184\n*S KotlinDebug\n*F\n+ 1 SelectFabsBottomSheet.kt\norg/fork/ui/dialog/SelectFabsBottomSheet\n*L\n131#1:184,4\n*E\n"
 .end annotation
 
 
@@ -52,26 +52,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$XBOAKxj6Am8h8KIN4L6OODVrBis(Lorg/fork/ui/dialog/SelectFabsBottomSheet;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$EAkK9rBMT7OuDMx3_mEfRNtZu6M(Lorg/fork/ui/dialog/SelectFabsBottomSheet;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->setupListeners$lambda-8(Lorg/fork/ui/dialog/SelectFabsBottomSheet;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->setupListeners$lambda$8(Lorg/fork/ui/dialog/SelectFabsBottomSheet;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Yo2v7NGoQJoYliMmSl7YyOZWMlg(Lorg/fork/ui/dialog/SelectFabsBottomSheet;)V
+.method public static synthetic $r8$lambda$r1s3rWLIv6QlRsHYSUrFE_6BCOc(Lorg/fork/ui/dialog/SelectFabsBottomSheet;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->lambda-2$lambda-1(Lorg/fork/ui/dialog/SelectFabsBottomSheet;)V
+    invoke-static {p0}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->lambda$2$lambda$1(Lorg/fork/ui/dialog/SelectFabsBottomSheet;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$qAh5xcNmwxXiqYhxp9_61_aenUw(Lorg/fork/ui/dialog/SelectFabsBottomSheet;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$tRfnKgV2mYOivQtfzR7VJMTg3IM(Lorg/fork/ui/dialog/SelectFabsBottomSheet;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->setupListeners$lambda-7(Lorg/fork/ui/dialog/SelectFabsBottomSheet;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->setupListeners$lambda$7(Lorg/fork/ui/dialog/SelectFabsBottomSheet;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -197,7 +197,7 @@
     .line 48
     new-instance p2, Lorg/fork/ui/dialog/SelectFabsBottomSheet$1;
 
-    invoke-direct {p2, p0, p1}, Lorg/fork/ui/dialog/SelectFabsBottomSheet$1;-><init>(Lorg/fork/ui/dialog/SelectFabsBottomSheet;Landroid/content/Context;)V
+    invoke-direct {p2, p1, p0}, Lorg/fork/ui/dialog/SelectFabsBottomSheet$1;-><init>(Landroid/content/Context;Lorg/fork/ui/dialog/SelectFabsBottomSheet;)V
 
     .line 54
     invoke-direct {p0}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -259,8 +259,6 @@
     invoke-virtual {p2, p1, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 57
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     new-instance p1, Lorg/fork/ui/dialog/SelectFabsBottomSheet$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0}, Lorg/fork/ui/dialog/SelectFabsBottomSheet$$ExternalSyntheticLambda1;-><init>(Lorg/fork/ui/dialog/SelectFabsBottomSheet;)V
@@ -634,7 +632,7 @@
     return-object v0
 .end method
 
-.method private static final lambda-2$lambda-1(Lorg/fork/ui/dialog/SelectFabsBottomSheet;)V
+.method private static final lambda$2$lambda$1(Lorg/fork/ui/dialog/SelectFabsBottomSheet;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -675,7 +673,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-7(Lorg/fork/ui/dialog/SelectFabsBottomSheet;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$7(Lorg/fork/ui/dialog/SelectFabsBottomSheet;Landroid/view/View;I)V
     .locals 2
 
     const-string v0, "this$0"
@@ -694,9 +692,7 @@
     check-cast p2, Lcom/smedialink/storage/domain/model/filters/FilterFab;
 
     .line 99
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->getSelectedFabs()Ljava/util/Set;
-
-    move-result-object v0
+    iget-object v0, p0, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->selectedFabs:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->size()I
 
@@ -706,9 +702,7 @@
 
     if-ne v0, v1, :cond_0
 
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->getSelectedFabs()Ljava/util/Set;
-
-    move-result-object v0
+    iget-object v0, p0, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->selectedFabs:Ljava/util/Set;
 
     invoke-interface {v0, p2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -722,7 +716,7 @@
     const-string v0, "null cannot be cast to non-null type org.fork.ui.view.CircleCheckCell"
 
     .line 102
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lorg/fork/ui/view/CircleCheckCell;
 
@@ -743,7 +737,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-8(Lorg/fork/ui/dialog/SelectFabsBottomSheet;Landroid/view/View;)V
+.method private static final setupListeners$lambda$8(Lorg/fork/ui/dialog/SelectFabsBottomSheet;Landroid/view/View;)V
     .locals 1
 
     const-string p1, "this$0"
@@ -751,13 +745,9 @@
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 107
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->getListener()Lorg/fork/utils/Callbacks$Callback1;
+    iget-object p1, p0, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->listener:Lorg/fork/utils/Callbacks$Callback1;
 
-    move-result-object p1
-
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->getSelectedFabs()Ljava/util/Set;
-
-    move-result-object v0
+    iget-object v0, p0, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->selectedFabs:Ljava/util/Set;
 
     invoke-interface {p1, v0}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
@@ -768,7 +758,7 @@
 .end method
 
 .method private final updateLimitsUI()V
-    .locals 11
+    .locals 10
 
     .line 121
     invoke-direct {p0}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->getSaveButton()Landroid/widget/TextView;
@@ -776,9 +766,7 @@
     move-result-object v0
 
     .line 122
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->getSelectedFabs()Ljava/util/Set;
-
-    move-result-object v1
+    iget-object v1, p0, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->selectedFabs:Ljava/util/Set;
 
     invoke-interface {v1}, Ljava/util/Set;->isEmpty()Z
 
@@ -815,110 +803,80 @@
 
     move-result-object v0
 
-    .line 61
+    .line 62
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
 
-    if-lez v1, :cond_4
-
     const/4 v6, 0x0
 
     :goto_1
-    add-int/lit8 v7, v6, 0x1
+    if-ge v6, v1, :cond_3
 
-    .line 62
+    .line 63
     invoke-virtual {v0, v6}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v8
+    move-result-object v7
 
-    const-string v9, "getChildAt(index)"
+    const-string v8, "getChildAt(index)"
 
-    invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 132
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->getSelectedFabs()Ljava/util/Set;
+    iget-object v8, p0, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->selectedFabs:Ljava/util/Set;
 
-    move-result-object v9
+    invoke-interface {v8}, Ljava/util/Set;->size()I
 
-    invoke-interface {v9}, Ljava/util/Set;->size()I
+    move-result v8
 
-    move-result v9
+    const/4 v9, 0x5
 
-    const/4 v10, 0x5
-
-    if-ge v9, v10, :cond_1
+    if-ge v8, v9, :cond_1
 
     .line 133
-    invoke-virtual {v8, v5}, Landroid/view/View;->setEnabled(Z)V
+    invoke-virtual {v7, v5}, Landroid/view/View;->setEnabled(Z)V
 
     .line 134
-    invoke-virtual {v8, v3}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v7, v3}, Landroid/view/View;->setAlpha(F)V
 
     goto :goto_2
 
     .line 135
     :cond_1
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->getSelectedFabs()Ljava/util/Set;
-
-    move-result-object v9
+    iget-object v8, p0, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->selectedFabs:Ljava/util/Set;
 
     invoke-direct {p0}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->getFabs()Ljava/util/List;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-interface {v10, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v9, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v9
 
-    invoke-interface {v9, v6}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v8, v9}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v8
 
-    if-nez v6, :cond_2
+    if-nez v8, :cond_2
 
     .line 136
-    invoke-virtual {v8, v4}, Landroid/view/View;->setEnabled(Z)V
+    invoke-virtual {v7, v4}, Landroid/view/View;->setEnabled(Z)V
 
     .line 137
-    invoke-virtual {v8, v2}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v7, v2}, Landroid/view/View;->setAlpha(F)V
 
     :cond_2
     :goto_2
-    if-lt v7, v1, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    move v6, v7
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
-    :cond_4
-    :goto_3
+    :cond_3
     return-void
 .end method
 
 
 # virtual methods
-.method public final getListener()Lorg/fork/utils/Callbacks$Callback1;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lorg/fork/utils/Callbacks$Callback1<",
-            "Ljava/util/Set<",
-            "Lcom/smedialink/storage/domain/model/filters/FilterFab;",
-            ">;>;"
-        }
-    .end annotation
-
-    .line 34
-    iget-object v0, p0, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->listener:Lorg/fork/utils/Callbacks$Callback1;
-
-    return-object v0
-.end method
-
 .method public final getSelectedFabs()Ljava/util/Set;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;

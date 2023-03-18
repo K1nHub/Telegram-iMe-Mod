@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 /* compiled from: CustomForwardSwitchArchiveImageView.kt */
@@ -32,7 +32,7 @@ public final class CustomForwardSwitchArchiveImageView extends ImageView {
         setScaleType(ImageView.ScaleType.CENTER);
         setColorFilter(new PorterDuffColorFilter(Theme.getColor("actionBarDefaultTitle"), PorterDuff.Mode.SRC_IN));
         setBackground(Theme.createSelectorDrawable(Theme.getColor("actionBarActionModeDefaultSelector")));
-        setImageResource(C3158R.C3160drawable.fork_custom_forward_switch_archive);
+        setImageResource(C3286R.C3288drawable.fork_custom_forward_switch_archive);
     }
 
     public final ArrayList<ThemeDescription> getThemeDescriptions() {
@@ -49,7 +49,7 @@ public final class CustomForwardSwitchArchiveImageView extends ImageView {
         ObjectAnimator ofPropertyValuesHolder2 = ObjectAnimator.ofPropertyValuesHolder(this, PropertyValuesHolder.ofFloat(ImageView.SCALE_X, 1.0f), PropertyValuesHolder.ofFloat(ImageView.SCALE_Y, 1.0f));
         Intrinsics.checkNotNullExpressionValue(ofPropertyValuesHolder2, "ofPropertyValuesHolder(t…fFloat(SCALE_Y, SCALE_1))");
         ofPropertyValuesHolder2.setDuration(200L);
-        setImageResource(this.isArchive ? C3158R.C3160drawable.fork_custom_forward_switch_main : C3158R.C3160drawable.fork_custom_forward_switch_archive);
+        setImageResource(this.isArchive ? C3286R.C3288drawable.fork_custom_forward_switch_main : C3286R.C3288drawable.fork_custom_forward_switch_archive);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playSequentially(ofPropertyValuesHolder, ofPropertyValuesHolder2);
         Property property = ImageView.ROTATION;

@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/smedialink/ui/profile/ProfileView$$State;Ljava/lang/String;)V
     .locals 1
 
-    .line 148
+    .line 460
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showToast"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 150
+    .line 462
     iput-object p2, p0, Lcom/smedialink/ui/profile/ProfileView$$State$ShowToastCommand;->text:Ljava/lang/String;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/smedialink/ui/profile/ProfileView;)V
     .locals 1
 
-    .line 155
+    .line 467
     iget-object v0, p0, Lcom/smedialink/ui/profile/ProfileView$$State$ShowToastCommand;->text:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Lcom/smedialink/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 144
+    .line 456
     check-cast p1, Lcom/smedialink/ui/profile/ProfileView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/profile/ProfileView$$State$ShowToastCommand;->apply(Lcom/smedialink/ui/profile/ProfileView;)V

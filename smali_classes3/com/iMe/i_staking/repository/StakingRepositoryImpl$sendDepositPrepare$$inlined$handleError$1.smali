@@ -1,9 +1,9 @@
 .class public final Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendDepositPrepare$$inlined$handleError$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "RxExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Function;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,13 +18,17 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        "R:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Function;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Ljava/lang/Throwable;",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Lkotlin/Pair<",
+        "+",
+        "Ljava/lang/String;",
+        "+",
+        "Lcom/smedialink/storage/domain/model/staking/StakingTransactionAction;",
+        ">;>;>;"
     }
 .end annotation
 
@@ -43,14 +47,16 @@
 
     iput-object p1, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendDepositPrepare$$inlined$handleError$1;->$errorHandler:Lcom/smedialink/storage/data/network/handlers/ErrorHandler;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
+.method public final invoke(Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -58,7 +64,12 @@
             "Ljava/lang/Throwable;",
             ")",
             "Lcom/smedialink/storage/domain/model/Result<",
-            "TT;>;"
+            "Lkotlin/Pair<",
+            "+",
+            "Ljava/lang/String;",
+            "+",
+            "Lcom/smedialink/storage/domain/model/staking/StakingTransactionAction;",
+            ">;>;"
         }
     .end annotation
 
@@ -87,13 +98,13 @@
     return-object p1
 .end method
 
-.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     .line 26
     check-cast p1, Ljava/lang/Throwable;
 
-    invoke-virtual {p0, p1}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendDepositPrepare$$inlined$handleError$1;->apply(Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-virtual {p0, p1}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendDepositPrepare$$inlined$handleError$1;->invoke(Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p1
 

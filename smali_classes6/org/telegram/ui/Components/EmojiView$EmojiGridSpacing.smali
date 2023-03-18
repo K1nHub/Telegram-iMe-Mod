@@ -22,7 +22,7 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 4915
+    .line 4933
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridSpacing;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
@@ -35,35 +35,35 @@
 .method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 1
 
-    .line 4919
+    .line 4937
     instance-of p4, p2, Lorg/telegram/ui/Cells/StickerSetNameCell;
 
     if-eqz p4, :cond_0
 
     const/4 p4, 0x5
 
-    .line 4920
+    .line 4938
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, p1, Landroid/graphics/Rect;->left:I
 
-    .line 4921
+    .line 4939
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p4
 
     iput p4, p1, Landroid/graphics/Rect;->right:I
 
-    .line 4922
+    .line 4940
     invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result p2
 
     add-int/lit8 p2, p2, 0x1
 
-    .line 4923
+    .line 4941
     iget-object p3, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridSpacing;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/EmojiView;->access$1400(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;
@@ -98,7 +98,7 @@
 
     const/16 p2, 0xa
 
-    .line 4924
+    .line 4942
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -107,7 +107,7 @@
 
     goto :goto_1
 
-    .line 4926
+    .line 4944
     :cond_0
     instance-of p3, p2, Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -119,7 +119,7 @@
 
     goto :goto_0
 
-    .line 4935
+    .line 4953
     :cond_1
     instance-of p2, p2, Lorg/telegram/ui/Components/BackupImageView;
 
@@ -127,7 +127,7 @@
 
     const/16 p2, 0xc
 
-    .line 4936
+    .line 4954
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -136,7 +136,7 @@
 
     goto :goto_1
 
-    .line 4927
+    .line 4945
     :cond_2
     :goto_0
     iget-object p3, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridSpacing;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -153,7 +153,7 @@
 
     iput p3, p1, Landroid/graphics/Rect;->left:I
 
-    .line 4928
+    .line 4946
     iget-object p3, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridSpacing;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/EmojiView;->access$1100(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
@@ -168,14 +168,14 @@
 
     iput p3, p1, Landroid/graphics/Rect;->right:I
 
-    .line 4929
+    .line 4947
     instance-of p2, p2, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;
 
     if-eqz p2, :cond_3
 
     const/16 p2, 0x8
 
-    .line 4930
+    .line 4948
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

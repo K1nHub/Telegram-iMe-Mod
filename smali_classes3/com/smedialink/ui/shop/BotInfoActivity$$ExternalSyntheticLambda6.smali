@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda6;->f$0:Lcom/smedialink/ui/shop/BotInfoActivity;
 
-    invoke-static {v0, p1, p2}, Lcom/smedialink/ui/shop/BotInfoActivity;->$r8$lambda$7Mv6xakiwfZY19DPeK5FiT9x0po(Lcom/smedialink/ui/shop/BotInfoActivity;Lme/zhanghai/android/materialratingbar/MaterialRatingBar;F)V
+    invoke-static {v0, p1, p2}, Lcom/smedialink/ui/shop/BotInfoActivity;->$r8$lambda$w4rQwGTNwoEXI1MhBzOSY_T8_O0(Lcom/smedialink/ui/shop/BotInfoActivity;Lme/zhanghai/android/materialratingbar/MaterialRatingBar;F)V
 
     return-void
 .end method

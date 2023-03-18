@@ -5,21 +5,27 @@
 .implements Lorg/fork/utils/Callbacks$Callback1;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
-
-.field public final synthetic f$1:Lorg/telegram/ui/DialogsActivity$ViewPage;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda109;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity$ViewPage;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda109;
+
+    invoke-direct {v0}, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda109;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda109;->INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda109;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda109;->f$0:Lorg/telegram/ui/DialogsActivity;
-
-    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda109;->f$1:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     return-void
 .end method
@@ -27,15 +33,11 @@
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;)V
-    .locals 2
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda109;->f$0:Lorg/telegram/ui/DialogsActivity;
+    check-cast p1, Ljava/lang/Boolean;
 
-    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda109;->f$1:Lorg/telegram/ui/DialogsActivity$ViewPage;
-
-    check-cast p1, Ljava/util/Set;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$c7CPSIcdz35hrrDG78KaBji9GJM(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity$ViewPage;Ljava/util/Set;)V
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$6e11fDST_kKQzO_H3mx8jaCFhLM(Ljava/lang/Boolean;)V
 
     return-void
 .end method

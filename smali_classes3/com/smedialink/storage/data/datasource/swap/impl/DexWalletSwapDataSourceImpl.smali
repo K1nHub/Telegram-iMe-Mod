@@ -15,7 +15,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDexWalletSwapDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DexWalletSwapDataSourceImpl.kt\ncom/smedialink/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,160:1\n15#2:161\n8#3:162\n18#4:163\n1547#5:164\n1618#5,3:165\n*S KotlinDebug\n*F\n+ 1 DexWalletSwapDataSourceImpl.kt\ncom/smedialink/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl\n*L\n39#1:161\n67#1:162\n67#1:163\n117#1:164\n117#1:165,3\n*E\n"
+    value = "SMAP\nDexWalletSwapDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DexWalletSwapDataSourceImpl.kt\ncom/smedialink/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,160:1\n15#2:161\n8#3:162\n18#4:163\n1549#5:164\n1620#5,3:165\n*S KotlinDebug\n*F\n+ 1 DexWalletSwapDataSourceImpl.kt\ncom/smedialink/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl\n*L\n39#1:161\n67#1:162\n67#1:163\n117#1:164\n117#1:165,3\n*E\n"
 .end annotation
 
 
@@ -89,18 +89,20 @@
 .end method
 
 .method private final calculateDeadline(I)Ljava/math/BigInteger;
-    .locals 4
+    .locals 5
 
     .line 150
     invoke-static {}, Lcom/smedialink/storage/data/utils/extentions/DateExtKt;->now()J
 
     move-result-wide v0
 
+    new-instance v2, Ljava/math/BigDecimal;
+
     long-to-double v0, v0
 
-    const-wide v2, 0x408f400000000000L    # 1000.0
+    const-wide v3, 0x408f400000000000L    # 1000.0
 
-    div-double/2addr v0, v2
+    div-double/2addr v0, v3
 
     .line 151
     invoke-static {v0, v1}, Ljava/lang/Math;->floor(D)D
@@ -109,19 +111,17 @@
 
     mul-int/lit8 p1, p1, 0x3c
 
-    int-to-double v2, p1
+    int-to-double v3, p1
 
-    add-double/2addr v0, v2
-
-    new-instance p1, Ljava/math/BigDecimal;
+    add-double/2addr v0, v3
 
     invoke-static {v0, v1}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-direct {p1, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, p1}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1}, Ljava/math/BigDecimal;->toBigIntegerExact()Ljava/math/BigInteger;
+    invoke-virtual {v2}, Ljava/math/BigDecimal;->toBigIntegerExact()Ljava/math/BigInteger;
 
     move-result-object p1
 
@@ -172,7 +172,7 @@
 
     move-result-object v3
 
-    .line 1547
+    .line 1549
     new-instance v4, Ljava/util/ArrayList;
 
     const/16 v5, 0xa
@@ -183,7 +183,7 @@
 
     invoke-direct {v4, v5}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -199,7 +199,7 @@
 
     move-result-object v5
 
-    .line 1619
+    .line 1621
     check-cast v5, Ljava/lang/String;
 
     .line 117
@@ -207,6 +207,7 @@
 
     invoke-direct {v6, v5}, Lorg/web3j/abi/datatypes/Address;-><init>(Ljava/lang/String;)V
 
+    .line 1621
     invoke-interface {v4, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -217,7 +218,7 @@
 
     move-result-object v3
 
-    sget-object v5, Lcom/smedialink/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl$WhenMappings;->$EnumSwitchMapping$0:[I
+    sget-object v5, Lcom/smedialink/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl$WhenMappings;->$EnumSwitchMapping$1:[I
 
     invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
@@ -277,16 +278,16 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    move-object v0, v11
+    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+
+    move-result-object v0
 
     goto :goto_1
 
     :cond_1
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
-
-    move-result-object v0
+    move-object v0, v11
 
     :goto_1
     invoke-direct {p1, v0}, Lorg/web3j/abi/datatypes/Address;-><init>(Ljava/lang/String;)V
@@ -366,16 +367,16 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_4
+    if-eqz v0, :cond_4
 
-    move-object v0, v11
+    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+
+    move-result-object v0
 
     goto :goto_2
 
     :cond_4
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
-
-    move-result-object v0
+    move-object v0, v11
 
     :goto_2
     invoke-direct {p1, v0}, Lorg/web3j/abi/datatypes/Address;-><init>(Ljava/lang/String;)V
@@ -411,7 +412,7 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/smedialink/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl$WhenMappings;->$EnumSwitchMapping$0:[I
+    sget-object v1, Lcom/smedialink/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl$WhenMappings;->$EnumSwitchMapping$1:[I
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
@@ -442,7 +443,7 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/smedialink/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl$WhenMappings;->$EnumSwitchMapping$1:[I
+    sget-object v1, Lcom/smedialink/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
@@ -661,16 +662,16 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
+    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;->getCredentials()Lorg/web3j/crypto/Credentials;
+
+    move-result-object p1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;->getCredentials()Lorg/web3j/crypto/Credentials;
-
-    move-result-object p1
+    const/4 p1, 0x0
 
     .line 60
     :goto_0
@@ -758,7 +759,11 @@
 
     invoke-direct {v1, p0, p1}, Lcom/smedialink/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl$swap$$inlined$flatMapSuccess$1;-><init>(Lcom/smedialink/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;Lcom/smedialink/storage/domain/model/crypto/send/TransactionArgs;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, v1}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 

@@ -37,10 +37,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$1GWIbIeWpeh6ussx6w8iLdXxNKk()V
+.method public static synthetic $r8$lambda$KfeqdMI29OtMryomhup3LjZmwZA()V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/storage/data/manager/common/EnvironmentManager;->exitRunnable$lambda-0()V
+    invoke-static {}, Lcom/smedialink/storage/data/manager/common/EnvironmentManager;->exitRunnable$lambda$0()V
 
     return-void
 .end method
@@ -171,7 +171,7 @@
     return-void
 .end method
 
-.method private static final exitRunnable$lambda-0()V
+.method private static final exitRunnable$lambda$0()V
     .locals 1
 
     .line 25

@@ -8,14 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
+
+    iput-object p2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-void
 .end method
@@ -23,11 +27,13 @@
 
 # virtual methods
 .method public final onLongClick(Landroid/view/View;)Z
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->$r8$lambda$vueU6uD2syGzGgS90Y0Irvxmaqc(Lorg/telegram/ui/Components/AudioPlayerAlert;Landroid/view/View;)Z
+    iget-object v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->$r8$lambda$rw-Y2VUTqU7-QDzM9LeLcvI3UNw(Lorg/telegram/ui/Components/AudioPlayerAlert;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;)Z
 
     move-result p1
 

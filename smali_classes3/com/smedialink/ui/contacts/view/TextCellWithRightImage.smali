@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTextCellWithRightImage.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TextCellWithRightImage.kt\ncom/smedialink/ui/contacts/view/TextCellWithRightImage\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,71:1\n254#2,2:72\n*S KotlinDebug\n*F\n+ 1 TextCellWithRightImage.kt\ncom/smedialink/ui/contacts/view/TextCellWithRightImage\n*L\n38#1:72,2\n*E\n"
+    value = "SMAP\nTextCellWithRightImage.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TextCellWithRightImage.kt\ncom/smedialink/ui/contacts/view/TextCellWithRightImage\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,71:1\n262#2,2:72\n*S KotlinDebug\n*F\n+ 1 TextCellWithRightImage.kt\ncom/smedialink/ui/contacts/view/TextCellWithRightImage\n*L\n38#1:72,2\n*E\n"
 .end annotation
 
 
@@ -288,7 +288,7 @@
     :cond_0
     const/16 p1, 0x8
 
-    .line 254
+    .line 262
     :goto_0
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 

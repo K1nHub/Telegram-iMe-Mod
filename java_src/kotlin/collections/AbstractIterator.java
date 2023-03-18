@@ -18,8 +18,14 @@ public abstract class AbstractIterator<T> implements Iterator<T>, KMappedMarker,
 
         static {
             int[] iArr = new int[State.values().length];
-            iArr[State.Done.ordinal()] = 1;
-            iArr[State.Ready.ordinal()] = 2;
+            try {
+                iArr[State.Done.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[State.Ready.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }

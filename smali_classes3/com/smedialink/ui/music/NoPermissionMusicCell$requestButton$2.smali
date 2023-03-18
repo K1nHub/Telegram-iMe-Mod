@@ -33,10 +33,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$l51LdMrqHWntOXrJsKbslFd5j58(Landroid/app/Activity;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$wKX40oinGJRTEN2jQLwBPIDovjA(Landroid/app/Activity;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/music/NoPermissionMusicCell$requestButton$2;->invoke$lambda-1$lambda-0(Landroid/app/Activity;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/music/NoPermissionMusicCell$requestButton$2;->invoke$lambda$1$lambda$0(Landroid/app/Activity;Landroid/view/View;)V
 
     return-void
 .end method
@@ -55,7 +55,7 @@
     return-void
 .end method
 
-.method private static final invoke$lambda-1$lambda-0(Landroid/app/Activity;Landroid/view/View;)V
+.method private static final invoke$lambda$1$lambda$0(Landroid/app/Activity;Landroid/view/View;)V
     .locals 1
 
     const-string p1, "$context"

@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lorg/fork/ui/dialog/SelectIconBottomSheet$Companion;,
         Lorg/fork/ui/dialog/SelectIconBottomSheet$GridAdapter;,
         Lorg/fork/ui/dialog/SelectIconBottomSheet$IconView;,
-        Lorg/fork/ui/dialog/SelectIconBottomSheet$Companion;,
         Lorg/fork/ui/dialog/SelectIconBottomSheet$WhenMappings;
     }
 .end annotation
@@ -44,18 +44,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$CxeCDnWBoGyv3WqDw5qnWedes8I(Lorg/fork/ui/dialog/SelectIconBottomSheet;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$2GJnwgZjxFZlQxsW4P-z7q-ByxA(Lorg/fork/ui/dialog/SelectIconBottomSheet;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/dialog/SelectIconBottomSheet;->initDeleteButton$lambda-3$lambda-2(Lorg/fork/ui/dialog/SelectIconBottomSheet;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/dialog/SelectIconBottomSheet;->initDeleteButton$lambda$3$lambda$2(Lorg/fork/ui/dialog/SelectIconBottomSheet;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$djsiIrdJF-63RC_GYt44_JV-2_Q(Lorg/fork/ui/dialog/SelectIconBottomSheet;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$WUCYAcF8tjwLJayqEipdCS6khEw(Lorg/fork/ui/dialog/SelectIconBottomSheet;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/SelectIconBottomSheet;->setupListeners$lambda-4(Lorg/fork/ui/dialog/SelectIconBottomSheet;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/SelectIconBottomSheet;->setupListeners$lambda$4(Lorg/fork/ui/dialog/SelectIconBottomSheet;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -353,7 +353,7 @@
     return-object v0
 .end method
 
-.method private static final initDeleteButton$lambda-3$lambda-2(Lorg/fork/ui/dialog/SelectIconBottomSheet;Landroid/view/View;)V
+.method private static final initDeleteButton$lambda$3$lambda$2(Lorg/fork/ui/dialog/SelectIconBottomSheet;Landroid/view/View;)V
     .locals 1
 
     const-string p1, "this$0"
@@ -361,9 +361,7 @@
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 84
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectIconBottomSheet;->getSelectIconDelegate()Lorg/fork/utils/Callbacks$Callback2;
-
-    move-result-object p1
+    iget-object p1, p0, Lorg/fork/ui/dialog/SelectIconBottomSheet;->selectIconDelegate:Lorg/fork/utils/Callbacks$Callback2;
 
     const/4 v0, 0x0
 
@@ -455,9 +453,7 @@
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setOverScrollMode(I)V
 
     .line 75
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectIconBottomSheet;->getActivity()Landroid/app/Activity;
-
-    move-result-object v1
+    iget-object v1, p0, Lorg/fork/ui/dialog/SelectIconBottomSheet;->activity:Landroid/app/Activity;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->isInLandscapeMode(Landroid/app/Activity;)Z
 
@@ -538,15 +534,11 @@
     invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 67
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectIconBottomSheet;->getCurrentFilterIcon()Lcom/smedialink/storage/domain/model/filters/FilterIcon;
-
-    move-result-object v1
+    iget-object v1, p0, Lorg/fork/ui/dialog/SelectIconBottomSheet;->currentFilterIcon:Lcom/smedialink/storage/domain/model/filters/FilterIcon;
 
     if-nez v1, :cond_0
 
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectIconBottomSheet;->getCurrentTopicIcon()Lcom/smedialink/storage/data/repository/topics/Topic;
-
-    move-result-object v1
+    iget-object v1, p0, Lorg/fork/ui/dialog/SelectIconBottomSheet;->currentTopicIcon:Lcom/smedialink/storage/data/repository/topics/Topic;
 
     if-eqz v1, :cond_1
 
@@ -590,7 +582,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-4(Lorg/fork/ui/dialog/SelectIconBottomSheet;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$4(Lorg/fork/ui/dialog/SelectIconBottomSheet;Landroid/view/View;I)V
     .locals 2
 
     const-string p1, "this$0"
@@ -609,15 +601,11 @@
     check-cast p1, Ljava/lang/Enum;
 
     .line 93
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectIconBottomSheet;->getCurrentFilterIcon()Lcom/smedialink/storage/domain/model/filters/FilterIcon;
-
-    move-result-object p2
+    iget-object p2, p0, Lorg/fork/ui/dialog/SelectIconBottomSheet;->currentFilterIcon:Lcom/smedialink/storage/domain/model/filters/FilterIcon;
 
     if-eq p2, p1, :cond_2
 
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectIconBottomSheet;->getCurrentTopicIcon()Lcom/smedialink/storage/data/repository/topics/Topic;
-
-    move-result-object p2
+    iget-object p2, p0, Lorg/fork/ui/dialog/SelectIconBottomSheet;->currentTopicIcon:Lcom/smedialink/storage/data/repository/topics/Topic;
 
     if-ne p2, p1, :cond_0
 
@@ -625,9 +613,7 @@
 
     .line 97
     :cond_0
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectIconBottomSheet;->getType()Lorg/fork/enums/FilterActivityType;
-
-    move-result-object p2
+    iget-object p2, p0, Lorg/fork/ui/dialog/SelectIconBottomSheet;->type:Lorg/fork/enums/FilterActivityType;
 
     sget-object v0, Lorg/fork/enums/FilterActivityType;->FILTER:Lorg/fork/enums/FilterActivityType;
 
@@ -635,13 +621,11 @@
 
     if-ne p2, v0, :cond_1
 
-    instance-of p2, p1, Lcom/smedialink/storage/domain/model/filters/FilterIcon;
+    instance-of v0, p1, Lcom/smedialink/storage/domain/model/filters/FilterIcon;
 
-    if-eqz p2, :cond_1
+    if-eqz v0, :cond_1
 
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectIconBottomSheet;->getSelectIconDelegate()Lorg/fork/utils/Callbacks$Callback2;
-
-    move-result-object p2
+    iget-object p2, p0, Lorg/fork/ui/dialog/SelectIconBottomSheet;->selectIconDelegate:Lorg/fork/utils/Callbacks$Callback2;
 
     invoke-interface {p2, p1, v1}, Lorg/fork/utils/Callbacks$Callback2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)V
 
@@ -649,10 +633,6 @@
 
     .line 98
     :cond_1
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectIconBottomSheet;->getType()Lorg/fork/enums/FilterActivityType;
-
-    move-result-object p2
-
     sget-object v0, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
 
     if-ne p2, v0, :cond_2
@@ -661,9 +641,7 @@
 
     if-eqz p2, :cond_2
 
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectIconBottomSheet;->getSelectIconDelegate()Lorg/fork/utils/Callbacks$Callback2;
-
-    move-result-object p2
+    iget-object p2, p0, Lorg/fork/ui/dialog/SelectIconBottomSheet;->selectIconDelegate:Lorg/fork/utils/Callbacks$Callback2;
 
     invoke-interface {p2, v1, p1}, Lorg/fork/utils/Callbacks$Callback2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)V
 
@@ -686,15 +664,6 @@
     return v0
 .end method
 
-.method public final getActivity()Landroid/app/Activity;
-    .locals 1
-
-    .line 32
-    iget-object v0, p0, Lorg/fork/ui/dialog/SelectIconBottomSheet;->activity:Landroid/app/Activity;
-
-    return-object v0
-.end method
-
 .method public final getCurrentFilterIcon()Lcom/smedialink/storage/domain/model/filters/FilterIcon;
     .locals 1
 
@@ -709,24 +678,6 @@
 
     .line 35
     iget-object v0, p0, Lorg/fork/ui/dialog/SelectIconBottomSheet;->currentTopicIcon:Lcom/smedialink/storage/data/repository/topics/Topic;
-
-    return-object v0
-.end method
-
-.method public final getSelectIconDelegate()Lorg/fork/utils/Callbacks$Callback2;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lorg/fork/utils/Callbacks$Callback2<",
-            "Lcom/smedialink/storage/domain/model/filters/FilterIcon;",
-            "Lcom/smedialink/storage/data/repository/topics/Topic;",
-            ">;"
-        }
-    .end annotation
-
-    .line 36
-    iget-object v0, p0, Lorg/fork/ui/dialog/SelectIconBottomSheet;->selectIconDelegate:Lorg/fork/utils/Callbacks$Callback2;
 
     return-object v0
 .end method

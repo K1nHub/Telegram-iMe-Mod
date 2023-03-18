@@ -966,13 +966,13 @@
     :cond_13
     const-string/jumbo v13, "\ud83d\uddbc "
 
-    const-string v14, "\ud83d\udcce "
+    const-string/jumbo v14, "\ud83d\udcce "
 
-    const-string v16, "\ud83c\udfa7 "
+    const-string/jumbo v16, "\ud83c\udfa7 "
 
-    const-string v15, "\ud83c\udfa7 %s - %s"
+    const-string/jumbo v15, "\ud83c\udfa7 %s - %s"
 
-    const-string v17, "\ud83c\udfa4 "
+    const-string/jumbo v17, "\ud83c\udfa4 "
 
     const-string/jumbo v18, "\ud83d\udcf9 "
 
@@ -1220,7 +1220,7 @@
 
     aput-object v8, v12, v13
 
-    const-string v8, "\ud83d\udcca \u2068%s\u2069"
+    const-string/jumbo v8, "\ud83d\udcca \u2068%s\u2069"
 
     invoke-static {v8, v12}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1242,7 +1242,7 @@
 
     aput-object v8, v12, v13
 
-    const-string v8, "\ud83d\udcca %s"
+    const-string/jumbo v8, "\ud83d\udcca %s"
 
     invoke-static {v8, v12}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1283,7 +1283,7 @@
 
     aput-object v8, v12, v13
 
-    const-string v8, "\ud83c\udfae \u2068%s\u2069"
+    const-string/jumbo v8, "\ud83c\udfae \u2068%s\u2069"
 
     invoke-static {v8, v12}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1305,7 +1305,7 @@
 
     aput-object v8, v12, v13
 
-    const-string v8, "\ud83c\udfae %s"
+    const-string/jumbo v8, "\ud83c\udfae %s"
 
     invoke-static {v8, v12}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1357,7 +1357,7 @@
 
     aput-object v12, v11, v14
 
-    const-string v12, "\ud83c\udfa7 \u2068%s - %s\u2069"
+    const-string/jumbo v12, "\ud83c\udfa7 \u2068%s - %s\u2069"
 
     invoke-static {v12, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1718,7 +1718,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "\ud83d\udcca "
+    const-string/jumbo v6, "\ud83d\udcca "
 
     invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1748,7 +1748,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "\ud83c\udfae "
+    const-string/jumbo v4, "\ud83c\udfae "
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

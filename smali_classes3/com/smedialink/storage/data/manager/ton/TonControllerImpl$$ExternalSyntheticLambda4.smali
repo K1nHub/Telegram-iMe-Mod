@@ -8,18 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;
 
-.field public final synthetic f$1:Ljava/lang/Object;
+.field public final synthetic f$1:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;Ljava/lang/Object;)V
+.method public synthetic constructor <init>(Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda4;->f$0:Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;
 
-    iput-object p2, p0, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda4;->f$1:Ljava/lang/Object;
+    iput-object p2, p0, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda4;->f$1:Ljava/lang/String;
 
     return-void
 .end method
@@ -31,9 +31,9 @@
 
     iget-object v0, p0, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda4;->f$0:Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;
 
-    iget-object v1, p0, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda4;->f$1:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda4;->f$1:Ljava/lang/String;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;->$r8$lambda$dI8lG12wV9LlmLGpmgAeN1dsVN4(Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;Ljava/lang/Object;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {v0, v1, p1}, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;->$r8$lambda$AaJPBerhYc61RCGy7paDmf9S-Cg(Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Boolean;
 
     move-result-object p1
 

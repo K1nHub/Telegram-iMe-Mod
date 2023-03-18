@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FragmentContextView;Landroid/content/Context;IZ)V
     .locals 0
 
-    .line 902
+    .line 940
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/HintView;-><init>(Landroid/content/Context;IZ)V
 
     return-void
@@ -29,12 +29,12 @@
 .method public setVisibility(I)V
     .locals 0
 
-    .line 905
+    .line 943
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     if-eqz p1, :cond_0
 
-    .line 908
+    .line 946
     :try_start_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 

@@ -2,7 +2,7 @@ package kotlin.text;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import java.util.Objects;
+import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.markers.KMappedMarker;
 import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
@@ -139,7 +139,7 @@ public final class DelimitedRangesSequence$iterator$1 implements Iterator<IntRan
             throw new NoSuchElementException();
         }
         IntRange intRange = this.nextItem;
-        Objects.requireNonNull(intRange, "null cannot be cast to non-null type kotlin.ranges.IntRange");
+        Intrinsics.checkNotNull(intRange, "null cannot be cast to non-null type kotlin.ranges.IntRange");
         this.nextItem = null;
         this.nextState = -1;
         return intRange;

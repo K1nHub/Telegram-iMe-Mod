@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletAuthFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAuthFragment.kt\ncom/smedialink/ui/base/WalletAuthFragment\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 4 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,87:1\n56#2,6:88\n56#2,6:94\n56#2,6:100\n56#2,6:106\n56#2,6:112\n16#3,3:118\n39#4,6:121\n*S KotlinDebug\n*F\n+ 1 WalletAuthFragment.kt\ncom/smedialink/ui/base/WalletAuthFragment\n*L\n20#1:88,6\n21#1:94,6\n22#1:100,6\n23#1:106,6\n24#1:112,6\n58#1:118,3\n59#1:121,6\n*E\n"
+    value = "SMAP\nWalletAuthFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAuthFragment.kt\ncom/smedialink/ui/base/WalletAuthFragment\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 4 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,87:1\n56#2,6:88\n56#2,6:94\n56#2,6:100\n56#2,6:106\n56#2,6:112\n16#3,3:118\n39#4,8:121\n*S KotlinDebug\n*F\n+ 1 WalletAuthFragment.kt\ncom/smedialink/ui/base/WalletAuthFragment\n*L\n20#1:88,6\n21#1:94,6\n22#1:100,6\n23#1:106,6\n24#1:112,6\n58#1:118,3\n59#1:121,8\n*E\n"
 .end annotation
 
 
@@ -22,10 +22,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$cTRKPdNXzjZxPJHZ2x1km_oyyjw(Lcom/smedialink/ui/base/WalletAuthFragment;Lkotlin/jvm/functions/Function0;)V
+.method public static synthetic $r8$lambda$Ks_ZzsBgjNIs1NQMI1jV4gLd53o(Lcom/smedialink/ui/base/WalletAuthFragment;Lkotlin/jvm/functions/Function0;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/base/WalletAuthFragment;->closeAllWalletFragments$lambda-0(Lcom/smedialink/ui/base/WalletAuthFragment;Lkotlin/jvm/functions/Function0;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/base/WalletAuthFragment;->closeAllWalletFragments$lambda$0(Lcom/smedialink/ui/base/WalletAuthFragment;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
@@ -190,7 +190,7 @@
     return-void
 .end method
 
-.method private static final closeAllWalletFragments$lambda-0(Lcom/smedialink/ui/base/WalletAuthFragment;Lkotlin/jvm/functions/Function0;)V
+.method private static final closeAllWalletFragments$lambda$0(Lcom/smedialink/ui/base/WalletAuthFragment;Lkotlin/jvm/functions/Function0;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -252,18 +252,29 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/base/WalletAuthFragment$listenGlobalRxEvents$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/base/WalletAuthFragment;)V
 
-    new-instance v2, Lcom/smedialink/ui/base/WalletAuthFragment$listenGlobalRxEvents$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v1, Lcom/smedialink/ui/base/WalletAuthFragment$listenGlobalRxEvents$$inlined$subscribeWithErrorHandle$default$2;
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v3}, Lcom/smedialink/ui/base/WalletAuthFragment$listenGlobalRxEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v3}, Lcom/smedialink/ui/base/WalletAuthFragment$listenGlobalRxEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 46
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v3, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 73

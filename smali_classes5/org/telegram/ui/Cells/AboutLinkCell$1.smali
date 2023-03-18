@@ -22,12 +22,12 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/AboutLinkCell;Landroid/content/Context;)V
     .locals 0
 
-    .line 160
+    .line 186
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x0
 
-    .line 161
+    .line 187
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/AboutLinkCell$1;->pressed:Z
 
     return-void
@@ -38,12 +38,12 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 178
+    .line 204
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/AboutLinkCell$1;->pressed:Z
 
     if-eqz v0, :cond_0
 
-    .line 179
+    .line 205
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/widget/TextView;->getWidth()I
@@ -64,7 +64,7 @@
 
     const/4 v1, 0x4
 
-    .line 180
+    .line 206
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -81,7 +81,7 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 182
+    .line 208
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/TextView;->onDraw(Landroid/graphics/Canvas;)V
 
@@ -91,10 +91,10 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 5
 
-    .line 164
+    .line 190
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/AboutLinkCell$1;->pressed:Z
 
-    .line 165
+    .line 191
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v1
@@ -105,12 +105,12 @@
 
     if-nez v1, :cond_0
 
-    .line 166
+    .line 192
     iput-boolean v3, p0, Lorg/telegram/ui/Cells/AboutLinkCell$1;->pressed:Z
 
     goto :goto_0
 
-    .line 167
+    .line 193
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -120,20 +120,20 @@
 
     if-eq v1, v4, :cond_1
 
-    .line 168
+    .line 194
     iput-boolean v2, p0, Lorg/telegram/ui/Cells/AboutLinkCell$1;->pressed:Z
 
-    .line 170
+    .line 196
     :cond_1
     :goto_0
     iget-boolean v1, p0, Lorg/telegram/ui/Cells/AboutLinkCell$1;->pressed:Z
 
     if-eq v0, v1, :cond_2
 
-    .line 171
+    .line 197
     invoke-virtual {p0}, Landroid/widget/TextView;->invalidate()V
 
-    .line 173
+    .line 199
     :cond_2
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/AboutLinkCell$1;->pressed:Z
 

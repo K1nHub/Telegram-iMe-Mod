@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$6\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,410:1\n42#2:411\n127#3,5:412\n127#3,5:417\n127#3,5:422\n127#3,5:427\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$6\n*L\n139#1:411\n141#1:412,5\n142#1:417,5\n143#1:422,5\n144#1:427,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$6\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n42#2:434\n127#3,5:435\n127#3,5:440\n127#3,5:445\n127#3,5:450\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$6\n*L\n143#1:434\n145#1:435,5\n146#1:440,5\n147#1:445,5\n148#1:450,5\n*E\n"
 .end annotation
 
 
@@ -68,7 +68,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$dstr$chat"
+    const-string v0, "<name for destructuring parameter 0>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -85,7 +85,6 @@
 
     move-result-object p2
 
-    .line 139
     move-object v1, p2
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$Chat;
@@ -103,7 +102,7 @@
 
     move-result-object p2
 
-    .line 141
+    .line 145
     move-object v2, p2
 
     check-cast v2, Lcom/smedialink/manager/TelegramApi;
@@ -119,7 +118,7 @@
 
     move-result-object p2
 
-    .line 141
+    .line 145
     move-object v4, p2
 
     check-cast v4, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -135,7 +134,7 @@
 
     move-result-object p2
 
-    .line 142
+    .line 146
     move-object v5, p2
 
     check-cast v5, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;
@@ -151,7 +150,7 @@
 
     move-result-object p2
 
-    .line 142
+    .line 146
     move-object v7, p2
 
     check-cast v7, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
@@ -167,7 +166,7 @@
 
     move-result-object p2
 
-    .line 142
+    .line 146
     move-object v8, p2
 
     check-cast v8, Lcom/smedialink/storage/domain/interactor/google/GoogleServicesInteractor;
@@ -183,7 +182,7 @@
 
     move-result-object p2
 
-    .line 143
+    .line 147
     move-object v9, p2
 
     check-cast v9, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;
@@ -199,7 +198,7 @@
 
     move-result-object p2
 
-    .line 143
+    .line 147
     move-object v10, p2
 
     check-cast v10, Lcom/smedialink/storage/domain/gateway/TelegramGateway;
@@ -215,7 +214,7 @@
 
     move-result-object p2
 
-    .line 143
+    .line 147
     move-object v11, p2
 
     check-cast v11, Lcom/smedialink/manager/multireply/MultiReplyInteractor;
@@ -231,7 +230,7 @@
 
     move-result-object p2
 
-    .line 144
+    .line 148
     move-object v12, p2
 
     check-cast v12, Lcom/smedialink/storage/domain/interactor/translate/TranslationInteractor;
@@ -247,7 +246,7 @@
 
     move-result-object p2
 
-    .line 144
+    .line 148
     move-object v6, p2
 
     check-cast v6, Lcom/smedialink/storage/domain/interactor/crypto/donations/DonationsInteractor;
@@ -263,12 +262,12 @@
 
     move-result-object p1
 
-    .line 144
+    .line 148
     move-object v3, p1
 
     check-cast v3, Lcom/smedialink/storage/domain/utils/rx/RxEventBus;
 
-    .line 140
+    .line 144
     new-instance p1, Lcom/smedialink/ui/chat/ChatPresenter;
 
     move-object v0, p1
@@ -281,7 +280,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 139
+    .line 143
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

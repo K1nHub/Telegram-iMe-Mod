@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMessagePopupItem.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MessagePopupItem.kt\norg/fork/enums/MessagePopupItem$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,35:1\n1#2:36\n1#2:47\n1601#3,9:37\n1849#3:46\n1850#3:48\n1610#3:49\n1547#3:50\n1618#3,3:51\n11328#4:54\n11663#4,3:55\n*S KotlinDebug\n*F\n+ 1 MessagePopupItem.kt\norg/fork/enums/MessagePopupItem$Companion\n*L\n29#1:47\n29#1:37,9\n29#1:46\n29#1:48\n29#1:49\n31#1:50\n31#1:51,3\n33#1:54\n33#1:55,3\n*E\n"
+    value = "SMAP\nMessagePopupItem.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MessagePopupItem.kt\norg/fork/enums/MessagePopupItem$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,35:1\n1#2:36\n1#2:47\n1603#3,9:37\n1855#3:46\n1856#3:48\n1612#3:49\n1549#3:50\n1620#3,3:51\n11335#4:54\n11670#4,3:55\n*S KotlinDebug\n*F\n+ 1 MessagePopupItem.kt\norg/fork/enums/MessagePopupItem$Companion\n*L\n29#1:47\n29#1:37,9\n29#1:46\n29#1:48\n29#1:49\n31#1:50\n31#1:51,3\n33#1:54\n33#1:55,3\n*E\n"
 .end annotation
 
 
@@ -54,14 +54,14 @@
 
     move-result-object v0
 
-    .line 11328
+    .line 11335
     new-instance v1, Ljava/util/ArrayList;
 
     array-length v2, v0
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11663
+    .line 11670
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -76,12 +76,14 @@
 
     move-result-object v4
 
+    .line 11671
     invoke-interface {v1, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 33
     :cond_0
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
@@ -109,7 +111,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -120,7 +122,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -136,7 +138,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lorg/fork/enums/MessagePopupItem;
 
     .line 31
@@ -144,10 +146,12 @@
 
     move-result-object v1
 
+    .line 1621
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 31
     :cond_0
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
@@ -215,24 +219,19 @@
         }
     .end annotation
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_1
 
-    const/4 p1, 0x0
-
-    goto :goto_1
-
-    .line 1601
-    :cond_0
+    .line 1603
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :cond_1
+    :cond_0
     :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -244,7 +243,7 @@
 
     move-result-object v1
 
-    .line 1609
+    .line 1611
     check-cast v1, Ljava/lang/String;
 
     .line 29
@@ -254,26 +253,26 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
-    .line 1609
+    .line 1611
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    :cond_2
-    move-object p1, v0
+    :cond_1
+    const/4 v0, 0x0
 
-    :goto_1
-    if-nez p1, :cond_3
+    :cond_2
+    if-nez v0, :cond_3
 
     .line 29
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
-    move-result-object p1
+    move-result-object v0
 
     :cond_3
-    invoke-static {p1}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
     move-result-object p1
 

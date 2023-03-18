@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCatalogCategoriesUiMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogCategoriesUiMapping.kt\ncom/smedialink/mapper/catalog/CatalogCategoriesUiMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,14:1\n1547#2:15\n1618#2,3:16\n*S KotlinDebug\n*F\n+ 1 CatalogCategoriesUiMapping.kt\ncom/smedialink/mapper/catalog/CatalogCategoriesUiMappingKt\n*L\n6#1:15\n6#1:16,3\n*E\n"
+    value = "SMAP\nCatalogCategoriesUiMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogCategoriesUiMapping.kt\ncom/smedialink/mapper/catalog/CatalogCategoriesUiMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,14:1\n1549#2:15\n1620#2,3:16\n*S KotlinDebug\n*F\n+ 1 CatalogCategoriesUiMapping.kt\ncom/smedialink/mapper/catalog/CatalogCategoriesUiMappingKt\n*L\n6#1:15\n6#1:16,3\n*E\n"
 .end annotation
 
 
@@ -28,7 +28,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -39,7 +39,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -55,7 +55,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lcom/smedialink/storage/domain/model/catalog/CategoryWithCounter;
 
     .line 7
@@ -81,7 +81,7 @@
     .line 8
     invoke-direct {v2, v3, v4, v1, v5}, Lcom/smedialink/model/common/FilterItem;-><init>(JLjava/lang/String;Z)V
 
-    .line 7
+    .line 1621
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0

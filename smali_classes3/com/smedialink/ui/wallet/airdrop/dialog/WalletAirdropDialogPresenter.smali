@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletAirdropDialogPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAirdropDialogPresenter.kt\ncom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,128:1\n15#2:129\n39#3,6:130\n*S KotlinDebug\n*F\n+ 1 WalletAirdropDialogPresenter.kt\ncom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter\n*L\n53#1:129\n56#1:130,6\n*E\n"
+    value = "SMAP\nWalletAirdropDialogPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAirdropDialogPresenter.kt\ncom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,129:1\n15#2:130\n39#3,8:131\n*S KotlinDebug\n*F\n+ 1 WalletAirdropDialogPresenter.kt\ncom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter\n*L\n53#1:130\n56#1:131,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -125,7 +125,7 @@
 .method private final configureDialogState()V
     .locals 5
 
-    .line 96
+    .line 97
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter;->isBotActivated()Z
 
     move-result v0
@@ -142,7 +142,7 @@
 
     goto :goto_0
 
-    .line 97
+    .line 98
     :cond_0
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter;->isBotActivated()Z
 
@@ -160,11 +160,11 @@
 
     goto :goto_0
 
-    .line 98
+    .line 99
     :cond_1
     sget-object v0, Lcom/smedialink/storage/domain/model/crypto/airdrop/AirdropStep;->INTRO:Lcom/smedialink/storage/domain/model/crypto/airdrop/AirdropStep;
 
-    .line 101
+    .line 102
     :goto_0
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -172,7 +172,7 @@
 
     check-cast v1, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogView;
 
-    .line 102
+    .line 103
     iget-object v2, p0, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter;->preferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v2}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getAirdropMetadata()Lcom/smedialink/storage/data/locale/prefs/model/WalletAirdropMetadata;
@@ -183,17 +183,17 @@
 
     move-result v2
 
-    .line 103
+    .line 104
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter;->isBotActivated()Z
 
     move-result v3
 
-    .line 104
+    .line 105
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter;->isCryptoWalletCreated()Z
 
     move-result v4
 
-    .line 101
+    .line 102
     invoke-interface {v1, v3, v4, v0, v2}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogView;->configureDialogState(ZZLcom/smedialink/storage/domain/model/crypto/airdrop/AirdropStep;I)V
 
     return-void
@@ -202,10 +202,10 @@
 .method private final enableWalletMenuItem()V
     .locals 3
 
-    .line 86
+    .line 87
     sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
-    .line 87
+    .line 88
     sget-object v1, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;->WALLET:Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
 
     invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -214,13 +214,13 @@
 
     if-nez v2, :cond_0
 
-    .line 88
+    .line 89
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 89
+    .line 90
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSelectedDrawerItems(Ljava/util/Set;)V
 
-    .line 90
+    .line 91
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -266,7 +266,7 @@
 .method private final handleErrors(Lcom/smedialink/storage/data/network/model/error/ErrorModel;)V
     .locals 8
 
-    .line 110
+    .line 111
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -281,17 +281,17 @@
 
     invoke-interface {v0, v1}, Lcom/smedialink/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
 
-    .line 111
+    .line 112
     invoke-virtual {p1}, Lcom/smedialink/storage/data/network/model/error/ErrorModel;->getStatus()Lcom/smedialink/storage/data/network/model/error/IErrorStatus;
 
     move-result-object p1
 
-    .line 112
+    .line 113
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;->AIRDROP_NO_TOKENS:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
     if-ne p1, v0, :cond_0
 
-    .line 113
+    .line 114
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -302,7 +302,7 @@
 
     goto :goto_1
 
-    .line 115
+    .line 116
     :cond_0
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;->AIRDROP_NOT_ACTIVE:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
@@ -325,7 +325,7 @@
     :goto_0
     if-eqz v1, :cond_3
 
-    .line 116
+    .line 117
     iget-object p1, p0, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter;->preferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {p1}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getAirdropMetadata()Lcom/smedialink/storage/data/locale/prefs/model/WalletAirdropMetadata;
@@ -352,7 +352,7 @@
 
     invoke-interface {p1, v0}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->setAirdropMetadata(Lcom/smedialink/storage/data/locale/prefs/model/WalletAirdropMetadata;)V
 
-    .line 117
+    .line 118
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -369,7 +369,7 @@
 .method private final isBotActivated()Z
     .locals 1
 
-    .line 122
+    .line 123
     invoke-static {}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->isWalletAuthorized()Z
 
     move-result v0
@@ -380,7 +380,7 @@
 .method private final isCryptoWalletCreated()Z
     .locals 1
 
-    .line 124
+    .line 125
     iget-object v0, p0, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter;->cryptoAccessManager:Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->isCurrentBlockchainWalletCreated()Z
@@ -462,7 +462,11 @@
 
     invoke-direct {v0, p0}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter$getTokensByAirdrop$$inlined$flatMapSuccess$1;-><init>(Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v3, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v3, v0}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v3}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -514,21 +518,32 @@
 
     invoke-direct {v2, p0}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter$getTokensByAirdrop$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter;)V
 
-    new-instance v3, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter$getTokensByAirdrop$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v3, v0}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter$getTokensByAirdrop$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v3, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p1, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v2, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter$getTokensByAirdrop$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v2, v0}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter$getTokensByAirdrop$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v0, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {p1, v3, v0}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
-    .line 70
+    .line 71
     invoke-static {p0, p1, v1, v0, v1}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -537,7 +552,7 @@
 .method protected onFirstViewAttach()V
     .locals 0
 
-    .line 78
+    .line 79
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter;->configureDialogState()V
 
     return-void

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;
 
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;->$r8$lambda$wQM2Qfakl8w3iDu6v5rO2h7Pi9Y(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
+    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;->$r8$lambda$lo735W6JrduxD5PxgrEoJiQ6DQY(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
 
     return-void
 .end method

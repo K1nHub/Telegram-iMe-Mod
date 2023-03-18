@@ -11,6 +11,6 @@ public final class zzlz implements zzvb {
 
     @Override // com.google.android.gms.internal.firebase_ml.zzvb
     public final boolean zzb(int i) {
-        return zzlu.zzp.zzb.EnumC6606zzb.zzaj(i) != null;
+        return zzlu.zzp.zzb.EnumC6750zzb.zzaj(i) != null;
     }
 }

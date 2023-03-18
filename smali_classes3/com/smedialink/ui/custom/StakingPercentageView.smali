@@ -15,7 +15,7 @@
 # instance fields
 .field private animator:Landroid/animation/ValueAnimator;
 
-.field private binding:Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;
+.field private final binding:Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;
 
 .field private isThresholdReached:Z
 
@@ -37,18 +37,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$ZIXwdA0xDPkDtsvmamH-P8cOlO8(Lcom/smedialink/ui/custom/StakingPercentageView;Ljava/lang/Float;)V
+.method public static synthetic $r8$lambda$JmQso4UA33XgxSCTwfT_aEy61PY(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/custom/StakingPercentageView;->setupProgressListener$lambda-7(Lcom/smedialink/ui/custom/StakingPercentageView;Ljava/lang/Float;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$yc8Kw64xdV9ony4Fo9c19Hka2bg(Lcom/smedialink/ui/custom/StakingPercentageView;Landroid/animation/ValueAnimator;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/smedialink/ui/custom/StakingPercentageView;->setupProgressListener$lambda-7$lambda-6$lambda-5(Lcom/smedialink/ui/custom/StakingPercentageView;Landroid/animation/ValueAnimator;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/custom/StakingPercentageView;->setupProgressListener$lambda$5(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -170,13 +162,75 @@
     return-void
 .end method
 
+.method public static final synthetic access$getAnimator$p(Lcom/smedialink/ui/custom/StakingPercentageView;)Landroid/animation/ValueAnimator;
+    .locals 0
+
+    .line 26
+    iget-object p0, p0, Lcom/smedialink/ui/custom/StakingPercentageView;->animator:Landroid/animation/ValueAnimator;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$getBinding$p(Lcom/smedialink/ui/custom/StakingPercentageView;)Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;
+    .locals 0
+
+    .line 26
+    iget-object p0, p0, Lcom/smedialink/ui/custom/StakingPercentageView;->binding:Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$getProgress$p(Lcom/smedialink/ui/custom/StakingPercentageView;)F
+    .locals 0
+
+    .line 26
+    iget p0, p0, Lcom/smedialink/ui/custom/StakingPercentageView;->progress:F
+
+    return p0
+.end method
+
+.method public static final synthetic access$setAnimator$p(Lcom/smedialink/ui/custom/StakingPercentageView;Landroid/animation/ValueAnimator;)V
+    .locals 0
+
+    .line 26
+    iput-object p1, p0, Lcom/smedialink/ui/custom/StakingPercentageView;->animator:Landroid/animation/ValueAnimator;
+
+    return-void
+.end method
+
+.method public static final synthetic access$setProgress$p(Lcom/smedialink/ui/custom/StakingPercentageView;F)V
+    .locals 0
+
+    .line 26
+    iput p1, p0, Lcom/smedialink/ui/custom/StakingPercentageView;->progress:F
+
+    return-void
+.end method
+
+.method public static final synthetic access$setThresholdReached$p(Lcom/smedialink/ui/custom/StakingPercentageView;Z)V
+    .locals 0
+
+    .line 26
+    iput-boolean p1, p0, Lcom/smedialink/ui/custom/StakingPercentageView;->isThresholdReached:Z
+
+    return-void
+.end method
+
 .method private final getAnnualPercentageText(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
-    const-string v0, " %"
-
     .line 149
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, " %"
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -240,15 +294,19 @@
     move-result-object v0
 
     .line 131
-    new-instance v1, Lcom/smedialink/ui/custom/StakingPercentageView$$ExternalSyntheticLambda1;
+    new-instance v1, Lcom/smedialink/ui/custom/StakingPercentageView$setupProgressListener$1;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/ui/custom/StakingPercentageView$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/custom/StakingPercentageView;)V
+    invoke-direct {v1, p0}, Lcom/smedialink/ui/custom/StakingPercentageView$setupProgressListener$1;-><init>(Lcom/smedialink/ui/custom/StakingPercentageView;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v2, Lcom/smedialink/ui/custom/StakingPercentageView$$ExternalSyntheticLambda0;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/custom/StakingPercentageView$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
-    const-string v1, "progressSubject\n        \u2026olors()\n                }"
+    const-string v1, "private fun setupProgres\u2026pose(subscriptions)\n    }"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -260,130 +318,15 @@
     return-void
 .end method
 
-.method private static final setupProgressListener$lambda-7(Lcom/smedialink/ui/custom/StakingPercentageView;Ljava/lang/Float;)V
-    .locals 4
-
-    const-string v0, "this$0"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 132
-    iget-object v0, p0, Lcom/smedialink/ui/custom/StakingPercentageView;->animator:Landroid/animation/ValueAnimator;
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
-
-    :goto_0
-    const/4 v0, 0x2
-
-    new-array v0, v0, [F
-
-    .line 133
-    iget v1, p0, Lcom/smedialink/ui/custom/StakingPercentageView;->progress:F
-
-    const/4 v2, 0x0
-
-    aput v1, v0, v2
-
-    const-string v1, "newProgress"
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result v1
-
-    const/4 v3, 0x1
-
-    aput v1, v0, v3
-
-    invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
-
-    move-result-object v0
-
-    .line 134
-    new-instance v1, Lcom/smedialink/ui/custom/StakingPercentageView$$ExternalSyntheticLambda0;
-
-    invoke-direct {v1, p0}, Lcom/smedialink/ui/custom/StakingPercentageView$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/custom/StakingPercentageView;)V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    .line 135
-    new-instance v1, Landroid/view/animation/LinearInterpolator;
-
-    invoke-direct {v1}, Landroid/view/animation/LinearInterpolator;-><init>()V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    .line 136
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
-
-    .line 137
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    .line 133
-    iput-object v0, p0, Lcom/smedialink/ui/custom/StakingPercentageView;->animator:Landroid/animation/ValueAnimator;
-
-    .line 138
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    iput p1, p0, Lcom/smedialink/ui/custom/StakingPercentageView;->progress:F
-
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    cmpl-float p1, p1, v0
-
-    if-ltz p1, :cond_1
-
-    const/4 v2, 0x1
-
-    .line 139
-    :cond_1
-    iput-boolean v2, p0, Lcom/smedialink/ui/custom/StakingPercentageView;->isThresholdReached:Z
-
-    .line 140
-    invoke-virtual {p0}, Lcom/smedialink/ui/custom/StakingPercentageView;->setupColors()V
-
-    return-void
-.end method
-
-.method private static final setupProgressListener$lambda-7$lambda-6$lambda-5(Lcom/smedialink/ui/custom/StakingPercentageView;Landroid/animation/ValueAnimator;)V
+.method private static final setupProgressListener$lambda$5(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "it"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 134
-    iget-object p0, p0, Lcom/smedialink/ui/custom/StakingPercentageView;->binding:Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;
-
-    iget-object p0, p0, Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;->viewProgress:Lcom/smedialink/ui/custom/ProgressView;
-
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    const-string v0, "null cannot be cast to non-null type kotlin.Float"
-
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    invoke-virtual {p0, p1}, Lcom/smedialink/ui/custom/ProgressView;->updateProgress(F)V
+    .line 131
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -463,14 +406,11 @@
     .line 108
     iget-object v0, p0, Lcom/smedialink/ui/custom/StakingPercentageView;->animator:Landroid/animation/ValueAnimator;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    :goto_0
+    :cond_0
     const/4 v0, 0x0
 
     .line 109
@@ -521,7 +461,7 @@
     .line 71
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const-string v2, ""
+    const-string v2, "setupColors$lambda$4$lambda$1"
 
     .line 77
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -532,9 +472,9 @@
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;->textApy:Landroidx/appcompat/widget/AppCompatTextView;
 
     .line 82
-    iget-boolean v5, p0, Lcom/smedialink/ui/custom/StakingPercentageView;->isThresholdReached:Z
+    iget-boolean v2, p0, Lcom/smedialink/ui/custom/StakingPercentageView;->isThresholdReached:Z
 
-    if-eqz v5, :cond_1
+    if-eqz v2, :cond_1
 
     goto :goto_1
 
@@ -545,10 +485,12 @@
     :goto_1
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v3
+    move-result v2
 
     .line 80
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+
+    const-string v2, "setupColors$lambda$4$lambda$2"
 
     .line 86
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -557,6 +499,8 @@
 
     .line 88
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;->imageInfo:Landroidx/appcompat/widget/AppCompatImageView;
+
+    const-string v2, "setupColors$lambda$4$lambda$3"
 
     .line 89
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -644,11 +588,17 @@
     :cond_0
     iget-object p2, v0, Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;->textApr:Landroidx/appcompat/widget/AppCompatTextView;
 
-    sget v1, Lorg/telegram/messenger/R$string;->staking_programme_apr:I
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v1
+    sget v2, Lorg/telegram/messenger/R$string;->staking_programme_apr:I
+
+    invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 57
     invoke-virtual {p1}, Lcom/smedialink/model/staking/StakingAnnualPercentageData;->getApr()Ljava/lang/String;
@@ -660,7 +610,9 @@
     move-result-object v2
 
     .line 56
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -669,11 +621,17 @@
     .line 58
     iget-object p2, v0, Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;->textApy:Landroidx/appcompat/widget/AppCompatTextView;
 
-    sget v1, Lorg/telegram/messenger/R$string;->staking_programme_apy:I
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v1
+    sget v2, Lorg/telegram/messenger/R$string;->staking_programme_apy:I
+
+    invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 59
     invoke-virtual {p1}, Lcom/smedialink/model/staking/StakingAnnualPercentageData;->getApy()Ljava/lang/String;
@@ -685,7 +643,9 @@
     move-result-object v2
 
     .line 58
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -694,13 +654,21 @@
     .line 60
     iget-object p2, v0, Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;->textThresholdValue:Landroidx/appcompat/widget/AppCompatTextView;
 
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-virtual {p1}, Lcom/smedialink/model/staking/StakingAnnualPercentageData;->getCompoundThreshold()Ljava/lang/String;
 
     move-result-object p1
 
-    const-string v0, "+"
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    const/16 p1, 0x2b
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 

@@ -5,49 +5,49 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nEVMBlockchainCryptoWalletManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EVMBlockchainCryptoWalletManagerImpl.kt\ncom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,73:1\n15#2:74\n8#3:75\n8#3:77\n8#3:79\n8#3:81\n8#3:82\n8#3:83\n8#3:84\n18#4:76\n18#4:78\n18#4:80\n*S KotlinDebug\n*F\n+ 1 EVMBlockchainCryptoWalletManagerImpl.kt\ncom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl\n*L\n25#1:74\n38#1:75\n50#1:77\n69#1:79\n56#1:81\n58#1:82\n64#1:83\n66#1:84\n38#1:76\n50#1:78\n69#1:80\n*E\n"
+    value = "SMAP\nEVMBlockchainCryptoWalletManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EVMBlockchainCryptoWalletManagerImpl.kt\ncom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,73:1\n15#2:74\n8#3:75\n8#3:77\n8#3:79\n8#3:81\n8#3:82\n18#4:76\n18#4:78\n18#4:80\n*S KotlinDebug\n*F\n+ 1 EVMBlockchainCryptoWalletManagerImpl.kt\ncom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl\n*L\n25#1:74\n38#1:75\n50#1:77\n69#1:79\n56#1:81\n64#1:82\n38#1:76\n50#1:78\n69#1:80\n*E\n"
 .end annotation
 
 
 # direct methods
-.method public static synthetic $r8$lambda$HGU1QIWTz7FI-gnU5xIQEc8IBow(Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl;->generateMnemonic$lambda-4(Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic $r8$lambda$NZbJ_eOy5laKx6nUcwjVoWLsR7o(Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl;->generateAddressByMnemonic$lambda-2(Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic $r8$lambda$bfeU-BROvENhlWb8LPru73zh3Rg(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/Result;
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl;->generateAddressByMnemonic$lambda-1(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/Result;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic $r8$lambda$j-3tRoiRZIDgZJ9Y1NoAv3WhP_8()Lcom/smedialink/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$D5PHxsYowR_SAr9qtw8WKMMBDmg()Lcom/smedialink/storage/domain/model/Result;
     .locals 1
 
-    invoke-static {}, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl;->generateMnemonic$lambda-3()Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {}, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl;->generateMnemonic$lambda$3()Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public static synthetic $r8$lambda$alzG9oWx0ZTSA8wwsWA8QSqiBPU(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl;->generateMnemonic$lambda$4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic $r8$lambda$dDIxVmayYMPqcYHKRces6Ylq93w(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/Result;
+    .locals 0
+
+    invoke-static {p0}, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl;->generateAddressByMnemonic$lambda$1(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/Result;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic $r8$lambda$fSPpRbDkz-eoyFP1Cz7GxoncNWY(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl;->generateAddressByMnemonic$lambda$2(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public constructor <init>(Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;)V
@@ -65,7 +65,7 @@
     return-void
 .end method
 
-.method private static final generateAddressByMnemonic$lambda-1(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/Result;
+.method private static final generateAddressByMnemonic$lambda$1(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/Result;
     .locals 1
 
     const-string v0, "$mnemonic"
@@ -97,26 +97,24 @@
     return-object p0
 .end method
 
-.method private static final generateAddressByMnemonic$lambda-2(Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
+.method private static final generateAddressByMnemonic$lambda$2(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 1
 
-    const-string v0, "it"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 8
-    sget-object p0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
-
-    const-string v0, ""
-
-    invoke-virtual {p0, v0}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+    .line 58
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Lcom/smedialink/storage/domain/model/Result;
 
     return-object p0
 .end method
 
-.method private static final generateMnemonic$lambda-3()Lcom/smedialink/storage/domain/model/Result;
+.method private static final generateMnemonic$lambda$3()Lcom/smedialink/storage/domain/model/Result;
     .locals 4
 
     .line 64
@@ -146,21 +144,19 @@
     return-object v0
 .end method
 
-.method private static final generateMnemonic$lambda-4(Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
+.method private static final generateMnemonic$lambda$4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 1
 
-    const-string v0, "it"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 8
-    sget-object p0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
-
-    const-string v0, ""
-
-    invoke-virtual {p0, v0}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+    .line 66
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Lcom/smedialink/storage/domain/model/Result;
 
     return-object p0
 .end method
@@ -200,7 +196,11 @@
 
     invoke-direct {v1, p0, p1, p2}, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl$createWallet$$inlined$flatMapSuccess$1;-><init>(Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, v1}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -212,7 +212,7 @@
 .end method
 
 .method public generateAddressByMnemonic(Ljava/lang/String;)Lio/reactivex/Observable;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -238,10 +238,14 @@
 
     move-result-object p1
 
-    sget-object v0, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda1;->INSTANCE:Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda1;
-
     .line 58
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    sget-object v0, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$2;->INSTANCE:Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$2;
+
+    new-instance v1, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda1;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -282,10 +286,14 @@
 
     move-result-object p1
 
-    sget-object p2, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda0;->INSTANCE:Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda0;
-
     .line 66
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    sget-object p2, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl$generateMnemonic$2;->INSTANCE:Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl$generateMnemonic$2;
+
+    new-instance v0, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda0;
+
+    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 

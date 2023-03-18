@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/fork/ui/view/DialogTypeTopicsBar$ListAdapter;,
-        Lorg/fork/ui/view/DialogTypeTopicsBar$Companion;
+        Lorg/fork/ui/view/DialogTypeTopicsBar$Companion;,
+        Lorg/fork/ui/view/DialogTypeTopicsBar$ListAdapter;
     }
 .end annotation
 
@@ -42,10 +42,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$-D6pEK7gZ3BMYgs2QJGVb--ojm0(Lorg/fork/ui/view/DialogTypeTopicsBar;Landroid/view/View;IFF)V
+.method public static synthetic $r8$lambda$TXiiCH7MHfwcWYQq_rkhI5fQswY(Lorg/fork/ui/view/DialogTypeTopicsBar;Landroid/view/View;IFF)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/view/DialogTypeTopicsBar;->setupListeners$lambda-1(Lorg/fork/ui/view/DialogTypeTopicsBar;Landroid/view/View;IFF)V
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/view/DialogTypeTopicsBar;->setupListeners$lambda$1(Lorg/fork/ui/view/DialogTypeTopicsBar;Landroid/view/View;IFF)V
 
     return-void
 .end method
@@ -280,25 +280,21 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-1(Lorg/fork/ui/view/DialogTypeTopicsBar;Landroid/view/View;IFF)V
+.method private static final setupListeners$lambda$1(Lorg/fork/ui/view/DialogTypeTopicsBar;Landroid/view/View;IFF)V
     .locals 0
 
     const-string p3, "this$0"
 
     invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p3, "$noName_0"
+    const-string p3, "<anonymous parameter 0>"
 
     invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 66
-    invoke-virtual {p0}, Lorg/fork/ui/view/DialogTypeTopicsBar;->getCurrentDialogType()Lorg/fork/enums/DialogType;
+    iget-object p1, p0, Lorg/fork/ui/view/DialogTypeTopicsBar;->currentDialogType:Lorg/fork/enums/DialogType;
 
-    move-result-object p1
-
-    invoke-virtual {p0}, Lorg/fork/ui/view/DialogTypeTopicsBar;->getData()Ljava/util/List;
-
-    move-result-object p3
+    iget-object p3, p0, Lorg/fork/ui/view/DialogTypeTopicsBar;->data:Ljava/util/List;
 
     invoke-interface {p3, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -307,9 +303,7 @@
     if-eq p1, p3, :cond_0
 
     .line 67
-    invoke-virtual {p0}, Lorg/fork/ui/view/DialogTypeTopicsBar;->getData()Ljava/util/List;
-
-    move-result-object p1
+    iget-object p1, p0, Lorg/fork/ui/view/DialogTypeTopicsBar;->data:Ljava/util/List;
 
     invoke-interface {p1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -317,18 +311,12 @@
 
     check-cast p1, Lorg/fork/enums/DialogType;
 
-    invoke-virtual {p0, p1}, Lorg/fork/ui/view/DialogTypeTopicsBar;->setCurrentDialogType(Lorg/fork/enums/DialogType;)V
+    iput-object p1, p0, Lorg/fork/ui/view/DialogTypeTopicsBar;->currentDialogType:Lorg/fork/enums/DialogType;
 
     .line 68
-    invoke-virtual {p0}, Lorg/fork/ui/view/DialogTypeTopicsBar;->getDelegate()Lkotlin/jvm/functions/Function1;
+    iget-object p2, p0, Lorg/fork/ui/view/DialogTypeTopicsBar;->delegate:Lkotlin/jvm/functions/Function1;
 
-    move-result-object p1
-
-    invoke-virtual {p0}, Lorg/fork/ui/view/DialogTypeTopicsBar;->getCurrentDialogType()Lorg/fork/enums/DialogType;
-
-    move-result-object p2
-
-    invoke-interface {p1, p2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 69
     invoke-direct {p0}, Lorg/fork/ui/view/DialogTypeTopicsBar;->getListAdapter()Lorg/fork/ui/view/DialogTypeTopicsBar$ListAdapter;
@@ -408,20 +396,14 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {v0}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_1
     invoke-direct {p0}, Lorg/fork/ui/view/DialogTypeTopicsBar;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v1
@@ -435,7 +417,7 @@
     invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
     .line 48
-    :goto_0
+    :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1

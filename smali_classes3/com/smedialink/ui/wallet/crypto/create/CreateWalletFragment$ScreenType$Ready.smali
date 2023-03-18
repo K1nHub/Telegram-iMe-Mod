@@ -36,7 +36,7 @@
 
     const/4 v0, 0x0
 
-    .line 1353
+    .line 1354
     invoke-direct {p0, v0}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void

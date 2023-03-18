@@ -48,7 +48,7 @@ public final class WalletConnectSessionDb {
     }
 
     public String toString() {
-        return "WalletConnectSessionDb(tgUserId=" + this.tgUserId + ", sessionTopic=" + this.sessionTopic + ", sessionVersion=" + this.sessionVersion + ", sessionBridge=" + this.sessionBridge + ", sessionKey=" + this.sessionKey + ", chainId=" + this.chainId + ", peerId=" + this.peerId + ", remotePeerId=" + this.remotePeerId + ", remotePeerMetaName=" + this.remotePeerMetaName + ", remotePeerMetaUrl=" + this.remotePeerMetaUrl + ", remotePeerMetaDescription=" + ((Object) this.remotePeerMetaDescription) + ", remotePeerMetaIcons=" + this.remotePeerMetaIcons + ", isAutoSign=" + this.isAutoSign + ", date=" + this.date + ')';
+        return "WalletConnectSessionDb(tgUserId=" + this.tgUserId + ", sessionTopic=" + this.sessionTopic + ", sessionVersion=" + this.sessionVersion + ", sessionBridge=" + this.sessionBridge + ", sessionKey=" + this.sessionKey + ", chainId=" + this.chainId + ", peerId=" + this.peerId + ", remotePeerId=" + this.remotePeerId + ", remotePeerMetaName=" + this.remotePeerMetaName + ", remotePeerMetaUrl=" + this.remotePeerMetaUrl + ", remotePeerMetaDescription=" + this.remotePeerMetaDescription + ", remotePeerMetaIcons=" + this.remotePeerMetaIcons + ", isAutoSign=" + this.isAutoSign + ", date=" + this.date + ')';
     }
 
     public WalletConnectSessionDb(long j, String sessionTopic, String sessionVersion, String sessionBridge, String sessionKey, int i, String peerId, String remotePeerId, String remotePeerMetaName, String remotePeerMetaUrl, String str, List<String> remotePeerMetaIcons, boolean z, Date date) {

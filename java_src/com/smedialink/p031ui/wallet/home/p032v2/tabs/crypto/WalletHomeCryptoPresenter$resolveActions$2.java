@@ -23,7 +23,6 @@ public final class WalletHomeCryptoPresenter$resolveActions$2 extends Lambda imp
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         this.this$0.showQrReceiveDialog();

@@ -12,8 +12,9 @@ import android.util.Log;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.List;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-final class ActivityRecreator {
+public final class ActivityRecreator {
     protected static final Class<?> activityThreadClass;
     private static final Handler mainHandler = new Handler(Looper.getMainLooper());
     protected static final Field mainThreadField;

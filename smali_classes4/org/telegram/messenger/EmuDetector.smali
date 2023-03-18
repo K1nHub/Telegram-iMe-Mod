@@ -163,7 +163,7 @@
 
     const-string v2, "ueventd.android_x86.rc"
 
-    const-string v3, "x86.prop"
+    const-string/jumbo v3, "x86.prop"
 
     const-string v4, "ueventd.ttVM_x86.rc"
 
@@ -691,7 +691,7 @@
 
     move-result-object v6
 
-    const-string v7, "vbox86"
+    const-string/jumbo v7, "vbox86"
 
     invoke-virtual {v6, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
@@ -750,7 +750,7 @@
 
     if-nez v6, :cond_1
 
-    const-string v6, "vbox86p"
+    const-string/jumbo v6, "vbox86p"
 
     .line 221
     invoke-virtual {v0, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1170,7 +1170,7 @@
 
     aget-object v5, v0, v4
 
-    const-string v6, "wlan0"
+    const-string/jumbo v6, "wlan0"
 
     .line 400
     invoke-virtual {v5, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z

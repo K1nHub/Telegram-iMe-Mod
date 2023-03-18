@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,114:1\n127#2,5:115\n127#2,5:120\n127#2,5:125\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$3\n*L\n49#1:115,5\n50#1:120,5\n51#1:125,5\n*E\n"
+    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,118:1\n127#2,5:119\n127#2,5:124\n127#2,5:129\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$3\n*L\n51#1:119,5\n52#1:124,5\n53#1:129,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 49
+    .line 51
     move-object v6, p2
 
     check-cast v6, Lcom/smedialink/ui/adapter/provider/HeaderProvider;
@@ -101,7 +101,7 @@
 
     move-result-object p2
 
-    .line 49
+    .line 51
     move-object v5, p2
 
     check-cast v5, Lcom/smedialink/ui/adapter/provider/HeaderWithNetworkSwitcherProvider;
@@ -117,7 +117,7 @@
 
     move-result-object p2
 
-    .line 49
+    .line 51
     move-object v2, p2
 
     check-cast v2, Lcom/smedialink/ui/adapter/provider/BannerProvider;
@@ -133,7 +133,7 @@
 
     move-result-object p2
 
-    .line 50
+    .line 52
     move-object v3, p2
 
     check-cast v3, Lcom/smedialink/ui/adapter/provider/BinanceAccountProvider;
@@ -149,7 +149,7 @@
 
     move-result-object p2
 
-    .line 50
+    .line 52
     move-object v7, p2
 
     check-cast v7, Lcom/smedialink/ui/adapter/provider/BinanceTokenBalanceProvider;
@@ -165,7 +165,7 @@
 
     move-result-object p2
 
-    .line 50
+    .line 52
     move-object v4, p2
 
     check-cast v4, Lcom/smedialink/ui/adapter/provider/CardButtonProvider;
@@ -181,7 +181,7 @@
 
     move-result-object p2
 
-    .line 51
+    .line 53
     move-object v9, p2
 
     check-cast v9, Lcom/smedialink/ui/adapter/provider/GlobalStateProvider;
@@ -197,12 +197,12 @@
 
     move-result-object p1
 
-    .line 51
+    .line 53
     move-object v8, p1
 
     check-cast v8, Lcom/smedialink/ui/adapter/provider/TotalBalanceProvider;
 
-    .line 48
+    .line 50
     new-instance p1, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/adapter/BinancePayRecycleAdapter;
 
     move-object v1, p1
@@ -215,7 +215,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 47
+    .line 49
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

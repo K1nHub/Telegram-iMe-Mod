@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StickerEmptyView;)V
     .locals 0
 
-    .line 307
+    .line 314
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerEmptyView$5;->this$0:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 310
+    .line 317
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerEmptyView$5;->this$0:Lorg/telegram/ui/Components/StickerEmptyView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/StickerEmptyView;->progressView:Landroid/view/View;

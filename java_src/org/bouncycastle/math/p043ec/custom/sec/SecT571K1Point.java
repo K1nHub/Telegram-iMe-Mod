@@ -41,36 +41,36 @@ public class SecT571K1Point extends ECPoint.AbstractF2m {
             return this;
         }
         ECCurve curve = getCurve();
-        SecT571FieldElement secT571FieldElement4 = (SecT571FieldElement) this.f1305x;
+        SecT571FieldElement secT571FieldElement4 = (SecT571FieldElement) this.f1310x;
         SecT571FieldElement secT571FieldElement5 = (SecT571FieldElement) eCPoint.getRawXCoord();
         if (secT571FieldElement4.isZero()) {
             return secT571FieldElement5.isZero() ? curve.getInfinity() : eCPoint.add(this);
         }
-        SecT571FieldElement secT571FieldElement6 = (SecT571FieldElement) this.f1306y;
-        SecT571FieldElement secT571FieldElement7 = (SecT571FieldElement) this.f1307zs[0];
+        SecT571FieldElement secT571FieldElement6 = (SecT571FieldElement) this.f1311y;
+        SecT571FieldElement secT571FieldElement7 = (SecT571FieldElement) this.f1312zs[0];
         SecT571FieldElement secT571FieldElement8 = (SecT571FieldElement) eCPoint.getRawYCoord();
         SecT571FieldElement secT571FieldElement9 = (SecT571FieldElement) eCPoint.getZCoord(0);
         long[] create64 = Nat576.create64();
         long[] create642 = Nat576.create64();
         long[] create643 = Nat576.create64();
         long[] create644 = Nat576.create64();
-        long[] precompMultiplicand = secT571FieldElement7.isOne() ? null : SecT571Field.precompMultiplicand(secT571FieldElement7.f1371x);
+        long[] precompMultiplicand = secT571FieldElement7.isOne() ? null : SecT571Field.precompMultiplicand(secT571FieldElement7.f1376x);
         if (precompMultiplicand == null) {
-            jArr = secT571FieldElement5.f1371x;
-            jArr2 = secT571FieldElement8.f1371x;
+            jArr = secT571FieldElement5.f1376x;
+            jArr2 = secT571FieldElement8.f1376x;
         } else {
-            SecT571Field.multiplyPrecomp(secT571FieldElement5.f1371x, precompMultiplicand, create642);
-            SecT571Field.multiplyPrecomp(secT571FieldElement8.f1371x, precompMultiplicand, create644);
+            SecT571Field.multiplyPrecomp(secT571FieldElement5.f1376x, precompMultiplicand, create642);
+            SecT571Field.multiplyPrecomp(secT571FieldElement8.f1376x, precompMultiplicand, create644);
             jArr = create642;
             jArr2 = create644;
         }
-        long[] precompMultiplicand2 = secT571FieldElement9.isOne() ? null : SecT571Field.precompMultiplicand(secT571FieldElement9.f1371x);
-        long[] jArr4 = secT571FieldElement4.f1371x;
+        long[] precompMultiplicand2 = secT571FieldElement9.isOne() ? null : SecT571Field.precompMultiplicand(secT571FieldElement9.f1376x);
+        long[] jArr4 = secT571FieldElement4.f1376x;
         if (precompMultiplicand2 == null) {
-            jArr3 = secT571FieldElement6.f1371x;
+            jArr3 = secT571FieldElement6.f1376x;
         } else {
             SecT571Field.multiplyPrecomp(jArr4, precompMultiplicand2, create64);
-            SecT571Field.multiplyPrecomp(secT571FieldElement6.f1371x, precompMultiplicand2, create643);
+            SecT571Field.multiplyPrecomp(secT571FieldElement6.f1376x, precompMultiplicand2, create643);
             jArr4 = create64;
             jArr3 = create643;
         }
@@ -96,25 +96,25 @@ public class SecT571K1Point extends ECPoint.AbstractF2m {
             SecT571Field.multiplyPrecomp(jArr4, precompMultiplicand3, create64);
             SecT571Field.multiplyPrecomp(jArr, precompMultiplicand3, create642);
             SecT571FieldElement secT571FieldElement11 = new SecT571FieldElement(create64);
-            SecT571Field.multiply(create64, create642, secT571FieldElement11.f1371x);
+            SecT571Field.multiply(create64, create642, secT571FieldElement11.f1376x);
             if (secT571FieldElement11.isZero()) {
                 return new SecT571K1Point(curve, secT571FieldElement11, curve.getB(), this.withCompression);
             }
             SecT571FieldElement secT571FieldElement12 = new SecT571FieldElement(create643);
-            SecT571Field.multiplyPrecomp(create644, precompMultiplicand3, secT571FieldElement12.f1371x);
+            SecT571Field.multiplyPrecomp(create644, precompMultiplicand3, secT571FieldElement12.f1376x);
             if (precompMultiplicand2 != null) {
-                long[] jArr5 = secT571FieldElement12.f1371x;
+                long[] jArr5 = secT571FieldElement12.f1376x;
                 SecT571Field.multiplyPrecomp(jArr5, precompMultiplicand2, jArr5);
             }
             long[] createExt64 = Nat576.createExt64();
             SecT571Field.add(create642, create644, create644);
             SecT571Field.squareAddToExt(create644, createExt64);
-            SecT571Field.add(secT571FieldElement6.f1371x, secT571FieldElement7.f1371x, create644);
-            SecT571Field.multiplyAddToExt(create644, secT571FieldElement12.f1371x, createExt64);
+            SecT571Field.add(secT571FieldElement6.f1376x, secT571FieldElement7.f1376x, create644);
+            SecT571Field.multiplyAddToExt(create644, secT571FieldElement12.f1376x, createExt64);
             SecT571FieldElement secT571FieldElement13 = new SecT571FieldElement(create644);
-            SecT571Field.reduce(createExt64, secT571FieldElement13.f1371x);
+            SecT571Field.reduce(createExt64, secT571FieldElement13.f1376x);
             if (precompMultiplicand != null) {
-                long[] jArr6 = secT571FieldElement12.f1371x;
+                long[] jArr6 = secT571FieldElement12.f1376x;
                 SecT571Field.multiplyPrecomp(jArr6, precompMultiplicand, jArr6);
             }
             secT571FieldElement = secT571FieldElement11;
@@ -132,13 +132,13 @@ public class SecT571K1Point extends ECPoint.AbstractF2m {
 
     @Override // org.bouncycastle.math.p043ec.ECPoint
     public ECFieldElement getYCoord() {
-        ECFieldElement eCFieldElement = this.f1305x;
-        ECFieldElement eCFieldElement2 = this.f1306y;
+        ECFieldElement eCFieldElement = this.f1310x;
+        ECFieldElement eCFieldElement2 = this.f1311y;
         if (isInfinity() || eCFieldElement.isZero()) {
             return eCFieldElement2;
         }
         ECFieldElement multiply = eCFieldElement2.add(eCFieldElement).multiply(eCFieldElement);
-        ECFieldElement eCFieldElement3 = this.f1307zs[0];
+        ECFieldElement eCFieldElement3 = this.f1312zs[0];
         return !eCFieldElement3.isOne() ? multiply.divide(eCFieldElement3) : multiply;
     }
 
@@ -147,12 +147,12 @@ public class SecT571K1Point extends ECPoint.AbstractF2m {
         if (isInfinity()) {
             return this;
         }
-        ECFieldElement eCFieldElement = this.f1305x;
+        ECFieldElement eCFieldElement = this.f1310x;
         if (eCFieldElement.isZero()) {
             return this;
         }
-        ECFieldElement eCFieldElement2 = this.f1306y;
-        ECFieldElement eCFieldElement3 = this.f1307zs[0];
+        ECFieldElement eCFieldElement2 = this.f1311y;
+        ECFieldElement eCFieldElement3 = this.f1312zs[0];
         return new SecT571K1Point(this.curve, eCFieldElement, eCFieldElement2.add(eCFieldElement3), new ECFieldElement[]{eCFieldElement3}, this.withCompression);
     }
 
@@ -162,12 +162,12 @@ public class SecT571K1Point extends ECPoint.AbstractF2m {
             return this;
         }
         ECCurve curve = getCurve();
-        ECFieldElement eCFieldElement = this.f1305x;
+        ECFieldElement eCFieldElement = this.f1310x;
         if (eCFieldElement.isZero()) {
             return curve.getInfinity();
         }
-        ECFieldElement eCFieldElement2 = this.f1306y;
-        ECFieldElement eCFieldElement3 = this.f1307zs[0];
+        ECFieldElement eCFieldElement2 = this.f1311y;
+        ECFieldElement eCFieldElement3 = this.f1312zs[0];
         boolean isOne = eCFieldElement3.isOne();
         ECFieldElement square = isOne ? eCFieldElement3 : eCFieldElement3.square();
         ECFieldElement add = isOne ? eCFieldElement2.square().add(eCFieldElement2) : eCFieldElement2.add(eCFieldElement3).multiply(eCFieldElement2);
@@ -192,7 +192,7 @@ public class SecT571K1Point extends ECPoint.AbstractF2m {
             return twice();
         }
         ECCurve curve = getCurve();
-        ECFieldElement eCFieldElement = this.f1305x;
+        ECFieldElement eCFieldElement = this.f1310x;
         if (eCFieldElement.isZero()) {
             return eCPoint;
         }
@@ -201,8 +201,8 @@ public class SecT571K1Point extends ECPoint.AbstractF2m {
         if (rawXCoord.isZero() || !zCoord.isOne()) {
             return twice().add(eCPoint);
         }
-        ECFieldElement eCFieldElement2 = this.f1306y;
-        ECFieldElement eCFieldElement3 = this.f1307zs[0];
+        ECFieldElement eCFieldElement2 = this.f1311y;
+        ECFieldElement eCFieldElement3 = this.f1312zs[0];
         ECFieldElement rawYCoord = eCPoint.getRawYCoord();
         ECFieldElement square = eCFieldElement.square();
         ECFieldElement square2 = eCFieldElement2.square();

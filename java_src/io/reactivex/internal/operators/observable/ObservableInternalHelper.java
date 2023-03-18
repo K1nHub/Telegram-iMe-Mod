@@ -157,16 +157,16 @@ public final class ObservableInternalHelper {
         private final BiFunction<? super T, ? super U, ? extends R> combiner;
 
         /* renamed from: t */
-        private final T f450t;
+        private final T f455t;
 
         FlatMapWithCombinerInner(BiFunction<? super T, ? super U, ? extends R> biFunction, T t) {
             this.combiner = biFunction;
-            this.f450t = t;
+            this.f455t = t;
         }
 
         @Override // io.reactivex.functions.Function
         public R apply(U u) throws Exception {
-            return this.combiner.apply((T) this.f450t, u);
+            return this.combiner.apply((T) this.f455t, u);
         }
     }
 

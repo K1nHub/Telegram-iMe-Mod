@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTabBotMediaAnswerItem.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TabBotMediaAnswerItem.kt\ncom/smedialink/ui/smartpanel/model/content/TabBotMediaAnswerItem$Companion\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,17:1\n1547#2:18\n1618#2,3:19\n*S KotlinDebug\n*F\n+ 1 TabBotMediaAnswerItem.kt\ncom/smedialink/ui/smartpanel/model/content/TabBotMediaAnswerItem$Companion\n*L\n14#1:18\n14#1:19,3\n*E\n"
+    value = "SMAP\nTabBotMediaAnswerItem.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TabBotMediaAnswerItem.kt\ncom/smedialink/ui/smartpanel/model/content/TabBotMediaAnswerItem$Companion\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,17:1\n1549#2:18\n1620#2,3:19\n*S KotlinDebug\n*F\n+ 1 TabBotMediaAnswerItem.kt\ncom/smedialink/ui/smartpanel/model/content/TabBotMediaAnswerItem$Companion\n*L\n14#1:18\n14#1:19,3\n*E\n"
 .end annotation
 
 
@@ -57,7 +57,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -68,7 +68,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -84,7 +84,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lorg/telegram/tgnet/TLRPC$BotInlineResult;
 
     .line 14
@@ -94,6 +94,7 @@
 
     invoke-direct {v2, v3, v1}, Lcom/smedialink/ui/smartpanel/model/content/TabBotMediaAnswerItem;-><init>(Lcom/smedialink/ui/smartpanel/model/SmartPanelTabContent$Type;Lorg/telegram/tgnet/TLRPC$BotInlineResult;)V
 
+    .line 1621
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0

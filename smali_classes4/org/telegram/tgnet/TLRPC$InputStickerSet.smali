@@ -15,7 +15,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 30403
+    .line 30545
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
 
     goto :goto_0
 
-    .line 30437
+    .line 30579
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetEmojiDefaultTopicIcons;
 
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 30431
+    .line 30573
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetEmojiDefaultStatuses;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 30434
+    .line 30576
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetEmojiGenericAnimations;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 30422
+    .line 30564
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetAnimatedEmoji;
 
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 30413
+    .line 30555
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetEmpty;
 
@@ -70,7 +70,7 @@
 
     goto :goto_0
 
-    .line 30425
+    .line 30567
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetDice;
 
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 30428
+    .line 30570
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetPremiumGifts;
 
@@ -86,7 +86,7 @@
 
     goto :goto_0
 
-    .line 30416
+    .line 30558
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetID;
 
@@ -94,7 +94,7 @@
 
     goto :goto_0
 
-    .line 30419
+    .line 30561
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetShortName;
 
@@ -107,7 +107,7 @@
 
     goto :goto_1
 
-    .line 30441
+    .line 30583
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -137,7 +137,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 30444
+    .line 30586
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

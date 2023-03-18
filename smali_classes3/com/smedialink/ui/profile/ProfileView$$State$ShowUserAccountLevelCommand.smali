@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/smedialink/ui/profile/ProfileView$$State;Lcom/smedialink/storage/domain/model/crypto/level/AccountLevelInformation;)V
     .locals 1
 
-    .line 133
+    .line 294
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "showUserAccountLevel"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 135
+    .line 296
     iput-object p2, p0, Lcom/smedialink/ui/profile/ProfileView$$State$ShowUserAccountLevelCommand;->level:Lcom/smedialink/storage/domain/model/crypto/level/AccountLevelInformation;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/smedialink/ui/profile/ProfileView;)V
     .locals 1
 
-    .line 140
+    .line 301
     iget-object v0, p0, Lcom/smedialink/ui/profile/ProfileView$$State$ShowUserAccountLevelCommand;->level:Lcom/smedialink/storage/domain/model/crypto/level/AccountLevelInformation;
 
     invoke-interface {p1, v0}, Lcom/smedialink/ui/profile/ProfileView;->showUserAccountLevel(Lcom/smedialink/storage/domain/model/crypto/level/AccountLevelInformation;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 129
+    .line 290
     check-cast p1, Lcom/smedialink/ui/profile/ProfileView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/profile/ProfileView$$State$ShowUserAccountLevelCommand;->apply(Lcom/smedialink/ui/profile/ProfileView;)V

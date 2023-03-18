@@ -20,6 +20,7 @@ import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.List;
+import org.telegram.messenger.LiteMode;
 /* loaded from: classes.dex */
 public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
     private static final Rect INVALID_PARENT_BOUNDS = new Rect(Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE);
@@ -449,7 +450,7 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
             }
             this.mAccessibilityFocusedVirtualViewId = i;
             this.mHost.invalidate();
-            sendEventForVirtualView(i, 32768);
+            sendEventForVirtualView(i, LiteMode.FLAG_CHAT_SCALE);
             return true;
         }
         return false;

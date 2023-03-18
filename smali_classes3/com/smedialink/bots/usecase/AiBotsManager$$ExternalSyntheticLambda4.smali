@@ -45,7 +45,7 @@
 
     iget-object v3, p0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda4;->f$3:Ljava/lang/String;
 
-    invoke-static {v0, v1, v2, v3}, Lcom/smedialink/bots/usecase/AiBotsManager;->$r8$lambda$zFEyuWYnIH_fKJX-wl9lJMHex_E(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2, v3}, Lcom/smedialink/bots/usecase/AiBotsManager;->$r8$lambda$4gQeNrEtPKovaWGSkzzeU8adTqg(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

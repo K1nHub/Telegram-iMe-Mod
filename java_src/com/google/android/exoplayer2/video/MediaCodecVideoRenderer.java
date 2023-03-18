@@ -12,7 +12,7 @@ import android.os.SystemClock;
 import android.util.Pair;
 import android.view.Display;
 import android.view.Surface;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
@@ -38,7 +38,6 @@ import com.google.common.collect.ImmutableList;
 import java.nio.ByteBuffer;
 import java.util.Collection;
 import java.util.List;
-import org.telegram.messenger.LiteMode;
 /* loaded from: classes.dex */
 public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     private static final int HEVC_MAX_INPUT_SIZE_THRESHOLD = 2097152;
@@ -47,7 +46,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     private static final String KEY_CROP_LEFT = "crop-left";
     private static final String KEY_CROP_RIGHT = "crop-right";
     private static final String KEY_CROP_TOP = "crop-top";
-    private static final int[] STANDARD_LONG_EDGE_VIDEO_PX = {1920, 1600, 1440, 1280, 960, 854, 640, 540, LiteMode.FLAGS_CHAT};
+    private static final int[] STANDARD_LONG_EDGE_VIDEO_PX = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
     private static final String TAG = "MediaCodecVideoRenderer";
     private static final long TUNNELING_EOS_PRESENTATION_TIME_US = Long.MAX_VALUE;
     private static boolean deviceNeedsSetOutputSurfaceWorkaround;
@@ -130,7 +129,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
         this.frameReleaseHelper = new VideoFrameReleaseHelper(applicationContext);
         this.eventDispatcher = new VideoRendererEventListener.EventDispatcher(handler, videoRendererEventListener);
         this.deviceNeedsNoPostProcessWorkaround = deviceNeedsNoPostProcessWorkaround();
-        this.joiningDeadlineMs = C0474C.TIME_UNSET;
+        this.joiningDeadlineMs = C0468C.TIME_UNSET;
         this.currentWidth = -1;
         this.currentHeight = -1;
         this.currentPixelWidthHeightRatio = -1.0f;
@@ -254,13 +253,13 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
         super.onPositionReset(j, z);
         clearRenderedFirstFrame();
         this.frameReleaseHelper.onPositionReset();
-        this.lastBufferPresentationTimeUs = C0474C.TIME_UNSET;
-        this.initialPositionUs = C0474C.TIME_UNSET;
+        this.lastBufferPresentationTimeUs = C0468C.TIME_UNSET;
+        this.initialPositionUs = C0468C.TIME_UNSET;
         this.consecutiveDroppedFrameCount = 0;
         if (z) {
             setJoiningDeadlineMs();
         } else {
-            this.joiningDeadlineMs = C0474C.TIME_UNSET;
+            this.joiningDeadlineMs = C0468C.TIME_UNSET;
         }
     }
 
@@ -268,15 +267,15 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     public boolean isReady() {
         PlaceholderSurface placeholderSurface;
         if (super.isReady() && (this.renderedFirstFrameAfterReset || (((placeholderSurface = this.placeholderSurface) != null && this.surface == placeholderSurface) || getCodec() == null || this.tunneling))) {
-            this.joiningDeadlineMs = C0474C.TIME_UNSET;
+            this.joiningDeadlineMs = C0468C.TIME_UNSET;
             return true;
-        } else if (this.joiningDeadlineMs == C0474C.TIME_UNSET) {
+        } else if (this.joiningDeadlineMs == C0468C.TIME_UNSET) {
             return false;
         } else {
             if (SystemClock.elapsedRealtime() < this.joiningDeadlineMs) {
                 return true;
             }
-            this.joiningDeadlineMs = C0474C.TIME_UNSET;
+            this.joiningDeadlineMs = C0468C.TIME_UNSET;
             return false;
         }
     }
@@ -296,7 +295,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecRenderer, com.google.android.exoplayer2.BaseRenderer
     public void onStopped() {
-        this.joiningDeadlineMs = C0474C.TIME_UNSET;
+        this.joiningDeadlineMs = C0468C.TIME_UNSET;
         maybeNotifyDroppedFrames();
         maybeNotifyVideoFrameProcessingOffset();
         this.frameReleaseHelper.onStopped();
@@ -616,7 +615,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
         long j4;
         boolean z3;
         Assertions.checkNotNull(mediaCodecAdapter);
-        if (this.initialPositionUs == C0474C.TIME_UNSET) {
+        if (this.initialPositionUs == C0468C.TIME_UNSET) {
             this.initialPositionUs = j;
         }
         if (j3 != this.lastBufferPresentationTimeUs) {
@@ -652,7 +651,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
             j4 = j7;
             z3 = true;
         }
-        if (this.joiningDeadlineMs == C0474C.TIME_UNSET && j >= outputStreamOffsetUs && (z3 || (z4 && shouldForceRenderOutputBuffer(j6, j4)))) {
+        if (this.joiningDeadlineMs == C0468C.TIME_UNSET && j >= outputStreamOffsetUs && (z3 || (z4 && shouldForceRenderOutputBuffer(j6, j4)))) {
             long nanoTime = System.nanoTime();
             notifyFrameMetadataListener(j5, nanoTime, format);
             if (Util.SDK_INT >= 21) {
@@ -667,7 +666,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
             long nanoTime2 = System.nanoTime();
             long adjustReleaseTime = this.frameReleaseHelper.adjustReleaseTime((j6 * 1000) + nanoTime2);
             long j8 = (adjustReleaseTime - nanoTime2) / 1000;
-            boolean z5 = this.joiningDeadlineMs != C0474C.TIME_UNSET;
+            boolean z5 = this.joiningDeadlineMs != C0468C.TIME_UNSET;
             if (shouldDropBuffersToKeyframe(j8, j2, z2) && maybeDropBuffersToKeyframe(j, z5)) {
                 return false;
             }
@@ -843,7 +842,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     }
 
     private void setJoiningDeadlineMs() {
-        this.joiningDeadlineMs = this.allowedJoiningTimeMs > 0 ? SystemClock.elapsedRealtime() + this.allowedJoiningTimeMs : C0474C.TIME_UNSET;
+        this.joiningDeadlineMs = this.allowedJoiningTimeMs > 0 ? SystemClock.elapsedRealtime() + this.allowedJoiningTimeMs : C0468C.TIME_UNSET;
     }
 
     private void clearRenderedFirstFrame() {

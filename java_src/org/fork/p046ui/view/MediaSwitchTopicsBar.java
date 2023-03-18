@@ -77,21 +77,20 @@ public final class MediaSwitchTopicsBar extends LinearLayout {
         topicView.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.view.MediaSwitchTopicsBar$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MediaSwitchTopicsBar.m2110initTopic$lambda1$lambda0(MediaSwitchTopicsBar.this, z, view);
+                MediaSwitchTopicsBar.initTopic$lambda$1$lambda$0(MediaSwitchTopicsBar.this, z, view);
             }
         });
         return topicView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initTopic$lambda-1$lambda-0  reason: not valid java name */
-    public static final void m2110initTopic$lambda1$lambda0(MediaSwitchTopicsBar this$0, boolean z, View view) {
+    public static final void initTopic$lambda$1$lambda$0(MediaSwitchTopicsBar this$0, boolean z, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        if (this$0.getCurrentMessagesContextMenu() == z) {
+        if (this$0.currentMessagesContextMenu == z) {
             return;
         }
-        this$0.setCurrentMessagesContextMenu(z);
-        this$0.getDelegate().invoke(Boolean.valueOf(this$0.getCurrentMessagesContextMenu()));
+        this$0.currentMessagesContextMenu = z;
+        this$0.delegate.invoke(Boolean.valueOf(z));
         this$0.updateSelectedTopicAndColors();
     }
 

@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;ZZ)V
     .locals 0
 
-    .line 9295
+    .line 9306
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iput-boolean p2, p0, Lorg/telegram/ui/PhotoViewer$57;->val$visible:Z
@@ -43,14 +43,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 9298
+    .line 9309
     iget-boolean p1, p0, Lorg/telegram/ui/PhotoViewer$57;->val$visible:Z
 
     const/16 v0, 0x8
 
     if-nez p1, :cond_0
 
-    .line 9299
+    .line 9310
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$9500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$VideoPlayerControlFrameLayout;
@@ -61,7 +61,7 @@
 
     goto :goto_0
 
-    .line 9301
+    .line 9312
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -71,7 +71,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 9302
+    .line 9313
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$17500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/FadingTextViewLayout;
@@ -80,12 +80,12 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 9303
+    .line 9314
     iget-boolean p1, p0, Lorg/telegram/ui/PhotoViewer$57;->val$shareWasAllowed:Z
 
     if-eqz p1, :cond_1
 
-    .line 9304
+    .line 9315
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$17700(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/LinearLayout;

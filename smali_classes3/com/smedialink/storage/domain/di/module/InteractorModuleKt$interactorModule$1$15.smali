@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor;",
+        "Lcom/smedialink/storage/domain/interactor/crypto/level/AccountLevelInteractor;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$15\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,75:1\n127#2,5:76\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$15\n*L\n61#1:76,5\n*E\n"
+    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$15\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,77:1\n127#2,5:78\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$15\n*L\n62#1:78,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/interactor/crypto/level/AccountLevelInteractor;
     .locals 3
 
     const-string v0, "$this$single"
@@ -73,7 +73,7 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 131
-    const-class p2, Lcom/smedialink/storage/domain/repository/crypto/cancel/CancelRepository;
+    const-class p2, Lcom/smedialink/storage/domain/repository/crypto/level/AccountLevelRepository;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -85,8 +85,8 @@
 
     move-result-object p2
 
-    .line 61
-    check-cast p2, Lcom/smedialink/storage/domain/repository/crypto/cancel/CancelRepository;
+    .line 62
+    check-cast p2, Lcom/smedialink/storage/domain/repository/crypto/level/AccountLevelRepository;
 
     .line 131
     const-class v1, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
@@ -99,11 +99,11 @@
 
     move-result-object v1
 
-    .line 61
+    .line 62
     check-cast v1, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     .line 131
-    const-class v2, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
+    const-class v2, Lcom/smedialink/storage/domain/gateway/TelegramGateway;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -113,12 +113,12 @@
 
     move-result-object p1
 
-    .line 61
-    check-cast p1, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
+    .line 62
+    check-cast p1, Lcom/smedialink/storage/domain/gateway/TelegramGateway;
 
-    new-instance v0, Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor;
+    new-instance v0, Lcom/smedialink/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
-    invoke-direct {v0, p1, p2, v1}, Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor;-><init>(Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;Lcom/smedialink/storage/domain/repository/crypto/cancel/CancelRepository;Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;)V
+    invoke-direct {v0, p2, p1, v1}, Lcom/smedialink/storage/domain/interactor/crypto/level/AccountLevelInteractor;-><init>(Lcom/smedialink/storage/domain/repository/crypto/level/AccountLevelRepository;Lcom/smedialink/storage/domain/gateway/TelegramGateway;Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;)V
 
     return-object v0
 .end method
@@ -126,12 +126,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 61
+    .line 62
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$15;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor;
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$15;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
     move-result-object p1
 

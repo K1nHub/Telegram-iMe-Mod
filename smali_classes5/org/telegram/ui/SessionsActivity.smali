@@ -1237,7 +1237,7 @@
     :cond_6
     iget v2, v0, Lorg/telegram/ui/SessionsActivity;->terminateAllSessionsRow:I
 
-    const-string v7, "dialogTextRed2"
+    const-string v7, "dialogTextRed"
 
     const/4 v8, -0x1
 

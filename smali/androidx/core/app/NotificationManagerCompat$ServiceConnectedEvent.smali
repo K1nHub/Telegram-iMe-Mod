@@ -24,13 +24,13 @@
 .method constructor <init>(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 0
 
-    .line 968
+    .line 973
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 969
+    .line 974
     iput-object p1, p0, Landroidx/core/app/NotificationManagerCompat$ServiceConnectedEvent;->componentName:Landroid/content/ComponentName;
 
-    .line 970
+    .line 975
     iput-object p2, p0, Landroidx/core/app/NotificationManagerCompat$ServiceConnectedEvent;->iBinder:Landroid/os/IBinder;
 
     return-void

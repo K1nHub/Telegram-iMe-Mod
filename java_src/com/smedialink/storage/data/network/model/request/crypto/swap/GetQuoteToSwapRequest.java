@@ -60,7 +60,7 @@ public final class GetQuoteToSwapRequest {
         }
         if (obj instanceof GetQuoteToSwapRequest) {
             GetQuoteToSwapRequest getQuoteToSwapRequest = (GetQuoteToSwapRequest) obj;
-            return Intrinsics.areEqual(this.inputCryptoTokenCode, getQuoteToSwapRequest.inputCryptoTokenCode) && Intrinsics.areEqual(this.outputCryptoTokenCode, getQuoteToSwapRequest.outputCryptoTokenCode) && Intrinsics.areEqual(this.amount, getQuoteToSwapRequest.amount) && this.tradeType == getQuoteToSwapRequest.tradeType && Intrinsics.areEqual(Float.valueOf(this.slippageTolerance), Float.valueOf(getQuoteToSwapRequest.slippageTolerance)) && Intrinsics.areEqual(this.defiProtocol, getQuoteToSwapRequest.defiProtocol) && Intrinsics.areEqual(this.networkType, getQuoteToSwapRequest.networkType) && Intrinsics.areEqual(this.outputNetworkType, getQuoteToSwapRequest.outputNetworkType);
+            return Intrinsics.areEqual(this.inputCryptoTokenCode, getQuoteToSwapRequest.inputCryptoTokenCode) && Intrinsics.areEqual(this.outputCryptoTokenCode, getQuoteToSwapRequest.outputCryptoTokenCode) && Intrinsics.areEqual(this.amount, getQuoteToSwapRequest.amount) && this.tradeType == getQuoteToSwapRequest.tradeType && Float.compare(this.slippageTolerance, getQuoteToSwapRequest.slippageTolerance) == 0 && Intrinsics.areEqual(this.defiProtocol, getQuoteToSwapRequest.defiProtocol) && Intrinsics.areEqual(this.networkType, getQuoteToSwapRequest.networkType) && Intrinsics.areEqual(this.outputNetworkType, getQuoteToSwapRequest.outputNetworkType);
         }
         return false;
     }
@@ -72,7 +72,7 @@ public final class GetQuoteToSwapRequest {
     }
 
     public String toString() {
-        return "GetQuoteToSwapRequest(inputCryptoTokenCode=" + this.inputCryptoTokenCode + ", outputCryptoTokenCode=" + this.outputCryptoTokenCode + ", amount=" + this.amount + ", tradeType=" + this.tradeType + ", slippageTolerance=" + this.slippageTolerance + ", defiProtocol=" + this.defiProtocol + ", networkType=" + this.networkType + ", outputNetworkType=" + ((Object) this.outputNetworkType) + ')';
+        return "GetQuoteToSwapRequest(inputCryptoTokenCode=" + this.inputCryptoTokenCode + ", outputCryptoTokenCode=" + this.outputCryptoTokenCode + ", amount=" + this.amount + ", tradeType=" + this.tradeType + ", slippageTolerance=" + this.slippageTolerance + ", defiProtocol=" + this.defiProtocol + ", networkType=" + this.networkType + ", outputNetworkType=" + this.outputNetworkType + ')';
     }
 
     public GetQuoteToSwapRequest(String inputCryptoTokenCode, String outputCryptoTokenCode, String amount, int i, float f, String defiProtocol, String networkType, String str) {

@@ -163,56 +163,52 @@ public final class RecognitionBottomSheetDialog extends MvpBottomSheet {
 
     private final void setupListeners() {
         ForkTextRecognitionContentLayoutBinding binding = getBinding();
-        binding.imageClose.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.recognition.RecognitionBottomSheetDialog$$ExternalSyntheticLambda0
+        binding.imageClose.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.recognition.RecognitionBottomSheetDialog$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RecognitionBottomSheetDialog.m1473setupListeners$lambda7$lambda3(RecognitionBottomSheetDialog.this, view);
+                RecognitionBottomSheetDialog.setupListeners$lambda$7$lambda$3(RecognitionBottomSheetDialog.this, view);
             }
         });
-        binding.imageCopy.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.recognition.RecognitionBottomSheetDialog$$ExternalSyntheticLambda3
+        binding.imageCopy.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.recognition.RecognitionBottomSheetDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RecognitionBottomSheetDialog.m1474setupListeners$lambda7$lambda4(RecognitionBottomSheetDialog.this, view);
+                RecognitionBottomSheetDialog.setupListeners$lambda$7$lambda$4(RecognitionBottomSheetDialog.this, view);
             }
         });
-        binding.imageTranslate.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.recognition.RecognitionBottomSheetDialog$$ExternalSyntheticLambda1
+        binding.imageTranslate.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.recognition.RecognitionBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RecognitionBottomSheetDialog.m1475setupListeners$lambda7$lambda5(RecognitionBottomSheetDialog.this, view);
+                RecognitionBottomSheetDialog.setupListeners$lambda$7$lambda$5(RecognitionBottomSheetDialog.this, view);
             }
         });
         binding.imageShare.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.recognition.RecognitionBottomSheetDialog$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RecognitionBottomSheetDialog.m1476setupListeners$lambda7$lambda6(RecognitionBottomSheetDialog.this, view);
+                RecognitionBottomSheetDialog.setupListeners$lambda$7$lambda$6(RecognitionBottomSheetDialog.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-7$lambda-3  reason: not valid java name */
-    public static final void m1473setupListeners$lambda7$lambda3(RecognitionBottomSheetDialog this$0, View view) {
+    public static final void setupListeners$lambda$7$lambda$3(RecognitionBottomSheetDialog this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-7$lambda-4  reason: not valid java name */
-    public static final void m1474setupListeners$lambda7$lambda4(RecognitionBottomSheetDialog this$0, View view) {
+    public static final void setupListeners$lambda$7$lambda$4(RecognitionBottomSheetDialog this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.actionCopyToClipboard();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-7$lambda-5  reason: not valid java name */
-    public static final void m1475setupListeners$lambda7$lambda5(RecognitionBottomSheetDialog this$0, View view) {
+    public static final void setupListeners$lambda$7$lambda$5(RecognitionBottomSheetDialog this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.translateText();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-7$lambda-6  reason: not valid java name */
-    public static final void m1476setupListeners$lambda7$lambda6(RecognitionBottomSheetDialog this$0, View view) {
+    public static final void setupListeners$lambda$7$lambda$6(RecognitionBottomSheetDialog this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.shareText();
     }

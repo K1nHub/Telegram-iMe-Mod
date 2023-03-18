@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHorizontalActionButtonsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HorizontalActionButtonsView.kt\ncom/smedialink/ui/custom/HorizontalActionButtonsView\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,88:1\n1849#2,2:89\n1849#2,2:91\n*S KotlinDebug\n*F\n+ 1 HorizontalActionButtonsView.kt\ncom/smedialink/ui/custom/HorizontalActionButtonsView\n*L\n37#1:89,2\n68#1:91,2\n*E\n"
+    value = "SMAP\nHorizontalActionButtonsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HorizontalActionButtonsView.kt\ncom/smedialink/ui/custom/HorizontalActionButtonsView\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,88:1\n1855#2,2:89\n1855#2,2:91\n*S KotlinDebug\n*F\n+ 1 HorizontalActionButtonsView.kt\ncom/smedialink/ui/custom/HorizontalActionButtonsView\n*L\n37#1:89,2\n68#1:91,2\n*E\n"
 .end annotation
 
 
@@ -22,10 +22,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$XGIZ7B5Kc5ut1WoVFvXNJPDRna8(Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$Caz6cvF1aFUBuqKkCxNyYL0kFnk(Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/custom/HorizontalActionButtonsView;->initButtons$lambda-2$lambda-1$lambda-0(Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/custom/HorizontalActionButtonsView;->initButtons$lambda$2$lambda$1$lambda$0(Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;Landroid/view/View;)V
 
     return-void
 .end method
@@ -102,7 +102,7 @@
     return-void
 .end method
 
-.method private static final initButtons$lambda-2$lambda-1$lambda-0(Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;Landroid/view/View;)V
+.method private static final initButtons$lambda$2$lambda$1$lambda$0(Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$item"
@@ -122,7 +122,7 @@
 
 # virtual methods
 .method public final initButtons(Ljava/util/List;)V
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -144,7 +144,7 @@
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -238,22 +238,12 @@
     invoke-virtual {v1, v4, v2}, Landroidx/appcompat/widget/AppCompatTextView;->setTextSize(IF)V
 
     .line 51
-    invoke-virtual {v1}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
     invoke-virtual {v0}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->getIconRes()I
 
-    move-result v5
-
-    invoke-static {v2, v5}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    const/4 v5, 0x0
+    move-result v2
 
     .line 49
-    invoke-virtual {v1, v5, v2, v5, v5}, Landroidx/appcompat/widget/AppCompatTextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v1, v4, v2, v4, v4}, Landroidx/appcompat/widget/AppCompatTextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
     .line 55
     invoke-virtual {v1}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
@@ -333,7 +323,7 @@
     .line 68
     iget-object v0, p0, Lcom/smedialink/ui/custom/HorizontalActionButtonsView;->buttons:Ljava/util/List;
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0

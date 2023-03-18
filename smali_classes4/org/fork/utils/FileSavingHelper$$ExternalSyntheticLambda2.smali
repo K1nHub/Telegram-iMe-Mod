@@ -35,7 +35,7 @@
 .method public final run()V
     .locals 0
 
-    invoke-static {}, Lorg/fork/utils/FileSavingHelper;->$r8$lambda$gcewHFd_gjNnevZeqUFUqiFZXfU()V
+    invoke-static {}, Lorg/fork/utils/FileSavingHelper;->$r8$lambda$qUgmseWv24ehZOP0l1hLQp1xi3Y()V
 
     return-void
 .end method

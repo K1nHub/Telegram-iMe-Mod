@@ -10,7 +10,6 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.graphics.ColorUtils;
 import com.fxn.BubbleTabBar;
 import com.fxn.OnBubbleClickListener;
 import com.fxn.parser.MenuItem;
@@ -25,6 +24,7 @@ import com.smedialink.p031ui.catalog.tabs.CatalogFragment;
 import com.smedialink.p031ui.wallet.common.BottomNavigationDelegate;
 import com.smedialink.storage.domain.model.catalog.ChatType;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
+import com.smedialink.utils.extentions.common.ViewExtKt;
 import com.smedialink.utils.extentions.delegate.ResettableLazy;
 import com.smedialink.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.smedialink.utils.extentions.delegate.ResettableLazyManager;
@@ -48,11 +48,11 @@ import org.fork.utils.CollectionsUtilsKt;
 import org.koin.core.qualifier.StringQualifier;
 import org.koin.p047mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentCatalogGlobalBinding;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.LanguageSelectActivity;
@@ -120,10 +120,10 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         CatalogFragment currentScreen = getBottomNavigationRouter().getCurrentScreen();
-        if (currentScreen == null) {
-            return true;
+        if (currentScreen != null) {
+            return currentScreen.isSwipeBackEnabled(motionEvent);
         }
-        return currentScreen.isSwipeBackEnabled(motionEvent);
+        return true;
     }
 
     @Override // com.smedialink.p031ui.base.mvp.MvpFragment
@@ -181,7 +181,7 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
                 int height = view.getHeight();
                 ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
                 ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams : null;
-                int i = height + (marginLayoutParams == null ? 0 : marginLayoutParams.bottomMargin);
+                int i = height + (marginLayoutParams != null ? marginLayoutParams.bottomMargin : 0);
                 ViewGroup.LayoutParams layoutParams2 = view.getLayoutParams();
                 ViewGroup.MarginLayoutParams marginLayoutParams2 = layoutParams2 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams2 : null;
                 function1.invoke(Integer.valueOf(i + (marginLayoutParams2 != null ? marginLayoutParams2.topMargin : 0)));
@@ -193,20 +193,18 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     public void onResume() {
         super.onResume();
         CatalogFragment currentScreen = getBottomNavigationRouter().getCurrentScreen();
-        if (currentScreen == null) {
-            return;
+        if (currentScreen != null) {
+            currentScreen.onResume();
         }
-        currentScreen.onResume();
     }
 
     @Override // com.smedialink.p031ui.base.mvp.MvpFragment, org.telegram.p048ui.ActionBar.BaseFragment
     public void onPause() {
         super.onPause();
         CatalogFragment currentScreen = getBottomNavigationRouter().getCurrentScreen();
-        if (currentScreen == null) {
-            return;
+        if (currentScreen != null) {
+            currentScreen.onPause();
         }
-        currentScreen.onPause();
     }
 
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
@@ -215,7 +213,7 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(null, 0, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.smedialink.ui.catalog.CatalogRootFragment$$ExternalSyntheticLambda1
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                CatalogRootFragment.m1411getThemeDescriptions$lambda4(CatalogRootFragment.this);
+                CatalogRootFragment.getThemeDescriptions$lambda$4(CatalogRootFragment.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -230,12 +228,11 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescriptions$lambda-4  reason: not valid java name */
-    public static final void m1411getThemeDescriptions$lambda4(CatalogRootFragment this$0) {
+    public static final void getThemeDescriptions$lambda$4(CatalogRootFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ForkFragmentCatalogGlobalBinding binding = this$0.getBinding();
         binding.cardBottomNavigationWrapper.setRadius(AndroidUtilities.m51dp(30.0f));
-        binding.realtimeBlur.setOverlayColor(ColorUtils.setAlphaComponent(Theme.getColor("chats_actionBackground"), 55));
+        binding.realtimeBlur.setOverlayColor(ViewExtKt.withAlpha(Theme.getColor("chats_actionBackground"), 55));
     }
 
     @Override // com.smedialink.p031ui.catalog.CatalogRootView
@@ -250,14 +247,13 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
         presentFragment(LanguageSelectActivity.newInstanceForCatalog(i, CollectionsUtilsKt.toArrayList(languages), new Callbacks$Callback1() { // from class: com.smedialink.ui.catalog.CatalogRootFragment$$ExternalSyntheticLambda0
             @Override // org.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                CatalogRootFragment.m1412openSelectLanguageScreen$lambda7(CatalogRootFragment.this, (Integer) obj);
+                CatalogRootFragment.openSelectLanguageScreen$lambda$7(CatalogRootFragment.this, (Integer) obj);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: openSelectLanguageScreen$lambda-7  reason: not valid java name */
-    public static final void m1412openSelectLanguageScreen$lambda7(CatalogRootFragment this$0, Integer id) {
+    public static final void openSelectLanguageScreen$lambda$7(CatalogRootFragment this$0, Integer id) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         CatalogRootPresenter presenter = this$0.getPresenter();
         Intrinsics.checkNotNullExpressionValue(id, "id");
@@ -280,14 +276,14 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setCastShadows(false);
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setTitle(getResourceManager().getString(C3158R.string.catalog_title));
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.createMenu().addItem(IdFabric$Menu.LANGUAGE, C3158R.C3160drawable.msg_language);
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.catalog.CatalogRootFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setCastShadows(false);
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.catalog_title));
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.createMenu().addItem(IdFabric$Menu.LANGUAGE, C3286R.C3288drawable.msg_language);
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.catalog.CatalogRootFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 CatalogRootPresenter presenter;
                 if (i == -1) {
@@ -302,7 +298,7 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
 
     private final void setupColors() {
         ForkFragmentCatalogGlobalBinding binding = getBinding();
-        binding.realtimeBlur.setOverlayColor(ColorUtils.setAlphaComponent(getThemedColor("chats_actionBackground"), 55));
+        binding.realtimeBlur.setOverlayColor(ViewExtKt.withAlpha(getThemedColor("chats_actionBackground"), 55));
         BubbleTabBar bubbleTabBar = binding.bottomNavigationCatalog;
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
@@ -319,9 +315,9 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     /* JADX INFO: Access modifiers changed from: private */
     public final List<NavigationTab<CatalogFragment>> initTabs() {
         List<NavigationTab<CatalogFragment>> mutableListOf;
-        int i = C3158R.C3161id.catalog_root_bottom_navigation_channels;
+        int i = C3286R.C3289id.catalog_root_bottom_navigation_channels;
         CatalogFragment.Companion companion = CatalogFragment.Companion;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new NavigationTab(i, companion.newInstance(ChatType.CHANNEL)), new NavigationTab(C3158R.C3161id.catalog_root_bottom_navigation_groups, companion.newInstance(ChatType.GROUP)));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new NavigationTab(i, companion.newInstance(ChatType.CHANNEL)), new NavigationTab(C3286R.C3289id.catalog_root_bottom_navigation_groups, companion.newInstance(ChatType.GROUP)));
         Iterator<T> it = mutableListOf.iterator();
         while (it.hasNext()) {
             ((CatalogFragment) ((NavigationTab) it.next()).getFragment()).setBottomNavigationDelegate(this);
@@ -341,7 +337,7 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
                 return true;
             }
         });
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(C3158R.C3161id.catalog_root_bottom_navigation_channels, getResourceManager().getString(C3158R.string.catalog_navigation_channels), C3158R.C3160drawable.fork_filter_icon_channel, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3158R.C3161id.catalog_root_bottom_navigation_groups, getResourceManager().getString(C3158R.string.catalog_navigation_groups), C3158R.C3160drawable.msg_groups, true, getResourceManager().getColor(17170443), false, 32, null));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(C3286R.C3289id.catalog_root_bottom_navigation_channels, getResourceManager().getString(C3286R.string.catalog_navigation_channels), C3286R.C3288drawable.fork_filter_icon_channel, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3286R.C3289id.catalog_root_bottom_navigation_groups, getResourceManager().getString(C3286R.string.catalog_navigation_groups), C3286R.C3288drawable.msg_groups, true, getResourceManager().getColor(17170443), false, 32, null));
         bubbleTabBar.setMenu(mutableListOf);
     }
 

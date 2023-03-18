@@ -383,40 +383,40 @@ public class BackgroundGradientDrawable extends GradientDrawable {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.BackgroundGradientDrawable$2 */
     /* loaded from: classes6.dex */
-    public static /* synthetic */ class C39602 {
+    public static /* synthetic */ class C40942 {
 
         /* renamed from: $SwitchMap$android$graphics$drawable$GradientDrawable$Orientation */
-        static final /* synthetic */ int[] f1678x8f1352bc;
+        static final /* synthetic */ int[] f1684x8f1352bc;
 
         static {
             int[] iArr = new int[GradientDrawable.Orientation.values().length];
-            f1678x8f1352bc = iArr;
+            f1684x8f1352bc = iArr;
             try {
                 iArr[GradientDrawable.Orientation.TOP_BOTTOM.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1678x8f1352bc[GradientDrawable.Orientation.TR_BL.ordinal()] = 2;
+                f1684x8f1352bc[GradientDrawable.Orientation.TR_BL.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1678x8f1352bc[GradientDrawable.Orientation.RIGHT_LEFT.ordinal()] = 3;
+                f1684x8f1352bc[GradientDrawable.Orientation.RIGHT_LEFT.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1678x8f1352bc[GradientDrawable.Orientation.BR_TL.ordinal()] = 4;
+                f1684x8f1352bc[GradientDrawable.Orientation.BR_TL.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1678x8f1352bc[GradientDrawable.Orientation.BOTTOM_TOP.ordinal()] = 5;
+                f1684x8f1352bc[GradientDrawable.Orientation.BOTTOM_TOP.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1678x8f1352bc[GradientDrawable.Orientation.BL_TR.ordinal()] = 6;
+                f1684x8f1352bc[GradientDrawable.Orientation.BL_TR.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1678x8f1352bc[GradientDrawable.Orientation.LEFT_RIGHT.ordinal()] = 7;
+                f1684x8f1352bc[GradientDrawable.Orientation.LEFT_RIGHT.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -424,7 +424,7 @@ public class BackgroundGradientDrawable extends GradientDrawable {
 
     public static Rect getGradientPoints(GradientDrawable.Orientation orientation, int i, int i2) {
         Rect rect = new Rect();
-        switch (C39602.f1678x8f1352bc[orientation.ordinal()]) {
+        switch (C40942.f1684x8f1352bc[orientation.ordinal()]) {
             case 1:
                 int i3 = i / 2;
                 rect.left = i3;

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/controller/BookmarksController$$ExternalSyntheticLambda3;->f$1:Ljava/util/List;
 
-    invoke-static {v0, v1}, Lorg/fork/controller/BookmarksController;->$r8$lambda$T18eYH3PgSRKbrKBZnZGwGkHbys(Lorg/fork/controller/BookmarksController;Ljava/util/List;)V
+    invoke-static {v0, v1}, Lorg/fork/controller/BookmarksController;->$r8$lambda$FboZZxUbK6hmtRktTXX1v7epDp0(Lorg/fork/controller/BookmarksController;Ljava/util/List;)V
 
     return-void
 .end method

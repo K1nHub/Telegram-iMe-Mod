@@ -1,6 +1,4 @@
 package com.smedialink.storage.data.network.model.response.crypto.ton;
-
-import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TonFeesResponse.kt */
 /* loaded from: classes3.dex */
 public final class TonFeesResponse {
@@ -43,7 +41,7 @@ public final class TonFeesResponse {
         }
         if (obj instanceof TonFeesResponse) {
             TonFeesResponse tonFeesResponse = (TonFeesResponse) obj;
-            return Intrinsics.areEqual(Float.valueOf(this.duration), Float.valueOf(tonFeesResponse.duration)) && Intrinsics.areEqual(Double.valueOf(this.fee), Double.valueOf(tonFeesResponse.fee)) && Intrinsics.areEqual(Float.valueOf(this.feeInDollars), Float.valueOf(tonFeesResponse.feeInDollars));
+            return Float.compare(this.duration, tonFeesResponse.duration) == 0 && Double.compare(this.fee, tonFeesResponse.fee) == 0 && Float.compare(this.feeInDollars, tonFeesResponse.feeInDollars) == 0;
         }
         return false;
     }

@@ -15,7 +15,7 @@ public class Lifecycling {
 
     /* renamed from: androidx.lifecycle.Lifecycling$1 */
     /* loaded from: classes.dex */
-    class C02331 implements LifecycleEventObserver {
+    class C02271 implements LifecycleEventObserver {
         final /* synthetic */ LifecycleEventObserver val$observer;
 
         @Override // androidx.lifecycle.LifecycleEventObserver

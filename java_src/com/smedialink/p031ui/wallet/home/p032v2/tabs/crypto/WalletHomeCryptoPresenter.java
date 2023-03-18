@@ -24,7 +24,6 @@ import com.smedialink.p031ui.base.mvp.base.BasePresenter;
 import com.smedialink.p031ui.base.mvp.base.BaseView;
 import com.smedialink.storage.data.locale.prefs.model.WalletCryptoTokensSettingsMetadata;
 import com.smedialink.storage.data.locale.prefs.model.WalletCryptoTokensSettingsTokenState;
-import com.smedialink.storage.data.network.model.error.ErrorModel;
 import com.smedialink.storage.domain.gateway.TelegramGateway;
 import com.smedialink.storage.domain.interactor.crypto.CryptoWalletInteractor;
 import com.smedialink.storage.domain.interactor.crypto.nft.avatar.NftAvatarInteractor;
@@ -45,15 +44,14 @@ import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
 import com.smedialink.storage.domain.storage.HintsPreferenceHelper;
 import com.smedialink.storage.domain.utils.p030rx.RxEventBus;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
-import com.smedialink.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.smedialink.storage.domain.utils.p030rx.event.RxEvent;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
-import io.reactivex.functions.Function;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
@@ -70,12 +68,12 @@ import kotlin.collections.CollectionsKt___CollectionsJvmKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.tgnet.TLRPC$User;
-import timber.log.Timber;
 /* compiled from: WalletHomeCryptoPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoPresenter */
@@ -107,14 +105,32 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
 
         static {
             int[] iArr = new int[TokenType.values().length];
-            iArr[TokenType.CRYPTO.ordinal()] = 1;
-            iArr[TokenType.FIAT.ordinal()] = 2;
-            iArr[TokenType.NFT.ordinal()] = 3;
+            try {
+                iArr[TokenType.CRYPTO.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[TokenType.FIAT.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[TokenType.NFT.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
             int[] iArr2 = new int[TokenOrderType.values().length];
-            iArr2[TokenOrderType.ALPHABET.ordinal()] = 1;
-            iArr2[TokenOrderType.BALANCE.ordinal()] = 2;
-            iArr2[TokenOrderType.DEFAULT.ordinal()] = 3;
+            try {
+                iArr2[TokenOrderType.ALPHABET.ordinal()] = 1;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr2[TokenOrderType.BALANCE.ordinal()] = 2;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr2[TokenOrderType.DEFAULT.ordinal()] = 3;
+            } catch (NoSuchFieldError unused6) {
+            }
             $EnumSwitchMapping$1 = iArr2;
         }
     }
@@ -217,95 +233,33 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
         }
         Observable<Result<List<NftToken>>> delay = walletBalance$default.distinctUntilChanged().delay(j, TimeUnit.MILLISECONDS);
         Intrinsics.checkNotNullExpressionValue(delay, "observable\n             …y, TimeUnit.MILLISECONDS)");
-        Observable<R> map = delay.map(new Function() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoPresenter$loadTokens$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)TR; */
-            @Override // io.reactivex.functions.Function
-            public final Object apply(Result result) {
-                TokenType tokenType;
-                List list;
-                List configureUiItems;
-                Intrinsics.checkNotNullParameter(result, "result");
-                if (!(result instanceof Result.Success)) {
-                    if (result instanceof Result.Error) {
-                        return Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                    }
-                    if (result instanceof Object) {
-                        return result;
-                    }
-                    return null;
-                }
-                WalletHomeCryptoPresenter.this.isLoading = false;
-                WalletHomeCryptoPresenter walletHomeCryptoPresenter = WalletHomeCryptoPresenter.this;
-                Object data = result.getData();
-                Intrinsics.checkNotNull(data);
-                walletHomeCryptoPresenter.tokens = (List) data;
-                WalletHomeCryptoPresenter walletHomeCryptoPresenter2 = WalletHomeCryptoPresenter.this;
-                tokenType = walletHomeCryptoPresenter2.selectedTokenType;
-                list = WalletHomeCryptoPresenter.this.tokens;
-                configureUiItems = walletHomeCryptoPresenter2.configureUiItems(tokenType, list);
-                return Result.Companion.success(configureUiItems);
-            }
-        });
+        Observable<R> map = delay.map(new C2201x21775993(new WalletHomeCryptoPresenter$loadTokens$$inlined$mapSuccess$1(this)));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
-        Observable doFinally = map.observeOn(this.schedulersProvider.mo707ui()).doOnSubscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoPresenter$$ExternalSyntheticLambda1
+        Observable observeOn = map.observeOn(this.schedulersProvider.mo707ui());
+        final WalletHomeCryptoPresenter$loadTokens$2 walletHomeCryptoPresenter$loadTokens$2 = new WalletHomeCryptoPresenter$loadTokens$2(this);
+        Observable doFinally = observeOn.doOnSubscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoPresenter$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                WalletHomeCryptoPresenter.m1697loadTokens$lambda1(WalletHomeCryptoPresenter.this, (Disposable) obj);
+                WalletHomeCryptoPresenter.loadTokens$lambda$1(Function1.this, obj);
             }
         }).doFinally(new Action() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
-                WalletHomeCryptoPresenter.m1698loadTokens$lambda2(WalletHomeCryptoPresenter.this);
+                WalletHomeCryptoPresenter.loadTokens$lambda$2(WalletHomeCryptoPresenter.this);
             }
         });
-        Intrinsics.checkNotNullExpressionValue(doFinally, "observable\n             …e.showRefreshing(false) }");
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = doFinally.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoPresenter$loadTokens$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                ResourceManager resourceManager;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                WalletHomeCryptoView walletHomeCryptoView = (WalletHomeCryptoView) WalletHomeCryptoPresenter.this.getViewState();
-                if (result instanceof Result.Success) {
-                    walletHomeCryptoView.renderNodes((List) ((Result.Success) result).getData());
-                } else if (result instanceof Result.Error) {
-                    WalletHomeCryptoPresenter.this.isLoading = false;
-                    ErrorModel error = ((Result.Error) result).getError();
-                    resourceManager = WalletHomeCryptoPresenter.this.resourceManager;
-                    walletHomeCryptoView.showToast(error.getMessage(resourceManager));
-                } else if (result instanceof Result.Loading) {
-                    walletHomeCryptoView.showRefreshing(true);
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoPresenter$loadTokens$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Intrinsics.checkNotNullExpressionValue(doFinally, "fun loadTokens(forceUpda…creenSubscriptions)\n    }");
+        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2199xe9f7ff8(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2200xe9f7ff9((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         autoDispose(subscribe, this.mainScreenSubscriptions);
     }
 
-    /* renamed from: loadTokens$lambda-1 */
-    public static final void m1697loadTokens$lambda1(WalletHomeCryptoPresenter this$0, Disposable disposable) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.isLoading = true;
-        ((WalletHomeCryptoView) this$0.getViewState()).showRefreshing(true);
+    public static final void loadTokens$lambda$1(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
-    /* renamed from: loadTokens$lambda-2 */
-    public static final void m1698loadTokens$lambda2(WalletHomeCryptoPresenter this$0) {
+    public static final void loadTokens$lambda$2(WalletHomeCryptoPresenter this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ((WalletHomeCryptoView) this$0.getViewState()).showRefreshing(false);
     }
@@ -368,64 +322,11 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
     }
 
     private final void loadAccountInformation() {
-        Observable<R> map = this.cryptoWalletInteractor.getLinkedCryptoWalletAddress().map(new Function() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoPresenter$loadAccountInformation$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)TR; */
-            @Override // io.reactivex.functions.Function
-            public final Object apply(Result result) {
-                TokenType tokenType;
-                Intrinsics.checkNotNullParameter(result, "result");
-                if (!(result instanceof Result.Success)) {
-                    if (result instanceof Result.Error) {
-                        return Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                    }
-                    if (result instanceof Object) {
-                        return result;
-                    }
-                    return null;
-                }
-                WalletHomeCryptoPresenter.this.setLinkedCryptoWalletAddress((String) result.getData());
-                WalletHomeCryptoPresenter.this.checkWalletState();
-                WalletHomeCryptoPresenter walletHomeCryptoPresenter = WalletHomeCryptoPresenter.this;
-                tokenType = walletHomeCryptoPresenter.selectedTokenType;
-                return Result.Companion.success(WalletHomeCryptoPresenter.configureUiItems$default(walletHomeCryptoPresenter, tokenType, null, 2, null));
-            }
-        });
+        Observable<R> map = this.cryptoWalletInteractor.getLinkedCryptoWalletAddress().map(new C2201x21775993(new C2196x3703ab47(this)));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
         Observable observeOn = map.observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoPresenter$loadAccountInformation$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                ResourceManager resourceManager;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                WalletHomeCryptoView walletHomeCryptoView = (WalletHomeCryptoView) WalletHomeCryptoPresenter.this.getViewState();
-                if (result instanceof Result.Success) {
-                    ((WalletHomeCryptoView) WalletHomeCryptoPresenter.this.getViewState()).renderNodes((List) ((Result.Success) result).getData());
-                } else if (result instanceof Result.Error) {
-                    ErrorModel error = ((Result.Error) result).getError();
-                    resourceManager = WalletHomeCryptoPresenter.this.resourceManager;
-                    walletHomeCryptoView.showToast(error.getMessage(resourceManager));
-                } else if (result instanceof Result.Loading) {
-                    walletHomeCryptoView.showRefreshing(true);
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoPresenter$loadAccountInformation$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2197xa8abeb1d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2198xa8abeb1e((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         autoDispose(subscribe, this.mainScreenSubscriptions);
     }
@@ -448,36 +349,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                RxEvent rxEvent = (RxEvent) it;
-                if (rxEvent instanceof DomainRxEvents.TokensSettingsChanged ? true : rxEvent instanceof DomainRxEvents.InterfaceSettingsChanged) {
-                    WalletHomeCryptoPresenter.loadScreenInfo$default(WalletHomeCryptoPresenter.this, false, 0L, 3, null);
-                    return;
-                }
-                if (rxEvent instanceof DomainRxEvents.SuccessResetWallet ? true : rxEvent instanceof DomainRxEvents.SuccessCreateWallet ? true : rxEvent instanceof DomainRxEvents.SuccessRestoreWallet ? true : rxEvent instanceof DomainRxEvents.NetworkUpdated) {
-                    WalletHomeCryptoPresenter.loadScreenInfo$default(WalletHomeCryptoPresenter.this, true, 0L, 2, null);
-                } else if (rxEvent instanceof AppRxEvents.HiddenBalanceSettingChanged) {
-                    ((WalletHomeCryptoView) WalletHomeCryptoPresenter.this.getViewState()).notifyDataSetChanged();
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2194x69225658(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2195x69225659(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -501,9 +373,9 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
 
     private final boolean configureTokensHeader(List<BaseNode> list) {
         int collectionSizeOrDefault;
-        int i = C3158R.C3161id.selectable_token_header;
+        int i = C3286R.C3289id.selectable_token_header;
         int category = this.selectedTokenType.getCategory();
-        int i2 = C3158R.C3160drawable.fork_ic_arrow_down_16;
+        int i2 = C3286R.C3288drawable.fork_ic_arrow_down_16;
         List<TokenType> availableTypes = TokenType.Companion.getAvailableTypes();
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(availableTypes, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
@@ -524,7 +396,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
     }
 
     private final boolean configureCryptoAccountHeader(List<BaseNode> list) {
-        return list.add(new HeaderItemWithNetworkSwitcher(this.resourceManager.getString(C3158R.string.wallet_home_crypto_account), this.cryptoPreferenceHelper.getNetworkType(), false, 4, null));
+        return list.add(new HeaderItemWithNetworkSwitcher(this.resourceManager.getString(C3286R.string.wallet_home_crypto_account), this.cryptoPreferenceHelper.getNetworkType(), false, 4, null));
     }
 
     private final List<BaseNode> configureCryptoAccount(List<BaseNode> list) {
@@ -610,7 +482,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
         }
         int i = WhenMappings.$EnumSwitchMapping$1[this.cryptoPreferenceHelper.getTokensOrderType().ordinal()];
         if (i == 1) {
-            arrayList3 = CollectionsKt___CollectionsKt.sortedWith(arrayList3, new Comparator() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoPresenter$configureCryptoTokens$lambda-24$$inlined$sortedBy$1
+            arrayList3 = CollectionsKt___CollectionsKt.sortedWith(arrayList3, new Comparator() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoPresenter$configureCryptoTokens$lambda$24$$inlined$sortedBy$1
                 @Override // java.util.Comparator
                 public final int compare(T t, T t2) {
                     ResourceManager resourceManager;
@@ -629,7 +501,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
                 }
             });
         } else if (i == 2) {
-            arrayList3 = CollectionsKt___CollectionsKt.sortedWith(arrayList3, new Comparator() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoPresenter$configureCryptoTokens$lambda-24$$inlined$sortedByDescending$1
+            arrayList3 = CollectionsKt___CollectionsKt.sortedWith(arrayList3, new Comparator() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoPresenter$configureCryptoTokens$lambda$24$$inlined$sortedByDescending$1
                 @Override // java.util.Comparator
                 public final int compare(T t, T t2) {
                     int compareValues;
@@ -649,10 +521,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
             d += token.getBalance().getTotalInDollars();
         }
         list.add(new TotalBalanceItem((float) d));
-        if (arrayList4.isEmpty()) {
-            return list.add(new CryptoSelectTokensItem());
-        }
-        return list.addAll(arrayList4);
+        return arrayList4.isEmpty() ? list.add(new CryptoSelectTokensItem()) : list.addAll(arrayList4);
     }
 
     private final boolean configureNftTokens(List<BaseNode> list, List<? extends Object> list2) {
@@ -707,16 +576,16 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
 
     private final List<HorizontalActionButtonItem> resolveActions() {
         List<HorizontalActionButtonItem> listOf;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3158R.C3160drawable.msg_send, C3158R.string.wallet_token_details_details_action_send, this.selectedTokenType.isCrypto(), new WalletHomeCryptoPresenter$resolveActions$1(this)), new HorizontalActionButtonItem(C3158R.C3160drawable.fork_ic_ask_transfer, C3158R.string.wallet_binance_pay_action_receive, false, new WalletHomeCryptoPresenter$resolveActions$2(this), 4, null), new HorizontalActionButtonItem(C3158R.C3160drawable.fork_ic_transactions_28, C3158R.string.wallet_binance_pay_action_history, this.selectedTokenType.isCrypto(), new WalletHomeCryptoPresenter$resolveActions$3(this))});
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3286R.C3288drawable.msg_send, C3286R.string.wallet_token_details_details_action_send, this.selectedTokenType.isCrypto(), new WalletHomeCryptoPresenter$resolveActions$1(this)), new HorizontalActionButtonItem(C3286R.C3288drawable.fork_ic_ask_transfer, C3286R.string.wallet_binance_pay_action_receive, false, new WalletHomeCryptoPresenter$resolveActions$2(this), 4, null), new HorizontalActionButtonItem(C3286R.C3288drawable.fork_ic_transactions_28, C3286R.string.wallet_binance_pay_action_history, this.selectedTokenType.isCrypto(), new WalletHomeCryptoPresenter$resolveActions$3(this))});
         return listOf;
     }
 
     private final List<HorizontalActionButtonItem> getHorizontalActionButtonItems() {
         List<HorizontalActionButtonItem> listOfNotNull;
         HorizontalActionButtonItem[] horizontalActionButtonItemArr = new HorizontalActionButtonItem[3];
-        horizontalActionButtonItemArr[0] = new HorizontalActionButtonItem(C3158R.C3160drawable.fork_ic_eth_wallet_create, C3158R.string.wallet_dashboard_create_eth_wallet, false, new WalletHomeCryptoPresenter$getHorizontalActionButtonItems$1(this), 4, null);
-        horizontalActionButtonItemArr[1] = new HorizontalActionButtonItem(C3158R.C3160drawable.fork_ic_eth_wallet_import, C3158R.string.wallet_dashboard_import_eth_wallet, false, new WalletHomeCryptoPresenter$getHorizontalActionButtonItems$2(this), 4, null);
-        horizontalActionButtonItemArr[2] = isRestoreAvailable() ? new HorizontalActionButtonItem(C3158R.C3160drawable.fork_ic_eth_wallet_restore, C3158R.string.wallet_dashboard_restore_eth_wallet, false, new WalletHomeCryptoPresenter$getHorizontalActionButtonItems$3(this), 4, null) : null;
+        horizontalActionButtonItemArr[0] = new HorizontalActionButtonItem(C3286R.C3288drawable.fork_ic_eth_wallet_create, C3286R.string.wallet_dashboard_create_eth_wallet, false, new WalletHomeCryptoPresenter$getHorizontalActionButtonItems$1(this), 4, null);
+        horizontalActionButtonItemArr[1] = new HorizontalActionButtonItem(C3286R.C3288drawable.fork_ic_eth_wallet_import, C3286R.string.wallet_dashboard_import_eth_wallet, false, new WalletHomeCryptoPresenter$getHorizontalActionButtonItems$2(this), 4, null);
+        horizontalActionButtonItemArr[2] = isRestoreAvailable() ? new HorizontalActionButtonItem(C3286R.C3288drawable.fork_ic_eth_wallet_restore, C3286R.string.wallet_dashboard_restore_eth_wallet, false, new WalletHomeCryptoPresenter$getHorizontalActionButtonItems$3(this), 4, null) : null;
         listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(horizontalActionButtonItemArr);
         return listOfNotNull;
     }

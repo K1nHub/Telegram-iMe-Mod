@@ -3,10 +3,6 @@
 .source "TelegramThemeKeys.kt"
 
 
-# static fields
-.field public static final INSTANCE:Lcom/smedialink/common/TelegramThemeKeys$Drawer;
-
-
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
@@ -14,8 +10,6 @@
     new-instance v0, Lcom/smedialink/common/TelegramThemeKeys$Drawer;
 
     invoke-direct {v0}, Lcom/smedialink/common/TelegramThemeKeys$Drawer;-><init>()V
-
-    sput-object v0, Lcom/smedialink/common/TelegramThemeKeys$Drawer;->INSTANCE:Lcom/smedialink/common/TelegramThemeKeys$Drawer;
 
     return-void
 .end method
@@ -41,15 +35,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "iMe_"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "drawer_"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "item_"
+    const-string v1, "iMe_drawer_item_"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -16,18 +16,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$CcQ6jf5lhmcOnRxJDL8hTMRFRr0(Lorg/fork/ui/view/FragmentPreviewMenu;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$_2OL0qRnNv4Hnl82txrJWkBEZnw(Lorg/fork/ui/view/FragmentPreviewMenu;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/view/FragmentPreviewMenu;->initCloseItem$lambda-3$lambda-2(Lorg/fork/ui/view/FragmentPreviewMenu;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/view/FragmentPreviewMenu;->initCloseItem$lambda$3$lambda$2(Lorg/fork/ui/view/FragmentPreviewMenu;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$SAGnZltxN9mSmo7W5CoSSvu4HC4(Lorg/fork/ui/view/FragmentPreviewMenu;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$noGXcsfBvEMjgqNKJgydxR78ewY(Lorg/fork/ui/view/FragmentPreviewMenu;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/view/FragmentPreviewMenu;->initOpenItem$lambda-1$lambda-0(Lorg/fork/ui/view/FragmentPreviewMenu;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/view/FragmentPreviewMenu;->initOpenItem$lambda$1$lambda$0(Lorg/fork/ui/view/FragmentPreviewMenu;Landroid/view/View;)V
 
     return-void
 .end method
@@ -207,7 +207,7 @@
     return-object v0
 .end method
 
-.method private static final initCloseItem$lambda-3$lambda-2(Lorg/fork/ui/view/FragmentPreviewMenu;Landroid/view/View;)V
+.method private static final initCloseItem$lambda$3$lambda$2(Lorg/fork/ui/view/FragmentPreviewMenu;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -215,9 +215,7 @@
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 34
-    invoke-virtual {p0}, Lorg/fork/ui/view/FragmentPreviewMenu;->getPreviewFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    move-result-object p0
+    iget-object p0, p0, Lorg/fork/ui/view/FragmentPreviewMenu;->previewFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishPreviewFragment()V
 
@@ -270,7 +268,7 @@
     return-object v0
 .end method
 
-.method private static final initOpenItem$lambda-1$lambda-0(Lorg/fork/ui/view/FragmentPreviewMenu;Landroid/view/View;)V
+.method private static final initOpenItem$lambda$1$lambda$0(Lorg/fork/ui/view/FragmentPreviewMenu;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -278,22 +276,17 @@
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 28
-    invoke-virtual {p0}, Lorg/fork/ui/view/FragmentPreviewMenu;->getPreviewFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    move-result-object p0
+    iget-object p0, p0, Lorg/fork/ui/view/FragmentPreviewMenu;->previewFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object p0
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->expandPreviewFragment()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 

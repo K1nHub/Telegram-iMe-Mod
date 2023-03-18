@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTemplatesHeaderCell.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TemplatesHeaderCell.kt\norg/fork/ui/view/TemplatesHeaderCell\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,111:1\n169#2,2:112\n254#2,2:114\n13536#3,2:116\n*S KotlinDebug\n*F\n+ 1 TemplatesHeaderCell.kt\norg/fork/ui/view/TemplatesHeaderCell\n*L\n34#1:112,2\n50#1:114,2\n97#1:116,2\n*E\n"
+    value = "SMAP\nTemplatesHeaderCell.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TemplatesHeaderCell.kt\norg/fork/ui/view/TemplatesHeaderCell\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,111:1\n177#2,2:112\n262#2,2:114\n13579#3,2:116\n*S KotlinDebug\n*F\n+ 1 TemplatesHeaderCell.kt\norg/fork/ui/view/TemplatesHeaderCell\n*L\n34#1:112,2\n50#1:114,2\n97#1:116,2\n*E\n"
 .end annotation
 
 
@@ -24,26 +24,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$8zHO0wXoay824IIGO2GqWLnP4E0(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/fork/ui/view/TemplatesHeaderCell;I)V
+.method public static synthetic $r8$lambda$2PEeGDedBgXxhYxp3SRrwJoq35c(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/TemplatesHeaderCell;->initSortButton$lambda-7$lambda-5(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/fork/ui/view/TemplatesHeaderCell;I)V
+    invoke-static {p0, p1}, Lorg/fork/ui/view/TemplatesHeaderCell;->bind$lambda$3$lambda$2(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$FUYYE4xTQvIfHe_vi_wn_dwBVH0(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$5CyMu7l0RhVkeiFsGkVGRSQaI38(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/fork/ui/view/TemplatesHeaderCell;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/view/TemplatesHeaderCell;->initSortButton$lambda-7$lambda-6(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/TemplatesHeaderCell;->initSortButton$lambda$7$lambda$5(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/fork/ui/view/TemplatesHeaderCell;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$QD4v3xmT8UriC3Y6cD6SK_j6o00(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$5y5Ano_qQSpvBoNQMF1uiVceoHU(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/view/TemplatesHeaderCell;->bind$lambda-3$lambda-2(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/view/TemplatesHeaderCell;->initSortButton$lambda$7$lambda$6(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
 
     return-void
 .end method
@@ -110,7 +110,7 @@
 
     move-result p1
 
-    .line 169
+    .line 177
     invoke-virtual {p0, p1, p1, p1, p1}, Landroid/view/View;->setPadding(IIII)V
 
     const/16 p1, 0x10
@@ -220,7 +220,7 @@
     return-object p0
 .end method
 
-.method private static final bind$lambda-3$lambda-2(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Landroid/view/View;)V
+.method private static final bind$lambda$3$lambda$2(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$templatesDelegate"
@@ -379,7 +379,7 @@
 
     move-result-object v1
 
-    const-string v2, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v2, "windowBackgroundWhiteBlackText"
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
@@ -451,7 +451,7 @@
     return-object v0
 .end method
 
-.method private static final initSortButton$lambda-7$lambda-5(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/fork/ui/view/TemplatesHeaderCell;I)V
+.method private static final initSortButton$lambda$7$lambda$5(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/fork/ui/view/TemplatesHeaderCell;I)V
     .locals 1
 
     const-string v0, "$this_apply"
@@ -485,7 +485,7 @@
     return-void
 .end method
 
-.method private static final initSortButton$lambda-7$lambda-6(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
+.method private static final initSortButton$lambda$7$lambda$6(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$this_apply"
@@ -513,7 +513,7 @@
 
     move-result-object v0
 
-    .line 13536
+    .line 13579
     array-length v1, v0
 
     const/4 v2, 0x0
@@ -613,7 +613,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v1, "windowBackgroundWhiteBlackText"
 
     .line 47
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -650,7 +650,7 @@
     :cond_2
     const/16 p1, 0x8
 
-    .line 254
+    .line 262
     :goto_2
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 

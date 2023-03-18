@@ -1,6 +1,4 @@
 package com.smedialink.storage.domain.model.staking;
-
-import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingTotalStats.kt */
 /* loaded from: classes3.dex */
 public final class StakingTotalStats {
@@ -35,7 +33,7 @@ public final class StakingTotalStats {
         }
         if (obj instanceof StakingTotalStats) {
             StakingTotalStats stakingTotalStats = (StakingTotalStats) obj;
-            return Intrinsics.areEqual(Float.valueOf(this.totalStakedUsd), Float.valueOf(stakingTotalStats.totalStakedUsd)) && Intrinsics.areEqual(Float.valueOf(this.totalProfitUsd), Float.valueOf(stakingTotalStats.totalProfitUsd));
+            return Float.compare(this.totalStakedUsd, stakingTotalStats.totalStakedUsd) == 0 && Float.compare(this.totalProfitUsd, stakingTotalStats.totalProfitUsd) == 0;
         }
         return false;
     }

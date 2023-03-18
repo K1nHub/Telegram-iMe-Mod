@@ -10,7 +10,7 @@ public class ClientInterceptors {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: io.grpc.ClientInterceptors$1 */
     /* loaded from: classes3.dex */
-    public class C22201 implements ClientInterceptor {
+    public class C23441 implements ClientInterceptor {
     }
 
     public static Channel intercept(Channel channel, ClientInterceptor... clientInterceptorArr) {
@@ -31,7 +31,7 @@ public class ClientInterceptors {
         private final Channel channel;
         private final ClientInterceptor interceptor;
 
-        /* synthetic */ InterceptorChannel(Channel channel, ClientInterceptor clientInterceptor, C22201 c22201) {
+        /* synthetic */ InterceptorChannel(Channel channel, ClientInterceptor clientInterceptor, C23441 c23441) {
             this(channel, clientInterceptor);
         }
 

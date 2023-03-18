@@ -58,7 +58,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 35
+    .line 34
     invoke-virtual {p0}, Lcom/smedialink/manager/common/MediaEditManager$imageLoader$2;->invoke()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object v0
@@ -69,7 +69,7 @@
 .method public final invoke()Lorg/telegram/messenger/ImageLoader;
     .locals 1
 
-    .line 35
+    .line 34
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object v0

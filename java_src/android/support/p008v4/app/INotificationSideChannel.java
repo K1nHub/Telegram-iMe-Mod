@@ -5,6 +5,7 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
+import android.os.Parcelable;
 import android.os.RemoteException;
 /* renamed from: android.support.v4.app.INotificationSideChannel */
 /* loaded from: classes.dex */
@@ -29,11 +30,9 @@ public interface INotificationSideChannel extends IInterface {
             return new Proxy(iBinder);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: android.support.v4.app.INotificationSideChannel$Stub$Proxy */
         /* loaded from: classes.dex */
-        public static class Proxy implements INotificationSideChannel {
-            public static INotificationSideChannel sDefaultImpl;
+        private static class Proxy implements INotificationSideChannel {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -53,16 +52,8 @@ public interface INotificationSideChannel extends IInterface {
                     obtain.writeString(str);
                     obtain.writeInt(i);
                     obtain.writeString(str2);
-                    if (notification != null) {
-                        obtain.writeInt(1);
-                        notification.writeToParcel(obtain, 0);
-                    } else {
-                        obtain.writeInt(0);
-                    }
-                    if (this.mRemote.transact(1, obtain, null, 1) || Stub.getDefaultImpl() == null) {
-                        return;
-                    }
-                    Stub.getDefaultImpl().notify(str, i, str2, notification);
+                    _Parcel.writeTypedObject(obtain, notification, 0);
+                    this.mRemote.transact(1, obtain, null, 1);
                 } finally {
                     obtain.recycle();
                 }
@@ -76,10 +67,7 @@ public interface INotificationSideChannel extends IInterface {
                     obtain.writeString(str);
                     obtain.writeInt(i);
                     obtain.writeString(str2);
-                    if (this.mRemote.transact(2, obtain, null, 1) || Stub.getDefaultImpl() == null) {
-                        return;
-                    }
-                    Stub.getDefaultImpl().cancel(str, i, str2);
+                    this.mRemote.transact(2, obtain, null, 1);
                 } finally {
                     obtain.recycle();
                 }
@@ -91,18 +79,25 @@ public interface INotificationSideChannel extends IInterface {
                 try {
                     obtain.writeInterfaceToken("android.support.v4.app.INotificationSideChannel");
                     obtain.writeString(str);
-                    if (this.mRemote.transact(3, obtain, null, 1) || Stub.getDefaultImpl() == null) {
-                        return;
-                    }
-                    Stub.getDefaultImpl().cancelAll(str);
+                    this.mRemote.transact(3, obtain, null, 1);
                 } finally {
                     obtain.recycle();
                 }
             }
         }
+    }
 
-        public static INotificationSideChannel getDefaultImpl() {
-            return Proxy.sDefaultImpl;
+    /* renamed from: android.support.v4.app.INotificationSideChannel$_Parcel */
+    /* loaded from: classes.dex */
+    public static class _Parcel {
+        /* JADX INFO: Access modifiers changed from: private */
+        public static <T extends Parcelable> void writeTypedObject(Parcel parcel, T t, int i) {
+            if (t != null) {
+                parcel.writeInt(1);
+                t.writeToParcel(parcel, i);
+                return;
+            }
+            parcel.writeInt(0);
         }
     }
 }

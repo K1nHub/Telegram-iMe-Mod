@@ -12,14 +12,14 @@ import org.bouncycastle.util.encoders.Hex;
 public class SecP224R1Curve extends ECCurve.AbstractFp {
 
     /* renamed from: q */
-    public static final BigInteger f1343q = new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000001"));
+    public static final BigInteger f1348q = new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000001"));
     protected SecP224R1Point infinity;
 
     public SecP224R1Curve() {
-        super(f1343q);
+        super(f1348q);
         this.infinity = new SecP224R1Point(this, null, null);
-        this.f1302a = fromBigInteger(new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFE")));
-        this.f1303b = fromBigInteger(new BigInteger(1, Hex.decode("B4050A850C04B3ABF54132565044B0B7D7BFD8BA270B39432355FFB4")));
+        this.f1307a = fromBigInteger(new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFE")));
+        this.f1308b = fromBigInteger(new BigInteger(1, Hex.decode("B4050A850C04B3ABF54132565044B0B7D7BFD8BA270B39432355FFB4")));
         this.order = new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFF16A2E0B8F03E13DD29455C5C2A3D"));
         this.cofactor = BigInteger.valueOf(1L);
         this.coord = 2;
@@ -36,9 +36,9 @@ public class SecP224R1Curve extends ECCurve.AbstractFp {
         int i3 = 0;
         for (int i4 = 0; i4 < i2; i4++) {
             ECPoint eCPoint = eCPointArr[i + i4];
-            Nat224.copy(((SecP224R1FieldElement) eCPoint.getRawXCoord()).f1346x, 0, iArr, i3);
+            Nat224.copy(((SecP224R1FieldElement) eCPoint.getRawXCoord()).f1351x, 0, iArr, i3);
             int i5 = i3 + 7;
-            Nat224.copy(((SecP224R1FieldElement) eCPoint.getRawYCoord()).f1346x, 0, iArr, i5);
+            Nat224.copy(((SecP224R1FieldElement) eCPoint.getRawYCoord()).f1351x, 0, iArr, i5);
             i3 = i5 + 7;
         }
         return new ECLookupTable() { // from class: org.bouncycastle.math.ec.custom.sec.SecP224R1Curve.1
@@ -86,7 +86,7 @@ public class SecP224R1Curve extends ECCurve.AbstractFp {
 
     @Override // org.bouncycastle.math.p043ec.ECCurve
     public int getFieldSize() {
-        return f1343q.bitLength();
+        return f1348q.bitLength();
     }
 
     @Override // org.bouncycastle.math.p043ec.ECCurve

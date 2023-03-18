@@ -725,7 +725,7 @@
 .end method
 
 .method public updateButtonState(Z)V
-    .locals 10
+    .locals 9
 
     .line 592
     iget-object v0, p0, Lorg/telegram/ui/PassportActivity$SecureDocumentCell;->currentSecureDocument:Lorg/telegram/messenger/SecureDocument;
@@ -780,9 +780,7 @@
 
     const/4 v7, -0x1
 
-    const/4 v8, 0x5
-
-    const/4 v9, 0x1
+    const/4 v8, 0x1
 
     if-eqz v5, :cond_3
 
@@ -833,7 +831,7 @@
     invoke-virtual {v0, v1, p0}, Lorg/telegram/messenger/DownloadController;->addLoadingFileObserver(Ljava/lang/String;Lorg/telegram/messenger/DownloadController$FileDownloadProgressListener;)V
 
     .line 607
-    iput v9, p0, Lorg/telegram/ui/PassportActivity$SecureDocumentCell;->buttonState:I
+    iput v8, p0, Lorg/telegram/ui/PassportActivity$SecureDocumentCell;->buttonState:I
 
     .line 608
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
@@ -851,13 +849,17 @@
     .line 609
     iget-object v1, p0, Lorg/telegram/ui/PassportActivity$SecureDocumentCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
-    sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->chat_photoStatesDrawables:[[Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getResources()Landroid/content/res/Resources;
 
-    aget-object v2, v2, v8
+    move-result-object v2
 
-    aget-object v2, v2, v4
+    sget v3, Lorg/telegram/messenger/R$drawable;->circle:I
 
-    invoke-virtual {v1, v2, v9, p1}, Lorg/telegram/ui/Components/RadialProgress;->setBackground(Landroid/graphics/drawable/Drawable;ZZ)V
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2, v8, p1}, Lorg/telegram/ui/Components/RadialProgress;->setBackground(Landroid/graphics/drawable/Drawable;ZZ)V
 
     .line 610
     iget-object p1, p0, Lorg/telegram/ui/PassportActivity$SecureDocumentCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
@@ -920,7 +922,7 @@
     invoke-virtual {v1, v0, p0}, Lorg/telegram/messenger/DownloadController;->addLoadingFileObserver(Ljava/lang/String;Lorg/telegram/messenger/DownloadController$FileDownloadProgressListener;)V
 
     .line 621
-    iput v9, p0, Lorg/telegram/ui/PassportActivity$SecureDocumentCell;->buttonState:I
+    iput v8, p0, Lorg/telegram/ui/PassportActivity$SecureDocumentCell;->buttonState:I
 
     .line 622
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
@@ -934,13 +936,17 @@
     .line 623
     iget-object v1, p0, Lorg/telegram/ui/PassportActivity$SecureDocumentCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
-    sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->chat_photoStatesDrawables:[[Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getResources()Landroid/content/res/Resources;
 
-    aget-object v2, v2, v8
+    move-result-object v2
 
-    aget-object v2, v2, v4
+    sget v3, Lorg/telegram/messenger/R$drawable;->circle:I
 
-    invoke-virtual {v1, v2, v9, p1}, Lorg/telegram/ui/Components/RadialProgress;->setBackground(Landroid/graphics/drawable/Drawable;ZZ)V
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2, v8, p1}, Lorg/telegram/ui/Components/RadialProgress;->setBackground(Landroid/graphics/drawable/Drawable;ZZ)V
 
     .line 624
     iget-object v1, p0, Lorg/telegram/ui/PassportActivity$SecureDocumentCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;

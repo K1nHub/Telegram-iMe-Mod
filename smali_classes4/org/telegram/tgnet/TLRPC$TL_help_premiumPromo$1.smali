@@ -22,29 +22,29 @@
 .method constructor <init>(Lorg/telegram/tgnet/TLRPC$TL_help_premiumPromo;)V
     .locals 2
 
-    .line 9807
+    .line 9911
     iput-object p1, p0, Lorg/telegram/tgnet/TLRPC$TL_help_premiumPromo$1;->val$finalResult:Lorg/telegram/tgnet/TLRPC$TL_help_premiumPromo;
 
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;-><init>()V
 
     const/4 v0, 0x1
 
-    .line 9808
+    .line 9912
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;->months:I
 
-    .line 9809
+    .line 9913
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_help_premiumPromo;->currency:Ljava/lang/String;
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;->currency:Ljava/lang/String;
 
-    .line 9810
+    .line 9914
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$TL_help_premiumPromo;->monthly_amount:J
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;->amount:J
 
     const-string p1, "telegram_premium"
 
-    .line 9811
+    .line 9915
     iput-object p1, p0, Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;->store_product:Ljava/lang/String;
 
     return-void

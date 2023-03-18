@@ -51,7 +51,7 @@
 
     iget-boolean v4, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda9;->f$4:Z
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$MOforjRp1XnrHzfPxHOVf-1TQ-o(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Z)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$YvuaykYHfdRKLbzlCJp2lYX9nx4(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Z)V
 
     return-void
 .end method

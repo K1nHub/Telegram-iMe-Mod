@@ -24,10 +24,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/view/View;II)V
     .locals 0
 
-    .line 1816
+    .line 1817
     invoke-direct {p0, p2, p3, p4}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;II)V
 
-    .line 1817
+    .line 1818
     invoke-direct {p0}, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->init()V
 
     return-void
@@ -36,14 +36,14 @@
 .method private init()V
     .locals 2
 
-    .line 1821
+    .line 1822
     invoke-static {}, Lorg/telegram/ui/Components/EmojiView;->access$6000()Ljava/lang/reflect/Field;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 1823
+    .line 1824
     :try_start_0
     invoke-static {}, Lorg/telegram/ui/Components/EmojiView;->access$6000()Ljava/lang/reflect/Field;
 
@@ -57,7 +57,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->mSuperScrollListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
-    .line 1824
+    .line 1825
     invoke-static {}, Lorg/telegram/ui/Components/EmojiView;->access$6000()Ljava/lang/reflect/Field;
 
     move-result-object v0
@@ -75,7 +75,7 @@
     :catch_0
     const/4 v0, 0x0
 
-    .line 1826
+    .line 1827
     iput-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->mSuperScrollListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
     :cond_0
@@ -86,12 +86,12 @@
 .method private registerListener(Landroid/view/View;)V
     .locals 2
 
-    .line 1841
+    .line 1842
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->mSuperScrollListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
     if-eqz v0, :cond_2
 
-    .line 1842
+    .line 1843
     invoke-virtual {p1}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
     move-result-object v0
@@ -107,7 +107,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 1843
+    .line 1844
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
 
@@ -115,27 +115,27 @@
 
     if-eqz v0, :cond_1
 
-    .line 1844
+    .line 1845
     invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 1845
+    .line 1846
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->mSuperScrollListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeOnScrollChangedListener(Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V
 
-    .line 1847
+    .line 1848
     :cond_1
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
 
     if-eqz p1, :cond_2
 
-    .line 1848
+    .line 1849
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->mSuperScrollListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
     invoke-virtual {p1, v0}, Landroid/view/ViewTreeObserver;->addOnScrollChangedListener(Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V
@@ -147,7 +147,7 @@
 .method private unregisterListener()V
     .locals 2
 
-    .line 1832
+    .line 1833
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->mSuperScrollListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
     if-eqz v0, :cond_1
@@ -156,14 +156,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 1833
+    .line 1834
     invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1834
+    .line 1835
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->mSuperScrollListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
@@ -173,7 +173,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1836
+    .line 1837
     iput-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
 
     :cond_1
@@ -187,16 +187,16 @@
 
     const/4 v0, 0x0
 
-    .line 1884
+    .line 1885
     invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setFocusable(Z)V
 
-    .line 1886
+    .line 1887
     :try_start_0
     invoke-super {p0}, Landroid/widget/PopupWindow;->dismiss()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1890
+    .line 1891
     :catch_0
     invoke-direct {p0}, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->unregisterListener()V
 
@@ -206,11 +206,11 @@
 .method public showAsDropDown(Landroid/view/View;II)V
     .locals 0
 
-    .line 1857
+    .line 1858
     :try_start_0
     invoke-super {p0, p1, p2, p3}, Landroid/widget/PopupWindow;->showAsDropDown(Landroid/view/View;II)V
 
-    .line 1858
+    .line 1859
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->registerListener(Landroid/view/View;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -220,7 +220,7 @@
     :catch_0
     move-exception p1
 
-    .line 1860
+    .line 1861
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -230,10 +230,10 @@
 .method public showAtLocation(Landroid/view/View;III)V
     .locals 0
 
-    .line 1878
+    .line 1879
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 1879
+    .line 1880
     invoke-direct {p0}, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->unregisterListener()V
 
     return-void
@@ -242,10 +242,10 @@
 .method public update(Landroid/view/View;II)V
     .locals 0
 
-    .line 1872
+    .line 1873
     invoke-super {p0, p1, p2, p3}, Landroid/widget/PopupWindow;->update(Landroid/view/View;II)V
 
-    .line 1873
+    .line 1874
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->registerListener(Landroid/view/View;)V
 
     return-void
@@ -254,10 +254,10 @@
 .method public update(Landroid/view/View;IIII)V
     .locals 0
 
-    .line 1866
+    .line 1867
     invoke-super/range {p0 .. p5}, Landroid/widget/PopupWindow;->update(Landroid/view/View;IIII)V
 
-    .line 1867
+    .line 1868
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/EmojiView$EmojiPopupWindow;->registerListener(Landroid/view/View;)V
 
     return-void

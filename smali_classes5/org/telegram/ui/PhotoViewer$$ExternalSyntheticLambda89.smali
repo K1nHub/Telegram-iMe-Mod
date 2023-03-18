@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$OnDispatchKeyEventListener;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
@@ -22,12 +22,14 @@
 
 
 # virtual methods
-.method public final onDispatchKeyEvent(Landroid/view/KeyEvent;)V
+.method public final run(Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda89;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$I6Wq1bph0udQHfwCnSJQbeBMUxQ(Lorg/telegram/ui/PhotoViewer;Landroid/view/KeyEvent;)V
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$g82rTgOoD3XVPwzZ23JQqB7egAw(Lorg/telegram/ui/PhotoViewer;Ljava/lang/Boolean;)V
 
     return-void
 .end method

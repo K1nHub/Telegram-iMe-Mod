@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemDelegate;
+.implements Lorg/telegram/messenger/Utilities$Callback2;
 
 
 # instance fields
@@ -22,12 +22,16 @@
 
 
 # virtual methods
-.method public final onItemClick(I)V
+.method public final run(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda10;->f$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->$r8$lambda$HhbZNH3cmRNoKYJii-HoHzKagi0(Lorg/telegram/ui/Components/AudioPlayerAlert;I)V
+    check-cast p1, Ljava/lang/Float;
+
+    check-cast p2, Ljava/lang/Boolean;
+
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->$r8$lambda$LDOd2Ss-GvnpVj8KqfY2p5yaeaI(Lorg/telegram/ui/Components/AudioPlayerAlert;Ljava/lang/Float;Ljava/lang/Boolean;)V
 
     return-void
 .end method

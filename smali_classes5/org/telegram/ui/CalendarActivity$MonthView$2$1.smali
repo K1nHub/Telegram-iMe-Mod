@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/CalendarActivity$MonthView$2;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    .line 756
+    .line 755
     iput-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2$1;->this$2:Lorg/telegram/ui/CalendarActivity$MonthView$2;
 
     iput-object p2, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2$1;->val$fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -42,7 +42,7 @@
 .method public run(Z)V
     .locals 4
 
-    .line 759
+    .line 758
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2$1;->this$2:Lorg/telegram/ui/CalendarActivity$MonthView$2;
 
     iget-object v0, v0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
@@ -51,7 +51,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
-    .line 760
+    .line 759
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2$1;->val$fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     check-cast v0, Lorg/telegram/ui/ChatActivity;

@@ -23,8 +23,14 @@ public final class WalletSwapProcessPresenter$startChooseNetworkDialog$1 extends
 
         static {
             int[] iArr = new int[SwapSide.values().length];
-            iArr[SwapSide.INPUT.ordinal()] = 1;
-            iArr[SwapSide.OUTPUT.ordinal()] = 2;
+            try {
+                iArr[SwapSide.INPUT.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[SwapSide.OUTPUT.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }

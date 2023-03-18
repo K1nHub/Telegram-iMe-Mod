@@ -30,6 +30,7 @@ import com.smedialink.storage.data.network.api.own.PushNotificationApi;
 import com.smedialink.storage.data.network.api.own.ReactionApi;
 import com.smedialink.storage.data.network.api.own.SimplexApi;
 import com.smedialink.storage.data.network.api.own.SwapApi;
+import com.smedialink.storage.data.network.api.own.TwitterApi;
 import com.smedialink.storage.data.network.api.own.WalletApi;
 import com.smedialink.storage.data.network.api.own.WalletConnectApi;
 import com.smedialink.storage.data.network.handlers.impl.ApiErrorHandler;
@@ -58,6 +59,7 @@ import com.smedialink.storage.data.repository.notification.PushNotificationRepos
 import com.smedialink.storage.data.repository.recognition.GoogleServicesRepositoryImpl;
 import com.smedialink.storage.data.repository.socialEmotion.ReactionRepositoryImpl;
 import com.smedialink.storage.data.repository.translate.TranslationRepositoryImpl;
+import com.smedialink.storage.data.repository.twitter.TwitterRepositoryImpl;
 import com.smedialink.storage.data.repository.wallet.WalletRepositoryImpl;
 import com.smedialink.storage.data.repository.wallet.WalletSessionRepositoryImpl;
 import com.smedialink.storage.domain.gateway.TelegramGateway;
@@ -87,10 +89,12 @@ import com.smedialink.storage.domain.repository.kikliko.KiklikoRepository;
 import com.smedialink.storage.domain.repository.notification.PushNotificationRepository;
 import com.smedialink.storage.domain.repository.socialEmotion.ReactionRepository;
 import com.smedialink.storage.domain.repository.translate.TranslationRepository;
+import com.smedialink.storage.domain.repository.twitter.TwitterRepository;
 import com.smedialink.storage.domain.repository.wallet.WalletRepository;
 import com.smedialink.storage.domain.repository.wallet.WalletSessionRepository;
 import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
 import com.smedialink.storage.domain.storage.PreferenceHelper;
+import com.smedialink.storage.domain.storage.TwitterPreferenceHelper;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import java.io.File;
 import java.util.List;
@@ -155,244 +159,254 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
         List emptyList23;
         List emptyList24;
         List emptyList25;
+        List emptyList26;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C15711 c15711 = C15711.INSTANCE;
+        C15821 c15821 = C15821.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Singleton;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TranslationRepository.class), null, c15711, kind, emptyList));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TranslationRepository.class), null, c15821, kind, emptyList));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         new Pair(module, singleInstanceFactory);
-        C15822 c15822 = C15822.INSTANCE;
+        C15932 c15932 = C15932.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(WalletSessionRepository.class), null, c15822, kind, emptyList2));
+        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(WalletSessionRepository.class), null, c15932, kind, emptyList2));
         module.indexPrimaryType(singleInstanceFactory2);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory2);
         }
         new Pair(module, singleInstanceFactory2);
-        C15893 c15893 = C15893.INSTANCE;
+        C16013 c16013 = C16013.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(WalletRepository.class), null, c15893, kind, emptyList3));
+        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(WalletRepository.class), null, c16013, kind, emptyList3));
         module.indexPrimaryType(singleInstanceFactory3);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory3);
         }
         new Pair(module, singleInstanceFactory3);
-        C15904 c15904 = C15904.INSTANCE;
+        C16024 c16024 = C16024.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(PushNotificationRepository.class), null, c15904, kind, emptyList4));
+        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(PushNotificationRepository.class), null, c16024, kind, emptyList4));
         module.indexPrimaryType(singleInstanceFactory4);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory4);
         }
         new Pair(module, singleInstanceFactory4);
-        C15915 c15915 = C15915.INSTANCE;
+        C16035 c16035 = C16035.INSTANCE;
         StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
         emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(CatalogRepository.class), null, c15915, kind, emptyList5));
+        SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(CatalogRepository.class), null, c16035, kind, emptyList5));
         module.indexPrimaryType(singleInstanceFactory5);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory5);
         }
         new Pair(module, singleInstanceFactory5);
-        C15926 c15926 = C15926.INSTANCE;
+        C16046 c16046 = C16046.INSTANCE;
         StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
         emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(GoogleServicesRepository.class), null, c15926, kind, emptyList6));
+        SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(GoogleServicesRepository.class), null, c16046, kind, emptyList6));
         module.indexPrimaryType(singleInstanceFactory6);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory6);
         }
         new Pair(module, singleInstanceFactory6);
-        C15937 c15937 = C15937.INSTANCE;
+        C16057 c16057 = C16057.INSTANCE;
         StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
         emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(RemoteConfigRepository.class), null, c15937, kind, emptyList7));
+        SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(RemoteConfigRepository.class), null, c16057, kind, emptyList7));
         module.indexPrimaryType(singleInstanceFactory7);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory7);
         }
         new Pair(module, singleInstanceFactory7);
-        C15948 c15948 = C15948.INSTANCE;
+        C16068 c16068 = C16068.INSTANCE;
         StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
         emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(DynamicLinksRepository.class), null, c15948, kind, emptyList8));
+        SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(DynamicLinksRepository.class), null, c16068, kind, emptyList8));
         module.indexPrimaryType(singleInstanceFactory8);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory8);
         }
         new Pair(module, singleInstanceFactory8);
-        C15959 c15959 = C15959.INSTANCE;
+        C16079 c16079 = C16079.INSTANCE;
         StringQualifier rootScopeQualifier9 = companion.getRootScopeQualifier();
         emptyList9 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(ReactionRepository.class), null, c15959, kind, emptyList9));
+        SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(ReactionRepository.class), null, c16079, kind, emptyList9));
         module.indexPrimaryType(singleInstanceFactory9);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory9);
         }
         new Pair(module, singleInstanceFactory9);
-        C157210 c157210 = C157210.INSTANCE;
+        C158310 c158310 = C158310.INSTANCE;
         StringQualifier rootScopeQualifier10 = companion.getRootScopeQualifier();
         emptyList10 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(KiklikoRepository.class), null, c157210, kind, emptyList10));
+        SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(KiklikoRepository.class), null, c158310, kind, emptyList10));
         module.indexPrimaryType(singleInstanceFactory10);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory10);
         }
         new Pair(module, singleInstanceFactory10);
-        C157311 c157311 = C157311.INSTANCE;
+        C158411 c158411 = C158411.INSTANCE;
         StringQualifier rootScopeQualifier11 = companion.getRootScopeQualifier();
         emptyList11 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(CryptoWalletRepository.class), null, c157311, kind, emptyList11));
+        SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(TwitterRepository.class), null, c158411, kind, emptyList11));
         module.indexPrimaryType(singleInstanceFactory11);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory11);
         }
         new Pair(module, singleInstanceFactory11);
-        C157412 c157412 = C157412.INSTANCE;
+        C158512 c158512 = C158512.INSTANCE;
         StringQualifier rootScopeQualifier12 = companion.getRootScopeQualifier();
         emptyList12 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(BinanceInternalRepository.class), null, c157412, kind, emptyList12));
+        SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(CryptoWalletRepository.class), null, c158512, kind, emptyList12));
         module.indexPrimaryType(singleInstanceFactory12);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory12);
         }
         new Pair(module, singleInstanceFactory12);
-        C157513 c157513 = C157513.INSTANCE;
+        C158613 c158613 = C158613.INSTANCE;
         StringQualifier rootScopeQualifier13 = companion.getRootScopeQualifier();
         emptyList13 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(CryptoPermissionRepository.class), null, c157513, kind, emptyList13));
+        SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(BinanceInternalRepository.class), null, c158613, kind, emptyList13));
         module.indexPrimaryType(singleInstanceFactory13);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory13);
         }
         new Pair(module, singleInstanceFactory13);
-        C157614 c157614 = C157614.INSTANCE;
+        C158714 c158714 = C158714.INSTANCE;
         StringQualifier rootScopeQualifier14 = companion.getRootScopeQualifier();
         emptyList14 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(AccountLevelRepository.class), null, c157614, kind, emptyList14));
+        SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(CryptoPermissionRepository.class), null, c158714, kind, emptyList14));
         module.indexPrimaryType(singleInstanceFactory14);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory14);
         }
         new Pair(module, singleInstanceFactory14);
-        C157715 c157715 = C157715.INSTANCE;
+        C158815 c158815 = C158815.INSTANCE;
         StringQualifier rootScopeQualifier15 = companion.getRootScopeQualifier();
         emptyList15 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory15 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(CryptoLocalWalletRepository.class), null, c157715, kind, emptyList15));
+        SingleInstanceFactory<?> singleInstanceFactory15 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(AccountLevelRepository.class), null, c158815, kind, emptyList15));
         module.indexPrimaryType(singleInstanceFactory15);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory15);
         }
         new Pair(module, singleInstanceFactory15);
-        C157816 c157816 = C157816.INSTANCE;
+        C158916 c158916 = C158916.INSTANCE;
         StringQualifier rootScopeQualifier16 = companion.getRootScopeQualifier();
         emptyList16 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory16 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(PinCodeRepository.class), null, c157816, kind, emptyList16));
+        SingleInstanceFactory<?> singleInstanceFactory16 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(CryptoLocalWalletRepository.class), null, c158916, kind, emptyList16));
         module.indexPrimaryType(singleInstanceFactory16);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory16);
         }
         new Pair(module, singleInstanceFactory16);
-        C157917 c157917 = C157917.INSTANCE;
+        C159017 c159017 = C159017.INSTANCE;
         StringQualifier rootScopeQualifier17 = companion.getRootScopeQualifier();
         emptyList17 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory17 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(SimplexRepository.class), null, c157917, kind, emptyList17));
+        SingleInstanceFactory<?> singleInstanceFactory17 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(PinCodeRepository.class), null, c159017, kind, emptyList17));
         module.indexPrimaryType(singleInstanceFactory17);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory17);
         }
         new Pair(module, singleInstanceFactory17);
-        C158018 c158018 = C158018.INSTANCE;
+        C159118 c159118 = C159118.INSTANCE;
         StringQualifier rootScopeQualifier18 = companion.getRootScopeQualifier();
         emptyList18 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory18 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(SwapRepository.class), null, c158018, kind, emptyList18));
+        SingleInstanceFactory<?> singleInstanceFactory18 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(SimplexRepository.class), null, c159118, kind, emptyList18));
         module.indexPrimaryType(singleInstanceFactory18);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory18);
         }
         new Pair(module, singleInstanceFactory18);
-        C158119 c158119 = C158119.INSTANCE;
+        C159219 c159219 = C159219.INSTANCE;
         StringQualifier rootScopeQualifier19 = companion.getRootScopeQualifier();
         emptyList19 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory19 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(CancelRepository.class), null, c158119, kind, emptyList19));
+        SingleInstanceFactory<?> singleInstanceFactory19 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(SwapRepository.class), null, c159219, kind, emptyList19));
         module.indexPrimaryType(singleInstanceFactory19);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory19);
         }
         new Pair(module, singleInstanceFactory19);
-        C158320 c158320 = C158320.INSTANCE;
+        C159420 c159420 = C159420.INSTANCE;
         StringQualifier rootScopeQualifier20 = companion.getRootScopeQualifier();
         emptyList20 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory20 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(DonationsRepository.class), null, c158320, kind, emptyList20));
+        SingleInstanceFactory<?> singleInstanceFactory20 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(CancelRepository.class), null, c159420, kind, emptyList20));
         module.indexPrimaryType(singleInstanceFactory20);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory20);
         }
         new Pair(module, singleInstanceFactory20);
-        C158421 c158421 = C158421.INSTANCE;
+        C159521 c159521 = C159521.INSTANCE;
         StringQualifier rootScopeQualifier21 = companion.getRootScopeQualifier();
         emptyList21 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory21 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(BoostRepository.class), null, c158421, kind, emptyList21));
+        SingleInstanceFactory<?> singleInstanceFactory21 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(DonationsRepository.class), null, c159521, kind, emptyList21));
         module.indexPrimaryType(singleInstanceFactory21);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory21);
         }
         new Pair(module, singleInstanceFactory21);
-        C158522 c158522 = C158522.INSTANCE;
+        C159622 c159622 = C159622.INSTANCE;
         StringQualifier rootScopeQualifier22 = companion.getRootScopeQualifier();
         emptyList22 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory22 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(AirdropRepository.class), null, c158522, kind, emptyList22));
+        SingleInstanceFactory<?> singleInstanceFactory22 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(BoostRepository.class), null, c159622, kind, emptyList22));
         module.indexPrimaryType(singleInstanceFactory22);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory22);
         }
         new Pair(module, singleInstanceFactory22);
-        C158623 c158623 = C158623.INSTANCE;
+        C159723 c159723 = C159723.INSTANCE;
         StringQualifier rootScopeQualifier23 = companion.getRootScopeQualifier();
         emptyList23 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory23 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(NftAvatarRepository.class), null, c158623, kind, emptyList23));
+        SingleInstanceFactory<?> singleInstanceFactory23 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(AirdropRepository.class), null, c159723, kind, emptyList23));
         module.indexPrimaryType(singleInstanceFactory23);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory23);
         }
         new Pair(module, singleInstanceFactory23);
-        C158724 c158724 = C158724.INSTANCE;
+        C159824 c159824 = C159824.INSTANCE;
         StringQualifier rootScopeQualifier24 = companion.getRootScopeQualifier();
         emptyList24 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory24 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(WalletConnectRepository.class), null, c158724, kind, emptyList24));
+        SingleInstanceFactory<?> singleInstanceFactory24 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(NftAvatarRepository.class), null, c159824, kind, emptyList24));
         module.indexPrimaryType(singleInstanceFactory24);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory24);
         }
         new Pair(module, singleInstanceFactory24);
-        C158825 c158825 = C158825.INSTANCE;
+        C159925 c159925 = C159925.INSTANCE;
         StringQualifier rootScopeQualifier25 = companion.getRootScopeQualifier();
         emptyList25 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory25 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier25, Reflection.getOrCreateKotlinClass(TonConfigRepository.class), null, c158825, kind, emptyList25));
+        SingleInstanceFactory<?> singleInstanceFactory25 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier25, Reflection.getOrCreateKotlinClass(WalletConnectRepository.class), null, c159925, kind, emptyList25));
         module.indexPrimaryType(singleInstanceFactory25);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory25);
         }
         new Pair(module, singleInstanceFactory25);
+        C160026 c160026 = C160026.INSTANCE;
+        StringQualifier rootScopeQualifier26 = companion.getRootScopeQualifier();
+        emptyList26 = CollectionsKt__CollectionsKt.emptyList();
+        SingleInstanceFactory<?> singleInstanceFactory26 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier26, Reflection.getOrCreateKotlinClass(TonConfigRepository.class), null, c160026, kind, emptyList26));
+        module.indexPrimaryType(singleInstanceFactory26);
+        if (module.get_createdAtStart()) {
+            module.prepareForCreationAtStart(singleInstanceFactory26);
+        }
+        new Pair(module, singleInstanceFactory26);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$5 */
     /* loaded from: classes3.dex */
-    public static final class C15915 extends Lambda implements Function2<Scope, ParametersHolder, CatalogRepository> {
-        public static final C15915 INSTANCE = new C15915();
+    public static final class C16035 extends Lambda implements Function2<Scope, ParametersHolder, CatalogRepository> {
+        public static final C16035 INSTANCE = new C16035();
 
-        C15915() {
+        C16035() {
             super(2);
         }
 
@@ -408,10 +422,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$6 */
     /* loaded from: classes3.dex */
-    public static final class C15926 extends Lambda implements Function2<Scope, ParametersHolder, GoogleServicesRepository> {
-        public static final C15926 INSTANCE = new C15926();
+    public static final class C16046 extends Lambda implements Function2<Scope, ParametersHolder, GoogleServicesRepository> {
+        public static final C16046 INSTANCE = new C16046();
 
-        C15926() {
+        C16046() {
             super(2);
         }
 
@@ -429,10 +443,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$7 */
     /* loaded from: classes3.dex */
-    public static final class C15937 extends Lambda implements Function2<Scope, ParametersHolder, RemoteConfigRepository> {
-        public static final C15937 INSTANCE = new C15937();
+    public static final class C16057 extends Lambda implements Function2<Scope, ParametersHolder, RemoteConfigRepository> {
+        public static final C16057 INSTANCE = new C16057();
 
-        C15937() {
+        C16057() {
             super(2);
         }
 
@@ -448,10 +462,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$8 */
     /* loaded from: classes3.dex */
-    public static final class C15948 extends Lambda implements Function2<Scope, ParametersHolder, DynamicLinksRepository> {
-        public static final C15948 INSTANCE = new C15948();
+    public static final class C16068 extends Lambda implements Function2<Scope, ParametersHolder, DynamicLinksRepository> {
+        public static final C16068 INSTANCE = new C16068();
 
-        C15948() {
+        C16068() {
             super(2);
         }
 
@@ -467,10 +481,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$9 */
     /* loaded from: classes3.dex */
-    public static final class C15959 extends Lambda implements Function2<Scope, ParametersHolder, ReactionRepository> {
-        public static final C15959 INSTANCE = new C15959();
+    public static final class C16079 extends Lambda implements Function2<Scope, ParametersHolder, ReactionRepository> {
+        public static final C16079 INSTANCE = new C16079();
 
-        C15959() {
+        C16079() {
             super(2);
         }
 
@@ -486,10 +500,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$10 */
     /* loaded from: classes3.dex */
-    public static final class C157210 extends Lambda implements Function2<Scope, ParametersHolder, KiklikoRepository> {
-        public static final C157210 INSTANCE = new C157210();
+    public static final class C158310 extends Lambda implements Function2<Scope, ParametersHolder, KiklikoRepository> {
+        public static final C158310 INSTANCE = new C158310();
 
-        C157210() {
+        C158310() {
             super(2);
         }
 
@@ -503,12 +517,31 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
+    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$11 */
+    /* loaded from: classes3.dex */
+    public static final class C158411 extends Lambda implements Function2<Scope, ParametersHolder, TwitterRepository> {
+        public static final C158411 INSTANCE = new C158411();
+
+        C158411() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final TwitterRepository invoke(Scope single, ParametersHolder it) {
+            Intrinsics.checkNotNullParameter(single, "$this$single");
+            Intrinsics.checkNotNullParameter(it, "it");
+            return new TwitterRepositoryImpl((ApiErrorHandler) single.get(Reflection.getOrCreateKotlinClass(ApiErrorHandler.class), null, null), (FirebaseFunctionsErrorHandler) single.get(Reflection.getOrCreateKotlinClass(FirebaseFunctionsErrorHandler.class), null, null), (TwitterApi) single.get(Reflection.getOrCreateKotlinClass(TwitterApi.class), null, null), (TwitterPreferenceHelper) single.get(Reflection.getOrCreateKotlinClass(TwitterPreferenceHelper.class), null, null));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: RepositoryModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C15711 extends Lambda implements Function2<Scope, ParametersHolder, TranslationRepository> {
-        public static final C15711 INSTANCE = new C15711();
+    public static final class C15821 extends Lambda implements Function2<Scope, ParametersHolder, TranslationRepository> {
+        public static final C15821 INSTANCE = new C15821();
 
-        C15711() {
+        C15821() {
             super(2);
         }
 
@@ -522,12 +555,12 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$11 */
+    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$12 */
     /* loaded from: classes3.dex */
-    public static final class C157311 extends Lambda implements Function2<Scope, ParametersHolder, CryptoWalletRepository> {
-        public static final C157311 INSTANCE = new C157311();
+    public static final class C158512 extends Lambda implements Function2<Scope, ParametersHolder, CryptoWalletRepository> {
+        public static final C158512 INSTANCE = new C158512();
 
-        C157311() {
+        C158512() {
             super(2);
         }
 
@@ -542,12 +575,12 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$12 */
+    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$13 */
     /* loaded from: classes3.dex */
-    public static final class C157412 extends Lambda implements Function2<Scope, ParametersHolder, BinanceInternalRepository> {
-        public static final C157412 INSTANCE = new C157412();
+    public static final class C158613 extends Lambda implements Function2<Scope, ParametersHolder, BinanceInternalRepository> {
+        public static final C158613 INSTANCE = new C158613();
 
-        C157412() {
+        C158613() {
             super(2);
         }
 
@@ -562,12 +595,12 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$13 */
+    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$14 */
     /* loaded from: classes3.dex */
-    public static final class C157513 extends Lambda implements Function2<Scope, ParametersHolder, CryptoPermissionRepository> {
-        public static final C157513 INSTANCE = new C157513();
+    public static final class C158714 extends Lambda implements Function2<Scope, ParametersHolder, CryptoPermissionRepository> {
+        public static final C158714 INSTANCE = new C158714();
 
-        C157513() {
+        C158714() {
             super(2);
         }
 
@@ -584,12 +617,12 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$14 */
+    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$15 */
     /* loaded from: classes3.dex */
-    public static final class C157614 extends Lambda implements Function2<Scope, ParametersHolder, AccountLevelRepository> {
-        public static final C157614 INSTANCE = new C157614();
+    public static final class C158815 extends Lambda implements Function2<Scope, ParametersHolder, AccountLevelRepository> {
+        public static final C158815 INSTANCE = new C158815();
 
-        C157614() {
+        C158815() {
             super(2);
         }
 
@@ -606,12 +639,12 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$15 */
+    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$16 */
     /* loaded from: classes3.dex */
-    public static final class C157715 extends Lambda implements Function2<Scope, ParametersHolder, CryptoLocalWalletRepository> {
-        public static final C157715 INSTANCE = new C157715();
+    public static final class C158916 extends Lambda implements Function2<Scope, ParametersHolder, CryptoLocalWalletRepository> {
+        public static final C158916 INSTANCE = new C158916();
 
-        C157715() {
+        C158916() {
             super(2);
         }
 
@@ -625,12 +658,12 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$16 */
+    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$17 */
     /* loaded from: classes3.dex */
-    public static final class C157816 extends Lambda implements Function2<Scope, ParametersHolder, PinCodeRepository> {
-        public static final C157816 INSTANCE = new C157816();
+    public static final class C159017 extends Lambda implements Function2<Scope, ParametersHolder, PinCodeRepository> {
+        public static final C159017 INSTANCE = new C159017();
 
-        C157816() {
+        C159017() {
             super(2);
         }
 
@@ -648,12 +681,12 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$17 */
+    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$18 */
     /* loaded from: classes3.dex */
-    public static final class C157917 extends Lambda implements Function2<Scope, ParametersHolder, SimplexRepository> {
-        public static final C157917 INSTANCE = new C157917();
+    public static final class C159118 extends Lambda implements Function2<Scope, ParametersHolder, SimplexRepository> {
+        public static final C159118 INSTANCE = new C159118();
 
-        C157917() {
+        C159118() {
             super(2);
         }
 
@@ -668,12 +701,12 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$18 */
+    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$19 */
     /* loaded from: classes3.dex */
-    public static final class C158018 extends Lambda implements Function2<Scope, ParametersHolder, SwapRepository> {
-        public static final C158018 INSTANCE = new C158018();
+    public static final class C159219 extends Lambda implements Function2<Scope, ParametersHolder, SwapRepository> {
+        public static final C159219 INSTANCE = new C159219();
 
-        C158018() {
+        C159219() {
             super(2);
         }
 
@@ -689,32 +722,12 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$19 */
-    /* loaded from: classes3.dex */
-    public static final class C158119 extends Lambda implements Function2<Scope, ParametersHolder, CancelRepository> {
-        public static final C158119 INSTANCE = new C158119();
-
-        C158119() {
-            super(2);
-        }
-
-        @Override // kotlin.jvm.functions.Function2
-        public final CancelRepository invoke(Scope single, ParametersHolder it) {
-            Intrinsics.checkNotNullParameter(single, "$this$single");
-            Intrinsics.checkNotNullParameter(it, "it");
-            FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = (FirebaseFunctionsErrorHandler) single.get(Reflection.getOrCreateKotlinClass(FirebaseFunctionsErrorHandler.class), null, null);
-            return new CancelRepositoryImpl((CancelApi) single.get(Reflection.getOrCreateKotlinClass(CancelApi.class), null, null), (WalletCancelDataSourceFactory) single.get(Reflection.getOrCreateKotlinClass(WalletCancelDataSourceFactory.class), null, null), firebaseFunctionsErrorHandler, (ApiErrorHandler) single.get(Reflection.getOrCreateKotlinClass(ApiErrorHandler.class), null, null));
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: RepositoryModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C15822 extends Lambda implements Function2<Scope, ParametersHolder, WalletSessionRepository> {
-        public static final C15822 INSTANCE = new C15822();
+    public static final class C15932 extends Lambda implements Function2<Scope, ParametersHolder, WalletSessionRepository> {
+        public static final C15932 INSTANCE = new C15932();
 
-        C15822() {
+        C15932() {
             super(2);
         }
 
@@ -730,10 +743,30 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$20 */
     /* loaded from: classes3.dex */
-    public static final class C158320 extends Lambda implements Function2<Scope, ParametersHolder, DonationsRepository> {
-        public static final C158320 INSTANCE = new C158320();
+    public static final class C159420 extends Lambda implements Function2<Scope, ParametersHolder, CancelRepository> {
+        public static final C159420 INSTANCE = new C159420();
 
-        C158320() {
+        C159420() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final CancelRepository invoke(Scope single, ParametersHolder it) {
+            Intrinsics.checkNotNullParameter(single, "$this$single");
+            Intrinsics.checkNotNullParameter(it, "it");
+            FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = (FirebaseFunctionsErrorHandler) single.get(Reflection.getOrCreateKotlinClass(FirebaseFunctionsErrorHandler.class), null, null);
+            return new CancelRepositoryImpl((CancelApi) single.get(Reflection.getOrCreateKotlinClass(CancelApi.class), null, null), (WalletCancelDataSourceFactory) single.get(Reflection.getOrCreateKotlinClass(WalletCancelDataSourceFactory.class), null, null), firebaseFunctionsErrorHandler, (ApiErrorHandler) single.get(Reflection.getOrCreateKotlinClass(ApiErrorHandler.class), null, null));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: RepositoryModule.kt */
+    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$21 */
+    /* loaded from: classes3.dex */
+    public static final class C159521 extends Lambda implements Function2<Scope, ParametersHolder, DonationsRepository> {
+        public static final C159521 INSTANCE = new C159521();
+
+        C159521() {
             super(2);
         }
 
@@ -748,12 +781,12 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$21 */
+    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$22 */
     /* loaded from: classes3.dex */
-    public static final class C158421 extends Lambda implements Function2<Scope, ParametersHolder, BoostRepository> {
-        public static final C158421 INSTANCE = new C158421();
+    public static final class C159622 extends Lambda implements Function2<Scope, ParametersHolder, BoostRepository> {
+        public static final C159622 INSTANCE = new C159622();
 
-        C158421() {
+        C159622() {
             super(2);
         }
 
@@ -769,12 +802,12 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$22 */
+    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$23 */
     /* loaded from: classes3.dex */
-    public static final class C158522 extends Lambda implements Function2<Scope, ParametersHolder, AirdropRepository> {
-        public static final C158522 INSTANCE = new C158522();
+    public static final class C159723 extends Lambda implements Function2<Scope, ParametersHolder, AirdropRepository> {
+        public static final C159723 INSTANCE = new C159723();
 
-        C158522() {
+        C159723() {
             super(2);
         }
 
@@ -789,12 +822,12 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$23 */
+    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$24 */
     /* loaded from: classes3.dex */
-    public static final class C158623 extends Lambda implements Function2<Scope, ParametersHolder, NftAvatarRepository> {
-        public static final C158623 INSTANCE = new C158623();
+    public static final class C159824 extends Lambda implements Function2<Scope, ParametersHolder, NftAvatarRepository> {
+        public static final C159824 INSTANCE = new C159824();
 
-        C158623() {
+        C159824() {
             super(2);
         }
 
@@ -811,10 +844,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C15893 extends Lambda implements Function2<Scope, ParametersHolder, WalletRepository> {
-        public static final C15893 INSTANCE = new C15893();
+    public static final class C16013 extends Lambda implements Function2<Scope, ParametersHolder, WalletRepository> {
+        public static final C16013 INSTANCE = new C16013();
 
-        C15893() {
+        C16013() {
             super(2);
         }
 
@@ -834,10 +867,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C15904 extends Lambda implements Function2<Scope, ParametersHolder, PushNotificationRepository> {
-        public static final C15904 INSTANCE = new C15904();
+    public static final class C16024 extends Lambda implements Function2<Scope, ParametersHolder, PushNotificationRepository> {
+        public static final C16024 INSTANCE = new C16024();
 
-        C15904() {
+        C16024() {
             super(2);
         }
 
@@ -851,12 +884,12 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$24 */
+    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$25 */
     /* loaded from: classes3.dex */
-    public static final class C158724 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectRepository> {
-        public static final C158724 INSTANCE = new C158724();
+    public static final class C159925 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectRepository> {
+        public static final C159925 INSTANCE = new C159925();
 
-        C158724() {
+        C159925() {
             super(2);
         }
 
@@ -870,12 +903,12 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$25 */
+    /* renamed from: com.smedialink.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$26 */
     /* loaded from: classes3.dex */
-    public static final class C158825 extends Lambda implements Function2<Scope, ParametersHolder, TonConfigRepository> {
-        public static final C158825 INSTANCE = new C158825();
+    public static final class C160026 extends Lambda implements Function2<Scope, ParametersHolder, TonConfigRepository> {
+        public static final C160026 INSTANCE = new C160026();
 
-        C158825() {
+        C160026() {
             super(2);
         }
 

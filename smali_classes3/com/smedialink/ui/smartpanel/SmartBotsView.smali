@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSmartBotsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SmartBotsView.kt\ncom/smedialink/ui/smartpanel/SmartBotsView\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,311:1\n1849#2,2:312\n1858#2,3:314\n1858#2,3:317\n348#2,7:320\n1849#2,2:327\n1849#2,2:329\n*S KotlinDebug\n*F\n+ 1 SmartBotsView.kt\ncom/smedialink/ui/smartpanel/SmartBotsView\n*L\n94#1:312,2\n136#1:314,3\n149#1:317,3\n161#1:320,7\n242#1:327,2\n248#1:329,2\n*E\n"
+    value = "SMAP\nSmartBotsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SmartBotsView.kt\ncom/smedialink/ui/smartpanel/SmartBotsView\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,311:1\n1855#2,2:312\n1864#2,3:314\n1864#2,3:317\n350#2,7:320\n1855#2,2:327\n1855#2,2:329\n*S KotlinDebug\n*F\n+ 1 SmartBotsView.kt\ncom/smedialink/ui/smartpanel/SmartBotsView\n*L\n94#1:312,2\n136#1:314,3\n149#1:317,3\n161#1:320,7\n242#1:327,2\n248#1:329,2\n*E\n"
 .end annotation
 
 
@@ -54,54 +54,54 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$21Emjq3ciRDidqxNGP1VubP90HM(Lcom/smedialink/ui/smartpanel/SmartBotsView;)V
+.method public static synthetic $r8$lambda$5mRk0fGX7uuH3vkKjA2sImS8lxg(Lcom/smedialink/ui/smartpanel/SmartBotsView;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->firePageSelectedEvent$lambda-15(Lcom/smedialink/ui/smartpanel/SmartBotsView;)V
+    invoke-static {p0}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->firePageSelectedEvent$lambda$15(Lcom/smedialink/ui/smartpanel/SmartBotsView;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$WaPdhqiG3K_8mrCwb7IHXpBpNaQ(Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$Q3F5P-P0HRuW1SxXV5eU9X_dSGE(Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->setupLayoutBottom$lambda-14$lambda-13(Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->setupLayoutBottom$lambda$14$lambda$13(Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$dSVA9w0hzZZJ9ZF5TU21IbChxSk(Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$X20ec9WI-d9SNaaM7a7PP7P6XvA(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->setupLayoutBottom$lambda-14$lambda-12(Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->setupLayoutBottom$lambda$14$lambda$11(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$dZrKfhvIO28bchIxYoSzqCq_G9k(Landroid/view/View;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)Z
+.method public static synthetic $r8$lambda$cGUp0q14NCyhHvwW5G_gd-IWspg(Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->updateTabListeners$lambda-7(Landroid/view/View;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)Z
+    invoke-static {p0, p1}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->setupLayoutBottom$lambda$14$lambda$12(Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$oSNFIQvUoA5gWTE7Og2kzdZHGkc(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->setupLayoutBottom$lambda$14$lambda$9(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$rOeVtmu-ZHb5yWUrylx181arFVY(Landroid/view/View;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)Z
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->updateTabListeners$lambda$7(Landroid/view/View;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)Z
 
     move-result p0
 
     return p0
-.end method
-
-.method public static synthetic $r8$lambda$e_dSyvY-L1pbso1JZ5w8m5-Hh-o(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->setupLayoutBottom$lambda-14$lambda-9(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$s5BVCv77xmx1hTS1i05tPXvzyIE(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->setupLayoutBottom$lambda-14$lambda-11(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
-
-    return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;IJ)V
@@ -273,7 +273,7 @@
     return-void
 .end method
 
-.method private static final firePageSelectedEvent$lambda-15(Lcom/smedialink/ui/smartpanel/SmartBotsView;)V
+.method private static final firePageSelectedEvent$lambda$15(Lcom/smedialink/ui/smartpanel/SmartBotsView;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -472,18 +472,18 @@
     .line 238
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageTextResponses:Landroidx/appcompat/widget/AppCompatImageView;
 
-    new-instance v3, Lcom/smedialink/ui/smartpanel/SmartBotsView$$ExternalSyntheticLambda2;
+    new-instance v3, Lcom/smedialink/ui/smartpanel/SmartBotsView$$ExternalSyntheticLambda3;
 
-    invoke-direct {v3, v0, p0}, Lcom/smedialink/ui/smartpanel/SmartBotsView$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;)V
+    invoke-direct {v3, v0, p0}, Lcom/smedialink/ui/smartpanel/SmartBotsView$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;)V
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 244
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageGifResponses:Landroidx/appcompat/widget/AppCompatImageView;
 
-    new-instance v3, Lcom/smedialink/ui/smartpanel/SmartBotsView$$ExternalSyntheticLambda3;
+    new-instance v3, Lcom/smedialink/ui/smartpanel/SmartBotsView$$ExternalSyntheticLambda2;
 
-    invoke-direct {v3, v0, p0}, Lcom/smedialink/ui/smartpanel/SmartBotsView$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;)V
+    invoke-direct {v3, v0, p0}, Lcom/smedialink/ui/smartpanel/SmartBotsView$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;)V
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -579,7 +579,7 @@
     return-void
 .end method
 
-.method private static final setupLayoutBottom$lambda-14$lambda-11(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
+.method private static final setupLayoutBottom$lambda$14$lambda$11(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
     .locals 1
 
     const-string p2, "$this_with"
@@ -612,7 +612,7 @@
     .line 248
     iget-object p0, p1, Lcom/smedialink/ui/smartpanel/SmartBotsView;->contentViews:Ljava/util/List;
 
-    .line 1849
+    .line 1855
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -641,7 +641,7 @@
     return-void
 .end method
 
-.method private static final setupLayoutBottom$lambda-14$lambda-12(Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
+.method private static final setupLayoutBottom$lambda$14$lambda$12(Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -651,18 +651,15 @@
     .line 251
     iget-object p0, p0, Lcom/smedialink/ui/smartpanel/SmartBotsView;->listener:Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {p0}, Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;->onShopClick()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
-.method private static final setupLayoutBottom$lambda-14$lambda-13(Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
+.method private static final setupLayoutBottom$lambda$14$lambda$13(Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -672,18 +669,15 @@
     .line 254
     iget-object p0, p0, Lcom/smedialink/ui/smartpanel/SmartBotsView;->listener:Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {p0}, Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;->onBotsSettingsClick()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
-.method private static final setupLayoutBottom$lambda-14$lambda-9(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
+.method private static final setupLayoutBottom$lambda$14$lambda$9(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
     .locals 1
 
     const-string p2, "$this_with"
@@ -716,7 +710,7 @@
     .line 242
     iget-object p0, p1, Lcom/smedialink/ui/smartpanel/SmartBotsView;->contentViews:Ljava/util/List;
 
-    .line 1849
+    .line 1855
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -751,7 +745,7 @@
     .line 161
     iget-object v0, p0, Lcom/smedialink/ui/smartpanel/SmartBotsView;->content:Ljava/util/List;
 
-    .line 349
+    .line 351
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -771,7 +765,7 @@
 
     move-result-object v2
 
-    .line 350
+    .line 352
     check-cast v2, Lcom/smedialink/ui/smartpanel/model/SmartBotTab;
 
     .line 161
@@ -798,7 +792,7 @@
     const/4 v1, -0x1
 
     :goto_1
-    if-eq v1, v3, :cond_6
+    if-eq v1, v3, :cond_3
 
     .line 164
     new-instance v0, Landroid/graphics/drawable/GradientDrawable;
@@ -885,20 +879,14 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_3
+    if-eqz v1, :cond_3
 
-    goto :goto_3
-
-    :cond_3
     invoke-virtual {v1}, Lcom/google/android/material/tabs/TabLayout$Tab;->getCustomView()Landroid/view/View;
 
     move-result-object v1
 
-    if-nez v1, :cond_4
+    if-eqz v1, :cond_3
 
-    goto :goto_3
-
-    :cond_4
     sget v3, Lorg/telegram/messenger/R$id;->avatar:I
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -907,19 +895,15 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    if-nez v1, :cond_5
-
-    goto :goto_3
+    if-eqz v1, :cond_3
 
     .line 173
-    :cond_5
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 174
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    :cond_6
-    :goto_3
+    :cond_3
     return-void
 .end method
 
@@ -929,7 +913,7 @@
     .line 136
     iget-object v0, p0, Lcom/smedialink/ui/smartpanel/SmartBotsView;->content:Ljava/util/List;
 
-    .line 1859
+    .line 1865
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1085,7 +1069,7 @@
     .line 149
     iget-object v0, p0, Lcom/smedialink/ui/smartpanel/SmartBotsView;->content:Ljava/util/List;
 
-    .line 1859
+    .line 1865
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1099,7 +1083,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_4
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1175,42 +1159,39 @@
 
     move-result-object v2
 
-    const/4 v3, 0x0
+    if-eqz v2, :cond_2
 
-    if-nez v2, :cond_2
-
-    goto :goto_1
-
-    :cond_2
     invoke-virtual {v2}, Lcom/google/android/material/tabs/TabLayout$Tab;->getCustomView()Landroid/view/View;
 
     move-result-object v2
 
-    if-nez v2, :cond_3
+    if-eqz v2, :cond_2
 
-    goto :goto_1
-
-    :cond_3
     sget v3, Lorg/telegram/messenger/R$id;->avatar_bg:I
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v2
+
+    goto :goto_1
+
+    :cond_2
+    const/4 v2, 0x0
 
     :goto_1
-    if-nez v3, :cond_4
+    if-nez v2, :cond_3
 
     goto :goto_2
 
-    :cond_4
-    invoke-virtual {v3, v5}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    :cond_3
+    invoke-virtual {v2, v5}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     :goto_2
     move v2, v4
 
     goto :goto_0
 
-    :cond_5
+    :cond_4
     return-void
 .end method
 
@@ -1231,7 +1212,7 @@
     .line 181
     instance-of v2, v0, Landroid/view/ViewGroup;
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
     .line 182
     move-object v2, v0
@@ -1242,37 +1223,29 @@
 
     move-result v3
 
-    if-lez v3, :cond_1
-
     :goto_0
-    add-int/lit8 v4, v1, 0x1
+    if-ge v1, v3, :cond_0
 
     .line 184
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v4
 
     new-instance v5, Lcom/smedialink/ui/smartpanel/SmartBotsView$$ExternalSyntheticLambda4;
 
     invoke-direct {v5, v0, p0}, Lcom/smedialink/ui/smartpanel/SmartBotsView$$ExternalSyntheticLambda4;-><init>(Landroid/view/View;Lcom/smedialink/ui/smartpanel/SmartBotsView;)V
 
-    invoke-virtual {v1, v5}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+    invoke-virtual {v4, v5}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    if-lt v4, v3, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    move v1, v4
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_1
-    :goto_1
+    :cond_0
     return-void
 .end method
 
-.method private static final updateTabListeners$lambda-7(Landroid/view/View;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)Z
+.method private static final updateTabListeners$lambda$7(Landroid/view/View;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)Z
     .locals 4
 
     const-string v0, "this$0"
@@ -1313,9 +1286,7 @@
     if-nez p2, :cond_0
 
     .line 188
-    invoke-virtual {p1}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->getCurrentAccount()I
-
-    move-result p1
+    iget p1, p1, Lcom/smedialink/ui/smartpanel/SmartBotsView;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
@@ -1375,7 +1346,7 @@
     .line 202
     instance-of v3, v1, Landroid/view/ViewGroup;
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_2
 
     .line 203
     check-cast v1, Landroid/view/ViewGroup;
@@ -1384,34 +1355,32 @@
 
     move-result v3
 
-    if-lez v3, :cond_2
-
     const/4 v4, 0x0
 
     :goto_0
-    add-int/lit8 v5, v4, 0x1
+    if-ge v4, v3, :cond_1
 
     .line 205
     invoke-virtual {v1, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v4
+    move-result-object v5
 
     .line 206
-    invoke-virtual {v4, v2}, Landroid/view/View;->setMinimumWidth(I)V
+    invoke-virtual {v5, v2}, Landroid/view/View;->setMinimumWidth(I)V
 
     .line 207
-    invoke-virtual {v4}, Landroid/view/View;->getPaddingTop()I
+    invoke-virtual {v5}, Landroid/view/View;->getPaddingTop()I
 
     move-result v6
 
-    invoke-virtual {v4}, Landroid/view/View;->getPaddingBottom()I
+    invoke-virtual {v5}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v7
 
-    invoke-virtual {v4, v0, v6, v0, v7}, Landroid/view/View;->setPadding(IIII)V
+    invoke-virtual {v5, v0, v6, v0, v7}, Landroid/view/View;->setPadding(IIII)V
 
     .line 208
-    invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v6
 
@@ -1420,38 +1389,32 @@
     if-eqz v6, :cond_0
 
     .line 209
-    invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v4
+    move-result-object v5
 
     const-string v6, "null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams"
 
-    invoke-static {v4, v6}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    check-cast v4, Landroid/view/ViewGroup$MarginLayoutParams;
+    check-cast v5, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    invoke-direct {p0, v4}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->setTabMargin(Landroid/view/ViewGroup$MarginLayoutParams;)V
+    invoke-direct {p0, v5}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->setTabMargin(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
     :cond_0
-    if-lt v5, v3, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    move v4, v5
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
     .line 212
-    :cond_2
-    :goto_1
+    :cond_1
     iget-object v0, p0, Lcom/smedialink/ui/smartpanel/SmartBotsView;->binding:Lorg/telegram/messenger/databinding/ForkPanelViewBinding;
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->tabs:Lcom/google/android/material/tabs/TabLayout;
 
     invoke-virtual {v0}, Landroid/widget/HorizontalScrollView;->requestLayout()V
 
-    :cond_3
+    :cond_2
     return-void
 .end method
 
@@ -1492,17 +1455,14 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     const/4 v1, 0x1
 
     invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
     .line 123
-    :goto_0
+    :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -1646,7 +1606,7 @@
     .line 94
     iget-object p1, p0, Lcom/smedialink/ui/smartpanel/SmartBotsView;->contentViews:Ljava/util/List;
 
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -1739,13 +1699,10 @@
     .line 113
     iget-object v0, p0, Lcom/smedialink/ui/smartpanel/SmartBotsView;->listener:Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {v0, p1}, Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;->onTranslationYChanged(F)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method

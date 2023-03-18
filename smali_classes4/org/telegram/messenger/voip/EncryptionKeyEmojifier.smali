@@ -97,49 +97,49 @@
 
     const/16 v1, 0xd
 
-    const-string v3, "\ud83d\udc6e"
+    const-string/jumbo v3, "\ud83d\udc6e"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xe
 
-    const-string v3, "\ud83d\udc77"
+    const-string/jumbo v3, "\ud83d\udc77"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xf
 
-    const-string v3, "\ud83d\udc82"
+    const-string/jumbo v3, "\ud83d\udc82"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x10
 
-    const-string v3, "\ud83d\udc76"
+    const-string/jumbo v3, "\ud83d\udc76"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x11
 
-    const-string v3, "\ud83d\udc68"
+    const-string/jumbo v3, "\ud83d\udc68"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x12
 
-    const-string v3, "\ud83d\udc69"
+    const-string/jumbo v3, "\ud83d\udc69"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x13
 
-    const-string v3, "\ud83d\udc74"
+    const-string/jumbo v3, "\ud83d\udc74"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x14
 
-    const-string v3, "\ud83d\udc75"
+    const-string/jumbo v3, "\ud83d\udc75"
 
     aput-object v3, v0, v1
 
@@ -163,7 +163,7 @@
 
     const/16 v1, 0x18
 
-    const-string v3, "\ud83d\udc7a"
+    const-string/jumbo v3, "\ud83d\udc7a"
 
     aput-object v3, v0, v1
 
@@ -187,19 +187,19 @@
 
     const/16 v1, 0x1c
 
-    const-string v3, "\ud83d\udc80"
+    const-string/jumbo v3, "\ud83d\udc80"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x1d
 
-    const-string v3, "\ud83d\udc7d"
+    const-string/jumbo v3, "\ud83d\udc7d"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x1e
 
-    const-string v3, "\ud83d\udca9"
+    const-string/jumbo v3, "\ud83d\udca9"
 
     aput-object v3, v0, v1
 
@@ -211,109 +211,109 @@
 
     const/16 v1, 0x20
 
-    const-string v3, "\ud83d\udca5"
+    const-string/jumbo v3, "\ud83d\udca5"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x21
 
-    const-string v3, "\ud83d\udca4"
+    const-string/jumbo v3, "\ud83d\udca4"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x22
 
-    const-string v3, "\ud83d\udc42"
+    const-string/jumbo v3, "\ud83d\udc42"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x23
 
-    const-string v3, "\ud83d\udc40"
+    const-string/jumbo v3, "\ud83d\udc40"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x24
 
-    const-string v3, "\ud83d\udc43"
+    const-string/jumbo v3, "\ud83d\udc43"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x25
 
-    const-string v3, "\ud83d\udc45"
+    const-string/jumbo v3, "\ud83d\udc45"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x26
 
-    const-string v3, "\ud83d\udc44"
+    const-string/jumbo v3, "\ud83d\udc44"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x27
 
-    const-string v3, "\ud83d\udc4d"
+    const-string/jumbo v3, "\ud83d\udc4d"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x28
 
-    const-string v3, "\ud83d\udc4e"
+    const-string/jumbo v3, "\ud83d\udc4e"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x29
 
-    const-string v3, "\ud83d\udc4c"
+    const-string/jumbo v3, "\ud83d\udc4c"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x2a
 
-    const-string v3, "\ud83d\udc4a"
+    const-string/jumbo v3, "\ud83d\udc4a"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x2b
 
-    const-string v3, "\u270c"
+    const-string/jumbo v3, "\u270c"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x2c
 
-    const-string v3, "\u270b"
+    const-string/jumbo v3, "\u270b"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x2d
 
-    const-string v3, "\ud83d\udc50"
+    const-string/jumbo v3, "\ud83d\udc50"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x2e
 
-    const-string v3, "\ud83d\udc46"
+    const-string/jumbo v3, "\ud83d\udc46"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x2f
 
-    const-string v3, "\ud83d\udc47"
+    const-string/jumbo v3, "\ud83d\udc47"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x30
 
-    const-string v3, "\ud83d\udc49"
+    const-string/jumbo v3, "\ud83d\udc49"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x31
 
-    const-string v3, "\ud83d\udc48"
+    const-string/jumbo v3, "\ud83d\udc48"
 
     aput-object v3, v0, v1
 
@@ -325,13 +325,13 @@
 
     const/16 v1, 0x33
 
-    const-string v3, "\ud83d\udc4f"
+    const-string/jumbo v3, "\ud83d\udc4f"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x34
 
-    const-string v3, "\ud83d\udcaa"
+    const-string/jumbo v3, "\ud83d\udcaa"
 
     aput-object v3, v0, v1
 
@@ -343,547 +343,547 @@
 
     const/16 v1, 0x36
 
-    const-string v3, "\ud83c\udfc3"
+    const-string/jumbo v3, "\ud83c\udfc3"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x37
 
-    const-string v3, "\ud83d\udc83"
+    const-string/jumbo v3, "\ud83d\udc83"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x38
 
-    const-string v3, "\ud83d\udc6b"
+    const-string/jumbo v3, "\ud83d\udc6b"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x39
 
-    const-string v3, "\ud83d\udc6a"
+    const-string/jumbo v3, "\ud83d\udc6a"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x3a
 
-    const-string v3, "\ud83d\udc6c"
+    const-string/jumbo v3, "\ud83d\udc6c"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x3b
 
-    const-string v3, "\ud83d\udc6d"
+    const-string/jumbo v3, "\ud83d\udc6d"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x3c
 
-    const-string v3, "\ud83d\udc85"
+    const-string/jumbo v3, "\ud83d\udc85"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x3d
 
-    const-string v3, "\ud83c\udfa9"
+    const-string/jumbo v3, "\ud83c\udfa9"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x3e
 
-    const-string v3, "\ud83d\udc51"
+    const-string/jumbo v3, "\ud83d\udc51"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x3f
 
-    const-string v3, "\ud83d\udc52"
+    const-string/jumbo v3, "\ud83d\udc52"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x40
 
-    const-string v3, "\ud83d\udc5f"
+    const-string/jumbo v3, "\ud83d\udc5f"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x41
 
-    const-string v3, "\ud83d\udc5e"
+    const-string/jumbo v3, "\ud83d\udc5e"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x42
 
-    const-string v3, "\ud83d\udc60"
+    const-string/jumbo v3, "\ud83d\udc60"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x43
 
-    const-string v3, "\ud83d\udc55"
+    const-string/jumbo v3, "\ud83d\udc55"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x44
 
-    const-string v3, "\ud83d\udc57"
+    const-string/jumbo v3, "\ud83d\udc57"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x45
 
-    const-string v3, "\ud83d\udc56"
+    const-string/jumbo v3, "\ud83d\udc56"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x46
 
-    const-string v3, "\ud83d\udc59"
+    const-string/jumbo v3, "\ud83d\udc59"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x47
 
-    const-string v3, "\ud83d\udc5c"
+    const-string/jumbo v3, "\ud83d\udc5c"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x48
 
-    const-string v3, "\ud83d\udc53"
+    const-string/jumbo v3, "\ud83d\udc53"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x49
 
-    const-string v3, "\ud83c\udf80"
+    const-string/jumbo v3, "\ud83c\udf80"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x4a
 
-    const-string v3, "\ud83d\udc84"
+    const-string/jumbo v3, "\ud83d\udc84"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x4b
 
-    const-string v3, "\ud83d\udc9b"
+    const-string/jumbo v3, "\ud83d\udc9b"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x4c
 
-    const-string v3, "\ud83d\udc99"
+    const-string/jumbo v3, "\ud83d\udc99"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x4d
 
-    const-string v3, "\ud83d\udc9c"
+    const-string/jumbo v3, "\ud83d\udc9c"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x4e
 
-    const-string v3, "\ud83d\udc9a"
+    const-string/jumbo v3, "\ud83d\udc9a"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x4f
 
-    const-string v3, "\ud83d\udc8d"
+    const-string/jumbo v3, "\ud83d\udc8d"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x50
 
-    const-string v3, "\ud83d\udc8e"
+    const-string/jumbo v3, "\ud83d\udc8e"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x51
 
-    const-string v3, "\ud83d\udc36"
+    const-string/jumbo v3, "\ud83d\udc36"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x52
 
-    const-string v3, "\ud83d\udc3a"
+    const-string/jumbo v3, "\ud83d\udc3a"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x53
 
-    const-string v3, "\ud83d\udc31"
+    const-string/jumbo v3, "\ud83d\udc31"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x54
 
-    const-string v3, "\ud83d\udc2d"
+    const-string/jumbo v3, "\ud83d\udc2d"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x55
 
-    const-string v3, "\ud83d\udc39"
+    const-string/jumbo v3, "\ud83d\udc39"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x56
 
-    const-string v3, "\ud83d\udc30"
+    const-string/jumbo v3, "\ud83d\udc30"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x57
 
-    const-string v3, "\ud83d\udc38"
+    const-string/jumbo v3, "\ud83d\udc38"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x58
 
-    const-string v3, "\ud83d\udc2f"
+    const-string/jumbo v3, "\ud83d\udc2f"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x59
 
-    const-string v3, "\ud83d\udc28"
+    const-string/jumbo v3, "\ud83d\udc28"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x5a
 
-    const-string v3, "\ud83d\udc3b"
+    const-string/jumbo v3, "\ud83d\udc3b"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x5b
 
-    const-string v3, "\ud83d\udc37"
+    const-string/jumbo v3, "\ud83d\udc37"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x5c
 
-    const-string v3, "\ud83d\udc2e"
+    const-string/jumbo v3, "\ud83d\udc2e"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x5d
 
-    const-string v3, "\ud83d\udc17"
+    const-string/jumbo v3, "\ud83d\udc17"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x5e
 
-    const-string v3, "\ud83d\udc34"
+    const-string/jumbo v3, "\ud83d\udc34"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x5f
 
-    const-string v3, "\ud83d\udc11"
+    const-string/jumbo v3, "\ud83d\udc11"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x60
 
-    const-string v3, "\ud83d\udc18"
+    const-string/jumbo v3, "\ud83d\udc18"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x61
 
-    const-string v3, "\ud83d\udc3c"
+    const-string/jumbo v3, "\ud83d\udc3c"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x62
 
-    const-string v3, "\ud83d\udc27"
+    const-string/jumbo v3, "\ud83d\udc27"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x63
 
-    const-string v3, "\ud83d\udc25"
+    const-string/jumbo v3, "\ud83d\udc25"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x64
 
-    const-string v3, "\ud83d\udc14"
+    const-string/jumbo v3, "\ud83d\udc14"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x65
 
-    const-string v3, "\ud83d\udc0d"
+    const-string/jumbo v3, "\ud83d\udc0d"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x66
 
-    const-string v3, "\ud83d\udc22"
+    const-string/jumbo v3, "\ud83d\udc22"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x67
 
-    const-string v3, "\ud83d\udc1b"
+    const-string/jumbo v3, "\ud83d\udc1b"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x68
 
-    const-string v3, "\ud83d\udc1d"
+    const-string/jumbo v3, "\ud83d\udc1d"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x69
 
-    const-string v3, "\ud83d\udc1c"
+    const-string/jumbo v3, "\ud83d\udc1c"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x6a
 
-    const-string v3, "\ud83d\udc1e"
+    const-string/jumbo v3, "\ud83d\udc1e"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x6b
 
-    const-string v3, "\ud83d\udc0c"
+    const-string/jumbo v3, "\ud83d\udc0c"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x6c
 
-    const-string v3, "\ud83d\udc19"
+    const-string/jumbo v3, "\ud83d\udc19"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x6d
 
-    const-string v3, "\ud83d\udc1a"
+    const-string/jumbo v3, "\ud83d\udc1a"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x6e
 
-    const-string v3, "\ud83d\udc1f"
+    const-string/jumbo v3, "\ud83d\udc1f"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x6f
 
-    const-string v3, "\ud83d\udc2c"
+    const-string/jumbo v3, "\ud83d\udc2c"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x70
 
-    const-string v3, "\ud83d\udc0b"
+    const-string/jumbo v3, "\ud83d\udc0b"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x71
 
-    const-string v3, "\ud83d\udc10"
+    const-string/jumbo v3, "\ud83d\udc10"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x72
 
-    const-string v3, "\ud83d\udc0a"
+    const-string/jumbo v3, "\ud83d\udc0a"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x73
 
-    const-string v3, "\ud83d\udc2b"
+    const-string/jumbo v3, "\ud83d\udc2b"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x74
 
-    const-string v3, "\ud83c\udf40"
+    const-string/jumbo v3, "\ud83c\udf40"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x75
 
-    const-string v3, "\ud83c\udf39"
+    const-string/jumbo v3, "\ud83c\udf39"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x76
 
-    const-string v3, "\ud83c\udf3b"
+    const-string/jumbo v3, "\ud83c\udf3b"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x77
 
-    const-string v3, "\ud83c\udf41"
+    const-string/jumbo v3, "\ud83c\udf41"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x78
 
-    const-string v3, "\ud83c\udf3e"
+    const-string/jumbo v3, "\ud83c\udf3e"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x79
 
-    const-string v3, "\ud83c\udf44"
+    const-string/jumbo v3, "\ud83c\udf44"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x7a
 
-    const-string v3, "\ud83c\udf35"
+    const-string/jumbo v3, "\ud83c\udf35"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x7b
 
-    const-string v3, "\ud83c\udf34"
+    const-string/jumbo v3, "\ud83c\udf34"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x7c
 
-    const-string v3, "\ud83c\udf33"
+    const-string/jumbo v3, "\ud83c\udf33"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x7d
 
-    const-string v3, "\ud83c\udf1e"
+    const-string/jumbo v3, "\ud83c\udf1e"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x7e
 
-    const-string v3, "\ud83c\udf1a"
+    const-string/jumbo v3, "\ud83c\udf1a"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x7f
 
-    const-string v3, "\ud83c\udf19"
+    const-string/jumbo v3, "\ud83c\udf19"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x80
 
-    const-string v3, "\ud83c\udf0e"
+    const-string/jumbo v3, "\ud83c\udf0e"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x81
 
-    const-string v3, "\ud83c\udf0b"
+    const-string/jumbo v3, "\ud83c\udf0b"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x82
 
-    const-string v3, "\u26a1"
+    const-string/jumbo v3, "\u26a1"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x83
 
-    const-string v3, "\u2614"
+    const-string/jumbo v3, "\u2614"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x84
 
-    const-string v3, "\u2744"
+    const-string/jumbo v3, "\u2744"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x85
 
-    const-string v3, "\u26c4"
+    const-string/jumbo v3, "\u26c4"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x86
 
-    const-string v3, "\ud83c\udf00"
+    const-string/jumbo v3, "\ud83c\udf00"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x87
 
-    const-string v3, "\ud83c\udf08"
+    const-string/jumbo v3, "\ud83c\udf08"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x88
 
-    const-string v3, "\ud83c\udf0a"
+    const-string/jumbo v3, "\ud83c\udf0a"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x89
 
-    const-string v3, "\ud83c\udf93"
+    const-string/jumbo v3, "\ud83c\udf93"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x8a
 
-    const-string v3, "\ud83c\udf86"
+    const-string/jumbo v3, "\ud83c\udf86"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x8b
 
-    const-string v3, "\ud83c\udf83"
+    const-string/jumbo v3, "\ud83c\udf83"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x8c
 
-    const-string v3, "\ud83d\udc7b"
+    const-string/jumbo v3, "\ud83d\udc7b"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x8d
 
-    const-string v3, "\ud83c\udf85"
+    const-string/jumbo v3, "\ud83c\udf85"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x8e
 
-    const-string v3, "\ud83c\udf84"
+    const-string/jumbo v3, "\ud83c\udf84"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x8f
 
-    const-string v3, "\ud83c\udf81"
+    const-string/jumbo v3, "\ud83c\udf81"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x90
 
-    const-string v3, "\ud83c\udf88"
+    const-string/jumbo v3, "\ud83c\udf88"
 
     aput-object v3, v0, v1
 
@@ -895,7 +895,7 @@
 
     const/16 v1, 0x92
 
-    const-string v3, "\ud83c\udfa5"
+    const-string/jumbo v3, "\ud83c\udfa5"
 
     aput-object v3, v0, v1
 
@@ -907,19 +907,19 @@
 
     const/16 v1, 0x94
 
-    const-string v3, "\ud83d\udcbf"
+    const-string/jumbo v3, "\ud83d\udcbf"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x95
 
-    const-string v3, "\ud83d\udcbb"
+    const-string/jumbo v3, "\ud83d\udcbb"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x96
 
-    const-string v3, "\u260e"
+    const-string/jumbo v3, "\u260e"
 
     aput-object v3, v0, v1
 
@@ -955,19 +955,19 @@
 
     const/16 v1, 0x9c
 
-    const-string v3, "\u23f3"
+    const-string/jumbo v3, "\u23f3"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x9d
 
-    const-string v3, "\u23f0"
+    const-string/jumbo v3, "\u23f0"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x9e
 
-    const-string v3, "\u231a"
+    const-string/jumbo v3, "\u231a"
 
     aput-object v3, v0, v1
 
@@ -991,7 +991,7 @@
 
     const/16 v1, 0xa2
 
-    const-string v3, "\ud83d\udca1"
+    const-string/jumbo v3, "\ud83d\udca1"
 
     aput-object v3, v0, v1
 
@@ -1051,7 +1051,7 @@
 
     const/16 v1, 0xac
 
-    const-string v3, "\ud83d\udca3"
+    const-string/jumbo v3, "\ud83d\udca3"
 
     aput-object v3, v0, v1
 
@@ -1069,37 +1069,37 @@
 
     const/16 v1, 0xaf
 
-    const-string v3, "\ud83d\udc8a"
+    const-string/jumbo v3, "\ud83d\udc8a"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xb0
 
-    const-string v3, "\ud83d\udc89"
+    const-string/jumbo v3, "\ud83d\udc89"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xb1
 
-    const-string v3, "\ud83d\udcb0"
+    const-string/jumbo v3, "\ud83d\udcb0"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xb2
 
-    const-string v3, "\ud83d\udcb5"
+    const-string/jumbo v3, "\ud83d\udcb5"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xb3
 
-    const-string v3, "\ud83d\udcb3"
+    const-string/jumbo v3, "\ud83d\udcb3"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xb4
 
-    const-string v3, "\u2709"
+    const-string/jumbo v3, "\u2709"
 
     aput-object v3, v0, v1
 
@@ -1117,49 +1117,49 @@
 
     const/16 v1, 0xb7
 
-    const-string v3, "\ud83d\udcc5"
+    const-string/jumbo v3, "\ud83d\udcc5"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xb8
 
-    const-string v3, "\ud83d\udcc1"
+    const-string/jumbo v3, "\ud83d\udcc1"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xb9
 
-    const-string v3, "\u2702"
+    const-string/jumbo v3, "\u2702"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xba
 
-    const-string v3, "\ud83d\udccc"
+    const-string/jumbo v3, "\ud83d\udccc"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xbb
 
-    const-string v3, "\ud83d\udcce"
+    const-string/jumbo v3, "\ud83d\udcce"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xbc
 
-    const-string v3, "\u2712"
+    const-string/jumbo v3, "\u2712"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xbd
 
-    const-string v3, "\u270f"
+    const-string/jumbo v3, "\u270f"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xbe
 
-    const-string v3, "\ud83d\udcd0"
+    const-string/jumbo v3, "\ud83d\udcd0"
 
     aput-object v3, v0, v1
 
@@ -1183,433 +1183,433 @@
 
     const/16 v1, 0xc2
 
-    const-string v3, "\ud83c\udfa8"
+    const-string/jumbo v3, "\ud83c\udfa8"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xc3
 
-    const-string v3, "\ud83c\udfac"
+    const-string/jumbo v3, "\ud83c\udfac"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xc4
 
-    const-string v3, "\ud83c\udfa4"
+    const-string/jumbo v3, "\ud83c\udfa4"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xc5
 
-    const-string v3, "\ud83c\udfa7"
+    const-string/jumbo v3, "\ud83c\udfa7"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xc6
 
-    const-string v3, "\ud83c\udfb5"
+    const-string/jumbo v3, "\ud83c\udfb5"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xc7
 
-    const-string v3, "\ud83c\udfb9"
+    const-string/jumbo v3, "\ud83c\udfb9"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xc8
 
-    const-string v3, "\ud83c\udfbb"
+    const-string/jumbo v3, "\ud83c\udfbb"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xc9
 
-    const-string v3, "\ud83c\udfba"
+    const-string/jumbo v3, "\ud83c\udfba"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xca
 
-    const-string v3, "\ud83c\udfb8"
+    const-string/jumbo v3, "\ud83c\udfb8"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xcb
 
-    const-string v3, "\ud83d\udc7e"
+    const-string/jumbo v3, "\ud83d\udc7e"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xcc
 
-    const-string v3, "\ud83c\udfae"
+    const-string/jumbo v3, "\ud83c\udfae"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xcd
 
-    const-string v3, "\ud83c\udccf"
+    const-string/jumbo v3, "\ud83c\udccf"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xce
 
-    const-string v3, "\ud83c\udfb2"
+    const-string/jumbo v3, "\ud83c\udfb2"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xcf
 
-    const-string v3, "\ud83c\udfaf"
+    const-string/jumbo v3, "\ud83c\udfaf"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xd0
 
-    const-string v3, "\ud83c\udfc8"
+    const-string/jumbo v3, "\ud83c\udfc8"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xd1
 
-    const-string v3, "\ud83c\udfc0"
+    const-string/jumbo v3, "\ud83c\udfc0"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xd2
 
-    const-string v3, "\u26bd"
+    const-string/jumbo v3, "\u26bd"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xd3
 
-    const-string v3, "\u26be"
+    const-string/jumbo v3, "\u26be"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xd4
 
-    const-string v3, "\ud83c\udfbe"
+    const-string/jumbo v3, "\ud83c\udfbe"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xd5
 
-    const-string v3, "\ud83c\udfb1"
+    const-string/jumbo v3, "\ud83c\udfb1"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xd6
 
-    const-string v3, "\ud83c\udfc9"
+    const-string/jumbo v3, "\ud83c\udfc9"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xd7
 
-    const-string v3, "\ud83c\udfb3"
+    const-string/jumbo v3, "\ud83c\udfb3"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xd8
 
-    const-string v3, "\ud83c\udfc1"
+    const-string/jumbo v3, "\ud83c\udfc1"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xd9
 
-    const-string v3, "\ud83c\udfc7"
+    const-string/jumbo v3, "\ud83c\udfc7"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xda
 
-    const-string v3, "\ud83c\udfc6"
+    const-string/jumbo v3, "\ud83c\udfc6"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xdb
 
-    const-string v3, "\ud83c\udfca"
+    const-string/jumbo v3, "\ud83c\udfca"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xdc
 
-    const-string v3, "\ud83c\udfc4"
+    const-string/jumbo v3, "\ud83c\udfc4"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xdd
 
-    const-string v3, "\u2615"
+    const-string/jumbo v3, "\u2615"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xde
 
-    const-string v3, "\ud83c\udf7c"
+    const-string/jumbo v3, "\ud83c\udf7c"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xdf
 
-    const-string v3, "\ud83c\udf7a"
+    const-string/jumbo v3, "\ud83c\udf7a"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xe0
 
-    const-string v3, "\ud83c\udf77"
+    const-string/jumbo v3, "\ud83c\udf77"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xe1
 
-    const-string v3, "\ud83c\udf74"
+    const-string/jumbo v3, "\ud83c\udf74"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xe2
 
-    const-string v3, "\ud83c\udf55"
+    const-string/jumbo v3, "\ud83c\udf55"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xe3
 
-    const-string v3, "\ud83c\udf54"
+    const-string/jumbo v3, "\ud83c\udf54"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xe4
 
-    const-string v3, "\ud83c\udf5f"
+    const-string/jumbo v3, "\ud83c\udf5f"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xe5
 
-    const-string v3, "\ud83c\udf57"
+    const-string/jumbo v3, "\ud83c\udf57"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xe6
 
-    const-string v3, "\ud83c\udf71"
+    const-string/jumbo v3, "\ud83c\udf71"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xe7
 
-    const-string v3, "\ud83c\udf5a"
+    const-string/jumbo v3, "\ud83c\udf5a"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xe8
 
-    const-string v3, "\ud83c\udf5c"
+    const-string/jumbo v3, "\ud83c\udf5c"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xe9
 
-    const-string v3, "\ud83c\udf61"
+    const-string/jumbo v3, "\ud83c\udf61"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xea
 
-    const-string v3, "\ud83c\udf73"
+    const-string/jumbo v3, "\ud83c\udf73"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xeb
 
-    const-string v3, "\ud83c\udf5e"
+    const-string/jumbo v3, "\ud83c\udf5e"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xec
 
-    const-string v3, "\ud83c\udf69"
+    const-string/jumbo v3, "\ud83c\udf69"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xed
 
-    const-string v3, "\ud83c\udf66"
+    const-string/jumbo v3, "\ud83c\udf66"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xee
 
-    const-string v3, "\ud83c\udf82"
+    const-string/jumbo v3, "\ud83c\udf82"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xef
 
-    const-string v3, "\ud83c\udf70"
+    const-string/jumbo v3, "\ud83c\udf70"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xf0
 
-    const-string v3, "\ud83c\udf6a"
+    const-string/jumbo v3, "\ud83c\udf6a"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xf1
 
-    const-string v3, "\ud83c\udf6b"
+    const-string/jumbo v3, "\ud83c\udf6b"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xf2
 
-    const-string v3, "\ud83c\udf6d"
+    const-string/jumbo v3, "\ud83c\udf6d"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xf3
 
-    const-string v3, "\ud83c\udf6f"
+    const-string/jumbo v3, "\ud83c\udf6f"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xf4
 
-    const-string v3, "\ud83c\udf4e"
+    const-string/jumbo v3, "\ud83c\udf4e"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xf5
 
-    const-string v3, "\ud83c\udf4f"
+    const-string/jumbo v3, "\ud83c\udf4f"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xf6
 
-    const-string v3, "\ud83c\udf4a"
+    const-string/jumbo v3, "\ud83c\udf4a"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xf7
 
-    const-string v3, "\ud83c\udf4b"
+    const-string/jumbo v3, "\ud83c\udf4b"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xf8
 
-    const-string v3, "\ud83c\udf52"
+    const-string/jumbo v3, "\ud83c\udf52"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xf9
 
-    const-string v3, "\ud83c\udf47"
+    const-string/jumbo v3, "\ud83c\udf47"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xfa
 
-    const-string v3, "\ud83c\udf49"
+    const-string/jumbo v3, "\ud83c\udf49"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xfb
 
-    const-string v3, "\ud83c\udf53"
+    const-string/jumbo v3, "\ud83c\udf53"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xfc
 
-    const-string v3, "\ud83c\udf51"
+    const-string/jumbo v3, "\ud83c\udf51"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xfd
 
-    const-string v3, "\ud83c\udf4c"
+    const-string/jumbo v3, "\ud83c\udf4c"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xfe
 
-    const-string v3, "\ud83c\udf50"
+    const-string/jumbo v3, "\ud83c\udf50"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0xff
 
-    const-string v3, "\ud83c\udf4d"
+    const-string/jumbo v3, "\ud83c\udf4d"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x100
 
-    const-string v3, "\ud83c\udf46"
+    const-string/jumbo v3, "\ud83c\udf46"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x101
 
-    const-string v3, "\ud83c\udf45"
+    const-string/jumbo v3, "\ud83c\udf45"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x102
 
-    const-string v3, "\ud83c\udf3d"
+    const-string/jumbo v3, "\ud83c\udf3d"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x103
 
-    const-string v3, "\ud83c\udfe1"
+    const-string/jumbo v3, "\ud83c\udfe1"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x104
 
-    const-string v3, "\ud83c\udfe5"
+    const-string/jumbo v3, "\ud83c\udfe5"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x105
 
-    const-string v3, "\ud83c\udfe6"
+    const-string/jumbo v3, "\ud83c\udfe6"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x106
 
-    const-string v3, "\u26ea"
+    const-string/jumbo v3, "\u26ea"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x107
 
-    const-string v3, "\ud83c\udff0"
+    const-string/jumbo v3, "\ud83c\udff0"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x108
 
-    const-string v3, "\u26fa"
+    const-string/jumbo v3, "\u26fa"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x109
 
-    const-string v3, "\ud83c\udfed"
+    const-string/jumbo v3, "\ud83c\udfed"
 
     aput-object v3, v0, v1
 
@@ -1627,25 +1627,25 @@
 
     const/16 v1, 0x10c
 
-    const-string v3, "\ud83c\udfa0"
+    const-string/jumbo v3, "\ud83c\udfa0"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x10d
 
-    const-string v3, "\ud83c\udfa1"
+    const-string/jumbo v3, "\ud83c\udfa1"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x10e
 
-    const-string v3, "\u26f2"
+    const-string/jumbo v3, "\u26f2"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x10f
 
-    const-string v3, "\ud83c\udfa2"
+    const-string/jumbo v3, "\ud83c\udfa2"
 
     aput-object v3, v0, v1
 
@@ -1663,7 +1663,7 @@
 
     const/16 v1, 0x112
 
-    const-string v3, "\u2693"
+    const-string/jumbo v3, "\u2693"
 
     aput-object v3, v0, v1
 
@@ -1675,7 +1675,7 @@
 
     const/16 v1, 0x114
 
-    const-string v3, "\u2708"
+    const-string/jumbo v3, "\u2708"
 
     aput-object v3, v0, v1
 
@@ -1783,7 +1783,7 @@
 
     const/16 v1, 0x126
 
-    const-string v3, "\u26a0"
+    const-string/jumbo v3, "\u26a0"
 
     aput-object v3, v0, v1
 
@@ -1795,13 +1795,13 @@
 
     const/16 v1, 0x128
 
-    const-string v3, "\u26fd"
+    const-string/jumbo v3, "\u26fd"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x129
 
-    const-string v3, "\ud83c\udfb0"
+    const-string/jumbo v3, "\ud83c\udfb0"
 
     aput-object v3, v0, v1
 
@@ -1813,73 +1813,73 @@
 
     const/16 v1, 0x12b
 
-    const-string v3, "\ud83c\udfaa"
+    const-string/jumbo v3, "\ud83c\udfaa"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x12c
 
-    const-string v3, "\ud83c\udfad"
+    const-string/jumbo v3, "\ud83c\udfad"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x12d
 
-    const-string v3, "\ud83c\uddef\ud83c\uddf5"
+    const-string/jumbo v3, "\ud83c\uddef\ud83c\uddf5"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x12e
 
-    const-string v3, "\ud83c\uddf0\ud83c\uddf7"
+    const-string/jumbo v3, "\ud83c\uddf0\ud83c\uddf7"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x12f
 
-    const-string v3, "\ud83c\udde9\ud83c\uddea"
+    const-string/jumbo v3, "\ud83c\udde9\ud83c\uddea"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x130
 
-    const-string v3, "\ud83c\udde8\ud83c\uddf3"
+    const-string/jumbo v3, "\ud83c\udde8\ud83c\uddf3"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x131
 
-    const-string v3, "\ud83c\uddfa\ud83c\uddf8"
+    const-string/jumbo v3, "\ud83c\uddfa\ud83c\uddf8"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x132
 
-    const-string v3, "\ud83c\uddeb\ud83c\uddf7"
+    const-string/jumbo v3, "\ud83c\uddeb\ud83c\uddf7"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x133
 
-    const-string v3, "\ud83c\uddea\ud83c\uddf8"
+    const-string/jumbo v3, "\ud83c\uddea\ud83c\uddf8"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x134
 
-    const-string v3, "\ud83c\uddee\ud83c\uddf9"
+    const-string/jumbo v3, "\ud83c\uddee\ud83c\uddf9"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x135
 
-    const-string v3, "\ud83c\uddf7\ud83c\uddfa"
+    const-string/jumbo v3, "\ud83c\uddf7\ud83c\uddfa"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x136
 
-    const-string v3, "\ud83c\uddec\ud83c\udde7"
+    const-string/jumbo v3, "\ud83c\uddec\ud83c\udde7"
 
     aput-object v3, v0, v1
 
@@ -1951,31 +1951,31 @@
 
     const/16 v1, 0x142
 
-    const-string v3, "\u2757"
+    const-string/jumbo v3, "\u2757"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x143
 
-    const-string v3, "\u2753"
+    const-string/jumbo v3, "\u2753"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x144
 
-    const-string v3, "\u2665"
+    const-string/jumbo v3, "\u2665"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x145
 
-    const-string v3, "\u2666"
+    const-string/jumbo v3, "\u2666"
 
     aput-object v3, v0, v1
 
     const/16 v1, 0x146
 
-    const-string v3, "\ud83d\udcaf"
+    const-string/jumbo v3, "\ud83d\udcaf"
 
     aput-object v3, v0, v1
 

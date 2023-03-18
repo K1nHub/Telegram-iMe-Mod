@@ -12,30 +12,20 @@ public final class UserUtils {
     }
 
     public static final int getSelectedAccountPositionByUserId(long j) {
-        int i = 0;
-        while (true) {
-            int i2 = i + 1;
+        for (int i = 0; i < 5; i++) {
             if (UserConfig.getInstance(i).getClientUserId() == j) {
                 return i;
             }
-            if (i2 >= 5) {
-                return UserConfig.selectedAccount;
-            }
-            i = i2;
         }
+        return UserConfig.selectedAccount;
     }
 
     public static final boolean isUserActive(long j) {
-        int i = 0;
-        while (true) {
-            int i2 = i + 1;
+        for (int i = 0; i < 5; i++) {
             if (UserConfig.getInstance(i).getClientUserId() == j) {
                 return true;
             }
-            if (i2 >= 5) {
-                return false;
-            }
-            i = i2;
         }
+        return false;
     }
 }

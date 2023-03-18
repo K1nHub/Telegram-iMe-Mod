@@ -215,7 +215,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnabl
     }
 
     private void runWrapped() {
-        int i = C04151.$SwitchMap$com$bumptech$glide$load$engine$DecodeJob$RunReason[this.runReason.ordinal()];
+        int i = C04091.$SwitchMap$com$bumptech$glide$load$engine$DecodeJob$RunReason[this.runReason.ordinal()];
         if (i == 1) {
             this.stage = getNextStage(Stage.INITIALIZE);
             this.currentGenerator = getNextGenerator();
@@ -230,7 +230,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnabl
     }
 
     private DataFetcherGenerator getNextGenerator() {
-        int i = C04151.$SwitchMap$com$bumptech$glide$load$engine$DecodeJob$Stage[this.stage.ordinal()];
+        int i = C04091.$SwitchMap$com$bumptech$glide$load$engine$DecodeJob$Stage[this.stage.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {
@@ -290,7 +290,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnabl
     }
 
     private Stage getNextStage(Stage stage) {
-        int i = C04151.$SwitchMap$com$bumptech$glide$load$engine$DecodeJob$Stage[stage.ordinal()];
+        int i = C04091.$SwitchMap$com$bumptech$glide$load$engine$DecodeJob$Stage[stage.ordinal()];
         if (i == 1) {
             if (this.diskCacheStrategy.decodeCachedData()) {
                 return Stage.DATA_CACHE;
@@ -499,7 +499,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnabl
             if (resourceEncoder2 == null) {
                 throw new Registry.NoResultEncoderAvailableException(resource2.get().getClass());
             }
-            int i = C04151.$SwitchMap$com$bumptech$glide$load$EncodeStrategy[encodeStrategy.ordinal()];
+            int i = C04091.$SwitchMap$com$bumptech$glide$load$EncodeStrategy[encodeStrategy.ordinal()];
             if (i == 1) {
                 dataCacheKey = new DataCacheKey(this.currentSourceKey, this.signature);
             } else if (i == 2) {
@@ -517,7 +517,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnabl
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.bumptech.glide.load.engine.DecodeJob$1 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C04151 {
+    public static /* synthetic */ class C04091 {
         static final /* synthetic */ int[] $SwitchMap$com$bumptech$glide$load$EncodeStrategy;
         static final /* synthetic */ int[] $SwitchMap$com$bumptech$glide$load$engine$DecodeJob$RunReason;
         static final /* synthetic */ int[] $SwitchMap$com$bumptech$glide$load$engine$DecodeJob$Stage;

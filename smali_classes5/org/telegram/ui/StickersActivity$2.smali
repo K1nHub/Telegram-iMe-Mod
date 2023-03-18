@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/StickersActivity$2;
-.super Landroidx/recyclerview/widget/LinearLayoutManager;
+.super Lorg/telegram/ui/Components/RecyclerListView;
 .source "StickersActivity.java"
 
 
@@ -22,41 +22,56 @@
 .method constructor <init>(Lorg/telegram/ui/StickersActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 373
+    .line 369
     iput-object p1, p0, Lorg/telegram/ui/StickersActivity$2;->this$0:Lorg/telegram/ui/StickersActivity;
 
-    invoke-direct {p0, p2}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected calculateExtraLayoutSpace(Landroidx/recyclerview/widget/RecyclerView$State;[I)V
-    .locals 1
+.method protected dispatchDraw(Landroid/graphics/Canvas;)V
+    .locals 3
 
-    .line 381
-    iget-object p1, p0, Lorg/telegram/ui/StickersActivity$2;->this$0:Lorg/telegram/ui/StickersActivity;
+    .line 372
+    iget-object v0, p0, Lorg/telegram/ui/StickersActivity$2;->this$0:Lorg/telegram/ui/StickersActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/StickersActivity;->access$200(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$600(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getHeight()I
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->isActionModeShowed()Z
 
-    move-result p1
+    move-result v0
 
-    const/4 v0, 0x1
+    if-eqz v0, :cond_0
 
-    aput p1, p2, v0
+    .line 373
+    iget-object v0, p0, Lorg/telegram/ui/StickersActivity$2;->this$0:Lorg/telegram/ui/StickersActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$700(Lorg/telegram/ui/StickersActivity;)I
+
+    move-result v0
+
+    iget-object v1, p0, Lorg/telegram/ui/StickersActivity$2;->this$0:Lorg/telegram/ui/StickersActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/StickersActivity;->access$800(Lorg/telegram/ui/StickersActivity;)I
+
+    move-result v1
+
+    const-string v2, "windowBackgroundWhite"
+
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+
+    move-result v2
+
+    invoke-virtual {p0, p1, v0, v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->drawSectionBackground(Landroid/graphics/Canvas;III)V
+
+    .line 375
+    :cond_0
+    invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     return-void
-.end method
-
-.method public supportsPredictiveItemAnimations()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
 .end method

@@ -98,7 +98,7 @@
 
     move-result-object v1
 
-    const-string v2, "voip_persistent_state.json"
+    const-string/jumbo v2, "voip_persistent_state.json"
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -860,7 +860,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "voip"
+    const-string/jumbo v3, "voip"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -890,7 +890,7 @@
 
     if-eqz v5, :cond_6
 
-    const-string v0, "voipStats"
+    const-string/jumbo v0, "voipStats"
 
     invoke-direct {v14, v0}, Lorg/telegram/messenger/voip/VoIPController;->getLogFilePath(Ljava/lang/String;)Ljava/lang/String;
 

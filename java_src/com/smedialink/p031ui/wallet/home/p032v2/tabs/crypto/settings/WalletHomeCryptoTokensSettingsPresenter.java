@@ -275,7 +275,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
                     public final int compare(T t, T t2) {
                         int compareValues;
                         Integer num = (Integer) linkedHashMap.get(((SelectableToken.WithResLogo) t).getId());
-                        Integer valueOf = Integer.valueOf(num == null ? Integer.MAX_VALUE : num.intValue());
+                        Integer valueOf = Integer.valueOf(num != null ? num.intValue() : Integer.MAX_VALUE);
                         Integer num2 = (Integer) linkedHashMap.get(((SelectableToken.WithResLogo) t2).getId());
                         compareValues = ComparisonsKt__ComparisonsKt.compareValues(valueOf, Integer.valueOf(num2 != null ? num2.intValue() : Integer.MAX_VALUE));
                         return compareValues;
@@ -290,7 +290,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
             public final int compare(T t, T t2) {
                 int compareValues;
                 Integer num = (Integer) linkedHashMap.get(((SelectableToken) t).getId());
-                Integer valueOf = Integer.valueOf(num == null ? Integer.MAX_VALUE : num.intValue());
+                Integer valueOf = Integer.valueOf(num != null ? num.intValue() : Integer.MAX_VALUE);
                 Integer num2 = (Integer) linkedHashMap.get(((SelectableToken) t2).getId());
                 compareValues = ComparisonsKt__ComparisonsKt.compareValues(valueOf, Integer.valueOf(num2 != null ? num2.intValue() : Integer.MAX_VALUE));
                 return compareValues;

@@ -441,16 +441,16 @@
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
+    const/4 p1, 0x0
 
     .line 59
     :goto_0
@@ -458,24 +458,19 @@
 
     move-result-object p2
 
-    if-nez p2, :cond_1
+    if-eqz p2, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
 
     move-result v0
 
     .line 62
-    :goto_1
+    :cond_1
     iget-object p2, p0, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPricePresenter;->toCurrency:Lcom/smedialink/storage/domain/model/crypto/simplex/Currency;
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPricePresenter;->fromCurrency:Lcom/smedialink/storage/domain/model/crypto/simplex/Currency;
 
     iput-object v1, p0, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPricePresenter;->toCurrency:Lcom/smedialink/storage/domain/model/crypto/simplex/Currency;
-
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     iput-object p2, p0, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPricePresenter;->fromCurrency:Lcom/smedialink/storage/domain/model/crypto/simplex/Currency;
 
@@ -541,16 +536,16 @@
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
+    const/4 p1, 0x0
 
     .line 34
     :goto_0
@@ -558,17 +553,14 @@
 
     move-result-object p2
 
-    if-nez p2, :cond_1
+    if-eqz p2, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
 
     move-result v0
 
     .line 36
-    :goto_1
+    :cond_1
     iget-object p2, p0, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPricePresenter;->simplexInteractor:Lcom/smedialink/storage/domain/interactor/crypto/simplex/SimplexInteractor;
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPricePresenter;->limits:Lcom/smedialink/storage/domain/model/crypto/simplex/CustomPriceLimits;
@@ -591,13 +583,13 @@
 
     if-eqz p2, :cond_3
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_3
     move v0, p1
 
     .line 40
-    :goto_2
+    :goto_1
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p2

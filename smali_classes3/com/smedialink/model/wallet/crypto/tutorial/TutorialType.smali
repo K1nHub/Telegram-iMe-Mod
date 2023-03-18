@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/model/wallet/crypto/tutorial/TutorialType$Intro;,
-        Lcom/smedialink/model/wallet/crypto/tutorial/TutorialType$Backup;
+        Lcom/smedialink/model/wallet/crypto/tutorial/TutorialType$Backup;,
+        Lcom/smedialink/model/wallet/crypto/tutorial/TutorialType$Intro;
     }
 .end annotation
 

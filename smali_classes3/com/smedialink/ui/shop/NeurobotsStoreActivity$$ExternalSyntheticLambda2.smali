@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/smedialink/ui/shop/NeurobotsStoreActivity;
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda2;->f$0:Lcom/smedialink/ui/shop/NeurobotsStoreActivity;
+    iput-object p1, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda2;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -25,11 +25,9 @@
 .method public final accept(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda2;->f$0:Lcom/smedialink/ui/shop/NeurobotsStoreActivity;
+    iget-object v0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda2;->f$0:Lkotlin/jvm/functions/Function1;
 
-    check-cast p1, Ljava/util/List;
-
-    invoke-static {v0, p1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->$r8$lambda$ngtwGQsuO2JhjbiXNQULX7Ovayw(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;Ljava/util/List;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->$r8$lambda$0OF1PJDFbTRCWFNmdVTitU_no18(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method

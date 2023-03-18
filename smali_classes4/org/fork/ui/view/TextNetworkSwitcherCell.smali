@@ -273,9 +273,7 @@
     invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     .line 75
-    invoke-virtual {p0}, Lorg/fork/ui/view/TextNetworkSwitcherCell;->getDialog()Z
-
-    move-result v1
+    iget-boolean v1, p0, Lorg/fork/ui/view/TextNetworkSwitcherCell;->dialog:Z
 
     if-eqz v1, :cond_0
 
@@ -284,7 +282,7 @@
     goto :goto_0
 
     :cond_0
-    const-string v1, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v1, "windowBackgroundWhiteBlackText"
 
     :goto_0
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I

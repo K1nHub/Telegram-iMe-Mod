@@ -5,27 +5,17 @@
 .implements Lio/reactivex/functions/Consumer;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda23;
+# instance fields
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda23;
-
-    invoke-direct {v0}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda23;-><init>()V
-
-    sput-object v0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda23;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda23;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda23;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -33,11 +23,11 @@
 
 # virtual methods
 .method public final accept(Ljava/lang/Object;)V
-    .locals 0
+    .locals 1
 
-    check-cast p1, Ljava/lang/Throwable;
+    iget-object v0, p0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda23;->f$0:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->$r8$lambda$67MY2S4u2pqOXbH5Aw30ZFVfbsw(Ljava/lang/Throwable;)V
+    invoke-static {v0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->$r8$lambda$CAkcguWqiFqlv-0JkN1XgL_3j2U(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method

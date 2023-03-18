@@ -2,20 +2,18 @@ package com.smedialink.p031ui.custom;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
 import androidx.appcompat.widget.AppCompatTextView;
-import androidx.core.content.ContextCompat;
 import com.smedialink.model.wallet.home.HorizontalActionButtonItem;
 import com.tbuonomo.viewpagerdotsindicator.ViewExtKt;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 /* compiled from: HorizontalActionButtonsView.kt */
@@ -50,19 +48,19 @@ public final class HorizontalActionButtonsView extends LinearLayout {
             AppCompatTextView appCompatTextView = new AppCompatTextView(getContext());
             appCompatTextView.setGravity(1);
             Resources resources = appCompatTextView.getResources();
-            int i = C3158R.dimen.margin_half_small;
+            int i = C3286R.dimen.margin_half_small;
             ViewExtKt.setPaddingHorizontal(appCompatTextView, resources.getDimensionPixelOffset(i));
-            ViewExtKt.setPaddingVertical(appCompatTextView, appCompatTextView.getResources().getDimensionPixelOffset(C3158R.dimen.margin_normal_2));
+            ViewExtKt.setPaddingVertical(appCompatTextView, appCompatTextView.getResources().getDimensionPixelOffset(C3286R.dimen.margin_normal_2));
             com.smedialink.utils.extentions.common.ViewExtKt.singleLine(appCompatTextView);
             appCompatTextView.setEllipsize(TextUtils.TruncateAt.END);
             appCompatTextView.setText(LocaleController.getInternalString(horizontalActionButtonItem.getTextRes()));
-            appCompatTextView.setTextSize(0, appCompatTextView.getResources().getDimension(C3158R.dimen.text_size_normal));
-            appCompatTextView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, ContextCompat.getDrawable(appCompatTextView.getContext(), horizontalActionButtonItem.getIconRes()), (Drawable) null, (Drawable) null);
+            appCompatTextView.setTextSize(0, appCompatTextView.getResources().getDimension(C3286R.dimen.text_size_normal));
+            appCompatTextView.setCompoundDrawablesWithIntrinsicBounds(0, horizontalActionButtonItem.getIconRes(), 0, 0);
             appCompatTextView.setCompoundDrawablePadding(appCompatTextView.getResources().getDimensionPixelOffset(i));
             appCompatTextView.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.custom.HorizontalActionButtonsView$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    HorizontalActionButtonsView.m1440initButtons$lambda2$lambda1$lambda0(HorizontalActionButtonItem.this, view);
+                    HorizontalActionButtonsView.initButtons$lambda$2$lambda$1$lambda$0(HorizontalActionButtonItem.this, view);
                 }
             });
             if (horizontalActionButtonItem.isEnabled()) {
@@ -77,8 +75,7 @@ public final class HorizontalActionButtonsView extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initButtons$lambda-2$lambda-1$lambda-0  reason: not valid java name */
-    public static final void m1440initButtons$lambda2$lambda1$lambda0(HorizontalActionButtonItem item, View view) {
+    public static final void initButtons$lambda$2$lambda$1$lambda$0(HorizontalActionButtonItem item, View view) {
         Intrinsics.checkNotNullParameter(item, "$item");
         item.getOnClickAction().invoke();
     }

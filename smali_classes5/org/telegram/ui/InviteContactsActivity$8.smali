@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/InviteContactsActivity;)V
     .locals 0
 
-    .line 558
+    .line 559
     iput-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$8;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 562
+    .line 563
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$8;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$000(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;

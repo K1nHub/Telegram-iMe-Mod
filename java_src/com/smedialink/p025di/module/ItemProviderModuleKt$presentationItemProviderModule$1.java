@@ -32,6 +32,10 @@ import com.smedialink.p031ui.adapter.provider.StakingProgrammeProvider;
 import com.smedialink.p031ui.adapter.provider.TokenBalanceProvider;
 import com.smedialink.p031ui.adapter.provider.TokenTransactionProvider;
 import com.smedialink.p031ui.adapter.provider.TotalBalanceProvider;
+import com.smedialink.p031ui.adapter.provider.TweetDatesProvider;
+import com.smedialink.p031ui.adapter.provider.TweetProvider;
+import com.smedialink.p031ui.adapter.provider.TwitterInviteProvider;
+import com.smedialink.p031ui.adapter.provider.TwitterUserProvider;
 import com.smedialink.p031ui.wallet.home.p032v2.adapter.BannersRecycleAdapter;
 import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
@@ -66,10 +70,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C13191 extends Lambda implements Function2<Scope, ParametersHolder, BannerProvider> {
-        public static final C13191 INSTANCE = new C13191();
+    public static final class C13201 extends Lambda implements Function2<Scope, ParametersHolder, BannerProvider> {
+        public static final C13201 INSTANCE = new C13201();
 
-        C13191() {
+        C13201() {
             super(2);
         }
 
@@ -91,10 +95,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C13302 extends Lambda implements Function2<Scope, ParametersHolder, CreateAccountProvider> {
-        public static final C13302 INSTANCE = new C13302();
+    public static final class C13312 extends Lambda implements Function2<Scope, ParametersHolder, CreateAccountProvider> {
+        public static final C13312 INSTANCE = new C13312();
 
-        C13302() {
+        C13312() {
             super(2);
         }
 
@@ -139,205 +143,233 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
         List emptyList29;
         List emptyList30;
         List emptyList31;
+        List emptyList32;
+        List emptyList33;
+        List emptyList34;
+        List emptyList35;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C13191 c13191 = C13191.INSTANCE;
+        C13201 c13201 = C13201.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Factory;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(BannerProvider.class), null, c13191, kind, emptyList));
+        FactoryInstanceFactory factoryInstanceFactory = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(BannerProvider.class), null, c13201, kind, emptyList));
         module.indexPrimaryType(factoryInstanceFactory);
         new Pair(module, factoryInstanceFactory);
-        C13302 c13302 = C13302.INSTANCE;
+        C13312 c13312 = C13312.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory2 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(CreateAccountProvider.class), null, c13302, kind, emptyList2));
+        FactoryInstanceFactory factoryInstanceFactory2 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(CreateAccountProvider.class), null, c13312, kind, emptyList2));
         module.indexPrimaryType(factoryInstanceFactory2);
         new Pair(module, factoryInstanceFactory2);
-        C13413 c13413 = C13413.INSTANCE;
+        C13423 c13423 = C13423.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory3 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(CryptoAccountProvider.class), null, c13413, kind, emptyList3));
+        FactoryInstanceFactory factoryInstanceFactory3 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(CryptoAccountProvider.class), null, c13423, kind, emptyList3));
         module.indexPrimaryType(factoryInstanceFactory3);
         new Pair(module, factoryInstanceFactory3);
-        C13444 c13444 = C13444.INSTANCE;
+        C13494 c13494 = C13494.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory4 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(HeaderProvider.class), null, c13444, kind, emptyList4));
+        FactoryInstanceFactory factoryInstanceFactory4 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(HeaderProvider.class), null, c13494, kind, emptyList4));
         module.indexPrimaryType(factoryInstanceFactory4);
         new Pair(module, factoryInstanceFactory4);
-        C13455 c13455 = C13455.INSTANCE;
+        C13505 c13505 = C13505.INSTANCE;
         StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
         emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory5 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(HeaderWithNetworkSwitcherProvider.class), null, c13455, kind, emptyList5));
+        FactoryInstanceFactory factoryInstanceFactory5 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(HeaderWithNetworkSwitcherProvider.class), null, c13505, kind, emptyList5));
         module.indexPrimaryType(factoryInstanceFactory5);
         new Pair(module, factoryInstanceFactory5);
-        C13466 c13466 = C13466.INSTANCE;
+        C13516 c13516 = C13516.INSTANCE;
         StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
         emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory6 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(HeaderWithRightButtonProvider.class), null, c13466, kind, emptyList6));
+        FactoryInstanceFactory factoryInstanceFactory6 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(HeaderWithRightButtonProvider.class), null, c13516, kind, emptyList6));
         module.indexPrimaryType(factoryInstanceFactory6);
         new Pair(module, factoryInstanceFactory6);
-        C13477 c13477 = C13477.INSTANCE;
+        C13527 c13527 = C13527.INSTANCE;
         StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
         emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory7 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(SelectableHeaderProvider.class), null, c13477, kind, emptyList7));
+        FactoryInstanceFactory factoryInstanceFactory7 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(SelectableHeaderProvider.class), null, c13527, kind, emptyList7));
         module.indexPrimaryType(factoryInstanceFactory7);
         new Pair(module, factoryInstanceFactory7);
-        C13488 c13488 = C13488.INSTANCE;
+        C13538 c13538 = C13538.INSTANCE;
         StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
         emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory8 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(SelectTokenProvider.class), null, c13488, kind, emptyList8));
+        FactoryInstanceFactory factoryInstanceFactory8 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(SelectTokenProvider.class), null, c13538, kind, emptyList8));
         module.indexPrimaryType(factoryInstanceFactory8);
         new Pair(module, factoryInstanceFactory8);
-        C13499 c13499 = C13499.INSTANCE;
+        C13549 c13549 = C13549.INSTANCE;
         StringQualifier rootScopeQualifier9 = companion.getRootScopeQualifier();
         emptyList9 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory9 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(GlobalStateProvider.class), null, c13499, kind, emptyList9));
+        FactoryInstanceFactory factoryInstanceFactory9 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(GlobalStateProvider.class), null, c13549, kind, emptyList9));
         module.indexPrimaryType(factoryInstanceFactory9);
         new Pair(module, factoryInstanceFactory9);
-        C132010 c132010 = C132010.INSTANCE;
+        C132110 c132110 = C132110.INSTANCE;
         StringQualifier rootScopeQualifier10 = companion.getRootScopeQualifier();
         emptyList10 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory10 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(ServiceProvider.class), null, c132010, kind, emptyList10));
+        FactoryInstanceFactory factoryInstanceFactory10 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(ServiceProvider.class), null, c132110, kind, emptyList10));
         module.indexPrimaryType(factoryInstanceFactory10);
         new Pair(module, factoryInstanceFactory10);
-        C132111 c132111 = C132111.INSTANCE;
+        C132211 c132211 = C132211.INSTANCE;
         StringQualifier rootScopeQualifier11 = companion.getRootScopeQualifier();
         emptyList11 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory11 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(TokenBalanceProvider.class), null, c132111, kind, emptyList11));
+        FactoryInstanceFactory factoryInstanceFactory11 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(TokenBalanceProvider.class), null, c132211, kind, emptyList11));
         module.indexPrimaryType(factoryInstanceFactory11);
         new Pair(module, factoryInstanceFactory11);
-        C132212 c132212 = C132212.INSTANCE;
+        C132312 c132312 = C132312.INSTANCE;
         StringQualifier rootScopeQualifier12 = companion.getRootScopeQualifier();
         emptyList12 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory12 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(TotalBalanceProvider.class), null, c132212, kind, emptyList12));
+        FactoryInstanceFactory factoryInstanceFactory12 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(TotalBalanceProvider.class), null, c132312, kind, emptyList12));
         module.indexPrimaryType(factoryInstanceFactory12);
         new Pair(module, factoryInstanceFactory12);
-        C132313 c132313 = C132313.INSTANCE;
+        C132413 c132413 = C132413.INSTANCE;
         StringQualifier rootScopeQualifier13 = companion.getRootScopeQualifier();
         emptyList13 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory13 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(NftCollectionProvider.class), null, c132313, kind, emptyList13));
+        FactoryInstanceFactory factoryInstanceFactory13 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(NftCollectionProvider.class), null, c132413, kind, emptyList13));
         module.indexPrimaryType(factoryInstanceFactory13);
         new Pair(module, factoryInstanceFactory13);
-        C132414 c132414 = C132414.INSTANCE;
+        C132514 c132514 = C132514.INSTANCE;
         StringQualifier rootScopeQualifier14 = companion.getRootScopeQualifier();
         emptyList14 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory14 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(NftTokenProvider.class), null, c132414, kind, emptyList14));
+        FactoryInstanceFactory factoryInstanceFactory14 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(NftTokenProvider.class), null, c132514, kind, emptyList14));
         module.indexPrimaryType(factoryInstanceFactory14);
         new Pair(module, factoryInstanceFactory14);
-        C132515 c132515 = C132515.INSTANCE;
+        C132615 c132615 = C132615.INSTANCE;
         StringQualifier rootScopeQualifier15 = companion.getRootScopeQualifier();
         emptyList15 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory15 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(CexProtocolProvider.class), null, c132515, kind, emptyList15));
+        FactoryInstanceFactory factoryInstanceFactory15 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(CexProtocolProvider.class), null, c132615, kind, emptyList15));
         module.indexPrimaryType(factoryInstanceFactory15);
         new Pair(module, factoryInstanceFactory15);
-        C132616 c132616 = C132616.INSTANCE;
+        C132716 c132716 = C132716.INSTANCE;
         StringQualifier rootScopeQualifier16 = companion.getRootScopeQualifier();
         emptyList16 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory16 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(DexProtocolProvider.class), null, c132616, kind, emptyList16));
+        FactoryInstanceFactory factoryInstanceFactory16 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(DexProtocolProvider.class), null, c132716, kind, emptyList16));
         module.indexPrimaryType(factoryInstanceFactory16);
         new Pair(module, factoryInstanceFactory16);
-        C132717 c132717 = C132717.INSTANCE;
+        C132817 c132817 = C132817.INSTANCE;
         StringQualifier rootScopeQualifier17 = companion.getRootScopeQualifier();
         emptyList17 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory17 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(BinanceTokenBalanceProvider.class), null, c132717, kind, emptyList17));
+        FactoryInstanceFactory factoryInstanceFactory17 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(BinanceTokenBalanceProvider.class), null, c132817, kind, emptyList17));
         module.indexPrimaryType(factoryInstanceFactory17);
         new Pair(module, factoryInstanceFactory17);
-        C132818 c132818 = C132818.INSTANCE;
+        C132918 c132918 = C132918.INSTANCE;
         StringQualifier rootScopeQualifier18 = companion.getRootScopeQualifier();
         emptyList18 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory18 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(BinanceAccountProvider.class), null, c132818, kind, emptyList18));
+        FactoryInstanceFactory factoryInstanceFactory18 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(BinanceAccountProvider.class), null, c132918, kind, emptyList18));
         module.indexPrimaryType(factoryInstanceFactory18);
         new Pair(module, factoryInstanceFactory18);
-        C132919 c132919 = C132919.INSTANCE;
+        C133019 c133019 = C133019.INSTANCE;
         StringQualifier rootScopeQualifier19 = companion.getRootScopeQualifier();
         emptyList19 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory19 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(CardButtonProvider.class), null, c132919, kind, emptyList19));
+        FactoryInstanceFactory factoryInstanceFactory19 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(CardButtonProvider.class), null, c133019, kind, emptyList19));
         module.indexPrimaryType(factoryInstanceFactory19);
         new Pair(module, factoryInstanceFactory19);
-        C133120 c133120 = C133120.INSTANCE;
+        C133220 c133220 = C133220.INSTANCE;
         StringQualifier rootScopeQualifier20 = companion.getRootScopeQualifier();
         emptyList20 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory20 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(TokenTransactionProvider.class), null, c133120, kind, emptyList20));
+        FactoryInstanceFactory factoryInstanceFactory20 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(TokenTransactionProvider.class), null, c133220, kind, emptyList20));
         module.indexPrimaryType(factoryInstanceFactory20);
         new Pair(module, factoryInstanceFactory20);
-        C133221 c133221 = C133221.INSTANCE;
+        C133321 c133321 = C133321.INSTANCE;
         StringQualifier rootScopeQualifier21 = companion.getRootScopeQualifier();
         emptyList21 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory21 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(StakingOperationProvider.class), null, c133221, kind, emptyList21));
+        FactoryInstanceFactory factoryInstanceFactory21 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(StakingOperationProvider.class), null, c133321, kind, emptyList21));
         module.indexPrimaryType(factoryInstanceFactory21);
         new Pair(module, factoryInstanceFactory21);
-        C133322 c133322 = C133322.INSTANCE;
+        C133422 c133422 = C133422.INSTANCE;
         StringQualifier rootScopeQualifier22 = companion.getRootScopeQualifier();
         emptyList22 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory22 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(BinanceTransactionProvider.class), null, c133322, kind, emptyList22));
+        FactoryInstanceFactory factoryInstanceFactory22 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(BinanceTransactionProvider.class), null, c133422, kind, emptyList22));
         module.indexPrimaryType(factoryInstanceFactory22);
         new Pair(module, factoryInstanceFactory22);
-        C133423 c133423 = C133423.INSTANCE;
+        C133523 c133523 = C133523.INSTANCE;
         StringQualifier rootScopeQualifier23 = companion.getRootScopeQualifier();
         emptyList23 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory23 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(SimplexProductProvider.class), null, c133423, kind, emptyList23));
+        FactoryInstanceFactory factoryInstanceFactory23 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(SimplexProductProvider.class), null, c133523, kind, emptyList23));
         module.indexPrimaryType(factoryInstanceFactory23);
         new Pair(module, factoryInstanceFactory23);
-        C133524 c133524 = C133524.INSTANCE;
+        C133624 c133624 = C133624.INSTANCE;
         StringQualifier rootScopeQualifier24 = companion.getRootScopeQualifier();
         emptyList24 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory24 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(SimplexFooterProvider.class), null, c133524, kind, emptyList24));
+        FactoryInstanceFactory factoryInstanceFactory24 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(SimplexFooterProvider.class), null, c133624, kind, emptyList24));
         module.indexPrimaryType(factoryInstanceFactory24);
         new Pair(module, factoryInstanceFactory24);
-        C133625 c133625 = C133625.INSTANCE;
+        C133725 c133725 = C133725.INSTANCE;
         StringQualifier rootScopeQualifier25 = companion.getRootScopeQualifier();
         emptyList25 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory25 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier25, Reflection.getOrCreateKotlinClass(CategoryWithCampaignsProvider.class), null, c133625, kind, emptyList25));
+        FactoryInstanceFactory factoryInstanceFactory25 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier25, Reflection.getOrCreateKotlinClass(CategoryWithCampaignsProvider.class), null, c133725, kind, emptyList25));
         module.indexPrimaryType(factoryInstanceFactory25);
         new Pair(module, factoryInstanceFactory25);
-        C133726 c133726 = C133726.INSTANCE;
+        C133826 c133826 = C133826.INSTANCE;
         StringQualifier rootScopeQualifier26 = companion.getRootScopeQualifier();
         emptyList26 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory26 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier26, Reflection.getOrCreateKotlinClass(FilterProvider.class), null, c133726, kind, emptyList26));
+        FactoryInstanceFactory factoryInstanceFactory26 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier26, Reflection.getOrCreateKotlinClass(FilterProvider.class), null, c133826, kind, emptyList26));
         module.indexPrimaryType(factoryInstanceFactory26);
         new Pair(module, factoryInstanceFactory26);
-        C133827 c133827 = C133827.INSTANCE;
+        C133927 c133927 = C133927.INSTANCE;
         StringQualifier rootScopeQualifier27 = companion.getRootScopeQualifier();
         emptyList27 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory27 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier27, Reflection.getOrCreateKotlinClass(CampaignProvider.class), null, c133827, kind, emptyList27));
+        FactoryInstanceFactory factoryInstanceFactory27 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier27, Reflection.getOrCreateKotlinClass(CampaignProvider.class), null, c133927, kind, emptyList27));
         module.indexPrimaryType(factoryInstanceFactory27);
         new Pair(module, factoryInstanceFactory27);
-        C133928 c133928 = C133928.INSTANCE;
+        C134028 c134028 = C134028.INSTANCE;
         StringQualifier rootScopeQualifier28 = companion.getRootScopeQualifier();
         emptyList28 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory28 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier28, Reflection.getOrCreateKotlinClass(CreateCampaignProvider.class), null, c133928, kind, emptyList28));
+        FactoryInstanceFactory factoryInstanceFactory28 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier28, Reflection.getOrCreateKotlinClass(CreateCampaignProvider.class), null, c134028, kind, emptyList28));
         module.indexPrimaryType(factoryInstanceFactory28);
         new Pair(module, factoryInstanceFactory28);
-        C134029 c134029 = C134029.INSTANCE;
+        C134129 c134129 = C134129.INSTANCE;
         StringQualifier rootScopeQualifier29 = companion.getRootScopeQualifier();
         emptyList29 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory29 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier29, Reflection.getOrCreateKotlinClass(StakingDashboardProvider.class), null, c134029, kind, emptyList29));
+        FactoryInstanceFactory factoryInstanceFactory29 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier29, Reflection.getOrCreateKotlinClass(StakingDashboardProvider.class), null, c134129, kind, emptyList29));
         module.indexPrimaryType(factoryInstanceFactory29);
         new Pair(module, factoryInstanceFactory29);
-        C134230 c134230 = C134230.INSTANCE;
+        C134330 c134330 = C134330.INSTANCE;
         StringQualifier rootScopeQualifier30 = companion.getRootScopeQualifier();
         emptyList30 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory30 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier30, Reflection.getOrCreateKotlinClass(StakingProgrammeProvider.class), null, c134230, kind, emptyList30));
+        FactoryInstanceFactory factoryInstanceFactory30 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier30, Reflection.getOrCreateKotlinClass(StakingProgrammeProvider.class), null, c134330, kind, emptyList30));
         module.indexPrimaryType(factoryInstanceFactory30);
         new Pair(module, factoryInstanceFactory30);
-        C134331 c134331 = C134331.INSTANCE;
+        C134431 c134431 = C134431.INSTANCE;
         StringQualifier rootScopeQualifier31 = companion.getRootScopeQualifier();
         emptyList31 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory31 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier31, Reflection.getOrCreateKotlinClass(StakingCalculatorProgrammeProvider.class), null, c134331, kind, emptyList31));
+        FactoryInstanceFactory factoryInstanceFactory31 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier31, Reflection.getOrCreateKotlinClass(StakingCalculatorProgrammeProvider.class), null, c134431, kind, emptyList31));
         module.indexPrimaryType(factoryInstanceFactory31);
         new Pair(module, factoryInstanceFactory31);
+        C134532 c134532 = C134532.INSTANCE;
+        StringQualifier rootScopeQualifier32 = companion.getRootScopeQualifier();
+        emptyList32 = CollectionsKt__CollectionsKt.emptyList();
+        FactoryInstanceFactory factoryInstanceFactory32 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier32, Reflection.getOrCreateKotlinClass(TweetProvider.class), null, c134532, kind, emptyList32));
+        module.indexPrimaryType(factoryInstanceFactory32);
+        new Pair(module, factoryInstanceFactory32);
+        C134633 c134633 = C134633.INSTANCE;
+        StringQualifier rootScopeQualifier33 = companion.getRootScopeQualifier();
+        emptyList33 = CollectionsKt__CollectionsKt.emptyList();
+        FactoryInstanceFactory factoryInstanceFactory33 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier33, Reflection.getOrCreateKotlinClass(TweetDatesProvider.class), null, c134633, kind, emptyList33));
+        module.indexPrimaryType(factoryInstanceFactory33);
+        new Pair(module, factoryInstanceFactory33);
+        C134734 c134734 = C134734.INSTANCE;
+        StringQualifier rootScopeQualifier34 = companion.getRootScopeQualifier();
+        emptyList34 = CollectionsKt__CollectionsKt.emptyList();
+        FactoryInstanceFactory factoryInstanceFactory34 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier34, Reflection.getOrCreateKotlinClass(TwitterUserProvider.class), null, c134734, kind, emptyList34));
+        module.indexPrimaryType(factoryInstanceFactory34);
+        new Pair(module, factoryInstanceFactory34);
+        C134835 c134835 = C134835.INSTANCE;
+        StringQualifier rootScopeQualifier35 = companion.getRootScopeQualifier();
+        emptyList35 = CollectionsKt__CollectionsKt.emptyList();
+        FactoryInstanceFactory factoryInstanceFactory35 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier35, Reflection.getOrCreateKotlinClass(TwitterInviteProvider.class), null, c134835, kind, emptyList35));
+        module.indexPrimaryType(factoryInstanceFactory35);
+        new Pair(module, factoryInstanceFactory35);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C13413 extends Lambda implements Function2<Scope, ParametersHolder, CryptoAccountProvider> {
-        public static final C13413 INSTANCE = new C13413();
+    public static final class C13423 extends Lambda implements Function2<Scope, ParametersHolder, CryptoAccountProvider> {
+        public static final C13423 INSTANCE = new C13423();
 
-        C13413() {
+        C13423() {
             super(2);
         }
 
@@ -353,10 +385,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C13444 extends Lambda implements Function2<Scope, ParametersHolder, HeaderProvider> {
-        public static final C13444 INSTANCE = new C13444();
+    public static final class C13494 extends Lambda implements Function2<Scope, ParametersHolder, HeaderProvider> {
+        public static final C13494 INSTANCE = new C13494();
 
-        C13444() {
+        C13494() {
             super(2);
         }
 
@@ -372,10 +404,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$5 */
     /* loaded from: classes3.dex */
-    public static final class C13455 extends Lambda implements Function2<Scope, ParametersHolder, HeaderWithNetworkSwitcherProvider> {
-        public static final C13455 INSTANCE = new C13455();
+    public static final class C13505 extends Lambda implements Function2<Scope, ParametersHolder, HeaderWithNetworkSwitcherProvider> {
+        public static final C13505 INSTANCE = new C13505();
 
-        C13455() {
+        C13505() {
             super(2);
         }
 
@@ -391,10 +423,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$6 */
     /* loaded from: classes3.dex */
-    public static final class C13466 extends Lambda implements Function2<Scope, ParametersHolder, HeaderWithRightButtonProvider> {
-        public static final C13466 INSTANCE = new C13466();
+    public static final class C13516 extends Lambda implements Function2<Scope, ParametersHolder, HeaderWithRightButtonProvider> {
+        public static final C13516 INSTANCE = new C13516();
 
-        C13466() {
+        C13516() {
             super(2);
         }
 
@@ -410,10 +442,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$7 */
     /* loaded from: classes3.dex */
-    public static final class C13477 extends Lambda implements Function2<Scope, ParametersHolder, SelectableHeaderProvider> {
-        public static final C13477 INSTANCE = new C13477();
+    public static final class C13527 extends Lambda implements Function2<Scope, ParametersHolder, SelectableHeaderProvider> {
+        public static final C13527 INSTANCE = new C13527();
 
-        C13477() {
+        C13527() {
             super(2);
         }
 
@@ -429,10 +461,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$8 */
     /* loaded from: classes3.dex */
-    public static final class C13488 extends Lambda implements Function2<Scope, ParametersHolder, SelectTokenProvider> {
-        public static final C13488 INSTANCE = new C13488();
+    public static final class C13538 extends Lambda implements Function2<Scope, ParametersHolder, SelectTokenProvider> {
+        public static final C13538 INSTANCE = new C13538();
 
-        C13488() {
+        C13538() {
             super(2);
         }
 
@@ -448,10 +480,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$9 */
     /* loaded from: classes3.dex */
-    public static final class C13499 extends Lambda implements Function2<Scope, ParametersHolder, GlobalStateProvider> {
-        public static final C13499 INSTANCE = new C13499();
+    public static final class C13549 extends Lambda implements Function2<Scope, ParametersHolder, GlobalStateProvider> {
+        public static final C13549 INSTANCE = new C13549();
 
-        C13499() {
+        C13549() {
             super(2);
         }
 
@@ -467,10 +499,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$10 */
     /* loaded from: classes3.dex */
-    public static final class C132010 extends Lambda implements Function2<Scope, ParametersHolder, ServiceProvider> {
-        public static final C132010 INSTANCE = new C132010();
+    public static final class C132110 extends Lambda implements Function2<Scope, ParametersHolder, ServiceProvider> {
+        public static final C132110 INSTANCE = new C132110();
 
-        C132010() {
+        C132110() {
             super(2);
         }
 
@@ -486,10 +518,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$11 */
     /* loaded from: classes3.dex */
-    public static final class C132111 extends Lambda implements Function2<Scope, ParametersHolder, TokenBalanceProvider> {
-        public static final C132111 INSTANCE = new C132111();
+    public static final class C132211 extends Lambda implements Function2<Scope, ParametersHolder, TokenBalanceProvider> {
+        public static final C132211 INSTANCE = new C132211();
 
-        C132111() {
+        C132211() {
             super(2);
         }
 
@@ -505,10 +537,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$12 */
     /* loaded from: classes3.dex */
-    public static final class C132212 extends Lambda implements Function2<Scope, ParametersHolder, TotalBalanceProvider> {
-        public static final C132212 INSTANCE = new C132212();
+    public static final class C132312 extends Lambda implements Function2<Scope, ParametersHolder, TotalBalanceProvider> {
+        public static final C132312 INSTANCE = new C132312();
 
-        C132212() {
+        C132312() {
             super(2);
         }
 
@@ -524,10 +556,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$13 */
     /* loaded from: classes3.dex */
-    public static final class C132313 extends Lambda implements Function2<Scope, ParametersHolder, NftCollectionProvider> {
-        public static final C132313 INSTANCE = new C132313();
+    public static final class C132413 extends Lambda implements Function2<Scope, ParametersHolder, NftCollectionProvider> {
+        public static final C132413 INSTANCE = new C132413();
 
-        C132313() {
+        C132413() {
             super(2);
         }
 
@@ -543,10 +575,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$14 */
     /* loaded from: classes3.dex */
-    public static final class C132414 extends Lambda implements Function2<Scope, ParametersHolder, NftTokenProvider> {
-        public static final C132414 INSTANCE = new C132414();
+    public static final class C132514 extends Lambda implements Function2<Scope, ParametersHolder, NftTokenProvider> {
+        public static final C132514 INSTANCE = new C132514();
 
-        C132414() {
+        C132514() {
             super(2);
         }
 
@@ -562,10 +594,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$15 */
     /* loaded from: classes3.dex */
-    public static final class C132515 extends Lambda implements Function2<Scope, ParametersHolder, CexProtocolProvider> {
-        public static final C132515 INSTANCE = new C132515();
+    public static final class C132615 extends Lambda implements Function2<Scope, ParametersHolder, CexProtocolProvider> {
+        public static final C132615 INSTANCE = new C132615();
 
-        C132515() {
+        C132615() {
             super(2);
         }
 
@@ -581,10 +613,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$16 */
     /* loaded from: classes3.dex */
-    public static final class C132616 extends Lambda implements Function2<Scope, ParametersHolder, DexProtocolProvider> {
-        public static final C132616 INSTANCE = new C132616();
+    public static final class C132716 extends Lambda implements Function2<Scope, ParametersHolder, DexProtocolProvider> {
+        public static final C132716 INSTANCE = new C132716();
 
-        C132616() {
+        C132716() {
             super(2);
         }
 
@@ -600,10 +632,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$17 */
     /* loaded from: classes3.dex */
-    public static final class C132717 extends Lambda implements Function2<Scope, ParametersHolder, BinanceTokenBalanceProvider> {
-        public static final C132717 INSTANCE = new C132717();
+    public static final class C132817 extends Lambda implements Function2<Scope, ParametersHolder, BinanceTokenBalanceProvider> {
+        public static final C132817 INSTANCE = new C132817();
 
-        C132717() {
+        C132817() {
             super(2);
         }
 
@@ -619,10 +651,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$18 */
     /* loaded from: classes3.dex */
-    public static final class C132818 extends Lambda implements Function2<Scope, ParametersHolder, BinanceAccountProvider> {
-        public static final C132818 INSTANCE = new C132818();
+    public static final class C132918 extends Lambda implements Function2<Scope, ParametersHolder, BinanceAccountProvider> {
+        public static final C132918 INSTANCE = new C132918();
 
-        C132818() {
+        C132918() {
             super(2);
         }
 
@@ -638,10 +670,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$19 */
     /* loaded from: classes3.dex */
-    public static final class C132919 extends Lambda implements Function2<Scope, ParametersHolder, CardButtonProvider> {
-        public static final C132919 INSTANCE = new C132919();
+    public static final class C133019 extends Lambda implements Function2<Scope, ParametersHolder, CardButtonProvider> {
+        public static final C133019 INSTANCE = new C133019();
 
-        C132919() {
+        C133019() {
             super(2);
         }
 
@@ -657,10 +689,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$20 */
     /* loaded from: classes3.dex */
-    public static final class C133120 extends Lambda implements Function2<Scope, ParametersHolder, TokenTransactionProvider> {
-        public static final C133120 INSTANCE = new C133120();
+    public static final class C133220 extends Lambda implements Function2<Scope, ParametersHolder, TokenTransactionProvider> {
+        public static final C133220 INSTANCE = new C133220();
 
-        C133120() {
+        C133220() {
             super(2);
         }
 
@@ -676,10 +708,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$21 */
     /* loaded from: classes3.dex */
-    public static final class C133221 extends Lambda implements Function2<Scope, ParametersHolder, StakingOperationProvider> {
-        public static final C133221 INSTANCE = new C133221();
+    public static final class C133321 extends Lambda implements Function2<Scope, ParametersHolder, StakingOperationProvider> {
+        public static final C133321 INSTANCE = new C133321();
 
-        C133221() {
+        C133321() {
             super(2);
         }
 
@@ -695,10 +727,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$22 */
     /* loaded from: classes3.dex */
-    public static final class C133322 extends Lambda implements Function2<Scope, ParametersHolder, BinanceTransactionProvider> {
-        public static final C133322 INSTANCE = new C133322();
+    public static final class C133422 extends Lambda implements Function2<Scope, ParametersHolder, BinanceTransactionProvider> {
+        public static final C133422 INSTANCE = new C133422();
 
-        C133322() {
+        C133422() {
             super(2);
         }
 
@@ -714,10 +746,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$23 */
     /* loaded from: classes3.dex */
-    public static final class C133423 extends Lambda implements Function2<Scope, ParametersHolder, SimplexProductProvider> {
-        public static final C133423 INSTANCE = new C133423();
+    public static final class C133523 extends Lambda implements Function2<Scope, ParametersHolder, SimplexProductProvider> {
+        public static final C133523 INSTANCE = new C133523();
 
-        C133423() {
+        C133523() {
             super(2);
         }
 
@@ -733,10 +765,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$24 */
     /* loaded from: classes3.dex */
-    public static final class C133524 extends Lambda implements Function2<Scope, ParametersHolder, SimplexFooterProvider> {
-        public static final C133524 INSTANCE = new C133524();
+    public static final class C133624 extends Lambda implements Function2<Scope, ParametersHolder, SimplexFooterProvider> {
+        public static final C133624 INSTANCE = new C133624();
 
-        C133524() {
+        C133624() {
             super(2);
         }
 
@@ -752,10 +784,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$25 */
     /* loaded from: classes3.dex */
-    public static final class C133625 extends Lambda implements Function2<Scope, ParametersHolder, CategoryWithCampaignsProvider> {
-        public static final C133625 INSTANCE = new C133625();
+    public static final class C133725 extends Lambda implements Function2<Scope, ParametersHolder, CategoryWithCampaignsProvider> {
+        public static final C133725 INSTANCE = new C133725();
 
-        C133625() {
+        C133725() {
             super(2);
         }
 
@@ -771,10 +803,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$26 */
     /* loaded from: classes3.dex */
-    public static final class C133726 extends Lambda implements Function2<Scope, ParametersHolder, FilterProvider> {
-        public static final C133726 INSTANCE = new C133726();
+    public static final class C133826 extends Lambda implements Function2<Scope, ParametersHolder, FilterProvider> {
+        public static final C133826 INSTANCE = new C133826();
 
-        C133726() {
+        C133826() {
             super(2);
         }
 
@@ -790,10 +822,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$27 */
     /* loaded from: classes3.dex */
-    public static final class C133827 extends Lambda implements Function2<Scope, ParametersHolder, CampaignProvider> {
-        public static final C133827 INSTANCE = new C133827();
+    public static final class C133927 extends Lambda implements Function2<Scope, ParametersHolder, CampaignProvider> {
+        public static final C133927 INSTANCE = new C133927();
 
-        C133827() {
+        C133927() {
             super(2);
         }
 
@@ -809,10 +841,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$28 */
     /* loaded from: classes3.dex */
-    public static final class C133928 extends Lambda implements Function2<Scope, ParametersHolder, CreateCampaignProvider> {
-        public static final C133928 INSTANCE = new C133928();
+    public static final class C134028 extends Lambda implements Function2<Scope, ParametersHolder, CreateCampaignProvider> {
+        public static final C134028 INSTANCE = new C134028();
 
-        C133928() {
+        C134028() {
             super(2);
         }
 
@@ -828,10 +860,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$29 */
     /* loaded from: classes3.dex */
-    public static final class C134029 extends Lambda implements Function2<Scope, ParametersHolder, StakingDashboardProvider> {
-        public static final C134029 INSTANCE = new C134029();
+    public static final class C134129 extends Lambda implements Function2<Scope, ParametersHolder, StakingDashboardProvider> {
+        public static final C134129 INSTANCE = new C134129();
 
-        C134029() {
+        C134129() {
             super(2);
         }
 
@@ -847,10 +879,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$30 */
     /* loaded from: classes3.dex */
-    public static final class C134230 extends Lambda implements Function2<Scope, ParametersHolder, StakingProgrammeProvider> {
-        public static final C134230 INSTANCE = new C134230();
+    public static final class C134330 extends Lambda implements Function2<Scope, ParametersHolder, StakingProgrammeProvider> {
+        public static final C134330 INSTANCE = new C134330();
 
-        C134230() {
+        C134330() {
             super(2);
         }
 
@@ -866,10 +898,10 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
     /* compiled from: ItemProviderModule.kt */
     /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$31 */
     /* loaded from: classes3.dex */
-    public static final class C134331 extends Lambda implements Function2<Scope, ParametersHolder, StakingCalculatorProgrammeProvider> {
-        public static final C134331 INSTANCE = new C134331();
+    public static final class C134431 extends Lambda implements Function2<Scope, ParametersHolder, StakingCalculatorProgrammeProvider> {
+        public static final C134431 INSTANCE = new C134431();
 
-        C134331() {
+        C134431() {
             super(2);
         }
 
@@ -878,6 +910,82 @@ final class ItemProviderModuleKt$presentationItemProviderModule$1 extends Lambda
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
             Intrinsics.checkNotNullParameter(it, "it");
             return new StakingCalculatorProgrammeProvider((ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: ItemProviderModule.kt */
+    /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$32 */
+    /* loaded from: classes3.dex */
+    public static final class C134532 extends Lambda implements Function2<Scope, ParametersHolder, TweetProvider> {
+        public static final C134532 INSTANCE = new C134532();
+
+        C134532() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final TweetProvider invoke(Scope factory, ParametersHolder it) {
+            Intrinsics.checkNotNullParameter(factory, "$this$factory");
+            Intrinsics.checkNotNullParameter(it, "it");
+            return new TweetProvider();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: ItemProviderModule.kt */
+    /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$33 */
+    /* loaded from: classes3.dex */
+    public static final class C134633 extends Lambda implements Function2<Scope, ParametersHolder, TweetDatesProvider> {
+        public static final C134633 INSTANCE = new C134633();
+
+        C134633() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final TweetDatesProvider invoke(Scope factory, ParametersHolder it) {
+            Intrinsics.checkNotNullParameter(factory, "$this$factory");
+            Intrinsics.checkNotNullParameter(it, "it");
+            return new TweetDatesProvider();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: ItemProviderModule.kt */
+    /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$34 */
+    /* loaded from: classes3.dex */
+    public static final class C134734 extends Lambda implements Function2<Scope, ParametersHolder, TwitterUserProvider> {
+        public static final C134734 INSTANCE = new C134734();
+
+        C134734() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final TwitterUserProvider invoke(Scope factory, ParametersHolder it) {
+            Intrinsics.checkNotNullParameter(factory, "$this$factory");
+            Intrinsics.checkNotNullParameter(it, "it");
+            return new TwitterUserProvider();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: ItemProviderModule.kt */
+    /* renamed from: com.smedialink.di.module.ItemProviderModuleKt$presentationItemProviderModule$1$35 */
+    /* loaded from: classes3.dex */
+    public static final class C134835 extends Lambda implements Function2<Scope, ParametersHolder, TwitterInviteProvider> {
+        public static final C134835 INSTANCE = new C134835();
+
+        C134835() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final TwitterInviteProvider invoke(Scope factory, ParametersHolder it) {
+            Intrinsics.checkNotNullParameter(factory, "$this$factory");
+            Intrinsics.checkNotNullParameter(it, "it");
+            return new TwitterInviteProvider((ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null));
         }
     }
 }

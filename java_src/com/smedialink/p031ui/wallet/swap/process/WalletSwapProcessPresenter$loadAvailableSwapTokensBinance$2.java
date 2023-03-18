@@ -1,0 +1,44 @@
+package com.smedialink.p031ui.wallet.swap.process;
+
+import com.smedialink.p031ui.base.mvp.base.BaseView;
+import com.smedialink.storage.domain.model.Result;
+import com.smedialink.storage.domain.model.binancepay.BinanceTokenInfo;
+import com.smedialink.utils.extentions.p033rx.RxExtKt;
+import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
+import java.util.List;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: WalletSwapProcessPresenter.kt */
+/* renamed from: com.smedialink.ui.wallet.swap.process.WalletSwapProcessPresenter$loadAvailableSwapTokensBinance$2 */
+/* loaded from: classes3.dex */
+public final class WalletSwapProcessPresenter$loadAvailableSwapTokensBinance$2 extends Lambda implements Function1<Observable<Result<? extends List<? extends BinanceTokenInfo>>>, ObservableSource<Result<? extends List<? extends BinanceTokenInfo>>>> {
+    final /* synthetic */ boolean $isWithLoading;
+    final /* synthetic */ WalletSwapProcessPresenter this$0;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public WalletSwapProcessPresenter$loadAvailableSwapTokensBinance$2(boolean z, WalletSwapProcessPresenter walletSwapProcessPresenter) {
+        super(1);
+        this.$isWithLoading = z;
+        this.this$0 = walletSwapProcessPresenter;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public /* bridge */ /* synthetic */ ObservableSource<Result<? extends List<? extends BinanceTokenInfo>>> invoke(Observable<Result<? extends List<? extends BinanceTokenInfo>>> observable) {
+        return invoke2((Observable<Result<List<BinanceTokenInfo>>>) observable);
+    }
+
+    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+    public final ObservableSource<Result<List<BinanceTokenInfo>>> invoke2(Observable<Result<List<BinanceTokenInfo>>> observable) {
+        Intrinsics.checkNotNullParameter(observable, "observable");
+        if (this.$isWithLoading) {
+            T viewState = this.this$0.getViewState();
+            Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
+            return RxExtKt.withLoadingDialog$default((Observable) observable, (BaseView) viewState, false, 2, (Object) null);
+        }
+        return observable;
+    }
+}

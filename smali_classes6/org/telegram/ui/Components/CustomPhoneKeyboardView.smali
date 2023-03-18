@@ -26,6 +26,8 @@
 
 .field private runningLongClick:Z
 
+.field private viewToFindFocus:Landroid/view/View;
+
 .field private views:[Landroid/view/View;
 
 
@@ -65,7 +67,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 6
 
-    .line 61
+    .line 64
     invoke-direct {p0, p1}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
 
     const/16 v0, 0xc
@@ -75,14 +77,14 @@
     .line 36
     iput-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->views:[Landroid/view/View;
 
-    .line 40
+    .line 42
     new-instance v0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/CustomPhoneKeyboardView;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->onBackButton:Ljava/lang/Runnable;
 
-    .line 54
+    .line 57
     new-instance v0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/CustomPhoneKeyboardView;)V
@@ -167,13 +169,13 @@
     :cond_1
     const/4 v3, 0x0
 
-    .line 100
+    .line 103
     :goto_2
     invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 101
+    .line 104
     iget-object v4, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->views:[Landroid/view/View;
 
     new-instance v5, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;
@@ -182,7 +184,7 @@
 
     aput-object v5, v4, v1
 
-    .line 102
+    .line 105
     iget-object v2, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->views:[Landroid/view/View;
 
     aget-object v2, v2, v1
@@ -193,7 +195,7 @@
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 124
+    .line 128
     iget-object v2, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->views:[Landroid/view/View;
 
     aget-object v2, v2, v1
@@ -205,25 +207,25 @@
 
     goto :goto_0
 
-    .line 127
+    .line 131
     :cond_2
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->setupBackButtonDetector(Landroid/content/Context;)Landroidx/core/view/GestureDetectorCompat;
 
     move-result-object v0
 
-    .line 128
+    .line 132
     new-instance v1, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$1;
 
     invoke-direct {v1, p0, p1, v0}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$1;-><init>(Lorg/telegram/ui/Components/CustomPhoneKeyboardView;Landroid/content/Context;Landroidx/core/view/GestureDetectorCompat;)V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->backButton:Landroid/widget/ImageView;
 
-    .line 144
+    .line 148
     sget p1, Lorg/telegram/messenger/R$drawable;->msg_clear_input:I
 
     invoke-virtual {v1, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 145
+    .line 149
     iget-object p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->backButton:Landroid/widget/ImageView;
 
     const-string v0, "windowBackgroundWhiteBlackText"
@@ -234,7 +236,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setColorFilter(I)V
 
-    .line 146
+    .line 150
     iget-object p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->backButton:Landroid/widget/ImageView;
 
     invoke-static {}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->getButtonDrawable()Landroid/graphics/drawable/Drawable;
@@ -243,24 +245,24 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 147
+    .line 151
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 148
+    .line 152
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->backButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1, p1, p1, p1}, Landroid/widget/ImageView;->setPadding(IIII)V
 
-    .line 149
+    .line 153
     iget-object p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->backButton:Landroid/widget/ImageView;
 
     sget-object v0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$$ExternalSyntheticLambda1;->INSTANCE:Lorg/telegram/ui/Components/CustomPhoneKeyboardView$$ExternalSyntheticLambda1;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 150
+    .line 154
     iget-object p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->views:[Landroid/view/View;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->backButton:Landroid/widget/ImageView;
@@ -358,7 +360,7 @@
 
     const/4 v0, 0x6
 
-    .line 224
+    .line 241
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -389,7 +391,10 @@
 .method private synthetic lambda$new$0()V
     .locals 4
 
-    .line 41
+    .line 43
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->checkFindEditText()V
+
+    .line 44
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->editText:Landroid/widget/EditText;
 
     if-eqz v0, :cond_1
@@ -411,15 +416,15 @@
 
     const/4 v1, 0x2
 
-    .line 43
+    .line 46
     invoke-virtual {p0, v0, v1}, Landroid/view/ViewGroup;->performHapticFeedback(II)Z
 
     const/4 v0, 0x0
 
-    .line 44
+    .line 47
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->playSoundEffect(I)V
 
-    .line 45
+    .line 48
     iget-object v1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->editText:Landroid/widget/EditText;
 
     new-instance v2, Landroid/view/KeyEvent;
@@ -430,7 +435,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
-    .line 46
+    .line 49
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->editText:Landroid/widget/EditText;
 
     new-instance v1, Landroid/view/KeyEvent;
@@ -441,12 +446,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
-    .line 48
+    .line 51
     iget-boolean v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->runningLongClick:Z
 
     if-eqz v0, :cond_1
 
-    .line 49
+    .line 52
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->onBackButton:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0x32
@@ -463,15 +468,15 @@
 
     const/4 v0, 0x0
 
-    .line 55
+    .line 58
     iput-boolean v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->postedLongClick:Z
 
     const/4 v0, 0x1
 
-    .line 56
+    .line 59
     iput-boolean v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->runningLongClick:Z
 
-    .line 57
+    .line 60
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->onBackButton:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
@@ -482,7 +487,10 @@
 .method private synthetic lambda$new$2(Ljava/lang/String;Landroid/view/View;)V
     .locals 7
 
-    .line 103
+    .line 106
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->checkFindEditText()V
+
+    .line 107
     iget-object p2, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->editText:Landroid/widget/EditText;
 
     if-nez p2, :cond_0
@@ -494,10 +502,10 @@
 
     const/4 v0, 0x2
 
-    .line 105
+    .line 109
     invoke-virtual {p0, p2, v0}, Landroid/view/ViewGroup;->performHapticFeedback(II)Z
 
-    .line 106
+    .line 110
     iget-object p2, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->editText:Landroid/widget/EditText;
 
     instance-of v0, p2, Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -508,12 +516,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 107
+    .line 111
     check-cast p2, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p2, v2, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextWatchersSuppressed(ZZ)V
 
-    .line 110
+    .line 114
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->editText:Landroid/widget/EditText;
 
@@ -521,7 +529,7 @@
 
     move-result-object p2
 
-    .line 111
+    .line 115
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->editText:Landroid/widget/EditText;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->getSelectionEnd()I
@@ -555,7 +563,7 @@
 
     add-int/2addr v0, v3
 
-    .line 112
+    .line 116
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->editText:Landroid/widget/EditText;
 
@@ -573,7 +581,7 @@
 
     if-eq v3, v4, :cond_4
 
-    .line 113
+    .line 117
     iget-object v3, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->editText:Landroid/widget/EditText;
 
     invoke-virtual {v3}, Landroid/widget/EditText;->getSelectionStart()I
@@ -592,7 +600,7 @@
 
     invoke-virtual {v3, p1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 114
+    .line 118
     iget-object p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->editText:Landroid/widget/EditText;
 
     if-ne v0, v4, :cond_3
@@ -606,13 +614,13 @@
 
     goto :goto_1
 
-    .line 116
+    .line 120
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->editText:Landroid/widget/EditText;
 
     invoke-virtual {p2, p1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 117
+    .line 121
     iget-object p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->editText:Landroid/widget/EditText;
 
     invoke-virtual {p1}, Landroid/widget/EditText;->length()I
@@ -621,7 +629,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/EditText;->setSelection(I)V
 
-    .line 120
+    .line 124
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->editText:Landroid/widget/EditText;
 
@@ -629,7 +637,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 121
+    .line 125
     check-cast p1, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p1, v1, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextWatchersSuppressed(ZZ)V
@@ -647,7 +655,7 @@
 .method private setupBackButtonDetector(Landroid/content/Context;)Landroidx/core/view/GestureDetectorCompat;
     .locals 3
 
-    .line 163
+    .line 167
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v0
@@ -656,7 +664,7 @@
 
     move-result v0
 
-    .line 164
+    .line 168
     new-instance v1, Landroidx/core/view/GestureDetectorCompat;
 
     new-instance v2, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$2;
@@ -678,126 +686,39 @@
     return p1
 .end method
 
-.method protected onLayout(ZIIII)V
-    .locals 3
+.method public checkFindEditText()V
+    .locals 2
 
-    .line 196
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
+    .line 198
+    iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->editText:Landroid/widget/EditText;
 
-    move-result p1
+    if-nez v0, :cond_0
 
-    const/16 p2, 0x20
+    iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->viewToFindFocus:Landroid/view/View;
 
-    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result p2
-
-    sub-int/2addr p1, p2
-
-    div-int/lit8 p1, p1, 0x3
-
-    .line 197
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->getHeight()I
-
-    move-result p2
-
-    const/16 p3, 0x2a
-
-    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result p3
-
-    sub-int/2addr p2, p3
-
-    div-int/lit8 p2, p2, 0x4
-
-    const/4 p3, 0x0
+    if-eqz v0, :cond_0
 
     .line 199
-    :goto_0
-    iget-object p4, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->views:[Landroid/view/View;
+    invoke-virtual {v0}, Landroid/view/View;->findFocus()Landroid/view/View;
 
-    array-length p4, p4
-
-    if-ge p3, p4, :cond_1
+    move-result-object v0
 
     .line 200
-    rem-int/lit8 p4, p3, 0x3
-
-    div-int/lit8 p5, p3, 0x3
-
-    const/4 v0, 0x6
-
-    .line 201
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v1
-
-    add-int/2addr v1, p1
-
-    mul-int p4, p4, v1
-
-    const/16 v1, 0xa
-
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    add-int/2addr p4, v2
-
-    .line 202
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    add-int/2addr v0, p2
-
-    mul-int p5, p5, v0
-
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    add-int/2addr p5, v0
-
-    .line 203
-    iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->views:[Landroid/view/View;
-
-    aget-object v1, v0, p3
+    instance-of v1, v0, Landroid/widget/EditText;
 
     if-eqz v1, :cond_0
 
-    .line 204
-    aget-object v0, v0, p3
+    .line 201
+    check-cast v0, Landroid/widget/EditText;
 
-    add-int v1, p4, p1
-
-    add-int v2, p5, p2
-
-    invoke-virtual {v0, p4, p5, v1, v2}, Landroid/view/View;->layout(IIII)V
+    iput-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->editText:Landroid/widget/EditText;
 
     :cond_0
-    add-int/lit8 p3, p3, 0x1
-
-    goto :goto_0
-
-    :cond_1
     return-void
 .end method
 
-.method protected onMeasure(II)V
-    .locals 6
-
-    .line 211
-    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
-
-    move-result p1
-
-    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
-
-    move-result p2
-
-    invoke-virtual {p0, p1, p2}, Landroid/view/ViewGroup;->setMeasuredDimension(II)V
+.method protected onLayout(ZIIII)V
+    .locals 3
 
     .line 213
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
@@ -819,6 +740,124 @@
 
     move-result p2
 
+    const/16 p3, 0x2a
+
+    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p3
+
+    sub-int/2addr p2, p3
+
+    div-int/lit8 p2, p2, 0x4
+
+    const/4 p3, 0x0
+
+    .line 216
+    :goto_0
+    iget-object p4, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->views:[Landroid/view/View;
+
+    array-length p4, p4
+
+    if-ge p3, p4, :cond_1
+
+    .line 217
+    rem-int/lit8 p4, p3, 0x3
+
+    div-int/lit8 p5, p3, 0x3
+
+    const/4 v0, 0x6
+
+    .line 218
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    add-int/2addr v1, p1
+
+    mul-int p4, p4, v1
+
+    const/16 v1, 0xa
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    add-int/2addr p4, v2
+
+    .line 219
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    add-int/2addr v0, p2
+
+    mul-int p5, p5, v0
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    add-int/2addr p5, v0
+
+    .line 220
+    iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->views:[Landroid/view/View;
+
+    aget-object v1, v0, p3
+
+    if-eqz v1, :cond_0
+
+    .line 221
+    aget-object v0, v0, p3
+
+    add-int v1, p4, p1
+
+    add-int v2, p5, p2
+
+    invoke-virtual {v0, p4, p5, v1, v2}, Landroid/view/View;->layout(IIII)V
+
+    :cond_0
+    add-int/lit8 p3, p3, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+.end method
+
+.method protected onMeasure(II)V
+    .locals 6
+
+    .line 228
+    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result p1
+
+    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result p2
+
+    invoke-virtual {p0, p1, p2}, Landroid/view/ViewGroup;->setMeasuredDimension(II)V
+
+    .line 230
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
+
+    move-result p1
+
+    const/16 p2, 0x20
+
+    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p2
+
+    sub-int/2addr p1, p2
+
+    div-int/lit8 p1, p1, 0x3
+
+    .line 231
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getHeight()I
+
+    move-result p2
+
     const/16 v0, 0x2a
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -829,7 +868,7 @@
 
     div-int/lit8 p2, p2, 0x4
 
-    .line 216
+    .line 233
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->views:[Landroid/view/View;
 
     array-length v1, v0
@@ -845,7 +884,7 @@
 
     const/high16 v4, 0x40000000    # 2.0f
 
-    .line 218
+    .line 235
     invoke-static {p1, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v5
@@ -868,7 +907,7 @@
 .method public setDispatchBackWhenEmpty(Z)V
     .locals 0
 
-    .line 159
+    .line 163
     iput-boolean p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->dispatchBackWhenEmpty:Z
 
     return-void
@@ -877,13 +916,22 @@
 .method public setEditText(Landroid/widget/EditText;)V
     .locals 0
 
-    .line 190
+    .line 207
     iput-object p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->editText:Landroid/widget/EditText;
 
     const/4 p1, 0x0
 
-    .line 191
+    .line 208
     iput-boolean p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->dispatchBackWhenEmpty:Z
+
+    return-void
+.end method
+
+.method public setViewToFindFocus(Landroid/view/View;)V
+    .locals 0
+
+    .line 194
+    iput-object p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->viewToFindFocus:Landroid/view/View;
 
     return-void
 .end method
@@ -891,7 +939,7 @@
 .method public updateColors()V
     .locals 5
 
-    .line 228
+    .line 245
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->backButton:Landroid/widget/ImageView;
 
     const-string v1, "windowBackgroundWhiteBlackText"
@@ -902,7 +950,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(I)V
 
-    .line 229
+    .line 246
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->views:[Landroid/view/View;
 
     array-length v1, v0
@@ -916,19 +964,19 @@
 
     if-eqz v3, :cond_0
 
-    .line 231
+    .line 248
     invoke-static {}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->getButtonDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 233
+    .line 250
     instance-of v4, v3, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;
 
     if-eqz v4, :cond_0
 
-    .line 234
+    .line 251
     check-cast v3, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->access$400(Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;)V

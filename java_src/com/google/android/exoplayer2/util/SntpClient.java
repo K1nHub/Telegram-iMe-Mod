@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.util;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.upstream.Loader;
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -69,7 +69,7 @@ public final class SntpClient {
     public static long getElapsedRealtimeOffsetMs() {
         long j;
         synchronized (valueLock) {
-            j = isInitialized ? elapsedRealtimeOffsetMs : C0474C.TIME_UNSET;
+            j = isInitialized ? elapsedRealtimeOffsetMs : C0468C.TIME_UNSET;
         }
         return j;
     }

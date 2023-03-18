@@ -77,9 +77,9 @@ public final class DonationBalanceView extends FrameLayout implements KoinCompon
         ForkRecycleItemWalletTokenBalanceBinding forkRecycleItemWalletTokenBalanceBinding = this.binding;
         forkRecycleItemWalletTokenBalanceBinding.getRoot().setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
         listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new AppCompatTextView[]{forkRecycleItemWalletTokenBalanceBinding.textAccountBalance, forkRecycleItemWalletTokenBalanceBinding.textAccountBalanceInDollars});
-        for (AppCompatTextView appCompatTextView : listOf) {
-            Intrinsics.checkNotNullExpressionValue(appCompatTextView, "");
-            ViewExtKt.withMediumTypeface(appCompatTextView);
+        for (AppCompatTextView setupColors$lambda$2$lambda$1 : listOf) {
+            Intrinsics.checkNotNullExpressionValue(setupColors$lambda$2$lambda$1, "setupColors$lambda$2$lambda$1");
+            ViewExtKt.withMediumTypeface(setupColors$lambda$2$lambda$1);
         }
         forkRecycleItemWalletTokenBalanceBinding.textAccountBalanceInDollars.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
         forkRecycleItemWalletTokenBalanceBinding.textAccountTitle.setTextColor(Theme.getColor("chats_actionBackground"));

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/custom/HorizontalActionButtonsView$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/custom/HorizontalActionButtonsView;->$r8$lambda$XGIZ7B5Kc5ut1WoVFvXNJPDRna8(Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/custom/HorizontalActionButtonsView;->$r8$lambda$Caz6cvF1aFUBuqKkCxNyYL0kFnk(Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;Landroid/view/View;)V
 
     return-void
 .end method

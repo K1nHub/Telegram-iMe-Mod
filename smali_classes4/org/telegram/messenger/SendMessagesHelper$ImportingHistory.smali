@@ -645,7 +645,7 @@
     goto :goto_1
 
     :cond_1
-    const-string p3, "webp"
+    const-string/jumbo p3, "webp"
 
     .line 313
     invoke-virtual {p3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

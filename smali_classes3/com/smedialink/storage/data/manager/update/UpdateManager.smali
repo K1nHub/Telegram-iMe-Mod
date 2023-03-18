@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/storage/data/manager/update/UpdateManager$FlexibleUpdateDownloadListener;,
-        Lcom/smedialink/storage/data/manager/update/UpdateManager$Companion;
+        Lcom/smedialink/storage/data/manager/update/UpdateManager$Companion;,
+        Lcom/smedialink/storage/data/manager/update/UpdateManager$FlexibleUpdateDownloadListener;
     }
 .end annotation
 
@@ -51,34 +51,34 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$0SZgyhE16k7PCJmD9aChED91iKM(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/appupdate/AppUpdateInfo;)V
+.method public static synthetic $r8$lambda$5CmhYXv767fjk5tiDgxIehD52h4(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/install/InstallState;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->continueUpdateForImmediate$lambda-6(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/appupdate/AppUpdateInfo;)V
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->listener$lambda$0(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/install/InstallState;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$J5PBepBRoWo8xxITNR4rvpxmXak(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/appupdate/AppUpdateInfo;)V
+.method public static synthetic $r8$lambda$Hqa9trvXlKYlNrsGxfKj8J0bOn8(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->checkUpdate$lambda-3(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/appupdate/AppUpdateInfo;)V
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->continueUpdateForImmediate$lambda$6(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$QcToTZ1FuWhMGJgLqBLEcNepPy8(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/install/InstallState;)V
+.method public static synthetic $r8$lambda$OM7_AwXIGHtHrHF9KybFPaYFWTc(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->listener$lambda-0(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/install/InstallState;)V
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->continueUpdateForFlexible$lambda$5(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Wtu4stP4nbr3o6YVfpZ9ZsE3Q98(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/appupdate/AppUpdateInfo;)V
+.method public static synthetic $r8$lambda$rTR1VrlQr6aGza9m517TsfVijrw(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->continueUpdateForFlexible$lambda-5(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/appupdate/AppUpdateInfo;)V
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->checkUpdate$lambda$3(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -172,6 +172,17 @@
     return-void
 .end method
 
+.method public static final synthetic access$getActivity(Lcom/smedialink/storage/data/manager/update/UpdateManager;)Landroid/app/Activity;
+    .locals 0
+
+    .line 23
+    invoke-direct {p0}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->getActivity()Landroid/app/Activity;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static final synthetic access$getAppUpdateManager$p(Lcom/smedialink/storage/data/manager/update/UpdateManager;)Lcom/google/android/play/core/appupdate/AppUpdateManager;
     .locals 0
 
@@ -181,8 +192,46 @@
     return-object p0
 .end method
 
+.method public static final synthetic access$getMode$p(Lcom/smedialink/storage/data/manager/update/UpdateManager;)I
+    .locals 0
+
+    .line 23
+    iget p0, p0, Lcom/smedialink/storage/data/manager/update/UpdateManager;->mode:I
+
+    return p0
+.end method
+
+.method public static final synthetic access$isNeedUpdate(Lcom/smedialink/storage/data/manager/update/UpdateManager;)Z
+    .locals 0
+
+    .line 23
+    invoke-direct {p0}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->isNeedUpdate()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static final synthetic access$popupSnackbarForCompleteUpdate(Lcom/smedialink/storage/data/manager/update/UpdateManager;)V
+    .locals 0
+
+    .line 23
+    invoke-direct {p0}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->popupSnackbarForCompleteUpdate()V
+
+    return-void
+.end method
+
+.method public static final synthetic access$startUpdate(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/appupdate/AppUpdateInfo;)V
+    .locals 0
+
+    .line 23
+    invoke-direct {p0, p1}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->startUpdate(Lcom/google/android/play/core/appupdate/AppUpdateInfo;)V
+
+    return-void
+.end method
+
 .method private final checkUpdate()V
-    .locals 2
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -196,75 +245,29 @@
     .line 128
     iget-object v0, p0, Lcom/smedialink/storage/data/manager/update/UpdateManager;->appUpdateInfoTask:Lcom/google/android/play/core/tasks/Task;
 
-    new-instance v1, Lcom/smedialink/storage/data/manager/update/UpdateManager$$ExternalSyntheticLambda2;
+    new-instance v1, Lcom/smedialink/storage/data/manager/update/UpdateManager$checkUpdate$1;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/storage/data/manager/update/UpdateManager$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/storage/data/manager/update/UpdateManager;)V
+    invoke-direct {v1, p0}, Lcom/smedialink/storage/data/manager/update/UpdateManager$checkUpdate$1;-><init>(Lcom/smedialink/storage/data/manager/update/UpdateManager;)V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/play/core/tasks/Task;->addOnSuccessListener(Lcom/google/android/play/core/tasks/OnSuccessListener;)Lcom/google/android/play/core/tasks/Task;
+    new-instance v2, Lcom/smedialink/storage/data/manager/update/UpdateManager$$ExternalSyntheticLambda3;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/storage/data/manager/update/UpdateManager$$ExternalSyntheticLambda3;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v2}, Lcom/google/android/play/core/tasks/Task;->addOnSuccessListener(Lcom/google/android/play/core/tasks/OnSuccessListener;)Lcom/google/android/play/core/tasks/Task;
 
     return-void
 .end method
 
-.method private static final checkUpdate$lambda-3(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/appupdate/AppUpdateInfo;)V
-    .locals 3
+.method private static final checkUpdate$lambda$3(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "appUpdateInfo"
+    .line 128
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 129
-    invoke-virtual {p1}, Lcom/google/android/play/core/appupdate/AppUpdateInfo;->updateAvailability()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x2
-
-    if-ne v0, v2, :cond_0
-
-    .line 130
-    iget v0, p0, Lcom/smedialink/storage/data/manager/update/UpdateManager;->mode:I
-
-    invoke-virtual {p1, v0}, Lcom/google/android/play/core/appupdate/AppUpdateInfo;->isUpdateTypeAllowed(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    new-array v0, v1, [Ljava/lang/Object;
-
-    const-string v1, "Update available"
-
-    .line 132
-    invoke-static {v1, v0}, Ltimber/log/Timber;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 133
-    invoke-direct {p0}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->isNeedUpdate()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 134
-    invoke-direct {p0, p1}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->startUpdate(Lcom/google/android/play/core/appupdate/AppUpdateInfo;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-array p0, v1, [Ljava/lang/Object;
-
-    const-string p1, "No Update available"
-
-    .line 137
-    invoke-static {p1, p0}, Ltimber/log/Timber;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 
@@ -290,7 +293,7 @@
 .end method
 
 .method private final continueUpdateForFlexible()V
-    .locals 2
+    .locals 3
 
     .line 185
     iget-object v0, p0, Lcom/smedialink/storage/data/manager/update/UpdateManager;->appUpdateManager:Lcom/google/android/play/core/appupdate/AppUpdateManager;
@@ -301,53 +304,34 @@
     move-result-object v0
 
     .line 187
-    new-instance v1, Lcom/smedialink/storage/data/manager/update/UpdateManager$$ExternalSyntheticLambda3;
+    new-instance v1, Lcom/smedialink/storage/data/manager/update/UpdateManager$continueUpdateForFlexible$1;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/storage/data/manager/update/UpdateManager$$ExternalSyntheticLambda3;-><init>(Lcom/smedialink/storage/data/manager/update/UpdateManager;)V
+    invoke-direct {v1, p0}, Lcom/smedialink/storage/data/manager/update/UpdateManager$continueUpdateForFlexible$1;-><init>(Lcom/smedialink/storage/data/manager/update/UpdateManager;)V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/play/core/tasks/Task;->addOnSuccessListener(Lcom/google/android/play/core/tasks/OnSuccessListener;)Lcom/google/android/play/core/tasks/Task;
+    new-instance v2, Lcom/smedialink/storage/data/manager/update/UpdateManager$$ExternalSyntheticLambda2;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/storage/data/manager/update/UpdateManager$$ExternalSyntheticLambda2;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v2}, Lcom/google/android/play/core/tasks/Task;->addOnSuccessListener(Lcom/google/android/play/core/tasks/OnSuccessListener;)Lcom/google/android/play/core/tasks/Task;
 
     return-void
 .end method
 
-.method private static final continueUpdateForFlexible$lambda-5(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/appupdate/AppUpdateInfo;)V
+.method private static final continueUpdateForFlexible$lambda$5(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "appUpdateInfo"
+    .line 187
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 190
-    invoke-virtual {p1}, Lcom/google/android/play/core/appupdate/AppUpdateInfo;->installStatus()I
-
-    move-result p1
-
-    const/16 v0, 0xb
-
-    if-ne p1, v0, :cond_0
-
-    const/4 p1, 0x0
-
-    new-array p1, p1, [Ljava/lang/Object;
-
-    const-string v0, "An update has been downloaded"
-
-    .line 191
-    invoke-static {v0, p1}, Ltimber/log/Timber;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 192
-    invoke-direct {p0}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->popupSnackbarForCompleteUpdate()V
-
-    :cond_0
     return-void
 .end method
 
 .method private final continueUpdateForImmediate()V
-    .locals 2
+    .locals 3
 
     .line 198
     iget-object v0, p0, Lcom/smedialink/storage/data/manager/update/UpdateManager;->appUpdateManager:Lcom/google/android/play/core/appupdate/AppUpdateManager;
@@ -358,66 +342,29 @@
     move-result-object v0
 
     .line 200
-    new-instance v1, Lcom/smedialink/storage/data/manager/update/UpdateManager$$ExternalSyntheticLambda1;
+    new-instance v1, Lcom/smedialink/storage/data/manager/update/UpdateManager$continueUpdateForImmediate$1;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/storage/data/manager/update/UpdateManager$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/storage/data/manager/update/UpdateManager;)V
+    invoke-direct {v1, p0}, Lcom/smedialink/storage/data/manager/update/UpdateManager$continueUpdateForImmediate$1;-><init>(Lcom/smedialink/storage/data/manager/update/UpdateManager;)V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/play/core/tasks/Task;->addOnSuccessListener(Lcom/google/android/play/core/tasks/OnSuccessListener;)Lcom/google/android/play/core/tasks/Task;
+    new-instance v2, Lcom/smedialink/storage/data/manager/update/UpdateManager$$ExternalSyntheticLambda1;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/storage/data/manager/update/UpdateManager$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v2}, Lcom/google/android/play/core/tasks/Task;->addOnSuccessListener(Lcom/google/android/play/core/tasks/OnSuccessListener;)Lcom/google/android/play/core/tasks/Task;
 
     return-void
 .end method
 
-.method private static final continueUpdateForImmediate$lambda-6(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/appupdate/AppUpdateInfo;)V
-    .locals 3
+.method private static final continueUpdateForImmediate$lambda$6(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "appUpdateInfo"
+    .line 200
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 201
-    invoke-virtual {p1}, Lcom/google/android/play/core/appupdate/AppUpdateInfo;->updateAvailability()I
-
-    move-result v0
-
-    const/4 v1, 0x3
-
-    if-ne v0, v1, :cond_0
-
-    .line 204
-    :try_start_0
-    iget-object v0, p0, Lcom/smedialink/storage/data/manager/update/UpdateManager;->appUpdateManager:Lcom/google/android/play/core/appupdate/AppUpdateManager;
-
-    .line 206
-    iget v1, p0, Lcom/smedialink/storage/data/manager/update/UpdateManager;->mode:I
-
-    .line 207
-    invoke-direct {p0}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->getActivity()Landroid/app/Activity;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
-    const/16 v2, 0x309
-
-    .line 204
-    invoke-interface {v0, p1, v1, p0, v2}, Lcom/google/android/play/core/appupdate/AppUpdateManager;->startUpdateFlowForResult(Lcom/google/android/play/core/appupdate/AppUpdateInfo;ILandroid/app/Activity;I)Z
-    :try_end_0
-    .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p0
-
-    .line 210
-    invoke-static {p0}, Ltimber/log/Timber;->d(Ljava/lang/Throwable;)V
-
-    :cond_0
-    :goto_0
     return-void
 .end method
 
@@ -550,7 +497,7 @@
     return v2
 .end method
 
-.method private static final listener$lambda-0(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/install/InstallState;)V
+.method private static final listener$lambda$0(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/install/InstallState;)V
     .locals 5
 
     const-string v0, "this$0"

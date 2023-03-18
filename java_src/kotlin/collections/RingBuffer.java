@@ -123,7 +123,7 @@ final class RingBuffer<T> extends AbstractList<T> implements RandomAccess {
         return new RingBuffer<>(array, size());
     }
 
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection
+    @Override // java.util.Collection, java.util.List
     public final void add(T t) {
         if (isFull()) {
             throw new IllegalStateException("ring buffer is full");

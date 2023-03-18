@@ -10,6 +10,6 @@ public final /* synthetic */ class AiBotsManager$$ExternalSyntheticLambda13 impl
 
     @Override // io.reactivex.functions.Action
     public final void run() {
-        AiBotsManager.m1201fetchVotes$lambda24();
+        AiBotsManager.handleChosenBotAnswer$lambda$29();
     }
 }

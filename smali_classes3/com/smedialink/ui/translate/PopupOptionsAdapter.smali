@@ -122,7 +122,7 @@
 
     const-string v0, "null cannot be cast to non-null type com.smedialink.ui.translate.PopupOptionsAdapter.ViewHolder"
 
-    invoke-static {p3, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p3, Lcom/smedialink/ui/translate/PopupOptionsAdapter$ViewHolder;
 

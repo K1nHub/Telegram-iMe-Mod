@@ -1,9 +1,9 @@
 .class final Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$1$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "WalletInteractor.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Function;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,13 +18,20 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        "R:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Function;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Ljava/lang/Boolean;",
+        ">;",
+        "Lio/reactivex/ObservableSource<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Ljava/util/List<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;",
+        ">;>;>;>;"
     }
 .end annotation
 
@@ -47,14 +54,16 @@
 
     iput-object p3, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$1$1;->$networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Lcom/smedialink/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
+.method public final invoke(Lcom/smedialink/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -107,13 +116,13 @@
     return-object p1
 .end method
 
-.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     .line 42
     check-cast p1, Lcom/smedialink/storage/domain/model/Result;
 
-    invoke-virtual {p0, p1}, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$1$1;->apply(Lcom/smedialink/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
+    invoke-virtual {p0, p1}, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$1$1;->invoke(Lcom/smedialink/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
 
     move-result-object p1
 

@@ -26,8 +26,16 @@ public class IntrinsicsKt__IntrinsicsJvmKt {
         }
         final CoroutineContext context = probeCoroutineCreated.getContext();
         if (context == EmptyCoroutineContext.INSTANCE) {
-            return new RestrictedContinuationImpl(probeCoroutineCreated) { // from class: kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$1
+            return new RestrictedContinuationImpl(probeCoroutineCreated, function1) { // from class: kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$1
+                final /* synthetic */ Function1 $this_createCoroutineUnintercepted$inlined;
                 private int label;
+
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(probeCoroutineCreated);
+                    this.$this_createCoroutineUnintercepted$inlined = function1;
+                    Intrinsics.checkNotNull(probeCoroutineCreated, "null cannot be cast to non-null type kotlin.coroutines.Continuation<kotlin.Any?>");
+                }
 
                 @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                 protected Object invokeSuspend(Object obj) {
@@ -35,7 +43,8 @@ public class IntrinsicsKt__IntrinsicsJvmKt {
                     if (i == 0) {
                         this.label = 1;
                         ResultKt.throwOnFailure(obj);
-                        return ((Function1) TypeIntrinsics.beforeCheckcastToFunctionOfArity(function1, 1)).invoke(this);
+                        Intrinsics.checkNotNull(this.$this_createCoroutineUnintercepted$inlined, "null cannot be cast to non-null type kotlin.Function1<kotlin.coroutines.Continuation<T of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted$lambda$0>, kotlin.Any?>");
+                        return ((Function1) TypeIntrinsics.beforeCheckcastToFunctionOfArity(this.$this_createCoroutineUnintercepted$inlined, 1)).invoke(this);
                     } else if (i == 1) {
                         this.label = 2;
                         ResultKt.throwOnFailure(obj);
@@ -46,8 +55,16 @@ public class IntrinsicsKt__IntrinsicsJvmKt {
                 }
             };
         }
-        return new ContinuationImpl(probeCoroutineCreated, context) { // from class: kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$2
+        return new ContinuationImpl(probeCoroutineCreated, context, function1) { // from class: kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$2
+            final /* synthetic */ Function1 $this_createCoroutineUnintercepted$inlined;
             private int label;
+
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(probeCoroutineCreated, context);
+                this.$this_createCoroutineUnintercepted$inlined = function1;
+                Intrinsics.checkNotNull(probeCoroutineCreated, "null cannot be cast to non-null type kotlin.coroutines.Continuation<kotlin.Any?>");
+            }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             protected Object invokeSuspend(Object obj) {
@@ -55,7 +72,8 @@ public class IntrinsicsKt__IntrinsicsJvmKt {
                 if (i == 0) {
                     this.label = 1;
                     ResultKt.throwOnFailure(obj);
-                    return ((Function1) TypeIntrinsics.beforeCheckcastToFunctionOfArity(function1, 1)).invoke(this);
+                    Intrinsics.checkNotNull(this.$this_createCoroutineUnintercepted$inlined, "null cannot be cast to non-null type kotlin.Function1<kotlin.coroutines.Continuation<T of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted$lambda$0>, kotlin.Any?>");
+                    return ((Function1) TypeIntrinsics.beforeCheckcastToFunctionOfArity(this.$this_createCoroutineUnintercepted$inlined, 1)).invoke(this);
                 } else if (i == 1) {
                     this.label = 2;
                     ResultKt.throwOnFailure(obj);
@@ -76,8 +94,18 @@ public class IntrinsicsKt__IntrinsicsJvmKt {
         }
         final CoroutineContext context = probeCoroutineCreated.getContext();
         if (context == EmptyCoroutineContext.INSTANCE) {
-            return new RestrictedContinuationImpl(probeCoroutineCreated) { // from class: kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$3
+            return new RestrictedContinuationImpl(probeCoroutineCreated, function2, r) { // from class: kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$3
+                final /* synthetic */ Object $receiver$inlined;
+                final /* synthetic */ Function2 $this_createCoroutineUnintercepted$inlined;
                 private int label;
+
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(probeCoroutineCreated);
+                    this.$this_createCoroutineUnintercepted$inlined = function2;
+                    this.$receiver$inlined = r;
+                    Intrinsics.checkNotNull(probeCoroutineCreated, "null cannot be cast to non-null type kotlin.coroutines.Continuation<kotlin.Any?>");
+                }
 
                 @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                 protected Object invokeSuspend(Object obj) {
@@ -85,7 +113,8 @@ public class IntrinsicsKt__IntrinsicsJvmKt {
                     if (i == 0) {
                         this.label = 1;
                         ResultKt.throwOnFailure(obj);
-                        return ((Function2) TypeIntrinsics.beforeCheckcastToFunctionOfArity(function2, 2)).invoke(r, this);
+                        Intrinsics.checkNotNull(this.$this_createCoroutineUnintercepted$inlined, "null cannot be cast to non-null type kotlin.Function2<R of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted$lambda$1, kotlin.coroutines.Continuation<T of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted$lambda$1>, kotlin.Any?>");
+                        return ((Function2) TypeIntrinsics.beforeCheckcastToFunctionOfArity(this.$this_createCoroutineUnintercepted$inlined, 2)).invoke(this.$receiver$inlined, this);
                     } else if (i == 1) {
                         this.label = 2;
                         ResultKt.throwOnFailure(obj);
@@ -96,8 +125,18 @@ public class IntrinsicsKt__IntrinsicsJvmKt {
                 }
             };
         }
-        return new ContinuationImpl(probeCoroutineCreated, context) { // from class: kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$4
+        return new ContinuationImpl(probeCoroutineCreated, context, function2, r) { // from class: kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$4
+            final /* synthetic */ Object $receiver$inlined;
+            final /* synthetic */ Function2 $this_createCoroutineUnintercepted$inlined;
             private int label;
+
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(probeCoroutineCreated, context);
+                this.$this_createCoroutineUnintercepted$inlined = function2;
+                this.$receiver$inlined = r;
+                Intrinsics.checkNotNull(probeCoroutineCreated, "null cannot be cast to non-null type kotlin.coroutines.Continuation<kotlin.Any?>");
+            }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             protected Object invokeSuspend(Object obj) {
@@ -105,7 +144,8 @@ public class IntrinsicsKt__IntrinsicsJvmKt {
                 if (i == 0) {
                     this.label = 1;
                     ResultKt.throwOnFailure(obj);
-                    return ((Function2) TypeIntrinsics.beforeCheckcastToFunctionOfArity(function2, 2)).invoke(r, this);
+                    Intrinsics.checkNotNull(this.$this_createCoroutineUnintercepted$inlined, "null cannot be cast to non-null type kotlin.Function2<R of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted$lambda$1, kotlin.coroutines.Continuation<T of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted$lambda$1>, kotlin.Any?>");
+                    return ((Function2) TypeIntrinsics.beforeCheckcastToFunctionOfArity(this.$this_createCoroutineUnintercepted$inlined, 2)).invoke(this.$receiver$inlined, this);
                 } else if (i == 1) {
                     this.label = 2;
                     ResultKt.throwOnFailure(obj);

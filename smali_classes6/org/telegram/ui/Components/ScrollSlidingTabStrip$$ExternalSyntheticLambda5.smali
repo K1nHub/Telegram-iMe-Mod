@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->$r8$lambda$bmH0wyE_7XMBb_YxkYgoRxkn6z0(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->$r8$lambda$PumQ7ttxCjCfGgBTJHh4nmy4p10(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;Landroid/view/View;)V
 
     return-void
 .end method

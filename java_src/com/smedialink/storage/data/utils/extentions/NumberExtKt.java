@@ -51,9 +51,8 @@ public final class NumberExtKt {
             return Intrinsics.areEqual(number, BigInteger.ZERO);
         } else {
             if (!(number instanceof BigDecimal)) {
-                return Intrinsics.areEqual((Object) number, (Object) 0);
-            }
-            if (BigDecimal.ZERO.compareTo((BigDecimal) number) == 0) {
+                return number instanceof Long ? Intrinsics.areEqual((Object) number, (Object) 0L) : Intrinsics.areEqual((Object) number, (Object) 0);
+            } else if (BigDecimal.ZERO.compareTo((BigDecimal) number) == 0) {
                 return true;
             }
         }
@@ -61,28 +60,28 @@ public final class NumberExtKt {
     }
 
     public static final int orZero(Integer num) {
-        if (num == null) {
-            return 0;
+        if (num != null) {
+            return num.intValue();
         }
-        return num.intValue();
+        return 0;
     }
 
     public static final long orZero(Long l) {
-        if (l == null) {
-            return 0L;
+        if (l != null) {
+            return l.longValue();
         }
-        return l.longValue();
+        return 0L;
     }
 
     public static final float orZero(Float f) {
-        return f == null ? BitmapDescriptorFactory.HUE_RED : f.floatValue();
+        return f != null ? f.floatValue() : BitmapDescriptorFactory.HUE_RED;
     }
 
     public static final double orZero(Double d) {
-        if (d == null) {
-            return 0.0d;
+        if (d != null) {
+            return d.doubleValue();
         }
-        return d.doubleValue();
+        return 0.0d;
     }
 
     public static final BigDecimal orZero(BigDecimal bigDecimal) {

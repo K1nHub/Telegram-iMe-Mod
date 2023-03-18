@@ -2,34 +2,46 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Ljava/util/Comparator;
 
 
-# instance fields
-.field public final synthetic f$0:Ljava/lang/Runnable;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda11;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda11;
+
+    invoke-direct {v0}, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda11;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda11;->INSTANCE:Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda11;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda11;->f$0:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
-    .locals 1
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda11;->f$0:Ljava/lang/Runnable;
+    check-cast p1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
-    check-cast p1, Ljava/util/HashMap;
+    check-cast p2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/Theme;->$r8$lambda$QiPCVRK6XUYq-IhQaRyJ3XXfu3E(Ljava/lang/Runnable;Ljava/util/HashMap;)V
+    invoke-static {p1, p2}, Lorg/telegram/ui/ActionBar/Theme;->$r8$lambda$Ywqj9JQytc_IBGqdVuFsghzB1FQ(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)I
 
-    return-void
+    move-result p1
+
+    return p1
 .end method

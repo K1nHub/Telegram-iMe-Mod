@@ -45,7 +45,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity$$ExternalSyntheticLambda5;->f$0:Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->$r8$lambda$WNO3gKSJeAnp_JtwELZrvwLZE6s(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/view/View;IFF)V
+    invoke-static {v0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->$r8$lambda$zZQtf9oh77AirN-l_DzXMLOYYco(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/view/View;IFF)V
 
     return-void
 .end method

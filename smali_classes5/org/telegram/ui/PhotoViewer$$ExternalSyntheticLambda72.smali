@@ -39,7 +39,7 @@
 
     iget-boolean v2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda72;->f$2:Z
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$A-a5npjnfMZOoOn0YIglWjP6iWI(Lorg/telegram/ui/PhotoViewer;Ljava/lang/String;Z)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$3ud1eSfyr11_JSQeMXYzk4qKrVk(Lorg/telegram/ui/PhotoViewer;Ljava/lang/String;Z)V
 
     return-void
 .end method

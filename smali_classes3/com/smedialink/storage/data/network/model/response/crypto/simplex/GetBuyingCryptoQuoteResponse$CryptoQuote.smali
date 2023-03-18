@@ -193,42 +193,26 @@
     :cond_3
     iget v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/simplex/GetBuyingCryptoQuoteResponse$CryptoQuote;->digitalMoneyAmount:F
 
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
     iget v3, p1, Lcom/smedialink/storage/data/network/model/response/crypto/simplex/GetBuyingCryptoQuoteResponse$CryptoQuote;->digitalMoneyAmount:F
 
-    invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
 
     move-result v1
 
-    if-nez v1, :cond_4
+    if-eqz v1, :cond_4
 
     return v2
 
     :cond_4
     iget v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/simplex/GetBuyingCryptoQuoteResponse$CryptoQuote;->fiatMoneyAmount:F
 
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
     iget p1, p1, Lcom/smedialink/storage/data/network/model/response/crypto/simplex/GetBuyingCryptoQuoteResponse$CryptoQuote;->fiatMoneyAmount:F
 
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p1
-
-    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Ljava/lang/Float;->compare(FF)I
 
     move-result p1
 
-    if-nez p1, :cond_5
+    if-eqz p1, :cond_5
 
     return v2
 

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/StickerSetCell;Z)V
     .locals 0
 
-    .line 385
+    .line 405
     iput-object p1, p0, Lorg/telegram/ui/Cells/StickerSetCell$2;->this$0:Lorg/telegram/ui/Cells/StickerSetCell;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Cells/StickerSetCell$2;->val$checked:Z
@@ -39,12 +39,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 388
+    .line 408
     iget-boolean p1, p0, Lorg/telegram/ui/Cells/StickerSetCell$2;->val$checked:Z
 
     if-nez p1, :cond_0
 
-    .line 389
+    .line 409
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerSetCell$2;->this$0:Lorg/telegram/ui/Cells/StickerSetCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/StickerSetCell;->access$000(Lorg/telegram/ui/Cells/StickerSetCell;)Landroid/widget/FrameLayout;
@@ -62,12 +62,12 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 395
+    .line 415
     iget-boolean p1, p0, Lorg/telegram/ui/Cells/StickerSetCell$2;->val$checked:Z
 
     if-eqz p1, :cond_0
 
-    .line 396
+    .line 416
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerSetCell$2;->this$0:Lorg/telegram/ui/Cells/StickerSetCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/StickerSetCell;->access$000(Lorg/telegram/ui/Cells/StickerSetCell;)Landroid/widget/FrameLayout;

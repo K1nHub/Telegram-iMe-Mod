@@ -1,6 +1,6 @@
 .class public final Lkotlin/ranges/LongRange;
 .super Lkotlin/ranges/LongProgression;
-.source "Ranges.kt"
+.source "PrimitiveRanges.kt"
 
 
 # annotations
@@ -27,7 +27,7 @@
 
     invoke-direct {v0, v1}, Lkotlin/ranges/LongRange$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 99
+    .line 126
     new-instance v0, Lkotlin/ranges/LongRange;
 
     const-wide/16 v1, 0x1
@@ -50,7 +50,7 @@
 
     move-wide v3, p3
 
-    .line 75
+    .line 94
     invoke-direct/range {v0 .. v6}, Lkotlin/ranges/LongProgression;-><init>(JJJ)V
 
     return-void
@@ -61,7 +61,7 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
 
-    .line 89
+    .line 116
     instance-of v0, p1, Lkotlin/ranges/LongRange;
 
     if-eqz v0, :cond_2
@@ -82,7 +82,7 @@
 
     if-nez v0, :cond_1
 
-    .line 90
+    .line 117
     :cond_0
     invoke-virtual {p0}, Lkotlin/ranges/LongProgression;->getFirst()J
 
@@ -125,7 +125,7 @@
 .method public hashCode()I
     .locals 7
 
-    .line 93
+    .line 120
     invoke-virtual {p0}, Lkotlin/ranges/LongRange;->isEmpty()Z
 
     move-result v0
@@ -180,7 +180,7 @@
 .method public isEmpty()Z
     .locals 5
 
-    .line 86
+    .line 113
     invoke-virtual {p0}, Lkotlin/ranges/LongProgression;->getFirst()J
 
     move-result-wide v0
@@ -207,7 +207,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 95
+    .line 122
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

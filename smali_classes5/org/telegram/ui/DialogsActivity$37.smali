@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 6985
+    .line 6975
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$37;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -39,7 +39,7 @@
 
     new-array v1, v0, [Ljava/lang/Object;
 
-    .line 6988
+    .line 6978
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$37;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/DialogsActivity;->access$900(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
@@ -68,7 +68,7 @@
 
     move-result-object v0
 
-    .line 6989
+    .line 6979
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$37;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$32300(Lorg/telegram/ui/DialogsActivity;)Landroid/text/TextPaint;
@@ -89,7 +89,7 @@
 
     const/16 v2, 0x10
 
-    .line 6990
+    .line 6980
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -106,7 +106,7 @@
 
     move-result v2
 
-    .line 6991
+    .line 6981
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
@@ -115,14 +115,14 @@
 
     div-int/2addr v3, v4
 
-    .line 6992
+    .line 6982
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v5
 
     div-int/2addr v5, v4
 
-    .line 6994
+    .line 6984
     iget-object v5, p0, Lorg/telegram/ui/DialogsActivity$37;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/DialogsActivity;->access$32300(Lorg/telegram/ui/DialogsActivity;)Landroid/text/TextPaint;
@@ -139,7 +139,7 @@
 
     invoke-virtual {v5, v6}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 6995
+    .line 6985
     iget-object v5, p0, Lorg/telegram/ui/DialogsActivity$37;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/DialogsActivity;->access$32400(Lorg/telegram/ui/DialogsActivity;)Landroid/graphics/Paint;
@@ -168,7 +168,7 @@
 
     invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 6996
+    .line 6986
     iget-object v5, p0, Lorg/telegram/ui/DialogsActivity$37;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/DialogsActivity;->access$32500(Lorg/telegram/ui/DialogsActivity;)Landroid/graphics/RectF;
@@ -195,7 +195,7 @@
 
     invoke-virtual {v5, v7, v8, v9, v10}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 6997
+    .line 6987
     iget-object v5, p0, Lorg/telegram/ui/DialogsActivity$37;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/DialogsActivity;->access$32500(Lorg/telegram/ui/DialogsActivity;)Landroid/graphics/RectF;
@@ -224,7 +224,7 @@
 
     invoke-virtual {p1, v5, v8, v7, v9}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 6999
+    .line 6989
     iget-object v5, p0, Lorg/telegram/ui/DialogsActivity$37;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/DialogsActivity;->access$32400(Lorg/telegram/ui/DialogsActivity;)Landroid/graphics/Paint;
@@ -241,7 +241,7 @@
 
     invoke-virtual {v5, v7}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 7000
+    .line 6990
     iget-object v5, p0, Lorg/telegram/ui/DialogsActivity$37;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/DialogsActivity;->access$32500(Lorg/telegram/ui/DialogsActivity;)Landroid/graphics/RectF;
@@ -284,7 +284,7 @@
 
     invoke-virtual {v5, v6, v7, v2, v8}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 7001
+    .line 6991
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$37;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/DialogsActivity;->access$32500(Lorg/telegram/ui/DialogsActivity;)Landroid/graphics/RectF;
@@ -313,7 +313,7 @@
 
     invoke-virtual {p1, v2, v6, v5, v7}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 7003
+    .line 6993
     div-int/2addr v1, v4
 
     sub-int/2addr v3, v1

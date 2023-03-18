@@ -2,23 +2,17 @@ package com.smedialink.storage.data.mapper.crypto;
 
 import com.smedialink.storage.data.network.model.response.crypto.swap.AvailableSwapTokensResponse;
 import com.smedialink.storage.data.network.model.response.crypto.swap.GetApproveTokensInfoResponse;
-import com.smedialink.storage.data.network.model.response.crypto.swap.GetQuoteToSwapResponse;
 import com.smedialink.storage.data.network.model.response.crypto.wallet.TransactionParamsResponse;
 import com.smedialink.storage.domain.model.crypto.TransactionParams;
-import com.smedialink.storage.domain.model.crypto.swap.CryptoSwapMetadata;
 import com.smedialink.storage.domain.model.crypto.swap.CryptoTokenApproveMetadata;
-import com.smedialink.storage.domain.model.wallet.swap.SwapMethod;
 import com.smedialink.storage.domain.model.wallet.swap.TokenApproveStatus;
 import com.smedialink.storage.domain.model.wallet.token.TokenCode;
 import com.smedialink.storage.domain.model.wallet.token.TokenInfo;
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.StringsKt__StringNumberConversionsJVMKt;
 /* compiled from: SwapMapping.kt */
 /* loaded from: classes3.dex */
 public final class SwapMappingKt {
@@ -30,10 +24,22 @@ public final class SwapMappingKt {
 
         static {
             int[] iArr = new int[TokenApproveStatus.values().length];
-            iArr[TokenApproveStatus.ALLOWED.ordinal()] = 1;
-            iArr[TokenApproveStatus.ERROR.ordinal()] = 2;
-            iArr[TokenApproveStatus.IN_PROGRESS.ordinal()] = 3;
-            iArr[TokenApproveStatus.NOT_ALLOWED.ordinal()] = 4;
+            try {
+                iArr[TokenApproveStatus.ALLOWED.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[TokenApproveStatus.ERROR.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[TokenApproveStatus.IN_PROGRESS.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[TokenApproveStatus.NOT_ALLOWED.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -61,7 +67,9 @@ public final class SwapMappingKt {
         for (GetApproveTokensInfoResponse.CryptoTokenApprovalQuote cryptoTokenApprovalQuote : cryptoTokens) {
             TokenApproveStatus map = TokenApproveStatus.Companion.map(cryptoTokenApprovalQuote.getStatus());
             int i = WhenMappings.$EnumSwitchMapping$0[map.ordinal()];
-            if (i != 1) {
+            if (i == 1) {
+                allowed = new CryptoTokenApproveMetadata.Allowed(TokenCode.Companion.map(cryptoTokenApprovalQuote.getCryptoTokenCode()), map, cryptoTokenApprovalQuote.getValue());
+            } else {
                 if (i == 2) {
                     TokenCode.Companion companion = TokenCode.Companion;
                     TokenCode map2 = companion.map(cryptoTokenApprovalQuote.getCryptoTokenCode());
@@ -91,8 +99,6 @@ public final class SwapMappingKt {
                     cryptoTokenApproveMetadata = new CryptoTokenApproveMetadata.NeedApprove.NotAllowed(map3, map, value2, CryptoWalletMappingKt.mapToDomain(transactionParams2), contractAddress2, spenderContractAddress2, companion2.map(cryptoTokenApprovalQuote.getFeeTokenCode()));
                 }
                 arrayList.add(cryptoTokenApproveMetadata);
-            } else {
-                allowed = new CryptoTokenApproveMetadata.Allowed(TokenCode.Companion.map(cryptoTokenApprovalQuote.getCryptoTokenCode()), map, cryptoTokenApprovalQuote.getValue());
             }
             cryptoTokenApproveMetadata = allowed;
             arrayList.add(cryptoTokenApproveMetadata);
@@ -100,31 +106,79 @@ public final class SwapMappingKt {
         return arrayList;
     }
 
-    public static final CryptoSwapMetadata mapToDomain(GetQuoteToSwapResponse getQuoteToSwapResponse) {
-        Intrinsics.checkNotNullParameter(getQuoteToSwapResponse, "<this>");
-        String quoteId = getQuoteToSwapResponse.getQuoteId();
-        TransactionParams mapToDomain = CryptoWalletMappingKt.mapToDomain(getQuoteToSwapResponse.getTransactionParams());
-        String spenderContractAddress = getQuoteToSwapResponse.getSpenderContractAddress();
-        String str = spenderContractAddress == null ? "" : spenderContractAddress;
-        TokenCode.Companion companion = TokenCode.Companion;
-        TokenCode map = companion.map(getQuoteToSwapResponse.getInputCryptoTokenCode());
-        TokenCode map2 = companion.map(getQuoteToSwapResponse.getOutputCryptoTokenCode());
-        SwapMethod map3 = SwapMethod.Companion.map(getQuoteToSwapResponse.getSwapMethod());
-        List<String> path = getQuoteToSwapResponse.getPath();
-        BigDecimal bigDecimal = new BigDecimal(getQuoteToSwapResponse.getAmountIn());
-        BigDecimal bigDecimal2 = new BigDecimal(getQuoteToSwapResponse.getAmountOut());
-        BigInteger bigInteger = new BigInteger(getQuoteToSwapResponse.getAmountBound());
-        BigDecimal executionPrice = getQuoteToSwapResponse.getExecutionPrice();
-        TokenCode map4 = companion.map(getQuoteToSwapResponse.getFeeTokenCode());
-        String value = getQuoteToSwapResponse.getValue();
-        BigInteger bigIntegerOrNull = value == null ? null : StringsKt__StringNumberConversionsJVMKt.toBigIntegerOrNull(value);
-        if (bigIntegerOrNull == null) {
-            bigIntegerOrNull = BigInteger.ZERO;
-        }
-        BigInteger bigInteger2 = bigIntegerOrNull;
-        String callData = getQuoteToSwapResponse.getCallData();
-        String str2 = callData == null ? "" : callData;
-        Intrinsics.checkNotNullExpressionValue(bigInteger2, "value?.toBigIntegerOrNull() ?: BigInteger.ZERO");
-        return new CryptoSwapMetadata(quoteId, mapToDomain, map, map2, str, map3, bigDecimal, bigDecimal2, bigInteger, path, executionPrice, map4, bigInteger2, str2);
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x006b, code lost:
+        r14 = kotlin.text.StringsKt__StringNumberConversionsJVMKt.toBigIntegerOrNull(r14);
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public static final com.smedialink.storage.domain.model.crypto.swap.CryptoSwapMetadata mapToDomain(com.smedialink.storage.data.network.model.response.crypto.swap.GetQuoteToSwapResponse r17) {
+        /*
+            java.lang.String r0 = "<this>"
+            r1 = r17
+            kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r1, r0)
+            java.lang.String r2 = r17.getQuoteId()
+            com.smedialink.storage.data.network.model.response.crypto.wallet.TransactionParamsResponse r0 = r17.getTransactionParams()
+            com.smedialink.storage.domain.model.crypto.TransactionParams r3 = com.smedialink.storage.data.mapper.crypto.CryptoWalletMappingKt.mapToDomain(r0)
+            java.lang.String r0 = r17.getSpenderContractAddress()
+            java.lang.String r4 = ""
+            if (r0 != 0) goto L1d
+            r6 = r4
+            goto L1e
+        L1d:
+            r6 = r0
+        L1e:
+            com.smedialink.storage.domain.model.wallet.token.TokenCode$Companion r0 = com.smedialink.storage.domain.model.wallet.token.TokenCode.Companion
+            java.lang.String r5 = r17.getInputCryptoTokenCode()
+            com.smedialink.storage.domain.model.wallet.token.TokenCode r5 = r0.map(r5)
+            java.lang.String r7 = r17.getOutputCryptoTokenCode()
+            com.smedialink.storage.domain.model.wallet.token.TokenCode r7 = r0.map(r7)
+            com.smedialink.storage.domain.model.wallet.swap.SwapMethod$Companion r8 = com.smedialink.storage.domain.model.wallet.swap.SwapMethod.Companion
+            java.lang.String r9 = r17.getSwapMethod()
+            com.smedialink.storage.domain.model.wallet.swap.SwapMethod r8 = r8.map(r9)
+            java.util.List r11 = r17.getPath()
+            java.math.BigDecimal r9 = new java.math.BigDecimal
+            java.lang.String r10 = r17.getAmountIn()
+            r9.<init>(r10)
+            java.math.BigDecimal r10 = new java.math.BigDecimal
+            java.lang.String r12 = r17.getAmountOut()
+            r10.<init>(r12)
+            java.math.BigInteger r12 = new java.math.BigInteger
+            java.lang.String r13 = r17.getAmountBound()
+            r12.<init>(r13)
+            java.math.BigDecimal r13 = r17.getExecutionPrice()
+            java.lang.String r14 = r17.getFeeTokenCode()
+            com.smedialink.storage.domain.model.wallet.token.TokenCode r0 = r0.map(r14)
+            java.lang.String r14 = r17.getValue()
+            if (r14 == 0) goto L71
+            java.math.BigInteger r14 = kotlin.text.StringsKt.toBigIntegerOrNull(r14)
+            if (r14 != 0) goto L73
+        L71:
+            java.math.BigInteger r14 = java.math.BigInteger.ZERO
+        L73:
+            java.lang.String r1 = r17.getCallData()
+            if (r1 != 0) goto L7b
+            r15 = r4
+            goto L7c
+        L7b:
+            r15 = r1
+        L7c:
+            com.smedialink.storage.domain.model.crypto.swap.CryptoSwapMetadata r16 = new com.smedialink.storage.domain.model.crypto.swap.CryptoSwapMetadata
+            java.lang.String r1 = "value?.toBigIntegerOrNull() ?: BigInteger.ZERO"
+            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r14, r1)
+            r1 = r16
+            r4 = r5
+            r5 = r7
+            r7 = r8
+            r8 = r9
+            r9 = r10
+            r10 = r12
+            r12 = r13
+            r13 = r0
+            r1.<init>(r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15)
+            return r16
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.smedialink.storage.data.mapper.crypto.SwapMappingKt.mapToDomain(com.smedialink.storage.data.network.model.response.crypto.swap.GetQuoteToSwapResponse):com.smedialink.storage.domain.model.crypto.swap.CryptoSwapMetadata");
     }
 }

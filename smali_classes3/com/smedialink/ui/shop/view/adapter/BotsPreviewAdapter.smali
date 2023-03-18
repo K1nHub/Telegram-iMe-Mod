@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBotsPreviewAdapter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BotsPreviewAdapter.kt\ncom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,82:1\n1547#2:83\n1618#2,3:84\n*S KotlinDebug\n*F\n+ 1 BotsPreviewAdapter.kt\ncom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter\n*L\n50#1:83\n50#1:84,3\n*E\n"
+    value = "SMAP\nBotsPreviewAdapter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BotsPreviewAdapter.kt\ncom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,82:1\n1549#2:83\n1620#2,3:84\n*S KotlinDebug\n*F\n+ 1 BotsPreviewAdapter.kt\ncom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter\n*L\n50#1:83\n50#1:84,3\n*E\n"
 .end annotation
 
 
@@ -32,18 +32,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$P48nm056oa5tnIIOmxRhVCAM3Ek(Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$QPTPey24QKRoeGlqz0jikd7adh0(Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;->onBindViewHolder$lambda-3$lambda-1(Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;->onBindViewHolder$lambda$3$lambda$2(Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ZNURjKmoL4M-W6mJc5Y1txAhC8U(Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$apqoJMkngRnq5fl4VTlSlCzVU-g(Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;->onBindViewHolder$lambda-3$lambda-2(Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;->onBindViewHolder$lambda$3$lambda$1(Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
 
     return-void
 .end method
@@ -66,7 +66,7 @@
     return-void
 .end method
 
-.method private static final onBindViewHolder$lambda-3$lambda-1(Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
+.method private static final onBindViewHolder$lambda$3$lambda$1(Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
     .locals 2
 
     const-string p2, "this$0"
@@ -99,7 +99,7 @@
     return-void
 .end method
 
-.method private static final onBindViewHolder$lambda-3$lambda-2(Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
+.method private static final onBindViewHolder$lambda$3$lambda$2(Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
     .locals 2
 
     const-string p2, "this$0"
@@ -278,7 +278,7 @@
 
     move-result-object v0
 
-    .line 1547
+    .line 1549
     new-instance v2, Ljava/util/ArrayList;
 
     const/16 v3, 0xa
@@ -289,7 +289,7 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -305,7 +305,7 @@
 
     move-result-object v3
 
-    .line 1619
+    .line 1621
     check-cast v3, Lcom/smedialink/bots/domain/model/SmartTag;
 
     .line 50
@@ -313,6 +313,7 @@
 
     move-result-object v3
 
+    .line 1621
     invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -320,6 +321,7 @@
     :cond_0
     const-string v0, "new"
 
+    .line 50
     invoke-interface {v2, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v0
@@ -412,18 +414,18 @@
     :cond_5
     iget-object v0, p1, Lorg/telegram/messenger/databinding/ForkShopItemGridBinding;->botAvatar:Landroid/widget/ImageView;
 
-    new-instance v1, Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter$$ExternalSyntheticLambda0;
+    new-instance v1, Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter$$ExternalSyntheticLambda1;
 
-    invoke-direct {v1, p0, p2}, Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;Lcom/smedialink/bots/domain/model/ShopItem;)V
+    invoke-direct {v1, p0, p2}, Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;Lcom/smedialink/bots/domain/model/ShopItem;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 68
     iget-object p1, p1, Lorg/telegram/messenger/databinding/ForkShopItemGridBinding;->botName:Landroid/widget/TextView;
 
-    new-instance v0, Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter$$ExternalSyntheticLambda1;
+    new-instance v0, Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p0, p2}, Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;Lcom/smedialink/bots/domain/model/ShopItem;)V
+    invoke-direct {v0, p0, p2}, Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/shop/view/adapter/BotsPreviewAdapter;Lcom/smedialink/bots/domain/model/ShopItem;)V
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

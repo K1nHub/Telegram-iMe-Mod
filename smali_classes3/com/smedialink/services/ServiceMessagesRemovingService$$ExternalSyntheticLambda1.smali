@@ -33,7 +33,7 @@
 
     iget-wide v1, p0, Lcom/smedialink/services/ServiceMessagesRemovingService$$ExternalSyntheticLambda1;->f$1:J
 
-    invoke-static {v0, v1, v2}, Lcom/smedialink/services/ServiceMessagesRemovingService;->$r8$lambda$oZFzhol1Rq3k3VojD8ZlvcOXAFk(Lcom/smedialink/services/ServiceMessagesRemovingService;J)V
+    invoke-static {v0, v1, v2}, Lcom/smedialink/services/ServiceMessagesRemovingService;->$r8$lambda$wGDo1KRY1AydZ8LUNNYVt1LGlDM(Lcom/smedialink/services/ServiceMessagesRemovingService;J)V
 
     return-void
 .end method

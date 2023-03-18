@@ -28,7 +28,7 @@ public final class AppPreference extends BasePreference implements PreferenceHel
     @Override // com.smedialink.storage.domain.storage.PreferenceHelper
     public Environment getEnvironment() {
         Environment.Companion companion = Environment.Companion;
-        String string = getMPref().getString("app_environment", Environment.PRODUCTION.name());
+        String string = getMPref().getString("app_environment", "PRODUCTION");
         if (string == null) {
             string = "";
         }
@@ -96,7 +96,7 @@ public final class AppPreference extends BasePreference implements PreferenceHel
 
     @Override // com.smedialink.storage.domain.storage.PreferenceHelper
     public void setCatalogSelectedLanguageId(Long l) {
-        getMPref().edit().putLong("catalog_selected_language_id", l == null ? -1L : l.longValue()).apply();
+        getMPref().edit().putLong("catalog_selected_language_id", l != null ? l.longValue() : -1L).apply();
     }
 
     @Override // com.smedialink.storage.domain.storage.PreferenceHelper

@@ -7,14 +7,14 @@ import org.json.JSONObject;
 public final class Sku {
 
     /* renamed from: id */
-    public final C3075Id f1418id;
+    public final C3201Id f1423id;
     private String mDisplayTitle;
     public final String price;
     public final String title;
 
     Sku(String str, String str2) throws JSONException {
         JSONObject jSONObject = new JSONObject(str);
-        this.f1418id = new C3075Id(str2, jSONObject.getString("productId"));
+        this.f1423id = new C3201Id(str2, jSONObject.getString("productId"));
         this.price = jSONObject.getString("price");
         Price.regularPriceFromJson(jSONObject);
         this.title = jSONObject.getString("title");
@@ -54,7 +54,7 @@ public final class Sku {
     }
 
     public String toString() {
-        return this.f1418id + "{" + getDisplayTitle() + ", " + this.price + "}";
+        return this.f1423id + "{" + getDisplayTitle() + ", " + this.price + "}";
     }
 
     public String getDisplayTitle() {
@@ -71,20 +71,20 @@ public final class Sku {
         if (obj == null || Sku.class != obj.getClass()) {
             return false;
         }
-        return this.f1418id.equals(((Sku) obj).f1418id);
+        return this.f1423id.equals(((Sku) obj).f1423id);
     }
 
     public int hashCode() {
-        return this.f1418id.hashCode();
+        return this.f1423id.hashCode();
     }
 
     /* renamed from: org.solovyev.android.checkout.Sku$Id */
     /* loaded from: classes4.dex */
-    public static final class C3075Id {
+    public static final class C3201Id {
         public final String code;
         public final String product;
 
-        public C3075Id(String str, String str2) {
+        public C3201Id(String str, String str2) {
             this.product = str;
             this.code = str2;
         }
@@ -97,12 +97,12 @@ public final class Sku {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || C3075Id.class != obj.getClass()) {
+            if (obj == null || C3201Id.class != obj.getClass()) {
                 return false;
             }
-            C3075Id c3075Id = (C3075Id) obj;
-            if (this.product.equals(c3075Id.product)) {
-                return this.code.equals(c3075Id.code);
+            C3201Id c3201Id = (C3201Id) obj;
+            if (this.product.equals(c3201Id.product)) {
+                return this.code.equals(c3201Id.code);
             }
             return false;
         }

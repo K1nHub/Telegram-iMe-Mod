@@ -3,37 +3,30 @@ package com.smedialink.p031ui.wallet.swap.fee;
 import com.smedialink.model.wallet.crypto.send.fee.GasPriceItem;
 import com.smedialink.model.wallet.crypto.swap.SwapFeeScreenArgs;
 import com.smedialink.p031ui.base.mvp.base.BasePresenter;
-import com.smedialink.p031ui.base.mvp.base.BaseView;
-import com.smedialink.storage.data.network.model.error.ErrorModel;
 import com.smedialink.storage.domain.interactor.crypto.swap.SwapInteractor;
-import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.crypto.send.TransactionSpeedLevel;
 import com.smedialink.storage.domain.model.crypto.swap.CryptoSwapMetadata;
 import com.smedialink.storage.domain.model.wallet.swap.SwapDeadline;
 import com.smedialink.storage.domain.model.wallet.swap.SwapSlippage;
-import com.smedialink.storage.domain.model.wallet.swap.TradeType;
-import com.smedialink.storage.domain.model.wallet.token.TokenCode;
 import com.smedialink.storage.domain.model.wallet.token.TokenInfo;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.extentions.common.StringExtKt;
-import com.smedialink.utils.extentions.p033rx.RxExtKt;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.subjects.PublishSubject;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3158R;
-import timber.log.Timber;
+import org.telegram.messenger.C3286R;
 /* compiled from: WalletSwapFeePresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.swap.fee.WalletSwapFeePresenter */
@@ -175,67 +168,26 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
     }
 
     private final void subscribeToChangeEvents() {
-        Observable observeOn = this.slipChangeEvent.debounce(250L, TimeUnit.MILLISECONDS).distinctUntilChanged().flatMap(new Function() { // from class: com.smedialink.ui.wallet.swap.fee.WalletSwapFeePresenter$$ExternalSyntheticLambda0
+        Observable<SwapSlippage> distinctUntilChanged = this.slipChangeEvent.debounce(250L, TimeUnit.MILLISECONDS).distinctUntilChanged();
+        final WalletSwapFeePresenter$subscribeToChangeEvents$1 walletSwapFeePresenter$subscribeToChangeEvents$1 = new WalletSwapFeePresenter$subscribeToChangeEvents$1(this);
+        Observable observeOn = distinctUntilChanged.flatMap(new Function() { // from class: com.smedialink.ui.wallet.swap.fee.WalletSwapFeePresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                ObservableSource m1754subscribeToChangeEvents$lambda0;
-                m1754subscribeToChangeEvents$lambda0 = WalletSwapFeePresenter.m1754subscribeToChangeEvents$lambda0(WalletSwapFeePresenter.this, (SwapSlippage) obj);
-                return m1754subscribeToChangeEvents$lambda0;
+                ObservableSource subscribeToChangeEvents$lambda$0;
+                subscribeToChangeEvents$lambda$0 = WalletSwapFeePresenter.subscribeToChangeEvents$lambda$0(Function1.this, obj);
+                return subscribeToChangeEvents$lambda$0;
             }
         }).subscribeOn(this.schedulersProvider.mo708io()).observeOn(this.schedulersProvider.mo707ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "slipChangeEvent\n        …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.swap.fee.WalletSwapFeePresenter$subscribeToChangeEvents$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                ResourceManager resourceManager;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    Result.Success success = (Result.Success) result;
-                    WalletSwapFeePresenter.this.setMetadata((CryptoSwapMetadata) success.getData());
-                    WalletSwapFeePresenter walletSwapFeePresenter = WalletSwapFeePresenter.this;
-                    walletSwapFeePresenter.setSelectedFee(new GasPriceItem(walletSwapFeePresenter.getSelectedFee().getSpeedLevel(), TokenInfo.Companion.map(((CryptoSwapMetadata) success.getData()).getFeeTokenCode()), ((CryptoSwapMetadata) success.getData()).getTransactionParams().getFeeByLevel(WalletSwapFeePresenter.this.getSelectedFee().getSpeedLevel())));
-                    ((WalletSwapFeeView) WalletSwapFeePresenter.this.getViewState()).onFeeReselected();
-                } else if (result instanceof Result.Error) {
-                    ErrorModel error = ((Result.Error) result).getError();
-                    resourceManager = WalletSwapFeePresenter.this.resourceManager;
-                    ((WalletSwapFeeView) WalletSwapFeePresenter.this.getViewState()).showToast(error.getMessage(resourceManager));
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.swap.fee.WalletSwapFeePresenter$subscribeToChangeEvents$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Intrinsics.checkNotNullExpressionValue(observeOn, "private fun subscribeToC…     .autoDispose()\n    }");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2270x4867fe3b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2271x4867fe3c(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: subscribeToChangeEvents$lambda-0  reason: not valid java name */
-    public static final ObservableSource m1754subscribeToChangeEvents$lambda0(WalletSwapFeePresenter this$0, SwapSlippage slippage) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(slippage, "slippage");
-        this$0.setSelectedSlip(slippage);
-        SwapInteractor swapInteractor = this$0.swapInteractor;
-        TokenCode inputTokenCode = this$0.args.getMetadata().getInputTokenCode();
-        TokenCode outputTokenCode = this$0.args.getMetadata().getOutputTokenCode();
-        String bigDecimal = this$0.args.getMetadata().getAmountIn().toString();
-        Intrinsics.checkNotNullExpressionValue(bigDecimal, "args.metadata.amountIn.toString()");
-        Observable<Result<CryptoSwapMetadata>> quoteToSwap = swapInteractor.getQuoteToSwap(inputTokenCode, outputTokenCode, bigDecimal, TradeType.EXACT_INPUT, slippage.getPercent(), this$0.args.getNetworkType(), this$0.args.getOutputNetworkType(), this$0.args.getProtocol());
-        T viewState = this$0.getViewState();
-        Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        return RxExtKt.withLoadingDialog$default((Observable) quoteToSwap, (BaseView) viewState, false, 2, (Object) null);
+    public static final ObservableSource subscribeToChangeEvents$lambda$0(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (ObservableSource) tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -245,9 +197,7 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
         for (TransactionSpeedLevel transactionSpeedLevel : feesOptions) {
             arrayList.add(this.resourceManager.getString(transactionSpeedLevel.getTitle()));
         }
-        Object[] array = arrayList.toArray(new String[0]);
-        Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-        return (String[]) array;
+        return (String[]) arrayList.toArray(new String[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -255,11 +205,9 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
         SwapDeadline[] deadlineOptions = getDeadlineOptions();
         ArrayList arrayList = new ArrayList(deadlineOptions.length);
         for (SwapDeadline swapDeadline : deadlineOptions) {
-            arrayList.add(this.resourceManager.getString(C3158R.string.wallet_swap_transaction_options_deadline, String.valueOf(swapDeadline.getMinutes())));
+            arrayList.add(this.resourceManager.getString(C3286R.string.wallet_swap_transaction_options_deadline, String.valueOf(swapDeadline.getMinutes())));
         }
-        Object[] array = arrayList.toArray(new String[0]);
-        Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-        return (String[]) array;
+        return (String[]) arrayList.toArray(new String[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -267,11 +215,9 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
         SwapSlippage[] slipOptions = getSlipOptions();
         ArrayList arrayList = new ArrayList(slipOptions.length);
         for (SwapSlippage swapSlippage : slipOptions) {
-            arrayList.add(this.resourceManager.getString(C3158R.string.wallet_swap_transaction_options_slip, StringExtKt.stripZeros$default(String.valueOf(swapSlippage.getPercent()), (char) 0, 1, null)));
+            arrayList.add(this.resourceManager.getString(C3286R.string.wallet_swap_transaction_options_slip, StringExtKt.stripZeros$default(String.valueOf(swapSlippage.getPercent()), (char) 0, 1, null)));
         }
-        Object[] array = arrayList.toArray(new String[0]);
-        Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-        return (String[]) array;
+        return (String[]) arrayList.toArray(new String[0]);
     }
 
     /* compiled from: WalletSwapFeePresenter.kt */

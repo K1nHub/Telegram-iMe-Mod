@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;FLjava/lang/Runnable;)V
     .locals 0
 
-    .line 7684
+    .line 7695
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iput p2, p0, Lorg/telegram/ui/PhotoViewer$46;->val$diff:F
@@ -43,14 +43,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 5
 
-    .line 7687
+    .line 7698
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$21502(Lorg/telegram/ui/PhotoViewer;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 7688
+    .line 7699
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v1, 0x0
@@ -61,7 +61,7 @@
 
     invoke-static {p1, v2}, Lorg/telegram/ui/PhotoViewer;->access$21902(Lorg/telegram/ui/PhotoViewer;F)F
 
-    .line 7689
+    .line 7700
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/PhotoViewer;->access$21802(Lorg/telegram/ui/PhotoViewer;F)F
@@ -70,7 +70,7 @@
 
     invoke-static {p1, v2}, Lorg/telegram/ui/PhotoViewer;->access$21702(Lorg/telegram/ui/PhotoViewer;F)F
 
-    .line 7690
+    .line 7701
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -81,7 +81,7 @@
 
     invoke-static {p1, v3}, Lorg/telegram/ui/PhotoViewer;->access$10602(Lorg/telegram/ui/PhotoViewer;F)F
 
-    .line 7691
+    .line 7702
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$1300(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;
@@ -90,7 +90,7 @@
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 7692
+    .line 7703
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$1400(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/PhotoCropView;
@@ -103,7 +103,7 @@
 
     invoke-virtual {p1, v1, v2, v1, v1}, Lorg/telegram/ui/Components/Crop/CropAreaView;->setRotationScaleTranslation(FFFF)V
 
-    .line 7693
+    .line 7704
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$1400(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/PhotoCropView;
@@ -116,7 +116,7 @@
 
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/Crop/CropRotationWheel;->setRotated(Z)V
 
-    .line 7694
+    .line 7705
     iget p1, p0, Lorg/telegram/ui/PhotoViewer$46;->val$diff:F
 
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
@@ -127,7 +127,7 @@
 
     if-lez p1, :cond_1
 
-    .line 7695
+    .line 7706
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$1400(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/PhotoCropView;
@@ -142,7 +142,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 7696
+    .line 7707
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$22200(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/ImageView;
@@ -167,7 +167,7 @@
 
     goto :goto_0
 
-    .line 7698
+    .line 7709
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -177,7 +177,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 7701
+    .line 7712
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -190,7 +190,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 7702
+    .line 7713
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$22300(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$EditState;
@@ -211,7 +211,7 @@
 
     iput v1, p1, Lorg/telegram/messenger/MediaController$CropState;->cropPx:F
 
-    .line 7703
+    .line 7714
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$22300(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$EditState;
@@ -232,13 +232,13 @@
 
     iput v2, p1, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    .line 7705
+    .line 7716
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->val$onEnd:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_3
 
-    .line 7706
+    .line 7717
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_3

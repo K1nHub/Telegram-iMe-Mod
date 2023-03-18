@@ -69,7 +69,7 @@
         }
     .end annotation
 
-    .line 203
+    .line 204
     iget-object p1, p0, Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter$checkTokensApproval$1;->this$0:Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
     invoke-static {p1}, Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;->access$getStakingInteractor$p(Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;)Lcom/iMe/i_staking/StakingInteractor;
@@ -92,7 +92,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 203
+    .line 204
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter$checkTokensApproval$1;->invoke(Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p1

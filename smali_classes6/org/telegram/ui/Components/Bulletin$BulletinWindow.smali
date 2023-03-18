@@ -32,10 +32,10 @@
 .method private constructor <init>(Landroid/content/Context;)V
     .locals 7
 
-    .line 1681
+    .line 1694
     invoke-direct {p0, p1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;)V
 
-    .line 1682
+    .line 1695
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;-><init>(Lorg/telegram/ui/Components/Bulletin$BulletinWindow;Landroid/content/Context;)V
@@ -50,7 +50,7 @@
 
     invoke-virtual {p0, v0, p1}, Landroid/app/Dialog;->setContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1699
+    .line 1716
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x15
@@ -59,10 +59,10 @@
 
     if-lt p1, v2, :cond_1
 
-    .line 1700
+    .line 1717
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setFitsSystemWindows(Z)V
 
-    .line 1701
+    .line 1718
     new-instance v4, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$$ExternalSyntheticLambda0;
 
     invoke-direct {v4, p0}, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/Bulletin$BulletinWindow;)V
@@ -75,7 +75,7 @@
 
     const/16 v4, 0x700
 
-    .line 1711
+    .line 1728
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setSystemUiVisibility(I)V
 
     goto :goto_0
@@ -83,10 +83,10 @@
     :cond_0
     const/16 v4, 0x500
 
-    .line 1713
+    .line 1730
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setSystemUiVisibility(I)V
 
-    .line 1717
+    .line 1734
     :cond_1
     :goto_0
     new-instance v4, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$2;
@@ -95,41 +95,41 @@
 
     invoke-static {v0, v4}, Lorg/telegram/ui/Components/Bulletin;->addDelegate(Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/Bulletin$Delegate;)V
 
-    .line 1730
+    .line 1747
     :try_start_0
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
-    .line 1731
+    .line 1748
     sget v4, Lorg/telegram/messenger/R$style;->DialogNoAnimation:I
 
     invoke-virtual {v0, v4}, Landroid/view/Window;->setWindowAnimations(I)V
 
     const/4 v4, 0x0
 
-    .line 1732
+    .line 1749
     invoke-virtual {v0, v4}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1733
+    .line 1750
     invoke-virtual {v0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v4
 
-    .line 1734
+    .line 1751
     iput v1, v4, Landroid/view/WindowManager$LayoutParams;->width:I
 
     const/16 v5, 0x33
 
-    .line 1735
+    .line 1752
     iput v5, v4, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
     const/4 v5, 0x0
 
-    .line 1736
+    .line 1753
     iput v5, v4, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
 
-    .line 1737
+    .line 1754
     iget v5, v4, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     and-int/lit8 v5, v5, -0x3
@@ -138,7 +138,7 @@
 
     or-int/lit8 v5, v5, 0x8
 
-    .line 1738
+    .line 1755
     iput v5, v4, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     const/16 v6, 0x13
@@ -149,10 +149,10 @@
 
     or-int/2addr v5, v6
 
-    .line 1740
+    .line 1757
     iput v5, v4, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 1742
+    .line 1759
     :cond_2
     iget v5, v4, Landroid/view/WindowManager$LayoutParams;->flags:I
 
@@ -166,10 +166,10 @@
 
     or-int/2addr v2, v5
 
-    .line 1744
+    .line 1761
     iput v2, v4, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 1748
+    .line 1765
     :cond_3
     iget v2, v4, Landroid/view/WindowManager$LayoutParams;->flags:I
 
@@ -177,23 +177,23 @@
 
     iput v2, v4, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 1749
+    .line 1766
     iput v1, v4, Landroid/view/WindowManager$LayoutParams;->height:I
 
     const/16 v1, 0x1c
 
     if-lt p1, v1, :cond_4
 
-    .line 1751
+    .line 1768
     iput v3, v4, Landroid/view/WindowManager$LayoutParams;->layoutInDisplayCutoutMode:I
 
-    .line 1753
+    .line 1770
     :cond_4
     invoke-virtual {v0, v4}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
     const-string p1, "windowBackgroundGray"
 
-    .line 1754
+    .line 1771
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p1
@@ -225,7 +225,7 @@
 .method static synthetic access$2100(Lorg/telegram/ui/Components/Bulletin$BulletinWindow;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 1674
+    .line 1687
     iget-object p0, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow;->container:Landroid/widget/FrameLayout;
 
     return-object p0
@@ -234,32 +234,32 @@
 .method private applyInsets(Landroid/view/WindowInsets;)V
     .locals 4
 
-    .line 1760
+    .line 1777
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow;->container:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_0
 
-    .line 1762
+    .line 1779
     invoke-virtual {p1}, Landroid/view/WindowInsets;->getSystemWindowInsetLeft()I
 
     move-result v1
 
-    .line 1763
+    .line 1780
     invoke-virtual {p1}, Landroid/view/WindowInsets;->getSystemWindowInsetTop()I
 
     move-result v2
 
-    .line 1764
+    .line 1781
     invoke-virtual {p1}, Landroid/view/WindowInsets;->getSystemWindowInsetRight()I
 
     move-result v3
 
-    .line 1765
+    .line 1782
     invoke-virtual {p1}, Landroid/view/WindowInsets;->getSystemWindowInsetBottom()I
 
     move-result p1
 
-    .line 1761
+    .line 1778
     invoke-virtual {v0, v1, v2, v3, p1}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
     :cond_0
@@ -269,25 +269,25 @@
 .method private synthetic lambda$new$0(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
     .locals 1
 
-    .line 1702
+    .line 1719
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/Bulletin$BulletinWindow;->applyInsets(Landroid/view/WindowInsets;)V
 
-    .line 1703
+    .line 1720
     invoke-virtual {p1}, Landroid/view/View;->requestLayout()V
 
-    .line 1704
+    .line 1721
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x1e
 
     if-lt p1, v0, :cond_0
 
-    .line 1705
+    .line 1722
     sget-object p1, Landroid/view/WindowInsets;->CONSUMED:Landroid/view/WindowInsets;
 
     return-object p1
 
-    .line 1707
+    .line 1724
     :cond_0
     invoke-virtual {p2}, Landroid/view/WindowInsets;->consumeSystemWindowInsets()Landroid/view/WindowInsets;
 
@@ -299,7 +299,7 @@
 .method public static make(Landroid/content/Context;)Landroid/widget/FrameLayout;
     .locals 1
 
-    .line 1676
+    .line 1689
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/Bulletin$BulletinWindow;-><init>(Landroid/content/Context;)V

@@ -229,7 +229,7 @@
 .method private static synthetic lambda$onSearchViewTouched$0(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
     .locals 0
 
-    .line 143
+    .line 138
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
     return-void
@@ -240,13 +240,13 @@
 
     const/4 v0, 0x1
 
-    .line 141
+    .line 136
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->setFocusable(Z)V
 
-    .line 142
+    .line 137
     invoke-virtual {p1}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 143
+    .line 138
     new-instance v0, Lorg/telegram/ui/Components/MemberRequestsBottomSheet$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Components/MemberRequestsBottomSheet$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
@@ -259,7 +259,7 @@
 .method private static synthetic lambda$onSearchViewTouched$2(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
     .locals 0
 
-    .line 149
+    .line 144
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
     return-void
@@ -267,37 +267,6 @@
 
 
 # virtual methods
-.method protected isAllowSelectChildAtPosition(FF)Z
-    .locals 1
-
-    .line 93
-    iget p1, p0, Lorg/telegram/ui/Components/UsersAlertBase;->scrollOffsetY:I
-
-    iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->frameLayout:Landroid/widget/FrameLayout;
-
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result v0
-
-    add-int/2addr p1, v0
-
-    int-to-float p1, p1
-
-    cmpl-float p1, p2, p1
-
-    if-ltz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    return p1
-.end method
-
 .method public isNeedRestoreDialog()Z
     .locals 1
 
@@ -331,7 +300,7 @@
 .method protected onSearchViewTouched(Landroid/view/MotionEvent;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
     .locals 5
 
-    .line 127
+    .line 122
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -340,14 +309,14 @@
 
     if-nez v0, :cond_0
 
-    .line 128
+    .line 123
     iget p2, p0, Lorg/telegram/ui/Components/UsersAlertBase;->scrollOffsetY:I
 
     int-to-float p2, p2
 
     iput p2, p0, Lorg/telegram/ui/Components/MemberRequestsBottomSheet;->yOffset:F
 
-    .line 129
+    .line 124
     iget-object p2, p0, Lorg/telegram/ui/Components/MemberRequestsBottomSheet;->delegate:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     const/4 v0, 0x0
@@ -356,7 +325,7 @@
 
     goto :goto_1
 
-    .line 130
+    .line 125
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -384,12 +353,12 @@
 
     if-gez v0, :cond_4
 
-    .line 131
+    .line 126
     iget-boolean v0, p0, Lorg/telegram/ui/Components/MemberRequestsBottomSheet;->enterEventSent:Z
 
     if-nez v0, :cond_4
 
-    .line 132
+    .line 127
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -400,12 +369,12 @@
 
     const/4 v2, 0x0
 
-    .line 134
+    .line 129
     instance-of v3, v0, Lorg/telegram/ui/LaunchActivity;
 
     if-eqz v3, :cond_1
 
-    .line 135
+    .line 130
     check-cast v0, Lorg/telegram/ui/LaunchActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/LaunchActivity;->getActionBarLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -438,23 +407,23 @@
 
     check-cast v2, Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 137
+    .line 132
     :cond_1
     instance-of v0, v2, Lorg/telegram/ui/ChatActivity;
 
     if-eqz v0, :cond_3
 
-    .line 138
+    .line 133
     check-cast v2, Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ChatActivity;->needEnterText()Z
 
     move-result v0
 
-    .line 139
+    .line 134
     iput-boolean v1, p0, Lorg/telegram/ui/Components/MemberRequestsBottomSheet;->enterEventSent:Z
 
-    .line 140
+    .line 135
     new-instance v2, Lorg/telegram/ui/Components/MemberRequestsBottomSheet$$ExternalSyntheticLambda2;
 
     invoke-direct {v2, p0, p2}, Lorg/telegram/ui/Components/MemberRequestsBottomSheet$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/MemberRequestsBottomSheet;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
@@ -473,24 +442,24 @@
 
     goto :goto_1
 
-    .line 146
+    .line 141
     :cond_3
     iput-boolean v1, p0, Lorg/telegram/ui/Components/MemberRequestsBottomSheet;->enterEventSent:Z
 
-    .line 147
+    .line 142
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setFocusable(Z)V
 
-    .line 148
+    .line 143
     invoke-virtual {p2}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 149
+    .line 144
     new-instance v0, Lorg/telegram/ui/Components/MemberRequestsBottomSheet$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p2}, Lorg/telegram/ui/Components/MemberRequestsBottomSheet$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 153
+    .line 148
     :cond_4
     :goto_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
@@ -507,7 +476,7 @@
 
     if-ne p1, p2, :cond_6
 
-    .line 154
+    .line 149
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/MemberRequestsBottomSheet;->delegate:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
@@ -520,10 +489,10 @@
 .method protected search(Ljava/lang/String;)V
     .locals 1
 
-    .line 121
+    .line 116
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/UsersAlertBase;->search(Ljava/lang/String;)V
 
-    .line 122
+    .line 117
     iget-object v0, p0, Lorg/telegram/ui/Components/MemberRequestsBottomSheet;->delegate:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->setQuery(Ljava/lang/String;)V
@@ -534,10 +503,10 @@
 .method protected setTranslationY(I)V
     .locals 2
 
-    .line 98
+    .line 93
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/UsersAlertBase;->setTranslationY(I)V
 
-    .line 99
+    .line 94
     iget-object v0, p0, Lorg/telegram/ui/Components/MemberRequestsBottomSheet;->currentLoadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/UsersAlertBase;->frameLayout:Landroid/widget/FrameLayout;
@@ -552,14 +521,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 100
+    .line 95
     iget-object v0, p0, Lorg/telegram/ui/Components/MemberRequestsBottomSheet;->membersEmptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     int-to-float p1, p1
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 101
+    .line 96
     iget-object v0, p0, Lorg/telegram/ui/Components/MemberRequestsBottomSheet;->membersSearchEmptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
@@ -607,7 +576,7 @@
 .method protected updateLayout()V
     .locals 2
 
-    .line 106
+    .line 101
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -616,7 +585,7 @@
 
     if-gtz v0, :cond_1
 
-    .line 107
+    .line 102
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getVisibility()I
@@ -625,7 +594,7 @@
 
     if-nez v0, :cond_0
 
-    .line 108
+    .line 103
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getPaddingTop()I
@@ -645,21 +614,21 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 110
+    .line 105
     :goto_0
     iget v1, p0, Lorg/telegram/ui/Components/UsersAlertBase;->scrollOffsetY:I
 
     if-eq v1, v0, :cond_2
 
-    .line 111
+    .line 106
     iput v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->scrollOffsetY:I
 
-    .line 112
+    .line 107
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/MemberRequestsBottomSheet;->setTranslationY(I)V
 
     goto :goto_1
 
-    .line 115
+    .line 110
     :cond_1
     invoke-super {p0}, Lorg/telegram/ui/Components/UsersAlertBase;->updateLayout()V
 

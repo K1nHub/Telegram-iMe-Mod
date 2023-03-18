@@ -6,16 +6,16 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/bots/usecase/AiBotsManager$Companion;,
         Lcom/smedialink/bots/usecase/AiBotsManager$AppInstalledCallback;,
-        Lcom/smedialink/bots/usecase/AiBotsManager$SmartReplierCallback;,
+        Lcom/smedialink/bots/usecase/AiBotsManager$BotsListChangedCallback;,
+        Lcom/smedialink/bots/usecase/AiBotsManager$Companion;,
         Lcom/smedialink/bots/usecase/AiBotsManager$FirebaseSnapshotCallback;,
-        Lcom/smedialink/bots/usecase/AiBotsManager$BotsListChangedCallback;
+        Lcom/smedialink/bots/usecase/AiBotsManager$SmartReplierCallback;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAiBotsManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AiBotsManager.kt\ncom/smedialink/bots/usecase/AiBotsManager\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,434:1\n1#2:435\n211#3,2:436\n764#4:438\n855#4,2:439\n1052#4:441\n*S KotlinDebug\n*F\n+ 1 AiBotsManager.kt\ncom/smedialink/bots/usecase/AiBotsManager\n*L\n414#1:436,2\n168#1:438\n168#1:439,2\n200#1:441\n*E\n"
+    value = "SMAP\nAiBotsManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AiBotsManager.kt\ncom/smedialink/bots/usecase/AiBotsManager\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,434:1\n1#2:435\n215#3,2:436\n*S KotlinDebug\n*F\n+ 1 AiBotsManager.kt\ncom/smedialink/bots/usecase/AiBotsManager\n*L\n414#1:436,2\n*E\n"
 .end annotation
 
 
@@ -81,392 +81,392 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$2-0NKsppKHd7BNOPOW96kIdk2aI(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Lcom/smedialink/bots/data/model/database/BotsDbModel;)Lcom/smedialink/bots/domain/model/ShopItem;
+.method public static synthetic $r8$lambda$16CPQ8P6CjKCx9zeq5kxjt4xj0U(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/bots/usecase/AiBotsManager;->getSingleBotObservable$lambda-18(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Lcom/smedialink/bots/data/model/database/BotsDbModel;)Lcom/smedialink/bots/domain/model/ShopItem;
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->sendBotRatingEvent$lambda$10(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$1AN_pWB_u-a0U0FNuVpi5jmZgL8(Ljava/lang/String;J)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lcom/smedialink/bots/usecase/AiBotsManager;->sendBotInstalledEvent$lambda$6(Ljava/lang/String;J)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$1iFVGD_4yF5f462roLKf5_mUA6s(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->getAllBotsObservable$lambda$13(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$2F5XyEpbzhXEnQKapC09qJLPCjc(Ljava/lang/Throwable;)V
+.method public static synthetic $r8$lambda$1nHAYMQ4pKKLyCdJeGI7qwzgmh4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->rebuildActiveBotsList$lambda-1(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$2O87AD0ZLmO-mM8zhcPx6O9HLN8(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lcom/smedialink/bots/usecase/AiBotsManager;->getAllBotsObservable$lambda-14(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->getAvailableCategories$lambda$18(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$4Hpwz0nTAB31xHzyH5H6Q_hOTFI(Ljava/lang/Throwable;)V
+.method public static synthetic $r8$lambda$1vGA9eS4FNsub0mvsNQHh4Zd5BM(Ljava/lang/String;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->handleChosenBotAnswer$lambda-32(Ljava/lang/Throwable;)V
+    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->cleanupData$lambda$54(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$5V9FLm-rhGtF5zdd0B6JX0dIm6Y(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;JLio/reactivex/disposables/Disposable;)V
+.method public static synthetic $r8$lambda$2iCZcU0FHlTqHp15RAfuAzmPROs(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/bots/usecase/AiBotsManager;->startBotDownloading$lambda-47(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;JLio/reactivex/disposables/Disposable;)V
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->listenForRemoteBotUpdates$lambda$25(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$67MY2S4u2pqOXbH5Aw30ZFVfbsw(Ljava/lang/Throwable;)V
+.method public static synthetic $r8$lambda$4GCERDUHKoam2EpCv8TdWOEK00U(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->sendAppInstalledEvent$lambda-4(Ljava/lang/Throwable;)V
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->cleanupData$lambda$55(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$6iVVjwzGrdHM8OIEzxa8CLryP0Q(Ljava/lang/Throwable;)V
+.method public static synthetic $r8$lambda$4UO5mC1nsyJBZ3eEQfz-f3o0T44(Ljava/lang/String;Lcom/smedialink/bots/usecase/AiBotsManager;JLjava/lang/String;I)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->startBotDownloading$lambda-49(Ljava/lang/Throwable;)V
+    invoke-static/range {p0 .. p5}, Lcom/smedialink/bots/usecase/AiBotsManager;->handleChosenBotAnswer$lambda$28(Ljava/lang/String;Lcom/smedialink/bots/usecase/AiBotsManager;JLjava/lang/String;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$7Wl0M7C_lrIxTjOfaerO26Om1sY(Lcom/smedialink/bots/usecase/AiBotsManager;Lcom/smedialink/bots/usecase/AiBotsManager$FirebaseSnapshotCallback;Lcom/google/firebase/firestore/QuerySnapshot;)V
+.method public static synthetic $r8$lambda$4gQeNrEtPKovaWGSkzzeU8adTqg(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/bots/usecase/AiBotsManager;->listenForRemoteBotUpdates$lambda-27(Lcom/smedialink/bots/usecase/AiBotsManager;Lcom/smedialink/bots/usecase/AiBotsManager$FirebaseSnapshotCallback;Lcom/google/firebase/firestore/QuerySnapshot;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/bots/usecase/AiBotsManager;->startBotDownloading$lambda$46(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Bqnep9XzBaXz_mx13HhWWaGsiTc(Lcom/smedialink/bots/usecase/AiBotsManager;Lcom/google/firebase/firestore/QuerySnapshot;)V
+.method public static synthetic $r8$lambda$4o3Pi2O5osEtdMxzr8iHDNUbExE(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->fetchTags$lambda-34(Lcom/smedialink/bots/usecase/AiBotsManager;Lcom/google/firebase/firestore/QuerySnapshot;)V
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->fetchTags$lambda$33(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$C_fzcu7-uOF_ptmUjBeiOZtcExA(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
+.method public static synthetic $r8$lambda$6R6PJPLHaO1nRfVDq7uKFBDG1E4(Ljava/lang/String;Ljava/lang/String;Lio/reactivex/CompletableEmitter;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/bots/usecase/AiBotsManager;->getAllBotsObservable$lambda-16(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
+    invoke-static {p0, p1, p2}, Lcom/smedialink/bots/usecase/AiBotsManager;->unzip$lambda$57(Ljava/lang/String;Ljava/lang/String;Lio/reactivex/CompletableEmitter;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$6RwdnnuZlf75ttJHHpvzl9EgRGU(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->fetchTags$lambda$32(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$889TVECFRRgNP26l_Rq6ixEqGKU(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->downloadPurchase$lambda$39(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$9SF5WTlXVQDJp8A3ipzU8mUaSpk(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->getAvailableCategories$lambda$19(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$D8TdlrAXCQb5q5RzNQYOb3PClUc(Ljava/util/List;)Ljava/util/List;
+.method public static synthetic $r8$lambda$ALSkoBFfSP9AmG6vdjT5f4zMyvk(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getAllBotsObservable$lambda-17(Ljava/util/List;)Ljava/util/List;
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->fetchCategories$lambda$35(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$BE92v4QdzwVF9WDNfT_4YsCJEjk(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->cleanDownloads$lambda$61(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$BWB2pqqxudMJlVXrruazU_guaO0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->sendBotInstalledEvent$lambda$7(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$CAkcguWqiFqlv-0JkN1XgL_3j2U(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->fetchCategories$lambda$36(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$EQvwPVnSTTYwheufXcHSy5wNV2w(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->listenForRemoteBotUpdates$lambda$26(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$F46wE8KLU6BiEcA3drbVLSk-4mM(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->disableBot$lambda$43(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$GP4Nf_Mjwj9rKwN6_Fda6rgtg8s(Lcom/smedialink/bots/usecase/AiBotsManager;)V
+    .locals 0
+
+    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->updateBotStatus$lambda$41(Lcom/smedialink/bots/usecase/AiBotsManager;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$GmaHI17jYl6QFu0B9shNLswAPXc()V
+    .locals 0
+
+    invoke-static {}, Lcom/smedialink/bots/usecase/AiBotsManager;->cleanDownloads$lambda$60()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$HlhdceY2QAX29NgQQVhmNxmJlj4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->getAllBotsObservable$lambda$15(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$E3FtKbBDqBB6KlWIKb88mBsL5Sk(Ljava/lang/Throwable;)V
+.method public static synthetic $r8$lambda$I85XZJq7JCcpTPDcO0f_WFkMH6E(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->handleDownloadCompletion$lambda-53(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$FcGFNDqZpnrR9sQfVZYZfqVL3GQ(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lcom/smedialink/bots/usecase/AiBotsManager;->getAvailableCategories$lambda-19(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->getAllBotsObservable$lambda$12(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$IewEL9HsT7WswCuUgQ2dmPLX6SE(Lcom/smedialink/bots/usecase/AiBotsManager;JLjava/io/File;)V
+.method public static synthetic $r8$lambda$JPmF4PKxjQ67FaMJg9hAImbAYQM(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/bots/usecase/AiBotsManager;->handleDownloadCompletion$lambda-52(Lcom/smedialink/bots/usecase/AiBotsManager;JLjava/io/File;)V
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->startBotDownloading$lambda$47(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$KLdha1Gy9jdX4hdICPuYA8Ymkp0(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/util/List;)V
+.method public static synthetic $r8$lambda$Q_SptixBTyftP5E9I94-4stfIKQ()V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->rebuildActiveBotsList$lambda-0(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/util/List;)V
+    invoke-static {}, Lcom/smedialink/bots/usecase/AiBotsManager;->fetchVotes$lambda$22()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Kx4TcoXW_cNxmOLSPLtYXjvZiKs(Ljava/lang/String;Ljava/lang/String;Lio/reactivex/CompletableEmitter;)V
+.method public static synthetic $r8$lambda$RmYJorV4rWnoKSch4HH4uBdMbew(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/bots/usecase/AiBotsManager;->unzip$lambda-59(Ljava/lang/String;Ljava/lang/String;Lio/reactivex/CompletableEmitter;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$LLd4nTuWN5vEmMAcZCiplXTKLA0(Ljava/lang/String;IJLjava/lang/Integer;)V
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/bots/usecase/AiBotsManager;->sendBotRatingEvent$lambda-9(Ljava/lang/String;IJLjava/lang/Integer;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$O5wboo8WsRAHQIgjqUWq-z75x5c(Lcom/smedialink/bots/usecase/AiBotsManager;Lcom/google/firebase/firestore/QuerySnapshot;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->fetchCategories$lambda-37(Lcom/smedialink/bots/usecase/AiBotsManager;Lcom/google/firebase/firestore/QuerySnapshot;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$ODG2yu6GE66IG94MAy3HpkOzivs(Ljava/lang/Throwable;)V
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->fetchTags$lambda-35(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$OEiaIqNOZUK_o0a2p_7jBkalt3k(Ljava/lang/Throwable;)V
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->disableBot$lambda-45(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$QCRk1QaSiNQhFGvRYKy2X3N5bzo(Ljava/util/List;)Ljava/util/List;
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getAvailableCategories$lambda-21(Ljava/util/List;)Ljava/util/List;
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->getAllBotsObservable$lambda$14(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$SfZZ882AcpmOqULy7CG2oNgKkNc(Ljava/util/List;)Ljava/util/List;
+.method public static synthetic $r8$lambda$SARvC_izdCr7hr1PiHFLyWiiEv8(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getAllBotsObservable$lambda-15(Ljava/util/List;)Ljava/util/List;
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->getCategories$lambda$21(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$WEKjPdta_priM4omL6LmnFHl56o(Ljava/lang/Throwable;)V
+.method public static synthetic $r8$lambda$TKNHWqxZjO_2sDPaFsK5ATKqovI(Ljava/lang/String;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->fetchVotes$lambda-25(Ljava/lang/Throwable;)V
+    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->disableBot$lambda$42(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Wjof3aqkmiTOOhuvDHBJI3Oegx4(Ljava/io/File;)V
+.method public static synthetic $r8$lambda$W7zEW4ez8-P3XHieSrFjIXc0hUk(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/google/firebase/firestore/QuerySnapshot;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->cleanupData$lambda-55(Ljava/io/File;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$ZYq7K9n-13CMZyay00zyeSY6X8o(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Lcom/google/firebase/firestore/QuerySnapshot;)Lio/reactivex/ObservableSource;
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lcom/smedialink/bots/usecase/AiBotsManager;->getCategories$lambda-23(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Lcom/google/firebase/firestore/QuerySnapshot;)Lio/reactivex/ObservableSource;
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->getCategories$lambda$20(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/google/firebase/firestore/QuerySnapshot;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$Zxe0l1zCiaMkJO3mhmXYa50dMRM()V
+.method public static synthetic $r8$lambda$Wt9g1b73Yt6kDiyboZPjCerUZ48(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/bots/usecase/AiBotsManager;->cleanDownloads$lambda-62()V
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->rebuildActiveBotsList$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$_K8Ucf6oaWQeZvdLsN7VXhIB-jg()V
+.method public static synthetic $r8$lambda$YREw58XfmmPXFnXpAkFML5u4AD4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/bots/domain/model/ShopItem;
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/bots/usecase/AiBotsManager;->handleChosenBotAnswer$lambda-31()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$atbrolXIdzMjjbBg-b7P5xzZ0Ac()V
-    .locals 0
-
-    invoke-static {}, Lcom/smedialink/bots/usecase/AiBotsManager;->fetchVotes$lambda-24()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$dgBstaWwjaABpAQIyKWwt64oIS0(Ljava/lang/Throwable;)V
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->cleanDownloads$lambda-63(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$f9TZFvH01GRCbryJymbTIyBsq7A(Ljava/lang/Throwable;)V
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->sendBotInstalledEvent$lambda-7(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$ggBj5XsJGc33LZn0F5oed3eh8eU(Lcom/smedialink/bots/usecase/AiBotsManager;Lcom/google/firebase/firestore/QuerySnapshot;)Lcom/google/firebase/firestore/QuerySnapshot;
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->getCategories$lambda-22(Lcom/smedialink/bots/usecase/AiBotsManager;Lcom/google/firebase/firestore/QuerySnapshot;)Lcom/google/firebase/firestore/QuerySnapshot;
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->getSingleBotObservable$lambda$17(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/bots/domain/model/ShopItem;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$hfi81rQkOX5o68nhkfsVgmupPVY(Ljava/lang/Throwable;)V
+.method public static synthetic $r8$lambda$YiiDEgxWGXV_wEZAhc_ZJtAHWyw()V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->listenForRemoteBotUpdates$lambda-28(Ljava/lang/Throwable;)V
+    invoke-static {}, Lcom/smedialink/bots/usecase/AiBotsManager;->handleChosenBotAnswer$lambda$29()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ijpINR5vAQHOt-JOgCqaaeoEM68(Ljava/lang/String;)V
+.method public static synthetic $r8$lambda$Z_HuSVTrIfaucQJPLNNOI-z1FP0(Lcom/smedialink/bots/usecase/AiBotsManager$AppInstalledCallback;J)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->cleanupData$lambda-56(Ljava/lang/String;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/bots/usecase/AiBotsManager;->sendAppInstalledEvent$lambda$3(Lcom/smedialink/bots/usecase/AiBotsManager$AppInstalledCallback;J)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$kXPDDOXpJgbeXbAEaOdT0DRxtcE(Ljava/lang/String;)V
+.method public static synthetic $r8$lambda$b6Wc-gmXE6r8oiJbX8XEbRLyOOo(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->disableBot$lambda-44(Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->sendAppInstalledEvent$lambda$4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$oWr4cimiIf2es5mSLHhlduyKcwQ(Ljava/lang/Throwable;)V
+.method public static synthetic $r8$lambda$cV1Z-LxrNYsIeiL82QreFaZAPo0(Lkotlin/jvm/functions/Function0;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->cleanupData$lambda-57(Ljava/lang/Throwable;)V
+    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->cleanDownloads$lambda$59(Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$oySQAxSqnm5mL4ELvNjZRtJxa00(Ljava/lang/String;Lcom/smedialink/bots/usecase/AiBotsManager;JLjava/lang/String;I)V
+.method public static synthetic $r8$lambda$exEtk_WuvaYfjE9SbNollXfzPxU(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static/range {p0 .. p5}, Lcom/smedialink/bots/usecase/AiBotsManager;->handleChosenBotAnswer$lambda-30(Ljava/lang/String;Lcom/smedialink/bots/usecase/AiBotsManager;JLjava/lang/String;I)V
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->handleChosenBotAnswer$lambda$30(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$pXF94oHOfg8HVhrekJC6VDuLmqs(Lcom/smedialink/bots/usecase/AiBotsManager$AppInstalledCallback;J)V
+.method public static synthetic $r8$lambda$fPVlGR3IggQ79KgPqk3Bn8mp43c(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/bots/usecase/AiBotsManager;->sendAppInstalledEvent$lambda-3(Lcom/smedialink/bots/usecase/AiBotsManager$AppInstalledCallback;J)V
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->startBotDownloading$lambda$45(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$pZ9ustGhyPsC_1EWjlICxf0_IsM(Ljava/lang/Throwable;)V
+.method public static synthetic $r8$lambda$i9pyHzfvqM9HiIN-QgXPcEgCLRc(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->sendBotRatingEvent$lambda-10(Ljava/lang/Throwable;)V
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->fetchVotes$lambda$23(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$sAmK1W_I6loUq-4_Pra8XIuJpLY(Lcom/smedialink/bots/domain/model/BotLanguage;Ljava/util/List;)Ljava/util/List;
+.method public static synthetic $r8$lambda$lmFBKGAsXD_8iv6MCM-xd_4E7U8(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->getAllBotsObservable$lambda-13(Lcom/smedialink/bots/domain/model/BotLanguage;Ljava/util/List;)Ljava/util/List;
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->handleDownloadCompletion$lambda$51(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$muiTKB8JG8Iyi6H9SHtH122cs5A(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->sendBotRatingEvent$lambda$9(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$nt7QT9aXjQ-WoVAr5X0_t-TYhVo(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->downloadPurchase$lambda$38(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$oK8CRidJSipUju7jyHMtKSZQz6g(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->rebuildActiveBotsList$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$sUSFnguh36lqVlA9WCJDwidUs0o(Lcom/smedialink/bots/usecase/AiBotsManager;JLjava/io/File;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/bots/usecase/AiBotsManager;->handleDownloadCompletion$lambda$50(Lcom/smedialink/bots/usecase/AiBotsManager;JLjava/io/File;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$u2YFYR2TZik2uOc3D6xF-YAEqVs(Ljava/io/File;)V
+    .locals 0
+
+    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->cleanupData$lambda$53(Ljava/io/File;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$v-Qe0SaP0Mk1HoeygFGWxCPlq04(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->getAllBotsObservable$lambda$16(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public static synthetic $r8$lambda$spI1vUEJSrvBUpuUrgemSj9zOmc(Ljava/lang/Throwable;)V
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->downloadPurchase$lambda-41(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$tIy4G626Pcy_NK3gQ0_E5_HAyRg(Ljava/lang/Throwable;)V
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->fetchCategories$lambda-38(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$vbtRTHDh-vO4LzLrWkn1v1WkHZw(Lcom/smedialink/bots/usecase/AiBotsManager;JLcom/smedialink/bots/data/model/database/BotsDbModel;)V
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/bots/usecase/AiBotsManager;->downloadPurchase$lambda-40(Lcom/smedialink/bots/usecase/AiBotsManager;JLcom/smedialink/bots/data/model/database/BotsDbModel;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$w6khUKBs9ghkdn7uaKEXRQvIy4k(Lkotlin/jvm/functions/Function0;)V
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->cleanDownloads$lambda-61(Lkotlin/jvm/functions/Function0;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$woRuauEPOD5cTuk1PmQtvKsLdfM(Ljava/lang/String;J)V
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lcom/smedialink/bots/usecase/AiBotsManager;->sendBotInstalledEvent$lambda-6(Ljava/lang/String;J)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$yeJg1dVwCPwrTwQZ4lgabOlZqys(Lcom/smedialink/bots/usecase/AiBotsManager;)V
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->updateBotStatus$lambda-43(Lcom/smedialink/bots/usecase/AiBotsManager;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$zFEyuWYnIH_fKJX-wl9lJMHex_E(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/bots/usecase/AiBotsManager;->startBotDownloading$lambda-48(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
 .end method
 
 .method static constructor <clinit>()V
@@ -629,7 +629,7 @@
 
     const-string p2, "null cannot be cast to non-null type android.app.DownloadManager"
 
-    invoke-static {p1, p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Landroid/app/DownloadManager;
 
@@ -653,6 +653,33 @@
     return-void
 .end method
 
+.method public static final synthetic access$fetchCategories(Lcom/smedialink/bots/usecase/AiBotsManager;)V
+    .locals 0
+
+    .line 33
+    invoke-direct {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->fetchCategories()V
+
+    return-void
+.end method
+
+.method public static final synthetic access$fetchTags(Lcom/smedialink/bots/usecase/AiBotsManager;)V
+    .locals 0
+
+    .line 33
+    invoke-direct {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->fetchTags()V
+
+    return-void
+.end method
+
+.method public static final synthetic access$getCategoriesMapper$p(Lcom/smedialink/bots/usecase/AiBotsManager;)Lcom/smedialink/bots/data/mapper/BotCategoryMapper;
+    .locals 0
+
+    .line 33
+    iget-object p0, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->categoriesMapper:Lcom/smedialink/bots/data/mapper/BotCategoryMapper;
+
+    return-object p0
+.end method
+
 .method public static final synthetic access$getDisposables$p(Lcom/smedialink/bots/usecase/AiBotsManager;)Lio/reactivex/disposables/CompositeDisposable;
     .locals 0
 
@@ -669,6 +696,33 @@
     sget-object v0, Lcom/smedialink/bots/usecase/AiBotsManager;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager;
 
     return-object v0
+.end method
+
+.method public static final synthetic access$getShopItemMapper$p(Lcom/smedialink/bots/usecase/AiBotsManager;)Lcom/smedialink/bots/data/mapper/ShopItemMapper;
+    .locals 0
+
+    .line 33
+    iget-object p0, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->shopItemMapper:Lcom/smedialink/bots/data/mapper/ShopItemMapper;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$rebuildActiveBotsList(Lcom/smedialink/bots/usecase/AiBotsManager;)V
+    .locals 0
+
+    .line 33
+    invoke-direct {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->rebuildActiveBotsList()V
+
+    return-void
+.end method
+
+.method public static final synthetic access$sendBotInstalledEvent(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;J)V
+    .locals 0
+
+    .line 33
+    invoke-direct {p0, p1, p2, p3}, Lcom/smedialink/bots/usecase/AiBotsManager;->sendBotInstalledEvent(Ljava/lang/String;J)V
+
+    return-void
 .end method
 
 .method public static final synthetic access$setINSTANCE$cp(Lcom/smedialink/bots/usecase/AiBotsManager;)V
@@ -694,7 +748,7 @@
     .line 414
     iget-object v0, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->downloads:Ljava/util/Map;
 
-    .line 211
+    .line 215
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -778,10 +832,16 @@
 
     sget-object v0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda11;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda11;
 
-    sget-object v1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda29;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda29;
+    .line 420
+    sget-object v1, Lcom/smedialink/bots/usecase/AiBotsManager$cleanDownloads$4;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$cleanDownloads$4;
+
+    .line 422
+    new-instance v2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda21;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda21;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     .line 420
-    invoke-virtual {p1, v0, v1}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    invoke-virtual {p1, v0, v2}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
@@ -793,7 +853,7 @@
     return-void
 .end method
 
-.method private static final cleanDownloads$lambda-61(Lkotlin/jvm/functions/Function0;)V
+.method private static final cleanDownloads$lambda$59(Lkotlin/jvm/functions/Function0;)V
     .locals 1
 
     const-string v0, "$finallyCallback"
@@ -806,7 +866,7 @@
     return-void
 .end method
 
-.method private static final cleanDownloads$lambda-62()V
+.method private static final cleanDownloads$lambda$60()V
     .locals 2
 
     const-string v0, "BotsDownloader"
@@ -819,11 +879,15 @@
     return-void
 .end method
 
-.method private static final cleanDownloads$lambda-63(Ljava/lang/Throwable;)V
-    .locals 0
+.method private static final cleanDownloads$lambda$61(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 422
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -884,9 +948,15 @@
 
     invoke-direct {v1, v0}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda6;-><init>(Ljava/lang/String;)V
 
-    sget-object v0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda32;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda32;
+    sget-object v0, Lcom/smedialink/bots/usecase/AiBotsManager$cleanupData$3;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$cleanupData$3;
 
-    invoke-virtual {p1, v1, v0}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 394
+    new-instance v2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda16;
+
+    invoke-direct {v2, v0}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda16;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 392
+    invoke-virtual {p1, v1, v2}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
@@ -898,7 +968,7 @@
     return-void
 .end method
 
-.method private static final cleanupData$lambda-55(Ljava/io/File;)V
+.method private static final cleanupData$lambda$53(Ljava/io/File;)V
     .locals 0
 
     .line 389
@@ -907,13 +977,21 @@
     return-void
 .end method
 
-.method private static final cleanupData$lambda-56(Ljava/lang/String;)V
+.method private static final cleanupData$lambda$54(Ljava/lang/String;)V
     .locals 1
 
-    const-string v0, " installed"
-
     .line 393
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, " installed"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -924,26 +1002,38 @@
     return-void
 .end method
 
-.method private static final cleanupData$lambda-57(Ljava/lang/Throwable;)V
-    .locals 0
+.method private static final cleanupData$lambda$55(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 394
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final disableBot$lambda-44(Ljava/lang/String;)V
+.method private static final disableBot$lambda$42(Ljava/lang/String;)V
     .locals 1
 
     const-string v0, "$botId"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, " disabled"
-
     .line 315
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, " disabled"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -954,55 +1044,47 @@
     return-void
 .end method
 
-.method private static final disableBot$lambda-45(Ljava/lang/Throwable;)V
-    .locals 0
+.method private static final disableBot$lambda$43(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
 
-    .line 316
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
-
-    return-void
-.end method
-
-.method private static final downloadPurchase$lambda-40(Lcom/smedialink/bots/usecase/AiBotsManager;JLcom/smedialink/bots/data/model/database/BotsDbModel;)V
-    .locals 7
-
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 299
-    invoke-virtual {p3}, Lcom/smedialink/bots/data/model/database/BotsDbModel;->getId()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p3}, Lcom/smedialink/bots/data/model/database/BotsDbModel;->getTitle()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p3}, Lcom/smedialink/bots/data/model/database/BotsDbModel;->getFile()Ljava/lang/String;
-
-    move-result-object v4
-
-    move-object v1, p0
-
-    move-wide v5, p1
-
-    invoke-virtual/range {v1 .. v6}, Lcom/smedialink/bots/usecase/AiBotsManager;->startBotDownloading(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
+    .line 316
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final downloadPurchase$lambda-41(Ljava/lang/Throwable;)V
-    .locals 0
+.method private static final downloadPurchase$lambda$38(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 298
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private static final downloadPurchase$lambda$39(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 300
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
 .method private final fetchCategories()V
-    .locals 3
+    .locals 4
 
     .line 272
     iget-object v0, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->botsRepository:Lcom/smedialink/bots/data/repository/BotsRepository;
@@ -1030,13 +1112,23 @@
     move-result-object v0
 
     .line 275
-    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda15;
+    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$fetchCategories$1;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda15;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;)V
+    invoke-direct {v1, p0}, Lcom/smedialink/bots/usecase/AiBotsManager$fetchCategories$1;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;)V
 
-    sget-object v2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda35;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda35;
+    new-instance v2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda20;
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Single;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    invoke-direct {v2, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda20;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    sget-object v1, Lcom/smedialink/bots/usecase/AiBotsManager$fetchCategories$2;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$fetchCategories$2;
+
+    .line 279
+    new-instance v3, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda23;
+
+    invoke-direct {v3, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda23;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 275
+    invoke-virtual {v0, v2, v3}, Lio/reactivex/Single;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
@@ -1048,60 +1140,34 @@
     return-void
 .end method
 
-.method private static final fetchCategories$lambda-37(Lcom/smedialink/bots/usecase/AiBotsManager;Lcom/google/firebase/firestore/QuerySnapshot;)V
-    .locals 2
+.method private static final fetchCategories$lambda$35(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "snapshot"
+    .line 275
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 276
-    invoke-virtual {p1}, Lcom/google/firebase/firestore/QuerySnapshot;->getDocuments()Ljava/util/List;
-
-    move-result-object v0
-
-    const-string v1, "snapshot.documents"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    if-eqz v0, :cond_0
-
-    .line 277
-    invoke-virtual {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getBotsRepository()Lcom/smedialink/bots/data/repository/BotsRepository;
-
-    move-result-object p0
-
-    invoke-virtual {p0, p1}, Lcom/smedialink/bots/data/repository/BotsRepository;->storeCategoryDocuments(Lcom/google/firebase/firestore/QuerySnapshot;)V
-
-    :cond_0
     return-void
 .end method
 
-.method private static final fetchCategories$lambda-38(Ljava/lang/Throwable;)V
+.method private static final fetchCategories$lambda$36(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string v0, "t"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 280
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    .line 279
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
 .method private final fetchTags()V
-    .locals 3
+    .locals 4
 
     .line 257
     iget-object v0, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->botsRepository:Lcom/smedialink/bots/data/repository/BotsRepository;
@@ -1129,13 +1195,23 @@
     move-result-object v0
 
     .line 260
-    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda14;
+    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$fetchTags$1;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda14;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;)V
+    invoke-direct {v1, p0}, Lcom/smedialink/bots/usecase/AiBotsManager$fetchTags$1;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;)V
 
-    sget-object v2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda26;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda26;
+    new-instance v2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda18;
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Single;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    invoke-direct {v2, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda18;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    sget-object v1, Lcom/smedialink/bots/usecase/AiBotsManager$fetchTags$2;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$fetchTags$2;
+
+    .line 265
+    new-instance v3, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda17;
+
+    invoke-direct {v3, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda17;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 260
+    invoke-virtual {v0, v2, v3}, Lio/reactivex/Single;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
@@ -1147,452 +1223,222 @@
     return-void
 .end method
 
-.method private static final fetchTags$lambda-34(Lcom/smedialink/bots/usecase/AiBotsManager;Lcom/google/firebase/firestore/QuerySnapshot;)V
-    .locals 2
-
-    const-string v0, "this$0"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "snapshot"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 261
-    invoke-virtual {p1}, Lcom/google/firebase/firestore/QuerySnapshot;->getDocuments()Ljava/util/List;
-
-    move-result-object v0
-
-    const-string v1, "snapshot.documents"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    if-eqz v0, :cond_0
-
-    .line 262
-    invoke-virtual {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getBotsRepository()Lcom/smedialink/bots/data/repository/BotsRepository;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/smedialink/bots/data/repository/BotsRepository;->storeTagDocuments(Lcom/google/firebase/firestore/QuerySnapshot;)V
-
-    .line 263
-    invoke-direct {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->fetchCategories()V
-
-    :cond_0
-    return-void
-.end method
-
-.method private static final fetchTags$lambda-35(Ljava/lang/Throwable;)V
+.method private static final fetchTags$lambda$32(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string v0, "t"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 266
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    .line 260
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final fetchVotes$lambda-24()V
+.method private static final fetchTags$lambda$33(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 265
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private static final fetchVotes$lambda$22()V
     .locals 0
 
     return-void
 .end method
 
-.method private static final fetchVotes$lambda-25(Ljava/lang/Throwable;)V
-    .locals 0
+.method private static final fetchVotes$lambda$23(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 222
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final getAllBotsObservable$lambda-13(Lcom/smedialink/bots/domain/model/BotLanguage;Ljava/util/List;)Ljava/util/List;
-    .locals 3
+.method private static final getAllBotsObservable$lambda$12(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
+    .locals 1
 
-    const-string v0, "$botLanguage"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "it"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 764
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    .line 855
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :cond_0
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v2, v1
-
-    check-cast v2, Lcom/smedialink/bots/data/model/database/BotsDbModel;
 
     .line 168
-    invoke-virtual {v2}, Lcom/smedialink/bots/data/model/database/BotsDbModel;->getLang()Lcom/smedialink/bots/domain/model/BotLanguage;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object p0
 
-    if-ne v2, p0, :cond_1
+    check-cast p0, Ljava/util/List;
 
-    const/4 v2, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v2, 0x0
-
-    :goto_1
-    if-eqz v2, :cond_0
-
-    invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_2
-    return-object v0
+    return-object p0
 .end method
 
-.method private static final getAllBotsObservable$lambda-14(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
+.method private static final getAllBotsObservable$lambda$13(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
     .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "$language"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "it"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 169
-    iget-object v0, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->shopItemMapper:Lcom/smedialink/bots/data/mapper/ShopItemMapper;
-
-    invoke-virtual {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getBotsRepository()Lcom/smedialink/bots/data/repository/BotsRepository;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Lcom/smedialink/bots/data/repository/BotsRepository;->getTags()Ljava/util/List;
-
-    move-result-object p0
-
-    invoke-virtual {v0, p2, p1, p0}, Lcom/smedialink/bots/data/mapper/ShopItemMapper;->mapList(Ljava/util/List;Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
-
-    move-result-object p0
+    check-cast p0, Ljava/util/List;
 
     return-object p0
 .end method
 
-.method private static final getAllBotsObservable$lambda-15(Ljava/util/List;)Ljava/util/List;
-    .locals 3
+.method private static final getAllBotsObservable$lambda$14(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
+    .locals 1
 
-    const-string v0, "list"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Lkotlin/jvm/functions/Function1;
 
     .line 170
-    sget-object v1, Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$3$1;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$3$1;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$3$2;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$3$2;
-
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    invoke-static {v0}, Lkotlin/comparisons/ComparisonsKt;->compareBy([Lkotlin/jvm/functions/Function1;)Ljava/util/Comparator;
-
-    move-result-object v0
-
-    invoke-static {p0, v0}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Ljava/util/List;
 
     return-object p0
 .end method
 
-.method private static final getAllBotsObservable$lambda-16(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
+.method private static final getAllBotsObservable$lambda$15(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
     .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$language"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "it"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 177
-    invoke-virtual {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getCurrentTags()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 178
-    invoke-virtual {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getBotsRepository()Lcom/smedialink/bots/data/repository/BotsRepository;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/smedialink/bots/data/repository/BotsRepository;->getTags()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/smedialink/bots/usecase/AiBotsManager;->setCurrentTags(Ljava/util/List;)V
-
-    .line 180
-    :cond_0
-    iget-object v0, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->shopItemMapper:Lcom/smedialink/bots/data/mapper/ShopItemMapper;
-
-    invoke-virtual {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getCurrentTags()Ljava/util/List;
+    .line 176
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-virtual {v0, p2, p1, p0}, Lcom/smedialink/bots/data/mapper/ShopItemMapper;->mapList(Ljava/util/List;Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
-
-    move-result-object p0
+    check-cast p0, Ljava/util/List;
 
     return-object p0
 .end method
 
-.method private static final getAllBotsObservable$lambda-17(Ljava/util/List;)Ljava/util/List;
-    .locals 3
+.method private static final getAllBotsObservable$lambda$16(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
+    .locals 1
 
-    const-string v0, "list"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Lkotlin/jvm/functions/Function1;
 
     .line 182
-    sget-object v1, Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$5$1;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$5$1;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$5$2;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$5$2;
-
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    invoke-static {v0}, Lkotlin/comparisons/ComparisonsKt;->compareBy([Lkotlin/jvm/functions/Function1;)Ljava/util/Comparator;
-
-    move-result-object v0
-
-    invoke-static {p0, v0}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Ljava/util/List;
 
     return-object p0
 .end method
 
-.method private static final getAvailableCategories$lambda-19(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
+.method private static final getAvailableCategories$lambda$18(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
     .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "$language"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "it"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 199
-    iget-object p0, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->categoriesMapper:Lcom/smedialink/bots/data/mapper/BotCategoryMapper;
-
-    invoke-virtual {p0, p2, p1}, Lcom/smedialink/bots/data/mapper/BotCategoryMapper;->mapList(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Ljava/util/List;
 
     return-object p0
 .end method
 
-.method private static final getAvailableCategories$lambda-21(Ljava/util/List;)Ljava/util/List;
+.method private static final getAvailableCategories$lambda$19(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
     .locals 1
 
-    const-string v0, "list"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1052
-    new-instance v0, Lcom/smedialink/bots/usecase/AiBotsManager$getAvailableCategories$lambda-21$$inlined$sortedByDescending$1;
-
-    invoke-direct {v0}, Lcom/smedialink/bots/usecase/AiBotsManager$getAvailableCategories$lambda-21$$inlined$sortedByDescending$1;-><init>()V
-
-    invoke-static {p0, v0}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
+    .line 200
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Ljava/util/List;
 
     return-object p0
 .end method
 
-.method private static final getCategories$lambda-22(Lcom/smedialink/bots/usecase/AiBotsManager;Lcom/google/firebase/firestore/QuerySnapshot;)Lcom/google/firebase/firestore/QuerySnapshot;
-    .locals 2
+.method private static final getCategories$lambda$20(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/google/firebase/firestore/QuerySnapshot;
+    .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "snapshot"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 209
-    invoke-virtual {p1}, Lcom/google/firebase/firestore/QuerySnapshot;->getDocuments()Ljava/util/List;
-
-    move-result-object v0
-
-    const-string v1, "snapshot.documents"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    if-eqz v0, :cond_0
-
-    .line 210
-    invoke-virtual {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getBotsRepository()Lcom/smedialink/bots/data/repository/BotsRepository;
+    .line 208
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-virtual {p0, p1}, Lcom/smedialink/bots/data/repository/BotsRepository;->storeCategoryDocuments(Lcom/google/firebase/firestore/QuerySnapshot;)V
+    check-cast p0, Lcom/google/firebase/firestore/QuerySnapshot;
 
-    :cond_0
-    return-object p1
+    return-object p0
 .end method
 
-.method private static final getCategories$lambda-23(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Lcom/google/firebase/firestore/QuerySnapshot;)Lio/reactivex/ObservableSource;
+.method private static final getCategories$lambda$21(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "$language"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "it"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 215
-    invoke-virtual {p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->getAvailableCategories(Ljava/lang/String;)Lio/reactivex/Observable;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Lio/reactivex/ObservableSource;
 
     return-object p0
 .end method
 
-.method private static final getSingleBotObservable$lambda-18(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Lcom/smedialink/bots/data/model/database/BotsDbModel;)Lcom/smedialink/bots/domain/model/ShopItem;
+.method private static final getSingleBotObservable$lambda$17(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/bots/domain/model/ShopItem;
     .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$language"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "it"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 189
-    invoke-virtual {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getCurrentTags()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 190
-    invoke-virtual {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getBotsRepository()Lcom/smedialink/bots/data/repository/BotsRepository;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/smedialink/bots/data/repository/BotsRepository;->getTags()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/smedialink/bots/usecase/AiBotsManager;->setCurrentTags(Ljava/util/List;)V
-
-    .line 192
-    :cond_0
-    iget-object v0, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->shopItemMapper:Lcom/smedialink/bots/data/mapper/ShopItemMapper;
-
-    invoke-virtual {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getCurrentTags()Ljava/util/List;
+    .line 188
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-virtual {v0, p2, p0, p1}, Lcom/smedialink/bots/data/mapper/ShopItemMapper;->mapItem(Lcom/smedialink/bots/data/model/database/BotsDbModel;Ljava/util/List;Ljava/lang/String;)Lcom/smedialink/bots/domain/model/ShopItem;
-
-    move-result-object p0
+    check-cast p0, Lcom/smedialink/bots/domain/model/ShopItem;
 
     return-object p0
 .end method
 
-.method private static final handleChosenBotAnswer$lambda-30(Ljava/lang/String;Lcom/smedialink/bots/usecase/AiBotsManager;JLjava/lang/String;I)V
+.method private static final handleChosenBotAnswer$lambda$28(Ljava/lang/String;Lcom/smedialink/bots/usecase/AiBotsManager;JLjava/lang/String;I)V
     .locals 1
 
     const-string v0, "$botId"
@@ -1633,22 +1479,26 @@
     return-void
 .end method
 
-.method private static final handleChosenBotAnswer$lambda-31()V
+.method private static final handleChosenBotAnswer$lambda$29()V
     .locals 0
 
     return-void
 .end method
 
-.method private static final handleChosenBotAnswer$lambda-32(Ljava/lang/Throwable;)V
-    .locals 0
+.method private static final handleChosenBotAnswer$lambda$30(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 252
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final handleDownloadCompletion$lambda-52(Lcom/smedialink/bots/usecase/AiBotsManager;JLjava/io/File;)V
+.method private static final handleDownloadCompletion$lambda$50(Lcom/smedialink/bots/usecase/AiBotsManager;JLjava/io/File;)V
     .locals 2
 
     const-string v0, "this$0"
@@ -1663,9 +1513,7 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 374
-    invoke-virtual {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getDownloads()Ljava/util/Map;
-
-    move-result-object v0
+    iget-object v0, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->downloads:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -1679,11 +1527,15 @@
     return-void
 .end method
 
-.method private static final handleDownloadCompletion$lambda-53(Ljava/lang/Throwable;)V
-    .locals 0
+.method private static final handleDownloadCompletion$lambda$51(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 376
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -1754,89 +1606,50 @@
 
     move-result-wide p2
 
-    .line 353
-    iget-object v1, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->downloads:Ljava/util/Map;
-
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
 
-    new-instance p3, Lcom/smedialink/bots/domain/model/DownloadSession;
+    .line 353
+    iget-object p3, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->downloads:Ljava/util/Map;
 
-    invoke-direct {p3, v0, p1}, Lcom/smedialink/bots/domain/model/DownloadSession;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    new-instance v1, Lcom/smedialink/bots/domain/model/DownloadSession;
 
-    invoke-interface {v1, p2, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v1, v0, p1}, Lcom/smedialink/bots/domain/model/DownloadSession;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-interface {p3, p2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final listenForRemoteBotUpdates$lambda-27(Lcom/smedialink/bots/usecase/AiBotsManager;Lcom/smedialink/bots/usecase/AiBotsManager$FirebaseSnapshotCallback;Lcom/google/firebase/firestore/QuerySnapshot;)V
-    .locals 2
-
-    const-string v0, "this$0"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "$callback"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "snapshot"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 231
-    invoke-virtual {p2}, Lcom/google/firebase/firestore/QuerySnapshot;->getDocuments()Ljava/util/List;
-
-    move-result-object v0
-
-    const-string v1, "snapshot.documents"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    if-eqz v0, :cond_0
-
-    .line 232
-    invoke-virtual {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getBotsRepository()Lcom/smedialink/bots/data/repository/BotsRepository;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Lcom/smedialink/bots/data/repository/BotsRepository;->storeBotDocuments(Lcom/google/firebase/firestore/QuerySnapshot;)V
-
-    .line 233
-    invoke-interface {p1}, Lcom/smedialink/bots/usecase/AiBotsManager$FirebaseSnapshotCallback;->onSuccess()V
-
-    .line 234
-    invoke-direct {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->fetchTags()V
-
-    .line 235
-    invoke-direct {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->rebuildActiveBotsList()V
-
-    :cond_0
-    return-void
-.end method
-
-.method private static final listenForRemoteBotUpdates$lambda-28(Ljava/lang/Throwable;)V
+.method private static final listenForRemoteBotUpdates$lambda$25(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string v0, "t"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 238
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    .line 230
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private static final listenForRemoteBotUpdates$lambda$26(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 237
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
 .method private final rebuildActiveBotsList()V
-    .locals 3
+    .locals 4
 
     .line 121
     iget-object v0, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->botsRepository:Lcom/smedialink/bots/data/repository/BotsRepository;
@@ -1864,13 +1677,23 @@
     move-result-object v0
 
     .line 124
-    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda16;
+    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$rebuildActiveBotsList$1;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda16;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;)V
+    invoke-direct {v1, p0}, Lcom/smedialink/bots/usecase/AiBotsManager$rebuildActiveBotsList$1;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;)V
 
-    sget-object v2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda21;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda21;
+    new-instance v2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda27;
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Single;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    invoke-direct {v2, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda27;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    sget-object v1, Lcom/smedialink/bots/usecase/AiBotsManager$rebuildActiveBotsList$2;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$rebuildActiveBotsList$2;
+
+    .line 128
+    new-instance v3, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda35;
+
+    invoke-direct {v3, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda35;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 124
+    invoke-virtual {v0, v2, v3}, Lio/reactivex/Single;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
@@ -1882,57 +1705,33 @@
     return-void
 .end method
 
-.method private static final rebuildActiveBotsList$lambda-0(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/util/List;)V
+.method private static final rebuildActiveBotsList$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "bots"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 125
-    invoke-virtual {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getActiveBots()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->clear()V
-
-    .line 126
-    invoke-virtual {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getActiveBots()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-
-    .line 127
-    invoke-virtual {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getBotDisableCallback()Lcom/smedialink/bots/usecase/AiBotsManager$BotsListChangedCallback;
-
-    move-result-object p0
-
-    if-nez p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {p0}, Lcom/smedialink/bots/usecase/AiBotsManager$BotsListChangedCallback;->onSuccess()V
-
-    :goto_0
-    return-void
-.end method
-
-.method private static final rebuildActiveBotsList$lambda-1(Ljava/lang/Throwable;)V
-    .locals 0
-
-    .line 129
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    .line 124
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final sendAppInstalledEvent$lambda-3(Lcom/smedialink/bots/usecase/AiBotsManager$AppInstalledCallback;J)V
+.method private static final rebuildActiveBotsList$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 128
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private static final sendAppInstalledEvent$lambda$3(Lcom/smedialink/bots/usecase/AiBotsManager$AppInstalledCallback;J)V
     .locals 1
 
     const-string v0, "$callback"
@@ -1943,13 +1742,17 @@
     invoke-interface {p0}, Lcom/smedialink/bots/usecase/AiBotsManager$AppInstalledCallback;->onSuccess()V
 
     .line 140
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    new-instance p0, Ljava/lang/StringBuilder;
 
-    move-result-object p0
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p1, "App installed event, user id "
+    const-string v0, "App installed event, user id "
 
-    invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -1960,11 +1763,15 @@
     return-void
 .end method
 
-.method private static final sendAppInstalledEvent$lambda-4(Ljava/lang/Throwable;)V
-    .locals 0
+.method private static final sendAppInstalledEvent$lambda$4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 141
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -1993,9 +1800,15 @@
 
     invoke-direct {v1, p1, p2, p3}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda8;-><init>(Ljava/lang/String;J)V
 
-    sget-object p1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda30;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda30;
+    sget-object p1, Lcom/smedialink/bots/usecase/AiBotsManager$sendBotInstalledEvent$2;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$sendBotInstalledEvent$2;
 
-    invoke-virtual {v0, v1, p1}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 151
+    new-instance p2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda22;
+
+    invoke-direct {p2, p1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda22;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 149
+    invoke-virtual {v0, v1, p2}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
@@ -2007,7 +1820,7 @@
     return-void
 .end method
 
-.method private static final sendBotInstalledEvent$lambda-6(Ljava/lang/String;J)V
+.method private static final sendBotInstalledEvent$lambda$6(Ljava/lang/String;J)V
     .locals 2
 
     const-string v0, "$botId"
@@ -2042,83 +1855,59 @@
     return-void
 .end method
 
-.method private static final sendBotInstalledEvent$lambda-7(Ljava/lang/Throwable;)V
-    .locals 0
-
-    .line 151
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
-
-    return-void
-.end method
-
-.method private static final sendBotRatingEvent$lambda-10(Ljava/lang/Throwable;)V
-    .locals 0
-
-    .line 161
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
-
-    return-void
-.end method
-
-.method private static final sendBotRatingEvent$lambda-9(Ljava/lang/String;IJLjava/lang/Integer;)V
+.method private static final sendBotInstalledEvent$lambda$7(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string p4, "$botId"
+    const-string v0, "$tmp0"
 
-    invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 160
-    new-instance p4, Ljava/lang/StringBuilder;
-
-    invoke-direct {p4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v0, "Bot "
-
-    invoke-virtual {p4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, " rating "
-
-    invoke-virtual {p4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p4, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p0, " event, user id "
-
-    invoke-virtual {p4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p4, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string p1, "Remote event"
-
-    invoke-static {p1, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    .line 151
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final startBotDownloading$lambda-47(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;JLio/reactivex/disposables/Disposable;)V
-    .locals 0
+.method private static final sendBotRatingEvent$lambda$10(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
 
-    const-string p4, "this$0"
+    const-string v0, "$tmp0"
 
-    invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p4, "$botId"
+    .line 161
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    return-void
+.end method
+
+.method private static final sendBotRatingEvent$lambda$9(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 159
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private static final startBotDownloading$lambda$45(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 331
-    invoke-direct {p0, p1, p2, p3}, Lcom/smedialink/bots/usecase/AiBotsManager;->sendBotInstalledEvent(Ljava/lang/String;J)V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final startBotDownloading$lambda-48(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method private static final startBotDownloading$lambda$46(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -2143,11 +1932,15 @@
     return-void
 .end method
 
-.method private static final startBotDownloading$lambda-49(Ljava/lang/Throwable;)V
-    .locals 0
+.method private static final startBotDownloading$lambda$47(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 336
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -2171,7 +1964,7 @@
     return-object p1
 .end method
 
-.method private static final unzip$lambda-59(Ljava/lang/String;Ljava/lang/String;Lio/reactivex/CompletableEmitter;)V
+.method private static final unzip$lambda$57(Ljava/lang/String;Ljava/lang/String;Lio/reactivex/CompletableEmitter;)V
     .locals 1
 
     const-string v0, "$destination"
@@ -2220,7 +2013,7 @@
     return-void
 .end method
 
-.method private static final updateBotStatus$lambda-43(Lcom/smedialink/bots/usecase/AiBotsManager;)V
+.method private static final updateBotStatus$lambda$41(Lcom/smedialink/bots/usecase/AiBotsManager;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -2249,7 +2042,7 @@
 .end method
 
 .method public final disableBot(Ljava/lang/String;)V
-    .locals 2
+    .locals 3
 
     const-string v0, "botId"
 
@@ -2285,9 +2078,15 @@
 
     invoke-direct {v1, p1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda7;-><init>(Ljava/lang/String;)V
 
-    sget-object p1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda27;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda27;
+    sget-object p1, Lcom/smedialink/bots/usecase/AiBotsManager$disableBot$2;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$disableBot$2;
 
-    invoke-virtual {v0, v1, p1}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 316
+    new-instance v2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda25;
+
+    invoke-direct {v2, p1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda25;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 314
+    invoke-virtual {v0, v1, v2}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
@@ -2332,13 +2131,23 @@
     move-result-object p1
 
     .line 298
-    new-instance v0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda17;
+    new-instance v0, Lcom/smedialink/bots/usecase/AiBotsManager$downloadPurchase$1;
 
-    invoke-direct {v0, p0, p2, p3}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda17;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;J)V
+    invoke-direct {v0, p0, p2, p3}, Lcom/smedialink/bots/usecase/AiBotsManager$downloadPurchase$1;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;J)V
 
-    sget-object p2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda34;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda34;
+    new-instance p2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda34;
 
-    invoke-virtual {p1, v0, p2}, Lio/reactivex/Single;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    invoke-direct {p2, v0}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda34;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    sget-object p3, Lcom/smedialink/bots/usecase/AiBotsManager$downloadPurchase$2;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$downloadPurchase$2;
+
+    .line 300
+    new-instance v0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda19;
+
+    invoke-direct {v0, p3}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda19;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 298
+    invoke-virtual {p1, p2, v0}, Lio/reactivex/Single;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
@@ -2351,7 +2160,7 @@
 .end method
 
 .method public final fetchVotes(J)V
-    .locals 1
+    .locals 2
 
     .line 222
     iget-object v0, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->botsRepository:Lcom/smedialink/bots/data/repository/BotsRepository;
@@ -2360,11 +2169,15 @@
 
     move-result-object p1
 
-    sget-object p2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda13;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda13;
+    sget-object p2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda12;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda12;
 
-    sget-object v0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda28;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda28;
+    sget-object v0, Lcom/smedialink/bots/usecase/AiBotsManager$fetchVotes$2;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$fetchVotes$2;
 
-    invoke-virtual {p1, p2, v0}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda31;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda31;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2, v1}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
@@ -2423,31 +2236,43 @@
     move-result-object v0
 
     .line 168
-    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda36;
+    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$1;
 
-    invoke-direct {v1, p1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda36;-><init>(Lcom/smedialink/bots/domain/model/BotLanguage;)V
+    invoke-direct {v1, p1}, Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$1;-><init>(Lcom/smedialink/bots/domain/model/BotLanguage;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda40;
+
+    invoke-direct {p1, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda40;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
     .line 169
-    new-instance v0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda40;
+    new-instance v0, Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$2;
 
-    invoke-direct {v0, p0, p2}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda40;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p2}, Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$2;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;)V
+
+    new-instance p2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda36;
+
+    invoke-direct {p2, v0}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda36;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    .line 170
+    sget-object p2, Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$3;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$3;
+
+    new-instance v0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda41;
+
+    invoke-direct {v0, p2}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda41;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    sget-object p2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda45;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda45;
-
-    .line 170
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    const-string p2, "botsRepository.getBotsLi\u2026rity, ShopItem::title)) }"
+    const-string p2, "fun getAllBotsObservable\u2026rity, ShopItem::title)) }"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2481,22 +2306,30 @@
     move-result-object v0
 
     .line 176
-    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda41;
+    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$4;
 
-    invoke-direct {v1, p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda41;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;)V
+    invoke-direct {v1, p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$4;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda39;
+
+    invoke-direct {p1, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda39;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
-
-    sget-object v0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda43;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda43;
 
     .line 182
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    sget-object v0, Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$5;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$getAllBotsObservable$5;
+
+    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda45;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda45;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    const-string v0, "botsRepository\n         \u2026rity, ShopItem::title)) }"
+    const-string v0, "fun getAllBotsObservable\u2026rity, ShopItem::title)) }"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2530,22 +2363,30 @@
     move-result-object v0
 
     .line 199
-    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda42;
+    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$getAvailableCategories$1;
 
-    invoke-direct {v1, p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda42;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;)V
+    invoke-direct {v1, p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager$getAvailableCategories$1;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda37;
+
+    invoke-direct {p1, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda37;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
-
-    sget-object v0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda44;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda44;
 
     .line 200
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    sget-object v0, Lcom/smedialink/bots/usecase/AiBotsManager$getAvailableCategories$2;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$getAvailableCategories$2;
+
+    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda38;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda38;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    const-string v0, "botsRepository\n         \u2026cending { it.priority } }"
+    const-string v0, "fun getAvailableCategori\u2026cending { it.priority } }"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2612,7 +2453,7 @@
 .end method
 
 .method public final getCategories(Ljava/lang/String;)Lio/reactivex/Observable;
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2655,11 +2496,15 @@
     move-result-object v0
 
     .line 208
-    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda37;
+    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$getCategories$1;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda37;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;)V
+    invoke-direct {v1, p0}, Lcom/smedialink/bots/usecase/AiBotsManager$getCategories$1;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Single;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Single;
+    new-instance v2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda43;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda43;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v2}, Lio/reactivex/Single;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Single;
 
     move-result-object v0
 
@@ -2669,11 +2514,15 @@
     move-result-object v0
 
     .line 215
-    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda38;
+    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$getCategories$2;
 
-    invoke-direct {v1, p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda38;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;)V
+    invoke-direct {v1, p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager$getCategories$2;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda42;
+
+    invoke-direct {p1, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda42;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -2682,8 +2531,9 @@
 
     move-result-object p1
 
-    const-string v0, "botsRepository.getCatego\u2026  .distinctUntilChanged()"
+    const-string v0, "fun getCategories(langua\u2026inctUntilChanged()\n\n    }"
 
+    .line 215
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
@@ -2702,24 +2552,6 @@
 
     .line 94
     iget-object v0, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->currentTags:Ljava/util/List;
-
-    return-object v0
-.end method
-
-.method public final getDownloads()Ljava/util/Map;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Map<",
-            "Ljava/lang/Long;",
-            "Lcom/smedialink/bots/domain/model/DownloadSession;",
-            ">;"
-        }
-    .end annotation
-
-    .line 92
-    iget-object v0, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->downloads:Ljava/util/Map;
 
     return-object v0
 .end method
@@ -2755,15 +2587,19 @@
     move-result-object p1
 
     .line 188
-    new-instance v0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda39;
+    new-instance v0, Lcom/smedialink/bots/usecase/AiBotsManager$getSingleBotObservable$1;
 
-    invoke-direct {v0, p0, p2}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda39;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p2}, Lcom/smedialink/bots/usecase/AiBotsManager$getSingleBotObservable$1;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda44;
+
+    invoke-direct {p2, v0}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda44;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    const-string p2, "botsRepository\n         \u2026ge)\n                    }"
+    const-string p2, "fun getSingleBotObservab\u2026ge)\n                    }"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2811,12 +2647,16 @@
 
     move-result-object p1
 
-    sget-object p2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda12;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda12;
-
-    sget-object p3, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda22;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda22;
+    sget-object p2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda13;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda13;
 
     .line 252
-    invoke-virtual {p1, p2, p3}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    sget-object p3, Lcom/smedialink/bots/usecase/AiBotsManager$handleChosenBotAnswer$3;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$handleChosenBotAnswer$3;
+
+    new-instance p4, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda29;
+
+    invoke-direct {p4, p3}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda29;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2, p4}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
@@ -2846,16 +2686,16 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    move-object v0, v1
+    invoke-virtual {v0}, Lcom/smedialink/bots/domain/model/DownloadSession;->getFile()Ljava/io/File;
+
+    move-result-object v0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Lcom/smedialink/bots/domain/model/DownloadSession;->getFile()Ljava/io/File;
-
-    move-result-object v0
+    move-object v0, v1
 
     .line 359
     :goto_0
@@ -2881,175 +2721,194 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-nez v0, :cond_1
+    .line 360
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    move-object v2, v1
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "File downloaded to "
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v4
 
     goto :goto_1
 
-    .line 360
     :cond_1
-    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v2
+    move-object v4, v1
 
     :goto_1
-    const-string v4, "File downloaded to "
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v4, v2}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-nez v0, :cond_2
+    .line 361
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    move-object v2, v1
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "File exists? "
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v4
+
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v4
 
     goto :goto_2
 
-    .line 361
     :cond_2
-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
+    move-object v4, v1
 
     :goto_2
-    const-string v4, "File exists? "
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v4, v2}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-nez v0, :cond_3
-
-    move-object v2, v1
-
-    goto :goto_3
-
     .line 362
-    :cond_3
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "File last modified: "
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-eqz v0, :cond_3
+
     invoke-virtual {v0}, Ljava/io/File;->lastModified()J
 
     move-result-wide v4
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v2
+    move-result-object v4
+
+    goto :goto_3
+
+    :cond_3
+    move-object v4, v1
 
     :goto_3
-    const-string v4, "File last modified: "
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v4, v2}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 364
-    iget-object v2, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->destinationPath:Ljava/io/File;
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v4, "Unzip to "
 
-    invoke-static {v4, v2}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v4, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->destinationPath:Ljava/io/File;
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-nez v0, :cond_4
-
-    move-object v2, v1
-
-    goto :goto_4
+    if-eqz v0, :cond_4
 
     .line 366
-    :cond_4
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    :goto_4
-    iget-object v3, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->destinationPath:Ljava/io/File;
+    :cond_4
+    iget-object v2, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->destinationPath:Ljava/io/File;
 
-    invoke-virtual {v3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v4, "destinationPath.absolutePath"
-
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-direct {p0, v2, v3}, Lcom/smedialink/bots/usecase/AiBotsManager;->unzip(Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Completable;
+    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v2
+
+    const-string v3, "destinationPath.absolutePath"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0, v1, v2}, Lcom/smedialink/bots/usecase/AiBotsManager;->unzip(Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Completable;
+
+    move-result-object v1
 
     .line 367
     invoke-static {}, Lio/reactivex/schedulers/Schedulers;->io()Lio/reactivex/Scheduler;
 
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lio/reactivex/Completable;->subscribeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Completable;
-
     move-result-object v2
 
+    invoke-virtual {v1, v2}, Lio/reactivex/Completable;->subscribeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Completable;
+
+    move-result-object v1
+
     .line 368
-    iget-object v3, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->downloads:Ljava/util/Map;
+    iget-object v2, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->downloads:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v4
-
-    invoke-interface {v3, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
     move-result-object v3
 
-    check-cast v3, Lcom/smedialink/bots/domain/model/DownloadSession;
+    invoke-interface {v2, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-nez v3, :cond_5
+    move-result-object v2
 
-    goto :goto_5
+    check-cast v2, Lcom/smedialink/bots/domain/model/DownloadSession;
 
-    :cond_5
-    invoke-virtual {v3}, Lcom/smedialink/bots/domain/model/DownloadSession;->getBotId()Ljava/lang/String;
+    if-eqz v2, :cond_5
 
-    move-result-object v3
+    invoke-virtual {v2}, Lcom/smedialink/bots/domain/model/DownloadSession;->getBotId()Ljava/lang/String;
 
-    if-nez v3, :cond_6
+    move-result-object v2
 
-    goto :goto_5
+    if-eqz v2, :cond_5
 
     .line 369
-    :cond_6
-    invoke-virtual {p0}, Lcom/smedialink/bots/usecase/AiBotsManager;->getBotsRepository()Lcom/smedialink/bots/data/repository/BotsRepository;
+    iget-object v3, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->botsRepository:Lcom/smedialink/bots/data/repository/BotsRepository;
 
-    move-result-object v1
+    invoke-virtual {v3, v2}, Lcom/smedialink/bots/data/repository/BotsRepository;->updateRemoteBotHash(Ljava/lang/String;)Lio/reactivex/Completable;
 
-    invoke-virtual {v1, v3}, Lcom/smedialink/bots/data/repository/BotsRepository;->updateRemoteBotHash(Ljava/lang/String;)Lio/reactivex/Completable;
+    move-result-object v2
 
-    move-result-object v1
-
-    :goto_5
-    if-nez v1, :cond_7
+    if-nez v2, :cond_6
 
     .line 370
+    :cond_5
     invoke-static {}, Lio/reactivex/Completable;->complete()Lio/reactivex/Completable;
 
-    move-result-object v1
+    move-result-object v2
 
     const-string v3, "complete()"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 368
-    :cond_7
-    invoke-virtual {v2, v1}, Lio/reactivex/Completable;->andThen(Lio/reactivex/CompletableSource;)Lio/reactivex/Completable;
+    :cond_6
+    invoke-virtual {v1, v2}, Lio/reactivex/Completable;->andThen(Lio/reactivex/CompletableSource;)Lio/reactivex/Completable;
 
     move-result-object v1
 
@@ -3067,9 +2926,15 @@
 
     invoke-direct {v2, p0, p1, p2, v0}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda3;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;JLjava/io/File;)V
 
-    sget-object p1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda25;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda25;
+    sget-object p1, Lcom/smedialink/bots/usecase/AiBotsManager$handleDownloadCompletion$3;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$handleDownloadCompletion$3;
 
-    invoke-virtual {v1, v2, p1}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 376
+    new-instance p2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda32;
+
+    invoke-direct {p2, p1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda32;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 372
+    invoke-virtual {v1, v2, p2}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
@@ -3082,7 +2947,7 @@
 .end method
 
 .method public final listenForRemoteBotUpdates(Lcom/smedialink/bots/usecase/AiBotsManager$FirebaseSnapshotCallback;)V
-    .locals 2
+    .locals 3
 
     const-string v0, "callback"
 
@@ -3114,13 +2979,23 @@
     move-result-object v0
 
     .line 230
-    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda18;
+    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$listenForRemoteBotUpdates$1;
 
-    invoke-direct {v1, p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda18;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;Lcom/smedialink/bots/usecase/AiBotsManager$FirebaseSnapshotCallback;)V
+    invoke-direct {v1, p0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager$listenForRemoteBotUpdates$1;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;Lcom/smedialink/bots/usecase/AiBotsManager$FirebaseSnapshotCallback;)V
 
-    sget-object p1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda31;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda31;
+    new-instance p1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda15;
 
-    invoke-virtual {v0, v1, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    invoke-direct {p1, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda15;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    sget-object v1, Lcom/smedialink/bots/usecase/AiBotsManager$listenForRemoteBotUpdates$2;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$listenForRemoteBotUpdates$2;
+
+    .line 237
+    new-instance v2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda24;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda24;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 230
+    invoke-virtual {v0, p1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
@@ -3160,9 +3035,15 @@
 
     invoke-direct {v1, p3, p1, p2}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager$AppInstalledCallback;J)V
 
-    sget-object p1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda23;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda23;
+    sget-object p1, Lcom/smedialink/bots/usecase/AiBotsManager$sendAppInstalledEvent$2;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$sendAppInstalledEvent$2;
 
-    invoke-virtual {v0, v1, p1}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 141
+    new-instance p2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda28;
+
+    invoke-direct {p2, p1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda28;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 138
+    invoke-virtual {v0, v1, p2}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
@@ -3198,13 +3079,23 @@
     move-result-object v0
 
     .line 159
-    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda20;
+    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$sendBotRatingEvent$1;
 
-    invoke-direct {v1, p1, p4, p2, p3}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda20;-><init>(Ljava/lang/String;IJ)V
+    invoke-direct {v1, p1, p4, p2, p3}, Lcom/smedialink/bots/usecase/AiBotsManager$sendBotRatingEvent$1;-><init>(Ljava/lang/String;IJ)V
 
-    sget-object p1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda33;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda33;
+    new-instance p1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda33;
 
-    invoke-virtual {v0, v1, p1}, Lio/reactivex/Single;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    invoke-direct {p1, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda33;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    sget-object p2, Lcom/smedialink/bots/usecase/AiBotsManager$sendBotRatingEvent$2;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$sendBotRatingEvent$2;
+
+    .line 161
+    new-instance p3, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda14;
+
+    invoke-direct {p3, p2}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda14;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 159
+    invoke-virtual {v0, p1, p3}, Lio/reactivex/Single;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
@@ -3285,11 +3176,19 @@
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 329
-    iget-object v0, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->downloadsPath:Ljava/io/File;
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "Download path "
 
-    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/smedialink/bots/usecase/AiBotsManager;->downloadsPath:Ljava/io/File;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -3303,11 +3202,15 @@
     move-result-object v0
 
     .line 331
-    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda19;
+    new-instance v1, Lcom/smedialink/bots/usecase/AiBotsManager$startBotDownloading$1;
 
-    invoke-direct {v1, p0, p1, p4, p5}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda19;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;J)V
+    invoke-direct {v1, p0, p1, p4, p5}, Lcom/smedialink/bots/usecase/AiBotsManager$startBotDownloading$1;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;J)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Completable;->doOnSubscribe(Lio/reactivex/functions/Consumer;)Lio/reactivex/Completable;
+    new-instance p4, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda30;
+
+    invoke-direct {p4, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda30;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p4}, Lio/reactivex/Completable;->doOnSubscribe(Lio/reactivex/functions/Consumer;)Lio/reactivex/Completable;
 
     move-result-object p4
 
@@ -3334,9 +3237,15 @@
 
     invoke-direct {p5, p0, p1, p2, p3}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda4;-><init>(Lcom/smedialink/bots/usecase/AiBotsManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object p1, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda24;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda24;
+    sget-object p1, Lcom/smedialink/bots/usecase/AiBotsManager$startBotDownloading$3;->INSTANCE:Lcom/smedialink/bots/usecase/AiBotsManager$startBotDownloading$3;
 
-    invoke-virtual {p4, p5, p1}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 336
+    new-instance p2, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda26;
+
+    invoke-direct {p2, p1}, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda26;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 334
+    invoke-virtual {p4, p5, p2}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 

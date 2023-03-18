@@ -142,22 +142,22 @@ public final class AppMainDatabaseMigrations {
         ?? r8 = new Migration() { // from class: com.smedialink.storage.data.locale.db.migration.AppMainDatabaseMigrations$MIGRATION_9_10$1
             @Override // androidx.room.migration.Migration
             public void migrate(SupportSQLiteDatabase database) {
+                String str;
+                String str2;
+                String str3;
                 List<Long> presets;
                 Intrinsics.checkNotNullParameter(database, "database");
                 database.execSQL("CREATE TABLE TopicDb_copy (topicId INTEGER NOT NULL, name TEXT, icon TEXT, `order` INTEGER NOT NULL, presets TEXT NOT NULL DEFAULT \"[]\", dialogs TEXT NOT NULL, userId INTEGER NOT NULL, PRIMARY KEY(userId, topicId))");
                 Cursor query = database.query("SELECT * FROM TopicDb");
                 if (query != null) {
-                    while (true) {
+                    Intrinsics.checkNotNullExpressionValue(query, "query(\"SELECT * FROM TopicDb\")");
+                    while (query.moveToNext()) {
                         try {
-                            String str = null;
-                            if (!query.moveToNext()) {
-                                break;
-                            }
-                            String string = query.getString(query.getColumnIndexOrThrow(AppMeasurementSdk.ConditionalUserProperty.NAME));
+                            String name = query.getString(query.getColumnIndexOrThrow(AppMeasurementSdk.ConditionalUserProperty.NAME));
                             String icon = query.getString(query.getColumnIndexOrThrow("icon"));
                             String dialogsString = query.getString(query.getColumnIndexOrThrow("dialogs"));
                             boolean z = false;
-                            if (string == null) {
+                            if (name == null) {
                                 Topic.Companion companion = Topic.Companion;
                                 Intrinsics.checkNotNullExpressionValue(icon, "icon");
                                 Topic map = companion.map(icon);
@@ -185,16 +185,31 @@ public final class AppMainDatabaseMigrations {
                                 sb.append("INSERT INTO TopicDb_copy (topicId, name, icon, `order`, dialogs, userId) VALUES(");
                                 sb.append(j);
                                 sb.append(", ");
-                                sb.append((Object) (string == null ? null : StringExtKt.wrapWithQuotes(string)));
+                                if (name != null) {
+                                    Intrinsics.checkNotNullExpressionValue(name, "name");
+                                    str = StringExtKt.wrapWithQuotes(name);
+                                } else {
+                                    str = null;
+                                }
+                                sb.append(str);
                                 sb.append(", ");
-                                sb.append((Object) (icon == null ? null : StringExtKt.wrapWithQuotes(icon)));
+                                if (icon != null) {
+                                    Intrinsics.checkNotNullExpressionValue(icon, "icon");
+                                    str2 = StringExtKt.wrapWithQuotes(icon);
+                                } else {
+                                    str2 = null;
+                                }
+                                sb.append(str2);
                                 sb.append(", ");
                                 sb.append(i);
                                 sb.append(", ");
                                 if (dialogsString != null) {
-                                    str = StringExtKt.wrapWithQuotes(dialogsString);
+                                    Intrinsics.checkNotNullExpressionValue(dialogsString, "dialogsString");
+                                    str3 = StringExtKt.wrapWithQuotes(dialogsString);
+                                } else {
+                                    str3 = null;
                                 }
-                                sb.append((Object) str);
+                                sb.append(str3);
                                 sb.append(", ");
                                 sb.append(j2);
                                 sb.append(')');
@@ -249,6 +264,7 @@ public final class AppMainDatabaseMigrations {
                 database.execSQL("CREATE TABLE FilterSettingsDb_copy (filterId INTEGER NOT NULL, fabs TEXT NOT NULL, icon TEXT, userId INTEGER NOT NULL, PRIMARY KEY(filterId, userId))");
                 Cursor query = database.query("SELECT * FROM FilterSettingsDb");
                 if (query != null) {
+                    Intrinsics.checkNotNullExpressionValue(query, "query(\"SELECT * FROM FilterSettingsDb\")");
                     while (true) {
                         try {
                             String str = null;
@@ -257,7 +273,7 @@ public final class AppMainDatabaseMigrations {
                             }
                             int i = query.getInt(query.getColumnIndexOrThrow("filterId"));
                             String string = query.getString(query.getColumnIndexOrThrow("fabs"));
-                            String string2 = query.getString(query.getColumnIndexOrThrow("icon"));
+                            String icon = query.getString(query.getColumnIndexOrThrow("icon"));
                             long j = query.getLong(query.getColumnIndexOrThrow("userId"));
                             FilterFab.Companion companion = FilterFab.Companion;
                             Set<String> mapEnumsToNames = companion.mapEnumsToNames(companion.mapOldPreferenceJsonToEnums(string));
@@ -271,10 +287,11 @@ public final class AppMainDatabaseMigrations {
                             }
                             sb.append(StringExtKt.wrapWithQuotes(arrayList.toString()));
                             sb.append(", ");
-                            if (string2 != null) {
-                                str = StringExtKt.wrapWithQuotes(string2);
+                            if (icon != null) {
+                                Intrinsics.checkNotNullExpressionValue(icon, "icon");
+                                str = StringExtKt.wrapWithQuotes(icon);
                             }
-                            sb.append((Object) str);
+                            sb.append(str);
                             sb.append(", ");
                             sb.append(j);
                             sb.append(')');

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/fork/ui/fragment/ReactionsSettingsActivity;->showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda-17$lambda-16(Ljava/util/List;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Lorg/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;)V
+    value = Lorg/fork/ui/fragment/ReactionsSettingsActivity;->showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -83,7 +83,7 @@
 
     const-string v0, "null cannot be cast to non-null type org.fork.enums.DialogType"
 
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lorg/fork/enums/DialogType;
 

@@ -43,7 +43,6 @@ public final class FilterProvider$convert$1 extends Lambda implements Function1<
         linearLayoutManager.setInitialPrefetchItemCount(4);
         parcelable = filterProvider.filtersScrollState;
         RecycleViewExtKt.restoreScrollState(linearLayoutManager, parcelable);
-        Unit unit = Unit.INSTANCE;
         applyForView.setLayoutManager(linearLayoutManager);
         FiltersRecycleAdapter filtersRecycleAdapter = this.this$0.getFiltersRecycleAdapter();
         FiltersListItem filtersListItem = this.$item;

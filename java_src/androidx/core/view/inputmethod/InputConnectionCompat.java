@@ -106,22 +106,29 @@ public final class InputConnectionCompat {
 
     private static OnCommitContentListener createOnCommitContentListenerUsingPerformReceiveContent(final View view) {
         Preconditions.checkNotNull(view);
-        return new OnCommitContentListener() { // from class: androidx.core.view.inputmethod.InputConnectionCompat.3
+        return new OnCommitContentListener() { // from class: androidx.core.view.inputmethod.InputConnectionCompat$$ExternalSyntheticLambda0
             @Override // androidx.core.view.inputmethod.InputConnectionCompat.OnCommitContentListener
-            public boolean onCommitContent(InputContentInfoCompat inputContentInfoCompat, int i, Bundle bundle) {
-                if (Build.VERSION.SDK_INT >= 25 && (i & 1) != 0) {
-                    try {
-                        inputContentInfoCompat.requestPermission();
-                        InputContentInfo inputContentInfo = (InputContentInfo) inputContentInfoCompat.unwrap();
-                        bundle = bundle == null ? new Bundle() : new Bundle(bundle);
-                        bundle.putParcelable("androidx.core.view.extra.INPUT_CONTENT_INFO", inputContentInfo);
-                    } catch (Exception e) {
-                        Log.w("InputConnectionCompat", "Can't insert content from IME; requestPermission() failed", e);
-                        return false;
-                    }
-                }
-                return ViewCompat.performReceiveContent(view, new ContentInfoCompat.Builder(new ClipData(inputContentInfoCompat.getDescription(), new ClipData.Item(inputContentInfoCompat.getContentUri())), 2).setLinkUri(inputContentInfoCompat.getLinkUri()).setExtras(bundle).build()) == null;
+            public final boolean onCommitContent(InputContentInfoCompat inputContentInfoCompat, int i, Bundle bundle) {
+                boolean lambda$createOnCommitContentListenerUsingPerformReceiveContent$0;
+                lambda$createOnCommitContentListenerUsingPerformReceiveContent$0 = InputConnectionCompat.lambda$createOnCommitContentListenerUsingPerformReceiveContent$0(view, inputContentInfoCompat, i, bundle);
+                return lambda$createOnCommitContentListenerUsingPerformReceiveContent$0;
             }
         };
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ boolean lambda$createOnCommitContentListenerUsingPerformReceiveContent$0(View view, InputContentInfoCompat inputContentInfoCompat, int i, Bundle bundle) {
+        if (Build.VERSION.SDK_INT >= 25 && (i & 1) != 0) {
+            try {
+                inputContentInfoCompat.requestPermission();
+                InputContentInfo inputContentInfo = (InputContentInfo) inputContentInfoCompat.unwrap();
+                bundle = bundle == null ? new Bundle() : new Bundle(bundle);
+                bundle.putParcelable("androidx.core.view.extra.INPUT_CONTENT_INFO", inputContentInfo);
+            } catch (Exception e) {
+                Log.w("InputConnectionCompat", "Can't insert content from IME; requestPermission() failed", e);
+                return false;
+            }
+        }
+        return ViewCompat.performReceiveContent(view, new ContentInfoCompat.Builder(new ClipData(inputContentInfoCompat.getDescription(), new ClipData.Item(inputContentInfoCompat.getContentUri())), 2).setLinkUri(inputContentInfoCompat.getLinkUri()).setExtras(bundle).build()) == null;
     }
 }

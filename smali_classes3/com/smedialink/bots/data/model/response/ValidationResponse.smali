@@ -111,21 +111,13 @@
     :cond_2
     iget v1, p0, Lcom/smedialink/bots/data/model/response/ValidationResponse;->probability:F
 
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
     iget p1, p1, Lcom/smedialink/bots/data/model/response/ValidationResponse;->probability:F
 
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p1
-
-    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Ljava/lang/Float;->compare(FF)I
 
     move-result p1
 
-    if-nez p1, :cond_3
+    if-eqz p1, :cond_3
 
     return v2
 
@@ -203,7 +195,7 @@
 
     iget-object v1, p0, Lcom/smedialink/bots/data/model/response/ValidationResponse;->tag:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", probability="
 

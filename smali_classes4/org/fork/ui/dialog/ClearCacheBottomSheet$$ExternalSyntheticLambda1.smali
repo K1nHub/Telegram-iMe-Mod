@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/fork/ui/dialog/ClearCacheBottomSheet$$ExternalSyntheticLambda1;->f$2:Lorg/fork/models/TelegramCacheData;
 
-    invoke-static {v0, v1, v2, p1}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->$r8$lambda$0M2vtlST4HZP2lghb24BC7nWuTY(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/fork/models/TelegramCacheData;Landroid/view/View;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->$r8$lambda$axGIfv1tlHMWWMrFXVDKh8pX_-4(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/fork/models/TelegramCacheData;Landroid/view/View;)V
 
     return-void
 .end method

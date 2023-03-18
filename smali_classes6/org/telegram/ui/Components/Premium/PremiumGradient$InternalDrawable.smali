@@ -24,7 +24,7 @@
 .method public constructor <init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/Bitmap;[I)V
     .locals 1
 
-    .line 110
+    .line 118
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -33,17 +33,17 @@
 
     invoke-direct {p0, v0, p2}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
 
-    .line 111
+    .line 119
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$InternalDrawable;->originDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 112
+    .line 120
     array-length p1, p3
 
     new-array p1, p1, [I
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$InternalDrawable;->colors:[I
 
-    .line 113
+    .line 121
     array-length p2, p3
 
     const/4 v0, 0x0

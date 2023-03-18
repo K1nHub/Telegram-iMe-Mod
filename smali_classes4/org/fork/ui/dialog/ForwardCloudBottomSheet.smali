@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/fork/ui/dialog/ForwardCloudBottomSheet$ListAdapter;,
-        Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;,
+        Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Companion;,
         Lorg/fork/ui/dialog/ForwardCloudBottomSheet$CustomContainerView;,
-        Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Companion;
+        Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;,
+        Lorg/fork/ui/dialog/ForwardCloudBottomSheet$ListAdapter;
     }
 .end annotation
 
@@ -35,18 +35,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$9qUoEtAUqHeu9xsfLchsiQ5qOJQ(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;J)V
+.method public static synthetic $r8$lambda$0Ef8EeapAEhFi7pXKS22kPjG98k(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->initListView$lambda-5$lambda-4$lambda-3(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;J)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->initListView$lambda$5$lambda$4(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$D3kOnMEmj4LhUVhwoJi2A89fCSQ(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$inE57jZnoJ-nZvlzK-aqQz2xO6c(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;J)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->initListView$lambda-5$lambda-4(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->initListView$lambda$5$lambda$4$lambda$3(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;J)V
 
     return-void
 .end method
@@ -219,9 +219,6 @@
     move-result-object v0
 
     invoke-virtual {p1, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 60
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 56
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
@@ -531,7 +528,7 @@
     return-object v1
 .end method
 
-.method private static final initListView$lambda-5$lambda-4(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;Landroid/view/View;I)V
+.method private static final initListView$lambda$5$lambda$4(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;Landroid/view/View;I)V
     .locals 3
 
     const-string p1, "this$0"
@@ -554,9 +551,7 @@
     if-nez v2, :cond_0
 
     .line 114
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->getParentFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    move-result-object p1
+    iget-object p1, p0, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     new-instance p2, Lorg/fork/ui/dialog/ForwardCloudBottomSheet$$ExternalSyntheticLambda0;
 
@@ -569,9 +564,7 @@
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     .line 117
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->getForwardCloudDelegate()Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
-
-    move-result-object p1
+    iget-object p1, p0, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->forwardCloudDelegate:Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
 
     invoke-interface {p1}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;->onAlbumCreatorOpened()V
 
@@ -579,9 +572,7 @@
 
     .line 119
     :cond_0
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->getForwardCloudDelegate()Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
-
-    move-result-object v0
+    iget-object v0, p0, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->forwardCloudDelegate:Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
 
     invoke-interface {v0, p1, p2}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;->didSelectCloudDialog(J)V
 
@@ -592,7 +583,7 @@
     return-void
 .end method
 
-.method private static final initListView$lambda-5$lambda-4$lambda-3(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;J)V
+.method private static final initListView$lambda$5$lambda$4$lambda$3(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;J)V
     .locals 1
 
     const-string v0, "this$0"
@@ -600,9 +591,7 @@
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 115
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->getForwardCloudDelegate()Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
-
-    move-result-object p0
+    iget-object p0, p0, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->forwardCloudDelegate:Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
 
     invoke-interface {p0, p1, p2}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;->didSelectCloudDialog(J)V
 
@@ -803,15 +792,12 @@
     :cond_3
     iget-object v0, p0, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
 
-    if-nez v0, :cond_4
+    if-eqz v0, :cond_4
 
-    goto :goto_1
-
-    :cond_4
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
     .line 160
-    :goto_1
+    :cond_4
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
@@ -836,12 +822,12 @@
 
     const/high16 v5, 0x3f800000    # 1.0f
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_5
     const/4 v5, 0x0
 
-    :goto_2
+    :goto_1
     const/4 v6, 0x0
 
     aput v5, v1, v6
@@ -863,9 +849,6 @@
 
     .line 179
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
-
-    .line 180
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 160
     iput-object v0, p0, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
@@ -1011,22 +994,4 @@
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method public final getForwardCloudDelegate()Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
-    .locals 1
-
-    .line 41
-    iget-object v0, p0, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->forwardCloudDelegate:Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
-
-    return-object v0
-.end method
-
-.method public final getParentFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
-    .locals 1
-
-    .line 40
-    iget-object v0, p0, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    return-object v0
 .end method

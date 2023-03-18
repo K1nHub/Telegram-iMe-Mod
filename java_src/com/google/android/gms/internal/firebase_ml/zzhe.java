@@ -1,9 +1,9 @@
 package com.google.android.gms.internal.firebase_ml;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import java.nio.charset.Charset;
 /* loaded from: classes.dex */
 public final class zzhe {
     public static final Charset UTF_8 = Charset.forName("UTF-8");
-    public static final Charset ISO_8859_1 = Charset.forName(C0474C.ISO88591_NAME);
+    public static final Charset ISO_8859_1 = Charset.forName(C0468C.ISO88591_NAME);
 }

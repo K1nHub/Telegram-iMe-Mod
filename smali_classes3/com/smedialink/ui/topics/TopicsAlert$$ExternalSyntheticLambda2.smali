@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/topics/TopicsAlert$$ExternalSyntheticLambda2;->f$0:Lcom/smedialink/ui/topics/TopicsAlert;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/topics/TopicsAlert;->$r8$lambda$ubGx-5MWCE1O4zMHDjtbCpPt_v8(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/topics/TopicsAlert;->$r8$lambda$imWyOlT_Y0Q93q4VreEFx6mqgmk(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;)V
 
     return-void
 .end method

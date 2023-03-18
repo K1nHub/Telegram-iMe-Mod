@@ -42,42 +42,42 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$18owMG3llsKMconnRXwd7UrScQM(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
+.method public static synthetic $r8$lambda$19VcqIqOv-DC9sGOBEhHHbrsqY8(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;->showSuccessPurchase$lambda-0(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;->getThemeDescriptions$lambda$2(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$E6irUgT5-VmiL7lCvoS9iYnoj5Q(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;Lcom/smedialink/model/wallet/crypto/buy/CryptoBuyItem;)V
+.method public static synthetic $r8$lambda$IRQ_WwzccobBpngLqg5Wg0FR9Qk(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;->showConfirmDialog$lambda-1(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;Lcom/smedialink/model/wallet/crypto/buy/CryptoBuyItem;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;->setupListeners$lambda$6(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Gb_XQp8zCnnaTi-lt03-1AJqhxk(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$K9yS7KMc4cUnjcOZHIj2JoXj4w4(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;->setupListeners$lambda-6(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;->showSuccessPurchase$lambda$0(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$HN8_VcvRZ4BBR-hNGFFFe7boVnU(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
+.method public static synthetic $r8$lambda$fDEX5IKulra98a1Xb4h4asE3wGA(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;->getThemeDescriptions$lambda-2(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;->setupListeners$lambda$7(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$_zvEIp5pcBr_2hjlCxTgiKsKMIM(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
+.method public static synthetic $r8$lambda$lXYVZq3obBatWws3yz1i8G2rxMg(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;Lcom/smedialink/model/wallet/crypto/buy/CryptoBuyItem;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;->setupListeners$lambda-7(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;->showConfirmDialog$lambda$1(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;Lcom/smedialink/model/wallet/crypto/buy/CryptoBuyItem;)V
 
     return-void
 .end method
@@ -316,7 +316,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-2(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
+.method private static final getThemeDescriptions$lambda$2(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -508,18 +508,18 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-6(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$6(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "$noName_1"
+    const-string p1, "<anonymous parameter 1>"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -587,7 +587,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-7(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
+.method private static final setupListeners$lambda$7(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -635,7 +635,7 @@
     return-void
 .end method
 
-.method private static final showConfirmDialog$lambda-1(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;Lcom/smedialink/model/wallet/crypto/buy/CryptoBuyItem;)V
+.method private static final showConfirmDialog$lambda$1(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;Lcom/smedialink/model/wallet/crypto/buy/CryptoBuyItem;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -693,7 +693,7 @@
     return-void
 .end method
 
-.method private static final showSuccessPurchase$lambda-0(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
+.method private static final showSuccessPurchase$lambda$0(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
     .locals 1
 
     const-string v0, "this$0"

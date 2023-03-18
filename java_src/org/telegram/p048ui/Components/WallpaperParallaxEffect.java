@@ -16,7 +16,7 @@ public class WallpaperParallaxEffect implements SensorEventListener {
     private SensorManager sensorManager;
 
     /* renamed from: wm */
-    private WindowManager f1814wm;
+    private WindowManager f1825wm;
     private float[] rollBuffer = new float[3];
     private float[] pitchBuffer = new float[3];
 
@@ -31,7 +31,7 @@ public class WallpaperParallaxEffect implements SensorEventListener {
     }
 
     public WallpaperParallaxEffect(Context context) {
-        this.f1814wm = (WindowManager) context.getSystemService("window");
+        this.f1825wm = (WindowManager) context.getSystemService("window");
         SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
         this.sensorManager = sensorManager;
         this.accelerometer = sensorManager.getDefaultSensor(1);

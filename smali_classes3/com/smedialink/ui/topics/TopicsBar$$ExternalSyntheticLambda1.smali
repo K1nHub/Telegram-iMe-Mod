@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/topics/TopicsBar$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/topics/TopicsBar;
 
-    invoke-static {v0, p1, p2}, Lcom/smedialink/ui/topics/TopicsBar;->$r8$lambda$ZLaVdisLUS0qOkvAlMKuUBoIh0c(Lcom/smedialink/ui/topics/TopicsBar;Landroid/view/View;I)Z
+    invoke-static {v0, p1, p2}, Lcom/smedialink/ui/topics/TopicsBar;->$r8$lambda$KB4Q62vTneZaOoyEM3g48FgNV7Y(Lcom/smedialink/ui/topics/TopicsBar;Landroid/view/View;I)Z
 
     move-result p1
 

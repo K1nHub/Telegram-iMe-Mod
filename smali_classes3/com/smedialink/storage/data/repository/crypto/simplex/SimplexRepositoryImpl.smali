@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSimplexRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SimplexRepositoryImpl.kt\ncom/smedialink/storage/data/repository/crypto/simplex/SimplexRepositoryImpl\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt\n+ 4 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,58:1\n1547#2:59\n1618#2,3:60\n70#3:63\n70#3:65\n26#4:64\n26#4:66\n*S KotlinDebug\n*F\n+ 1 SimplexRepositoryImpl.kt\ncom/smedialink/storage/data/repository/crypto/simplex/SimplexRepositoryImpl\n*L\n29#1:59\n29#1:60,3\n33#1:63\n54#1:65\n34#1:64\n55#1:66\n*E\n"
+    value = "SMAP\nSimplexRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SimplexRepositoryImpl.kt\ncom/smedialink/storage/data/repository/crypto/simplex/SimplexRepositoryImpl\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt\n+ 4 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,58:1\n1549#2:59\n1620#2,3:60\n70#3:63\n70#3:65\n26#4:64\n26#4:66\n*S KotlinDebug\n*F\n+ 1 SimplexRepositoryImpl.kt\ncom/smedialink/storage/data/repository/crypto/simplex/SimplexRepositoryImpl\n*L\n29#1:59\n29#1:60,3\n33#1:63\n54#1:65\n34#1:64\n55#1:66\n*E\n"
 .end annotation
 
 
@@ -136,7 +136,11 @@
 
     invoke-direct {p4, p3, p1}, Lcom/smedialink/storage/data/repository/crypto/simplex/SimplexRepositoryImpl$createBuyingCryptoPayment$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/smedialink/storage/data/network/model/request/crypto/simplex/CreateBuyingCryptoPaymentRequest;)V
 
-    invoke-virtual {p2, p4}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, p4}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p2, p1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -148,11 +152,15 @@
     iget-object p2, p0, Lcom/smedialink/storage/data/repository/crypto/simplex/SimplexRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance p3, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance p3, Lcom/smedialink/storage/data/repository/crypto/simplex/SimplexRepositoryImpl$createBuyingCryptoPayment$$inlined$handleError$1;
 
-    invoke-direct {p3, p2}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {p3, p2}, Lcom/smedialink/storage/data/repository/crypto/simplex/SimplexRepositoryImpl$createBuyingCryptoPayment$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, p3}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -183,7 +191,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -194,7 +202,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -210,7 +218,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lcom/smedialink/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;
 
     .line 29
@@ -218,6 +226,7 @@
 
     move-result-object v1
 
+    .line 1621
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -243,7 +252,11 @@
 
     invoke-direct {v1, v0}, Lcom/smedialink/storage/data/repository/crypto/simplex/SimplexRepositoryImpl$getBuyingCryptoQuote$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
-    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v0, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v0, v1}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -255,11 +268,15 @@
     iget-object v0, p0, Lcom/smedialink/storage/data/repository/crypto/simplex/SimplexRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance v1, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance v1, Lcom/smedialink/storage/data/repository/crypto/simplex/SimplexRepositoryImpl$getBuyingCryptoQuote$$inlined$handleError$1;
 
-    invoke-direct {v1, v0}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {v1, v0}, Lcom/smedialink/storage/data/repository/crypto/simplex/SimplexRepositoryImpl$getBuyingCryptoQuote$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v0, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v0, v1}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 

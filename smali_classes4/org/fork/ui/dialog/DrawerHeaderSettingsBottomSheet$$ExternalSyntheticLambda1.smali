@@ -41,7 +41,7 @@
 
     check-cast p1, Lcom/smedialink/ui/drawer/DrawerAccountData;
 
-    invoke-static {v0, v1, v2, p1}, Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->$r8$lambda$KoyKSthDOZiZX-qiD20kuJENYcQ(ZLorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;ILcom/smedialink/ui/drawer/DrawerAccountData;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->$r8$lambda$OEIFnnLSDMgwFWKJLBuWGIVIwLw(ZLorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;ILcom/smedialink/ui/drawer/DrawerAccountData;)V
 
     return-void
 .end method

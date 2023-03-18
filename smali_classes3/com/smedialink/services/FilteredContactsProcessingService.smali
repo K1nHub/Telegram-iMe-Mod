@@ -9,14 +9,14 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/services/FilteredContactsProcessingService$State;,
         Lcom/smedialink/services/FilteredContactsProcessingService$Companion;,
+        Lcom/smedialink/services/FilteredContactsProcessingService$State;,
         Lcom/smedialink/services/FilteredContactsProcessingService$WhenMappings;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFilteredContactsProcessingService.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FilteredContactsProcessingService.kt\ncom/smedialink/services/FilteredContactsProcessingService\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,210:1\n1547#2:211\n1618#2,3:212\n*S KotlinDebug\n*F\n+ 1 FilteredContactsProcessingService.kt\ncom/smedialink/services/FilteredContactsProcessingService\n*L\n141#1:211\n141#1:212,3\n*E\n"
+    value = "SMAP\nFilteredContactsProcessingService.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FilteredContactsProcessingService.kt\ncom/smedialink/services/FilteredContactsProcessingService\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,210:1\n1549#2:211\n1620#2,3:212\n*S KotlinDebug\n*F\n+ 1 FilteredContactsProcessingService.kt\ncom/smedialink/services/FilteredContactsProcessingService\n*L\n141#1:211\n141#1:212,3\n*E\n"
 .end annotation
 
 
@@ -59,18 +59,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$8c46x3XKPossN23PTNcLjnNPDGc(Lcom/smedialink/services/FilteredContactsProcessingService;Ljava/lang/Throwable;)V
+.method public static synthetic $r8$lambda$5EEvRPavBx4OM3a6RsREk5re8gI(Lcom/smedialink/services/FilteredContactsProcessingService;Ljava/lang/Throwable;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/services/FilteredContactsProcessingService;->deleteContactsPart$lambda-2(Lcom/smedialink/services/FilteredContactsProcessingService;Ljava/lang/Throwable;)V
+    invoke-static {p0, p1}, Lcom/smedialink/services/FilteredContactsProcessingService;->deleteContactsPart$lambda$2(Lcom/smedialink/services/FilteredContactsProcessingService;Ljava/lang/Throwable;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$PVN_A5a3AVDfcrVu5eMX7mRLHhc(Lcom/smedialink/services/FilteredContactsProcessingService;)V
+.method public static synthetic $r8$lambda$JYy5E3yLXw0rSGkQNrdd9KZV4Jw(Lcom/smedialink/services/FilteredContactsProcessingService;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/services/FilteredContactsProcessingService;->processNextContactsPart$lambda-0(Lcom/smedialink/services/FilteredContactsProcessingService;)V
+    invoke-static {p0}, Lcom/smedialink/services/FilteredContactsProcessingService;->processNextContactsPart$lambda$0(Lcom/smedialink/services/FilteredContactsProcessingService;)V
 
     return-void
 .end method
@@ -191,7 +191,7 @@
     .line 141
     iget-object v3, p0, Lcom/smedialink/services/FilteredContactsProcessingService;->processingContactsIds:Ljava/util/List;
 
-    .line 1547
+    .line 1549
     new-instance v4, Ljava/util/ArrayList;
 
     const/16 v5, 0xa
@@ -202,7 +202,7 @@
 
     invoke-direct {v4, v5}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -218,7 +218,7 @@
 
     move-result-object v5
 
-    .line 1619
+    .line 1621
     check-cast v5, Ljava/lang/Number;
 
     invoke-virtual {v5}, Ljava/lang/Number;->longValue()J
@@ -247,10 +247,12 @@
 
     move-result-object v5
 
+    .line 1621
     invoke-interface {v4, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 141
     :cond_2
     invoke-static {v4}, Lorg/fork/utils/CollectionsUtilsKt;->toArrayList(Ljava/util/List;)Ljava/util/ArrayList;
 
@@ -268,7 +270,7 @@
     return-void
 .end method
 
-.method private static final deleteContactsPart$lambda-2(Lcom/smedialink/services/FilteredContactsProcessingService;Ljava/lang/Throwable;)V
+.method private static final deleteContactsPart$lambda$2(Lcom/smedialink/services/FilteredContactsProcessingService;Ljava/lang/Throwable;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -375,7 +377,7 @@
     return-void
 .end method
 
-.method private static final processNextContactsPart$lambda-0(Lcom/smedialink/services/FilteredContactsProcessingService;)V
+.method private static final processNextContactsPart$lambda$0(Lcom/smedialink/services/FilteredContactsProcessingService;)V
     .locals 4
 
     const-string v0, "this$0"
@@ -478,16 +480,16 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    const/4 v1, 0x0
+    invoke-static {v1}, Lkotlin/collections/ArraysKt;->toMutableList([J)Ljava/util/List;
+
+    move-result-object v1
 
     goto :goto_0
 
     :cond_0
-    invoke-static {v1}, Lkotlin/collections/ArraysKt;->toMutableList([J)Ljava/util/List;
-
-    move-result-object v1
+    const/4 v1, 0x0
 
     :goto_0
     if-nez v1, :cond_1
@@ -740,18 +742,15 @@
     :goto_0
     iget-object v0, p0, Lcom/smedialink/services/FilteredContactsProcessingService;->builder:Landroidx/core/app/NotificationCompat$Builder;
 
-    if-nez v0, :cond_2
-
-    goto :goto_1
+    if-eqz v0, :cond_2
 
     .line 172
-    :cond_2
     invoke-virtual {v0, p2}, Landroidx/core/app/NotificationCompat$Builder;->setTicker(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
 
     .line 173
     invoke-virtual {v0, p2}, Landroidx/core/app/NotificationCompat$Builder;->setContentText(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     .line 176
     sget-object p1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -769,8 +768,7 @@
 
     invoke-virtual {p1, p2, v0}, Landroidx/core/app/NotificationManagerCompat;->notify(ILandroid/app/Notification;)V
 
-    :cond_3
-    :goto_1
+    :cond_2
     return-void
 .end method
 

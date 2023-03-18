@@ -5,27 +5,17 @@
 .implements Lj$/util/function/Predicate;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lcom/smedialink/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;
+# instance fields
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/smedialink/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;
-
-    invoke-direct {v0}, Lcom/smedialink/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;-><init>()V
-
-    sput-object v0, Lcom/smedialink/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;->INSTANCE:Lcom/smedialink/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/smedialink/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -63,11 +53,11 @@
 .end method
 
 .method public final test(Ljava/lang/Object;)Z
-    .locals 0
+    .locals 1
 
-    check-cast p1, Lcom/smedialink/storage/domain/model/HistoryDialogModel;
+    iget-object v0, p0, Lcom/smedialink/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {p1}, Lcom/smedialink/ui/recent_chats/RecentChatsBar;->$r8$lambda$BqnplMMfUad038d6EmBuP_KeEDI(Lcom/smedialink/storage/domain/model/HistoryDialogModel;)Z
+    invoke-static {v0, p1}, Lcom/smedialink/ui/recent_chats/RecentChatsBar;->$r8$lambda$Zq2MVMyIMUOQOvlYuiJSuksQyF4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
 
     move-result p1
 

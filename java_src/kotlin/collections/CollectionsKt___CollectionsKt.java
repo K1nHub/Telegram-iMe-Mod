@@ -8,7 +8,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
-import java.util.Objects;
 import java.util.RandomAccess;
 import java.util.Set;
 import kotlin.Pair;
@@ -308,10 +307,8 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
                 return list;
             }
             Object[] array = collection.toArray(new Comparable[0]);
-            Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-            Comparable[] comparableArr = (Comparable[]) array;
-            ArraysKt___ArraysJvmKt.sort(comparableArr);
-            asList = ArraysKt___ArraysJvmKt.asList(comparableArr);
+            ArraysKt___ArraysJvmKt.sort((Comparable[]) array);
+            asList = ArraysKt___ArraysJvmKt.asList(array);
             return asList;
         }
         mutableList = toMutableList(iterable);
@@ -333,7 +330,6 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
                 return list;
             }
             Object[] array = collection.toArray(new Object[0]);
-            Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
             ArraysKt___ArraysJvmKt.sortWith(array, comparator);
             asList = ArraysKt___ArraysJvmKt.asList(array);
             return asList;

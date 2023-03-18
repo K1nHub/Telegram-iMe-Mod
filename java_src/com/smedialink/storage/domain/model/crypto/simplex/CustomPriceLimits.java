@@ -2,7 +2,6 @@ package com.smedialink.storage.domain.model.crypto.simplex;
 
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CustomPriceLimits.kt */
 /* loaded from: classes3.dex */
 public final class CustomPriceLimits {
@@ -57,7 +56,7 @@ public final class CustomPriceLimits {
         }
         if (obj instanceof CustomPriceLimits) {
             CustomPriceLimits customPriceLimits = (CustomPriceLimits) obj;
-            return Intrinsics.areEqual(Float.valueOf(this.minFiatAmount), Float.valueOf(customPriceLimits.minFiatAmount)) && Intrinsics.areEqual(Float.valueOf(this.minCryptoAmount), Float.valueOf(customPriceLimits.minCryptoAmount)) && Intrinsics.areEqual(Float.valueOf(this.maxFiatAmount), Float.valueOf(customPriceLimits.maxFiatAmount)) && Intrinsics.areEqual(Float.valueOf(this.maxCryptoAmount), Float.valueOf(customPriceLimits.maxCryptoAmount));
+            return Float.compare(this.minFiatAmount, customPriceLimits.minFiatAmount) == 0 && Float.compare(this.minCryptoAmount, customPriceLimits.minCryptoAmount) == 0 && Float.compare(this.maxFiatAmount, customPriceLimits.maxFiatAmount) == 0 && Float.compare(this.maxCryptoAmount, customPriceLimits.maxCryptoAmount) == 0;
         }
         return false;
     }

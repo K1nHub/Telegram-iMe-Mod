@@ -56,8 +56,7 @@ public final class MiniFabsContainer extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: show$lambda-4$lambda-2  reason: not valid java name */
-    public static final void m1459show$lambda4$lambda2(boolean z, MiniFabsContainer this$0) {
+    public static final void show$lambda$4$lambda$2(boolean z, MiniFabsContainer this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (z) {
             ViewExtKt.visible(this$0);
@@ -65,8 +64,7 @@ public final class MiniFabsContainer extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: show$lambda-4$lambda-3  reason: not valid java name */
-    public static final void m1460show$lambda4$lambda3(boolean z, MiniFabsContainer this$0) {
+    public static final void show$lambda$4$lambda$3(boolean z, MiniFabsContainer this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (z) {
             return;
@@ -99,18 +97,17 @@ public final class MiniFabsContainer extends LinearLayout {
         imageView.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.multifab.MiniFabsContainer$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MiniFabsContainer.m1458createFab$lambda7$lambda6(MiniFabsContainer.this, filterFab, view);
+                MiniFabsContainer.createFab$lambda$7$lambda$6(MiniFabsContainer.this, filterFab, view);
             }
         });
         return imageView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: createFab$lambda-7$lambda-6  reason: not valid java name */
-    public static final void m1458createFab$lambda7$lambda6(MiniFabsContainer this$0, FilterFab type, View view) {
+    public static final void createFab$lambda$7$lambda$6(MiniFabsContainer this$0, FilterFab type, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(type, "$type");
-        this$0.getListener().invoke(type);
+        this$0.listener.invoke(type);
     }
 
     /* compiled from: MiniFabsContainer.kt */
@@ -127,30 +124,16 @@ public final class MiniFabsContainer extends LinearLayout {
 
     public final void setScale(float f) {
         int childCount = getChildCount();
-        if (childCount <= 0) {
-            return;
-        }
-        int i = 0;
-        while (true) {
-            int i2 = i + 1;
+        for (int i = 0; i < childCount; i++) {
             View childAt = getChildAt(i);
             Intrinsics.checkNotNullExpressionValue(childAt, "getChildAt(i)");
             ViewExtKt.setScale(childAt, f);
-            if (i2 >= childCount) {
-                return;
-            }
-            i = i2;
         }
     }
 
     public final void show(final boolean z) {
         int childCount = getChildCount();
-        if (childCount <= 0) {
-            return;
-        }
-        int i = 0;
-        while (true) {
-            int i2 = i + 1;
+        for (int i = 0; i < childCount; i++) {
             View childAt = getChildAt(i);
             Intrinsics.checkNotNullExpressionValue(childAt, "getChildAt(i)");
             float f = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
@@ -159,18 +142,14 @@ public final class MiniFabsContainer extends LinearLayout {
             ViewExtKt.scale(animate, f).withStartAction(new Runnable() { // from class: com.smedialink.ui.multifab.MiniFabsContainer$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MiniFabsContainer.m1459show$lambda4$lambda2(z, this);
+                    MiniFabsContainer.show$lambda$4$lambda$2(z, this);
                 }
             }).withEndAction(new Runnable() { // from class: com.smedialink.ui.multifab.MiniFabsContainer$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MiniFabsContainer.m1460show$lambda4$lambda3(z, this);
+                    MiniFabsContainer.show$lambda$4$lambda$3(z, this);
                 }
             }).setDuration(200L).start();
-            if (i2 >= childCount) {
-                return;
-            }
-            i = i2;
         }
     }
 }

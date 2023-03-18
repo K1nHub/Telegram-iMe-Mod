@@ -554,17 +554,17 @@
     new-array v5, v5, [Ljava/lang/Object;
 
     .line 49
-    iget-object v6, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Simplex;->amountToSpent:Ljava/lang/String;
+    new-instance v6, Ljava/math/BigDecimal;
 
-    new-instance v7, Ljava/math/BigDecimal;
+    iget-object v7, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Simplex;->amountToSpent:Ljava/lang/String;
 
-    invoke-direct {v7, v6}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    invoke-direct {v6, v7}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/token/FiatCode;->getDecimals()I
 
-    move-result v6
+    move-result v7
 
-    invoke-static {v7, v6}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v6, v7}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
 
     move-result-object v6
 
@@ -579,18 +579,19 @@
 
     aput-object v0, v5, v6
 
+    .line 49
+    new-instance v0, Ljava/math/BigDecimal;
+
     .line 51
-    iget-object v0, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Simplex;->amount:Ljava/lang/String;
+    iget-object v6, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Simplex;->amount:Ljava/lang/String;
 
-    new-instance v6, Ljava/math/BigDecimal;
-
-    invoke-direct {v6, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v6}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->getDecimals()I
 
-    move-result v0
+    move-result v6
 
-    invoke-static {v6, v0}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v0, v6}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
 
     move-result-object v0
 

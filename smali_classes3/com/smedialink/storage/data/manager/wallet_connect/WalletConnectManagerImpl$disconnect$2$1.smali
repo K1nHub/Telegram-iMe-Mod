@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->disconnect$lambda-9(Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Ljava/lang/String;)V
+    value = Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->disconnect(Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -53,7 +53,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 200
+    .line 201
     invoke-virtual {p1}, Lcom/trustwallet/walletconnect/WCSessionStoreItem;->getSession()Lcom/trustwallet/walletconnect/models/session/WCSession;
 
     move-result-object p1
@@ -78,7 +78,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 200
+    .line 201
     check-cast p1, Lcom/trustwallet/walletconnect/WCSessionStoreItem;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$disconnect$2$1;->invoke(Lcom/trustwallet/walletconnect/WCSessionStoreItem;)Ljava/lang/Boolean;

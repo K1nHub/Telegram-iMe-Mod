@@ -38,10 +38,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 76
+    .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 77
+    .line 80
     iput-object p1, p0, Lcom/smedialink/navigation/wallet/coordinator/PinCodeCoordinator$Args;->lockType:Lcom/smedialink/model/wallet/crypto/pin/EnterPinCodeScreenType;
 
     return-void
@@ -54,10 +54,10 @@
 
     if-eqz p2, :cond_0
 
-    .line 77
+    .line 80
     sget-object p1, Lcom/smedialink/model/wallet/crypto/pin/EnterPinCodeScreenType;->TOTAL_LOCK:Lcom/smedialink/model/wallet/crypto/pin/EnterPinCodeScreenType;
 
-    .line 76
+    .line 79
     :cond_0
     invoke-direct {p0, p1}, Lcom/smedialink/navigation/wallet/coordinator/PinCodeCoordinator$Args;-><init>(Lcom/smedialink/model/wallet/crypto/pin/EnterPinCodeScreenType;)V
 
@@ -102,7 +102,7 @@
 .method public final getLockType()Lcom/smedialink/model/wallet/crypto/pin/EnterPinCodeScreenType;
     .locals 1
 
-    .line 77
+    .line 80
     iget-object v0, p0, Lcom/smedialink/navigation/wallet/coordinator/PinCodeCoordinator$Args;->lockType:Lcom/smedialink/model/wallet/crypto/pin/EnterPinCodeScreenType;
 
     return-object v0

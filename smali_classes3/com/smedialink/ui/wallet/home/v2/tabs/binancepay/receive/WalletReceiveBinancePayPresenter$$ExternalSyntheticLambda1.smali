@@ -35,7 +35,7 @@
 
     check-cast p1, Lcom/smedialink/model/wallet/select/SelectableToken;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;->$r8$lambda$rRBOAqjGpacOH1MrXZCyXbJqqqE(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;Lorg/fork/utils/Callbacks$Callback1;Lcom/smedialink/model/wallet/select/SelectableToken;)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;->$r8$lambda$A-WxLcyQWn5WAkobfSns7iSgTYY(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;Lorg/fork/utils/Callbacks$Callback1;Lcom/smedialink/model/wallet/select/SelectableToken;)V
 
     return-void
 .end method

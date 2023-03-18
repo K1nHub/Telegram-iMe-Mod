@@ -14,7 +14,7 @@ import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p047mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.p048ui.ActionBar.Theme;
 /* compiled from: NetworkTypeView.kt */
 /* renamed from: com.smedialink.ui.custom.NetworkTypeView */
@@ -73,7 +73,7 @@ public final class NetworkTypeView extends TextView implements KoinComponent {
         setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m51dp(15.0f), getResourceManager().getColor(value.getBackgroundColor())));
         setText(getResourceManager().getString(value.getTitle()));
         setTextColor(getResourceManager().getColor(value.getTextColor()));
-        setCompoundDrawablesWithIntrinsicBounds(value.getSmallIcon(), 0, C3158R.C3160drawable.fork_ic_arrow_down_16, 0);
+        setCompoundDrawablesWithIntrinsicBounds(value.getSmallIcon(), 0, C3286R.C3288drawable.fork_ic_arrow_down_16, 0);
         setCompoundDrawablePadding(AndroidUtilities.m50dp(4));
         ViewExtKt.setCompoundDrawablesColor(this, getResourceManager().getColor(value.getTextColor()));
     }

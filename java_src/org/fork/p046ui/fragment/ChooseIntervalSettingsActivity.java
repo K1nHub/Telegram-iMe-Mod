@@ -11,11 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.smedialink.common.IdFabric$ViewTypes;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Objects;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.NoWhenBranchMatchedException;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -23,10 +21,10 @@ import org.fork.controller.BackupController;
 import org.fork.controller.ForkTopicsController;
 import org.fork.enums.Interval;
 import org.fork.p046ui.fragment.ChooseIntervalSettingsActivity;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -66,8 +64,14 @@ public final class ChooseIntervalSettingsActivity extends BaseFragment {
 
         static {
             int[] iArr = new int[Type.values().length];
-            iArr[Type.AUTO_BACKUP.ordinal()] = 1;
-            iArr[Type.AUTO_UPDATE_TOPICS_CATALOG.ordinal()] = 2;
+            try {
+                iArr[Type.AUTO_BACKUP.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[Type.AUTO_UPDATE_TOPICS_CATALOG.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -141,20 +145,20 @@ public final class ChooseIntervalSettingsActivity extends BaseFragment {
 
     private final void setupActionBar() {
         int i;
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setAllowOverlayTitle(true);
-        int i2 = WhenMappings.$EnumSwitchMapping$0[getType().ordinal()];
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setAllowOverlayTitle(true);
+        int i2 = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
         if (i2 == 1) {
-            i = C3158R.string.backup_settings_header;
+            i = C3286R.string.backup_settings_header;
         } else if (i2 != 2) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3158R.string.topics_catalog;
+            i = C3286R.string.topics_catalog;
         }
-        c3222ActionBar.setTitle(LocaleController.getInternalString(i));
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.ChooseIntervalSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        c3351ActionBar.setTitle(LocaleController.getInternalString(i));
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.ChooseIntervalSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
                     ChooseIntervalSettingsActivity.this.finishFragment();
@@ -167,14 +171,13 @@ public final class ChooseIntervalSettingsActivity extends BaseFragment {
         getListView().setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.fork.ui.fragment.ChooseIntervalSettingsActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                ChooseIntervalSettingsActivity.m2034setupListeners$lambda4(ChooseIntervalSettingsActivity.this, view, i);
+                ChooseIntervalSettingsActivity.setupListeners$lambda$4(ChooseIntervalSettingsActivity.this, view, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-4  reason: not valid java name */
-    public static final void m2034setupListeners$lambda4(ChooseIntervalSettingsActivity this$0, View view, int i) {
+    public static final void setupListeners$lambda$4(ChooseIntervalSettingsActivity this$0, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if ((view instanceof TextCheckCell) && i == this$0.enableRow) {
             TextCheckCell textCheckCell = (TextCheckCell) view;
@@ -273,7 +276,6 @@ public final class ChooseIntervalSettingsActivity extends BaseFragment {
     /* renamed from: org.fork.ui.fragment.ChooseIntervalSettingsActivity$ListAdapter */
     /* loaded from: classes4.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ ChooseIntervalSettingsActivity this$0;
 
         /* compiled from: ChooseIntervalSettingsActivity.kt */
         /* renamed from: org.fork.ui.fragment.ChooseIntervalSettingsActivity$ListAdapter$WhenMappings */
@@ -283,38 +285,42 @@ public final class ChooseIntervalSettingsActivity extends BaseFragment {
 
             static {
                 int[] iArr = new int[Type.values().length];
-                iArr[Type.AUTO_BACKUP.ordinal()] = 1;
-                iArr[Type.AUTO_UPDATE_TOPICS_CATALOG.ordinal()] = 2;
+                try {
+                    iArr[Type.AUTO_BACKUP.ordinal()] = 1;
+                } catch (NoSuchFieldError unused) {
+                }
+                try {
+                    iArr[Type.AUTO_UPDATE_TOPICS_CATALOG.ordinal()] = 2;
+                } catch (NoSuchFieldError unused2) {
+                }
                 $EnumSwitchMapping$0 = iArr;
             }
         }
 
-        public ListAdapter(ChooseIntervalSettingsActivity this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public ListAdapter() {
             updateRows();
         }
 
         public final void updateRows() {
-            this.this$0.rowCount = 0;
-            ChooseIntervalSettingsActivity chooseIntervalSettingsActivity = this.this$0;
+            ChooseIntervalSettingsActivity.this.rowCount = 0;
+            ChooseIntervalSettingsActivity chooseIntervalSettingsActivity = ChooseIntervalSettingsActivity.this;
             int i = chooseIntervalSettingsActivity.rowCount;
             chooseIntervalSettingsActivity.rowCount = i + 1;
             chooseIntervalSettingsActivity.enableRow = i;
-            ChooseIntervalSettingsActivity chooseIntervalSettingsActivity2 = this.this$0;
+            ChooseIntervalSettingsActivity chooseIntervalSettingsActivity2 = ChooseIntervalSettingsActivity.this;
             int i2 = chooseIntervalSettingsActivity2.rowCount;
             chooseIntervalSettingsActivity2.rowCount = i2 + 1;
             chooseIntervalSettingsActivity2.enableInfoRow = i2;
-            if (!this.this$0.isMainSwitchEnabled()) {
-                this.this$0.intervalHeaderRow = -1;
-                this.this$0.intervalChooserRow = -1;
+            if (!ChooseIntervalSettingsActivity.this.isMainSwitchEnabled()) {
+                ChooseIntervalSettingsActivity.this.intervalHeaderRow = -1;
+                ChooseIntervalSettingsActivity.this.intervalChooserRow = -1;
                 return;
             }
-            ChooseIntervalSettingsActivity chooseIntervalSettingsActivity3 = this.this$0;
+            ChooseIntervalSettingsActivity chooseIntervalSettingsActivity3 = ChooseIntervalSettingsActivity.this;
             int i3 = chooseIntervalSettingsActivity3.rowCount;
             chooseIntervalSettingsActivity3.rowCount = i3 + 1;
             chooseIntervalSettingsActivity3.intervalHeaderRow = i3;
-            ChooseIntervalSettingsActivity chooseIntervalSettingsActivity4 = this.this$0;
+            ChooseIntervalSettingsActivity chooseIntervalSettingsActivity4 = ChooseIntervalSettingsActivity.this;
             int i4 = chooseIntervalSettingsActivity4.rowCount;
             chooseIntervalSettingsActivity4.rowCount = i4 + 1;
             chooseIntervalSettingsActivity4.intervalChooserRow = i4;
@@ -322,12 +328,12 @@ public final class ChooseIntervalSettingsActivity extends BaseFragment {
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            return this.this$0.rowCount;
+            return ChooseIntervalSettingsActivity.this.rowCount;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
-            return i == this.this$0.enableRow ? IdFabric$ViewTypes.TEXT_CHECK : i == this.this$0.intervalHeaderRow ? IdFabric$ViewTypes.HEADER : i == this.this$0.enableInfoRow ? IdFabric$ViewTypes.TEXT_INFO_PRIVACY : i == this.this$0.intervalChooserRow ? IdFabric$ViewTypes.SLIDE_CHOOSE : IdFabric$ViewTypes.SHADOW_SECTION;
+            return i == ChooseIntervalSettingsActivity.this.enableRow ? IdFabric$ViewTypes.TEXT_CHECK : i == ChooseIntervalSettingsActivity.this.intervalHeaderRow ? IdFabric$ViewTypes.HEADER : i == ChooseIntervalSettingsActivity.this.enableInfoRow ? IdFabric$ViewTypes.TEXT_INFO_PRIVACY : i == ChooseIntervalSettingsActivity.this.intervalChooserRow ? IdFabric$ViewTypes.SLIDE_CHOOSE : IdFabric$ViewTypes.SHADOW_SECTION;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -335,20 +341,18 @@ public final class ChooseIntervalSettingsActivity extends BaseFragment {
             SlideChooseView slideChooseView;
             Intrinsics.checkNotNullParameter(parent, "parent");
             if (i == IdFabric$ViewTypes.TEXT_CHECK) {
-                TextCheckCell textCheckCell = new TextCheckCell(this.this$0.getParentActivity());
+                TextCheckCell textCheckCell = new TextCheckCell(ChooseIntervalSettingsActivity.this.getParentActivity());
                 textCheckCell.setType(1);
-                Unit unit = Unit.INSTANCE;
                 slideChooseView = textCheckCell;
             } else if (i == IdFabric$ViewTypes.HEADER) {
-                HeaderCell headerCell = new HeaderCell(this.this$0.getParentActivity());
+                HeaderCell headerCell = new HeaderCell(ChooseIntervalSettingsActivity.this.getParentActivity());
                 headerCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                Unit unit2 = Unit.INSTANCE;
                 slideChooseView = headerCell;
             } else if (i == IdFabric$ViewTypes.TEXT_INFO_PRIVACY) {
-                slideChooseView = new TextInfoPrivacyCell(this.this$0.getParentActivity());
+                slideChooseView = new TextInfoPrivacyCell(ChooseIntervalSettingsActivity.this.getParentActivity());
             } else if (i == IdFabric$ViewTypes.SLIDE_CHOOSE) {
-                SlideChooseView slideChooseView2 = new SlideChooseView(this.this$0.getParentActivity());
-                final ChooseIntervalSettingsActivity chooseIntervalSettingsActivity = this.this$0;
+                SlideChooseView slideChooseView2 = new SlideChooseView(ChooseIntervalSettingsActivity.this.getParentActivity());
+                final ChooseIntervalSettingsActivity chooseIntervalSettingsActivity = ChooseIntervalSettingsActivity.this;
                 slideChooseView2.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
                 int ordinal = chooseIntervalSettingsActivity.getSelectedInterval().ordinal();
                 Interval[] intervals = chooseIntervalSettingsActivity.getIntervals();
@@ -356,14 +360,12 @@ public final class ChooseIntervalSettingsActivity extends BaseFragment {
                 for (Interval interval : intervals) {
                     arrayList.add(LocaleController.getInternalString(interval.getNameResId()));
                 }
-                Object[] array = arrayList.toArray(new String[0]);
-                Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-                String[] strArr = (String[]) array;
+                String[] strArr = (String[]) arrayList.toArray(new String[0]);
                 slideChooseView2.setOptions(ordinal, (String[]) Arrays.copyOf(strArr, strArr.length));
                 slideChooseView2.setCallback(new SlideChooseView.Callback() { // from class: org.fork.ui.fragment.ChooseIntervalSettingsActivity$ListAdapter$$ExternalSyntheticLambda0
                     @Override // org.telegram.p048ui.Components.SlideChooseView.Callback
                     public final void onOptionSelected(int i2) {
-                        ChooseIntervalSettingsActivity.ListAdapter.m2035onCreateViewHolder$lambda4$lambda3(ChooseIntervalSettingsActivity.this, i2);
+                        ChooseIntervalSettingsActivity.ListAdapter.onCreateViewHolder$lambda$4$lambda$3(ChooseIntervalSettingsActivity.this, i2);
                     }
 
                     @Override // org.telegram.p048ui.Components.SlideChooseView.Callback
@@ -371,19 +373,16 @@ public final class ChooseIntervalSettingsActivity extends BaseFragment {
                         SlideChooseView.Callback.CC.$default$onTouchEnd(this);
                     }
                 });
-                Unit unit3 = Unit.INSTANCE;
                 slideChooseView = slideChooseView2;
             } else {
-                slideChooseView = i == IdFabric$ViewTypes.SHADOW_SECTION ? new ShadowSectionCell(this.this$0.getParentActivity()) : new ShadowSectionCell(this.this$0.getParentActivity());
+                slideChooseView = i == IdFabric$ViewTypes.SHADOW_SECTION ? new ShadowSectionCell(ChooseIntervalSettingsActivity.this.getParentActivity()) : new ShadowSectionCell(ChooseIntervalSettingsActivity.this.getParentActivity());
             }
             slideChooseView.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-            Unit unit4 = Unit.INSTANCE;
             return new RecyclerListView.Holder(slideChooseView);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: onCreateViewHolder$lambda-4$lambda-3  reason: not valid java name */
-        public static final void m2035onCreateViewHolder$lambda4$lambda3(ChooseIntervalSettingsActivity this$0, int i) {
+        public static final void onCreateViewHolder$lambda$4$lambda$3(ChooseIntervalSettingsActivity this$0, int i) {
             Intrinsics.checkNotNullParameter(this$0, "this$0");
             this$0.setInterval(this$0.getIntervals()[i]);
         }
@@ -399,45 +398,45 @@ public final class ChooseIntervalSettingsActivity extends BaseFragment {
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK && (view instanceof TextCheckCell)) {
                 TextCheckCell textCheckCell = (TextCheckCell) view;
-                int i5 = WhenMappings.$EnumSwitchMapping$0[this.this$0.getType().ordinal()];
+                int i5 = WhenMappings.$EnumSwitchMapping$0[ChooseIntervalSettingsActivity.this.getType().ordinal()];
                 if (i5 == 1) {
-                    i4 = C3158R.string.backup_settings_save_auto;
+                    i4 = C3286R.string.backup_settings_save_auto;
                 } else if (i5 != 2) {
                     throw new NoWhenBranchMatchedException();
                 } else {
-                    i4 = C3158R.string.topics_catalog_update_auto;
+                    i4 = C3286R.string.topics_catalog_update_auto;
                 }
-                textCheckCell.setTextAndCheck(LocaleController.getInternalString(i4), this.this$0.isMainSwitchEnabled(), false);
+                textCheckCell.setTextAndCheck(LocaleController.getInternalString(i4), ChooseIntervalSettingsActivity.this.isMainSwitchEnabled(), false);
             } else if (itemViewType == IdFabric$ViewTypes.HEADER && (view instanceof HeaderCell)) {
                 HeaderCell headerCell = (HeaderCell) view;
-                int i6 = WhenMappings.$EnumSwitchMapping$0[this.this$0.getType().ordinal()];
+                int i6 = WhenMappings.$EnumSwitchMapping$0[ChooseIntervalSettingsActivity.this.getType().ordinal()];
                 if (i6 == 1) {
-                    i3 = C3158R.string.backup_auto_settings_interval_chooser_header;
+                    i3 = C3286R.string.backup_auto_settings_interval_chooser_header;
                 } else if (i6 != 2) {
                     throw new NoWhenBranchMatchedException();
                 } else {
-                    i3 = C3158R.string.topics_catalog_auto_update_settings_interval_chooser_header;
+                    i3 = C3286R.string.topics_catalog_auto_update_settings_interval_chooser_header;
                 }
                 headerCell.setText(LocaleController.getInternalString(i3));
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY && (view instanceof TextInfoPrivacyCell)) {
-                ChooseIntervalSettingsActivity chooseIntervalSettingsActivity = this.this$0;
+                ChooseIntervalSettingsActivity chooseIntervalSettingsActivity = ChooseIntervalSettingsActivity.this;
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) view;
                 if (chooseIntervalSettingsActivity.isMainSwitchEnabled()) {
                     textInfoPrivacyCell.setText(null);
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(chooseIntervalSettingsActivity.getParentActivity(), C3158R.C3160drawable.greydivider, "windowBackgroundGrayShadow"));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(chooseIntervalSettingsActivity.getParentActivity(), C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"));
                     textInfoPrivacyCell.setFixedSize(12);
                     return;
                 }
                 int i7 = WhenMappings.$EnumSwitchMapping$0[chooseIntervalSettingsActivity.getType().ordinal()];
                 if (i7 == 1) {
-                    i2 = C3158R.string.backup_auto_settings_enable_item_hint;
+                    i2 = C3286R.string.backup_auto_settings_enable_item_hint;
                 } else if (i7 != 2) {
                     throw new NoWhenBranchMatchedException();
                 } else {
-                    i2 = C3158R.string.topics_catalog_auto_update_settings_enable_item_hint;
+                    i2 = C3286R.string.topics_catalog_auto_update_settings_enable_item_hint;
                 }
                 textInfoPrivacyCell.setText(LocaleController.getInternalString(i2));
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(chooseIntervalSettingsActivity.getParentActivity(), C3158R.C3160drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(chooseIntervalSettingsActivity.getParentActivity(), C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
                 textInfoPrivacyCell.setFixedSize(0);
             }
         }

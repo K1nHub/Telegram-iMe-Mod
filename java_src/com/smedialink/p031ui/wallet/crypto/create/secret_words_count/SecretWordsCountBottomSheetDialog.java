@@ -27,7 +27,7 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkSecretWordsCountLayoutBinding;
 /* compiled from: SecretWordsCountBottomSheetDialog.kt */
@@ -60,7 +60,7 @@ public final class SecretWordsCountBottomSheetDialog extends MvpBottomSheet impl
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
         this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, SecretWordsCountPresenter.class.getName() + ".presenter", secretWordsCountBottomSheetDialog$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1948x593128cf(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2063x593128cf(this, null, null));
         this.actionAdapter$delegate = lazy;
         this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new SecretWordsCountBottomSheetDialog$binding$2(this), 1, (Object) null);
         setApplyBottomPadding(false);
@@ -97,17 +97,16 @@ public final class SecretWordsCountBottomSheetDialog extends MvpBottomSheet impl
         actionAdapter.setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.wallet.crypto.create.secret_words_count.SecretWordsCountBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                SecretWordsCountBottomSheetDialog.m1599setupAdapter$lambda1$lambda0(SecretWordsCountBottomSheetDialog.this, baseQuickAdapter, view, i);
+                SecretWordsCountBottomSheetDialog.setupAdapter$lambda$1$lambda$0(SecretWordsCountBottomSheetDialog.this, baseQuickAdapter, view, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupAdapter$lambda-1$lambda-0  reason: not valid java name */
-    public static final void m1599setupAdapter$lambda1$lambda0(SecretWordsCountBottomSheetDialog this$0, BaseQuickAdapter noName_0, View noName_1, int i) {
+    public static final void setupAdapter$lambda$1$lambda$0(SecretWordsCountBottomSheetDialog this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         this$0.getPresenter().onItemClicked(i);
     }
 
@@ -120,15 +119,15 @@ public final class SecretWordsCountBottomSheetDialog extends MvpBottomSheet impl
     private final void setupColors() {
         setBackgroundColor(getThemedColor("windowBackgroundWhite"));
         ForkSecretWordsCountLayoutBinding binding = getBinding();
-        AppCompatTextView appCompatTextView = binding.textTitle;
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView, "");
-        ViewExtKt.withMediumTypeface(appCompatTextView);
-        appCompatTextView.setTextColor(getThemedColor("dialogTextBlue2"));
-        AppCompatTextView appCompatTextView2 = binding.textActionCancel;
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView2, "");
-        ViewExtKt.setRippleBackground$default(appCompatTextView2, false, 1, null);
-        ViewExtKt.withMediumTypeface(appCompatTextView2);
-        appCompatTextView2.setTextColor(getThemedColor("chats_actionBackground"));
+        AppCompatTextView setupColors$lambda$4$lambda$2 = binding.textTitle;
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$4$lambda$2, "setupColors$lambda$4$lambda$2");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$4$lambda$2);
+        setupColors$lambda$4$lambda$2.setTextColor(getThemedColor("dialogTextBlue2"));
+        AppCompatTextView setupColors$lambda$4$lambda$3 = binding.textActionCancel;
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$4$lambda$3, "setupColors$lambda$4$lambda$3");
+        ViewExtKt.setRippleBackground$default(setupColors$lambda$4$lambda$3, false, 1, null);
+        ViewExtKt.withMediumTypeface(setupColors$lambda$4$lambda$3);
+        setupColors$lambda$4$lambda$3.setTextColor(getThemedColor("chats_actionBackground"));
     }
 
     private final void setupRecycleView() {
@@ -144,7 +143,7 @@ public final class SecretWordsCountBottomSheetDialog extends MvpBottomSheet impl
     }
 
     private final void setTexts() {
-        getBinding().textTitle.setText(LocaleController.getInternalString(C3158R.string.wallet_import_change_words_count_dialog_title));
+        getBinding().textTitle.setText(LocaleController.getInternalString(C3286R.string.wallet_import_change_words_count_dialog_title));
     }
 
     /* compiled from: SecretWordsCountBottomSheetDialog.kt */

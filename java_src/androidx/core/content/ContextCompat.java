@@ -15,10 +15,12 @@ import android.app.job.JobScheduler;
 import android.app.usage.UsageStatsManager;
 import android.appwidget.AppWidgetManager;
 import android.bluetooth.BluetoothManager;
+import android.content.BroadcastReceiver;
 import android.content.ClipboardManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.RestrictionsManager;
 import android.content.pm.LauncherApps;
 import android.content.res.ColorStateList;
@@ -54,6 +56,7 @@ import android.print.PrintManager;
 import android.telecom.TelecomManager;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -62,7 +65,9 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.CaptioningManager;
 import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.TextServicesManager;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.core.p010os.BuildCompat;
 import androidx.core.p010os.ExecutorCompat;
 import androidx.core.util.ObjectsCompat;
 import java.io.File;
@@ -70,6 +75,10 @@ import java.util.HashMap;
 import java.util.concurrent.Executor;
 /* loaded from: classes.dex */
 public class ContextCompat {
+    private static final String DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION_SUFFIX = ".DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION";
+    public static final int RECEIVER_EXPORTED = 2;
+    public static final int RECEIVER_NOT_EXPORTED = 4;
+    public static final int RECEIVER_VISIBLE_TO_INSTANT_APPS = 1;
     private static final String TAG = "ContextCompat";
     private static final Object sLock = new Object();
     private static final Object sSync = new Object();
@@ -161,7 +170,10 @@ public class ContextCompat {
 
     public static int checkSelfPermission(Context context, String str) {
         ObjectsCompat.requireNonNull(str, "permission must be non-null");
-        return context.checkPermission(str, Process.myPid(), Process.myUid());
+        if (BuildCompat.isAtLeastT() || !TextUtils.equals("android.permission.POST_NOTIFICATIONS", str)) {
+            return context.checkPermission(str, Process.myPid(), Process.myUid());
+        }
+        return NotificationManagerCompat.from(context).areNotificationsEnabled() ? 0 : -1;
     }
 
     public static File getNoBackupFilesDir(Context context) {
@@ -230,11 +242,51 @@ public class ContextCompat {
         return null;
     }
 
+    public static Intent registerReceiver(Context context, BroadcastReceiver broadcastReceiver, IntentFilter intentFilter, int i) {
+        return registerReceiver(context, broadcastReceiver, intentFilter, null, null, i);
+    }
+
+    public static Intent registerReceiver(Context context, BroadcastReceiver broadcastReceiver, IntentFilter intentFilter, String str, Handler handler, int i) {
+        int i2 = i & 1;
+        if (i2 == 0 || (i & 4) == 0) {
+            if (i2 != 0) {
+                i |= 2;
+            }
+            int i3 = i;
+            int i4 = i3 & 2;
+            if (i4 == 0 && (i3 & 4) == 0) {
+                throw new IllegalArgumentException("One of either RECEIVER_EXPORTED or RECEIVER_NOT_EXPORTED is required");
+            }
+            if (i4 != 0 && (i3 & 4) != 0) {
+                throw new IllegalArgumentException("Cannot specify both RECEIVER_EXPORTED and RECEIVER_NOT_EXPORTED");
+            }
+            if (BuildCompat.isAtLeastT()) {
+                return Api33Impl.registerReceiver(context, broadcastReceiver, intentFilter, str, handler, i3);
+            }
+            if (Build.VERSION.SDK_INT >= 26) {
+                return Api26Impl.registerReceiver(context, broadcastReceiver, intentFilter, str, handler, i3);
+            }
+            if ((i3 & 4) != 0 && str == null) {
+                return context.registerReceiver(broadcastReceiver, intentFilter, obtainAndCheckReceiverPermission(context), handler);
+            }
+            return context.registerReceiver(broadcastReceiver, intentFilter, str, handler);
+        }
+        throw new IllegalArgumentException("Cannot specify both RECEIVER_VISIBLE_TO_INSTANT_APPS and RECEIVER_NOT_EXPORTED");
+    }
+
     public static String getSystemServiceName(Context context, Class<?> cls) {
         if (Build.VERSION.SDK_INT >= 23) {
             return Api23Impl.getSystemServiceName(context, cls);
         }
         return LegacyServiceMapHolder.SERVICES.get(cls);
+    }
+
+    static String obtainAndCheckReceiverPermission(Context context) {
+        String str = context.getPackageName() + DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION_SUFFIX;
+        if (PermissionChecker.checkSelfPermission(context, str) == 0) {
+            return str;
+        }
+        throw new RuntimeException("Permission " + str + " is required by your application to receive broadcasts, please add it to your manifest");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -339,8 +391,9 @@ public class ContextCompat {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    static class Api21Impl {
+    public static class Api21Impl {
         static Drawable getDrawable(Context context, int i) {
             return context.getDrawable(i);
         }
@@ -385,8 +438,16 @@ public class ContextCompat {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    static class Api26Impl {
+    public static class Api26Impl {
+        static Intent registerReceiver(Context context, BroadcastReceiver broadcastReceiver, IntentFilter intentFilter, String str, Handler handler, int i) {
+            if ((i & 4) != 0 && str == null) {
+                return context.registerReceiver(broadcastReceiver, intentFilter, ContextCompat.obtainAndCheckReceiverPermission(context), handler);
+            }
+            return context.registerReceiver(broadcastReceiver, intentFilter, str, handler, i & 1);
+        }
+
         static ComponentName startForegroundService(Context context, Intent intent) {
             return context.startForegroundService(intent);
         }
@@ -403,6 +464,14 @@ public class ContextCompat {
     static class Api30Impl {
         static String getAttributionTag(Context context) {
             return context.getAttributionTag();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api33Impl {
+        static Intent registerReceiver(Context context, BroadcastReceiver broadcastReceiver, IntentFilter intentFilter, String str, Handler handler, int i) {
+            return context.registerReceiver(broadcastReceiver, intentFilter, str, handler, i);
         }
     }
 }

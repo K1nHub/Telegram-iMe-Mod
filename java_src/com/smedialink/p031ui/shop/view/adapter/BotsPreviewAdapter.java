@@ -144,11 +144,11 @@ public final class BotsPreviewAdapter extends RecyclerListView.ViewBindingSelect
             r0.setVisibility(r1)
         Lce:
             android.widget.ImageView r0 = r8.botAvatar
-            com.smedialink.ui.shop.view.adapter.BotsPreviewAdapter$$ExternalSyntheticLambda0 r1 = new com.smedialink.ui.shop.view.adapter.BotsPreviewAdapter$$ExternalSyntheticLambda0
+            com.smedialink.ui.shop.view.adapter.BotsPreviewAdapter$$ExternalSyntheticLambda1 r1 = new com.smedialink.ui.shop.view.adapter.BotsPreviewAdapter$$ExternalSyntheticLambda1
             r1.<init>()
             r0.setOnClickListener(r1)
             android.widget.TextView r8 = r8.botName
-            com.smedialink.ui.shop.view.adapter.BotsPreviewAdapter$$ExternalSyntheticLambda1 r0 = new com.smedialink.ui.shop.view.adapter.BotsPreviewAdapter$$ExternalSyntheticLambda1
+            com.smedialink.ui.shop.view.adapter.BotsPreviewAdapter$$ExternalSyntheticLambda0 r0 = new com.smedialink.ui.shop.view.adapter.BotsPreviewAdapter$$ExternalSyntheticLambda0
             r0.<init>()
             r8.setOnClickListener(r0)
             return
@@ -157,16 +157,14 @@ public final class BotsPreviewAdapter extends RecyclerListView.ViewBindingSelect
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onBindViewHolder$lambda-3$lambda-1  reason: not valid java name */
-    public static final void m1525onBindViewHolder$lambda3$lambda1(BotsPreviewAdapter this$0, ShopItem item, View view) {
+    public static final void onBindViewHolder$lambda$3$lambda$1(BotsPreviewAdapter this$0, ShopItem item, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
         NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.botItemClicked, item);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onBindViewHolder$lambda-3$lambda-2  reason: not valid java name */
-    public static final void m1526onBindViewHolder$lambda3$lambda2(BotsPreviewAdapter this$0, ShopItem item, View view) {
+    public static final void onBindViewHolder$lambda$3$lambda$2(BotsPreviewAdapter this$0, ShopItem item, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
         NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.botItemClicked, item);

@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMiniFabsContainer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MiniFabsContainer.kt\ncom/smedialink/ui/multifab/MiniFabsContainer\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ViewExt.kt\ncom/smedialink/utils/extentions/common/ViewExtKt\n*L\n1#1,99:1\n1849#2,2:100\n187#3,4:102\n187#3,4:106\n*S KotlinDebug\n*F\n+ 1 MiniFabsContainer.kt\ncom/smedialink/ui/multifab/MiniFabsContainer\n*L\n38#1:100,2\n47#1:102,4\n51#1:106,4\n*E\n"
+    value = "SMAP\nMiniFabsContainer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MiniFabsContainer.kt\ncom/smedialink/ui/multifab/MiniFabsContainer\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ViewExt.kt\ncom/smedialink/utils/extentions/common/ViewExtKt\n*L\n1#1,99:1\n1855#2,2:100\n191#3,4:102\n191#3,4:106\n*S KotlinDebug\n*F\n+ 1 MiniFabsContainer.kt\ncom/smedialink/ui/multifab/MiniFabsContainer\n*L\n38#1:100,2\n47#1:102,4\n51#1:106,4\n*E\n"
 .end annotation
 
 
@@ -28,26 +28,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$WfbVa3RBsZHuSQjoGw2Ff5tuOD4(Lcom/smedialink/ui/multifab/MiniFabsContainer;Lcom/smedialink/storage/domain/model/filters/FilterFab;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$4q9wnxZVq0a8AjH86Npr8nU-BEw(ZLcom/smedialink/ui/multifab/MiniFabsContainer;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/multifab/MiniFabsContainer;->createFab$lambda-7$lambda-6(Lcom/smedialink/ui/multifab/MiniFabsContainer;Lcom/smedialink/storage/domain/model/filters/FilterFab;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/multifab/MiniFabsContainer;->show$lambda$4$lambda$3(ZLcom/smedialink/ui/multifab/MiniFabsContainer;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$YO-015uqyPJ2Jdh5YgFcIliOH-E(ZLcom/smedialink/ui/multifab/MiniFabsContainer;)V
+.method public static synthetic $r8$lambda$YBHN93cekh8I8tGv35cuWhoOfAY(Lcom/smedialink/ui/multifab/MiniFabsContainer;Lcom/smedialink/storage/domain/model/filters/FilterFab;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/multifab/MiniFabsContainer;->show$lambda-4$lambda-3(ZLcom/smedialink/ui/multifab/MiniFabsContainer;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/multifab/MiniFabsContainer;->createFab$lambda$7$lambda$6(Lcom/smedialink/ui/multifab/MiniFabsContainer;Lcom/smedialink/storage/domain/model/filters/FilterFab;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$dvGb0fV3fjhsxAy8uwxI5ALDha8(ZLcom/smedialink/ui/multifab/MiniFabsContainer;)V
+.method public static synthetic $r8$lambda$mb1zyLPMXI942KwwTLFCuxNtbes(ZLcom/smedialink/ui/multifab/MiniFabsContainer;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/multifab/MiniFabsContainer;->show$lambda-4$lambda-2(ZLcom/smedialink/ui/multifab/MiniFabsContainer;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/multifab/MiniFabsContainer;->show$lambda$4$lambda$2(ZLcom/smedialink/ui/multifab/MiniFabsContainer;)V
 
     return-void
 .end method
@@ -246,7 +246,7 @@
     return-object v0
 .end method
 
-.method private static final createFab$lambda-7$lambda-6(Lcom/smedialink/ui/multifab/MiniFabsContainer;Lcom/smedialink/storage/domain/model/filters/FilterFab;Landroid/view/View;)V
+.method private static final createFab$lambda$7$lambda$6(Lcom/smedialink/ui/multifab/MiniFabsContainer;Lcom/smedialink/storage/domain/model/filters/FilterFab;Landroid/view/View;)V
     .locals 0
 
     const-string p2, "this$0"
@@ -258,16 +258,14 @@
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 88
-    invoke-virtual {p0}, Lcom/smedialink/ui/multifab/MiniFabsContainer;->getListener()Lorg/fork/utils/Callbacks$Callback1;
-
-    move-result-object p0
+    iget-object p0, p0, Lcom/smedialink/ui/multifab/MiniFabsContainer;->listener:Lorg/fork/utils/Callbacks$Callback1;
 
     invoke-interface {p0, p1}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method private static final show$lambda-4$lambda-2(ZLcom/smedialink/ui/multifab/MiniFabsContainer;)V
+.method private static final show$lambda$4$lambda$2(ZLcom/smedialink/ui/multifab/MiniFabsContainer;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -283,7 +281,7 @@
     return-void
 .end method
 
-.method private static final show$lambda-4$lambda-3(ZLcom/smedialink/ui/multifab/MiniFabsContainer;)V
+.method private static final show$lambda$4$lambda$3(ZLcom/smedialink/ui/multifab/MiniFabsContainer;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -337,7 +335,7 @@
     .line 37
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->removeAllViews()V
 
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -391,67 +389,57 @@
 .method public final setScale(F)V
     .locals 4
 
-    .line 187
+    .line 191
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
-    if-lez v0, :cond_1
-
     const/4 v1, 0x0
 
     :goto_0
-    add-int/lit8 v2, v1, 0x1
+    if-ge v1, v0, :cond_0
 
-    .line 188
+    .line 192
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
     const-string v3, "getChildAt(i)"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 47
-    invoke-static {v1, p1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setScale(Landroid/view/View;F)V
+    invoke-static {v2, p1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setScale(Landroid/view/View;F)V
 
-    if-lt v2, v0, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    move v1, v2
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_1
-    :goto_1
+    :cond_0
     return-void
 .end method
 
 .method public final show(Z)V
     .locals 5
 
-    .line 187
+    .line 191
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
-    if-lez v0, :cond_2
-
     const/4 v1, 0x0
 
     :goto_0
-    add-int/lit8 v2, v1, 0x1
+    if-ge v1, v0, :cond_1
 
-    .line 188
+    .line 192
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
     const-string v3, "getChildAt(i)"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-eqz p1, :cond_0
 
@@ -464,57 +452,51 @@
 
     .line 55
     :goto_1
-    invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v2}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
-    move-result-object v1
+    move-result-object v2
 
     const-string v4, "fab.animate()"
 
-    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 56
-    invoke-static {v1, v3}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->scale(Landroid/view/ViewPropertyAnimator;F)Landroid/view/ViewPropertyAnimator;
+    invoke-static {v2, v3}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->scale(Landroid/view/ViewPropertyAnimator;F)Landroid/view/ViewPropertyAnimator;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 57
     new-instance v3, Lcom/smedialink/ui/multifab/MiniFabsContainer$$ExternalSyntheticLambda2;
 
     invoke-direct {v3, p1, p0}, Lcom/smedialink/ui/multifab/MiniFabsContainer$$ExternalSyntheticLambda2;-><init>(ZLcom/smedialink/ui/multifab/MiniFabsContainer;)V
 
-    invoke-virtual {v1, v3}, Landroid/view/ViewPropertyAnimator;->withStartAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v2, v3}, Landroid/view/ViewPropertyAnimator;->withStartAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 58
     new-instance v3, Lcom/smedialink/ui/multifab/MiniFabsContainer$$ExternalSyntheticLambda1;
 
     invoke-direct {v3, p1, p0}, Lcom/smedialink/ui/multifab/MiniFabsContainer$$ExternalSyntheticLambda1;-><init>(ZLcom/smedialink/ui/multifab/MiniFabsContainer;)V
 
-    invoke-virtual {v1, v3}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v2, v3}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
-    move-result-object v1
+    move-result-object v2
 
     const-wide/16 v3, 0xc8
 
     .line 59
-    invoke-virtual {v1, v3, v4}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v2, v3, v4}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 60
-    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
+    invoke-virtual {v2}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    if-lt v2, v0, :cond_1
-
-    goto :goto_2
-
-    :cond_1
-    move v1, v2
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_2
-    :goto_2
+    :cond_1
     return-void
 .end method

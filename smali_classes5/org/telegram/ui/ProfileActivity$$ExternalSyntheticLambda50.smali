@@ -2,40 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
+.implements Lorg/fork/utils/Callbacks$Callback;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
+.field public final synthetic f$0:Lcom/smedialink/ui/profile/ProfilePresenter;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
+.method public synthetic constructor <init>(Lcom/smedialink/ui/profile/ProfilePresenter;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda50;->f$0:Lorg/telegram/ui/ProfileActivity;
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda50;->f$0:Lcom/smedialink/ui/profile/ProfilePresenter;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSetColor()V
+.method public final invoke()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda50;->f$0:Lorg/telegram/ui/ProfileActivity;
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda50;->f$0:Lcom/smedialink/ui/profile/ProfilePresenter;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$rtT5SuJyqvPLUS5qeCeNp7RyCK8(Lorg/telegram/ui/ProfileActivity;)V
-
-    return-void
-.end method
-
-.method public synthetic onAnimationProgress(F)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
+    invoke-virtual {v0}, Lcom/smedialink/ui/profile/ProfilePresenter;->logoutTwitter()V
 
     return-void
 .end method

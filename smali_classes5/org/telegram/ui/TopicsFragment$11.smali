@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;)V
     .locals 0
 
-    .line 1071
+    .line 1072
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$11;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -39,7 +39,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 2
 
-    .line 1078
+    .line 1079
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$11;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object p2, p2, Lorg/telegram/ui/TopicsFragment;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -52,7 +52,7 @@
 
     if-eq p2, p3, :cond_6
 
-    .line 1080
+    .line 1081
     invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->findViewHolderForAdapterPosition(I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     move-result-object p1
@@ -61,7 +61,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1084
+    .line 1085
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getTop()I
@@ -73,7 +73,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 1088
+    .line 1089
     :goto_0
     iget v0, p0, Lorg/telegram/ui/TopicsFragment$11;->prevPosition:I
 
@@ -81,7 +81,7 @@
 
     if-ne v0, p2, :cond_2
 
-    .line 1089
+    .line 1090
     iget p2, p0, Lorg/telegram/ui/TopicsFragment$11;->prevTop:I
 
     sub-int v0, p2, p1
@@ -95,7 +95,7 @@
     :cond_1
     const/4 p1, 0x0
 
-    .line 1091
+    .line 1092
     :goto_1
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
@@ -111,7 +111,7 @@
     :cond_3
     const/4 p1, 0x0
 
-    .line 1096
+    .line 1097
     :goto_2
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$11;->this$0:Lorg/telegram/ui/TopicsFragment;
 

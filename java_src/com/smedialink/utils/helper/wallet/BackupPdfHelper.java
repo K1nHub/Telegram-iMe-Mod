@@ -19,7 +19,7 @@ import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
@@ -44,15 +44,14 @@ public final class BackupPdfHelper {
             Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.smedialink.utils.helper.wallet.BackupPdfHelper$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BackupPdfHelper.m1851generatePdf$lambda4(parentActivity, walletAddress, qrBitmap, secretWords);
+                    BackupPdfHelper.generatePdf$lambda$4(parentActivity, walletAddress, qrBitmap, secretWords);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: generatePdf$lambda-4  reason: not valid java name */
-    public static final void m1851generatePdf$lambda4(Activity parentActivity, String walletAddress, Bitmap qrBitmap, List secretWords) {
+    public static final void generatePdf$lambda$4(Activity parentActivity, String walletAddress, Bitmap qrBitmap, List secretWords) {
         Intrinsics.checkNotNullParameter(parentActivity, "$parentActivity");
         Intrinsics.checkNotNullParameter(walletAddress, "$walletAddress");
         Intrinsics.checkNotNullParameter(qrBitmap, "$qrBitmap");
@@ -90,56 +89,54 @@ public final class BackupPdfHelper {
     }
 
     private final void saveAndOpenPdf(PdfDocument pdfDocument, final Activity activity) {
-        Object m1870constructorimpl;
+        Object m1463constructorimpl;
         File checkDirectory = FileLoader.checkDirectory(3);
-        String absolutePath = checkDirectory == null ? null : checkDirectory.getAbsolutePath();
+        String absolutePath = checkDirectory != null ? checkDirectory.getAbsolutePath() : null;
         if (absolutePath == null) {
             return;
         }
-        final File file = new File(absolutePath + ((Object) File.separator) + "iMeWallet_Seed_" + ((Object) Constants.INSTANCE.getDateDotsFormat().format(new Date())) + ".pdf");
+        final File file = new File(absolutePath + File.separator + "iMeWallet_Seed_" + Constants.INSTANCE.getDateDotsFormat().format(new Date()) + ".pdf");
         try {
             Result.Companion companion = Result.Companion;
             pdfDocument.writeTo(new FileOutputStream(file));
-            m1870constructorimpl = Result.m1870constructorimpl(Unit.INSTANCE);
+            m1463constructorimpl = Result.m1463constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1870constructorimpl = Result.m1870constructorimpl(ResultKt.createFailure(th));
+            m1463constructorimpl = Result.m1463constructorimpl(ResultKt.createFailure(th));
         }
-        final Throwable m1871exceptionOrNullimpl = Result.m1871exceptionOrNullimpl(m1870constructorimpl);
-        if (m1871exceptionOrNullimpl != null) {
+        final Throwable m1464exceptionOrNullimpl = Result.m1464exceptionOrNullimpl(m1463constructorimpl);
+        if (m1464exceptionOrNullimpl != null) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.smedialink.utils.helper.wallet.BackupPdfHelper$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BackupPdfHelper.m1852saveAndOpenPdf$lambda7$lambda6(m1871exceptionOrNullimpl);
+                    BackupPdfHelper.saveAndOpenPdf$lambda$7$lambda$6(m1464exceptionOrNullimpl);
                 }
             });
         }
-        if (Result.m1873isSuccessimpl(m1870constructorimpl)) {
-            Unit unit = (Unit) m1870constructorimpl;
+        if (Result.m1466isSuccessimpl(m1463constructorimpl)) {
+            Unit unit = (Unit) m1463constructorimpl;
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.smedialink.utils.helper.wallet.BackupPdfHelper$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BackupPdfHelper.m1853saveAndOpenPdf$lambda9$lambda8(file, activity);
+                    BackupPdfHelper.saveAndOpenPdf$lambda$9$lambda$8(file, activity);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: saveAndOpenPdf$lambda-7$lambda-6  reason: not valid java name */
-    public static final void m1852saveAndOpenPdf$lambda7$lambda6(Throwable it) {
+    public static final void saveAndOpenPdf$lambda$7$lambda$6(Throwable it) {
         Intrinsics.checkNotNullParameter(it, "$it");
         String message = it.getMessage();
         if (message == null) {
-            message = LocaleController.getString("ErrorOccurred", C3158R.string.ErrorOccurred);
+            message = LocaleController.getString("ErrorOccurred", C3286R.string.ErrorOccurred);
         }
         Intrinsics.checkNotNullExpressionValue(message, "it.message ?: LocaleCont…, R.string.ErrorOccurred)");
         ContextExtKt.toast(message);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: saveAndOpenPdf$lambda-9$lambda-8  reason: not valid java name */
-    public static final void m1853saveAndOpenPdf$lambda9$lambda8(File file, Activity parentActivity) {
+    public static final void saveAndOpenPdf$lambda$9$lambda$8(File file, Activity parentActivity) {
         Intrinsics.checkNotNullParameter(file, "$file");
         Intrinsics.checkNotNullParameter(parentActivity, "$parentActivity");
         AndroidUtilities.openForView(file, file.getName(), "application/pdf", parentActivity, null);

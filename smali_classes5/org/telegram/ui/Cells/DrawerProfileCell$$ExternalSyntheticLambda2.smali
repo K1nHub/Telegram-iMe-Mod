@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Cells/DrawerProfileCell;->$r8$lambda$l2O2b0yYuWknfzXnKsFDSNd8znw(Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;Landroid/view/View;)Z
+    invoke-static {v0, p1}, Lorg/telegram/ui/Cells/DrawerProfileCell;->$r8$lambda$uxGcZdp6WFD1X_CouT2BAvEslLk(Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;Landroid/view/View;)Z
 
     move-result p1
 

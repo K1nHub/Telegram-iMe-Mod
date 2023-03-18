@@ -6,12 +6,12 @@ import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.stub.AbstractStub;
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractStub<S extends AbstractStub<S>> {
     private final CallOptions callOptions;
     private final Channel channel;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface StubFactory<T extends AbstractStub<T>> {
         T newStub(Channel channel, CallOptions callOptions);
     }

@@ -27,7 +27,7 @@
 
     iput-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$openQRScan$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 1028
+    .line 1029
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,7 +50,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1030
+    .line 1031
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$openQRScan$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$pasteToEditText(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;Ljava/lang/String;)V

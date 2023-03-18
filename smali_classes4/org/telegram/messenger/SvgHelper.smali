@@ -1289,7 +1289,7 @@
     goto/16 :goto_1
 
     :sswitch_1
-    const-string v0, "white"
+    const-string/jumbo v0, "white"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1401,7 +1401,7 @@
     goto :goto_1
 
     :sswitch_8
-    const-string v0, "yellow"
+    const-string/jumbo v0, "yellow"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

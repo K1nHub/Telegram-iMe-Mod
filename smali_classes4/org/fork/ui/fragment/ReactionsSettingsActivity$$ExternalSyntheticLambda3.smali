@@ -45,7 +45,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/ReactionsSettingsActivity$$ExternalSyntheticLambda3;->f$0:Lorg/fork/ui/fragment/ReactionsSettingsActivity;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/ReactionsSettingsActivity;->$r8$lambda$GuXt64wg0RtLa7jOyytUpPfife8(Lorg/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;IFF)V
+    invoke-static {v0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/ReactionsSettingsActivity;->$r8$lambda$Wd3-4epMwLUWVl4KVBTzOO1iWgU(Lorg/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;IFF)V
 
     return-void
 .end method

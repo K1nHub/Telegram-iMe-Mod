@@ -30,6 +30,7 @@ import kotlin.collections.MapsKt__MapsKt;
 import kotlin.collections.SetsKt__SetsJVMKt;
 import kotlin.collections.SetsKt__SetsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
@@ -163,10 +164,10 @@ public final class FiltersController extends BaseController implements KoinCompo
     public final void loadConfig(SharedPreferences preferences) {
         Set<String> selectedAllChatsTabFabs;
         Intrinsics.checkNotNullParameter(preferences, "preferences");
-        setHideFoldersEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isHideFoldersEnabled(), TelegramPreferenceKeys.User.Default.isHideFoldersEnabled()));
-        setFoldersFirstEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isFoldersFirstEnabled(), TelegramPreferenceKeys.User.Default.isFoldersFirstEnabled()));
-        setAllChatsTabEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isAllChatsTabEnabled(), TelegramPreferenceKeys.User.Default.isAllChatsTabEnabled()));
-        setIconInsteadAllChatsTabTitleEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isIconInsteadAllChatsTabTitleEnabled(), TelegramPreferenceKeys.User.Default.isIconInsteadAllChatsTabTitleEnabled()));
+        this.isHideFoldersEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isHideFoldersEnabled(), TelegramPreferenceKeys.User.Default.isHideFoldersEnabled());
+        this.isFoldersFirstEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isFoldersFirstEnabled(), TelegramPreferenceKeys.User.Default.isFoldersFirstEnabled());
+        this.isAllChatsTabEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isAllChatsTabEnabled(), TelegramPreferenceKeys.User.Default.isAllChatsTabEnabled());
+        this.isIconInsteadAllChatsTabTitleEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isIconInsteadAllChatsTabTitleEnabled(), TelegramPreferenceKeys.User.Default.isIconInsteadAllChatsTabTitleEnabled());
         FilterFab.Companion companion = FilterFab.Companion;
         try {
             selectedAllChatsTabFabs = preferences.getStringSet(TelegramPreferenceKeys.User.selectedAllChatsTabFabs(), TelegramPreferenceKeys.User.Default.selectedAllChatsTabFabs());
@@ -174,7 +175,7 @@ public final class FiltersController extends BaseController implements KoinCompo
             preferences.edit().remove(TelegramPreferenceKeys.User.selectedAllChatsTabFabs()).apply();
             selectedAllChatsTabFabs = TelegramPreferenceKeys.User.Default.selectedAllChatsTabFabs();
         }
-        setSelectedAllChatsTabFabs(companion.mapNamesToEnums(selectedAllChatsTabFabs));
+        this.selectedAllChatsTabFabs = companion.mapNamesToEnums(selectedAllChatsTabFabs);
         this.isSortingChatsEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isSortingChatsEnabled(), TelegramPreferenceKeys.User.Default.isSortingChatsEnabled());
         this.isArchiveSortingChatsEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isArchiveSortingChatsEnabled(), TelegramPreferenceKeys.User.Default.isArchiveSortingChatsEnabled());
         loadSortingTabsConfig(false, preferences);
@@ -185,11 +186,11 @@ public final class FiltersController extends BaseController implements KoinCompo
 
     public final void saveConfig() {
         SharedPreferences.Editor edit = getUserConfig().getPreferencesPublic().edit();
-        edit.putBoolean(TelegramPreferenceKeys.User.isHideFoldersEnabled(), isHideFoldersEnabled());
-        edit.putBoolean(TelegramPreferenceKeys.User.isFoldersFirstEnabled(), isFoldersFirstEnabled());
-        edit.putBoolean(TelegramPreferenceKeys.User.isAllChatsTabEnabled(), isAllChatsTabEnabled());
-        edit.putBoolean(TelegramPreferenceKeys.User.isIconInsteadAllChatsTabTitleEnabled(), isIconInsteadAllChatsTabTitleEnabled());
-        edit.putStringSet(TelegramPreferenceKeys.User.selectedAllChatsTabFabs(), FilterFab.Companion.mapEnumsToNames(getSelectedAllChatsTabFabs()));
+        edit.putBoolean(TelegramPreferenceKeys.User.isHideFoldersEnabled(), this.isHideFoldersEnabled);
+        edit.putBoolean(TelegramPreferenceKeys.User.isFoldersFirstEnabled(), this.isFoldersFirstEnabled);
+        edit.putBoolean(TelegramPreferenceKeys.User.isAllChatsTabEnabled(), this.isAllChatsTabEnabled);
+        edit.putBoolean(TelegramPreferenceKeys.User.isIconInsteadAllChatsTabTitleEnabled(), this.isIconInsteadAllChatsTabTitleEnabled);
+        edit.putStringSet(TelegramPreferenceKeys.User.selectedAllChatsTabFabs(), FilterFab.Companion.mapEnumsToNames(this.selectedAllChatsTabFabs));
         edit.putBoolean(TelegramPreferenceKeys.User.isSortingChatsEnabled(), this.isSortingChatsEnabled);
         edit.putBoolean(TelegramPreferenceKeys.User.isArchiveSortingChatsEnabled(), this.isArchiveSortingChatsEnabled);
         Intrinsics.checkNotNullExpressionValue(edit, "this");
@@ -264,7 +265,7 @@ public final class FiltersController extends BaseController implements KoinCompo
             }
             sortingTabs.addAll(arrayList);
             if (sortingTabs.size() > 1) {
-                CollectionsKt__MutableCollectionsJVMKt.sortWith(sortingTabs, new Comparator() { // from class: org.fork.controller.FiltersController$restoreSortingBackup$lambda-5$$inlined$sortBy$1
+                CollectionsKt__MutableCollectionsJVMKt.sortWith(sortingTabs, new Comparator() { // from class: org.fork.controller.FiltersController$restoreSortingBackup$lambda$5$$inlined$sortBy$1
                     @Override // java.util.Comparator
                     public final int compare(T t, T t2) {
                         int compareValues;
@@ -283,7 +284,7 @@ public final class FiltersController extends BaseController implements KoinCompo
             for (MessagesController.DialogFilter dialogFilter : filters) {
                 dialogFilter.alwaysShow.clear();
                 dialogFilter.pinnedDialogs.clear();
-                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1434id).name());
+                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1439id).name());
                 if (pair != null) {
                     int i = 0;
                     for (Object obj : pair.getFirst()) {
@@ -417,14 +418,13 @@ public final class FiltersController extends BaseController implements KoinCompo
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.FiltersController$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                FiltersController.m1906addOrEditFilterSettings$lambda14(FiltersController.this, settings);
+                FiltersController.addOrEditFilterSettings$lambda$14(FiltersController.this, settings);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: addOrEditFilterSettings$lambda-14  reason: not valid java name */
-    public static final void m1906addOrEditFilterSettings$lambda14(FiltersController this$0, FilterSettingsModel settings) {
+    public static final void addOrEditFilterSettings$lambda$14(FiltersController this$0, FilterSettingsModel settings) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(settings, "$settings");
         this$0.filterSettings.put(Integer.valueOf(settings.getFilterId()), settings);
@@ -461,20 +461,12 @@ public final class FiltersController extends BaseController implements KoinCompo
         for (MessagesController.DialogFilter dialogFilter : filters) {
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
-            int i = 0;
             int size = dialogFilter.pinnedDialogs.size();
-            if (size > 0) {
-                while (true) {
-                    int i2 = i + 1;
-                    arrayList.add(Long.valueOf(dialogFilter.pinnedDialogs.keyAt(i)));
-                    arrayList2.add(Integer.valueOf(dialogFilter.pinnedDialogs.valueAt(i)));
-                    if (i2 >= size) {
-                        break;
-                    }
-                    i = i2;
-                }
+            for (int i = 0; i < size; i++) {
+                arrayList.add(Long.valueOf(dialogFilter.pinnedDialogs.keyAt(i)));
+                arrayList2.add(Integer.valueOf(dialogFilter.pinnedDialogs.valueAt(i)));
             }
-            Pair m100to = TuplesKt.m100to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1434id).name(), TuplesKt.m100to(arrayList, arrayList2));
+            Pair m100to = TuplesKt.m100to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1439id).name(), TuplesKt.m100to(arrayList, arrayList2));
             linkedHashMap.put(m100to.getFirst(), m100to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
@@ -510,7 +502,7 @@ public final class FiltersController extends BaseController implements KoinCompo
             sortingTabs.add(new SortingTabState(sortingFilter, companion.mapNamesToEnums(of), sharedPreferences.getInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter), sortingFilter.groupOrdinal()), sharedPreferences.getBoolean(TelegramPreferenceKeys.User.buildSortingTabEnabledKey(sortingFilter), sortingFilter.isEnabledByDefault())));
         }
         if (sortingTabs.size() > 1) {
-            CollectionsKt__MutableCollectionsJVMKt.sortWith(sortingTabs, new Comparator() { // from class: org.fork.controller.FiltersController$loadSortingTabsConfig$lambda-20$lambda-19$$inlined$sortBy$1
+            CollectionsKt__MutableCollectionsJVMKt.sortWith(sortingTabs, new Comparator() { // from class: org.fork.controller.FiltersController$loadSortingTabsConfig$lambda$20$lambda$19$$inlined$sortBy$1
                 @Override // java.util.Comparator
                 public final int compare(T t, T t2) {
                     int compareValues;
@@ -553,14 +545,16 @@ public final class FiltersController extends BaseController implements KoinCompo
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: getInstance$lambda-0  reason: not valid java name */
-        public static final FiltersController m1907getInstance$lambda0(int i, Integer it) {
-            Intrinsics.checkNotNullParameter(it, "it");
-            return new FiltersController(i);
+        public static final FiltersController getInstance$lambda$0(Function1 tmp0, Object obj) {
+            Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+            return (FiltersController) tmp0.invoke(obj);
         }
 
-        public final FiltersController getInstance(final int i) {
-            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(FiltersController.accountInstances, Integer.valueOf(i), new Function() { // from class: org.fork.controller.FiltersController$Companion$$ExternalSyntheticLambda0
+        public final FiltersController getInstance(int i) {
+            ConcurrentHashMap concurrentHashMap = FiltersController.accountInstances;
+            Integer valueOf = Integer.valueOf(i);
+            final FiltersController$Companion$getInstance$1 filtersController$Companion$getInstance$1 = new FiltersController$Companion$getInstance$1(i);
+            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: org.fork.controller.FiltersController$Companion$$ExternalSyntheticLambda0
                 @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
@@ -568,9 +562,9 @@ public final class FiltersController extends BaseController implements KoinCompo
 
                 @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
-                    FiltersController m1907getInstance$lambda0;
-                    m1907getInstance$lambda0 = FiltersController.Companion.m1907getInstance$lambda0(i, (Integer) obj);
-                    return m1907getInstance$lambda0;
+                    FiltersController instance$lambda$0;
+                    instance$lambda$0 = FiltersController.Companion.getInstance$lambda$0(Function1.this, obj);
+                    return instance$lambda$0;
                 }
 
                 @Override // p034j$.util.function.Function
@@ -578,7 +572,7 @@ public final class FiltersController extends BaseController implements KoinCompo
                     return Objects.requireNonNull(function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountInstances.compute…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
             return (FiltersController) computeIfAbsent;
         }
     }

@@ -2,13 +2,13 @@ package org.fork.enums;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: FilterTabNotificationMode.kt */
 /* loaded from: classes4.dex */
 public enum FilterTabNotificationMode {
-    HIDDEN(C3158R.string.folder_tabs_notification_mode_value_hidden),
-    NUMBER(C3158R.string.folder_tabs_notification_mode_value_default),
-    POINT(C3158R.string.folder_tabs_notification_mode_value_points);
+    HIDDEN(C3286R.string.folder_tabs_notification_mode_value_hidden),
+    NUMBER(C3286R.string.folder_tabs_notification_mode_value_default),
+    POINT(C3286R.string.folder_tabs_notification_mode_value_points);
     
     public static final Companion Companion = new Companion(null);
     private final int titleResId;

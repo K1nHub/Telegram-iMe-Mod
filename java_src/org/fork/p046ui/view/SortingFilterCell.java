@@ -41,8 +41,7 @@ public final class SortingFilterCell extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onFabsClick$lambda-0  reason: not valid java name */
-    public static final void m2117onFabsClick$lambda0() {
+    public static final void onFabsClick$lambda$0() {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -211,17 +210,16 @@ public final class SortingFilterCell extends LinearLayout {
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.view.SortingFilterCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SortingFilterCell.m2116initFabsLayout$lambda5$lambda4(SortingFilterCell.this, view);
+                SortingFilterCell.initFabsLayout$lambda$5$lambda$4(SortingFilterCell.this, view);
             }
         });
         return frameLayout;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initFabsLayout$lambda-5$lambda-4  reason: not valid java name */
-    public static final void m2116initFabsLayout$lambda5$lambda4(SortingFilterCell this$0, View view) {
+    public static final void initFabsLayout$lambda$5$lambda$4(SortingFilterCell this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getOnFabsClick().run();
+        this$0.onFabsClick.run();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

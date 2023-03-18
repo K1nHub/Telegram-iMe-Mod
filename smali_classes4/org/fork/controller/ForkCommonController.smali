@@ -302,7 +302,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ForkCommonController;->setWalletRefreshToken(Ljava/lang/String;)V
+    iput-object v0, p0, Lorg/fork/controller/ForkCommonController;->walletRefreshToken:Ljava/lang/String;
 
     .line 32
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->appVersionRequiredUpdate()Ljava/lang/String;
@@ -317,7 +317,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ForkCommonController;->setAppVersionRequiredUpdate(Ljava/lang/String;)V
+    iput-object v0, p0, Lorg/fork/controller/ForkCommonController;->appVersionRequiredUpdate:Ljava/lang/String;
 
     .line 33
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->sortingDeployVersion()Ljava/lang/String;
@@ -332,7 +332,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ForkCommonController;->setSortingDeployVersion(I)V
+    iput v0, p0, Lorg/fork/controller/ForkCommonController;->sortingDeployVersion:I
 
     .line 34
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->lastFilterTab()Ljava/lang/String;
@@ -347,7 +347,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ForkCommonController;->setLastFilterTab(I)V
+    iput v0, p0, Lorg/fork/controller/ForkCommonController;->lastFilterTab:I
 
     .line 35
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isAccountMuted()Ljava/lang/String;
@@ -362,7 +362,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ForkCommonController;->setAccountMuted(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ForkCommonController;->isAccountMuted:Z
 
     .line 36
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isQuickReactionEnabled()Ljava/lang/String;
@@ -377,7 +377,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ForkCommonController;->setQuickReactionEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ForkCommonController;->isQuickReactionEnabled:Z
 
     .line 37
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isPremiumAnimateStickers()Ljava/lang/String;
@@ -392,7 +392,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ForkCommonController;->setPremiumAnimateStickers(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateStickers:Z
 
     .line 38
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isShowPremiumBadgeEnabled()Ljava/lang/String;
@@ -407,7 +407,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ForkCommonController;->setShowPremiumBadgeEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled:Z
 
     .line 39
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isShowPremiumStatusEnabled()Ljava/lang/String;
@@ -422,7 +422,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ForkCommonController;->setShowPremiumStatusEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled:Z
 
     .line 40
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isPremiumAnimateAvatars()Ljava/lang/String;
@@ -437,7 +437,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ForkCommonController;->setPremiumAnimateAvatars(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateAvatars:Z
 
     .line 41
     sget-object v0, Lcom/smedialink/model/contacts/ContactsFilter;->Companion:Lcom/smedialink/model/contacts/ContactsFilter$Companion;
@@ -462,7 +462,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Lorg/fork/controller/ForkCommonController;->setSelectedContactsFilter(Lcom/smedialink/model/contacts/ContactsFilter;)V
+    iput-object p1, p0, Lorg/fork/controller/ForkCommonController;->selectedContactsFilter:Lcom/smedialink/model/contacts/ContactsFilter;
 
     return-void
 .end method
@@ -617,9 +617,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ForkCommonController;->getWalletRefreshToken()Ljava/lang/String;
-
-    move-result-object v2
+    iget-object v2, p0, Lorg/fork/controller/ForkCommonController;->walletRefreshToken:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
@@ -628,9 +626,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ForkCommonController;->getAppVersionRequiredUpdate()Ljava/lang/String;
-
-    move-result-object v2
+    iget-object v2, p0, Lorg/fork/controller/ForkCommonController;->appVersionRequiredUpdate:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
@@ -639,9 +635,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ForkCommonController;->getSortingDeployVersion()I
-
-    move-result v2
+    iget v2, p0, Lorg/fork/controller/ForkCommonController;->sortingDeployVersion:I
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
@@ -650,9 +644,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ForkCommonController;->getLastFilterTab()I
-
-    move-result v2
+    iget v2, p0, Lorg/fork/controller/ForkCommonController;->lastFilterTab:I
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
@@ -661,9 +653,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ForkCommonController;->isAccountMuted()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ForkCommonController;->isAccountMuted:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -672,9 +662,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ForkCommonController;->isQuickReactionEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ForkCommonController;->isQuickReactionEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -683,9 +671,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateStickers()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateStickers:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -694,9 +680,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -705,9 +689,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -716,9 +698,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateAvatars()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateAvatars:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -727,9 +707,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ForkCommonController;->getSelectedContactsFilter()Lcom/smedialink/model/contacts/ContactsFilter;
-
-    move-result-object v2
+    iget-object v2, p0, Lorg/fork/controller/ForkCommonController;->selectedContactsFilter:Lcom/smedialink/model/contacts/ContactsFilter;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 

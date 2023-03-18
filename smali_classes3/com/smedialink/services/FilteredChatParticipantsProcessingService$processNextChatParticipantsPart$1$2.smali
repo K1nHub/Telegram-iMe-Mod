@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/services/FilteredChatParticipantsProcessingService;->processNextChatParticipantsPart$lambda-4(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;)V
+    value = Lcom/smedialink/services/FilteredChatParticipantsProcessingService;->processNextChatParticipantsPart()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

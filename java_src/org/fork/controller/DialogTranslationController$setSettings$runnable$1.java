@@ -28,7 +28,6 @@ public final class DialogTranslationController$setSettings$runnable$1 extends La
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         DialogTranslationSettingsDao dao;

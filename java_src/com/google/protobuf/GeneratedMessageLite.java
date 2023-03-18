@@ -198,7 +198,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         }
 
         /* renamed from: clone */
-        public BuilderType m1140clone() {
+        public BuilderType m1122clone() {
             BuilderType buildertype = (BuilderType) getDefaultInstanceForType().newBuilderForType();
             buildertype.mergeFrom(buildPartial());
             return buildertype;
@@ -265,7 +265,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         /* JADX INFO: Access modifiers changed from: package-private */
         public FieldSet<ExtensionDescriptor> ensureExtensionsAreMutable() {
             if (this.extensions.isImmutable()) {
-                this.extensions = this.extensions.m1139clone();
+                this.extensions = this.extensions.m1121clone();
             }
             return this.extensions;
         }

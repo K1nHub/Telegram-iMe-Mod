@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBotInfoActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BotInfoActivity.kt\ncom/smedialink/ui/shop/BotInfoActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,277:1\n1#2:278\n764#3:279\n855#3,2:280\n1849#3,2:282\n*S KotlinDebug\n*F\n+ 1 BotInfoActivity.kt\ncom/smedialink/ui/shop/BotInfoActivity\n*L\n216#1:279\n216#1:280,2\n217#1:282,2\n*E\n"
+    value = "SMAP\nBotInfoActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BotInfoActivity.kt\ncom/smedialink/ui/shop/BotInfoActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,277:1\n1#2:278\n766#3:279\n857#3,2:280\n1855#3,2:282\n*S KotlinDebug\n*F\n+ 1 BotInfoActivity.kt\ncom/smedialink/ui/shop/BotInfoActivity\n*L\n216#1:279\n216#1:280,2\n217#1:282,2\n*E\n"
 .end annotation
 
 
@@ -76,58 +76,58 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$-x-n6YkQFdiC4VWW8zuu4Qdn9IQ(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$1APc2FB1OwtN3vvhI4HGkYAy4GA(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/shop/BotInfoActivity;->displayBotItem$lambda-9(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/BotInfoActivity;->observeBotAnalog$lambda$10(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$7Mv6xakiwfZY19DPeK5FiT9x0po(Lcom/smedialink/ui/shop/BotInfoActivity;Lme/zhanghai/android/materialratingbar/MaterialRatingBar;F)V
+.method public static synthetic $r8$lambda$GEHvjR-0CUKgzalTqAg4T2wWPC4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/shop/BotInfoActivity;->displayBotItem$lambda-5(Lcom/smedialink/ui/shop/BotInfoActivity;Lme/zhanghai/android/materialratingbar/MaterialRatingBar;F)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/BotInfoActivity;->subscribeToBotContent$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$88P1IReCwFrkMlC34plbj1DzcwA(Ljava/lang/Throwable;)V
+.method public static synthetic $r8$lambda$eq4R-Gbee129k15ZfZfSvRNDlVE(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/shop/BotInfoActivity;->subscribeToBotContent$lambda-1(Ljava/lang/Throwable;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/shop/BotInfoActivity;->displayBotItem$lambda$9(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$DNPQYZ__0-C5yL5mvj-0EYojXfQ(Lcom/smedialink/ui/shop/BotInfoActivity;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$j-0BYSrx-HdvDncvoXjB2XlHWyk(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/BotInfoActivity;->displayBotItem$lambda-4(Lcom/smedialink/ui/shop/BotInfoActivity;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/BotInfoActivity;->subscribeToBotContent$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$USk4jkKAVDigKAOhSxPpcZsMIS0(Ljava/lang/Throwable;)V
+.method public static synthetic $r8$lambda$nSOTytaiL6lY9Evv3zH_5JPtpng(Lcom/smedialink/ui/shop/BotInfoActivity;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/shop/BotInfoActivity;->observeBotAnalog$lambda-13(Ljava/lang/Throwable;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/BotInfoActivity;->displayBotItem$lambda$4(Lcom/smedialink/ui/shop/BotInfoActivity;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$o6ZiA0NyKH1TdpFGIrtcJSoB9pk(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;)V
+.method public static synthetic $r8$lambda$ph3LnCSqGWRiySTtUznn1hlF1f0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/BotInfoActivity;->subscribeToBotContent$lambda-0(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/BotInfoActivity;->observeBotAnalog$lambda$11(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$qr8JYukKYR09ccPvlLhpijZmTpc(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;Ljava/util/List;)V
+.method public static synthetic $r8$lambda$w4rQwGTNwoEXI1MhBzOSY_T8_O0(Lcom/smedialink/ui/shop/BotInfoActivity;Lme/zhanghai/android/materialratingbar/MaterialRatingBar;F)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/shop/BotInfoActivity;->observeBotAnalog$lambda-12(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;Ljava/util/List;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/shop/BotInfoActivity;->displayBotItem$lambda$5(Lcom/smedialink/ui/shop/BotInfoActivity;Lme/zhanghai/android/materialratingbar/MaterialRatingBar;F)V
 
     return-void
 .end method
@@ -169,6 +169,42 @@
     return-void
 .end method
 
+.method public static final synthetic access$displayBotItem(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;)V
+    .locals 0
+
+    .line 31
+    invoke-direct {p0, p1}, Lcom/smedialink/ui/shop/BotInfoActivity;->displayBotItem(Lcom/smedialink/bots/domain/model/ShopItem;)V
+
+    return-void
+.end method
+
+.method public static final synthetic access$getBotAnalog$p(Lcom/smedialink/ui/shop/BotInfoActivity;)Lcom/smedialink/bots/domain/model/ShopItem;
+    .locals 0
+
+    .line 31
+    iget-object p0, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->botAnalog:Lcom/smedialink/bots/domain/model/ShopItem;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$getBotAnalogLanguage$p(Lcom/smedialink/ui/shop/BotInfoActivity;)Landroid/widget/TextView;
+    .locals 0
+
+    .line 31
+    iget-object p0, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->botAnalogLanguage:Landroid/widget/TextView;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$setBotAnalog$p(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;)V
+    .locals 0
+
+    .line 31
+    iput-object p1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->botAnalog:Lcom/smedialink/bots/domain/model/ShopItem;
+
+    return-void
+.end method
+
 .method private final displayBotItem(Lcom/smedialink/bots/domain/model/ShopItem;)V
     .locals 11
 
@@ -185,11 +221,8 @@
 
     const-string v2, "chats_actionBackground"
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v3
@@ -197,14 +230,11 @@
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setBackgroundColor(I)V
 
     .line 164
-    :goto_0
+    :cond_0
     iget-object v4, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->avatar:Landroid/widget/ImageView;
 
-    if-nez v4, :cond_1
+    if-eqz v4, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {p1}, Lcom/smedialink/bots/domain/model/ShopItem;->getAvatar()Ljava/lang/String;
 
     move-result-object v5
@@ -228,12 +258,12 @@
     invoke-static/range {v4 .. v10}, Lcom/smedialink/ui/smartpanel/extension/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;ZILjava/lang/Object;)V
 
     .line 165
-    :goto_1
+    :cond_1
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->botName:Landroid/widget/TextView;
 
     if-nez v1, :cond_2
 
-    goto :goto_2
+    goto :goto_0
 
     :cond_2
     invoke-virtual {p1}, Lcom/smedialink/bots/domain/model/ShopItem;->getTitle()Ljava/lang/String;
@@ -243,14 +273,11 @@
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 166
-    :goto_2
+    :goto_0
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->botName:Landroid/widget/TextView;
 
-    if-nez v1, :cond_3
+    if-eqz v1, :cond_3
 
-    goto :goto_3
-
-    :cond_3
     const-string v3, "windowBackgroundWhiteBlackText"
 
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -260,12 +287,12 @@
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 167
-    :goto_3
+    :cond_3
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->botDescription:Landroid/widget/TextView;
 
     if-nez v1, :cond_4
 
-    goto :goto_4
+    goto :goto_1
 
     :cond_4
     invoke-virtual {p1}, Lcom/smedialink/bots/domain/model/ShopItem;->getDescription()Ljava/lang/String;
@@ -275,14 +302,14 @@
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 168
-    :goto_4
+    :goto_1
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->ratingValue:Landroid/widget/TextView;
 
     const/4 v3, 0x1
 
     if-nez v1, :cond_5
 
-    goto :goto_5
+    goto :goto_2
 
     :cond_5
     new-array v4, v3, [Ljava/lang/Object;
@@ -314,12 +341,12 @@
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 169
-    :goto_5
+    :goto_2
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->ratingLabel:Landroid/widget/TextView;
 
     if-nez v1, :cond_6
 
-    goto :goto_6
+    goto :goto_3
 
     :cond_6
     sget v4, Lorg/telegram/messenger/R$string;->plural_info_votes:I
@@ -337,12 +364,12 @@
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 170
-    :goto_6
+    :goto_3
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->themesLabel:Landroid/widget/TextView;
 
     if-nez v1, :cond_7
 
-    goto :goto_7
+    goto :goto_4
 
     :cond_7
     sget v4, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_themes:I
@@ -354,12 +381,12 @@
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 171
-    :goto_7
+    :goto_4
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->phrasesLabel:Landroid/widget/TextView;
 
     if-nez v1, :cond_8
 
-    goto :goto_8
+    goto :goto_5
 
     :cond_8
     sget v4, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_phrases:I
@@ -371,12 +398,12 @@
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 172
-    :goto_8
+    :goto_5
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->developerLabel:Landroid/widget/TextView;
 
     if-nez v1, :cond_9
 
-    goto :goto_9
+    goto :goto_6
 
     :cond_9
     sget v4, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_developer:I
@@ -388,12 +415,12 @@
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 173
-    :goto_9
+    :goto_6
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->instalsLabel:Landroid/widget/TextView;
 
     if-nez v1, :cond_a
 
-    goto :goto_a
+    goto :goto_7
 
     :cond_a
     sget v4, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_installs:I
@@ -405,12 +432,12 @@
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 174
-    :goto_a
+    :goto_7
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->themesValue:Landroid/widget/TextView;
 
     if-nez v1, :cond_b
 
-    goto :goto_b
+    goto :goto_8
 
     :cond_b
     invoke-virtual {p1}, Lcom/smedialink/bots/domain/model/ShopItem;->getThemes()J
@@ -424,12 +451,12 @@
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 175
-    :goto_b
+    :goto_8
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->phrasesValue:Landroid/widget/TextView;
 
     if-nez v1, :cond_c
 
-    goto :goto_c
+    goto :goto_9
 
     :cond_c
     invoke-virtual {p1}, Lcom/smedialink/bots/domain/model/ShopItem;->getPhrases()J
@@ -443,12 +470,12 @@
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 176
-    :goto_c
+    :goto_9
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->installsValue:Landroid/widget/TextView;
 
     if-nez v1, :cond_d
 
-    goto :goto_d
+    goto :goto_a
 
     :cond_d
     invoke-virtual {p1}, Lcom/smedialink/bots/domain/model/ShopItem;->getInstalls()J
@@ -462,12 +489,12 @@
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 177
-    :goto_d
+    :goto_a
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->rateLabel:Landroid/widget/TextView;
 
     if-nez v1, :cond_e
 
-    goto :goto_e
+    goto :goto_b
 
     :cond_e
     sget v4, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_rate:I
@@ -479,7 +506,7 @@
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 178
-    :goto_e
+    :goto_b
     invoke-virtual {p1}, Lcom/smedialink/bots/domain/model/ShopItem;->getLanguage()Lcom/smedialink/bots/domain/model/BotLanguage;
 
     move-result-object v1
@@ -505,7 +532,7 @@
 
     move-result-object v1
 
-    goto :goto_f
+    goto :goto_c
 
     :cond_f
     new-instance p1, Lkotlin/NoWhenBranchMatchedException;
@@ -523,12 +550,12 @@
     move-result-object v1
 
     .line 182
-    :goto_f
+    :goto_c
     iget-object v4, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->botCurrentLanguage:Landroid/widget/TextView;
 
     if-nez v4, :cond_11
 
-    goto :goto_10
+    goto :goto_d
 
     :cond_11
     new-instance v5, Ljava/lang/StringBuilder;
@@ -541,13 +568,13 @@
 
     move-result-object v6
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v6, ": \n"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -556,14 +583,11 @@
     invoke-virtual {v4, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 183
-    :goto_10
+    :goto_d
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->botAnalogLanguage:Landroid/widget/TextView;
 
-    if-nez v1, :cond_12
+    if-eqz v1, :cond_12
 
-    goto :goto_11
-
-    :cond_12
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v4
@@ -571,14 +595,11 @@
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 184
-    :goto_11
+    :cond_12
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->botAnalogLanguage:Landroid/widget/TextView;
 
-    if-nez v1, :cond_13
+    if-eqz v1, :cond_13
 
-    goto :goto_12
-
-    :cond_13
     new-instance v4, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda0;
 
     invoke-direct {v4, p0}, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/shop/BotInfoActivity;)V
@@ -586,30 +607,27 @@
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 193
-    :goto_12
+    :cond_13
     invoke-virtual {p1}, Lcom/smedialink/bots/domain/model/ShopItem;->getOwnRating()I
 
     move-result v1
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_16
 
     .line 194
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->ratingBar:Lme/zhanghai/android/materialratingbar/MaterialRatingBar;
 
-    if-nez v1, :cond_14
+    if-eqz v1, :cond_14
 
-    goto :goto_13
-
-    :cond_14
     invoke-virtual {v1, v0}, Landroid/widget/RatingBar;->setIsIndicator(Z)V
 
     .line 195
-    :goto_13
+    :cond_14
     iget-object v0, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->ratingBar:Lme/zhanghai/android/materialratingbar/MaterialRatingBar;
 
     if-nez v0, :cond_15
 
-    goto :goto_14
+    goto :goto_e
 
     :cond_15
     const/4 v1, 0x0
@@ -617,42 +635,36 @@
     invoke-virtual {v0, v1}, Landroid/widget/RatingBar;->setRating(F)V
 
     .line 196
-    :goto_14
+    :goto_e
     iget-object v0, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->ratingBar:Lme/zhanghai/android/materialratingbar/MaterialRatingBar;
 
-    if-nez v0, :cond_16
+    if-eqz v0, :cond_19
 
-    goto :goto_16
-
-    :cond_16
     new-instance v1, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda6;
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda6;-><init>(Lcom/smedialink/ui/shop/BotInfoActivity;)V
 
     invoke-virtual {v0, v1}, Lme/zhanghai/android/materialratingbar/MaterialRatingBar;->setOnRatingChangeListener(Lme/zhanghai/android/materialratingbar/MaterialRatingBar$OnRatingChangeListener;)V
 
-    goto :goto_16
+    goto :goto_f
 
     .line 202
+    :cond_16
+    iget-object v0, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->ratingBar:Lme/zhanghai/android/materialratingbar/MaterialRatingBar;
+
+    if-eqz v0, :cond_17
+
+    invoke-virtual {v0, v3}, Landroid/widget/RatingBar;->setIsIndicator(Z)V
+
+    .line 203
     :cond_17
     iget-object v0, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->ratingBar:Lme/zhanghai/android/materialratingbar/MaterialRatingBar;
 
     if-nez v0, :cond_18
 
-    goto :goto_15
+    goto :goto_f
 
     :cond_18
-    invoke-virtual {v0, v3}, Landroid/widget/RatingBar;->setIsIndicator(Z)V
-
-    .line 203
-    :goto_15
-    iget-object v0, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->ratingBar:Lme/zhanghai/android/materialratingbar/MaterialRatingBar;
-
-    if-nez v0, :cond_19
-
-    goto :goto_16
-
-    :cond_19
     invoke-virtual {p1}, Lcom/smedialink/bots/domain/model/ShopItem;->getOwnRating()I
 
     move-result v1
@@ -662,37 +674,32 @@
     invoke-virtual {v0, v1}, Landroid/widget/RatingBar;->setRating(F)V
 
     .line 207
-    :goto_16
+    :cond_19
+    :goto_f
     iget-object v0, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->tagsContainer:Lcom/google/android/flexbox/FlexboxLayout;
 
-    if-nez v0, :cond_1a
+    if-eqz v0, :cond_1a
 
-    goto :goto_17
-
-    :cond_1a
     invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
 
     .line 208
-    :goto_17
+    :cond_1a
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    if-nez v0, :cond_1b
-
-    goto/16 :goto_1e
+    if-eqz v0, :cond_23
 
     .line 210
-    :cond_1b
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->dateAdded:Landroid/widget/TextView;
 
     const/16 v4, 0x20
 
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_1b
 
-    goto :goto_18
+    goto :goto_10
 
-    :cond_1c
+    :cond_1b
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -703,7 +710,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
@@ -720,14 +727,14 @@
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 211
-    :goto_18
+    :goto_10
     iget-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->dateUpdated:Landroid/widget/TextView;
 
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_1c
 
-    goto :goto_19
+    goto :goto_11
 
-    :cond_1d
+    :cond_1c
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -738,7 +745,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
@@ -754,7 +761,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :goto_19
+    :goto_11
     const/16 v1, 0x10
 
     .line 214
@@ -767,23 +774,23 @@
 
     move-result-object v4
 
-    .line 764
+    .line 766
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
 
-    :cond_1e
-    :goto_1a
+    :cond_1d
+    :goto_12
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_1f
+    if-eqz v6, :cond_1e
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -800,24 +807,25 @@
 
     xor-int/2addr v7, v3
 
-    if-eqz v7, :cond_1e
+    if-eqz v7, :cond_1d
 
+    .line 857
     invoke-interface {v5, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1a
+    goto :goto_12
 
-    .line 1849
-    :cond_1f
+    .line 1855
+    :cond_1e
     invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    :goto_1b
+    :goto_13
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_21
+    if-eqz v4, :cond_20
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -894,22 +902,19 @@
     .line 226
     iget-object v4, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->tagsContainer:Lcom/google/android/flexbox/FlexboxLayout;
 
-    if-nez v4, :cond_20
+    if-eqz v4, :cond_1f
 
-    goto :goto_1c
-
-    :cond_20
     invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 227
-    :goto_1c
+    :cond_1f
     invoke-virtual {v5}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v4
 
     const-string v6, "null cannot be cast to non-null type com.google.android.flexbox.FlexboxLayout.LayoutParams"
 
-    invoke-static {v4, v6}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v4, Lcom/google/android/flexbox/FlexboxLayout$LayoutParams;
 
@@ -919,18 +924,18 @@
     .line 229
     invoke-virtual {v5, v4}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    goto :goto_1b
+    goto :goto_13
 
     .line 233
-    :cond_21
+    :cond_20
     iget-object v0, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->button:Landroid/widget/TextView;
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_21
 
-    goto :goto_1e
+    goto :goto_15
 
     .line 234
-    :cond_22
+    :cond_21
     invoke-virtual {p1}, Lcom/smedialink/bots/domain/model/ShopItem;->getStatus()Lcom/smedialink/bots/data/model/BotStatus;
 
     move-result-object v1
@@ -959,7 +964,7 @@
 
     move-result-object v1
 
-    goto :goto_1d
+    goto :goto_14
 
     .line 239
     :pswitch_1
@@ -969,7 +974,7 @@
 
     move-result-object v1
 
-    goto :goto_1d
+    goto :goto_14
 
     .line 238
     :pswitch_2
@@ -979,7 +984,7 @@
 
     move-result-object v1
 
-    goto :goto_1d
+    goto :goto_14
 
     .line 237
     :pswitch_3
@@ -989,7 +994,7 @@
 
     move-result-object v1
 
-    goto :goto_1d
+    goto :goto_14
 
     .line 236
     :pswitch_4
@@ -999,7 +1004,7 @@
 
     move-result-object v1
 
-    goto :goto_1d
+    goto :goto_14
 
     .line 235
     :pswitch_5
@@ -1007,32 +1012,32 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_23
+    if-nez v1, :cond_22
 
     const-string v1, "Free"
 
     .line 233
-    :cond_23
-    :goto_1d
+    :cond_22
+    :goto_14
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 244
-    :goto_1e
+    :cond_23
+    :goto_15
     iget-object v0, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->button:Landroid/widget/TextView;
 
-    if-nez v0, :cond_24
+    if-eqz v0, :cond_24
 
-    goto :goto_1f
-
-    :cond_24
     new-instance v1, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0, p1}, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    :goto_1f
+    :cond_24
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -1045,7 +1050,7 @@
     .end packed-switch
 .end method
 
-.method private static final displayBotItem$lambda-4(Lcom/smedialink/ui/shop/BotInfoActivity;Landroid/view/View;)V
+.method private static final displayBotItem$lambda$4(Lcom/smedialink/ui/shop/BotInfoActivity;Landroid/view/View;)V
     .locals 3
 
     const-string p1, "this$0"
@@ -1055,12 +1060,9 @@
     .line 185
     iget-object p1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->botAnalog:Lcom/smedialink/bots/domain/model/ShopItem;
 
-    if-nez p1, :cond_0
-
-    goto :goto_0
+    if-eqz p1, :cond_0
 
     .line 186
-    :cond_0
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
@@ -1092,11 +1094,11 @@
 
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
-.method private static final displayBotItem$lambda-5(Lcom/smedialink/ui/shop/BotInfoActivity;Lme/zhanghai/android/materialratingbar/MaterialRatingBar;F)V
+.method private static final displayBotItem$lambda$5(Lcom/smedialink/ui/shop/BotInfoActivity;Lme/zhanghai/android/materialratingbar/MaterialRatingBar;F)V
     .locals 3
 
     const-string v0, "this$0"
@@ -1125,7 +1127,7 @@
     return-void
 .end method
 
-.method private static final displayBotItem$lambda-9(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
+.method private static final displayBotItem$lambda$9(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;Landroid/view/View;)V
     .locals 2
 
     const-string p2, "this$0"
@@ -1163,14 +1165,9 @@
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_0
-
-    move-object v1, v0
-
-    goto :goto_0
+    if-eqz p1, :cond_0
 
     .line 114
-    :cond_0
     sget v1, Lorg/telegram/messenger/R$id;->bot_avatar:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1179,17 +1176,17 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
+    goto :goto_0
+
+    :cond_0
+    move-object v1, v0
+
     :goto_0
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->avatar:Landroid/widget/ImageView;
 
-    if-nez p1, :cond_1
-
-    move-object v1, v0
-
-    goto :goto_1
+    if-eqz p1, :cond_1
 
     .line 115
-    :cond_1
     sget v1, Lorg/telegram/messenger/R$id;->bot_name:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1198,17 +1195,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_1
+
+    :cond_1
+    move-object v1, v0
+
     :goto_1
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->botName:Landroid/widget/TextView;
 
-    if-nez p1, :cond_2
-
-    move-object v1, v0
-
-    goto :goto_2
+    if-eqz p1, :cond_2
 
     .line 116
-    :cond_2
     sget v1, Lorg/telegram/messenger/R$id;->bot_description:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1217,17 +1214,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_2
+
+    :cond_2
+    move-object v1, v0
+
     :goto_2
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->botDescription:Landroid/widget/TextView;
 
-    if-nez p1, :cond_3
-
-    move-object v1, v0
-
-    goto :goto_3
+    if-eqz p1, :cond_3
 
     .line 117
-    :cond_3
     sget v1, Lorg/telegram/messenger/R$id;->tags_container:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1236,17 +1233,17 @@
 
     check-cast v1, Lcom/google/android/flexbox/FlexboxLayout;
 
+    goto :goto_3
+
+    :cond_3
+    move-object v1, v0
+
     :goto_3
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->tagsContainer:Lcom/google/android/flexbox/FlexboxLayout;
 
-    if-nez p1, :cond_4
-
-    move-object v1, v0
-
-    goto :goto_4
+    if-eqz p1, :cond_4
 
     .line 118
-    :cond_4
     sget v1, Lorg/telegram/messenger/R$id;->rating_number:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1255,17 +1252,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_4
+
+    :cond_4
+    move-object v1, v0
+
     :goto_4
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->ratingValue:Landroid/widget/TextView;
 
-    if-nez p1, :cond_5
-
-    move-object v1, v0
-
-    goto :goto_5
+    if-eqz p1, :cond_5
 
     .line 119
-    :cond_5
     sget v1, Lorg/telegram/messenger/R$id;->rating_label:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1274,17 +1271,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_5
+
+    :cond_5
+    move-object v1, v0
+
     :goto_5
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->ratingLabel:Landroid/widget/TextView;
 
-    if-nez p1, :cond_6
-
-    move-object v1, v0
-
-    goto :goto_6
+    if-eqz p1, :cond_6
 
     .line 120
-    :cond_6
     sget v1, Lorg/telegram/messenger/R$id;->installs_label:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1293,17 +1290,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_6
+
+    :cond_6
+    move-object v1, v0
+
     :goto_6
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->instalsLabel:Landroid/widget/TextView;
 
-    if-nez p1, :cond_7
-
-    move-object v1, v0
-
-    goto :goto_7
+    if-eqz p1, :cond_7
 
     .line 121
-    :cond_7
     sget v1, Lorg/telegram/messenger/R$id;->themes_label:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1312,17 +1309,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_7
+
+    :cond_7
+    move-object v1, v0
+
     :goto_7
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->themesLabel:Landroid/widget/TextView;
 
-    if-nez p1, :cond_8
-
-    move-object v1, v0
-
-    goto :goto_8
+    if-eqz p1, :cond_8
 
     .line 122
-    :cond_8
     sget v1, Lorg/telegram/messenger/R$id;->bot_developer:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1331,17 +1328,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_8
+
+    :cond_8
+    move-object v1, v0
+
     :goto_8
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->developerLabel:Landroid/widget/TextView;
 
-    if-nez p1, :cond_9
-
-    move-object v1, v0
-
-    goto :goto_9
+    if-eqz p1, :cond_9
 
     .line 123
-    :cond_9
     sget v1, Lorg/telegram/messenger/R$id;->bot_current_language:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1350,17 +1347,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_9
+
+    :cond_9
+    move-object v1, v0
+
     :goto_9
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->botCurrentLanguage:Landroid/widget/TextView;
 
-    if-nez p1, :cond_a
-
-    move-object v1, v0
-
-    goto :goto_a
+    if-eqz p1, :cond_a
 
     .line 124
-    :cond_a
     sget v1, Lorg/telegram/messenger/R$id;->bot_analog_language:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1369,17 +1366,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_a
+
+    :cond_a
+    move-object v1, v0
+
     :goto_a
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->botAnalogLanguage:Landroid/widget/TextView;
 
-    if-nez p1, :cond_b
-
-    move-object v1, v0
-
-    goto :goto_b
+    if-eqz p1, :cond_b
 
     .line 125
-    :cond_b
     sget v1, Lorg/telegram/messenger/R$id;->phrases_label:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1388,17 +1385,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_b
+
+    :cond_b
+    move-object v1, v0
+
     :goto_b
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->phrasesLabel:Landroid/widget/TextView;
 
-    if-nez p1, :cond_c
-
-    move-object v1, v0
-
-    goto :goto_c
+    if-eqz p1, :cond_c
 
     .line 126
-    :cond_c
     sget v1, Lorg/telegram/messenger/R$id;->installs_counter:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1407,17 +1404,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_c
+
+    :cond_c
+    move-object v1, v0
+
     :goto_c
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->installsValue:Landroid/widget/TextView;
 
-    if-nez p1, :cond_d
-
-    move-object v1, v0
-
-    goto :goto_d
+    if-eqz p1, :cond_d
 
     .line 127
-    :cond_d
     sget v1, Lorg/telegram/messenger/R$id;->themes_counter:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1426,17 +1423,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_d
+
+    :cond_d
+    move-object v1, v0
+
     :goto_d
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->themesValue:Landroid/widget/TextView;
 
-    if-nez p1, :cond_e
-
-    move-object v1, v0
-
-    goto :goto_e
+    if-eqz p1, :cond_e
 
     .line 128
-    :cond_e
     sget v1, Lorg/telegram/messenger/R$id;->phrases_counter:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1445,17 +1442,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_e
+
+    :cond_e
+    move-object v1, v0
+
     :goto_e
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->phrasesValue:Landroid/widget/TextView;
 
-    if-nez p1, :cond_f
-
-    move-object v1, v0
-
-    goto :goto_f
+    if-eqz p1, :cond_f
 
     .line 129
-    :cond_f
     sget v1, Lorg/telegram/messenger/R$id;->bot_date_added:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1464,17 +1461,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_f
+
+    :cond_f
+    move-object v1, v0
+
     :goto_f
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->dateAdded:Landroid/widget/TextView;
 
-    if-nez p1, :cond_10
-
-    move-object v1, v0
-
-    goto :goto_10
+    if-eqz p1, :cond_10
 
     .line 130
-    :cond_10
     sget v1, Lorg/telegram/messenger/R$id;->bot_date_updated:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1483,17 +1480,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_10
+
+    :cond_10
+    move-object v1, v0
+
     :goto_10
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->dateUpdated:Landroid/widget/TextView;
 
-    if-nez p1, :cond_11
-
-    move-object v1, v0
-
-    goto :goto_11
+    if-eqz p1, :cond_11
 
     .line 131
-    :cond_11
     sget v1, Lorg/telegram/messenger/R$id;->rating:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1502,17 +1499,17 @@
 
     check-cast v1, Lme/zhanghai/android/materialratingbar/MaterialRatingBar;
 
+    goto :goto_11
+
+    :cond_11
+    move-object v1, v0
+
     :goto_11
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->ratingBar:Lme/zhanghai/android/materialratingbar/MaterialRatingBar;
 
-    if-nez p1, :cond_12
-
-    move-object v1, v0
-
-    goto :goto_12
+    if-eqz p1, :cond_12
 
     .line 132
-    :cond_12
     sget v1, Lorg/telegram/messenger/R$id;->bot_info_button:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1521,17 +1518,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_12
+
+    :cond_12
+    move-object v1, v0
+
     :goto_12
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->button:Landroid/widget/TextView;
 
-    if-nez p1, :cond_13
-
-    move-object v1, v0
-
-    goto :goto_13
+    if-eqz p1, :cond_13
 
     .line 133
-    :cond_13
     sget v1, Lorg/telegram/messenger/R$id;->textRateBot:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1540,17 +1537,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
+    goto :goto_13
+
+    :cond_13
+    move-object v1, v0
+
     :goto_13
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->rateLabel:Landroid/widget/TextView;
 
-    if-nez p1, :cond_14
-
-    move-object v1, v0
-
-    goto :goto_14
+    if-eqz p1, :cond_14
 
     .line 134
-    :cond_14
     sget v1, Lorg/telegram/messenger/R$id;->layoutContainer:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1559,17 +1556,17 @@
 
     check-cast v1, Landroidx/constraintlayout/widget/ConstraintLayout;
 
+    goto :goto_14
+
+    :cond_14
+    move-object v1, v0
+
     :goto_14
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->layoutContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    if-nez p1, :cond_15
-
-    move-object v1, v0
-
-    goto :goto_15
+    if-eqz p1, :cond_15
 
     .line 135
-    :cond_15
     sget v1, Lorg/telegram/messenger/R$id;->progressBar:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1578,22 +1575,24 @@
 
     check-cast v1, Landroid/widget/ProgressBar;
 
+    goto :goto_15
+
+    :cond_15
+    move-object v1, v0
+
     :goto_15
     iput-object v1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->progressBar:Landroid/widget/ProgressBar;
 
-    if-nez p1, :cond_16
-
-    goto :goto_16
+    if-eqz p1, :cond_16
 
     .line 136
-    :cond_16
     sget v0, Lorg/telegram/messenger/R$id;->stats_container:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    :goto_16
+    :cond_16
     iput-object v0, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->statsContainer:Landroid/view/View;
 
     return-void
@@ -1645,13 +1644,23 @@
     move-result-object v0
 
     .line 254
-    new-instance v1, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda3;
+    new-instance v1, Lcom/smedialink/ui/shop/BotInfoActivity$observeBotAnalog$1;
 
-    invoke-direct {v1, p0, p1}, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda3;-><init>(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;)V
+    invoke-direct {v1, p0, p1}, Lcom/smedialink/ui/shop/BotInfoActivity$observeBotAnalog$1;-><init>(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;)V
 
-    sget-object p1, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda5;->INSTANCE:Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda5;
+    new-instance p1, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda2;
 
-    invoke-virtual {v0, v1, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    invoke-direct {p1, v1}, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda2;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    sget-object v1, Lcom/smedialink/ui/shop/BotInfoActivity$observeBotAnalog$2;->INSTANCE:Lcom/smedialink/ui/shop/BotInfoActivity$observeBotAnalog$2;
+
+    .line 271
+    new-instance v2, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda5;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda5;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 254
+    invoke-virtual {v0, p1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
@@ -1663,202 +1672,28 @@
     return-void
 .end method
 
-.method private static final observeBotAnalog$lambda-12(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;Ljava/util/List;)V
-    .locals 10
+.method private static final observeBotAnalog$lambda$10(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$currentBot"
+    .line 254
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "items"
-
-    .line 255
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    invoke-interface {p2, v0}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
-
-    move-result-object p2
-
-    :cond_0
-    invoke-interface {p2}, Ljava/util/ListIterator;->hasPrevious()Z
-
-    move-result v0
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x1
-
-    if-eqz v0, :cond_3
-
-    invoke-interface {p2}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Lcom/smedialink/bots/domain/model/ShopItem;
-
-    .line 256
-    invoke-virtual {p1}, Lcom/smedialink/bots/domain/model/ShopItem;->getLanguage()Lcom/smedialink/bots/domain/model/BotLanguage;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/smedialink/ui/shop/BotInfoActivity$WhenMappings;->$EnumSwitchMapping$0:[I
-
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v4
-
-    aget v4, v5, v4
-
-    if-eq v4, v2, :cond_2
-
-    if-ne v4, v1, :cond_1
-
-    .line 261
-    invoke-virtual {v3}, Lcom/smedialink/bots/domain/model/ShopItem;->getBotId()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p1}, Lcom/smedialink/bots/domain/model/ShopItem;->getBotId()Ljava/lang/String;
-
-    move-result-object v4
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x4
-
-    const/4 v9, 0x0
-
-    const-string v5, "_eng"
-
-    const-string v6, ""
-
-    invoke-static/range {v4 .. v9}, Lkotlin/text/StringsKt;->replace$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    goto :goto_0
-
-    :cond_1
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p0
-
-    .line 258
-    :cond_2
-    invoke-virtual {v3}, Lcom/smedialink/bots/domain/model/ShopItem;->getBotId()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p1}, Lcom/smedialink/bots/domain/model/ShopItem;->getBotId()Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string v5, "_eng"
-
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    :goto_0
-    if-eqz v3, :cond_0
-
-    goto :goto_1
-
-    :cond_3
-    const/4 v0, 0x0
-
-    .line 255
-    :goto_1
-    check-cast v0, Lcom/smedialink/bots/domain/model/ShopItem;
-
-    iput-object v0, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->botAnalog:Lcom/smedialink/bots/domain/model/ShopItem;
-
-    if-nez v0, :cond_4
-
-    goto :goto_3
-
-    .line 266
-    :cond_4
-    iget-object p0, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->botAnalogLanguage:Landroid/widget/TextView;
-
-    if-nez p0, :cond_5
-
-    goto :goto_3
-
-    :cond_5
-    invoke-virtual {v0}, Lcom/smedialink/bots/domain/model/ShopItem;->getLanguage()Lcom/smedialink/bots/domain/model/BotLanguage;
-
-    move-result-object p1
-
-    sget-object p2, Lcom/smedialink/ui/shop/BotInfoActivity$WhenMappings;->$EnumSwitchMapping$0:[I
-
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result p1
-
-    aget p1, p2, p1
-
-    if-eq p1, v2, :cond_7
-
-    if-ne p1, v1, :cond_6
-
-    .line 268
-    sget p1, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_supported_language_en:I
-
-    invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :cond_6
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p0
-
-    .line 267
-    :cond_7
-    sget p1, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_supported_language_ru:I
-
-    invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 266
-    :goto_2
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    :goto_3
     return-void
 .end method
 
-.method private static final observeBotAnalog$lambda-13(Ljava/lang/Throwable;)V
-    .locals 0
+.method private static final observeBotAnalog$lambda$11(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
 
-    .line 272
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 271
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -1972,13 +1807,23 @@
     move-result-object v0
 
     .line 151
-    new-instance v1, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda2;
+    new-instance v1, Lcom/smedialink/ui/shop/BotInfoActivity$subscribeToBotContent$1;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/ui/shop/BotInfoActivity;)V
+    invoke-direct {v1, p0}, Lcom/smedialink/ui/shop/BotInfoActivity$subscribeToBotContent$1;-><init>(Lcom/smedialink/ui/shop/BotInfoActivity;)V
 
-    sget-object v2, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda4;->INSTANCE:Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda4;
+    new-instance v2, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda4;
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda4;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    sget-object v1, Lcom/smedialink/ui/shop/BotInfoActivity$subscribeToBotContent$2;->INSTANCE:Lcom/smedialink/ui/shop/BotInfoActivity$subscribeToBotContent$2;
+
+    .line 153
+    new-instance v3, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda3;
+
+    invoke-direct {v3, v1}, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda3;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 151
+    invoke-virtual {v0, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
@@ -1990,28 +1835,28 @@
     return-void
 .end method
 
-.method private static final subscribeToBotContent$lambda-0(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;)V
+.method private static final subscribeToBotContent$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "item"
-
-    .line 152
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-direct {p0, p1}, Lcom/smedialink/ui/shop/BotInfoActivity;->displayBotItem(Lcom/smedialink/bots/domain/model/ShopItem;)V
+    .line 151
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final subscribeToBotContent$lambda-1(Ljava/lang/Throwable;)V
-    .locals 0
+.method private static final subscribeToBotContent$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
 
-    .line 154
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 153
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -2093,11 +1938,8 @@
     .line 105
     iget-object p1, p0, Lcom/smedialink/ui/shop/BotInfoActivity;->statsContainer:Landroid/view/View;
 
-    if-nez p1, :cond_1
+    if-eqz p1, :cond_1
 
-    goto :goto_0
-
-    :cond_1
     const-string v0, "windowBackgroundGray"
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -2107,7 +1949,7 @@
     invoke-virtual {p1, v0}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 106
-    :goto_0
+    :cond_1
     invoke-direct {p0, v4}, Lcom/smedialink/ui/shop/BotInfoActivity;->showProgress(Z)V
 
     .line 107
@@ -2120,12 +1962,12 @@
 
     invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_2
     move-object v2, p1
 
-    :goto_1
+    :goto_0
     iput-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     const-string p1, "fragmentView"

@@ -90,15 +90,15 @@ public final class TranslationArgs {
     public final String getLangCodeByType() {
         if (this.type == TranslationDialogType.INCOMING) {
             DialogTranslationSettings dialogTranslationSettings = this.translationSettings;
-            if (dialogTranslationSettings == null) {
-                return null;
+            if (dialogTranslationSettings != null) {
+                return dialogTranslationSettings.getInTextTranslateLangCode();
             }
-            return dialogTranslationSettings.getInTextTranslateLangCode();
-        }
-        DialogTranslationSettings dialogTranslationSettings2 = this.translationSettings;
-        if (dialogTranslationSettings2 == null) {
             return null;
         }
-        return dialogTranslationSettings2.getOutTextTranslateLangCode();
+        DialogTranslationSettings dialogTranslationSettings2 = this.translationSettings;
+        if (dialogTranslationSettings2 != null) {
+            return dialogTranslationSettings2.getOutTextTranslateLangCode();
+        }
+        return null;
     }
 }

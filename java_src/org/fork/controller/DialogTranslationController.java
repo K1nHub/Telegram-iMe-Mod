@@ -19,6 +19,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
@@ -116,7 +117,7 @@ public final class DialogTranslationController extends BaseController implements
             Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.DialogTranslationController$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DialogTranslationController.m1902setSettings$lambda3(Function0.this);
+                    DialogTranslationController.setSettings$lambda$3(Function0.this);
                 }
             });
         } else {
@@ -125,8 +126,7 @@ public final class DialogTranslationController extends BaseController implements
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setSettings$lambda-3  reason: not valid java name */
-    public static final void m1902setSettings$lambda3(Function0 tmp0) {
+    public static final void setSettings$lambda$3(Function0 tmp0) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke();
     }
@@ -183,14 +183,16 @@ public final class DialogTranslationController extends BaseController implements
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: getInstance$lambda-1  reason: not valid java name */
-        public static final DialogTranslationController m1904getInstance$lambda1(int i, Integer it) {
-            Intrinsics.checkNotNullParameter(it, "it");
-            return new DialogTranslationController(i);
+        public static final DialogTranslationController getInstance$lambda$1(Function1 tmp0, Object obj) {
+            Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+            return (DialogTranslationController) tmp0.invoke(obj);
         }
 
-        public final DialogTranslationController getInstance(final int i) {
-            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(DialogTranslationController.accountInstances, Integer.valueOf(i), new Function() { // from class: org.fork.controller.DialogTranslationController$Companion$$ExternalSyntheticLambda0
+        public final DialogTranslationController getInstance(int i) {
+            ConcurrentHashMap concurrentHashMap = DialogTranslationController.accountInstances;
+            Integer valueOf = Integer.valueOf(i);
+            final DialogTranslationController$Companion$getInstance$1 dialogTranslationController$Companion$getInstance$1 = new DialogTranslationController$Companion$getInstance$1(i);
+            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: org.fork.controller.DialogTranslationController$Companion$$ExternalSyntheticLambda0
                 @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
@@ -198,9 +200,9 @@ public final class DialogTranslationController extends BaseController implements
 
                 @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
-                    DialogTranslationController m1904getInstance$lambda1;
-                    m1904getInstance$lambda1 = DialogTranslationController.Companion.m1904getInstance$lambda1(i, (Integer) obj);
-                    return m1904getInstance$lambda1;
+                    DialogTranslationController instance$lambda$1;
+                    instance$lambda$1 = DialogTranslationController.Companion.getInstance$lambda$1(Function1.this, obj);
+                    return instance$lambda$1;
                 }
 
                 @Override // p034j$.util.function.Function
@@ -208,7 +210,7 @@ public final class DialogTranslationController extends BaseController implements
                     return Objects.requireNonNull(function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountInstances.compute…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
             return (DialogTranslationController) computeIfAbsent;
         }
     }

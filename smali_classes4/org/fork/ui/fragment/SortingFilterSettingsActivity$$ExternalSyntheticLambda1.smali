@@ -45,7 +45,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/SortingFilterSettingsActivity$$ExternalSyntheticLambda1;->f$0:Lorg/fork/ui/fragment/SortingFilterSettingsActivity;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity;->$r8$lambda$qGzTJg5uA6xLLGqf5M32Qw9dZwQ(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Landroid/view/View;IFF)V
+    invoke-static {v0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity;->$r8$lambda$ZjQdGf9DaFqgHqhf43vWta4NuWM(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Landroid/view/View;IFF)V
 
     return-void
 .end method

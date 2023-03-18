@@ -43,7 +43,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;J)V
     .locals 0
 
-    .line 10189
+    .line 10154
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput-wide p2, p0, Lorg/telegram/ui/DialogsActivity$57;->val$finalDialogId:J
@@ -56,7 +56,7 @@
 .method private synthetic lambda$onUnpin$0(JLjava/util/ArrayList;Ljava/util/ArrayList;II)V
     .locals 3
 
-    .line 10214
+    .line 10179
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -119,7 +119,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 10215
+    .line 10180
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$40800(Lorg/telegram/ui/DialogsActivity;)I
@@ -128,7 +128,7 @@
 
     if-ne p6, p1, :cond_0
 
-    .line 10216
+    .line 10181
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1, p4}, Lorg/telegram/ui/DialogsActivity;->access$40602(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Components/Bulletin;)Lorg/telegram/ui/Components/Bulletin;
@@ -142,7 +142,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 10220
+    .line 10185
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBookmarksController()Lorg/fork/controller/BookmarksController;
@@ -153,7 +153,7 @@
 
     goto :goto_0
 
-    .line 10222
+    .line 10187
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -163,7 +163,7 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/fork/controller/BookmarksController;->unbookmarkAllMessages(J)V
 
-    .line 10224
+    .line 10189
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -173,7 +173,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/messenger/MessagesController;->loadManagementBookmarks()V
 
-    .line 10225
+    .line 10190
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$40800(Lorg/telegram/ui/DialogsActivity;)I
@@ -182,7 +182,7 @@
 
     if-ne p5, p1, :cond_1
 
-    .line 10226
+    .line 10191
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 p2, 0x0
@@ -229,19 +229,19 @@
 
     move-object/from16 v8, p0
 
-    .line 10204
+    .line 10169
     invoke-virtual/range {p5 .. p5}, Lorg/telegram/ui/ChatActivity;->getTotalBookmarkMessagesCount()I
 
     move-result v6
 
-    .line 10205
+    .line 10170
     new-instance v9, Ljava/util/ArrayList;
 
     move-object/from16 v0, p6
 
     invoke-direct {v9, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 10206
+    .line 10171
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-virtual/range {p7 .. p7}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -250,7 +250,7 @@
 
     invoke-direct {v5, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 10207
+    .line 10172
     iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -323,7 +323,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 10208
+    .line 10173
     iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$40600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/Bulletin;
@@ -332,7 +332,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 10209
+    .line 10174
     iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$40600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/Bulletin;
@@ -341,20 +341,20 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin;->hide()V
 
-    .line 10211
+    .line 10176
     :cond_0
     iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0, v3}, Lorg/telegram/ui/DialogsActivity;->access$40702(Lorg/telegram/ui/DialogsActivity;Z)Z
 
-    .line 10212
+    .line 10177
     iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$40804(Lorg/telegram/ui/DialogsActivity;)I
 
     move-result v11
 
-    .line 10213
+    .line 10178
     iget-object v12, v8, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     if-eqz p3, :cond_1
@@ -403,12 +403,12 @@
 
     iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    .line 10228
+    .line 10193
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v18
 
-    .line 10213
+    .line 10178
     invoke-static/range {v13 .. v18}, Lorg/telegram/ui/Components/BulletinFactory;->createUnpinAllMessagesBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;IZLjava/lang/Runnable;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object v0
@@ -417,7 +417,7 @@
 
     if-eqz p3, :cond_2
 
-    .line 10229
+    .line 10194
     iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$40600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/Bulletin;
@@ -426,12 +426,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 10230
+    .line 10195
     iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0, v10}, Lorg/telegram/ui/DialogsActivity;->access$40702(Lorg/telegram/ui/DialogsActivity;Z)Z
 
-    .line 10231
+    .line 10196
     iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$40600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/Bulletin;
@@ -447,7 +447,7 @@
 .method public openReplyMessage(I)V
     .locals 3
 
-    .line 10192
+    .line 10157
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iget-wide v1, p0, Lorg/telegram/ui/DialogsActivity$57;->val$finalDialogId:J
@@ -464,17 +464,17 @@
 .method public openSearch(Ljava/lang/String;)V
     .locals 4
 
-    .line 10197
+    .line 10162
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     const-string v1, "searchFromString"
 
-    .line 10198
+    .line 10163
     invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10199
+    .line 10164
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$57;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iget-wide v1, p0, Lorg/telegram/ui/DialogsActivity$57;->val$finalDialogId:J

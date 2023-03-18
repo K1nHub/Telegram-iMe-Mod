@@ -3,7 +3,7 @@ package org.fork.enums;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: DrawerHolidayIconType.kt */
 /* loaded from: classes4.dex */
@@ -24,11 +24,26 @@ public enum DrawerHolidayIconType {
 
         static {
             int[] iArr = new int[DrawerHolidayIconType.values().length];
-            iArr[DrawerHolidayIconType.DEFAULT.ordinal()] = 1;
-            iArr[DrawerHolidayIconType.NEW_YEAR.ordinal()] = 2;
-            iArr[DrawerHolidayIconType.VALENTINE_DAY.ordinal()] = 3;
-            iArr[DrawerHolidayIconType.HALLOWEEN.ordinal()] = 4;
-            iArr[DrawerHolidayIconType.MAIN.ordinal()] = 5;
+            try {
+                iArr[DrawerHolidayIconType.DEFAULT.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[DrawerHolidayIconType.NEW_YEAR.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[DrawerHolidayIconType.VALENTINE_DAY.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[DrawerHolidayIconType.HALLOWEEN.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[DrawerHolidayIconType.MAIN.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -48,23 +63,23 @@ public enum DrawerHolidayIconType {
     public final String getTitle() {
         int i = WhenMappings.$EnumSwitchMapping$0[ordinal()];
         if (i == 1) {
-            String string = LocaleController.getString("Default", C3158R.string.Default);
+            String string = LocaleController.getString("Default", C3286R.string.Default);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"Default\", R.string.Default)");
             return string;
         } else if (i == 2) {
-            String internalString = LocaleController.getInternalString(C3158R.string.setting_tools_drawer_holiday_icon_menu_ny);
+            String internalString = LocaleController.getInternalString(C3286R.string.setting_tools_drawer_holiday_icon_menu_ny);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…wer_holiday_icon_menu_ny)");
             return internalString;
         } else if (i == 3) {
-            String internalString2 = LocaleController.getInternalString(C3158R.string.setting_tools_drawer_holiday_icon_menu_14);
+            String internalString2 = LocaleController.getInternalString(C3286R.string.setting_tools_drawer_holiday_icon_menu_14);
             Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…wer_holiday_icon_menu_14)");
             return internalString2;
         } else if (i == 4) {
-            String internalString3 = LocaleController.getInternalString(C3158R.string.setting_tools_drawer_holiday_icon_menu_hw);
+            String internalString3 = LocaleController.getInternalString(C3286R.string.setting_tools_drawer_holiday_icon_menu_hw);
             Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.stri…wer_holiday_icon_menu_hw)");
             return internalString3;
         } else if (i == 5) {
-            String string2 = LocaleController.getString("PhoneMain", C3158R.string.PhoneMain);
+            String string2 = LocaleController.getString("PhoneMain", C3286R.string.PhoneMain);
             Intrinsics.checkNotNullExpressionValue(string2, "getString(\"PhoneMain\",R.string.PhoneMain)");
             return string2;
         } else {

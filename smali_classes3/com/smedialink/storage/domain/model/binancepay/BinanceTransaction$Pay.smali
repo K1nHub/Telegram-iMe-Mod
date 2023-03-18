@@ -662,7 +662,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 5
+    .locals 7
 
     const/4 v0, 0x1
 
@@ -754,23 +754,15 @@
 
     move-result-wide v3
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v1
-
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction$Pay;->getAmount()D
 
-    move-result-wide v3
+    move-result-wide v5
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
     move-result v1
 
-    if-nez v1, :cond_6
+    if-eqz v1, :cond_6
 
     return v2
 

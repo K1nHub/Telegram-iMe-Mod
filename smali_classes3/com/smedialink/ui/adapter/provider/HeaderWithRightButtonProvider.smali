@@ -14,6 +14,8 @@
 
 
 # instance fields
+.field private isInfoButtonVisible:Z
+
 .field private final itemViewType:I
 
 .field private final layoutId:I
@@ -23,15 +25,15 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 15
+    .line 11
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
-    .line 18
+    .line 17
     sget v0, Lcom/smedialink/common/IdFabric$ViewTypes;->HEADER_WITH_RIGHT_BUTTON:I
 
     iput v0, p0, Lcom/smedialink/ui/adapter/provider/HeaderWithRightButtonProvider;->itemViewType:I
 
-    .line 19
+    .line 18
     sget v0, Lorg/telegram/messenger/R$layout;->fork_recycle_item_header_with_right_button:I
 
     iput v0, p0, Lcom/smedialink/ui/adapter/provider/HeaderWithRightButtonProvider;->layoutId:I
@@ -52,7 +54,28 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    .line 24
+    sget v0, Lorg/telegram/messenger/R$id;->image_info:I
+
+    const-string v1, "chats_actionBackground"
+
+    invoke-static {p1, v0, v1}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
     .line 25
+    invoke-static {p1, v0}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->setCircleRippleBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
+    .line 26
+    iget-boolean v1, p0, Lcom/smedialink/ui/adapter/provider/HeaderWithRightButtonProvider;->isInfoButtonVisible:Z
+
+    invoke-static {p1, v0, v1}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->setVisibleElseGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
+    .line 27
     sget v0, Lorg/telegram/messenger/R$id;->text_wallet_header:I
 
     const-string v1, "windowBackgroundWhiteGrayText2"
@@ -69,12 +92,12 @@
 
     aput v0, v2, v3
 
-    .line 26
+    .line 28
     invoke-static {p1, v2}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 27
+    .line 29
     invoke-virtual {p2}, Lcom/smedialink/model/wallet/home/HeaderItemWithRightButton;->getTitle()Ljava/lang/String;
 
     move-result-object v2
@@ -83,14 +106,14 @@
 
     move-result-object p1
 
-    .line 28
+    .line 30
     sget v0, Lorg/telegram/messenger/R$id;->image_header_right_button:I
 
     invoke-static {p1, v0, v1}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 29
+    .line 31
     invoke-virtual {p2}, Lcom/smedialink/model/wallet/home/HeaderItemWithRightButton;->getIconRes()I
 
     move-result p2
@@ -99,7 +122,7 @@
 
     move-result-object p1
 
-    .line 30
+    .line 32
     invoke-static {p1, v0}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->setCircleRippleBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     return-void
@@ -131,7 +154,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 34
+    .line 36
     sget p3, Lorg/telegram/messenger/R$id;->text_wallet_header:I
 
     invoke-virtual {p2}, Lcom/smedialink/model/wallet/home/HeaderItemWithRightButton;->getTitle()Ljava/lang/String;
@@ -146,7 +169,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 15
+    .line 11
     check-cast p2, Lcom/smedialink/model/wallet/home/HeaderItemWithRightButton;
 
     invoke-virtual {p0, p1, p2}, Lcom/smedialink/ui/adapter/provider/HeaderWithRightButtonProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/smedialink/model/wallet/home/HeaderItemWithRightButton;)V
@@ -157,7 +180,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;Ljava/util/List;)V
     .locals 0
 
-    .line 15
+    .line 11
     check-cast p2, Lcom/smedialink/model/wallet/home/HeaderItemWithRightButton;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/smedialink/ui/adapter/provider/HeaderWithRightButtonProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/smedialink/model/wallet/home/HeaderItemWithRightButton;Ljava/util/List;)V
@@ -168,7 +191,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 18
+    .line 17
     iget v0, p0, Lcom/smedialink/ui/adapter/provider/HeaderWithRightButtonProvider;->itemViewType:I
 
     return v0
@@ -177,8 +200,17 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 19
+    .line 18
     iget v0, p0, Lcom/smedialink/ui/adapter/provider/HeaderWithRightButtonProvider;->layoutId:I
 
     return v0
+.end method
+
+.method public final setInfoButtonVisible(Z)V
+    .locals 0
+
+    .line 14
+    iput-boolean p1, p0, Lcom/smedialink/ui/adapter/provider/HeaderWithRightButtonProvider;->isInfoButtonVisible:Z
+
+    return-void
 .end method

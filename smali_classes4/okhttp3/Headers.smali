@@ -290,7 +290,7 @@
 
     if-eqz v3, :cond_0
 
-    const-string v4, "\u2588\u2588"
+    const-string/jumbo v4, "\u2588\u2588"
 
     :cond_0
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;

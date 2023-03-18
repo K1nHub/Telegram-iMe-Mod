@@ -73,17 +73,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 29531
+    .line 29673
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 29540
+    .line 29682
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->stickers:Ljava/util/ArrayList;
 
-    .line 29553
+    .line 29695
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -102,7 +102,7 @@
 
     goto :goto_0
 
-    .line 29594
+    .line 29736
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaUploadedDocument;
 
@@ -110,7 +110,7 @@
 
     goto :goto_0
 
-    .line 29564
+    .line 29706
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaDocument;
 
@@ -118,7 +118,7 @@
 
     goto :goto_0
 
-    .line 29585
+    .line 29727
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaUploadedPhoto;
 
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 29582
+    .line 29724
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaPoll;
 
@@ -134,7 +134,7 @@
 
     goto :goto_0
 
-    .line 29576
+    .line 29718
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaDocumentExternal;
 
@@ -142,7 +142,7 @@
 
     goto :goto_0
 
-    .line 29573
+    .line 29715
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaGeoPoint;
 
@@ -150,7 +150,7 @@
 
     goto :goto_0
 
-    .line 29561
+    .line 29703
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaContact;
 
@@ -158,7 +158,7 @@
 
     goto :goto_0
 
-    .line 29570
+    .line 29712
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaDice;
 
@@ -166,7 +166,7 @@
 
     goto :goto_0
 
-    .line 29597
+    .line 29739
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaPhotoExternal;
 
@@ -174,7 +174,7 @@
 
     goto :goto_0
 
-    .line 29567
+    .line 29709
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaGame;
 
@@ -182,7 +182,7 @@
 
     goto :goto_0
 
-    .line 29588
+    .line 29730
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaVenue;
 
@@ -190,7 +190,7 @@
 
     goto :goto_0
 
-    .line 29600
+    .line 29742
     :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaPhoto;
 
@@ -198,7 +198,7 @@
 
     goto :goto_0
 
-    .line 29591
+    .line 29733
     :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaGeoLive;
 
@@ -206,7 +206,7 @@
 
     goto :goto_0
 
-    .line 29579
+    .line 29721
     :sswitch_d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaEmpty;
 
@@ -219,7 +219,7 @@
 
     goto :goto_1
 
-    .line 29604
+    .line 29746
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -249,7 +249,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 29607
+    .line 29749
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

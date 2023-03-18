@@ -390,7 +390,7 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
         }
         List<WalletCryptoTokensSettingsTokenState> states = defaultTokensSettings.getStates();
         if (states.size() > 1) {
-            CollectionsKt__MutableCollectionsJVMKt.sortWith(states, new Comparator() { // from class: com.smedialink.storage.data.locale.prefs.impl.CryptoPreference$getTokensSettings$lambda-1$$inlined$sortBy$1
+            CollectionsKt__MutableCollectionsJVMKt.sortWith(states, new Comparator() { // from class: com.smedialink.storage.data.locale.prefs.impl.CryptoPreference$getTokensSettings$lambda$1$$inlined$sortBy$1
                 @Override // java.util.Comparator
                 public final int compare(T t, T t2) {
                     int compareValues;

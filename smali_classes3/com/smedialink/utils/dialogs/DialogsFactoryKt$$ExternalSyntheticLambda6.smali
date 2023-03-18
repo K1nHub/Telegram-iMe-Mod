@@ -29,7 +29,7 @@
 
     check-cast p1, Ljava/lang/Integer;
 
-    invoke-static {v0, p1}, Lcom/smedialink/utils/dialogs/DialogsFactoryKt;->$r8$lambda$GQHa46DwH1h241eKxZ21dSAEUsA(Lorg/fork/utils/Callbacks$Callback;Ljava/lang/Integer;)V
+    invoke-static {v0, p1}, Lcom/smedialink/utils/dialogs/DialogsFactoryKt;->$r8$lambda$_BBunNXsdrTAu_zoIku-daw0X8A(Lorg/fork/utils/Callbacks$Callback;Ljava/lang/Integer;)V
 
     return-void
 .end method

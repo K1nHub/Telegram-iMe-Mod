@@ -47,7 +47,7 @@ public class Datastore {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.remote.Datastore$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10271 {
+    public static /* synthetic */ class C10201 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$FirebaseFirestoreException$Code */
         static final /* synthetic */ int[] f186xf2f5b1d8;
@@ -127,7 +127,7 @@ public class Datastore {
     }
 
     public static boolean isPermanentError(FirebaseFirestoreException.Code code) {
-        switch (C10271.f186xf2f5b1d8[code.ordinal()]) {
+        switch (C10201.f186xf2f5b1d8[code.ordinal()]) {
             case 1:
                 throw new IllegalArgumentException("Treated status OK as error");
             case 2:

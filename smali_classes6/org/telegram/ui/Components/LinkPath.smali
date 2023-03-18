@@ -37,17 +37,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 45
+    .line 46
     invoke-direct {p0}, Landroid/graphics/Path;-><init>()V
 
     const/high16 v0, -0x40800000    # -1.0f
 
-    .line 22
+    .line 23
     iput v0, p0, Lorg/telegram/ui/Components/LinkPath;->lastTop:F
 
     const/4 v0, 0x1
 
-    .line 25
+    .line 26
     iput-boolean v0, p0, Lorg/telegram/ui/Components/LinkPath;->allowReset:Z
 
     return-void
@@ -56,20 +56,20 @@
 .method public constructor <init>(Z)V
     .locals 1
 
-    .line 49
+    .line 50
     invoke-direct {p0}, Landroid/graphics/Path;-><init>()V
 
     const/high16 v0, -0x40800000    # -1.0f
 
-    .line 22
+    .line 23
     iput v0, p0, Lorg/telegram/ui/Components/LinkPath;->lastTop:F
 
     const/4 v0, 0x1
 
-    .line 25
+    .line 26
     iput-boolean v0, p0, Lorg/telegram/ui/Components/LinkPath;->allowReset:Z
 
-    .line 50
+    .line 51
     iput-boolean p1, p0, Lorg/telegram/ui/Components/LinkPath;->useRoundRect:Z
 
     return-void
@@ -80,7 +80,7 @@
 
     const/4 v0, 0x5
 
-    .line 32
+    .line 33
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -91,7 +91,7 @@
 .method public static getRoundedEffect()Landroid/graphics/CornerPathEffect;
     .locals 2
 
-    .line 38
+    .line 39
     sget-object v0, Lorg/telegram/ui/Components/LinkPath;->roundedEffect:Landroid/graphics/CornerPathEffect;
 
     if-eqz v0, :cond_0
@@ -104,7 +104,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 39
+    .line 40
     :cond_0
     new-instance v0, Landroid/graphics/CornerPathEffect;
 
@@ -120,7 +120,7 @@
 
     sput-object v0, Lorg/telegram/ui/Components/LinkPath;->roundedEffect:Landroid/graphics/CornerPathEffect;
 
-    .line 41
+    .line 42
     :cond_1
     sget-object v0, Lorg/telegram/ui/Components/LinkPath;->roundedEffect:Landroid/graphics/CornerPathEffect;
 
@@ -132,17 +132,17 @@
 .method public addRect(FFFFLandroid/graphics/Path$Direction;)V
     .locals 7
 
-    .line 97
+    .line 98
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkPath;->currentLayout:Landroid/text/Layout;
 
     if-nez v0, :cond_0
 
-    .line 98
+    .line 99
     invoke-super/range {p0 .. p5}, Landroid/graphics/Path;->addRect(FFFFLandroid/graphics/Path$Direction;)V
 
     return-void
 
-    .line 102
+    .line 103
     :cond_0
     :try_start_0
     iget v1, p0, Lorg/telegram/ui/Components/LinkPath;->yOffset:F
@@ -151,7 +151,7 @@
 
     add-float/2addr v1, p4
 
-    .line 104
+    .line 105
     iget v3, p0, Lorg/telegram/ui/Components/LinkPath;->lastTop:F
 
     const/high16 v4, -0x40800000    # -1.0f
@@ -160,7 +160,7 @@
 
     if-nez v4, :cond_1
 
-    .line 105
+    .line 106
     iput v2, p0, Lorg/telegram/ui/Components/LinkPath;->lastTop:F
 
     goto :goto_0
@@ -170,17 +170,17 @@
 
     if-eqz v3, :cond_2
 
-    .line 107
+    .line 108
     iput v2, p0, Lorg/telegram/ui/Components/LinkPath;->lastTop:F
 
-    .line 108
+    .line 109
     iget v3, p0, Lorg/telegram/ui/Components/LinkPath;->currentLine:I
 
     add-int/lit8 v3, v3, 0x1
 
     iput v3, p0, Lorg/telegram/ui/Components/LinkPath;->currentLine:I
 
-    .line 110
+    .line 111
     :cond_2
     :goto_0
     iget v3, p0, Lorg/telegram/ui/Components/LinkPath;->currentLine:I
@@ -189,7 +189,7 @@
 
     move-result v0
 
-    .line 111
+    .line 112
     iget-object v3, p0, Lorg/telegram/ui/Components/LinkPath;->currentLayout:Landroid/text/Layout;
 
     iget v4, p0, Lorg/telegram/ui/Components/LinkPath;->currentLine:I
@@ -230,7 +230,7 @@
     :cond_5
     move v3, p1
 
-    .line 121
+    .line 122
     :goto_2
     iget v4, p0, Lorg/telegram/ui/Components/LinkPath;->xOffset:F
 
@@ -238,7 +238,7 @@
 
     add-float/2addr v4, v0
 
-    .line 125
+    .line 126
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v5, 0x1c
@@ -249,7 +249,7 @@
 
     sub-float v0, v1, v2
 
-    .line 127
+    .line 128
     iget v5, p0, Lorg/telegram/ui/Components/LinkPath;->lineHeight:I
 
     int-to-float v5, v5
@@ -258,7 +258,7 @@
 
     if-lez v0, :cond_9
 
-    .line 128
+    .line 129
     iget v0, p0, Lorg/telegram/ui/Components/LinkPath;->yOffset:F
 
     iget-object v5, p0, Lorg/telegram/ui/Components/LinkPath;->currentLayout:Landroid/text/Layout;
@@ -296,7 +296,7 @@
 
     goto :goto_3
 
-    .line 131
+    .line 132
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkPath;->currentLayout:Landroid/text/Layout;
 
@@ -319,7 +319,7 @@
     :cond_8
     sub-float/2addr v1, v6
 
-    .line 133
+    .line 134
     :cond_9
     :goto_3
     iget v0, p0, Lorg/telegram/ui/Components/LinkPath;->baselineShift:I
@@ -349,22 +349,30 @@
 
     div-float/2addr v0, v1
 
-    .line 138
+    .line 139
     iput v0, p0, Lorg/telegram/ui/Components/LinkPath;->centerX:F
 
     add-float v0, v5, v2
 
     div-float/2addr v0, v1
 
-    .line 139
+    .line 140
     iput v0, p0, Lorg/telegram/ui/Components/LinkPath;->centerY:F
 
-    .line 140
+    .line 141
     iget-boolean v0, p0, Lorg/telegram/ui/Components/LinkPath;->useRoundRect:Z
 
     if-eqz v0, :cond_c
 
-    .line 145
+    const v0, 0x81e0
+
+    invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_c
+
+    .line 146
     invoke-static {}, Lorg/telegram/ui/Components/LinkPath;->getRadius()I
 
     move-result v0
@@ -410,7 +418,7 @@
 
     move-object v5, p5
 
-    .line 147
+    .line 148
     invoke-super/range {v0 .. v5}, Landroid/graphics/Path;->addRect(FFFFLandroid/graphics/Path$Direction;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -426,14 +434,14 @@
 .method public reset()V
     .locals 1
 
-    .line 156
+    .line 157
     iget-boolean v0, p0, Lorg/telegram/ui/Components/LinkPath;->allowReset:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 159
+    .line 160
     :cond_0
     invoke-super {p0}, Landroid/graphics/Path;->reset()V
 
@@ -443,7 +451,7 @@
 .method public setAllowReset(Z)V
     .locals 0
 
-    .line 80
+    .line 81
     iput-boolean p1, p0, Lorg/telegram/ui/Components/LinkPath;->allowReset:Z
 
     return-void
@@ -452,7 +460,7 @@
 .method public setBaselineShift(I)V
     .locals 0
 
-    .line 92
+    .line 93
     iput p1, p0, Lorg/telegram/ui/Components/LinkPath;->baselineShift:I
 
     return-void
@@ -463,7 +471,7 @@
 
     const/4 v0, 0x0
 
-    .line 54
+    .line 55
     invoke-virtual {p0, p1, p2, v0, p3}, Lorg/telegram/ui/Components/LinkPath;->setCurrentLayout(Landroid/text/Layout;IFF)V
 
     return-void
@@ -478,53 +486,53 @@
 
     const/4 p1, 0x0
 
-    .line 59
+    .line 60
     iput-object p1, p0, Lorg/telegram/ui/Components/LinkPath;->currentLayout:Landroid/text/Layout;
 
     const/4 p1, 0x0
 
-    .line 60
+    .line 61
     iput p1, p0, Lorg/telegram/ui/Components/LinkPath;->currentLine:I
 
-    .line 61
+    .line 62
     iput v0, p0, Lorg/telegram/ui/Components/LinkPath;->lastTop:F
 
-    .line 62
+    .line 63
     iput p3, p0, Lorg/telegram/ui/Components/LinkPath;->xOffset:F
 
-    .line 63
+    .line 64
     iput p4, p0, Lorg/telegram/ui/Components/LinkPath;->yOffset:F
 
     return-void
 
-    .line 66
+    .line 67
     :cond_0
     iput-object p1, p0, Lorg/telegram/ui/Components/LinkPath;->currentLayout:Landroid/text/Layout;
 
-    .line 67
+    .line 68
     invoke-virtual {p1, p2}, Landroid/text/Layout;->getLineForOffset(I)I
 
     move-result p2
 
     iput p2, p0, Lorg/telegram/ui/Components/LinkPath;->currentLine:I
 
-    .line 68
+    .line 69
     iput v0, p0, Lorg/telegram/ui/Components/LinkPath;->lastTop:F
 
-    .line 69
+    .line 70
     iput p3, p0, Lorg/telegram/ui/Components/LinkPath;->xOffset:F
 
-    .line 70
+    .line 71
     iput p4, p0, Lorg/telegram/ui/Components/LinkPath;->yOffset:F
 
-    .line 71
+    .line 72
     sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 p3, 0x1c
 
     if-lt p2, p3, :cond_1
 
-    .line 72
+    .line 73
     invoke-virtual {p1}, Landroid/text/Layout;->getLineCount()I
 
     move-result p2
@@ -533,7 +541,7 @@
 
     add-int/lit8 p2, p2, -0x1
 
-    .line 74
+    .line 75
     invoke-virtual {p1, p2}, Landroid/text/Layout;->getLineBottom(I)I
 
     move-result p3

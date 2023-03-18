@@ -3,7 +3,7 @@ package org.fork.enums;
 import android.graphics.PorterDuff;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum MEMBERS uses external variables
 	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:444)
@@ -35,8 +35,8 @@ public final class MultiPanelButton {
     private final boolean isEnabledByDefault;
     private final PorterDuff.Mode porterDuffMode;
     private final int titleId;
-    public static final MultiPanelButton MUTE = new MultiPanelButton("MUTE", 0, C3158R.C3160drawable.msg_mute, PorterDuff.Mode.MULTIPLY, C3158R.string.multi_panel_settings_button_mute_item_title, false, 8, null);
-    public static final MultiPanelButton SEARCH = new MultiPanelButton("SEARCH", 1, C3158R.C3160drawable.msg_search, PorterDuff.Mode.MULTIPLY, C3158R.string.multi_panel_settings_button_search_item_title, false, 8, null);
+    public static final MultiPanelButton MUTE = new MultiPanelButton("MUTE", 0, C3286R.C3288drawable.msg_mute, PorterDuff.Mode.MULTIPLY, C3286R.string.multi_panel_settings_button_mute_item_title, false, 8, null);
+    public static final MultiPanelButton SEARCH = new MultiPanelButton("SEARCH", 1, C3286R.C3288drawable.msg_search, PorterDuff.Mode.MULTIPLY, C3286R.string.multi_panel_settings_button_search_item_title, false, 8, null);
 
     private static final /* synthetic */ MultiPanelButton[] $values() {
         return new MultiPanelButton[]{MUTE, SEARCH, MEMBERS, SUBSCRIBERS, MEDIA, RECENT_ACTIONS, CACHE, STOP_BOT, ADD_TO_TOPIC, BOOKMARKS, PINS};
@@ -78,16 +78,16 @@ public final class MultiPanelButton {
     }
 
     static {
-        int i = C3158R.C3160drawable.fork_ic_contacts_24;
-        MEMBERS = new MultiPanelButton("MEMBERS", 2, i, PorterDuff.Mode.SRC_IN, C3158R.string.multi_panel_settings_button_members_item_title, false, 8, null);
-        SUBSCRIBERS = new MultiPanelButton("SUBSCRIBERS", 3, i, PorterDuff.Mode.SRC_IN, C3158R.string.multi_panel_settings_button_subscribers_item_title, false, 8, null);
-        MEDIA = new MultiPanelButton("MEDIA", 4, C3158R.C3160drawable.msg_photos, PorterDuff.Mode.MULTIPLY, C3158R.string.multi_panel_settings_button_shared_content_item_title, false, 8, null);
-        RECENT_ACTIONS = new MultiPanelButton("RECENT_ACTIONS", 5, C3158R.C3160drawable.msg_log, PorterDuff.Mode.MULTIPLY, C3158R.string.multi_panel_settings_button_recent_actions_item_title, false, 8, null);
-        CACHE = new MultiPanelButton("CACHE", 6, C3158R.C3160drawable.msg_data, PorterDuff.Mode.MULTIPLY, C3158R.string.multi_panel_settings_button_cache_item_title, false, 8, null);
-        STOP_BOT = new MultiPanelButton("STOP_BOT", 7, C3158R.C3160drawable.msg_block, PorterDuff.Mode.MULTIPLY, C3158R.string.multi_panel_settings_button_stop_bot_item_title, false, 8, null);
-        ADD_TO_TOPIC = new MultiPanelButton("ADD_TO_TOPIC", 8, C3158R.C3160drawable.fork_topic_select_24, PorterDuff.Mode.SRC_IN, C3158R.string.topics_select, false);
-        BOOKMARKS = new MultiPanelButton("BOOKMARKS", 9, C3158R.C3160drawable.msg_saved, PorterDuff.Mode.MULTIPLY, C3158R.string.chat_bookmarks, true);
-        PINS = new MultiPanelButton("PINS", 10, C3158R.C3160drawable.msg_pin, PorterDuff.Mode.MULTIPLY, C3158R.string.multi_panel_settings_button_pins_item_title, false);
+        int i = C3286R.C3288drawable.fork_ic_contacts_24;
+        MEMBERS = new MultiPanelButton("MEMBERS", 2, i, PorterDuff.Mode.SRC_IN, C3286R.string.multi_panel_settings_button_members_item_title, false, 8, null);
+        SUBSCRIBERS = new MultiPanelButton("SUBSCRIBERS", 3, i, PorterDuff.Mode.SRC_IN, C3286R.string.multi_panel_settings_button_subscribers_item_title, false, 8, null);
+        MEDIA = new MultiPanelButton("MEDIA", 4, C3286R.C3288drawable.msg_photos, PorterDuff.Mode.MULTIPLY, C3286R.string.multi_panel_settings_button_shared_content_item_title, false, 8, null);
+        RECENT_ACTIONS = new MultiPanelButton("RECENT_ACTIONS", 5, C3286R.C3288drawable.msg_log, PorterDuff.Mode.MULTIPLY, C3286R.string.multi_panel_settings_button_recent_actions_item_title, false, 8, null);
+        CACHE = new MultiPanelButton("CACHE", 6, C3286R.C3288drawable.msg2_data, PorterDuff.Mode.MULTIPLY, C3286R.string.multi_panel_settings_button_cache_item_title, false, 8, null);
+        STOP_BOT = new MultiPanelButton("STOP_BOT", 7, C3286R.C3288drawable.msg_block, PorterDuff.Mode.MULTIPLY, C3286R.string.multi_panel_settings_button_stop_bot_item_title, false, 8, null);
+        ADD_TO_TOPIC = new MultiPanelButton("ADD_TO_TOPIC", 8, C3286R.C3288drawable.fork_topic_select_24, PorterDuff.Mode.SRC_IN, C3286R.string.topics_select, false);
+        BOOKMARKS = new MultiPanelButton("BOOKMARKS", 9, C3286R.C3288drawable.msg_saved, PorterDuff.Mode.MULTIPLY, C3286R.string.chat_bookmarks, true);
+        PINS = new MultiPanelButton("PINS", 10, C3286R.C3288drawable.msg_pin, PorterDuff.Mode.MULTIPLY, C3286R.string.multi_panel_settings_button_pins_item_title, false);
         $VALUES = $values();
         Companion = new Companion(null);
     }

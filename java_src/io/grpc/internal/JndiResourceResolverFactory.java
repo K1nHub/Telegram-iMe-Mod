@@ -20,11 +20,11 @@ import javax.naming.directory.Attribute;
 import javax.naming.directory.DirContext;
 import javax.naming.directory.InitialDirContext;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class JndiResourceResolverFactory implements DnsNameResolver.ResourceResolverFactory {
     private static final Throwable JNDI_UNAVAILABILITY_CAUSE = initJndi();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     interface RecordFetcher {
         List<String> getAllRecords(String str, String str2) throws NamingException;
     }
@@ -56,7 +56,7 @@ public final class JndiResourceResolverFactory implements DnsNameResolver.Resour
         return JNDI_UNAVAILABILITY_CAUSE;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class JndiResourceResolver implements DnsNameResolver.ResourceResolver {
         private static final Logger logger = Logger.getLogger(JndiResourceResolver.class.getName());
         private static final Pattern whitespace = Pattern.compile("\\s+");
@@ -141,7 +141,7 @@ public final class JndiResourceResolverFactory implements DnsNameResolver.Resour
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class SrvRecord {
             final String host;
             final int port;
@@ -186,7 +186,7 @@ public final class JndiResourceResolverFactory implements DnsNameResolver.Resour
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class JndiRecordFetcher implements RecordFetcher {
         JndiRecordFetcher() {
         }

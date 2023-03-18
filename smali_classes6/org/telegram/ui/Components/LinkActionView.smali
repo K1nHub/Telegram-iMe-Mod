@@ -1580,11 +1580,9 @@
 
     move-result-object p2
 
-    invoke-interface {p2}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getOverlayContainerView()Landroid/view/ViewGroup;
+    invoke-interface {p2}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getOverlayContainerView()Landroid/widget/FrameLayout;
 
     move-result-object p2
-
-    check-cast p2, Landroid/widget/FrameLayout;
 
     goto :goto_2
 

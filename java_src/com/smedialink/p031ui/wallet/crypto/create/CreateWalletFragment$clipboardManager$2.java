@@ -1,8 +1,8 @@
 package com.smedialink.p031ui.wallet.crypto.create;
 
 import android.content.ClipboardManager;
-import java.util.Objects;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CreateWalletFragment.kt */
@@ -22,7 +22,7 @@ public final class CreateWalletFragment$clipboardManager$2 extends Lambda implem
     @Override // kotlin.jvm.functions.Function0
     public final ClipboardManager invoke() {
         Object systemService = this.this$0.getParentActivity().getSystemService("clipboard");
-        Objects.requireNonNull(systemService, "null cannot be cast to non-null type android.content.ClipboardManager");
+        Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.content.ClipboardManager");
         return (ClipboardManager) systemService;
     }
 }

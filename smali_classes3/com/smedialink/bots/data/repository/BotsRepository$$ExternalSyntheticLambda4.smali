@@ -29,7 +29,7 @@
 
     check-cast p1, Lcom/google/firebase/firestore/QuerySnapshot;
 
-    invoke-static {v0, p1, p2}, Lcom/smedialink/bots/data/repository/BotsRepository;->$r8$lambda$IOHLLSmRCXmyivepDUQIGdWv3Z8(Lio/reactivex/ObservableEmitter;Lcom/google/firebase/firestore/QuerySnapshot;Lcom/google/firebase/firestore/FirebaseFirestoreException;)V
+    invoke-static {v0, p1, p2}, Lcom/smedialink/bots/data/repository/BotsRepository;->$r8$lambda$dq2uYyrbT_QQvlGdPETUz2TL9cA(Lio/reactivex/ObservableEmitter;Lcom/google/firebase/firestore/QuerySnapshot;Lcom/google/firebase/firestore/FirebaseFirestoreException;)V
 
     return-void
 .end method

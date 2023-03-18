@@ -6,20 +6,20 @@ import kotlin.jvm.internal.Intrinsics;
 public final class CatalogLanguage {
 
     /* renamed from: id */
-    private final long f314id;
+    private final long f317id;
     private final String nativeTitle;
     private final String title;
 
     public CatalogLanguage(long j, String nativeTitle, String title) {
         Intrinsics.checkNotNullParameter(nativeTitle, "nativeTitle");
         Intrinsics.checkNotNullParameter(title, "title");
-        this.f314id = j;
+        this.f317id = j;
         this.nativeTitle = nativeTitle;
         this.title = title;
     }
 
     public final long getId() {
-        return this.f314id;
+        return this.f317id;
     }
 
     public final String getNativeTitle() {

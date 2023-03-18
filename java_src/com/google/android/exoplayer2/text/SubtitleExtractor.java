@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.text;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.extractor.Extractor;
@@ -42,7 +42,7 @@ public class SubtitleExtractor implements Extractor {
     private final List<Long> timestamps = new ArrayList();
     private final List<ParsableByteArray> samples = new ArrayList();
     private int state = 0;
-    private long seekTimeUs = C0474C.TIME_UNSET;
+    private long seekTimeUs = C0468C.TIME_UNSET;
 
     @Target({ElementType.TYPE_USE})
     @Documented
@@ -67,7 +67,7 @@ public class SubtitleExtractor implements Extractor {
         this.extractorOutput = extractorOutput;
         this.trackOutput = extractorOutput.track(0, 3);
         this.extractorOutput.endTracks();
-        this.extractorOutput.seekMap(new IndexSeekMap(new long[]{0}, new long[]{0}, C0474C.TIME_UNSET));
+        this.extractorOutput.seekMap(new IndexSeekMap(new long[]{0}, new long[]{0}, C0468C.TIME_UNSET));
         this.trackOutput.format(this.format);
         this.state = 1;
     }
@@ -167,7 +167,7 @@ public class SubtitleExtractor implements Extractor {
         Assertions.checkStateNotNull(this.trackOutput);
         Assertions.checkState(this.timestamps.size() == this.samples.size());
         long j = this.seekTimeUs;
-        for (int binarySearchFloor = j == C0474C.TIME_UNSET ? 0 : Util.binarySearchFloor((List<? extends Comparable<? super Long>>) this.timestamps, Long.valueOf(j), true, true); binarySearchFloor < this.samples.size(); binarySearchFloor++) {
+        for (int binarySearchFloor = j == C0468C.TIME_UNSET ? 0 : Util.binarySearchFloor((List<? extends Comparable<? super Long>>) this.timestamps, Long.valueOf(j), true, true); binarySearchFloor < this.samples.size(); binarySearchFloor++) {
             ParsableByteArray parsableByteArray = this.samples.get(binarySearchFloor);
             parsableByteArray.setPosition(0);
             int length = parsableByteArray.getData().length;

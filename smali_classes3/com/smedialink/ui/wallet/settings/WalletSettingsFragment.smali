@@ -15,7 +15,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletSettingsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSettingsFragment.kt\ncom/smedialink/ui/wallet/settings/WalletSettingsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 5 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,117:1\n13#2,4:118\n56#3,6:122\n16#4,3:128\n39#5,6:131\n*S KotlinDebug\n*F\n+ 1 WalletSettingsFragment.kt\ncom/smedialink/ui/wallet/settings/WalletSettingsFragment\n*L\n27#1:118,4\n28#1:122,6\n87#1:128,3\n88#1:131,6\n*E\n"
+    value = "SMAP\nWalletSettingsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSettingsFragment.kt\ncom/smedialink/ui/wallet/settings/WalletSettingsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 5 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,117:1\n13#2,4:118\n56#3,6:122\n16#4,3:128\n39#5,8:131\n*S KotlinDebug\n*F\n+ 1 WalletSettingsFragment.kt\ncom/smedialink/ui/wallet/settings/WalletSettingsFragment\n*L\n27#1:118,4\n28#1:122,6\n87#1:128,3\n88#1:131,8\n*E\n"
 .end annotation
 
 
@@ -43,18 +43,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$jauNyYQHazzCGecgOn6dPaEvNB8(Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;)V
+.method public static synthetic $r8$lambda$FZUMk3WytiDMPryTB-9aTgtPb4o(Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;->getThemeDescriptions$lambda-1(Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;->getThemeDescriptions$lambda$1(Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$nQrwfvRag0-ho3x-QH54Vh1Ng5k(Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$q2UTHb_spLXRedl8126wFFmZJb8(Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;->setupListeners$lambda-4(Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;->setupListeners$lambda$4(Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -271,7 +271,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-1(Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;)V
+.method private static final getThemeDescriptions$lambda$1(Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -410,18 +410,29 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;)V
 
-    new-instance v2, Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v1, Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2;
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v3}, Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v3}, Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 46
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v3, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 95
@@ -430,18 +441,18 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-4(Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$4(Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "$noName_1"
+    const-string p1, "<anonymous parameter 1>"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

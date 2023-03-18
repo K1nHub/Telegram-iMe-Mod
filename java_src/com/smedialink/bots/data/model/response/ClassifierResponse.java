@@ -124,7 +124,7 @@ public final class ClassifierResponse {
         }
 
         public String toString() {
-            return "ClassifierItem(tag=" + this.tag + ", gif=" + ((Object) this.gif) + ", response=" + this.response + ')';
+            return "ClassifierItem(tag=" + this.tag + ", gif=" + this.gif + ", response=" + this.response + ')';
         }
 
         public ClassifierItem(String tag, String str, List<String> response) {

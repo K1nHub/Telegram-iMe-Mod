@@ -11,6 +11,6 @@ public final /* synthetic */ class WalletSwapProcessFragment$$ExternalSyntheticL
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        WalletSwapProcessFragment.m1762renderState$lambda22$lambda19$lambda18(view);
+        WalletSwapProcessFragment.renderState$lambda$22$lambda$19$lambda$18(view);
     }
 }

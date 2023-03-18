@@ -58,7 +58,7 @@ public final class BalanceFormatter {
         Intrinsics.checkNotNullParameter(balance, "balance");
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         StringBuilder sb = new StringBuilder();
-        sb.append(formatBalance(balance, num == null ? TokenInfo.Fiat.USD.INSTANCE.getDecimals() : num.intValue()));
+        sb.append(formatBalance(balance, num != null ? num.intValue() : TokenInfo.Fiat.USD.INSTANCE.getDecimals()));
         sb.append(' ');
         sb.append(resourceManager.getString(TokenInfo.Fiat.USD.INSTANCE.getShortName()));
         return sb.toString();
@@ -67,7 +67,7 @@ public final class BalanceFormatter {
     public final String formatShortFiatBalance(Number balance, ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(balance, "balance");
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-        return ((Object) AndroidUtilities.formatWholeNumber(balance.intValue(), 0)) + ' ' + resourceManager.getString(TokenInfo.Fiat.USD.INSTANCE.getShortName());
+        return AndroidUtilities.formatWholeNumber(balance.intValue()) + ' ' + resourceManager.getString(TokenInfo.Fiat.USD.INSTANCE.getShortName());
     }
 
     public final String formatTokenBalance(Number balance, String tokenTicker, ResourceManager resourceManager) {

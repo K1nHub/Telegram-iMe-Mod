@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDetailsIconCellView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DetailsIconCellView.kt\ncom/smedialink/ui/custom/DetailsIconCellView\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,75:1\n254#2,2:76\n*S KotlinDebug\n*F\n+ 1 DetailsIconCellView.kt\ncom/smedialink/ui/custom/DetailsIconCellView\n*L\n42#1:76,2\n*E\n"
+    value = "SMAP\nDetailsIconCellView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DetailsIconCellView.kt\ncom/smedialink/ui/custom/DetailsIconCellView\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,75:1\n262#2,2:76\n*S KotlinDebug\n*F\n+ 1 DetailsIconCellView.kt\ncom/smedialink/ui/custom/DetailsIconCellView\n*L\n42#1:76,2\n*E\n"
 .end annotation
 
 
@@ -135,15 +135,6 @@
 
 
 # virtual methods
-.method public final isIconTinted()Z
-    .locals 1
-
-    .line 21
-    iget-boolean v0, p0, Lcom/smedialink/ui/custom/DetailsIconCellView;->isIconTinted:Z
-
-    return v0
-.end method
-
 .method public final setIconTinted(Z)V
     .locals 0
 
@@ -154,7 +145,7 @@
 .end method
 
 .method public final setupColors()V
-    .locals 4
+    .locals 3
 
     .line 47
     iget-object v0, p0, Lcom/smedialink/ui/custom/DetailsIconCellView;->binding:Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;
@@ -182,7 +173,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const-string v2, ""
+    const-string v2, "setupColors$lambda$3$lambda$1"
 
     .line 51
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -193,11 +184,11 @@
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->imageIcon:Landroidx/appcompat/widget/AppCompatImageView;
 
     .line 54
-    invoke-virtual {p0}, Lcom/smedialink/ui/custom/DetailsIconCellView;->isIconTinted()Z
+    iget-boolean v2, p0, Lcom/smedialink/ui/custom/DetailsIconCellView;->isIconTinted:Z
 
-    move-result v3
+    if-eqz v2, :cond_0
 
-    if-eqz v3, :cond_0
+    const-string v2, "setupColors$lambda$3$lambda$2"
 
     .line 55
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -276,7 +267,7 @@
     :cond_0
     const/16 p2, 0x8
 
-    .line 254
+    .line 262
     :goto_0
     invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 

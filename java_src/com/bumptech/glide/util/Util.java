@@ -68,7 +68,7 @@ public final class Util {
         if (config == null) {
             config = Bitmap.Config.ARGB_8888;
         }
-        int i = C04511.$SwitchMap$android$graphics$Bitmap$Config[config.ordinal()];
+        int i = C04451.$SwitchMap$android$graphics$Bitmap$Config[config.ordinal()];
         if (i != 1) {
             if (i == 2 || i == 3) {
                 return 2;
@@ -81,7 +81,7 @@ public final class Util {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.bumptech.glide.util.Util$1 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C04511 {
+    public static /* synthetic */ class C04451 {
         static final /* synthetic */ int[] $SwitchMap$android$graphics$Bitmap$Config;
 
         static {

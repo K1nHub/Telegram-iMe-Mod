@@ -121,7 +121,11 @@
 
     invoke-direct {p2, p0}, Lcom/smedialink/utils/helper/wallet/CryptoHelper$extractAddress$$inlined$mapSuccess$1;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p0, Lcom/smedialink/utils/helper/wallet/CryptoHelper$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p0, p2}, Lcom/smedialink/utils/helper/wallet/CryptoHelper$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p0
 
@@ -154,7 +158,7 @@
 .end method
 
 .method public static final formatAddressQR(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Ljava/lang/String;
-    .locals 1
+    .locals 2
 
     const-string v0, "address"
 
@@ -165,9 +169,13 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 23
-    sget-object v0, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;->Companion:Lcom/smedialink/model/wallet/crypto/BlockchainAddressData$Companion;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p1}, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData$Companion;->mapByBlockchainType(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v1, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;->Companion:Lcom/smedialink/model/wallet/crypto/BlockchainAddressData$Companion;
+
+    invoke-virtual {v1, p1}, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData$Companion;->mapByBlockchainType(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
 
     move-result-object p1
 
@@ -175,7 +183,11 @@
 
     move-result-object p1
 
-    invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

@@ -91,7 +91,7 @@ public final class Precondition extends GeneratedMessageLite<Precondition, Build
     /* renamed from: com.google.firestore.v1.Precondition$Builder */
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Precondition, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10671 c10671) {
+        /* synthetic */ Builder(C10601 c10601) {
             this();
         }
 
@@ -114,7 +114,7 @@ public final class Precondition extends GeneratedMessageLite<Precondition, Build
 
     /* renamed from: com.google.firestore.v1.Precondition$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10671 {
+    static /* synthetic */ class C10601 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f213xa1df5c61;
@@ -155,7 +155,7 @@ public final class Precondition extends GeneratedMessageLite<Precondition, Build
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10671.f213xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10601.f213xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new Precondition();
             case 2:

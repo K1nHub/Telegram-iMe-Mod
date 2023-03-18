@@ -11,7 +11,7 @@ public final class PaintCompat {
 
     public static boolean hasGlyph(Paint paint, String str) {
         if (Build.VERSION.SDK_INT >= 23) {
-            return paint.hasGlyph(str);
+            return Api23Impl.hasGlyph(paint, str);
         }
         int length = str.length();
         if (length == 1 && Character.isWhitespace(str.charAt(0))) {
@@ -58,5 +58,12 @@ public final class PaintCompat {
         pair.first.setEmpty();
         pair.second.setEmpty();
         return pair;
+    }
+
+    /* loaded from: classes.dex */
+    static class Api23Impl {
+        static boolean hasGlyph(Paint paint, String str) {
+            return paint.hasGlyph(str);
+        }
     }
 }

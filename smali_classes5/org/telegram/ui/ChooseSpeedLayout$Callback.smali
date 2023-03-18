@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract onSpeedSelected(F)V
+.method public abstract onSpeedSelected(FZZ)V
 .end method

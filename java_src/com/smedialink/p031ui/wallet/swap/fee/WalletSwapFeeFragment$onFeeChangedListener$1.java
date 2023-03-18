@@ -16,8 +16,8 @@ final class WalletSwapFeeFragment$onFeeChangedListener$1 extends Lambda implemen
     }
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
-    public final void invoke2(SwapFeeScreenArgs noName_0) {
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
+    public final void invoke2(SwapFeeScreenArgs swapFeeScreenArgs) {
+        Intrinsics.checkNotNullParameter(swapFeeScreenArgs, "<anonymous parameter 0>");
     }
 
     @Override // kotlin.jvm.functions.Function1

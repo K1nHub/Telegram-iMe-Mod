@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/controller/BackupController$$ExternalSyntheticLambda0;->f$1:Lorg/fork/utils/Callbacks$Callback1;
 
-    invoke-static {v0, v1}, Lorg/fork/controller/BackupController;->$r8$lambda$rxSf4t-uBGcCckjgf4l9ZYh12Xg(Ljava/lang/Exception;Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-static {v0, v1}, Lorg/fork/controller/BackupController;->$r8$lambda$xFhENqjYPZy-4lix6Qm1C9oddq0(Ljava/lang/Exception;Lorg/fork/utils/Callbacks$Callback1;)V
 
     return-void
 .end method

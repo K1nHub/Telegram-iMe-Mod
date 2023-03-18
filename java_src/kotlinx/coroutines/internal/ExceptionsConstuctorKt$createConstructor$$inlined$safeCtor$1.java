@@ -18,22 +18,22 @@ public final class ExceptionsConstuctorKt$createConstructor$$inlined$safeCtor$1 
 
     @Override // kotlin.jvm.functions.Function1
     public final Throwable invoke(Throwable th) {
-        Object m1870constructorimpl;
+        Object m1463constructorimpl;
         Object newInstance;
         try {
             Result.Companion companion = Result.Companion;
             newInstance = this.$constructor$inlined.newInstance(th.getMessage(), th);
         } catch (Throwable th2) {
             Result.Companion companion2 = Result.Companion;
-            m1870constructorimpl = Result.m1870constructorimpl(ResultKt.createFailure(th2));
+            m1463constructorimpl = Result.m1463constructorimpl(ResultKt.createFailure(th2));
         }
         if (newInstance == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Throwable");
         }
-        m1870constructorimpl = Result.m1870constructorimpl((Throwable) newInstance);
-        if (Result.m1872isFailureimpl(m1870constructorimpl)) {
-            m1870constructorimpl = null;
+        m1463constructorimpl = Result.m1463constructorimpl((Throwable) newInstance);
+        if (Result.m1465isFailureimpl(m1463constructorimpl)) {
+            m1463constructorimpl = null;
         }
-        return (Throwable) m1870constructorimpl;
+        return (Throwable) m1463constructorimpl;
     }
 }

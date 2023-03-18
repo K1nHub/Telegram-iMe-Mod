@@ -92,16 +92,24 @@
 
 .field public static final enum JWT_EXPIRED:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
 
+.field public static final enum NO_OAUTH_ACCESS_GRANTED_ERROR:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+
 .field public static final enum REFRESH_TOKEN_ABSENT:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
 
+.field public static final enum TWITTER_USER_DISABLED_DIRECT_MESSAGES:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+
 .field public static final enum UNKNOWN:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+.field public static final enum WRONG_TWITTER_ACCESS_TOKEN_ERROR:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+.field public static final enum WRONG_TWITTER_REFRESH_TOKEN_ERROR:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
 
 
 # direct methods
 .method private static final synthetic $values()[Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
     .locals 3
 
-    const/16 v0, 0x24
+    const/16 v0, 0x28
 
     new-array v0, v0, [Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
 
@@ -315,9 +323,33 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;->UNKNOWN:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;->WRONG_TWITTER_ACCESS_TOKEN_ERROR:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     const/16 v2, 0x23
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;->WRONG_TWITTER_REFRESH_TOKEN_ERROR:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    const/16 v2, 0x24
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;->TWITTER_USER_DISABLED_DIRECT_MESSAGES:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    const/16 v2, 0x25
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;->NO_OAUTH_ACCESS_GRANTED_ERROR:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    const/16 v2, 0x26
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;->UNKNOWN:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    const/16 v2, 0x27
 
     aput-object v1, v0, v2
 
@@ -715,9 +747,53 @@
     .line 39
     new-instance v0, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
 
-    const-string v1, "UNKNOWN"
+    const-string v1, "WRONG_TWITTER_ACCESS_TOKEN_ERROR"
 
     const/16 v2, 0x23
+
+    invoke-direct {v0, v1, v2}, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;->WRONG_TWITTER_ACCESS_TOKEN_ERROR:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    .line 40
+    new-instance v0, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    const-string v1, "WRONG_TWITTER_REFRESH_TOKEN_ERROR"
+
+    const/16 v2, 0x24
+
+    invoke-direct {v0, v1, v2}, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;->WRONG_TWITTER_REFRESH_TOKEN_ERROR:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    .line 41
+    new-instance v0, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    const-string v1, "TWITTER_USER_DISABLED_DIRECT_MESSAGES"
+
+    const/16 v2, 0x25
+
+    invoke-direct {v0, v1, v2}, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;->TWITTER_USER_DISABLED_DIRECT_MESSAGES:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    .line 42
+    new-instance v0, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    const-string v1, "NO_OAUTH_ACCESS_GRANTED_ERROR"
+
+    const/16 v2, 0x26
+
+    invoke-direct {v0, v1, v2}, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;->NO_OAUTH_ACCESS_GRANTED_ERROR:Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    .line 43
+    new-instance v0, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    const-string v1, "UNKNOWN"
+
+    const/16 v2, 0x27
 
     invoke-direct {v0, v1, v2}, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
 

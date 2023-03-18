@@ -1,7 +1,7 @@
 package org.fork.enums;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt__CollectionsKt;
@@ -9,7 +9,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: MessagePopupItem.kt */
 /* loaded from: classes4.dex */
@@ -31,13 +31,34 @@ public enum MessagePopupItem {
 
         static {
             int[] iArr = new int[MessagePopupItem.values().length];
-            iArr[MessagePopupItem.FORWARD_CLOUD.ordinal()] = 1;
-            iArr[MessagePopupItem.SHARE.ordinal()] = 2;
-            iArr[MessagePopupItem.FORWARD_MESSENGERS.ordinal()] = 3;
-            iArr[MessagePopupItem.TRANSLATE.ordinal()] = 4;
-            iArr[MessagePopupItem.COPY_PART.ordinal()] = 5;
-            iArr[MessagePopupItem.COPY_IMAGE.ordinal()] = 6;
-            iArr[MessagePopupItem.SAVE_AS.ordinal()] = 7;
+            try {
+                iArr[MessagePopupItem.FORWARD_CLOUD.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[MessagePopupItem.SHARE.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[MessagePopupItem.FORWARD_MESSENGERS.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[MessagePopupItem.TRANSLATE.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[MessagePopupItem.COPY_PART.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr[MessagePopupItem.COPY_IMAGE.ordinal()] = 6;
+            } catch (NoSuchFieldError unused6) {
+            }
+            try {
+                iArr[MessagePopupItem.SAVE_AS.ordinal()] = 7;
+            } catch (NoSuchFieldError unused7) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -45,31 +66,31 @@ public enum MessagePopupItem {
     public final String getTitle() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String internalString = LocaleController.getInternalString(C3158R.string.chat_message_popup_option_forward_cloud);
+                String internalString = LocaleController.getInternalString(C3286R.string.chat_message_popup_option_forward_cloud);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…pup_option_forward_cloud)");
                 return internalString;
             case 2:
-                String string = LocaleController.getString("ShareFile", C3158R.string.ShareFile);
+                String string = LocaleController.getString("ShareFile", C3286R.string.ShareFile);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"ShareFile\", R.string.ShareFile)");
                 return string;
             case 3:
-                String internalString2 = LocaleController.getInternalString(C3158R.string.settings_interface_message_popup_item_forward_messengers);
+                String internalString2 = LocaleController.getInternalString(C3286R.string.settings_interface_message_popup_item_forward_messengers);
                 Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…_item_forward_messengers)");
                 return internalString2;
             case 4:
-                String internalString3 = LocaleController.getInternalString(C3158R.string.chat_long_action_translate);
+                String internalString3 = LocaleController.getInternalString(C3286R.string.chat_long_action_translate);
                 Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.stri…at_long_action_translate)");
                 return internalString3;
             case 5:
-                String internalString4 = LocaleController.getInternalString(C3158R.string.chat_message_popup_option_copy_part);
+                String internalString4 = LocaleController.getInternalString(C3286R.string.chat_message_popup_option_copy_part);
                 Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(R.stri…e_popup_option_copy_part)");
                 return internalString4;
             case 6:
-                String internalString5 = LocaleController.getInternalString(C3158R.string.chat_message_popup_option_copy_image);
+                String internalString5 = LocaleController.getInternalString(C3286R.string.chat_message_popup_option_copy_image);
                 Intrinsics.checkNotNullExpressionValue(internalString5, "getInternalString(R.stri…_popup_option_copy_image)");
                 return internalString5;
             case 7:
-                String internalString6 = LocaleController.getInternalString(C3158R.string.message_document_file_save_as);
+                String internalString6 = LocaleController.getInternalString(C3286R.string.message_document_file_save_as);
                 Intrinsics.checkNotNullExpressionValue(internalString6, "getInternalString(R.stri…ge_document_file_save_as)");
                 return internalString6;
             default:
@@ -123,24 +144,23 @@ public enum MessagePopupItem {
         }
 
         public final Set<MessagePopupItem> mapNamesToEnums(Set<String> set) {
-            Collection collection;
+            List list;
             Set<MessagePopupItem> mutableSet;
-            if (set == null) {
-                collection = null;
-            } else {
-                Collection arrayList = new ArrayList();
+            if (set != null) {
+                list = new ArrayList();
                 for (String str : set) {
                     MessagePopupItem mapNameToEnum = MessagePopupItem.Companion.mapNameToEnum(str);
                     if (mapNameToEnum != null) {
-                        arrayList.add(mapNameToEnum);
+                        list.add(mapNameToEnum);
                     }
                 }
-                collection = arrayList;
+            } else {
+                list = null;
             }
-            if (collection == null) {
-                collection = CollectionsKt__CollectionsKt.emptyList();
+            if (list == null) {
+                list = CollectionsKt__CollectionsKt.emptyList();
             }
-            mutableSet = CollectionsKt___CollectionsKt.toMutableSet(collection);
+            mutableSet = CollectionsKt___CollectionsKt.toMutableSet(list);
             return mutableSet;
         }
     }

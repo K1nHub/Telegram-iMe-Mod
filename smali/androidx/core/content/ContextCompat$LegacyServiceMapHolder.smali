@@ -32,28 +32,28 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 748
+    .line 896
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Landroidx/core/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
-    .line 751
+    .line 899
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x16
 
     if-lt v1, v2, :cond_0
 
-    .line 752
+    .line 900
     const-class v2, Landroid/telephony/SubscriptionManager;
 
     const-string v3, "telephony_subscription_service"
 
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 753
+    .line 901
     const-class v2, Landroid/app/usage/UsageStatsManager;
 
     const-string v3, "usagestats"
@@ -65,70 +65,70 @@
 
     if-lt v1, v2, :cond_1
 
-    .line 756
+    .line 904
     const-class v2, Landroid/appwidget/AppWidgetManager;
 
     const-string v3, "appwidget"
 
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 757
+    .line 905
     const-class v2, Landroid/os/BatteryManager;
 
     const-string v3, "batterymanager"
 
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 758
+    .line 906
     const-class v2, Landroid/hardware/camera2/CameraManager;
 
     const-string v3, "camera"
 
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 759
+    .line 907
     const-class v2, Landroid/app/job/JobScheduler;
 
     const-string v3, "jobscheduler"
 
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 760
+    .line 908
     const-class v2, Landroid/content/pm/LauncherApps;
 
     const-string v3, "launcherapps"
 
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 761
+    .line 909
     const-class v2, Landroid/media/projection/MediaProjectionManager;
 
     const-string v3, "media_projection"
 
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 762
+    .line 910
     const-class v2, Landroid/media/session/MediaSessionManager;
 
     const-string v3, "media_session"
 
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 763
+    .line 911
     const-class v2, Landroid/content/RestrictionsManager;
 
     const-string v3, "restrictions"
 
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 764
+    .line 912
     const-class v2, Landroid/telecom/TelecomManager;
 
     const-string v3, "telecom"
 
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 765
+    .line 913
     const-class v2, Landroid/media/tv/TvInputManager;
 
     const-string v3, "tv_input"
@@ -140,28 +140,28 @@
 
     if-lt v1, v2, :cond_2
 
-    .line 768
+    .line 916
     const-class v2, Landroid/app/AppOpsManager;
 
     const-string v3, "appops"
 
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 769
+    .line 917
     const-class v2, Landroid/view/accessibility/CaptioningManager;
 
     const-string v3, "captioning"
 
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 770
+    .line 918
     const-class v2, Landroid/hardware/ConsumerIrManager;
 
     const-string v3, "consumer_ir"
 
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 771
+    .line 919
     const-class v2, Landroid/print/PrintManager;
 
     const-string v3, "print"
@@ -173,7 +173,7 @@
 
     if-lt v1, v2, :cond_3
 
-    .line 774
+    .line 922
     const-class v2, Landroid/bluetooth/BluetoothManager;
 
     const-string v3, "bluetooth"
@@ -185,14 +185,14 @@
 
     if-lt v1, v2, :cond_4
 
-    .line 777
+    .line 925
     const-class v2, Landroid/hardware/display/DisplayManager;
 
     const-string v3, "display"
 
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 778
+    .line 926
     const-class v2, Landroid/os/UserManager;
 
     const-string v3, "user"
@@ -204,28 +204,28 @@
 
     if-lt v1, v2, :cond_5
 
-    .line 781
+    .line 929
     const-class v1, Landroid/hardware/input/InputManager;
 
     const-string v2, "input"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 782
+    .line 930
     const-class v1, Landroid/media/MediaRouter;
 
     const-string v2, "media_router"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 783
+    .line 931
     const-class v1, Landroid/net/nsd/NsdManager;
 
     const-string v2, "servicediscovery"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 785
+    .line 933
     :cond_5
     const-class v1, Landroid/view/accessibility/AccessibilityManager;
 
@@ -233,196 +233,196 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 786
+    .line 934
     const-class v1, Landroid/accounts/AccountManager;
 
     const-string v2, "account"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 787
+    .line 935
     const-class v1, Landroid/app/ActivityManager;
 
     const-string v2, "activity"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 788
+    .line 936
     const-class v1, Landroid/app/AlarmManager;
 
     const-string v2, "alarm"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 789
+    .line 937
     const-class v1, Landroid/media/AudioManager;
 
     const-string v2, "audio"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 790
+    .line 938
     const-class v1, Landroid/content/ClipboardManager;
 
     const-string v2, "clipboard"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 791
+    .line 939
     const-class v1, Landroid/net/ConnectivityManager;
 
     const-string v2, "connectivity"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 792
+    .line 940
     const-class v1, Landroid/app/admin/DevicePolicyManager;
 
     const-string v2, "device_policy"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 793
+    .line 941
     const-class v1, Landroid/app/DownloadManager;
 
     const-string v2, "download"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 794
+    .line 942
     const-class v1, Landroid/os/DropBoxManager;
 
     const-string v2, "dropbox"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 795
+    .line 943
     const-class v1, Landroid/view/inputmethod/InputMethodManager;
 
     const-string v2, "input_method"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 796
+    .line 944
     const-class v1, Landroid/app/KeyguardManager;
 
     const-string v2, "keyguard"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 797
+    .line 945
     const-class v1, Landroid/view/LayoutInflater;
 
     const-string v2, "layout_inflater"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 798
+    .line 946
     const-class v1, Landroid/location/LocationManager;
 
     const-string v2, "location"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 799
+    .line 947
     const-class v1, Landroid/nfc/NfcManager;
 
     const-string v2, "nfc"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 800
+    .line 948
     const-class v1, Landroid/app/NotificationManager;
 
     const-string v2, "notification"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 801
+    .line 949
     const-class v1, Landroid/os/PowerManager;
 
     const-string v2, "power"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 802
+    .line 950
     const-class v1, Landroid/app/SearchManager;
 
     const-string v2, "search"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 803
+    .line 951
     const-class v1, Landroid/hardware/SensorManager;
 
     const-string v2, "sensor"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 804
+    .line 952
     const-class v1, Landroid/os/storage/StorageManager;
 
     const-string v2, "storage"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 805
+    .line 953
     const-class v1, Landroid/telephony/TelephonyManager;
 
     const-string v2, "phone"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 806
+    .line 954
     const-class v1, Landroid/view/textservice/TextServicesManager;
 
     const-string v2, "textservices"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 807
+    .line 955
     const-class v1, Landroid/app/UiModeManager;
 
     const-string v2, "uimode"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 808
+    .line 956
     const-class v1, Landroid/hardware/usb/UsbManager;
 
     const-string v2, "usb"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 809
+    .line 957
     const-class v1, Landroid/os/Vibrator;
 
     const-string v2, "vibrator"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 810
+    .line 958
     const-class v1, Landroid/app/WallpaperManager;
 
     const-string v2, "wallpaper"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 811
+    .line 959
     const-class v1, Landroid/net/wifi/p2p/WifiP2pManager;
 
     const-string v2, "wifip2p"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 812
+    .line 960
     const-class v1, Landroid/net/wifi/WifiManager;
 
     const-string v2, "wifi"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 813
+    .line 961
     const-class v1, Landroid/view/WindowManager;
 
     const-string v2, "window"

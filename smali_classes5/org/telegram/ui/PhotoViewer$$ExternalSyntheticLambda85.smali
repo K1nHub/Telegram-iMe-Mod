@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda85;->f$1:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$P45Yh1-taDQo30mGeDUnJrebu70(Lorg/telegram/ui/PhotoViewer;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$STcxhoDGylLW-coM-lforlkJ6Nk(Lorg/telegram/ui/PhotoViewer;Ljava/lang/String;)V
 
     return-void
 .end method

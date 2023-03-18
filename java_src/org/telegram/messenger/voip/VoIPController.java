@@ -175,7 +175,7 @@ public class VoIPController {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x0047  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x005d  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x005e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -227,7 +227,7 @@ public class VoIPController {
         L42:
             r11 = 1
             boolean r2 = org.telegram.messenger.BuildVars.DEBUG_VERSION
-            if (r2 == 0) goto L5d
+            if (r2 == 0) goto L5e
             java.lang.StringBuilder r2 = new java.lang.StringBuilder
             r2.<init>()
             java.lang.String r3 = "voip"
@@ -235,20 +235,20 @@ public class VoIPController {
             r2.append(r0)
             java.lang.String r0 = r2.toString()
             java.lang.String r0 = r14.getLogFilePath(r0)
-            goto L61
-        L5d:
+            goto L62
+        L5e:
             java.lang.String r0 = r14.getLogFilePath(r0)
-        L61:
+        L62:
             r12 = r0
             boolean r0 = org.telegram.messenger.BuildVars.DEBUG_VERSION
-            if (r0 == 0) goto L6f
-            if (r5 == 0) goto L6f
+            if (r0 == 0) goto L71
+            if (r5 == 0) goto L71
             java.lang.String r0 = "voipStats"
             java.lang.String r0 = r14.getLogFilePath(r0)
-            goto L70
-        L6f:
+            goto L72
+        L71:
             r0 = 0
-        L70:
+        L72:
             r13 = r0
             boolean r15 = org.telegram.messenger.BuildVars.DEBUG_VERSION
             r0 = r16

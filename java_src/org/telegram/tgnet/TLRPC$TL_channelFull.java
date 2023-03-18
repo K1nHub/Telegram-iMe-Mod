@@ -1,7 +1,8 @@
 package org.telegram.tgnet;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
+import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
     public static int constructor = -231385849;
@@ -24,7 +25,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         this.antispam = (readInt322 & 2) != 0;
         this.participants_hidden = (readInt322 & 4) != 0;
         this.translations_disabled = (readInt322 & 8) != 0;
-        this.f1495id = abstractSerializedData.readInt64(z);
+        this.f1500id = abstractSerializedData.readInt64(z);
         this.about = abstractSerializedData.readString(z);
         if ((this.flags & 1) != 0) {
             this.participants_count = abstractSerializedData.readInt32(z);
@@ -85,7 +86,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         if ((this.flags & 16384) != 0) {
             this.linked_chat_id = abstractSerializedData.readInt64(z);
         }
-        if ((this.flags & 32768) != 0) {
+        if ((this.flags & LiteMode.FLAG_CHAT_SCALE) != 0) {
             this.location = TLRPC$ChannelLocation.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
         if ((this.flags & 131072) != 0) {
@@ -120,7 +121,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
             this.groupcall_default_join_as = TLRPC$Peer.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
-        if ((this.flags & C0474C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+        if ((this.flags & C0468C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
             this.theme_emoticon = abstractSerializedData.readString(z);
         }
         if ((this.flags & 268435456) != 0) {
@@ -176,7 +177,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         int i12 = this.translations_disabled ? i11 | 8 : i11 & (-9);
         this.flags2 = i12;
         abstractSerializedData.writeInt32(i12);
-        abstractSerializedData.writeInt64(this.f1495id);
+        abstractSerializedData.writeInt64(this.f1500id);
         abstractSerializedData.writeString(this.about);
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeInt32(this.participants_count);
@@ -228,7 +229,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         if ((this.flags & 16384) != 0) {
             abstractSerializedData.writeInt64(this.linked_chat_id);
         }
-        if ((this.flags & 32768) != 0) {
+        if ((this.flags & LiteMode.FLAG_CHAT_SCALE) != 0) {
             this.location.serializeToStream(abstractSerializedData);
         }
         if ((this.flags & 131072) != 0) {
@@ -258,7 +259,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
             this.groupcall_default_join_as.serializeToStream(abstractSerializedData);
         }
-        if ((this.flags & C0474C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+        if ((this.flags & C0468C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
             abstractSerializedData.writeString(this.theme_emoticon);
         }
         if ((this.flags & 268435456) != 0) {

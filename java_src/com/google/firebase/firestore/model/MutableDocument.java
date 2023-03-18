@@ -141,8 +141,8 @@ public final class MutableDocument implements Document, Cloneable {
     }
 
     /* renamed from: clone */
-    public MutableDocument m1103clone() {
-        return new MutableDocument(this.key, this.documentType, this.version, this.value.m1104clone(), this.documentState);
+    public MutableDocument m1085clone() {
+        return new MutableDocument(this.key, this.documentType, this.version, this.value.m1086clone(), this.documentState);
     }
 
     public boolean equals(Object obj) {

@@ -1,7 +1,7 @@
 package io.grpc.internal;
 
 import java.util.HashSet;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class InUseStateAggregator<T> {
     private final HashSet<T> inUseObjects = new HashSet<>();
 

@@ -7,7 +7,7 @@
 .method public static roundToInt(D)I
     .locals 3
 
-    .line 602
+    .line 619
     invoke-static {p0, p1}, Ljava/lang/Double;->isNaN(D)Z
 
     move-result v0
@@ -35,7 +35,7 @@
 
     goto :goto_0
 
-    .line 605
+    .line 622
     :cond_1
     invoke-static {p0, p1}, Ljava/lang/Math;->round(D)J
 
@@ -46,7 +46,7 @@
     :goto_0
     return p0
 
-    .line 602
+    .line 619
     :cond_2
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -60,7 +60,7 @@
 .method public static roundToInt(F)I
     .locals 1
 
-    .line 1132
+    .line 1165
     invoke-static {p0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0

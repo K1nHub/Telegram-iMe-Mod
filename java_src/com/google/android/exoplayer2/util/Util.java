@@ -28,7 +28,7 @@ import android.util.Base64;
 import android.util.SparseLongArray;
 import android.view.Display;
 import android.view.WindowManager;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.ExoPlayerLibraryInfo;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.MediaItem;
@@ -232,7 +232,7 @@ public final class Util {
                     if (i != 32) {
                         return 0;
                     }
-                    return C0474C.ENCODING_PCM_32BIT;
+                    return C0468C.ENCODING_PCM_32BIT;
                 }
                 return 536870912;
             }
@@ -278,7 +278,7 @@ public final class Util {
     }
 
     public static long msToUs(long j) {
-        return (j == C0474C.TIME_UNSET || j == Long.MIN_VALUE) ? j : j * 1000;
+        return (j == C0468C.TIME_UNSET || j == Long.MIN_VALUE) ? j : j * 1000;
     }
 
     private static boolean shouldEscapeCharacter(char c) {
@@ -858,7 +858,7 @@ public final class Util {
     }
 
     public static long usToMs(long j) {
-        return (j == C0474C.TIME_UNSET || j == Long.MIN_VALUE) ? j : j / 1000;
+        return (j == C0468C.TIME_UNSET || j == Long.MIN_VALUE) ? j : j / 1000;
     }
 
     public static long parseXsDuration(String str) {
@@ -1124,11 +1124,11 @@ public final class Util {
         }
         switch (c) {
             case 0:
-                return C0474C.PLAYREADY_UUID;
+                return C0468C.PLAYREADY_UUID;
             case 1:
-                return C0474C.WIDEVINE_UUID;
+                return C0468C.WIDEVINE_UUID;
             case 2:
-                return C0474C.CLEARKEY_UUID;
+                return C0468C.CLEARKEY_UUID;
             default:
                 try {
                     return UUID.fromString(str);
@@ -1279,7 +1279,7 @@ public final class Util {
     }
 
     public static String getStringForTime(StringBuilder sb, Formatter formatter, long j) {
-        if (j == C0474C.TIME_UNSET) {
+        if (j == C0468C.TIME_UNSET) {
             j = 0;
         }
         String str = j < 0 ? "-" : "";
@@ -1558,7 +1558,7 @@ public final class Util {
     }
 
     public static long getNowUnixTimeMs(long j) {
-        if (j == C0474C.TIME_UNSET) {
+        if (j == C0468C.TIME_UNSET) {
             return System.currentTimeMillis();
         }
         return j + android.os.SystemClock.elapsedRealtime();

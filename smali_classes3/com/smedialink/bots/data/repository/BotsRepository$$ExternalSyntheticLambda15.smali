@@ -2,38 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lio/reactivex/functions/Action;
+.implements Lio/reactivex/functions/Consumer;
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/util/List;
-
-.field public final synthetic f$1:Lcom/smedialink/bots/data/repository/BotsRepository;
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/List;Lcom/smedialink/bots/data/repository/BotsRepository;)V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda15;->f$0:Ljava/util/List;
-
-    iput-object p2, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda15;->f$1:Lcom/smedialink/bots/data/repository/BotsRepository;
+    iput-object p1, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda15;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final accept(Ljava/lang/Object;)V
+    .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda15;->f$0:Ljava/util/List;
+    iget-object v0, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda15;->f$0:Lkotlin/jvm/functions/Function1;
 
-    iget-object v1, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda15;->f$1:Lcom/smedialink/bots/data/repository/BotsRepository;
-
-    invoke-static {v0, v1}, Lcom/smedialink/bots/data/repository/BotsRepository;->$r8$lambda$dD2Qev_XIa5Xixc-QOmxn9W52SQ(Ljava/util/List;Lcom/smedialink/bots/data/repository/BotsRepository;)V
+    invoke-static {v0, p1}, Lcom/smedialink/bots/data/repository/BotsRepository;->$r8$lambda$cL-G8iAlaovABdbtAlcMIesz1sQ(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method

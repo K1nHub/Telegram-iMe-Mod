@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/storage/data/repository/wallet/WalletSessionRepositoryImpl$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/storage/data/repository/wallet/WalletSessionRepositoryImpl;
 
-    invoke-static {v0}, Lcom/smedialink/storage/data/repository/wallet/WalletSessionRepositoryImpl;->$r8$lambda$Dx0rRQpjiiQFZYHC-XU8ZtJrg4Q(Lcom/smedialink/storage/data/repository/wallet/WalletSessionRepositoryImpl;)V
+    invoke-static {v0}, Lcom/smedialink/storage/data/repository/wallet/WalletSessionRepositoryImpl;->$r8$lambda$BxFCZBpjtyHWLPSLLAJNDwCSWwc(Lcom/smedialink/storage/data/repository/wallet/WalletSessionRepositoryImpl;)V
 
     return-void
 .end method

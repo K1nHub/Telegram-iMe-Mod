@@ -29,34 +29,34 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 594
+    .line 605
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method static synthetic access$1800(Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;)J
+.method static synthetic access$1900(Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;)J
     .locals 2
 
-    .line 594
+    .line 605
     iget-wide v0, p0, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->nativeInstance:J
 
     return-wide v0
 .end method
 
-.method static synthetic access$1802(Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;J)J
+.method static synthetic access$1902(Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;J)J
     .locals 0
 
-    .line 594
+    .line 605
     iput-wide p1, p0, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->nativeInstance:J
 
     return-wide p1
 .end method
 
-.method static synthetic access$2200(Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;)Lorg/webrtc/VideoSink;
+.method static synthetic access$2300(Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;)Lorg/webrtc/VideoSink;
     .locals 0
 
-    .line 594
+    .line 605
     iget-object p0, p0, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->target:Lorg/webrtc/VideoSink;
 
     return-object p0
@@ -69,27 +69,27 @@
 
     monitor-enter p0
 
-    .line 602
+    .line 613
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->target:Lorg/webrtc/VideoSink;
 
     if-eqz v0, :cond_0
 
-    .line 603
+    .line 614
     invoke-interface {v0, p1}, Lorg/webrtc/VideoSink;->onFrame(Lorg/webrtc/VideoFrame;)V
 
-    .line 605
+    .line 616
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->background:Lorg/webrtc/VideoSink;
 
     if-eqz v0, :cond_1
 
-    .line 606
+    .line 617
     invoke-interface {v0, p1}, Lorg/webrtc/VideoSink;->onFrame(Lorg/webrtc/VideoFrame;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 608
+    .line 619
     :cond_1
     monitor-exit p0
 
@@ -108,7 +108,7 @@
 
     monitor-enter p0
 
-    .line 639
+    .line 650
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->background:Lorg/webrtc/VideoSink;
 
@@ -116,12 +116,12 @@
 
     const/4 p1, 0x0
 
-    .line 640
+    .line 651
     iput-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->background:Lorg/webrtc/VideoSink;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 642
+    .line 653
     :cond_0
     monitor-exit p0
 
@@ -140,7 +140,7 @@
 
     monitor-enter p0
 
-    .line 633
+    .line 644
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->target:Lorg/webrtc/VideoSink;
 
@@ -148,12 +148,12 @@
 
     const/4 p1, 0x0
 
-    .line 634
+    .line 645
     iput-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->target:Lorg/webrtc/VideoSink;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 636
+    .line 647
     :cond_0
     monitor-exit p0
 
@@ -172,7 +172,7 @@
 
     monitor-enter p0
 
-    .line 623
+    .line 634
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->background:Lorg/webrtc/VideoSink;
 
@@ -180,21 +180,21 @@
 
     const/4 v1, 0x0
 
-    .line 624
+    .line 635
     invoke-interface {v0, v1}, Lorg/webrtc/VideoSink;->setParentSink(Lorg/webrtc/VideoSink;)V
 
-    .line 626
+    .line 637
     :cond_0
     iput-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->background:Lorg/webrtc/VideoSink;
 
     if-eqz p1, :cond_1
 
-    .line 628
+    .line 639
     invoke-interface {p1, p0}, Lorg/webrtc/VideoSink;->setParentSink(Lorg/webrtc/VideoSink;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 630
+    .line 641
     :cond_1
     monitor-exit p0
 
@@ -221,7 +221,7 @@
 
     monitor-enter p0
 
-    .line 611
+    .line 622
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->target:Lorg/webrtc/VideoSink;
 
@@ -231,21 +231,21 @@
 
     const/4 v1, 0x0
 
-    .line 613
+    .line 624
     invoke-interface {v0, v1}, Lorg/webrtc/VideoSink;->setParentSink(Lorg/webrtc/VideoSink;)V
 
-    .line 615
+    .line 626
     :cond_0
     iput-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->target:Lorg/webrtc/VideoSink;
 
     if-eqz p1, :cond_1
 
-    .line 617
+    .line 628
     invoke-interface {p1, p0}, Lorg/webrtc/VideoSink;->setParentSink(Lorg/webrtc/VideoSink;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 620
+    .line 631
     :cond_1
     monitor-exit p0
 
@@ -264,7 +264,7 @@
 
     monitor-enter p0
 
-    .line 645
+    .line 656
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->target:Lorg/webrtc/VideoSink;
 
@@ -274,17 +274,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 646
+    .line 657
     iput-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->target:Lorg/webrtc/VideoSink;
 
     const/4 v0, 0x0
 
-    .line 647
+    .line 658
     iput-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->background:Lorg/webrtc/VideoSink;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 649
+    .line 660
     :cond_0
     monitor-exit p0
 

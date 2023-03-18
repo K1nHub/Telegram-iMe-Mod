@@ -33,7 +33,7 @@
 
     iget-boolean v1, p0, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda0;->f$1:Z
 
-    invoke-static {v0, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt;->$r8$lambda$10H01mRp3awai6xOqtT_IyhkwuM(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
+    invoke-static {v0, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt;->$r8$lambda$Mu26yGhpKBfhGSlr2gYyD6gs41Y(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
 
     return-void
 .end method

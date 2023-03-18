@@ -3470,7 +3470,7 @@
     .line 123
     iget-object v0, p0, Lcom/trustwallet/walletconnect/WCClient;->listeners:Ljava/util/Set;
 
-    .line 1849
+    .line 469
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -3530,7 +3530,7 @@
     .line 138
     iget-object v0, p0, Lcom/trustwallet/walletconnect/WCClient;->listeners:Ljava/util/Set;
 
-    .line 1849
+    .line 473
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -3579,7 +3579,7 @@
     .line 117
     iget-object v0, p0, Lcom/trustwallet/walletconnect/WCClient;->listeners:Ljava/util/Set;
 
-    .line 1849
+    .line 467
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -3672,7 +3672,7 @@
     .line 109
     iget-object v1, p0, Lcom/trustwallet/walletconnect/WCClient;->listeners:Ljava/util/Set;
 
-    .line 1849
+    .line 465
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -3724,7 +3724,7 @@
     .line 109
     iget-object v1, p0, Lcom/trustwallet/walletconnect/WCClient;->listeners:Ljava/util/Set;
 
-    .line 1849
+    .line 465
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -3763,7 +3763,7 @@
     :goto_4
     iget-object v2, p0, Lcom/trustwallet/walletconnect/WCClient;->listeners:Ljava/util/Set;
 
-    .line 1849
+    .line 465
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -3796,7 +3796,7 @@
 
     goto :goto_5
 
-    .line 1850
+    .line 466
     :cond_4
     throw v1
 .end method
@@ -3822,7 +3822,7 @@
     .line 129
     iget-object v0, p0, Lcom/trustwallet/walletconnect/WCClient;->listeners:Ljava/util/Set;
 
-    .line 1849
+    .line 471
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -3870,7 +3870,7 @@
     .line 89
     iget-object v0, p0, Lcom/trustwallet/walletconnect/WCClient;->listeners:Ljava/util/Set;
 
-    .line 1849
+    .line 463
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0

@@ -22,7 +22,7 @@
 .method constructor <init>(Landroid/view/View;)V
     .locals 0
 
-    .line 2824
+    .line 2814
     iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$3;->val$view:Landroid/view/View;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 2827
+    .line 2817
     iget-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$3;->val$view:Landroid/view/View;
 
     const/4 v0, 0x0

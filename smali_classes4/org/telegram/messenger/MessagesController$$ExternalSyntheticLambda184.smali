@@ -8,26 +8,26 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_help_promoData;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_peerDialogs;
+.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-.field public final synthetic f$3:J
+.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_channels_inviteToChannel;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_help_promoData;Lorg/telegram/tgnet/TLRPC$TL_messages_peerDialogs;J)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_channels_inviteToChannel;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda184;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda184;->f$1:Lorg/telegram/tgnet/TLRPC$TL_help_promoData;
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda184;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda184;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_peerDialogs;
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda184;->f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iput-wide p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda184;->f$3:J
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda184;->f$3:Lorg/telegram/tgnet/TLRPC$TL_channels_inviteToChannel;
 
     return-void
 .end method
@@ -35,17 +35,17 @@
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda184;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda184;->f$1:Lorg/telegram/tgnet/TLRPC$TL_help_promoData;
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda184;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda184;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_peerDialogs;
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda184;->f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iget-wide v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda184;->f$3:J
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda184;->f$3:Lorg/telegram/tgnet/TLRPC$TL_channels_inviteToChannel;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$yPWc9LgCuhRgw3oDlmxlKgeTBJw(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_help_promoData;Lorg/telegram/tgnet/TLRPC$TL_messages_peerDialogs;J)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$dDeO18StUEWMmxsL9217ZvtbyM8(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_channels_inviteToChannel;)V
 
     return-void
 .end method

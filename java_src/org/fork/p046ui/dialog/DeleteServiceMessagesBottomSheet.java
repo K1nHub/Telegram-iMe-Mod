@@ -27,7 +27,6 @@ import com.smedialink.utils.extentions.common.ContextExtKt;
 import com.smedialink.utils.extentions.common.ViewExtKt;
 import java.util.ArrayList;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
@@ -39,7 +38,7 @@ import kotlin.text.StringsKt__StringsJVMKt;
 import org.fork.enums.ServiceMessageType;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BottomSheet;
@@ -79,23 +78,74 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
 
         static {
             int[] iArr = new int[ServiceMessageType.values().length];
-            iArr[ServiceMessageType.CHAT_CREATED.ordinal()] = 1;
-            iArr[ServiceMessageType.TITLE_EDITED.ordinal()] = 2;
-            iArr[ServiceMessageType.PHOTO_CHANGED.ordinal()] = 3;
-            iArr[ServiceMessageType.PHOTO_DELETED.ordinal()] = 4;
-            iArr[ServiceMessageType.USER_ADDED.ordinal()] = 5;
-            iArr[ServiceMessageType.USER_LEFT.ordinal()] = 6;
-            iArr[ServiceMessageType.USER_JOINED_LINK.ordinal()] = 7;
-            iArr[ServiceMessageType.MESSAGE_PINNED.ordinal()] = 8;
-            iArr[ServiceMessageType.GAME_SCORE.ordinal()] = 9;
-            iArr[ServiceMessageType.PAYMENT_SENT.ordinal()] = 10;
-            iArr[ServiceMessageType.SCREENSHOT_TAKEN.ordinal()] = 11;
-            iArr[ServiceMessageType.GEO_PROXIMITY_REACHED.ordinal()] = 12;
-            iArr[ServiceMessageType.GROUP_CALL.ordinal()] = 13;
-            iArr[ServiceMessageType.GROUP_CALL_SCHEDULED.ordinal()] = 14;
-            iArr[ServiceMessageType.GROUP_CALL_INVITE.ordinal()] = 15;
-            iArr[ServiceMessageType.TTL_CHANGE.ordinal()] = 16;
-            iArr[ServiceMessageType.SET_MESSAGES_TTL.ordinal()] = 17;
+            try {
+                iArr[ServiceMessageType.CHAT_CREATED.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[ServiceMessageType.TITLE_EDITED.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[ServiceMessageType.PHOTO_CHANGED.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[ServiceMessageType.PHOTO_DELETED.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[ServiceMessageType.USER_ADDED.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr[ServiceMessageType.USER_LEFT.ordinal()] = 6;
+            } catch (NoSuchFieldError unused6) {
+            }
+            try {
+                iArr[ServiceMessageType.USER_JOINED_LINK.ordinal()] = 7;
+            } catch (NoSuchFieldError unused7) {
+            }
+            try {
+                iArr[ServiceMessageType.MESSAGE_PINNED.ordinal()] = 8;
+            } catch (NoSuchFieldError unused8) {
+            }
+            try {
+                iArr[ServiceMessageType.GAME_SCORE.ordinal()] = 9;
+            } catch (NoSuchFieldError unused9) {
+            }
+            try {
+                iArr[ServiceMessageType.PAYMENT_SENT.ordinal()] = 10;
+            } catch (NoSuchFieldError unused10) {
+            }
+            try {
+                iArr[ServiceMessageType.SCREENSHOT_TAKEN.ordinal()] = 11;
+            } catch (NoSuchFieldError unused11) {
+            }
+            try {
+                iArr[ServiceMessageType.GEO_PROXIMITY_REACHED.ordinal()] = 12;
+            } catch (NoSuchFieldError unused12) {
+            }
+            try {
+                iArr[ServiceMessageType.GROUP_CALL.ordinal()] = 13;
+            } catch (NoSuchFieldError unused13) {
+            }
+            try {
+                iArr[ServiceMessageType.GROUP_CALL_SCHEDULED.ordinal()] = 14;
+            } catch (NoSuchFieldError unused14) {
+            }
+            try {
+                iArr[ServiceMessageType.GROUP_CALL_INVITE.ordinal()] = 15;
+            } catch (NoSuchFieldError unused15) {
+            }
+            try {
+                iArr[ServiceMessageType.TTL_CHANGE.ordinal()] = 16;
+            } catch (NoSuchFieldError unused16) {
+            }
+            try {
+                iArr[ServiceMessageType.SET_MESSAGES_TTL.ordinal()] = 17;
+            } catch (NoSuchFieldError unused17) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -148,7 +198,6 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         customContainerView.addView(getTitleTextView(), LayoutHelper.createFrame(-1, 56, 51));
         customContainerView.addView(getShadows()[1], LayoutHelper.createFrame(-1, 1, 83, 0, 0, 0, 48));
         customContainerView.addView(getButtonsLayout(), LayoutHelper.createFrame(-1, 48, 83));
-        Unit unit = Unit.INSTANCE;
         this.containerView = customContainerView;
     }
 
@@ -186,7 +235,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         ViewExtKt.singleLine(textView);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
-        textView.setText(LocaleController.getInternalString(C3158R.string.service_messages));
+        textView.setText(LocaleController.getInternalString(C3286R.string.service_messages));
         textView.setTextColor(Theme.getColor("dialogTextBlack"));
         textView.setTextSize(1, 20.0f);
         textView.setLinkTextColor(Theme.getColor("dialogTextLink"));
@@ -238,15 +287,15 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         r1.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.fork.ui.dialog.DeleteServiceMessagesBottomSheet$$ExternalSyntheticLambda2
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                DeleteServiceMessagesBottomSheet.m1977initListView$lambda5$lambda4(DeleteServiceMessagesBottomSheet.this, view, i);
+                DeleteServiceMessagesBottomSheet.initListView$lambda$5$lambda$4(DeleteServiceMessagesBottomSheet.this, view, i);
             }
         });
         return r1;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-5$lambda-4  reason: not valid java name */
-    public static final void m1977initListView$lambda5$lambda4(DeleteServiceMessagesBottomSheet this$0, View view, int i) {
+    public static final void initListView$lambda$5$lambda$4(DeleteServiceMessagesBottomSheet this$0, View view, int i) {
+        ServiceMessageType[] values;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(view, "view");
         if (view instanceof TextCheckCell) {
@@ -267,12 +316,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
                 this$0.selectedFiltersCodes.add(Integer.valueOf(i - 1));
             } else if (this$0.selectedFiltersCodes.contains(Integer.valueOf(ServiceMessageType.ALL.getCode(this$0.isChannel)))) {
                 this$0.selectedFiltersCodes.clear();
-                ServiceMessageType[] values = ServiceMessageType.Companion.getValues(this$0.isChannel);
-                int i2 = 0;
-                int length = values.length;
-                while (i2 < length) {
-                    ServiceMessageType serviceMessageType = values[i2];
-                    i2++;
+                for (ServiceMessageType serviceMessageType : ServiceMessageType.Companion.getValues(this$0.isChannel)) {
                     if (serviceMessageType.getCode(this$0.isChannel) != i - 1 && serviceMessageType != ServiceMessageType.ALL) {
                         this$0.selectedFiltersCodes.add(Integer.valueOf(serviceMessageType.getCode(this$0.isChannel)));
                     }
@@ -294,24 +338,20 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FrameLayout initButtonsLayout() {
+        TextView[] bottomButtons;
         final FrameLayout frameLayout = new FrameLayout(getContext());
         com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(frameLayout, AndroidUtilities.m50dp(8));
         frameLayout.setBackgroundColor(Theme.getColor("dialogBackground"));
-        TextView[] bottomButtons = getBottomButtons();
-        int length = bottomButtons.length;
-        int i = 0;
-        while (i < length) {
-            TextView textView = bottomButtons[i];
-            i++;
+        for (TextView textView : getBottomButtons()) {
             Intrinsics.checkNotNull(textView);
             Object tag = textView.getTag();
-            Objects.requireNonNull(tag, "null cannot be cast to non-null type kotlin.Int");
+            Intrinsics.checkNotNull(tag, "null cannot be cast to non-null type kotlin.Int");
             frameLayout.addView(textView, LayoutHelper.createFrameRelatively(-2.0f, 36.0f, (((Integer) tag).intValue() == 0 ? 3 : 5) | 16));
         }
         if (!ViewCompat.isLaidOut(frameLayout) || frameLayout.isLayoutRequested()) {
-            frameLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: org.fork.ui.dialog.DeleteServiceMessagesBottomSheet$initButtonsLayout$lambda-7$$inlined$doOnLayout$1
+            frameLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: org.fork.ui.dialog.DeleteServiceMessagesBottomSheet$initButtonsLayout$lambda$7$$inlined$doOnLayout$1
                 @Override // android.view.View.OnLayoutChangeListener
-                public void onLayoutChange(View view, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9) {
+                public void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
                     Intrinsics.checkNotNullParameter(view, "view");
                     view.removeOnLayoutChangeListener(this);
                     DeleteServiceMessagesBottomSheet.this.getShadows()[1].setBottom(frameLayout.getTop());
@@ -419,27 +459,24 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public final void showPeriodSelectionDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle(LocaleController.getInternalString(C3158R.string.erasing_period));
+        builder.setTitle(LocaleController.getInternalString(C3286R.string.erasing_period));
         ErasingPeriod[] values = ErasingPeriod.values();
         ArrayList arrayList = new ArrayList(values.length);
         for (ErasingPeriod erasingPeriod : values) {
             arrayList.add(LocaleController.getInternalString(erasingPeriod.getStringRes()));
         }
-        Object[] array = arrayList.toArray(new CharSequence[0]);
-        Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-        builder.setItems((CharSequence[]) array, new DialogInterface.OnClickListener() { // from class: org.fork.ui.dialog.DeleteServiceMessagesBottomSheet$$ExternalSyntheticLambda0
+        builder.setItems((CharSequence[]) arrayList.toArray(new CharSequence[0]), new DialogInterface.OnClickListener() { // from class: org.fork.ui.dialog.DeleteServiceMessagesBottomSheet$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                DeleteServiceMessagesBottomSheet.m1978showPeriodSelectionDialog$lambda10(DeleteServiceMessagesBottomSheet.this, dialogInterface, i);
+                DeleteServiceMessagesBottomSheet.showPeriodSelectionDialog$lambda$10(DeleteServiceMessagesBottomSheet.this, dialogInterface, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3158R.string.Cancel), null);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null);
         builder.create().show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showPeriodSelectionDialog$lambda-10  reason: not valid java name */
-    public static final void m1978showPeriodSelectionDialog$lambda10(DeleteServiceMessagesBottomSheet this$0, DialogInterface dialogInterface, int i) {
+    public static final void showPeriodSelectionDialog$lambda$10(DeleteServiceMessagesBottomSheet this$0, DialogInterface dialogInterface, int i) {
         int period;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int seconds = (int) TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis());
@@ -460,9 +497,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         int color = Theme.getColor("dialogButton");
         Typeface typeface = AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM);
         TextView[] textViewArr = new TextView[2];
-        int i = 0;
-        while (true) {
-            int i2 = i + 1;
+        for (int i = 0; i < 2; i++) {
             final Context context = getContext();
             AppCompatTextView appCompatTextView = new AppCompatTextView(context) { // from class: org.fork.ui.dialog.DeleteServiceMessagesBottomSheet$getBottomDialogButtons$1
                 @Override // android.widget.TextView, android.view.View
@@ -472,9 +507,9 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
                 }
 
                 @Override // android.widget.TextView
-                public void setTextColor(int i3) {
-                    super.setTextColor(i3);
-                    setBackground(Theme.getRoundRectSelectorDrawable(i3));
+                public void setTextColor(int i2) {
+                    super.setTextColor(i2);
+                    setBackground(Theme.getRoundRectSelectorDrawable(i2));
                 }
             };
             com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(appCompatTextView, m50dp2);
@@ -485,9 +520,9 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
             appCompatTextView.setSingleLine(true);
             appCompatTextView.setBackground(Theme.getRoundRectSelectorDrawable(color));
             if (i == 0) {
-                string = LocaleController.getString("Cancel", C3158R.string.Cancel);
+                string = LocaleController.getString("Cancel", C3286R.string.Cancel);
             } else {
-                string = LocaleController.getString("Delete", C3158R.string.Delete);
+                string = LocaleController.getString("Delete", C3286R.string.Delete);
             }
             Intrinsics.checkNotNullExpressionValue(string, "when (i) {\n             …Delete)\n                }");
             Locale locale = Locale.getDefault();
@@ -501,32 +536,28 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
             appCompatTextView.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.DeleteServiceMessagesBottomSheet$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DeleteServiceMessagesBottomSheet.m1976getBottomDialogButtons$lambda12$lambda11(runnable, this, view);
+                    DeleteServiceMessagesBottomSheet.getBottomDialogButtons$lambda$12$lambda$11(runnable, this, view);
                 }
             });
             Unit unit = Unit.INSTANCE;
             textViewArr[i] = appCompatTextView;
-            if (i2 > 1) {
-                return textViewArr;
-            }
-            i = i2;
         }
+        return textViewArr;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBottomDialogButtons$lambda-12$lambda-11  reason: not valid java name */
-    public static final void m1976getBottomDialogButtons$lambda12$lambda11(Runnable onFiltersSelectionConfirmedAction, DeleteServiceMessagesBottomSheet this$0, View v) {
+    public static final void getBottomDialogButtons$lambda$12$lambda$11(Runnable onFiltersSelectionConfirmedAction, DeleteServiceMessagesBottomSheet this$0, View v) {
         Intrinsics.checkNotNullParameter(onFiltersSelectionConfirmedAction, "$onFiltersSelectionConfirmedAction");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(v, "v");
         if (AndroidUtilities.isServiceRunning(ServiceMessagesRemovingService.class)) {
-            String internalString = LocaleController.getInternalString(C3158R.string.already_removing);
+            String internalString = LocaleController.getInternalString(C3286R.string.already_removing);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.already_removing)");
             ContextExtKt.toast(internalString);
             return;
         }
         Object tag = v.getTag();
-        Objects.requireNonNull(tag, "null cannot be cast to non-null type kotlin.Int");
+        Intrinsics.checkNotNull(tag, "null cannot be cast to non-null type kotlin.Int");
         if (((Integer) tag).intValue() != 0) {
             onFiltersSelectionConfirmedAction.run();
         }
@@ -540,79 +571,79 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         String text;
         switch (WhenMappings.$EnumSwitchMapping$0[ServiceMessageType.Companion.getByCode(i, this.isChannel).ordinal()]) {
             case 1:
-                string = LocaleController.getString("ActionCreateGroup", C3158R.string.ActionCreateGroup);
+                string = LocaleController.getString("ActionCreateGroup", C3286R.string.ActionCreateGroup);
                 break;
             case 2:
                 if (this.isChannel) {
-                    string = LocaleController.getString("ActionChannelChangedTitle", C3158R.string.ActionChannelChangedTitle);
+                    string = LocaleController.getString("ActionChannelChangedTitle", C3286R.string.ActionChannelChangedTitle);
                     break;
                 } else {
-                    string = LocaleController.getString("ActionChangedTitle", C3158R.string.ActionChangedTitle);
+                    string = LocaleController.getString("ActionChangedTitle", C3286R.string.ActionChangedTitle);
                     break;
                 }
             case 3:
                 if (this.isChannel) {
-                    string = LocaleController.getString("ActionChannelChangedPhoto", C3158R.string.ActionChannelChangedPhoto);
+                    string = LocaleController.getString("ActionChannelChangedPhoto", C3286R.string.ActionChannelChangedPhoto);
                     break;
                 } else {
-                    string = LocaleController.getString("ActionChangedPhoto", C3158R.string.ActionChangedPhoto);
+                    string = LocaleController.getString("ActionChangedPhoto", C3286R.string.ActionChangedPhoto);
                     break;
                 }
             case 4:
                 if (this.isChannel) {
-                    string = LocaleController.getString("ActionChannelRemovedPhoto", C3158R.string.ActionChannelRemovedPhoto);
+                    string = LocaleController.getString("ActionChannelRemovedPhoto", C3286R.string.ActionChannelRemovedPhoto);
                     break;
                 } else {
-                    string = LocaleController.getString("ActionRemovedPhoto", C3158R.string.ActionRemovedPhoto);
+                    string = LocaleController.getString("ActionRemovedPhoto", C3286R.string.ActionRemovedPhoto);
                     break;
                 }
             case 5:
-                string = LocaleController.formatStringInternal(C3158R.string.service_messages_variants, LocaleController.getString("ActionAddUserSelfMega", C3158R.string.ActionAddUserSelfMega), LocaleController.getString("ActionAddUser", C3158R.string.ActionAddUser));
+                string = LocaleController.formatStringInternal(C3286R.string.service_messages_variants, LocaleController.getString("ActionAddUserSelfMega", C3286R.string.ActionAddUserSelfMega), LocaleController.getString("ActionAddUser", C3286R.string.ActionAddUser));
                 break;
             case 6:
-                string = LocaleController.getString("ActionLeftUser", C3158R.string.ActionLeftUser);
+                string = LocaleController.getString("ActionLeftUser", C3286R.string.ActionLeftUser);
                 break;
             case 7:
-                string = LocaleController.getString("ActionInviteUser", C3158R.string.ActionInviteUser);
+                string = LocaleController.getString("ActionInviteUser", C3286R.string.ActionInviteUser);
                 break;
             case 8:
-                string = LocaleController.getString("ActionPinnedNoText", C3158R.string.ActionPinnedNoText);
+                string = LocaleController.getString("ActionPinnedNoText", C3286R.string.ActionPinnedNoText);
                 break;
             case 9:
-                string = LocaleController.formatString("ActionUserScored", C3158R.string.ActionUserScored, "...");
+                string = LocaleController.formatString("ActionUserScored", C3286R.string.ActionUserScored, "...");
                 break;
             case 10:
-                string = LocaleController.formatString("PaymentSuccessfullyPaid", C3158R.string.PaymentSuccessfullyPaid, "...", "...", "...");
+                string = LocaleController.formatString("PaymentSuccessfullyPaid", C3286R.string.PaymentSuccessfullyPaid, "...", "...", "...");
                 break;
             case 11:
-                string = LocaleController.getString("ActionTakeScreenshoot", C3158R.string.ActionTakeScreenshoot);
+                string = LocaleController.getString("ActionTakeScreenshoot", C3286R.string.ActionTakeScreenshoot);
                 break;
             case 12:
-                string = LocaleController.formatString("ActionUserWithinRadius", C3158R.string.ActionUserWithinRadius, "...");
+                string = LocaleController.formatString("ActionUserWithinRadius", C3286R.string.ActionUserWithinRadius, "...");
                 break;
             case 13:
                 if (this.isChannel) {
-                    string = LocaleController.formatStringInternal(C3158R.string.service_messages_variants, LocaleController.getString("ActionGroupCallJustStarted", C3158R.string.ActionGroupCallStarted), LocaleController.formatString("ActionChannelCallEnded", C3158R.string.ActionChannelCallEnded, "..."));
+                    string = LocaleController.formatStringInternal(C3286R.string.service_messages_variants, LocaleController.getString("ActionGroupCallJustStarted", C3286R.string.ActionGroupCallStarted), LocaleController.formatString("ActionChannelCallEnded", C3286R.string.ActionChannelCallEnded, "..."));
                     break;
                 } else {
-                    string = LocaleController.formatStringInternal(C3158R.string.service_messages_variants, LocaleController.getString("ActionGroupCallStarted", C3158R.string.ActionGroupCallStarted), LocaleController.formatString("ActionGroupCallEndedBy", C3158R.string.ActionGroupCallEndedBy, "..."));
+                    string = LocaleController.formatStringInternal(C3286R.string.service_messages_variants, LocaleController.getString("ActionGroupCallStarted", C3286R.string.ActionGroupCallStarted), LocaleController.formatString("ActionGroupCallEndedBy", C3286R.string.ActionGroupCallEndedBy, "..."));
                     break;
                 }
             case 14:
-                string = LocaleController.formatString("ActionGroupCallScheduled", C3158R.string.ActionGroupCallScheduled, "...");
+                string = LocaleController.formatString("ActionGroupCallScheduled", C3286R.string.ActionGroupCallScheduled, "...");
                 break;
             case 15:
-                string = LocaleController.getString("ActionGroupCallInvited", C3158R.string.ActionGroupCallInvited);
+                string = LocaleController.getString("ActionGroupCallInvited", C3286R.string.ActionGroupCallInvited);
                 break;
             case 16:
-                string = LocaleController.formatString("MessageLifetimeChanged", C3158R.string.MessageLifetimeChanged, "...", "...");
+                string = LocaleController.formatString("MessageLifetimeChanged", C3286R.string.MessageLifetimeChanged, "...", "...");
                 break;
             case 17:
                 if (this.isChannel) {
-                    string = LocaleController.getString("ActionTTLChannelChanged", C3158R.string.ActionTTLChannelChanged);
+                    string = LocaleController.getString("ActionTTLChannelChanged", C3286R.string.ActionTTLChannelChanged);
                     break;
                 } else {
-                    string = LocaleController.formatString("ActionTTLChanged", C3158R.string.ActionTTLChanged, "...");
+                    string = LocaleController.formatString("ActionTTLChanged", C3286R.string.ActionTTLChanged, "...");
                     break;
                 }
             default:
@@ -623,6 +654,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         Intrinsics.checkNotNullExpressionValue(text2, "text");
         replace$default = StringsKt__StringsJVMKt.replace$default(text2, "un1", "...", false, 4, (Object) null);
         text = StringsKt__StringsJVMKt.replace$default(replace$default, "un2", "...", false, 4, (Object) null);
+        StringBuilder sb = new StringBuilder();
         Intrinsics.checkNotNullExpressionValue(text, "text");
         String substring = text.substring(0, 1);
         Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
@@ -630,10 +662,12 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         Intrinsics.checkNotNullExpressionValue(locale, "getDefault()");
         String upperCase = substring.toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(locale)");
+        sb.append(upperCase);
         Intrinsics.checkNotNullExpressionValue(text, "text");
         String substring2 = text.substring(1);
         Intrinsics.checkNotNullExpressionValue(substring2, "this as java.lang.String).substring(startIndex)");
-        return Intrinsics.stringPlus(upperCase, substring2);
+        sb.append(substring2);
+        return sb.toString();
     }
 
     private final Intent getServiceMessagesRemovingServiceIntent(int i) {
@@ -691,7 +725,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         private final int code;
         private final int period;
         private final int stringRes;
-        public static final ErasingPeriod ALL_TIME = new ErasingPeriod("ALL_TIME", 4, 4, 0, C3158R.string.period_all_time);
+        public static final ErasingPeriod ALL_TIME = new ErasingPeriod("ALL_TIME", 4, 4, 0, C3286R.string.period_all_time);
         private static final /* synthetic */ ErasingPeriod[] $VALUES = $values();
         public static final Companion Companion = new Companion(null);
 
@@ -723,10 +757,10 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
 
         static {
             long j = 1000;
-            DAY = new ErasingPeriod("DAY", 0, 0, (int) (ChronoUnit.DAYS.getDuration().toMillis() / j), C3158R.string.period_last_day);
-            WEEK = new ErasingPeriod("WEEK", 1, 1, (int) (ChronoUnit.WEEKS.getDuration().toMillis() / j), C3158R.string.period_last_week);
-            MONTH = new ErasingPeriod("MONTH", 2, 2, (int) (ChronoUnit.MONTHS.getDuration().toMillis() / j), C3158R.string.period_last_month);
-            YEAR = new ErasingPeriod("YEAR", 3, 3, (int) (ChronoUnit.YEARS.getDuration().toMillis() / j), C3158R.string.period_last_year);
+            DAY = new ErasingPeriod("DAY", 0, 0, (int) (ChronoUnit.DAYS.getDuration().toMillis() / j), C3286R.string.period_last_day);
+            WEEK = new ErasingPeriod("WEEK", 1, 1, (int) (ChronoUnit.WEEKS.getDuration().toMillis() / j), C3286R.string.period_last_week);
+            MONTH = new ErasingPeriod("MONTH", 2, 2, (int) (ChronoUnit.MONTHS.getDuration().toMillis() / j), C3286R.string.period_last_month);
+            YEAR = new ErasingPeriod("YEAR", 3, 3, (int) (ChronoUnit.YEARS.getDuration().toMillis() / j), C3286R.string.period_last_year);
         }
 
         /* compiled from: DeleteServiceMessagesBottomSheet.kt */
@@ -741,13 +775,9 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
             }
 
             public final ErasingPeriod getByCode(int i) {
+                ErasingPeriod[] values;
                 ErasingPeriod erasingPeriod = ErasingPeriod.ALL_TIME;
-                ErasingPeriod[] values = ErasingPeriod.values();
-                int length = values.length;
-                int i2 = 0;
-                while (i2 < length) {
-                    ErasingPeriod erasingPeriod2 = values[i2];
-                    i2++;
+                for (ErasingPeriod erasingPeriod2 : ErasingPeriod.values()) {
                     if (erasingPeriod2.code == i) {
                         erasingPeriod = erasingPeriod2;
                     }
@@ -771,10 +801,9 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
             return true;
         }
 
-        public ServiceMessagesTypesAdapter(DeleteServiceMessagesBottomSheet this$0, Context context) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
+        public ServiceMessagesTypesAdapter(DeleteServiceMessagesBottomSheet deleteServiceMessagesBottomSheet, Context context) {
             Intrinsics.checkNotNullParameter(context, "context");
-            this.this$0 = this$0;
+            this.this$0 = deleteServiceMessagesBottomSheet;
             this.context = context;
         }
 
@@ -829,7 +858,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK && (view instanceof TextCheckCell)) {
-                ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3158R.string.service_messages_all), this.this$0.selectedFiltersCodes.contains(Integer.valueOf(ServiceMessageType.ALL.getCode(this.this$0.isChannel))), true);
+                ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3286R.string.service_messages_all), this.this$0.selectedFiltersCodes.contains(Integer.valueOf(ServiceMessageType.ALL.getCode(this.this$0.isChannel))), true);
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_BOX && (view instanceof TextCheckBoxCell)) {
                 TextCheckBoxCell textCheckBoxCell = (TextCheckBoxCell) view;
                 int i2 = i - 1;
@@ -851,14 +880,13 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         final /* synthetic */ DeleteServiceMessagesBottomSheet this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public CustomContainerView(DeleteServiceMessagesBottomSheet this$0, Context context) {
+        public CustomContainerView(DeleteServiceMessagesBottomSheet deleteServiceMessagesBottomSheet, Context context) {
             super(context);
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullParameter(context, "context");
-            this.this$0 = this$0;
+            this.this$0 = deleteServiceMessagesBottomSheet;
             this.rect = new RectF();
             setWillNotDraw(false);
-            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(this, ((BottomSheet) this$0).backgroundPaddingLeft);
+            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(this, ((BottomSheet) deleteServiceMessagesBottomSheet).backgroundPaddingLeft);
         }
 
         @Override // android.view.ViewGroup

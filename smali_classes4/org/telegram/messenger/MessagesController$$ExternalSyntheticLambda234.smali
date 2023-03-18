@@ -2,38 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
+.field public final synthetic f$0:Lorg/telegram/tgnet/TLObject;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;)V
+.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda234;->f$0:Lorg/telegram/messenger/MessagesController;
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda234;->f$0:Lorg/telegram/tgnet/TLObject;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda234;->f$0:Lorg/telegram/messenger/MessagesController;
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda234;->f$0:Lorg/telegram/tgnet/TLObject;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$Update;
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$Z5t_Wucum--R4hpOyzsXGbZy-zQ(Lorg/telegram/tgnet/TLObject;)V
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$Update;
-
-    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$NX7qCLgwq7W8JCgruQid94c457I(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Update;Lorg/telegram/tgnet/TLRPC$Update;)I
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

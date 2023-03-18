@@ -45,7 +45,7 @@
 
     move v5, p3
 
-    invoke-static/range {v0 .. v5}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->$r8$lambda$3qnb2RFEOOfeXxDUIa5UO8wjieU(Ljava/util/List;Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;Ljava/util/List;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static/range {v0 .. v5}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->$r8$lambda$prnKnNxeaDx_RZnXHUEzhqPZ7co(Ljava/util/List;Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;Ljava/util/List;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method

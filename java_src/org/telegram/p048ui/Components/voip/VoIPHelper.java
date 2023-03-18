@@ -25,11 +25,12 @@ import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
@@ -94,7 +95,7 @@ public class VoIPHelper {
         int i2;
         String str2;
         if (tLRPC$UserFull != null && tLRPC$UserFull.phone_calls_private) {
-            new AlertDialog.Builder(activity).setTitle(LocaleController.getString("VoipFailed", C3158R.string.VoipFailed)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("CallNotAvailable", C3158R.string.CallNotAvailable, ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name)))).setPositiveButton(LocaleController.getString("OK", C3158R.string.OK), null).show();
+            new AlertDialog.Builder(activity).setTitle(LocaleController.getString("VoipFailed", C3286R.string.VoipFailed)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("CallNotAvailable", C3286R.string.CallNotAvailable, ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name)))).setPositiveButton(LocaleController.getString("OK", C3286R.string.OK), null).show();
         } else if (ConnectionsManager.getInstance(UserConfig.selectedAccount).getConnectionState() == 3) {
             if (z3) {
                 AlertsCreator.showCallConfirmAlert(tLRPC$User, z, z2, activity, tLRPC$UserFull, accountInstance);
@@ -118,25 +119,25 @@ public class VoIPHelper {
             boolean z4 = Settings.System.getInt(activity.getContentResolver(), "airplane_mode_on", 0) != 0;
             AlertDialog.Builder builder = new AlertDialog.Builder(activity);
             if (z4) {
-                i = C3158R.string.VoipOfflineAirplaneTitle;
+                i = C3286R.string.VoipOfflineAirplaneTitle;
                 str = "VoipOfflineAirplaneTitle";
             } else {
-                i = C3158R.string.VoipOfflineTitle;
+                i = C3286R.string.VoipOfflineTitle;
                 str = "VoipOfflineTitle";
             }
             AlertDialog.Builder title = builder.setTitle(LocaleController.getString(str, i));
             if (z4) {
-                i2 = C3158R.string.VoipOfflineAirplane;
+                i2 = C3286R.string.VoipOfflineAirplane;
                 str2 = "VoipOfflineAirplane";
             } else {
-                i2 = C3158R.string.VoipOffline;
+                i2 = C3286R.string.VoipOffline;
                 str2 = "VoipOffline";
             }
-            AlertDialog.Builder positiveButton = title.setMessage(LocaleController.getString(str2, i2)).setPositiveButton(LocaleController.getString("OK", C3158R.string.OK), null);
+            AlertDialog.Builder positiveButton = title.setMessage(LocaleController.getString(str2, i2)).setPositiveButton(LocaleController.getString("OK", C3286R.string.OK), null);
             if (z4) {
                 final Intent intent = new Intent("android.settings.AIRPLANE_MODE_SETTINGS");
                 if (intent.resolveActivity(activity.getPackageManager()) != null) {
-                    positiveButton.setNeutralButton(LocaleController.getString("VoipOfflineOpenSettings", C3158R.string.VoipOfflineOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda1
+                    positiveButton.setNeutralButton(LocaleController.getString("VoipOfflineOpenSettings", C3286R.string.VoipOfflineOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda1
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i3) {
                             activity.startActivity(intent);
@@ -168,25 +169,25 @@ public class VoIPHelper {
             boolean z2 = Settings.System.getInt(activity.getContentResolver(), "airplane_mode_on", 0) != 0;
             AlertDialog.Builder builder = new AlertDialog.Builder(activity);
             if (z2) {
-                i = C3158R.string.VoipOfflineAirplaneTitle;
+                i = C3286R.string.VoipOfflineAirplaneTitle;
                 str2 = "VoipOfflineAirplaneTitle";
             } else {
-                i = C3158R.string.VoipOfflineTitle;
+                i = C3286R.string.VoipOfflineTitle;
                 str2 = "VoipOfflineTitle";
             }
             AlertDialog.Builder title = builder.setTitle(LocaleController.getString(str2, i));
             if (z2) {
-                i2 = C3158R.string.VoipGroupOfflineAirplane;
+                i2 = C3286R.string.VoipGroupOfflineAirplane;
                 str3 = "VoipGroupOfflineAirplane";
             } else {
-                i2 = C3158R.string.VoipGroupOffline;
+                i2 = C3286R.string.VoipGroupOffline;
                 str3 = "VoipGroupOffline";
             }
-            AlertDialog.Builder positiveButton = title.setMessage(LocaleController.getString(str3, i2)).setPositiveButton(LocaleController.getString("OK", C3158R.string.OK), null);
+            AlertDialog.Builder positiveButton = title.setMessage(LocaleController.getString(str3, i2)).setPositiveButton(LocaleController.getString("OK", C3286R.string.OK), null);
             if (z2) {
                 final Intent intent = new Intent("android.settings.AIRPLANE_MODE_SETTINGS");
                 if (intent.resolveActivity(activity.getPackageManager()) != null) {
-                    positiveButton.setNeutralButton(LocaleController.getString("VoipOfflineOpenSettings", C3158R.string.VoipOfflineOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda2
+                    positiveButton.setNeutralButton(LocaleController.getString("VoipOfflineOpenSettings", C3286R.string.VoipOfflineOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda2
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i3) {
                             activity.startActivity(intent);
@@ -201,7 +202,7 @@ public class VoIPHelper {
             }
         } else if (Build.VERSION.SDK_INT >= 23) {
             ArrayList arrayList = new ArrayList();
-            ChatObject.Call groupCall = accountInstance.getMessagesController().getGroupCall(tLRPC$Chat.f1494id, false);
+            ChatObject.Call groupCall = accountInstance.getMessagesController().getGroupCall(tLRPC$Chat.f1499id, false);
             if (activity.checkSelfPermission("android.permission.RECORD_AUDIO") != 0 && (groupCall == null || !groupCall.call.rtmp_stream)) {
                 arrayList.add("android.permission.RECORD_AUDIO");
             }
@@ -228,7 +229,7 @@ public class VoIPHelper {
             }
             VoIPService sharedInstance = VoIPService.getSharedInstance();
             if (sharedInstance != null) {
-                long j = tLRPC$User != null ? tLRPC$User.f1633id : -tLRPC$Chat.f1494id;
+                long j = tLRPC$User != null ? tLRPC$User.f1639id : -tLRPC$Chat.f1499id;
                 long callerId = VoIPService.getSharedInstance().getCallerId();
                 if (callerId != j || sharedInstance.getAccount() != accountInstance.getCurrentAccount()) {
                     int i3 = (callerId > 0L ? 1 : (callerId == 0L ? 0 : -1));
@@ -236,19 +237,19 @@ public class VoIPHelper {
                         TLRPC$User user = sharedInstance.getUser();
                         str2 = ContactsController.formatName(user.first_name, user.last_name);
                         if (j > 0) {
-                            i = C3158R.string.VoipOngoingAlert;
+                            i = C3286R.string.VoipOngoingAlert;
                             str3 = "VoipOngoingAlert";
                         } else {
-                            i = C3158R.string.VoipOngoingAlert2;
+                            i = C3286R.string.VoipOngoingAlert2;
                             str3 = "VoipOngoingAlert2";
                         }
                     } else {
                         str2 = sharedInstance.getChat().title;
                         if (j > 0) {
-                            i = C3158R.string.VoipOngoingChatAlert2;
+                            i = C3286R.string.VoipOngoingChatAlert2;
                             str3 = "VoipOngoingChatAlert2";
                         } else {
-                            i = C3158R.string.VoipOngoingChatAlert;
+                            i = C3286R.string.VoipOngoingChatAlert;
                             str3 = "VoipOngoingChatAlert";
                         }
                     }
@@ -259,18 +260,18 @@ public class VoIPHelper {
                     }
                     AlertDialog.Builder builder = new AlertDialog.Builder(activity);
                     if (i3 < 0) {
-                        i2 = C3158R.string.VoipOngoingChatAlertTitle;
+                        i2 = C3286R.string.VoipOngoingChatAlertTitle;
                         str5 = "VoipOngoingChatAlertTitle";
                     } else {
-                        i2 = C3158R.string.VoipOngoingAlertTitle;
+                        i2 = C3286R.string.VoipOngoingAlertTitle;
                         str5 = "VoipOngoingAlertTitle";
                     }
-                    builder.setTitle(LocaleController.getString(str5, i2)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(str3, i, str2, str4))).setPositiveButton(LocaleController.getString("OK", C3158R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda5
+                    builder.setTitle(LocaleController.getString(str5, i2)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(str3, i, str2, str4))).setPositiveButton(LocaleController.getString("OK", C3286R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda5
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i4) {
                             VoIPHelper.lambda$initiateCall$3(TLRPC$User.this, tLRPC$Chat, str, z, z2, z3, activity, baseFragment, accountInstance, dialogInterface, i4);
                         }
-                    }).setNegativeButton(LocaleController.getString("Cancel", C3158R.string.Cancel), null).show();
+                    }).setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null).show();
                 } else if (tLRPC$User != null || !(activity instanceof LaunchActivity)) {
                     activity.startActivity(new Intent(activity, LaunchActivity.class).setAction(tLRPC$User != null ? "voip" : "voip_chat"));
                 } else {
@@ -322,16 +323,16 @@ public class VoIPHelper {
             if (SystemClock.elapsedRealtime() - lastCallTime < (tLRPC$Chat != null ? 200 : 2000)) {
                 return;
             }
-            if (z5 && tLRPC$Chat != null && !z4 && (chatFull2 = accountInstance.getMessagesController().getChatFull(tLRPC$Chat.f1494id)) != null && (tLRPC$Peer = chatFull2.groupcall_default_join_as) != null) {
+            if (z5 && tLRPC$Chat != null && !z4 && (chatFull2 = accountInstance.getMessagesController().getChatFull(tLRPC$Chat.f1499id)) != null && (tLRPC$Peer = chatFull2.groupcall_default_join_as) != null) {
                 final TLRPC$InputPeer inputPeer = accountInstance.getMessagesController().getInputPeer(MessageObject.getPeerId(tLRPC$Peer));
-                JoinCallAlert.checkFewUsers(activity, -tLRPC$Chat.f1494id, accountInstance, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda16
+                JoinCallAlert.checkFewUsers(activity, -tLRPC$Chat.f1499id, accountInstance, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda16
                     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
                     public final void run(boolean z7) {
                         VoIPHelper.lambda$doInitiateCall$4(str, activity, tLRPC$Chat, tLRPC$User, inputPeer, z2, z3, baseFragment, accountInstance, z7);
                     }
                 });
             } else if (z5 && tLRPC$Chat != null) {
-                JoinCallAlert.open(activity, -tLRPC$Chat.f1494id, accountInstance, baseFragment, !z4 ? 1 : 0, null, new JoinCallAlert.JoinCallAlertDelegate() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda20
+                JoinCallAlert.open(activity, -tLRPC$Chat.f1499id, accountInstance, baseFragment, !z4 ? 1 : 0, null, new JoinCallAlert.JoinCallAlertDelegate() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda20
                     @Override // org.telegram.p048ui.Components.JoinCallAlert.JoinCallAlertDelegate
                     public final void didSelectChat(TLRPC$InputPeer tLRPC$InputPeer2, boolean z7, boolean z8) {
                         VoIPHelper.lambda$doInitiateCall$5(z4, activity, accountInstance, tLRPC$Chat, str, tLRPC$User, z2, z3, baseFragment, tLRPC$InputPeer2, z7, z8);
@@ -340,28 +341,28 @@ public class VoIPHelper {
             } else if (z6 && !z && (tLRPC$InputPeer instanceof TLRPC$TL_inputPeerUser) && ChatObject.shouldSendAnonymously(tLRPC$Chat) && (!ChatObject.isChannel(tLRPC$Chat) || tLRPC$Chat.megagroup)) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(activity);
                 if (ChatObject.isChannelOrGiga(tLRPC$Chat)) {
-                    i = C3158R.string.VoipChannelVoiceChat;
+                    i = C3286R.string.VoipChannelVoiceChat;
                     str2 = "VoipChannelVoiceChat";
                 } else {
-                    i = C3158R.string.VoipGroupVoiceChat;
+                    i = C3286R.string.VoipGroupVoiceChat;
                     str2 = "VoipGroupVoiceChat";
                 }
                 AlertDialog.Builder title = builder.setTitle(LocaleController.getString(str2, i));
                 if (ChatObject.isChannelOrGiga(tLRPC$Chat)) {
-                    i2 = C3158R.string.VoipChannelJoinAnonymouseAlert;
+                    i2 = C3286R.string.VoipChannelJoinAnonymouseAlert;
                     str3 = "VoipChannelJoinAnonymouseAlert";
                 } else {
-                    i2 = C3158R.string.VoipGroupJoinAnonymouseAlert;
+                    i2 = C3286R.string.VoipGroupJoinAnonymouseAlert;
                     str3 = "VoipGroupJoinAnonymouseAlert";
                 }
-                title.setMessage(LocaleController.getString(str3, i2)).setPositiveButton(LocaleController.getString("VoipChatJoin", C3158R.string.VoipChatJoin), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda4
+                title.setMessage(LocaleController.getString(str3, i2)).setPositiveButton(LocaleController.getString("VoipChatJoin", C3286R.string.VoipChatJoin), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda4
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i3) {
                         VoIPHelper.doInitiateCall(TLRPC$User.this, tLRPC$Chat, str, tLRPC$InputPeer, false, z2, z3, z4, activity, baseFragment, accountInstance, false, false);
                     }
-                }).setNegativeButton(LocaleController.getString("Cancel", C3158R.string.Cancel), null).show();
+                }).setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null).show();
             } else {
-                if (tLRPC$Chat != null && tLRPC$InputPeer != null && (chatFull = accountInstance.getMessagesController().getChatFull(tLRPC$Chat.f1494id)) != null) {
+                if (tLRPC$Chat != null && tLRPC$InputPeer != null && (chatFull = accountInstance.getMessagesController().getChatFull(tLRPC$Chat.f1499id)) != null) {
                     if (tLRPC$InputPeer instanceof TLRPC$TL_inputPeerUser) {
                         TLRPC$TL_peerUser tLRPC$TL_peerUser = new TLRPC$TL_peerUser();
                         chatFull.groupcall_default_join_as = tLRPC$TL_peerUser;
@@ -376,22 +377,22 @@ public class VoIPHelper {
                         tLRPC$TL_peerChannel.channel_id = tLRPC$InputPeer.channel_id;
                     }
                     if (chatFull instanceof TLRPC$TL_chatFull) {
-                        chatFull.flags |= 32768;
+                        chatFull.flags |= LiteMode.FLAG_CHAT_SCALE;
                     } else {
                         chatFull.flags |= ConnectionsManager.FileTypeFile;
                     }
                 }
                 boolean z7 = false;
-                if (tLRPC$Chat != null && !z4 && (groupCall = accountInstance.getMessagesController().getGroupCall(tLRPC$Chat.f1494id, false)) != null && groupCall.isScheduled()) {
+                if (tLRPC$Chat != null && !z4 && (groupCall = accountInstance.getMessagesController().getGroupCall(tLRPC$Chat.f1499id, false)) != null && groupCall.isScheduled()) {
                     GroupCallActivity.create((LaunchActivity) activity, accountInstance, tLRPC$Chat, tLRPC$InputPeer, z, str);
                     return;
                 }
                 lastCallTime = SystemClock.elapsedRealtime();
                 Intent intent = new Intent(activity, VoIPService.class);
                 if (tLRPC$User != null) {
-                    intent.putExtra("user_id", tLRPC$User.f1633id);
+                    intent.putExtra("user_id", tLRPC$User.f1639id);
                 } else {
-                    intent.putExtra("chat_id", tLRPC$Chat.f1494id);
+                    intent.putExtra("chat_id", tLRPC$Chat.f1499id);
                     intent.putExtra("createGroupCall", z4);
                     intent.putExtra("hasFewPeers", z);
                     intent.putExtra("hash", str);
@@ -464,23 +465,23 @@ public class VoIPHelper {
         if (!activity.shouldShowRequestPermissionRationale("android.permission.RECORD_AUDIO") || (z && !activity.shouldShowRequestPermissionRationale("android.permission.CAMERA"))) {
             AlertDialog.Builder builder = new AlertDialog.Builder(activity);
             if (z) {
-                i2 = C3158R.string.VoipNeedMicCameraPermissionWithHint;
+                i2 = C3286R.string.VoipNeedMicCameraPermissionWithHint;
                 str = "VoipNeedMicCameraPermissionWithHint";
             } else {
-                i2 = C3158R.string.VoipNeedMicPermissionWithHint;
+                i2 = C3286R.string.VoipNeedMicPermissionWithHint;
                 str = "VoipNeedMicPermissionWithHint";
             }
-            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.getString(str, i2))).setPositiveButton(LocaleController.getString("Settings", C3158R.string.Settings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda0
+            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.getString(str, i2))).setPositiveButton(LocaleController.getString("Settings", C3286R.string.Settings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i3) {
                     VoIPHelper.lambda$permissionDenied$7(activity, dialogInterface, i3);
                 }
-            }).setNegativeButton(LocaleController.getString("ContactsPermissionAlertNotNow", C3158R.string.ContactsPermissionAlertNotNow), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda7
+            }).setNegativeButton(LocaleController.getString("ContactsPermissionAlertNotNow", C3286R.string.ContactsPermissionAlertNotNow), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda7
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
                     VoIPHelper.lambda$permissionDenied$8(runnable, dialogInterface);
                 }
-            }).setTopAnimation(z ? C3158R.C3164raw.permission_request_camera : C3158R.C3164raw.permission_request_microphone, 72, false, Theme.getColor("dialogTopBackground")).show();
+            }).setTopAnimation(z ? C3286R.C3291raw.permission_request_camera : C3286R.C3291raw.permission_request_microphone, 72, false, Theme.getColor("dialogTopBackground")).show();
         }
     }
 
@@ -552,7 +553,7 @@ public class VoIPHelper {
         textView.setTextSize(2, 16.0f);
         textView.setTextColor(Theme.getColor("dialogTextBlack"));
         textView.setGravity(17);
-        textView.setText(LocaleController.getString("VoipRateCallAlert", C3158R.string.VoipRateCallAlert));
+        textView.setText(LocaleController.getString("VoipRateCallAlert", C3286R.string.VoipRateCallAlert));
         linearLayout.addView(textView);
         final BetterRatingView betterRatingView = new BetterRatingView(context);
         linearLayout.addView(betterRatingView, LayoutHelper.createLinear(-2, -2, 1, 0, 16, 0, 0));
@@ -577,31 +578,31 @@ public class VoIPHelper {
                 checkBoxCell.setTag(strArr[i3]);
                 switch (i3) {
                     case 0:
-                        string = LocaleController.getString("RateCallVideoDistorted", C3158R.string.RateCallVideoDistorted);
+                        string = LocaleController.getString("RateCallVideoDistorted", C3286R.string.RateCallVideoDistorted);
                         break;
                     case 1:
-                        string = LocaleController.getString("RateCallVideoPixelated", C3158R.string.RateCallVideoPixelated);
+                        string = LocaleController.getString("RateCallVideoPixelated", C3286R.string.RateCallVideoPixelated);
                         break;
                     case 2:
-                        string = LocaleController.getString("RateCallEcho", C3158R.string.RateCallEcho);
+                        string = LocaleController.getString("RateCallEcho", C3286R.string.RateCallEcho);
                         break;
                     case 3:
-                        string = LocaleController.getString("RateCallNoise", C3158R.string.RateCallNoise);
+                        string = LocaleController.getString("RateCallNoise", C3286R.string.RateCallNoise);
                         break;
                     case 4:
-                        string = LocaleController.getString("RateCallInterruptions", C3158R.string.RateCallInterruptions);
+                        string = LocaleController.getString("RateCallInterruptions", C3286R.string.RateCallInterruptions);
                         break;
                     case 5:
-                        string = LocaleController.getString("RateCallDistorted", C3158R.string.RateCallDistorted);
+                        string = LocaleController.getString("RateCallDistorted", C3286R.string.RateCallDistorted);
                         break;
                     case 6:
-                        string = LocaleController.getString("RateCallSilentLocal", C3158R.string.RateCallSilentLocal);
+                        string = LocaleController.getString("RateCallSilentLocal", C3286R.string.RateCallSilentLocal);
                         break;
                     case 7:
-                        string = LocaleController.getString("RateCallSilentRemote", C3158R.string.RateCallSilentRemote);
+                        string = LocaleController.getString("RateCallSilentRemote", C3286R.string.RateCallSilentRemote);
                         break;
                     case 8:
-                        string = LocaleController.getString("RateCallDropped", C3158R.string.RateCallDropped);
+                        string = LocaleController.getString("RateCallDropped", C3286R.string.RateCallDropped);
                         break;
                     default:
                         string = null;
@@ -618,12 +619,12 @@ public class VoIPHelper {
         linearLayout.addView(linearLayout2, LayoutHelper.createLinear(-1, -2, -8, 0, -8, 0));
         linearLayout2.setVisibility(8);
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
-        editTextBoldCursor.setHint(LocaleController.getString("VoipFeedbackCommentHint", C3158R.string.VoipFeedbackCommentHint));
+        editTextBoldCursor.setHint(LocaleController.getString("VoipFeedbackCommentHint", C3286R.string.VoipFeedbackCommentHint));
         editTextBoldCursor.setInputType(147457);
         editTextBoldCursor.setTextColor(Theme.getColor("dialogTextBlack"));
         editTextBoldCursor.setHintTextColor(Theme.getColor("dialogTextHint"));
         editTextBoldCursor.setBackground(null);
-        editTextBoldCursor.setLineColors(Theme.getColor("dialogInputField"), Theme.getColor("dialogInputFieldActivated"), Theme.getColor("dialogTextRed2"));
+        editTextBoldCursor.setLineColors(Theme.getColor("dialogInputField"), Theme.getColor("dialogInputFieldActivated"), Theme.getColor("dialogTextRed"));
         editTextBoldCursor.setPadding(0, AndroidUtilities.m50dp(4), 0, AndroidUtilities.m50dp(4));
         editTextBoldCursor.setTextSize(1, 18.0f);
         editTextBoldCursor.setVisibility(8);
@@ -636,14 +637,14 @@ public class VoIPHelper {
                 VoIPHelper.lambda$showRateAlert$10(zArr, checkBoxCell2, view);
             }
         };
-        checkBoxCell2.setText(LocaleController.getString("CallReportIncludeLogs", C3158R.string.CallReportIncludeLogs), null, true, false);
+        checkBoxCell2.setText(LocaleController.getString("CallReportIncludeLogs", C3286R.string.CallReportIncludeLogs), null, true, false);
         checkBoxCell2.setClipToPadding(false);
         checkBoxCell2.setOnClickListener(onClickListener);
         linearLayout.addView(checkBoxCell2, LayoutHelper.createLinear(-1, -2, -8, 0, -8, 0));
         final TextView textView2 = new TextView(context);
         textView2.setTextSize(2, 14.0f);
         textView2.setTextColor(Theme.getColor("dialogTextGray3"));
-        textView2.setText(LocaleController.getString("CallReportLogsExplain", C3158R.string.CallReportLogsExplain));
+        textView2.setText(LocaleController.getString("CallReportLogsExplain", C3286R.string.CallReportLogsExplain));
         textView2.setPadding(AndroidUtilities.m50dp(8), 0, AndroidUtilities.m50dp(8), 0);
         textView2.setOnClickListener(onClickListener);
         linearLayout.addView(textView2);
@@ -652,7 +653,7 @@ public class VoIPHelper {
         if (!logFile.exists()) {
             zArr[0] = false;
         }
-        final AlertDialog create = new AlertDialog.Builder(context).setTitle(LocaleController.getString("CallMessageReportProblem", C3158R.string.CallMessageReportProblem)).setView(linearLayout).setPositiveButton(LocaleController.getString("Send", C3158R.string.Send), VoIPHelper$$ExternalSyntheticLambda6.INSTANCE).setNegativeButton(LocaleController.getString("Cancel", C3158R.string.Cancel), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda8
+        final AlertDialog create = new AlertDialog.Builder(context).setTitle(LocaleController.getString("CallMessageReportProblem", C3286R.string.CallMessageReportProblem)).setView(linearLayout).setPositiveButton(LocaleController.getString("Send", C3286R.string.Send), VoIPHelper$$ExternalSyntheticLambda6.INSTANCE).setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda8
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 VoIPHelper.lambda$showRateAlert$12(runnable, dialogInterface);
@@ -718,10 +719,10 @@ public class VoIPHelper {
         view.setEnabled(i > 0);
         TextView textView = (TextView) view;
         if (i < 4) {
-            i2 = C3158R.string.Next;
+            i2 = C3286R.string.Next;
             str = "Next";
         } else {
-            i2 = C3158R.string.Send;
+            i2 = C3286R.string.Send;
             str = "Send";
         }
         textView.setText(LocaleController.getString(str, i2).toUpperCase());
@@ -751,7 +752,7 @@ public class VoIPHelper {
             TLRPC$TL_inputPhoneCall tLRPC$TL_inputPhoneCall = new TLRPC$TL_inputPhoneCall();
             tLRPC$TL_phone_setCallRating.peer = tLRPC$TL_inputPhoneCall;
             tLRPC$TL_inputPhoneCall.access_hash = j;
-            tLRPC$TL_inputPhoneCall.f1560id = j2;
+            tLRPC$TL_inputPhoneCall.f1566id = j2;
             tLRPC$TL_phone_setCallRating.user_initiative = z;
             ConnectionsManager.getInstance(i).sendRequest(tLRPC$TL_phone_setCallRating, new RequestDelegate() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda18
                 @Override // org.telegram.tgnet.RequestDelegate
@@ -765,14 +766,14 @@ public class VoIPHelper {
         iArr[0] = 1;
         betterRatingView.setVisibility(8);
         textView.setVisibility(8);
-        alertDialog.setTitle(LocaleController.getString("CallReportHint", C3158R.string.CallReportHint));
+        alertDialog.setTitle(LocaleController.getString("CallReportHint", C3286R.string.CallReportHint));
         editTextBoldCursor.setVisibility(0);
         if (file.exists()) {
             checkBoxCell.setVisibility(0);
             textView2.setVisibility(0);
         }
         linearLayout.setVisibility(0);
-        ((TextView) view).setText(LocaleController.getString("Send", C3158R.string.Send).toUpperCase());
+        ((TextView) view).setText(LocaleController.getString("Send", C3286R.string.Send).toUpperCase());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -782,7 +783,7 @@ public class VoIPHelper {
         }
         if (zArr[0] && file.exists() && tLRPC$TL_phone_setCallRating.rating < 4) {
             SendMessagesHelper.prepareSendingDocument(AccountInstance.getInstance(UserConfig.selectedAccount), file.getAbsolutePath(), file.getAbsolutePath(), null, TextUtils.join(" ", arrayList), "text/plain", 4244000L, null, null, null, null, true, 0, null);
-            Toast.makeText(context, LocaleController.getString("CallReportSent", C3158R.string.CallReportSent), 1).show();
+            Toast.makeText(context, LocaleController.getString("CallReportSent", C3286R.string.CallReportSent), 1).show();
         }
     }
 
@@ -839,7 +840,7 @@ public class VoIPHelper {
             });
             linearLayout.addView(textCheckCell3);
         }
-        new AlertDialog.Builder(context).setTitle(LocaleController.getString("DebugMenuCallSettings", C3158R.string.DebugMenuCallSettings)).setView(linearLayout).show();
+        new AlertDialog.Builder(context).setTitle(LocaleController.getString("DebugMenuCallSettings", C3286R.string.DebugMenuCallSettings)).setView(linearLayout).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -924,7 +925,7 @@ public class VoIPHelper {
         if (baseFragment == null || baseFragment.getParentActivity() == null) {
             return;
         }
-        JoinCallAlert.checkFewUsers(baseFragment.getParentActivity(), -tLRPC$Chat.f1494id, accountInstance, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda17
+        JoinCallAlert.checkFewUsers(baseFragment.getParentActivity(), -tLRPC$Chat.f1499id, accountInstance, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.Components.voip.VoIPHelper$$ExternalSyntheticLambda17
             @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
             public final void run(boolean z2) {
                 VoIPHelper.lambda$showGroupCallAlert$20(TLRPC$Chat.this, tLRPC$InputPeer, baseFragment, accountInstance, z2);

@@ -58,7 +58,7 @@
 
     move-result-object v3
 
-    const-string v4, "xmss == null"
+    const-string/jumbo v4, "xmss == null"
 
     invoke-static {v3, v4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

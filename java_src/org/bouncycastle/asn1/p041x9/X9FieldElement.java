@@ -10,14 +10,14 @@ public class X9FieldElement extends ASN1Object {
     private static X9IntegerConverter converter = new X9IntegerConverter();
 
     /* renamed from: f */
-    protected ECFieldElement f1234f;
+    protected ECFieldElement f1239f;
 
     public X9FieldElement(ECFieldElement eCFieldElement) {
-        this.f1234f = eCFieldElement;
+        this.f1239f = eCFieldElement;
     }
 
     @Override // org.bouncycastle.asn1.ASN1Object, org.bouncycastle.asn1.ASN1Encodable
     public ASN1Primitive toASN1Primitive() {
-        return new DEROctetString(converter.integerToBytes(this.f1234f.toBigInteger(), converter.getByteLength(this.f1234f)));
+        return new DEROctetString(converter.integerToBytes(this.f1239f.toBigInteger(), converter.getByteLength(this.f1239f)));
     }
 }

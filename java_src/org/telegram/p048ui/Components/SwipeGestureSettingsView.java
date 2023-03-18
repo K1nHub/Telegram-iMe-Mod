@@ -15,7 +15,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.fork.controller.FiltersController;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
@@ -56,12 +56,12 @@ public class SwipeGestureSettingsView extends FrameLayout {
         this.icons = new RLottieDrawable[6];
         this.iconViews = new RLottieImageView[2];
         this.colorProgress = 1.0f;
-        strArr[0] = LocaleController.getString("SwipeSettingsPin", C3158R.string.SwipeSettingsPin);
-        this.strings[1] = LocaleController.getString("SwipeSettingsRead", C3158R.string.SwipeSettingsRead);
-        this.strings[2] = LocaleController.getString("SwipeSettingsArchive", C3158R.string.SwipeSettingsArchive);
-        this.strings[3] = LocaleController.getString("SwipeSettingsMute", C3158R.string.SwipeSettingsMute);
-        this.strings[4] = LocaleController.getString("SwipeSettingsDelete", C3158R.string.SwipeSettingsDelete);
-        this.strings[5] = LocaleController.getString("SwipeSettingsFolders", C3158R.string.SwipeSettingsFolders);
+        strArr[0] = LocaleController.getString("SwipeSettingsPin", C3286R.string.SwipeSettingsPin);
+        this.strings[1] = LocaleController.getString("SwipeSettingsRead", C3286R.string.SwipeSettingsRead);
+        this.strings[2] = LocaleController.getString("SwipeSettingsArchive", C3286R.string.SwipeSettingsArchive);
+        this.strings[3] = LocaleController.getString("SwipeSettingsMute", C3286R.string.SwipeSettingsMute);
+        this.strings[4] = LocaleController.getString("SwipeSettingsDelete", C3286R.string.SwipeSettingsDelete);
+        this.strings[5] = LocaleController.getString("SwipeSettingsFolders", C3286R.string.SwipeSettingsFolders);
         String[] strArr2 = this.backgroundKeys;
         strArr2[0] = "chats_archiveBackground";
         strArr2[1] = "chats_archiveBackground";
@@ -209,17 +209,17 @@ public class SwipeGestureSettingsView extends FrameLayout {
         RLottieDrawable[] rLottieDrawableArr = this.icons;
         if (rLottieDrawableArr[i] == null) {
             if (i == 1) {
-                i2 = C3158R.C3164raw.swipe_read;
+                i2 = C3286R.C3291raw.swipe_read;
             } else if (i == 2) {
-                i2 = C3158R.C3164raw.chats_archive;
+                i2 = C3286R.C3291raw.chats_archive;
             } else if (i == 3) {
-                i2 = C3158R.C3164raw.swipe_mute;
+                i2 = C3286R.C3291raw.swipe_mute;
             } else if (i == 4) {
-                i2 = C3158R.C3164raw.swipe_delete;
+                i2 = C3286R.C3291raw.swipe_delete;
             } else if (i != 5) {
-                i2 = C3158R.C3164raw.swipe_pin;
+                i2 = C3286R.C3291raw.swipe_pin;
             } else {
-                i2 = C3158R.C3164raw.swipe_disabled;
+                i2 = C3286R.C3291raw.swipe_disabled;
             }
             int i3 = i2;
             rLottieDrawableArr[i] = new RLottieDrawable(i3, "" + i3, AndroidUtilities.m50dp(28), AndroidUtilities.m50dp(28), true, null);

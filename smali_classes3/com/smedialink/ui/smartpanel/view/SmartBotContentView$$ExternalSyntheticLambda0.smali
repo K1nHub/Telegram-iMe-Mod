@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView$$ExternalSyntheticLambda0;->f$1:Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;
 
-    invoke-static {v0, v1, p1, p2}, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;->$r8$lambda$jnwaOgfA9wVPZCIqxOmMyn1DLe0(Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;Landroid/view/View;I)V
+    invoke-static {v0, v1, p1, p2}, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;->$r8$lambda$Xd1DGVUa2v4ZYiKVaMr9TYVFFcA(Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;Landroid/view/View;I)V
 
     return-void
 .end method

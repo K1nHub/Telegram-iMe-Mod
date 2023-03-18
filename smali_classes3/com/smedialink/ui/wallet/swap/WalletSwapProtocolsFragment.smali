@@ -47,26 +47,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$QpG4s-ugd2q-QvTHYz0ZSTnQspA(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$MknzaF6lMSzjttoILwWV7rd_PR4(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;->setupListeners$lambda-5(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;->getThemeDescriptions$lambda$1(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$gy7COGtiq2Rg7M0rqIGdI71szK8(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+.method public static synthetic $r8$lambda$n_pI2EIx8wp9rr2_IOrFxyydp3s(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;->openSwapScreen$lambda-2(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;->setupListeners$lambda$5(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$lJ9dtRwqQKjdUedz4-tBKzk-8OI(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;)V
+.method public static synthetic $r8$lambda$yfV8IREzppDP6-GSNlJDh3NlwPo(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;->getThemeDescriptions$lambda-1(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;->openSwapScreen$lambda$2(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
     return-void
 .end method
@@ -282,7 +282,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-1(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;)V
+.method private static final getThemeDescriptions$lambda$1(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -401,7 +401,7 @@
     return-void
 .end method
 
-.method private static final openSwapScreen$lambda-2(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+.method private static final openSwapScreen$lambda$2(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 9
 
     const-string v0, "this$0"
@@ -529,18 +529,18 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-5(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$5(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "$noName_1"
+    const-string p1, "<anonymous parameter 1>"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

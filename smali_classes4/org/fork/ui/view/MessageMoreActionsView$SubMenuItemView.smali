@@ -27,10 +27,6 @@
         }
     .end annotation
 
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     .line 103
     iput-object p1, p0, Lorg/fork/ui/view/MessageMoreActionsView$SubMenuItemView;->this$0:Lorg/fork/ui/view/MessageMoreActionsView;
 

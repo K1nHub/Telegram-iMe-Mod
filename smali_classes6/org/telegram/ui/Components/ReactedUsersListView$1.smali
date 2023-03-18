@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ReactedUsersListView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 86
+    .line 89
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView$1;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,14 +35,14 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 89
+    .line 92
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView$1;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ReactedUsersListView;->messageContainsEmojiButton:Lorg/telegram/ui/Components/MessageContainsEmojiButton;
 
     if-eqz v0, :cond_0
 
-    .line 90
+    .line 93
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
@@ -55,11 +55,11 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 92
+    .line 95
     :cond_0
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->onMeasure(II)V
 
-    .line 93
+    .line 96
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView$1;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ReactedUsersListView;->access$000(Lorg/telegram/ui/Components/ReactedUsersListView;)V

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nReactionHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ReactionHelper.kt\ncom/smedialink/utils/helper/reaction/ReactionHelper\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,74:1\n1741#2,3:75\n*S KotlinDebug\n*F\n+ 1 ReactionHelper.kt\ncom/smedialink/utils/helper/reaction/ReactionHelper\n*L\n39#1:75,3\n*E\n"
+    value = "SMAP\nReactionHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ReactionHelper.kt\ncom/smedialink/utils/helper/reaction/ReactionHelper\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,74:1\n1747#2,3:75\n*S KotlinDebug\n*F\n+ 1 ReactionHelper.kt\ncom/smedialink/utils/helper/reaction/ReactionHelper\n*L\n39#1:75,3\n*E\n"
 .end annotation
 
 
@@ -14,10 +14,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$ML4pSKd9lquhz4XgdJNNVAlWbpU(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method public static synthetic $r8$lambda$hOhPMqpg1BhfPIcT4LOHTAyNGAw(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/utils/helper/reaction/ReactionHelper;->showReactionActivationAlert$lambda-0(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {p0}, Lcom/smedialink/utils/helper/reaction/ReactionHelper;->showReactionActivationAlert$lambda$0(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method
@@ -116,7 +116,7 @@
 
     const-string v1, "null cannot be cast to non-null type java.util.ArrayList<*>{ kotlin.collections.TypeAliasesKt.ArrayList<*> }"
 
-    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v0, Ljava/util/ArrayList;
 
@@ -127,7 +127,7 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_4
 
     .line 48
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->firstOrNull(Ljava/util/List;)Ljava/lang/Object;
@@ -150,31 +150,28 @@
     move-object v5, v2
 
     :goto_0
-    if-nez v5, :cond_1
-
-    goto :goto_2
+    if-eqz v5, :cond_4
 
     .line 51
-    :cond_1
     iget-object v0, v5, Lorg/telegram/messenger/MessageObject;->caption:Ljava/lang/CharSequence;
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_1
 
-    move-object v0, v2
-
-    goto :goto_1
-
-    :cond_2
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
+    goto :goto_1
+
+    :cond_1
+    move-object v0, v2
+
     :goto_1
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     const-string v0, ""
 
-    :cond_3
+    :cond_2
     const-string v1, "\\b[0-9a-f]{8}\\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\\b[0-9a-f]{12}\\b"
 
     .line 52
@@ -192,7 +189,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_4
+    if-eqz v6, :cond_3
 
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->start()I
 
@@ -211,12 +208,12 @@
     invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 56
-    :cond_4
+    :cond_3
     invoke-static {v2, p3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     .line 57
     new-instance v9, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;
@@ -237,8 +234,7 @@
 
     invoke-virtual {p4, v9}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    :cond_5
-    :goto_2
+    :cond_4
     return-void
 .end method
 
@@ -258,7 +254,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1741
+    .line 1747
     instance-of v0, p0, Ljava/util/Collection;
 
     const/4 v1, 0x1
@@ -275,7 +271,7 @@
 
     goto :goto_1
 
-    .line 1742
+    .line 1748
     :cond_0
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -415,7 +411,7 @@
     return-void
 .end method
 
-.method private static final showReactionActivationAlert$lambda-0(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method private static final showReactionActivationAlert$lambda$0(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 1
 
     const-string v0, "$fragment"
@@ -433,16 +429,24 @@
 
 # virtual methods
 .method public final formatUuid(Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
+    .locals 2
 
     const-string v0, "uuid"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "File to put in iMe Like Message with id = "
-
     .line 22
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "File to put in iMe Like Message with id = "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 

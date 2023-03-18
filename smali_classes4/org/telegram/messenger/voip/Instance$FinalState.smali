@@ -28,19 +28,19 @@
 .method public constructor <init>([BLjava/lang/String;Lorg/telegram/messenger/voip/Instance$TrafficStats;Z)V
     .locals 0
 
-    .line 291
+    .line 302
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 292
+    .line 303
     iput-object p1, p0, Lorg/telegram/messenger/voip/Instance$FinalState;->persistentState:[B
 
-    .line 293
+    .line 304
     iput-object p2, p0, Lorg/telegram/messenger/voip/Instance$FinalState;->debugLog:Ljava/lang/String;
 
-    .line 294
+    .line 305
     iput-object p3, p0, Lorg/telegram/messenger/voip/Instance$FinalState;->trafficStats:Lorg/telegram/messenger/voip/Instance$TrafficStats;
 
-    .line 295
+    .line 306
     iput-boolean p4, p0, Lorg/telegram/messenger/voip/Instance$FinalState;->isRatingSuggested:Z
 
     return-void
@@ -51,7 +51,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 300
+    .line 311
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -62,7 +62,7 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/voip/Instance$FinalState;->persistentState:[B
 
-    .line 301
+    .line 312
     invoke-static {v1}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
 
     move-result-object v1

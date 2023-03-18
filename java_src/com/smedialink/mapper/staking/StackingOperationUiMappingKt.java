@@ -20,11 +20,7 @@ public final class StackingOperationUiMappingKt {
         Intrinsics.checkNotNullParameter(stakingOperation, "<this>");
         long id = stakingOperation.getId();
         StakingOperationCost amount = stakingOperation.getAmount();
-        BigDecimal bigDecimal = null;
-        if (amount != null && (value = amount.getValue()) != null) {
-            bigDecimal = value.getAsToken();
-        }
-        BigDecimal orZero = NumberExtKt.orZero(bigDecimal);
+        BigDecimal orZero = NumberExtKt.orZero((amount == null || (value = amount.getValue()) == null) ? null : value.getAsToken());
         String tokenTicker = stakingOperation.getTokenTicker();
         StakingOperationType type = stakingOperation.getType();
         StakingOperationStatus status = stakingOperation.getStatus();
@@ -32,6 +28,6 @@ public final class StackingOperationUiMappingKt {
         String transaction = stakingOperation.getTransaction();
         StakingOperationCost fee = stakingOperation.getFee();
         Boolean safe = stakingOperation.getSafe();
-        return new StakingOperationItem(id, orZero, tokenTicker, type, status, createdAt, transaction, fee, safe == null ? false : safe.booleanValue(), z, TokenInfoExtKt.getLogo(TokenInfo.Companion.map(stakingOperation.getToken()), stakingOperation.getNetworkType()));
+        return new StakingOperationItem(id, orZero, tokenTicker, type, status, createdAt, transaction, fee, safe != null ? safe.booleanValue() : false, z, TokenInfoExtKt.getLogo(TokenInfo.Companion.map(stakingOperation.getToken()), stakingOperation.getNetworkType()));
     }
 }

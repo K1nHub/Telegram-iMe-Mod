@@ -108,16 +108,16 @@
 
     const/4 v4, 0x0
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    move-object v1, v4
+    invoke-virtual {v1}, Lcom/smedialink/model/wallet/select/SelectableTokenBalance;->getTotal()Ljava/lang/String;
+
+    move-result-object v1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v1}, Lcom/smedialink/model/wallet/select/SelectableTokenBalance;->getTotal()Ljava/lang/String;
-
-    move-result-object v1
+    move-object v1, v4
 
     :goto_0
     invoke-virtual {p1, v3, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
@@ -142,16 +142,13 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {v0}, Lcom/smedialink/model/wallet/select/SelectableTokenBalance;->getTotalInDollars()Ljava/lang/String;
 
     move-result-object v4
 
-    :goto_1
+    :cond_1
     invoke-virtual {p1, v2, v4}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
@@ -232,16 +229,16 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    move-object v0, v1
+    invoke-virtual {v0}, Lcom/smedialink/model/wallet/select/SelectableTokenBalance;->getTotal()Ljava/lang/String;
+
+    move-result-object v0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Lcom/smedialink/model/wallet/select/SelectableTokenBalance;->getTotal()Ljava/lang/String;
-
-    move-result-object v0
+    move-object v0, v1
 
     :goto_0
     invoke-virtual {p1, p3, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
@@ -270,16 +267,13 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_1
+    if-eqz v2, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {v2}, Lcom/smedialink/model/wallet/select/SelectableTokenBalance;->getTotalInDollars()Ljava/lang/String;
 
     move-result-object v1
 
-    :goto_1
+    :cond_1
     invoke-virtual {p1, v0, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1

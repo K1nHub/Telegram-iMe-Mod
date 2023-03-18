@@ -808,7 +808,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;->inTextTranslateLangCode:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", isOutTextTranslateEnabled="
 
@@ -848,7 +848,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;->incomingTargetLanguageCode:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", outgoingTargetLanguageCode="
 
@@ -856,7 +856,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;->outgoingTargetLanguageCode:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x29
 

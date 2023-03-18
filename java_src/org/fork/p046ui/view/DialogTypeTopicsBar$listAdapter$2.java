@@ -18,6 +18,6 @@ final class DialogTypeTopicsBar$listAdapter$2 extends Lambda implements Function
 
     @Override // kotlin.jvm.functions.Function0
     public final DialogTypeTopicsBar.ListAdapter invoke() {
-        return new DialogTypeTopicsBar.ListAdapter(this.this$0);
+        return new DialogTypeTopicsBar.ListAdapter();
     }
 }

@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -34,11 +33,11 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentWalletNotificationsBinding;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 /* compiled from: WalletNotificationsFragment.kt */
@@ -172,7 +171,7 @@ public final class WalletNotificationsFragment extends WalletAuthFragment implem
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUBACKGROUND, null, null, null, null, "actionBarDefaultSubmenuBackground"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUITEM, null, null, null, null, "actionBarDefaultSubmenuItem"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUITEM | ThemeDescription.FLAG_IMAGECOLOR, null, null, null, null, "actionBarDefaultSubmenuItemIcon"), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundWhite"), new ThemeDescription(getBinding().globalStateLayout, ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.smedialink.ui.wallet.notifications.WalletNotificationsFragment$$ExternalSyntheticLambda3
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                WalletNotificationsFragment.m1710getThemeDescriptions$lambda0(WalletNotificationsFragment.this);
+                WalletNotificationsFragment.getThemeDescriptions$lambda$0(WalletNotificationsFragment.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -184,26 +183,24 @@ public final class WalletNotificationsFragment extends WalletAuthFragment implem
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescriptions$lambda-0  reason: not valid java name */
-    public static final void m1710getThemeDescriptions$lambda0(WalletNotificationsFragment this$0) {
+    public static final void getThemeDescriptions$lambda$0(WalletNotificationsFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getNotificationAdapter().notifyDataSetChanged();
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setTitle(getResourceManager().getString(C3158R.string.wallet_notifications_toolbar_title));
-        c3222ActionBar.setAllowOverlayTitle(true);
-        ActionBarMenuItem addItem = c3222ActionBar.createMenu().addItem(0, C3158R.C3160drawable.ic_ab_other);
-        Intrinsics.checkNotNullExpressionValue(addItem, "");
-        ViewExtKt.gone(addItem);
-        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3158R.string.AccDescrMoreOptions));
-        addItem.addSubItem(1, C3158R.C3160drawable.fork_ic_folder_tab_read_all_24, getResourceManager().getString(C3158R.string.dialogs_tab_popup_read_all));
-        Unit unit = Unit.INSTANCE;
-        this.optionsMenuItem = addItem;
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.notifications.WalletNotificationsFragment$setupActionBar$1$2
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.wallet_notifications_toolbar_title));
+        c3351ActionBar.setAllowOverlayTitle(true);
+        ActionBarMenuItem setupActionBar$lambda$3$lambda$2$lambda$1 = c3351ActionBar.createMenu().addItem(0, C3286R.C3288drawable.ic_ab_other);
+        Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$3$lambda$2$lambda$1, "setupActionBar$lambda$3$lambda$2$lambda$1");
+        ViewExtKt.gone(setupActionBar$lambda$3$lambda$2$lambda$1);
+        setupActionBar$lambda$3$lambda$2$lambda$1.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions));
+        setupActionBar$lambda$3$lambda$2$lambda$1.addSubItem(1, C3286R.C3288drawable.fork_ic_folder_tab_read_all_24, getResourceManager().getString(C3286R.string.dialogs_tab_popup_read_all));
+        this.optionsMenuItem = setupActionBar$lambda$3$lambda$2$lambda$1;
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.notifications.WalletNotificationsFragment$setupActionBar$1$2
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletNotificationsPresenter presenter;
                 WalletNotificationsRecycleAdapter notificationAdapter;
@@ -227,13 +224,13 @@ public final class WalletNotificationsFragment extends WalletAuthFragment implem
         loadMoreModule.setOnLoadMoreListener(new OnLoadMoreListener() { // from class: com.smedialink.ui.wallet.notifications.WalletNotificationsFragment$$ExternalSyntheticLambda2
             @Override // com.chad.library.adapter.base.listener.OnLoadMoreListener
             public final void onLoadMore() {
-                WalletNotificationsFragment.m1712setupRecycleView$lambda9$lambda8$lambda6$lambda5(WalletNotificationsFragment.this);
+                WalletNotificationsFragment.setupRecycleView$lambda$9$lambda$8$lambda$6$lambda$5(WalletNotificationsFragment.this);
             }
         });
         notificationAdapter.setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.wallet.notifications.WalletNotificationsFragment$$ExternalSyntheticLambda1
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                WalletNotificationsFragment.m1713setupRecycleView$lambda9$lambda8$lambda7(WalletNotificationsFragment.this, baseQuickAdapter, view, i);
+                WalletNotificationsFragment.setupRecycleView$lambda$9$lambda$8$lambda$7(WalletNotificationsFragment.this, baseQuickAdapter, view, i);
             }
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(getParentActivity()));
@@ -241,22 +238,19 @@ public final class WalletNotificationsFragment extends WalletAuthFragment implem
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupRecycleView$lambda-9$lambda-8$lambda-6$lambda-5  reason: not valid java name */
-    public static final void m1712setupRecycleView$lambda9$lambda8$lambda6$lambda5(WalletNotificationsFragment this$0) {
+    public static final void setupRecycleView$lambda$9$lambda$8$lambda$6$lambda$5(WalletNotificationsFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         NotificationItem notificationItem = (NotificationItem) CollectionsKt.lastOrNull(this$0.getNotificationAdapter().getData());
-        if (notificationItem == null) {
-            return;
+        if (notificationItem != null) {
+            this$0.getPresenter().loadMoreNotification(notificationItem.getNotification().getId());
         }
-        this$0.getPresenter().loadMoreNotification(notificationItem.getNotification().getId());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupRecycleView$lambda-9$lambda-8$lambda-7  reason: not valid java name */
-    public static final void m1713setupRecycleView$lambda9$lambda8$lambda7(WalletNotificationsFragment this$0, BaseQuickAdapter noName_0, View noName_1, int i) {
+    public static final void setupRecycleView$lambda$9$lambda$8$lambda$7(WalletNotificationsFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         NotificationItem item = this$0.getNotificationAdapter().getItem(i);
         this$0.getPresenter().markNotificationAsRead(item, i);
         if (item.isUnsupported()) {
@@ -278,14 +272,13 @@ public final class WalletNotificationsFragment extends WalletAuthFragment implem
         binding.getRoot().setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: com.smedialink.ui.wallet.notifications.WalletNotificationsFragment$$ExternalSyntheticLambda0
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                WalletNotificationsFragment.m1711setupListeners$lambda12$lambda11(WalletNotificationsFragment.this);
+                WalletNotificationsFragment.setupListeners$lambda$12$lambda$11(WalletNotificationsFragment.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-12$lambda-11  reason: not valid java name */
-    public static final void m1711setupListeners$lambda12$lambda11(WalletNotificationsFragment this$0) {
+    public static final void setupListeners$lambda$12$lambda$11(WalletNotificationsFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getPresenter().loadNotification(true);
     }

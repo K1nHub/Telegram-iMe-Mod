@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTemplatesDao.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TemplatesDao.kt\ncom/smedialink/storage/data/locale/db/dao/main/TemplatesDao\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,28:1\n1547#2:29\n1618#2,3:30\n*S KotlinDebug\n*F\n+ 1 TemplatesDao.kt\ncom/smedialink/storage/data/locale/db/dao/main/TemplatesDao\n*L\n26#1:29\n26#1:30,3\n*E\n"
+    value = "SMAP\nTemplatesDao.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TemplatesDao.kt\ncom/smedialink/storage/data/locale/db/dao/main/TemplatesDao\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,28:1\n1549#2:29\n1620#2,3:30\n*S KotlinDebug\n*F\n+ 1 TemplatesDao.kt\ncom/smedialink/storage/data/locale/db/dao/main/TemplatesDao\n*L\n26#1:29\n26#1:30,3\n*E\n"
 .end annotation
 
 
@@ -76,7 +76,7 @@
     .line 25
     invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/locale/db/dao/main/TemplatesDao;->clearAllTemplates(J)V
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -87,7 +87,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p3
@@ -103,7 +103,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lcom/smedialink/storage/domain/model/templates/TemplateModel;
 
     .line 26
@@ -111,10 +111,12 @@
 
     move-result-object v1
 
+    .line 1621
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 26
     :cond_0
     invoke-interface {p0, v0}, Lcom/smedialink/storage/data/locale/db/dao/base/BaseDao;->insert(Ljava/util/List;)V
 

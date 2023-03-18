@@ -5,10 +5,11 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.koin.p047mp.KoinPlatformTools;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletAppearanceSettingsFragment.kt */
 /* renamed from: com.smedialink.ui.wallet.settings.appearance.WalletAppearanceSettingsFragment$presenter$2 */
 /* loaded from: classes3.dex */
-final class WalletAppearanceSettingsFragment$presenter$2 extends Lambda implements Function0<WalletAppearanceSettingsPresenter> {
+public final class WalletAppearanceSettingsFragment$presenter$2 extends Lambda implements Function0<WalletAppearanceSettingsPresenter> {
     final /* synthetic */ WalletAppearanceSettingsFragment this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -22,7 +23,7 @@ final class WalletAppearanceSettingsFragment$presenter$2 extends Lambda implemen
     @Override // kotlin.jvm.functions.Function0
     public final WalletAppearanceSettingsPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2106x379ffb8e(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2229x379ffb8e(this.this$0, null, null));
         return (WalletAppearanceSettingsPresenter) lazy.getValue();
     }
 }

@@ -39,7 +39,7 @@
 
     move-result-wide p1
 
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/fork/ui/fragment/MusicActivity$musicCountComparator$2;->$r8$lambda$sRkwuM5La1dMY-l6dCqAZBbgAMM(Lorg/fork/ui/fragment/MusicActivity;JJ)I
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/fork/ui/fragment/MusicActivity$musicCountComparator$2;->$r8$lambda$ETpuGrQXQaKooEUnSNsEuYCkqKA(Lorg/fork/ui/fragment/MusicActivity;JJ)I
 
     move-result p1
 

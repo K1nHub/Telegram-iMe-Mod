@@ -952,16 +952,13 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_1
+    if-ne v0, v2, :cond_0
 
     .line 56
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/smedialink/storage/domain/model/staking/StakingToken;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_1
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/staking/StakingToken;->getTicker()Ljava/lang/String;
 
     move-result-object v1
@@ -969,29 +966,24 @@
     goto :goto_0
 
     .line 57
-    :cond_1
+    :cond_0
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/staking/StakingOperation;->amount:Lcom/smedialink/storage/domain/model/staking/StakingOperationCost;
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_1
 
-    goto :goto_0
-
-    :cond_2
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/staking/StakingOperationCost;->getToken()Lcom/smedialink/storage/domain/model/staking/StakingToken;
 
     move-result-object v0
 
-    if-nez v0, :cond_3
+    if-eqz v0, :cond_1
 
-    goto :goto_0
-
-    :cond_3
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/staking/StakingToken;->getTicker()Ljava/lang/String;
 
     move-result-object v1
 
+    :cond_1
     :goto_0
-    if-nez v1, :cond_4
+    if-nez v1, :cond_2
 
     .line 58
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->UNKNOWN:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
@@ -1000,7 +992,7 @@
 
     move-result-object v1
 
-    :cond_4
+    :cond_2
     return-object v1
 .end method
 
@@ -1430,7 +1422,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/domain/model/staking/StakingOperation;->settledAt:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", failReason="
 
@@ -1438,7 +1430,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/domain/model/staking/StakingOperation;->failReason:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", amount="
 

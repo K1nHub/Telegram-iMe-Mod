@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/messenger/voip/VoIPService;I)V
     .locals 0
 
-    .line 507
+    .line 518
     iput-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$4;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-direct {p0, p2}, Landroid/util/LruCache;-><init>(I)V
@@ -44,7 +44,7 @@
 .method protected bridge synthetic entryRemoved(ZLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 507
+    .line 518
     check-cast p2, Ljava/lang/String;
 
     check-cast p3, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;
@@ -59,13 +59,13 @@
 .method protected entryRemoved(ZLjava/lang/String;Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;)V
     .locals 0
 
-    .line 510
+    .line 521
     invoke-super {p0, p1, p2, p3, p4}, Landroid/util/LruCache;->entryRemoved(ZLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 511
+    .line 522
     iget-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$4;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
-    invoke-static {p1}, Lorg/telegram/messenger/voip/VoIPService;->access$1900(Lorg/telegram/messenger/voip/VoIPService;)[Lorg/telegram/messenger/voip/NativeInstance;
+    invoke-static {p1}, Lorg/telegram/messenger/voip/VoIPService;->access$2000(Lorg/telegram/messenger/voip/VoIPService;)[Lorg/telegram/messenger/voip/NativeInstance;
 
     move-result-object p1
 
@@ -73,7 +73,7 @@
 
     aget-object p1, p1, p2
 
-    invoke-static {p3}, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->access$1800(Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;)J
+    invoke-static {p3}, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->access$1900(Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;)J
 
     move-result-wide p2
 

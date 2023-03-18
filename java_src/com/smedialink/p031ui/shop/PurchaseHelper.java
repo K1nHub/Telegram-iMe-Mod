@@ -6,10 +6,10 @@ import android.content.Intent;
 import com.smedialink.bots.domain.model.ShopProduct;
 import com.smedialink.bots.usecase.AiBotsManager;
 import com.smedialink.p031ui.shop.configuration.BillingProvider;
+import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Objects;
 import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.solovyev.android.checkout.Checkout;
@@ -81,7 +81,7 @@ public final class PurchaseHelper {
         Intrinsics.checkNotNullParameter(activity, "activity");
         if (this.uiCheckout == null) {
             Application application = activity.getApplication();
-            Objects.requireNonNull(application, "null cannot be cast to non-null type com.smedialink.ui.shop.configuration.BillingProvider");
+            Intrinsics.checkNotNull(application, "null cannot be cast to non-null type com.smedialink.ui.shop.configuration.BillingProvider");
             this.uiCheckout = Checkout.forActivity(activity, ((BillingProvider) application).provideBilling());
         }
     }
@@ -98,31 +98,41 @@ public final class PurchaseHelper {
     }
 
     public final void preloadPurchasesInfo() {
-        this.disposable.add(this.aigramBotsManager.getAvailableSkus().subscribeOn(Schedulers.m694io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer() { // from class: com.smedialink.ui.shop.PurchaseHelper$$ExternalSyntheticLambda3
+        Single<List<String>> observeOn = this.aigramBotsManager.getAvailableSkus().subscribeOn(Schedulers.m694io()).observeOn(AndroidSchedulers.mainThread());
+        final PurchaseHelper$preloadPurchasesInfo$1 purchaseHelper$preloadPurchasesInfo$1 = new PurchaseHelper$preloadPurchasesInfo$1(this);
+        Consumer<? super List<String>> consumer = new Consumer() { // from class: com.smedialink.ui.shop.PurchaseHelper$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PurchaseHelper.m1501preloadPurchasesInfo$lambda1(PurchaseHelper.this, (List) obj);
+                PurchaseHelper.preloadPurchasesInfo$lambda$0(Function1.this, obj);
             }
-        }, PurchaseHelper$$ExternalSyntheticLambda5.INSTANCE));
+        };
+        final PurchaseHelper$preloadPurchasesInfo$2 purchaseHelper$preloadPurchasesInfo$2 = PurchaseHelper$preloadPurchasesInfo$2.INSTANCE;
+        this.disposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: com.smedialink.ui.shop.PurchaseHelper$$ExternalSyntheticLambda4
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                PurchaseHelper.preloadPurchasesInfo$lambda$1(Function1.this, obj);
+            }
+        }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: preloadPurchasesInfo$lambda-1  reason: not valid java name */
-    public static final void m1501preloadPurchasesInfo$lambda1(PurchaseHelper this$0, List list) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        if (list == null) {
-            return;
-        }
-        loadSkuDetails$default(this$0, list, null, 2, null);
+    public static final void preloadPurchasesInfo$lambda$0(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void preloadPurchasesInfo$lambda$1(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     public final void onActivityResult(int i, int i2, Intent data) {
         Intrinsics.checkNotNullParameter(data, "data");
         UiCheckout uiCheckout = this.uiCheckout;
-        if (uiCheckout == null) {
-            return;
+        if (uiCheckout != null) {
+            uiCheckout.onActivityResult(i, i2, data);
         }
-        uiCheckout.onActivityResult(i, i2, data);
     }
 
     public final Single<Purchase> purchase(String skuId) {
@@ -141,79 +151,50 @@ public final class PurchaseHelper {
         if (uiCheckout2 != null) {
             uiCheckout2.startPurchaseFlow("inapp", skuId, null, callback);
         }
-        Single<Purchase> doFinally = callback.getSingle().doOnSuccess(new Consumer() { // from class: com.smedialink.ui.shop.PurchaseHelper$$ExternalSyntheticLambda4
+        Single<Purchase> single = callback.getSingle();
+        final PurchaseHelper$purchase$2 purchaseHelper$purchase$2 = new PurchaseHelper$purchase$2(this);
+        Single<Purchase> doOnSuccess = single.doOnSuccess(new Consumer() { // from class: com.smedialink.ui.shop.PurchaseHelper$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PurchaseHelper.m1503purchase$lambda6(PurchaseHelper.this, (Purchase) obj);
+                PurchaseHelper.purchase$lambda$4(Function1.this, obj);
             }
-        }).doOnSubscribe(new Consumer() { // from class: com.smedialink.ui.shop.PurchaseHelper$$ExternalSyntheticLambda2
+        });
+        final PurchaseHelper$purchase$3 purchaseHelper$purchase$3 = new PurchaseHelper$purchase$3(this);
+        Single<Purchase> doFinally = doOnSuccess.doOnSubscribe(new Consumer() { // from class: com.smedialink.ui.shop.PurchaseHelper$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PurchaseHelper.m1504purchase$lambda7(PurchaseHelper.this, (Disposable) obj);
+                PurchaseHelper.purchase$lambda$5(Function1.this, obj);
             }
         }).doFinally(new Action() { // from class: com.smedialink.ui.shop.PurchaseHelper$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
-                PurchaseHelper.m1505purchase$lambda8(PurchaseHelper.this);
+                PurchaseHelper.purchase$lambda$6(PurchaseHelper.this);
             }
         });
-        Intrinsics.checkNotNullExpressionValue(doFinally, "callback.single.doOnSucc…chaseFlowActive = false }");
+        Intrinsics.checkNotNullExpressionValue(doFinally, "fun purchase(skuId: Stri…lowActive = false }\n    }");
         return doFinally;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: purchase$lambda-6  reason: not valid java name */
-    public static final void m1503purchase$lambda6(PurchaseHelper this$0, Purchase purchase) {
-        Object obj;
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Iterator<T> it = this$0.cachedPurchases.iterator();
-        while (true) {
-            if (!it.hasNext()) {
-                obj = null;
-                break;
-            }
-            obj = it.next();
-            if (Intrinsics.areEqual(((ShopProduct) obj).getSku(), purchase.sku)) {
-                break;
-            }
-        }
-        ShopProduct shopProduct = (ShopProduct) obj;
-        if (shopProduct == null) {
-            throw new IllegalStateException("Cannot find product");
-        }
-        this$0.cachedPurchases.remove(shopProduct);
-        List<ShopProduct> list = this$0.cachedPurchases;
-        String price = shopProduct.getPrice();
-        String price2 = shopProduct.getPrice();
-        String str = purchase.orderId;
-        Intrinsics.checkNotNullExpressionValue(str, "purchase.orderId");
-        String str2 = purchase.packageName;
-        Intrinsics.checkNotNullExpressionValue(str2, "purchase.packageName");
-        String str3 = purchase.sku;
-        Intrinsics.checkNotNullExpressionValue(str3, "purchase.sku");
-        long j = purchase.time;
-        int i = purchase.state.f1417id;
-        String str4 = purchase.token;
-        Intrinsics.checkNotNullExpressionValue(str4, "purchase.token");
-        list.add(new ShopProduct(price, price2, true, new ShopProduct.Receipt(str, str2, str3, j, i, str4)));
-        this$0.storeProductsInfo();
+    public static final void purchase$lambda$4(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: purchase$lambda-7  reason: not valid java name */
-    public static final void m1504purchase$lambda7(PurchaseHelper this$0, Disposable disposable) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.isPurchaseFlowActive = true;
+    public static final void purchase$lambda$5(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: purchase$lambda-8  reason: not valid java name */
-    public static final void m1505purchase$lambda8(PurchaseHelper this$0) {
+    public static final void purchase$lambda$6(PurchaseHelper this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.isPurchaseFlowActive = false;
     }
 
-    static /* synthetic */ void loadSkuDetails$default(PurchaseHelper purchaseHelper, List list, String str, int i, Object obj) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ void loadSkuDetails$default(PurchaseHelper purchaseHelper, List list, String str, int i, Object obj) {
         if ((i & 2) != 0) {
             str = "inapp";
         }
@@ -229,21 +210,19 @@ public final class PurchaseHelper {
             distinct = CollectionsKt___CollectionsKt.distinct(list);
             create.loadSkus(str, distinct);
             UiCheckout uiCheckout = this.uiCheckout;
-            if (uiCheckout == null) {
-                return;
+            if (uiCheckout != null) {
+                uiCheckout.loadInventory(create, new Inventory.Callback() { // from class: com.smedialink.ui.shop.PurchaseHelper$$ExternalSyntheticLambda7
+                    @Override // org.solovyev.android.checkout.Inventory.Callback
+                    public final void onLoaded(Inventory.Products products) {
+                        PurchaseHelper.loadSkuDetails$lambda$8(str, this, products);
+                    }
+                });
             }
-            uiCheckout.loadInventory(create, new Inventory.Callback() { // from class: com.smedialink.ui.shop.PurchaseHelper$$ExternalSyntheticLambda7
-                @Override // org.solovyev.android.checkout.Inventory.Callback
-                public final void onLoaded(Inventory.Products products) {
-                    PurchaseHelper.m1500loadSkuDetails$lambda10(str, this, products);
-                }
-            });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: loadSkuDetails$lambda-10  reason: not valid java name */
-    public static final void m1500loadSkuDetails$lambda10(String productType, PurchaseHelper this$0, Inventory.Products products) {
+    public static final void loadSkuDetails$lambda$8(String productType, PurchaseHelper this$0, Inventory.Products products) {
         Intrinsics.checkNotNullParameter(productType, "$productType");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(products, "products");
@@ -253,12 +232,12 @@ public final class PurchaseHelper {
         List<Sku> skus = product.getSkus();
         Intrinsics.checkNotNullExpressionValue(skus, "inAppProduct.skus");
         for (Sku sku : skus) {
-            String str = sku.f1418id.code;
+            String str = sku.f1423id.code;
             Intrinsics.checkNotNullExpressionValue(str, "it.id.code");
             String str2 = sku.price;
             Intrinsics.checkNotNullExpressionValue(str2, "it.price");
             boolean isPurchased = product.isPurchased(sku);
-            String str3 = sku.f1418id.code;
+            String str3 = sku.f1423id.code;
             Intrinsics.checkNotNullExpressionValue(str3, "it.id.code");
             List<Purchase> purchases = product.getPurchases();
             Intrinsics.checkNotNullExpressionValue(purchases, "inAppProduct.purchases");
@@ -278,8 +257,23 @@ public final class PurchaseHelper {
         this.isPurchaseHelperActive = false;
     }
 
-    private final void storeProductsInfo() {
-        this.disposable.add(this.aigramBotsManager.storeActualPurchases(getProducts()).subscribeOn(Schedulers.m694io()).observeOn(AndroidSchedulers.mainThread()).subscribe(PurchaseHelper$$ExternalSyntheticLambda1.INSTANCE, PurchaseHelper$$ExternalSyntheticLambda6.INSTANCE));
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void storeProductsInfo() {
+        Completable observeOn = this.aigramBotsManager.storeActualPurchases(getProducts()).subscribeOn(Schedulers.m694io()).observeOn(AndroidSchedulers.mainThread());
+        PurchaseHelper$$ExternalSyntheticLambda1 purchaseHelper$$ExternalSyntheticLambda1 = PurchaseHelper$$ExternalSyntheticLambda1.INSTANCE;
+        final PurchaseHelper$storeProductsInfo$2 purchaseHelper$storeProductsInfo$2 = PurchaseHelper$storeProductsInfo$2.INSTANCE;
+        this.disposable.add(observeOn.subscribe(purchaseHelper$$ExternalSyntheticLambda1, new Consumer() { // from class: com.smedialink.ui.shop.PurchaseHelper$$ExternalSyntheticLambda3
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                PurchaseHelper.storeProductsInfo$lambda$16(Function1.this, obj);
+            }
+        }));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void storeProductsInfo$lambda$16(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     /* compiled from: PurchaseHelper.kt */
@@ -329,19 +323,19 @@ public final class PurchaseHelper {
             }
         }
         Purchase purchase = (Purchase) obj;
-        if (purchase == null) {
-            return null;
+        if (purchase != null) {
+            String str2 = purchase.orderId;
+            Intrinsics.checkNotNullExpressionValue(str2, "it.orderId");
+            String str3 = purchase.packageName;
+            Intrinsics.checkNotNullExpressionValue(str3, "it.packageName");
+            String str4 = purchase.sku;
+            Intrinsics.checkNotNullExpressionValue(str4, "it.sku");
+            long j = purchase.time;
+            int i = purchase.state.f1422id;
+            String str5 = purchase.token;
+            Intrinsics.checkNotNullExpressionValue(str5, "it.token");
+            return new ShopProduct.Receipt(str2, str3, str4, j, i, str5);
         }
-        String str2 = purchase.orderId;
-        Intrinsics.checkNotNullExpressionValue(str2, "it.orderId");
-        String str3 = purchase.packageName;
-        Intrinsics.checkNotNullExpressionValue(str3, "it.packageName");
-        String str4 = purchase.sku;
-        Intrinsics.checkNotNullExpressionValue(str4, "it.sku");
-        long j = purchase.time;
-        int i = purchase.state.f1417id;
-        String str5 = purchase.token;
-        Intrinsics.checkNotNullExpressionValue(str5, "it.token");
-        return new ShopProduct.Receipt(str2, str3, str4, j, i, str5);
+        return null;
     }
 }

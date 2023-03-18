@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/Components/FragmentContextView;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/FragmentContextView;->$r8$lambda$KB4fCCI8PWVs5IYQeDXyTJ1cW24(Lorg/telegram/ui/Components/FragmentContextView;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/FragmentContextView;->$r8$lambda$Ttp1fe4Lri4QIr3W4d0MSe0BYWk(Lorg/telegram/ui/Components/FragmentContextView;Landroid/view/View;)V
 
     return-void
 .end method

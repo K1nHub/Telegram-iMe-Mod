@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda3;->f$1:Lorg/fork/ui/fragment/MusicActivity;
 
-    invoke-static {v0, v1}, Lorg/fork/ui/fragment/MusicActivity;->$r8$lambda$UGFAdvDXARJK8cLluVVh0yqPujk(Lorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;)V
+    invoke-static {v0, v1}, Lorg/fork/ui/fragment/MusicActivity;->$r8$lambda$6Tz6TfFCqdeh9WkErGByRoQZ3cI(Lorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;)V
 
     return-void
 .end method

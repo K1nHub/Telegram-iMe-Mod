@@ -27,10 +27,10 @@
 .method constructor <init>(Landroidx/core/view/ViewPropertyAnimatorCompat;)V
     .locals 0
 
-    .line 45
+    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
+    .line 54
     iput-object p1, p0, Landroidx/core/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14;->mVpa:Landroidx/core/view/ViewPropertyAnimatorCompat;
 
     return-void
@@ -43,17 +43,17 @@
 
     const/high16 v0, 0x7e000000
 
-    .line 101
+    .line 109
     invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 103
+    .line 111
     instance-of v1, v0, Landroidx/core/view/ViewPropertyAnimatorListener;
 
     if-eqz v1, :cond_0
 
-    .line 104
+    .line 112
     check-cast v0, Landroidx/core/view/ViewPropertyAnimatorListener;
 
     goto :goto_0
@@ -64,7 +64,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 107
+    .line 115
     invoke-interface {v0, p1}, Landroidx/core/view/ViewPropertyAnimatorListener;->onAnimationCancel(Landroid/view/View;)V
 
     :cond_1
@@ -74,7 +74,7 @@
 .method public onAnimationEnd(Landroid/view/View;)V
     .locals 3
 
-    .line 75
+    .line 83
     iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14;->mVpa:Landroidx/core/view/ViewPropertyAnimatorCompat;
 
     iget v0, v0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mOldLayerType:I
@@ -85,15 +85,15 @@
 
     if-le v0, v1, :cond_0
 
-    .line 76
+    .line 84
     invoke-virtual {p1, v0, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 77
+    .line 85
     iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14;->mVpa:Landroidx/core/view/ViewPropertyAnimatorCompat;
 
     iput v1, v0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mOldLayerType:I
 
-    .line 79
+    .line 87
     :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -105,7 +105,7 @@
 
     if-nez v0, :cond_5
 
-    .line 82
+    .line 90
     :cond_1
     iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14;->mVpa:Landroidx/core/view/ViewPropertyAnimatorCompat;
 
@@ -113,26 +113,26 @@
 
     if-eqz v1, :cond_2
 
-    .line 84
+    .line 92
     iput-object v2, v0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mEndAction:Ljava/lang/Runnable;
 
-    .line 85
+    .line 93
     invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
     :cond_2
     const/high16 v0, 0x7e000000
 
-    .line 87
+    .line 95
     invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 89
+    .line 97
     instance-of v1, v0, Landroidx/core/view/ViewPropertyAnimatorListener;
 
     if-eqz v1, :cond_3
 
-    .line 90
+    .line 98
     move-object v2, v0
 
     check-cast v2, Landroidx/core/view/ViewPropertyAnimatorListener;
@@ -140,13 +140,13 @@
     :cond_3
     if-eqz v2, :cond_4
 
-    .line 93
+    .line 101
     invoke-interface {v2, p1}, Landroidx/core/view/ViewPropertyAnimatorListener;->onAnimationEnd(Landroid/view/View;)V
 
     :cond_4
     const/4 p1, 0x1
 
-    .line 95
+    .line 103
     iput-boolean p1, p0, Landroidx/core/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14;->mAnimEndCalled:Z
 
     :cond_5
@@ -158,10 +158,10 @@
 
     const/4 v0, 0x0
 
-    .line 52
+    .line 60
     iput-boolean v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14;->mAnimEndCalled:Z
 
-    .line 54
+    .line 62
     iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14;->mVpa:Landroidx/core/view/ViewPropertyAnimatorCompat;
 
     iget v0, v0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mOldLayerType:I
@@ -174,10 +174,10 @@
 
     const/4 v0, 0x2
 
-    .line 55
+    .line 63
     invoke-virtual {p1, v0, v1}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 57
+    .line 65
     :cond_0
     iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14;->mVpa:Landroidx/core/view/ViewPropertyAnimatorCompat;
 
@@ -185,26 +185,26 @@
 
     if-eqz v2, :cond_1
 
-    .line 59
+    .line 67
     iput-object v1, v0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mStartAction:Ljava/lang/Runnable;
 
-    .line 60
+    .line 68
     invoke-interface {v2}, Ljava/lang/Runnable;->run()V
 
     :cond_1
     const/high16 v0, 0x7e000000
 
-    .line 62
+    .line 70
     invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 64
+    .line 72
     instance-of v2, v0, Landroidx/core/view/ViewPropertyAnimatorListener;
 
     if-eqz v2, :cond_2
 
-    .line 65
+    .line 73
     move-object v1, v0
 
     check-cast v1, Landroidx/core/view/ViewPropertyAnimatorListener;
@@ -212,7 +212,7 @@
     :cond_2
     if-eqz v1, :cond_3
 
-    .line 68
+    .line 76
     invoke-interface {v1, p1}, Landroidx/core/view/ViewPropertyAnimatorListener;->onAnimationStart(Landroid/view/View;)V
 
     :cond_3

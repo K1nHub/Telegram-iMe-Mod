@@ -31,7 +31,7 @@
 
     check-cast p2, Ljava/util/List;
 
-    invoke-static {v0, p1, p2}, Lcom/smedialink/ui/shop/view/GridBotsPageView;->$r8$lambda$7En28y06klW8G7GoYaKF6hPp8To(Lcom/smedialink/ui/shop/view/GridBotsPageView;Ljava/util/List;Ljava/util/List;)Ljava/util/List;
+    invoke-static {v0, p1, p2}, Lcom/smedialink/ui/shop/view/GridBotsPageView;->$r8$lambda$LUbOFl2fkRc2GCkIerl_RSSHHxQ(Lcom/smedialink/ui/shop/view/GridBotsPageView;Ljava/util/List;Ljava/util/List;)Ljava/util/List;
 
     move-result-object p1
 

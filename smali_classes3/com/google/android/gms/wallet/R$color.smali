@@ -14,31 +14,31 @@
 
 
 # static fields
-.field public static final wallet_bright_foreground_disabled_holo_light:I = 0x7f060132
+.field public static final wallet_bright_foreground_disabled_holo_light:I = 0x7f060133
 
-.field public static final wallet_bright_foreground_holo_dark:I = 0x7f060133
+.field public static final wallet_bright_foreground_holo_dark:I = 0x7f060134
 
-.field public static final wallet_bright_foreground_holo_light:I = 0x7f060134
+.field public static final wallet_bright_foreground_holo_light:I = 0x7f060135
 
-.field public static final wallet_dim_foreground_disabled_holo_dark:I = 0x7f060135
+.field public static final wallet_dim_foreground_disabled_holo_dark:I = 0x7f060136
 
-.field public static final wallet_dim_foreground_holo_dark:I = 0x7f060136
+.field public static final wallet_dim_foreground_holo_dark:I = 0x7f060137
 
-.field public static final wallet_highlighted_text_holo_dark:I = 0x7f060137
+.field public static final wallet_highlighted_text_holo_dark:I = 0x7f060138
 
-.field public static final wallet_highlighted_text_holo_light:I = 0x7f060138
+.field public static final wallet_highlighted_text_holo_light:I = 0x7f060139
 
-.field public static final wallet_hint_foreground_holo_dark:I = 0x7f060139
+.field public static final wallet_hint_foreground_holo_dark:I = 0x7f06013a
 
-.field public static final wallet_hint_foreground_holo_light:I = 0x7f06013a
+.field public static final wallet_hint_foreground_holo_light:I = 0x7f06013b
 
-.field public static final wallet_holo_blue_light:I = 0x7f06013b
+.field public static final wallet_holo_blue_light:I = 0x7f06013c
 
-.field public static final wallet_link_text_light:I = 0x7f06013c
+.field public static final wallet_link_text_light:I = 0x7f06013d
 
-.field public static final wallet_primary_text_holo_light:I = 0x7f060143
+.field public static final wallet_primary_text_holo_light:I = 0x7f060144
 
-.field public static final wallet_secondary_text_holo_dark:I = 0x7f060144
+.field public static final wallet_secondary_text_holo_dark:I = 0x7f060145
 
 
 # direct methods

@@ -50,42 +50,42 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$0zHSiK4Xtk4zmRTGWkFZ7bTtC6Q(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
+.method public static synthetic $r8$lambda$UWOja63e2mDR3JpQ6cs8PBI_Mx0(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lorg/fork/controller/AlbumsController;->removeAlbum$lambda-8(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
+    invoke-static {p0, p1, p2, p3}, Lorg/fork/controller/AlbumsController;->removeAlbum$lambda$8$lambda$7(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$5rJZytxXPPD7xj94oCfs6xp9_Dk(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
+.method public static synthetic $r8$lambda$m07aBLKFmQJhsxzdzg7j9Ogei5s(Lorg/fork/controller/AlbumsController;Lorg/fork/models/backup/Backup;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lorg/fork/controller/AlbumsController;->addAlbum$lambda-6$lambda-5(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
+    invoke-static {p0, p1}, Lorg/fork/controller/AlbumsController;->restoreBackup$lambda$3(Lorg/fork/controller/AlbumsController;Lorg/fork/models/backup/Backup;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$99hdeOPXyUvYwBSA6BfiGNKrmHI(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
+.method public static synthetic $r8$lambda$nKV14o3TI_w88wpOPY6joi_Pj8g(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lorg/fork/controller/AlbumsController;->addAlbum$lambda-6(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
+    invoke-static {p0, p1, p2, p3}, Lorg/fork/controller/AlbumsController;->removeAlbum$lambda$8(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$UuPU_OUsTrB5O6ImXC5_RuDpbe8(Lorg/fork/controller/AlbumsController;Lorg/fork/models/backup/Backup;)V
+.method public static synthetic $r8$lambda$nm_J-zeXH847ek1Zyj0MUr80zhY(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/controller/AlbumsController;->restoreBackup$lambda-3(Lorg/fork/controller/AlbumsController;Lorg/fork/models/backup/Backup;)V
+    invoke-static {p0, p1, p2, p3}, Lorg/fork/controller/AlbumsController;->addAlbum$lambda$6(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$fV7eM3p8triJy_O9OaxBgjWbQpE(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
+.method public static synthetic $r8$lambda$rO8ixzxNtTrNdjLvQOWOeA9RpAY(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lorg/fork/controller/AlbumsController;->removeAlbum$lambda-8$lambda-7(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
+    invoke-static {p0, p1, p2, p3}, Lorg/fork/controller/AlbumsController;->addAlbum$lambda$6$lambda$5(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
 
     return-void
 .end method
@@ -166,7 +166,7 @@
     return-object v0
 .end method
 
-.method private static final addAlbum$lambda-6(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
+.method private static final addAlbum$lambda$6(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
     .locals 4
 
     const-string v0, "this$0"
@@ -191,9 +191,7 @@
     invoke-interface {v0, v1}, Lcom/smedialink/storage/data/locale/db/dao/base/BaseDao;->insert(Ljava/lang/Object;)J
 
     .line 74
-    invoke-virtual {p0}, Lorg/fork/controller/AlbumsController;->getAlbums()Ljava/util/List;
-
-    move-result-object v0
+    iget-object v0, p0, Lorg/fork/controller/AlbumsController;->albums:Ljava/util/List;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -202,16 +200,16 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 75
-    new-instance v0, Lorg/fork/controller/AlbumsController$$ExternalSyntheticLambda1;
+    new-instance v0, Lorg/fork/controller/AlbumsController$$ExternalSyntheticLambda3;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/fork/controller/AlbumsController$$ExternalSyntheticLambda1;-><init>(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/fork/controller/AlbumsController$$ExternalSyntheticLambda3;-><init>(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method private static final addAlbum$lambda-6$lambda-5(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
+.method private static final addAlbum$lambda$6$lambda$5(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
     .locals 8
 
     const-string v0, "this$0"
@@ -233,15 +231,12 @@
 
     invoke-virtual/range {v1 .. v7}, Lorg/telegram/messenger/MessagesController;->addDialogToFolder(JIIJ)I
 
-    if-nez p3, :cond_0
-
-    goto :goto_0
+    if-eqz p3, :cond_0
 
     .line 77
-    :cond_0
     invoke-interface {p3}, Ljava/lang/Runnable;->run()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -272,7 +267,7 @@
     return-object p0
 .end method
 
-.method private static final removeAlbum$lambda-8(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
+.method private static final removeAlbum$lambda$8(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -293,16 +288,16 @@
     invoke-virtual {v0, v1, v2, p1, p2}, Lcom/smedialink/storage/data/locale/db/dao/minor/cloud/AlbumsDao;->deleteByAlbumId(JJ)V
 
     .line 88
-    new-instance v0, Lorg/fork/controller/AlbumsController$$ExternalSyntheticLambda3;
+    new-instance v0, Lorg/fork/controller/AlbumsController$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/fork/controller/AlbumsController$$ExternalSyntheticLambda3;-><init>(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/fork/controller/AlbumsController$$ExternalSyntheticLambda0;-><init>(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method private static final removeAlbum$lambda-8$lambda-7(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
+.method private static final removeAlbum$lambda$8$lambda$7(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -310,9 +305,7 @@
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 89
-    invoke-virtual {p0}, Lorg/fork/controller/AlbumsController;->getAlbums()Ljava/util/List;
-
-    move-result-object v0
+    iget-object v0, p0, Lorg/fork/controller/AlbumsController;->albums:Ljava/util/List;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -342,19 +335,16 @@
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    if-nez p3, :cond_0
-
-    goto :goto_0
+    if-eqz p3, :cond_0
 
     .line 92
-    :cond_0
     invoke-interface {p3}, Ljava/lang/Runnable;->run()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
-.method private static final restoreBackup$lambda-3(Lorg/fork/controller/AlbumsController;Lorg/fork/models/backup/Backup;)V
+.method private static final restoreBackup$lambda$3(Lorg/fork/controller/AlbumsController;Lorg/fork/models/backup/Backup;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -366,9 +356,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 44
-    invoke-virtual {p0}, Lorg/fork/controller/AlbumsController;->getAlbums()Ljava/util/List;
-
-    move-result-object v0
+    iget-object v0, p0, Lorg/fork/controller/AlbumsController;->albums:Ljava/util/List;
 
     .line 45
     invoke-interface {v0}, Ljava/util/List;->clear()V
@@ -525,7 +513,7 @@
 
     move-result p1
 
-    invoke-virtual {p0, p1}, Lorg/fork/controller/AlbumsController;->setOpenAlbumsInsteadCloudEnabled(Z)V
+    iput-boolean p1, p0, Lorg/fork/controller/AlbumsController;->isOpenAlbumsInsteadCloudEnabled:Z
 
     return-void
 .end method
@@ -550,9 +538,9 @@
     :cond_0
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance v1, Lorg/fork/controller/AlbumsController$$ExternalSyntheticLambda0;
+    new-instance v1, Lorg/fork/controller/AlbumsController$$ExternalSyntheticLambda1;
 
-    invoke-direct {v1, p0, p1, p2, p3}, Lorg/fork/controller/AlbumsController$$ExternalSyntheticLambda0;-><init>(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
+    invoke-direct {v1, p0, p1, p2, p3}, Lorg/fork/controller/AlbumsController$$ExternalSyntheticLambda1;-><init>(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
@@ -644,9 +632,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/AlbumsController;->isOpenAlbumsInsteadCloudEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/AlbumsController;->isOpenAlbumsInsteadCloudEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 

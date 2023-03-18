@@ -35,7 +35,7 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
-    invoke-static {v0, v1, p1}, Lorg/fork/ui/view/ChatAttachAlertWalletLayout;->$r8$lambda$KKXJ5uSrh_dHHNqK1pCj0c2IwKw(Lkotlin/jvm/functions/Function1;Lorg/fork/ui/view/ChatAttachAlertWalletLayout;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+    invoke-static {v0, v1, p1}, Lorg/fork/ui/view/ChatAttachAlertWalletLayout;->$r8$lambda$866c6DvWEsp63VXbOoMHIl8VdIU(Lkotlin/jvm/functions/Function1;Lorg/fork/ui/view/ChatAttachAlertWalletLayout;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
     return-void
 .end method

@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTemplateCell.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TemplateCell.kt\norg/fork/ui/view/TemplateCell\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,124:1\n169#2,2:125\n254#2,2:127\n*S KotlinDebug\n*F\n+ 1 TemplateCell.kt\norg/fork/ui/view/TemplateCell\n*L\n44#1:125,2\n63#1:127,2\n*E\n"
+    value = "SMAP\nTemplateCell.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TemplateCell.kt\norg/fork/ui/view/TemplateCell\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,124:1\n177#2,2:125\n262#2,2:127\n*S KotlinDebug\n*F\n+ 1 TemplateCell.kt\norg/fork/ui/view/TemplateCell\n*L\n44#1:125,2\n63#1:127,2\n*E\n"
 .end annotation
 
 
@@ -32,18 +32,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$NLRvJ-Uk5HeBM-Zm9p6XQ4Hr0p0(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$7K_ZNa7Gn-YSDDIYi158KZaGC2s(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/TemplateCell;->bind$lambda-3(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/TemplateCell;->bind$lambda$2(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$T0RpRzY-ycevbeYG51rMZ__DhVw(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$uGBAY_i6-79WJQHvTieteLdcXJ0(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/TemplateCell;->bind$lambda-2(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/TemplateCell;->bind$lambda$3(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Landroid/view/View;)V
 
     return-void
 .end method
@@ -143,7 +143,7 @@
 
     move-result p1
 
-    .line 169
+    .line 177
     invoke-virtual {p0, p1, p1, p1, p1}, Landroid/view/View;->setPadding(IIII)V
 
     const/16 p1, 0x10
@@ -308,7 +308,7 @@
     return-object p0
 .end method
 
-.method private static final bind$lambda-2(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Landroid/view/View;)V
+.method private static final bind$lambda$2(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Landroid/view/View;)V
     .locals 0
 
     const-string p2, "$templatesDelegate"
@@ -331,7 +331,7 @@
     return-void
 .end method
 
-.method private static final bind$lambda-3(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Landroid/view/View;)V
+.method private static final bind$lambda$3(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Landroid/view/View;)V
     .locals 0
 
     const-string p2, "$templatesDelegate"
@@ -592,7 +592,7 @@
     .line 99
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setIncludeFontPadding(Z)V
 
-    const-string v1, "windowBackgroundWhiteGrayText"
+    const-string/jumbo v1, "windowBackgroundWhiteGrayText"
 
     .line 100
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -686,7 +686,7 @@
     .line 92
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setIncludeFontPadding(Z)V
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v1, "windowBackgroundWhiteBlackText"
 
     .line 93
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -793,7 +793,7 @@
     :cond_1
     const/16 v1, 0x8
 
-    .line 254
+    .line 262
     :goto_1
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
@@ -824,7 +824,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -867,7 +867,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -881,9 +881,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lorg/fork/ui/view/TemplateCell$$ExternalSyntheticLambda1;
+    new-instance v1, Lorg/fork/ui/view/TemplateCell$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, p2, p1}, Lorg/fork/ui/view/TemplateCell$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;)V
+    invoke-direct {v1, p2, p1}, Lorg/fork/ui/view/TemplateCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -892,9 +892,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lorg/fork/ui/view/TemplateCell$$ExternalSyntheticLambda0;
+    new-instance v1, Lorg/fork/ui/view/TemplateCell$$ExternalSyntheticLambda1;
 
-    invoke-direct {v1, p2, p1}, Lorg/fork/ui/view/TemplateCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;)V
+    invoke-direct {v1, p2, p1}, Lorg/fork/ui/view/TemplateCell$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

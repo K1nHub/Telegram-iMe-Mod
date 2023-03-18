@@ -20,14 +20,13 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.NoWhenBranchMatchedException;
-import kotlin.Unit;
 import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.enums.FilterActivityType;
 import org.fork.utils.Callbacks$Callback2;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.BottomSheet;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -58,8 +57,14 @@ public final class SelectIconBottomSheet extends BottomSheet {
 
         static {
             int[] iArr = new int[FilterActivityType.values().length];
-            iArr[FilterActivityType.FILTER.ordinal()] = 1;
-            iArr[FilterActivityType.TOPIC.ordinal()] = 2;
+            try {
+                iArr[FilterActivityType.FILTER.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[FilterActivityType.TOPIC.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -73,10 +78,6 @@ public final class SelectIconBottomSheet extends BottomSheet {
         return false;
     }
 
-    public final Activity getActivity() {
-        return this.activity;
-    }
-
     public final FilterActivityType getType() {
         return this.type;
     }
@@ -87,10 +88,6 @@ public final class SelectIconBottomSheet extends BottomSheet {
 
     public final Topic getCurrentTopicIcon() {
         return this.currentTopicIcon;
-    }
-
-    public final Callbacks$Callback2<FilterIcon, Topic> getSelectIconDelegate() {
-        return this.selectIconDelegate;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -116,7 +113,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
         this.listView$delegate = lazy3;
         lazy4 = LazyKt__LazyJVMKt.lazy(new SelectIconBottomSheet$deleteButton$2(this));
         this.deleteButton$delegate = lazy4;
-        setTitle(LocaleController.getInternalString(C3158R.string.select_icon), true);
+        setTitle(LocaleController.getInternalString(C3286R.string.select_icon), true);
         setCustomView(getRootView());
         setupListeners();
     }
@@ -159,7 +156,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(1);
         linearLayout.addView(getListView(), LayoutHelper.createLinear(-2, 0, 1.0f));
-        if (getCurrentFilterIcon() != null || getCurrentTopicIcon() != null) {
+        if (this.currentFilterIcon != null || this.currentTopicIcon != null) {
             setApplyBottomPadding(false);
             linearLayout.addView(getDeleteButton(), LayoutHelper.createLinear(-1, 50));
         }
@@ -170,8 +167,8 @@ public final class SelectIconBottomSheet extends BottomSheet {
     public final RecyclerListView initListView() {
         RecyclerListView recyclerListView = new RecyclerListView(getContext());
         recyclerListView.setOverScrollMode(2);
-        recyclerListView.setLayoutManager(new ExtendedGridLayoutManager(recyclerListView.getContext(), AndroidUtilities.isInLandscapeMode(getActivity()) ? 14 : 7));
-        recyclerListView.setAdapter(new GridAdapter(this));
+        recyclerListView.setLayoutManager(new ExtendedGridLayoutManager(recyclerListView.getContext(), AndroidUtilities.isInLandscapeMode(this.activity) ? 14 : 7));
+        recyclerListView.setAdapter(new GridAdapter());
         ViewExtKt.setHorizontalPadding(recyclerListView, 10);
         return recyclerListView;
     }
@@ -183,18 +180,17 @@ public final class SelectIconBottomSheet extends BottomSheet {
         bottomSheetCell.getBackgroundPublic().setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.SelectIconBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SelectIconBottomSheet.m2002initDeleteButton$lambda3$lambda2(SelectIconBottomSheet.this, view);
+                SelectIconBottomSheet.initDeleteButton$lambda$3$lambda$2(SelectIconBottomSheet.this, view);
             }
         });
-        bottomSheetCell.setText(LocaleController.getString("Delete", C3158R.string.Delete));
+        bottomSheetCell.setText(LocaleController.getString("Delete", C3286R.string.Delete));
         return bottomSheetCell;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initDeleteButton$lambda-3$lambda-2  reason: not valid java name */
-    public static final void m2002initDeleteButton$lambda3$lambda2(SelectIconBottomSheet this$0, View view) {
+    public static final void initDeleteButton$lambda$3$lambda$2(SelectIconBottomSheet this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getSelectIconDelegate().invoke(null, null);
+        this$0.selectIconDelegate.invoke(null, null);
         this$0.dismiss();
     }
 
@@ -202,25 +198,26 @@ public final class SelectIconBottomSheet extends BottomSheet {
         getListView().setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.fork.ui.dialog.SelectIconBottomSheet$$ExternalSyntheticLambda1
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                SelectIconBottomSheet.m2003setupListeners$lambda4(SelectIconBottomSheet.this, view, i);
+                SelectIconBottomSheet.setupListeners$lambda$4(SelectIconBottomSheet.this, view, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-4  reason: not valid java name */
-    public static final void m2003setupListeners$lambda4(SelectIconBottomSheet this$0, View view, int i) {
+    /* JADX WARN: Multi-variable type inference failed */
+    public static final void setupListeners$lambda$4(SelectIconBottomSheet this$0, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Enum<?> r3 = this$0.getIcons().get(i);
-        if (this$0.getCurrentFilterIcon() == r3 || this$0.getCurrentTopicIcon() == r3) {
+        if (this$0.currentFilterIcon == r3 || this$0.currentTopicIcon == r3) {
             return;
         }
-        if (this$0.getType() == FilterActivityType.FILTER && (r3 instanceof FilterIcon)) {
-            this$0.getSelectIconDelegate().invoke(r3, null);
-        } else if (this$0.getType() != FilterActivityType.TOPIC || !(r3 instanceof Topic)) {
+        FilterActivityType filterActivityType = this$0.type;
+        if (filterActivityType == FilterActivityType.FILTER && (r3 instanceof FilterIcon)) {
+            this$0.selectIconDelegate.invoke(r3, null);
+        } else if (filterActivityType != FilterActivityType.TOPIC || !(r3 instanceof Topic)) {
             return;
         } else {
-            this$0.getSelectIconDelegate().invoke(null, r3);
+            this$0.selectIconDelegate.invoke(null, r3);
         }
         this$0.dismiss();
     }
@@ -229,28 +226,24 @@ public final class SelectIconBottomSheet extends BottomSheet {
     /* renamed from: org.fork.ui.dialog.SelectIconBottomSheet$GridAdapter */
     /* loaded from: classes4.dex */
     public final class GridAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ SelectIconBottomSheet this$0;
-
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             return true;
         }
 
-        public GridAdapter(SelectIconBottomSheet this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public GridAdapter() {
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            return this.this$0.getIcons().size();
+            return SelectIconBottomSheet.this.getIcons().size();
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
             Intrinsics.checkNotNullParameter(parent, "parent");
-            SelectIconBottomSheet selectIconBottomSheet = this.this$0;
+            SelectIconBottomSheet selectIconBottomSheet = SelectIconBottomSheet.this;
             Context context = selectIconBottomSheet.getContext();
             Intrinsics.checkNotNullExpressionValue(context, "context");
             return new RecyclerListView.Holder(new IconView(selectIconBottomSheet, context));
@@ -263,7 +256,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
             View view = holder.itemView;
             if (view instanceof IconView) {
                 Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
-                SelectIconBottomSheet selectIconBottomSheet = this.this$0;
+                SelectIconBottomSheet selectIconBottomSheet = SelectIconBottomSheet.this;
                 IconView iconView = (IconView) view;
                 Enum r5 = (Enum) selectIconBottomSheet.getIcons().get(i);
                 if (selectIconBottomSheet.getType() == FilterActivityType.FILTER && (r5 instanceof FilterIcon)) {
@@ -289,14 +282,13 @@ public final class SelectIconBottomSheet extends BottomSheet {
         final /* synthetic */ SelectIconBottomSheet this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public IconView(SelectIconBottomSheet this$0, Context context) {
+        public IconView(SelectIconBottomSheet selectIconBottomSheet, Context context) {
             super(context);
             Lazy lazy;
             Lazy lazy2;
             Lazy lazy3;
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullParameter(context, "context");
-            this.this$0 = this$0;
+            this.this$0 = selectIconBottomSheet;
             lazy = LazyKt__LazyJVMKt.lazy(new SelectIconBottomSheet$IconView$circleView$2(this));
             this.circleView$delegate = lazy;
             lazy2 = LazyKt__LazyJVMKt.lazy(new SelectIconBottomSheet$IconView$imageView$2(this));
@@ -304,7 +296,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
             lazy3 = LazyKt__LazyJVMKt.lazy(new SelectIconBottomSheet$IconView$checkBox$2(this));
             this.checkBox$delegate = lazy3;
             addView(getCircleView(), LayoutHelper.createFrame(-1, -1, 17, 3, 3, 3, 3));
-            addView(getImageView(), LayoutHelper.createFrame(this$0.getType().getIconSize(), this$0.getType().getIconSize(), 17));
+            addView(getImageView(), LayoutHelper.createFrame(selectIconBottomSheet.getType().getIconSize(), selectIconBottomSheet.getType().getIconSize(), 17));
             addView(getCheckBox(), LayoutHelper.createFrame(18, 18, 85));
         }
 
@@ -327,7 +319,6 @@ public final class SelectIconBottomSheet extends BottomSheet {
                 gradientDrawable = new GradientDrawable();
                 gradientDrawable.setShape(1);
                 gradientDrawable.setStroke(AndroidUtilities.m51dp(2.0f), Theme.getColor("chats_actionBackground"));
-                Unit unit = Unit.INSTANCE;
             } else {
                 gradientDrawable = null;
             }

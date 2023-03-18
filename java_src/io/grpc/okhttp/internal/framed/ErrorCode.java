@@ -1,5 +1,5 @@
 package io.grpc.okhttp.internal.framed;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum ErrorCode {
     NO_ERROR(0, -1, 0),
     PROTOCOL_ERROR(1, 1, 1),

@@ -59,29 +59,29 @@
 .method public constructor <init>()V
     .locals 4
 
-    .line 54
+    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x4
 
     new-array v1, v0, [Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
-    .line 29
+    .line 32
     iput-object v1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->states:[Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 40
+    .line 43
     iput v1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->progressToState:F
 
-    .line 42
+    .line 45
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->parents:Ljava/util/ArrayList;
 
-    .line 44
+    .line 47
     new-instance v1, Landroid/graphics/Paint;
 
     const/4 v2, 0x1
@@ -90,7 +90,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->paint:Landroid/graphics/Paint;
 
-    .line 46
+    .line 49
     new-instance v1, Lorg/telegram/ui/Components/LineBlobDrawable;
 
     const/4 v3, 0x5
@@ -99,7 +99,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lineBlobDrawable:Lorg/telegram/ui/Components/LineBlobDrawable;
 
-    .line 47
+    .line 50
     new-instance v1, Lorg/telegram/ui/Components/LineBlobDrawable;
 
     const/4 v3, 0x7
@@ -108,7 +108,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lineBlobDrawable1:Lorg/telegram/ui/Components/LineBlobDrawable;
 
-    .line 48
+    .line 51
     new-instance v1, Lorg/telegram/ui/Components/LineBlobDrawable;
 
     const/16 v3, 0x8
@@ -117,19 +117,19 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lineBlobDrawable2:Lorg/telegram/ui/Components/LineBlobDrawable;
 
-    .line 50
+    .line 53
     new-instance v1, Landroid/graphics/RectF;
 
     invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
 
-    .line 51
+    .line 54
     new-instance v1, Landroid/graphics/Path;
 
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->path:Landroid/graphics/Path;
 
-    .line 52
+    .line 55
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1, v2}, Landroid/graphics/Paint;-><init>(I)V
@@ -139,7 +139,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 56
+    .line 59
     iget-object v2, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->states:[Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
     new-instance v3, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
@@ -161,7 +161,7 @@
 
     const/4 v0, 0x0
 
-    .line 249
+    .line 197
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->states:[Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
@@ -169,7 +169,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 250
+    .line 198
     aget-object v1, v1, v0
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->checkColor()V
@@ -185,7 +185,7 @@
 .method private setState(IZ)V
     .locals 1
 
-    .line 255
+    .line 203
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->currentState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
     if-eqz v0, :cond_0
@@ -198,7 +198,7 @@
 
     return-void
 
-    .line 258
+    .line 206
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
@@ -210,7 +210,7 @@
 
     if-nez v0, :cond_1
 
-    .line 259
+    .line 207
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->pausedState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->currentState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
@@ -220,7 +220,7 @@
     :cond_1
     if-eqz p2, :cond_2
 
-    .line 261
+    .line 209
     iget-object p2, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->currentState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
     goto :goto_0
@@ -231,7 +231,7 @@
     :goto_0
     iput-object p2, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->previousState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
-    .line 262
+    .line 210
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->states:[Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
     aget-object p1, v0, p1
@@ -242,7 +242,7 @@
 
     const/4 p1, 0x0
 
-    .line 264
+    .line 212
     iput p1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->progressToState:F
 
     goto :goto_1
@@ -250,7 +250,7 @@
     :cond_3
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 266
+    .line 214
     iput p1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->progressToState:F
 
     :goto_1
@@ -262,7 +262,7 @@
 .method public addParent(Landroid/view/View;)V
     .locals 1
 
-    .line 278
+    .line 226
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->parents:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -271,7 +271,7 @@
 
     if-nez v0, :cond_0
 
-    .line 279
+    .line 227
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->parents:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -285,7 +285,7 @@
 
     move-object/from16 v0, p0
 
-    .line 62
+    .line 65
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->checkColors()V
 
     const/4 v10, 0x0
@@ -299,7 +299,7 @@
 
     goto :goto_0
 
-    .line 66
+    .line 69
     :cond_1
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->parents:Ljava/util/ArrayList;
 
@@ -321,7 +321,7 @@
     :cond_2
     const-wide/16 v2, 0x0
 
-    .line 72
+    .line 75
     iget-object v4, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->currentState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
     if-eqz v4, :cond_5
@@ -372,17 +372,17 @@
     :goto_1
     if-eqz v1, :cond_7
 
-    .line 75
+    .line 78
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
-    .line 76
+    .line 79
     iget-wide v4, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lastUpdateTime:J
 
     sub-long v4, v2, v4
 
-    .line 77
+    .line 80
     iput-wide v2, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lastUpdateTime:J
 
     const-wide/16 v2, 0x14
@@ -423,7 +423,7 @@
 
     if-eqz v13, :cond_f
 
-    .line 86
+    .line 89
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->animateToAmplitude:F
 
     iget v2, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->amplitude:F
@@ -432,7 +432,7 @@
 
     if-eqz v3, :cond_a
 
-    .line 87
+    .line 90
     iget v3, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->animateAmplitudeDiff:F
 
     long-to-float v4, v14
@@ -451,7 +451,7 @@
 
     if-lez v2, :cond_9
 
-    .line 90
+    .line 93
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->amplitude:F
 
     goto :goto_4
@@ -461,15 +461,15 @@
 
     if-gez v2, :cond_9
 
-    .line 94
+    .line 97
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->amplitude:F
 
-    .line 97
+    .line 100
     :cond_9
     :goto_4
     invoke-virtual/range {p6 .. p6}, Lorg/telegram/ui/Components/FragmentContextView;->invalidate()V
 
-    .line 100
+    .line 103
     :cond_a
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->animateToAmplitude:F
 
@@ -479,7 +479,7 @@
 
     if-eqz v3, :cond_d
 
-    .line 101
+    .line 104
     iget v3, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->animateAmplitudeDiff2:F
 
     long-to-float v4, v14
@@ -498,7 +498,7 @@
 
     if-lez v2, :cond_c
 
-    .line 104
+    .line 107
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->amplitude2:F
 
     goto :goto_5
@@ -508,21 +508,21 @@
 
     if-gez v2, :cond_c
 
-    .line 108
+    .line 111
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->amplitude2:F
 
-    .line 111
+    .line 114
     :cond_c
     :goto_5
     invoke-virtual/range {p6 .. p6}, Lorg/telegram/ui/Components/FragmentContextView;->invalidate()V
 
-    .line 114
+    .line 117
     :cond_d
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->previousState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
     if-eqz v1, :cond_f
 
-    .line 115
+    .line 118
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->progressToState:F
 
     long-to-float v2, v14
@@ -539,15 +539,15 @@
 
     if-lez v1, :cond_e
 
-    .line 117
+    .line 120
     iput v8, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->progressToState:F
 
     const/4 v1, 0x0
 
-    .line 118
+    .line 121
     iput-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->previousState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
-    .line 120
+    .line 123
     :cond_e
     invoke-virtual/range {p6 .. p6}, Lorg/telegram/ui/Components/FragmentContextView;->invalidate()V
 
@@ -557,11 +557,11 @@
     :goto_6
     const/4 v6, 0x2
 
-    if-ge v7, v6, :cond_19
+    if-ge v7, v6, :cond_1a
 
     if-nez v7, :cond_10
 
-    .line 125
+    .line 128
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->previousState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
     if-nez v1, :cond_10
@@ -572,17 +572,17 @@
 
     const/16 v19, 0x0
 
-    goto/16 :goto_b
+    goto/16 :goto_c
 
     :cond_10
     if-nez v7, :cond_11
 
-    .line 130
+    .line 133
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->progressToState:F
 
     sub-float v1, v8, v1
 
-    .line 131
+    .line 134
     iget-object v2, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->previousState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->paint:Landroid/graphics/Paint;
@@ -595,7 +595,7 @@
 
     goto :goto_9
 
-    .line 133
+    .line 136
     :cond_11
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->currentState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
@@ -603,7 +603,7 @@
 
     return-void
 
-    .line 136
+    .line 139
     :cond_12
     iget-object v2, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->previousState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
@@ -629,7 +629,7 @@
 
     float-to-int v3, v3
 
-    .line 138
+    .line 141
     iget v4, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->amplitude:F
 
     move/from16 v17, v4
@@ -647,7 +647,7 @@
     :cond_14
     const/16 v18, 0x2
 
-    .line 140
+    .line 143
     :goto_8
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->currentState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
@@ -655,13 +655,13 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->setToPaint(Landroid/graphics/Paint;)V
 
-    .line 143
+    .line 146
     :goto_9
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lineBlobDrawable:Lorg/telegram/ui/Components/LineBlobDrawable;
 
     iput v9, v1, Lorg/telegram/ui/Components/LineBlobDrawable;->minRadius:F
 
-    .line 144
+    .line 147
     invoke-static/range {v18 .. v18}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -682,7 +682,7 @@
 
     iput v2, v1, Lorg/telegram/ui/Components/LineBlobDrawable;->maxRadius:F
 
-    .line 146
+    .line 149
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lineBlobDrawable1:Lorg/telegram/ui/Components/LineBlobDrawable;
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -693,7 +693,7 @@
 
     iput v2, v1, Lorg/telegram/ui/Components/LineBlobDrawable;->minRadius:F
 
-    .line 147
+    .line 150
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lineBlobDrawable1:Lorg/telegram/ui/Components/LineBlobDrawable;
 
     const/4 v2, 0x3
@@ -720,7 +720,7 @@
 
     iput v3, v1, Lorg/telegram/ui/Components/LineBlobDrawable;->maxRadius:F
 
-    .line 149
+    .line 152
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lineBlobDrawable2:Lorg/telegram/ui/Components/LineBlobDrawable;
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -731,7 +731,7 @@
 
     iput v3, v1, Lorg/telegram/ui/Components/LineBlobDrawable;->minRadius:F
 
-    .line 150
+    .line 153
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lineBlobDrawable2:Lorg/telegram/ui/Components/LineBlobDrawable;
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -758,14 +758,14 @@
 
     if-eqz v13, :cond_15
 
-    .line 153
+    .line 156
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lineBlobDrawable:Lorg/telegram/ui/Components/LineBlobDrawable;
 
     const v2, 0x3e99999a    # 0.3f
 
     invoke-virtual {v1, v4, v2}, Lorg/telegram/ui/Components/LineBlobDrawable;->update(FF)V
 
-    .line 154
+    .line 157
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lineBlobDrawable1:Lorg/telegram/ui/Components/LineBlobDrawable;
 
     iget v2, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->amplitude:F
@@ -774,15 +774,24 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/Components/LineBlobDrawable;->update(FF)V
 
-    .line 155
+    .line 158
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lineBlobDrawable2:Lorg/telegram/ui/Components/LineBlobDrawable;
 
     iget v2, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->amplitude:F
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/Components/LineBlobDrawable;->update(FF)V
 
-    .line 183
     :cond_15
+    const/16 v1, 0x200
+
+    .line 161
+    invoke-static {v1}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_16
+
+    .line 162
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->paint:Landroid/graphics/Paint;
 
     const/high16 v2, 0x42980000    # 76.0f
@@ -795,7 +804,7 @@
 
     const/4 v1, 0x6
 
-    .line 184
+    .line 163
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -806,7 +815,7 @@
 
     mul-float v2, v2, v3
 
-    .line 185
+    .line 164
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -817,7 +826,7 @@
 
     mul-float v17, v1, v3
 
-    .line 186
+    .line 165
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lineBlobDrawable1:Lorg/telegram/ui/Components/LineBlobDrawable;
 
     sub-float v3, p2, v2
@@ -848,7 +857,7 @@
 
     invoke-virtual/range {v1 .. v9}, Lorg/telegram/ui/Components/LineBlobDrawable;->draw(FFFFLandroid/graphics/Canvas;Landroid/graphics/Paint;FF)V
 
-    .line 187
+    .line 166
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lineBlobDrawable2:Lorg/telegram/ui/Components/LineBlobDrawable;
 
     sub-float v3, p2, v17
@@ -857,23 +866,33 @@
 
     invoke-virtual/range {v1 .. v9}, Lorg/telegram/ui/Components/LineBlobDrawable;->draw(FFFFLandroid/graphics/Canvas;Landroid/graphics/Paint;FF)V
 
+    goto :goto_a
+
+    :cond_16
+    move v10, v7
+
+    const/high16 v18, 0x3f800000    # 1.0f
+
+    const/16 v19, 0x0
+
+    :goto_a
     const/16 v1, 0xff
 
-    if-ne v10, v11, :cond_16
+    if-ne v10, v11, :cond_17
 
-    if-eqz v12, :cond_16
+    if-eqz v12, :cond_17
 
-    .line 191
+    .line 170
     iget-object v2, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    goto :goto_a
+    goto :goto_b
 
-    :cond_16
-    if-ne v10, v11, :cond_17
+    :cond_17
+    if-ne v10, v11, :cond_18
 
-    .line 193
+    .line 172
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->paint:Landroid/graphics/Paint;
 
     const/high16 v2, 0x437f0000    # 255.0f
@@ -884,27 +903,27 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    goto :goto_a
+    goto :goto_b
 
-    .line 195
-    :cond_17
+    .line 174
+    :cond_18
     iget-object v2, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    :goto_a
-    if-ne v10, v11, :cond_18
+    :goto_b
+    if-ne v10, v11, :cond_19
 
-    if-eqz v12, :cond_18
+    if-eqz v12, :cond_19
 
-    .line 198
+    .line 177
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->path:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->reset()V
 
     const/16 v1, 0x12
 
-    .line 199
+    .line 178
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -929,24 +948,24 @@
 
     mul-float v3, v3, v16
 
-    .line 202
+    .line 181
     iget-object v4, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->path:Landroid/graphics/Path;
 
     sget-object v5, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
     invoke-virtual {v4, v1, v2, v3, v5}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 203
+    .line 182
     invoke-virtual/range {p5 .. p5}, Landroid/graphics/Canvas;->save()I
 
-    .line 205
+    .line 184
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->path:Landroid/graphics/Path;
 
     move-object/from16 v9, p5
 
     invoke-virtual {v9, v1}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 206
+    .line 185
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lineBlobDrawable:Lorg/telegram/ui/Components/LineBlobDrawable;
 
     iget-object v7, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->paint:Landroid/graphics/Paint;
@@ -967,13 +986,13 @@
 
     invoke-virtual/range {v1 .. v9}, Lorg/telegram/ui/Components/LineBlobDrawable;->draw(FFFFLandroid/graphics/Canvas;Landroid/graphics/Paint;FF)V
 
-    .line 207
+    .line 186
     invoke-virtual/range {p5 .. p5}, Landroid/graphics/Canvas;->restore()V
 
-    goto :goto_b
+    goto :goto_c
 
-    .line 209
-    :cond_18
+    .line 188
+    :cond_19
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->lineBlobDrawable:Lorg/telegram/ui/Components/LineBlobDrawable;
 
     iget-object v7, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->paint:Landroid/graphics/Paint;
@@ -994,7 +1013,7 @@
 
     invoke-virtual/range {v1 .. v9}, Lorg/telegram/ui/Components/LineBlobDrawable;->draw(FFFFLandroid/graphics/Canvas;Landroid/graphics/Paint;FF)V
 
-    :goto_b
+    :goto_c
     add-int/lit8 v7, v10, 0x1
 
     const/high16 v8, 0x3f800000    # 1.0f
@@ -1005,19 +1024,19 @@
 
     goto/16 :goto_6
 
-    :cond_19
+    :cond_1a
     return-void
 .end method
 
 .method public removeParent(Landroid/view/View;)V
     .locals 1
 
-    .line 283
+    .line 231
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->parents:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 284
+    .line 232
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->parents:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1026,17 +1045,17 @@
 
     if-eqz p1, :cond_0
 
-    .line 285
+    .line 233
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->currentState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->pausedState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
     const/4 p1, 0x0
 
-    .line 286
+    .line 234
     iput-object p1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->currentState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
-    .line 287
+    .line 235
     iput-object p1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->previousState:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;
 
     :cond_0
@@ -1046,10 +1065,10 @@
 .method public setAmplitude(F)V
     .locals 3
 
-    .line 272
+    .line 220
     iput p1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->animateToAmplitude:F
 
-    .line 273
+    .line 221
     iget v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->amplitude:F
 
     sub-float v1, p1, v0
@@ -1066,7 +1085,7 @@
 
     div-float/2addr p1, v0
 
-    .line 274
+    .line 222
     iput p1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->animateAmplitudeDiff2:F
 
     return-void
@@ -1075,19 +1094,19 @@
 .method public updateState(Z)V
     .locals 6
 
-    .line 292
+    .line 240
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
 
     if-eqz v0, :cond_6
 
-    .line 294
+    .line 242
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->getCallState()I
 
     move-result v1
 
-    .line 295
+    .line 243
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->isSwitchingStream()Z
 
     move-result v2
@@ -1110,19 +1129,19 @@
 
     if-ne v1, v4, :cond_1
 
-    .line 296
+    .line 244
     :cond_0
     invoke-direct {p0, v2, p1}, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->setState(IZ)V
 
     goto :goto_0
 
-    .line 298
+    .line 246
     :cond_1
     iget-object v1, v0, Lorg/telegram/messenger/voip/VoIPService;->groupCall:Lorg/telegram/messenger/ChatObject$Call;
 
     if-eqz v1, :cond_5
 
-    .line 299
+    .line 247
     iget-object v1, v1, Lorg/telegram/messenger/ChatObject$Call;->participants:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->getSelfId()J
@@ -1137,7 +1156,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 300
+    .line 248
     iget-boolean v2, v1, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->can_self_unmute:Z
 
     if-nez v2, :cond_2
@@ -1168,34 +1187,34 @@
     :cond_3
     const/4 v1, 0x0
 
-    .line 301
+    .line 249
     invoke-virtual {v0, v3, v1, v1}, Lorg/telegram/messenger/voip/VoIPService;->setMicMute(ZZZ)V
 
     const/4 v0, 0x3
 
-    .line 302
+    .line 250
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->setState(IZ)V
 
     goto :goto_0
 
-    .line 304
+    .line 252
     :cond_4
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->isMicMute()Z
 
     move-result v0
 
-    .line 305
+    .line 253
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->setState(IZ)V
 
     goto :goto_0
 
-    .line 308
+    .line 256
     :cond_5
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->isMicMute()Z
 
     move-result v0
 
-    .line 309
+    .line 257
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->setState(IZ)V
 
     :cond_6

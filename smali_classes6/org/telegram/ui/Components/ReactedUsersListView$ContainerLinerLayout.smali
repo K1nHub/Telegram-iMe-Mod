@@ -22,7 +22,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 494
+    .line 582
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -33,7 +33,7 @@
 .method protected onMeasure(II)V
     .locals 8
 
-    .line 501
+    .line 589
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView$ContainerLinerLayout;->hasHeader:Z
 
     const/4 v1, 0x0
@@ -46,7 +46,7 @@
 
     const/4 v3, 0x0
 
-    .line 502
+    .line 590
     :goto_0
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
 
@@ -54,7 +54,7 @@
 
     if-ge v0, v4, :cond_4
 
-    .line 503
+    .line 591
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
@@ -63,7 +63,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 504
+    .line 592
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -72,7 +72,7 @@
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 505
+    .line 593
     invoke-virtual {v2}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v4
@@ -87,7 +87,7 @@
 
     if-ne v4, v5, :cond_2
 
-    .line 506
+    .line 594
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v4
@@ -97,7 +97,7 @@
     :goto_1
     if-ge v5, v4, :cond_1
 
-    .line 508
+    .line 596
     invoke-virtual {v2, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v6
@@ -114,7 +114,7 @@
 
     invoke-virtual {v6, v7, p2}, Landroid/view/View;->measure(II)V
 
-    .line 509
+    .line 597
     invoke-virtual {v2, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v6
@@ -125,7 +125,7 @@
 
     if-le v6, v3, :cond_0
 
-    .line 510
+    .line 598
     invoke-virtual {v2, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
@@ -142,7 +142,7 @@
     :cond_1
     const/16 v4, 0x10
 
-    .line 513
+    .line 601
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -157,7 +157,7 @@
     :cond_3
     const/4 v3, 0x0
 
-    .line 518
+    .line 606
     :cond_4
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -165,14 +165,14 @@
 
     const/16 v0, 0xf0
 
-    .line 519
+    .line 607
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
     if-ge p1, v4, :cond_5
 
-    .line 520
+    .line 608
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -180,14 +180,14 @@
     :cond_5
     const/16 v0, 0x118
 
-    .line 522
+    .line 610
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
     if-le p1, v4, :cond_6
 
-    .line 523
+    .line 611
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -212,7 +212,7 @@
 
     if-eqz v2, :cond_9
 
-    .line 532
+    .line 620
     :goto_3
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -220,7 +220,7 @@
 
     if-ge v1, v0, :cond_9
 
-    .line 533
+    .line 621
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
@@ -235,7 +235,7 @@
 
     goto :goto_3
 
-    .line 536
+    .line 624
     :cond_9
     invoke-static {v3, p1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 

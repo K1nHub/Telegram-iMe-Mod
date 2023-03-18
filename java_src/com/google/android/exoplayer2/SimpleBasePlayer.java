@@ -155,8 +155,8 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 this.shuffleModeEnabled = false;
                 this.isLoading = false;
                 this.seekBackIncrementMs = 5000L;
-                this.seekForwardIncrementMs = C0474C.DEFAULT_SEEK_FORWARD_INCREMENT_MS;
-                this.maxSeekToPreviousPositionMs = C0474C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
+                this.seekForwardIncrementMs = C0468C.DEFAULT_SEEK_FORWARD_INCREMENT_MS;
+                this.maxSeekToPreviousPositionMs = C0468C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
                 this.playbackParameters = PlaybackParameters.DEFAULT;
                 this.trackSelectionParameters = TrackSelectionParameters.DEFAULT_WITHOUT_CONTEXT;
                 this.audioAttributes = AudioAttributes.DEFAULT;
@@ -168,7 +168,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 this.isDeviceMuted = false;
                 this.surfaceSize = Size.UNKNOWN;
                 this.newlyRenderedFirstFrame = false;
-                this.timedMetadata = new Metadata((long) C0474C.TIME_UNSET, new Metadata.Entry[0]);
+                this.timedMetadata = new Metadata((long) C0468C.TIME_UNSET, new Metadata.Entry[0]);
                 this.playlist = ImmutableList.m754of();
                 this.timeline = Timeline.EMPTY;
                 this.playlistMetadata = MediaMetadata.EMPTY;
@@ -176,11 +176,11 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 this.currentAdGroupIndex = -1;
                 this.currentAdIndexInAdGroup = -1;
                 this.contentPositionMs = null;
-                this.contentPositionMsSupplier = PositionSupplier.CC.getConstant(C0474C.TIME_UNSET);
+                this.contentPositionMsSupplier = PositionSupplier.CC.getConstant(C0468C.TIME_UNSET);
                 this.adPositionMs = null;
                 PositionSupplier positionSupplier = PositionSupplier.ZERO;
                 this.adPositionMsSupplier = positionSupplier;
-                this.contentBufferedPositionMsSupplier = PositionSupplier.CC.getConstant(C0474C.TIME_UNSET);
+                this.contentBufferedPositionMsSupplier = PositionSupplier.CC.getConstant(C0468C.TIME_UNSET);
                 this.adBufferedPositionMsSupplier = positionSupplier;
                 this.totalBufferedDurationMsSupplier = positionSupplier;
                 this.hasPositionDiscontinuity = false;
@@ -459,7 +459,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             if (builder.playbackState == 1 || builder.playbackState == 4) {
                 Assertions.checkArgument(!builder.isLoading, "isLoading only allowed when not in STATE_IDLE or STATE_ENDED");
             }
-            PositionSupplier extrapolating = builder.contentPositionMs != null ? (builder.currentAdGroupIndex == -1 && builder.playWhenReady && builder.playbackState == 3 && builder.playbackSuppressionReason == 0 && builder.contentPositionMs.longValue() != C0474C.TIME_UNSET) ? PositionSupplier.CC.getExtrapolating(builder.contentPositionMs.longValue(), builder.playbackParameters.speed) : PositionSupplier.CC.getConstant(builder.contentPositionMs.longValue()) : builder.contentPositionMsSupplier;
+            PositionSupplier extrapolating = builder.contentPositionMs != null ? (builder.currentAdGroupIndex == -1 && builder.playWhenReady && builder.playbackState == 3 && builder.playbackSuppressionReason == 0 && builder.contentPositionMs.longValue() != C0468C.TIME_UNSET) ? PositionSupplier.CC.getExtrapolating(builder.contentPositionMs.longValue(), builder.playbackParameters.speed) : PositionSupplier.CC.getConstant(builder.contentPositionMs.longValue()) : builder.contentPositionMsSupplier;
             PositionSupplier extrapolating2 = builder.adPositionMs != null ? (builder.currentAdGroupIndex != -1 && builder.playWhenReady && builder.playbackState == 3 && builder.playbackSuppressionReason == 0) ? PositionSupplier.CC.getExtrapolating(builder.adPositionMs.longValue(), 1.0f) : PositionSupplier.CC.getConstant(builder.adPositionMs.longValue()) : builder.adPositionMsSupplier;
             this.availableCommands = builder.availableCommands;
             this.playWhenReady = builder.playWhenReady;
@@ -675,13 +675,13 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 this.mediaMetadata = null;
                 this.manifest = null;
                 this.liveConfiguration = null;
-                this.presentationStartTimeMs = C0474C.TIME_UNSET;
-                this.windowStartTimeMs = C0474C.TIME_UNSET;
-                this.elapsedRealtimeEpochOffsetMs = C0474C.TIME_UNSET;
+                this.presentationStartTimeMs = C0468C.TIME_UNSET;
+                this.windowStartTimeMs = C0468C.TIME_UNSET;
+                this.elapsedRealtimeEpochOffsetMs = C0468C.TIME_UNSET;
                 this.isSeekable = false;
                 this.isDynamic = false;
                 this.defaultPositionUs = 0L;
-                this.durationUs = C0474C.TIME_UNSET;
+                this.durationUs = C0468C.TIME_UNSET;
                 this.positionInFirstPeriodUs = 0L;
                 this.isPlaceholder = false;
                 this.periods = ImmutableList.m754of();
@@ -768,7 +768,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             }
 
             public Builder setDurationUs(long j) {
-                Assertions.checkArgument(j == C0474C.TIME_UNSET || j >= 0);
+                Assertions.checkArgument(j == C0468C.TIME_UNSET || j >= 0);
                 this.durationUs = j;
                 return this;
             }
@@ -788,7 +788,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 int size = list.size();
                 int i = 0;
                 while (i < size - 1) {
-                    Assertions.checkArgument(list.get(i).durationUs != C0474C.TIME_UNSET, "Periods other than last need a duration");
+                    Assertions.checkArgument(list.get(i).durationUs != C0468C.TIME_UNSET, "Periods other than last need a duration");
                     int i2 = i + 1;
                     for (int i3 = i2; i3 < size; i3++) {
                         Assertions.checkArgument(!list.get(i).uid.equals(list.get(i3).uid), "Duplicate PeriodData UIDs in period list");
@@ -807,16 +807,16 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         private MediaItemData(Builder builder) {
             int i = 0;
             if (builder.liveConfiguration != null) {
-                if (builder.presentationStartTimeMs != C0474C.TIME_UNSET && builder.windowStartTimeMs != C0474C.TIME_UNSET) {
+                if (builder.presentationStartTimeMs != C0468C.TIME_UNSET && builder.windowStartTimeMs != C0468C.TIME_UNSET) {
                     Assertions.checkArgument(builder.windowStartTimeMs >= builder.presentationStartTimeMs, "windowStartTimeMs can't be less than presentationStartTimeMs");
                 }
             } else {
-                Assertions.checkArgument(builder.presentationStartTimeMs == C0474C.TIME_UNSET, "presentationStartTimeMs can only be set if liveConfiguration != null");
-                Assertions.checkArgument(builder.windowStartTimeMs == C0474C.TIME_UNSET, "windowStartTimeMs can only be set if liveConfiguration != null");
-                Assertions.checkArgument(builder.elapsedRealtimeEpochOffsetMs == C0474C.TIME_UNSET, "elapsedRealtimeEpochOffsetMs can only be set if liveConfiguration != null");
+                Assertions.checkArgument(builder.presentationStartTimeMs == C0468C.TIME_UNSET, "presentationStartTimeMs can only be set if liveConfiguration != null");
+                Assertions.checkArgument(builder.windowStartTimeMs == C0468C.TIME_UNSET, "windowStartTimeMs can only be set if liveConfiguration != null");
+                Assertions.checkArgument(builder.elapsedRealtimeEpochOffsetMs == C0468C.TIME_UNSET, "elapsedRealtimeEpochOffsetMs can only be set if liveConfiguration != null");
             }
             int size = builder.periods.size();
-            if (builder.durationUs != C0474C.TIME_UNSET) {
+            if (builder.durationUs != C0468C.TIME_UNSET) {
                 Assertions.checkArgument(builder.defaultPositionUs <= builder.durationUs, "defaultPositionUs can't be greater than durationUs");
             }
             this.uid = builder.uid;
@@ -967,7 +967,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             }
 
             public Builder setDurationUs(long j) {
-                Assertions.checkArgument(j == C0474C.TIME_UNSET || j >= 0);
+                Assertions.checkArgument(j == C0468C.TIME_UNSET || j >= 0);
                 this.durationUs = j;
                 return this;
             }
@@ -1137,7 +1137,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     @Override // com.google.android.exoplayer2.Player
     public final void setMediaItems(List<MediaItem> list, boolean z) {
         verifyApplicationThreadAndInitState();
-        setMediaItemsInternal(list, z ? -1 : this.state.currentMediaItemIndex, z ? C0474C.TIME_UNSET : this.state.contentPositionMsSupplier.get());
+        setMediaItemsInternal(list, z ? -1 : this.state.currentMediaItemIndex, z ? C0468C.TIME_UNSET : this.state.contentPositionMsSupplier.get());
     }
 
     @Override // com.google.android.exoplayer2.Player
@@ -2279,7 +2279,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 }
             });
         }
-        if (!state2.timedMetadata.equals(state.timedMetadata) && state.timedMetadata.presentationTimeUs != C0474C.TIME_UNSET) {
+        if (!state2.timedMetadata.equals(state.timedMetadata) && state.timedMetadata.presentationTimeUs != C0468C.TIME_UNSET) {
             this.listeners.queueEvent(28, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.SimpleBasePlayer$$ExternalSyntheticLambda12
                 @Override // com.google.android.exoplayer2.util.ListenerSet.Event
                 public final void invoke(Object obj) {
@@ -2526,7 +2526,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     }
 
     private static long getPositionOrDefaultInMediaItem(long j, State state) {
-        if (j != C0474C.TIME_UNSET) {
+        if (j != C0468C.TIME_UNSET) {
             return j;
         }
         if (state.playlist.isEmpty()) {
@@ -2587,14 +2587,14 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 }
                 long currentPeriodOrAdPositionMs = getCurrentPeriodOrAdPositionMs(state, uidOfPeriod, period);
                 long periodOrAdDurationMs = getPeriodOrAdDurationMs(state, uidOfPeriod, period);
-                return (periodOrAdDurationMs == C0474C.TIME_UNSET || currentPeriodOrAdPositionMs < periodOrAdDurationMs) ? 3 : 0;
+                return (periodOrAdDurationMs == C0468C.TIME_UNSET || currentPeriodOrAdPositionMs < periodOrAdDurationMs) ? 3 : 0;
             }
             long currentPeriodOrAdPositionMs2 = getCurrentPeriodOrAdPositionMs(state, uidOfPeriod, period);
             if (Math.abs(currentPeriodOrAdPositionMs2 - getCurrentPeriodOrAdPositionMs(state2, uidOfPeriod2, period)) < 1000) {
                 return -1;
             }
             long periodOrAdDurationMs2 = getPeriodOrAdDurationMs(state, uidOfPeriod, period);
-            return (periodOrAdDurationMs2 == C0474C.TIME_UNSET || currentPeriodOrAdPositionMs2 < periodOrAdDurationMs2) ? 5 : 0;
+            return (periodOrAdDurationMs2 == C0468C.TIME_UNSET || currentPeriodOrAdPositionMs2 < periodOrAdDurationMs2) ? 5 : 0;
         }
         return -1;
     }
@@ -2704,7 +2704,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         long j = state.contentPositionMsSupplier.get();
         int currentMediaItemIndexInternal = getCurrentMediaItemIndexInternal(state);
         int mediaItemIndexInNewPlaylist = getMediaItemIndexInNewPlaylist(state.playlist, timeline, currentMediaItemIndexInternal, period);
-        long j2 = mediaItemIndexInNewPlaylist == -1 ? C0474C.TIME_UNSET : j;
+        long j2 = mediaItemIndexInNewPlaylist == -1 ? C0468C.TIME_UNSET : j;
         for (int i = currentMediaItemIndexInternal + 1; mediaItemIndexInNewPlaylist == -1 && i < state.playlist.size(); i++) {
             mediaItemIndexInNewPlaylist = getMediaItemIndexInNewPlaylist(state.playlist, timeline, i, period);
         }
@@ -2735,7 +2735,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             j2 = -9223372036854775807L;
             i = 0;
         }
-        if (!list.isEmpty() && j2 == C0474C.TIME_UNSET) {
+        if (!list.isEmpty() && j2 == C0468C.TIME_UNSET) {
             j2 = Util.usToMs(list.get(i).defaultPositionUs);
         }
         boolean z3 = state.playlist.isEmpty() || list.isEmpty();

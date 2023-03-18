@@ -11,6 +11,6 @@ public final /* synthetic */ class DialogsActivity$12$$ExternalSyntheticLambda2 
 
     @Override // java.lang.Runnable
     public final void run() {
-        DialogsActivity.C534912.lambda$showDeleteAlert$0();
+        DialogsActivity.C548612.lambda$showDeleteAlert$0();
     }
 }

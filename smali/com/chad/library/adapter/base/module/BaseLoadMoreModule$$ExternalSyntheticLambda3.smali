@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule$$ExternalSyntheticLambda3;->f$1:Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
-    invoke-static {v0, v1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->$r8$lambda$iMxq56xdtWC8Z7kBKgfUlJW5-ic(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
+    invoke-static {v0, v1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->$r8$lambda$8xzWXNWE4oEt1R8ItJDGNxYOKmQ(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
     return-void
 .end method

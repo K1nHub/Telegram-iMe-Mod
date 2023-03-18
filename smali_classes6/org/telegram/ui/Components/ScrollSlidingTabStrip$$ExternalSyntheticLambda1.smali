@@ -39,7 +39,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$$ExternalSyntheticLambda1;->f$2:F
 
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->$r8$lambda$u1PhalGQ1r8qaB-h6wLn0zgJqa8(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;ZFLandroid/animation/ValueAnimator;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->$r8$lambda$wA0m2svh5C5pkRPTaW3zCKd_pvo(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;ZFLandroid/animation/ValueAnimator;)V
 
     return-void
 .end method

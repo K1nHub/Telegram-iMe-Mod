@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/storage/data/repository/recognition/GoogleServicesRepositoryImpl$getPhotoObjects$$inlined$mapSuccess$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "FirebaseExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Function;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,13 +18,17 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        "R:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Function;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+        "Lcom/smedialink/storage/data/network/model/response/google/ImageToObjectsResponse;",
+        ">;",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Ljava/util/List<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/google/RecognizedImageModel;",
+        ">;>;>;"
     }
 .end annotation
 
@@ -47,20 +51,28 @@
 
     iput-object p2, p0, Lcom/smedialink/storage/data/repository/recognition/GoogleServicesRepositoryImpl$getPhotoObjects$$inlined$mapSuccess$1;->$file$inlined:Ljava/io/File;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/smedialink/storage/domain/model/Result;
+.method public final invoke(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/smedialink/storage/domain/model/Result;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)",
+            "(",
+            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/smedialink/storage/data/network/model/response/google/ImageToObjectsResponse;",
+            ">;)",
             "Lcom/smedialink/storage/domain/model/Result<",
-            "TR;>;"
+            "Ljava/util/List<",
+            "+",
+            "Lcom/smedialink/storage/domain/model/google/RecognizedImageModel;",
+            ">;>;"
         }
     .end annotation
 
@@ -135,13 +147,13 @@
     return-object p1
 .end method
 
-.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     .line 70
     check-cast p1, Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;
 
-    invoke-virtual {p0, p1}, Lcom/smedialink/storage/data/repository/recognition/GoogleServicesRepositoryImpl$getPhotoObjects$$inlined$mapSuccess$1;->apply(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-virtual {p0, p1}, Lcom/smedialink/storage/data/repository/recognition/GoogleServicesRepositoryImpl$getPhotoObjects$$inlined$mapSuccess$1;->invoke(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p1
 

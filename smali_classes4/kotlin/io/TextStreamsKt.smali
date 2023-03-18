@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nReadWrite.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ReadWrite.kt\nkotlin/io/TextStreamsKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n*L\n1#1,152:1\n53#1:153\n1#2:154\n1#2:157\n1290#3,2:155\n*S KotlinDebug\n*F\n+ 1 ReadWrite.kt\nkotlin/io/TextStreamsKt\n*L\n33#1:153\n33#1:154\n33#1:155,2\n*E\n"
+    value = "SMAP\nReadWrite.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ReadWrite.kt\nkotlin/io/TextStreamsKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n*L\n1#1,151:1\n52#1:152\n1#2:153\n1#2:156\n1295#3,2:154\n*S KotlinDebug\n*F\n+ 1 ReadWrite.kt\nkotlin/io/TextStreamsKt\n*L\n33#1:152\n33#1:153\n33#1:154,2\n*E\n"
 .end annotation
 
 
@@ -21,10 +21,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 122
+    .line 121
     new-array p2, p2, [C
 
-    .line 123
+    .line 122
     invoke-virtual {p0, p2}, Ljava/io/Reader;->read([C)I
 
     move-result v0
@@ -36,14 +36,14 @@
 
     const/4 v3, 0x0
 
-    .line 125
+    .line 124
     invoke-virtual {p1, p2, v3, v0}, Ljava/io/Writer;->write([CII)V
 
     int-to-long v3, v0
 
     add-long/2addr v1, v3
 
-    .line 127
+    .line 126
     invoke-virtual {p0, p2}, Ljava/io/Reader;->read([C)I
 
     move-result v0
@@ -63,7 +63,7 @@
 
     const/16 p2, 0x2000
 
-    .line 120
+    .line 119
     :cond_0
     invoke-static {p0, p1, p2}, Lkotlin/io/TextStreamsKt;->copyTo(Ljava/io/Reader;Ljava/io/Writer;I)J
 
@@ -79,7 +79,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 106
+    .line 105
     new-instance v0, Ljava/io/StringWriter;
 
     invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V
@@ -90,10 +90,10 @@
 
     const/4 v3, 0x0
 
-    .line 107
+    .line 106
     invoke-static {p0, v0, v1, v2, v3}, Lkotlin/io/TextStreamsKt;->copyTo$default(Ljava/io/Reader;Ljava/io/Writer;IILjava/lang/Object;)J
 
-    .line 108
+    .line 107
     invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
 
     move-result-object p0

@@ -3,7 +3,6 @@ package com.smedialink.model.wallet.home;
 import com.smedialink.model.common.NoChildNode;
 import com.smedialink.storage.domain.model.wallet.token.TokenInfo;
 import com.smedialink.utils.formatter.MaskFormatter;
-import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TotalBalanceItem.kt */
 /* loaded from: classes3.dex */
 public final class TotalBalanceItem extends NoChildNode {
@@ -28,7 +27,7 @@ public final class TotalBalanceItem extends NoChildNode {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof TotalBalanceItem) && Intrinsics.areEqual(Float.valueOf(this.balance), Float.valueOf(((TotalBalanceItem) obj).balance));
+        return (obj instanceof TotalBalanceItem) && Float.compare(this.balance, ((TotalBalanceItem) obj).balance) == 0;
     }
 
     public int hashCode() {

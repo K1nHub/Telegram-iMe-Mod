@@ -344,19 +344,19 @@
 .method public onCreateSnapshotView(Landroid/content/Context;Landroid/os/Parcelable;)Landroid/view/View;
     .locals 2
 
-    .line 258
+    .line 259
     instance-of v0, p2, Landroid/os/Bundle;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 259
+    .line 260
     check-cast p2, Landroid/os/Bundle;
 
     const-string v0, "sharedElement:snapshot:bitmap"
 
-    .line 260
+    .line 261
     invoke-virtual {p2, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object v0
@@ -367,18 +367,18 @@
 
     return-object v1
 
-    .line 264
+    .line 265
     :cond_0
     new-instance v1, Landroid/widget/ImageView;
 
     invoke-direct {v1, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 266
+    .line 267
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
     const-string p1, "sharedElement:snapshot:imageScaleType"
 
-    .line 268
+    .line 269
     invoke-virtual {p2, p1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
@@ -387,10 +387,10 @@
 
     move-result-object p1
 
-    .line 267
+    .line 268
     invoke-virtual {v1, p1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 269
+    .line 270
     invoke-virtual {v1}, Landroid/widget/ImageView;->getScaleType()Landroid/widget/ImageView$ScaleType;
 
     move-result-object p1
@@ -401,39 +401,39 @@
 
     const-string p1, "sharedElement:snapshot:imageMatrix"
 
-    .line 270
+    .line 271
     invoke-virtual {p2, p1}, Landroid/os/Bundle;->getFloatArray(Ljava/lang/String;)[F
 
     move-result-object p1
 
-    .line 271
+    .line 272
     new-instance p2, Landroid/graphics/Matrix;
 
     invoke-direct {p2}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 272
+    .line 273
     invoke-virtual {p2, p1}, Landroid/graphics/Matrix;->setValues([F)V
 
-    .line 273
+    .line 274
     invoke-virtual {v1, p2}, Landroid/widget/ImageView;->setImageMatrix(Landroid/graphics/Matrix;)V
 
     goto :goto_0
 
-    .line 275
+    .line 276
     :cond_1
     instance-of v0, p2, Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_2
 
-    .line 276
+    .line 277
     check-cast p2, Landroid/graphics/Bitmap;
 
-    .line 277
+    .line 278
     new-instance v1, Landroid/widget/ImageView;
 
     invoke-direct {v1, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 278
+    .line 279
     invoke-virtual {v1, p2}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
     :cond_2
@@ -529,7 +529,7 @@
         }
     .end annotation
 
-    .line 301
+    .line 302
     invoke-interface {p3}, Landroidx/core/app/SharedElementCallback$OnSharedElementsReadyListener;->onSharedElementsReady()V
 
     return-void

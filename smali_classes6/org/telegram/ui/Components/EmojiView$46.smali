@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 5705
+    .line 5723
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$46;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 5708
+    .line 5726
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$46;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$15900(Lorg/telegram/ui/Components/EmojiView;)Landroid/animation/ValueAnimator;
@@ -46,7 +46,7 @@
 
     return-void
 
-    .line 5711
+    .line 5729
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$46;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -66,12 +66,12 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/EmojiView;->access$16002(Lorg/telegram/ui/Components/EmojiView;F)F
 
-    .line 5712
+    .line 5730
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$46;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$16100(Lorg/telegram/ui/Components/EmojiView;)V
 
-    .line 5713
+    .line 5731
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$46;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v0, 0x0

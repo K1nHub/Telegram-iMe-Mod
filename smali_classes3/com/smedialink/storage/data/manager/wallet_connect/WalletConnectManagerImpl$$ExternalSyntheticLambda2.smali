@@ -35,7 +35,7 @@
 .method public final run()V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->$r8$lambda$WzOH6V610Cb-Sw81fW7IlrcOfb4()V
+    invoke-static {}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->$r8$lambda$NLxaKc6xgOLeSKHuAeE3Xx0hlZI()V
 
     return-void
 .end method

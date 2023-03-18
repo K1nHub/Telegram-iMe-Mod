@@ -29,15 +29,14 @@ public final class PopupFactoryKt {
         listPopupWindow.setOnItemClickListener(new AdapterView.OnItemClickListener() { // from class: com.smedialink.utils.dialogs.PopupFactoryKt$$ExternalSyntheticLambda0
             @Override // android.widget.AdapterView.OnItemClickListener
             public final void onItemClick(AdapterView adapterView, View view2, int i, long j) {
-                PopupFactoryKt.m1830createPopupWithOptions$lambda1$lambda0(Function2.this, options, listPopupWindow, adapterView, view2, i, j);
+                PopupFactoryKt.createPopupWithOptions$lambda$1$lambda$0(Function2.this, options, listPopupWindow, adapterView, view2, i, j);
             }
         });
         return listPopupWindow;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: createPopupWithOptions$lambda-1$lambda-0  reason: not valid java name */
-    public static final void m1830createPopupWithOptions$lambda1$lambda0(Function2 onSelected, List options, ListPopupWindow this_apply, AdapterView adapterView, View view, int i, long j) {
+    public static final void createPopupWithOptions$lambda$1$lambda$0(Function2 onSelected, List options, ListPopupWindow this_apply, AdapterView adapterView, View view, int i, long j) {
         Intrinsics.checkNotNullParameter(onSelected, "$onSelected");
         Intrinsics.checkNotNullParameter(options, "$options");
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");

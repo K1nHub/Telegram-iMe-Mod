@@ -22,15 +22,15 @@
 
 .field public static final dark:I = 0x7f09010a
 
-.field public static final icon_only:I = 0x7f090189
+.field public static final icon_only:I = 0x7f09018d
 
-.field public static final light:I = 0x7f0901ef
+.field public static final light:I = 0x7f0901f1
 
-.field public static final none:I = 0x7f09026e
+.field public static final none:I = 0x7f090270
 
-.field public static final standard:I = 0x7f09032f
+.field public static final standard:I = 0x7f090332
 
-.field public static final wide:I = 0x7f090451
+.field public static final wide:I = 0x7f09045d
 
 
 # direct methods

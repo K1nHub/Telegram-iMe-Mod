@@ -30,7 +30,7 @@
 
     move v5, p6
 
-    .line 678
+    .line 736
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/QRCodeBottomSheet;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     return-void
@@ -41,7 +41,7 @@
 .method public getCustomQrCenterImageRes()I
     .locals 1
 
-    .line 686
+    .line 744
     sget-object v0, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->BINANCE_SMART_CHAIN:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->getLogo()I

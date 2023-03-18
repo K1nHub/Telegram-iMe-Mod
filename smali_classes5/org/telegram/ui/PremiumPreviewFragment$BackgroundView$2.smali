@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;Landroid/content/Context;Lorg/telegram/ui/PremiumPreviewFragment;)V
     .locals 0
 
-    .line 1305
+    .line 1307
     iput-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$2;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
-    .line 1306
+    .line 1308
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 p2, 0x1
@@ -40,7 +40,7 @@
 
     const-string p2, "dialogBackground"
 
-    .line 1309
+    .line 1311
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -55,7 +55,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 1314
+    .line 1316
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
@@ -76,7 +76,7 @@
 
     const/16 v1, 0xc
 
-    .line 1315
+    .line 1317
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -93,7 +93,7 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1317
+    .line 1319
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->draw(Landroid/graphics/Canvas;)V
 
     return-void
@@ -102,10 +102,10 @@
 .method protected onSizeChanged(IIII)V
     .locals 0
 
-    .line 1322
+    .line 1324
     invoke-super {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/RecyclerListView;->onSizeChanged(IIII)V
 
-    .line 1323
+    .line 1325
     iget-object p3, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$2;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     invoke-static {p3, p1, p2}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->access$2400(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;II)V

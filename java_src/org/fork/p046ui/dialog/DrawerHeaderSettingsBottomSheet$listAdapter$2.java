@@ -18,6 +18,6 @@ final class DrawerHeaderSettingsBottomSheet$listAdapter$2 extends Lambda impleme
 
     @Override // kotlin.jvm.functions.Function0
     public final DrawerHeaderSettingsBottomSheet.ListAdapter invoke() {
-        return new DrawerHeaderSettingsBottomSheet.ListAdapter(this.this$0);
+        return new DrawerHeaderSettingsBottomSheet.ListAdapter();
     }
 }

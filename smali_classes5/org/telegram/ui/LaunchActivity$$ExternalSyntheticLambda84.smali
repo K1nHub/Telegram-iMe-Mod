@@ -2,44 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/GenericProvider;
+.implements Lkotlin/jvm/functions/Function0;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda84;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda84;
-
-    invoke-direct {v0}, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda84;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda84;->INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda84;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda84;->f$0:Lorg/telegram/ui/LaunchActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final provide(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final invoke()Ljava/lang/Object;
+    .locals 1
 
-    check-cast p1, Ljava/lang/Void;
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda84;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$8T7vWAVdsuQWFkn1hrE7Nzt51tw(Ljava/lang/Void;)Lorg/telegram/ui/DialogsActivity;
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$4-8Cq-8OFMx5dQGLoIB6Lu6S2JE(Lorg/telegram/ui/LaunchActivity;)Lorg/koin/core/parameter/ParametersHolder;
 
-    move-result-object p1
+    move-result-object v0
 
-    return-object p1
+    return-object v0
 .end method

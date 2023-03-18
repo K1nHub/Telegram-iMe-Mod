@@ -23,10 +23,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$hnl0_Ni7F0DgmSRMjJHfCvQvoMY(Lcom/smedialink/ui/debug/DebugPresenter;Lcom/smedialink/storage/domain/model/common/Environment;)V
+.method public static synthetic $r8$lambda$KKRVxe_ICmaMVbKDgNoQas5ySqE(Lcom/smedialink/ui/debug/DebugPresenter;Lcom/smedialink/storage/domain/model/common/Environment;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/debug/DebugPresenter;->switchWalletEnvironment$lambda-0(Lcom/smedialink/ui/debug/DebugPresenter;Lcom/smedialink/storage/domain/model/common/Environment;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/debug/DebugPresenter;->switchWalletEnvironment$lambda$0(Lcom/smedialink/ui/debug/DebugPresenter;Lcom/smedialink/storage/domain/model/common/Environment;)V
 
     return-void
 .end method
@@ -101,7 +101,7 @@
     return-object v4
 .end method
 
-.method private static final switchWalletEnvironment$lambda-0(Lcom/smedialink/ui/debug/DebugPresenter;Lcom/smedialink/storage/domain/model/common/Environment;)V
+.method private static final switchWalletEnvironment$lambda$0(Lcom/smedialink/ui/debug/DebugPresenter;Lcom/smedialink/storage/domain/model/common/Environment;)V
     .locals 7
 
     const-string v0, "this$0"

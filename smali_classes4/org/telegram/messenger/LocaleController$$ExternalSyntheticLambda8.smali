@@ -10,7 +10,7 @@
 
 .field public final synthetic f$1:Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
-.field public final synthetic f$2:Z
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
 
 .field public final synthetic f$3:I
 
@@ -18,7 +18,7 @@
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/LocaleController;Lorg/telegram/messenger/LocaleController$LocaleInfo;ZILjava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/LocaleController;Lorg/telegram/messenger/LocaleController$LocaleInfo;Lorg/telegram/tgnet/TLObject;ILjava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
 
     iput-object p2, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
-    iput-boolean p3, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda8;->f$2:Z
+    iput-object p3, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda8;->f$2:Lorg/telegram/tgnet/TLObject;
 
     iput p4, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda8;->f$3:I
 
@@ -45,13 +45,13 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
-    iget-boolean v2, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda8;->f$2:Z
+    iget-object v2, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda8;->f$2:Lorg/telegram/tgnet/TLObject;
 
     iget v3, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda8;->f$3:I
 
     iget-object v4, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda8;->f$4:Ljava/lang/Runnable;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/LocaleController;->$r8$lambda$u-5Nv8_AFxL9OdC0N4KoTr42-60(Lorg/telegram/messenger/LocaleController;Lorg/telegram/messenger/LocaleController$LocaleInfo;ZILjava/lang/Runnable;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/LocaleController;->$r8$lambda$7FCM4dZAYqL4m3Us8Fbt4Fkyy5I(Lorg/telegram/messenger/LocaleController;Lorg/telegram/messenger/LocaleController$LocaleInfo;Lorg/telegram/tgnet/TLObject;ILjava/lang/Runnable;)V
 
     return-void
 .end method

@@ -49,10 +49,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$nQwTZaEQZaB58WIZ6Cs9e9oEz9s(Lcom/smedialink/ui/shop/BotSettingsActivity;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$6z_HiAPVB8luyewj4wXSQeQowY8(Lcom/smedialink/ui/shop/BotSettingsActivity;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/shop/BotSettingsActivity;->initListView$lambda-9$lambda-8(Lcom/smedialink/ui/shop/BotSettingsActivity;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/shop/BotSettingsActivity;->initListView$lambda$9$lambda$8(Lcom/smedialink/ui/shop/BotSettingsActivity;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -361,7 +361,7 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda-9$lambda-8(Lcom/smedialink/ui/shop/BotSettingsActivity;Landroid/view/View;I)V
+.method private static final initListView$lambda$9$lambda$8(Lcom/smedialink/ui/shop/BotSettingsActivity;Landroid/view/View;I)V
     .locals 3
 
     const-string v0, "this$0"

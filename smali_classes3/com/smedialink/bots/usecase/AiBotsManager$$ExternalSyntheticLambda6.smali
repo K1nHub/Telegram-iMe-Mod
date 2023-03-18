@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda6;->f$0:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/smedialink/bots/usecase/AiBotsManager;->$r8$lambda$ijpINR5vAQHOt-JOgCqaaeoEM68(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/smedialink/bots/usecase/AiBotsManager;->$r8$lambda$1vGA9eS4FNsub0mvsNQHh4Zd5BM(Ljava/lang/String;)V
 
     return-void
 .end method

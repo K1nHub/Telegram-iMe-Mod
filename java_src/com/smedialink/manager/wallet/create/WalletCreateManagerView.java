@@ -26,7 +26,6 @@ public interface WalletCreateManagerView extends BaseView {
     /* loaded from: classes3.dex */
     public static final class DefaultImpls {
         public static void showSelectOptionsDialog(WalletCreateManagerView walletCreateManagerView, String title, String[] items, DialogInterface.OnClickListener listener) {
-            Intrinsics.checkNotNullParameter(walletCreateManagerView, "this");
             Intrinsics.checkNotNullParameter(title, "title");
             Intrinsics.checkNotNullParameter(items, "items");
             Intrinsics.checkNotNullParameter(listener, "listener");

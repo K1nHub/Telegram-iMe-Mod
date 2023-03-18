@@ -26,9 +26,18 @@ public final class SmartContractProvider {
 
         static {
             int[] iArr = new int[NetworkType.values().length];
-            iArr[NetworkType.BINANCE_SMART_CHAIN.ordinal()] = 1;
-            iArr[NetworkType.ETHEREUM.ordinal()] = 2;
-            iArr[NetworkType.POLYGON.ordinal()] = 3;
+            try {
+                iArr[NetworkType.BINANCE_SMART_CHAIN.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[NetworkType.ETHEREUM.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[NetworkType.POLYGON.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }

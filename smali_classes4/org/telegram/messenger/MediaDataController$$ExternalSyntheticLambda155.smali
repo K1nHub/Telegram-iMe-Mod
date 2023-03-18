@@ -31,7 +31,7 @@
 
     check-cast p2, Lorg/telegram/messenger/MediaDataController$KeywordResult;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$eVA2POkEMKonuuqm261dxRZK1Vw(Ljava/util/ArrayList;Lorg/telegram/messenger/MediaDataController$KeywordResult;Lorg/telegram/messenger/MediaDataController$KeywordResult;)I
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$efwwsoU22Jbhh3XfdQUTSuk-bIQ(Ljava/util/ArrayList;Lorg/telegram/messenger/MediaDataController$KeywordResult;Lorg/telegram/messenger/MediaDataController$KeywordResult;)I
 
     move-result p1
 

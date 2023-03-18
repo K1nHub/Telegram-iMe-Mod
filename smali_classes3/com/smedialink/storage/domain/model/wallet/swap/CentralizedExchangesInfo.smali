@@ -9,11 +9,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo$Binance;,
-        Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo$Gate;,
         Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo$Ascendeex;,
-        Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo$Unknown;,
-        Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo$Companion;
+        Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo$Binance;,
+        Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo$Companion;,
+        Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo$Gate;,
+        Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo$Unknown;
     }
 .end annotation
 

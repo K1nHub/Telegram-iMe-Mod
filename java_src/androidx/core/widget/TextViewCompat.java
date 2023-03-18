@@ -13,6 +13,7 @@ import android.graphics.drawable.Drawable;
 import android.icu.text.DecimalFormatSymbols;
 import android.os.Build;
 import android.text.Editable;
+import android.text.PrecomputedText;
 import android.text.TextDirectionHeuristic;
 import android.text.TextDirectionHeuristics;
 import android.text.TextPaint;
@@ -21,6 +22,7 @@ import android.util.Log;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import androidx.core.text.PrecomputedTextCompat;
 import androidx.core.util.Preconditions;
@@ -29,6 +31,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 /* loaded from: classes.dex */
 public final class TextViewCompat {
     private static Field sMaxModeField;
@@ -60,9 +63,9 @@ public final class TextViewCompat {
     public static void setCompoundDrawablesRelative(TextView textView, Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
         int i = Build.VERSION.SDK_INT;
         if (i >= 18) {
-            textView.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
+            Api17Impl.setCompoundDrawablesRelative(textView, drawable, drawable2, drawable3, drawable4);
         } else if (i >= 17) {
-            boolean z = textView.getLayoutDirection() == 1;
+            boolean z = Api17Impl.getLayoutDirection(textView) == 1;
             Drawable drawable5 = z ? drawable3 : drawable;
             if (!z) {
                 drawable = drawable3;
@@ -75,7 +78,7 @@ public final class TextViewCompat {
 
     public static int getMaxLines(TextView textView) {
         if (Build.VERSION.SDK_INT >= 16) {
-            return textView.getMaxLines();
+            return Api16Impl.getMaxLines(textView);
         }
         if (!sMaxModeFieldFetched) {
             sMaxModeField = retrieveField("mMaxMode");
@@ -107,10 +110,10 @@ public final class TextViewCompat {
     public static Drawable[] getCompoundDrawablesRelative(TextView textView) {
         int i = Build.VERSION.SDK_INT;
         if (i >= 18) {
-            return textView.getCompoundDrawablesRelative();
+            return Api17Impl.getCompoundDrawablesRelative(textView);
         }
         if (i >= 17) {
-            boolean z = textView.getLayoutDirection() == 1;
+            boolean z = Api17Impl.getLayoutDirection(textView) == 1;
             Drawable[] compoundDrawables = textView.getCompoundDrawables();
             if (z) {
                 Drawable drawable = compoundDrawables[2];
@@ -254,11 +257,11 @@ public final class TextViewCompat {
         Preconditions.checkArgumentNonnegative(i);
         int i3 = Build.VERSION.SDK_INT;
         if (i3 >= 28) {
-            textView.setFirstBaselineToTopHeight(i);
+            Api28Impl.setFirstBaselineToTopHeight(textView, i);
             return;
         }
         Paint.FontMetricsInt fontMetricsInt = textView.getPaint().getFontMetricsInt();
-        if (i3 < 16 || textView.getIncludeFontPadding()) {
+        if (i3 < 16 || Api16Impl.getIncludeFontPadding(textView)) {
             i2 = fontMetricsInt.top;
         } else {
             i2 = fontMetricsInt.ascent;
@@ -272,7 +275,7 @@ public final class TextViewCompat {
         int i2;
         Preconditions.checkArgumentNonnegative(i);
         Paint.FontMetricsInt fontMetricsInt = textView.getPaint().getFontMetricsInt();
-        if (Build.VERSION.SDK_INT < 16 || textView.getIncludeFontPadding()) {
+        if (Build.VERSION.SDK_INT < 16 || Api16Impl.getIncludeFontPadding(textView)) {
             i2 = fontMetricsInt.bottom;
         } else {
             i2 = fontMetricsInt.descent;
@@ -301,12 +304,12 @@ public final class TextViewCompat {
     public static PrecomputedTextCompat.Params getTextMetricsParams(TextView textView) {
         int i = Build.VERSION.SDK_INT;
         if (i >= 28) {
-            return new PrecomputedTextCompat.Params(textView.getTextMetricsParams());
+            return new PrecomputedTextCompat.Params(Api28Impl.getTextMetricsParams(textView));
         }
         PrecomputedTextCompat.Params.Builder builder = new PrecomputedTextCompat.Params.Builder(new TextPaint(textView.getPaint()));
         if (i >= 23) {
-            builder.setBreakStrategy(textView.getBreakStrategy());
-            builder.setHyphenationFrequency(textView.getHyphenationFrequency());
+            builder.setBreakStrategy(Api23Impl.getBreakStrategy(textView));
+            builder.setHyphenationFrequency(Api23Impl.getHyphenationFrequency(textView));
         }
         if (i >= 18) {
             builder.setTextDirection(getTextDirectionHeuristic(textView));
@@ -317,7 +320,7 @@ public final class TextViewCompat {
     public static void setTextMetricsParams(TextView textView, PrecomputedTextCompat.Params params) {
         int i = Build.VERSION.SDK_INT;
         if (i >= 18) {
-            textView.setTextDirection(getTextDirection(params.getTextDirection()));
+            Api17Impl.setTextDirection(textView, getTextDirection(params.getTextDirection()));
         }
         if (i < 23) {
             float textScaleX = params.getTextPaint().getTextScaleX();
@@ -329,8 +332,8 @@ public final class TextViewCompat {
             return;
         }
         textView.getPaint().set(params.getTextPaint());
-        textView.setBreakStrategy(params.getBreakStrategy());
-        textView.setHyphenationFrequency(params.getHyphenationFrequency());
+        Api23Impl.setBreakStrategy(textView, params.getBreakStrategy());
+        Api23Impl.setHyphenationFrequency(textView, params.getHyphenationFrequency());
     }
 
     public static void setPrecomputedText(TextView textView, PrecomputedTextCompat precomputedTextCompat) {
@@ -348,14 +351,14 @@ public final class TextViewCompat {
             return TextDirectionHeuristics.LTR;
         }
         if (Build.VERSION.SDK_INT >= 28 && (textView.getInputType() & 15) == 3) {
-            byte directionality = Character.getDirectionality(DecimalFormatSymbols.getInstance(textView.getTextLocale()).getDigitStrings()[0].codePointAt(0));
+            byte directionality = Character.getDirectionality(Api28Impl.getDigitStrings(Api24Impl.getInstance(Api17Impl.getTextLocale(textView)))[0].codePointAt(0));
             if (directionality == 1 || directionality == 2) {
                 return TextDirectionHeuristics.RTL;
             }
             return TextDirectionHeuristics.LTR;
         }
-        boolean z = textView.getLayoutDirection() == 1;
-        switch (textView.getTextDirection()) {
+        boolean z = Api17Impl.getLayoutDirection(textView) == 1;
+        switch (Api17Impl.getTextDirection(textView)) {
             case 2:
                 return TextDirectionHeuristics.ANYRTL_LTR;
             case 3:
@@ -401,7 +404,7 @@ public final class TextViewCompat {
     public static void setCompoundDrawableTintList(TextView textView, ColorStateList colorStateList) {
         Preconditions.checkNotNull(textView);
         if (Build.VERSION.SDK_INT >= 24) {
-            textView.setCompoundDrawableTintList(colorStateList);
+            Api23Impl.setCompoundDrawableTintList(textView, colorStateList);
         } else if (textView instanceof TintableCompoundDrawablesView) {
             ((TintableCompoundDrawablesView) textView).setSupportCompoundDrawablesTintList(colorStateList);
         }
@@ -410,9 +413,120 @@ public final class TextViewCompat {
     public static void setCompoundDrawableTintMode(TextView textView, PorterDuff.Mode mode) {
         Preconditions.checkNotNull(textView);
         if (Build.VERSION.SDK_INT >= 24) {
-            textView.setCompoundDrawableTintMode(mode);
+            Api23Impl.setCompoundDrawableTintMode(textView, mode);
         } else if (textView instanceof TintableCompoundDrawablesView) {
             ((TintableCompoundDrawablesView) textView).setSupportCompoundDrawablesTintMode(mode);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api17Impl {
+        static void setCompoundDrawablesRelative(TextView textView, Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+            textView.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
+        }
+
+        static int getLayoutDirection(View view) {
+            return view.getLayoutDirection();
+        }
+
+        static void setCompoundDrawablesRelativeWithIntrinsicBounds(TextView textView, Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+            textView.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable, drawable2, drawable3, drawable4);
+        }
+
+        static void setCompoundDrawablesRelativeWithIntrinsicBounds(TextView textView, int i, int i2, int i3, int i4) {
+            textView.setCompoundDrawablesRelativeWithIntrinsicBounds(i, i2, i3, i4);
+        }
+
+        static Drawable[] getCompoundDrawablesRelative(TextView textView) {
+            return textView.getCompoundDrawablesRelative();
+        }
+
+        static void setTextDirection(View view, int i) {
+            view.setTextDirection(i);
+        }
+
+        static Locale getTextLocale(TextView textView) {
+            return textView.getTextLocale();
+        }
+
+        static int getTextDirection(View view) {
+            return view.getTextDirection();
+        }
+    }
+
+    /* loaded from: classes.dex */
+    static class Api16Impl {
+        static int getMaxLines(TextView textView) {
+            return textView.getMaxLines();
+        }
+
+        static int getMinLines(TextView textView) {
+            return textView.getMinLines();
+        }
+
+        static boolean getIncludeFontPadding(TextView textView) {
+            return textView.getIncludeFontPadding();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api28Impl {
+        static void setFirstBaselineToTopHeight(TextView textView, int i) {
+            textView.setFirstBaselineToTopHeight(i);
+        }
+
+        static PrecomputedText.Params getTextMetricsParams(TextView textView) {
+            return textView.getTextMetricsParams();
+        }
+
+        static String[] getDigitStrings(DecimalFormatSymbols decimalFormatSymbols) {
+            return decimalFormatSymbols.getDigitStrings();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api23Impl {
+        static int getBreakStrategy(TextView textView) {
+            return textView.getBreakStrategy();
+        }
+
+        static void setBreakStrategy(TextView textView, int i) {
+            textView.setBreakStrategy(i);
+        }
+
+        static int getHyphenationFrequency(TextView textView) {
+            return textView.getHyphenationFrequency();
+        }
+
+        static void setHyphenationFrequency(TextView textView, int i) {
+            textView.setHyphenationFrequency(i);
+        }
+
+        static PorterDuff.Mode getCompoundDrawableTintMode(TextView textView) {
+            return textView.getCompoundDrawableTintMode();
+        }
+
+        static ColorStateList getCompoundDrawableTintList(TextView textView) {
+            return textView.getCompoundDrawableTintList();
+        }
+
+        static void setCompoundDrawableTintList(TextView textView, ColorStateList colorStateList) {
+            textView.setCompoundDrawableTintList(colorStateList);
+        }
+
+        static void setCompoundDrawableTintMode(TextView textView, PorterDuff.Mode mode) {
+            textView.setCompoundDrawableTintMode(mode);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api24Impl {
+        static DecimalFormatSymbols getInstance(Locale locale) {
+            return DecimalFormatSymbols.getInstance(locale);
         }
     }
 }

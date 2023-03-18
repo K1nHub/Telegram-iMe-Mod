@@ -662,6 +662,15 @@
     return-object p0
 .end method
 
+.method static synthetic access$4500(Lorg/telegram/ui/CalendarActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    .locals 0
+
+    .line 69
+    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
+
+    return-object p0
+.end method
+
 .method static synthetic access$500(Lorg/telegram/ui/CalendarActivity;)Z
     .locals 0
 
@@ -705,7 +714,7 @@
 
     new-array v0, v0, [F
 
-    .line 1319
+    .line 1318
     fill-array-data v0, :array_0
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -718,36 +727,36 @@
 
     move-result-object v0
 
-    .line 1320
+    .line 1319
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1321
+    .line 1320
     new-instance v1, Lorg/telegram/ui/CalendarActivity$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/CalendarActivity$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/CalendarActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1328
+    .line 1327
     new-instance v1, Lorg/telegram/ui/CalendarActivity$9;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/CalendarActivity$9;-><init>(Lorg/telegram/ui/CalendarActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1337
+    .line 1336
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 1338
+    .line 1337
     iput-object v0, p0, Lorg/telegram/ui/CalendarActivity;->selectionAnimator:Landroid/animation/ValueAnimator;
 
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
-    .line 1342
+    .line 1341
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -757,7 +766,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 1343
+    .line 1342
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -768,7 +777,7 @@
 
     const/4 v3, 0x1
 
-    .line 1344
+    .line 1343
     invoke-direct {p0, v2, v3}, Lorg/telegram/ui/CalendarActivity;->updateRowSelections(Lorg/telegram/ui/CalendarActivity$MonthView;Z)V
 
     add-int/lit8 v1, v1, 0x1
@@ -778,7 +787,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 1347
+    .line 1346
     :goto_1
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -790,7 +799,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 1348
+    .line 1347
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v1}, Landroidx/recyclerview/widget/RecyclerView;->getCachedChildAt(I)Landroid/view/View;
@@ -799,17 +808,17 @@
 
     check-cast v2, Lorg/telegram/ui/CalendarActivity$MonthView;
 
-    .line 1349
+    .line 1348
     invoke-direct {p0, v2, v0}, Lorg/telegram/ui/CalendarActivity;->updateRowSelections(Lorg/telegram/ui/CalendarActivity$MonthView;Z)V
 
-    .line 1350
+    .line 1349
     iget v4, p0, Lorg/telegram/ui/CalendarActivity;->dateSelectedStart:I
 
     iget v5, p0, Lorg/telegram/ui/CalendarActivity;->dateSelectedEnd:I
 
     invoke-static {v2, v4, v5}, Lorg/telegram/ui/CalendarActivity$MonthView;->access$800(Lorg/telegram/ui/CalendarActivity$MonthView;II)V
 
-    .line 1351
+    .line 1350
     invoke-static {v2, v3}, Lorg/telegram/ui/CalendarActivity$MonthView;->access$900(Lorg/telegram/ui/CalendarActivity$MonthView;F)V
 
     add-int/lit8 v1, v1, 0x1
@@ -819,7 +828,7 @@
     :cond_1
     const/4 v1, 0x0
 
-    .line 1353
+    .line 1352
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -829,7 +838,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 1354
+    .line 1353
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v1}, Landroidx/recyclerview/widget/RecyclerView;->getHiddenChildAt(I)Landroid/view/View;
@@ -838,17 +847,17 @@
 
     check-cast v2, Lorg/telegram/ui/CalendarActivity$MonthView;
 
-    .line 1355
+    .line 1354
     invoke-direct {p0, v2, v0}, Lorg/telegram/ui/CalendarActivity;->updateRowSelections(Lorg/telegram/ui/CalendarActivity$MonthView;Z)V
 
-    .line 1356
+    .line 1355
     iget v4, p0, Lorg/telegram/ui/CalendarActivity;->dateSelectedStart:I
 
     iget v5, p0, Lorg/telegram/ui/CalendarActivity;->dateSelectedEnd:I
 
     invoke-static {v2, v4, v5}, Lorg/telegram/ui/CalendarActivity$MonthView;->access$800(Lorg/telegram/ui/CalendarActivity$MonthView;II)V
 
-    .line 1357
+    .line 1356
     invoke-static {v2, v3}, Lorg/telegram/ui/CalendarActivity$MonthView;->access$900(Lorg/telegram/ui/CalendarActivity$MonthView;F)V
 
     add-int/lit8 v1, v1, 0x1
@@ -858,7 +867,7 @@
     :cond_2
     const/4 v1, 0x0
 
-    .line 1359
+    .line 1358
     :goto_3
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -868,7 +877,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 1360
+    .line 1359
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v1}, Landroidx/recyclerview/widget/RecyclerView;->getAttachedScrapChildAt(I)Landroid/view/View;
@@ -877,17 +886,17 @@
 
     check-cast v2, Lorg/telegram/ui/CalendarActivity$MonthView;
 
-    .line 1361
+    .line 1360
     invoke-direct {p0, v2, v0}, Lorg/telegram/ui/CalendarActivity;->updateRowSelections(Lorg/telegram/ui/CalendarActivity$MonthView;Z)V
 
-    .line 1362
+    .line 1361
     iget v4, p0, Lorg/telegram/ui/CalendarActivity;->dateSelectedStart:I
 
     iget v5, p0, Lorg/telegram/ui/CalendarActivity;->dateSelectedEnd:I
 
     invoke-static {v2, v4, v5}, Lorg/telegram/ui/CalendarActivity$MonthView;->access$800(Lorg/telegram/ui/CalendarActivity$MonthView;II)V
 
-    .line 1363
+    .line 1362
     invoke-static {v2, v3}, Lorg/telegram/ui/CalendarActivity$MonthView;->access$900(Lorg/telegram/ui/CalendarActivity$MonthView;F)V
 
     add-int/lit8 v1, v1, 0x1
@@ -909,7 +918,7 @@
 .method private checkLoadNext()V
     .locals 4
 
-    .line 457
+    .line 456
     iget-boolean v0, p0, Lorg/telegram/ui/CalendarActivity;->loading:Z
 
     if-nez v0, :cond_3
@@ -925,7 +934,7 @@
 
     const/4 v1, 0x0
 
-    .line 461
+    .line 460
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -935,19 +944,19 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 462
+    .line 461
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 463
+    .line 462
     instance-of v3, v2, Lorg/telegram/ui/CalendarActivity$MonthView;
 
     if-eqz v3, :cond_1
 
-    .line 464
+    .line 463
     check-cast v2, Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget v3, v2, Lorg/telegram/ui/CalendarActivity$MonthView;->currentYear:I
@@ -967,7 +976,7 @@
 
     goto :goto_0
 
-    .line 470
+    .line 469
     :cond_2
     iget v1, p0, Lorg/telegram/ui/CalendarActivity;->minMontYear:I
 
@@ -979,7 +988,7 @@
 
     add-int/2addr v2, v1
 
-    .line 471
+    .line 470
     div-int/lit8 v1, v0, 0x64
 
     mul-int/lit8 v1, v1, 0xc
@@ -992,7 +1001,7 @@
 
     if-lt v2, v1, :cond_3
 
-    .line 473
+    .line 472
     invoke-direct {p0}, Lorg/telegram/ui/CalendarActivity;->loadNext()V
 
     :cond_3
@@ -1003,7 +1012,7 @@
 .method private synthetic lambda$animateSelection$4(Landroid/animation/ValueAnimator;)V
     .locals 2
 
-    .line 1322
+    .line 1321
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -1016,7 +1025,7 @@
 
     const/4 v0, 0x0
 
-    .line 1323
+    .line 1322
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -1026,7 +1035,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 1324
+    .line 1323
     iget-object v1, p0, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -1035,7 +1044,7 @@
 
     check-cast v1, Lorg/telegram/ui/CalendarActivity$MonthView;
 
-    .line 1325
+    .line 1324
     invoke-static {v1, p1}, Lorg/telegram/ui/CalendarActivity$MonthView;->access$900(Lorg/telegram/ui/CalendarActivity$MonthView;F)V
 
     add-int/lit8 v0, v0, 0x1
@@ -1191,7 +1200,7 @@
 
     if-nez p1, :cond_c
 
-    .line 380
+    .line 379
     move-object/from16 v2, p2
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;
@@ -1200,7 +1209,7 @@
 
     const/4 v4, 0x0
 
-    .line 382
+    .line 381
     :goto_0
     iget-object v5, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->periods:Ljava/util/ArrayList;
 
@@ -1220,7 +1229,7 @@
 
     if-ge v4, v5, :cond_5
 
-    .line 383
+    .line 382
     iget-object v5, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->periods:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1229,7 +1238,7 @@
 
     check-cast v5, Lorg/telegram/tgnet/TLRPC$TL_searchResultsCalendarPeriod;
 
-    .line 384
+    .line 383
     iget v5, v5, Lorg/telegram/tgnet/TLRPC$TL_searchResultsCalendarPeriod;->date:I
 
     int-to-long v12, v5
@@ -1238,7 +1247,7 @@
 
     invoke-virtual {v1, v12, v13}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 385
+    .line 384
     invoke-virtual {v1, v11}, Ljava/util/Calendar;->get(I)I
 
     move-result v5
@@ -1251,7 +1260,7 @@
 
     add-int/2addr v5, v7
 
-    .line 386
+    .line 385
     iget-object v7, v0, Lorg/telegram/ui/CalendarActivity;->messagesByYearMounth:Landroid/util/SparseArray;
 
     invoke-virtual {v7, v5}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -1262,23 +1271,23 @@
 
     if-nez v7, :cond_0
 
-    .line 388
+    .line 387
     new-instance v7, Landroid/util/SparseArray;
 
     invoke-direct {v7}, Landroid/util/SparseArray;-><init>()V
 
-    .line 389
+    .line 388
     iget-object v12, v0, Lorg/telegram/ui/CalendarActivity;->messagesByYearMounth:Landroid/util/SparseArray;
 
     invoke-virtual {v12, v5, v7}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 391
+    .line 390
     :cond_0
     new-instance v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;
 
     invoke-direct {v12, v0, v8}, Lorg/telegram/ui/CalendarActivity$PeriodDay;-><init>(Lorg/telegram/ui/CalendarActivity;Lorg/telegram/ui/CalendarActivity$1;)V
 
-    .line 392
+    .line 391
     new-instance v13, Lorg/telegram/messenger/MessageObject;
 
     iget v14, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
@@ -1293,10 +1302,10 @@
 
     invoke-direct {v13, v14, v15, v3, v3}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
 
-    .line 393
+    .line 392
     iput-object v13, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 394
+    .line 393
     invoke-virtual/range {p3 .. p3}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v13
@@ -1307,7 +1316,7 @@
 
     iput v9, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->date:I
 
-    .line 395
+    .line 394
     iget v9, v0, Lorg/telegram/ui/CalendarActivity;->startOffset:I
 
     iget-object v10, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->periods:Ljava/util/ArrayList;
@@ -1324,17 +1333,17 @@
 
     iput v9, v0, Lorg/telegram/ui/CalendarActivity;->startOffset:I
 
-    .line 396
+    .line 395
     iput v9, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->startOffset:I
 
-    .line 397
+    .line 396
     invoke-virtual {v1, v6}, Ljava/util/Calendar;->get(I)I
 
     move-result v6
 
     sub-int/2addr v6, v11
 
-    .line 398
+    .line 397
     invoke-virtual {v7, v6, v8}, Landroid/util/SparseArray;->get(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v9
@@ -1351,11 +1360,11 @@
 
     if-nez v8, :cond_2
 
-    .line 399
+    .line 398
     :cond_1
     invoke-virtual {v7, v6, v12}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 401
+    .line 400
     :cond_2
     iget v6, v0, Lorg/telegram/ui/CalendarActivity;->minMontYear:I
 
@@ -1363,7 +1372,7 @@
 
     if-nez v6, :cond_4
 
-    .line 402
+    .line 401
     :cond_3
     iput v5, v0, Lorg/telegram/ui/CalendarActivity;->minMontYear:I
 
@@ -1372,7 +1381,7 @@
 
     goto/16 :goto_0
 
-    .line 406
+    .line 405
     :cond_5
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -1382,7 +1391,7 @@
 
     long-to-int v5, v4
 
-    .line 407
+    .line 406
     iget v4, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->min_date:I
 
     iput v4, v0, Lorg/telegram/ui/CalendarActivity;->minDate:I
@@ -1394,30 +1403,30 @@
 
     mul-long v12, v12, v9
 
-    .line 410
+    .line 409
     invoke-virtual {v1, v12, v13}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
     const/16 v12, 0xb
 
-    .line 411
+    .line 410
     invoke-virtual {v1, v12, v3}, Ljava/util/Calendar;->set(II)V
 
     const/16 v12, 0xc
 
-    .line 412
+    .line 411
     invoke-virtual {v1, v12, v3}, Ljava/util/Calendar;->set(II)V
 
     const/16 v12, 0xd
 
-    .line 413
+    .line 412
     invoke-virtual {v1, v12, v3}, Ljava/util/Calendar;->set(II)V
 
     const/16 v12, 0xe
 
-    .line 414
+    .line 413
     invoke-virtual {v1, v12, v3}, Ljava/util/Calendar;->set(II)V
 
-    .line 416
+    .line 415
     invoke-virtual {v1, v11}, Ljava/util/Calendar;->get(I)I
 
     move-result v12
@@ -1430,7 +1439,7 @@
 
     add-int/2addr v12, v13
 
-    .line 417
+    .line 416
     iget-object v13, v0, Lorg/telegram/ui/CalendarActivity;->messagesByYearMounth:Landroid/util/SparseArray;
 
     invoke-virtual {v13, v12}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -1441,17 +1450,17 @@
 
     if-nez v13, :cond_6
 
-    .line 419
+    .line 418
     new-instance v13, Landroid/util/SparseArray;
 
     invoke-direct {v13}, Landroid/util/SparseArray;-><init>()V
 
-    .line 420
+    .line 419
     iget-object v14, v0, Lorg/telegram/ui/CalendarActivity;->messagesByYearMounth:Landroid/util/SparseArray;
 
     invoke-virtual {v14, v12, v13}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 422
+    .line 421
     :cond_6
     invoke-virtual {v1, v6}, Ljava/util/Calendar;->get(I)I
 
@@ -1459,22 +1468,22 @@
 
     sub-int/2addr v12, v11
 
-    .line 423
+    .line 422
     invoke-virtual {v13, v12, v8}, Landroid/util/SparseArray;->get(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v14
 
     if-nez v14, :cond_7
 
-    .line 424
+    .line 423
     new-instance v14, Lorg/telegram/ui/CalendarActivity$PeriodDay;
 
     invoke-direct {v14, v0, v8}, Lorg/telegram/ui/CalendarActivity$PeriodDay;-><init>(Lorg/telegram/ui/CalendarActivity;Lorg/telegram/ui/CalendarActivity$1;)V
 
-    .line 425
+    .line 424
     iput-boolean v3, v14, Lorg/telegram/ui/CalendarActivity$PeriodDay;->hasImage:Z
 
-    .line 426
+    .line 425
     invoke-virtual/range {p3 .. p3}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v15
@@ -1485,7 +1494,7 @@
 
     iput v7, v14, Lorg/telegram/ui/CalendarActivity$PeriodDay;->date:I
 
-    .line 427
+    .line 426
     invoke-virtual {v13, v12, v14}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     :cond_7
@@ -1499,11 +1508,11 @@
 
     goto :goto_1
 
-    .line 431
+    .line 430
     :cond_8
     iput-boolean v3, v0, Lorg/telegram/ui/CalendarActivity;->loading:Z
 
-    .line 432
+    .line 431
     iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1512,7 +1521,7 @@
 
     if-nez v4, :cond_9
 
-    .line 433
+    .line 432
     iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -1531,34 +1540,34 @@
 
     iput v4, v0, Lorg/telegram/ui/CalendarActivity;->lastId:I
 
-    .line 434
+    .line 433
     iput-boolean v3, v0, Lorg/telegram/ui/CalendarActivity;->endReached:Z
 
-    .line 435
+    .line 434
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/CalendarActivity;->checkLoadNext()V
 
     goto :goto_2
 
-    .line 437
+    .line 436
     :cond_9
     iput-boolean v11, v0, Lorg/telegram/ui/CalendarActivity;->endReached:Z
 
-    .line 439
+    .line 438
     :goto_2
     iget-boolean v4, v0, Lorg/telegram/ui/CalendarActivity;->isOpened:Z
 
     if-eqz v4, :cond_a
 
-    .line 440
+    .line 439
     iput-boolean v11, v0, Lorg/telegram/ui/CalendarActivity;->checkEnterItems:Z
 
-    .line 442
+    .line 441
     :cond_a
     iget-object v4, v0, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v4}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 443
+    .line 442
     invoke-virtual/range {p3 .. p3}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v4
@@ -1579,35 +1588,35 @@
 
     add-int/2addr v1, v11
 
-    .line 444
+    .line 443
     iget-object v2, v0, Lorg/telegram/ui/CalendarActivity;->adapter:Lorg/telegram/ui/CalendarActivity$CalendarAdapter;
 
     iget v4, v0, Lorg/telegram/ui/CalendarActivity;->monthCount:I
 
     invoke-virtual {v2, v3, v4}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeChanged(II)V
 
-    .line 445
+    .line 444
     iget v2, v0, Lorg/telegram/ui/CalendarActivity;->monthCount:I
 
     if-le v1, v2, :cond_b
 
-    .line 446
+    .line 445
     iget-object v3, v0, Lorg/telegram/ui/CalendarActivity;->adapter:Lorg/telegram/ui/CalendarActivity$CalendarAdapter;
 
     add-int/2addr v2, v11
 
     invoke-virtual {v3, v2, v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
 
-    .line 447
+    .line 446
     iput v1, v0, Lorg/telegram/ui/CalendarActivity;->monthCount:I
 
-    .line 449
+    .line 448
     :cond_b
     iget-boolean v1, v0, Lorg/telegram/ui/CalendarActivity;->endReached:Z
 
     if-eqz v1, :cond_c
 
-    .line 450
+    .line 449
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->resumeDelayedFragmentAnimation()V
 
     :cond_c
@@ -1617,7 +1626,7 @@
 .method private synthetic lambda$loadNext$3(Ljava/util/Calendar;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 378
+    .line 377
     new-instance v0, Lorg/telegram/ui/CalendarActivity$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0, p3, p2, p1}, Lorg/telegram/ui/CalendarActivity$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/CalendarActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Ljava/util/Calendar;)V
@@ -1630,7 +1639,7 @@
 .method private loadNext()V
     .locals 4
 
-    .line 360
+    .line 359
     iget-boolean v0, p0, Lorg/telegram/ui/CalendarActivity;->loading:Z
 
     if-nez v0, :cond_3
@@ -1644,20 +1653,20 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 363
+    .line 362
     iput-boolean v0, p0, Lorg/telegram/ui/CalendarActivity;->loading:Z
 
-    .line 364
+    .line 363
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messages_getSearchResultsCalendar;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_messages_getSearchResultsCalendar;-><init>()V
 
-    .line 365
+    .line 364
     iget v2, p0, Lorg/telegram/ui/CalendarActivity;->photosVideosTypeFilter:I
 
     if-ne v2, v0, :cond_1
 
-    .line 366
+    .line 365
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterPhotos;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterPhotos;-><init>()V
@@ -1671,7 +1680,7 @@
 
     if-ne v2, v0, :cond_2
 
-    .line 368
+    .line 367
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterVideo;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterVideo;-><init>()V
@@ -1680,7 +1689,7 @@
 
     goto :goto_0
 
-    .line 370
+    .line 369
     :cond_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterPhotoVideo;
 
@@ -1688,7 +1697,7 @@
 
     iput-object v0, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_getSearchResultsCalendar;->filter:Lorg/telegram/tgnet/TLRPC$MessagesFilter;
 
-    .line 373
+    .line 372
     :goto_0
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -1704,24 +1713,24 @@
 
     iput-object v0, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_getSearchResultsCalendar;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 374
+    .line 373
     iget v0, p0, Lorg/telegram/ui/CalendarActivity;->lastId:I
 
     iput v0, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_getSearchResultsCalendar;->offset_id:I
 
-    .line 376
+    .line 375
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 377
+    .line 376
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 378
+    .line 377
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v2
@@ -1740,14 +1749,14 @@
 .method private prepareBlurBitmap()V
     .locals 5
 
-    .line 1422
+    .line 1421
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->blurredView:Landroid/view/View;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1425
+    .line 1424
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
@@ -1767,7 +1776,7 @@
 
     float-to-int v0, v0
 
-    .line 1426
+    .line 1425
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     invoke-interface {v2}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getView()Landroid/view/ViewGroup;
@@ -1784,24 +1793,24 @@
 
     float-to-int v1, v2
 
-    .line 1427
+    .line 1426
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v0, v1, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 1428
+    .line 1427
     new-instance v3, Landroid/graphics/Canvas;
 
     invoke-direct {v3, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
     const v4, 0x3e2aaaab
 
-    .line 1429
+    .line 1428
     invoke-virtual {v3, v4, v4}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 1430
+    .line 1429
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     invoke-interface {v4}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getView()Landroid/view/ViewGroup;
@@ -1812,7 +1821,7 @@
 
     const/4 v3, 0x7
 
-    .line 1431
+    .line 1430
     invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v0
@@ -1825,7 +1834,7 @@
 
     invoke-static {v2, v0}, Lorg/telegram/messenger/Utilities;->stackBlurBitmap(Landroid/graphics/Bitmap;I)V
 
-    .line 1432
+    .line 1431
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->blurredView:Landroid/view/View;
 
     new-instance v1, Landroid/graphics/drawable/BitmapDrawable;
@@ -1834,14 +1843,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1433
+    .line 1432
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->blurredView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1434
+    .line 1433
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->blurredView:Landroid/view/View;
 
     const/4 v1, 0x0
@@ -1854,7 +1863,7 @@
 .method private updateColors()V
     .locals 3
 
-    .line 349
+    .line 348
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const-string v1, "windowBackgroundWhite"
@@ -1865,14 +1874,14 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackgroundColor(I)V
 
-    .line 350
+    .line 349
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->activeTextPaint:Landroid/text/TextPaint;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 351
+    .line 350
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
 
     const-string v1, "windowBackgroundWhiteBlackText"
@@ -1883,7 +1892,7 @@
 
     invoke-virtual {v0, v2}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 352
+    .line 351
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->textPaint2:Landroid/text/TextPaint;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1892,7 +1901,7 @@
 
     invoke-virtual {v0, v2}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 353
+    .line 352
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1901,7 +1910,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitleColor(I)V
 
-    .line 354
+    .line 353
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->backDrawable:Lorg/telegram/ui/ActionBar/BackDrawable;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1910,7 +1919,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/BackDrawable;->setColor(I)V
 
-    .line 355
+    .line 354
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1921,7 +1930,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
 
-    .line 356
+    .line 355
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const-string v1, "listSelectorSDK21"
@@ -1938,7 +1947,7 @@
 .method private updateRowSelections(Lorg/telegram/ui/CalendarActivity$MonthView;Z)V
     .locals 13
 
-    .line 1368
+    .line 1367
     iget v0, p0, Lorg/telegram/ui/CalendarActivity;->dateSelectedStart:I
 
     if-eqz v0, :cond_9
@@ -1949,7 +1958,7 @@
 
     goto/16 :goto_4
 
-    .line 1371
+    .line 1370
     :cond_0
     iget-object v0, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->messagesByDays:Landroid/util/SparseArray;
 
@@ -1962,10 +1971,10 @@
 
     if-nez p2, :cond_2
 
-    .line 1375
+    .line 1374
     invoke-virtual {p1, v0}, Lorg/telegram/ui/CalendarActivity$MonthView;->dismissRowAnimations(Z)V
 
-    .line 1379
+    .line 1378
     :cond_2
     iget v1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->startDayOfWeek:I
 
@@ -1979,13 +1988,13 @@
 
     const/4 v7, -0x1
 
-    .line 1381
+    .line 1380
     :goto_0
     iget v4, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->daysInMonth:I
 
     if-ge v3, v4, :cond_7
 
-    .line 1382
+    .line 1381
     iget-object v4, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->messagesByDays:Landroid/util/SparseArray;
 
     const/4 v8, 0x0
@@ -1998,7 +2007,7 @@
 
     if-eqz v4, :cond_4
 
-    .line 1384
+    .line 1383
     iget v4, v4, Lorg/telegram/ui/CalendarActivity$PeriodDay;->date:I
 
     iget v8, p0, Lorg/telegram/ui/CalendarActivity;->dateSelectedStart:I
@@ -2044,7 +2053,7 @@
 
     move v12, p2
 
-    .line 1395
+    .line 1394
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/CalendarActivity$MonthView;->animateRow(IIIZZ)V
 
     goto :goto_2
@@ -2062,7 +2071,7 @@
 
     move v12, p2
 
-    .line 1396
+    .line 1395
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/CalendarActivity$MonthView;->animateRow(IIIZZ)V
 
     :goto_2
@@ -2097,7 +2106,7 @@
 
     move v9, p2
 
-    .line 1404
+    .line 1403
     invoke-virtual/range {v4 .. v9}, Lorg/telegram/ui/CalendarActivity$MonthView;->animateRow(IIIZZ)V
 
     goto :goto_5
@@ -2115,12 +2124,12 @@
 
     move v12, p2
 
-    .line 1406
+    .line 1405
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/CalendarActivity$MonthView;->animateRow(IIIZZ)V
 
     goto :goto_5
 
-    .line 1369
+    .line 1368
     :cond_9
     :goto_4
     invoke-virtual {p1, p2}, Lorg/telegram/ui/CalendarActivity$MonthView;->dismissRowAnimations(Z)V
@@ -2132,7 +2141,7 @@
 .method private updateTitle()V
     .locals 11
 
-    .line 1176
+    .line 1175
     iget-boolean v0, p0, Lorg/telegram/ui/CalendarActivity;->canClearHistory:Z
 
     const-string v1, "Calendar"
@@ -2143,7 +2152,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1177
+    .line 1176
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v4, Lorg/telegram/messenger/R$string;->Calendar:I
@@ -2154,14 +2163,14 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 1178
+    .line 1177
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->backDrawable:Lorg/telegram/ui/ActionBar/BackDrawable;
 
     invoke-virtual {v0, v2, v3}, Lorg/telegram/ui/ActionBar/BackDrawable;->setRotation(FZ)V
 
     return-void
 
-    .line 1182
+    .line 1181
     :cond_0
     iget v0, p0, Lorg/telegram/ui/CalendarActivity;->dateSelectedStart:I
 
@@ -2180,7 +2189,7 @@
     :cond_1
     sub-int/2addr v0, v4
 
-    .line 1185
+    .line 1184
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
     move-result v0
@@ -2191,11 +2200,11 @@
 
     add-int/2addr v0, v3
 
-    .line 1187
+    .line 1186
     :goto_0
     iget-boolean v4, p0, Lorg/telegram/ui/CalendarActivity;->lastInSelectionMode:Z
 
-    .line 1188
+    .line 1187
     iget v6, p0, Lorg/telegram/ui/CalendarActivity;->lastDaysSelected:I
 
     if-ne v0, v6, :cond_2
@@ -2214,11 +2223,11 @@
     :cond_3
     const/4 v4, 0x0
 
-    .line 1190
+    .line 1189
     :goto_1
     iput v0, p0, Lorg/telegram/ui/CalendarActivity;->lastDaysSelected:I
 
-    .line 1191
+    .line 1190
     iget-boolean v6, p0, Lorg/telegram/ui/CalendarActivity;->inSelectionMode:Z
 
     iput-boolean v6, p0, Lorg/telegram/ui/CalendarActivity;->lastInSelectionMode:Z
@@ -2231,12 +2240,12 @@
 
     const-string v6, "Days"
 
-    .line 1194
+    .line 1193
     invoke-static {v6, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1195
+    .line 1194
     iget-object v6, p0, Lorg/telegram/ui/CalendarActivity;->backDrawable:Lorg/telegram/ui/ActionBar/BackDrawable;
 
     invoke-virtual {v6, v7, v3}, Lorg/telegram/ui/ActionBar/BackDrawable;->setRotation(FZ)V
@@ -2246,7 +2255,7 @@
     :cond_4
     if-eqz v6, :cond_5
 
-    .line 1197
+    .line 1196
     sget v1, Lorg/telegram/messenger/R$string;->SelectDays:I
 
     const-string v6, "SelectDays"
@@ -2255,14 +2264,14 @@
 
     move-result-object v1
 
-    .line 1198
+    .line 1197
     iget-object v6, p0, Lorg/telegram/ui/CalendarActivity;->backDrawable:Lorg/telegram/ui/ActionBar/BackDrawable;
 
     invoke-virtual {v6, v7, v3}, Lorg/telegram/ui/ActionBar/BackDrawable;->setRotation(FZ)V
 
     goto :goto_2
 
-    .line 1200
+    .line 1199
     :cond_5
     sget v6, Lorg/telegram/messenger/R$string;->Calendar:I
 
@@ -2270,7 +2279,7 @@
 
     move-result-object v1
 
-    .line 1201
+    .line 1200
     iget-object v6, p0, Lorg/telegram/ui/CalendarActivity;->backDrawable:Lorg/telegram/ui/ActionBar/BackDrawable;
 
     invoke-virtual {v6, v2, v3}, Lorg/telegram/ui/ActionBar/BackDrawable;->setRotation(FZ)V
@@ -2278,7 +2287,7 @@
     :goto_2
     if-le v0, v3, :cond_6
 
-    .line 1204
+    .line 1203
     iget-object v6, p0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
 
     sget v8, Lorg/telegram/messenger/R$string;->ClearHistoryForTheseDays:I
@@ -2298,12 +2307,12 @@
     :cond_6
     if-gtz v0, :cond_7
 
-    .line 1205
+    .line 1204
     iget-boolean v6, p0, Lorg/telegram/ui/CalendarActivity;->inSelectionMode:Z
 
     if-eqz v6, :cond_8
 
-    .line 1206
+    .line 1205
     :cond_7
     iget-object v6, p0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
 
@@ -2319,7 +2328,7 @@
 
     invoke-virtual {v6, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1208
+    .line 1207
     :cond_8
     :goto_3
     iget-object v6, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -2328,7 +2337,7 @@
 
     invoke-virtual {v6, v1, v4, v8, v9}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitleAnimated(Ljava/lang/CharSequence;ZJ)V
 
-    .line 1211
+    .line 1210
     iget-boolean v1, p0, Lorg/telegram/ui/CalendarActivity;->inSelectionMode:Z
 
     if-eqz v1, :cond_9
@@ -2340,7 +2349,7 @@
 
     if-eqz v1, :cond_a
 
-    .line 1212
+    .line 1211
     invoke-virtual {v1}, Lorg/telegram/ui/Components/HintView;->hide()V
 
     :cond_a
@@ -2352,14 +2361,14 @@
 
     if-gtz v0, :cond_d
 
-    .line 1214
+    .line 1213
     iget-boolean v10, p0, Lorg/telegram/ui/CalendarActivity;->inSelectionMode:Z
 
     if-eqz v10, :cond_b
 
     goto :goto_4
 
-    .line 1227
+    .line 1226
     :cond_b
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->selectDaysButton:Landroid/widget/TextView;
 
@@ -2369,12 +2378,12 @@
 
     if-ne v0, v1, :cond_c
 
-    .line 1228
+    .line 1227
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->selectDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 1229
+    .line 1228
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->selectDaysButton:Landroid/widget/TextView;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2385,13 +2394,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTranslationY(F)V
 
-    .line 1231
+    .line 1230
     :cond_c
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->selectDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1232
+    .line 1231
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->selectDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -2404,7 +2413,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1233
+    .line 1232
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -2417,7 +2426,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1234
+    .line 1233
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->selectDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -2434,7 +2443,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1235
+    .line 1234
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -2473,19 +2482,19 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1236
+    .line 1235
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->selectDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 1237
+    .line 1236
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setEnabled(Z)V
 
     goto/16 :goto_5
 
-    .line 1215
+    .line 1214
     :cond_d
     :goto_4
     iget-object v10, p0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
@@ -2496,12 +2505,12 @@
 
     if-ne v10, v1, :cond_e
 
-    .line 1216
+    .line 1215
     iget-object v1, p0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 1217
+    .line 1216
     iget-object v1, p0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2514,13 +2523,13 @@
 
     invoke-virtual {v1, v10}, Landroid/widget/TextView;->setTranslationY(F)V
 
-    .line 1219
+    .line 1218
     :cond_e
     iget-object v1, p0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1220
+    .line 1219
     iget-object v1, p0, Lorg/telegram/ui/CalendarActivity;->selectDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -2533,7 +2542,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1221
+    .line 1220
     iget-object v1, p0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -2546,7 +2555,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1222
+    .line 1221
     iget-object v1, p0, Lorg/telegram/ui/CalendarActivity;->selectDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -2583,7 +2592,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1223
+    .line 1222
     iget-object v1, p0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -2605,12 +2614,12 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1224
+    .line 1223
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->selectDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 1225
+    .line 1224
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setEnabled(Z)V
@@ -3219,19 +3228,19 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 332
+    .line 331
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setAllCaps(Z)V
 
-    .line 334
+    .line 333
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 335
+    .line 334
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity;->bottomBar:Landroid/widget/FrameLayout;
 
     iget-object v2, v0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
@@ -3244,7 +3253,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 336
+    .line 335
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity;->contentView:Landroid/widget/FrameLayout;
 
     iget-object v2, v0, Lorg/telegram/ui/CalendarActivity;->bottomBar:Landroid/widget/FrameLayout;
@@ -3267,7 +3276,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 339
+    .line 338
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity;->selectDaysButton:Landroid/widget/TextView;
 
     const-string v2, "chat_fieldOverlayText"
@@ -3288,7 +3297,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 340
+    .line 339
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
 
     const-string v3, "dialogTextRed"
@@ -3307,7 +3316,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 341
+    .line 340
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity;->selectDaysButton:Landroid/widget/TextView;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -3316,7 +3325,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 342
+    .line 341
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity;->removeDaysButton:Landroid/widget/TextView;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -3325,7 +3334,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 345
+    .line 344
     :cond_4
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
@@ -3343,17 +3352,17 @@
         }
     .end annotation
 
-    .line 1272
+    .line 1271
     new-instance v8, Lorg/telegram/ui/CalendarActivity$8;
 
     invoke-direct {v8, p0}, Lorg/telegram/ui/CalendarActivity$8;-><init>(Lorg/telegram/ui/CalendarActivity;)V
 
-    .line 1278
+    .line 1277
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1279
+    .line 1278
     new-instance v0, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const/4 v1, 0x0
@@ -3372,21 +3381,21 @@
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
 
-    .line 1280
+    .line 1279
     new-instance v0, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v7, "windowBackgroundWhiteBlackText"
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
 
-    .line 1281
+    .line 1280
     new-instance v0, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v7, "listSelectorSDK21"
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
 
-    .line 1284
+    .line 1283
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemeDescriptions()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -3403,12 +3412,12 @@
 
     const/4 v2, 0x1
 
-    .line 1451
+    .line 1450
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;[ZZ)I
 
     move-result v0
 
-    .line 1452
+    .line 1451
     invoke-static {v0}, Landroidx/core/graphics/ColorUtils;->calculateLuminance(I)D
 
     move-result-wide v0
@@ -3439,30 +3448,30 @@
 .method public onBackPressed()Z
     .locals 1
 
-    .line 1439
+    .line 1438
     iget-boolean v0, p0, Lorg/telegram/ui/CalendarActivity;->inSelectionMode:Z
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 1440
+    .line 1439
     iput-boolean v0, p0, Lorg/telegram/ui/CalendarActivity;->inSelectionMode:Z
 
-    .line 1441
+    .line 1440
     iput v0, p0, Lorg/telegram/ui/CalendarActivity;->dateSelectedEnd:I
 
     iput v0, p0, Lorg/telegram/ui/CalendarActivity;->dateSelectedStart:I
 
-    .line 1442
+    .line 1441
     invoke-direct {p0}, Lorg/telegram/ui/CalendarActivity;->updateTitle()V
 
-    .line 1443
+    .line 1442
     invoke-direct {p0}, Lorg/telegram/ui/CalendarActivity;->animateSelection()V
 
     return v0
 
-    .line 1446
+    .line 1445
     :cond_0
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onBackPressed()Z
 
@@ -3545,7 +3554,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1312
+    .line 1311
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity;->blurredView:Landroid/view/View;
 
     if-eqz p1, :cond_0
@@ -3556,14 +3565,14 @@
 
     if-nez p1, :cond_0
 
-    .line 1313
+    .line 1312
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity;->blurredView:Landroid/view/View;
 
     const/16 p2, 0x8
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1314
+    .line 1313
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity;->blurredView:Landroid/view/View;
 
     const/4 p2, 0x0
@@ -3577,10 +3586,10 @@
 .method public onTransitionAnimationProgress(ZF)V
     .locals 1
 
-    .line 1300
+    .line 1299
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->onTransitionAnimationProgress(ZF)V
 
-    .line 1301
+    .line 1300
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity;->blurredView:Landroid/view/View;
 
     if-eqz v0, :cond_1
@@ -3593,7 +3602,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1303
+    .line 1302
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity;->blurredView:Landroid/view/View;
 
     const/high16 v0, 0x3f800000    # 1.0f
@@ -3604,7 +3613,7 @@
 
     goto :goto_0
 
-    .line 1305
+    .line 1304
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity;->blurredView:Landroid/view/View;
 
@@ -3618,12 +3627,12 @@
 .method public onTransitionAnimationStart(ZZ)V
     .locals 0
 
-    .line 1294
+    .line 1293
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->onTransitionAnimationStart(ZZ)V
 
     const/4 p1, 0x1
 
-    .line 1295
+    .line 1294
     iput-boolean p1, p0, Lorg/telegram/ui/CalendarActivity;->isOpened:Z
 
     return-void
@@ -3632,7 +3641,7 @@
 .method public setCallback(Lorg/telegram/ui/CalendarActivity$Callback;)V
     .locals 0
 
-    .line 1244
+    .line 1243
     iput-object p1, p0, Lorg/telegram/ui/CalendarActivity;->callback:Lorg/telegram/ui/CalendarActivity$Callback;
 
     return-void

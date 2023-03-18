@@ -31,11 +31,11 @@ public final class CreateWalletFragment$setupViewsContents$1$2 extends Lambda im
     /* compiled from: CreateWalletFragment.kt */
     /* renamed from: com.smedialink.ui.wallet.crypto.create.CreateWalletFragment$setupViewsContents$1$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C19321 extends Lambda implements Function1<Integer, Unit> {
+    public static final class C20461 extends Lambda implements Function1<Integer, Unit> {
         final /* synthetic */ CreateWalletFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C19321(CreateWalletFragment createWalletFragment) {
+        C20461(CreateWalletFragment createWalletFragment) {
             super(1);
             this.this$0 = createWalletFragment;
         }
@@ -51,13 +51,12 @@ public final class CreateWalletFragment$setupViewsContents$1$2 extends Lambda im
         }
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         CreateWalletFragment createWalletFragment = this.this$0;
         SecretWordsCountBottomSheetDialog.Companion companion = SecretWordsCountBottomSheetDialog.Companion;
         Activity parentActivity = createWalletFragment.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        createWalletFragment.showDialog(companion.newInstance(parentActivity, new C19321(this.this$0)));
+        createWalletFragment.showDialog(companion.newInstance(parentActivity, new C20461(this.this$0)));
     }
 }

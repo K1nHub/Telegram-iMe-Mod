@@ -123,7 +123,7 @@ public final class GetApproveTokensInfoResponse {
         }
 
         public String toString() {
-            return "CryptoTokenApprovalQuote(cryptoTokenCode=" + this.cryptoTokenCode + ", contractAddress=" + this.contractAddress + ", spenderContractAddress=" + this.spenderContractAddress + ", status=" + this.status + ", value=" + this.value + ", feeTokenCode=" + this.feeTokenCode + ", transactionParams=" + this.transactionParams + ", lastErrorMessage=" + ((Object) this.lastErrorMessage) + ')';
+            return "CryptoTokenApprovalQuote(cryptoTokenCode=" + this.cryptoTokenCode + ", contractAddress=" + this.contractAddress + ", spenderContractAddress=" + this.spenderContractAddress + ", status=" + this.status + ", value=" + this.value + ", feeTokenCode=" + this.feeTokenCode + ", transactionParams=" + this.transactionParams + ", lastErrorMessage=" + this.lastErrorMessage + ')';
         }
 
         public CryptoTokenApprovalQuote(String cryptoTokenCode, String contractAddress, String spenderContractAddress, String status, String value, String feeTokenCode, TransactionParamsResponse transactionParamsResponse, String str) {

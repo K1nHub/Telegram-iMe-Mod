@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 624
+    .line 630
     invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
 
     return-void
@@ -31,28 +31,28 @@
 
     const-string v0, "fonts/rmedium.ttf"
 
-    .line 627
+    .line 633
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 628
+    .line 634
     invoke-virtual {p1}, Landroid/text/TextPaint;->getAlpha()I
 
     move-result v0
 
-    const-string v1, "windowBackgroundWhiteBlueText"
+    const-string/jumbo v1, "windowBackgroundWhiteBlueText"
 
-    .line 629
+    .line 635
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
 
     invoke-virtual {p1, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 630
+    .line 636
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setAlpha(I)V
 
     return-void

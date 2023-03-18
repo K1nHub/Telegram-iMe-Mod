@@ -8,10 +8,8 @@ import com.smedialink.model.wallet.home.HeaderItem;
 import com.smedialink.p031ui.base.mvp.base.BasePresenter;
 import com.smedialink.storage.data.locale.prefs.model.WalletCryptoTokensSettingsMetadata;
 import com.smedialink.storage.data.locale.prefs.model.WalletCryptoTokensSettingsTokenState;
-import com.smedialink.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.smedialink.storage.domain.interactor.wallet.WalletInteractor;
 import com.smedialink.storage.domain.manager.crypto.CryptoAccessManager;
-import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.crypto.BlockchainType;
 import com.smedialink.storage.domain.model.crypto.NetworkType;
 import com.smedialink.storage.domain.model.wallet.token.TokenBalance;
@@ -27,7 +25,6 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -38,6 +35,7 @@ import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import moxy.InjectViewState;
@@ -142,49 +140,39 @@ public final class WalletAttachAlertPresenter extends BasePresenter<WalletAttach
     }
 
     private final void getWalletBalance(boolean z) {
-        Disposable subscribe = WalletInteractor.getWalletBalance$default(this.walletInteractor, z, null, 2, null).distinctUntilChanged().observeOn(this.schedulersProvider.mo707ui()).subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.old.WalletAttachAlertPresenter$$ExternalSyntheticLambda0
+        Observable observeOn = WalletInteractor.getWalletBalance$default(this.walletInteractor, z, null, 2, null).distinctUntilChanged().observeOn(this.schedulersProvider.mo707ui());
+        final WalletAttachAlertPresenter$getWalletBalance$1 walletAttachAlertPresenter$getWalletBalance$1 = new WalletAttachAlertPresenter$getWalletBalance$1(this);
+        Consumer consumer = new Consumer() { // from class: com.smedialink.ui.wallet.home.old.WalletAttachAlertPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                WalletAttachAlertPresenter.m1630getWalletBalance$lambda0(WalletAttachAlertPresenter.this, (Result) obj);
+                WalletAttachAlertPresenter.getWalletBalance$lambda$0(Function1.this, obj);
             }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.home.old.WalletAttachAlertPresenter$$ExternalSyntheticLambda2
+        };
+        final WalletAttachAlertPresenter$getWalletBalance$2 walletAttachAlertPresenter$getWalletBalance$2 = new WalletAttachAlertPresenter$getWalletBalance$2(this);
+        Disposable subscribe = observeOn.subscribe(consumer, new Consumer() { // from class: com.smedialink.ui.wallet.home.old.WalletAttachAlertPresenter$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                WalletAttachAlertPresenter.m1631getWalletBalance$lambda1(WalletAttachAlertPresenter.this, (Throwable) obj);
+                WalletAttachAlertPresenter.getWalletBalance$lambda$1(Function1.this, obj);
             }
         });
-        Intrinsics.checkNotNullExpressionValue(subscribe, "walletInteractor\n       …pty())\n                })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "private fun getWalletBal…     .autoDispose()\n    }");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getWalletBalance$lambda-0  reason: not valid java name */
-    public static final void m1630getWalletBalance$lambda0(WalletAttachAlertPresenter this$0, Result result) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        if (result instanceof Result.Success) {
-            List<TokenBalance> configureTokens = this$0.configureTokens((List) ((Result.Success) result).getData());
-            ((WalletAttachAlertView) this$0.getViewState()).showBalances(configureTokens);
-            if (!configureTokens.isEmpty()) {
-                this$0.selectBalance((TokenBalance) CollectionsKt.first((List<? extends Object>) configureTokens));
-            }
-        } else if (result instanceof Result.Error) {
-            ((WalletAttachAlertView) this$0.getViewState()).showToast(((Result.Error) result).getError().getMessage(this$0.resourceManager));
-        }
+    public static final void getWalletBalance$lambda$0(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getWalletBalance$lambda-1  reason: not valid java name */
-    public static final void m1631getWalletBalance$lambda1(WalletAttachAlertPresenter this$0, Throwable th) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        WalletAttachAlertView walletAttachAlertView = (WalletAttachAlertView) this$0.getViewState();
-        String message = th.getMessage();
-        if (message == null) {
-            message = "";
-        }
-        walletAttachAlertView.showToast(message);
+    public static final void getWalletBalance$lambda$1(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
-    private final List<TokenBalance> configureTokens(List<TokenBalance> list) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final List<TokenBalance> configureTokens(List<TokenBalance> list) {
         int collectionSizeOrDefault;
         int mapCapacity;
         int coerceAtLeast;
@@ -220,89 +208,55 @@ public final class WalletAttachAlertPresenter extends BasePresenter<WalletAttach
         return arrayList3;
     }
 
-    private final void getWalletTransactions(final TokenCode tokenCode) {
-        Disposable subscribe = Observable.just(Boolean.TRUE).switchMap(new Function() { // from class: com.smedialink.ui.wallet.home.old.WalletAttachAlertPresenter$$ExternalSyntheticLambda4
+    private final void getWalletTransactions(TokenCode tokenCode) {
+        Observable just = Observable.just(Boolean.TRUE);
+        final WalletAttachAlertPresenter$getWalletTransactions$1 walletAttachAlertPresenter$getWalletTransactions$1 = new WalletAttachAlertPresenter$getWalletTransactions$1(this, tokenCode);
+        Observable observeOn = just.switchMap(new Function() { // from class: com.smedialink.ui.wallet.home.old.WalletAttachAlertPresenter$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                ObservableSource m1632getWalletTransactions$lambda6;
-                m1632getWalletTransactions$lambda6 = WalletAttachAlertPresenter.m1632getWalletTransactions$lambda6(WalletAttachAlertPresenter.this, tokenCode, (Boolean) obj);
-                return m1632getWalletTransactions$lambda6;
+                ObservableSource walletTransactions$lambda$6;
+                walletTransactions$lambda$6 = WalletAttachAlertPresenter.getWalletTransactions$lambda$6(Function1.this, obj);
+                return walletTransactions$lambda$6;
             }
-        }).distinctUntilChanged().observeOn(this.schedulersProvider.mo707ui()).subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.old.WalletAttachAlertPresenter$$ExternalSyntheticLambda3
+        }).distinctUntilChanged().observeOn(this.schedulersProvider.mo707ui());
+        final WalletAttachAlertPresenter$getWalletTransactions$2 walletAttachAlertPresenter$getWalletTransactions$2 = new WalletAttachAlertPresenter$getWalletTransactions$2(this, tokenCode);
+        Consumer consumer = new Consumer() { // from class: com.smedialink.ui.wallet.home.old.WalletAttachAlertPresenter$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                WalletAttachAlertPresenter.m1633getWalletTransactions$lambda7(WalletAttachAlertPresenter.this, tokenCode, (Result) obj);
+                WalletAttachAlertPresenter.getWalletTransactions$lambda$7(Function1.this, obj);
             }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.home.old.WalletAttachAlertPresenter$$ExternalSyntheticLambda1
+        };
+        final WalletAttachAlertPresenter$getWalletTransactions$3 walletAttachAlertPresenter$getWalletTransactions$3 = new WalletAttachAlertPresenter$getWalletTransactions$3(this);
+        Disposable subscribe = observeOn.subscribe(consumer, new Consumer() { // from class: com.smedialink.ui.wallet.home.old.WalletAttachAlertPresenter$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                WalletAttachAlertPresenter.m1634getWalletTransactions$lambda8(WalletAttachAlertPresenter.this, (Throwable) obj);
+                WalletAttachAlertPresenter.getWalletTransactions$lambda$8(Function1.this, obj);
             }
         });
-        Intrinsics.checkNotNullExpressionValue(subscribe, "just(true)\n             …pty())\n                })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "private fun getWalletTra…     .autoDispose()\n    }");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getWalletTransactions$lambda-6  reason: not valid java name */
-    public static final ObservableSource m1632getWalletTransactions$lambda6(WalletAttachAlertPresenter this$0, TokenCode selectedTokenCode, Boolean it) {
-        Result success;
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(selectedTokenCode, "$selectedTokenCode");
-        Intrinsics.checkNotNullParameter(it, "it");
-        List<Transaction> list = this$0.cachedTransactions.get(selectedTokenCode);
-        Observable observable = null;
-        if (list != null && (success = Result.Companion.success(list)) != null) {
-            observable = Observable.just(success);
-            Intrinsics.checkNotNullExpressionValue(observable, "just(this)");
-        }
-        return observable == null ? WalletInteractor.getWalletTransactions$default(this$0.walletInteractor, false, null, selectedTokenCode, 0, null, 27, null) : observable;
+    public static final ObservableSource getWalletTransactions$lambda$6(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (ObservableSource) tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getWalletTransactions$lambda-7  reason: not valid java name */
-    public static final void m1633getWalletTransactions$lambda7(WalletAttachAlertPresenter this$0, TokenCode selectedTokenCode, Result result) {
-        List<Transaction> mutableList;
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(selectedTokenCode, "$selectedTokenCode");
-        if (result instanceof Result.Success) {
-            HashMap<TokenCode, List<Transaction>> hashMap = this$0.cachedTransactions;
-            Result.Success success = (Result.Success) result;
-            mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) ((Collection) success.getData()));
-            hashMap.put(selectedTokenCode, mutableList);
-            List<BaseNode> mapTransactionsToGroups = this$0.mapTransactionsToGroups((List) success.getData());
-            if (mapTransactionsToGroups.isEmpty()) {
-                ((WalletAttachAlertView) this$0.getViewState()).onEmptyState();
-            } else {
-                ((WalletAttachAlertView) this$0.getViewState()).showTransactions(mapTransactionsToGroups);
-            }
-        } else if (result instanceof Result.Error) {
-            Result.Error error = (Result.Error) result;
-            if (error.getError().getStatus() == ApiErrorHandler.ErrorStatus.NO_CONNECTION) {
-                ((WalletAttachAlertView) this$0.getViewState()).onNoInternetErrorState();
-            } else {
-                ((WalletAttachAlertView) this$0.getViewState()).onUnexpectedErrorState();
-            }
-            ((WalletAttachAlertView) this$0.getViewState()).showToast(error.getError().getMessage(this$0.resourceManager));
-        } else if (result instanceof Result.Loading) {
-            ((WalletAttachAlertView) this$0.getViewState()).onLoadingState();
-        }
+    public static final void getWalletTransactions$lambda$7(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getWalletTransactions$lambda-8  reason: not valid java name */
-    public static final void m1634getWalletTransactions$lambda8(WalletAttachAlertPresenter this$0, Throwable th) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        ((WalletAttachAlertView) this$0.getViewState()).onUnexpectedErrorState();
-        WalletAttachAlertView walletAttachAlertView = (WalletAttachAlertView) this$0.getViewState();
-        String message = th.getMessage();
-        if (message == null) {
-            message = "";
-        }
-        walletAttachAlertView.showToast(message);
+    public static final void getWalletTransactions$lambda$8(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
-    private final List<BaseNode> mapTransactionsToGroups(List<? extends Transaction> list) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final List<BaseNode> mapTransactionsToGroups(List<? extends Transaction> list) {
         List distinct;
         distinct = CollectionsKt___CollectionsKt.distinct(list);
         ArrayList arrayList = new ArrayList();

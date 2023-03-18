@@ -99,7 +99,7 @@
 
     if-eqz p4, :cond_0
 
-    const/16 p1, 0x10
+    const/16 p1, 0x1010
 
     .line 47
     invoke-static {p1}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z

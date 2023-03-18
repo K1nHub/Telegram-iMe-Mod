@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)V
     .locals 0
 
-    .line 798
+    .line 843
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$7;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 801
+    .line 846
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$7;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1600(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebProgressView;

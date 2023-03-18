@@ -57,7 +57,7 @@ public class MatrixParticlesDrawable {
         }
         long currentTimeMillis = System.currentTimeMillis();
         ArrayList<Particle>[] arrayListArr = this.particles;
-        C47751 c47751 = null;
+        C49121 c49121 = null;
         int i3 = 0;
         if (arrayListArr == null || arrayListArr.length != width + 1) {
             this.particles = new ArrayList[width + 1];
@@ -87,8 +87,8 @@ public class MatrixParticlesDrawable {
                 Particle particle3 = arrayList.get(i8);
                 int i9 = 1;
                 if (currentTimeMillis - particle3.time > 50) {
-                    int i10 = particle3.f1759y + 1;
-                    particle3.f1759y = i10;
+                    int i10 = particle3.f1770y + 1;
+                    particle3.f1770y = i10;
                     particle3.time = currentTimeMillis;
                     if (i10 - particle3.len >= height) {
                         if (arrayList.size() == 1) {
@@ -98,15 +98,15 @@ public class MatrixParticlesDrawable {
                             i8--;
                         }
                     }
-                    if (particle3.f1759y > particle3.len && i8 == arrayList.size() - 1 && Math.abs(Utilities.fastRandom.nextInt(4)) == 0) {
+                    if (particle3.f1770y > particle3.len && i8 == arrayList.size() - 1 && Math.abs(Utilities.fastRandom.nextInt(4)) == 0) {
                         Particle particle4 = new Particle();
                         particle4.reset(currentTimeMillis);
                         arrayList.add(particle4);
                     }
                 }
                 int i11 = i8;
-                int min = Math.min(particle3.f1759y, height + 1);
-                int max = Math.max(i3, particle3.f1759y - particle3.len);
+                int min = Math.min(particle3.f1770y, height + 1);
+                int max = Math.max(i3, particle3.f1770y - particle3.len);
                 while (max < min) {
                     int i12 = this.size;
                     float f = i12 * i7;
@@ -119,7 +119,7 @@ public class MatrixParticlesDrawable {
                         i = max;
                         i2 = min;
                         particle = particle3;
-                        this.matrixTextParticles[i7][max].draw(canvas, f, f2, currentTimeMillis, Utilities.clamp(((1.0f - ((particle3.f1759y - max) / (particle3.len - i9))) * 0.8f) + 0.2f, 1.0f, (float) BitmapDescriptorFactory.HUE_RED));
+                        this.matrixTextParticles[i7][max].draw(canvas, f, f2, currentTimeMillis, Utilities.clamp(((1.0f - ((particle3.f1770y - max) / (particle3.len - i9))) * 0.8f) + 0.2f, 1.0f, (float) BitmapDescriptorFactory.HUE_RED));
                     }
                     max = i + 1;
                     min = i2;
@@ -127,11 +127,11 @@ public class MatrixParticlesDrawable {
                     i9 = 1;
                 }
                 i8 = i11 + 1;
-                c47751 = null;
+                c49121 = null;
                 i3 = 0;
             }
             i7++;
-            c47751 = null;
+            c49121 = null;
             i3 = 0;
         }
     }
@@ -143,20 +143,20 @@ public class MatrixParticlesDrawable {
         long time;
 
         /* renamed from: y */
-        int f1759y;
+        int f1770y;
 
         private Particle(MatrixParticlesDrawable matrixParticlesDrawable) {
             this.len = 5;
         }
 
         public void init(int i, long j) {
-            this.f1759y = Math.abs(Utilities.fastRandom.nextInt() % i);
+            this.f1770y = Math.abs(Utilities.fastRandom.nextInt() % i);
             this.time = j;
             this.len = Math.abs(Utilities.fastRandom.nextInt() % 6) + 4;
         }
 
         public void reset(long j) {
-            this.f1759y = 0;
+            this.f1770y = 0;
             this.time = j;
             this.len = Math.abs(Utilities.fastRandom.nextInt() % 6) + 4;
         }

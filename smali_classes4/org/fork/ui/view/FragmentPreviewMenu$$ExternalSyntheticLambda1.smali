@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/view/FragmentPreviewMenu$$ExternalSyntheticLambda1;->f$0:Lorg/fork/ui/view/FragmentPreviewMenu;
 
-    invoke-static {v0, p1}, Lorg/fork/ui/view/FragmentPreviewMenu;->$r8$lambda$SAGnZltxN9mSmo7W5CoSSvu4HC4(Lorg/fork/ui/view/FragmentPreviewMenu;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/fork/ui/view/FragmentPreviewMenu;->$r8$lambda$noGXcsfBvEMjgqNKJgydxR78ewY(Lorg/fork/ui/view/FragmentPreviewMenu;Landroid/view/View;)V
 
     return-void
 .end method

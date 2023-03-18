@@ -4,40 +4,40 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$10H01mRp3awai6xOqtT_IyhkwuM(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
+.method public static synthetic $r8$lambda$2bit6sM4zwDxSA5pxLk8RcQIXjY(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/utils/extentions/rx/RxExtKt;->withLoadingDialog$lambda-1(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
+    invoke-static {p0, p1}, Lcom/smedialink/utils/extentions/rx/RxExtKt;->withLoadingDialog$lambda$4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Bvu6wjYcNSWjfwwzknOFbwQrMGQ(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
+.method public static synthetic $r8$lambda$Mu26yGhpKBfhGSlr2gYyD6gs41Y(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/utils/extentions/rx/RxExtKt;->withLoadingDialog$lambda-5(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
+    invoke-static {p0, p1}, Lcom/smedialink/utils/extentions/rx/RxExtKt;->withLoadingDialog$lambda$5(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ZEOkOeN6lTkYTm6kFMnVCiujxPg(Lcom/smedialink/ui/base/mvp/base/BaseView;ZLio/reactivex/disposables/Disposable;)V
+.method public static synthetic $r8$lambda$fL35Is-nTqeycLVASgpi48kb6CY(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/utils/extentions/rx/RxExtKt;->withLoadingDialog$lambda-4(Lcom/smedialink/ui/base/mvp/base/BaseView;ZLio/reactivex/disposables/Disposable;)V
+    invoke-static {p0, p1}, Lcom/smedialink/utils/extentions/rx/RxExtKt;->withLoadingDialog$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$khr3th8i1o2BGK3ViqoZqF3l2yY(Lcom/smedialink/ui/base/mvp/base/BaseView;ZLio/reactivex/disposables/Disposable;)V
+.method public static synthetic $r8$lambda$oYOSFNS_W7f4RmnCA-R_SlGDEv8(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/utils/extentions/rx/RxExtKt;->withLoadingDialog$lambda-0(Lcom/smedialink/ui/base/mvp/base/BaseView;ZLio/reactivex/disposables/Disposable;)V
+    invoke-static {p0, p1}, Lcom/smedialink/utils/extentions/rx/RxExtKt;->withLoadingDialog$lambda$1(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
 
     return-void
 .end method
 
 .method public static final withLoadingDialog(Lio/reactivex/Completable;Lcom/smedialink/ui/base/mvp/base/BaseView;Z)Lio/reactivex/Completable;
-    .locals 1
+    .locals 2
 
     const-string v0, "<this>"
 
@@ -48,32 +48,37 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 32
-    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda2;
+    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$withLoadingDialog$5;
 
-    invoke-direct {v0, p1, p2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
+    invoke-direct {v0, p1, p2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$withLoadingDialog$5;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
 
-    invoke-virtual {p0, v0}, Lio/reactivex/Completable;->doOnSubscribe(Lio/reactivex/functions/Consumer;)Lio/reactivex/Completable;
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda2;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda2;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p0, v1}, Lio/reactivex/Completable;->doOnSubscribe(Lio/reactivex/functions/Consumer;)Lio/reactivex/Completable;
 
     move-result-object p0
 
     .line 33
-    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda1;
+    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p1, p2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
+    invoke-direct {v0, p1, p2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
 
     invoke-virtual {p0, v0}, Lio/reactivex/Completable;->doFinally(Lio/reactivex/functions/Action;)Lio/reactivex/Completable;
 
     move-result-object p0
 
-    const-string p1, "doOnSubscribe { disposab\u2026cellable = cancellable) }"
+    const-string p1, "viewState: BaseView, can\u2026cellable = cancellable) }"
 
+    .line 32
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 .end method
 
 .method public static final withLoadingDialog(Lio/reactivex/Observable;Lcom/smedialink/ui/base/mvp/base/BaseView;Z)Lio/reactivex/Observable;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -97,25 +102,30 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 18
-    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda3;
+    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$withLoadingDialog$1;
 
-    invoke-direct {v0, p1, p2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda3;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
+    invoke-direct {v0, p1, p2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$withLoadingDialog$1;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
 
-    invoke-virtual {p0, v0}, Lio/reactivex/Observable;->doOnSubscribe(Lio/reactivex/functions/Consumer;)Lio/reactivex/Observable;
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda3;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda3;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p0, v1}, Lio/reactivex/Observable;->doOnSubscribe(Lio/reactivex/functions/Consumer;)Lio/reactivex/Observable;
 
     move-result-object p0
 
     .line 19
-    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda0;
+    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda1;
 
-    invoke-direct {v0, p1, p2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
+    invoke-direct {v0, p1, p2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
 
     invoke-virtual {p0, v0}, Lio/reactivex/Observable;->doFinally(Lio/reactivex/functions/Action;)Lio/reactivex/Observable;
 
     move-result-object p0
 
-    const-string p1, "doOnSubscribe { disposab\u2026cellable = cancellable) }"
+    const-string p1, "viewState: BaseView, can\u2026cellable = cancellable) }"
 
+    .line 18
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
@@ -157,22 +167,20 @@
     return-object p0
 .end method
 
-.method private static final withLoadingDialog$lambda-0(Lcom/smedialink/ui/base/mvp/base/BaseView;ZLio/reactivex/disposables/Disposable;)V
+.method private static final withLoadingDialog$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string v0, "$viewState"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v0, 0x1
-
     .line 18
-    invoke-interface {p0, v0, p1, p2}, Lcom/smedialink/ui/base/mvp/base/BaseView;->showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final withLoadingDialog$lambda-1(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
+.method private static final withLoadingDialog$lambda$1(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
     .locals 7
 
     const-string v0, "$viewState"
@@ -197,22 +205,20 @@
     return-void
 .end method
 
-.method private static final withLoadingDialog$lambda-4(Lcom/smedialink/ui/base/mvp/base/BaseView;ZLio/reactivex/disposables/Disposable;)V
+.method private static final withLoadingDialog$lambda$4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string v0, "$viewState"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v0, 0x1
-
     .line 32
-    invoke-interface {p0, v0, p1, p2}, Lcom/smedialink/ui/base/mvp/base/BaseView;->showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final withLoadingDialog$lambda-5(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
+.method private static final withLoadingDialog$lambda$5(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
     .locals 7
 
     const-string v0, "$viewState"

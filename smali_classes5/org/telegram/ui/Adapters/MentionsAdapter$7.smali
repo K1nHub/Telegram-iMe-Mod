@@ -53,7 +53,7 @@
 .method constructor <init>(Lorg/telegram/ui/Adapters/MentionsAdapter;Lorg/telegram/tgnet/TLRPC$Chat;Ljava/lang/String;ILjava/util/ArrayList;Landroidx/collection/LongSparseArray;Lorg/telegram/messenger/MessagesController;)V
     .locals 0
 
-    .line 1198
+    .line 1210
     iput-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->val$chat:Lorg/telegram/tgnet/TLRPC$Chat;
@@ -76,7 +76,7 @@
 .method private synthetic lambda$run$0(ILjava/util/ArrayList;Landroidx/collection/LongSparseArray;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/MessagesController;)V
     .locals 6
 
-    .line 1218
+    .line 1230
     iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$1800(Lorg/telegram/ui/Adapters/MentionsAdapter;)I
@@ -85,7 +85,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
@@ -93,7 +93,7 @@
 
     move-result v0
 
-    if-ne p1, v0, :cond_6
+    if-ne p1, v0, :cond_7
 
     iget-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
@@ -101,7 +101,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_7
 
     iget-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
@@ -109,29 +109,29 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_7
 
-    .line 1219
+    .line 1231
     iget-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {p1, p2, p3, v1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$2100(Lorg/telegram/ui/Adapters/MentionsAdapter;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;Z)V
 
-    if-nez p4, :cond_5
+    if-nez p4, :cond_6
 
-    .line 1221
+    .line 1233
     check-cast p5, Lorg/telegram/tgnet/TLRPC$TL_channels_channelParticipants;
 
-    .line 1222
+    .line 1234
     iget-object p1, p5, Lorg/telegram/tgnet/TLRPC$channels_ChannelParticipants;->users:Ljava/util/ArrayList;
 
     invoke-virtual {p6, p1, v1}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 1223
+    .line 1235
     iget-object p1, p5, Lorg/telegram/tgnet/TLRPC$channels_ChannelParticipants;->chats:Ljava/util/ArrayList;
 
     invoke-virtual {p6, p1, v1}, Lorg/telegram/messenger/MessagesController;->putChats(Ljava/util/ArrayList;Z)V
 
-    .line 1224
+    .line 1236
     iget-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {p1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$2000(Lorg/telegram/ui/Adapters/MentionsAdapter;)Ljava/util/ArrayList;
@@ -140,16 +140,16 @@
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
-    .line 1225
+    .line 1237
     iget-object p1, p5, Lorg/telegram/tgnet/TLRPC$channels_ChannelParticipants;->participants:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p1
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_6
 
-    .line 1226
+    .line 1238
     iget-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {p1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$1500(Lorg/telegram/ui/Adapters/MentionsAdapter;)I
@@ -166,7 +166,7 @@
 
     const/4 p3, 0x0
 
-    .line 1227
+    .line 1239
     :goto_0
     iget-object p4, p5, Lorg/telegram/tgnet/TLRPC$channels_ChannelParticipants;->participants:Ljava/util/ArrayList;
 
@@ -174,9 +174,9 @@
 
     move-result p4
 
-    if-ge p3, p4, :cond_5
+    if-ge p3, p4, :cond_6
 
-    .line 1228
+    .line 1240
     iget-object p4, p5, Lorg/telegram/tgnet/TLRPC$channels_ChannelParticipants;->participants:Ljava/util/ArrayList;
 
     invoke-virtual {p4, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -185,14 +185,14 @@
 
     check-cast p4, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
-    .line 1229
+    .line 1241
     iget-object p4, p4, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {p4}, Lorg/telegram/messenger/MessageObject;->getPeerId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
     move-result-wide v2
 
-    .line 1230
+    .line 1242
     iget-object p4, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {p4}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$1900(Lorg/telegram/ui/Adapters/MentionsAdapter;)Landroidx/collection/LongSparseArray;
@@ -203,30 +203,47 @@
 
     move-result p4
 
-    if-gez p4, :cond_4
+    if-gez p4, :cond_5
 
-    iget-object p4, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
-
-    invoke-static {p4}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$2200(Lorg/telegram/ui/Adapters/MentionsAdapter;)Z
-
-    move-result p4
-
-    if-nez p4, :cond_0
-
-    cmp-long p4, v2, p1
-
-    if-nez p4, :cond_0
-
-    goto :goto_1
-
-    :cond_0
     const-wide/16 v4, 0x0
 
     cmp-long p4, v2, v4
 
-    if-ltz p4, :cond_2
+    if-nez p4, :cond_0
 
-    .line 1234
+    iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
+
+    invoke-static {v0}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$1900(Lorg/telegram/ui/Adapters/MentionsAdapter;)Landroidx/collection/LongSparseArray;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1, p2}, Landroidx/collection/LongSparseArray;->indexOfKey(J)I
+
+    move-result v0
+
+    if-gez v0, :cond_5
+
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
+
+    invoke-static {v0}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$2200(Lorg/telegram/ui/Adapters/MentionsAdapter;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    cmp-long v0, v2, p1
+
+    if-eqz v0, :cond_5
+
+    if-nez p4, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    if-ltz p4, :cond_3
+
+    .line 1246
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p4
@@ -235,12 +252,12 @@
 
     move-result-object p4
 
-    if-nez p4, :cond_1
+    if-nez p4, :cond_2
 
     return-void
 
-    .line 1238
-    :cond_1
+    .line 1250
+    :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$2000(Lorg/telegram/ui/Adapters/MentionsAdapter;)Ljava/util/ArrayList;
@@ -251,10 +268,10 @@
 
     goto :goto_1
 
-    :cond_2
+    :cond_3
     neg-long v2, v2
 
-    .line 1240
+    .line 1252
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p4
@@ -263,12 +280,12 @@
 
     move-result-object p4
 
-    if-nez p4, :cond_3
+    if-nez p4, :cond_4
 
     return-void
 
-    .line 1244
-    :cond_3
+    .line 1256
+    :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$2000(Lorg/telegram/ui/Adapters/MentionsAdapter;)Ljava/util/ArrayList;
@@ -277,19 +294,19 @@
 
     invoke-virtual {v0, p4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_4
+    :cond_5
     :goto_1
     add-int/lit8 p3, p3, 0x1
 
     goto :goto_0
 
-    .line 1249
-    :cond_5
+    .line 1261
+    :cond_6
     iget-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->notifyDataSetChanged()V
 
-    .line 1250
+    .line 1262
     iget-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {p1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$2300(Lorg/telegram/ui/Adapters/MentionsAdapter;)Lorg/telegram/ui/Adapters/MentionsAdapter$MentionsAdapterDelegate;
@@ -310,8 +327,8 @@
 
     invoke-interface {p1, p2}, Lorg/telegram/ui/Adapters/MentionsAdapter$MentionsAdapterDelegate;->needChangePanelVisibility(Z)V
 
-    .line 1252
-    :cond_6
+    .line 1264
+    :cond_7
     iget-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$1802(Lorg/telegram/ui/Adapters/MentionsAdapter;I)I
@@ -322,7 +339,7 @@
 .method private synthetic lambda$run$1(ILjava/util/ArrayList;Landroidx/collection/LongSparseArray;Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 9
 
-    .line 1217
+    .line 1229
     new-instance v8, Lorg/telegram/ui/Adapters/MentionsAdapter$7$$ExternalSyntheticLambda0;
 
     move-object v0, v8
@@ -353,7 +370,7 @@
 .method public run()V
     .locals 10
 
-    .line 1201
+    .line 1213
     iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$1600(Lorg/telegram/ui/Adapters/MentionsAdapter;)Ljava/lang/Runnable;
@@ -364,13 +381,13 @@
 
     return-void
 
-    .line 1204
+    .line 1216
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;-><init>()V
 
-    .line 1205
+    .line 1217
     iget-object v1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->val$chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInputChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Lorg/telegram/tgnet/TLRPC$InputChannel;
@@ -381,56 +398,56 @@
 
     const/16 v1, 0x14
 
-    .line 1206
+    .line 1218
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->limit:I
 
     const/4 v1, 0x0
 
-    .line 1207
+    .line 1219
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->offset:I
 
-    .line 1208
+    .line 1220
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsMentions;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsMentions;-><init>()V
 
-    .line 1209
+    .line 1221
     iget v2, v1, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsMentions;->flags:I
 
     or-int/lit8 v2, v2, 0x1
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsMentions;->flags:I
 
-    .line 1210
+    .line 1222
     iget-object v3, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->val$usernameString:Ljava/lang/String;
 
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$ChannelParticipantsFilter;->q:Ljava/lang/String;
 
-    .line 1211
+    .line 1223
     iget v3, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->val$threadId:I
 
     if-eqz v3, :cond_1
 
     or-int/lit8 v2, v2, 0x2
 
-    .line 1212
+    .line 1224
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsMentions;->flags:I
 
-    .line 1213
+    .line 1225
     iput v3, v1, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsMentions;->top_msg_id:I
 
-    .line 1215
+    .line 1227
     :cond_1
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->filter:Lorg/telegram/tgnet/TLRPC$ChannelParticipantsFilter;
 
-    .line 1216
+    .line 1228
     iget-object v1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {v1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$1704(Lorg/telegram/ui/Adapters/MentionsAdapter;)I
 
     move-result v4
 
-    .line 1217
+    .line 1229
     iget-object v1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$7;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {v1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$1500(Lorg/telegram/ui/Adapters/MentionsAdapter;)I

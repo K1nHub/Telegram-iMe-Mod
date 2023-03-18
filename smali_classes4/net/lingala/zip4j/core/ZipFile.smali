@@ -257,7 +257,7 @@
     :cond_4
     new-instance v0, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string v1, "zip file does not exist"
+    const-string/jumbo v1, "zip file does not exist"
 
     invoke-direct {v0, v1}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;)V
 

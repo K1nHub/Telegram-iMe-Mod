@@ -29,11 +29,26 @@ public final class FilteredByOnlineContactsDelegate extends BaseController {
 
         static {
             int[] iArr = new int[ContactsFilter.values().length];
-            iArr[ContactsFilter.ONLINE.ordinal()] = 1;
-            iArr[ContactsFilter.MUTUAL.ordinal()] = 2;
-            iArr[ContactsFilter.NOT_MUTUAL.ordinal()] = 3;
-            iArr[ContactsFilter.BLOCKED.ordinal()] = 4;
-            iArr[ContactsFilter.ALL.ordinal()] = 5;
+            try {
+                iArr[ContactsFilter.ONLINE.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[ContactsFilter.MUTUAL.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[ContactsFilter.NOT_MUTUAL.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[ContactsFilter.BLOCKED.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[ContactsFilter.ALL.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -110,6 +125,6 @@ public final class FilteredByOnlineContactsDelegate extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean userIsOnline(TLRPC$User tLRPC$User) {
         TLRPC$UserStatus tLRPC$UserStatus = tLRPC$User.status;
-        return (tLRPC$UserStatus != null && tLRPC$UserStatus.expires > getConnectionsManager().getCurrentTime()) || getMessagesController().onlinePrivacy.containsKey(Long.valueOf(tLRPC$User.f1633id));
+        return (tLRPC$UserStatus != null && tLRPC$UserStatus.expires > getConnectionsManager().getCurrentTime()) || getMessagesController().onlinePrivacy.containsKey(Long.valueOf(tLRPC$User.f1639id));
     }
 }

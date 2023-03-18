@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/languages/LanguagesAdapter$$ExternalSyntheticLambda0;->f$1:Lcom/smedialink/ui/languages/LanguageViewModel;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/languages/LanguagesAdapter;->$r8$lambda$7B-Nzhqqfv6CMLDjHiWpwKaIAIY(Lcom/smedialink/ui/languages/LanguagesAdapter;Lcom/smedialink/ui/languages/LanguageViewModel;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/languages/LanguagesAdapter;->$r8$lambda$QYTq8V-6Y2OL-fJm18e8hL2au28(Lcom/smedialink/ui/languages/LanguagesAdapter;Lcom/smedialink/ui/languages/LanguageViewModel;Landroid/view/View;)V
 
     return-void
 .end method

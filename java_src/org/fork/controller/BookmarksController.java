@@ -19,6 +19,7 @@ import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt__MapsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.sequences.Sequence;
@@ -104,19 +105,18 @@ public final class BookmarksController extends BaseController implements KoinCom
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.BookmarksController$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                BookmarksController.m1897setNewBookmarks$lambda2(BookmarksController.this);
+                BookmarksController.setNewBookmarks$lambda$2(BookmarksController.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setNewBookmarks$lambda-2  reason: not valid java name */
-    public static final void m1897setNewBookmarks$lambda2(BookmarksController this$0) {
+    public static final void setNewBookmarks$lambda$2(BookmarksController this$0) {
         List<BookmarksModel> list;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         BookmarksDao dao = this$0.getDao();
         long j = this$0.getUserConfig().clientUserId;
-        list = CollectionsKt___CollectionsKt.toList(this$0.getBookmarks().values());
+        list = CollectionsKt___CollectionsKt.toList(this$0.bookmarks.values());
         dao.restoreBackup(j, list);
     }
 
@@ -131,17 +131,16 @@ public final class BookmarksController extends BaseController implements KoinCom
         }
         final BookmarksModel bookmarksModel2 = bookmarksModel;
         bookmarksModel2.getMessageIds().addAll(ids);
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.BookmarksController$$ExternalSyntheticLambda1
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.BookmarksController$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                BookmarksController.m1896bookmarkMessages$lambda4(BookmarksController.this, bookmarksModel2);
+                BookmarksController.bookmarkMessages$lambda$4(BookmarksController.this, bookmarksModel2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: bookmarkMessages$lambda-4  reason: not valid java name */
-    public static final void m1896bookmarkMessages$lambda4(BookmarksController this$0, BookmarksModel bookmarksModel) {
+    public static final void bookmarkMessages$lambda$4(BookmarksController this$0, BookmarksModel bookmarksModel) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(bookmarksModel, "$bookmarksModel");
         this$0.getDao().insert((BookmarksDao) BookmarksMappingKt.mapToDb(bookmarksModel, this$0.getUserConfig().clientUserId));
@@ -160,17 +159,16 @@ public final class BookmarksController extends BaseController implements KoinCom
         if (bookmarksModel.getMessageIds().isEmpty()) {
             this.bookmarks.remove(Long.valueOf(j));
         }
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.BookmarksController$$ExternalSyntheticLambda2
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.BookmarksController$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                BookmarksController.m1899unbookmarkMessages$lambda5(BookmarksController.this, bookmarksModel);
+                BookmarksController.unbookmarkMessages$lambda$5(BookmarksController.this, bookmarksModel);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: unbookmarkMessages$lambda-5  reason: not valid java name */
-    public static final void m1899unbookmarkMessages$lambda5(BookmarksController this$0, BookmarksModel bookmarksModel) {
+    public static final void unbookmarkMessages$lambda$5(BookmarksController this$0, BookmarksModel bookmarksModel) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(bookmarksModel, "$bookmarksModel");
         this$0.getDao().insert((BookmarksDao) BookmarksMappingKt.mapToDb(bookmarksModel, this$0.getUserConfig().clientUserId));
@@ -187,24 +185,23 @@ public final class BookmarksController extends BaseController implements KoinCom
         final ArrayList arrayList = new ArrayList();
         for (Number number : dialogIds) {
             long longValue = number.longValue();
-            BookmarksModel bookmarksModel = getBookmarks().get(Long.valueOf(longValue));
+            BookmarksModel bookmarksModel = this.bookmarks.get(Long.valueOf(longValue));
             if (bookmarksModel != null) {
                 bookmarksModel.getMessageIds().clear();
                 arrayList.add(bookmarksModel);
-                getBookmarks().remove(Long.valueOf(longValue));
+                this.bookmarks.remove(Long.valueOf(longValue));
             }
         }
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.BookmarksController$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                BookmarksController.m1898unbookmarkAllMessages$lambda8(BookmarksController.this, arrayList);
+                BookmarksController.unbookmarkAllMessages$lambda$8(BookmarksController.this, arrayList);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: unbookmarkAllMessages$lambda-8  reason: not valid java name */
-    public static final void m1898unbookmarkAllMessages$lambda8(BookmarksController this$0, List newBookmarks) {
+    public static final void unbookmarkAllMessages$lambda$8(BookmarksController this$0, List newBookmarks) {
         int collectionSizeOrDefault;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(newBookmarks, "$newBookmarks");
@@ -219,9 +216,9 @@ public final class BookmarksController extends BaseController implements KoinCom
     }
 
     public final ArrayList<Integer> getMessagesForDialog(long j) {
+        ArrayList<Integer> messageIds;
         BookmarksModel bookmarksModel = this.bookmarks.get(Long.valueOf(j));
-        ArrayList<Integer> messageIds = bookmarksModel == null ? null : bookmarksModel.getMessageIds();
-        return messageIds == null ? new ArrayList<>() : messageIds;
+        return (bookmarksModel == null || (messageIds = bookmarksModel.getMessageIds()) == null) ? new ArrayList<>() : messageIds;
     }
 
     /* compiled from: BookmarksController.kt */
@@ -235,14 +232,16 @@ public final class BookmarksController extends BaseController implements KoinCom
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: getInstance$lambda-0  reason: not valid java name */
-        public static final BookmarksController m1901getInstance$lambda0(int i, Integer it) {
-            Intrinsics.checkNotNullParameter(it, "it");
-            return new BookmarksController(i);
+        public static final BookmarksController getInstance$lambda$0(Function1 tmp0, Object obj) {
+            Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+            return (BookmarksController) tmp0.invoke(obj);
         }
 
-        public final BookmarksController getInstance(final int i) {
-            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(BookmarksController.accountInstances, Integer.valueOf(i), new Function() { // from class: org.fork.controller.BookmarksController$Companion$$ExternalSyntheticLambda0
+        public final BookmarksController getInstance(int i) {
+            ConcurrentHashMap concurrentHashMap = BookmarksController.accountInstances;
+            Integer valueOf = Integer.valueOf(i);
+            final BookmarksController$Companion$getInstance$1 bookmarksController$Companion$getInstance$1 = new BookmarksController$Companion$getInstance$1(i);
+            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: org.fork.controller.BookmarksController$Companion$$ExternalSyntheticLambda0
                 @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
@@ -250,9 +249,9 @@ public final class BookmarksController extends BaseController implements KoinCom
 
                 @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
-                    BookmarksController m1901getInstance$lambda0;
-                    m1901getInstance$lambda0 = BookmarksController.Companion.m1901getInstance$lambda0(i, (Integer) obj);
-                    return m1901getInstance$lambda0;
+                    BookmarksController instance$lambda$0;
+                    instance$lambda$0 = BookmarksController.Companion.getInstance$lambda$0(Function1.this, obj);
+                    return instance$lambda$0;
                 }
 
                 @Override // p034j$.util.function.Function
@@ -260,7 +259,7 @@ public final class BookmarksController extends BaseController implements KoinCom
                     return Objects.requireNonNull(function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountInstances.compute…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
             return (BookmarksController) computeIfAbsent;
         }
     }

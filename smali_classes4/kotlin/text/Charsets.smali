@@ -8,9 +8,9 @@
 
 .field public static final UTF_8:Ljava/nio/charset/Charset;
 
-.field private static utf_32be:Ljava/nio/charset/Charset;
+.field private static volatile utf_32be:Ljava/nio/charset/Charset;
 
-.field private static utf_32le:Ljava/nio/charset/Charset;
+.field private static volatile utf_32le:Ljava/nio/charset/Charset;
 
 
 # direct methods
@@ -108,14 +108,14 @@
 .method public final UTF32_BE()Ljava/nio/charset/Charset;
     .locals 2
 
-    .line 92
+    .line 96
     sget-object v0, Lkotlin/text/Charsets;->utf_32be:Ljava/nio/charset/Charset;
 
     if-nez v0, :cond_0
 
     const-string v0, "UTF-32BE"
 
-    .line 93
+    .line 97
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
     move-result-object v0
@@ -124,7 +124,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 94
+    .line 98
     sput-object v0, Lkotlin/text/Charsets;->utf_32be:Ljava/nio/charset/Charset;
 
     :cond_0
@@ -134,14 +134,14 @@
 .method public final UTF32_LE()Ljava/nio/charset/Charset;
     .locals 2
 
-    .line 80
+    .line 82
     sget-object v0, Lkotlin/text/Charsets;->utf_32le:Ljava/nio/charset/Charset;
 
     if-nez v0, :cond_0
 
     const-string v0, "UTF-32LE"
 
-    .line 81
+    .line 83
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
     move-result-object v0
@@ -150,7 +150,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 82
+    .line 84
     sput-object v0, Lkotlin/text/Charsets;->utf_32le:Ljava/nio/charset/Charset;
 
     :cond_0

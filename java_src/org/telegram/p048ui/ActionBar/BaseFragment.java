@@ -9,7 +9,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -69,7 +68,7 @@ import timber.log.Timber;
 /* renamed from: org.telegram.ui.ActionBar.BaseFragment */
 /* loaded from: classes5.dex */
 public abstract class BaseFragment {
-    protected C3222ActionBar actionBar;
+    protected C3351ActionBar actionBar;
     protected Bundle arguments;
     protected int classGuid;
     protected int currentAccount;
@@ -119,9 +118,6 @@ public abstract class BaseFragment {
 
     public boolean dismissDialogOnPause(Dialog dialog) {
         return true;
-    }
-
-    public void drawOverlay(Canvas canvas, View view) {
     }
 
     public boolean extendActionMode(Menu menu) {
@@ -209,9 +205,6 @@ public abstract class BaseFragment {
     public void onSlideProgress(boolean z, float f) {
     }
 
-    public void onSlideProgressFront(boolean z, float f) {
-    }
-
     public void onTransitionAnimationEnd(boolean z, boolean z2) {
     }
 
@@ -270,10 +263,6 @@ public abstract class BaseFragment {
 
     public boolean isInMenuMode() {
         return this.inMenuMode;
-    }
-
-    public PinnedPlayerView getPinnedPlayerView() {
-        return this.pinnedPlayerView;
     }
 
     public AlbumsController getAlbumsController() {
@@ -362,24 +351,16 @@ public abstract class BaseFragment {
         this.currentAccount = i;
     }
 
-    public boolean hasOwnBackground() {
-        return this.hasOwnBackground;
-    }
-
     public boolean getFragmentBeginToShow() {
         return this.fragmentBeginToShow;
     }
 
-    public C3222ActionBar getActionBar() {
+    public C3351ActionBar getActionBar() {
         return this.actionBar;
     }
 
     public View getFragmentView() {
         return this.fragmentView;
-    }
-
-    public void setFragmentView(View view) {
-        this.fragmentView = view;
     }
 
     public Bundle getArguments() {
@@ -406,22 +387,14 @@ public abstract class BaseFragment {
         return this.inPreviewMode;
     }
 
-    public INavigationLayout.BackButtonState getBackButtonState() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        if (c3222ActionBar != null) {
-            return c3222ActionBar.getBackButtonState();
-        }
-        return null;
-    }
-
     public void setInPreviewMode(boolean z) {
         this.inPreviewMode = z;
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        if (c3222ActionBar != null) {
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        if (c3351ActionBar != null) {
             if (z) {
-                c3222ActionBar.setOccupyStatusBar(false);
+                c3351ActionBar.setOccupyStatusBar(false);
             } else {
-                c3222ActionBar.setOccupyStatusBar(Build.VERSION.SDK_INT >= 21);
+                c3351ActionBar.setOccupyStatusBar(Build.VERSION.SDK_INT >= 21);
             }
         }
     }
@@ -445,9 +418,9 @@ public abstract class BaseFragment {
             this.fragmentView = null;
             onDestroyView();
         }
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        if (c3222ActionBar != null) {
-            ViewGroup viewGroup2 = (ViewGroup) c3222ActionBar.getParent();
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        if (c3351ActionBar != null) {
+            ViewGroup viewGroup2 = (ViewGroup) c3351ActionBar.getParent();
             if (viewGroup2 != null) {
                 try {
                     viewGroup2.removeViewInLayout(this.actionBar);
@@ -517,7 +490,7 @@ public abstract class BaseFragment {
             }
             INavigationLayout iNavigationLayout4 = this.parentLayout;
             if (iNavigationLayout4 != null && this.actionBar == null) {
-                C3222ActionBar createActionBar = createActionBar(iNavigationLayout4.getView().getContext());
+                C3351ActionBar createActionBar = createActionBar(iNavigationLayout4.getView().getContext());
                 this.actionBar = createActionBar;
                 if (createActionBar != null) {
                     createActionBar.parentFragment = this;
@@ -546,17 +519,17 @@ public abstract class BaseFragment {
         }
     }
 
-    public C3222ActionBar createActionBar(Context context) {
-        C3222ActionBar c3222ActionBar = new C3222ActionBar(context, getResourceProvider());
-        c3222ActionBar.setBackgroundColor(getThemedColor("actionBarDefault"));
-        c3222ActionBar.setItemsBackgroundColor(getThemedColor("actionBarDefaultSelector"), false);
-        c3222ActionBar.setItemsBackgroundColor(getThemedColor("actionBarActionModeDefaultSelector"), true);
-        c3222ActionBar.setItemsColor(getThemedColor("actionBarDefaultIcon"), false);
-        c3222ActionBar.setItemsColor(getThemedColor("actionBarActionModeDefaultIcon"), true);
+    public C3351ActionBar createActionBar(Context context) {
+        C3351ActionBar c3351ActionBar = new C3351ActionBar(context, getResourceProvider());
+        c3351ActionBar.setBackgroundColor(getThemedColor("actionBarDefault"));
+        c3351ActionBar.setItemsBackgroundColor(getThemedColor("actionBarDefaultSelector"), false);
+        c3351ActionBar.setItemsBackgroundColor(getThemedColor("actionBarActionModeDefaultSelector"), true);
+        c3351ActionBar.setItemsColor(getThemedColor("actionBarDefaultIcon"), false);
+        c3351ActionBar.setItemsColor(getThemedColor("actionBarActionModeDefaultIcon"), true);
         if (this.inPreviewMode || this.inBubbleMode) {
-            c3222ActionBar.setOccupyStatusBar(false);
+            c3351ActionBar.setOccupyStatusBar(false);
         }
-        return c3222ActionBar;
+        return c3351ActionBar;
     }
 
     public void movePreviewFragment(float f) {
@@ -586,13 +559,14 @@ public abstract class BaseFragment {
         this.finishing = z;
     }
 
-    public void finishFragment(boolean z) {
+    public boolean finishFragment(boolean z) {
         INavigationLayout iNavigationLayout;
         if (this.isFinished || (iNavigationLayout = this.parentLayout) == null) {
-            return;
+            return false;
         }
         this.finishing = true;
         iNavigationLayout.closeLastFragment(z);
+        return true;
     }
 
     public void removeSelfFromStack() {
@@ -621,9 +595,9 @@ public abstract class BaseFragment {
         getConnectionsManager().cancelRequestsForGuid(this.classGuid);
         getMessagesStorage().cancelTasksForGuid(this.classGuid);
         this.isFinished = true;
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        if (c3222ActionBar != null) {
-            c3222ActionBar.setEnabled(false);
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        if (c3351ActionBar != null) {
+            c3351ActionBar.setEnabled(false);
         }
         if (!hasForceLightStatusBar() || AndroidUtilities.isTablet() || getParentLayout() == null || getParentLayout().getLastFragment() != this || getParentActivity() == null || this.finishing) {
             return;
@@ -644,9 +618,9 @@ public abstract class BaseFragment {
     }
 
     public void onPause() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        if (c3222ActionBar != null) {
-            c3222ActionBar.onPause();
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        if (c3351ActionBar != null) {
+            c3351ActionBar.onPause();
         }
         this.isPaused = true;
         try {
@@ -657,17 +631,6 @@ public abstract class BaseFragment {
             }
         } catch (Exception e) {
             FileLog.m45e(e);
-        }
-    }
-
-    public void setPaused(boolean z) {
-        if (this.isPaused == z) {
-            return;
-        }
-        if (z) {
-            onPause();
-        } else {
-            onResume();
         }
     }
 
@@ -722,6 +685,11 @@ public abstract class BaseFragment {
         return allowPresentFragment() && (iNavigationLayout = this.parentLayout) != null && iNavigationLayout.presentFragment(baseFragment, z, z2, true, false, null);
     }
 
+    public boolean presentFragment(INavigationLayout.NavigationParams navigationParams) {
+        INavigationLayout iNavigationLayout;
+        return allowPresentFragment() && (iNavigationLayout = this.parentLayout) != null && iNavigationLayout.presentFragment(navigationParams);
+    }
+
     public Activity getParentActivity() {
         INavigationLayout iNavigationLayout = this.parentLayout;
         if (iNavigationLayout != null) {
@@ -772,9 +740,9 @@ public abstract class BaseFragment {
         } catch (Exception e) {
             FileLog.m45e(e);
         }
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        if (c3222ActionBar != null) {
-            c3222ActionBar.onPause();
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        if (c3351ActionBar != null) {
+            c3351ActionBar.onPause();
         }
     }
 
@@ -785,7 +753,7 @@ public abstract class BaseFragment {
     }
 
     public void onBecomeFullyVisible() {
-        C3222ActionBar actionBar;
+        C3351ActionBar actionBar;
         if (!((AccessibilityManager) ApplicationLoader.applicationContext.getSystemService("accessibility")).isEnabled() || (actionBar = getActionBar()) == null) {
             return;
         }
@@ -937,15 +905,15 @@ public abstract class BaseFragment {
             return null;
         }
         INavigationLayout[] iNavigationLayoutArr = {INavigationLayout.CC.newLayout(getParentActivity())};
-        DialogC32791 dialogC32791 = new DialogC32791(this, getParentActivity(), true, iNavigationLayoutArr, baseFragment);
-        baseFragment.setParentDialog(dialogC32791);
-        dialogC32791.show();
+        DialogC34101 dialogC34101 = new DialogC34101(this, getParentActivity(), true, iNavigationLayoutArr, baseFragment);
+        baseFragment.setParentDialog(dialogC34101);
+        dialogC34101.show();
         return iNavigationLayoutArr;
     }
 
     /* renamed from: org.telegram.ui.ActionBar.BaseFragment$1 */
     /* loaded from: classes5.dex */
-    class DialogC32791 extends BottomSheet {
+    class DialogC34101 extends BottomSheet {
         final /* synthetic */ INavigationLayout[] val$actionBarLayout;
         final /* synthetic */ BaseFragment val$fragment;
 
@@ -955,7 +923,7 @@ public abstract class BaseFragment {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        DialogC32791(BaseFragment baseFragment, Context context, boolean z, INavigationLayout[] iNavigationLayoutArr, final BaseFragment baseFragment2) {
+        DialogC34101(BaseFragment baseFragment, Context context, boolean z, INavigationLayout[] iNavigationLayoutArr, final BaseFragment baseFragment2) {
             super(context, z);
             this.val$actionBarLayout = iNavigationLayoutArr;
             this.val$fragment = baseFragment2;
@@ -1037,8 +1005,8 @@ public abstract class BaseFragment {
         int color;
         if (!hasForceLightStatusBar() || Theme.getCurrentTheme().isDark()) {
             Theme.ResourcesProvider resourceProvider = getResourceProvider();
-            C3222ActionBar c3222ActionBar = this.actionBar;
-            String str = (c3222ActionBar == null || !c3222ActionBar.isActionModeShowed()) ? "actionBarDefault" : "actionBarActionModeDefault";
+            C3351ActionBar c3351ActionBar = this.actionBar;
+            String str = (c3351ActionBar == null || !c3351ActionBar.isActionModeShowed()) ? "actionBarDefault" : "actionBarActionModeDefault";
             if (resourceProvider != null) {
                 color = resourceProvider.getColorOrDefault(str);
             } else {

@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStickersSize.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StickersSize.kt\norg/fork/enums/StickersSize$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,23:1\n1#2:24\n11328#3:25\n11663#3,3:26\n37#4:29\n36#4,3:30\n*S KotlinDebug\n*F\n+ 1 StickersSize.kt\norg/fork/enums/StickersSize$Companion\n*L\n21#1:25\n21#1:26,3\n21#1:29\n21#1:30,3\n*E\n"
+    value = "SMAP\nStickersSize.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StickersSize.kt\norg/fork/enums/StickersSize$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,23:1\n1#2:24\n11335#3:25\n11670#3,3:26\n37#4,2:29\n*S KotlinDebug\n*F\n+ 1 StickersSize.kt\norg/fork/enums/StickersSize$Companion\n*L\n21#1:25\n21#1:26,3\n21#1:29,2\n*E\n"
 .end annotation
 
 
@@ -46,14 +46,14 @@
 
     move-result-object v0
 
-    .line 11328
+    .line 11335
     new-instance v1, Ljava/util/ArrayList;
 
     array-length v2, v0
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11663
+    .line 11670
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -74,6 +74,7 @@
 
     move-result-object v5
 
+    .line 11671
     invoke-interface {v1, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v4, v4, 0x1
@@ -87,10 +88,6 @@
     invoke-interface {v1, v0}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
-
-    const-string v1, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     check-cast v0, [Ljava/lang/String;
 

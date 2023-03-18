@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/view/TabbedViewPager$$ExternalSyntheticLambda0;->f$0:Lorg/fork/ui/view/TabbedViewPager;
 
-    invoke-static {v0}, Lorg/fork/ui/view/TabbedViewPager;->$r8$lambda$LP1aPCL8QfyEj1JABVxLStOIFxg(Lorg/fork/ui/view/TabbedViewPager;)V
+    invoke-static {v0}, Lorg/fork/ui/view/TabbedViewPager;->$r8$lambda$RECVTjWPnWFvdTzHDQICveCib_M(Lorg/fork/ui/view/TabbedViewPager;)V
 
     return-void
 .end method

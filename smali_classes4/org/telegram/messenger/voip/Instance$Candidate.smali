@@ -46,46 +46,46 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 372
+    .line 383
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 373
+    .line 384
     iput-object p1, p0, Lorg/telegram/messenger/voip/Instance$Candidate;->port:Ljava/lang/String;
 
-    .line 374
+    .line 385
     iput-object p2, p0, Lorg/telegram/messenger/voip/Instance$Candidate;->protocol:Ljava/lang/String;
 
-    .line 375
+    .line 386
     iput-object p3, p0, Lorg/telegram/messenger/voip/Instance$Candidate;->network:Ljava/lang/String;
 
-    .line 376
+    .line 387
     iput-object p4, p0, Lorg/telegram/messenger/voip/Instance$Candidate;->generation:Ljava/lang/String;
 
-    .line 377
+    .line 388
     iput-object p5, p0, Lorg/telegram/messenger/voip/Instance$Candidate;->id:Ljava/lang/String;
 
-    .line 378
+    .line 389
     iput-object p6, p0, Lorg/telegram/messenger/voip/Instance$Candidate;->component:Ljava/lang/String;
 
-    .line 379
+    .line 390
     iput-object p7, p0, Lorg/telegram/messenger/voip/Instance$Candidate;->foundation:Ljava/lang/String;
 
-    .line 380
+    .line 391
     iput-object p8, p0, Lorg/telegram/messenger/voip/Instance$Candidate;->priority:Ljava/lang/String;
 
-    .line 381
+    .line 392
     iput-object p9, p0, Lorg/telegram/messenger/voip/Instance$Candidate;->ip:Ljava/lang/String;
 
-    .line 382
+    .line 393
     iput-object p10, p0, Lorg/telegram/messenger/voip/Instance$Candidate;->type:Ljava/lang/String;
 
-    .line 383
+    .line 394
     iput-object p11, p0, Lorg/telegram/messenger/voip/Instance$Candidate;->tcpType:Ljava/lang/String;
 
-    .line 384
+    .line 395
     iput-object p12, p0, Lorg/telegram/messenger/voip/Instance$Candidate;->relAddr:Ljava/lang/String;
 
-    .line 385
+    .line 396
     iput-object p13, p0, Lorg/telegram/messenger/voip/Instance$Candidate;->relPort:Ljava/lang/String;
 
     return-void
@@ -96,7 +96,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 390
+    .line 401
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

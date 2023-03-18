@@ -1,5 +1,5 @@
 package io.grpc.okhttp.internal;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum TlsVersion {
     TLS_1_2("TLSv1.2"),
     TLS_1_1("TLSv1.1"),

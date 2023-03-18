@@ -1,12 +1,12 @@
 package io.grpc;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.common.p020io.BaseEncoding;
 import io.grpc.Metadata;
 import java.nio.charset.Charset;
 /* loaded from: classes3.dex */
 public final class InternalMetadata {
-    public static final Charset US_ASCII = Charset.forName(C0474C.ASCII_NAME);
+    public static final Charset US_ASCII = Charset.forName(C0468C.ASCII_NAME);
     public static final BaseEncoding BASE64_ENCODING_OMIT_PADDING = Metadata.BASE64_ENCODING_OMIT_PADDING;
 
     /* loaded from: classes3.dex */

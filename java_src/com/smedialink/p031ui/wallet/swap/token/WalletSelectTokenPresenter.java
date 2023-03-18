@@ -1,14 +1,10 @@
 package com.smedialink.p031ui.wallet.swap.token;
 
-import com.smedialink.mapper.wallet.select.SelectableMappingKt;
 import com.smedialink.model.wallet.select.SelectableToken;
-import com.smedialink.model.wallet.select.SelectableTokenBalance;
 import com.smedialink.model.wallet.select.SelectableTokenItem;
 import com.smedialink.model.wallet.select.SelectableType;
 import com.smedialink.p031ui.base.mvp.base.BasePresenter;
 import com.smedialink.p031ui.base.mvp.base.BaseView;
-import com.smedialink.storage.data.network.model.error.ErrorModel;
-import com.smedialink.storage.data.utils.extentions.NumberExtKt;
 import com.smedialink.storage.domain.interactor.binancepay.BinanceInternalInteractor;
 import com.smedialink.storage.domain.interactor.wallet.WalletInteractor;
 import com.smedialink.storage.domain.model.Result;
@@ -18,25 +14,19 @@ import com.smedialink.storage.domain.model.wallet.token.TokenBalance;
 import com.smedialink.storage.domain.model.wallet.token.TokenCode;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Comparator;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
-import kotlin.collections.MapsKt__MapsJVMKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.ranges.RangesKt___RangesKt;
 import moxy.InjectViewState;
-import timber.log.Timber;
 /* compiled from: WalletSelectTokenPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.swap.token.WalletSelectTokenPresenter */
@@ -61,8 +51,14 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
 
         static {
             int[] iArr = new int[SelectableType.values().length];
-            iArr[SelectableType.INTERNAL.ordinal()] = 1;
-            iArr[SelectableType.BINANCE.ordinal()] = 2;
+            try {
+                iArr[SelectableType.INTERNAL.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[SelectableType.BINANCE.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -114,90 +110,7 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
     private final void loadBinanceBalances() {
         Observable<Result<List<BinanceTokenBalanceInfo>>> observeOn = this.binanceInternalInteractor.getUserBalance().observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.swap.token.WalletSelectTokenPresenter$loadBinanceBalances$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Map supportedTokensItemsMap;
-                List mutableList;
-                List<SelectableTokenItem> withExcludedSelectedToken;
-                ResourceManager resourceManager;
-                int collectionSizeOrDefault;
-                int mapCapacity;
-                int coerceAtLeast;
-                Map supportedTokensItemsMap2;
-                List<SelectableTokenItem> withExcludedSelectedToken2;
-                boolean z;
-                ResourceManager resourceManager2;
-                SelectableTokenBalance mapToSelectable;
-                ResourceManager resourceManager3;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    Result.Success success = (Result.Success) result;
-                    if (!((Collection) success.getData()).isEmpty()) {
-                        Iterable iterable = (Iterable) success.getData();
-                        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(iterable, 10);
-                        mapCapacity = MapsKt__MapsJVMKt.mapCapacity(collectionSizeOrDefault);
-                        coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
-                        LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
-                        for (T t : iterable) {
-                            linkedHashMap.put(((BinanceTokenBalanceInfo) t).getAsset(), t);
-                        }
-                        supportedTokensItemsMap2 = WalletSelectTokenPresenter.this.getSupportedTokensItemsMap();
-                        Collection<SelectableTokenItem> values = supportedTokensItemsMap2.values();
-                        ArrayList arrayList = new ArrayList();
-                        for (SelectableTokenItem selectableTokenItem : values) {
-                            BinanceTokenBalanceInfo binanceTokenBalanceInfo = (BinanceTokenBalanceInfo) linkedHashMap.get(selectableTokenItem.getToken().getId());
-                            z = WalletSelectTokenPresenter.this.onlyPositiveBalance;
-                            SelectableTokenItem selectableTokenItem2 = null;
-                            if (!z) {
-                                if (binanceTokenBalanceInfo == null) {
-                                    mapToSelectable = null;
-                                } else {
-                                    resourceManager2 = WalletSelectTokenPresenter.this.resourceManager;
-                                    mapToSelectable = SelectableMappingKt.mapToSelectable(binanceTokenBalanceInfo, resourceManager2);
-                                }
-                                selectableTokenItem2 = SelectableTokenItem.copy$default(selectableTokenItem, null, mapToSelectable, 1, null);
-                            } else if (binanceTokenBalanceInfo != null && !NumberExtKt.isZero(Double.valueOf(binanceTokenBalanceInfo.getCombined().getTotal()))) {
-                                resourceManager3 = WalletSelectTokenPresenter.this.resourceManager;
-                                selectableTokenItem2 = SelectableTokenItem.copy$default(selectableTokenItem, null, SelectableMappingKt.mapToSelectable(binanceTokenBalanceInfo, resourceManager3), 1, null);
-                            }
-                            if (selectableTokenItem2 != null) {
-                                arrayList.add(selectableTokenItem2);
-                            }
-                        }
-                        withExcludedSelectedToken2 = WalletSelectTokenPresenter.this.withExcludedSelectedToken(arrayList);
-                        ((WalletSelectTokenView) WalletSelectTokenPresenter.this.getViewState()).onTokensLoaded(withExcludedSelectedToken2);
-                    }
-                } else if (result instanceof Result.Error) {
-                    WalletSelectTokenPresenter walletSelectTokenPresenter = WalletSelectTokenPresenter.this;
-                    supportedTokensItemsMap = walletSelectTokenPresenter.getSupportedTokensItemsMap();
-                    mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) supportedTokensItemsMap.values());
-                    withExcludedSelectedToken = walletSelectTokenPresenter.withExcludedSelectedToken(mutableList);
-                    ((WalletSelectTokenView) WalletSelectTokenPresenter.this.getViewState()).onTokensLoaded(withExcludedSelectedToken);
-                    ErrorModel error = ((Result.Error) result).getError();
-                    resourceManager = WalletSelectTokenPresenter.this.resourceManager;
-                    ((WalletSelectTokenView) WalletSelectTokenPresenter.this.getViewState()).showToast(error.getMessage(resourceManager));
-                } else if (result instanceof Result.Loading) {
-                    ((WalletSelectTokenView) WalletSelectTokenPresenter.this.getViewState()).onLoadingState();
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.swap.token.WalletSelectTokenPresenter$loadBinanceBalances$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2300xe8a4a06a(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2301xe8a4a06b((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -205,90 +118,7 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
     private final void loadInternalBalances() {
         Observable<Result<List<TokenBalance>>> observeOn = this.walletInteractor.getWalletBalance(false, this.networkType).distinctUntilChanged().observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.swap.token.WalletSelectTokenPresenter$loadInternalBalances$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Map supportedTokensItemsMap;
-                List mutableList;
-                List<SelectableTokenItem> withExcludedSelectedToken;
-                ResourceManager resourceManager;
-                int collectionSizeOrDefault;
-                int mapCapacity;
-                int coerceAtLeast;
-                Map supportedTokensItemsMap2;
-                List<SelectableTokenItem> withExcludedSelectedToken2;
-                boolean z;
-                ResourceManager resourceManager2;
-                SelectableTokenBalance mapToSelectable;
-                ResourceManager resourceManager3;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    Result.Success success = (Result.Success) result;
-                    if (!((Collection) success.getData()).isEmpty()) {
-                        Iterable iterable = (Iterable) success.getData();
-                        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(iterable, 10);
-                        mapCapacity = MapsKt__MapsJVMKt.mapCapacity(collectionSizeOrDefault);
-                        coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
-                        LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
-                        for (T t : iterable) {
-                            linkedHashMap.put(((TokenBalance) t).getCode().getName(), t);
-                        }
-                        supportedTokensItemsMap2 = WalletSelectTokenPresenter.this.getSupportedTokensItemsMap();
-                        Collection<SelectableTokenItem> values = supportedTokensItemsMap2.values();
-                        ArrayList arrayList = new ArrayList();
-                        for (SelectableTokenItem selectableTokenItem : values) {
-                            TokenBalance tokenBalance = (TokenBalance) linkedHashMap.get(selectableTokenItem.getToken().getId());
-                            z = WalletSelectTokenPresenter.this.onlyPositiveBalance;
-                            SelectableTokenItem selectableTokenItem2 = null;
-                            if (!z) {
-                                if (tokenBalance == null) {
-                                    mapToSelectable = null;
-                                } else {
-                                    resourceManager2 = WalletSelectTokenPresenter.this.resourceManager;
-                                    mapToSelectable = SelectableMappingKt.mapToSelectable(tokenBalance, resourceManager2);
-                                }
-                                selectableTokenItem2 = SelectableTokenItem.copy$default(selectableTokenItem, null, mapToSelectable, 1, null);
-                            } else if (tokenBalance != null && !NumberExtKt.isZero(Float.valueOf(tokenBalance.getTotalInDollars()))) {
-                                resourceManager3 = WalletSelectTokenPresenter.this.resourceManager;
-                                selectableTokenItem2 = SelectableTokenItem.copy$default(selectableTokenItem, null, SelectableMappingKt.mapToSelectable(tokenBalance, resourceManager3), 1, null);
-                            }
-                            if (selectableTokenItem2 != null) {
-                                arrayList.add(selectableTokenItem2);
-                            }
-                        }
-                        withExcludedSelectedToken2 = WalletSelectTokenPresenter.this.withExcludedSelectedToken(arrayList);
-                        ((WalletSelectTokenView) WalletSelectTokenPresenter.this.getViewState()).onTokensLoaded(withExcludedSelectedToken2);
-                    }
-                } else if (result instanceof Result.Error) {
-                    WalletSelectTokenPresenter walletSelectTokenPresenter = WalletSelectTokenPresenter.this;
-                    supportedTokensItemsMap = walletSelectTokenPresenter.getSupportedTokensItemsMap();
-                    mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) supportedTokensItemsMap.values());
-                    withExcludedSelectedToken = walletSelectTokenPresenter.withExcludedSelectedToken(mutableList);
-                    ((WalletSelectTokenView) WalletSelectTokenPresenter.this.getViewState()).onTokensLoaded(withExcludedSelectedToken);
-                    ErrorModel error = ((Result.Error) result).getError();
-                    resourceManager = WalletSelectTokenPresenter.this.resourceManager;
-                    ((WalletSelectTokenView) WalletSelectTokenPresenter.this.getViewState()).showToast(error.getMessage(resourceManager));
-                } else if (result instanceof Result.Loading) {
-                    ((WalletSelectTokenView) WalletSelectTokenPresenter.this.getViewState()).onLoadingState();
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.swap.token.WalletSelectTokenPresenter$loadInternalBalances$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2302x58d117dd(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2303x58d117de((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -301,7 +131,7 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
         for (Object obj : list) {
             String id = ((SelectableTokenItem) obj).getToken().getId();
             SelectableToken selectableToken = this.selectedToken;
-            if (!Intrinsics.areEqual(id, selectableToken == null ? null : selectableToken.getId())) {
+            if (!Intrinsics.areEqual(id, selectableToken != null ? selectableToken.getId() : null)) {
                 arrayList.add(obj);
             }
         }

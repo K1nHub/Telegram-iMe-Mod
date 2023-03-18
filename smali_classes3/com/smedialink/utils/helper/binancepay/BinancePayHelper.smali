@@ -25,18 +25,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$Ge52XvK6hTa5cGhmUFUvceuPl-o(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method public static synthetic $r8$lambda$ZirtOiSSmKft3BOegCe5otKbfZ8(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/utils/helper/binancepay/BinancePayHelper;->runWithCheckIsBinancePayActivated$lambda-1$lambda-0(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {p0, p1}, Lcom/smedialink/utils/helper/binancepay/BinancePayHelper;->runWithCheckIsBinancePayActivated$lambda$1(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ZYe9W4j_6C52fOSRrlWNaEJUwDo(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback;)V
+.method public static synthetic $r8$lambda$aehN_yjWA-gDbVHcNnWscT52Atg(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/utils/helper/binancepay/BinancePayHelper;->runWithCheckIsBinancePayActivated$lambda-1(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-static {p0}, Lcom/smedialink/utils/helper/binancepay/BinancePayHelper;->runWithCheckIsBinancePayActivated$lambda$1$lambda$0(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method
@@ -208,20 +208,14 @@
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {p0}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    if-nez p0, :cond_1
+    if-eqz p0, :cond_0
 
-    goto :goto_0
-
-    :cond_1
     sget-object v1, Lcom/smedialink/storage/common/AppConfiguration$Binance;->INSTANCE:Lcom/smedialink/storage/common/AppConfiguration$Binance;
 
     invoke-virtual {v1}, Lcom/smedialink/storage/common/AppConfiguration$Binance;->getAUTH_REDIRECT_URL()Ljava/lang/String;
@@ -236,7 +230,7 @@
 
     move-result v0
 
-    :goto_0
+    :cond_0
     return v0
 .end method
 
@@ -361,7 +355,7 @@
     return-void
 .end method
 
-.method private static final runWithCheckIsBinancePayActivated$lambda-1(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback;)V
+.method private static final runWithCheckIsBinancePayActivated$lambda$1(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback;)V
     .locals 7
 
     const-string v0, "$fragment"
@@ -385,19 +379,16 @@
 
     invoke-static/range {v1 .. v6}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->safeRunWalletScreen$default(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback;Lorg/fork/utils/Callbacks$Callback;ILjava/lang/Object;)V
 
-    if-nez p1, :cond_0
-
-    goto :goto_0
+    if-eqz p1, :cond_0
 
     .line 67
-    :cond_0
     invoke-interface {p1}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
-.method private static final runWithCheckIsBinancePayActivated$lambda-1$lambda-0(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method private static final runWithCheckIsBinancePayActivated$lambda$1$lambda$0(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 7
 
     const-string v0, "$fragment"

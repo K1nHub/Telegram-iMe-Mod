@@ -1,4 +1,6 @@
 package org.telegram.tgnet;
+
+import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_groupCallParticipant extends TLObject {
     public static int constructor = -341428482;
@@ -62,7 +64,7 @@ public class TLRPC$TL_groupCallParticipant extends TLObject {
         this.muted_by_you = (readInt32 & 512) != 0;
         this.volume_by_admin = (readInt32 & 1024) != 0;
         this.self = (readInt32 & 4096) != 0;
-        this.video_joined = (readInt32 & 32768) != 0;
+        this.video_joined = (readInt32 & LiteMode.FLAG_CHAT_SCALE) != 0;
         this.peer = TLRPC$Peer.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         this.date = abstractSerializedData.readInt32(z);
         if ((this.flags & 8) != 0) {
@@ -107,7 +109,7 @@ public class TLRPC$TL_groupCallParticipant extends TLObject {
         this.flags = i8;
         int i9 = this.self ? i8 | 4096 : i8 & (-4097);
         this.flags = i9;
-        int i10 = this.video_joined ? i9 | 32768 : i9 & (-32769);
+        int i10 = this.video_joined ? i9 | LiteMode.FLAG_CHAT_SCALE : i9 & (-32769);
         this.flags = i10;
         abstractSerializedData.writeInt32(i10);
         this.peer.serializeToStream(abstractSerializedData);

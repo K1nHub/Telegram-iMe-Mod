@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/smedialink/ui/catalog/tabs/all/CatalogAllPresenter;
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/smedialink/ui/catalog/tabs/all/CatalogAllPresenter;)V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/smedialink/ui/catalog/tabs/all/CatalogAllPresenter$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/ui/catalog/tabs/all/CatalogAllPresenter;
+    iput-object p1, p0, Lcom/smedialink/ui/catalog/tabs/all/CatalogAllPresenter$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -25,11 +25,9 @@
 .method public final accept(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/ui/catalog/tabs/all/CatalogAllPresenter$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/ui/catalog/tabs/all/CatalogAllPresenter;
+    iget-object v0, p0, Lcom/smedialink/ui/catalog/tabs/all/CatalogAllPresenter$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
 
-    check-cast p1, Lkotlin/Pair;
-
-    invoke-static {v0, p1}, Lcom/smedialink/ui/catalog/tabs/all/CatalogAllPresenter;->$r8$lambda$LMV1l6Rr1nGvDIFGK8L78AGFgEc(Lcom/smedialink/ui/catalog/tabs/all/CatalogAllPresenter;Lkotlin/Pair;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/catalog/tabs/all/CatalogAllPresenter;->$r8$lambda$BJ4hmsT9BWkxvzveKzn8FxOyPNk(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method

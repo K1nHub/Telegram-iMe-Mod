@@ -4,6 +4,7 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.view.MotionEvent;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p048ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p048ui.Components.GestureDetector2;
 /* renamed from: org.telegram.ui.LongPressListenerWithMovingGesture */
@@ -13,8 +14,11 @@ public class LongPressListenerWithMovingGesture implements View.OnTouchListener 
     private int[] location;
     Rect rect = new Rect();
     private View selectedMenuView;
+    float startFromX;
+    float startFromY;
     boolean subItemClicked;
     ActionBarPopupWindow submenu;
+    boolean tapConfirmedOrCanceled;
     View view;
 
     public void onLongPress() {
@@ -76,12 +80,14 @@ public class LongPressListenerWithMovingGesture implements View.OnTouchListener 
 
             @Override // org.telegram.p048ui.Components.GestureDetector2.OnGestureListener
             public boolean onSingleTapUp(MotionEvent motionEvent) {
-                View view = LongPressListenerWithMovingGesture.this.view;
-                if (view != null) {
-                    view.callOnClick();
+                View view;
+                LongPressListenerWithMovingGesture longPressListenerWithMovingGesture = LongPressListenerWithMovingGesture.this;
+                if (longPressListenerWithMovingGesture.tapConfirmedOrCanceled || (view = longPressListenerWithMovingGesture.view) == null) {
                     return false;
                 }
-                return false;
+                view.callOnClick();
+                LongPressListenerWithMovingGesture.this.tapConfirmedOrCanceled = true;
+                return true;
             }
 
             @Override // org.telegram.p048ui.Components.GestureDetector2.OnGestureListener
@@ -101,6 +107,11 @@ public class LongPressListenerWithMovingGesture implements View.OnTouchListener 
     public boolean onTouch(View view, MotionEvent motionEvent) {
         View view2;
         this.view = view;
+        if (motionEvent.getAction() == 0) {
+            this.startFromX = motionEvent.getX();
+            this.startFromY = motionEvent.getY();
+            this.tapConfirmedOrCanceled = false;
+        }
         this.gestureDetector2.onTouchEvent(motionEvent);
         if (this.submenu != null && !this.subItemClicked && motionEvent.getAction() == 2) {
             this.view.getLocationOnScreen(this.location);
@@ -138,7 +149,12 @@ public class LongPressListenerWithMovingGesture implements View.OnTouchListener 
                 }
             }
         }
-        if (motionEvent.getAction() == 1 && !this.subItemClicked) {
+        if ((motionEvent.getAction() == 2 && Math.abs(motionEvent.getX() - this.startFromX) > AndroidUtilities.touchSlop * 2.0f) || Math.abs(motionEvent.getY() - this.startFromY) > AndroidUtilities.touchSlop * 2.0f) {
+            this.tapConfirmedOrCanceled = true;
+            this.view.setPressed(false);
+            this.view.setSelected(false);
+        }
+        if (motionEvent.getAction() == 1 && !this.subItemClicked && !this.tapConfirmedOrCanceled) {
             View view3 = this.selectedMenuView;
             if (view3 != null) {
                 view3.callOnClick();

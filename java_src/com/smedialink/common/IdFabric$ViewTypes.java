@@ -14,6 +14,7 @@ public class IdFabric$ViewTypes {
     public static final int CHAT_ATTACH_FOOTER;
     public static final int CHAT_ATTACH_HEADER;
     public static final int CHOOSE_FEE;
+    public static final int CHOOSE_RECIPIENT_OPTIONS;
     public static final int CONTACTS_FILTER;
     public static final int CONTACTS_INPUT_ADDRESS;
     public static final int CREATE_ACCOUNT;
@@ -72,7 +73,7 @@ public class IdFabric$ViewTypes {
     public static final int TEXT;
     public static final int TEXT_CHECK;
     public static final int TEXT_CHECK_BOX;
-    public static final int TEXT_DETAIL_WITH_RANGE;
+    public static final int TEXT_DETAIL_WITH_RANK;
     public static final int TEXT_INFO_PRIVACY;
     public static final int TEXT_NETWORK_SWITCHER;
     public static final int TEXT_SETTINGS;
@@ -82,7 +83,14 @@ public class IdFabric$ViewTypes {
     public static final int TOPICS_BAR;
     public static final int TOTAL_BALANCE;
     public static final int TRANSACTION;
+    public static final int TWEET;
+    public static final int TWEETS_DATE;
+    public static final int TWITTER;
+    public static final int TWITTER_INVITE;
+    public static final int TWITTER_USER;
     public static final int URL_BUTTON;
+    public static final int VIEW_TYPE_EXPANDABLE_SWITCH;
+    public static final int VIEW_TYPE_INNER_CHECK;
     public static final int WALLET_CONNECT_SESSION;
 
     /* renamed from: id */
@@ -266,7 +274,7 @@ public class IdFabric$ViewTypes {
         TOPIC = i58;
         int i60 = i59 + 1;
         f261id = i60;
-        TEXT_DETAIL_WITH_RANGE = i59;
+        TEXT_DETAIL_WITH_RANK = i59;
         int i61 = i60 + 1;
         f261id = i61;
         MOVING_REACTION = i60;
@@ -336,7 +344,31 @@ public class IdFabric$ViewTypes {
         int i83 = i82 + 1;
         f261id = i83;
         TON_ADDRESS_VERSION = i82;
-        f261id = i83 + 1;
+        int i84 = i83 + 1;
+        f261id = i84;
         FILTERS_LIST = i83;
+        int i85 = i84 + 1;
+        f261id = i85;
+        VIEW_TYPE_EXPANDABLE_SWITCH = i84;
+        int i86 = i85 + 1;
+        f261id = i86;
+        VIEW_TYPE_INNER_CHECK = i85;
+        int i87 = i86 + 1;
+        f261id = i87;
+        TWITTER = i86;
+        int i88 = i87 + 1;
+        f261id = i88;
+        TWITTER_USER = i87;
+        int i89 = i88 + 1;
+        f261id = i89;
+        TWITTER_INVITE = i88;
+        int i90 = i89 + 1;
+        f261id = i90;
+        TWEET = i89;
+        int i91 = i90 + 1;
+        f261id = i91;
+        TWEETS_DATE = i90;
+        f261id = i91 + 1;
+        CHOOSE_RECIPIENT_OPTIONS = i91;
     }
 }

@@ -59,6 +59,6 @@ public class JDK8PlatformImplementations extends JDK7PlatformImplementations {
 
     @Override // kotlin.internal.PlatformImplementations
     public Random defaultPlatformRandom() {
-        return sdkIsNullOrAtLeast(24) ? new PlatformThreadLocalRandom() : super.defaultPlatformRandom();
+        return sdkIsNullOrAtLeast(34) ? new PlatformThreadLocalRandom() : super.defaultPlatformRandom();
     }
 }

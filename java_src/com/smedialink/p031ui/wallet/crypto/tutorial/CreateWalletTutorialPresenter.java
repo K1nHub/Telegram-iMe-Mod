@@ -8,7 +8,7 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: CreateWalletTutorialPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.crypto.tutorial.CreateWalletTutorialPresenter */
@@ -26,10 +26,10 @@ public final class CreateWalletTutorialPresenter extends BasePresenter<CreateWal
         List<TutorialPage> mutableListOf2;
         TutorialType tutorialType = this.tutorialType;
         if (tutorialType instanceof TutorialType.Intro) {
-            mutableListOf2 = CollectionsKt__CollectionsKt.mutableListOf(new TutorialPage(C3158R.C3164raw.fork_non_custodial, C3158R.string.wallet_create_eth_account_tutorial_backup_title, C3158R.string.wallet_create_eth_account_tutorial_backup_description), new TutorialPage(C3158R.C3164raw.fork_tutorial_check_data, C3158R.string.wallet_create_eth_account_tutorial_check_data_title, C3158R.string.wallet_create_eth_account_tutorial_check_data_description), new TutorialPage(C3158R.C3164raw.fork_tutorial_be_carefull, C3158R.string.wallet_create_eth_account_tutorial_carefull_title, C3158R.string.wallet_create_eth_account_tutorial_carefull_description));
+            mutableListOf2 = CollectionsKt__CollectionsKt.mutableListOf(new TutorialPage(C3286R.C3291raw.fork_non_custodial, C3286R.string.wallet_create_eth_account_tutorial_backup_title, C3286R.string.wallet_create_eth_account_tutorial_backup_description), new TutorialPage(C3286R.C3291raw.fork_tutorial_check_data, C3286R.string.wallet_create_eth_account_tutorial_check_data_title, C3286R.string.wallet_create_eth_account_tutorial_check_data_description), new TutorialPage(C3286R.C3291raw.fork_tutorial_be_carefull, C3286R.string.wallet_create_eth_account_tutorial_carefull_title, C3286R.string.wallet_create_eth_account_tutorial_carefull_description));
             return mutableListOf2;
         } else if (tutorialType instanceof TutorialType.Backup) {
-            mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new TutorialPage(C3158R.C3164raw.fork_congratulations, C3158R.string.wallet_dashboard_create_eth_wallet_success_dialog_title, C3158R.string.wallet_dashboard_create_eth_wallet_success_dialog_description), new TutorialPage(C3158R.C3164raw.fork_back_up, C3158R.string.wallet_eth_backup_info_start_dialog_title, C3158R.string.wallet_eth_backup_info_start_dialog_description));
+            mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new TutorialPage(C3286R.C3291raw.fork_congratulations, C3286R.string.wallet_dashboard_create_eth_wallet_success_dialog_title, C3286R.string.wallet_dashboard_create_eth_wallet_success_dialog_description), new TutorialPage(C3286R.C3291raw.fork_back_up, C3286R.string.wallet_eth_backup_info_start_dialog_title, C3286R.string.wallet_eth_backup_info_start_dialog_description));
             return mutableListOf;
         } else {
             throw new NoWhenBranchMatchedException();

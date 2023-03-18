@@ -68,7 +68,7 @@ import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
@@ -87,7 +87,7 @@ import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BackDrawable;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Adapters.ContactsAdapter;
@@ -205,8 +205,8 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
 
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
     public boolean onBackPressed() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        if (c3222ActionBar != null && c3222ActionBar.isActionModeShowed()) {
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        if (c3351ActionBar != null && c3351ActionBar.isActionModeShowed()) {
             this.presenter.closeActionMode();
             return false;
         }
@@ -216,8 +216,8 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
     @Override // com.smedialink.p031ui.contacts.ContactsView
     public void onSelectedQtyChange(int i) {
         NumberTextView numberTextView;
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        if (c3222ActionBar == null || !c3222ActionBar.isActionModeShowed() || (numberTextView = this.selectedContactsCount) == null) {
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        if (c3351ActionBar == null || !c3351ActionBar.isActionModeShowed() || (numberTextView = this.selectedContactsCount) == null) {
             return;
         }
         numberTextView.setNumber(i, true);
@@ -225,8 +225,8 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
 
     @Override // com.smedialink.p031ui.contacts.ContactsView
     public void openActionMode() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        if (c3222ActionBar == null || c3222ActionBar.isActionModeShowed()) {
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        if (c3351ActionBar == null || c3351ActionBar.isActionModeShowed()) {
             return;
         }
         ContactsAdapter contactsAdapter = this.listViewAdapter;
@@ -238,8 +238,8 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
 
     @Override // com.smedialink.p031ui.contacts.ContactsView
     public void closeActionMode() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        if (c3222ActionBar == null || !c3222ActionBar.isActionModeShowed()) {
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        if (c3351ActionBar == null || !c3351ActionBar.isActionModeShowed()) {
             return;
         }
         ContactsAdapter contactsAdapter = this.listViewAdapter;
@@ -259,14 +259,14 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
     }
 
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
-    public C3222ActionBar createActionBar(Context context) {
-        C3222ActionBar c3222ActionBar = new C3222ActionBar(context);
-        c3222ActionBar.setBackgroundColor(Theme.getColor("actionBarDefault"));
-        c3222ActionBar.setItemsBackgroundColor(Theme.getColor("actionBarDefaultSelector"), false);
-        c3222ActionBar.setItemsBackgroundColor(Theme.getColor("actionBarActionModeDefaultSelector"), true);
-        c3222ActionBar.setItemsColor(Theme.getColor("actionBarDefaultIcon"), false);
-        c3222ActionBar.setItemsColor(Theme.getColor("actionBarActionModeDefaultIcon"), true);
-        return c3222ActionBar;
+    public C3351ActionBar createActionBar(Context context) {
+        C3351ActionBar c3351ActionBar = new C3351ActionBar(context);
+        c3351ActionBar.setBackgroundColor(Theme.getColor("actionBarDefault"));
+        c3351ActionBar.setItemsBackgroundColor(Theme.getColor("actionBarDefaultSelector"), false);
+        c3351ActionBar.setItemsBackgroundColor(Theme.getColor("actionBarActionModeDefaultSelector"), true);
+        c3351ActionBar.setItemsColor(Theme.getColor("actionBarDefaultIcon"), false);
+        c3351ActionBar.setItemsColor(Theme.getColor("actionBarActionModeDefaultIcon"), true);
+        return c3351ActionBar;
     }
 
     @Override // com.smedialink.manager.crypto.recipient.CryptoRecipientView
@@ -292,18 +292,13 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
     }
 
     @Override // com.smedialink.manager.crypto.recipient.CryptoRecipientView
-    public void showRecipientWalletNotActivatedError(String str, String str2, String str3) {
-        DialogsFactoryKt.showErrorAlert(this, str, str2, str3, null);
-    }
-
-    @Override // com.smedialink.manager.crypto.recipient.CryptoRecipientView
-    public void showRecipientEthWalletNotActivatedError(String str, String str2, String str3) {
+    public void showErrorDialog(String str, String str2, String str3) {
         DialogsFactoryKt.showErrorAlert(this, str, str2, str3, null);
     }
 
     @Override // com.smedialink.manager.crypto.recipient.CryptoRecipientView
     public void showRequestPermissionSuccessDialog(String str, String str2, Callbacks$Callback callbacks$Callback) {
-        DialogsFactoryKt.showSuccessAlert(this, str, str2, this.resourceManager.getValue().getString(C3158R.string.common_ok), callbacks$Callback);
+        DialogsFactoryKt.showSuccessAlert(this, str, str2, this.resourceManager.getValue().getString(C3286R.string.common_ok), callbacks$Callback);
     }
 
     @Override // com.smedialink.manager.crypto.recipient.CryptoRecipientView
@@ -363,7 +358,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
 
     private void processSwitchCheckedUserCell(UserCell userCell) {
         if (userCell.getCurrentObject() instanceof TLRPC$User) {
-            long j = ((TLRPC$User) userCell.getCurrentObject()).f1633id;
+            long j = ((TLRPC$User) userCell.getCurrentObject()).f1639id;
             userCell.setChecked(this.presenter.indexOfSelectedId(j) < 0, true);
             this.presenter.addOrRemoveSelectedContact(j);
         }
@@ -399,7 +394,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
         this.selectedContactsCount.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.selectedContactsCount.setTextColor(Theme.getColor("actionBarActionModeDefaultIcon"));
         createActionMode.addView(this.selectedContactsCount, LayoutHelper.createLinear(0, -1, 1.0f, 72, 0, 0, 0));
-        createActionMode.addItemWithWidth(IdFabric$Menu.DELETE, C3158R.C3160drawable.msg_delete, AndroidUtilities.m50dp(54));
+        createActionMode.addItemWithWidth(IdFabric$Menu.DELETE, C3286R.C3288drawable.msg_delete, AndroidUtilities.m50dp(54));
     }
 
     private void callActionModeAnimation() {
@@ -436,7 +431,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
         if (getParentActivity() == null) {
             return;
         }
-        AlertsCreator.showConfirmationDialog(this, getParentActivity(), LocaleController.getString("SyncContactsDeleteTitle", C3158R.string.SyncContactsDeleteTitle), AndroidUtilities.replaceTags(LocaleController.getString("SyncContactsDeleteText", C3158R.string.SyncContactsDeleteText)), LocaleController.getString("Delete", C3158R.string.Delete), true, getResourceProvider(), new Callbacks$Callback1() { // from class: org.telegram.ui.ContactsActivity$$ExternalSyntheticLambda12
+        AlertsCreator.showConfirmationDialog(this, getParentActivity(), LocaleController.getString("SyncContactsDeleteTitle", C3286R.string.SyncContactsDeleteTitle), AndroidUtilities.replaceTags(LocaleController.getString("SyncContactsDeleteText", C3286R.string.SyncContactsDeleteText)), LocaleController.getString("Delete", C3286R.string.Delete), true, getResourceProvider(), new Callbacks$Callback1() { // from class: org.telegram.ui.ContactsActivity$$ExternalSyntheticLambda12
             @Override // org.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
                 ContactsActivity.lambda$openDeleteContactsDialog$2(runnable, (Boolean) obj);
@@ -456,7 +451,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
             return;
         }
         final AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setTitle(LocaleController.getInternalString(C3158R.string.contacts_filter_header));
+        builder.setTitle(LocaleController.getInternalString(C3286R.string.contacts_filter_header));
         final ContactsFilter[] values = ContactsFilter.values();
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
         linearLayout.setOrientation(1);
@@ -516,7 +511,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
                 }
             });
         } else if (contactsActionType == ContactsActionType.UNBLOCK) {
-            AlertsCreator.showConfirmationDialog(this, getParentActivity(), null, LocaleController.getInternalString(C3158R.string.contacts_filter_confirm_unblock), LocaleController.getString("Unblock", C3158R.string.Unblock), true, null, new Callbacks$Callback1() { // from class: org.telegram.ui.ContactsActivity$$ExternalSyntheticLambda13
+            AlertsCreator.showConfirmationDialog(this, getParentActivity(), null, LocaleController.getInternalString(C3286R.string.contacts_filter_confirm_unblock), LocaleController.getString("Unblock", C3286R.string.Unblock), true, null, new Callbacks$Callback1() { // from class: org.telegram.ui.ContactsActivity$$ExternalSyntheticLambda13
                 @Override // org.fork.utils.Callbacks$Callback1
                 public final void invoke(Object obj) {
                     ContactsActivity.this.lambda$showMembersActionConfirmationAlert$6(contactsActionType, (Boolean) obj);
@@ -536,7 +531,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
     /* renamed from: startContactsProcessingService */
     public void lambda$showMembersActionConfirmationAlert$5(ContactsActionType contactsActionType) {
         if (AndroidUtilities.isServiceRunning(FilteredContactsProcessingService.class)) {
-            showToast(LocaleController.getInternalString(C3158R.string.already_processing));
+            showToast(LocaleController.getInternalString(C3286R.string.already_processing));
             return;
         }
         ContactsFilter selectedContactsFilter = getForkCommonController().getSelectedContactsFilter();
@@ -678,11 +673,11 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.ContactsActivity$2 */
     /* loaded from: classes5.dex */
-    public class C52892 extends C3222ActionBar.ActionBarMenuOnItemClick {
-        C52892() {
+    public class C54262 extends C3351ActionBar.ActionBarMenuOnItemClick {
+        C54262() {
         }
 
-        @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
         public void onItemClick(int i) {
             if (i == -1 && ((BaseFragment) ContactsActivity.this).actionBar != null && ((BaseFragment) ContactsActivity.this).actionBar.isActionModeShowed()) {
                 ContactsActivity.this.presenter.closeActionMode();
@@ -694,7 +689,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
                 ContactsActivity.this.openDeleteContactsDialog(new Runnable() { // from class: org.telegram.ui.ContactsActivity$2$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ContactsActivity.C52892.this.lambda$onItemClick$0();
+                        ContactsActivity.C54262.this.lambda$onItemClick$0();
                     }
                 });
             } else if (i == -1) {
@@ -704,7 +699,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
                     SharedConfig.toggleSortContactsByName();
                     ContactsActivity.this.sortByName = SharedConfig.sortContactsByName;
                     ContactsActivity.this.listViewAdapter.setSortType(ContactsActivity.this.sortByName ? 1 : 2, false);
-                    ContactsActivity.this.sortItem.setIcon(ContactsActivity.this.sortByName ? C3158R.C3160drawable.msg_contacts_time : C3158R.C3160drawable.msg_contacts_name);
+                    ContactsActivity.this.sortItem.setIcon(ContactsActivity.this.sortByName ? C3286R.C3288drawable.msg_contacts_time : C3286R.C3288drawable.msg_contacts_name);
                 }
             }
         }
@@ -727,7 +722,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$10(int i, View view, int i2) {
         Activity parentActivity;
-        C3222ActionBar c3222ActionBar;
+        C3351ActionBar c3351ActionBar;
         RecyclerView.Adapter adapter = this.listView.getAdapter();
         SearchAdapter searchAdapter = this.searchListViewAdapter;
         boolean z = true;
@@ -743,13 +738,13 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
                 }
                 if (this.returnAsResult) {
                     LongSparseArray<TLRPC$User> longSparseArray = this.ignoreUsers;
-                    if (longSparseArray == null || longSparseArray.indexOfKey(tLRPC$User.f1633id) < 0) {
+                    if (longSparseArray == null || longSparseArray.indexOfKey(tLRPC$User.f1639id) < 0) {
                         didSelectResult(tLRPC$User, true, null);
                         return;
                     }
                     return;
                 } else if (this.createSecretChat) {
-                    if (tLRPC$User.f1633id == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
+                    if (tLRPC$User.f1639id == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
                         return;
                     }
                     this.creatingChat = true;
@@ -757,7 +752,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
                     return;
                 } else {
                     Bundle bundle = new Bundle();
-                    bundle.putLong("user_id", tLRPC$User.f1633id);
+                    bundle.putLong("user_id", tLRPC$User.f1639id);
                     if (getMessagesController().checkCanOpenChat(bundle, this)) {
                         if (this.needPhonebook) {
                             presentFragment(new ChatActivity(bundle));
@@ -791,7 +786,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
         if (positionInSectionForPosition < 0 || sectionForPosition < 0) {
             return;
         }
-        if ((view instanceof UserCell) && this.needPhonebook && (c3222ActionBar = this.actionBar) != null && c3222ActionBar.isActionModeShowed()) {
+        if ((view instanceof UserCell) && this.needPhonebook && (c3351ActionBar = this.actionBar) != null && c3351ActionBar.isActionModeShowed()) {
             processSwitchCheckedUserCell((UserCell) view);
         } else if (view instanceof TextCellWithRightImage) {
             openFilterBottomSheet();
@@ -855,7 +850,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
                 TLRPC$User tLRPC$User2 = (TLRPC$User) item2;
                 if (this.returnAsResult) {
                     LongSparseArray<TLRPC$User> longSparseArray2 = this.ignoreUsers;
-                    if (longSparseArray2 == null || longSparseArray2.indexOfKey(tLRPC$User2.f1633id) < 0) {
+                    if (longSparseArray2 == null || longSparseArray2.indexOfKey(tLRPC$User2.f1639id) < 0) {
                         didSelectResult(tLRPC$User2, true, null);
                     }
                 } else if (this.createSecretChat) {
@@ -863,7 +858,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
                     SecretChatHelper.getInstance(this.currentAccount).startSecretChat(getParentActivity(), tLRPC$User2);
                 } else {
                     Bundle bundle4 = new Bundle();
-                    bundle4.putLong("user_id", tLRPC$User2.f1633id);
+                    bundle4.putLong("user_id", tLRPC$User2.f1639id);
                     if (getMessagesController().checkCanOpenChat(bundle4, this)) {
                         if (this.needPhonebook) {
                             presentFragment(new ChatActivity(bundle4));
@@ -879,15 +874,15 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
                     return;
                 }
                 AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-                builder.setMessage(LocaleController.getString("InviteUser", C3158R.string.InviteUser));
-                builder.setTitle(LocaleController.getString("AppName", C3158R.string.AppName));
-                builder.setPositiveButton(LocaleController.getString("OK", C3158R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ContactsActivity$$ExternalSyntheticLambda4
+                builder.setMessage(LocaleController.getString("InviteUser", C3286R.string.InviteUser));
+                builder.setTitle(LocaleController.getString("AppName", C3286R.string.AppName));
+                builder.setPositiveButton(LocaleController.getString("OK", C3286R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ContactsActivity$$ExternalSyntheticLambda4
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i4) {
                         ContactsActivity.this.lambda$createView$9(str2, dialogInterface, i4);
                     }
                 });
-                builder.setNegativeButton(LocaleController.getString("Cancel", C3158R.string.Cancel), null);
+                builder.setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null);
                 showDialog(builder.create());
             }
         }
@@ -929,7 +924,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
             if (tLRPC$User.bot) {
                 if (tLRPC$User.bot_nochats) {
                     try {
-                        BulletinFactory.m27of(this).createErrorBulletin(LocaleController.getString("BotCantJoinGroups", C3158R.string.BotCantJoinGroups)).show();
+                        BulletinFactory.m27of(this).createErrorBulletin(LocaleController.getString("BotCantJoinGroups", C3286R.string.BotCantJoinGroups)).show();
                         return;
                     } catch (Exception e) {
                         FileLog.m45e(e);
@@ -939,30 +934,30 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
                     TLRPC$Chat chat = getMessagesController().getChat(Long.valueOf(this.channelId));
                     AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
                     if (ChatObject.canAddAdmins(chat)) {
-                        builder.setTitle(LocaleController.getString("AddBotAdminAlert", C3158R.string.AddBotAdminAlert));
-                        builder.setMessage(LocaleController.getString("AddBotAsAdmin", C3158R.string.AddBotAsAdmin));
-                        builder.setPositiveButton(LocaleController.getString("AddAsAdmin", C3158R.string.AddAsAdmin), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ContactsActivity$$ExternalSyntheticLambda6
+                        builder.setTitle(LocaleController.getString("AddBotAdminAlert", C3286R.string.AddBotAdminAlert));
+                        builder.setMessage(LocaleController.getString("AddBotAsAdmin", C3286R.string.AddBotAsAdmin));
+                        builder.setPositiveButton(LocaleController.getString("AddAsAdmin", C3286R.string.AddAsAdmin), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ContactsActivity$$ExternalSyntheticLambda6
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i) {
                                 ContactsActivity.this.lambda$didSelectResult$12(tLRPC$User, str, dialogInterface, i);
                             }
                         });
-                        builder.setNegativeButton(LocaleController.getString("Cancel", C3158R.string.Cancel), null);
+                        builder.setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null);
                     } else {
-                        builder.setMessage(LocaleController.getString("CantAddBotAsAdmin", C3158R.string.CantAddBotAsAdmin));
-                        builder.setPositiveButton(LocaleController.getString("OK", C3158R.string.OK), null);
+                        builder.setMessage(LocaleController.getString("CantAddBotAsAdmin", C3286R.string.CantAddBotAsAdmin));
+                        builder.setPositiveButton(LocaleController.getString("OK", C3286R.string.OK), null);
                     }
                     showDialog(builder.create());
                     return;
                 }
             }
             AlertDialog.Builder builder2 = new AlertDialog.Builder(getParentActivity());
-            builder2.setTitle(LocaleController.getString("AppName", C3158R.string.AppName));
+            builder2.setTitle(LocaleController.getString("AppName", C3286R.string.AppName));
             String formatStringSimple = LocaleController.formatStringSimple(this.selectAlertString, UserObject.getUserName(tLRPC$User));
             if (tLRPC$User.bot || !this.needForwardCount) {
                 editTextBoldCursor = null;
             } else {
-                formatStringSimple = String.format("%s\n\n%s", formatStringSimple, LocaleController.getString("AddToTheGroupForwardCount", C3158R.string.AddToTheGroupForwardCount));
+                formatStringSimple = String.format("%s\n\n%s", formatStringSimple, LocaleController.getString("AddToTheGroupForwardCount", C3286R.string.AddToTheGroupForwardCount));
                 editTextBoldCursor = new EditTextBoldCursor(getParentActivity());
                 editTextBoldCursor.setTextSize(1, 18.0f);
                 editTextBoldCursor.setText("50");
@@ -1011,13 +1006,13 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
                 builder2.setView(editTextBoldCursor);
             }
             builder2.setMessage(formatStringSimple);
-            builder2.setPositiveButton(LocaleController.getString("OK", C3158R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ContactsActivity$$ExternalSyntheticLambda5
+            builder2.setPositiveButton(LocaleController.getString("OK", C3286R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ContactsActivity$$ExternalSyntheticLambda5
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     ContactsActivity.this.lambda$didSelectResult$13(tLRPC$User, editTextBoldCursor, dialogInterface, i);
                 }
             });
-            builder2.setNegativeButton(LocaleController.getString("Cancel", C3158R.string.Cancel), null);
+            builder2.setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null);
             showDialog(builder2.create());
             if (editTextBoldCursor != null) {
                 ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) editTextBoldCursor.getLayoutParams();
@@ -1034,7 +1029,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
                 editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
             }
         } else if (this.isChooseWalletTransferRecipient) {
-            validateAndGoNext(String.valueOf(tLRPC$User.f1633id), true);
+            validateAndGoNext(String.valueOf(tLRPC$User.f1639id), true);
         } else {
             ContactsActivityDelegate contactsActivityDelegate = this.delegate;
             if (contactsActivityDelegate != null) {
@@ -1178,15 +1173,15 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
                 return;
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-            builder.setTitle(LocaleController.getString("AppName", C3158R.string.AppName));
-            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.getString("QRCodePermissionNoCameraWithHint", C3158R.string.QRCodePermissionNoCameraWithHint)));
-            builder.setNegativeButton(LocaleController.getString("PermissionOpenSettings", C3158R.string.PermissionOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ContactsActivity$$ExternalSyntheticLambda2
+            builder.setTitle(LocaleController.getString("AppName", C3286R.string.AppName));
+            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.getString("QRCodePermissionNoCameraWithHint", C3286R.string.QRCodePermissionNoCameraWithHint)));
+            builder.setNegativeButton(LocaleController.getString("PermissionOpenSettings", C3286R.string.PermissionOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ContactsActivity$$ExternalSyntheticLambda2
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i2) {
                     ContactsActivity.this.lambda$onRequestPermissionsResultFragment$16(dialogInterface, i2);
                 }
             });
-            builder.setPositiveButton(LocaleController.getString("OK", C3158R.string.OK), null);
+            builder.setPositiveButton(LocaleController.getString("OK", C3286R.string.OK), null);
             builder.show();
         } else if (i == 1) {
             for (int i2 = 0; i2 < strArr.length; i2++) {
@@ -1229,9 +1224,9 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
     @Override // com.smedialink.p031ui.base.mvp.MvpFragment, org.telegram.p048ui.ActionBar.BaseFragment
     public void onPause() {
         super.onPause();
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        if (c3222ActionBar != null) {
-            c3222ActionBar.closeSearchField();
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        if (c3351ActionBar != null) {
+            c3351ActionBar.closeSearchField();
         }
     }
 
@@ -1272,7 +1267,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
         } else if (i == NotificationCenter.encryptedChatCreated) {
             if (this.createSecretChat && this.creatingChat) {
                 Bundle bundle = new Bundle();
-                bundle.putInt("enc_id", ((TLRPC$EncryptedChat) objArr[0]).f1506id);
+                bundle.putInt("enc_id", ((TLRPC$EncryptedChat) objArr[0]).f1511id);
                 NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.closeChats, new Object[0]);
                 presentFragment(new ChatActivity(bundle), true);
             }
@@ -1374,7 +1369,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
         final RLottieImageView floatingButton = dialogsActivity.getFloatingButton();
         final View view = floatingButton.getParent() != null ? (View) floatingButton.getParent() : null;
         if (this.floatingButtonContainer == null || view == null || floatingButton.getVisibility() != 0 || Math.abs(view.getTranslationY()) > AndroidUtilities.m50dp(4) || Math.abs(this.floatingButtonContainer.getTranslationY()) > AndroidUtilities.m50dp(4) || dialogsActivity.needDisableContactsActivityFabAnimations()) {
-            this.floatingButton.setAnimation(C3158R.C3164raw.write_contacts_fab_icon, 52, 52);
+            this.floatingButton.setAnimation(C3286R.C3291raw.write_contacts_fab_icon, 52, 52);
             this.floatingButton.getAnimatedDrawable().setCurrentFrame(this.floatingButton.getAnimatedDrawable().getFramesCount() - 1);
             return null;
         }
@@ -1407,7 +1402,7 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
                     ((ViewGroup) ((BaseFragment) ContactsActivity.this).fragmentView).addView(ContactsActivity.this.floatingButtonContainer);
                     view2.setVisibility(0);
                     if (!z) {
-                        floatingButton.setAnimation(C3158R.C3164raw.write_contacts_fab_icon_reverse, 52, 52);
+                        floatingButton.setAnimation(C3286R.C3291raw.write_contacts_fab_icon_reverse, 52, 52);
                         floatingButton.getAnimatedDrawable().setCurrentFrame(ContactsActivity.this.floatingButton.getAnimatedDrawable().getCurrentFrame());
                         floatingButton.playAnimation();
                     }
@@ -1437,10 +1432,10 @@ public class ContactsActivity extends JavaMvpFragment implements NotificationCen
         this.animationIndex = getNotificationCenter().setAnimationInProgress(this.animationIndex, new int[]{NotificationCenter.diceStickersDidLoad}, false);
         animatorSet.start();
         if (z) {
-            this.floatingButton.setAnimation(C3158R.C3164raw.write_contacts_fab_icon, 52, 52);
+            this.floatingButton.setAnimation(C3286R.C3291raw.write_contacts_fab_icon, 52, 52);
             this.floatingButton.playAnimation();
         } else {
-            this.floatingButton.setAnimation(C3158R.C3164raw.write_contacts_fab_icon_reverse, 52, 52);
+            this.floatingButton.setAnimation(C3286R.C3291raw.write_contacts_fab_icon_reverse, 52, 52);
             this.floatingButton.playAnimation();
         }
         AnimatorSet animatorSet2 = this.bounceIconAnimator;

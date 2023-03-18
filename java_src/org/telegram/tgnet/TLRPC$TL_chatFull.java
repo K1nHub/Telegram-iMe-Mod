@@ -1,4 +1,6 @@
 package org.telegram.tgnet;
+
+import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_chatFull extends TLRPC$ChatFull {
     public static int constructor = -908914376;
@@ -9,7 +11,7 @@ public class TLRPC$TL_chatFull extends TLRPC$ChatFull {
         this.flags = readInt32;
         this.can_set_username = (readInt32 & 128) != 0;
         this.has_scheduled = (readInt32 & 256) != 0;
-        this.f1495id = abstractSerializedData.readInt64(z);
+        this.f1500id = abstractSerializedData.readInt64(z);
         this.about = abstractSerializedData.readString(z);
         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         if ((this.flags & 4) != 0) {
@@ -48,7 +50,7 @@ public class TLRPC$TL_chatFull extends TLRPC$ChatFull {
         if ((this.flags & 16384) != 0) {
             this.ttl_period = abstractSerializedData.readInt32(z);
         }
-        if ((this.flags & 32768) != 0) {
+        if ((this.flags & LiteMode.FLAG_CHAT_SCALE) != 0) {
             this.groupcall_default_join_as = TLRPC$Peer.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
         if ((this.flags & 65536) != 0) {
@@ -83,7 +85,7 @@ public class TLRPC$TL_chatFull extends TLRPC$ChatFull {
         int i2 = this.has_scheduled ? i | 256 : i & (-257);
         this.flags = i2;
         abstractSerializedData.writeInt32(i2);
-        abstractSerializedData.writeInt64(this.f1495id);
+        abstractSerializedData.writeInt64(this.f1500id);
         abstractSerializedData.writeString(this.about);
         this.participants.serializeToStream(abstractSerializedData);
         if ((this.flags & 4) != 0) {
@@ -113,7 +115,7 @@ public class TLRPC$TL_chatFull extends TLRPC$ChatFull {
         if ((this.flags & 16384) != 0) {
             abstractSerializedData.writeInt32(this.ttl_period);
         }
-        if ((this.flags & 32768) != 0) {
+        if ((this.flags & LiteMode.FLAG_CHAT_SCALE) != 0) {
             this.groupcall_default_join_as.serializeToStream(abstractSerializedData);
         }
         if ((this.flags & 65536) != 0) {

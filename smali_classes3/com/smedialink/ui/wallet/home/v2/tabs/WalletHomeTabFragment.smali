@@ -84,14 +84,11 @@
     .line 17
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/WalletHomeTabFragment;->parentView:Lcom/smedialink/ui/wallet/home/v2/WalletHomeView;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {v0, p1}, Lcom/smedialink/ui/wallet/home/v2/WalletHomeView;->onTabSelected(I)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 

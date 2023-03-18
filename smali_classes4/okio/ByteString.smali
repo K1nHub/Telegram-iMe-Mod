@@ -816,7 +816,7 @@
 
     const/4 v4, -0x1
 
-    const-string v5, "\u2026]"
+    const-string/jumbo v5, "\u2026]"
 
     const/16 v6, 0x5d
 

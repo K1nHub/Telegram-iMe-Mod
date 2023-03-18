@@ -126,9 +126,23 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$SpansContainer;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintVisible(Z)V
+    invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$1300(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintVisible(ZZ)V
 
     .line 1467
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$SpansContainer;->currentAnimation:Landroid/animation/AnimatorSet;
@@ -145,7 +159,7 @@
 
     .line 1471
     :cond_0
-    iput-boolean v1, p0, Lorg/telegram/ui/DialogsActivity$SpansContainer;->animationStarted:Z
+    iput-boolean v2, p0, Lorg/telegram/ui/DialogsActivity$SpansContainer;->animationStarted:Z
 
     if-eqz p2, :cond_1
 

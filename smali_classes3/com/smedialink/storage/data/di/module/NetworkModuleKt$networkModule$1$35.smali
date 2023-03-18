@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/smedialink/storage/data/network/api/own/TonApi;",
+        "Lcom/smedialink/storage/data/network/api/own/CatalogApi;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/smedialink/storage/data/di/module/NetworkModuleKt$networkModule$1$35\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,174:1\n127#2,5:175\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/smedialink/storage/data/di/module/NetworkModuleKt$networkModule$1$35\n*L\n102#1:175,5\n*E\n"
+    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/smedialink/storage/data/di/module/NetworkModuleKt$networkModule$1$35\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,176:1\n127#2,5:177\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/smedialink/storage/data/di/module/NetworkModuleKt$networkModule$1$35\n*L\n103#1:177,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/network/api/own/TonApi;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/network/api/own/CatalogApi;
     .locals 2
 
     const-string v0, "$this$single"
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 102
+    .line 103
     invoke-static {}, Lcom/smedialink/storage/data/di/module/NetworkModuleKt;->getSERVER_RETROFIT()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object p2
@@ -92,18 +92,18 @@
 
     check-cast p1, Lretrofit2/Retrofit;
 
-    const-class p2, Lcom/smedialink/storage/data/network/api/own/TonApi;
+    const-class p2, Lcom/smedialink/storage/data/network/api/own/CatalogApi;
 
-    .line 102
+    .line 103
     invoke-virtual {p1, p2}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object p1
 
-    const-string p2, "get<Retrofit>(SERVER_RET\u2026reate(TonApi::class.java)"
+    const-string p2, "get<Retrofit>(SERVER_RET\u2026e(CatalogApi::class.java)"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    check-cast p1, Lcom/smedialink/storage/data/network/api/own/TonApi;
+    check-cast p1, Lcom/smedialink/storage/data/network/api/own/CatalogApi;
 
     return-object p1
 .end method
@@ -111,12 +111,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 102
+    .line 103
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/di/module/NetworkModuleKt$networkModule$1$35;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/network/api/own/TonApi;
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/di/module/NetworkModuleKt$networkModule$1$35;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/network/api/own/CatalogApi;
 
     move-result-object p1
 

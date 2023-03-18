@@ -8,18 +8,18 @@ import org.bouncycastle.math.raw.Nat192;
 public class SecP192K1Field {
 
     /* renamed from: P */
-    static final int[] f1332P = {-4553, -2, -1, -1, -1, -1};
+    static final int[] f1337P = {-4553, -2, -1, -1, -1, -1};
     static final int[] PExt = {20729809, 9106, 1, 0, 0, 0, -9106, -3, -1, -1, -1, -1};
     private static final int[] PExtInv = {-20729809, -9107, -2, -1, -1, -1, 9105, 2};
 
     public static void add(int[] iArr, int[] iArr2, int[] iArr3) {
-        if (Nat192.add(iArr, iArr2, iArr3) != 0 || (iArr3[5] == -1 && Nat192.gte(iArr3, f1332P))) {
+        if (Nat192.add(iArr, iArr2, iArr3) != 0 || (iArr3[5] == -1 && Nat192.gte(iArr3, f1337P))) {
             Nat.add33To(6, 4553, iArr3);
         }
     }
 
     public static void addOne(int[] iArr, int[] iArr2) {
-        if (Nat.inc(6, iArr, iArr2) != 0 || (iArr2[5] == -1 && Nat192.gte(iArr2, f1332P))) {
+        if (Nat.inc(6, iArr, iArr2) != 0 || (iArr2[5] == -1 && Nat192.gte(iArr2, f1337P))) {
             Nat.add33To(6, 4553, iArr2);
         }
     }
@@ -27,7 +27,7 @@ public class SecP192K1Field {
     public static int[] fromBigInteger(BigInteger bigInteger) {
         int[] fromBigInteger = Nat192.fromBigInteger(bigInteger);
         if (fromBigInteger[5] == -1) {
-            int[] iArr = f1332P;
+            int[] iArr = f1337P;
             if (Nat192.gte(fromBigInteger, iArr)) {
                 Nat192.subFrom(iArr, fromBigInteger);
             }
@@ -54,18 +54,18 @@ public class SecP192K1Field {
         if (Nat192.isZero(iArr)) {
             Nat192.zero(iArr2);
         } else {
-            Nat192.sub(f1332P, iArr, iArr2);
+            Nat192.sub(f1337P, iArr, iArr2);
         }
     }
 
     public static void reduce(int[] iArr, int[] iArr2) {
-        if (Nat192.mul33DWordAdd(4553, Nat192.mul33Add(4553, iArr, 6, iArr, 0, iArr2, 0), iArr2, 0) != 0 || (iArr2[5] == -1 && Nat192.gte(iArr2, f1332P))) {
+        if (Nat192.mul33DWordAdd(4553, Nat192.mul33Add(4553, iArr, 6, iArr, 0, iArr2, 0), iArr2, 0) != 0 || (iArr2[5] == -1 && Nat192.gte(iArr2, f1337P))) {
             Nat.add33To(6, 4553, iArr2);
         }
     }
 
     public static void reduce32(int i, int[] iArr) {
-        if ((i == 0 || Nat192.mul33WordAdd(4553, i, iArr, 0) == 0) && !(iArr[5] == -1 && Nat192.gte(iArr, f1332P))) {
+        if ((i == 0 || Nat192.mul33WordAdd(4553, i, iArr, 0) == 0) && !(iArr[5] == -1 && Nat192.gte(iArr, f1337P))) {
             return;
         }
         Nat.add33To(6, 4553, iArr);
@@ -97,7 +97,7 @@ public class SecP192K1Field {
     }
 
     public static void twice(int[] iArr, int[] iArr2) {
-        if (Nat.shiftUpBit(6, iArr, 0, iArr2) != 0 || (iArr2[5] == -1 && Nat192.gte(iArr2, f1332P))) {
+        if (Nat.shiftUpBit(6, iArr, 0, iArr2) != 0 || (iArr2[5] == -1 && Nat192.gte(iArr2, f1337P))) {
             Nat.add33To(6, 4553, iArr2);
         }
     }

@@ -264,23 +264,6 @@
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->access$300(Lorg/telegram/ui/ActionBar/ActionBar;)Landroid/view/View;
 
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->noStatusBar:Z
-
-    if-nez p1, :cond_0
-
-    .line 779
-    iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$3;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
-
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->access$300(Lorg/telegram/ui/ActionBar/ActionBar;)Landroid/view/View;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
-
     :cond_0
     return-void
 .end method

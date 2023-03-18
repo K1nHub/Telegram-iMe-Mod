@@ -6,7 +6,7 @@ import io.grpc.okhttp.internal.framed.FrameWriter;
 import java.io.IOException;
 import okio.Buffer;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class OutboundFlowController {
     private final FrameWriter frameWriter;
     private final OkHttpClientTransport transport;
@@ -139,7 +139,7 @@ public class OutboundFlowController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class WriteStatus {
         int numWrites;
 
@@ -156,7 +156,7 @@ public class OutboundFlowController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class OutboundFlowState {
         int allocatedBytes;
         boolean pendingBufferHasEndOfStream;

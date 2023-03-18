@@ -12,7 +12,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.utils.Callbacks$Callback;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingTransactionActionsBinding;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -58,49 +58,46 @@ public final class StakingTransactionActionButtonsView extends FrameLayout {
         ForkContentStakingTransactionActionsBinding forkContentStakingTransactionActionsBinding = this.binding;
         BigActionButton bigActionButton = forkContentStakingTransactionActionsBinding.buttonAction;
         bigActionButton.setText(actionText);
-        bigActionButton.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.custom.StakingTransactionActionButtonsView$$ExternalSyntheticLambda0
+        bigActionButton.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.custom.StakingTransactionActionButtonsView$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StakingTransactionActionButtonsView.m1448setupViewData$lambda6$lambda1$lambda0(Callbacks$Callback.this, view);
+                StakingTransactionActionButtonsView.setupViewData$lambda$6$lambda$1$lambda$0(Callbacks$Callback.this, view);
             }
         });
-        AppCompatTextView appCompatTextView = forkContentStakingTransactionActionsBinding.buttonApproveInfo;
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView, "");
-        appCompatTextView.setVisibility(z2 ? 0 : 8);
-        appCompatTextView.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.custom.StakingTransactionActionButtonsView$$ExternalSyntheticLambda2
+        AppCompatTextView setupViewData$lambda$6$lambda$3 = forkContentStakingTransactionActionsBinding.buttonApproveInfo;
+        Intrinsics.checkNotNullExpressionValue(setupViewData$lambda$6$lambda$3, "setupViewData$lambda$6$lambda$3");
+        setupViewData$lambda$6$lambda$3.setVisibility(z2 ? 0 : 8);
+        setupViewData$lambda$6$lambda$3.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.custom.StakingTransactionActionButtonsView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StakingTransactionActionButtonsView.m1449setupViewData$lambda6$lambda3$lambda2(Callbacks$Callback.this, view);
+                StakingTransactionActionButtonsView.setupViewData$lambda$6$lambda$3$lambda$2(Callbacks$Callback.this, view);
             }
         });
-        AppCompatTextView appCompatTextView2 = forkContentStakingTransactionActionsBinding.buttonConditions;
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView2, "");
-        appCompatTextView2.setVisibility(z && !z2 ? 0 : 8);
-        appCompatTextView2.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.custom.StakingTransactionActionButtonsView$$ExternalSyntheticLambda1
+        AppCompatTextView setupViewData$lambda$6$lambda$5 = forkContentStakingTransactionActionsBinding.buttonConditions;
+        Intrinsics.checkNotNullExpressionValue(setupViewData$lambda$6$lambda$5, "setupViewData$lambda$6$lambda$5");
+        setupViewData$lambda$6$lambda$5.setVisibility(z && !z2 ? 0 : 8);
+        setupViewData$lambda$6$lambda$5.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.custom.StakingTransactionActionButtonsView$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StakingTransactionActionButtonsView.m1450setupViewData$lambda6$lambda5$lambda4(Callbacks$Callback.this, view);
+                StakingTransactionActionButtonsView.setupViewData$lambda$6$lambda$5$lambda$4(Callbacks$Callback.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupViewData$lambda-6$lambda-1$lambda-0  reason: not valid java name */
-    public static final void m1448setupViewData$lambda6$lambda1$lambda0(Callbacks$Callback onActionClickAction, View view) {
+    public static final void setupViewData$lambda$6$lambda$1$lambda$0(Callbacks$Callback onActionClickAction, View view) {
         Intrinsics.checkNotNullParameter(onActionClickAction, "$onActionClickAction");
         onActionClickAction.invoke();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupViewData$lambda-6$lambda-3$lambda-2  reason: not valid java name */
-    public static final void m1449setupViewData$lambda6$lambda3$lambda2(Callbacks$Callback onApproveInfoClickAction, View view) {
+    public static final void setupViewData$lambda$6$lambda$3$lambda$2(Callbacks$Callback onApproveInfoClickAction, View view) {
         Intrinsics.checkNotNullParameter(onApproveInfoClickAction, "$onApproveInfoClickAction");
         onApproveInfoClickAction.invoke();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupViewData$lambda-6$lambda-5$lambda-4  reason: not valid java name */
-    public static final void m1450setupViewData$lambda6$lambda5$lambda4(Callbacks$Callback onConditionsClickAction, View view) {
+    public static final void setupViewData$lambda$6$lambda$5$lambda$4(Callbacks$Callback onConditionsClickAction, View view) {
         Intrinsics.checkNotNullParameter(onConditionsClickAction, "$onConditionsClickAction");
         onConditionsClickAction.invoke();
     }
@@ -108,22 +105,22 @@ public final class StakingTransactionActionButtonsView extends FrameLayout {
     public final void setupColors() {
         ForkContentStakingTransactionActionsBinding forkContentStakingTransactionActionsBinding = this.binding;
         forkContentStakingTransactionActionsBinding.buttonAction.applyColors();
-        AppCompatTextView appCompatTextView = forkContentStakingTransactionActionsBinding.buttonConditions;
-        appCompatTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlueText"));
+        AppCompatTextView setupColors$lambda$9$lambda$7 = forkContentStakingTransactionActionsBinding.buttonConditions;
+        setupColors$lambda$9$lambda$7.setTextColor(Theme.getColor("windowBackgroundWhiteBlueText"));
+        setupColors$lambda$9$lambda$7.setBackground(Theme.createSimpleSelectorRoundRectDrawable(getCornerRadius(), 0, Theme.getColor("listSelectorSDK21")));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$9$lambda$7, "setupColors$lambda$9$lambda$7");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$9$lambda$7);
+        AppCompatTextView appCompatTextView = forkContentStakingTransactionActionsBinding.buttonApproveInfo;
+        appCompatTextView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText4"));
         appCompatTextView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(getCornerRadius(), 0, Theme.getColor("listSelectorSDK21")));
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView, "");
-        ViewExtKt.withMediumTypeface(appCompatTextView);
-        AppCompatTextView appCompatTextView2 = forkContentStakingTransactionActionsBinding.buttonApproveInfo;
-        appCompatTextView2.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText4"));
-        appCompatTextView2.setBackground(Theme.createSimpleSelectorRoundRectDrawable(getCornerRadius(), 0, Theme.getColor("listSelectorSDK21")));
     }
 
     private final void setupView() {
         setupColors();
         ForkContentStakingTransactionActionsBinding forkContentStakingTransactionActionsBinding = this.binding;
         forkContentStakingTransactionActionsBinding.buttonAction.setForcedCustomHeight(36);
-        forkContentStakingTransactionActionsBinding.buttonConditions.setText(LocaleController.getInternalString(C3158R.string.staking_deposit_conditions));
-        forkContentStakingTransactionActionsBinding.buttonApproveInfo.setText(LocaleController.getInternalString(C3158R.string.wallet_swap_process_what_is_approve));
+        forkContentStakingTransactionActionsBinding.buttonConditions.setText(LocaleController.getInternalString(C3286R.string.staking_deposit_conditions));
+        forkContentStakingTransactionActionsBinding.buttonApproveInfo.setText(LocaleController.getInternalString(C3286R.string.wallet_swap_process_what_is_approve));
         addView(this.binding.getRoot());
     }
 }

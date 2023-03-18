@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;
 
-    invoke-static {v0, p1, p2, p3}, Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;->$r8$lambda$pgPF5e79HkzJASEYDPdk4xMsKAk(Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2, p3}, Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;->$r8$lambda$SEveCZNz5piwHLhHA8ZIZRBC4Ak(Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method

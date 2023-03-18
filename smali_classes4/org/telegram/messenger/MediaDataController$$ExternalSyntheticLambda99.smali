@@ -39,7 +39,7 @@
 
     iget-wide v2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda99;->f$2:J
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$es7VG06cKOhBZZL2eksQc8s_lU8(Lorg/telegram/messenger/MediaDataController;Lorg/telegram/tgnet/TLRPC$Message;J)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$OWkJQUTzbhhyiQY_Yd6Wzes8bvM(Lorg/telegram/messenger/MediaDataController;Lorg/telegram/tgnet/TLRPC$Message;J)V
 
     return-void
 .end method

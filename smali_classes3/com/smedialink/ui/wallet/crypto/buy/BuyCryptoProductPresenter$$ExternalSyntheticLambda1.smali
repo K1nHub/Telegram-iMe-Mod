@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter;
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter;)V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter;
+    iput-object p1, p0, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter$$ExternalSyntheticLambda1;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -25,11 +25,9 @@
 .method public final accept(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter;
+    iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter$$ExternalSyntheticLambda1;->f$0:Lkotlin/jvm/functions/Function1;
 
-    check-cast p1, Lio/reactivex/disposables/Disposable;
-
-    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter;->$r8$lambda$x9YyCbQfgIbbNwavkXsnCOxkqh8(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter;Lio/reactivex/disposables/Disposable;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter;->$r8$lambda$gz2tE14Il0-8tuDalPrVK5UnSz8(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method

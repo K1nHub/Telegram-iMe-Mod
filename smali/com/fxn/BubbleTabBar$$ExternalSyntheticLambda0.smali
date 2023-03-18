@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/fxn/BubbleTabBar$$ExternalSyntheticLambda0;->f$0:Lcom/fxn/BubbleTabBar;
 
-    invoke-static {v0, p1}, Lcom/fxn/BubbleTabBar;->$r8$lambda$K488Q92z_iGZOZoruYDUzYQoXyI(Lcom/fxn/BubbleTabBar;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lcom/fxn/BubbleTabBar;->$r8$lambda$WWN8MRXyZElxR19crdAQfkIuCjo(Lcom/fxn/BubbleTabBar;Landroid/view/View;)V
 
     return-void
 .end method

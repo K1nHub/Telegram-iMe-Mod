@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/smedialink/ui/wallet/staking/calculator/StakingCalculatorPresenter;
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/smedialink/ui/wallet/staking/calculator/StakingCalculatorPresenter;)V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/smedialink/ui/wallet/staking/calculator/StakingCalculatorPresenter$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/wallet/staking/calculator/StakingCalculatorPresenter;
+    iput-object p1, p0, Lcom/smedialink/ui/wallet/staking/calculator/StakingCalculatorPresenter$$ExternalSyntheticLambda1;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -25,11 +25,9 @@
 .method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/ui/wallet/staking/calculator/StakingCalculatorPresenter$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/wallet/staking/calculator/StakingCalculatorPresenter;
+    iget-object v0, p0, Lcom/smedialink/ui/wallet/staking/calculator/StakingCalculatorPresenter$$ExternalSyntheticLambda1;->f$0:Lkotlin/jvm/functions/Function1;
 
-    check-cast p1, Ljava/lang/Double;
-
-    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/staking/calculator/StakingCalculatorPresenter;->$r8$lambda$WxhMUz_roqlT-e5Ntryeqo5-Q54(Lcom/smedialink/ui/wallet/staking/calculator/StakingCalculatorPresenter;Ljava/lang/Double;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
+    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/staking/calculator/StakingCalculatorPresenter;->$r8$lambda$YsWLWgkk6LCDwnBgk5lMtx5egg8(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     move-result-object p1
 

@@ -39,7 +39,7 @@
 
     check-cast p2, Ljava/lang/String;
 
-    invoke-static {p1, p2}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->$r8$lambda$JyRiYcHKDYpwEhEsdEwSHF1a7oQ(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
+    invoke-static {p1, p2}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->$r8$lambda$N3m0qPyzosUcjnwGTJnm_B5BtB0(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object p1
 

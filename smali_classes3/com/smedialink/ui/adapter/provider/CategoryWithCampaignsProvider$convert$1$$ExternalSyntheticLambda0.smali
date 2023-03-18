@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;
 
-    invoke-static {v0, p1, p2, p3}, Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1;->$r8$lambda$paRmUS9e84shW2pvfr9zqTxDIkM(Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2, p3}, Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1;->$r8$lambda$QdshuuCVNwR-E97NARgdUX2HY90(Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method

@@ -21,7 +21,7 @@ import org.fork.utils.Callbacks$Callback;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.BaseFragment;
 import org.telegram.p048ui.ActionBar.INavigationLayout;
@@ -107,36 +107,33 @@ public final class BinancePayHelper implements KoinComponent {
             action.invoke();
             return;
         }
-        DialogModel dialogModel = new DialogModel(LocaleController.getInternalString(C3158R.string.wallet_binance_pay_not_activated_dialog_title), LocaleController.getInternalString(C3158R.string.wallet_binance_pay_not_activated_dialog_description), LocaleController.getInternalString(C3158R.string.common_cancel), LocaleController.getInternalString(C3158R.string.wallet_button_auth_dialog_action_btn));
+        DialogModel dialogModel = new DialogModel(LocaleController.getInternalString(C3286R.string.wallet_binance_pay_not_activated_dialog_title), LocaleController.getInternalString(C3286R.string.wallet_binance_pay_not_activated_dialog_description), LocaleController.getInternalString(C3286R.string.common_cancel), LocaleController.getInternalString(C3286R.string.wallet_button_auth_dialog_action_btn));
         Activity parentActivity = fragment.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "fragment.parentActivity");
         DialogUtils.createDialog$default(parentActivity, dialogModel, new Callbacks$Callback() { // from class: com.smedialink.utils.helper.binancepay.BinancePayHelper$$ExternalSyntheticLambda1
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                BinancePayHelper.m1845runWithCheckIsBinancePayActivated$lambda1(BaseFragment.this, callbacks$Callback);
+                BinancePayHelper.runWithCheckIsBinancePayActivated$lambda$1(BaseFragment.this, callbacks$Callback);
             }
         }, null, 8, null).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: runWithCheckIsBinancePayActivated$lambda-1  reason: not valid java name */
-    public static final void m1845runWithCheckIsBinancePayActivated$lambda1(final BaseFragment fragment, Callbacks$Callback callbacks$Callback) {
+    public static final void runWithCheckIsBinancePayActivated$lambda$1(final BaseFragment fragment, Callbacks$Callback callbacks$Callback) {
         Intrinsics.checkNotNullParameter(fragment, "$fragment");
         WalletHelper.safeRunWalletScreen$default(fragment, null, null, new Callbacks$Callback() { // from class: com.smedialink.utils.helper.binancepay.BinancePayHelper$$ExternalSyntheticLambda0
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                BinancePayHelper.m1846runWithCheckIsBinancePayActivated$lambda1$lambda0(BaseFragment.this);
+                BinancePayHelper.runWithCheckIsBinancePayActivated$lambda$1$lambda$0(BaseFragment.this);
             }
         }, 3, null);
-        if (callbacks$Callback == null) {
-            return;
+        if (callbacks$Callback != null) {
+            callbacks$Callback.invoke();
         }
-        callbacks$Callback.invoke();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: runWithCheckIsBinancePayActivated$lambda-1$lambda-0  reason: not valid java name */
-    public static final void m1846runWithCheckIsBinancePayActivated$lambda1$lambda0(BaseFragment fragment) {
+    public static final void runWithCheckIsBinancePayActivated$lambda$1$lambda$0(BaseFragment fragment) {
         Intrinsics.checkNotNullParameter(fragment, "$fragment");
         WalletFlowCoordinator walletFlowCoordinator = INSTANCE.getWalletFlowCoordinator();
         INavigationLayout parentLayout = fragment.getParentLayout();

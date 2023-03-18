@@ -55,11 +55,11 @@ public class FontResourcesParserCompat {
     /* loaded from: classes.dex */
     public static final class FontFileResourceEntry {
         private final String mFileName;
-        private boolean mItalic;
-        private int mResourceId;
-        private int mTtcIndex;
-        private String mVariationSettings;
-        private int mWeight;
+        private final boolean mItalic;
+        private final int mResourceId;
+        private final int mTtcIndex;
+        private final String mVariationSettings;
+        private final int mWeight;
 
         public FontFileResourceEntry(String str, int i, boolean z, String str2, int i2, int i3) {
             this.mFileName = str;
@@ -160,12 +160,12 @@ public class FontResourcesParserCompat {
         if (arrayList.isEmpty()) {
             return null;
         }
-        return new FontFamilyFilesResourceEntry((FontFileResourceEntry[]) arrayList.toArray(new FontFileResourceEntry[arrayList.size()]));
+        return new FontFamilyFilesResourceEntry((FontFileResourceEntry[]) arrayList.toArray(new FontFileResourceEntry[0]));
     }
 
     private static int getType(TypedArray typedArray, int i) {
         if (Build.VERSION.SDK_INT >= 21) {
-            return typedArray.getType(i);
+            return Api21Impl.getType(typedArray, i);
         }
         TypedValue typedValue = new TypedValue();
         typedArray.getValue(i, typedValue);
@@ -250,6 +250,14 @@ public class FontResourcesParserCompat {
             } else if (next == 3) {
                 i--;
             }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api21Impl {
+        static int getType(TypedArray typedArray, int i) {
+            return typedArray.getType(i);
         }
     }
 }

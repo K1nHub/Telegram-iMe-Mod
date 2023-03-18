@@ -11,6 +11,6 @@ public final /* synthetic */ class PhotoViewer$$ExternalSyntheticLambda18 implem
 
     @Override // android.content.DialogInterface.OnClickListener
     public final void onClick(DialogInterface dialogInterface, int i) {
-        PhotoViewer.lambda$sendPressed$50(dialogInterface, i);
+        PhotoViewer.lambda$sendPressed$51(dialogInterface, i);
     }
 }

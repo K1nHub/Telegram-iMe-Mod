@@ -14,6 +14,6 @@ public final /* synthetic */ class DialogsActivity$28$$ExternalSyntheticLambda5 
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-        DialogsActivity.C537028.lambda$clearTopPeers$0(tLObject, tLRPC$TL_error);
+        DialogsActivity.C550728.lambda$clearTopPeers$0(tLObject, tLRPC$TL_error);
     }
 }

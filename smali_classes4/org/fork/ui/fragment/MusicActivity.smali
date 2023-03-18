@@ -9,14 +9,14 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lorg/fork/ui/fragment/MusicActivity$Companion;,
         Lorg/fork/ui/fragment/MusicActivity$DeviceAdapter;,
-        Lorg/fork/ui/fragment/MusicActivity$DialogsAdapter;,
-        Lorg/fork/ui/fragment/MusicActivity$Companion;
+        Lorg/fork/ui/fragment/MusicActivity$DialogsAdapter;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMusicActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MusicActivity.kt\norg/fork/ui/fragment/MusicActivity\n+ 2 LongSparseArray.kt\nandroidx/core/util/LongSparseArrayKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 ViewExt.kt\ncom/smedialink/utils/extentions/common/ViewExtKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 7 CommonExt.kt\ncom/smedialink/storage/data/utils/extentions/CommonExtKt\n*L\n1#1,496:1\n91#2,4:497\n13536#3:501\n13537#3:506\n187#4,4:502\n1849#5,2:507\n1#6:509\n6#7,6:510\n*S KotlinDebug\n*F\n+ 1 MusicActivity.kt\norg/fork/ui/fragment/MusicActivity\n*L\n259#1:497,4\n280#1:501\n280#1:506\n281#1:502,4\n296#1:507,2\n118#1:510,6\n*E\n"
+    value = "SMAP\nMusicActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MusicActivity.kt\norg/fork/ui/fragment/MusicActivity\n+ 2 LongSparseArray.kt\nandroidx/core/util/LongSparseArrayKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 ViewExt.kt\ncom/smedialink/utils/extentions/common/ViewExtKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 7 CommonExt.kt\ncom/smedialink/storage/data/utils/extentions/CommonExtKt\n*L\n1#1,496:1\n104#2,4:497\n13579#3:501\n13580#3:506\n191#4,4:502\n1855#5,2:507\n1#6:509\n6#7,6:510\n*S KotlinDebug\n*F\n+ 1 MusicActivity.kt\norg/fork/ui/fragment/MusicActivity\n*L\n259#1:497,4\n280#1:501\n280#1:506\n281#1:502,4\n296#1:507,2\n118#1:510,6\n*E\n"
 .end annotation
 
 
@@ -95,66 +95,66 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$-0whDp7_W9dokOmUTsooXvG0dQ0(ZLorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;)V
+.method public static synthetic $r8$lambda$5He6RselytnSlexBwyZQAzmo-r8(Lorg/fork/ui/fragment/MusicActivity;Lorg/telegram/messenger/MessageObject;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/MusicActivity;->showDeviceMusicDeleteConfirmDialog$lambda-24$lambda-23$lambda-22$lambda-21(ZLorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/MusicActivity;->showDeviceMusicOptions$lambda$20(Lorg/fork/ui/fragment/MusicActivity;Lorg/telegram/messenger/MessageObject;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$0dFjuKw1S0O3HCLcGOjfRgJRNWQ(Lorg/fork/ui/fragment/MusicActivity;)V
+.method public static synthetic $r8$lambda$6Tz6TfFCqdeh9WkErGByRoQZ3cI(Lorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/fragment/MusicActivity;->getThemeDescriptions$lambda-7$lambda-6(Lorg/fork/ui/fragment/MusicActivity;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/fragment/MusicActivity;->showDeviceMusicDeleteConfirmDialog$lambda$24$lambda$23(Lorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$UGFAdvDXARJK8cLluVVh0yqPujk(Lorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;)V
+.method public static synthetic $r8$lambda$N0jl8xKMDwlXCK2TmJftqaeHAH4(Lorg/fork/ui/fragment/MusicActivity;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/fragment/MusicActivity;->showDeviceMusicDeleteConfirmDialog$lambda-24$lambda-23(Lorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;)V
+    invoke-static {p0}, Lorg/fork/ui/fragment/MusicActivity;->getThemeDescriptions$lambda$7$lambda$6(Lorg/fork/ui/fragment/MusicActivity;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$b4xmHkVWxSnLSg0VuOCMu4JeCw0(Lorg/fork/ui/fragment/MusicActivity;)V
+.method public static synthetic $r8$lambda$O5AqhhkMMp_5qMtMT8rxf39slrs(Lorg/fork/ui/fragment/MusicActivity;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/fragment/MusicActivity;->loadDeviceMusic$lambda-4$lambda-3(Lorg/fork/ui/fragment/MusicActivity;)V
+    invoke-static {p0}, Lorg/fork/ui/fragment/MusicActivity;->notifyDialogsAdapters$lambda$19(Lorg/fork/ui/fragment/MusicActivity;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$kVyYTipTKhUAXkroqhIRafMkpRI(Lorg/fork/ui/fragment/MusicActivity;)V
+.method public static synthetic $r8$lambda$UG3uaiZ6ijrS1nrI59EDGjyMgU4(Lorg/fork/ui/fragment/MusicActivity;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/fragment/MusicActivity;->loadDeviceMusic$lambda-4(Lorg/fork/ui/fragment/MusicActivity;)V
+    invoke-static {p0}, Lorg/fork/ui/fragment/MusicActivity;->loadDeviceMusic$lambda$4$lambda$3(Lorg/fork/ui/fragment/MusicActivity;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$sYrW4xhEkGe3BGTIxRyCwsLsZ68(Lorg/fork/ui/fragment/MusicActivity;Lorg/telegram/messenger/MessageObject;I)V
+.method public static synthetic $r8$lambda$YRJ9XjhadCtEzT3_g5Dtuqmy3FQ(Lorg/fork/ui/fragment/MusicActivity;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/MusicActivity;->showDeviceMusicOptions$lambda-20(Lorg/fork/ui/fragment/MusicActivity;Lorg/telegram/messenger/MessageObject;I)V
+    invoke-static {p0}, Lorg/fork/ui/fragment/MusicActivity;->loadDeviceMusic$lambda$4(Lorg/fork/ui/fragment/MusicActivity;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ulQAraGTiLkUGeaYASA3UNKrIfQ(Lorg/fork/ui/fragment/MusicActivity;)V
+.method public static synthetic $r8$lambda$YVx05VXP3QE2zSeruMOFhPQy1KA(ZLorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/fragment/MusicActivity;->notifyDialogsAdapters$lambda-19(Lorg/fork/ui/fragment/MusicActivity;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/MusicActivity;->showDeviceMusicDeleteConfirmDialog$lambda$24$lambda$23$lambda$22$lambda$21(ZLorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$yjuyRB3bQWtSkfGmuNykCb3nqM0(Lorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;Ljava/lang/Boolean;)V
+.method public static synthetic $r8$lambda$s6owO9lX_lrblMAKxYHoM6D4IR8(Lorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;Ljava/lang/Boolean;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/MusicActivity;->showDeviceMusicDeleteConfirmDialog$lambda-24(Lorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;Ljava/lang/Boolean;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/MusicActivity;->showDeviceMusicDeleteConfirmDialog$lambda$24(Lorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;Ljava/lang/Boolean;)V
 
     return-void
 .end method
@@ -426,8 +426,6 @@
 
     iput-wide v2, v4, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    sget-object v4, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     iput-wide v2, v1, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
     .line 310
@@ -511,26 +509,34 @@
 
     iput v6, v2, Lorg/telegram/tgnet/TLRPC$Document;->date:I
 
-    const-string v6, "ext"
-
     .line 323
-    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "audio/"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, "ext"
+
+    invoke-static {v4, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 
-    move-result v6
+    move-result v7
 
-    if-lez v6, :cond_0
+    if-lez v7, :cond_0
 
-    const/4 v6, 0x1
+    const/4 v7, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
     :goto_0
-    if-eqz v6, :cond_1
+    if-eqz v7, :cond_1
 
     goto :goto_1
 
@@ -538,9 +544,9 @@
     const-string v4, "mp3"
 
     :goto_1
-    const-string v6, "audio/"
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v6, v4}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -704,7 +710,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-7$lambda-6(Lorg/fork/ui/fragment/MusicActivity;)V
+.method private static final getThemeDescriptions$lambda$7$lambda$6(Lorg/fork/ui/fragment/MusicActivity;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -714,18 +720,15 @@
     .line 240
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lorg/fork/ui/view/PinnedPlayerView;
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {p0}, Lorg/fork/ui/view/PinnedPlayerView;->updateColors()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
-.method private static final loadDeviceMusic$lambda-4(Lorg/fork/ui/fragment/MusicActivity;)V
+.method private static final loadDeviceMusic$lambda$4(Lorg/fork/ui/fragment/MusicActivity;)V
     .locals 13
 
     const-string v0, "this$0"
@@ -774,24 +777,21 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    if-nez v2, :cond_0
+    if-eqz v2, :cond_2
 
-    goto :goto_1
-
-    :cond_0
     const/4 v3, 0x0
 
     const v4, -0x77359400
 
     .line 98
-    :cond_1
+    :cond_0
     :goto_0
     :try_start_1
     invoke-interface {v2}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_1
 
     .line 99
     new-instance v5, Lorg/telegram/messenger/MediaController$AudioEntry;
@@ -873,7 +873,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_0
 
     add-int/lit8 v6, v4, -0x1
 
@@ -894,7 +894,7 @@
     goto :goto_0
 
     .line 112
-    :cond_2
+    :cond_1
     sget-object v4, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -906,18 +906,11 @@
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    .line 116
-    :goto_1
-    new-instance v2, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda0;
-
-    invoke-direct {v2, p0}, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda0;-><init>(Lorg/fork/ui/fragment/MusicActivity;)V
-
-    goto :goto_2
+    goto :goto_1
 
     :catchall_0
     move-exception v3
 
-    .line 96
     :try_start_3
     throw v3
     :try_end_3
@@ -934,6 +927,15 @@
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
+    .line 116
+    :cond_2
+    :goto_1
+    new-instance v2, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda1;
+
+    invoke-direct {v2, p0}, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda1;-><init>(Lorg/fork/ui/fragment/MusicActivity;)V
+
+    goto :goto_2
+
     :catchall_2
     move-exception v2
 
@@ -949,9 +951,9 @@
     .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
     .line 116
-    new-instance v2, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda0;
+    new-instance v2, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda1;
 
-    invoke-direct {v2, p0}, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda0;-><init>(Lorg/fork/ui/fragment/MusicActivity;)V
+    invoke-direct {v2, p0}, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda1;-><init>(Lorg/fork/ui/fragment/MusicActivity;)V
 
     :goto_2
     invoke-static {v2, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
@@ -959,16 +961,16 @@
     return-void
 
     :goto_3
-    new-instance v3, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda0;
+    new-instance v3, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda1;
 
-    invoke-direct {v3, p0}, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda0;-><init>(Lorg/fork/ui/fragment/MusicActivity;)V
+    invoke-direct {v3, p0}, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda1;-><init>(Lorg/fork/ui/fragment/MusicActivity;)V
 
     invoke-static {v3, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     throw v2
 .end method
 
-.method private static final loadDeviceMusic$lambda-4$lambda-3(Lorg/fork/ui/fragment/MusicActivity;)V
+.method private static final loadDeviceMusic$lambda$4$lambda$3(Lorg/fork/ui/fragment/MusicActivity;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1049,16 +1051,16 @@
     .locals 1
 
     .line 342
-    new-instance v0, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda2;
+    new-instance v0, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p0}, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda2;-><init>(Lorg/fork/ui/fragment/MusicActivity;)V
+    invoke-direct {v0, p0}, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda0;-><init>(Lorg/fork/ui/fragment/MusicActivity;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method private static final notifyDialogsAdapters$lambda-19(Lorg/fork/ui/fragment/MusicActivity;)V
+.method private static final notifyDialogsAdapters$lambda$19(Lorg/fork/ui/fragment/MusicActivity;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1095,38 +1097,36 @@
     .line 259
     iget-object v0, p0, Lorg/fork/ui/fragment/MusicActivity;->countsMap:Landroid/util/LongSparseArray;
 
-    .line 91
+    .line 104
     invoke-virtual {v0}, Landroid/util/LongSparseArray;->size()I
 
     move-result v1
 
-    if-lez v1, :cond_4
-
     const/4 v2, 0x0
 
     :goto_0
-    add-int/lit8 v3, v2, 0x1
+    if-ge v2, v1, :cond_3
 
-    .line 92
+    .line 105
     invoke-virtual {v0, v2}, Landroid/util/LongSparseArray;->keyAt(I)J
 
-    move-result-wide v4
+    move-result-wide v3
 
     invoke-virtual {v0, v2}, Landroid/util/LongSparseArray;->valueAt(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v5
 
-    check-cast v2, Ljava/lang/Number;
+    check-cast v5, Ljava/lang/Number;
 
-    invoke-virtual {v2}, Ljava/lang/Number;->intValue()I
+    invoke-virtual {v5}, Ljava/lang/Number;->intValue()I
 
-    move-result v2
+    move-result v5
 
-    if-lez v2, :cond_2
+    if-lez v5, :cond_2
 
     const-wide/16 v6, 0x0
 
-    cmp-long v8, v4, v6
+    cmp-long v8, v3, v6
 
     if-gez v8, :cond_1
 
@@ -1135,63 +1135,57 @@
 
     move-result-object v6
 
-    invoke-virtual {v6, v4, v5}, Lorg/fork/controller/AlbumsController;->isDialogAlbum(J)Z
+    invoke-virtual {v6, v3, v4}, Lorg/fork/controller/AlbumsController;->isDialogAlbum(J)Z
 
     move-result v6
 
     if-eqz v6, :cond_0
 
     .line 263
-    iget-object v2, p0, Lorg/fork/ui/fragment/MusicActivity;->albums:Ljava/util/List;
+    iget-object v5, p0, Lorg/fork/ui/fragment/MusicActivity;->albums:Ljava/util/List;
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v5, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
     :cond_0
     const/16 v6, 0xa
 
-    if-lt v2, v6, :cond_2
+    if-lt v5, v6, :cond_2
 
     .line 265
-    iget-object v2, p0, Lorg/fork/ui/fragment/MusicActivity;->channels:Ljava/util/List;
+    iget-object v5, p0, Lorg/fork/ui/fragment/MusicActivity;->channels:Ljava/util/List;
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v5, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
     .line 268
     :cond_1
-    iget-object v2, p0, Lorg/fork/ui/fragment/MusicActivity;->bots:Ljava/util/List;
+    iget-object v5, p0, Lorg/fork/ui/fragment/MusicActivity;->bots:Ljava/util/List;
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v5, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_2
     :goto_1
-    if-lt v3, v1, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    move v2, v3
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
     .line 272
-    :cond_4
-    :goto_2
+    :cond_3
     invoke-direct {p0}, Lorg/fork/ui/fragment/MusicActivity;->getMusicCountComparator()Ljava/util/Comparator;
 
     move-result-object v0
@@ -1256,7 +1250,7 @@
     return-void
 .end method
 
-.method private static final showDeviceMusicDeleteConfirmDialog$lambda-24(Lorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;Ljava/lang/Boolean;)V
+.method private static final showDeviceMusicDeleteConfirmDialog$lambda$24(Lorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;Ljava/lang/Boolean;)V
     .locals 1
 
     const-string v0, "$message"
@@ -1291,7 +1285,7 @@
     return-void
 .end method
 
-.method private static final showDeviceMusicDeleteConfirmDialog$lambda-24$lambda-23(Lorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;)V
+.method private static final showDeviceMusicDeleteConfirmDialog$lambda$24$lambda$23(Lorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;)V
     .locals 2
 
     const-string v0, "$message"
@@ -1325,7 +1319,7 @@
     return-void
 .end method
 
-.method private static final showDeviceMusicDeleteConfirmDialog$lambda-24$lambda-23$lambda-22$lambda-21(ZLorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;)V
+.method private static final showDeviceMusicDeleteConfirmDialog$lambda$24$lambda$23$lambda$22$lambda$21(ZLorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;)V
     .locals 2
 
     const-string v0, "$message"
@@ -1336,43 +1330,42 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_2
 
     .line 372
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
-
-    move-result p0
-
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaController()Lorg/telegram/messenger/MediaController;
 
-    move-result-object p1
+    move-result-object p0
 
-    invoke-virtual {p1}, Lorg/telegram/messenger/MediaController;->getPlayingMessageObject()Lorg/telegram/messenger/MessageObject;
+    invoke-virtual {p0}, Lorg/telegram/messenger/MediaController;->getPlayingMessageObject()Lorg/telegram/messenger/MessageObject;
 
-    move-result-object p1
+    move-result-object p0
 
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    if-nez p1, :cond_1
+    if-eqz p0, :cond_0
 
-    :cond_0
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    :cond_1
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result p1
 
-    if-ne p0, p1, :cond_0
+    invoke-virtual {p0}, Lorg/telegram/messenger/MessageObject;->getId()I
+
+    move-result p0
+
+    if-ne p1, p0, :cond_0
 
     const/4 p0, 0x1
 
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
     :goto_0
-    if-eqz p0, :cond_2
+    if-eqz p0, :cond_1
 
     .line 373
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaController()Lorg/telegram/messenger/MediaController;
@@ -1382,13 +1375,13 @@
     invoke-virtual {p0, v0, v0, v1, v1}, Lorg/telegram/messenger/MediaController;->cleanupPlayer(ZZZZ)V
 
     .line 375
-    :cond_2
+    :cond_1
     invoke-virtual {p2}, Lorg/fork/ui/fragment/MusicActivity;->loadDeviceMusic()V
 
     goto :goto_1
 
     .line 377
-    :cond_3
+    :cond_2
     sget p0, Lorg/telegram/messenger/R$string;->UnknownError:I
 
     const-string p1, "UnknownError"
@@ -1420,7 +1413,7 @@
     return-void
 .end method
 
-.method private static final showDeviceMusicOptions$lambda-20(Lorg/fork/ui/fragment/MusicActivity;Lorg/telegram/messenger/MessageObject;I)V
+.method private static final showDeviceMusicOptions$lambda$20(Lorg/fork/ui/fragment/MusicActivity;Lorg/telegram/messenger/MessageObject;I)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1503,7 +1496,7 @@
     .line 295
     iput-boolean v2, p0, Lorg/fork/ui/fragment/MusicActivity;->parallelLoading:Z
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1552,7 +1545,7 @@
 
     move-result-object v0
 
-    .line 13536
+    .line 13579
     array-length v1, v0
 
     const/4 v2, 0x0
@@ -1560,7 +1553,7 @@
     const/4 v3, 0x0
 
     :goto_0
-    if-ge v3, v1, :cond_3
+    if-ge v3, v1, :cond_2
 
     aget-object v4, v0, v3
 
@@ -1569,35 +1562,33 @@
 
     move-result-object v4
 
-    .line 187
+    .line 191
     invoke-virtual {v4}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v5
 
-    if-lez v5, :cond_2
-
     const/4 v6, 0x0
 
     :goto_1
-    add-int/lit8 v7, v6, 0x1
+    if-ge v6, v5, :cond_1
 
-    .line 188
+    .line 192
     invoke-virtual {v4, v6}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v6
+    move-result-object v7
 
     const-string v8, "getChildAt(i)"
 
-    invoke-static {v6, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 282
-    instance-of v8, v6, Lorg/telegram/ui/Cells/SharedAudioCell;
+    instance-of v8, v7, Lorg/telegram/ui/Cells/SharedAudioCell;
 
     if-eqz v8, :cond_0
 
-    check-cast v6, Lorg/telegram/ui/Cells/SharedAudioCell;
+    check-cast v7, Lorg/telegram/ui/Cells/SharedAudioCell;
 
-    invoke-virtual {v6}, Lorg/telegram/ui/Cells/SharedAudioCell;->getMessage()Lorg/telegram/messenger/MessageObject;
+    invoke-virtual {v7}, Lorg/telegram/ui/Cells/SharedAudioCell;->getMessage()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v8
 
@@ -1606,32 +1597,26 @@
     const/4 v8, 0x1
 
     .line 283
-    invoke-virtual {v6, v2, v8}, Lorg/telegram/ui/Cells/SharedAudioCell;->updateButtonState(ZZ)V
+    invoke-virtual {v7, v2, v8}, Lorg/telegram/ui/Cells/SharedAudioCell;->updateButtonState(ZZ)V
 
     :cond_0
-    if-lt v7, v5, :cond_1
-
-    goto :goto_2
-
-    :cond_1
-    move v6, v7
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
-    :cond_2
-    :goto_2
+    :cond_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    :cond_3
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
 .method public didReceivedNotification(II[Ljava/lang/Object;)V
-    .locals 2
+    .locals 3
 
     const-string p2, "args"
 
@@ -1649,6 +1634,10 @@
     .line 215
     aget-object p2, p3, p1
 
+    const-string v1, "null cannot be cast to non-null type kotlin.Int"
+
+    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     check-cast p2, Ljava/lang/Integer;
 
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
@@ -1660,16 +1649,22 @@
     .line 216
     aget-object p1, p3, v0
 
+    const-string p2, "null cannot be cast to non-null type kotlin.Long"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     check-cast p1, Ljava/lang/Long;
 
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
     move-result-wide p1
 
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
     .line 217
-    aget-object p3, p3, v1
+    aget-object p3, p3, v2
+
+    invoke-static {p3, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p3, Ljava/lang/Integer;
 
@@ -1754,6 +1749,10 @@
 
     .line 229
     aget-object p1, p3, v0
+
+    const-string p2, "null cannot be cast to non-null type org.telegram.messenger.MessageObject"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
 
@@ -1851,13 +1850,10 @@
 
     const/4 v4, 0x0
 
-    :cond_0
     :goto_0
     if-ge v4, v2, :cond_1
 
     aget-object v5, v1, v4
-
-    add-int/lit8 v4, v4, 0x1
 
     .line 240
     new-instance v14, Lorg/telegram/ui/ActionBar/ThemeDescription;
@@ -2058,6 +2054,9 @@
 
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
+    :cond_0
+    add-int/lit8 v4, v4, 0x1
+
     goto/16 :goto_0
 
     :cond_1
@@ -2244,9 +2243,9 @@
     .line 84
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance v1, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda1;
+    new-instance v1, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda2;
 
-    invoke-direct {v1, p0}, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda1;-><init>(Lorg/fork/ui/fragment/MusicActivity;)V
+    invoke-direct {v1, p0}, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda2;-><init>(Lorg/fork/ui/fragment/MusicActivity;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
@@ -2347,7 +2346,7 @@
 .end method
 
 .method public onListItemClick(Landroid/view/View;IFF)V
-    .locals 4
+    .locals 2
 
     const-string p2, "itemView"
 
@@ -2362,13 +2361,13 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/SharedAudioCell;->didPressedButton()V
 
-    goto :goto_2
+    goto :goto_1
 
     .line 160
     :cond_0
     instance-of p2, p1, Lorg/telegram/ui/Cells/ProfileSearchCell;
 
-    if-eqz p2, :cond_3
+    if-eqz p2, :cond_2
 
     .line 161
     new-instance p2, Lorg/telegram/ui/Components/MediaActivity;
@@ -2386,41 +2385,23 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_1
 
-    if-nez v0, :cond_1
-
-    move-object v0, v1
+    iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     goto :goto_0
 
     :cond_1
-    iget-wide v2, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    :goto_0
-    if-nez v0, :cond_2
-
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ProfileSearchCell;->getChat()Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object p1
 
-    iget-wide v2, p1, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+    iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
-    neg-long v2, v2
+    neg-long v0, v0
 
-    goto :goto_1
-
-    :cond_2
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    :goto_1
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    :goto_0
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
 
@@ -2454,12 +2435,14 @@
 
     move-result-object p1
 
-    invoke-direct {p2, p1, v1}, Lorg/telegram/ui/Components/MediaActivity;-><init>(Landroid/os/Bundle;Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;)V
+    const/4 p3, 0x0
+
+    invoke-direct {p2, p1, p3}, Lorg/telegram/ui/Components/MediaActivity;-><init>(Landroid/os/Bundle;Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;)V
 
     invoke-virtual {p0, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    :cond_3
-    :goto_2
+    :cond_2
+    :goto_1
     return-void
 .end method
 

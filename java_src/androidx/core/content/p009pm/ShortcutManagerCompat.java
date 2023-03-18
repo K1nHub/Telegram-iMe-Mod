@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 /* renamed from: androidx.core.content.pm.ShortcutManagerCompat */
 /* loaded from: classes.dex */
 public class ShortcutManagerCompat {
@@ -80,44 +81,49 @@ public class ShortcutManagerCompat {
     }
 
     public static boolean requestPinShortcut(Context context, ShortcutInfoCompat shortcutInfoCompat, final IntentSender intentSender) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            return ((ShortcutManager) context.getSystemService(ShortcutManager.class)).requestPinShortcut(shortcutInfoCompat.toShortcutInfo(), intentSender);
-        }
-        if (isRequestPinShortcutSupported(context)) {
-            Intent addToIntent = shortcutInfoCompat.addToIntent(new Intent("com.android.launcher.action.INSTALL_SHORTCUT"));
-            if (intentSender == null) {
-                context.sendBroadcast(addToIntent);
+        int i = Build.VERSION.SDK_INT;
+        if (i > 31 || !shortcutInfoCompat.isExcludedFromSurfaces(1)) {
+            if (i >= 26) {
+                return ((ShortcutManager) context.getSystemService(ShortcutManager.class)).requestPinShortcut(shortcutInfoCompat.toShortcutInfo(), intentSender);
+            }
+            if (isRequestPinShortcutSupported(context)) {
+                Intent addToIntent = shortcutInfoCompat.addToIntent(new Intent("com.android.launcher.action.INSTALL_SHORTCUT"));
+                if (intentSender == null) {
+                    context.sendBroadcast(addToIntent);
+                    return true;
+                }
+                context.sendOrderedBroadcast(addToIntent, null, new BroadcastReceiver() { // from class: androidx.core.content.pm.ShortcutManagerCompat.1
+                    @Override // android.content.BroadcastReceiver
+                    public void onReceive(Context context2, Intent intent) {
+                        try {
+                            intentSender.sendIntent(context2, 0, null, null, null);
+                        } catch (IntentSender.SendIntentException unused) {
+                        }
+                    }
+                }, null, -1, null, null);
                 return true;
             }
-            context.sendOrderedBroadcast(addToIntent, null, new BroadcastReceiver() { // from class: androidx.core.content.pm.ShortcutManagerCompat.1
-                @Override // android.content.BroadcastReceiver
-                public void onReceive(Context context2, Intent intent) {
-                    try {
-                        intentSender.sendIntent(context2, 0, null, null, null);
-                    } catch (IntentSender.SendIntentException unused) {
-                    }
-                }
-            }, null, -1, null, null);
-            return true;
+            return false;
         }
         return false;
     }
 
     public static boolean addDynamicShortcuts(Context context, List<ShortcutInfoCompat> list) {
+        List<ShortcutInfoCompat> removeShortcutsExcludedFromSurface = removeShortcutsExcludedFromSurface(list, 1);
         int i = Build.VERSION.SDK_INT;
         if (i <= 29) {
-            convertUriIconsToBitmapIcons(context, list);
+            convertUriIconsToBitmapIcons(context, removeShortcutsExcludedFromSurface);
         }
         if (i >= 25) {
             ArrayList arrayList = new ArrayList();
-            for (ShortcutInfoCompat shortcutInfoCompat : list) {
+            for (ShortcutInfoCompat shortcutInfoCompat : removeShortcutsExcludedFromSurface) {
                 arrayList.add(shortcutInfoCompat.toShortcutInfo());
             }
             if (!((ShortcutManager) context.getSystemService(ShortcutManager.class)).addDynamicShortcuts(arrayList)) {
                 return false;
             }
         }
-        getShortcutInfoSaverInstance(context).addShortcuts(list);
+        getShortcutInfoSaverInstance(context).addShortcuts(removeShortcutsExcludedFromSurface);
         for (ShortcutInfoChangeListener shortcutInfoChangeListener : getShortcutInfoListeners(context)) {
             shortcutInfoChangeListener.onShortcutAdded(list);
         }
@@ -160,20 +166,21 @@ public class ShortcutManagerCompat {
     }
 
     public static boolean updateShortcuts(Context context, List<ShortcutInfoCompat> list) {
+        List<ShortcutInfoCompat> removeShortcutsExcludedFromSurface = removeShortcutsExcludedFromSurface(list, 1);
         int i = Build.VERSION.SDK_INT;
         if (i <= 29) {
-            convertUriIconsToBitmapIcons(context, list);
+            convertUriIconsToBitmapIcons(context, removeShortcutsExcludedFromSurface);
         }
         if (i >= 25) {
             ArrayList arrayList = new ArrayList();
-            for (ShortcutInfoCompat shortcutInfoCompat : list) {
+            for (ShortcutInfoCompat shortcutInfoCompat : removeShortcutsExcludedFromSurface) {
                 arrayList.add(shortcutInfoCompat.toShortcutInfo());
             }
             if (!((ShortcutManager) context.getSystemService(ShortcutManager.class)).updateShortcuts(arrayList)) {
                 return false;
             }
         }
-        getShortcutInfoSaverInstance(context).addShortcuts(list);
+        getShortcutInfoSaverInstance(context).addShortcuts(removeShortcutsExcludedFromSurface);
         for (ShortcutInfoChangeListener shortcutInfoChangeListener : getShortcutInfoListeners(context)) {
             shortcutInfoChangeListener.onShortcutUpdated(list);
         }
@@ -235,11 +242,17 @@ public class ShortcutManagerCompat {
     public static boolean pushDynamicShortcut(Context context, ShortcutInfoCompat shortcutInfoCompat) {
         Preconditions.checkNotNull(context);
         Preconditions.checkNotNull(shortcutInfoCompat);
+        int i = Build.VERSION.SDK_INT;
+        if (i <= 31 && shortcutInfoCompat.isExcludedFromSurfaces(1)) {
+            for (ShortcutInfoChangeListener shortcutInfoChangeListener : getShortcutInfoListeners(context)) {
+                shortcutInfoChangeListener.onShortcutAdded(Collections.singletonList(shortcutInfoCompat));
+            }
+            return true;
+        }
         int maxShortcutCountPerActivity = getMaxShortcutCountPerActivity(context);
         if (maxShortcutCountPerActivity == 0) {
             return false;
         }
-        int i = Build.VERSION.SDK_INT;
         if (i <= 29) {
             convertUriIconToBitmapIcon(context, shortcutInfoCompat);
         }
@@ -263,20 +276,20 @@ public class ShortcutManagerCompat {
                 shortcutInfoSaverInstance.removeShortcuts(Arrays.asList(getShortcutInfoCompatWithLowestRank(shortcuts)));
             }
             shortcutInfoSaverInstance.addShortcuts(Arrays.asList(shortcutInfoCompat));
-            for (ShortcutInfoChangeListener shortcutInfoChangeListener : getShortcutInfoListeners(context)) {
-                shortcutInfoChangeListener.onShortcutAdded(Collections.singletonList(shortcutInfoCompat));
-            }
-            reportShortcutUsed(context, shortcutInfoCompat.getId());
-            return true;
-        } catch (Exception unused) {
             for (ShortcutInfoChangeListener shortcutInfoChangeListener2 : getShortcutInfoListeners(context)) {
                 shortcutInfoChangeListener2.onShortcutAdded(Collections.singletonList(shortcutInfoCompat));
             }
             reportShortcutUsed(context, shortcutInfoCompat.getId());
-            return false;
-        } catch (Throwable th) {
+            return true;
+        } catch (Exception unused) {
             for (ShortcutInfoChangeListener shortcutInfoChangeListener3 : getShortcutInfoListeners(context)) {
                 shortcutInfoChangeListener3.onShortcutAdded(Collections.singletonList(shortcutInfoCompat));
+            }
+            reportShortcutUsed(context, shortcutInfoCompat.getId());
+            return false;
+        } catch (Throwable th) {
+            for (ShortcutInfoChangeListener shortcutInfoChangeListener4 : getShortcutInfoListeners(context)) {
+                shortcutInfoChangeListener4.onShortcutAdded(Collections.singletonList(shortcutInfoCompat));
             }
             reportShortcutUsed(context, shortcutInfoCompat.getId());
             throw th;
@@ -334,6 +347,20 @@ public class ShortcutManagerCompat {
             }
         }
         return sShortcutInfoChangeListeners;
+    }
+
+    private static List<ShortcutInfoCompat> removeShortcutsExcludedFromSurface(List<ShortcutInfoCompat> list, int i) {
+        Objects.requireNonNull(list);
+        if (Build.VERSION.SDK_INT > 31) {
+            return list;
+        }
+        ArrayList arrayList = new ArrayList(list);
+        for (ShortcutInfoCompat shortcutInfoCompat : list) {
+            if (shortcutInfoCompat.isExcludedFromSurfaces(i)) {
+                arrayList.remove(shortcutInfoCompat);
+            }
+        }
+        return arrayList;
     }
 
     /* renamed from: androidx.core.content.pm.ShortcutManagerCompat$Api25Impl */

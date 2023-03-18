@@ -4,10 +4,11 @@ import com.smedialink.utils.extentions.common.BaseFragmentExtKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.databinding.ForkFragmentWalletInterfaceSettingsBinding;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletAppearanceSettingsFragment.kt */
 /* renamed from: com.smedialink.ui.wallet.settings.appearance.WalletAppearanceSettingsFragment$binding$2 */
 /* loaded from: classes3.dex */
-final class WalletAppearanceSettingsFragment$binding$2 extends Lambda implements Function0<ForkFragmentWalletInterfaceSettingsBinding> {
+public final class WalletAppearanceSettingsFragment$binding$2 extends Lambda implements Function0<ForkFragmentWalletInterfaceSettingsBinding> {
     final /* synthetic */ WalletAppearanceSettingsFragment this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */

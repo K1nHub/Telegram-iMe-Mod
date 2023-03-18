@@ -35,34 +35,34 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$D0Wn-fd8L8EL0TjUVBzvYuiJKks(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
+.method public static synthetic $r8$lambda$8xzWXNWE4oEt1R8ItJDGNxYOKmQ(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->invokeLoadMoreListener$lambda-3$lambda-2(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
+    invoke-static {p0, p1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->checkDisableLoadMoreIfNotFullPage$lambda$4(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$IyTSQgh2_l3EyUTm_EdnQnBWP3s(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
+.method public static synthetic $r8$lambda$F9zt50EK7G9y4jOFxzcNoiGdpjg(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->checkDisableLoadMoreIfNotFullPage$lambda-5(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
+    invoke-static {p0, p1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->checkDisableLoadMoreIfNotFullPage$lambda$5(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$iMxq56xdtWC8Z7kBKgfUlJW5-ic(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
+.method public static synthetic $r8$lambda$GSTiwjI05PJwY_rcdFCeh0tIjrs(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->checkDisableLoadMoreIfNotFullPage$lambda-4(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
+    invoke-static {p0, p1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->setupViewHolder$lambda$1(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$qg28ugvLfdrXgP-WjlV02J81ayo(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$I0NejYIIOOajvamrGUd9rVF1Nto(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->setupViewHolder$lambda-1(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;Landroid/view/View;)V
+    invoke-static {p0}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->invokeLoadMoreListener$lambda$3$lambda$2(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
 
     return-void
 .end method
@@ -115,7 +115,7 @@
     return-void
 .end method
 
-.method private static final checkDisableLoadMoreIfNotFullPage$lambda-4(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
+.method private static final checkDisableLoadMoreIfNotFullPage$lambda$4(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -144,7 +144,7 @@
     return-void
 .end method
 
-.method private static final checkDisableLoadMoreIfNotFullPage$lambda-5(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
+.method private static final checkDisableLoadMoreIfNotFullPage$lambda$5(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
     .locals 2
 
     const-string v0, "$manager"
@@ -222,17 +222,17 @@
     :cond_1
     array-length v1, p1
 
-    :cond_2
     :goto_1
     if-ge v2, v1, :cond_3
 
     aget v3, p1, v2
 
-    add-int/lit8 v2, v2, 0x1
-
     if-le v3, v0, :cond_2
 
     move v0, v3
+
+    :cond_2
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
@@ -256,45 +256,31 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    goto :goto_0
+    if-eqz v0, :cond_0
 
     .line 180
-    :cond_0
     new-instance v1, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, p0}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule$$ExternalSyntheticLambda2;-><init>(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->post(Ljava/lang/Runnable;)Z
 
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    :goto_0
-    if-nez v0, :cond_2
+    goto :goto_0
 
     .line 181
+    :cond_0
     iget-object v0, p0, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->mLoadMoreListener:Lcom/chad/library/adapter/base/listener/OnLoadMoreListener;
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-interface {v0}, Lcom/chad/library/adapter/base/listener/OnLoadMoreListener;->onLoadMore()V
 
-    :cond_2
-    :goto_1
+    :cond_1
+    :goto_0
     return-void
 .end method
 
-.method private static final invokeLoadMoreListener$lambda-3$lambda-2(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
+.method private static final invokeLoadMoreListener$lambda$3$lambda$2(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -304,14 +290,11 @@
     .line 180
     iget-object p0, p0, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->mLoadMoreListener:Lcom/chad/library/adapter/base/listener/OnLoadMoreListener;
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {p0}, Lcom/chad/library/adapter/base/listener/OnLoadMoreListener;->onLoadMore()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -379,7 +362,7 @@
     throw p0
 .end method
 
-.method private static final setupViewHolder$lambda-1(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;Landroid/view/View;)V
+.method private static final setupViewHolder$lambda$1(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;Landroid/view/View;)V
     .locals 1
 
     const-string p1, "this$0"
@@ -387,9 +370,7 @@
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 113
-    invoke-virtual {p0}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->getLoadMoreStatus()Lcom/chad/library/adapter/base/loadmore/LoadMoreStatus;
-
-    move-result-object p1
+    iget-object p1, p0, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->loadMoreStatus:Lcom/chad/library/adapter/base/loadmore/LoadMoreStatus;
 
     sget-object v0, Lcom/chad/library/adapter/base/loadmore/LoadMoreStatus;->Fail:Lcom/chad/library/adapter/base/loadmore/LoadMoreStatus;
 
@@ -402,10 +383,6 @@
 
     .line 115
     :cond_0
-    invoke-virtual {p0}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->getLoadMoreStatus()Lcom/chad/library/adapter/base/loadmore/LoadMoreStatus;
-
-    move-result-object p1
-
     sget-object v0, Lcom/chad/library/adapter/base/loadmore/LoadMoreStatus;->Complete:Lcom/chad/library/adapter/base/loadmore/LoadMoreStatus;
 
     if-ne p1, v0, :cond_1
@@ -417,15 +394,9 @@
 
     .line 117
     :cond_1
-    invoke-virtual {p0}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->getEnableLoadMoreEndClick()Z
+    iget-boolean v0, p0, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->enableLoadMoreEndClick:Z
 
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p0}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->getLoadMoreStatus()Lcom/chad/library/adapter/base/loadmore/LoadMoreStatus;
-
-    move-result-object p1
+    if-eqz v0, :cond_2
 
     sget-object v0, Lcom/chad/library/adapter/base/loadmore/LoadMoreStatus;->End:Lcom/chad/library/adapter/base/loadmore/LoadMoreStatus;
 
@@ -580,15 +551,6 @@
     :cond_4
     :goto_0
     return-void
-.end method
-
-.method public final getEnableLoadMoreEndClick()Z
-    .locals 1
-
-    .line 52
-    iget-boolean v0, p0, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->enableLoadMoreEndClick:Z
-
-    return v0
 .end method
 
 .method public final getLoadMoreStatus()Lcom/chad/library/adapter/base/loadmore/LoadMoreStatus;

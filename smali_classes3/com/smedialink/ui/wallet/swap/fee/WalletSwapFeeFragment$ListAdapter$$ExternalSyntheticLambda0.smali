@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment$ListAdapter$$ExternalSyntheticLambda0;->f$1:Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment$ListAdapter;->$r8$lambda$Fn-Xv7p0D0GTirqcb-_dFQeFas4(Lorg/telegram/ui/Components/RecyclerListView$Holder;Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment;I)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment$ListAdapter;->$r8$lambda$yupc0_eQdnWNUWLl55qO2pwJxJA(Lorg/telegram/ui/Components/RecyclerListView$Holder;Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeeFragment;I)V
 
     return-void
 .end method

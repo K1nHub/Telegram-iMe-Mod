@@ -50,7 +50,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 234
+    .line 236
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
@@ -69,11 +69,11 @@
 .method public final invoke(ILjava/lang/String;)V
     .locals 1
 
-    const-string v0, "$noName_1"
+    const-string v0, "<anonymous parameter 1>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 241
+    .line 243
     sget-object p2, Lcom/smedialink/storage/domain/model/wallet/token/TokenType;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenType$Companion;
 
     invoke-virtual {p2}, Lcom/smedialink/storage/domain/model/wallet/token/TokenType$Companion;->getAvailableTypes()Ljava/util/List;
@@ -86,7 +86,7 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/model/wallet/token/TokenType;
 
-    .line 242
+    .line 244
     iget-object p2, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter$configureTokensHeader$1$2;->this$0:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
 
     invoke-static {p2, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;->access$setTokensType(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;Lcom/smedialink/storage/domain/model/wallet/token/TokenType;)V

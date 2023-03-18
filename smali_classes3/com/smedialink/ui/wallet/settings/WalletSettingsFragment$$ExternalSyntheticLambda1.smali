@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;
 
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;->$r8$lambda$jauNyYQHazzCGecgOn6dPaEvNB8(Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;)V
+    invoke-static {v0}, Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;->$r8$lambda$FZUMk3WytiDMPryTB-9aTgtPb4o(Lcom/smedialink/ui/wallet/settings/WalletSettingsFragment;)V
 
     return-void
 .end method

@@ -58,6 +58,10 @@
 
     if-eqz v2, :cond_1
 
+    const-string v3, "jwt.getClaim(TRANSACTION\u2026     ?: throw Throwable()"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     const-string v3, "gas"
 
     .line 19
@@ -74,6 +78,10 @@
     check-cast v0, Lcom/smedialink/storage/domain/model/staking/StakingTransactionGas;
 
     if-eqz v0, :cond_0
+
+    const-string v3, "jwt.getClaim(GAS_KEY).as\u2026     ?: throw Throwable()"
+
+    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 16
     invoke-direct {v1, v2, v0}, Lcom/smedialink/storage/domain/model/staking/StakingTransactionAction;-><init>(Lcom/smedialink/storage/domain/model/staking/StakingTransactionArgs;Lcom/smedialink/storage/domain/model/staking/StakingTransactionGas;)V

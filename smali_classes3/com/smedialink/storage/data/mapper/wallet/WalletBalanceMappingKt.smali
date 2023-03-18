@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletBalanceMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletBalanceMapping.kt\ncom/smedialink/storage/data/mapper/wallet/WalletBalanceMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,51:1\n1618#2,3:52\n*S KotlinDebug\n*F\n+ 1 WalletBalanceMapping.kt\ncom/smedialink/storage/data/mapper/wallet/WalletBalanceMappingKt\n*L\n38#1:52,3\n*E\n"
+    value = "SMAP\nWalletBalanceMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletBalanceMapping.kt\ncom/smedialink/storage/data/mapper/wallet/WalletBalanceMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,51:1\n1620#2,3:52\n*S KotlinDebug\n*F\n+ 1 WalletBalanceMapping.kt\ncom/smedialink/storage/data/mapper/wallet/WalletBalanceMappingKt\n*L\n38#1:52,3\n*E\n"
 .end annotation
 
 
@@ -178,7 +178,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1618
+    .line 1620
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -194,7 +194,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lcom/smedialink/storage/data/network/model/response/wallet/TokenBalanceResponse;
 
     .line 39
@@ -245,16 +245,16 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_0
+    if-eqz v2, :cond_0
 
-    const/4 v2, 0x0
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v2
 
     goto :goto_1
 
     :cond_0
-    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
-
-    move-result v2
+    const/4 v2, 0x0
 
     .line 44
     :goto_1
@@ -276,6 +276,7 @@
     .line 39
     invoke-direct/range {v2 .. v9}, Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;-><init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;DFLcom/smedialink/storage/domain/model/wallet/token/TokenInfo;Lcom/smedialink/storage/domain/model/wallet/PriceRate;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
+    .line 1621
     invoke-interface {v0, v10}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0

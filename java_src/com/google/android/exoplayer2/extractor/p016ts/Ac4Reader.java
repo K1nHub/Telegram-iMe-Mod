@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p016ts;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.audio.Ac4Util;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
@@ -59,7 +59,7 @@ public final class Ac4Reader implements ElementaryStreamReader {
         this.bytesRead = 0;
         this.lastByteWasAC = false;
         this.hasCRC = false;
-        this.timeUs = C0474C.TIME_UNSET;
+        this.timeUs = C0468C.TIME_UNSET;
         this.language = str;
     }
 
@@ -69,7 +69,7 @@ public final class Ac4Reader implements ElementaryStreamReader {
         this.bytesRead = 0;
         this.lastByteWasAC = false;
         this.hasCRC = false;
-        this.timeUs = C0474C.TIME_UNSET;
+        this.timeUs = C0468C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.extractor.p016ts.ElementaryStreamReader
@@ -81,7 +81,7 @@ public final class Ac4Reader implements ElementaryStreamReader {
 
     @Override // com.google.android.exoplayer2.extractor.p016ts.ElementaryStreamReader
     public void packetStarted(long j, int i) {
-        if (j != C0474C.TIME_UNSET) {
+        if (j != C0468C.TIME_UNSET) {
             this.timeUs = j;
         }
     }
@@ -101,7 +101,7 @@ public final class Ac4Reader implements ElementaryStreamReader {
                         int i3 = this.sampleSize;
                         if (i2 == i3) {
                             long j = this.timeUs;
-                            if (j != C0474C.TIME_UNSET) {
+                            if (j != C0468C.TIME_UNSET) {
                                 this.output.sampleMetadata(j, 1, i3, 0, null);
                                 this.timeUs += this.sampleDurationUs;
                             }

@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager$$ExternalSyntheticLambda0;->f$2:Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction;
 
-    invoke-static {v0, v1, v2}, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;->$r8$lambda$SNbUbyO8y1qBBtqCdeKOcQOWup4(Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;Lcom/smedialink/storage/data/utils/system/AndroidActivityHolder;Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction;)V
+    invoke-static {v0, v1, v2}, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;->$r8$lambda$cesoJsCdukyjEC6HfAMqVSmHk3U(Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;Lcom/smedialink/storage/data/utils/system/AndroidActivityHolder;Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction;)V
 
     return-void
 .end method

@@ -6,12 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/model/staking/StakingTransactionStep$Loading;,
-        Lcom/smedialink/model/staking/StakingTransactionStep$RetryLoading;,
-        Lcom/smedialink/model/staking/StakingTransactionStep$ApprovalProcessing;,
-        Lcom/smedialink/model/staking/StakingTransactionStep$Prepare;,
         Lcom/smedialink/model/staking/StakingTransactionStep$ApprovalNeeded;,
-        Lcom/smedialink/model/staking/StakingTransactionStep$Execute;
+        Lcom/smedialink/model/staking/StakingTransactionStep$ApprovalProcessing;,
+        Lcom/smedialink/model/staking/StakingTransactionStep$Execute;,
+        Lcom/smedialink/model/staking/StakingTransactionStep$Loading;,
+        Lcom/smedialink/model/staking/StakingTransactionStep$Prepare;,
+        Lcom/smedialink/model/staking/StakingTransactionStep$RetryLoading;
     }
 .end annotation
 

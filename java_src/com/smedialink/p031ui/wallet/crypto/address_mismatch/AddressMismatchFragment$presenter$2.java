@@ -22,7 +22,7 @@ final class AddressMismatchFragment$presenter$2 extends Lambda implements Functi
     @Override // kotlin.jvm.functions.Function0
     public final AddressMismatchPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1906xf22f97ac(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2020xf22f97ac(this.this$0, null, null));
         return (AddressMismatchPresenter) lazy.getValue();
     }
 }

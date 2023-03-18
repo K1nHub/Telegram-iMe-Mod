@@ -11,7 +11,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.utils.Callbacks$Callback;
 import org.fork.utils.Callbacks$Callback1;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingSafeWithdrawalBinding;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -60,15 +60,15 @@ public final class StakingSafeWithdrawalView extends FrameLayout {
         ForkContentStakingSafeWithdrawalBinding forkContentStakingSafeWithdrawalBinding = this.binding;
         forkContentStakingSafeWithdrawalBinding.checkboxSafeWithdrawal.setColors("checkboxSquareUnchecked", "checkboxSquareBackground", "checkboxSquareCheck");
         forkContentStakingSafeWithdrawalBinding.textSafeWithdrawal.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-        AppCompatImageView appCompatImageView = forkContentStakingSafeWithdrawalBinding.imageHelp;
-        Intrinsics.checkNotNullExpressionValue(appCompatImageView, "");
-        ViewExtKt.setImageColor(appCompatImageView, Theme.getColor("windowBackgroundWhiteGrayIcon"));
-        ViewExtKt.setBoundedCircleRippleBackground(appCompatImageView);
+        AppCompatImageView setupColors$lambda$3$lambda$2 = forkContentStakingSafeWithdrawalBinding.imageHelp;
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$3$lambda$2, "setupColors$lambda$3$lambda$2");
+        ViewExtKt.setImageColor(setupColors$lambda$3$lambda$2, Theme.getColor("windowBackgroundWhiteGrayIcon"));
+        ViewExtKt.setBoundedCircleRippleBackground(setupColors$lambda$3$lambda$2);
     }
 
     private final void setupView() {
         setupColors();
-        this.binding.textSafeWithdrawal.setText(LocaleController.getInternalString(C3158R.string.staking_withdraw_safe_withdrawal));
+        this.binding.textSafeWithdrawal.setText(LocaleController.getInternalString(C3286R.string.staking_withdraw_safe_withdrawal));
         addView(this.binding.getRoot());
     }
 }

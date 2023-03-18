@@ -51,8 +51,14 @@ public final class SmartReplier implements Replier, CoroutineScope {
 
         static {
             int[] iArr = new int[BotLanguage.values().length];
-            iArr[BotLanguage.RU.ordinal()] = 1;
-            iArr[BotLanguage.EN.ordinal()] = 2;
+            try {
+                iArr[BotLanguage.RU.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[BotLanguage.EN.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -215,19 +221,19 @@ public final class SmartReplier implements Replier, CoroutineScope {
             response = null;
         }
         StringBuilder sb = new StringBuilder();
-        sb.append((Object) (response3 != null ? response3.getTag() : null));
+        sb.append(response3 != null ? response3.getTag() : null);
         sb.append('.');
         sb.append(this.currentYearTag);
         String sb2 = sb.toString();
         Set<String> tagsForUser = this.repository.getTagsForUser(j);
-        if (j != 0 && tagsForUser.contains(sb2)) {
-            listOf3 = CollectionsKt__CollectionsKt.listOf((Object[]) new Response[]{response, response2});
-            plus3 = CollectionsKt___CollectionsKt.plus((Collection) listOf3, (Iterable) arrayList);
-            filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(plus3);
-        } else {
+        if (j == 0 || !tagsForUser.contains(sb2)) {
             listOf2 = CollectionsKt__CollectionsKt.listOf((Object[]) new Response[]{response, response3, response2});
             plus2 = CollectionsKt___CollectionsKt.plus((Collection) listOf2, (Iterable) arrayList);
             filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(plus2);
+        } else {
+            listOf3 = CollectionsKt__CollectionsKt.listOf((Object[]) new Response[]{response, response2});
+            plus3 = CollectionsKt___CollectionsKt.plus((Collection) listOf3, (Iterable) arrayList);
+            filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(plus3);
         }
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(filterNotNull, 10);
         ArrayList arrayList4 = new ArrayList(collectionSizeOrDefault);

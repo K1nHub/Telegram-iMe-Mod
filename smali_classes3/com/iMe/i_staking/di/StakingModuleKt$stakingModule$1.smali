@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/i_staking/di/StakingModuleKt;-><clinit>()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/iMe/i_staking/di/StakingModuleKt;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

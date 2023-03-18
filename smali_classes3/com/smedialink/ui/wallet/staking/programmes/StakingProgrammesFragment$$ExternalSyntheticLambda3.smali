@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$$ExternalSyntheticLambda3;->f$0:Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;
 
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->$r8$lambda$yVvSBxm-CAbzg_n4tCTQQeSzf_0(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
+    invoke-static {v0}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->$r8$lambda$vR21_g8FZwr_b4wPB8Muhcw9hLY(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
 
     return-void
 .end method

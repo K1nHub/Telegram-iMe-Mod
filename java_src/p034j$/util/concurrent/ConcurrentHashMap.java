@@ -26,130 +26,131 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.IntFunction;
 import java.util.stream.Stream;
-import p034j$.util.AbstractC2414a;
-import p034j$.util.InterfaceC2415b;
-import p034j$.util.InterfaceC2487s;
+import org.telegram.messenger.LiteMode;
+import p034j$.util.AbstractC2538a;
+import p034j$.util.InterfaceC2539b;
+import p034j$.util.InterfaceC2611s;
 import p034j$.util.Iterator;
 import p034j$.util.function.BiConsumer;
 import p034j$.util.function.BiFunction;
 import p034j$.util.function.Consumer;
 import p034j$.util.function.Function;
 import p034j$.util.function.Predicate;
-import p034j$.wrappers.C2823L;
-import p034j$.wrappers.C2830O0;
-import p034j$.wrappers.C2833S;
-import p034j$.wrappers.C2855h;
-import p034j$.wrappers.C2873q;
-import p034j$.wrappers.C2877s;
-import p034j$.wrappers.C2885w;
-import p034j$.wrappers.C2886w0;
+import p034j$.wrappers.C2947L;
+import p034j$.wrappers.C2954O0;
+import p034j$.wrappers.C2957S;
+import p034j$.wrappers.C2979h;
+import p034j$.wrappers.C2997q;
+import p034j$.wrappers.C3001s;
+import p034j$.wrappers.C3009w;
+import p034j$.wrappers.C3010w0;
 import sun.misc.Unsafe;
 /* renamed from: j$.util.concurrent.ConcurrentHashMap */
 /* loaded from: classes2.dex */
-public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements ConcurrentMap<K, V>, Serializable, InterfaceC2443b {
+public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements ConcurrentMap<K, V>, Serializable, InterfaceC2567b {
 
     /* renamed from: g */
-    static final int f564g = Runtime.getRuntime().availableProcessors();
+    static final int f569g = Runtime.getRuntime().availableProcessors();
 
     /* renamed from: h */
-    private static final Unsafe f565h;
+    private static final Unsafe f570h;
 
     /* renamed from: i */
-    private static final long f566i;
+    private static final long f571i;
 
     /* renamed from: j */
-    private static final long f567j;
+    private static final long f572j;
 
     /* renamed from: k */
-    private static final long f568k;
+    private static final long f573k;
 
     /* renamed from: l */
-    private static final long f569l;
+    private static final long f574l;
 
     /* renamed from: m */
-    private static final long f570m;
+    private static final long f575m;
 
     /* renamed from: n */
-    private static final long f571n;
+    private static final long f576n;
 
     /* renamed from: o */
-    private static final int f572o;
+    private static final int f577o;
     private static final ObjectStreamField[] serialPersistentFields;
     private static final long serialVersionUID = 7249069246763182397L;
 
     /* renamed from: a */
-    volatile transient C2428l[] f573a;
+    volatile transient C2552l[] f578a;
 
     /* renamed from: b */
-    private volatile transient C2428l[] f574b;
+    private volatile transient C2552l[] f579b;
     private volatile transient long baseCount;
 
     /* renamed from: c */
-    private volatile transient C2419c[] f575c;
+    private volatile transient C2543c[] f580c;
     private volatile transient int cellsBusy;
 
     /* renamed from: d */
-    private transient C2425i f576d;
+    private transient C2549i f581d;
 
     /* renamed from: e */
-    private transient C2437u f577e;
+    private transient C2561u f582e;
 
     /* renamed from: f */
-    private transient C2421e f578f;
+    private transient C2545e f583f;
     private volatile transient int sizeCtl;
     private volatile transient int transferIndex;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$a */
     /* loaded from: classes2.dex */
-    public static class C2417a extends C2432p {
+    public static class C2541a extends C2556p {
 
         /* renamed from: i */
-        final ConcurrentHashMap f579i;
+        final ConcurrentHashMap f584i;
 
         /* renamed from: j */
-        C2428l f580j;
+        C2552l f585j;
 
-        C2417a(C2428l[] c2428lArr, int i, int i2, int i3, ConcurrentHashMap concurrentHashMap) {
-            super(c2428lArr, i, i2, i3);
-            this.f579i = concurrentHashMap;
+        C2541a(C2552l[] c2552lArr, int i, int i2, int i3, ConcurrentHashMap concurrentHashMap) {
+            super(c2552lArr, i, i2, i3);
+            this.f584i = concurrentHashMap;
             m583a();
         }
 
         public final boolean hasMoreElements() {
-            return this.f598b != null;
+            return this.f603b != null;
         }
 
         public final boolean hasNext() {
-            return this.f598b != null;
+            return this.f603b != null;
         }
 
         public final void remove() {
-            C2428l c2428l = this.f580j;
-            if (c2428l == null) {
+            C2552l c2552l = this.f585j;
+            if (c2552l == null) {
                 throw new IllegalStateException();
             }
-            this.f580j = null;
-            this.f579i.m595i(c2428l.f590b, null, null);
+            this.f585j = null;
+            this.f584i.m595i(c2552l.f595b, null, null);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$c */
     /* loaded from: classes2.dex */
-    public static final class C2419c {
+    public static final class C2543c {
         volatile long value;
 
-        C2419c(long j) {
+        C2543c(long j) {
             this.value = j;
         }
     }
 
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$d */
     /* loaded from: classes2.dex */
-    static final class C2420d extends C2417a implements Iterator, p034j$.util.Iterator {
-        C2420d(C2428l[] c2428lArr, int i, int i2, int i3, ConcurrentHashMap concurrentHashMap) {
-            super(c2428lArr, i, i2, i3, concurrentHashMap);
+    static final class C2544d extends C2541a implements Iterator, p034j$.util.Iterator {
+        C2544d(C2552l[] c2552lArr, int i, int i2, int i3, ConcurrentHashMap concurrentHashMap) {
+            super(c2552lArr, i, i2, i3, concurrentHashMap);
         }
 
         @Override // p034j$.util.Iterator
@@ -159,18 +160,18 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
         @Override // java.util.Iterator
         public /* synthetic */ void forEachRemaining(java.util.function.Consumer consumer) {
-            Iterator.CC.$default$forEachRemaining(this, C2885w.m109b(consumer));
+            Iterator.CC.$default$forEachRemaining(this, C3009w.m109b(consumer));
         }
 
         @Override // java.util.Iterator, p034j$.util.Iterator
         public Object next() {
-            C2428l c2428l = this.f598b;
-            if (c2428l != null) {
-                Object obj = c2428l.f590b;
-                Object obj2 = c2428l.f591c;
-                this.f580j = c2428l;
+            C2552l c2552l = this.f603b;
+            if (c2552l != null) {
+                Object obj = c2552l.f595b;
+                Object obj2 = c2552l.f596c;
+                this.f585j = c2552l;
                 m583a();
-                return new C2427k(obj, obj2, this.f579i);
+                return new C2551k(obj, obj2, this.f584i);
             }
             throw new NoSuchElementException();
         }
@@ -179,15 +180,15 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$e */
     /* loaded from: classes2.dex */
-    public static final class C2421e extends AbstractC2418b implements Set, InterfaceC2415b {
-        C2421e(ConcurrentHashMap concurrentHashMap) {
+    public static final class C2545e extends AbstractC2542b implements Set, InterfaceC2539b {
+        C2545e(ConcurrentHashMap concurrentHashMap) {
             super(concurrentHashMap);
         }
 
         @Override // java.util.Collection, java.util.Set
         /* renamed from: a */
         public boolean add(Map.Entry entry) {
-            return this.f581a.m596h(entry.getKey(), entry.getValue(), false) == null;
+            return this.f586a.m596h(entry.getKey(), entry.getValue(), false) == null;
         }
 
         @Override // java.util.Collection, java.util.Set
@@ -202,13 +203,13 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return z;
         }
 
-        @Override // p034j$.util.concurrent.ConcurrentHashMap.AbstractC2418b, java.util.Collection
+        @Override // p034j$.util.concurrent.ConcurrentHashMap.AbstractC2542b, java.util.Collection
         public boolean contains(Object obj) {
             Map.Entry entry;
             Object key;
             Object obj2;
             Object value;
-            return (!(obj instanceof Map.Entry) || (key = (entry = (Map.Entry) obj).getKey()) == null || (obj2 = this.f581a.get(key)) == null || (value = entry.getValue()) == null || (value != obj2 && !value.equals(obj2))) ? false : true;
+            return (!(obj instanceof Map.Entry) || (key = (entry = (Map.Entry) obj).getKey()) == null || (obj2 = this.f586a.get(key)) == null || (value = entry.getValue()) == null || (value != obj2 && !value.equals(obj2))) ? false : true;
         }
 
         @Override // java.util.Collection, java.util.Set
@@ -217,36 +218,36 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return (obj instanceof Set) && ((set = (Set) obj) == this || (containsAll(set) && set.containsAll(this)));
         }
 
-        @Override // p034j$.util.InterfaceC2415b, p034j$.lang.InterfaceC2361e
+        @Override // p034j$.util.InterfaceC2539b, p034j$.lang.InterfaceC2485e
         public void forEach(Consumer consumer) {
             Objects.requireNonNull(consumer);
-            C2428l[] c2428lArr = this.f581a.f573a;
-            if (c2428lArr == null) {
+            C2552l[] c2552lArr = this.f586a.f578a;
+            if (c2552lArr == null) {
                 return;
             }
-            C2432p c2432p = new C2432p(c2428lArr, c2428lArr.length, 0, c2428lArr.length);
+            C2556p c2556p = new C2556p(c2552lArr, c2552lArr.length, 0, c2552lArr.length);
             while (true) {
-                C2428l m583a = c2432p.m583a();
+                C2552l m583a = c2556p.m583a();
                 if (m583a == null) {
                     return;
                 }
-                consumer.accept(new C2427k(m583a.f590b, m583a.f591c, this.f581a));
+                consumer.accept(new C2551k(m583a.f595b, m583a.f596c, this.f586a));
             }
         }
 
         @Override // java.lang.Iterable
         public /* synthetic */ void forEach(java.util.function.Consumer consumer) {
-            forEach(C2885w.m109b(consumer));
+            forEach(C3009w.m109b(consumer));
         }
 
         @Override // java.util.Collection, java.util.Set
         public final int hashCode() {
-            C2428l[] c2428lArr = this.f581a.f573a;
+            C2552l[] c2552lArr = this.f586a.f578a;
             int i = 0;
-            if (c2428lArr != null) {
-                C2432p c2432p = new C2432p(c2428lArr, c2428lArr.length, 0, c2428lArr.length);
+            if (c2552lArr != null) {
+                C2556p c2556p = new C2556p(c2552lArr, c2552lArr.length, 0, c2552lArr.length);
                 while (true) {
-                    C2428l m583a = c2432p.m583a();
+                    C2552l m583a = c2556p.m583a();
                     if (m583a == null) {
                         break;
                     }
@@ -256,23 +257,23 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return i;
         }
 
-        @Override // p034j$.util.concurrent.ConcurrentHashMap.AbstractC2418b, java.util.Collection, java.lang.Iterable
+        @Override // p034j$.util.concurrent.ConcurrentHashMap.AbstractC2542b, java.util.Collection, java.lang.Iterable
         public java.util.Iterator iterator() {
-            ConcurrentHashMap concurrentHashMap = this.f581a;
-            C2428l[] c2428lArr = concurrentHashMap.f573a;
-            int length = c2428lArr == null ? 0 : c2428lArr.length;
-            return new C2420d(c2428lArr, length, 0, length, concurrentHashMap);
+            ConcurrentHashMap concurrentHashMap = this.f586a;
+            C2552l[] c2552lArr = concurrentHashMap.f578a;
+            int length = c2552lArr == null ? 0 : c2552lArr.length;
+            return new C2544d(c2552lArr, length, 0, length, concurrentHashMap);
         }
 
-        @Override // p034j$.util.InterfaceC2415b
+        @Override // p034j$.util.InterfaceC2539b
         /* renamed from: k */
         public /* synthetic */ boolean mo571k(Predicate predicate) {
-            return AbstractC2414a.m619h(this, predicate);
+            return AbstractC2538a.m619h(this, predicate);
         }
 
         @Override // java.util.Collection
         public /* synthetic */ Stream parallelStream() {
-            return C2830O0.m182n0(AbstractC2414a.m620g(this));
+            return C2954O0.m182n0(AbstractC2538a.m620g(this));
         }
 
         @Override // java.util.Collection, java.util.Set
@@ -280,158 +281,158 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             Map.Entry entry;
             Object key;
             Object value;
-            return (obj instanceof Map.Entry) && (key = (entry = (Map.Entry) obj).getKey()) != null && (value = entry.getValue()) != null && this.f581a.remove(key, value);
+            return (obj instanceof Map.Entry) && (key = (entry = (Map.Entry) obj).getKey()) != null && (value = entry.getValue()) != null && this.f586a.remove(key, value);
         }
 
         @Override // java.util.Collection
         public /* synthetic */ boolean removeIf(java.util.function.Predicate predicate) {
-            return AbstractC2414a.m619h(this, C2886w0.m108a(predicate));
+            return AbstractC2538a.m619h(this, C3010w0.m108a(predicate));
         }
 
-        @Override // java.util.Collection, java.lang.Iterable, java.util.Set, p034j$.util.InterfaceC2415b, p034j$.lang.InterfaceC2361e
-        public InterfaceC2487s spliterator() {
-            ConcurrentHashMap concurrentHashMap = this.f581a;
+        @Override // java.util.Collection, java.lang.Iterable, java.util.Set, p034j$.util.InterfaceC2539b, p034j$.lang.InterfaceC2485e
+        public InterfaceC2611s spliterator() {
+            ConcurrentHashMap concurrentHashMap = this.f586a;
             long m591m = concurrentHashMap.m591m();
-            C2428l[] c2428lArr = concurrentHashMap.f573a;
-            int length = c2428lArr == null ? 0 : c2428lArr.length;
-            return new C2422f(c2428lArr, length, 0, length, m591m >= 0 ? m591m : 0L, concurrentHashMap);
+            C2552l[] c2552lArr = concurrentHashMap.f578a;
+            int length = c2552lArr == null ? 0 : c2552lArr.length;
+            return new C2546f(c2552lArr, length, 0, length, m591m >= 0 ? m591m : 0L, concurrentHashMap);
         }
 
-        @Override // java.util.Collection, java.lang.Iterable, java.util.Set, p034j$.util.InterfaceC2415b, p034j$.lang.InterfaceC2361e
+        @Override // java.util.Collection, java.lang.Iterable, java.util.Set
         public /* synthetic */ Spliterator spliterator() {
-            return C2855h.m150a(spliterator());
+            return C2979h.m150a(spliterator());
         }
 
-        @Override // java.util.Collection, p034j$.util.InterfaceC2415b
+        @Override // java.util.Collection, p034j$.util.InterfaceC2539b
         public /* synthetic */ p034j$.util.stream.Stream stream() {
-            return AbstractC2414a.m618i(this);
+            return AbstractC2538a.m618i(this);
         }
 
-        @Override // java.util.Collection, p034j$.util.InterfaceC2415b
+        @Override // java.util.Collection
         public /* synthetic */ Stream stream() {
-            return C2830O0.m182n0(AbstractC2414a.m618i(this));
+            return C2954O0.m182n0(AbstractC2538a.m618i(this));
         }
 
         public Object[] toArray(IntFunction intFunction) {
-            return toArray((Object[]) C2833S.m178a(intFunction).apply(0));
+            return toArray((Object[]) C2957S.m178a(intFunction).apply(0));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$f */
     /* loaded from: classes2.dex */
-    public static final class C2422f extends C2432p implements InterfaceC2487s {
+    public static final class C2546f extends C2556p implements InterfaceC2611s {
 
         /* renamed from: i */
-        final ConcurrentHashMap f582i;
+        final ConcurrentHashMap f587i;
 
         /* renamed from: j */
-        long f583j;
+        long f588j;
 
-        C2422f(C2428l[] c2428lArr, int i, int i2, int i3, long j, ConcurrentHashMap concurrentHashMap) {
-            super(c2428lArr, i, i2, i3);
-            this.f582i = concurrentHashMap;
-            this.f583j = j;
+        C2546f(C2552l[] c2552lArr, int i, int i2, int i3, long j, ConcurrentHashMap concurrentHashMap) {
+            super(c2552lArr, i, i2, i3);
+            this.f587i = concurrentHashMap;
+            this.f588j = j;
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         /* renamed from: b */
         public boolean mo128b(Consumer consumer) {
             Objects.requireNonNull(consumer);
-            C2428l m583a = m583a();
+            C2552l m583a = m583a();
             if (m583a == null) {
                 return false;
             }
-            consumer.accept(new C2427k(m583a.f590b, m583a.f591c, this.f582i));
+            consumer.accept(new C2551k(m583a.f595b, m583a.f596c, this.f587i));
             return true;
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public int characteristics() {
             return 4353;
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public long estimateSize() {
-            return this.f583j;
+            return this.f588j;
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public void forEachRemaining(Consumer consumer) {
             Objects.requireNonNull(consumer);
             while (true) {
-                C2428l m583a = m583a();
+                C2552l m583a = m583a();
                 if (m583a == null) {
                     return;
                 }
-                consumer.accept(new C2427k(m583a.f590b, m583a.f591c, this.f582i));
+                consumer.accept(new C2551k(m583a.f595b, m583a.f596c, this.f587i));
             }
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public Comparator getComparator() {
             throw new IllegalStateException();
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public /* synthetic */ long getExactSizeIfKnown() {
-            return AbstractC2414a.m622e(this);
+            return AbstractC2538a.m622e(this);
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public /* synthetic */ boolean hasCharacteristics(int i) {
-            return AbstractC2414a.m621f(this, i);
+            return AbstractC2538a.m621f(this, i);
         }
 
-        @Override // p034j$.util.InterfaceC2487s
-        public InterfaceC2487s trySplit() {
-            int i = this.f602f;
-            int i2 = this.f603g;
+        @Override // p034j$.util.InterfaceC2611s
+        public InterfaceC2611s trySplit() {
+            int i = this.f607f;
+            int i2 = this.f608g;
             int i3 = (i + i2) >>> 1;
             if (i3 <= i) {
                 return null;
             }
-            C2428l[] c2428lArr = this.f597a;
-            int i4 = this.f604h;
-            this.f603g = i3;
-            long j = this.f583j >>> 1;
-            this.f583j = j;
-            return new C2422f(c2428lArr, i4, i3, i2, j, this.f582i);
+            C2552l[] c2552lArr = this.f602a;
+            int i4 = this.f609h;
+            this.f608g = i3;
+            long j = this.f588j >>> 1;
+            this.f588j = j;
+            return new C2546f(c2552lArr, i4, i3, i2, j, this.f587i);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$g */
     /* loaded from: classes2.dex */
-    public static final class C2423g extends C2428l {
+    public static final class C2547g extends C2552l {
 
         /* renamed from: e */
-        final C2428l[] f584e;
+        final C2552l[] f589e;
 
-        C2423g(C2428l[] c2428lArr) {
+        C2547g(C2552l[] c2552lArr) {
             super(-1, null, null, null);
-            this.f584e = c2428lArr;
+            this.f589e = c2552lArr;
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:20:0x0027, code lost:
-            if ((r0 instanceof p034j$.util.concurrent.ConcurrentHashMap.C2423g) == false) goto L28;
+            if ((r0 instanceof p034j$.util.concurrent.ConcurrentHashMap.C2547g) == false) goto L28;
          */
         /* JADX WARN: Code restructure failed: missing block: B:21:0x0029, code lost:
-            r0 = ((p034j$.util.concurrent.ConcurrentHashMap.C2423g) r0).f584e;
+            r0 = ((p034j$.util.concurrent.ConcurrentHashMap.C2547g) r0).f589e;
          */
         /* JADX WARN: Code restructure failed: missing block: B:23:0x0032, code lost:
             return r0.mo573a(r5, r6);
          */
-        @Override // p034j$.util.concurrent.ConcurrentHashMap.C2428l
+        @Override // p034j$.util.concurrent.ConcurrentHashMap.C2552l
         /* renamed from: a */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
-        p034j$.util.concurrent.ConcurrentHashMap.C2428l mo573a(int r5, java.lang.Object r6) {
+        p034j$.util.concurrent.ConcurrentHashMap.C2552l mo573a(int r5, java.lang.Object r6) {
             /*
                 r4 = this;
-                j$.util.concurrent.ConcurrentHashMap$l[] r0 = r4.f584e
+                j$.util.concurrent.ConcurrentHashMap$l[] r0 = r4.f589e
             L2:
                 r1 = 0
                 if (r0 == 0) goto L37
@@ -443,9 +444,9 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 if (r0 != 0) goto L12
                 goto L37
             L12:
-                int r2 = r0.f589a
+                int r2 = r0.f594a
                 if (r2 != r5) goto L23
-                java.lang.Object r3 = r0.f590b
+                java.lang.Object r3 = r0.f595b
                 if (r3 == r6) goto L22
                 if (r3 == 0) goto L23
                 boolean r3 = r6.equals(r3)
@@ -454,30 +455,30 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 return r0
             L23:
                 if (r2 >= 0) goto L33
-                boolean r1 = r0 instanceof p034j$.util.concurrent.ConcurrentHashMap.C2423g
+                boolean r1 = r0 instanceof p034j$.util.concurrent.ConcurrentHashMap.C2547g
                 if (r1 == 0) goto L2e
-                j$.util.concurrent.ConcurrentHashMap$g r0 = (p034j$.util.concurrent.ConcurrentHashMap.C2423g) r0
-                j$.util.concurrent.ConcurrentHashMap$l[] r0 = r0.f584e
+                j$.util.concurrent.ConcurrentHashMap$g r0 = (p034j$.util.concurrent.ConcurrentHashMap.C2547g) r0
+                j$.util.concurrent.ConcurrentHashMap$l[] r0 = r0.f589e
                 goto L2
             L2e:
                 j$.util.concurrent.ConcurrentHashMap$l r5 = r0.mo573a(r5, r6)
                 return r5
             L33:
-                j$.util.concurrent.ConcurrentHashMap$l r0 = r0.f592d
+                j$.util.concurrent.ConcurrentHashMap$l r0 = r0.f597d
                 if (r0 != 0) goto L12
             L37:
                 return r1
             */
-            throw new UnsupportedOperationException("Method not decompiled: p034j$.util.concurrent.ConcurrentHashMap.C2423g.mo573a(int, java.lang.Object):j$.util.concurrent.ConcurrentHashMap$l");
+            throw new UnsupportedOperationException("Method not decompiled: p034j$.util.concurrent.ConcurrentHashMap.C2547g.mo573a(int, java.lang.Object):j$.util.concurrent.ConcurrentHashMap$l");
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$h */
     /* loaded from: classes2.dex */
-    public static final class C2424h extends C2417a implements java.util.Iterator, Enumeration, p034j$.util.Iterator {
-        C2424h(C2428l[] c2428lArr, int i, int i2, int i3, ConcurrentHashMap concurrentHashMap) {
-            super(c2428lArr, i, i2, i3, concurrentHashMap);
+    public static final class C2548h extends C2541a implements java.util.Iterator, Enumeration, p034j$.util.Iterator {
+        C2548h(C2552l[] c2552lArr, int i, int i2, int i3, ConcurrentHashMap concurrentHashMap) {
+            super(c2552lArr, i, i2, i3, concurrentHashMap);
         }
 
         @Override // p034j$.util.Iterator
@@ -487,15 +488,15 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
         @Override // java.util.Iterator
         public /* synthetic */ void forEachRemaining(java.util.function.Consumer consumer) {
-            Iterator.CC.$default$forEachRemaining(this, C2885w.m109b(consumer));
+            Iterator.CC.$default$forEachRemaining(this, C3009w.m109b(consumer));
         }
 
         @Override // java.util.Iterator, p034j$.util.Iterator
         public final Object next() {
-            C2428l c2428l = this.f598b;
-            if (c2428l != null) {
-                Object obj = c2428l.f590b;
-                this.f580j = c2428l;
+            C2552l c2552l = this.f603b;
+            if (c2552l != null) {
+                Object obj = c2552l.f595b;
+                this.f585j = c2552l;
                 m583a();
                 return obj;
             }
@@ -510,8 +511,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$i */
     /* loaded from: classes2.dex */
-    public static class C2425i extends AbstractC2418b implements Set, InterfaceC2415b {
-        C2425i(ConcurrentHashMap concurrentHashMap, Object obj) {
+    public static class C2549i extends AbstractC2542b implements Set, InterfaceC2539b {
+        C2549i(ConcurrentHashMap concurrentHashMap, Object obj) {
             super(concurrentHashMap);
         }
 
@@ -525,9 +526,9 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             throw new UnsupportedOperationException();
         }
 
-        @Override // p034j$.util.concurrent.ConcurrentHashMap.AbstractC2418b, java.util.Collection
+        @Override // p034j$.util.concurrent.ConcurrentHashMap.AbstractC2542b, java.util.Collection
         public boolean contains(Object obj) {
-            return this.f581a.containsKey(obj);
+            return this.f586a.containsKey(obj);
         }
 
         @Override // java.util.Collection, java.util.Set
@@ -536,193 +537,193 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return (obj instanceof Set) && ((set = (Set) obj) == this || (containsAll(set) && set.containsAll(this)));
         }
 
-        @Override // p034j$.util.InterfaceC2415b, p034j$.lang.InterfaceC2361e
+        @Override // p034j$.util.InterfaceC2539b, p034j$.lang.InterfaceC2485e
         public void forEach(Consumer consumer) {
             Objects.requireNonNull(consumer);
-            C2428l[] c2428lArr = this.f581a.f573a;
-            if (c2428lArr == null) {
+            C2552l[] c2552lArr = this.f586a.f578a;
+            if (c2552lArr == null) {
                 return;
             }
-            C2432p c2432p = new C2432p(c2428lArr, c2428lArr.length, 0, c2428lArr.length);
+            C2556p c2556p = new C2556p(c2552lArr, c2552lArr.length, 0, c2552lArr.length);
             while (true) {
-                C2428l m583a = c2432p.m583a();
+                C2552l m583a = c2556p.m583a();
                 if (m583a == null) {
                     return;
                 }
-                consumer.accept(m583a.f590b);
+                consumer.accept(m583a.f595b);
             }
         }
 
         @Override // java.lang.Iterable
         public /* synthetic */ void forEach(java.util.function.Consumer consumer) {
-            forEach(C2885w.m109b(consumer));
+            forEach(C3009w.m109b(consumer));
         }
 
         @Override // java.util.Collection, java.util.Set
         public int hashCode() {
             java.util.Iterator it = iterator();
             int i = 0;
-            while (((C2417a) it).hasNext()) {
-                i += ((C2424h) it).next().hashCode();
+            while (((C2541a) it).hasNext()) {
+                i += ((C2548h) it).next().hashCode();
             }
             return i;
         }
 
-        @Override // p034j$.util.concurrent.ConcurrentHashMap.AbstractC2418b, java.util.Collection, java.lang.Iterable
+        @Override // p034j$.util.concurrent.ConcurrentHashMap.AbstractC2542b, java.util.Collection, java.lang.Iterable
         public java.util.Iterator iterator() {
-            ConcurrentHashMap concurrentHashMap = this.f581a;
-            C2428l[] c2428lArr = concurrentHashMap.f573a;
-            int length = c2428lArr == null ? 0 : c2428lArr.length;
-            return new C2424h(c2428lArr, length, 0, length, concurrentHashMap);
+            ConcurrentHashMap concurrentHashMap = this.f586a;
+            C2552l[] c2552lArr = concurrentHashMap.f578a;
+            int length = c2552lArr == null ? 0 : c2552lArr.length;
+            return new C2548h(c2552lArr, length, 0, length, concurrentHashMap);
         }
 
-        @Override // p034j$.util.InterfaceC2415b
+        @Override // p034j$.util.InterfaceC2539b
         /* renamed from: k */
         public /* synthetic */ boolean mo571k(Predicate predicate) {
-            return AbstractC2414a.m619h(this, predicate);
+            return AbstractC2538a.m619h(this, predicate);
         }
 
         @Override // java.util.Collection
         public /* synthetic */ Stream parallelStream() {
-            return C2830O0.m182n0(AbstractC2414a.m620g(this));
+            return C2954O0.m182n0(AbstractC2538a.m620g(this));
         }
 
         @Override // java.util.Collection, java.util.Set
         public boolean remove(Object obj) {
-            return this.f581a.remove(obj) != null;
+            return this.f586a.remove(obj) != null;
         }
 
         @Override // java.util.Collection
         public /* synthetic */ boolean removeIf(java.util.function.Predicate predicate) {
-            return AbstractC2414a.m619h(this, C2886w0.m108a(predicate));
+            return AbstractC2538a.m619h(this, C3010w0.m108a(predicate));
         }
 
-        @Override // java.util.Collection, java.lang.Iterable, java.util.Set, p034j$.util.InterfaceC2415b, p034j$.lang.InterfaceC2361e
-        public InterfaceC2487s spliterator() {
-            ConcurrentHashMap concurrentHashMap = this.f581a;
+        @Override // java.util.Collection, java.lang.Iterable, java.util.Set, p034j$.util.InterfaceC2539b, p034j$.lang.InterfaceC2485e
+        public InterfaceC2611s spliterator() {
+            ConcurrentHashMap concurrentHashMap = this.f586a;
             long m591m = concurrentHashMap.m591m();
-            C2428l[] c2428lArr = concurrentHashMap.f573a;
-            int length = c2428lArr == null ? 0 : c2428lArr.length;
-            return new C2426j(c2428lArr, length, 0, length, m591m >= 0 ? m591m : 0L);
+            C2552l[] c2552lArr = concurrentHashMap.f578a;
+            int length = c2552lArr == null ? 0 : c2552lArr.length;
+            return new C2550j(c2552lArr, length, 0, length, m591m >= 0 ? m591m : 0L);
         }
 
-        @Override // java.util.Collection, java.lang.Iterable, java.util.Set, p034j$.util.InterfaceC2415b, p034j$.lang.InterfaceC2361e
+        @Override // java.util.Collection, java.lang.Iterable, java.util.Set
         public /* synthetic */ Spliterator spliterator() {
-            return C2855h.m150a(spliterator());
+            return C2979h.m150a(spliterator());
         }
 
-        @Override // java.util.Collection, p034j$.util.InterfaceC2415b
+        @Override // java.util.Collection, p034j$.util.InterfaceC2539b
         public /* synthetic */ p034j$.util.stream.Stream stream() {
-            return AbstractC2414a.m618i(this);
+            return AbstractC2538a.m618i(this);
         }
 
-        @Override // java.util.Collection, p034j$.util.InterfaceC2415b
+        @Override // java.util.Collection
         public /* synthetic */ Stream stream() {
-            return C2830O0.m182n0(AbstractC2414a.m618i(this));
+            return C2954O0.m182n0(AbstractC2538a.m618i(this));
         }
 
         public Object[] toArray(IntFunction intFunction) {
-            return toArray((Object[]) C2833S.m178a(intFunction).apply(0));
+            return toArray((Object[]) C2957S.m178a(intFunction).apply(0));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$j */
     /* loaded from: classes2.dex */
-    public static final class C2426j extends C2432p implements InterfaceC2487s {
+    public static final class C2550j extends C2556p implements InterfaceC2611s {
 
         /* renamed from: i */
-        long f585i;
+        long f590i;
 
-        C2426j(C2428l[] c2428lArr, int i, int i2, int i3, long j) {
-            super(c2428lArr, i, i2, i3);
-            this.f585i = j;
+        C2550j(C2552l[] c2552lArr, int i, int i2, int i3, long j) {
+            super(c2552lArr, i, i2, i3);
+            this.f590i = j;
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         /* renamed from: b */
         public boolean mo128b(Consumer consumer) {
             Objects.requireNonNull(consumer);
-            C2428l m583a = m583a();
+            C2552l m583a = m583a();
             if (m583a == null) {
                 return false;
             }
-            consumer.accept(m583a.f590b);
+            consumer.accept(m583a.f595b);
             return true;
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public int characteristics() {
             return 4353;
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public long estimateSize() {
-            return this.f585i;
+            return this.f590i;
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public void forEachRemaining(Consumer consumer) {
             Objects.requireNonNull(consumer);
             while (true) {
-                C2428l m583a = m583a();
+                C2552l m583a = m583a();
                 if (m583a == null) {
                     return;
                 }
-                consumer.accept(m583a.f590b);
+                consumer.accept(m583a.f595b);
             }
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public Comparator getComparator() {
             throw new IllegalStateException();
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public /* synthetic */ long getExactSizeIfKnown() {
-            return AbstractC2414a.m622e(this);
+            return AbstractC2538a.m622e(this);
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public /* synthetic */ boolean hasCharacteristics(int i) {
-            return AbstractC2414a.m621f(this, i);
+            return AbstractC2538a.m621f(this, i);
         }
 
-        @Override // p034j$.util.InterfaceC2487s
-        public InterfaceC2487s trySplit() {
-            int i = this.f602f;
-            int i2 = this.f603g;
+        @Override // p034j$.util.InterfaceC2611s
+        public InterfaceC2611s trySplit() {
+            int i = this.f607f;
+            int i2 = this.f608g;
             int i3 = (i + i2) >>> 1;
             if (i3 <= i) {
                 return null;
             }
-            C2428l[] c2428lArr = this.f597a;
-            int i4 = this.f604h;
-            this.f603g = i3;
-            long j = this.f585i >>> 1;
-            this.f585i = j;
-            return new C2426j(c2428lArr, i4, i3, i2, j);
+            C2552l[] c2552lArr = this.f602a;
+            int i4 = this.f609h;
+            this.f608g = i3;
+            long j = this.f590i >>> 1;
+            this.f590i = j;
+            return new C2550j(c2552lArr, i4, i3, i2, j);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$k */
     /* loaded from: classes2.dex */
-    public static final class C2427k implements Map.Entry {
+    public static final class C2551k implements Map.Entry {
 
         /* renamed from: a */
-        final Object f586a;
+        final Object f591a;
 
         /* renamed from: b */
-        Object f587b;
+        Object f592b;
 
         /* renamed from: c */
-        final ConcurrentHashMap f588c;
+        final ConcurrentHashMap f593c;
 
-        C2427k(Object obj, Object obj2, ConcurrentHashMap concurrentHashMap) {
-            this.f586a = obj;
-            this.f587b = obj2;
-            this.f588c = concurrentHashMap;
+        C2551k(Object obj, Object obj2, ConcurrentHashMap concurrentHashMap) {
+            this.f591a = obj;
+            this.f592b = obj2;
+            this.f593c = concurrentHashMap;
         }
 
         @Override // java.util.Map.Entry
@@ -732,73 +733,73 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             Object value;
             Object obj2;
             Object obj3;
-            return (obj instanceof Map.Entry) && (key = (entry = (Map.Entry) obj).getKey()) != null && (value = entry.getValue()) != null && (key == (obj2 = this.f586a) || key.equals(obj2)) && (value == (obj3 = this.f587b) || value.equals(obj3));
+            return (obj instanceof Map.Entry) && (key = (entry = (Map.Entry) obj).getKey()) != null && (value = entry.getValue()) != null && (key == (obj2 = this.f591a) || key.equals(obj2)) && (value == (obj3 = this.f592b) || value.equals(obj3));
         }
 
         @Override // java.util.Map.Entry
         public Object getKey() {
-            return this.f586a;
+            return this.f591a;
         }
 
         @Override // java.util.Map.Entry
         public Object getValue() {
-            return this.f587b;
+            return this.f592b;
         }
 
         @Override // java.util.Map.Entry
         public int hashCode() {
-            return this.f586a.hashCode() ^ this.f587b.hashCode();
+            return this.f591a.hashCode() ^ this.f592b.hashCode();
         }
 
         /* JADX WARN: Multi-variable type inference failed */
         @Override // java.util.Map.Entry
         public Object setValue(Object obj) {
             Objects.requireNonNull(obj);
-            Object obj2 = this.f587b;
-            this.f587b = obj;
-            this.f588c.put(this.f586a, obj);
+            Object obj2 = this.f592b;
+            this.f592b = obj;
+            this.f593c.put(this.f591a, obj);
             return obj2;
         }
 
         public String toString() {
-            return this.f586a + "=" + this.f587b;
+            return this.f591a + "=" + this.f592b;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$l */
     /* loaded from: classes2.dex */
-    public static class C2428l implements Map.Entry {
+    public static class C2552l implements Map.Entry {
 
         /* renamed from: a */
-        final int f589a;
+        final int f594a;
 
         /* renamed from: b */
-        final Object f590b;
+        final Object f595b;
 
         /* renamed from: c */
-        volatile Object f591c;
+        volatile Object f596c;
 
         /* renamed from: d */
-        volatile C2428l f592d;
+        volatile C2552l f597d;
 
-        C2428l(int i, Object obj, Object obj2, C2428l c2428l) {
-            this.f589a = i;
-            this.f590b = obj;
-            this.f591c = obj2;
-            this.f592d = c2428l;
+        C2552l(int i, Object obj, Object obj2, C2552l c2552l) {
+            this.f594a = i;
+            this.f595b = obj;
+            this.f596c = obj2;
+            this.f597d = c2552l;
         }
 
         /* renamed from: a */
-        C2428l mo573a(int i, Object obj) {
+        C2552l mo573a(int i, Object obj) {
             Object obj2;
-            C2428l c2428l = this;
+            C2552l c2552l = this;
             do {
-                if (c2428l.f589a == i && ((obj2 = c2428l.f590b) == obj || (obj2 != null && obj.equals(obj2)))) {
-                    return c2428l;
+                if (c2552l.f594a == i && ((obj2 = c2552l.f595b) == obj || (obj2 != null && obj.equals(obj2)))) {
+                    return c2552l;
                 }
-                c2428l = c2428l.f592d;
-            } while (c2428l != null);
+                c2552l = c2552l.f597d;
+            } while (c2552l != null);
             return null;
         }
 
@@ -809,22 +810,22 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             Object value;
             Object obj2;
             Object obj3;
-            return (obj instanceof Map.Entry) && (key = (entry = (Map.Entry) obj).getKey()) != null && (value = entry.getValue()) != null && (key == (obj2 = this.f590b) || key.equals(obj2)) && (value == (obj3 = this.f591c) || value.equals(obj3));
+            return (obj instanceof Map.Entry) && (key = (entry = (Map.Entry) obj).getKey()) != null && (value = entry.getValue()) != null && (key == (obj2 = this.f595b) || key.equals(obj2)) && (value == (obj3 = this.f596c) || value.equals(obj3));
         }
 
         @Override // java.util.Map.Entry
         public final Object getKey() {
-            return this.f590b;
+            return this.f595b;
         }
 
         @Override // java.util.Map.Entry
         public final Object getValue() {
-            return this.f591c;
+            return this.f596c;
         }
 
         @Override // java.util.Map.Entry
         public final int hashCode() {
-            return this.f590b.hashCode() ^ this.f591c.hashCode();
+            return this.f595b.hashCode() ^ this.f596c.hashCode();
         }
 
         @Override // java.util.Map.Entry
@@ -833,412 +834,412 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         }
 
         public final String toString() {
-            return this.f590b + "=" + this.f591c;
+            return this.f595b + "=" + this.f596c;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$m */
     /* loaded from: classes2.dex */
-    public static final class C2429m extends C2428l {
-        C2429m() {
+    public static final class C2553m extends C2552l {
+        C2553m() {
             super(-3, null, null, null);
         }
 
-        @Override // p034j$.util.concurrent.ConcurrentHashMap.C2428l
+        @Override // p034j$.util.concurrent.ConcurrentHashMap.C2552l
         /* renamed from: a */
-        C2428l mo573a(int i, Object obj) {
+        C2552l mo573a(int i, Object obj) {
             return null;
         }
     }
 
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$n */
     /* loaded from: classes2.dex */
-    static class C2430n extends ReentrantLock {
-        C2430n(float f) {
+    static class C2554n extends ReentrantLock {
+        C2554n(float f) {
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$o */
     /* loaded from: classes2.dex */
-    public static final class C2431o {
+    public static final class C2555o {
 
         /* renamed from: a */
-        int f593a;
+        int f598a;
 
         /* renamed from: b */
-        int f594b;
+        int f599b;
 
         /* renamed from: c */
-        C2428l[] f595c;
+        C2552l[] f600c;
 
         /* renamed from: d */
-        C2431o f596d;
+        C2555o f601d;
 
-        C2431o() {
+        C2555o() {
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$p */
     /* loaded from: classes2.dex */
-    public static class C2432p {
+    public static class C2556p {
 
         /* renamed from: a */
-        C2428l[] f597a;
+        C2552l[] f602a;
 
         /* renamed from: b */
-        C2428l f598b = null;
+        C2552l f603b = null;
 
         /* renamed from: c */
-        C2431o f599c;
+        C2555o f604c;
 
         /* renamed from: d */
-        C2431o f600d;
+        C2555o f605d;
 
         /* renamed from: e */
-        int f601e;
+        int f606e;
 
         /* renamed from: f */
-        int f602f;
+        int f607f;
 
         /* renamed from: g */
-        int f603g;
+        int f608g;
 
         /* renamed from: h */
-        final int f604h;
+        final int f609h;
 
-        C2432p(C2428l[] c2428lArr, int i, int i2, int i3) {
-            this.f597a = c2428lArr;
-            this.f604h = i;
-            this.f601e = i2;
-            this.f602f = i2;
-            this.f603g = i3;
+        C2556p(C2552l[] c2552lArr, int i, int i2, int i3) {
+            this.f602a = c2552lArr;
+            this.f609h = i;
+            this.f606e = i2;
+            this.f607f = i2;
+            this.f608g = i3;
         }
 
         /* renamed from: a */
-        final C2428l m583a() {
-            C2428l[] c2428lArr;
+        final C2552l m583a() {
+            C2552l[] c2552lArr;
             int length;
             int i;
-            C2431o c2431o;
-            C2428l c2428l = this.f598b;
-            if (c2428l != null) {
-                c2428l = c2428l.f592d;
+            C2555o c2555o;
+            C2552l c2552l = this.f603b;
+            if (c2552l != null) {
+                c2552l = c2552l.f597d;
             }
-            while (c2428l == null) {
-                if (this.f602f >= this.f603g || (c2428lArr = this.f597a) == null || (length = c2428lArr.length) <= (i = this.f601e) || i < 0) {
-                    this.f598b = null;
+            while (c2552l == null) {
+                if (this.f607f >= this.f608g || (c2552lArr = this.f602a) == null || (length = c2552lArr.length) <= (i = this.f606e) || i < 0) {
+                    this.f603b = null;
                     return null;
                 }
-                C2428l m590n = ConcurrentHashMap.m590n(c2428lArr, i);
-                if (m590n == null || m590n.f589a >= 0) {
-                    c2428l = m590n;
-                } else if (m590n instanceof C2423g) {
-                    this.f597a = ((C2423g) m590n).f584e;
-                    C2431o c2431o2 = this.f600d;
-                    if (c2431o2 != null) {
-                        this.f600d = c2431o2.f596d;
+                C2552l m590n = ConcurrentHashMap.m590n(c2552lArr, i);
+                if (m590n == null || m590n.f594a >= 0) {
+                    c2552l = m590n;
+                } else if (m590n instanceof C2547g) {
+                    this.f602a = ((C2547g) m590n).f589e;
+                    C2555o c2555o2 = this.f605d;
+                    if (c2555o2 != null) {
+                        this.f605d = c2555o2.f601d;
                     } else {
-                        c2431o2 = new C2431o();
+                        c2555o2 = new C2555o();
                     }
-                    c2431o2.f595c = c2428lArr;
-                    c2431o2.f593a = length;
-                    c2431o2.f594b = i;
-                    c2431o2.f596d = this.f599c;
-                    this.f599c = c2431o2;
-                    c2428l = null;
+                    c2555o2.f600c = c2552lArr;
+                    c2555o2.f598a = length;
+                    c2555o2.f599b = i;
+                    c2555o2.f601d = this.f604c;
+                    this.f604c = c2555o2;
+                    c2552l = null;
                 } else {
-                    c2428l = m590n instanceof C2433q ? ((C2433q) m590n).f608f : null;
+                    c2552l = m590n instanceof C2557q ? ((C2557q) m590n).f613f : null;
                 }
-                if (this.f599c != null) {
+                if (this.f604c != null) {
                     while (true) {
-                        c2431o = this.f599c;
-                        if (c2431o == null) {
+                        c2555o = this.f604c;
+                        if (c2555o == null) {
                             break;
                         }
-                        int i2 = this.f601e;
-                        int i3 = c2431o.f593a;
+                        int i2 = this.f606e;
+                        int i3 = c2555o.f598a;
                         int i4 = i2 + i3;
-                        this.f601e = i4;
+                        this.f606e = i4;
                         if (i4 < length) {
                             break;
                         }
-                        this.f601e = c2431o.f594b;
-                        this.f597a = c2431o.f595c;
-                        c2431o.f595c = null;
-                        C2431o c2431o3 = c2431o.f596d;
-                        c2431o.f596d = this.f600d;
-                        this.f599c = c2431o3;
-                        this.f600d = c2431o;
+                        this.f606e = c2555o.f599b;
+                        this.f602a = c2555o.f600c;
+                        c2555o.f600c = null;
+                        C2555o c2555o3 = c2555o.f601d;
+                        c2555o.f601d = this.f605d;
+                        this.f604c = c2555o3;
+                        this.f605d = c2555o;
                         length = i3;
                     }
-                    if (c2431o == null) {
-                        int i5 = this.f601e + this.f604h;
-                        this.f601e = i5;
+                    if (c2555o == null) {
+                        int i5 = this.f606e + this.f609h;
+                        this.f606e = i5;
                         if (i5 >= length) {
-                            int i6 = this.f602f + 1;
-                            this.f602f = i6;
-                            this.f601e = i6;
+                            int i6 = this.f607f + 1;
+                            this.f607f = i6;
+                            this.f606e = i6;
                         }
                     }
                 } else {
-                    int i7 = i + this.f604h;
-                    this.f601e = i7;
+                    int i7 = i + this.f609h;
+                    this.f606e = i7;
                     if (i7 >= length) {
-                        int i8 = this.f602f + 1;
-                        this.f602f = i8;
-                        this.f601e = i8;
+                        int i8 = this.f607f + 1;
+                        this.f607f = i8;
+                        this.f606e = i8;
                     }
                 }
             }
-            this.f598b = c2428l;
-            return c2428l;
+            this.f603b = c2552l;
+            return c2552l;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$q */
     /* loaded from: classes2.dex */
-    public static final class C2433q extends C2428l {
+    public static final class C2557q extends C2552l {
 
         /* renamed from: h */
-        private static final Unsafe f605h;
+        private static final Unsafe f610h;
 
         /* renamed from: i */
-        private static final long f606i;
+        private static final long f611i;
 
         /* renamed from: e */
-        C2434r f607e;
+        C2558r f612e;
 
         /* renamed from: f */
-        volatile C2434r f608f;
+        volatile C2558r f613f;
 
         /* renamed from: g */
-        volatile Thread f609g;
+        volatile Thread f614g;
         volatile int lockState;
 
         static {
             try {
-                Unsafe m556c = AbstractC2444c.m556c();
-                f605h = m556c;
-                f606i = m556c.objectFieldOffset(C2433q.class.getDeclaredField("lockState"));
+                Unsafe m556c = AbstractC2568c.m556c();
+                f610h = m556c;
+                f611i = m556c.objectFieldOffset(C2557q.class.getDeclaredField("lockState"));
             } catch (Exception e) {
                 throw new Error(e);
             }
         }
 
-        C2433q(C2434r c2434r) {
+        C2557q(C2558r c2558r) {
             super(-2, null, null, null);
             int m600d;
             int m574j;
-            this.f608f = c2434r;
-            C2434r c2434r2 = null;
-            while (c2434r != null) {
-                C2434r c2434r3 = (C2434r) c2434r.f592d;
-                c2434r.f612g = null;
-                c2434r.f611f = null;
-                if (c2434r2 == null) {
-                    c2434r.f610e = null;
-                    c2434r.f614i = false;
+            this.f613f = c2558r;
+            C2558r c2558r2 = null;
+            while (c2558r != null) {
+                C2558r c2558r3 = (C2558r) c2558r.f597d;
+                c2558r.f617g = null;
+                c2558r.f616f = null;
+                if (c2558r2 == null) {
+                    c2558r.f615e = null;
+                    c2558r.f619i = false;
                 } else {
-                    Object obj = c2434r.f590b;
-                    int i = c2434r.f589a;
-                    C2434r c2434r4 = c2434r2;
+                    Object obj = c2558r.f595b;
+                    int i = c2558r.f594a;
+                    C2558r c2558r4 = c2558r2;
                     Class cls = null;
                     while (true) {
-                        Object obj2 = c2434r4.f590b;
-                        int i2 = c2434r4.f589a;
+                        Object obj2 = c2558r4.f595b;
+                        int i2 = c2558r4.f594a;
                         m574j = i2 > i ? -1 : i2 < i ? 1 : ((cls == null && (cls = ConcurrentHashMap.m601c(obj)) == null) || (m600d = ConcurrentHashMap.m600d(cls, obj, obj2)) == 0) ? m574j(obj, obj2) : m600d;
-                        C2434r c2434r5 = m574j <= 0 ? c2434r4.f611f : c2434r4.f612g;
-                        if (c2434r5 == null) {
+                        C2558r c2558r5 = m574j <= 0 ? c2558r4.f616f : c2558r4.f617g;
+                        if (c2558r5 == null) {
                             break;
                         }
-                        c2434r4 = c2434r5;
+                        c2558r4 = c2558r5;
                     }
-                    c2434r.f610e = c2434r4;
+                    c2558r.f615e = c2558r4;
                     if (m574j <= 0) {
-                        c2434r4.f611f = c2434r;
+                        c2558r4.f616f = c2558r;
                     } else {
-                        c2434r4.f612g = c2434r;
+                        c2558r4.f617g = c2558r;
                     }
-                    c2434r = m581c(c2434r2, c2434r);
+                    c2558r = m581c(c2558r2, c2558r);
                 }
-                c2434r2 = c2434r;
-                c2434r = c2434r3;
+                c2558r2 = c2558r;
+                c2558r = c2558r3;
             }
-            this.f607e = c2434r2;
+            this.f612e = c2558r2;
         }
 
         /* renamed from: b */
-        static C2434r m582b(C2434r c2434r, C2434r c2434r2) {
-            while (c2434r2 != null && c2434r2 != c2434r) {
-                C2434r c2434r3 = c2434r2.f610e;
-                if (c2434r3 == null) {
-                    c2434r2.f614i = false;
-                    return c2434r2;
-                } else if (c2434r2.f614i) {
-                    c2434r2.f614i = false;
-                    return c2434r;
+        static C2558r m582b(C2558r c2558r, C2558r c2558r2) {
+            while (c2558r2 != null && c2558r2 != c2558r) {
+                C2558r c2558r3 = c2558r2.f615e;
+                if (c2558r3 == null) {
+                    c2558r2.f619i = false;
+                    return c2558r2;
+                } else if (c2558r2.f619i) {
+                    c2558r2.f619i = false;
+                    return c2558r;
                 } else {
-                    C2434r c2434r4 = c2434r3.f611f;
-                    C2434r c2434r5 = null;
-                    if (c2434r4 == c2434r2) {
-                        c2434r4 = c2434r3.f612g;
-                        if (c2434r4 != null && c2434r4.f614i) {
-                            c2434r4.f614i = false;
-                            c2434r3.f614i = true;
-                            c2434r = m576h(c2434r, c2434r3);
-                            c2434r3 = c2434r2.f610e;
-                            c2434r4 = c2434r3 == null ? null : c2434r3.f612g;
+                    C2558r c2558r4 = c2558r3.f616f;
+                    C2558r c2558r5 = null;
+                    if (c2558r4 == c2558r2) {
+                        c2558r4 = c2558r3.f617g;
+                        if (c2558r4 != null && c2558r4.f619i) {
+                            c2558r4.f619i = false;
+                            c2558r3.f619i = true;
+                            c2558r = m576h(c2558r, c2558r3);
+                            c2558r3 = c2558r2.f615e;
+                            c2558r4 = c2558r3 == null ? null : c2558r3.f617g;
                         }
-                        if (c2434r4 == null) {
-                            c2434r2 = c2434r3;
+                        if (c2558r4 == null) {
+                            c2558r2 = c2558r3;
                         } else {
-                            C2434r c2434r6 = c2434r4.f611f;
-                            C2434r c2434r7 = c2434r4.f612g;
-                            if ((c2434r7 != null && c2434r7.f614i) || (c2434r6 != null && c2434r6.f614i)) {
-                                if (c2434r7 == null || !c2434r7.f614i) {
-                                    if (c2434r6 != null) {
-                                        c2434r6.f614i = false;
+                            C2558r c2558r6 = c2558r4.f616f;
+                            C2558r c2558r7 = c2558r4.f617g;
+                            if ((c2558r7 != null && c2558r7.f619i) || (c2558r6 != null && c2558r6.f619i)) {
+                                if (c2558r7 == null || !c2558r7.f619i) {
+                                    if (c2558r6 != null) {
+                                        c2558r6.f619i = false;
                                     }
-                                    c2434r4.f614i = true;
-                                    c2434r = m575i(c2434r, c2434r4);
-                                    c2434r3 = c2434r2.f610e;
-                                    if (c2434r3 != null) {
-                                        c2434r5 = c2434r3.f612g;
+                                    c2558r4.f619i = true;
+                                    c2558r = m575i(c2558r, c2558r4);
+                                    c2558r3 = c2558r2.f615e;
+                                    if (c2558r3 != null) {
+                                        c2558r5 = c2558r3.f617g;
                                     }
                                 } else {
-                                    c2434r5 = c2434r4;
+                                    c2558r5 = c2558r4;
                                 }
-                                if (c2434r5 != null) {
-                                    c2434r5.f614i = c2434r3 == null ? false : c2434r3.f614i;
-                                    C2434r c2434r8 = c2434r5.f612g;
-                                    if (c2434r8 != null) {
-                                        c2434r8.f614i = false;
+                                if (c2558r5 != null) {
+                                    c2558r5.f619i = c2558r3 == null ? false : c2558r3.f619i;
+                                    C2558r c2558r8 = c2558r5.f617g;
+                                    if (c2558r8 != null) {
+                                        c2558r8.f619i = false;
                                     }
                                 }
-                                if (c2434r3 != null) {
-                                    c2434r3.f614i = false;
-                                    c2434r = m576h(c2434r, c2434r3);
+                                if (c2558r3 != null) {
+                                    c2558r3.f619i = false;
+                                    c2558r = m576h(c2558r, c2558r3);
                                 }
-                                c2434r2 = c2434r;
-                                c2434r = c2434r2;
+                                c2558r2 = c2558r;
+                                c2558r = c2558r2;
                             }
-                            c2434r4.f614i = true;
-                            c2434r2 = c2434r3;
+                            c2558r4.f619i = true;
+                            c2558r2 = c2558r3;
                         }
                     } else {
-                        if (c2434r4 != null && c2434r4.f614i) {
-                            c2434r4.f614i = false;
-                            c2434r3.f614i = true;
-                            c2434r = m575i(c2434r, c2434r3);
-                            c2434r3 = c2434r2.f610e;
-                            c2434r4 = c2434r3 == null ? null : c2434r3.f611f;
+                        if (c2558r4 != null && c2558r4.f619i) {
+                            c2558r4.f619i = false;
+                            c2558r3.f619i = true;
+                            c2558r = m575i(c2558r, c2558r3);
+                            c2558r3 = c2558r2.f615e;
+                            c2558r4 = c2558r3 == null ? null : c2558r3.f616f;
                         }
-                        if (c2434r4 == null) {
-                            c2434r2 = c2434r3;
+                        if (c2558r4 == null) {
+                            c2558r2 = c2558r3;
                         } else {
-                            C2434r c2434r9 = c2434r4.f611f;
-                            C2434r c2434r10 = c2434r4.f612g;
-                            if ((c2434r9 != null && c2434r9.f614i) || (c2434r10 != null && c2434r10.f614i)) {
-                                if (c2434r9 == null || !c2434r9.f614i) {
-                                    if (c2434r10 != null) {
-                                        c2434r10.f614i = false;
+                            C2558r c2558r9 = c2558r4.f616f;
+                            C2558r c2558r10 = c2558r4.f617g;
+                            if ((c2558r9 != null && c2558r9.f619i) || (c2558r10 != null && c2558r10.f619i)) {
+                                if (c2558r9 == null || !c2558r9.f619i) {
+                                    if (c2558r10 != null) {
+                                        c2558r10.f619i = false;
                                     }
-                                    c2434r4.f614i = true;
-                                    c2434r = m576h(c2434r, c2434r4);
-                                    c2434r3 = c2434r2.f610e;
-                                    if (c2434r3 != null) {
-                                        c2434r5 = c2434r3.f611f;
+                                    c2558r4.f619i = true;
+                                    c2558r = m576h(c2558r, c2558r4);
+                                    c2558r3 = c2558r2.f615e;
+                                    if (c2558r3 != null) {
+                                        c2558r5 = c2558r3.f616f;
                                     }
                                 } else {
-                                    c2434r5 = c2434r4;
+                                    c2558r5 = c2558r4;
                                 }
-                                if (c2434r5 != null) {
-                                    c2434r5.f614i = c2434r3 == null ? false : c2434r3.f614i;
-                                    C2434r c2434r11 = c2434r5.f611f;
-                                    if (c2434r11 != null) {
-                                        c2434r11.f614i = false;
+                                if (c2558r5 != null) {
+                                    c2558r5.f619i = c2558r3 == null ? false : c2558r3.f619i;
+                                    C2558r c2558r11 = c2558r5.f616f;
+                                    if (c2558r11 != null) {
+                                        c2558r11.f619i = false;
                                     }
                                 }
-                                if (c2434r3 != null) {
-                                    c2434r3.f614i = false;
-                                    c2434r = m575i(c2434r, c2434r3);
+                                if (c2558r3 != null) {
+                                    c2558r3.f619i = false;
+                                    c2558r = m575i(c2558r, c2558r3);
                                 }
-                                c2434r2 = c2434r;
-                                c2434r = c2434r2;
+                                c2558r2 = c2558r;
+                                c2558r = c2558r2;
                             }
-                            c2434r4.f614i = true;
-                            c2434r2 = c2434r3;
+                            c2558r4.f619i = true;
+                            c2558r2 = c2558r3;
                         }
                     }
                 }
             }
-            return c2434r;
+            return c2558r;
         }
 
         /* renamed from: c */
-        static C2434r m581c(C2434r c2434r, C2434r c2434r2) {
-            C2434r c2434r3;
-            c2434r2.f614i = true;
+        static C2558r m581c(C2558r c2558r, C2558r c2558r2) {
+            C2558r c2558r3;
+            c2558r2.f619i = true;
             while (true) {
-                C2434r c2434r4 = c2434r2.f610e;
-                if (c2434r4 == null) {
-                    c2434r2.f614i = false;
-                    return c2434r2;
-                } else if (!c2434r4.f614i || (c2434r3 = c2434r4.f610e) == null) {
+                C2558r c2558r4 = c2558r2.f615e;
+                if (c2558r4 == null) {
+                    c2558r2.f619i = false;
+                    return c2558r2;
+                } else if (!c2558r4.f619i || (c2558r3 = c2558r4.f615e) == null) {
                     break;
                 } else {
-                    C2434r c2434r5 = c2434r3.f611f;
-                    if (c2434r4 == c2434r5) {
-                        c2434r5 = c2434r3.f612g;
-                        if (c2434r5 == null || !c2434r5.f614i) {
-                            if (c2434r2 == c2434r4.f612g) {
-                                c2434r = m576h(c2434r, c2434r4);
-                                C2434r c2434r6 = c2434r4.f610e;
-                                c2434r3 = c2434r6 == null ? null : c2434r6.f610e;
-                                c2434r4 = c2434r6;
-                                c2434r2 = c2434r4;
+                    C2558r c2558r5 = c2558r3.f616f;
+                    if (c2558r4 == c2558r5) {
+                        c2558r5 = c2558r3.f617g;
+                        if (c2558r5 == null || !c2558r5.f619i) {
+                            if (c2558r2 == c2558r4.f617g) {
+                                c2558r = m576h(c2558r, c2558r4);
+                                C2558r c2558r6 = c2558r4.f615e;
+                                c2558r3 = c2558r6 == null ? null : c2558r6.f615e;
+                                c2558r4 = c2558r6;
+                                c2558r2 = c2558r4;
                             }
-                            if (c2434r4 != null) {
-                                c2434r4.f614i = false;
-                                if (c2434r3 != null) {
-                                    c2434r3.f614i = true;
-                                    c2434r = m575i(c2434r, c2434r3);
+                            if (c2558r4 != null) {
+                                c2558r4.f619i = false;
+                                if (c2558r3 != null) {
+                                    c2558r3.f619i = true;
+                                    c2558r = m575i(c2558r, c2558r3);
                                 }
                             }
                         } else {
-                            c2434r5.f614i = false;
-                            c2434r4.f614i = false;
-                            c2434r3.f614i = true;
-                            c2434r2 = c2434r3;
+                            c2558r5.f619i = false;
+                            c2558r4.f619i = false;
+                            c2558r3.f619i = true;
+                            c2558r2 = c2558r3;
                         }
-                    } else if (c2434r5 == null || !c2434r5.f614i) {
-                        if (c2434r2 == c2434r4.f611f) {
-                            c2434r = m575i(c2434r, c2434r4);
-                            C2434r c2434r7 = c2434r4.f610e;
-                            c2434r3 = c2434r7 == null ? null : c2434r7.f610e;
-                            c2434r4 = c2434r7;
-                            c2434r2 = c2434r4;
+                    } else if (c2558r5 == null || !c2558r5.f619i) {
+                        if (c2558r2 == c2558r4.f616f) {
+                            c2558r = m575i(c2558r, c2558r4);
+                            C2558r c2558r7 = c2558r4.f615e;
+                            c2558r3 = c2558r7 == null ? null : c2558r7.f615e;
+                            c2558r4 = c2558r7;
+                            c2558r2 = c2558r4;
                         }
-                        if (c2434r4 != null) {
-                            c2434r4.f614i = false;
-                            if (c2434r3 != null) {
-                                c2434r3.f614i = true;
-                                c2434r = m576h(c2434r, c2434r3);
+                        if (c2558r4 != null) {
+                            c2558r4.f619i = false;
+                            if (c2558r3 != null) {
+                                c2558r3.f619i = true;
+                                c2558r = m576h(c2558r, c2558r3);
                             }
                         }
                     } else {
-                        c2434r5.f614i = false;
-                        c2434r4.f614i = false;
-                        c2434r3.f614i = true;
-                        c2434r2 = c2434r3;
+                        c2558r5.f619i = false;
+                        c2558r4.f619i = false;
+                        c2558r3.f619i = true;
+                        c2558r2 = c2558r3;
                     }
                 }
             }
-            return c2434r;
+            return c2558r;
         }
 
         /* renamed from: d */
@@ -1247,79 +1248,79 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             while (true) {
                 int i = this.lockState;
                 if ((i & (-3)) == 0) {
-                    if (f605h.compareAndSwapInt(this, f606i, i, 1)) {
+                    if (f610h.compareAndSwapInt(this, f611i, i, 1)) {
                         break;
                     }
                 } else if ((i & 2) == 0) {
-                    if (f605h.compareAndSwapInt(this, f606i, i, i | 2)) {
+                    if (f610h.compareAndSwapInt(this, f611i, i, i | 2)) {
                         z = true;
-                        this.f609g = Thread.currentThread();
+                        this.f614g = Thread.currentThread();
                     }
                 } else if (z) {
                     LockSupport.park(this);
                 }
             }
             if (z) {
-                this.f609g = null;
+                this.f614g = null;
             }
         }
 
         /* renamed from: e */
         private final void m579e() {
-            if (f605h.compareAndSwapInt(this, f606i, 0, 1)) {
+            if (f610h.compareAndSwapInt(this, f611i, 0, 1)) {
                 return;
             }
             m580d();
         }
 
         /* renamed from: h */
-        static C2434r m576h(C2434r c2434r, C2434r c2434r2) {
-            C2434r c2434r3 = c2434r2.f612g;
-            if (c2434r3 != null) {
-                C2434r c2434r4 = c2434r3.f611f;
-                c2434r2.f612g = c2434r4;
-                if (c2434r4 != null) {
-                    c2434r4.f610e = c2434r2;
+        static C2558r m576h(C2558r c2558r, C2558r c2558r2) {
+            C2558r c2558r3 = c2558r2.f617g;
+            if (c2558r3 != null) {
+                C2558r c2558r4 = c2558r3.f616f;
+                c2558r2.f617g = c2558r4;
+                if (c2558r4 != null) {
+                    c2558r4.f615e = c2558r2;
                 }
-                C2434r c2434r5 = c2434r2.f610e;
-                c2434r3.f610e = c2434r5;
-                if (c2434r5 == null) {
-                    c2434r3.f614i = false;
-                    c2434r = c2434r3;
-                } else if (c2434r5.f611f == c2434r2) {
-                    c2434r5.f611f = c2434r3;
+                C2558r c2558r5 = c2558r2.f615e;
+                c2558r3.f615e = c2558r5;
+                if (c2558r5 == null) {
+                    c2558r3.f619i = false;
+                    c2558r = c2558r3;
+                } else if (c2558r5.f616f == c2558r2) {
+                    c2558r5.f616f = c2558r3;
                 } else {
-                    c2434r5.f612g = c2434r3;
+                    c2558r5.f617g = c2558r3;
                 }
-                c2434r3.f611f = c2434r2;
-                c2434r2.f610e = c2434r3;
+                c2558r3.f616f = c2558r2;
+                c2558r2.f615e = c2558r3;
             }
-            return c2434r;
+            return c2558r;
         }
 
         /* renamed from: i */
-        static C2434r m575i(C2434r c2434r, C2434r c2434r2) {
-            C2434r c2434r3 = c2434r2.f611f;
-            if (c2434r3 != null) {
-                C2434r c2434r4 = c2434r3.f612g;
-                c2434r2.f611f = c2434r4;
-                if (c2434r4 != null) {
-                    c2434r4.f610e = c2434r2;
+        static C2558r m575i(C2558r c2558r, C2558r c2558r2) {
+            C2558r c2558r3 = c2558r2.f616f;
+            if (c2558r3 != null) {
+                C2558r c2558r4 = c2558r3.f617g;
+                c2558r2.f616f = c2558r4;
+                if (c2558r4 != null) {
+                    c2558r4.f615e = c2558r2;
                 }
-                C2434r c2434r5 = c2434r2.f610e;
-                c2434r3.f610e = c2434r5;
-                if (c2434r5 == null) {
-                    c2434r3.f614i = false;
-                    c2434r = c2434r3;
-                } else if (c2434r5.f612g == c2434r2) {
-                    c2434r5.f612g = c2434r3;
+                C2558r c2558r5 = c2558r2.f615e;
+                c2558r3.f615e = c2558r5;
+                if (c2558r5 == null) {
+                    c2558r3.f619i = false;
+                    c2558r = c2558r3;
+                } else if (c2558r5.f617g == c2558r2) {
+                    c2558r5.f617g = c2558r3;
                 } else {
-                    c2434r5.f611f = c2434r3;
+                    c2558r5.f616f = c2558r3;
                 }
-                c2434r3.f612g = c2434r2;
-                c2434r2.f610e = c2434r3;
+                c2558r3.f617g = c2558r2;
+                c2558r2.f615e = c2558r3;
             }
-            return c2434r;
+            return c2558r;
         }
 
         /* renamed from: j */
@@ -1328,44 +1329,44 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return (obj == null || obj2 == null || (compareTo = obj.getClass().getName().compareTo(obj2.getClass().getName())) == 0) ? System.identityHashCode(obj) <= System.identityHashCode(obj2) ? -1 : 1 : compareTo;
         }
 
-        @Override // p034j$.util.concurrent.ConcurrentHashMap.C2428l
+        @Override // p034j$.util.concurrent.ConcurrentHashMap.C2552l
         /* renamed from: a */
-        final C2428l mo573a(int i, Object obj) {
+        final C2552l mo573a(int i, Object obj) {
             Object obj2;
             Thread thread;
             Thread thread2;
-            C2428l c2428l = this.f608f;
+            C2552l c2552l = this.f613f;
             while (true) {
-                C2434r c2434r = null;
-                if (c2428l == null) {
+                C2558r c2558r = null;
+                if (c2552l == null) {
                     return null;
                 }
                 int i2 = this.lockState;
                 if ((i2 & 3) == 0) {
-                    Unsafe unsafe = f605h;
-                    long j = f606i;
+                    Unsafe unsafe = f610h;
+                    long j = f611i;
                     if (unsafe.compareAndSwapInt(this, j, i2, i2 + 4)) {
                         try {
-                            C2434r c2434r2 = this.f607e;
-                            if (c2434r2 != null) {
-                                c2434r = c2434r2.m572b(i, obj, null);
+                            C2558r c2558r2 = this.f612e;
+                            if (c2558r2 != null) {
+                                c2558r = c2558r2.m572b(i, obj, null);
                             }
-                            if (AbstractC2444c.m558a(unsafe, this, j, -4) == 6 && (thread2 = this.f609g) != null) {
+                            if (AbstractC2568c.m558a(unsafe, this, j, -4) == 6 && (thread2 = this.f614g) != null) {
                                 LockSupport.unpark(thread2);
                             }
-                            return c2434r;
+                            return c2558r;
                         } catch (Throwable th) {
-                            if (AbstractC2444c.m558a(f605h, this, f606i, -4) == 6 && (thread = this.f609g) != null) {
+                            if (AbstractC2568c.m558a(f610h, this, f611i, -4) == 6 && (thread = this.f614g) != null) {
                                 LockSupport.unpark(thread);
                             }
                             throw th;
                         }
                     }
-                } else if (c2428l.f589a != i || ((obj2 = c2428l.f590b) != obj && (obj2 == null || !obj.equals(obj2)))) {
-                    c2428l = c2428l.f592d;
+                } else if (c2552l.f594a != i || ((obj2 = c2552l.f595b) != obj && (obj2 == null || !obj.equals(obj2)))) {
+                    c2552l = c2552l.f597d;
                 }
             }
-            return c2428l;
+            return c2552l;
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:30:0x0060, code lost:
@@ -1379,13 +1380,13 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
-        final p034j$.util.concurrent.ConcurrentHashMap.C2434r m578f(int r16, java.lang.Object r17, java.lang.Object r18) {
+        final p034j$.util.concurrent.ConcurrentHashMap.C2558r m578f(int r16, java.lang.Object r17, java.lang.Object r18) {
             /*
                 r15 = this;
                 r1 = r15
                 r0 = r16
                 r4 = r17
-                j$.util.concurrent.ConcurrentHashMap$r r2 = r1.f607e
+                j$.util.concurrent.ConcurrentHashMap$r r2 = r1.f612e
                 r8 = 0
                 r9 = 0
                 r10 = r2
@@ -1401,11 +1402,11 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 r4 = r17
                 r5 = r18
                 r2.<init>(r3, r4, r5, r6, r7)
-                r1.f607e = r9
-                r1.f608f = r9
+                r1.f612e = r9
+                r1.f613f = r9
                 goto La3
             L22:
-                int r5 = r10.f589a
+                int r5 = r10.f594a
                 r11 = 1
                 if (r5 <= r0) goto L2a
                 r5 = -1
@@ -1416,7 +1417,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 r12 = 1
                 goto L69
             L2e:
-                java.lang.Object r5 = r10.f590b
+                java.lang.Object r5 = r10.f595b
                 if (r5 == r4) goto Lab
                 if (r5 == 0) goto L3c
                 boolean r6 = r4.equals(r5)
@@ -1431,12 +1432,12 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 if (r6 != 0) goto L68
             L4a:
                 if (r3 != 0) goto L62
-                j$.util.concurrent.ConcurrentHashMap$r r3 = r10.f611f
+                j$.util.concurrent.ConcurrentHashMap$r r3 = r10.f616f
                 if (r3 == 0) goto L56
                 j$.util.concurrent.ConcurrentHashMap$r r3 = r3.m572b(r0, r4, r2)
                 if (r3 != 0) goto L60
             L56:
-                j$.util.concurrent.ConcurrentHashMap$r r3 = r10.f612g
+                j$.util.concurrent.ConcurrentHashMap$r r3 = r10.f617g
                 if (r3 == 0) goto L61
                 j$.util.concurrent.ConcurrentHashMap$r r3 = r3.m572b(r0, r4, r2)
                 if (r3 == 0) goto L61
@@ -1452,13 +1453,13 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 r12 = r6
             L69:
                 if (r12 > 0) goto L6e
-                j$.util.concurrent.ConcurrentHashMap$r r5 = r10.f611f
+                j$.util.concurrent.ConcurrentHashMap$r r5 = r10.f616f
                 goto L70
             L6e:
-                j$.util.concurrent.ConcurrentHashMap$r r5 = r10.f612g
+                j$.util.concurrent.ConcurrentHashMap$r r5 = r10.f617g
             L70:
                 if (r5 != 0) goto La8
-                j$.util.concurrent.ConcurrentHashMap$r r13 = r1.f608f
+                j$.util.concurrent.ConcurrentHashMap$r r13 = r1.f613f
                 j$.util.concurrent.ConcurrentHashMap$r r14 = new j$.util.concurrent.ConcurrentHashMap$r
                 r2 = r14
                 r3 = r16
@@ -1467,25 +1468,25 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 r6 = r13
                 r7 = r10
                 r2.<init>(r3, r4, r5, r6, r7)
-                r1.f608f = r14
+                r1.f613f = r14
                 if (r13 == 0) goto L88
-                r13.f613h = r14
+                r13.f618h = r14
             L88:
                 if (r12 > 0) goto L8d
-                r10.f611f = r14
+                r10.f616f = r14
                 goto L8f
             L8d:
-                r10.f612g = r14
+                r10.f617g = r14
             L8f:
-                boolean r0 = r10.f614i
+                boolean r0 = r10.f619i
                 if (r0 != 0) goto L96
-                r14.f614i = r11
+                r14.f619i = r11
                 goto La3
             L96:
                 r15.m579e()
-                j$.util.concurrent.ConcurrentHashMap$r r0 = r1.f607e     // Catch: java.lang.Throwable -> La4
+                j$.util.concurrent.ConcurrentHashMap$r r0 = r1.f612e     // Catch: java.lang.Throwable -> La4
                 j$.util.concurrent.ConcurrentHashMap$r r0 = m581c(r0, r14)     // Catch: java.lang.Throwable -> La4
-                r1.f607e = r0     // Catch: java.lang.Throwable -> La4
+                r1.f612e = r0     // Catch: java.lang.Throwable -> La4
                 r1.lockState = r9
             La3:
                 return r8
@@ -1499,7 +1500,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             Lab:
                 return r10
             */
-            throw new UnsupportedOperationException("Method not decompiled: p034j$.util.concurrent.ConcurrentHashMap.C2433q.m578f(int, java.lang.Object, java.lang.Object):j$.util.concurrent.ConcurrentHashMap$r");
+            throw new UnsupportedOperationException("Method not decompiled: p034j$.util.concurrent.ConcurrentHashMap.C2557q.m578f(int, java.lang.Object, java.lang.Object):j$.util.concurrent.ConcurrentHashMap$r");
         }
 
         /* JADX WARN: Removed duplicated region for block: B:57:0x008e A[Catch: all -> 0x00c8, TryCatch #0 {all -> 0x00c8, blocks: (B:22:0x0030, B:26:0x0039, B:29:0x003f, B:31:0x004d, B:39:0x0065, B:41:0x006b, B:42:0x006d, B:57:0x008e, B:64:0x009f, B:60:0x0096, B:62:0x009a, B:63:0x009d, B:65:0x00a5, B:69:0x00ae, B:71:0x00b2, B:73:0x00b6, B:75:0x00ba, B:79:0x00c3, B:76:0x00bd, B:78:0x00c1, B:68:0x00aa, B:45:0x0077, B:47:0x007b, B:48:0x007e, B:32:0x0052, B:34:0x0058, B:36:0x005c, B:37:0x005f, B:38:0x0061), top: B:86:0x0030 }] */
@@ -1513,80 +1514,80 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
-        final boolean m577g(p034j$.util.concurrent.ConcurrentHashMap.C2434r r11) {
+        final boolean m577g(p034j$.util.concurrent.ConcurrentHashMap.C2558r r11) {
             /*
                 Method dump skipped, instructions count: 205
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: p034j$.util.concurrent.ConcurrentHashMap.C2433q.m577g(j$.util.concurrent.ConcurrentHashMap$r):boolean");
+            throw new UnsupportedOperationException("Method not decompiled: p034j$.util.concurrent.ConcurrentHashMap.C2557q.m577g(j$.util.concurrent.ConcurrentHashMap$r):boolean");
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$r */
     /* loaded from: classes2.dex */
-    public static final class C2434r extends C2428l {
+    public static final class C2558r extends C2552l {
 
         /* renamed from: e */
-        C2434r f610e;
+        C2558r f615e;
 
         /* renamed from: f */
-        C2434r f611f;
+        C2558r f616f;
 
         /* renamed from: g */
-        C2434r f612g;
+        C2558r f617g;
 
         /* renamed from: h */
-        C2434r f613h;
+        C2558r f618h;
 
         /* renamed from: i */
-        boolean f614i;
+        boolean f619i;
 
-        C2434r(int i, Object obj, Object obj2, C2428l c2428l, C2434r c2434r) {
-            super(i, obj, obj2, c2428l);
-            this.f610e = c2434r;
+        C2558r(int i, Object obj, Object obj2, C2552l c2552l, C2558r c2558r) {
+            super(i, obj, obj2, c2552l);
+            this.f615e = c2558r;
         }
 
-        @Override // p034j$.util.concurrent.ConcurrentHashMap.C2428l
+        @Override // p034j$.util.concurrent.ConcurrentHashMap.C2552l
         /* renamed from: a */
-        C2428l mo573a(int i, Object obj) {
+        C2552l mo573a(int i, Object obj) {
             return m572b(i, obj, null);
         }
 
         /* renamed from: b */
-        final C2434r m572b(int i, Object obj, Class cls) {
+        final C2558r m572b(int i, Object obj, Class cls) {
             int m600d;
             if (obj != null) {
-                C2434r c2434r = this;
+                C2558r c2558r = this;
                 do {
-                    C2434r c2434r2 = c2434r.f611f;
-                    C2434r c2434r3 = c2434r.f612g;
-                    int i2 = c2434r.f589a;
+                    C2558r c2558r2 = c2558r.f616f;
+                    C2558r c2558r3 = c2558r.f617g;
+                    int i2 = c2558r.f594a;
                     if (i2 <= i) {
                         if (i2 >= i) {
-                            Object obj2 = c2434r.f590b;
+                            Object obj2 = c2558r.f595b;
                             if (obj2 == obj || (obj2 != null && obj.equals(obj2))) {
-                                return c2434r;
+                                return c2558r;
                             }
-                            if (c2434r2 != null) {
-                                if (c2434r3 != null) {
+                            if (c2558r2 != null) {
+                                if (c2558r3 != null) {
                                     if ((cls == null && (cls = ConcurrentHashMap.m601c(obj)) == null) || (m600d = ConcurrentHashMap.m600d(cls, obj, obj2)) == 0) {
-                                        C2434r m572b = c2434r3.m572b(i, obj, cls);
+                                        C2558r m572b = c2558r3.m572b(i, obj, cls);
                                         if (m572b != null) {
                                             return m572b;
                                         }
                                     } else if (m600d >= 0) {
-                                        c2434r2 = c2434r3;
+                                        c2558r2 = c2558r3;
                                     }
                                 }
                             }
                         }
-                        c2434r = c2434r3;
+                        c2558r = c2558r3;
                         continue;
                     }
-                    c2434r = c2434r2;
+                    c2558r = c2558r2;
                     continue;
-                } while (c2434r != null);
+                } while (c2558r != null);
                 return null;
             }
             return null;
@@ -1596,9 +1597,9 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$s */
     /* loaded from: classes2.dex */
-    public static final class C2435s extends C2417a implements java.util.Iterator, Enumeration, p034j$.util.Iterator {
-        C2435s(C2428l[] c2428lArr, int i, int i2, int i3, ConcurrentHashMap concurrentHashMap) {
-            super(c2428lArr, i, i2, i3, concurrentHashMap);
+    public static final class C2559s extends C2541a implements java.util.Iterator, Enumeration, p034j$.util.Iterator {
+        C2559s(C2552l[] c2552lArr, int i, int i2, int i3, ConcurrentHashMap concurrentHashMap) {
+            super(c2552lArr, i, i2, i3, concurrentHashMap);
         }
 
         @Override // p034j$.util.Iterator
@@ -1608,15 +1609,15 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
         @Override // java.util.Iterator
         public /* synthetic */ void forEachRemaining(java.util.function.Consumer consumer) {
-            Iterator.CC.$default$forEachRemaining(this, C2885w.m109b(consumer));
+            Iterator.CC.$default$forEachRemaining(this, C3009w.m109b(consumer));
         }
 
         @Override // java.util.Iterator, p034j$.util.Iterator
         public final Object next() {
-            C2428l c2428l = this.f598b;
-            if (c2428l != null) {
-                Object obj = c2428l.f591c;
-                this.f580j = c2428l;
+            C2552l c2552l = this.f603b;
+            if (c2552l != null) {
+                Object obj = c2552l.f596c;
+                this.f585j = c2552l;
                 m583a();
                 return obj;
             }
@@ -1632,86 +1633,86 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$t */
     /* loaded from: classes2.dex */
-    public static final class C2436t extends C2432p implements InterfaceC2487s {
+    public static final class C2560t extends C2556p implements InterfaceC2611s {
 
         /* renamed from: i */
-        long f615i;
+        long f620i;
 
-        C2436t(C2428l[] c2428lArr, int i, int i2, int i3, long j) {
-            super(c2428lArr, i, i2, i3);
-            this.f615i = j;
+        C2560t(C2552l[] c2552lArr, int i, int i2, int i3, long j) {
+            super(c2552lArr, i, i2, i3);
+            this.f620i = j;
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         /* renamed from: b */
         public boolean mo128b(Consumer consumer) {
             Objects.requireNonNull(consumer);
-            C2428l m583a = m583a();
+            C2552l m583a = m583a();
             if (m583a == null) {
                 return false;
             }
-            consumer.accept(m583a.f591c);
+            consumer.accept(m583a.f596c);
             return true;
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public int characteristics() {
             return 4352;
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public long estimateSize() {
-            return this.f615i;
+            return this.f620i;
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public void forEachRemaining(Consumer consumer) {
             Objects.requireNonNull(consumer);
             while (true) {
-                C2428l m583a = m583a();
+                C2552l m583a = m583a();
                 if (m583a == null) {
                     return;
                 }
-                consumer.accept(m583a.f591c);
+                consumer.accept(m583a.f596c);
             }
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public Comparator getComparator() {
             throw new IllegalStateException();
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public /* synthetic */ long getExactSizeIfKnown() {
-            return AbstractC2414a.m622e(this);
+            return AbstractC2538a.m622e(this);
         }
 
-        @Override // p034j$.util.InterfaceC2487s
+        @Override // p034j$.util.InterfaceC2611s
         public /* synthetic */ boolean hasCharacteristics(int i) {
-            return AbstractC2414a.m621f(this, i);
+            return AbstractC2538a.m621f(this, i);
         }
 
-        @Override // p034j$.util.InterfaceC2487s
-        public InterfaceC2487s trySplit() {
-            int i = this.f602f;
-            int i2 = this.f603g;
+        @Override // p034j$.util.InterfaceC2611s
+        public InterfaceC2611s trySplit() {
+            int i = this.f607f;
+            int i2 = this.f608g;
             int i3 = (i + i2) >>> 1;
             if (i3 <= i) {
                 return null;
             }
-            C2428l[] c2428lArr = this.f597a;
-            int i4 = this.f604h;
-            this.f603g = i3;
-            long j = this.f615i >>> 1;
-            this.f615i = j;
-            return new C2436t(c2428lArr, i4, i3, i2, j);
+            C2552l[] c2552lArr = this.f602a;
+            int i4 = this.f609h;
+            this.f608g = i3;
+            long j = this.f620i >>> 1;
+            this.f620i = j;
+            return new C2560t(c2552lArr, i4, i3, i2, j);
         }
     }
 
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$u */
     /* loaded from: classes2.dex */
-    static final class C2437u extends AbstractC2418b implements InterfaceC2415b {
-        C2437u(ConcurrentHashMap concurrentHashMap) {
+    static final class C2561u extends AbstractC2542b implements InterfaceC2539b {
+        C2561u(ConcurrentHashMap concurrentHashMap) {
             super(concurrentHashMap);
         }
 
@@ -1725,64 +1726,64 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             throw new UnsupportedOperationException();
         }
 
-        @Override // p034j$.util.concurrent.ConcurrentHashMap.AbstractC2418b, java.util.Collection
+        @Override // p034j$.util.concurrent.ConcurrentHashMap.AbstractC2542b, java.util.Collection
         public final boolean contains(Object obj) {
-            return this.f581a.containsValue(obj);
+            return this.f586a.containsValue(obj);
         }
 
-        @Override // p034j$.util.InterfaceC2415b, p034j$.lang.InterfaceC2361e
+        @Override // p034j$.util.InterfaceC2539b, p034j$.lang.InterfaceC2485e
         public void forEach(Consumer consumer) {
             Objects.requireNonNull(consumer);
-            C2428l[] c2428lArr = this.f581a.f573a;
-            if (c2428lArr == null) {
+            C2552l[] c2552lArr = this.f586a.f578a;
+            if (c2552lArr == null) {
                 return;
             }
-            C2432p c2432p = new C2432p(c2428lArr, c2428lArr.length, 0, c2428lArr.length);
+            C2556p c2556p = new C2556p(c2552lArr, c2552lArr.length, 0, c2552lArr.length);
             while (true) {
-                C2428l m583a = c2432p.m583a();
+                C2552l m583a = c2556p.m583a();
                 if (m583a == null) {
                     return;
                 }
-                consumer.accept(m583a.f591c);
+                consumer.accept(m583a.f596c);
             }
         }
 
         @Override // java.lang.Iterable
         public /* synthetic */ void forEach(java.util.function.Consumer consumer) {
-            forEach(C2885w.m109b(consumer));
+            forEach(C3009w.m109b(consumer));
         }
 
-        @Override // p034j$.util.concurrent.ConcurrentHashMap.AbstractC2418b, java.util.Collection, java.lang.Iterable
+        @Override // p034j$.util.concurrent.ConcurrentHashMap.AbstractC2542b, java.util.Collection, java.lang.Iterable
         public final java.util.Iterator iterator() {
-            ConcurrentHashMap concurrentHashMap = this.f581a;
-            C2428l[] c2428lArr = concurrentHashMap.f573a;
-            int length = c2428lArr == null ? 0 : c2428lArr.length;
-            return new C2435s(c2428lArr, length, 0, length, concurrentHashMap);
+            ConcurrentHashMap concurrentHashMap = this.f586a;
+            C2552l[] c2552lArr = concurrentHashMap.f578a;
+            int length = c2552lArr == null ? 0 : c2552lArr.length;
+            return new C2559s(c2552lArr, length, 0, length, concurrentHashMap);
         }
 
-        @Override // p034j$.util.InterfaceC2415b
+        @Override // p034j$.util.InterfaceC2539b
         /* renamed from: k */
         public /* synthetic */ boolean mo571k(Predicate predicate) {
-            return AbstractC2414a.m619h(this, predicate);
+            return AbstractC2538a.m619h(this, predicate);
         }
 
         @Override // java.util.Collection
         public /* synthetic */ Stream parallelStream() {
-            return C2830O0.m182n0(AbstractC2414a.m620g(this));
+            return C2954O0.m182n0(AbstractC2538a.m620g(this));
         }
 
         @Override // java.util.Collection
         public final boolean remove(Object obj) {
-            C2417a c2417a;
+            C2541a c2541a;
             if (obj != null) {
                 java.util.Iterator it = iterator();
                 do {
-                    c2417a = (C2417a) it;
-                    if (!c2417a.hasNext()) {
+                    c2541a = (C2541a) it;
+                    if (!c2541a.hasNext()) {
                         return false;
                     }
-                } while (!obj.equals(((C2435s) it).next()));
-                c2417a.remove();
+                } while (!obj.equals(((C2559s) it).next()));
+                c2541a.remove();
                 return true;
             }
             return false;
@@ -1790,55 +1791,55 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
         @Override // java.util.Collection
         public /* synthetic */ boolean removeIf(java.util.function.Predicate predicate) {
-            return AbstractC2414a.m619h(this, C2886w0.m108a(predicate));
+            return AbstractC2538a.m619h(this, C3010w0.m108a(predicate));
         }
 
-        @Override // java.util.Collection, java.lang.Iterable, p034j$.util.InterfaceC2415b, p034j$.lang.InterfaceC2361e
-        public InterfaceC2487s spliterator() {
-            ConcurrentHashMap concurrentHashMap = this.f581a;
+        @Override // java.util.Collection, java.lang.Iterable, p034j$.util.InterfaceC2539b, p034j$.lang.InterfaceC2485e
+        public InterfaceC2611s spliterator() {
+            ConcurrentHashMap concurrentHashMap = this.f586a;
             long m591m = concurrentHashMap.m591m();
-            C2428l[] c2428lArr = concurrentHashMap.f573a;
-            int length = c2428lArr == null ? 0 : c2428lArr.length;
-            return new C2436t(c2428lArr, length, 0, length, m591m >= 0 ? m591m : 0L);
+            C2552l[] c2552lArr = concurrentHashMap.f578a;
+            int length = c2552lArr == null ? 0 : c2552lArr.length;
+            return new C2560t(c2552lArr, length, 0, length, m591m >= 0 ? m591m : 0L);
         }
 
-        @Override // java.util.Collection, java.lang.Iterable, p034j$.util.InterfaceC2415b, p034j$.lang.InterfaceC2361e
+        @Override // java.util.Collection, java.lang.Iterable
         public /* synthetic */ Spliterator spliterator() {
-            return C2855h.m150a(spliterator());
+            return C2979h.m150a(spliterator());
         }
 
-        @Override // java.util.Collection, p034j$.util.InterfaceC2415b
+        @Override // java.util.Collection, p034j$.util.InterfaceC2539b
         public /* synthetic */ p034j$.util.stream.Stream stream() {
-            return AbstractC2414a.m618i(this);
+            return AbstractC2538a.m618i(this);
         }
 
-        @Override // java.util.Collection, p034j$.util.InterfaceC2415b
+        @Override // java.util.Collection
         public /* synthetic */ Stream stream() {
-            return C2830O0.m182n0(AbstractC2414a.m618i(this));
+            return C2954O0.m182n0(AbstractC2538a.m618i(this));
         }
 
         public Object[] toArray(IntFunction intFunction) {
-            return toArray((Object[]) C2833S.m178a(intFunction).apply(0));
+            return toArray((Object[]) C2957S.m178a(intFunction).apply(0));
         }
     }
 
     static {
         Class cls = Integer.TYPE;
-        serialPersistentFields = new ObjectStreamField[]{new ObjectStreamField("segments", C2430n[].class), new ObjectStreamField("segmentMask", cls), new ObjectStreamField("segmentShift", cls)};
+        serialPersistentFields = new ObjectStreamField[]{new ObjectStreamField("segments", C2554n[].class), new ObjectStreamField("segmentMask", cls), new ObjectStreamField("segmentShift", cls)};
         try {
-            Unsafe m556c = AbstractC2444c.m556c();
-            f565h = m556c;
-            f566i = m556c.objectFieldOffset(ConcurrentHashMap.class.getDeclaredField("sizeCtl"));
-            f567j = m556c.objectFieldOffset(ConcurrentHashMap.class.getDeclaredField("transferIndex"));
-            f568k = m556c.objectFieldOffset(ConcurrentHashMap.class.getDeclaredField("baseCount"));
-            f569l = m556c.objectFieldOffset(ConcurrentHashMap.class.getDeclaredField("cellsBusy"));
-            f570m = m556c.objectFieldOffset(C2419c.class.getDeclaredField(AppMeasurementSdk.ConditionalUserProperty.VALUE));
-            f571n = m556c.arrayBaseOffset(C2428l[].class);
-            int arrayIndexScale = m556c.arrayIndexScale(C2428l[].class);
+            Unsafe m556c = AbstractC2568c.m556c();
+            f570h = m556c;
+            f571i = m556c.objectFieldOffset(ConcurrentHashMap.class.getDeclaredField("sizeCtl"));
+            f572j = m556c.objectFieldOffset(ConcurrentHashMap.class.getDeclaredField("transferIndex"));
+            f573k = m556c.objectFieldOffset(ConcurrentHashMap.class.getDeclaredField("baseCount"));
+            f574l = m556c.objectFieldOffset(ConcurrentHashMap.class.getDeclaredField("cellsBusy"));
+            f575m = m556c.objectFieldOffset(C2543c.class.getDeclaredField(AppMeasurementSdk.ConditionalUserProperty.VALUE));
+            f576n = m556c.arrayBaseOffset(C2552l[].class);
+            int arrayIndexScale = m556c.arrayIndexScale(C2552l[].class);
             if (((arrayIndexScale - 1) & arrayIndexScale) != 0) {
                 throw new Error("data type scale not a power of two");
             }
-            f572o = 31 - Integer.numberOfLeadingZeros(arrayIndexScale);
+            f577o = 31 - Integer.numberOfLeadingZeros(arrayIndexScale);
         } catch (Exception e) {
             throw new Error(e);
         }
@@ -1873,10 +1874,10 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     private final void m603a(long r12, int r14) {
         /*
             r11 = this;
-            j$.util.concurrent.ConcurrentHashMap$c[] r0 = r11.f575c
+            j$.util.concurrent.ConcurrentHashMap$c[] r0 = r11.f580c
             if (r0 != 0) goto L14
-            sun.misc.Unsafe r1 = p034j$.util.concurrent.ConcurrentHashMap.f565h
-            long r3 = p034j$.util.concurrent.ConcurrentHashMap.f568k
+            sun.misc.Unsafe r1 = p034j$.util.concurrent.ConcurrentHashMap.f570h
+            long r3 = p034j$.util.concurrent.ConcurrentHashMap.f573k
             long r5 = r11.baseCount
             long r9 = r5 + r12
             r2 = r11
@@ -1893,8 +1894,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             r2 = r2 & r3
             r4 = r0[r2]
             if (r4 == 0) goto L94
-            sun.misc.Unsafe r3 = p034j$.util.concurrent.ConcurrentHashMap.f565h
-            long r5 = p034j$.util.concurrent.ConcurrentHashMap.f570m
+            sun.misc.Unsafe r3 = p034j$.util.concurrent.ConcurrentHashMap.f570h
+            long r5 = p034j$.util.concurrent.ConcurrentHashMap.f575m
             long r7 = r4.value
             long r9 = r7 + r12
             boolean r0 = r3.compareAndSwapLong(r4, r5, r7, r9)
@@ -1913,7 +1914,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             long r12 = (long) r4
             int r14 = (r9 > r12 ? 1 : (r9 == r12 ? 0 : -1))
             if (r14 < 0) goto L93
-            j$.util.concurrent.ConcurrentHashMap$l[] r12 = r11.f573a
+            j$.util.concurrent.ConcurrentHashMap$l[] r12 = r11.f578a
             if (r12 == 0) goto L93
             int r13 = r12.length
             r14 = 1073741824(0x40000000, float:2.0)
@@ -1927,14 +1928,14 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             r14 = 65535(0xffff, float:9.1834E-41)
             int r13 = r13 + r14
             if (r4 == r13) goto L93
-            j$.util.concurrent.ConcurrentHashMap$l[] r13 = r11.f574b
+            j$.util.concurrent.ConcurrentHashMap$l[] r13 = r11.f579b
             if (r13 == 0) goto L93
             int r14 = r11.transferIndex
             if (r14 > 0) goto L6a
             goto L93
         L6a:
-            sun.misc.Unsafe r0 = p034j$.util.concurrent.ConcurrentHashMap.f565h
-            long r2 = p034j$.util.concurrent.ConcurrentHashMap.f566i
+            sun.misc.Unsafe r0 = p034j$.util.concurrent.ConcurrentHashMap.f570h
+            long r2 = p034j$.util.concurrent.ConcurrentHashMap.f571i
             int r5 = r4 + 1
             r1 = r11
             boolean r14 = r0.compareAndSwapInt(r1, r2, r4, r5)
@@ -1942,8 +1943,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             r11.m588p(r12, r13)
             goto L8e
         L7b:
-            sun.misc.Unsafe r0 = p034j$.util.concurrent.ConcurrentHashMap.f565h
-            long r2 = p034j$.util.concurrent.ConcurrentHashMap.f566i
+            sun.misc.Unsafe r0 = p034j$.util.concurrent.ConcurrentHashMap.f570h
+            long r2 = p034j$.util.concurrent.ConcurrentHashMap.f571i
             int r13 = r13 << 16
             int r5 = r13 + 2
             r1 = r11
@@ -1964,8 +1965,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     }
 
     /* renamed from: b */
-    static final boolean m602b(C2428l[] c2428lArr, int i, C2428l c2428l, C2428l c2428l2) {
-        return f565h.compareAndSwapObject(c2428lArr, (i << f572o) + f571n, (Object) null, c2428l2);
+    static final boolean m602b(C2552l[] c2552lArr, int i, C2552l c2552l, C2552l c2552l2) {
+        return f570h.compareAndSwapObject(c2552lArr, (i << f577o) + f576n, (Object) null, c2552l2);
     }
 
     /* renamed from: c */
@@ -2002,10 +2003,10 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:51:0x009b, code lost:
-        if (r24.f575c != r7) goto L101;
+        if (r24.f580c != r7) goto L101;
      */
     /* JADX WARN: Code restructure failed: missing block: B:52:0x009d, code lost:
-        r1 = new p034j$.util.concurrent.ConcurrentHashMap.C2419c[r8 << 1];
+        r1 = new p034j$.util.concurrent.ConcurrentHashMap.C2543c[r8 << 1];
         r2 = 0;
      */
     /* JADX WARN: Code restructure failed: missing block: B:53:0x00a2, code lost:
@@ -2016,7 +2017,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         r2 = r2 + 1;
      */
     /* JADX WARN: Code restructure failed: missing block: B:55:0x00ab, code lost:
-        r24.f575c = r1;
+        r24.f580c = r1;
      */
     /* JADX WARN: Removed duplicated region for block: B:108:0x001b A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:88:0x0101 A[SYNTHETIC] */
@@ -2034,27 +2035,27 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     }
 
     /* renamed from: g */
-    private final C2428l[] m597g() {
+    private final C2552l[] m597g() {
         while (true) {
-            C2428l[] c2428lArr = this.f573a;
-            if (c2428lArr != null && c2428lArr.length != 0) {
-                return c2428lArr;
+            C2552l[] c2552lArr = this.f578a;
+            if (c2552lArr != null && c2552lArr.length != 0) {
+                return c2552lArr;
             }
             int i = this.sizeCtl;
             if (i < 0) {
                 Thread.yield();
-            } else if (f565h.compareAndSwapInt(this, f566i, i, -1)) {
+            } else if (f570h.compareAndSwapInt(this, f571i, i, -1)) {
                 try {
-                    C2428l[] c2428lArr2 = this.f573a;
-                    if (c2428lArr2 == null || c2428lArr2.length == 0) {
+                    C2552l[] c2552lArr2 = this.f578a;
+                    if (c2552lArr2 == null || c2552lArr2.length == 0) {
                         int i2 = i > 0 ? i : 16;
-                        C2428l[] c2428lArr3 = new C2428l[i2];
-                        this.f573a = c2428lArr3;
+                        C2552l[] c2552lArr3 = new C2552l[i2];
+                        this.f578a = c2552lArr3;
                         i = i2 - (i2 >>> 2);
-                        c2428lArr2 = c2428lArr3;
+                        c2552lArr2 = c2552lArr3;
                     }
                     this.sizeCtl = i;
-                    return c2428lArr2;
+                    return c2552lArr2;
                 } catch (Throwable th) {
                     this.sizeCtl = i;
                     throw th;
@@ -2065,12 +2066,12 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
     /* renamed from: j */
     static final int m594j(int i) {
-        return Integer.numberOfLeadingZeros(i) | 32768;
+        return Integer.numberOfLeadingZeros(i) | LiteMode.FLAG_CHAT_SCALE;
     }
 
     /* renamed from: k */
-    static final void m593k(C2428l[] c2428lArr, int i, C2428l c2428l) {
-        f565h.putObjectVolatile(c2428lArr, (i << f572o) + f571n, c2428l);
+    static final void m593k(C2552l[] c2552lArr, int i, C2552l c2552l) {
+        f570h.putObjectVolatile(c2552lArr, (i << f577o) + f576n, c2552l);
     }
 
     /* renamed from: l */
@@ -2079,8 +2080,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     }
 
     /* renamed from: n */
-    static final C2428l m590n(C2428l[] c2428lArr, int i) {
-        return (C2428l) f565h.getObjectVolatile(c2428lArr, (i << f572o) + f571n);
+    static final C2552l m590n(C2552l[] c2552lArr, int i) {
+        return (C2552l) f570h.getObjectVolatile(c2552lArr, (i << f577o) + f576n);
     }
 
     /* renamed from: o */
@@ -2106,37 +2107,37 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     /* JADX WARN: Type inference failed for: r6v20, types: [j$.util.concurrent.ConcurrentHashMap$l] */
     /* JADX WARN: Type inference failed for: r6v25, types: [j$.util.concurrent.ConcurrentHashMap$l] */
     /* renamed from: p */
-    private final void m588p(C2428l[] c2428lArr, C2428l[] c2428lArr2) {
-        C2428l[] c2428lArr3;
-        C2428l[] c2428lArr4;
+    private final void m588p(C2552l[] c2552lArr, C2552l[] c2552lArr2) {
+        C2552l[] c2552lArr3;
+        C2552l[] c2552lArr4;
         int i;
         int i2;
         int i3;
         int i4;
-        C2423g c2423g;
-        C2434r c2434r;
+        C2547g c2547g;
+        C2558r c2558r;
         int i5;
         ConcurrentHashMap<K, V> concurrentHashMap = this;
-        int length = c2428lArr.length;
-        int i6 = f564g;
+        int length = c2552lArr.length;
+        int i6 = f569g;
         int i7 = i6 > 1 ? (length >>> 3) / i6 : length;
         int i8 = i7 < 16 ? 16 : i7;
-        if (c2428lArr2 == null) {
+        if (c2552lArr2 == null) {
             try {
-                C2428l[] c2428lArr5 = new C2428l[length << 1];
-                concurrentHashMap.f574b = c2428lArr5;
+                C2552l[] c2552lArr5 = new C2552l[length << 1];
+                concurrentHashMap.f579b = c2552lArr5;
                 concurrentHashMap.transferIndex = length;
-                c2428lArr3 = c2428lArr5;
+                c2552lArr3 = c2552lArr5;
             } catch (Throwable unused) {
                 concurrentHashMap.sizeCtl = Integer.MAX_VALUE;
                 return;
             }
         } else {
-            c2428lArr3 = c2428lArr2;
+            c2552lArr3 = c2552lArr2;
         }
-        int length2 = c2428lArr3.length;
-        C2423g c2423g2 = new C2423g(c2428lArr3);
-        C2428l[] c2428lArr6 = c2428lArr;
+        int length2 = c2552lArr3.length;
+        C2547g c2547g2 = new C2547g(c2552lArr3);
+        C2552l[] c2552lArr6 = c2552lArr;
         int i9 = 0;
         int i10 = 0;
         boolean z = true;
@@ -2145,65 +2146,65 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             if (z) {
                 int i11 = i9 - 1;
                 if (i11 >= i10 || z2) {
-                    c2428lArr4 = c2428lArr6;
+                    c2552lArr4 = c2552lArr6;
                     i9 = i11;
                     i10 = i10;
                 } else {
                     int i12 = concurrentHashMap.transferIndex;
                     if (i12 <= 0) {
-                        c2428lArr4 = c2428lArr6;
+                        c2552lArr4 = c2552lArr6;
                         i9 = -1;
                     } else {
-                        Unsafe unsafe = f565h;
-                        long j = f567j;
+                        Unsafe unsafe = f570h;
+                        long j = f572j;
                         int i13 = i12 > i8 ? i12 - i8 : 0;
-                        c2428lArr4 = c2428lArr6;
+                        c2552lArr4 = c2552lArr6;
                         i = i10;
                         if (unsafe.compareAndSwapInt(this, j, i12, i13)) {
                             i9 = i12 - 1;
                             i10 = i13;
                         } else {
-                            c2428lArr6 = c2428lArr4;
+                            c2552lArr6 = c2552lArr4;
                             i9 = i11;
                             i10 = i;
                         }
                     }
                 }
-                c2428lArr6 = c2428lArr4;
+                c2552lArr6 = c2552lArr4;
                 z = false;
             } else {
-                C2428l[] c2428lArr7 = c2428lArr6;
+                C2552l[] c2552lArr7 = c2552lArr6;
                 i = i10;
-                C2434r c2434r2 = null;
+                C2558r c2558r2 = null;
                 if (i9 < 0 || i9 >= length || (i2 = i9 + length) >= length2) {
                     int i14 = i8;
                     int i15 = length2;
-                    C2423g c2423g3 = c2423g2;
+                    C2547g c2547g3 = c2547g2;
                     if (z2) {
-                        this.f574b = null;
-                        this.f573a = c2428lArr3;
+                        this.f579b = null;
+                        this.f578a = c2552lArr3;
                         this.sizeCtl = (length << 1) - (length >>> 1);
                         return;
                     }
-                    Unsafe unsafe2 = f565h;
-                    long j2 = f566i;
+                    Unsafe unsafe2 = f570h;
+                    long j2 = f571i;
                     int i16 = this.sizeCtl;
                     int i17 = i9;
                     if (!unsafe2.compareAndSwapInt(this, j2, i16, i16 - 1)) {
-                        c2423g2 = c2423g3;
+                        c2547g2 = c2547g3;
                         concurrentHashMap = this;
                         i9 = i17;
-                        c2428lArr6 = c2428lArr7;
+                        c2552lArr6 = c2552lArr7;
                         i10 = i;
                         i8 = i14;
                         length2 = i15;
                     } else if (i16 - 2 != (m594j(length) << 16)) {
                         return;
                     } else {
-                        c2423g2 = c2423g3;
+                        c2547g2 = c2547g3;
                         i9 = length;
                         concurrentHashMap = this;
-                        c2428lArr6 = c2428lArr7;
+                        c2552lArr6 = c2552lArr7;
                         i10 = i;
                         i8 = i14;
                         length2 = i15;
@@ -2211,110 +2212,110 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                         z2 = true;
                     }
                 } else {
-                    C2428l m590n = m590n(c2428lArr7, i9);
+                    C2552l m590n = m590n(c2552lArr7, i9);
                     if (m590n == null) {
-                        z = m602b(c2428lArr7, i9, null, c2423g2);
-                        c2428lArr6 = c2428lArr7;
+                        z = m602b(c2552lArr7, i9, null, c2547g2);
+                        c2552lArr6 = c2552lArr7;
                         i10 = i;
                     } else {
-                        int i18 = m590n.f589a;
+                        int i18 = m590n.f594a;
                         if (i18 == -1) {
-                            c2428lArr6 = c2428lArr7;
+                            c2552lArr6 = c2552lArr7;
                             i10 = i;
                             z = true;
                         } else {
                             synchronized (m590n) {
-                                if (m590n(c2428lArr7, i9) == m590n) {
+                                if (m590n(c2552lArr7, i9) == m590n) {
                                     if (i18 >= 0) {
                                         int i19 = i18 & length;
-                                        C2434r c2434r3 = m590n;
-                                        for (C2434r c2434r4 = m590n.f592d; c2434r4 != null; c2434r4 = c2434r4.f592d) {
-                                            int i20 = c2434r4.f589a & length;
+                                        C2558r c2558r3 = m590n;
+                                        for (C2558r c2558r4 = m590n.f597d; c2558r4 != null; c2558r4 = c2558r4.f597d) {
+                                            int i20 = c2558r4.f594a & length;
                                             if (i20 != i19) {
-                                                c2434r3 = c2434r4;
+                                                c2558r3 = c2558r4;
                                                 i19 = i20;
                                             }
                                         }
                                         if (i19 == 0) {
-                                            c2434r = null;
-                                            c2434r2 = c2434r3;
+                                            c2558r = null;
+                                            c2558r2 = c2558r3;
                                         } else {
-                                            c2434r = c2434r3;
+                                            c2558r = c2558r3;
                                         }
-                                        C2428l c2428l = m590n;
-                                        while (c2428l != c2434r3) {
-                                            int i21 = c2428l.f589a;
-                                            C2434r c2434r5 = c2434r3;
-                                            Object obj = c2428l.f590b;
+                                        C2552l c2552l = m590n;
+                                        while (c2552l != c2558r3) {
+                                            int i21 = c2552l.f594a;
+                                            C2558r c2558r5 = c2558r3;
+                                            Object obj = c2552l.f595b;
                                             int i22 = i8;
-                                            Object obj2 = c2428l.f591c;
+                                            Object obj2 = c2552l.f596c;
                                             if ((i21 & length) == 0) {
                                                 i5 = length2;
-                                                c2434r2 = new C2428l(i21, obj, obj2, c2434r2);
+                                                c2558r2 = new C2552l(i21, obj, obj2, c2558r2);
                                             } else {
                                                 i5 = length2;
-                                                c2434r = new C2428l(i21, obj, obj2, c2434r);
+                                                c2558r = new C2552l(i21, obj, obj2, c2558r);
                                             }
-                                            c2428l = c2428l.f592d;
-                                            c2434r3 = c2434r5;
+                                            c2552l = c2552l.f597d;
+                                            c2558r3 = c2558r5;
                                             i8 = i22;
                                             length2 = i5;
                                         }
                                         i3 = i8;
                                         i4 = length2;
-                                        m593k(c2428lArr3, i9, c2434r2);
-                                        m593k(c2428lArr3, i2, c2434r);
-                                        m593k(c2428lArr7, i9, c2423g2);
-                                        c2423g = c2423g2;
-                                        c2428lArr6 = c2428lArr7;
+                                        m593k(c2552lArr3, i9, c2558r2);
+                                        m593k(c2552lArr3, i2, c2558r);
+                                        m593k(c2552lArr7, i9, c2547g2);
+                                        c2547g = c2547g2;
+                                        c2552lArr6 = c2552lArr7;
                                     } else {
                                         i3 = i8;
                                         i4 = length2;
-                                        if (m590n instanceof C2433q) {
-                                            C2433q c2433q = (C2433q) m590n;
-                                            C2434r c2434r6 = null;
-                                            C2434r c2434r7 = null;
-                                            C2428l c2428l2 = c2433q.f608f;
+                                        if (m590n instanceof C2557q) {
+                                            C2557q c2557q = (C2557q) m590n;
+                                            C2558r c2558r6 = null;
+                                            C2558r c2558r7 = null;
+                                            C2552l c2552l2 = c2557q.f613f;
                                             int i23 = 0;
                                             int i24 = 0;
-                                            C2434r c2434r8 = null;
-                                            while (c2428l2 != null) {
-                                                C2433q c2433q2 = c2433q;
-                                                int i25 = c2428l2.f589a;
-                                                C2423g c2423g4 = c2423g2;
-                                                C2434r c2434r9 = new C2434r(i25, c2428l2.f590b, c2428l2.f591c, null, null);
+                                            C2558r c2558r8 = null;
+                                            while (c2552l2 != null) {
+                                                C2557q c2557q2 = c2557q;
+                                                int i25 = c2552l2.f594a;
+                                                C2547g c2547g4 = c2547g2;
+                                                C2558r c2558r9 = new C2558r(i25, c2552l2.f595b, c2552l2.f596c, null, null);
                                                 if ((i25 & length) == 0) {
-                                                    c2434r9.f613h = c2434r7;
-                                                    if (c2434r7 == null) {
-                                                        c2434r2 = c2434r9;
+                                                    c2558r9.f618h = c2558r7;
+                                                    if (c2558r7 == null) {
+                                                        c2558r2 = c2558r9;
                                                     } else {
-                                                        c2434r7.f592d = c2434r9;
+                                                        c2558r7.f597d = c2558r9;
                                                     }
                                                     i23++;
-                                                    c2434r7 = c2434r9;
+                                                    c2558r7 = c2558r9;
                                                 } else {
-                                                    c2434r9.f613h = c2434r6;
-                                                    if (c2434r6 == null) {
-                                                        c2434r8 = c2434r9;
+                                                    c2558r9.f618h = c2558r6;
+                                                    if (c2558r6 == null) {
+                                                        c2558r8 = c2558r9;
                                                     } else {
-                                                        c2434r6.f592d = c2434r9;
+                                                        c2558r6.f597d = c2558r9;
                                                     }
                                                     i24++;
-                                                    c2434r6 = c2434r9;
+                                                    c2558r6 = c2558r9;
                                                 }
-                                                c2428l2 = c2428l2.f592d;
-                                                c2433q = c2433q2;
-                                                c2423g2 = c2423g4;
+                                                c2552l2 = c2552l2.f597d;
+                                                c2557q = c2557q2;
+                                                c2547g2 = c2547g4;
                                             }
-                                            C2433q c2433q3 = c2433q;
-                                            C2423g c2423g5 = c2423g2;
-                                            C2428l m585s = i23 <= 6 ? m585s(c2434r2) : i24 != 0 ? new C2433q(c2434r2) : c2433q3;
-                                            C2428l m585s2 = i24 <= 6 ? m585s(c2434r8) : i23 != 0 ? new C2433q(c2434r8) : c2433q3;
-                                            m593k(c2428lArr3, i9, m585s);
-                                            m593k(c2428lArr3, i2, m585s2);
-                                            c2423g = c2423g5;
-                                            m593k(c2428lArr, i9, c2423g);
-                                            c2428lArr6 = c2428lArr;
+                                            C2557q c2557q3 = c2557q;
+                                            C2547g c2547g5 = c2547g2;
+                                            C2552l m585s = i23 <= 6 ? m585s(c2558r2) : i24 != 0 ? new C2557q(c2558r2) : c2557q3;
+                                            C2552l m585s2 = i24 <= 6 ? m585s(c2558r8) : i23 != 0 ? new C2557q(c2558r8) : c2557q3;
+                                            m593k(c2552lArr3, i9, m585s);
+                                            m593k(c2552lArr3, i2, m585s2);
+                                            c2547g = c2547g5;
+                                            m593k(c2552lArr, i9, c2547g);
+                                            c2552lArr6 = c2552lArr;
                                         }
                                     }
                                     z = true;
@@ -2322,10 +2323,10 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                     i3 = i8;
                                     i4 = length2;
                                 }
-                                c2423g = c2423g2;
-                                c2428lArr6 = c2428lArr7;
+                                c2547g = c2547g2;
+                                c2552lArr6 = c2552lArr7;
                             }
-                            c2423g2 = c2423g;
+                            c2547g2 = c2547g;
                             i10 = i;
                             i8 = i3;
                             length2 = i4;
@@ -2338,33 +2339,33 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     }
 
     /* renamed from: q */
-    private final void m587q(C2428l[] c2428lArr, int i) {
-        int length = c2428lArr.length;
+    private final void m587q(C2552l[] c2552lArr, int i) {
+        int length = c2552lArr.length;
         if (length < 64) {
             m586r(length << 1);
             return;
         }
-        C2428l m590n = m590n(c2428lArr, i);
-        if (m590n == null || m590n.f589a < 0) {
+        C2552l m590n = m590n(c2552lArr, i);
+        if (m590n == null || m590n.f594a < 0) {
             return;
         }
         synchronized (m590n) {
-            if (m590n(c2428lArr, i) == m590n) {
-                C2434r c2434r = null;
-                C2428l c2428l = m590n;
-                C2434r c2434r2 = null;
-                while (c2428l != null) {
-                    C2434r c2434r3 = new C2434r(c2428l.f589a, c2428l.f590b, c2428l.f591c, null, null);
-                    c2434r3.f613h = c2434r2;
-                    if (c2434r2 == null) {
-                        c2434r = c2434r3;
+            if (m590n(c2552lArr, i) == m590n) {
+                C2558r c2558r = null;
+                C2552l c2552l = m590n;
+                C2558r c2558r2 = null;
+                while (c2552l != null) {
+                    C2558r c2558r3 = new C2558r(c2552l.f594a, c2552l.f595b, c2552l.f596c, null, null);
+                    c2558r3.f618h = c2558r2;
+                    if (c2558r2 == null) {
+                        c2558r = c2558r3;
                     } else {
-                        c2434r2.f592d = c2434r3;
+                        c2558r2.f597d = c2558r3;
                     }
-                    c2428l = c2428l.f592d;
-                    c2434r2 = c2434r3;
+                    c2552l = c2552l.f597d;
+                    c2558r2 = c2558r3;
                 }
-                m593k(c2428lArr, i, new C2433q(c2434r));
+                m593k(c2552lArr, i, new C2557q(c2558r));
             }
         }
     }
@@ -2372,20 +2373,20 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     /* renamed from: r */
     private final void m586r(int i) {
         int length;
-        C2428l[] c2428lArr;
+        C2552l[] c2552lArr;
         int m589o = i >= 536870912 ? 1073741824 : m589o(i + (i >>> 1) + 1);
         while (true) {
             int i2 = this.sizeCtl;
             if (i2 < 0) {
                 return;
             }
-            C2428l[] c2428lArr2 = this.f573a;
-            if (c2428lArr2 == null || (length = c2428lArr2.length) == 0) {
+            C2552l[] c2552lArr2 = this.f578a;
+            if (c2552lArr2 == null || (length = c2552lArr2.length) == 0) {
                 int i3 = i2 > m589o ? i2 : m589o;
-                if (f565h.compareAndSwapInt(this, f566i, i2, -1)) {
+                if (f570h.compareAndSwapInt(this, f571i, i2, -1)) {
                     try {
-                        if (this.f573a == c2428lArr2) {
-                            this.f573a = new C2428l[i3];
+                        if (this.f578a == c2552lArr2) {
+                            this.f578a = new C2552l[i3];
                             i2 = i3 - (i3 >>> 2);
                         }
                     } finally {
@@ -2397,17 +2398,17 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             } else if (m589o <= i2 || length >= 1073741824) {
                 return;
             } else {
-                if (c2428lArr2 == this.f573a) {
+                if (c2552lArr2 == this.f578a) {
                     int m594j = m594j(length);
                     if (i2 < 0) {
-                        if ((i2 >>> 16) != m594j || i2 == m594j + 1 || i2 == m594j + RtpPacket.MAX_SEQUENCE_NUMBER || (c2428lArr = this.f574b) == null || this.transferIndex <= 0) {
+                        if ((i2 >>> 16) != m594j || i2 == m594j + 1 || i2 == m594j + RtpPacket.MAX_SEQUENCE_NUMBER || (c2552lArr = this.f579b) == null || this.transferIndex <= 0) {
                             return;
                         }
-                        if (f565h.compareAndSwapInt(this, f566i, i2, i2 + 1)) {
-                            m588p(c2428lArr2, c2428lArr);
+                        if (f570h.compareAndSwapInt(this, f571i, i2, i2 + 1)) {
+                            m588p(c2552lArr2, c2552lArr);
                         }
-                    } else if (f565h.compareAndSwapInt(this, f566i, i2, (m594j << 16) + 2)) {
-                        m588p(c2428lArr2, null);
+                    } else if (f570h.compareAndSwapInt(this, f571i, i2, (m594j << 16) + 2)) {
+                        m588p(c2552lArr2, null);
                     }
                 } else {
                     continue;
@@ -2425,7 +2426,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         objectInputStream.defaultReadObject();
         long j2 = 0;
         long j3 = 0;
-        C2428l c2428l = null;
+        C2552l c2552l = null;
         while (true) {
             Object readObject = objectInputStream.readObject();
             Object readObject2 = objectInputStream.readObject();
@@ -2434,7 +2435,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 break;
             }
             j3++;
-            c2428l = new C2428l(m592l(readObject.hashCode()), readObject, readObject2, c2428l);
+            c2552l = new C2552l(m592l(readObject.hashCode()), readObject, readObject2, c2552l);
         }
         if (j3 == 0) {
             this.sizeCtl = 0;
@@ -2446,21 +2447,21 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             int i = (int) j3;
             m589o = m589o(i + (i >>> 1) + 1);
         }
-        C2428l[] c2428lArr = new C2428l[m589o];
+        C2552l[] c2552lArr = new C2552l[m589o];
         int i2 = m589o - 1;
-        while (c2428l != null) {
-            C2428l c2428l2 = c2428l.f592d;
-            int i3 = c2428l.f589a;
+        while (c2552l != null) {
+            C2552l c2552l2 = c2552l.f597d;
+            int i3 = c2552l.f594a;
             int i4 = i3 & i2;
-            C2428l m590n = m590n(c2428lArr, i4);
+            C2552l m590n = m590n(c2552lArr, i4);
             if (m590n == null) {
                 z = true;
             } else {
-                Object obj2 = c2428l.f590b;
-                if (m590n.f589a >= 0) {
+                Object obj2 = c2552l.f595b;
+                if (m590n.f594a >= 0) {
                     int i5 = 0;
-                    for (C2428l c2428l3 = m590n; c2428l3 != null; c2428l3 = c2428l3.f592d) {
-                        if (c2428l3.f589a == i3 && ((obj = c2428l3.f590b) == obj2 || (obj != null && obj2.equals(obj)))) {
+                    for (C2552l c2552l3 = m590n; c2552l3 != null; c2552l3 = c2552l3.f597d) {
+                        if (c2552l3.f594a == i3 && ((obj = c2552l3.f595b) == obj2 || (obj != null && obj2.equals(obj)))) {
                             z = false;
                             break;
                         }
@@ -2469,58 +2470,58 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                     z = true;
                     if (z && i5 >= 8) {
                         j2++;
-                        c2428l.f592d = m590n;
-                        C2428l c2428l4 = c2428l;
-                        C2434r c2434r = null;
-                        C2434r c2434r2 = null;
-                        while (c2428l4 != null) {
+                        c2552l.f597d = m590n;
+                        C2552l c2552l4 = c2552l;
+                        C2558r c2558r = null;
+                        C2558r c2558r2 = null;
+                        while (c2552l4 != null) {
                             long j4 = j2;
-                            C2434r c2434r3 = new C2434r(c2428l4.f589a, c2428l4.f590b, c2428l4.f591c, null, null);
-                            c2434r3.f613h = c2434r2;
-                            if (c2434r2 == null) {
-                                c2434r = c2434r3;
+                            C2558r c2558r3 = new C2558r(c2552l4.f594a, c2552l4.f595b, c2552l4.f596c, null, null);
+                            c2558r3.f618h = c2558r2;
+                            if (c2558r2 == null) {
+                                c2558r = c2558r3;
                             } else {
-                                c2434r2.f592d = c2434r3;
+                                c2558r2.f597d = c2558r3;
                             }
-                            c2428l4 = c2428l4.f592d;
-                            c2434r2 = c2434r3;
+                            c2552l4 = c2552l4.f597d;
+                            c2558r2 = c2558r3;
                             j2 = j4;
                         }
-                        m593k(c2428lArr, i4, new C2433q(c2434r));
+                        m593k(c2552lArr, i4, new C2557q(c2558r));
                     }
-                } else if (((C2433q) m590n).m578f(i3, obj2, c2428l.f591c) == null) {
+                } else if (((C2557q) m590n).m578f(i3, obj2, c2552l.f596c) == null) {
                     j2 += j;
                 }
                 z = false;
             }
             if (z) {
                 j2++;
-                c2428l.f592d = m590n;
-                m593k(c2428lArr, i4, c2428l);
+                c2552l.f597d = m590n;
+                m593k(c2552lArr, i4, c2552l);
             }
             j = 1;
-            c2428l = c2428l2;
+            c2552l = c2552l2;
         }
-        this.f573a = c2428lArr;
+        this.f578a = c2552lArr;
         this.sizeCtl = m589o - (m589o >>> 2);
         this.baseCount = j2;
     }
 
     /* renamed from: s */
-    static C2428l m585s(C2428l c2428l) {
-        C2428l c2428l2 = null;
-        C2428l c2428l3 = null;
-        while (c2428l != null) {
-            C2428l c2428l4 = new C2428l(c2428l.f589a, c2428l.f590b, c2428l.f591c, null);
-            if (c2428l3 == null) {
-                c2428l2 = c2428l4;
+    static C2552l m585s(C2552l c2552l) {
+        C2552l c2552l2 = null;
+        C2552l c2552l3 = null;
+        while (c2552l != null) {
+            C2552l c2552l4 = new C2552l(c2552l.f594a, c2552l.f595b, c2552l.f596c, null);
+            if (c2552l3 == null) {
+                c2552l2 = c2552l4;
             } else {
-                c2428l3.f592d = c2428l4;
+                c2552l3.f597d = c2552l4;
             }
-            c2428l = c2428l.f592d;
-            c2428l3 = c2428l4;
+            c2552l = c2552l.f597d;
+            c2552l3 = c2552l4;
         }
-        return c2428l2;
+        return c2552l2;
     }
 
     private void writeObject(ObjectOutputStream objectOutputStream) {
@@ -2532,24 +2533,24 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         }
         int i3 = 32 - i2;
         int i4 = i - 1;
-        C2430n[] c2430nArr = new C2430n[16];
+        C2554n[] c2554nArr = new C2554n[16];
         for (int i5 = 0; i5 < 16; i5++) {
-            c2430nArr[i5] = new C2430n(0.75f);
+            c2554nArr[i5] = new C2554n(0.75f);
         }
-        objectOutputStream.putFields().put("segments", c2430nArr);
+        objectOutputStream.putFields().put("segments", c2554nArr);
         objectOutputStream.putFields().put("segmentShift", i3);
         objectOutputStream.putFields().put("segmentMask", i4);
         objectOutputStream.writeFields();
-        C2428l[] c2428lArr = this.f573a;
-        if (c2428lArr != null) {
-            C2432p c2432p = new C2432p(c2428lArr, c2428lArr.length, 0, c2428lArr.length);
+        C2552l[] c2552lArr = this.f578a;
+        if (c2552lArr != null) {
+            C2556p c2556p = new C2556p(c2552lArr, c2552lArr.length, 0, c2552lArr.length);
             while (true) {
-                C2428l m583a = c2432p.m583a();
+                C2552l m583a = c2556p.m583a();
                 if (m583a == null) {
                     break;
                 }
-                objectOutputStream.writeObject(m583a.f590b);
-                objectOutputStream.writeObject(m583a.f591c);
+                objectOutputStream.writeObject(m583a.f595b);
+                objectOutputStream.writeObject(m583a.f596c);
             }
         }
         objectOutputStream.writeObject(null);
@@ -2558,32 +2559,32 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
     @Override // java.util.AbstractMap, java.util.Map, p034j$.util.Map
     public void clear() {
-        C2428l m590n;
-        C2428l[] c2428lArr = this.f573a;
+        C2552l m590n;
+        C2552l[] c2552lArr = this.f578a;
         long j = 0;
         loop0: while (true) {
             int i = 0;
-            while (c2428lArr != null && i < c2428lArr.length) {
-                m590n = m590n(c2428lArr, i);
+            while (c2552lArr != null && i < c2552lArr.length) {
+                m590n = m590n(c2552lArr, i);
                 if (m590n == null) {
                     i++;
                 } else {
-                    int i2 = m590n.f589a;
+                    int i2 = m590n.f594a;
                     if (i2 == -1) {
                         break;
                     }
                     synchronized (m590n) {
-                        if (m590n(c2428lArr, i) == m590n) {
-                            for (C2428l c2428l = i2 >= 0 ? m590n : m590n instanceof C2433q ? ((C2433q) m590n).f608f : null; c2428l != null; c2428l = c2428l.f592d) {
+                        if (m590n(c2552lArr, i) == m590n) {
+                            for (C2552l c2552l = i2 >= 0 ? m590n : m590n instanceof C2557q ? ((C2557q) m590n).f613f : null; c2552l != null; c2552l = c2552l.f597d) {
                                 j--;
                             }
-                            m593k(c2428lArr, i, null);
+                            m593k(c2552lArr, i, null);
                             i++;
                         }
                     }
                 }
             }
-            c2428lArr = m598f(c2428lArr, m590n);
+            c2552lArr = m598f(c2552lArr, m590n);
         }
         if (j != 0) {
             m603a(j, -1);
@@ -2593,36 +2594,36 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     @Override // p034j$.util.Map
     public Object compute(Object obj, BiFunction biFunction) {
         int i;
-        C2428l c2428l;
+        C2552l c2552l;
         Object obj2;
         Object obj3;
         if (obj == null || biFunction == null) {
             throw null;
         }
         int m592l = m592l(obj.hashCode());
-        C2428l[] c2428lArr = this.f573a;
+        C2552l[] c2552lArr = this.f578a;
         int i2 = 0;
         Object obj4 = null;
         int i3 = 0;
         while (true) {
-            if (c2428lArr != null) {
-                int length = c2428lArr.length;
+            if (c2552lArr != null) {
+                int length = c2552lArr.length;
                 if (length != 0) {
                     int i4 = (length - 1) & m592l;
-                    C2428l m590n = m590n(c2428lArr, i4);
+                    C2552l m590n = m590n(c2552lArr, i4);
                     if (m590n == null) {
-                        C2429m c2429m = new C2429m();
-                        synchronized (c2429m) {
-                            if (m602b(c2428lArr, i4, null, c2429m)) {
+                        C2553m c2553m = new C2553m();
+                        synchronized (c2553m) {
+                            if (m602b(c2552lArr, i4, null, c2553m)) {
                                 Object apply = biFunction.apply(obj, null);
                                 if (apply != null) {
-                                    c2428l = new C2428l(m592l, obj, apply, null);
+                                    c2552l = new C2552l(m592l, obj, apply, null);
                                     i = 1;
                                 } else {
                                     i = i2;
-                                    c2428l = null;
+                                    c2552l = null;
                                 }
-                                m593k(c2428lArr, i4, c2428l);
+                                m593k(c2552lArr, i4, c2552l);
                                 i2 = i;
                                 obj4 = apply;
                                 i3 = 1;
@@ -2632,62 +2633,62 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                             break;
                         }
                     } else {
-                        int i5 = m590n.f589a;
+                        int i5 = m590n.f594a;
                         if (i5 == -1) {
-                            c2428lArr = m598f(c2428lArr, m590n);
+                            c2552lArr = m598f(c2552lArr, m590n);
                         } else {
                             synchronized (m590n) {
-                                if (m590n(c2428lArr, i4) == m590n) {
+                                if (m590n(c2552lArr, i4) == m590n) {
                                     if (i5 >= 0) {
-                                        C2428l c2428l2 = null;
-                                        C2428l c2428l3 = m590n;
+                                        C2552l c2552l2 = null;
+                                        C2552l c2552l3 = m590n;
                                         int i6 = 1;
                                         while (true) {
-                                            if (c2428l3.f589a != m592l || ((obj3 = c2428l3.f590b) != obj && (obj3 == null || !obj.equals(obj3)))) {
-                                                C2428l c2428l4 = c2428l3.f592d;
-                                                if (c2428l4 == null) {
+                                            if (c2552l3.f594a != m592l || ((obj3 = c2552l3.f595b) != obj && (obj3 == null || !obj.equals(obj3)))) {
+                                                C2552l c2552l4 = c2552l3.f597d;
+                                                if (c2552l4 == null) {
                                                     Object apply2 = biFunction.apply(obj, null);
                                                     if (apply2 != null) {
-                                                        c2428l3.f592d = new C2428l(m592l, obj, apply2, null);
+                                                        c2552l3.f597d = new C2552l(m592l, obj, apply2, null);
                                                         i2 = 1;
                                                     }
                                                     obj2 = apply2;
                                                 } else {
                                                     i6++;
-                                                    c2428l2 = c2428l3;
-                                                    c2428l3 = c2428l4;
+                                                    c2552l2 = c2552l3;
+                                                    c2552l3 = c2552l4;
                                                 }
                                             }
                                         }
-                                        obj2 = biFunction.apply(obj, c2428l3.f591c);
+                                        obj2 = biFunction.apply(obj, c2552l3.f596c);
                                         if (obj2 != null) {
-                                            c2428l3.f591c = obj2;
+                                            c2552l3.f596c = obj2;
                                         } else {
-                                            C2428l c2428l5 = c2428l3.f592d;
-                                            if (c2428l2 != null) {
-                                                c2428l2.f592d = c2428l5;
+                                            C2552l c2552l5 = c2552l3.f597d;
+                                            if (c2552l2 != null) {
+                                                c2552l2.f597d = c2552l5;
                                             } else {
-                                                m593k(c2428lArr, i4, c2428l5);
+                                                m593k(c2552lArr, i4, c2552l5);
                                             }
                                             i2 = -1;
                                         }
                                         i3 = i6;
                                         obj4 = obj2;
-                                    } else if (m590n instanceof C2433q) {
-                                        C2433q c2433q = (C2433q) m590n;
-                                        C2434r c2434r = c2433q.f607e;
-                                        C2434r m572b = c2434r != null ? c2434r.m572b(m592l, obj, null) : null;
-                                        Object apply3 = biFunction.apply(obj, m572b == null ? null : m572b.f591c);
+                                    } else if (m590n instanceof C2557q) {
+                                        C2557q c2557q = (C2557q) m590n;
+                                        C2558r c2558r = c2557q.f612e;
+                                        C2558r m572b = c2558r != null ? c2558r.m572b(m592l, obj, null) : null;
+                                        Object apply3 = biFunction.apply(obj, m572b == null ? null : m572b.f596c);
                                         if (apply3 != null) {
                                             if (m572b != null) {
-                                                m572b.f591c = apply3;
+                                                m572b.f596c = apply3;
                                             } else {
-                                                c2433q.m578f(m592l, obj, apply3);
+                                                c2557q.m578f(m592l, obj, apply3);
                                                 i2 = 1;
                                             }
                                         } else if (m572b != null) {
-                                            if (c2433q.m577g(m572b)) {
-                                                m593k(c2428lArr, i4, m585s(c2433q.f608f));
+                                            if (c2557q.m577g(m572b)) {
+                                                m593k(c2552lArr, i4, m585s(c2557q.f613f));
                                             }
                                             i2 = -1;
                                         }
@@ -2698,14 +2699,14 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                             }
                             if (i3 != 0) {
                                 if (i3 >= 8) {
-                                    m587q(c2428lArr, i4);
+                                    m587q(c2552lArr, i4);
                                 }
                             }
                         }
                     }
                 }
             }
-            c2428lArr = m597g();
+            c2552lArr = m597g();
         }
         if (i2 != 0) {
             m603a(i2, i3);
@@ -2715,36 +2716,36 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
     @Override // java.util.Map, java.util.concurrent.ConcurrentMap
     public /* synthetic */ Object compute(Object obj, java.util.function.BiFunction biFunction) {
-        return compute(obj, C2877s.m117a(biFunction));
+        return compute(obj, C3001s.m117a(biFunction));
     }
 
-    @Override // p034j$.util.concurrent.InterfaceC2443b, p034j$.util.Map
+    @Override // p034j$.util.concurrent.InterfaceC2567b, p034j$.util.Map
     public Object computeIfAbsent(Object obj, Function function) {
         int i;
         Object apply;
-        C2434r m572b;
+        C2558r m572b;
         Object obj2;
         Object obj3;
         if (obj == null || function == null) {
             throw null;
         }
         int m592l = m592l(obj.hashCode());
-        C2428l[] c2428lArr = this.f573a;
+        C2552l[] c2552lArr = this.f578a;
         Object obj4 = null;
         int i2 = 0;
         while (true) {
-            if (c2428lArr != null) {
-                int length = c2428lArr.length;
+            if (c2552lArr != null) {
+                int length = c2552lArr.length;
                 if (length != 0) {
                     int i3 = (length - 1) & m592l;
-                    C2428l m590n = m590n(c2428lArr, i3);
+                    C2552l m590n = m590n(c2552lArr, i3);
                     boolean z = true;
                     if (m590n == null) {
-                        C2429m c2429m = new C2429m();
-                        synchronized (c2429m) {
-                            if (m602b(c2428lArr, i3, null, c2429m)) {
+                        C2553m c2553m = new C2553m();
+                        synchronized (c2553m) {
+                            if (m602b(c2552lArr, i3, null, c2553m)) {
                                 Object apply2 = function.apply(obj);
-                                m593k(c2428lArr, i3, apply2 != null ? new C2428l(m592l, obj, apply2, null) : null);
+                                m593k(c2552lArr, i3, apply2 != null ? new C2552l(m592l, obj, apply2, null) : null);
                                 obj4 = apply2;
                                 i2 = 1;
                             }
@@ -2753,42 +2754,42 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                             break;
                         }
                     } else {
-                        int i4 = m590n.f589a;
+                        int i4 = m590n.f594a;
                         if (i4 == -1) {
-                            c2428lArr = m598f(c2428lArr, m590n);
+                            c2552lArr = m598f(c2552lArr, m590n);
                         } else {
                             synchronized (m590n) {
-                                if (m590n(c2428lArr, i3) == m590n) {
+                                if (m590n(c2552lArr, i3) == m590n) {
                                     if (i4 >= 0) {
-                                        C2428l c2428l = m590n;
+                                        C2552l c2552l = m590n;
                                         i = 1;
                                         while (true) {
-                                            if (c2428l.f589a != m592l || ((obj3 = c2428l.f590b) != obj && (obj3 == null || !obj.equals(obj3)))) {
-                                                C2428l c2428l2 = c2428l.f592d;
-                                                if (c2428l2 == null) {
+                                            if (c2552l.f594a != m592l || ((obj3 = c2552l.f595b) != obj && (obj3 == null || !obj.equals(obj3)))) {
+                                                C2552l c2552l2 = c2552l.f597d;
+                                                if (c2552l2 == null) {
                                                     apply = function.apply(obj);
                                                     if (apply != null) {
-                                                        c2428l.f592d = new C2428l(m592l, obj, apply, null);
+                                                        c2552l.f597d = new C2552l(m592l, obj, apply, null);
                                                     }
                                                 } else {
                                                     i++;
-                                                    c2428l = c2428l2;
+                                                    c2552l = c2552l2;
                                                 }
                                             }
                                         }
-                                        obj2 = c2428l.f591c;
+                                        obj2 = c2552l.f596c;
                                         z = false;
                                         int i5 = i;
                                         obj4 = obj2;
                                         i2 = i5;
-                                    } else if (m590n instanceof C2433q) {
+                                    } else if (m590n instanceof C2557q) {
                                         i = 2;
-                                        C2433q c2433q = (C2433q) m590n;
-                                        C2434r c2434r = c2433q.f607e;
-                                        if (c2434r == null || (m572b = c2434r.m572b(m592l, obj, null)) == null) {
+                                        C2557q c2557q = (C2557q) m590n;
+                                        C2558r c2558r = c2557q.f612e;
+                                        if (c2558r == null || (m572b = c2558r.m572b(m592l, obj, null)) == null) {
                                             apply = function.apply(obj);
                                             if (apply != null) {
-                                                c2433q.m578f(m592l, obj, apply);
+                                                c2557q.m578f(m592l, obj, apply);
                                                 i2 = i;
                                                 obj4 = apply;
                                             }
@@ -2796,7 +2797,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                             i2 = i;
                                             obj4 = apply;
                                         } else {
-                                            obj2 = m572b.f591c;
+                                            obj2 = m572b.f596c;
                                             z = false;
                                             int i52 = i;
                                             obj4 = obj2;
@@ -2808,7 +2809,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                             }
                             if (i2 != 0) {
                                 if (i2 >= 8) {
-                                    m587q(c2428lArr, i3);
+                                    m587q(c2552lArr, i3);
                                 }
                                 if (!z) {
                                     return obj4;
@@ -2818,7 +2819,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                     }
                 }
             }
-            c2428lArr = m597g();
+            c2552lArr = m597g();
         }
         if (obj4 != null) {
             m603a(1L, i2);
@@ -2828,76 +2829,76 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
     @Override // java.util.Map, java.util.concurrent.ConcurrentMap
     public /* synthetic */ Object computeIfAbsent(Object obj, java.util.function.Function function) {
-        return computeIfAbsent(obj, C2823L.m204a(function));
+        return computeIfAbsent(obj, C2947L.m204a(function));
     }
 
     @Override // p034j$.util.Map
     public Object computeIfPresent(Object obj, BiFunction biFunction) {
-        C2434r m572b;
-        C2428l m585s;
+        C2558r m572b;
+        C2552l m585s;
         Object obj2;
         if (obj == null || biFunction == null) {
             throw null;
         }
         int m592l = m592l(obj.hashCode());
-        C2428l[] c2428lArr = this.f573a;
+        C2552l[] c2552lArr = this.f578a;
         int i = 0;
         Object obj3 = null;
         int i2 = 0;
         while (true) {
-            if (c2428lArr != null) {
-                int length = c2428lArr.length;
+            if (c2552lArr != null) {
+                int length = c2552lArr.length;
                 if (length != 0) {
                     int i3 = (length - 1) & m592l;
-                    C2428l m590n = m590n(c2428lArr, i3);
+                    C2552l m590n = m590n(c2552lArr, i3);
                     if (m590n == null) {
                         break;
                     }
-                    int i4 = m590n.f589a;
+                    int i4 = m590n.f594a;
                     if (i4 == -1) {
-                        c2428lArr = m598f(c2428lArr, m590n);
+                        c2552lArr = m598f(c2552lArr, m590n);
                     } else {
                         synchronized (m590n) {
-                            if (m590n(c2428lArr, i3) == m590n) {
+                            if (m590n(c2552lArr, i3) == m590n) {
                                 if (i4 >= 0) {
                                     i2 = 1;
-                                    C2428l c2428l = null;
-                                    C2428l c2428l2 = m590n;
+                                    C2552l c2552l = null;
+                                    C2552l c2552l2 = m590n;
                                     while (true) {
-                                        if (c2428l2.f589a != m592l || ((obj2 = c2428l2.f590b) != obj && (obj2 == null || !obj.equals(obj2)))) {
-                                            C2428l c2428l3 = c2428l2.f592d;
-                                            if (c2428l3 == null) {
+                                        if (c2552l2.f594a != m592l || ((obj2 = c2552l2.f595b) != obj && (obj2 == null || !obj.equals(obj2)))) {
+                                            C2552l c2552l3 = c2552l2.f597d;
+                                            if (c2552l3 == null) {
                                                 break;
                                             }
                                             i2++;
-                                            c2428l = c2428l2;
-                                            c2428l2 = c2428l3;
+                                            c2552l = c2552l2;
+                                            c2552l2 = c2552l3;
                                         }
                                     }
-                                    obj3 = biFunction.apply(obj, c2428l2.f591c);
+                                    obj3 = biFunction.apply(obj, c2552l2.f596c);
                                     if (obj3 != null) {
-                                        c2428l2.f591c = obj3;
+                                        c2552l2.f596c = obj3;
                                     } else {
-                                        m585s = c2428l2.f592d;
-                                        if (c2428l != null) {
-                                            c2428l.f592d = m585s;
+                                        m585s = c2552l2.f597d;
+                                        if (c2552l != null) {
+                                            c2552l.f597d = m585s;
                                             i = -1;
                                         }
-                                        m593k(c2428lArr, i3, m585s);
+                                        m593k(c2552lArr, i3, m585s);
                                         i = -1;
                                     }
-                                } else if (m590n instanceof C2433q) {
+                                } else if (m590n instanceof C2557q) {
                                     i2 = 2;
-                                    C2433q c2433q = (C2433q) m590n;
-                                    C2434r c2434r = c2433q.f607e;
-                                    if (c2434r != null && (m572b = c2434r.m572b(m592l, obj, null)) != null) {
-                                        obj3 = biFunction.apply(obj, m572b.f591c);
+                                    C2557q c2557q = (C2557q) m590n;
+                                    C2558r c2558r = c2557q.f612e;
+                                    if (c2558r != null && (m572b = c2558r.m572b(m592l, obj, null)) != null) {
+                                        obj3 = biFunction.apply(obj, m572b.f596c);
                                         if (obj3 != null) {
-                                            m572b.f591c = obj3;
+                                            m572b.f596c = obj3;
                                         } else {
-                                            if (c2433q.m577g(m572b)) {
-                                                m585s = m585s(c2433q.f608f);
-                                                m593k(c2428lArr, i3, m585s);
+                                            if (c2557q.m577g(m572b)) {
+                                                m585s = m585s(c2557q.f613f);
+                                                m593k(c2552lArr, i3, m585s);
                                             }
                                             i = -1;
                                         }
@@ -2911,7 +2912,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                     }
                 }
             }
-            c2428lArr = m597g();
+            c2552lArr = m597g();
         }
         if (i != 0) {
             m603a(i, i2);
@@ -2921,7 +2922,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
     @Override // java.util.Map, java.util.concurrent.ConcurrentMap
     public /* synthetic */ Object computeIfPresent(Object obj, java.util.function.BiFunction biFunction) {
-        return computeIfPresent(obj, C2877s.m117a(biFunction));
+        return computeIfPresent(obj, C3001s.m117a(biFunction));
     }
 
     @Override // java.util.AbstractMap, java.util.Map, p034j$.util.Map
@@ -2932,15 +2933,15 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     @Override // java.util.AbstractMap, java.util.Map, p034j$.util.Map
     public boolean containsValue(Object obj) {
         Objects.requireNonNull(obj);
-        C2428l[] c2428lArr = this.f573a;
-        if (c2428lArr != null) {
-            C2432p c2432p = new C2432p(c2428lArr, c2428lArr.length, 0, c2428lArr.length);
+        C2552l[] c2552lArr = this.f578a;
+        if (c2552lArr != null) {
+            C2556p c2556p = new C2556p(c2552lArr, c2552lArr.length, 0, c2552lArr.length);
             while (true) {
-                C2428l m583a = c2432p.m583a();
+                C2552l m583a = c2556p.m583a();
                 if (m583a == null) {
                     break;
                 }
-                Object obj2 = m583a.f591c;
+                Object obj2 = m583a.f596c;
                 if (obj2 == obj) {
                     return true;
                 }
@@ -2954,13 +2955,13 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
     @Override // java.util.AbstractMap, java.util.Map, p034j$.util.Map
     public Set<Map.Entry<K, V>> entrySet() {
-        C2421e c2421e = this.f578f;
-        if (c2421e != null) {
-            return c2421e;
+        C2545e c2545e = this.f583f;
+        if (c2545e != null) {
+            return c2545e;
         }
-        C2421e c2421e2 = new C2421e(this);
-        this.f578f = c2421e2;
-        return c2421e2;
+        C2545e c2545e2 = new C2545e(this);
+        this.f583f = c2545e2;
+        return c2545e2;
     }
 
     @Override // java.util.AbstractMap, java.util.Map, p034j$.util.Map
@@ -2970,11 +2971,11 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         if (obj != this) {
             if (obj instanceof Map) {
                 Map map = (Map) obj;
-                C2428l[] c2428lArr = this.f573a;
-                int length = c2428lArr == null ? 0 : c2428lArr.length;
-                C2432p c2432p = new C2432p(c2428lArr, length, 0, length);
+                C2552l[] c2552lArr = this.f578a;
+                int length = c2552lArr == null ? 0 : c2552lArr.length;
+                C2556p c2556p = new C2556p(c2552lArr, length, 0, length);
                 while (true) {
-                    C2428l m583a = c2432p.m583a();
+                    C2552l m583a = c2556p.m583a();
                     if (m583a == null) {
                         for (Map.Entry<K, V> entry : map.entrySet()) {
                             K key = entry.getKey();
@@ -2984,8 +2985,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                         }
                         return true;
                     }
-                    Object obj2 = m583a.f591c;
-                    Object obj3 = map.get(m583a.f590b);
+                    Object obj2 = m583a.f596c;
+                    Object obj3 = map.get(m583a.f595b);
                     if (obj3 == null || (obj3 != obj2 && !obj3.equals(obj2))) {
                         break;
                     }
@@ -2998,48 +2999,48 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     }
 
     /* renamed from: f */
-    final C2428l[] m598f(C2428l[] c2428lArr, C2428l c2428l) {
-        C2428l[] c2428lArr2;
+    final C2552l[] m598f(C2552l[] c2552lArr, C2552l c2552l) {
+        C2552l[] c2552lArr2;
         int i;
-        if (!(c2428l instanceof C2423g) || (c2428lArr2 = ((C2423g) c2428l).f584e) == null) {
-            return this.f573a;
+        if (!(c2552l instanceof C2547g) || (c2552lArr2 = ((C2547g) c2552l).f589e) == null) {
+            return this.f578a;
         }
-        int m594j = m594j(c2428lArr.length);
+        int m594j = m594j(c2552lArr.length);
         while (true) {
-            if (c2428lArr2 != this.f574b || this.f573a != c2428lArr || (i = this.sizeCtl) >= 0 || (i >>> 16) != m594j || i == m594j + 1 || i == RtpPacket.MAX_SEQUENCE_NUMBER + m594j || this.transferIndex <= 0) {
+            if (c2552lArr2 != this.f579b || this.f578a != c2552lArr || (i = this.sizeCtl) >= 0 || (i >>> 16) != m594j || i == m594j + 1 || i == RtpPacket.MAX_SEQUENCE_NUMBER + m594j || this.transferIndex <= 0) {
                 break;
-            } else if (f565h.compareAndSwapInt(this, f566i, i, i + 1)) {
-                m588p(c2428lArr, c2428lArr2);
+            } else if (f570h.compareAndSwapInt(this, f571i, i, i + 1)) {
+                m588p(c2552lArr, c2552lArr2);
                 break;
             }
         }
-        return c2428lArr2;
+        return c2552lArr2;
     }
 
-    @Override // p034j$.util.concurrent.InterfaceC2443b, p034j$.util.Map
+    @Override // p034j$.util.concurrent.InterfaceC2567b, p034j$.util.Map
     public void forEach(BiConsumer biConsumer) {
         Objects.requireNonNull(biConsumer);
-        C2428l[] c2428lArr = this.f573a;
-        if (c2428lArr == null) {
+        C2552l[] c2552lArr = this.f578a;
+        if (c2552lArr == null) {
             return;
         }
-        C2432p c2432p = new C2432p(c2428lArr, c2428lArr.length, 0, c2428lArr.length);
+        C2556p c2556p = new C2556p(c2552lArr, c2552lArr.length, 0, c2552lArr.length);
         while (true) {
-            C2428l m583a = c2432p.m583a();
+            C2552l m583a = c2556p.m583a();
             if (m583a == null) {
                 return;
             }
-            biConsumer.accept(m583a.f590b, m583a.f591c);
+            biConsumer.accept(m583a.f595b, m583a.f596c);
         }
     }
 
     @Override // java.util.Map, java.util.concurrent.ConcurrentMap
     public /* synthetic */ void forEach(java.util.function.BiConsumer biConsumer) {
-        forEach(C2873q.m122a(biConsumer));
+        forEach(C2997q.m122a(biConsumer));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:32:0x004d, code lost:
-        return (V) r1.f591c;
+        return (V) r1.f596c;
      */
     @Override // java.util.AbstractMap, java.util.Map, p034j$.util.Map
     /*
@@ -3051,7 +3052,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             r4 = this;
             int r0 = r5.hashCode()
             int r0 = m592l(r0)
-            j$.util.concurrent.ConcurrentHashMap$l[] r1 = r4.f573a
+            j$.util.concurrent.ConcurrentHashMap$l[] r1 = r4.f578a
             r2 = 0
             if (r1 == 0) goto L4e
             int r3 = r1.length
@@ -3060,35 +3061,35 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             r3 = r3 & r0
             j$.util.concurrent.ConcurrentHashMap$l r1 = m590n(r1, r3)
             if (r1 == 0) goto L4e
-            int r3 = r1.f589a
+            int r3 = r1.f594a
             if (r3 != r0) goto L2c
-            java.lang.Object r3 = r1.f590b
+            java.lang.Object r3 = r1.f595b
             if (r3 == r5) goto L29
             if (r3 == 0) goto L37
             boolean r3 = r5.equals(r3)
             if (r3 == 0) goto L37
         L29:
-            java.lang.Object r5 = r1.f591c
+            java.lang.Object r5 = r1.f596c
             return r5
         L2c:
             if (r3 >= 0) goto L37
             j$.util.concurrent.ConcurrentHashMap$l r5 = r1.mo573a(r0, r5)
             if (r5 == 0) goto L36
-            java.lang.Object r2 = r5.f591c
+            java.lang.Object r2 = r5.f596c
         L36:
             return r2
         L37:
-            j$.util.concurrent.ConcurrentHashMap$l r1 = r1.f592d
+            j$.util.concurrent.ConcurrentHashMap$l r1 = r1.f597d
             if (r1 == 0) goto L4e
-            int r3 = r1.f589a
+            int r3 = r1.f594a
             if (r3 != r0) goto L37
-            java.lang.Object r3 = r1.f590b
+            java.lang.Object r3 = r1.f595b
             if (r3 == r5) goto L4b
             if (r3 == 0) goto L37
             boolean r3 = r5.equals(r3)
             if (r3 == 0) goto L37
         L4b:
-            java.lang.Object r5 = r1.f591c
+            java.lang.Object r5 = r1.f596c
             return r5
         L4e:
             return r2
@@ -3119,7 +3120,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             int r1 = r9.hashCode()
             int r1 = m592l(r1)
             r2 = 0
-            j$.util.concurrent.ConcurrentHashMap$l[] r3 = r8.f573a
+            j$.util.concurrent.ConcurrentHashMap$l[] r3 = r8.f578a
         L10:
             if (r3 == 0) goto L92
             int r4 = r3.length
@@ -3136,7 +3137,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             if (r4 == 0) goto L10
             goto L89
         L2c:
-            int r6 = r5.f589a
+            int r6 = r5.f594a
             r7 = -1
             if (r6 != r7) goto L36
             j$.util.concurrent.ConcurrentHashMap$l[] r3 = r8.m598f(r3, r5)
@@ -3149,39 +3150,39 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             r2 = 1
             r6 = r5
         L41:
-            int r7 = r6.f589a     // Catch: java.lang.Throwable -> L8f
+            int r7 = r6.f594a     // Catch: java.lang.Throwable -> L8f
             if (r7 != r1) goto L58
-            java.lang.Object r7 = r6.f590b     // Catch: java.lang.Throwable -> L8f
+            java.lang.Object r7 = r6.f595b     // Catch: java.lang.Throwable -> L8f
             if (r7 == r9) goto L51
             if (r7 == 0) goto L58
             boolean r7 = r9.equals(r7)     // Catch: java.lang.Throwable -> L8f
             if (r7 == 0) goto L58
         L51:
-            java.lang.Object r7 = r6.f591c     // Catch: java.lang.Throwable -> L8f
+            java.lang.Object r7 = r6.f596c     // Catch: java.lang.Throwable -> L8f
             if (r11 != 0) goto L7c
         L55:
-            r6.f591c = r10     // Catch: java.lang.Throwable -> L8f
+            r6.f596c = r10     // Catch: java.lang.Throwable -> L8f
             goto L7c
         L58:
-            j$.util.concurrent.ConcurrentHashMap$l r7 = r6.f592d     // Catch: java.lang.Throwable -> L8f
+            j$.util.concurrent.ConcurrentHashMap$l r7 = r6.f597d     // Catch: java.lang.Throwable -> L8f
             if (r7 != 0) goto L64
             j$.util.concurrent.ConcurrentHashMap$l r7 = new j$.util.concurrent.ConcurrentHashMap$l     // Catch: java.lang.Throwable -> L8f
             r7.<init>(r1, r9, r10, r0)     // Catch: java.lang.Throwable -> L8f
-            r6.f592d = r7     // Catch: java.lang.Throwable -> L8f
+            r6.f597d = r7     // Catch: java.lang.Throwable -> L8f
             goto L7b
         L64:
             int r2 = r2 + 1
             r6 = r7
             goto L41
         L68:
-            boolean r6 = r5 instanceof p034j$.util.concurrent.ConcurrentHashMap.C2433q     // Catch: java.lang.Throwable -> L8f
+            boolean r6 = r5 instanceof p034j$.util.concurrent.ConcurrentHashMap.C2557q     // Catch: java.lang.Throwable -> L8f
             if (r6 == 0) goto L7b
             r2 = 2
             r6 = r5
-            j$.util.concurrent.ConcurrentHashMap$q r6 = (p034j$.util.concurrent.ConcurrentHashMap.C2433q) r6     // Catch: java.lang.Throwable -> L8f
+            j$.util.concurrent.ConcurrentHashMap$q r6 = (p034j$.util.concurrent.ConcurrentHashMap.C2557q) r6     // Catch: java.lang.Throwable -> L8f
             j$.util.concurrent.ConcurrentHashMap$r r6 = r6.m578f(r1, r9, r10)     // Catch: java.lang.Throwable -> L8f
             if (r6 == 0) goto L7b
-            java.lang.Object r7 = r6.f591c     // Catch: java.lang.Throwable -> L8f
+            java.lang.Object r7 = r6.f596c     // Catch: java.lang.Throwable -> L8f
             if (r11 != 0) goto L7c
             goto L55
         L7b:
@@ -3214,16 +3215,16 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
     @Override // java.util.AbstractMap, java.util.Map, p034j$.util.Map
     public int hashCode() {
-        C2428l[] c2428lArr = this.f573a;
+        C2552l[] c2552lArr = this.f578a;
         int i = 0;
-        if (c2428lArr != null) {
-            C2432p c2432p = new C2432p(c2428lArr, c2428lArr.length, 0, c2428lArr.length);
+        if (c2552lArr != null) {
+            C2556p c2556p = new C2556p(c2552lArr, c2552lArr.length, 0, c2552lArr.length);
             while (true) {
-                C2428l m583a = c2432p.m583a();
+                C2552l m583a = c2556p.m583a();
                 if (m583a == null) {
                     break;
                 }
-                i += m583a.f591c.hashCode() ^ m583a.f590b.hashCode();
+                i += m583a.f596c.hashCode() ^ m583a.f595b.hashCode();
             }
         }
         return i;
@@ -3233,62 +3234,62 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     final Object m595i(Object obj, Object obj2, Object obj3) {
         int length;
         int i;
-        C2428l m590n;
+        C2552l m590n;
         Object obj4;
-        C2434r m572b;
-        C2428l m585s;
+        C2558r m572b;
+        C2552l m585s;
         Object obj5;
         int m592l = m592l(obj.hashCode());
-        C2428l[] c2428lArr = this.f573a;
+        C2552l[] c2552lArr = this.f578a;
         while (true) {
-            if (c2428lArr == null || (length = c2428lArr.length) == 0 || (m590n = m590n(c2428lArr, (i = (length - 1) & m592l))) == null) {
+            if (c2552lArr == null || (length = c2552lArr.length) == 0 || (m590n = m590n(c2552lArr, (i = (length - 1) & m592l))) == null) {
                 break;
             }
-            int i2 = m590n.f589a;
+            int i2 = m590n.f594a;
             if (i2 == -1) {
-                c2428lArr = m598f(c2428lArr, m590n);
+                c2552lArr = m598f(c2552lArr, m590n);
             } else {
                 boolean z = false;
                 synchronized (m590n) {
-                    if (m590n(c2428lArr, i) == m590n) {
+                    if (m590n(c2552lArr, i) == m590n) {
                         if (i2 >= 0) {
-                            C2428l c2428l = null;
-                            C2428l c2428l2 = m590n;
+                            C2552l c2552l = null;
+                            C2552l c2552l2 = m590n;
                             while (true) {
-                                if (c2428l2.f589a != m592l || ((obj5 = c2428l2.f590b) != obj && (obj5 == null || !obj.equals(obj5)))) {
-                                    C2428l c2428l3 = c2428l2.f592d;
-                                    if (c2428l3 == null) {
+                                if (c2552l2.f594a != m592l || ((obj5 = c2552l2.f595b) != obj && (obj5 == null || !obj.equals(obj5)))) {
+                                    C2552l c2552l3 = c2552l2.f597d;
+                                    if (c2552l3 == null) {
                                         break;
                                     }
-                                    c2428l = c2428l2;
-                                    c2428l2 = c2428l3;
+                                    c2552l = c2552l2;
+                                    c2552l2 = c2552l3;
                                 }
                             }
-                            obj4 = c2428l2.f591c;
+                            obj4 = c2552l2.f596c;
                             if (obj3 == null || obj3 == obj4 || (obj4 != null && obj3.equals(obj4))) {
                                 if (obj2 != null) {
-                                    c2428l2.f591c = obj2;
-                                } else if (c2428l != null) {
-                                    c2428l.f592d = c2428l2.f592d;
+                                    c2552l2.f596c = obj2;
+                                } else if (c2552l != null) {
+                                    c2552l.f597d = c2552l2.f597d;
                                 } else {
-                                    m585s = c2428l2.f592d;
-                                    m593k(c2428lArr, i, m585s);
+                                    m585s = c2552l2.f597d;
+                                    m593k(c2552lArr, i, m585s);
                                 }
                                 z = true;
                             }
                             obj4 = null;
                             z = true;
-                        } else if (m590n instanceof C2433q) {
-                            C2433q c2433q = (C2433q) m590n;
-                            C2434r c2434r = c2433q.f607e;
-                            if (c2434r != null && (m572b = c2434r.m572b(m592l, obj, null)) != null) {
-                                obj4 = m572b.f591c;
+                        } else if (m590n instanceof C2557q) {
+                            C2557q c2557q = (C2557q) m590n;
+                            C2558r c2558r = c2557q.f612e;
+                            if (c2558r != null && (m572b = c2558r.m572b(m592l, obj, null)) != null) {
+                                obj4 = m572b.f596c;
                                 if (obj3 == null || obj3 == obj4 || (obj4 != null && obj3.equals(obj4))) {
                                     if (obj2 != null) {
-                                        m572b.f591c = obj2;
-                                    } else if (c2433q.m577g(m572b)) {
-                                        m585s = m585s(c2433q.f608f);
-                                        m593k(c2428lArr, i, m585s);
+                                        m572b.f596c = obj2;
+                                    } else if (c2557q.m577g(m572b)) {
+                                        m585s = m585s(c2557q.f613f);
+                                        m593k(c2552lArr, i, m585s);
                                     }
                                     z = true;
                                 }
@@ -3319,23 +3320,23 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
     @Override // java.util.AbstractMap, java.util.Map, p034j$.util.Map
     public Set<K> keySet() {
-        C2425i c2425i = this.f576d;
-        if (c2425i != null) {
-            return c2425i;
+        C2549i c2549i = this.f581d;
+        if (c2549i != null) {
+            return c2549i;
         }
-        C2425i c2425i2 = new C2425i(this, null);
-        this.f576d = c2425i2;
-        return c2425i2;
+        C2549i c2549i2 = new C2549i(this, null);
+        this.f581d = c2549i2;
+        return c2549i2;
     }
 
     /* renamed from: m */
     final long m591m() {
-        C2419c[] c2419cArr = this.f575c;
+        C2543c[] c2543cArr = this.f580c;
         long j = this.baseCount;
-        if (c2419cArr != null) {
-            for (C2419c c2419c : c2419cArr) {
-                if (c2419c != null) {
-                    j += c2419c.value;
+        if (c2543cArr != null) {
+            for (C2543c c2543c : c2543cArr) {
+                if (c2543c != null) {
+                    j += c2543c.value;
                 }
             }
         }
@@ -3352,50 +3353,50 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             throw null;
         }
         int m592l = m592l(obj.hashCode());
-        C2428l[] c2428lArr = this.f573a;
+        C2552l[] c2552lArr = this.f578a;
         int i2 = 0;
         Object obj6 = null;
         int i3 = 0;
         while (true) {
-            if (c2428lArr != null) {
-                int length = c2428lArr.length;
+            if (c2552lArr != null) {
+                int length = c2552lArr.length;
                 if (length != 0) {
                     int i4 = (length - 1) & m592l;
-                    C2428l m590n = m590n(c2428lArr, i4);
+                    C2552l m590n = m590n(c2552lArr, i4);
                     i = 1;
                     if (m590n != null) {
-                        int i5 = m590n.f589a;
+                        int i5 = m590n.f594a;
                         if (i5 == -1) {
-                            c2428lArr = m598f(c2428lArr, m590n);
+                            c2552lArr = m598f(c2552lArr, m590n);
                         } else {
                             synchronized (m590n) {
-                                if (m590n(c2428lArr, i4) == m590n) {
+                                if (m590n(c2552lArr, i4) == m590n) {
                                     if (i5 >= 0) {
-                                        C2428l c2428l = null;
-                                        C2428l c2428l2 = m590n;
+                                        C2552l c2552l = null;
+                                        C2552l c2552l2 = m590n;
                                         int i6 = 1;
                                         while (true) {
-                                            if (c2428l2.f589a != m592l || ((obj4 = c2428l2.f590b) != obj && (obj4 == null || !obj.equals(obj4)))) {
-                                                C2428l c2428l3 = c2428l2.f592d;
-                                                if (c2428l3 == null) {
-                                                    c2428l2.f592d = new C2428l(m592l, obj, obj5, null);
+                                            if (c2552l2.f594a != m592l || ((obj4 = c2552l2.f595b) != obj && (obj4 == null || !obj.equals(obj4)))) {
+                                                C2552l c2552l3 = c2552l2.f597d;
+                                                if (c2552l3 == null) {
+                                                    c2552l2.f597d = new C2552l(m592l, obj, obj5, null);
                                                     obj3 = obj5;
                                                     break;
                                                 }
                                                 i6++;
-                                                c2428l = c2428l2;
-                                                c2428l2 = c2428l3;
+                                                c2552l = c2552l2;
+                                                c2552l2 = c2552l3;
                                             }
                                         }
-                                        Object apply = biFunction.apply(c2428l2.f591c, obj5);
+                                        Object apply = biFunction.apply(c2552l2.f596c, obj5);
                                         if (apply != null) {
-                                            c2428l2.f591c = apply;
+                                            c2552l2.f596c = apply;
                                         } else {
-                                            C2428l c2428l4 = c2428l2.f592d;
-                                            if (c2428l != null) {
-                                                c2428l.f592d = c2428l4;
+                                            C2552l c2552l4 = c2552l2.f597d;
+                                            if (c2552l != null) {
+                                                c2552l.f597d = c2552l4;
                                             } else {
-                                                m593k(c2428lArr, i4, c2428l4);
+                                                m593k(c2552lArr, i4, c2552l4);
                                             }
                                             i2 = -1;
                                         }
@@ -3404,22 +3405,22 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                         i3 = i6;
                                         obj6 = obj3;
                                         i2 = i;
-                                    } else if (m590n instanceof C2433q) {
+                                    } else if (m590n instanceof C2557q) {
                                         i3 = 2;
-                                        C2433q c2433q = (C2433q) m590n;
-                                        C2434r c2434r = c2433q.f607e;
-                                        C2434r m572b = c2434r == null ? null : c2434r.m572b(m592l, obj, null);
-                                        Object apply2 = m572b == null ? obj5 : biFunction.apply(m572b.f591c, obj5);
+                                        C2557q c2557q = (C2557q) m590n;
+                                        C2558r c2558r = c2557q.f612e;
+                                        C2558r m572b = c2558r == null ? null : c2558r.m572b(m592l, obj, null);
+                                        Object apply2 = m572b == null ? obj5 : biFunction.apply(m572b.f596c, obj5);
                                         if (apply2 != null) {
                                             if (m572b != null) {
-                                                m572b.f591c = apply2;
+                                                m572b.f596c = apply2;
                                             } else {
-                                                c2433q.m578f(m592l, obj, apply2);
+                                                c2557q.m578f(m592l, obj, apply2);
                                                 i2 = 1;
                                             }
                                         } else if (m572b != null) {
-                                            if (c2433q.m577g(m572b)) {
-                                                m593k(c2428lArr, i4, m585s(c2433q.f608f));
+                                            if (c2557q.m577g(m572b)) {
+                                                m593k(c2552lArr, i4, m585s(c2557q.f613f));
                                             }
                                             i2 = -1;
                                         }
@@ -3429,18 +3430,18 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                             }
                             if (i3 != 0) {
                                 if (i3 >= 8) {
-                                    m587q(c2428lArr, i4);
+                                    m587q(c2552lArr, i4);
                                 }
                                 i = i2;
                                 obj5 = obj6;
                             }
                         }
-                    } else if (m602b(c2428lArr, i4, null, new C2428l(m592l, obj, obj5, null))) {
+                    } else if (m602b(c2552lArr, i4, null, new C2552l(m592l, obj, obj5, null))) {
                         break;
                     }
                 }
             }
-            c2428lArr = m597g();
+            c2552lArr = m597g();
         }
         if (i != 0) {
             m603a(i, i3);
@@ -3450,7 +3451,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
     @Override // java.util.Map, java.util.concurrent.ConcurrentMap
     public /* synthetic */ Object merge(Object obj, Object obj2, java.util.function.BiFunction biFunction) {
-        return merge(obj, obj2, C2877s.m117a(biFunction));
+        return merge(obj, obj2, C3001s.m117a(biFunction));
     }
 
     @Override // java.util.AbstractMap, java.util.Map, p034j$.util.Map
@@ -3501,18 +3502,18 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     @Override // p034j$.util.Map
     public void replaceAll(BiFunction biFunction) {
         Objects.requireNonNull(biFunction);
-        C2428l[] c2428lArr = this.f573a;
-        if (c2428lArr == null) {
+        C2552l[] c2552lArr = this.f578a;
+        if (c2552lArr == null) {
             return;
         }
-        C2432p c2432p = new C2432p(c2428lArr, c2428lArr.length, 0, c2428lArr.length);
+        C2556p c2556p = new C2556p(c2552lArr, c2552lArr.length, 0, c2552lArr.length);
         while (true) {
-            C2428l m583a = c2432p.m583a();
+            C2552l m583a = c2556p.m583a();
             if (m583a == null) {
                 return;
             }
-            Object obj = m583a.f591c;
-            Object obj2 = m583a.f590b;
+            Object obj = m583a.f596c;
+            Object obj2 = m583a.f595b;
             do {
                 Object apply = biFunction.apply(obj2, obj);
                 Objects.requireNonNull(apply);
@@ -3525,7 +3526,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
     @Override // java.util.Map, java.util.concurrent.ConcurrentMap
     public /* synthetic */ void replaceAll(java.util.function.BiFunction biFunction) {
-        replaceAll(C2877s.m117a(biFunction));
+        replaceAll(C3001s.m117a(biFunction));
     }
 
     @Override // java.util.AbstractMap, java.util.Map, p034j$.util.Map
@@ -3542,16 +3543,16 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
     @Override // java.util.AbstractMap
     public String toString() {
-        C2428l[] c2428lArr = this.f573a;
-        int length = c2428lArr == null ? 0 : c2428lArr.length;
-        C2432p c2432p = new C2432p(c2428lArr, length, 0, length);
+        C2552l[] c2552lArr = this.f578a;
+        int length = c2552lArr == null ? 0 : c2552lArr.length;
+        C2556p c2556p = new C2556p(c2552lArr, length, 0, length);
         StringBuilder sb = new StringBuilder();
         sb.append('{');
-        C2428l m583a = c2432p.m583a();
+        C2552l m583a = c2556p.m583a();
         if (m583a != null) {
             while (true) {
-                Object obj = m583a.f590b;
-                Object obj2 = m583a.f591c;
+                Object obj = m583a.f595b;
+                Object obj2 = m583a.f596c;
                 if (obj == this) {
                     obj = "(this Map)";
                 }
@@ -3561,7 +3562,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                     obj2 = "(this Map)";
                 }
                 sb.append(obj2);
-                m583a = c2432p.m583a();
+                m583a = c2556p.m583a();
                 if (m583a == null) {
                     break;
                 }
@@ -3575,30 +3576,30 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
     @Override // java.util.AbstractMap, java.util.Map, p034j$.util.Map
     public Collection<V> values() {
-        C2437u c2437u = this.f577e;
-        if (c2437u != null) {
-            return c2437u;
+        C2561u c2561u = this.f582e;
+        if (c2561u != null) {
+            return c2561u;
         }
-        C2437u c2437u2 = new C2437u(this);
-        this.f577e = c2437u2;
-        return c2437u2;
+        C2561u c2561u2 = new C2561u(this);
+        this.f582e = c2561u2;
+        return c2561u2;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.util.concurrent.ConcurrentHashMap$b */
     /* loaded from: classes2.dex */
-    public static abstract class AbstractC2418b implements Collection, Serializable {
+    public static abstract class AbstractC2542b implements Collection, Serializable {
 
         /* renamed from: a */
-        final ConcurrentHashMap f581a;
+        final ConcurrentHashMap f586a;
 
-        AbstractC2418b(ConcurrentHashMap concurrentHashMap) {
-            this.f581a = concurrentHashMap;
+        AbstractC2542b(ConcurrentHashMap concurrentHashMap) {
+            this.f586a = concurrentHashMap;
         }
 
         @Override // java.util.Collection
         public final void clear() {
-            this.f581a.clear();
+            this.f586a.clear();
         }
 
         @Override // java.util.Collection
@@ -3629,12 +3630,12 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 r2 = 1
                 return r2
             */
-            throw new UnsupportedOperationException("Method not decompiled: p034j$.util.concurrent.ConcurrentHashMap.AbstractC2418b.containsAll(java.util.Collection):boolean");
+            throw new UnsupportedOperationException("Method not decompiled: p034j$.util.concurrent.ConcurrentHashMap.AbstractC2542b.containsAll(java.util.Collection):boolean");
         }
 
         @Override // java.util.Collection
         public final boolean isEmpty() {
-            return this.f581a.isEmpty();
+            return this.f586a.isEmpty();
         }
 
         @Override // java.util.Collection, java.lang.Iterable
@@ -3670,12 +3671,12 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
         @Override // java.util.Collection
         public final int size() {
-            return this.f581a.size();
+            return this.f586a.size();
         }
 
         @Override // java.util.Collection
         public final Object[] toArray() {
-            long m591m = this.f581a.m591m();
+            long m591m = this.f586a.m591m();
             if (m591m < 0) {
                 m591m = 0;
             }
@@ -3726,7 +3727,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
         @Override // java.util.Collection
         public final Object[] toArray(Object[] objArr) {
-            long m591m = this.f581a.m591m();
+            long m591m = this.f586a.m591m();
             if (m591m < 0) {
                 m591m = 0;
             }

@@ -34,7 +34,7 @@
     <string name="SavedMessages">ابر</string>
     <string name="ShareTelegram">اشتراک‌گذاری iMe...</string>
     <string name="TelegramVersion">‏‎iMe‎‏ برای اندروید ‎%1$s‎</string>
-    <string name="UserRestrictionsSendStickers">ارسال استیکرها</string>
+    <string name="UserRestrictionsSendStickers">استیکرها</string>
     <string name="VoipGroupAudioRecordSaved">فایل صوتی در **ابر** ذخیره شد.</string>
     <string name="VoipGroupVideoRecordSaved">ویدئو در **ابر** ذخیره شد.</string>
     <string name="abc_action_bar_home_description">پیمایش به صفحه اصلی</string>
@@ -277,8 +277,8 @@
     <string name="chat_templates_info">پیام‌ها را اینجا ارسال و آن‌ها را جهت ارسال سریع الگوهای دریافت‌شده در چت‌ها نام‌گذاری کنید</string>
     <string name="chat_templates_list_header">بدون الگو</string>
     <string name="chat_templates_mode_attach">منوی پیوست</string>
-    <string name="chat_templates_mode_hint">"همواره می‌توانید آن را در
-تنظیمات > رابط کاربری > الگوها تغییر دهید"</string>
+    <string name="chat_templates_mode_hint">"شما همیشه می توانید این را تغییر دهید
+تنظیمات > ابزارها > چت ها > الگوها"</string>
     <string name="chat_templates_mode_oval">بیضی</string>
     <string name="choose_tokens_order_alphabet">بر اساس حروف الفبا</string>
     <string name="choose_tokens_order_balance">بر اساس موجودی</string>

@@ -35,7 +35,7 @@
 .method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    invoke-static {p1, p2}, Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;->$r8$lambda$FQyRbxOFpiOJIX3gZAKikZSbvEA(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-static {p1, p2}, Lorg/fork/ui/view/ChatAttachAlertTemplatesLayout;->$r8$lambda$FYNXECRlrDpap_nxrw7en62mFPI(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 

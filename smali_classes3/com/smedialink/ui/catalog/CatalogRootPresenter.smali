@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCatalogRootPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogRootPresenter.kt\ncom/smedialink/ui/catalog/CatalogRootPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,120:1\n39#2,6:121\n*S KotlinDebug\n*F\n+ 1 CatalogRootPresenter.kt\ncom/smedialink/ui/catalog/CatalogRootPresenter\n*L\n100#1:121,6\n*E\n"
+    value = "SMAP\nCatalogRootPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogRootPresenter.kt\ncom/smedialink/ui/catalog/CatalogRootPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,121:1\n39#2,8:122\n*S KotlinDebug\n*F\n+ 1 CatalogRootPresenter.kt\ncom/smedialink/ui/catalog/CatalogRootPresenter\n*L\n100#1:122,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -180,12 +180,12 @@
 .method private final getAllLanguagesLocaleInfo()Lorg/telegram/messenger/LocaleController$LocaleInfo;
     .locals 3
 
-    .line 113
+    .line 114
     new-instance v0, Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
     invoke-direct {v0}, Lorg/telegram/messenger/LocaleController$LocaleInfo;-><init>()V
 
-    .line 114
+    .line 115
     iget-object v1, p0, Lcom/smedialink/ui/catalog/CatalogRootPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->catalog_all:I
@@ -196,7 +196,7 @@
 
     iput-object v1, v0, Lorg/telegram/messenger/LocaleController$LocaleInfo;->name:Ljava/lang/String;
 
-    .line 115
+    .line 116
     iget-object v1, p0, Lcom/smedialink/ui/catalog/CatalogRootPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->catalog_all_languages:I
@@ -209,7 +209,7 @@
 
     const/4 v1, -0x1
 
-    .line 116
+    .line 117
     iput v1, v0, Lorg/telegram/messenger/LocaleController$LocaleInfo;->serverIndex:I
 
     return-object v0
@@ -240,25 +240,25 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, -0x1
-
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v0
 
-    long-to-int v0, v0
+    long-to-int v1, v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, -0x1
 
     :goto_0
-    return v0
+    return v1
 .end method
 
 .method private final loadLanguages()V
-    .locals 4
+    .locals 5
 
     .line 97
     iget-object v0, p0, Lcom/smedialink/ui/catalog/CatalogRootPresenter;->catalogInteractor:Lcom/smedialink/storage/domain/interactor/catalog/CatalogInteractor;
@@ -288,23 +288,34 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/catalog/CatalogRootPresenter$loadLanguages$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/catalog/CatalogRootPresenter;)V
 
-    new-instance v2, Lcom/smedialink/ui/catalog/CatalogRootPresenter$loadLanguages$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v1, Lcom/smedialink/ui/catalog/CatalogRootPresenter$loadLanguages$$inlined$subscribeWithErrorHandle$default$2;
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v3}, Lcom/smedialink/ui/catalog/CatalogRootPresenter$loadLanguages$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v3}, Lcom/smedialink/ui/catalog/CatalogRootPresenter$loadLanguages$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 46
+    new-instance v4, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v4, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, v2, v4}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
-    .line 109
+    .line 110
     invoke-static {p0, v0, v3, v1, v3}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -331,7 +342,7 @@
 
     const-string v0, "null cannot be cast to non-null type kotlin.Long"
 
-    invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p2, Ljava/lang/Long;
 
@@ -353,7 +364,7 @@
 
     const-string v2, "null cannot be cast to non-null type kotlin.Boolean"
 
-    invoke-static {p3, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p3, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p3, Ljava/lang/Boolean;
 

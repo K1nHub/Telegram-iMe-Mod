@@ -24,13 +24,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/content/Context;)V
     .locals 0
 
-    .line 1665
+    .line 1673
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    .line 1666
+    .line 1674
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1663
+    .line 1671
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 p2, 0x1
@@ -47,10 +47,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 1671
+    .line 1679
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 1672
+    .line 1680
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -77,12 +77,12 @@
 
     move-result v0
 
-    .line 1673
+    .line 1681
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1675
+    .line 1683
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -93,7 +93,7 @@
 
     div-float/2addr v0, v1
 
-    .line 1676
+    .line 1684
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v2
@@ -104,12 +104,12 @@
 
     const/4 v3, 0x0
 
-    .line 1677
+    .line 1685
     invoke-virtual {p0, v3}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1679
+    .line 1687
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v4
@@ -126,14 +126,14 @@
 
     div-float/2addr v4, v1
 
-    .line 1681
+    .line 1689
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->expandSize()F
 
     move-result v1
 
-    .line 1682
+    .line 1690
     sget-object v5, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     sub-float v6, v2, v4
@@ -150,10 +150,10 @@
 
     invoke-virtual {v5, v6, v7, v8, v9}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1683
+    .line 1691
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1684
+    .line 1692
     invoke-virtual {v3}, Landroid/view/View;->getScaleX()F
 
     move-result v6
@@ -164,26 +164,26 @@
 
     invoke-virtual {p1, v6, v3, v2, v0}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 1685
+    .line 1693
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v5, v4, v4, v0}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1686
+    .line 1694
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1688
+    .line 1696
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/4 v0, 0x0
 
-    .line 1689
+    .line 1697
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1690
+    .line 1698
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 1691
+    .line 1699
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void

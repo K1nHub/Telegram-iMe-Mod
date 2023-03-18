@@ -7,15 +7,15 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter$AdsViewHolder;,
-        Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter$NormalViewHolder;,
         Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter$BotNameViewHolder;,
+        Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter$NormalViewHolder;,
         Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter$OnLoadGifListener;,
         Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter$WhenMappings;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSmartBotContentAdapter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SmartBotContentAdapter.kt\ncom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,321:1\n764#2:322\n855#2,2:323\n798#2,11:325\n1547#2:336\n1618#2,3:337\n*S KotlinDebug\n*F\n+ 1 SmartBotContentAdapter.kt\ncom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter\n*L\n46#1:322\n46#1:323,2\n75#1:325,11\n76#1:336\n76#1:337,3\n*E\n"
+    value = "SMAP\nSmartBotContentAdapter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SmartBotContentAdapter.kt\ncom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,321:1\n766#2:322\n857#2,2:323\n800#2,11:325\n1549#2:336\n1620#2,3:337\n*S KotlinDebug\n*F\n+ 1 SmartBotContentAdapter.kt\ncom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter\n*L\n46#1:322\n46#1:323,2\n75#1:325,11\n76#1:336\n76#1:337,3\n*E\n"
 .end annotation
 
 
@@ -56,18 +56,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$4cbyOwtS0WnsG7sOXRQY-UidFMM(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Ljava/lang/String;ZLorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/messenger/MessagesStorage;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$G5a3fChVR7HLDMXXRa8NfjbvcEE(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Ljava/lang/String;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/messenger/MessagesStorage;Ljava/lang/String;)V
     .locals 0
 
-    invoke-static/range {p0 .. p8}, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->searchForGifResults$lambda-3(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Ljava/lang/String;ZLorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/messenger/MessagesStorage;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static/range {p0 .. p7}, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->searchForGifResults$lambda$3$lambda$2(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Ljava/lang/String;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/messenger/MessagesStorage;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$cqmassF93fBUKDdJFX7VOYNrCoA(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Ljava/lang/String;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/messenger/MessagesStorage;Ljava/lang/String;)V
+.method public static synthetic $r8$lambda$pIiuEyPHZV3DmXNbXoiroo4AODI(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Ljava/lang/String;ZLorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/messenger/MessagesStorage;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-static/range {p0 .. p7}, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->searchForGifResults$lambda-3$lambda-2(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Ljava/lang/String;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/messenger/MessagesStorage;Ljava/lang/String;)V
+    invoke-static/range {p0 .. p8}, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->searchForGifResults$lambda$3(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Ljava/lang/String;ZLorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/messenger/MessagesStorage;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
@@ -306,13 +306,13 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x5f
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
@@ -447,7 +447,7 @@
     return-void
 .end method
 
-.method private static final searchForGifResults$lambda-3(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Ljava/lang/String;ZLorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/messenger/MessagesStorage;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private static final searchForGifResults$lambda$3(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Ljava/lang/String;ZLorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/messenger/MessagesStorage;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 10
 
     const-string v0, "this$0"
@@ -486,7 +486,7 @@
     return-void
 .end method
 
-.method private static final searchForGifResults$lambda-3$lambda-2(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Ljava/lang/String;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/messenger/MessagesStorage;Ljava/lang/String;)V
+.method private static final searchForGifResults$lambda$3$lambda$2(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Ljava/lang/String;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/messenger/MessagesStorage;Ljava/lang/String;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -702,43 +702,41 @@
     .line 68
     iget-object v0, p0, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->foundContextBot:Lorg/telegram/tgnet/TLRPC$User;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const-wide/16 v0, 0x0
+    iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     goto :goto_0
 
     :cond_0
-    iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
+    const-wide/16 v0, 0x0
 
     :goto_0
     return-wide v0
 .end method
 
 .method public final getGifBotName()Ljava/lang/String;
-    .locals 2
+    .locals 1
 
     .line 70
     iget-object v0, p0, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->foundContextBot:Lorg/telegram/tgnet/TLRPC$User;
 
-    const-string v1, ""
+    if-eqz v0, :cond_0
 
-    if-nez v0, :cond_0
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$User;->username:Ljava/lang/String;
 
     goto :goto_0
 
     :cond_0
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$User;->username:Ljava/lang/String;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    move-object v1, v0
+    const/4 v0, 0x0
 
     :goto_0
-    return-object v1
+    if-nez v0, :cond_1
+
+    const-string v0, ""
+
+    :cond_1
+    return-object v0
 .end method
 
 .method public final getItem(I)Lcom/smedialink/ui/smartpanel/model/SmartPanelTabContent;
@@ -824,12 +822,12 @@
 
     move-result-object v0
 
-    .line 798
+    .line 800
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 807
+    .line 809
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -854,7 +852,7 @@
 
     goto :goto_0
 
-    .line 1547
+    .line 1549
     :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
@@ -866,7 +864,7 @@
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -882,7 +880,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Lcom/smedialink/ui/smartpanel/model/content/TabBotMediaAnswerItem;
 
     .line 76
@@ -890,6 +888,7 @@
 
     move-result-object v2
 
+    .line 1621
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
@@ -939,12 +938,9 @@
 
     const/4 v1, 0x0
 
-    if-nez p1, :cond_0
-
-    goto :goto_0
+    if-eqz p1, :cond_0
 
     .line 142
-    :cond_0
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -955,19 +951,18 @@
 
     move-result v2
 
-    if-ne p1, v2, :cond_1
+    if-ne p1, v2, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_1
-    :goto_0
+    :cond_0
     xor-int/lit8 p1, v1, 0x1
 
     return p1
 .end method
 
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 6
+    .locals 7
 
     const-string v0, "holder"
 
@@ -1023,25 +1018,29 @@
     .line 136
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    move-object v0, p1
+    const-string v0, "null cannot be cast to non-null type org.telegram.ui.Cells.ContextLinkCell"
 
-    check-cast v0, Lorg/telegram/ui/Cells/ContextLinkCell;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    move-object v1, p1
+
+    check-cast v1, Lorg/telegram/ui/Cells/ContextLinkCell;
 
     check-cast p2, Lcom/smedialink/ui/smartpanel/model/content/TabBotMediaAnswerItem;
 
     invoke-virtual {p2}, Lcom/smedialink/ui/smartpanel/model/content/TabBotMediaAnswerItem;->getMedia()Lorg/telegram/tgnet/TLRPC$BotInlineResult;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget-object v2, p0, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->foundContextBot:Lorg/telegram/tgnet/TLRPC$User;
+    iget-object v3, p0, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->foundContextBot:Lorg/telegram/tgnet/TLRPC$User;
 
-    iget-boolean v3, p0, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->contextMedia:Z
-
-    const/4 v4, 0x1
+    iget-boolean v4, p0, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->contextMedia:Z
 
     const/4 v5, 0x1
 
-    invoke-virtual/range {v0 .. v5}, Lorg/telegram/ui/Cells/ContextLinkCell;->setLink(Lorg/telegram/tgnet/TLRPC$BotInlineResult;Lorg/telegram/tgnet/TLRPC$User;ZZZ)V
+    const/4 v6, 0x1
+
+    invoke-virtual/range {v1 .. v6}, Lorg/telegram/ui/Cells/ContextLinkCell;->setLink(Lorg/telegram/tgnet/TLRPC$BotInlineResult;Lorg/telegram/tgnet/TLRPC$User;ZZZ)V
 
     goto :goto_0
 
@@ -1290,61 +1289,57 @@
     .line 79
     iget v0, p0, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->contextQueryReqId:I
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_3
 
     iget-object v0, p0, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->nextQueryOffset:Ljava/lang/String;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_1
 
-    goto :goto_1
-
-    :cond_0
     invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     const/4 v0, 0x0
 
     :goto_0
-    if-ne v0, v2, :cond_2
+    if-ne v0, v2, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_2
-    :goto_1
-    if-nez v1, :cond_4
+    :cond_1
+    if-nez v1, :cond_3
 
     iget-object v0, p0, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->foundContextBot:Lorg/telegram/tgnet/TLRPC$User;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     iget-object v1, p0, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->searchingContextQuery:Ljava/lang/String;
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_2
 
-    goto :goto_2
+    goto :goto_1
 
     .line 82
-    :cond_3
+    :cond_2
     iget-object v3, p0, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->nextQueryOffset:Ljava/lang/String;
 
     invoke-direct {p0, v2, v0, v1, v3}, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->searchForGifResults(ZLorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_4
-    :goto_2
+    :cond_3
+    :goto_1
     return-void
 .end method
 
@@ -1377,12 +1372,12 @@
 
     move-result-object v1
 
-    .line 764
+    .line 766
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -1464,7 +1459,7 @@
     :goto_1
     if-eqz v4, :cond_0
 
-    .line 47
+    .line 857
     invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0

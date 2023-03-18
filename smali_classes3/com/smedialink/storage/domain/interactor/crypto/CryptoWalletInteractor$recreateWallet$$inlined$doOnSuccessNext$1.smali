@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor$recreateWallet$$inlined$doOnSuccessNext$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "ObservableExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Consumer;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,11 +18,14 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Consumer;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/crypto/Wallet;",
+        ">;",
+        "Lkotlin/Unit;",
+        ">;"
     }
 .end annotation
 
@@ -41,18 +44,37 @@
 
     iput-object p1, p0, Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor$recreateWallet$$inlined$doOnSuccessNext$1;->this$0:Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Lcom/smedialink/storage/domain/model/Result;)V
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 39
+    check-cast p1, Lcom/smedialink/storage/domain/model/Result;
+
+    invoke-virtual {p0, p1}, Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor$recreateWallet$$inlined$doOnSuccessNext$1;->invoke(Lcom/smedialink/storage/domain/model/Result;)V
+
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method
+
+.method public final invoke(Lcom/smedialink/storage/domain/model/Result;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)V"
+            "(",
+            "Lcom/smedialink/storage/domain/model/Result<",
+            "+",
+            "Lcom/smedialink/storage/domain/model/crypto/Wallet;",
+            ">;)V"
         }
     .end annotation
 
@@ -73,16 +95,5 @@
     invoke-virtual {p1, v0}, Lcom/smedialink/storage/domain/utils/rx/RxEventBus;->publish(Lcom/smedialink/storage/domain/utils/rx/event/RxEvent;)V
 
     :cond_0
-    return-void
-.end method
-
-.method public bridge synthetic accept(Ljava/lang/Object;)V
-    .locals 0
-
-    .line 39
-    check-cast p1, Lcom/smedialink/storage/domain/model/Result;
-
-    invoke-virtual {p0, p1}, Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor$recreateWallet$$inlined$doOnSuccessNext$1;->accept(Lcom/smedialink/storage/domain/model/Result;)V
-
     return-void
 .end method

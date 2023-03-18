@@ -9,7 +9,7 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class LambdaObserver<T> extends AtomicReference<Disposable> implements Observer<T>, Disposable {
     final Action onComplete;
     final Consumer<? super Throwable> onError;

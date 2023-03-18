@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTranslationPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TranslationPresenter.kt\ncom/smedialink/ui/translate/TranslationPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,210:1\n39#2,6:211\n39#2,6:217\n39#2,6:223\n*S KotlinDebug\n*F\n+ 1 TranslationPresenter.kt\ncom/smedialink/ui/translate/TranslationPresenter\n*L\n45#1:211,6\n71#1:217,6\n112#1:223,6\n*E\n"
+    value = "SMAP\nTranslationPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TranslationPresenter.kt\ncom/smedialink/ui/translate/TranslationPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,213:1\n39#2,8:214\n39#2,8:222\n39#2,8:230\n*S KotlinDebug\n*F\n+ 1 TranslationPresenter.kt\ncom/smedialink/ui/translate/TranslationPresenter\n*L\n45#1:214,8\n72#1:222,8\n114#1:230,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -242,68 +242,63 @@
 .method private final getSourceLanguageByType()Lcom/smedialink/model/translation/TranslationLanguageUiModel;
     .locals 3
 
-    .line 189
+    .line 192
     iget-object v0, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->args:Lcom/smedialink/model/translation/TranslationArgs;
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_0
 
-    if-nez v0, :cond_0
-
-    move-object v0, v1
-
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lcom/smedialink/model/translation/TranslationArgs;->getType()Lorg/fork/enums/TranslationDialogType;
 
     move-result-object v0
 
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
     :goto_0
-    sget-object v2, Lorg/fork/enums/TranslationDialogType;->REPLY:Lorg/fork/enums/TranslationDialogType;
+    sget-object v1, Lorg/fork/enums/TranslationDialogType;->REPLY:Lorg/fork/enums/TranslationDialogType;
 
-    if-ne v0, v2, :cond_3
+    if-ne v0, v1, :cond_3
 
-    .line 190
+    .line 193
     sget-object v0, Lcom/smedialink/model/translation/TranslationLanguageUiModel;->Companion:Lcom/smedialink/model/translation/TranslationLanguageUiModel$Companion;
 
-    .line 191
-    iget-object v2, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->args:Lcom/smedialink/model/translation/TranslationArgs;
+    .line 194
+    iget-object v1, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->args:Lcom/smedialink/model/translation/TranslationArgs;
 
-    invoke-virtual {v2}, Lcom/smedialink/model/translation/TranslationArgs;->getTranslationSettings()Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;
-
-    move-result-object v2
-
-    if-nez v2, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;->getOutTextTranslateLangCode()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/smedialink/model/translation/TranslationArgs;->getTranslationSettings()Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;
 
     move-result-object v1
 
-    :goto_1
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;->getOutTextTranslateLangCode()Ljava/lang/String;
+
+    move-result-object v1
+
     if-nez v1, :cond_2
 
-    .line 192
+    .line 195
+    :cond_1
     invoke-direct {p0}, Lcom/smedialink/ui/translate/TranslationPresenter;->getCurrentLanguage()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 193
+    .line 196
     :cond_2
     invoke-direct {p0}, Lcom/smedialink/ui/translate/TranslationPresenter;->getCurrentLanguage()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 190
+    .line 193
     invoke-virtual {v0, v1, v2}, Lcom/smedialink/model/translation/TranslationLanguageUiModel$Companion;->createByLangCode(Ljava/lang/String;Ljava/lang/String;)Lcom/smedialink/model/translation/TranslationLanguageUiModel;
 
     move-result-object v0
 
-    goto :goto_2
+    goto :goto_1
 
-    .line 196
+    .line 199
     :cond_3
     sget-object v0, Lcom/smedialink/model/translation/TranslationLanguageUiModel;->Companion:Lcom/smedialink/model/translation/TranslationLanguageUiModel$Companion;
 
@@ -313,83 +308,78 @@
 
     move-result-object v0
 
-    :goto_2
+    :goto_1
     return-object v0
 .end method
 
 .method private final getTargetLanguageByType()Lcom/smedialink/model/translation/TranslationLanguageUiModel;
     .locals 4
 
-    .line 199
+    .line 202
     sget-object v0, Lcom/smedialink/model/translation/TranslationLanguageUiModel;->Companion:Lcom/smedialink/model/translation/TranslationLanguageUiModel$Companion;
 
-    .line 200
+    .line 203
     iget-object v1, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->args:Lcom/smedialink/model/translation/TranslationArgs;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    move-object v1, v2
-
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v1}, Lcom/smedialink/model/translation/TranslationArgs;->getType()Lorg/fork/enums/TranslationDialogType;
 
     move-result-object v1
 
+    goto :goto_0
+
+    :cond_0
+    move-object v1, v2
+
     :goto_0
     sget-object v3, Lorg/fork/enums/TranslationDialogType;->REPLY:Lorg/fork/enums/TranslationDialogType;
 
-    if-ne v1, v3, :cond_2
+    if-ne v1, v3, :cond_1
 
-    .line 201
+    .line 204
     iget-object v1, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->args:Lcom/smedialink/model/translation/TranslationArgs;
 
     invoke-virtual {v1}, Lcom/smedialink/model/translation/TranslationArgs;->getTranslationSettings()Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;
 
     move-result-object v1
 
-    if-nez v1, :cond_1
+    if-eqz v1, :cond_2
 
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;->getInTextTranslateLangCode()Ljava/lang/String;
 
     move-result-object v2
 
     goto :goto_1
 
-    .line 203
-    :cond_2
+    .line 206
+    :cond_1
     iget-object v1, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->args:Lcom/smedialink/model/translation/TranslationArgs;
 
-    if-nez v1, :cond_3
+    if-eqz v1, :cond_2
 
-    goto :goto_1
-
-    :cond_3
     invoke-virtual {v1}, Lcom/smedialink/model/translation/TranslationArgs;->getLangCodeByType()Ljava/lang/String;
 
     move-result-object v2
 
+    :cond_2
     :goto_1
-    if-nez v2, :cond_4
+    if-nez v2, :cond_3
 
-    .line 204
+    .line 207
     invoke-direct {p0}, Lcom/smedialink/ui/translate/TranslationPresenter;->getCurrentLanguage()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 205
-    :cond_4
+    .line 208
+    :cond_3
     invoke-direct {p0}, Lcom/smedialink/ui/translate/TranslationPresenter;->getCurrentLanguage()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 199
+    .line 202
     invoke-virtual {v0, v2, v1}, Lcom/smedialink/model/translation/TranslationLanguageUiModel$Companion;->createByLangCode(Ljava/lang/String;Ljava/lang/String;)Lcom/smedialink/model/translation/TranslationLanguageUiModel;
 
     move-result-object v0
@@ -400,7 +390,7 @@
 .method private final isSourceAndTargetLanguagesIsSame()Z
     .locals 2
 
-    .line 185
+    .line 188
     iget-object v0, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->targetLanguage:Lcom/smedialink/model/translation/TranslationLanguageUiModel;
 
     invoke-virtual {v0}, Lcom/smedialink/model/translation/TranslationLanguageUiModel;->getLanguageCode()Ljava/lang/String;
@@ -423,7 +413,7 @@
 .method private final isValidToTranslate()Z
     .locals 1
 
-    .line 187
+    .line 190
     iget-object v0, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->targetLanguage:Lcom/smedialink/model/translation/TranslationLanguageUiModel;
 
     invoke-virtual {v0}, Lcom/smedialink/model/translation/TranslationLanguageUiModel;->isAutoDetection()Z
@@ -456,19 +446,19 @@
 
     if-eqz p4, :cond_1
 
-    .line 62
+    .line 63
     iget-object p1, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->args:Lcom/smedialink/model/translation/TranslationArgs;
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
+    invoke-virtual {p1}, Lcom/smedialink/model/translation/TranslationArgs;->getTextToTranslate()Ljava/lang/String;
+
+    move-result-object p1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Lcom/smedialink/model/translation/TranslationArgs;->getTextToTranslate()Ljava/lang/String;
-
-    move-result-object p1
+    const/4 p1, 0x0
 
     :goto_0
     if-nez p1, :cond_1
@@ -495,19 +485,19 @@
 
     if-eqz p4, :cond_1
 
-    .line 104
+    .line 106
     iget-object p1, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->args:Lcom/smedialink/model/translation/TranslationArgs;
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
+    invoke-virtual {p1}, Lcom/smedialink/model/translation/TranslationArgs;->getTextToTranslate()Ljava/lang/String;
+
+    move-result-object p1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Lcom/smedialink/model/translation/TranslationArgs;->getTextToTranslate()Ljava/lang/String;
-
-    move-result-object p1
+    const/4 p1, 0x0
 
     :goto_0
     if-nez p1, :cond_1
@@ -567,23 +557,34 @@
 
     invoke-direct {v2, p0, p1}, Lcom/smedialink/ui/translate/TranslationPresenter$loadLanguages$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/translate/TranslationPresenter;Z)V
 
-    new-instance p1, Lcom/smedialink/ui/translate/TranslationPresenter$loadLanguages$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {p1, v1}, Lcom/smedialink/ui/translate/TranslationPresenter$loadLanguages$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {p1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v2, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v2, Lcom/smedialink/ui/translate/TranslationPresenter$loadLanguages$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/translate/TranslationPresenter$loadLanguages$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, p1, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    .line 59
+    .line 60
     invoke-static {p0, p1, v0, v1, v0}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -592,14 +593,14 @@
 .method protected onFirstViewAttach()V
     .locals 3
 
-    .line 174
+    .line 177
     iget-object v0, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->args:Lcom/smedialink/model/translation/TranslationArgs;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 175
+    .line 178
     :cond_0
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -621,7 +622,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/smedialink/ui/translate/TranslationView;->configureScreenWith(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 176
+    .line 179
     iget-object v0, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->args:Lcom/smedialink/model/translation/TranslationArgs;
 
     invoke-virtual {v0}, Lcom/smedialink/model/translation/TranslationArgs;->getType()Lorg/fork/enums/TranslationDialogType;
@@ -638,7 +639,7 @@
 
     const/4 v2, 0x0
 
-    .line 177
+    .line 180
     invoke-static {p0, v2, v0, v1, v2}, Lcom/smedialink/ui/translate/TranslationPresenter;->translate$default(Lcom/smedialink/ui/translate/TranslationPresenter;Ljava/lang/String;ZILjava/lang/Object;)V
 
     :cond_1
@@ -648,14 +649,14 @@
 .method public final prepareReplyDialog()V
     .locals 14
 
-    .line 160
+    .line 163
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/smedialink/ui/translate/TranslationView;
 
-    .line 161
+    .line 164
     new-instance v13, Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;
 
     const/4 v2, 0x0
@@ -682,7 +683,7 @@
 
     invoke-direct/range {v1 .. v12}, Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;-><init>(ZLjava/lang/String;ZLjava/lang/String;JZLjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 162
+    .line 165
     iget-object v1, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->sourceLanguage:Lcom/smedialink/model/translation/TranslationLanguageUiModel;
 
     invoke-virtual {v1}, Lcom/smedialink/model/translation/TranslationLanguageUiModel;->getLanguageCode()Ljava/lang/String;
@@ -691,7 +692,7 @@
 
     invoke-virtual {v13, v1}, Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;->setInTextTranslateLangCode(Ljava/lang/String;)V
 
-    .line 163
+    .line 166
     iget-object v1, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->targetLanguage:Lcom/smedialink/model/translation/TranslationLanguageUiModel;
 
     invoke-virtual {v1}, Lcom/smedialink/model/translation/TranslationLanguageUiModel;->getLanguageCode()Ljava/lang/String;
@@ -705,10 +706,7 @@
     :cond_0
     invoke-virtual {v13, v1}, Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;->setOutTextTranslateLangCode(Ljava/lang/String;)V
 
-    .line 165
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    .line 160
+    .line 163
     invoke-interface {v0, v13}, Lcom/smedialink/ui/translate/TranslationView;->openReplyDialog(Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;)V
 
     return-void
@@ -723,7 +721,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 138
+    .line 141
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -746,7 +744,7 @@
 
     goto :goto_0
 
-    .line 140
+    .line 143
     :cond_0
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -779,19 +777,19 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 145
+    .line 148
     iget-boolean v0, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->isSource:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_3
 
-    .line 146
+    .line 149
     iget-object v0, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->sourceLanguage:Lcom/smedialink/model/translation/TranslationLanguageUiModel;
 
     iput-object v0, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->outLanguage:Lcom/smedialink/model/translation/TranslationLanguageUiModel;
 
-    .line 147
+    .line 150
     iget-object v0, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->supportedLanguages:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -813,7 +811,7 @@
 
     check-cast v3, Lcom/smedialink/model/translation/TranslationLanguageUiModel;
 
-    .line 148
+    .line 151
     invoke-virtual {v3}, Lcom/smedialink/model/translation/TranslationLanguageUiModel;->getLanguageCode()Ljava/lang/String;
 
     move-result-object v3
@@ -829,7 +827,7 @@
     :cond_1
     move-object v2, v1
 
-    .line 147
+    .line 150
     :goto_0
     check-cast v2, Lcom/smedialink/model/translation/TranslationLanguageUiModel;
 
@@ -844,12 +842,12 @@
 
     const/4 v0, 0x3
 
-    .line 150
+    .line 153
     invoke-static {p0, v1, p1, v0, v1}, Lcom/smedialink/ui/translate/TranslationPresenter;->translateSource$default(Lcom/smedialink/ui/translate/TranslationPresenter;Ljava/lang/String;ZILjava/lang/Object;)V
 
     goto :goto_2
 
-    .line 152
+    .line 155
     :cond_3
     iget-object v0, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->supportedLanguages:Ljava/util/List;
 
@@ -872,7 +870,7 @@
 
     check-cast v3, Lcom/smedialink/model/translation/TranslationLanguageUiModel;
 
-    .line 153
+    .line 156
     invoke-virtual {v3}, Lcom/smedialink/model/translation/TranslationLanguageUiModel;->getLanguageCode()Ljava/lang/String;
 
     move-result-object v3
@@ -888,7 +886,7 @@
     :cond_5
     move-object v2, v1
 
-    .line 152
+    .line 155
     :goto_1
     check-cast v2, Lcom/smedialink/model/translation/TranslationLanguageUiModel;
 
@@ -901,7 +899,7 @@
 
     const/4 p1, 0x1
 
-    .line 155
+    .line 158
     invoke-static {p0, v1, p1, p1, v1}, Lcom/smedialink/ui/translate/TranslationPresenter;->translate$default(Lcom/smedialink/ui/translate/TranslationPresenter;Ljava/lang/String;ZILjava/lang/Object;)V
 
     :goto_2
@@ -915,17 +913,17 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 63
+    .line 64
     invoke-direct {p0}, Lcom/smedialink/ui/translate/TranslationPresenter;->isValidToTranslate()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 64
+    .line 65
     iget-object v0, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->translationInteractor:Lcom/smedialink/storage/domain/interactor/translate/TranslationInteractor;
 
-    .line 67
+    .line 68
     iget-object v1, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->targetLanguage:Lcom/smedialink/model/translation/TranslationLanguageUiModel;
 
     invoke-virtual {v1}, Lcom/smedialink/model/translation/TranslationLanguageUiModel;->getLanguageCode()Ljava/lang/String;
@@ -934,19 +932,19 @@
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    .line 68
+    .line 69
     iget-object v2, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->sourceLanguage:Lcom/smedialink/model/translation/TranslationLanguageUiModel;
 
     invoke-virtual {v2}, Lcom/smedialink/model/translation/TranslationLanguageUiModel;->getLanguageCode()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 65
+    .line 66
     invoke-virtual {v0, p1, v1, v2}, Lcom/smedialink/storage/domain/interactor/translate/TranslationInteractor;->translate(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 70
+    .line 71
     iget-object v1, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -961,7 +959,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 71
+    .line 72
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -973,28 +971,39 @@
 
     invoke-direct {v2, p0, p1, p2}, Lcom/smedialink/ui/translate/TranslationPresenter$translate$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/translate/TranslationPresenter;Ljava/lang/String;Z)V
 
-    new-instance p1, Lcom/smedialink/ui/translate/TranslationPresenter$translate$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {p1, v1}, Lcom/smedialink/ui/translate/TranslationPresenter$translate$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {p1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v2, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance p2, Lcom/smedialink/ui/translate/TranslationPresenter$translate$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {p2, v1}, Lcom/smedialink/ui/translate/TranslationPresenter$translate$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v1, p2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, p1, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string p2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 p2, 0x1
 
     const/4 v0, 0x0
 
-    .line 98
+    .line 100
     invoke-static {p0, p1, v0, p2, v0}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     goto :goto_0
 
-    .line 100
+    .line 102
     :cond_0
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -1027,10 +1036,10 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 105
+    .line 107
     iget-object p2, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->translationInteractor:Lcom/smedialink/storage/domain/interactor/translate/TranslationInteractor;
 
-    .line 108
+    .line 110
     iget-object v0, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->sourceLanguage:Lcom/smedialink/model/translation/TranslationLanguageUiModel;
 
     invoke-virtual {v0}, Lcom/smedialink/model/translation/TranslationLanguageUiModel;->getLanguageCode()Ljava/lang/String;
@@ -1039,19 +1048,19 @@
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    .line 109
+    .line 111
     iget-object v1, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->outLanguage:Lcom/smedialink/model/translation/TranslationLanguageUiModel;
 
     invoke-virtual {v1}, Lcom/smedialink/model/translation/TranslationLanguageUiModel;->getLanguageCode()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 106
+    .line 108
     invoke-virtual {p2, p1, v0, v1}, Lcom/smedialink/storage/domain/interactor/translate/TranslationInteractor;->translate(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p2
 
-    .line 111
+    .line 113
     iget-object v0, p0, Lcom/smedialink/ui/translate/TranslationPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -1066,7 +1075,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 112
+    .line 114
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -1078,23 +1087,34 @@
 
     invoke-direct {v1, p0, p1}, Lcom/smedialink/ui/translate/TranslationPresenter$translateSource$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/translate/TranslationPresenter;Ljava/lang/String;)V
 
-    new-instance p1, Lcom/smedialink/ui/translate/TranslationPresenter$translateSource$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {p1, v0}, Lcom/smedialink/ui/translate/TranslationPresenter$translateSource$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {p1, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p2, v1, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v1, Lcom/smedialink/ui/translate/TranslationPresenter$translateSource$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/ui/translate/TranslationPresenter$translateSource$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v0, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {p2, p1, v0}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string p2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 p2, 0x0
 
     const/4 v0, 0x1
 
-    .line 133
+    .line 136
     invoke-static {p0, p1, p2, v0, p2}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void

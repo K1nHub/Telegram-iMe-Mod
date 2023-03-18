@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ProfileActivity$37;
-.super Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+.super Lorg/telegram/ui/Components/ShareAlert;
 .source "ProfileActivity.java"
 
 
@@ -15,101 +15,133 @@
 
 
 # instance fields
-.field path:Landroid/graphics/Path;
+.field final synthetic this$0:Lorg/telegram/ui/ProfileActivity;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method public static synthetic $r8$lambda$cx7ESrDeXlQRD9Xpanu9tUtFEo0(Lorg/telegram/ui/ProfileActivity$37;Landroidx/collection/LongSparseArray;I)V
     .locals 0
 
-    .line 5427
-    invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ProfileActivity$37;->lambda$onSend$0(Landroidx/collection/LongSparseArray;I)V
 
-    .line 5428
-    new-instance p1, Landroid/graphics/Path;
+    return-void
+.end method
 
-    invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
+.method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;Ljava/util/ArrayList;Ljava/lang/String;ZLjava/lang/String;Z)V
+    .locals 7
 
-    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$37;->path:Landroid/graphics/Path;
+    .line 5534
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$37;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    move-object v0, p0
+
+    move-object v1, p2
+
+    move-object v2, p3
+
+    move-object v3, p4
+
+    move v4, p5
+
+    move-object v5, p6
+
+    move v6, p7
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/ShareAlert;-><init>(Landroid/content/Context;Ljava/util/ArrayList;Ljava/lang/String;ZLjava/lang/String;Z)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onSend$0(Landroidx/collection/LongSparseArray;I)V
+    .locals 9
+
+    .line 5538
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$37;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
+
+    move-result-object v1
+
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$37;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$1200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;
+
+    move-result-object v2
+
+    invoke-virtual {p1}, Landroidx/collection/LongSparseArray;->size()I
+
+    move-result v3
+
+    invoke-virtual {p1}, Landroidx/collection/LongSparseArray;->size()I
+
+    move-result v0
+
+    const/4 v4, 0x1
+
+    if-ne v0, v4, :cond_0
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroidx/collection/LongSparseArray;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$Dialog;
+
+    iget-wide v4, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
+
+    goto :goto_0
+
+    :cond_0
+    const-wide/16 v4, 0x0
+
+    :goto_0
+    const-string p1, "undo_background"
+
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+
+    move-result v7
+
+    const-string p1, "undo_infoColor"
+
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+
+    move-result v8
+
+    move v6, p2
+
+    invoke-static/range {v1 .. v8}, Lorg/telegram/ui/Components/BulletinFactory;->createInviteSentBulletin(Landroid/content/Context;Landroid/widget/FrameLayout;IJIII)Lorg/telegram/ui/Components/Bulletin;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
-    .locals 5
+.method protected onSend(Landroidx/collection/LongSparseArray;ILorg/telegram/tgnet/TLRPC$TL_forumTopic;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroidx/collection/LongSparseArray<",
+            "Lorg/telegram/tgnet/TLRPC$Dialog;",
+            ">;I",
+            "Lorg/telegram/tgnet/TLRPC$TL_forumTopic;",
+            ")V"
+        }
+    .end annotation
 
-    .line 5432
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+    .line 5537
+    new-instance p3, Lorg/telegram/ui/ProfileActivity$37$$ExternalSyntheticLambda0;
 
-    .line 5433
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$37;->path:Landroid/graphics/Path;
+    invoke-direct {p3, p0, p1, p2}, Lorg/telegram/ui/ProfileActivity$37$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ProfileActivity$37;Landroidx/collection/LongSparseArray;I)V
 
-    invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
+    const-wide/16 p1, 0xfa
 
-    .line 5434
-    sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
+    invoke-static {p3, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    invoke-virtual {p2}, Landroid/view/View;->getLeft()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    invoke-virtual {p2}, Landroid/view/View;->getTop()I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    invoke-virtual {p2}, Landroid/view/View;->getRight()I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    invoke-virtual {p2}, Landroid/view/View;->getBottom()I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
-
-    .line 5435
-    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$37;->path:Landroid/graphics/Path;
-
-    const/4 v2, 0x6
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    sget-object v4, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
-
-    invoke-virtual {v1, v0, v3, v2, v4}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
-
-    .line 5436
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$37;->path:Landroid/graphics/Path;
-
-    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
-
-    .line 5437
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
-
-    move-result p2
-
-    .line 5438
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
-
-    return p2
+    return-void
 .end method

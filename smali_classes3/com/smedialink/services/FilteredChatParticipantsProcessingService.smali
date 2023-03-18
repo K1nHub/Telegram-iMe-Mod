@@ -9,14 +9,14 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/services/FilteredChatParticipantsProcessingService$State;,
         Lcom/smedialink/services/FilteredChatParticipantsProcessingService$Companion;,
+        Lcom/smedialink/services/FilteredChatParticipantsProcessingService$State;,
         Lcom/smedialink/services/FilteredChatParticipantsProcessingService$WhenMappings;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFilteredChatParticipantsProcessingService.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FilteredChatParticipantsProcessingService.kt\ncom/smedialink/services/FilteredChatParticipantsProcessingService\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,292:1\n1601#2,9:293\n1849#2:302\n1850#2:304\n1610#2:305\n1#3:303\n*S KotlinDebug\n*F\n+ 1 FilteredChatParticipantsProcessingService.kt\ncom/smedialink/services/FilteredChatParticipantsProcessingService\n*L\n145#1:293,9\n145#1:302\n145#1:304\n145#1:305\n145#1:303\n*E\n"
+    value = "SMAP\nFilteredChatParticipantsProcessingService.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FilteredChatParticipantsProcessingService.kt\ncom/smedialink/services/FilteredChatParticipantsProcessingService\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,292:1\n1603#2,9:293\n1855#2:302\n1856#2:304\n1612#2:305\n1#3:303\n*S KotlinDebug\n*F\n+ 1 FilteredChatParticipantsProcessingService.kt\ncom/smedialink/services/FilteredChatParticipantsProcessingService\n*L\n145#1:293,9\n145#1:302\n145#1:304\n145#1:305\n145#1:303\n*E\n"
 .end annotation
 
 
@@ -73,26 +73,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$bIwoFdZD7tq5qCX7kejHmOuilRk(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;)V
+.method public static synthetic $r8$lambda$Hev2Xqa5-VHvA5MtA2Xltftk1T0(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/services/FilteredChatParticipantsProcessingService;->onParticipantsPartLoaded$lambda-3(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/services/FilteredChatParticipantsProcessingService;->loadParticipants$lambda$1(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$dWX8g66pkrsd2-T7LqJrksDGoaE(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$UeMWCfvkqtB6R01jtKzJ-3BM_7Y(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/services/FilteredChatParticipantsProcessingService;->loadParticipants$lambda-1(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {p0}, Lcom/smedialink/services/FilteredChatParticipantsProcessingService;->onParticipantsPartLoaded$lambda$3(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$txbRFpEPwEqV7p-lHYTRKFOE_gA(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;)V
+.method public static synthetic $r8$lambda$eac_4IbHzSli-ZkF4y_YqewY4Co(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/services/FilteredChatParticipantsProcessingService;->processNextChatParticipantsPart$lambda-4(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;)V
+    invoke-static {p0}, Lcom/smedialink/services/FilteredChatParticipantsProcessingService;->processNextChatParticipantsPart$lambda$4(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;)V
 
     return-void
 .end method
@@ -364,9 +364,6 @@
     .line 130
     iput v2, v0, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->limit:I
 
-    .line 131
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 126
     iput-object v0, p0, Lcom/smedialink/services/FilteredChatParticipantsProcessingService;->req:Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;
 
@@ -430,7 +427,7 @@
     return-void
 .end method
 
-.method private static final loadParticipants$lambda-1(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private static final loadParticipants$lambda$1(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -551,12 +548,12 @@
     .line 145
     iget-object v0, p0, Lcom/smedialink/services/FilteredChatParticipantsProcessingService;->participants:Ljava/util/List;
 
-    .line 1601
+    .line 1603
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -573,7 +570,7 @@
 
     move-result-object v3
 
-    .line 1609
+    .line 1611
     check-cast v3, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
     .line 146
@@ -604,7 +601,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 1609
+    .line 1611
     invoke-interface {v1, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -646,7 +643,7 @@
     return-void
 .end method
 
-.method private static final onParticipantsPartLoaded$lambda-3(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;)V
+.method private static final onParticipantsPartLoaded$lambda$3(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -692,7 +689,7 @@
     return-void
 .end method
 
-.method private static final processNextChatParticipantsPart$lambda-4(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;)V
+.method private static final processNextChatParticipantsPart$lambda$4(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;)V
     .locals 4
 
     const-string v0, "this$0"
@@ -1178,18 +1175,15 @@
     :goto_0
     iget-object v0, p0, Lcom/smedialink/services/FilteredChatParticipantsProcessingService;->builder:Landroidx/core/app/NotificationCompat$Builder;
 
-    if-nez v0, :cond_3
-
-    goto :goto_1
+    if-eqz v0, :cond_3
 
     .line 252
-    :cond_3
     invoke-virtual {v0, p2}, Landroidx/core/app/NotificationCompat$Builder;->setTicker(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
 
     .line 253
     invoke-virtual {v0, p2}, Landroidx/core/app/NotificationCompat$Builder;->setContentText(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_3
 
     .line 256
     sget-object p1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -1207,8 +1201,7 @@
 
     invoke-virtual {p1, p2, v0}, Landroidx/core/app/NotificationManagerCompat;->notify(ILandroid/app/Notification;)V
 
-    :cond_4
-    :goto_1
+    :cond_3
     return-void
 .end method
 

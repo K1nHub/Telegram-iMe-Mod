@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/InviteContactsActivity;)V
     .locals 0
 
-    .line 472
+    .line 473
     iput-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$7;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 2
 
-    .line 485
+    .line 486
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$7;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$000(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -51,19 +51,19 @@
 
     if-eqz p1, :cond_0
 
-    .line 486
+    .line 487
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$7;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     const/4 v0, 0x1
 
     invoke-static {p1, v0}, Lorg/telegram/ui/InviteContactsActivity;->access$2002(Lorg/telegram/ui/InviteContactsActivity;Z)Z
 
-    .line 487
+    .line 488
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$7;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/InviteContactsActivity;->access$2102(Lorg/telegram/ui/InviteContactsActivity;Z)Z
 
-    .line 488
+    .line 489
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$7;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$2200(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;
@@ -72,7 +72,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->setSearching(Z)V
 
-    .line 489
+    .line 490
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$7;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$2200(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;
@@ -95,7 +95,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searchDialogs(Ljava/lang/String;)V
 
-    .line 490
+    .line 491
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$7;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$1300(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -106,7 +106,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setFastScrollVisible(Z)V
 
-    .line 491
+    .line 492
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$7;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$1300(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -115,7 +115,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 492
+    .line 493
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$7;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$1400(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/EmptyTextProgressView;
@@ -134,7 +134,7 @@
 
     goto :goto_0
 
-    .line 494
+    .line 495
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$7;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 

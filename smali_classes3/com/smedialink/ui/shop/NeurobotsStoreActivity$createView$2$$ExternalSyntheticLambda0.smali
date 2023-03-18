@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$createView$2$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/ui/shop/NeurobotsStoreActivity;
 
-    invoke-static {v0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$createView$2;->$r8$lambda$5pnIaSqqncmHm6T3Urt9Igj8hpM(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)V
+    invoke-static {v0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$createView$2;->$r8$lambda$5bfFCzxovXC8ZBJ5kqGNQuzuPuw(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)V
 
     return-void
 .end method

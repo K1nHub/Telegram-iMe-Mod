@@ -151,6 +151,24 @@
 
     .line 23
     :cond_4
+    instance-of v0, p0, Ljava/lang/Long;
+
+    if-eqz v0, :cond_5
+
+    const-wide/16 v0, 0x0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    goto :goto_0
+
+    .line 24
+    :cond_5
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -166,17 +184,17 @@
 .method public static final orZero(Ljava/lang/Double;)D
     .locals 2
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    const-wide/16 v0, 0x0
-
-    goto :goto_0
-
-    .line 32
-    :cond_0
+    .line 33
     invoke-virtual {p0}, Ljava/lang/Double;->doubleValue()D
 
     move-result-wide v0
+
+    goto :goto_0
+
+    :cond_0
+    const-wide/16 v0, 0x0
 
     :goto_0
     return-wide v0
@@ -185,17 +203,17 @@
 .method public static final orZero(Ljava/lang/Float;)F
     .locals 0
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    .line 30
-    :cond_0
+    .line 31
     invoke-virtual {p0}, Ljava/lang/Float;->floatValue()F
 
     move-result p0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
 
     :goto_0
     return p0
@@ -204,17 +222,17 @@
 .method public static final orZero(Ljava/lang/Integer;)I
     .locals 0
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    .line 26
-    :cond_0
+    .line 27
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result p0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
 
     :goto_0
     return p0
@@ -223,17 +241,17 @@
 .method public static final orZero(Ljava/lang/Long;)J
     .locals 2
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    const-wide/16 v0, 0x0
-
-    goto :goto_0
-
-    .line 28
-    :cond_0
+    .line 29
     invoke-virtual {p0}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v0
+
+    goto :goto_0
+
+    :cond_0
+    const-wide/16 v0, 0x0
 
     :goto_0
     return-wide v0
@@ -244,7 +262,7 @@
 
     if-nez p0, :cond_0
 
-    .line 36
+    .line 37
     sget-object p0, Ljava/math/BigDecimal;->ZERO:Ljava/math/BigDecimal;
 
     const-string v0, "orZero"

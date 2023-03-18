@@ -5,7 +5,7 @@ import io.grpc.Deadline;
 import io.grpc.DecompressorRegistry;
 import io.grpc.Status;
 import java.io.InputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class NoopClientStream implements ClientStream {
     public static final NoopClientStream INSTANCE = new NoopClientStream();
 

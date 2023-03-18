@@ -31,7 +31,7 @@
 
     iput-object p2, p0, Lcom/smedialink/manager/common/MediaEditManager$convertGifNft$gifCompressing$1;->$avatarPath:Ljava/lang/String;
 
-    .line 175
+    .line 174
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -48,7 +48,7 @@
 .method public onGIFCompressionCompleted()V
     .locals 5
 
-    .line 182
+    .line 181
     iget-object v0, p0, Lcom/smedialink/manager/common/MediaEditManager$convertGifNft$gifCompressing$1;->this$0:Lcom/smedialink/manager/common/MediaEditManager;
 
     invoke-static {v0}, Lcom/smedialink/manager/common/MediaEditManager;->access$getLoadingAlertDialog(Lcom/smedialink/manager/common/MediaEditManager;)Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -57,7 +57,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
 
-    .line 183
+    .line 182
     iget-object v0, p0, Lcom/smedialink/manager/common/MediaEditManager$convertGifNft$gifCompressing$1;->this$0:Lcom/smedialink/manager/common/MediaEditManager;
 
     invoke-static {v0}, Lcom/smedialink/manager/common/MediaEditManager;->access$getImageUpdater(Lcom/smedialink/manager/common/MediaEditManager;)Lorg/telegram/ui/Components/ImageUpdater;
@@ -84,7 +84,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 191
+    .line 190
     invoke-static {p1}, Lcom/smedialink/utils/extentions/common/ThrowableExtKt;->showToast(Ljava/lang/Throwable;)V
 
     return-void

@@ -25,15 +25,15 @@ public final class WalletLinkClickableManager$getAddressAlertOptions$2 extends L
         ClickableItem clickableItem2;
         ClickableItem clickableItem3;
         walletLinkClickableView = this.this$0.viewState;
-        if (walletLinkClickableView == null) {
-            return null;
+        if (walletLinkClickableView != null) {
+            clickableItem = this.this$0.clickableItem;
+            TokenCode tokenCode = clickableItem.getTokenCode();
+            clickableItem2 = this.this$0.clickableItem;
+            String recipientAddress = clickableItem2.getRecipientAddress();
+            clickableItem3 = this.this$0.clickableItem;
+            walletLinkClickableView.actionMakeTransfer(tokenCode, "", false, recipientAddress, clickableItem3.getNetworkType());
+            return Unit.INSTANCE;
         }
-        clickableItem = this.this$0.clickableItem;
-        TokenCode tokenCode = clickableItem.getTokenCode();
-        clickableItem2 = this.this$0.clickableItem;
-        String recipientAddress = clickableItem2.getRecipientAddress();
-        clickableItem3 = this.this$0.clickableItem;
-        walletLinkClickableView.actionMakeTransfer(tokenCode, "", false, recipientAddress, clickableItem3.getNetworkType());
-        return Unit.INSTANCE;
+        return null;
     }
 }

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/UsersAlertBase;Z)V
     .locals 0
 
-    .line 439
+    .line 431
     iput-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$4;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/UsersAlertBase$4;->val$show:Z
@@ -39,7 +39,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 452
+    .line 444
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$4;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/UsersAlertBase;->shadowAnimation:Landroid/animation/AnimatorSet;
@@ -52,7 +52,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 453
+    .line 445
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$4;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     const/4 v0, 0x0
@@ -66,7 +66,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 442
+    .line 434
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$4;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/UsersAlertBase;->shadowAnimation:Landroid/animation/AnimatorSet;
@@ -79,12 +79,12 @@
 
     if-eqz p1, :cond_1
 
-    .line 443
+    .line 435
     iget-boolean p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$4;->val$show:Z
 
     if-nez p1, :cond_0
 
-    .line 444
+    .line 436
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$4;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/UsersAlertBase;->shadow:Landroid/view/View;
@@ -93,7 +93,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 446
+    .line 438
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$4;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 

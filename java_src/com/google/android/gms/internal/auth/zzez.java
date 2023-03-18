@@ -1,15 +1,15 @@
 package com.google.android.gms.internal.auth;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.Objects;
 /* compiled from: com.google.android.gms:play-services-auth-base@@18.0.4 */
 /* loaded from: classes.dex */
 public final class zzez {
-    static final Charset zza = Charset.forName(C0474C.ASCII_NAME);
+    static final Charset zza = Charset.forName(C0468C.ASCII_NAME);
     static final Charset zzb = Charset.forName("UTF-8");
-    static final Charset zzc = Charset.forName(C0474C.ISO88591_NAME);
+    static final Charset zzc = Charset.forName(C0468C.ISO88591_NAME);
     public static final byte[] zzd;
     public static final ByteBuffer zze;
     public static final zzei zzf;

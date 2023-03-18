@@ -13,11 +13,10 @@ import com.smedialink.storage.domain.model.crypto.simplex.FiatCurrency;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.formatter.BalanceFormatter;
 import com.smedialink.utils.validator.wallet.CustomPriceValidator;
-import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsJVMKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: CryptoBuyCustomPricePresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPricePresenter */
@@ -54,7 +53,7 @@ public final class CryptoBuyCustomPricePresenter extends BasePresenter<CryptoBuy
         Intrinsics.checkNotNullParameter(toAmount, "toAmount");
         floatOrNull = StringsKt__StringNumberConversionsJVMKt.toFloatOrNull(fromAmount);
         float f = BitmapDescriptorFactory.HUE_RED;
-        float floatValue = floatOrNull == null ? BitmapDescriptorFactory.HUE_RED : floatOrNull.floatValue();
+        float floatValue = floatOrNull != null ? floatOrNull.floatValue() : BitmapDescriptorFactory.HUE_RED;
         floatOrNull2 = StringsKt__StringNumberConversionsJVMKt.toFloatOrNull(toAmount);
         if (floatOrNull2 != null) {
             f = floatOrNull2.floatValue();
@@ -100,14 +99,13 @@ public final class CryptoBuyCustomPricePresenter extends BasePresenter<CryptoBuy
         Intrinsics.checkNotNullParameter(to, "to");
         floatOrNull = StringsKt__StringNumberConversionsJVMKt.toFloatOrNull(from);
         float f = BitmapDescriptorFactory.HUE_RED;
-        float floatValue = floatOrNull == null ? BitmapDescriptorFactory.HUE_RED : floatOrNull.floatValue();
+        float floatValue = floatOrNull != null ? floatOrNull.floatValue() : BitmapDescriptorFactory.HUE_RED;
         floatOrNull2 = StringsKt__StringNumberConversionsJVMKt.toFloatOrNull(to);
         if (floatOrNull2 != null) {
             f = floatOrNull2.floatValue();
         }
         Currency currency = this.toCurrency;
         this.toCurrency = this.fromCurrency;
-        Unit unit = Unit.INSTANCE;
         this.fromCurrency = currency;
         ((CryptoBuyCustomPriceView) getViewState()).configureExchangeState(f, floatValue, this.fromCurrency, this.toCurrency);
         calculateExchangeValues(String.valueOf(f));
@@ -120,7 +118,7 @@ public final class CryptoBuyCustomPricePresenter extends BasePresenter<CryptoBuy
     }
 
     private final DialogModel getConfirmationDialogModel(float f) {
-        return new DialogModel(this.resourceManager.getString(C3158R.string.wallet_crypto_buy_confirm_dialog_title), this.resourceManager.getString(C3158R.string.wallet_crypto_buy_confirm_dialog_description, BalanceFormatter.formatBalance(Float.valueOf(f), this.minItem.getTokenInfo().getDecimals()), this.resourceManager.getString(this.minItem.getTokenInfo().getShortName())), this.resourceManager.getString(C3158R.string.common_cancel), this.resourceManager.getString(C3158R.string.wallet_crypto_buy_confirm_dialog_action_txt));
+        return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_crypto_buy_confirm_dialog_title), this.resourceManager.getString(C3286R.string.wallet_crypto_buy_confirm_dialog_description, BalanceFormatter.formatBalance(Float.valueOf(f), this.minItem.getTokenInfo().getDecimals()), this.resourceManager.getString(this.minItem.getTokenInfo().getShortName())), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.wallet_crypto_buy_confirm_dialog_action_txt));
     }
 
     private final boolean isValidInput(Currency currency, Float f) {

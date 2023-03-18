@@ -35,7 +35,7 @@
 
     check-cast p1, Lcom/smedialink/model/wallet/select/SelectableToken;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->$r8$lambda$b4y8LGT7Qtzfr6TJphLELC31AJI(Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;Lorg/fork/utils/Callbacks$Callback1;Lcom/smedialink/model/wallet/select/SelectableToken;)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->$r8$lambda$8hBmFXe1Fa3wkx_fWYHVCgIltNg(Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;Lorg/fork/utils/Callbacks$Callback1;Lcom/smedialink/model/wallet/select/SelectableToken;)V
 
     return-void
 .end method

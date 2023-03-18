@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$$ExternalSyntheticLambda4;->f$1:Landroid/app/Activity;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->$r8$lambda$gCzx6YudNt7ro5c6rmUZpSvMtB8(Lcom/google/android/gms/tasks/Task;Landroid/app/Activity;Lio/reactivex/ObservableEmitter;)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->$r8$lambda$SEvLYrwgwtwC5FRU81w-Rsoo88g(Lcom/google/android/gms/tasks/Task;Landroid/app/Activity;Lio/reactivex/ObservableEmitter;)V
 
     return-void
 .end method

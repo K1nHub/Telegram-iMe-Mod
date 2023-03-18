@@ -39,7 +39,7 @@
 
     iget-wide v2, p0, Lorg/fork/controller/TemplatesController$$ExternalSyntheticLambda9;->f$2:J
 
-    invoke-static {v0, v1, v2, v3}, Lorg/fork/controller/TemplatesController;->$r8$lambda$hak3_WdxeC7viVVpAS2D2CfDoZw(Lorg/fork/controller/TemplatesController;Lcom/smedialink/storage/domain/model/templates/TemplateModel;J)V
+    invoke-static {v0, v1, v2, v3}, Lorg/fork/controller/TemplatesController;->$r8$lambda$TiyE-1v9HItb60wLW_QcS4tYS3I(Lorg/fork/controller/TemplatesController;Lcom/smedialink/storage/domain/model/templates/TemplateModel;J)V
 
     return-void
 .end method

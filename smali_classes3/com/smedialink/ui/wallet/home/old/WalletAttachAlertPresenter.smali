@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletAttachAlertPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAttachAlertPresenter.kt\ncom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 5 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 6 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n+ 7 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,186:1\n764#2:187\n855#2,2:188\n1192#2,2:190\n1220#2,4:192\n764#2:196\n855#2,2:197\n1601#2,9:199\n1849#2:208\n1850#2:210\n1610#2:211\n764#2:212\n855#2,2:213\n1475#2:215\n1500#2,3:216\n1503#2,3:226\n1849#2,2:230\n1#3:209\n357#4,7:219\n211#5:229\n212#5:232\n8#6:233\n18#7:234\n*S KotlinDebug\n*F\n+ 1 WalletAttachAlertPresenter.kt\ncom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter\n*L\n123#1:187\n123#1:188,2\n124#1:190,2\n124#1:192,4\n126#1:196\n126#1:197,2\n127#1:199,9\n127#1:208\n127#1:210\n127#1:211\n169#1:212\n169#1:213,2\n170#1:215\n170#1:216,3\n170#1:226,3\n176#1:230,2\n127#1:209\n170#1:219,7\n174#1:229\n174#1:232\n134#1:233\n134#1:234\n*E\n"
+    value = "SMAP\nWalletAttachAlertPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAttachAlertPresenter.kt\ncom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 5 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,188:1\n766#2:189\n857#2,2:190\n1194#2,2:192\n1222#2,4:194\n766#2:198\n857#2,2:199\n1603#2,9:201\n1855#2:210\n1856#2:212\n1612#2:213\n766#2:214\n857#2,2:215\n1477#2:217\n1502#2,3:218\n1505#2,3:228\n1855#2,2:232\n1#3:211\n361#4,7:221\n215#5:231\n216#5:234\n*S KotlinDebug\n*F\n+ 1 WalletAttachAlertPresenter.kt\ncom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter\n*L\n124#1:189\n124#1:190,2\n125#1:192,2\n125#1:194,4\n127#1:198\n127#1:199,2\n128#1:201,9\n128#1:210\n128#1:212\n128#1:213\n171#1:214\n171#1:215,2\n172#1:217\n172#1:218,3\n172#1:228,3\n178#1:232,2\n128#1:211\n172#1:221,7\n176#1:231\n176#1:234\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -49,44 +49,44 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$1dJ7cIuGkXcA2dTX2M9DgwZTp94(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Ljava/lang/Throwable;)V
+.method public static synthetic $r8$lambda$0zpyOPla83TOk_oXxLTS6d1efE4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->getWalletTransactions$lambda-8(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Ljava/lang/Throwable;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->getWalletBalance$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$6dZMUpXcxo-IvuVZ4OPOfcKFLgY(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/Boolean;)Lio/reactivex/ObservableSource;
+.method public static synthetic $r8$lambda$Fj7ljr1I-pb4cZGe45JOOiGNKyk(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->getWalletTransactions$lambda-6(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/Boolean;)Lio/reactivex/ObservableSource;
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->getWalletTransactions$lambda$7(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$N-TqyPv5_3o9r0hj_OgDAP3ecdE(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->getWalletTransactions$lambda$6(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$M-okIBkC3KNX3_AzVLVUuaxrDKc(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Ljava/lang/Throwable;)V
+.method public static synthetic $r8$lambda$XbrkOUeOhHTqkXqIzawenaebV24(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->getWalletBalance$lambda-1(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Ljava/lang/Throwable;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->getWalletBalance$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$QLviS3BqJvVycCPHfgOLVnarkTo(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/Result;)V
+.method public static synthetic $r8$lambda$dLhcNnkYqCw0TH0oRNFMv9W32EY(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->getWalletTransactions$lambda-7(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/Result;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$RZP4ay87O_kNue6Bg8vC8-1HzJI(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Lcom/smedialink/storage/domain/model/Result;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->getWalletBalance$lambda-0(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Lcom/smedialink/storage/domain/model/Result;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->getWalletTransactions$lambda$8(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -154,11 +154,60 @@
     return-void
 .end method
 
+.method public static final synthetic access$configureTokens(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Ljava/util/List;)Ljava/util/List;
+    .locals 0
+
+    .line 26
+    invoke-direct {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->configureTokens(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$getCachedTransactions$p(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;)Ljava/util/HashMap;
+    .locals 0
+
+    .line 26
+    iget-object p0, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->cachedTransactions:Ljava/util/HashMap;
+
+    return-object p0
+.end method
+
 .method public static final synthetic access$getCryptoPreferenceHelper$p(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;)Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
     .locals 0
 
     .line 26
     iget-object p0, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$getResourceManager$p(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;)Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    .locals 0
+
+    .line 26
+    iget-object p0, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$getWalletInteractor$p(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;)Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor;
+    .locals 0
+
+    .line 26
+    iget-object p0, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->walletInteractor:Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$mapTransactionsToGroups(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Ljava/util/List;)Ljava/util/List;
+    .locals 0
+
+    .line 26
+    invoke-direct {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->mapTransactionsToGroups(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object p0
 
     return-object p0
 .end method
@@ -186,7 +235,7 @@
         }
     .end annotation
 
-    .line 121
+    .line 122
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getNetworkType()Lcom/smedialink/storage/domain/model/crypto/NetworkType;
@@ -197,12 +246,12 @@
 
     move-result-object v0
 
-    .line 764
+    .line 766
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -223,7 +272,7 @@
 
     check-cast v3, Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;
 
-    .line 123
+    .line 124
     iget-object v4, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v4}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getOnlyPositiveTokens()Z
@@ -256,6 +305,7 @@
     :goto_2
     if-eqz v3, :cond_0
 
+    .line 857
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -263,7 +313,7 @@
     :cond_3
     const/16 p1, 0xa
 
-    .line 1192
+    .line 1194
     invoke-static {v1, p1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result p1
@@ -278,12 +328,12 @@
 
     move-result p1
 
-    .line 1193
+    .line 1195
     new-instance v2, Ljava/util/LinkedHashMap;
 
     invoke-direct {v2, p1}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 1220
+    .line 1222
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -299,32 +349,33 @@
 
     move-result-object v1
 
-    .line 1221
+    .line 1223
     move-object v3, v1
 
     check-cast v3, Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;
 
-    .line 124
+    .line 125
     invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;->getCode()Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     move-result-object v3
 
+    .line 1223
     invoke-interface {v2, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_3
 
-    .line 125
+    .line 126
     :cond_4
     invoke-virtual {v0}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;->getStates()Ljava/util/List;
 
     move-result-object p1
 
-    .line 764
+    .line 766
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -345,24 +396,25 @@
 
     check-cast v3, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;
 
-    .line 126
+    .line 127
     invoke-virtual {v3}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;->isEnabled()Z
 
     move-result v3
 
     if-eqz v3, :cond_5
 
+    .line 857
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_4
 
-    .line 1601
+    .line 1603
     :cond_6
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -379,10 +431,10 @@
 
     move-result-object v1
 
-    .line 1609
+    .line 1611
     check-cast v1, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;
 
-    .line 127
+    .line 128
     sget-object v3, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v1}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;->getToken()Ljava/lang/String;
@@ -401,7 +453,7 @@
 
     if-eqz v1, :cond_7
 
-    .line 1609
+    .line 1611
     invoke-interface {p1, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_5
@@ -411,7 +463,7 @@
 .end method
 
 .method private final getWalletBalance(Z)V
-    .locals 3
+    .locals 4
 
     .line 99
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->walletInteractor:Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor;
@@ -442,139 +494,63 @@
     move-result-object p1
 
     .line 103
-    new-instance v0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda0;
+    new-instance v0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$getWalletBalance$1;
 
-    invoke-direct {v0, p0}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;)V
+    invoke-direct {v0, p0}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$getWalletBalance$1;-><init>(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;)V
 
-    new-instance v2, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda2;
+    new-instance v2, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda0;
 
-    invoke-direct {v2, p0}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;)V
+    invoke-direct {v2, v0}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p1, v0, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$getWalletBalance$2;
+
+    invoke-direct {v0, p0}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$getWalletBalance$2;-><init>(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;)V
+
+    .line 115
+    new-instance v3, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda2;
+
+    invoke-direct {v3, v0}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda2;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 103
+    invoke-virtual {p1, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
-    const-string v0, "walletInteractor\n       \u2026pty())\n                })"
+    const-string v0, "private fun getWalletBal\u2026     .autoDispose()\n    }"
 
+    .line 115
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
-    .line 117
+    .line 118
     invoke-static {p0, p1, v1, v0, v1}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
 .end method
 
-.method private static final getWalletBalance$lambda-0(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Lcom/smedialink/storage/domain/model/Result;)V
+.method private static final getWalletBalance$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 105
-    instance-of v0, p1, Lcom/smedialink/storage/domain/model/Result$Success;
+    .line 103
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
-
-    .line 106
-    check-cast p1, Lcom/smedialink/storage/domain/model/Result$Success;
-
-    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/Result$Success;->getData()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/util/List;
-
-    invoke-direct {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->configureTokens(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object p1
-
-    .line 107
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;
-
-    invoke-interface {v0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;->showBalances(Ljava/util/List;)V
-
-    .line 108
-    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    if-eqz v0, :cond_1
-
-    .line 109
-    invoke-static {p1}, Lkotlin/collections/CollectionsKt;->first(Ljava/util/List;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;
-
-    invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->selectBalance(Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;)V
-
-    goto :goto_0
-
-    .line 112
-    :cond_0
-    instance-of v0, p1, Lcom/smedialink/storage/domain/model/Result$Error;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;
-
-    check-cast p1, Lcom/smedialink/storage/domain/model/Result$Error;
-
-    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/Result$Error;->getError()Lcom/smedialink/storage/data/network/model/error/ErrorModel;
-
-    move-result-object p1
-
-    iget-object p0, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
-
-    invoke-virtual {p1, p0}, Lcom/smedialink/storage/data/network/model/error/ErrorModel;->getMessage(Lcom/smedialink/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-interface {v0, p0}, Lcom/smedialink/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 
-.method private static final getWalletBalance$lambda-1(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Ljava/lang/Throwable;)V
+.method private static final getWalletBalance$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 115
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object p0
-
-    check-cast p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;
-
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object p1
-
-    if-nez p1, :cond_0
-
-    const-string p1, ""
-
-    :cond_0
-    invoke-interface {p0, p1}, Lcom/smedialink/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -596,30 +572,34 @@
 .end method
 
 .method private final getWalletTransactions(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
-    .locals 2
+    .locals 3
 
-    .line 132
+    .line 133
     sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     invoke-static {v0}, Lio/reactivex/Observable;->just(Ljava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 133
-    new-instance v1, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda4;
+    .line 134
+    new-instance v1, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$getWalletTransactions$1;
 
-    invoke-direct {v1, p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda4;-><init>(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
+    invoke-direct {v1, p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$getWalletTransactions$1;-><init>(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->switchMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v2, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda4;
 
-    move-result-object v0
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda4;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 137
-    invoke-virtual {v0}, Lio/reactivex/Observable;->distinctUntilChanged()Lio/reactivex/Observable;
+    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->switchMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v0
 
     .line 138
+    invoke-virtual {v0}, Lio/reactivex/Observable;->distinctUntilChanged()Lio/reactivex/Observable;
+
+    move-result-object v0
+
+    .line 139
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -630,303 +610,83 @@
 
     move-result-object v0
 
-    .line 139
-    new-instance v1, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda3;
+    .line 140
+    new-instance v1, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$getWalletTransactions$2;
 
-    invoke-direct {v1, p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda3;-><init>(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
+    invoke-direct {v1, p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$getWalletTransactions$2;-><init>(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
 
     new-instance p1, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda1;
 
-    invoke-direct {p1, p0}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;)V
+    invoke-direct {p1, v1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v1, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v1, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$getWalletTransactions$3;
+
+    invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$getWalletTransactions$3;-><init>(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;)V
+
+    .line 161
+    new-instance v2, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda3;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda3;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 140
+    invoke-virtual {v0, p1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
-    const-string v0, "just(true)\n             \u2026pty())\n                })"
+    const-string v0, "private fun getWalletTra\u2026     .autoDispose()\n    }"
 
+    .line 161
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    .line 163
+    .line 165
     invoke-static {p0, p1, v0, v1, v0}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
 .end method
 
-.method private static final getWalletTransactions$lambda-6(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/Boolean;)Lio/reactivex/ObservableSource;
-    .locals 9
+.method private static final getWalletTransactions$lambda$6(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "$selectedTokenCode"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "it"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 134
-    iget-object p2, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->cachedTransactions:Ljava/util/HashMap;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p0
 
-    move-result-object p2
+    check-cast p0, Lio/reactivex/ObservableSource;
 
-    check-cast p2, Ljava/util/List;
-
-    const/4 v0, 0x0
-
-    if-nez p2, :cond_0
-
-    goto :goto_0
-
-    .line 8
-    :cond_0
-    sget-object v1, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
-
-    invoke-virtual {v1, p2}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
-
-    move-result-object p2
-
-    if-nez p2, :cond_1
-
-    goto :goto_0
-
-    .line 18
-    :cond_1
-    invoke-static {p2}, Lio/reactivex/Observable;->just(Ljava/lang/Object;)Lio/reactivex/Observable;
-
-    move-result-object v0
-
-    const-string p2, "just(this)"
-
-    invoke-static {v0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :goto_0
-    if-nez v0, :cond_2
-
-    .line 135
-    iget-object v1, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->walletInteractor:Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/16 v7, 0x1b
-
-    const/4 v8, 0x0
-
-    move-object v4, p1
-
-    invoke-static/range {v1 .. v8}, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor;->getWalletTransactions$default(Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor;ZLjava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;ILcom/smedialink/storage/domain/model/crypto/NetworkType;ILjava/lang/Object;)Lio/reactivex/Observable;
-
-    move-result-object v0
-
-    :cond_2
-    return-object v0
+    return-object p0
 .end method
 
-.method private static final getWalletTransactions$lambda-7(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/Result;)V
-    .locals 2
+.method private static final getWalletTransactions$lambda$7(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$selectedTokenCode"
+    .line 140
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 141
-    instance-of v0, p2, Lcom/smedialink/storage/domain/model/Result$Success;
-
-    if-eqz v0, :cond_1
-
-    .line 142
-    iget-object v0, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->cachedTransactions:Ljava/util/HashMap;
-
-    check-cast p2, Lcom/smedialink/storage/domain/model/Result$Success;
-
-    invoke-virtual {p2}, Lcom/smedialink/storage/domain/model/Result$Success;->getData()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/Collection;
-
-    invoke-static {v1}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 143
-    invoke-virtual {p2}, Lcom/smedialink/storage/domain/model/Result$Success;->getData()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/util/List;
-
-    invoke-direct {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->mapTransactionsToGroups(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object p1
-
-    .line 145
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_0
-
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object p0
-
-    check-cast p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;
-
-    invoke-interface {p0}, Lcom/smedialink/ui/custom/state/GlobalStateView;->onEmptyState()V
-
-    goto :goto_1
-
-    .line 146
-    :cond_0
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object p0
-
-    check-cast p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;
-
-    invoke-interface {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;->showTransactions(Ljava/util/List;)V
-
-    goto :goto_1
-
-    .line 148
-    :cond_1
-    instance-of p1, p2, Lcom/smedialink/storage/domain/model/Result$Error;
-
-    if-eqz p1, :cond_3
-
-    .line 149
-    check-cast p2, Lcom/smedialink/storage/domain/model/Result$Error;
-
-    invoke-virtual {p2}, Lcom/smedialink/storage/domain/model/Result$Error;->getError()Lcom/smedialink/storage/data/network/model/error/ErrorModel;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/smedialink/storage/data/network/model/error/ErrorModel;->getStatus()Lcom/smedialink/storage/data/network/model/error/IErrorStatus;
-
-    move-result-object p1
-
-    .line 150
-    sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->NO_CONNECTION:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
-
-    if-ne p1, v0, :cond_2
-
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;
-
-    invoke-interface {p1}, Lcom/smedialink/ui/custom/state/GlobalStateView;->onNoInternetErrorState()V
-
-    goto :goto_0
-
-    .line 151
-    :cond_2
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;
-
-    invoke-interface {p1}, Lcom/smedialink/ui/custom/state/GlobalStateView;->onUnexpectedErrorState()V
-
-    .line 153
-    :goto_0
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;
-
-    invoke-virtual {p2}, Lcom/smedialink/storage/domain/model/Result$Error;->getError()Lcom/smedialink/storage/data/network/model/error/ErrorModel;
-
-    move-result-object p2
-
-    iget-object p0, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
-
-    invoke-virtual {p2, p0}, Lcom/smedialink/storage/data/network/model/error/ErrorModel;->getMessage(Lcom/smedialink/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-interface {p1, p0}, Lcom/smedialink/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
-
-    goto :goto_1
-
-    .line 155
-    :cond_3
-    instance-of p1, p2, Lcom/smedialink/storage/domain/model/Result$Loading;
-
-    if-eqz p1, :cond_4
-
-    .line 156
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object p0
-
-    check-cast p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;
-
-    invoke-interface {p0}, Lcom/smedialink/ui/custom/state/GlobalStateView;->onLoadingState()V
-
-    :cond_4
-    :goto_1
     return-void
 .end method
 
-.method private static final getWalletTransactions$lambda-8(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Ljava/lang/Throwable;)V
+.method private static final getWalletTransactions$lambda$8(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 160
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;
-
-    invoke-interface {v0}, Lcom/smedialink/ui/custom/state/GlobalStateView;->onUnexpectedErrorState()V
-
     .line 161
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object p0
-
-    check-cast p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;
-
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object p1
-
-    if-nez p1, :cond_0
-
-    const-string p1, ""
-
-    :cond_0
-    invoke-interface {p0, p1}, Lcom/smedialink/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -946,17 +706,17 @@
         }
     .end annotation
 
-    .line 168
+    .line 170
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->distinct(Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object p1
 
-    .line 764
+    .line 766
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -979,7 +739,7 @@
 
     check-cast v3, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
 
-    .line 169
+    .line 171
     invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getTokenCode()Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     move-result-object v3
@@ -996,17 +756,18 @@
     :goto_1
     if-eqz v2, :cond_0
 
+    .line 857
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 1475
+    .line 1477
     :cond_2
     new-instance p1, Ljava/util/LinkedHashMap;
 
     invoke-direct {p1}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 1500
+    .line 1502
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1022,12 +783,12 @@
 
     move-result-object v1
 
-    .line 1501
+    .line 1503
     move-object v3, v1
 
     check-cast v3, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
 
-    .line 170
+    .line 172
     invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getCreatedAt()Ljava/lang/String;
 
     move-result-object v3
@@ -1038,37 +799,37 @@
 
     move-result-object v3
 
-    .line 357
+    .line 361
     invoke-interface {p1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
     if-nez v4, :cond_3
 
-    .line 1502
+    .line 1504
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 360
+    .line 364
     invoke-interface {p1, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1502
+    .line 1504
     :cond_3
     check-cast v4, Ljava/util/List;
 
-    .line 1503
+    .line 1505
     invoke-interface {v4, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 172
+    .line 174
     :cond_4
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 211
+    .line 215
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p1
@@ -1090,7 +851,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 174
+    .line 176
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -1103,14 +864,14 @@
 
     check-cast v1, Ljava/util/List;
 
-    .line 175
+    .line 177
     new-instance v3, Lcom/smedialink/model/wallet/home/HeaderItem;
 
     invoke-direct {v3, v2}, Lcom/smedialink/model/wallet/home/HeaderItem;-><init>(Ljava/lang/String;)V
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1849
+    .line 1855
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -1128,7 +889,7 @@
 
     check-cast v2, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
 
-    .line 177
+    .line 179
     invoke-static {v2}, Lcom/smedialink/mapper/transaction/TransactionUiMappingKt;->mapToUI(Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;)Lcom/smedialink/model/wallet/transaction/TransactionItem;
 
     move-result-object v2

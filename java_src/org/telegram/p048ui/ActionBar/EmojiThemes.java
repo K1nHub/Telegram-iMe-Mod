@@ -223,7 +223,7 @@ public class EmojiThemes {
             }
             Theme.ThemeInfo themeInfo2 = new Theme.ThemeInfo(theme);
             themeAccent = themeInfo2.createNewAccent(tlTheme, i, true, settingsIndex);
-            themeInfo2.setCurrentAccentId(themeAccent.f1649id);
+            themeInfo2.setCurrentAccentId(themeAccent.f1655id);
             themeInfo = themeInfo2;
         } else {
             SparseArray<Theme.ThemeAccent> sparseArray = themeInfo.themeAccentsMap;
@@ -273,7 +273,7 @@ public class EmojiThemes {
             TLRPC$TL_theme tlTheme = getTlTheme(i2);
             Theme.ThemeInfo themeInfo2 = new Theme.ThemeInfo(Theme.getTheme(Theme.getBaseThemeKey(tlTheme.settings.get(settingsIndex))));
             themeAccent = themeInfo2.createNewAccent(tlTheme, i, true, settingsIndex);
-            themeInfo2.setCurrentAccentId(themeAccent.f1649id);
+            themeInfo2.setCurrentAccentId(themeAccent.f1655id);
             themeInfo = themeInfo2;
         } else {
             SparseArray<Theme.ThemeAccent> sparseArray = themeInfo.themeAccentsMap;
@@ -317,7 +317,7 @@ public class EmojiThemes {
     public void loadWallpaper(int i, final ResultCallback<Pair<Long, Bitmap>> resultCallback) {
         final TLRPC$WallPaper wallpaper = getWallpaper(i);
         if (wallpaper != null) {
-            final long j = getTlTheme(i).f1624id;
+            final long j = getTlTheme(i).f1630id;
             ChatThemeController.getWallpaperBitmap(j, new ResultCallback() { // from class: org.telegram.ui.ActionBar.EmojiThemes$$ExternalSyntheticLambda3
                 @Override // org.telegram.tgnet.ResultCallback
                 public final void onComplete(Object obj) {
@@ -389,7 +389,7 @@ public class EmojiThemes {
             }
             return;
         }
-        final long j = getTlTheme(i).f1624id;
+        final long j = getTlTheme(i).f1630id;
         Bitmap wallpaperThumbBitmap = ChatThemeController.getWallpaperThumbBitmap(j);
         final File wallpaperThumbFile = getWallpaperThumbFile(j);
         if (wallpaperThumbBitmap == null && wallpaperThumbFile.exists() && wallpaperThumbFile.length() > 0) {

@@ -18,6 +18,6 @@ final class ExtendedAvatarPreviewerSettingsActivity$listAdapter$2 extends Lambda
 
     @Override // kotlin.jvm.functions.Function0
     public final ExtendedAvatarPreviewerSettingsActivity.ListAdapter invoke() {
-        return new ExtendedAvatarPreviewerSettingsActivity.ListAdapter(this.this$0);
+        return new ExtendedAvatarPreviewerSettingsActivity.ListAdapter();
     }
 }

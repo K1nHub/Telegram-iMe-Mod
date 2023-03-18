@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ProfileActivity$23;
-.super Lorg/telegram/ui/Components/ProfileGalleryView;
+.super Lorg/telegram/ui/Components/RadialProgressView;
 .source "ProfileActivity.java"
 
 
@@ -15,55 +15,126 @@
 
 
 # instance fields
+.field private paint:Landroid/graphics/Paint;
+
 .field final synthetic this$0:Lorg/telegram/ui/ProfileActivity;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;JLorg/telegram/ui/ActionBar/ActionBar;Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/ProfileActivity$AvatarImageView;ILorg/telegram/ui/Components/ProfileGalleryView$Callback;)V
-    .locals 10
+.method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
+    .locals 0
 
-    move-object v9, p0
+    .line 4489
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$23;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    move-object v0, p1
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RadialProgressView;-><init>(Landroid/content/Context;)V
 
-    .line 4366
-    iput-object v0, v9, Lorg/telegram/ui/ProfileActivity$23;->this$0:Lorg/telegram/ui/ProfileActivity;
+    .line 4490
+    new-instance p1, Landroid/graphics/Paint;
 
-    move-object v0, p0
+    const/4 p2, 0x1
 
-    move-object v1, p2
+    invoke-direct {p1, p2}, Landroid/graphics/Paint;-><init>(I)V
 
-    move-wide v2, p3
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$23;->paint:Landroid/graphics/Paint;
 
-    move-object v4, p5
+    const/high16 p2, 0x55000000
 
-    move-object/from16 v5, p6
-
-    move-object/from16 v6, p7
-
-    move/from16 v7, p8
-
-    move-object/from16 v8, p9
-
-    invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/Components/ProfileGalleryView;-><init>(Landroid/content/Context;JLorg/telegram/ui/ActionBar/ActionBar;Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/ProfileActivity$AvatarImageView;ILorg/telegram/ui/Components/ProfileGalleryView$Callback;)V
+    .line 4493
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected setCustomAvatarProgress(F)V
-    .locals 1
+.method protected onDraw(Landroid/graphics/Canvas;)V
+    .locals 4
 
-    .line 4369
+    .line 4498
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$23;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->access$15502(Lorg/telegram/ui/ProfileActivity;F)F
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$AvatarImageView;
 
-    .line 4370
-    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$23;->this$0:Lorg/telegram/ui/ProfileActivity;
+    move-result-object v0
 
-    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$15800(Lorg/telegram/ui/ProfileActivity;)V
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$23;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$AvatarImageView;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->hasNotThumb()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 4499
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$23;->paint:Landroid/graphics/Paint;
+
+    const/high16 v1, 0x42aa0000    # 85.0f
+
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$23;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$AvatarImageView;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lorg/telegram/messenger/ImageReceiver;->getCurrentAlpha()F
+
+    move-result v2
+
+    mul-float v2, v2, v1
+
+    float-to-int v1, v2
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    .line 4500
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    const/high16 v1, 0x40000000    # 2.0f
+
+    div-float/2addr v0, v1
+
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    div-float/2addr v2, v1
+
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    div-float/2addr v3, v1
+
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$23;->paint:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v0, v2, v3, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+
+    .line 4502
+    :cond_0
+    invoke-super {p0, p1}, Lorg/telegram/ui/Components/RadialProgressView;->onDraw(Landroid/graphics/Canvas;)V
 
     return-void
 .end method

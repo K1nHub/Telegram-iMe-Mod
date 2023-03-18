@@ -277,9 +277,7 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RadioButton;->setSize(I)V
 
     .line 130
-    invoke-virtual {p0}, Lorg/fork/ui/view/ImageRadioCell;->getDialog()Z
-
-    move-result v1
+    iget-boolean v1, p0, Lorg/fork/ui/view/ImageRadioCell;->dialog:Z
 
     if-eqz v1, :cond_0
 
@@ -365,9 +363,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 121
-    invoke-virtual {p0}, Lorg/fork/ui/view/ImageRadioCell;->getDialog()Z
-
-    move-result v1
+    iget-boolean v1, p0, Lorg/fork/ui/view/ImageRadioCell;->dialog:Z
 
     if-eqz v1, :cond_1
 
@@ -383,7 +379,7 @@
     goto :goto_1
 
     :cond_1
-    const-string v1, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v1, "windowBackgroundWhiteBlackText"
 
     .line 124
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I

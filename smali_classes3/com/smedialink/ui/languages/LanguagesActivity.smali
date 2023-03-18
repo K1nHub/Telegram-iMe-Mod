@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nLanguagesActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LanguagesActivity.kt\ncom/smedialink/ui/languages/LanguagesActivity\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,88:1\n1547#2:89\n1618#2,3:90\n*S KotlinDebug\n*F\n+ 1 LanguagesActivity.kt\ncom/smedialink/ui/languages/LanguagesActivity\n*L\n79#1:89\n79#1:90,3\n*E\n"
+    value = "SMAP\nLanguagesActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LanguagesActivity.kt\ncom/smedialink/ui/languages/LanguagesActivity\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,88:1\n1549#2:89\n1620#2,3:90\n*S KotlinDebug\n*F\n+ 1 LanguagesActivity.kt\ncom/smedialink/ui/languages/LanguagesActivity\n*L\n79#1:89\n79#1:90,3\n*E\n"
 .end annotation
 
 
@@ -196,7 +196,7 @@
 
     move-result-object v1
 
-    .line 1547
+    .line 1549
     new-instance v2, Ljava/util/ArrayList;
 
     const/16 v3, 0xa
@@ -207,7 +207,7 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -223,7 +223,7 @@
 
     move-result-object v4
 
-    .line 1619
+    .line 1621
     check-cast v4, Lcom/smedialink/ui/languages/LanguageViewModel;
 
     .line 81
@@ -237,7 +237,7 @@
 
     invoke-virtual {v4, v5}, Lcom/smedialink/ui/languages/LanguageViewModel;->setChecked(Z)V
 
-    .line 80
+    .line 1621
     invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -300,12 +300,9 @@
 
     iput-object v0, p0, Lcom/smedialink/ui/languages/LanguagesActivity;->recyclerLanguages:Landroidx/recyclerview/widget/RecyclerView;
 
-    if-nez v0, :cond_1
-
-    goto :goto_0
+    if-eqz v0, :cond_1
 
     .line 31
-    :cond_1
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-direct {v1, p1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
@@ -318,7 +315,7 @@
     invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
     .line 35
-    :goto_0
+    :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
@@ -360,12 +357,12 @@
 
     invoke-static {v4}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_2
     move-object v3, p1
 
-    :goto_1
+    :goto_0
     iput-object v3, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     const-string p1, "fragmentView"

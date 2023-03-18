@@ -9,7 +9,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 85
+    .line 90
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x19
@@ -32,7 +32,7 @@
 
     const-string v0, "REL"
 
-    .line 51
+    .line 54
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -43,8 +43,20 @@
 
     return v1
 
-    .line 57
+    .line 60
     :cond_0
+    sget-object v0, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 61
+    invoke-virtual {p0, v0}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 62
     invoke-virtual {p1, p0}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 
     move-result p0
@@ -62,7 +74,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 155
+    .line 160
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
@@ -80,20 +92,25 @@
     return v0
 .end method
 
-.method public static isAtLeastS()Z
+.method public static isAtLeastT()Z
     .locals 2
 
-    .line 166
+    .line 209
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v1, 0x1f
+    const/16 v1, 0x21
 
     if-ge v0, v1, :cond_1
 
+    const/16 v1, 0x20
+
+    if-lt v0, v1, :cond_0
+
     sget-object v0, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
 
-    const-string v1, "S"
+    const-string v1, "Tiramisu"
 
+    .line 211
     invoke-static {v1, v0}, Landroidx/core/os/BuildCompat;->isAtLeastPreReleaseCodename(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
@@ -112,5 +129,37 @@
     const/4 v0, 0x1
 
     :goto_1
+    return v0
+.end method
+
+.method public static isAtLeastU()Z
+    .locals 2
+
+    .line 226
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x21
+
+    if-lt v0, v1, :cond_0
+
+    sget-object v0, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
+
+    const-string v1, "UpsideDownCake"
+
+    .line 227
+    invoke-static {v1, v0}, Landroidx/core/os/BuildCompat;->isAtLeastPreReleaseCodename(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
     return v0
 .end method

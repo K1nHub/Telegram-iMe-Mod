@@ -5,27 +5,17 @@
 .implements Ljava/util/Comparator;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda237;
+# instance fields
+.field public final synthetic f$0:Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda237;
-
-    invoke-direct {v0}, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda237;-><init>()V
-
-    sput-object v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda237;->INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda237;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda237;->f$0:Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;
 
     return-void
 .end method
@@ -33,13 +23,15 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 0
+    .locals 1
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$Updates;
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda237;->f$0:Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$Updates;
+    check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    invoke-static {p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$3pSQHIE5KVSAL0bOic96026-RrE(Lorg/telegram/tgnet/TLRPC$Updates;Lorg/telegram/tgnet/TLRPC$Updates;)I
+    check-cast p2, Lorg/telegram/messenger/MessageObject;
+
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$QPvtx6--D1bpo0okzObBx6iLWDU(Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;)I
 
     move-result p1
 

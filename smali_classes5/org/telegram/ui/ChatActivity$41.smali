@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Z)V
     .locals 0
 
-    .line 8895
+    .line 8908
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$41;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-boolean p3, p0, Lorg/telegram/ui/ChatActivity$41;->val$firstButton:Z
@@ -39,15 +39,15 @@
 .method public setEditButton(Z)V
     .locals 1
 
-    .line 8898
+    .line 8911
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->setEditButton(Z)V
 
-    .line 8899
+    .line 8912
     iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$41;->val$firstButton:Z
 
     if-eqz v0, :cond_1
 
-    .line 8900
+    .line 8913
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->getTextView()Landroid/widget/TextView;
 
     move-result-object v0
@@ -75,7 +75,7 @@
 .method public updateColors()V
     .locals 5
 
-    .line 8906
+    .line 8919
     iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$41;->val$firstButton:Z
 
     const/4 v1, 0x0
@@ -93,7 +93,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 8907
+    .line 8920
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$41;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -113,7 +113,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 8908
+    .line 8921
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->getImageView()Landroid/widget/ImageView;
 
     move-result-object v0
@@ -132,7 +132,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 8909
+    .line 8922
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->getTextView()Landroid/widget/TextView;
 
     move-result-object v0

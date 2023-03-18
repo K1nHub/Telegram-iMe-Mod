@@ -186,7 +186,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 5
+    .locals 7
 
     const/4 v0, 0x1
 
@@ -243,42 +243,26 @@
     :cond_4
     iget-wide v3, p0, Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;->fee:D
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    iget-wide v5, p1, Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;->fee:D
 
-    move-result-object v1
-
-    iget-wide v3, p1, Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;->fee:D
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
     move-result v1
 
-    if-nez v1, :cond_5
+    if-eqz v1, :cond_5
 
     return v2
 
     :cond_5
     iget v1, p0, Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;->feeInDollars:F
 
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
     iget p1, p1, Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;->feeInDollars:F
 
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p1
-
-    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Ljava/lang/Float;->compare(FF)I
 
     move-result p1
 
-    if-nez p1, :cond_6
+    if-eqz p1, :cond_6
 
     return v2
 

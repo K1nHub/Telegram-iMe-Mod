@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/storage/data/manager/review/AppReviewManager$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/storage/data/manager/review/AppReviewManager;
 
-    invoke-static {v0, p1}, Lcom/smedialink/storage/data/manager/review/AppReviewManager;->$r8$lambda$WwPwBejnxy9SsdhBM1sTfa4VrWs(Lcom/smedialink/storage/data/manager/review/AppReviewManager;Lcom/google/android/play/core/tasks/Task;)V
+    invoke-static {v0, p1}, Lcom/smedialink/storage/data/manager/review/AppReviewManager;->$r8$lambda$xmpz5O9nNZrGs27H2amOGwHD0p0(Lcom/smedialink/storage/data/manager/review/AppReviewManager;Lcom/google/android/play/core/tasks/Task;)V
 
     return-void
 .end method

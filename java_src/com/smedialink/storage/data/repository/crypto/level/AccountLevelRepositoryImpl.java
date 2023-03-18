@@ -1,21 +1,17 @@
 package com.smedialink.storage.data.repository.crypto.level;
 
-import com.smedialink.storage.data.locale.prefs.model.AccountLevelMetadata;
 import com.smedialink.storage.data.network.api.own.AccountLevelApi;
 import com.smedialink.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.smedialink.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.smedialink.storage.data.network.model.request.crypto.level.ChangeRankVisibilityRequest;
-import com.smedialink.storage.data.network.model.response.base.ApiBaseResponse;
-import com.smedialink.storage.data.network.model.response.crypto.level.GetAccountLevelResponse;
-import com.smedialink.storage.data.network.model.response.crypto.level.GetAccountLevelVisibilityResponse;
-import com.smedialink.storage.data.utils.extentions.RxExtKt$handleError$1;
+import com.smedialink.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
+import com.smedialink.storage.data.utils.extentions.RxExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.smedialink.storage.domain.gateway.TelegramGateway;
 import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.crypto.level.AccountLevel;
 import com.smedialink.storage.domain.repository.crypto.level.AccountLevelRepository;
 import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
 import io.reactivex.Observable;
-import io.reactivex.functions.Function;
 import java.util.HashMap;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AccountLevelRepositoryImpl.kt */
@@ -46,26 +42,9 @@ public final class AccountLevelRepositoryImpl implements AccountLevelRepository 
 
     @Override // com.smedialink.storage.domain.repository.crypto.level.AccountLevelRepository
     public Observable<Result<Boolean>> changeLevelVisibility(boolean z) {
-        Observable<ApiBaseResponse<GetAccountLevelVisibilityResponse>> changeLevelVisibility = this.accountLevelApi.changeLevelVisibility(new ChangeRankVisibilityRequest(z));
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = changeLevelVisibility.map(new Function() { // from class: com.smedialink.storage.data.repository.crypto.level.AccountLevelRepositoryImpl$changeLevelVisibility$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                HashMap hashMap;
-                TelegramGateway telegramGateway;
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (response.isSuccess()) {
-                    hashMap = this.cachedUserAccountLevelVisibility;
-                    telegramGateway = this.telegramGateway;
-                    hashMap.put(Long.valueOf(telegramGateway.getSelectedAccountId()), Boolean.valueOf(((GetAccountLevelVisibilityResponse) response.getPayload()).getRankVisibility()));
-                    return Result.Companion.success(Boolean.TRUE);
-                }
-                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-            }
-        });
+        Observable<R> map = this.accountLevelApi.changeLevelVisibility(new ChangeRankVisibilityRequest(z)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1748xafaa2290(this.firebaseErrorHandler, this)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$handleError$1(this.errorHandler));
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1747x28a1e811(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -81,26 +60,9 @@ public final class AccountLevelRepositoryImpl implements AccountLevelRepository 
         } else {
             empty = Observable.empty();
         }
-        Observable<ApiBaseResponse<GetAccountLevelVisibilityResponse>> levelVisibility = this.accountLevelApi.getLevelVisibility();
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = levelVisibility.map(new Function() { // from class: com.smedialink.storage.data.repository.crypto.level.AccountLevelRepositoryImpl$getLevelVisibility$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                HashMap hashMap;
-                TelegramGateway telegramGateway;
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (response.isSuccess()) {
-                    hashMap = this.cachedUserAccountLevelVisibility;
-                    telegramGateway = this.telegramGateway;
-                    hashMap.put(Long.valueOf(telegramGateway.getSelectedAccountId()), Boolean.valueOf(((GetAccountLevelVisibilityResponse) response.getPayload()).getRankVisibility()));
-                    return Result.Companion.success(Boolean.valueOf(((GetAccountLevelVisibilityResponse) response.getPayload()).getRankVisibility()));
-                }
-                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-            }
-        });
+        Observable<R> map = this.accountLevelApi.getLevelVisibility().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1752x717ec450(this.firebaseErrorHandler, this)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable onErrorReturn = map.onErrorReturn(new RxExtKt$handleError$1(this.errorHandler));
+        Observable onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1751xa1617e51(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         Observable<Result<Boolean>> concat = Observable.concat(empty, onErrorReturn);
         Intrinsics.checkNotNullExpressionValue(concat, "concat(\n                …rorHandler)\n            )");
@@ -124,33 +86,10 @@ public final class AccountLevelRepositoryImpl implements AccountLevelRepository 
     }
 
     @Override // com.smedialink.storage.domain.repository.crypto.level.AccountLevelRepository
-    public Observable<Result<AccountLevel>> getAccountLevelRemote(final long j) {
-        Observable<ApiBaseResponse<GetAccountLevelResponse>> accountLevel = this.accountLevelApi.getAccountLevel(String.valueOf(j));
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = accountLevel.map(new Function() { // from class: com.smedialink.storage.data.repository.crypto.level.AccountLevelRepositoryImpl$getAccountLevelRemote$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                HashMap hashMap;
-                TelegramGateway telegramGateway;
-                CryptoPreferenceHelper cryptoPreferenceHelper;
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (!response.isSuccess()) {
-                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-                }
-                AccountLevel map2 = AccountLevel.Companion.map(((GetAccountLevelResponse) response.getPayload()).getAccountRank());
-                hashMap = this.cachedUserAccountLevel;
-                hashMap.put(Long.valueOf(j), map2);
-                telegramGateway = this.telegramGateway;
-                if (telegramGateway.getSelectedAccountId() == j) {
-                    cryptoPreferenceHelper = this.cryptoPreferenceHelper;
-                    cryptoPreferenceHelper.setAccountLevelMetadata(new AccountLevelMetadata(map2, 0));
-                }
-                return Result.Companion.success(map2);
-            }
-        });
+    public Observable<Result<AccountLevel>> getAccountLevelRemote(long j) {
+        Observable<R> map = this.accountLevelApi.getAccountLevel(String.valueOf(j)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1750xd866155d(this.firebaseErrorHandler, this, j)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<AccountLevel>> onErrorReturn = map.onErrorReturn(new RxExtKt$handleError$1(this.errorHandler));
+        Observable<Result<AccountLevel>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1749x17644ee4(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

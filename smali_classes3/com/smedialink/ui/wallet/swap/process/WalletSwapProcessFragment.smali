@@ -9,15 +9,15 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$Companion;,
         Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$NetworkSwitchType;,
         Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType;,
-        Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$Companion;,
         Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$WhenMappings;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletSwapProcessFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSwapProcessFragment.kt\ncom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 CollectionExt.kt\ncom/smedialink/utils/extentions/common/CollectionExtKt\n+ 7 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 8 TextView.kt\nandroidx/core/widget/TextViewKt\n*L\n1#1,482:1\n13#2,4:483\n56#3,6:487\n254#4,2:493\n254#4,2:495\n254#4,2:497\n254#4,2:499\n254#4,2:583\n1#5:501\n1#5:504\n1#5:509\n1#5:514\n1#5:519\n1#5:524\n1#5:529\n1#5:534\n1#5:539\n1#5:544\n1#5:575\n1#5:580\n4#6:502\n5#6,2:505\n4#6:507\n5#6,2:510\n4#6:512\n5#6,2:515\n4#6:517\n5#6,2:520\n4#6:522\n5#6,2:525\n4#6:527\n5#6,2:530\n4#6:532\n5#6,2:535\n4#6:537\n5#6,2:540\n4#6:542\n5#6,2:545\n4#6:573\n5#6,2:576\n4#6:578\n5#6,2:581\n2478#7:503\n2478#7:508\n2478#7:513\n2478#7:518\n2478#7:523\n2478#7:528\n2478#7:533\n2478#7:538\n2478#7:543\n2478#7:574\n2478#7:579\n58#8,23:547\n93#8,3:570\n*S KotlinDebug\n*F\n+ 1 WalletSwapProcessFragment.kt\ncom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment\n*L\n55#1:483,4\n56#1:487,6\n123#1:493,2\n124#1:495,2\n127#1:497,2\n128#1:499,2\n444#1:583,2\n384#1:504\n385#1:509\n388#1:514\n389#1:519\n390#1:524\n391#1:529\n394#1:534\n395#1:539\n399#1:544\n419#1:575\n422#1:580\n384#1:502\n384#1:505,2\n385#1:507\n385#1:510,2\n388#1:512\n388#1:515,2\n389#1:517\n389#1:520,2\n390#1:522\n390#1:525,2\n391#1:527\n391#1:530,2\n394#1:532\n394#1:535,2\n395#1:537\n395#1:540,2\n399#1:542\n399#1:545,2\n419#1:573\n419#1:576,2\n422#1:578\n422#1:581,2\n384#1:503\n385#1:508\n388#1:513\n389#1:518\n390#1:523\n391#1:528\n394#1:533\n395#1:538\n399#1:543\n419#1:574\n422#1:579\n418#1:547,23\n418#1:570,3\n*E\n"
+    value = "SMAP\nWalletSwapProcessFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSwapProcessFragment.kt\ncom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 CollectionExt.kt\ncom/smedialink/utils/extentions/common/CollectionExtKt\n+ 7 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 8 TextView.kt\nandroidx/core/widget/TextViewKt\n*L\n1#1,482:1\n13#2,4:483\n56#3,6:487\n262#4,2:493\n262#4,2:495\n262#4,2:497\n262#4,2:499\n262#4,2:583\n1#5:501\n1#5:504\n1#5:509\n1#5:514\n1#5:519\n1#5:524\n1#5:529\n1#5:534\n1#5:539\n1#5:544\n1#5:575\n1#5:580\n4#6:502\n5#6,2:505\n4#6:507\n5#6,2:510\n4#6:512\n5#6,2:515\n4#6:517\n5#6,2:520\n4#6:522\n5#6,2:525\n4#6:527\n5#6,2:530\n4#6:532\n5#6,2:535\n4#6:537\n5#6,2:540\n4#6:542\n5#6,2:545\n4#6:573\n5#6,2:576\n4#6:578\n5#6,2:581\n2634#7:503\n2634#7:508\n2634#7:513\n2634#7:518\n2634#7:523\n2634#7:528\n2634#7:533\n2634#7:538\n2634#7:543\n2634#7:574\n2634#7:579\n58#8,23:547\n93#8,3:570\n*S KotlinDebug\n*F\n+ 1 WalletSwapProcessFragment.kt\ncom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment\n*L\n55#1:483,4\n56#1:487,6\n123#1:493,2\n124#1:495,2\n127#1:497,2\n128#1:499,2\n444#1:583,2\n384#1:504\n385#1:509\n388#1:514\n389#1:519\n390#1:524\n391#1:529\n394#1:534\n395#1:539\n399#1:544\n419#1:575\n422#1:580\n384#1:502\n384#1:505,2\n385#1:507\n385#1:510,2\n388#1:512\n388#1:515,2\n389#1:517\n389#1:520,2\n390#1:522\n390#1:525,2\n391#1:527\n391#1:530,2\n394#1:532\n394#1:535,2\n395#1:537\n395#1:540,2\n399#1:542\n399#1:545,2\n419#1:573\n419#1:576,2\n422#1:578\n422#1:581,2\n384#1:503\n385#1:508\n388#1:513\n389#1:518\n390#1:523\n391#1:528\n394#1:533\n395#1:538\n399#1:543\n419#1:574\n422#1:579\n418#1:547,23\n418#1:570,3\n*E\n"
 .end annotation
 
 
@@ -51,90 +51,90 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$Da7wAc2k7hDSf6khlQmmnmvUPDM(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$AxoJ630dq-aB7vBQTeln_8ONIbk(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->renderState$lambda-22$lambda-11$lambda-10(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->renderState$lambda$22$lambda$11$lambda$10(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$MlJHSpew6geRB-6GGULppmjQZpg(Landroid/view/View;)V
+.method public static synthetic $r8$lambda$PPIKgkP-H4D_gtYKq7i_MRsFl6Q(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->renderState$lambda-22$lambda-19$lambda-18(Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->showChooseNetworkDialog$lambda$1(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$QOSBQv7d9RbsdQnIrEhT_1W_OR4(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
+.method public static synthetic $r8$lambda$UU26L8YZkoAJMaZSQYo1_ueXGCk(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->showSuccessSwapAlert$lambda-23(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->renderState$lambda$22$lambda$21$lambda$20(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$VU81mv4K6Pt8Nksgsu8BKG7q1lA(Lkotlin/jvm/functions/Function1;Lcom/smedialink/model/wallet/select/SelectableToken;)V
+.method public static synthetic $r8$lambda$Y5D2OMJbwBji2my13qP70iJqkZM(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->openSelectTokenDialog$lambda-25(Lkotlin/jvm/functions/Function1;Lcom/smedialink/model/wallet/select/SelectableToken;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->renderState$lambda$22$lambda$14$lambda$13(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$WJk6JS_o1LXpDD62s1RRULRGNOM(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
+.method public static synthetic $r8$lambda$a4ba0_v85ZgXW0G75fro0uTGNVA(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->showSuccessSwapAlert$lambda$23(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$YQ1mXndfAdlXeRpbyYFCeoptulU(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+.method public static synthetic $r8$lambda$aP6unOHNLawAclzK7a2LSBxVQIs(Lkotlin/jvm/functions/Function1;Lcom/smedialink/model/wallet/select/SelectableToken;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->showChooseNetworkDialog$lambda-1(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->openSelectTokenDialog$lambda$25(Lkotlin/jvm/functions/Function1;Lcom/smedialink/model/wallet/select/SelectableToken;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ZheKm7HivnCJwyC4eFB78xroZEc(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$aSHu4uh2VOuF1gGdp0pigP4U-aE(Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->renderState$lambda-22$lambda-8$lambda-7(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->renderState$lambda$22$lambda$19$lambda$18(Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$eTfUe_lmxuHON7GmbzHgeE1D1ao(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$bTx9RjIKrba6f16xoFOD73b7jrI(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->renderState$lambda-22$lambda-21$lambda-20(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->showApproveConfirmationDialog$lambda$44(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$jLNIMsQYor-7jN22f5Ku_y5c194(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$dd7N2cx3soksf4kY7gEuVCy1OYI(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->renderState$lambda-22$lambda-16$lambda-15(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$m6H0g07COaXgRxvLjYpzUVEhnHM(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$xHupvT5UM1uAS7eOWcA11ndOn74(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->renderState$lambda-22$lambda-14$lambda-13(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->renderState$lambda$22$lambda$16$lambda$15(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$pZJZOMvCVdKQK4DKhhu3tbu7aeo(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
+.method public static synthetic $r8$lambda$yk1PyFnESy7xpZ41tKkPfnMDjs0(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->showApproveConfirmationDialog$lambda-44(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->renderState$lambda$22$lambda$8$lambda$7(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
 
     return-void
 .end method
@@ -423,7 +423,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
+.method private static final getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -479,7 +479,7 @@
 
     const/16 v0, 0x8
 
-    .line 254
+    .line 262
     invoke-virtual {v6, v0}, Landroid/view/View;->setVisibility(I)V
 
     return-object v6
@@ -534,7 +534,7 @@
     return-void
 .end method
 
-.method private static final openSelectTokenDialog$lambda-25(Lkotlin/jvm/functions/Function1;Lcom/smedialink/model/wallet/select/SelectableToken;)V
+.method private static final openSelectTokenDialog$lambda$25(Lkotlin/jvm/functions/Function1;Lcom/smedialink/model/wallet/select/SelectableToken;)V
     .locals 1
 
     const-string v0, "$action"
@@ -551,7 +551,7 @@
     return-void
 .end method
 
-.method private static final renderState$lambda-22$lambda-11$lambda-10(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
+.method private static final renderState$lambda$22$lambda$11$lambda$10(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -582,7 +582,7 @@
     return-void
 .end method
 
-.method private static final renderState$lambda-22$lambda-14$lambda-13(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
+.method private static final renderState$lambda$22$lambda$14$lambda$13(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -599,7 +599,7 @@
     return-void
 .end method
 
-.method private static final renderState$lambda-22$lambda-16$lambda-15(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
+.method private static final renderState$lambda$22$lambda$16$lambda$15(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -616,13 +616,13 @@
     return-void
 .end method
 
-.method private static final renderState$lambda-22$lambda-19$lambda-18(Landroid/view/View;)V
+.method private static final renderState$lambda$22$lambda$19$lambda$18(Landroid/view/View;)V
     .locals 0
 
     return-void
 .end method
 
-.method private static final renderState$lambda-22$lambda-21$lambda-20(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
+.method private static final renderState$lambda$22$lambda$21$lambda$20(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -653,7 +653,7 @@
     return-void
 .end method
 
-.method private static final renderState$lambda-22$lambda-8$lambda-7(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
+.method private static final renderState$lambda$22$lambda$8$lambda$7(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -708,7 +708,7 @@
 
     move-result-object v0
 
-    const-string v1, ""
+    const-string v1, "setupActionBar$lambda$28$lambda$27$lambda$26"
 
     .line 371
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -779,7 +779,7 @@
 
     move-result-object v1
 
-    .line 2478
+    .line 2634
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -849,7 +849,7 @@
 
     move-result-object v1
 
-    .line 2478
+    .line 2634
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -895,7 +895,7 @@
 
     move-result-object v1
 
-    .line 2478
+    .line 2634
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -907,8 +907,6 @@
 
     const/4 v8, 0x0
 
-    const-string v9, ""
-
     if-eqz v2, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -917,6 +915,8 @@
 
     .line 5
     check-cast v2, Landroidx/appcompat/widget/AppCompatTextView;
+
+    const-string v9, "setupColors$lambda$38$lambda$31"
 
     .line 388
     invoke-static {v2, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -941,7 +941,7 @@
 
     move-result-object v1
 
-    .line 2478
+    .line 2634
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -960,14 +960,14 @@
     .line 5
     check-cast v2, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    const-string v10, "windowBackgroundWhite"
+    const-string v9, "windowBackgroundWhite"
 
     .line 389
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v10
+    move-result v9
 
-    invoke-virtual {v2, v10}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
+    invoke-virtual {v2, v9}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
     goto :goto_3
 
@@ -987,7 +987,7 @@
 
     move-result-object v1
 
-    .line 2478
+    .line 2634
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -997,7 +997,7 @@
 
     move-result v2
 
-    const-string v10, "windowBackgroundWhiteBlueHeader"
+    const-string v9, "windowBackgroundWhiteBlueHeader"
 
     if-eqz v2, :cond_4
 
@@ -1008,14 +1008,16 @@
     .line 5
     check-cast v2, Landroidx/appcompat/widget/AppCompatImageView;
 
+    const-string v10, "setupColors$lambda$38$lambda$33"
+
     .line 390
-    invoke-static {v2, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v10
+    move-result v9
 
-    invoke-static {v2, v10}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
+    invoke-static {v2, v9}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
 
     goto :goto_4
 
@@ -1043,7 +1045,7 @@
 
     move-result-object v1
 
-    .line 2478
+    .line 2634
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -1063,7 +1065,7 @@
     check-cast v2, Landroidx/appcompat/widget/AppCompatTextView;
 
     .line 392
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v6
 
@@ -1087,7 +1089,7 @@
 
     move-result-object v1
 
-    .line 2478
+    .line 2634
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -1106,8 +1108,10 @@
     .line 5
     check-cast v2, Landroidx/appcompat/widget/AppCompatTextView;
 
+    const-string v6, "setupColors$lambda$38$lambda$35"
+
     .line 394
-    invoke-static {v2, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v2}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
@@ -1129,7 +1133,7 @@
 
     move-result-object v1
 
-    .line 2478
+    .line 2634
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -1184,7 +1188,7 @@
 
     move-result-object v0
 
-    .line 2478
+    .line 2634
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1203,8 +1207,10 @@
     .line 5
     check-cast v1, Landroid/widget/LinearLayout;
 
+    const-string v2, "setupColors$lambda$38$lambda$37"
+
     .line 399
-    invoke-static {v1, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1, v3, v4, v8}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setRippleForeground$default(Landroid/view/View;ZILjava/lang/Object;)V
 
@@ -1230,9 +1236,9 @@
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 80
-    new-instance v2, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$setupListeners$lambda-43$$inlined$doAfterTextChanged$1;
+    new-instance v2, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$setupListeners$lambda$43$$inlined$doAfterTextChanged$1;
 
-    invoke-direct {v2, p0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$setupListeners$lambda-43$$inlined$doAfterTextChanged$1;-><init>(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
+    invoke-direct {v2, p0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$setupListeners$lambda$43$$inlined$doAfterTextChanged$1;-><init>(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
 
     .line 93
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
@@ -1266,7 +1272,7 @@
 
     move-result-object v2
 
-    .line 2478
+    .line 2634
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1326,7 +1332,7 @@
 
     move-result-object v1
 
-    .line 2478
+    .line 2634
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -1593,7 +1599,7 @@
     return-void
 .end method
 
-.method private static final showApproveConfirmationDialog$lambda-44(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
+.method private static final showApproveConfirmationDialog$lambda$44(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1610,7 +1616,7 @@
     return-void
 .end method
 
-.method private static final showChooseNetworkDialog$lambda-1(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+.method private static final showChooseNetworkDialog$lambda$1(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 1
 
     const-string v0, "$action"
@@ -1627,7 +1633,7 @@
     return-void
 .end method
 
-.method private static final showSuccessSwapAlert$lambda-23(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
+.method private static final showSuccessSwapAlert$lambda$23(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1856,15 +1862,12 @@
     .line 88
     iget-object v0, p0, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->timer:Landroid/os/CountDownTimer;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Landroid/os/CountDownTimer;->cancel()V
 
     .line 89
-    :goto_0
+    :cond_0
     invoke-super {p0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
 
     return-void
@@ -1899,15 +1902,13 @@
 
     aget p1, v0, p1
 
-    const-string v0, ""
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    if-eq p1, v0, :cond_1
 
-    if-eq p1, v1, :cond_1
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
-
-    if-eq p1, v2, :cond_0
+    if-eq p1, v1, :cond_0
 
     goto :goto_0
 
@@ -1915,22 +1916,24 @@
     :cond_0
     iget-object p1, p5, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->linearChooseTo:Landroid/widget/LinearLayout;
 
-    const-string v2, "linearChooseTo"
+    const-string v1, "linearChooseTo"
 
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
 
     .line 155
     iget-object p1, p5, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->editToAmount:Landroidx/appcompat/widget/AppCompatEditText;
 
+    const-string v1, "onTokenSelected$lambda$5$lambda$4"
+
     .line 156
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1, p3, p4}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->limitInputLength(Landroid/widget/EditText;II)V
 
     .line 157
-    invoke-static {p1, v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setAllowDecimals(Landroid/widget/EditText;Z)V
+    invoke-static {p1, v0}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setAllowDecimals(Landroid/widget/EditText;Z)V
 
     .line 158
     invoke-virtual {p2}, Lcom/smedialink/model/wallet/select/SelectableToken;->getTicker()Ljava/lang/String;
@@ -1963,22 +1966,24 @@
     :cond_1
     iget-object p1, p5, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->linearChooseFrom:Landroid/widget/LinearLayout;
 
-    const-string v2, "linearChooseFrom"
+    const-string v1, "linearChooseFrom"
 
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
 
     .line 145
     iget-object p1, p5, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->editFromAmount:Landroidx/appcompat/widget/AppCompatEditText;
 
+    const-string v1, "onTokenSelected$lambda$5$lambda$3"
+
     .line 146
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1, p3, p4}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->limitInputLength(Landroid/widget/EditText;II)V
 
     .line 147
-    invoke-static {p1, v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setAllowDecimals(Landroid/widget/EditText;Z)V
+    invoke-static {p1, v0}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setAllowDecimals(Landroid/widget/EditText;Z)V
 
     .line 148
     invoke-virtual {p0}, Lcom/smedialink/ui/base/WalletAuthFragment;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -1987,7 +1992,7 @@
 
     sget p4, Lorg/telegram/messenger/R$string;->wallet_amount_input_hint:I
 
-    new-array v0, v1, [Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/Object;
 
     const/4 v1, 0x0
 
@@ -2181,9 +2186,9 @@
     invoke-virtual {v3, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 179
-    new-instance v7, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda1;
+    new-instance v7, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda4;
 
-    invoke-direct {v7, v0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
+    invoke-direct {v7, v0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda4;-><init>(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
 
     invoke-virtual {v3, v7}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -2194,16 +2199,13 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_0
+    if-eqz v3, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v3}, Lcom/smedialink/model/wallet/select/SelectableToken;->getTicker()Ljava/lang/String;
 
     move-result-object v4
 
-    :goto_0
+    :cond_0
     iget-object v3, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->editToAmount:Landroidx/appcompat/widget/AppCompatEditText;
 
     invoke-virtual {v3, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
@@ -2246,7 +2248,7 @@
 
     invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
 
-    goto/16 :goto_3
+    goto/16 :goto_1
 
     .line 187
     :cond_1
@@ -2258,9 +2260,7 @@
     iget-object v3, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->buttonAction:Lcom/smedialink/ui/custom/ActionButton;
 
     .line 189
-    invoke-virtual/range {p0 .. p0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->getScreenType()Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType;
-
-    move-result-object v7
+    iget-object v7, v0, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->screenType:Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType;
 
     .line 190
     instance-of v8, v7, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Binance;
@@ -2277,7 +2277,7 @@
 
     move-result-object v7
 
-    goto :goto_1
+    goto :goto_0
 
     .line 191
     :cond_2
@@ -2296,7 +2296,7 @@
     move-result-object v7
 
     .line 189
-    :goto_1
+    :goto_0
     invoke-virtual {v3, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 193
@@ -2313,16 +2313,13 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_3
+    if-eqz v1, :cond_3
 
-    goto :goto_2
-
-    :cond_3
     invoke-virtual {v1}, Lcom/smedialink/model/wallet/select/SelectableToken;->getTicker()Ljava/lang/String;
 
     move-result-object v4
 
-    :goto_2
+    :cond_3
     iget-object v1, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->editToAmount:Landroidx/appcompat/widget/AppCompatEditText;
 
     invoke-virtual {v1, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
@@ -2356,7 +2353,7 @@
 
     invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
 
-    goto/16 :goto_3
+    goto/16 :goto_1
 
     .line 191
     :cond_4
@@ -2571,13 +2568,13 @@
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 226
-    new-instance v2, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda4;
+    new-instance v2, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda2;
 
-    invoke-direct {v2, v0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda4;-><init>(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
+    invoke-direct {v2, v0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    goto/16 :goto_3
+    goto/16 :goto_1
 
     .line 229
     :cond_6
@@ -2620,7 +2617,7 @@
 
     invoke-virtual {v3, v0, v4}, Lcom/smedialink/ui/custom/FeeView;->init(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/smedialink/ui/custom/FeeView$ChooseFeeType;)V
 
-    const-string v4, ""
+    const-string v4, "renderState$lambda$22$lambda$17"
 
     .line 236
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -2807,7 +2804,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_3
+    goto/16 :goto_1
 
     .line 249
     :cond_7
@@ -2850,7 +2847,7 @@
 
     invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
 
-    goto/16 :goto_3
+    goto/16 :goto_1
 
     .line 257
     :cond_8
@@ -2875,9 +2872,9 @@
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 260
-    new-instance v3, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda2;
+    new-instance v3, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda1;
 
-    invoke-direct {v3, v0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
+    invoke-direct {v3, v0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;)V
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -2980,7 +2977,7 @@
     invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
 
     :cond_9
-    :goto_3
+    :goto_1
     return-void
 .end method
 
@@ -3122,7 +3119,7 @@
     :cond_1
     const/16 p3, 0x8
 
-    .line 254
+    .line 262
     :goto_0
     invoke-virtual {p2, p3}, Landroid/view/View;->setVisibility(I)V
 
@@ -3140,7 +3137,7 @@
     :cond_2
     const/16 p5, 0x8
 
-    .line 254
+    .line 262
     :goto_1
     invoke-virtual {p1, p5}, Landroid/view/View;->setVisibility(I)V
 
@@ -3161,7 +3158,7 @@
     :cond_4
     const/16 p2, 0x8
 
-    .line 254
+    .line 262
     :goto_2
     invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 
@@ -3181,6 +3178,10 @@
     goto :goto_4
 
     :cond_5
+    const-string p2, "getItem(IdFabric.Menu.NETWORK_SWITCH)"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     if-eqz p4, :cond_6
 
     goto :goto_3
@@ -3188,7 +3189,7 @@
     :cond_6
     const/16 p5, 0x8
 
-    .line 254
+    .line 262
     :goto_3
     invoke-virtual {p1, p5}, Landroid/view/View;->setVisibility(I)V
 

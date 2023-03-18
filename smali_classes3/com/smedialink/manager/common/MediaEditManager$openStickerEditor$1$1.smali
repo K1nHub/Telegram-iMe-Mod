@@ -25,10 +25,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$E9CM0PraBiaBKram9FQfBzLHDZ0(Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Lcom/smedialink/manager/common/MediaEditManager;ZILjava/lang/String;I)V
+.method public static synthetic $r8$lambda$xkvGNreKm2EcMXO2me4tPJc8Nwg(Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Lcom/smedialink/manager/common/MediaEditManager;ZILjava/lang/String;I)V
     .locals 0
 
-    invoke-static/range {p0 .. p5}, Lcom/smedialink/manager/common/MediaEditManager$openStickerEditor$1$1;->sendButtonPressed$lambda-1(Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Lcom/smedialink/manager/common/MediaEditManager;ZILjava/lang/String;I)V
+    invoke-static/range {p0 .. p5}, Lcom/smedialink/manager/common/MediaEditManager$openStickerEditor$1$1;->sendButtonPressed$lambda$1(Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Lcom/smedialink/manager/common/MediaEditManager;ZILjava/lang/String;I)V
 
     return-void
 .end method
@@ -44,13 +44,13 @@
 
     iput-boolean p4, p0, Lcom/smedialink/manager/common/MediaEditManager$openStickerEditor$1$1;->$isVideo:Z
 
-    .line 275
+    .line 274
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$EmptyPhotoViewerProvider;-><init>()V
 
     return-void
 .end method
 
-.method private static final sendButtonPressed$lambda-1(Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Lcom/smedialink/manager/common/MediaEditManager;ZILjava/lang/String;I)V
+.method private static final sendButtonPressed$lambda$1(Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Lcom/smedialink/manager/common/MediaEditManager;ZILjava/lang/String;I)V
     .locals 1
 
     const-string v0, "$info"
@@ -61,7 +61,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 304
+    .line 303
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
     if-nez p5, :cond_0
@@ -76,19 +76,16 @@
     :goto_0
     iput-boolean p5, v0, Lorg/telegram/messenger/VideoEditedInfo;->muted:Z
 
-    .line 305
+    .line 304
     invoke-static {p1}, Lcom/smedialink/manager/common/MediaEditManager;->access$getDelegate$p(Lcom/smedialink/manager/common/MediaEditManager;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
 
     move-result-object p1
 
-    if-nez p1, :cond_1
+    if-eqz p1, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-interface {p1, p0, p2, p3, p4}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->sendEditedSticker(Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;ZILjava/lang/String;)V
 
-    :goto_1
+    :cond_1
     return-void
 .end method
 
@@ -115,19 +112,19 @@
 
     move-object/from16 v0, p0
 
-    .line 278
+    .line 277
     new-instance v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;
 
     invoke-direct {v2}, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;-><init>()V
 
-    .line 279
+    .line 278
     iget-object v1, v0, Lcom/smedialink/manager/common/MediaEditManager$openStickerEditor$1$1;->$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     iget-object v3, v0, Lcom/smedialink/manager/common/MediaEditManager$openStickerEditor$1$1;->$path:Ljava/lang/String;
 
     iget-boolean v4, v0, Lcom/smedialink/manager/common/MediaEditManager$openStickerEditor$1$1;->$isVideo:Z
 
-    .line 280
+    .line 279
     iget-object v5, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->imagePath:Ljava/lang/String;
 
     if-nez v5, :cond_0
@@ -140,44 +137,44 @@
     :goto_0
     iput-object v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->path:Ljava/lang/String;
 
-    .line 281
+    .line 280
     iget-object v3, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->thumbPath:Ljava/lang/String;
 
     iput-object v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->thumbPath:Ljava/lang/String;
 
-    .line 282
+    .line 281
     iget-object v3, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->editedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
     iput-object v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
-    .line 283
+    .line 282
     iput-boolean v4, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->isVideo:Z
 
-    .line 284
+    .line 283
     iget-object v3, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
 
     iput-object v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->entities:Ljava/util/ArrayList;
 
-    .line 285
+    .line 284
     iget-object v3, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->stickers:Ljava/util/ArrayList;
 
     iput-object v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->masks:Ljava/util/ArrayList;
 
-    .line 286
+    .line 285
     iget v1, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
 
     iput v1, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->ttl:I
 
     if-eqz v4, :cond_1
 
-    .line 289
+    .line 288
     iget-object v1, v0, Lcom/smedialink/manager/common/MediaEditManager$openStickerEditor$1$1;->this$0:Lcom/smedialink/manager/common/MediaEditManager;
 
     invoke-static {v1}, Lcom/smedialink/manager/common/MediaEditManager;->access$getParentFragment$p(Lcom/smedialink/manager/common/MediaEditManager;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v7
 
-    .line 291
+    .line 290
     iget-object v1, v0, Lcom/smedialink/manager/common/MediaEditManager$openStickerEditor$1$1;->this$0:Lcom/smedialink/manager/common/MediaEditManager;
 
     invoke-static {v1}, Lcom/smedialink/manager/common/MediaEditManager;->access$getParentFragment$p(Lcom/smedialink/manager/common/MediaEditManager;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -192,10 +189,10 @@
 
     invoke-static {v8, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 292
+    .line 291
     new-instance v6, Lcom/smedialink/model/dialog/ListDialogModel;
 
-    .line 293
+    .line 292
     sget v1, Lorg/telegram/messenger/R$string;->sticker_edit_send_as:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -212,7 +209,7 @@
 
     const/4 v3, 0x0
 
-    .line 297
+    .line 296
     sget v4, Lorg/telegram/messenger/R$string;->AttachGif:I
 
     const-string v5, "AttachGif"
@@ -225,7 +222,7 @@
 
     const/4 v3, 0x1
 
-    .line 298
+    .line 297
     sget v4, Lorg/telegram/messenger/R$string;->AttachVideo:I
 
     const-string v5, "AttachVideo"
@@ -236,7 +233,7 @@
 
     aput-object v4, v1, v3
 
-    .line 296
+    .line 295
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v13
@@ -247,10 +244,10 @@
 
     move-object v9, v6
 
-    .line 292
+    .line 291
     invoke-direct/range {v9 .. v15}, Lcom/smedialink/model/dialog/ListDialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 290
+    .line 289
     iget-object v3, v0, Lcom/smedialink/manager/common/MediaEditManager$openStickerEditor$1$1;->this$0:Lcom/smedialink/manager/common/MediaEditManager;
 
     new-instance v9, Lcom/smedialink/manager/common/MediaEditManager$openStickerEditor$1$1$$ExternalSyntheticLambda0;
@@ -273,12 +270,12 @@
 
     move-result-object v1
 
-    .line 289
+    .line 288
     invoke-virtual {v7, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     goto :goto_1
 
-    .line 312
+    .line 311
     :cond_1
     iget-object v1, v0, Lcom/smedialink/manager/common/MediaEditManager$openStickerEditor$1$1;->this$0:Lcom/smedialink/manager/common/MediaEditManager;
 
@@ -286,11 +283,8 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_2
+    if-eqz v1, :cond_2
 
-    goto :goto_1
-
-    :cond_2
     move/from16 v3, p3
 
     move/from16 v4, p4
@@ -299,6 +293,7 @@
 
     invoke-interface {v1, v2, v3, v4, v5}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->sendEditedSticker(Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;ZILjava/lang/String;)V
 
+    :cond_2
     :goto_1
     return-void
 .end method

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/GroupCallUserCell;I)V
     .locals 0
 
-    .line 822
+    .line 828
     iput-object p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$4;->this$0:Lorg/telegram/ui/Cells/GroupCallUserCell;
 
     iput p2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$4;->val$newStatus:I
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 825
+    .line 831
     iget-object p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$4;->this$0:Lorg/telegram/ui/Cells/GroupCallUserCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/GroupCallUserCell;->isSelfUser()Z
@@ -48,14 +48,14 @@
 
     if-nez p1, :cond_0
 
-    .line 826
+    .line 832
     iget-object p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$4;->this$0:Lorg/telegram/ui/Cells/GroupCallUserCell;
 
     iget v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$4;->val$newStatus:I
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Cells/GroupCallUserCell;->access$400(Lorg/telegram/ui/Cells/GroupCallUserCell;I)V
 
-    .line 828
+    .line 834
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$4;->this$0:Lorg/telegram/ui/Cells/GroupCallUserCell;
 

@@ -39,9 +39,8 @@ public abstract class WalletHomeTabFragment extends MvpFragment {
 
     public final void selectTab(int i) {
         WalletHomeView walletHomeView = this.parentView;
-        if (walletHomeView == null) {
-            return;
+        if (walletHomeView != null) {
+            walletHomeView.onTabSelected(i);
         }
-        walletHomeView.onTabSelected(i);
     }
 }

@@ -1,5 +1,6 @@
 package org.bouncycastle.util;
 
+import com.google.android.exoplayer2.analytics.AnalyticsListener;
 import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -58,7 +59,7 @@ public final class Strings {
         while (i2 < bArr.length) {
             if ((bArr[i2] & 240) == 240) {
                 int i6 = (((((bArr[i2] & 3) << 18) | ((bArr[i2 + 1] & 63) << 12)) | ((bArr[i2 + 2] & 63) << 6)) | (bArr[i2 + 3] & 63)) - 65536;
-                c = (char) ((i6 & 1023) | 56320);
+                c = (char) ((i6 & AnalyticsListener.EVENT_DRM_KEYS_LOADED) | 56320);
                 cArr[i5] = (char) (55296 | (i6 >> 10));
                 i2 += 4;
                 i5++;

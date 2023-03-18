@@ -72,7 +72,7 @@ public final class RadioCellsListDialogModel {
     }
 
     public String toString() {
-        return "RadioCellsListDialogModel(title=" + ((Object) this.title) + ", subtitle=" + ((Object) this.subtitle) + ", items=" + this.items + ", negativeButtonText=" + ((Object) this.negativeButtonText) + ')';
+        return "RadioCellsListDialogModel(title=" + this.title + ", subtitle=" + this.subtitle + ", items=" + this.items + ", negativeButtonText=" + this.negativeButtonText + ')';
     }
 
     public RadioCellsListDialogModel(String str, String str2, List<Pair<String, Boolean>> items, String str3) {

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/MusicActivity$$ExternalSyntheticLambda0;->f$0:Lorg/fork/ui/fragment/MusicActivity;
 
-    invoke-static {v0}, Lorg/fork/ui/fragment/MusicActivity;->$r8$lambda$b4xmHkVWxSnLSg0VuOCMu4JeCw0(Lorg/fork/ui/fragment/MusicActivity;)V
+    invoke-static {v0}, Lorg/fork/ui/fragment/MusicActivity;->$r8$lambda$O5AqhhkMMp_5qMtMT8rxf39slrs(Lorg/fork/ui/fragment/MusicActivity;)V
 
     return-void
 .end method

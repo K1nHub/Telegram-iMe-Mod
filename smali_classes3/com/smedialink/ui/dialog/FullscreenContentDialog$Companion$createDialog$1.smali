@@ -78,13 +78,10 @@
     .line 98
     iget-object p1, p0, Lcom/smedialink/ui/dialog/FullscreenContentDialog$Companion$createDialog$1;->$buttonActionListener:Lorg/fork/utils/Callbacks$Callback;
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {p1}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method

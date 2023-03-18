@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/SortingFilterSettingsActivity$$ExternalSyntheticLambda0;->f$0:Lorg/fork/ui/fragment/SortingFilterSettingsActivity;
 
-    invoke-static {v0}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity;->$r8$lambda$WwO4-l_jx8LJ96FKjQ1a7PNGUU0(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;)V
+    invoke-static {v0}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity;->$r8$lambda$ndZgZRGAZW6LvYunHpFRwMzG7Ts(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;)V
 
     return-void
 .end method

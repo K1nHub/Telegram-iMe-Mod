@@ -20,7 +20,7 @@ public final class WalletTokenBalanceDb {
         }
         if (obj instanceof WalletTokenBalanceDb) {
             WalletTokenBalanceDb walletTokenBalanceDb = (WalletTokenBalanceDb) obj;
-            return this.tgUserId == walletTokenBalanceDb.tgUserId && Intrinsics.areEqual(this.coinCode, walletTokenBalanceDb.coinCode) && Intrinsics.areEqual(Double.valueOf(this.total), Double.valueOf(walletTokenBalanceDb.total)) && Intrinsics.areEqual(Float.valueOf(this.totalInDollars), Float.valueOf(walletTokenBalanceDb.totalInDollars)) && Intrinsics.areEqual(Double.valueOf(this.rateToDollars), Double.valueOf(walletTokenBalanceDb.rateToDollars)) && Intrinsics.areEqual(Float.valueOf(this.ratePercentageChange24h), Float.valueOf(walletTokenBalanceDb.ratePercentageChange24h)) && Intrinsics.areEqual(this.networkType, walletTokenBalanceDb.networkType);
+            return this.tgUserId == walletTokenBalanceDb.tgUserId && Intrinsics.areEqual(this.coinCode, walletTokenBalanceDb.coinCode) && Double.compare(this.total, walletTokenBalanceDb.total) == 0 && Float.compare(this.totalInDollars, walletTokenBalanceDb.totalInDollars) == 0 && Double.compare(this.rateToDollars, walletTokenBalanceDb.rateToDollars) == 0 && Float.compare(this.ratePercentageChange24h, walletTokenBalanceDb.ratePercentageChange24h) == 0 && Intrinsics.areEqual(this.networkType, walletTokenBalanceDb.networkType);
         }
         return false;
     }

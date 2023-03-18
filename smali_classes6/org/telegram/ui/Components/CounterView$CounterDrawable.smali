@@ -25,6 +25,8 @@
 
 .field public circlePaint:Landroid/graphics/Paint;
 
+.field public circleScale:F
+
 .field private countAnimationInLayout:Landroid/text/StaticLayout;
 
 .field private countAnimationIncrement:Z
@@ -47,6 +49,10 @@
 
 .field currentCount:I
 
+.field private cx:F
+
+.field private cy:F
+
 .field private drawBackground:Z
 
 .field public gravity:I
@@ -55,7 +61,13 @@
 
 .field lastH:I
 
+.field private mute:Z
+
 .field private parent:Landroid/view/View;
+
+.field public radius:F
+
+.field private recentChatsMode:Z
 
 .field public rectF:Landroid/graphics/RectF;
 
@@ -90,84 +102,92 @@
 .end method
 
 .method public constructor <init>(Landroid/view/View;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 2
+    .locals 3
 
-    .line 122
+    .line 155
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, -0x1
-
-    .line 77
-    iput v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->animationType:I
-
-    .line 80
-    new-instance v0, Landroid/text/TextPaint;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Landroid/text/TextPaint;-><init>(I)V
-
-    iput-object v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
-
-    .line 81
-    new-instance v0, Landroid/graphics/RectF;
-
-    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
-
-    iput-object v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 87
+    .line 107
+    iput v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circleScale:F
+
+    const/4 v1, -0x1
+
+    .line 109
+    iput v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->animationType:I
+
+    .line 112
+    new-instance v1, Landroid/text/TextPaint;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v1, v2}, Landroid/text/TextPaint;-><init>(I)V
+
+    iput-object v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
+
+    .line 113
+    new-instance v1, Landroid/graphics/RectF;
+
+    invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
+
+    iput-object v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+
+    .line 119
     iput v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countChangeProgress:F
 
     const-string v0, "chat_goDownButtonCounter"
 
-    .line 98
+    .line 130
     iput-object v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textColorKey:Ljava/lang/String;
 
     const-string v0, "chat_goDownButtonCounterBackground"
 
-    .line 99
+    .line 131
     iput-object v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circleColorKey:Ljava/lang/String;
 
     const/16 v0, 0x11
 
-    .line 103
+    .line 135
     iput v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->gravity:I
 
-    .line 109
-    iput-boolean v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->drawBackground:Z
+    const/high16 v0, 0x41380000    # 11.5f
+
+    .line 138
+    iput v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->radius:F
+
+    .line 142
+    iput-boolean v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->drawBackground:Z
 
     const/4 v0, 0x0
 
-    .line 119
+    .line 152
     iput v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->type:I
 
-    .line 123
+    .line 156
     iput-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->parent:Landroid/view/View;
 
-    .line 124
+    .line 157
     iput-object p3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 125
+    .line 158
     iput-boolean p2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->drawBackground:Z
 
     if-eqz p2, :cond_0
 
-    .line 127
+    .line 160
     new-instance p1, Landroid/graphics/Paint;
 
-    invoke-direct {p1, v1}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {p1, v2}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circlePaint:Landroid/graphics/Paint;
 
     const/high16 p2, -0x1000000
 
-    .line 128
+    .line 161
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 130
+    .line 163
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
 
@@ -179,7 +199,28 @@
 
     invoke-virtual {p1, p2}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 131
+    .line 165
+    iget-boolean p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->recentChatsMode:Z
+
+    if-eqz p1, :cond_1
+
+    .line 166
+    iget-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
+
+    const/16 p2, 0x8
+
+    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p2
+
+    int-to-float p2, p2
+
+    invoke-virtual {p1, p2}, Landroid/text/TextPaint;->setTextSize(F)V
+
+    goto :goto_0
+
+    .line 168
+    :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
 
     const/16 p2, 0xd
@@ -192,13 +233,14 @@
 
     invoke-virtual {p1, p2}, Landroid/text/TextPaint;->setTextSize(F)V
 
+    :goto_0
     return-void
 .end method
 
 .method static synthetic access$002(Lorg/telegram/ui/Components/CounterView$CounterDrawable;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    .line 70
+    .line 80
     iput-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textColorKey:Ljava/lang/String;
 
     return-object p1
@@ -207,7 +249,7 @@
 .method static synthetic access$102(Lorg/telegram/ui/Components/CounterView$CounterDrawable;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    .line 70
+    .line 80
     iput-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circleColorKey:Ljava/lang/String;
 
     return-object p1
@@ -216,7 +258,7 @@
 .method static synthetic access$202(Lorg/telegram/ui/Components/CounterView$CounterDrawable;Z)Z
     .locals 0
 
-    .line 70
+    .line 80
     iput-boolean p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->reverseAnimation:Z
 
     return p1
@@ -225,7 +267,7 @@
 .method static synthetic access$302(Lorg/telegram/ui/Components/CounterView$CounterDrawable;Landroid/text/StaticLayout;)Landroid/text/StaticLayout;
     .locals 0
 
-    .line 70
+    .line 80
     iput-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countOldLayout:Landroid/text/StaticLayout;
 
     return-object p1
@@ -234,7 +276,7 @@
 .method static synthetic access$402(Lorg/telegram/ui/Components/CounterView$CounterDrawable;Landroid/text/StaticLayout;)Landroid/text/StaticLayout;
     .locals 0
 
-    .line 70
+    .line 80
     iput-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimationStableLayout:Landroid/text/StaticLayout;
 
     return-object p1
@@ -243,7 +285,7 @@
 .method static synthetic access$502(Lorg/telegram/ui/Components/CounterView$CounterDrawable;Landroid/text/StaticLayout;)Landroid/text/StaticLayout;
     .locals 0
 
-    .line 70
+    .line 80
     iput-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimationInLayout:Landroid/text/StaticLayout;
 
     return-object p1
@@ -252,41 +294,81 @@
 .method static synthetic access$600(Lorg/telegram/ui/Components/CounterView$CounterDrawable;)Landroid/view/View;
     .locals 0
 
-    .line 70
+    .line 80
     iget-object p0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->parent:Landroid/view/View;
 
     return-object p0
 .end method
 
 .method private drawInternal(Landroid/graphics/Canvas;)V
-    .locals 6
+    .locals 7
 
-    .line 146
-    iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->lastH:I
+    .line 183
+    iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->radius:F
 
-    const/16 v1, 0x17
+    const/high16 v1, 0x40000000    # 2.0f
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    mul-float v0, v0, v1
 
-    move-result v2
+    .line 184
+    iget v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->lastH:I
 
-    sub-int/2addr v0, v2
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
-    int-to-float v0, v0
+    move-result v3
 
-    const/high16 v2, 0x40000000    # 2.0f
-
-    div-float/2addr v0, v2
-
-    .line 147
-    iget v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
+    sub-int/2addr v2, v3
 
     int-to-float v2, v2
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->updateX(F)V
+    div-float/2addr v2, v1
 
-    .line 148
-    iget-object v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+    .line 185
+    iget v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
+
+    int-to-float v1, v1
+
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->updateX(F)V
+
+    .line 187
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->recentChatsMode:Z
+
+    if-eqz v1, :cond_0
+
+    .line 188
+    iget-object v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+
+    iget v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->cx:F
+
+    iget v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->cy:F
+
+    const/16 v4, 0x14
+
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v5
+
+    int-to-float v5, v5
+
+    add-float/2addr v5, v1
+
+    iget v6, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->cy:F
+
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    add-float/2addr v6, v4
+
+    invoke-virtual {v0, v1, v3, v5, v6}, Landroid/graphics/RectF;->set(FFFF)V
+
+    goto :goto_0
+
+    .line 190
+    :cond_0
+    iget-object v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
 
     iget v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->x:F
 
@@ -296,9 +378,13 @@
 
     add-float/2addr v4, v3
 
-    const/16 v5, 0xb
+    iget v5, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->radius:F
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    const/high16 v6, 0x3f000000    # 0.5f
+
+    sub-float/2addr v5, v6
+
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v5
 
@@ -306,116 +392,195 @@
 
     add-float/2addr v4, v5
 
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    add-float/2addr v0, v2
+
+    invoke-virtual {v1, v3, v2, v4, v0}, Landroid/graphics/RectF;->set(FFFF)V
+
+    .line 191
+    :goto_0
+    iget-object v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circlePaint:Landroid/graphics/Paint;
+
+    if-eqz v0, :cond_3
+
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->drawBackground:Z
+
+    if-eqz v0, :cond_3
+
+    const/4 v0, 0x0
+
+    .line 193
+    iget v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circleScale:F
+
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    cmpl-float v1, v1, v3
+
+    if-eqz v1, :cond_1
+
+    .line 194
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    .line 195
+    iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circleScale:F
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+
+    invoke-virtual {v1}, Landroid/graphics/RectF;->centerX()F
+
+    move-result v1
+
+    iget-object v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+
+    invoke-virtual {v3}, Landroid/graphics/RectF;->centerY()F
+
+    move-result v3
+
+    invoke-virtual {p1, v0, v0, v1, v3}, Landroid/graphics/Canvas;->scale(FFFF)V
+
+    const/4 v0, 0x1
+
+    .line 198
+    :cond_1
+    iget-object v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+
+    iget v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->radius:F
+
+    sget v4, Lorg/telegram/messenger/AndroidUtilities;->density:F
+
+    mul-float v5, v3, v4
+
+    mul-float v3, v3, v4
+
+    iget-object v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circlePaint:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v1, v5, v3, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+
+    .line 199
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->addServiceGradient:Z
+
+    if-eqz v1, :cond_2
+
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->hasGradientService()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 200
+    iget-object v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+
+    iget v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->radius:F
+
+    sget v4, Lorg/telegram/messenger/AndroidUtilities;->density:F
+
+    mul-float v5, v3, v4
+
+    mul-float v3, v3, v4
+
+    sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v1, v5, v3, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+
+    :cond_2
+    if-eqz v0, :cond_3
+
+    .line 203
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+
+    .line 206
+    :cond_3
+    iget-object v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLayout:Landroid/text/StaticLayout;
+
+    if-eqz v0, :cond_5
+
+    .line 207
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    .line 209
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->recentChatsMode:Z
+
+    const/4 v1, 0x4
+
+    if-eqz v0, :cond_4
+
+    .line 210
+    iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->cx:F
+
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    add-float/2addr v1, v0
+    add-float/2addr v0, v1
 
-    invoke-virtual {v2, v3, v0, v4, v1}, Landroid/graphics/RectF;->set(FFFF)V
+    iget v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->cy:F
 
-    .line 149
-    iget-object v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circlePaint:Landroid/graphics/Paint;
+    const/high16 v2, 0x40900000    # 4.5f
 
-    if-eqz v1, :cond_0
-
-    iget-boolean v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->drawBackground:Z
-
-    if-eqz v2, :cond_0
-
-    .line 150
-    iget-object v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
-
-    sget v3, Lorg/telegram/messenger/AndroidUtilities;->density:F
-
-    const/high16 v4, 0x41380000    # 11.5f
-
-    mul-float v5, v3, v4
-
-    mul-float v3, v3, v4
-
-    invoke-virtual {p1, v2, v5, v3, v1}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
-
-    .line 151
-    iget-boolean v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->addServiceGradient:Z
-
-    if-eqz v1, :cond_0
-
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->hasGradientService()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 152
-    iget-object v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
-
-    sget v2, Lorg/telegram/messenger/AndroidUtilities;->density:F
-
-    mul-float v3, v2, v4
-
-    mul-float v2, v2, v4
-
-    sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v1, v3, v2, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
-
-    .line 155
-    :cond_0
-    iget-object v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLayout:Landroid/text/StaticLayout;
-
-    if-eqz v1, :cond_1
-
-    .line 156
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
-
-    .line 157
-    iget v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLeft:F
-
-    const/4 v2, 0x4
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
 
     int-to-float v2, v2
 
-    add-float/2addr v0, v2
+    add-float/2addr v1, v2
 
-    invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 158
+    goto :goto_1
+
+    .line 212
+    :cond_4
+    iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLeft:F
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    add-float/2addr v2, v1
+
+    invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->translate(FF)V
+
+    .line 213
+    :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 159
+    .line 214
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    :cond_1
+    :cond_5
     return-void
 .end method
 
 .method private getStringOfCCount(I)Ljava/lang/String;
     .locals 1
 
-    .line 275
+    .line 330
     iget-boolean v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->shortFormat:Z
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 276
+    .line 331
     invoke-static {p1, v0}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
 
     move-result-object p1
 
     return-object p1
 
-    .line 278
+    .line 333
     :cond_0
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
@@ -427,7 +592,7 @@
 .method private getThemedColor(Ljava/lang/String;)I
     .locals 1
 
-    .line 436
+    .line 505
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     if-eqz v0, :cond_0
@@ -444,7 +609,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 437
+    .line 506
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
@@ -463,7 +628,7 @@
 .method private synthetic lambda$setCount$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 201
+    .line 256
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -476,12 +641,12 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countChangeProgress:F
 
-    .line 202
+    .line 257
     iget-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->parent:Landroid/view/View;
 
     if-eqz p1, :cond_0
 
-    .line 203
+    .line 258
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
     :cond_0
@@ -491,7 +656,7 @@
 .method private updateX(F)V
     .locals 5
 
-    .line 406
+    .line 475
     iget-boolean v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->drawBackground:Z
 
     const/4 v1, 0x0
@@ -511,7 +676,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 407
+    .line 476
     :goto_0
     iget v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->gravity:I
 
@@ -521,7 +686,7 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 408
+    .line 477
     iget v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->width:I
 
     int-to-float v2, v2
@@ -530,7 +695,7 @@
 
     iput v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLeft:F
 
-    .line 409
+    .line 478
     iget v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->horizontalPadding:F
 
     cmpl-float v1, v3, v1
@@ -541,7 +706,7 @@
 
     add-float/2addr v3, v1
 
-    .line 410
+    .line 479
     invoke-static {v3, p1}, Ljava/lang/Math;->max(FF)F
 
     move-result p1
@@ -555,7 +720,7 @@
     :cond_1
     sub-float/2addr v2, p1
 
-    .line 412
+    .line 481
     iput v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLeft:F
 
     goto :goto_1
@@ -565,12 +730,12 @@
 
     if-ne v2, v1, :cond_3
 
-    .line 415
+    .line 484
     iput v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLeft:F
 
     goto :goto_1
 
-    .line 417
+    .line 486
     :cond_3
     iget v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->width:I
 
@@ -586,7 +751,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLeft:F
 
-    .line 419
+    .line 488
     :goto_1
     iget p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLeft:F
 
@@ -602,297 +767,373 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 11
 
-    .line 282
+    .line 337
     iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->type:I
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_3
 
     const/4 v2, 0x2
 
-    if-eq v0, v2, :cond_1
+    if-eq v0, v2, :cond_3
 
-    .line 283
+    .line 338
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textColorKey:Ljava/lang/String;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->getThemedColor(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 284
+    .line 339
     iget-object v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circleColorKey:Ljava/lang/String;
 
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->getThemedColor(Ljava/lang/String;)I
 
     move-result v2
 
-    .line 285
+    .line 341
+    iget-boolean v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->recentChatsMode:Z
+
+    if-eqz v3, :cond_1
+
+    .line 342
+    iget-boolean v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->mute:Z
+
+    if-eqz v2, :cond_0
+
+    sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_countGrayPaint:Landroid/graphics/Paint;
+
+    goto :goto_0
+
+    :cond_0
+    sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_countPaint:Landroid/graphics/Paint;
+
+    :goto_0
+    invoke-virtual {v2}, Landroid/graphics/Paint;->getColor()I
+
+    move-result v2
+
+    .line 345
+    :cond_1
     iget v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textColor:I
 
-    if-eq v3, v0, :cond_0
+    if-eq v3, v0, :cond_2
 
-    .line 286
+    .line 346
     iput v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textColor:I
 
-    .line 287
+    .line 347
     iget-object v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v3, v0}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 289
-    :cond_0
+    .line 349
+    :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circlePaint:Landroid/graphics/Paint;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3
 
     iget v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circleColor:I
 
-    if-eq v3, v2, :cond_1
+    if-eq v3, v2, :cond_3
 
-    .line 290
+    .line 350
     iput v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circleColor:I
 
-    .line 291
+    .line 351
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 294
-    :cond_1
+    .line 354
+    :cond_3
     iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countChangeProgress:F
 
     const/high16 v2, 0x3f800000    # 1.0f
 
     cmpl-float v3, v0, v2
 
-    if-eqz v3, :cond_12
+    if-eqz v3, :cond_16
 
-    .line 295
+    .line 355
     iget v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->animationType:I
 
     const/high16 v4, 0x40000000    # 2.0f
 
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_14
 
-    if-ne v3, v1, :cond_2
+    if-ne v3, v1, :cond_4
 
-    goto/16 :goto_8
+    goto/16 :goto_a
 
-    :cond_2
+    :cond_4
     mul-float v0, v0, v4
 
     cmpl-float v3, v0, v2
 
-    if-lez v3, :cond_3
+    if-lez v3, :cond_5
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 310
-    :cond_3
+    .line 370
+    :cond_5
     iget v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->lastH:I
 
-    const/16 v5, 0x17
+    iget v5, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->radius:F
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    mul-float v5, v5, v4
 
-    move-result v6
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
-    sub-int/2addr v3, v6
+    move-result v5
+
+    sub-int/2addr v3, v5
 
     int-to-float v3, v3
 
     div-float/2addr v3, v4
 
-    .line 312
-    iget v6, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
+    .line 372
+    iget v5, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
 
-    iget v7, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidthOld:I
+    iget v6, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidthOld:I
 
-    if-ne v6, v7, :cond_4
-
-    int-to-float v6, v6
-
-    goto :goto_0
-
-    :cond_4
-    int-to-float v6, v6
-
-    mul-float v6, v6, v0
-
-    int-to-float v7, v7
-
-    sub-float v8, v2, v0
-
-    mul-float v7, v7, v8
-
-    add-float/2addr v6, v7
-
-    .line 317
-    :goto_0
-    invoke-direct {p0, v6}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->updateX(F)V
-
-    .line 320
-    iget-boolean v7, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimationIncrement:Z
-
-    if-eqz v7, :cond_6
-
-    .line 321
-    iget v7, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countChangeProgress:F
-
-    const v8, 0x3dcccccd    # 0.1f
-
-    const/high16 v9, 0x3f000000    # 0.5f
-
-    cmpg-float v10, v7, v9
-
-    if-gtz v10, :cond_5
-
-    .line 322
-    sget-object v9, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
-
-    mul-float v7, v7, v4
-
-    invoke-virtual {v9, v7}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
-
-    move-result v4
-
-    goto :goto_1
-
-    .line 324
-    :cond_5
-    sget-object v10, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_IN:Lorg/telegram/ui/Components/CubicBezierInterpolator;
-
-    sub-float/2addr v7, v9
-
-    mul-float v7, v7, v4
-
-    sub-float v4, v2, v7
-
-    invoke-virtual {v10, v4}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
-
-    move-result v4
-
-    :goto_1
-    mul-float v4, v4, v8
-
-    add-float/2addr v4, v2
-
-    goto :goto_2
-
-    :cond_6
-    const/high16 v4, 0x3f800000    # 1.0f
-
-    .line 328
-    :goto_2
-    iget-object v7, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
-
-    iget v8, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->x:F
-
-    add-float/2addr v6, v8
-
-    const/16 v9, 0xb
-
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    int-to-float v9, v9
-
-    add-float/2addr v6, v9
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v5
+    if-ne v5, v6, :cond_6
 
     int-to-float v5, v5
 
-    add-float/2addr v5, v3
+    goto :goto_1
 
-    invoke-virtual {v7, v8, v3, v6, v5}, Landroid/graphics/RectF;->set(FFFF)V
+    :cond_6
+    int-to-float v5, v5
 
-    .line 329
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+    mul-float v5, v5, v0
 
-    .line 330
-    iget-object v5, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+    int-to-float v6, v6
 
-    invoke-virtual {v5}, Landroid/graphics/RectF;->centerX()F
-
-    move-result v5
-
-    iget-object v6, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
-
-    invoke-virtual {v6}, Landroid/graphics/RectF;->centerY()F
-
-    move-result v6
-
-    invoke-virtual {p1, v4, v4, v5, v6}, Landroid/graphics/Canvas;->scale(FFFF)V
-
-    .line 331
-    iget-boolean v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->drawBackground:Z
-
-    if-eqz v4, :cond_7
-
-    iget-object v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circlePaint:Landroid/graphics/Paint;
-
-    if-eqz v4, :cond_7
-
-    .line 332
-    iget-object v5, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
-
-    sget v6, Lorg/telegram/messenger/AndroidUtilities;->density:F
-
-    const/high16 v7, 0x41380000    # 11.5f
-
-    mul-float v8, v6, v7
+    sub-float v7, v2, v0
 
     mul-float v6, v6, v7
 
-    invoke-virtual {p1, v5, v8, v6, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    add-float/2addr v5, v6
 
-    .line 333
-    iget-boolean v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->addServiceGradient:Z
+    .line 377
+    :goto_1
+    invoke-direct {p0, v5}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->updateX(F)V
 
-    if-eqz v4, :cond_7
+    .line 380
+    iget-boolean v6, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimationIncrement:Z
 
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->hasGradientService()Z
+    const/high16 v7, 0x3f000000    # 0.5f
 
-    move-result v4
+    if-eqz v6, :cond_8
 
-    if-eqz v4, :cond_7
+    .line 381
+    iget v6, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countChangeProgress:F
 
-    .line 334
-    iget-object v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+    const v8, 0x3dcccccd    # 0.1f
 
-    sget v5, Lorg/telegram/messenger/AndroidUtilities;->density:F
+    cmpg-float v9, v6, v7
 
-    mul-float v6, v5, v7
+    if-gtz v9, :cond_7
 
-    mul-float v5, v5, v7
+    .line 382
+    sget-object v9, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    sget-object v7, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
+    mul-float v6, v6, v4
 
-    invoke-virtual {p1, v4, v6, v5, v7}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v9, v6}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
-    .line 337
+    move-result v6
+
+    goto :goto_2
+
+    .line 384
     :cond_7
-    iget-object v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+    sget-object v9, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_IN:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    invoke-virtual {p1, v4}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/RectF;)Z
+    sub-float/2addr v6, v7
 
-    .line 339
-    iget-boolean v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->reverseAnimation:Z
+    mul-float v6, v6, v4
 
-    iget-boolean v5, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimationIncrement:Z
+    sub-float v6, v2, v6
 
-    if-eq v4, v5, :cond_8
+    invoke-virtual {v9, v6}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
+
+    move-result v6
+
+    :goto_2
+    mul-float v6, v6, v8
+
+    add-float/2addr v6, v2
 
     goto :goto_3
 
     :cond_8
+    const/high16 v6, 0x3f800000    # 1.0f
+
+    .line 388
+    :goto_3
+    iget-object v8, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+
+    iget v9, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->x:F
+
+    add-float/2addr v5, v9
+
+    iget v10, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->radius:F
+
+    sub-float/2addr v10, v7
+
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+
+    move-result v7
+
+    int-to-float v7, v7
+
+    add-float/2addr v5, v7
+
+    iget v7, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->radius:F
+
+    mul-float v7, v7, v4
+
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    add-float/2addr v4, v3
+
+    invoke-virtual {v8, v9, v3, v5, v4}, Landroid/graphics/RectF;->set(FFFF)V
+
+    .line 389
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    .line 390
+    iget-object v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+
+    invoke-virtual {v4}, Landroid/graphics/RectF;->centerX()F
+
+    move-result v4
+
+    iget-object v5, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+
+    invoke-virtual {v5}, Landroid/graphics/RectF;->centerY()F
+
+    move-result v5
+
+    invoke-virtual {p1, v6, v6, v4, v5}, Landroid/graphics/Canvas;->scale(FFFF)V
+
+    .line 392
+    iget v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circleScale:F
+
+    const/4 v5, 0x0
+
+    cmpl-float v4, v4, v2
+
+    if-eqz v4, :cond_9
+
+    .line 394
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    .line 395
+    iget v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circleScale:F
+
+    iget-object v6, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+
+    invoke-virtual {v6}, Landroid/graphics/RectF;->centerX()F
+
+    move-result v6
+
+    iget-object v7, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+
+    invoke-virtual {v7}, Landroid/graphics/RectF;->centerY()F
+
+    move-result v7
+
+    invoke-virtual {p1, v4, v4, v6, v7}, Landroid/graphics/Canvas;->scale(FFFF)V
+
+    const/4 v4, 0x1
+
+    goto :goto_4
+
+    :cond_9
+    const/4 v4, 0x0
+
+    .line 397
+    :goto_4
+    iget-boolean v6, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->drawBackground:Z
+
+    if-eqz v6, :cond_a
+
+    iget-object v6, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->circlePaint:Landroid/graphics/Paint;
+
+    if-eqz v6, :cond_a
+
+    .line 398
+    iget-object v7, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+
+    iget v8, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->radius:F
+
+    sget v9, Lorg/telegram/messenger/AndroidUtilities;->density:F
+
+    mul-float v10, v8, v9
+
+    mul-float v8, v8, v9
+
+    invoke-virtual {p1, v7, v10, v8, v6}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+
+    .line 399
+    iget-boolean v6, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->addServiceGradient:Z
+
+    if-eqz v6, :cond_a
+
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->hasGradientService()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_a
+
+    .line 400
+    iget-object v6, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+
+    iget v7, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->radius:F
+
+    sget v8, Lorg/telegram/messenger/AndroidUtilities;->density:F
+
+    mul-float v9, v7, v8
+
+    mul-float v7, v7, v8
+
+    sget-object v8, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v6, v9, v7, v8}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+
+    :cond_a
+    if-eqz v4, :cond_b
+
+    .line 404
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+
+    .line 406
+    :cond_b
+    iget-object v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+
+    invoke-virtual {p1, v4}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/RectF;)Z
+
+    .line 408
+    iget-boolean v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->reverseAnimation:Z
+
+    iget-boolean v6, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimationIncrement:Z
+
+    if-eq v4, v6, :cond_c
+
+    goto :goto_5
+
+    :cond_c
     const/4 v1, 0x0
 
-    .line 340
-    :goto_3
+    .line 409
+    :goto_5
     iget-object v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimationInLayout:Landroid/text/StaticLayout;
 
     const/high16 v5, 0x437f0000    # 255.0f
@@ -901,12 +1142,12 @@
 
     const/16 v7, 0xd
 
-    if-eqz v4, :cond_a
+    if-eqz v4, :cond_e
 
-    .line 341
+    .line 410
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 342
+    .line 411
     iget v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLeft:F
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -921,14 +1162,14 @@
 
     move-result v9
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_d
 
-    goto :goto_4
+    goto :goto_6
 
-    :cond_9
+    :cond_d
     neg-int v9, v9
 
-    :goto_4
+    :goto_6
     int-to-float v9, v9
 
     sub-float v10, v2, v0
@@ -939,7 +1180,7 @@
 
     invoke-virtual {p1, v4, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 343
+    .line 412
     iget-object v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
 
     mul-float v8, v0, v5
@@ -948,26 +1189,26 @@
 
     invoke-virtual {v4, v8}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 344
+    .line 413
     iget-object v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimationInLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v4, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 345
+    .line 414
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    goto :goto_6
+    goto :goto_8
 
-    .line 346
-    :cond_a
+    .line 415
+    :cond_e
     iget-object v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLayout:Landroid/text/StaticLayout;
 
-    if-eqz v4, :cond_c
+    if-eqz v4, :cond_10
 
-    .line 347
+    .line 416
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 348
+    .line 417
     iget v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLeft:F
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -982,14 +1223,14 @@
 
     move-result v9
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_f
 
-    goto :goto_5
+    goto :goto_7
 
-    :cond_b
+    :cond_f
     neg-int v9, v9
 
-    :goto_5
+    :goto_7
     int-to-float v9, v9
 
     sub-float v10, v2, v0
@@ -1000,7 +1241,7 @@
 
     invoke-virtual {p1, v4, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 349
+    .line 418
     iget-object v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
 
     mul-float v8, v0, v5
@@ -1009,25 +1250,25 @@
 
     invoke-virtual {v4, v8}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 350
+    .line 419
     iget-object v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v4, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 351
+    .line 420
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 354
-    :cond_c
-    :goto_6
+    .line 423
+    :cond_10
+    :goto_8
     iget-object v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countOldLayout:Landroid/text/StaticLayout;
 
-    if-eqz v4, :cond_e
+    if-eqz v4, :cond_12
 
-    .line 355
+    .line 424
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 356
+    .line 425
     iget v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLeft:F
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1038,7 +1279,7 @@
 
     add-float/2addr v8, v3
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_11
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1046,14 +1287,14 @@
 
     neg-int v1, v1
 
-    goto :goto_7
+    goto :goto_9
 
-    :cond_d
+    :cond_11
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    :goto_7
+    :goto_9
     int-to-float v1, v1
 
     mul-float v1, v1, v0
@@ -1062,7 +1303,7 @@
 
     invoke-virtual {p1, v4, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 357
+    .line 426
     iget-object v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
 
     sub-float/2addr v2, v0
@@ -1073,26 +1314,26 @@
 
     invoke-virtual {v1, v0}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 358
+    .line 427
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countOldLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 359
+    .line 428
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 362
-    :cond_e
+    .line 431
+    :cond_12
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimationStableLayout:Landroid/text/StaticLayout;
 
     const/16 v1, 0xff
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_13
 
-    .line 363
+    .line 432
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 364
+    .line 433
     iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLeft:F
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1105,40 +1346,40 @@
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 365
+    .line 434
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 366
+    .line 435
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimationStableLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 367
+    .line 436
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 369
-    :cond_f
+    .line 438
+    :cond_13
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 370
+    .line 439
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    goto :goto_a
+    goto :goto_c
 
-    .line 296
-    :cond_10
-    :goto_8
+    .line 356
+    :cond_14
+    :goto_a
     iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
 
     int-to-float v0, v0
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->updateX(F)V
 
-    .line 297
+    .line 357
     iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLeft:F
 
     iget v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
@@ -1149,61 +1390,61 @@
 
     add-float/2addr v0, v1
 
-    .line 298
+    .line 358
     iget v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->lastH:I
 
     int-to-float v1, v1
 
     div-float/2addr v1, v4
 
-    .line 299
+    .line 359
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 300
+    .line 360
     iget v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->animationType:I
 
-    if-nez v3, :cond_11
+    if-nez v3, :cond_15
 
     iget v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countChangeProgress:F
 
-    goto :goto_9
+    goto :goto_b
 
-    :cond_11
+    :cond_15
     iget v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countChangeProgress:F
 
     sub-float/2addr v2, v3
 
-    .line 301
-    :goto_9
+    .line 361
+    :goto_b
     invoke-virtual {p1, v2, v2, v0, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 302
+    .line 362
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->drawInternal(Landroid/graphics/Canvas;)V
 
-    .line 303
+    .line 363
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    goto :goto_a
+    goto :goto_c
 
-    .line 373
-    :cond_12
+    .line 442
+    :cond_16
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->drawInternal(Landroid/graphics/Canvas;)V
 
-    :goto_a
+    :goto_c
     return-void
 .end method
 
 .method public getCenterX()F
     .locals 3
 
-    .line 423
+    .line 492
     iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
 
     int-to-float v0, v0
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->updateX(F)V
 
-    .line 424
+    .line 493
     iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLeft:F
 
     iget v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
@@ -1219,6 +1460,37 @@
     return v0
 .end method
 
+.method public getWidth()I
+    .locals 3
+
+    .line 510
+    iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->currentCount:I
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
+
+    iget v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->radius:F
+
+    const/high16 v2, 0x3f000000    # 0.5f
+
+    sub-float/2addr v1, v2
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    :goto_0
+    return v0
+.end method
+
 .method public setCount(IZ)V
     .locals 19
 
@@ -1226,20 +1498,20 @@
 
     move/from16 v1, p1
 
-    .line 164
+    .line 219
     iget v2, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->currentCount:I
 
     if-ne v1, v2, :cond_0
 
     return-void
 
-    .line 167
+    .line 222
     :cond_0
     iget-object v2, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v2, :cond_1
 
-    .line 168
+    .line 223
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_1
@@ -1247,7 +1519,7 @@
 
     if-lez v1, :cond_2
 
-    .line 170
+    .line 225
     iget-boolean v3, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->updateVisibility:Z
 
     if-eqz v3, :cond_2
@@ -1256,10 +1528,10 @@
 
     if-eqz v3, :cond_2
 
-    .line 171
+    .line 226
     invoke-virtual {v3, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 173
+    .line 228
     :cond_2
     iget v3, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->currentCount:I
 
@@ -1285,12 +1557,12 @@
 
     if-nez v3, :cond_7
 
-    .line 177
+    .line 232
     iput v1, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->currentCount:I
 
     if-nez v1, :cond_5
 
-    .line 179
+    .line 234
     iget-boolean v1, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->updateVisibility:Z
 
     if-eqz v1, :cond_4
@@ -1301,19 +1573,19 @@
 
     const/16 v2, 0x8
 
-    .line 180
+    .line 235
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     :cond_4
     return-void
 
-    .line 184
+    .line 239
     :cond_5
     invoke-direct/range {p0 .. p1}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->getStringOfCCount(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 185
+    .line 240
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1338,7 +1610,7 @@
 
     iput v2, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
 
-    .line 186
+    .line 241
     new-instance v2, Landroid/text/StaticLayout;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
@@ -1361,18 +1633,18 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLayout:Landroid/text/StaticLayout;
 
-    .line 187
+    .line 242
     iget-object v1, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->parent:Landroid/view/View;
 
     if-eqz v1, :cond_6
 
-    .line 188
+    .line 243
     invoke-virtual {v1}, Landroid/view/View;->invalidate()V
 
     :cond_6
     return-void
 
-    .line 192
+    .line 247
     :cond_7
     invoke-direct/range {p0 .. p1}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->getStringOfCCount(I)Ljava/lang/String;
 
@@ -1380,25 +1652,25 @@
 
     if-eqz v3, :cond_10
 
-    .line 195
+    .line 250
     iget-object v3, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v3, :cond_8
 
-    .line 196
+    .line 251
     invoke-virtual {v3}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_8
     const/4 v3, 0x0
 
-    .line 198
+    .line 253
     iput v3, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countChangeProgress:F
 
     const/4 v3, 0x2
 
     new-array v6, v3, [F
 
-    .line 199
+    .line 254
     fill-array-data v6, :array_0
 
     invoke-static {v6}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -1407,14 +1679,14 @@
 
     iput-object v6, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimator:Landroid/animation/ValueAnimator;
 
-    .line 200
+    .line 255
     new-instance v7, Lorg/telegram/ui/Components/CounterView$CounterDrawable$$ExternalSyntheticLambda0;
 
     invoke-direct {v7, v0}, Lorg/telegram/ui/Components/CounterView$CounterDrawable$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/CounterView$CounterDrawable;)V
 
     invoke-virtual {v6, v7}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 206
+    .line 261
     iget-object v6, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v7, Lorg/telegram/ui/Components/CounterView$CounterDrawable$1;
@@ -1423,24 +1695,24 @@
 
     invoke-virtual {v6, v7}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 222
+    .line 277
     iget v6, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->currentCount:I
 
     const/4 v7, 0x1
 
     if-gtz v6, :cond_9
 
-    .line 223
+    .line 278
     iput v2, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->animationType:I
 
-    .line 224
+    .line 279
     iget-object v3, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v8, 0xdc
 
     invoke-virtual {v3, v8, v9}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 225
+    .line 280
     iget-object v3, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v6, Landroid/view/animation/OvershootInterpolator;
@@ -1454,17 +1726,17 @@
     :cond_9
     if-nez v1, :cond_a
 
-    .line 227
+    .line 282
     iput v7, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->animationType:I
 
-    .line 228
+    .line 283
     iget-object v3, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v8, 0x96
 
     invoke-virtual {v3, v8, v9}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 229
+    .line 284
     iget-object v3, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v6, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -1473,38 +1745,38 @@
 
     goto :goto_1
 
-    .line 231
+    .line 286
     :cond_a
     iput v3, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->animationType:I
 
-    .line 232
+    .line 287
     iget-object v3, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v8, 0x1ae
 
     invoke-virtual {v3, v8, v9}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 233
+    .line 288
     iget-object v3, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v6, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v3, v6}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 235
+    .line 290
     :goto_1
     iget-object v3, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLayout:Landroid/text/StaticLayout;
 
     if-eqz v3, :cond_e
 
-    .line 236
+    .line 291
     iget v3, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->currentCount:I
 
     invoke-direct {v0, v3}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->getStringOfCCount(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 238
+    .line 293
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v6
@@ -1515,24 +1787,24 @@
 
     if-ne v6, v8, :cond_d
 
-    .line 239
+    .line 294
     new-instance v10, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v10, v3}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 240
+    .line 295
     new-instance v6, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v6, v5}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 241
+    .line 296
     new-instance v8, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v8, v5}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     const/4 v9, 0x0
 
-    .line 242
+    .line 297
     :goto_2
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
@@ -1540,7 +1812,7 @@
 
     if-ge v9, v11, :cond_c
 
-    .line 243
+    .line 298
     invoke-virtual {v3, v9}, Ljava/lang/String;->charAt(I)C
 
     move-result v11
@@ -1551,7 +1823,7 @@
 
     if-ne v11, v12, :cond_b
 
-    .line 244
+    .line 299
     new-instance v11, Lorg/telegram/ui/Components/EmptyStubSpan;
 
     invoke-direct {v11}, Lorg/telegram/ui/Components/EmptyStubSpan;-><init>()V
@@ -1560,7 +1832,7 @@
 
     invoke-virtual {v10, v11, v9, v12, v2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 245
+    .line 300
     new-instance v11, Lorg/telegram/ui/Components/EmptyStubSpan;
 
     invoke-direct {v11}, Lorg/telegram/ui/Components/EmptyStubSpan;-><init>()V
@@ -1569,7 +1841,7 @@
 
     goto :goto_3
 
-    .line 247
+    .line 302
     :cond_b
     new-instance v11, Lorg/telegram/ui/Components/EmptyStubSpan;
 
@@ -1584,7 +1856,7 @@
 
     goto :goto_2
 
-    .line 251
+    .line 306
     :cond_c
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1608,7 +1880,7 @@
 
     move-result v3
 
-    .line 252
+    .line 307
     new-instance v15, Landroid/text/StaticLayout;
 
     iget-object v11, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
@@ -1635,7 +1907,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countOldLayout:Landroid/text/StaticLayout;
 
-    .line 253
+    .line 308
     new-instance v2, Landroid/text/StaticLayout;
 
     iget-object v13, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
@@ -1658,7 +1930,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimationStableLayout:Landroid/text/StaticLayout;
 
-    .line 254
+    .line 309
     new-instance v2, Landroid/text/StaticLayout;
 
     iget-object v13, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
@@ -1675,20 +1947,20 @@
 
     goto :goto_4
 
-    .line 256
+    .line 311
     :cond_d
     iget-object v2, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLayout:Landroid/text/StaticLayout;
 
     iput-object v2, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countOldLayout:Landroid/text/StaticLayout;
 
-    .line 259
+    .line 314
     :cond_e
     :goto_4
     iget v2, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
 
     iput v2, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidthOld:I
 
-    .line 260
+    .line 315
     iget v2, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->currentCount:I
 
     if-le v1, v2, :cond_f
@@ -1703,7 +1975,7 @@
     :goto_5
     iput-boolean v2, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimationIncrement:Z
 
-    .line 261
+    .line 316
     iget-object v2, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->start()V
@@ -1711,7 +1983,7 @@
     :cond_10
     if-lez v1, :cond_11
 
-    .line 264
+    .line 319
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1736,7 +2008,7 @@
 
     iput v2, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
 
-    .line 265
+    .line 320
     new-instance v10, Landroid/text/StaticLayout;
 
     iget-object v4, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
@@ -1769,16 +2041,16 @@
 
     iput-object v10, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countLayout:Landroid/text/StaticLayout;
 
-    .line 268
+    .line 323
     :cond_11
     iput v1, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->currentCount:I
 
-    .line 269
+    .line 324
     iget-object v1, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->parent:Landroid/view/View;
 
     if-eqz v1, :cond_12
 
-    .line 270
+    .line 325
     invoke-virtual {v1}, Landroid/view/View;->invalidate()V
 
     :cond_12
@@ -1793,10 +2065,28 @@
     .end array-data
 .end method
 
+.method public setCountResentChats(ZZFF)V
+    .locals 0
+
+    .line 93
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->recentChatsMode:Z
+
+    .line 94
+    iput-boolean p2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->mute:Z
+
+    .line 95
+    iput p3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->cx:F
+
+    .line 96
+    iput p4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->cy:F
+
+    return-void
+.end method
+
 .method public setParent(Landroid/view/View;)V
     .locals 0
 
-    .line 432
+    .line 501
     iput-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->parent:Landroid/view/View;
 
     return-void
@@ -1805,20 +2095,20 @@
 .method public setSize(II)V
     .locals 2
 
-    .line 135
+    .line 172
     iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->lastH:I
 
     if-eq p1, v0, :cond_1
 
-    .line 136
+    .line 173
     iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->currentCount:I
 
     const/4 v1, -0x1
 
-    .line 137
+    .line 174
     iput v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->currentCount:I
 
-    .line 138
+    .line 175
     iget v1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->animationType:I
 
     if-nez v1, :cond_0
@@ -1833,10 +2123,10 @@
     :goto_0
     invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->setCount(IZ)V
 
-    .line 139
+    .line 176
     iput p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->lastH:I
 
-    .line 141
+    .line 178
     :cond_1
     iput p2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->width:I
 
@@ -1846,7 +2136,7 @@
 .method public setType(I)V
     .locals 0
 
-    .line 428
+    .line 497
     iput p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->type:I
 
     return-void
@@ -1855,22 +2145,22 @@
 .method public updateBackgroundRect()V
     .locals 7
 
-    .line 378
+    .line 447
     iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countChangeProgress:F
 
-    const/16 v1, 0xb
+    const/16 v1, 0x17
 
-    const/high16 v2, 0x40000000    # 2.0f
+    const/16 v2, 0xb
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    const/16 v4, 0x17
+    const/high16 v4, 0x40000000    # 2.0f
 
     cmpl-float v5, v0, v3
 
     if-eqz v5, :cond_4
 
-    .line 379
+    .line 448
     iget v5, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->animationType:I
 
     if-eqz v5, :cond_3
@@ -1882,7 +2172,7 @@
     goto :goto_1
 
     :cond_0
-    mul-float v0, v0, v2
+    mul-float v0, v0, v4
 
     cmpl-float v5, v0, v3
 
@@ -1890,11 +2180,15 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 388
+    .line 457
     :cond_1
     iget v5, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->lastH:I
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    iget v6, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->radius:F
+
+    mul-float v6, v6, v4
+
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v6
 
@@ -1902,23 +2196,23 @@
 
     int-to-float v5, v5
 
-    div-float/2addr v5, v2
+    div-float/2addr v5, v4
 
-    .line 390
-    iget v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
+    .line 459
+    iget v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
 
     iget v6, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidthOld:I
 
-    if-ne v2, v6, :cond_2
+    if-ne v4, v6, :cond_2
 
-    int-to-float v0, v2
+    int-to-float v0, v4
 
     goto :goto_0
 
     :cond_2
-    int-to-float v2, v2
+    int-to-float v4, v4
 
-    mul-float v2, v2, v0
+    mul-float v4, v4, v0
 
     int-to-float v6, v6
 
@@ -1926,18 +2220,26 @@
 
     mul-float v6, v6, v3
 
-    add-float v0, v2, v6
+    add-float v0, v4, v6
 
-    .line 395
+    .line 464
     :goto_0
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->updateX(F)V
 
-    .line 396
-    iget-object v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+    .line 465
+    iget-object v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
 
-    iget v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->x:F
+    iget v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->x:F
 
-    add-float/2addr v0, v3
+    add-float/2addr v0, v4
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    add-float/2addr v0, v2
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1945,21 +2247,13 @@
 
     int-to-float v1, v1
 
-    add-float/2addr v0, v1
-
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v1
-
-    int-to-float v1, v1
-
     add-float/2addr v1, v5
 
-    invoke-virtual {v2, v3, v5, v0, v1}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v3, v4, v5, v0, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
     goto :goto_2
 
-    .line 380
+    .line 449
     :cond_3
     :goto_1
     iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
@@ -1968,10 +2262,14 @@
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->updateX(F)V
 
-    .line 381
+    .line 450
     iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->lastH:I
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    iget v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->radius:F
+
+    mul-float v3, v3, v4
+
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v3
 
@@ -1979,18 +2277,26 @@
 
     int-to-float v0, v0
 
-    div-float/2addr v0, v2
+    div-float/2addr v0, v4
 
-    .line 382
-    iget-object v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+    .line 451
+    iget-object v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
 
-    iget v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->x:F
+    iget v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->x:F
 
     iget v5, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
 
     int-to-float v5, v5
 
-    add-float/2addr v5, v3
+    add-float/2addr v5, v4
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    add-float/2addr v5, v2
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1998,21 +2304,13 @@
 
     int-to-float v1, v1
 
-    add-float/2addr v5, v1
-
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v1
-
-    int-to-float v1, v1
-
     add-float/2addr v1, v0
 
-    invoke-virtual {v2, v3, v0, v5, v1}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v3, v4, v0, v5, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
     goto :goto_2
 
-    .line 399
+    .line 468
     :cond_4
     iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
 
@@ -2020,10 +2318,14 @@
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->updateX(F)V
 
-    .line 400
+    .line 469
     iget v0, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->lastH:I
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    iget v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->radius:F
+
+    mul-float v3, v3, v4
+
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v3
 
@@ -2031,18 +2333,26 @@
 
     int-to-float v0, v0
 
-    div-float/2addr v0, v2
+    div-float/2addr v0, v4
 
-    .line 401
-    iget-object v2, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+    .line 470
+    iget-object v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
 
-    iget v3, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->x:F
+    iget v4, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->x:F
 
     iget v5, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countWidth:I
 
     int-to-float v5, v5
 
-    add-float/2addr v5, v3
+    add-float/2addr v5, v4
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    add-float/2addr v5, v2
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -2050,17 +2360,9 @@
 
     int-to-float v1, v1
 
-    add-float/2addr v5, v1
-
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v1
-
-    int-to-float v1, v1
-
     add-float/2addr v1, v0
 
-    invoke-virtual {v2, v3, v0, v5, v1}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v3, v4, v0, v5, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
     :goto_2
     return-void

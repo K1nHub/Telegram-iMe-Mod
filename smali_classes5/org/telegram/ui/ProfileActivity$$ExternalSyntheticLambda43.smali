@@ -2,40 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback1;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
 
-.field public final synthetic f$1:Lorg/fork/enums/ParticipantsActionType;
+.field public final synthetic f$1:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;Lorg/fork/enums/ParticipantsActionType;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda43;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda43;->f$1:Lorg/fork/enums/ParticipantsActionType;
+    iput p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda43;->f$1:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda43;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda43;->f$1:Lorg/fork/enums/ParticipantsActionType;
+    iget v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda43;->f$1:I
 
-    check-cast p1, Ljava/lang/Boolean;
+    check-cast p1, Ljava/lang/Integer;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$eKGpCBMGtYBgk1-j3UbY43IWL3U(Lorg/telegram/ui/ProfileActivity;Lorg/fork/enums/ParticipantsActionType;Ljava/lang/Boolean;)V
+    check-cast p2, Ljava/lang/Integer;
 
-    return-void
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$WFeQ1dbbIWZLGe-_aqEtgQxOgvg(Lorg/telegram/ui/ProfileActivity;ILjava/lang/Integer;Ljava/lang/Integer;)I
+
+    move-result p1
+
+    return p1
 .end method

@@ -1,6 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
+import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_messages_editMessage extends TLObject {
     public static int constructor = 1224152952;
@@ -8,7 +9,7 @@ public class TLRPC$TL_messages_editMessage extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public int f1577id;
+    public int f1583id;
     public TLRPC$InputMedia media;
     public String message;
     public boolean no_webpage;
@@ -28,7 +29,7 @@ public class TLRPC$TL_messages_editMessage extends TLObject {
         this.flags = i;
         abstractSerializedData.writeInt32(i);
         this.peer.serializeToStream(abstractSerializedData);
-        abstractSerializedData.writeInt32(this.f1577id);
+        abstractSerializedData.writeInt32(this.f1583id);
         if ((this.flags & 2048) != 0) {
             abstractSerializedData.writeString(this.message);
         }
@@ -46,7 +47,7 @@ public class TLRPC$TL_messages_editMessage extends TLObject {
                 this.entities.get(i2).serializeToStream(abstractSerializedData);
             }
         }
-        if ((this.flags & 32768) != 0) {
+        if ((this.flags & LiteMode.FLAG_CHAT_SCALE) != 0) {
             abstractSerializedData.writeInt32(this.schedule_date);
         }
     }

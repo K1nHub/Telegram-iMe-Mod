@@ -7,12 +7,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ChannelTagResponse {
 
     /* renamed from: id */
-    private final long f300id;
+    private final long f302id;
     private final String title;
 
     public static /* synthetic */ ChannelTagResponse copy$default(ChannelTagResponse channelTagResponse, long j, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = channelTagResponse.f300id;
+            j = channelTagResponse.f302id;
         }
         if ((i & 2) != 0) {
             str = channelTagResponse.title;
@@ -21,7 +21,7 @@ public final class ChannelTagResponse {
     }
 
     public final long component1() {
-        return this.f300id;
+        return this.f302id;
     }
 
     public final String component2() {
@@ -39,27 +39,27 @@ public final class ChannelTagResponse {
         }
         if (obj instanceof ChannelTagResponse) {
             ChannelTagResponse channelTagResponse = (ChannelTagResponse) obj;
-            return this.f300id == channelTagResponse.f300id && Intrinsics.areEqual(this.title, channelTagResponse.title);
+            return this.f302id == channelTagResponse.f302id && Intrinsics.areEqual(this.title, channelTagResponse.title);
         }
         return false;
     }
 
     public int hashCode() {
-        return (StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f300id) * 31) + this.title.hashCode();
+        return (StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f302id) * 31) + this.title.hashCode();
     }
 
     public String toString() {
-        return "ChannelTagResponse(id=" + this.f300id + ", title=" + this.title + ')';
+        return "ChannelTagResponse(id=" + this.f302id + ", title=" + this.title + ')';
     }
 
     public ChannelTagResponse(long j, String title) {
         Intrinsics.checkNotNullParameter(title, "title");
-        this.f300id = j;
+        this.f302id = j;
         this.title = title;
     }
 
     public final long getId() {
-        return this.f300id;
+        return this.f302id;
     }
 
     public final String getTitle() {

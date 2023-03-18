@@ -44,15 +44,15 @@ public final class SocialNetworksRowView extends LinearLayout {
             frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.view.SocialNetworksRowView$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SocialNetworksRowView.m2113lambda4$lambda2$lambda0(SocialNetworksRowView.this, drawerSocialNetwork, view);
+                    SocialNetworksRowView.lambda$4$lambda$2$lambda$0(SocialNetworksRowView.this, drawerSocialNetwork, view);
                 }
             });
             frameLayout.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.fork.ui.view.SocialNetworksRowView$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
-                    boolean m2114lambda4$lambda2$lambda1;
-                    m2114lambda4$lambda2$lambda1 = SocialNetworksRowView.m2114lambda4$lambda2$lambda1(SocialNetworksRowView.this, drawerSocialNetwork, view);
-                    return m2114lambda4$lambda2$lambda1;
+                    boolean lambda$4$lambda$2$lambda$1;
+                    lambda$4$lambda$2$lambda$1 = SocialNetworksRowView.lambda$4$lambda$2$lambda$1(SocialNetworksRowView.this, drawerSocialNetwork, view);
+                    return lambda$4$lambda$2$lambda$1;
                 }
             });
             ImageView imageView = new ImageView(context);
@@ -73,25 +73,22 @@ public final class SocialNetworksRowView extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: lambda-4$lambda-2$lambda-0  reason: not valid java name */
-    public static final void m2113lambda4$lambda2$lambda0(SocialNetworksRowView this$0, DrawerSocialNetwork network, View view) {
+    public static final void lambda$4$lambda$2$lambda$0(SocialNetworksRowView this$0, DrawerSocialNetwork network, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(network, "$network");
-        OnSocialNetworkClickListener listener = this$0.getListener();
-        if (listener == null) {
-            return;
+        OnSocialNetworkClickListener onSocialNetworkClickListener = this$0.listener;
+        if (onSocialNetworkClickListener != null) {
+            onSocialNetworkClickListener.onSocialNetworkClick(network, false);
         }
-        listener.onSocialNetworkClick(network, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: lambda-4$lambda-2$lambda-1  reason: not valid java name */
-    public static final boolean m2114lambda4$lambda2$lambda1(SocialNetworksRowView this$0, DrawerSocialNetwork network, View view) {
+    public static final boolean lambda$4$lambda$2$lambda$1(SocialNetworksRowView this$0, DrawerSocialNetwork network, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(network, "$network");
-        OnSocialNetworkClickListener listener = this$0.getListener();
-        if (listener != null) {
-            listener.onSocialNetworkClick(network, true);
+        OnSocialNetworkClickListener onSocialNetworkClickListener = this$0.listener;
+        if (onSocialNetworkClickListener != null) {
+            onSocialNetworkClickListener.onSocialNetworkClick(network, true);
         }
         return true;
     }

@@ -43,7 +43,7 @@ import org.fork.p046ui.view.PinnedPlayerView;
 import org.fork.utils.Callbacks$Callback1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -158,17 +158,16 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
         this.deviceMusic.clear();
         this.deviceLoading = true;
         getDeviceAdapter().notifyDataSetChanged();
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda1
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                MusicActivity.m2056loadDeviceMusic$lambda4(MusicActivity.this);
+                MusicActivity.loadDeviceMusic$lambda$4(MusicActivity.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: loadDeviceMusic$lambda-4  reason: not valid java name */
-    public static final void m2056loadDeviceMusic$lambda4(final MusicActivity this$0) {
+    public static final void loadDeviceMusic$lambda$4(final MusicActivity this$0) {
         Runnable runnable;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         try {
@@ -179,7 +178,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
                     while (query.moveToNext()) {
                         try {
                             MediaController.AudioEntry audioEntry = new MediaController.AudioEntry();
-                            audioEntry.f1428id = query.getInt(0);
+                            audioEntry.f1433id = query.getInt(0);
                             audioEntry.author = query.getString(1);
                             audioEntry.title = query.getString(2);
                             audioEntry.path = query.getString(3);
@@ -196,27 +195,27 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
                     Unit unit = Unit.INSTANCE;
                     CloseableKt.closeFinally(query, null);
                 }
-                runnable = new Runnable() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda0
+                runnable = new Runnable() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MusicActivity.m2057loadDeviceMusic$lambda4$lambda3(MusicActivity.this);
+                        MusicActivity.loadDeviceMusic$lambda$4$lambda$3(MusicActivity.this);
                     }
                 };
             } catch (Exception e) {
                 FileLog.m45e(e);
-                runnable = new Runnable() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda0
+                runnable = new Runnable() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MusicActivity.m2057loadDeviceMusic$lambda4$lambda3(MusicActivity.this);
+                        MusicActivity.loadDeviceMusic$lambda$4$lambda$3(MusicActivity.this);
                     }
                 };
             }
             AndroidUtilities.runOnUIThread(runnable, 500L);
         } catch (Throwable th) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda0
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MusicActivity.m2057loadDeviceMusic$lambda4$lambda3(MusicActivity.this);
+                    MusicActivity.loadDeviceMusic$lambda$4$lambda$3(MusicActivity.this);
                 }
             }, 500L);
             throw th;
@@ -224,8 +223,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: loadDeviceMusic$lambda-4$lambda-3  reason: not valid java name */
-    public static final void m2057loadDeviceMusic$lambda4$lambda3(MusicActivity this$0) {
+    public static final void loadDeviceMusic$lambda$4$lambda$3(MusicActivity this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.deviceLoading = false;
         try {
@@ -239,7 +237,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
 
     @Override // com.smedialink.p031ui.pager.TelegramViewPagerFragment
     public String getToolbarTitle() {
-        String string = LocaleController.getString("AttachMusic", C3158R.string.AttachMusic);
+        String string = LocaleController.getString("AttachMusic", C3286R.string.AttachMusic);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"AttachMusic\", R.string.AttachMusic)");
         return string;
     }
@@ -264,7 +262,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
         Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(MusicTab.BOTS.titleResId)");
         String internalString4 = LocaleController.getInternalString(MusicTab.DEVICE.getTitleResId());
         Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(MusicTab.DEVICE.titleResId)");
-        return new ViewPageData[]{new ViewPageData(internalString, getAlbumsAdapter(), C3158R.C3160drawable.fork_fab_albums), new ViewPageData(internalString2, getChannelsAdapter(), 0), new ViewPageData(internalString3, getBotsAdapter(), 0), new ViewPageData(internalString4, getDeviceAdapter(), 0)};
+        return new ViewPageData[]{new ViewPageData(internalString, getAlbumsAdapter(), C3286R.C3288drawable.fork_fab_albums), new ViewPageData(internalString2, getChannelsAdapter(), 0), new ViewPageData(internalString3, getBotsAdapter(), 0), new ViewPageData(internalString4, getDeviceAdapter(), 0)};
     }
 
     @Override // com.smedialink.p031ui.pager.TelegramViewPagerFragment
@@ -276,8 +274,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             Pair[] pairArr = new Pair[2];
             ProfileSearchCell profileSearchCell = (ProfileSearchCell) itemView;
             TLRPC$User user = profileSearchCell.getUser();
-            Long valueOf = user == null ? null : Long.valueOf(user.f1633id);
-            pairArr[0] = TuplesKt.m100to("dialog_id", Long.valueOf(valueOf == null ? -profileSearchCell.getChat().f1494id : valueOf.longValue()));
+            pairArr[0] = TuplesKt.m100to("dialog_id", Long.valueOf(user != null ? user.f1639id : -profileSearchCell.getChat().f1499id));
             pairArr[1] = TuplesKt.m100to("custom_screen_type", Integer.valueOf(IdFabric$CustomType.MEDIA_MUSIC));
             presentFragment(new MediaActivity(BundleKt.bundleOf(pairArr), null));
         }
@@ -339,8 +336,15 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
     public void didReceivedNotification(int i, int i2, Object[] args) {
         Intrinsics.checkNotNullParameter(args, "args");
         if (i == NotificationCenter.mediaCountDidLoad) {
-            if (((Integer) args[4]).intValue() == 4) {
-                this.countsMap.put(((Long) args[0]).longValue(), Integer.valueOf(((Integer) args[2]).intValue()));
+            Object obj = args[4];
+            Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
+            if (((Integer) obj).intValue() == 4) {
+                Object obj2 = args[0];
+                Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type kotlin.Long");
+                long longValue = ((Long) obj2).longValue();
+                Object obj3 = args[2];
+                Intrinsics.checkNotNull(obj3, "null cannot be cast to non-null type kotlin.Int");
+                this.countsMap.put(longValue, Integer.valueOf(((Integer) obj3).intValue()));
                 int i3 = this.parallelCounter - 1;
                 this.parallelCounter = i3;
                 if (i3 == 0) {
@@ -358,26 +362,27 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             z = false;
         }
         if (z) {
-            if (i != NotificationCenter.messagePlayingDidStart || ((MessageObject) args[0]).eventId == 0) {
-                updatePlayButtons();
+            if (i == NotificationCenter.messagePlayingDidStart) {
+                Object obj4 = args[0];
+                Intrinsics.checkNotNull(obj4, "null cannot be cast to non-null type org.telegram.messenger.MessageObject");
+                if (((MessageObject) obj4).eventId != 0) {
+                    return;
+                }
             }
+            updatePlayButtons();
         }
     }
 
     @Override // com.smedialink.p031ui.pager.TelegramViewPagerFragment, org.telegram.p048ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
+        TelegramViewPagerFragment.ViewPage[] viewPages;
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
         arrayList.addAll(super.getThemeDescriptions());
-        TelegramViewPagerFragment.ViewPage[] viewPages = getViewPages();
-        int length = viewPages.length;
-        int i = 0;
-        while (i < length) {
-            TelegramViewPagerFragment.ViewPage viewPage = viewPages[i];
-            i++;
+        for (TelegramViewPagerFragment.ViewPage viewPage : getViewPages()) {
             arrayList.add(new ThemeDescription(viewPage.getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda7
                 @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
                 public final void didSetColor() {
-                    MusicActivity.m2055getThemeDescriptions$lambda7$lambda6(MusicActivity.this);
+                    MusicActivity.getThemeDescriptions$lambda$7$lambda$6(MusicActivity.this);
                 }
 
                 @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -400,40 +405,30 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescriptions$lambda-7$lambda-6  reason: not valid java name */
-    public static final void m2055getThemeDescriptions$lambda7$lambda6(MusicActivity this$0) {
+    public static final void getThemeDescriptions$lambda$7$lambda$6(MusicActivity this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         PinnedPlayerView pinnedPlayerView = this$0.pinnedPlayerView;
-        if (pinnedPlayerView == null) {
-            return;
+        if (pinnedPlayerView != null) {
+            pinnedPlayerView.updateColors();
         }
-        pinnedPlayerView.updateColors();
     }
 
     private final void prepareDialogsAdaptersData() {
         LongSparseArray<Integer> longSparseArray = this.countsMap;
         int size = longSparseArray.size();
-        if (size > 0) {
-            int i = 0;
-            while (true) {
-                int i2 = i + 1;
-                long keyAt = longSparseArray.keyAt(i);
-                int intValue = longSparseArray.valueAt(i).intValue();
-                if (intValue > 0) {
-                    if (keyAt < 0) {
-                        if (getAlbumsController().isDialogAlbum(keyAt)) {
-                            this.albums.add(Long.valueOf(keyAt));
-                        } else if (intValue >= 10) {
-                            this.channels.add(Long.valueOf(keyAt));
-                        }
-                    } else {
-                        this.bots.add(Long.valueOf(keyAt));
+        for (int i = 0; i < size; i++) {
+            long keyAt = longSparseArray.keyAt(i);
+            int intValue = longSparseArray.valueAt(i).intValue();
+            if (intValue > 0) {
+                if (keyAt < 0) {
+                    if (getAlbumsController().isDialogAlbum(keyAt)) {
+                        this.albums.add(Long.valueOf(keyAt));
+                    } else if (intValue >= 10) {
+                        this.channels.add(Long.valueOf(keyAt));
                     }
+                } else {
+                    this.bots.add(Long.valueOf(keyAt));
                 }
-                if (i2 >= size) {
-                    break;
-                }
-                i = i2;
             }
         }
         Comparator<Long> musicCountComparator = getMusicCountComparator();
@@ -446,22 +441,14 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
         for (TelegramViewPagerFragment.ViewPage viewPage : getViewPages()) {
             RecyclerListView listView = viewPage.getListView();
             int childCount = listView.getChildCount();
-            if (childCount > 0) {
-                int i = 0;
-                while (true) {
-                    int i2 = i + 1;
-                    View childAt = listView.getChildAt(i);
-                    Intrinsics.checkNotNullExpressionValue(childAt, "getChildAt(i)");
-                    if (childAt instanceof SharedAudioCell) {
-                        SharedAudioCell sharedAudioCell = (SharedAudioCell) childAt;
-                        if (sharedAudioCell.getMessage() != null) {
-                            sharedAudioCell.updateButtonState(false, true);
-                        }
+            for (int i = 0; i < childCount; i++) {
+                View childAt = listView.getChildAt(i);
+                Intrinsics.checkNotNullExpressionValue(childAt, "getChildAt(i)");
+                if (childAt instanceof SharedAudioCell) {
+                    SharedAudioCell sharedAudioCell = (SharedAudioCell) childAt;
+                    if (sharedAudioCell.getMessage() != null) {
+                        sharedAudioCell.updateButtonState(false, true);
                     }
-                    if (i2 >= childCount) {
-                        break;
-                    }
-                    i = i2;
                 }
             }
         }
@@ -487,21 +474,20 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             this.parallelCounter = plus2.size();
             this.parallelLoading = true;
             for (TLRPC$Dialog tLRPC$Dialog : plus2) {
-                getMediaDataController().getMediaCount(tLRPC$Dialog.f1500id, 0, 4, this.classGuid, true);
+                getMediaDataController().getMediaCount(tLRPC$Dialog.f1505id, 0, 4, this.classGuid, true);
             }
         }
     }
 
     private final MessageObject convertDeviceAudioEntryToTelegramMessage(MediaController.AudioEntry audioEntry, int i) {
         TLRPC$TL_message tLRPC$TL_message = new TLRPC$TL_message();
-        tLRPC$TL_message.f1518id = i;
+        tLRPC$TL_message.f1523id = i;
         tLRPC$TL_message.out = true;
         tLRPC$TL_message.peer_id = new TLRPC$TL_peerUser();
         tLRPC$TL_message.from_id = new TLRPC$TL_peerUser();
         TLRPC$Peer tLRPC$Peer = tLRPC$TL_message.peer_id;
         long clientUserId = getUserConfig().getClientUserId();
         tLRPC$TL_message.from_id.user_id = clientUserId;
-        Unit unit = Unit.INSTANCE;
         tLRPC$Peer.user_id = clientUserId;
         tLRPC$TL_message.date = (int) (System.currentTimeMillis() / 1000);
         tLRPC$TL_message.message = "";
@@ -512,15 +498,18 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
         File file = new File(audioEntry.path);
         String ext = FileLoader.getFileExtension(file);
         tLRPC$TL_message.flags |= 768;
-        tLRPC$TL_document.f1502id = 0L;
+        tLRPC$TL_document.f1507id = 0L;
         tLRPC$TL_document.access_hash = 0L;
         tLRPC$TL_document.file_reference = new byte[0];
         tLRPC$TL_document.date = tLRPC$TL_message.date;
+        StringBuilder sb = new StringBuilder();
+        sb.append("audio/");
         Intrinsics.checkNotNullExpressionValue(ext, "ext");
         if (!(ext.length() > 0)) {
             ext = "mp3";
         }
-        tLRPC$TL_document.mime_type = Intrinsics.stringPlus("audio/", ext);
+        sb.append(ext);
+        tLRPC$TL_document.mime_type = sb.toString();
         tLRPC$TL_document.size = file.length();
         tLRPC$TL_document.dc_id = 0;
         ArrayList<TLRPC$DocumentAttribute> arrayList = tLRPC$TL_document.attributes;
@@ -540,17 +529,16 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
     }
 
     private final void notifyDialogsAdapters() {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda2
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MusicActivity.m2058notifyDialogsAdapters$lambda19(MusicActivity.this);
+                MusicActivity.notifyDialogsAdapters$lambda$19(MusicActivity.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: notifyDialogsAdapters$lambda-19  reason: not valid java name */
-    public static final void m2058notifyDialogsAdapters$lambda19(MusicActivity this$0) {
+    public static final void notifyDialogsAdapters$lambda$19(MusicActivity this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getAlbumsAdapter().notifyDataSetChanged();
         this$0.getChannelsAdapter().notifyDataSetChanged();
@@ -561,14 +549,13 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
         AlertsCreator.showDeviceMusicOptionsAlertDialog(this, new MessagesStorage.IntCallback() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda6
             @Override // org.telegram.messenger.MessagesStorage.IntCallback
             public final void run(int i) {
-                MusicActivity.m2061showDeviceMusicOptions$lambda20(MusicActivity.this, messageObject, i);
+                MusicActivity.showDeviceMusicOptions$lambda$20(MusicActivity.this, messageObject, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showDeviceMusicOptions$lambda-20  reason: not valid java name */
-    public static final void m2061showDeviceMusicOptions$lambda20(MusicActivity this$0, MessageObject message, int i) {
+    public static final void showDeviceMusicOptions$lambda$20(MusicActivity this$0, MessageObject message, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(message, "$message");
         if (i == 0) {
@@ -577,17 +564,16 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
     }
 
     private final void showDeviceMusicDeleteConfirmDialog(final MessageObject messageObject) {
-        AlertsCreator.showConfirmationDialog(this, getParentActivity(), null, LocaleController.getInternalString(C3158R.string.music_device_delete_alert_message), LocaleController.getString("Delete", C3158R.string.Delete), true, null, new Callbacks$Callback1() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda5
+        AlertsCreator.showConfirmationDialog(this, getParentActivity(), null, LocaleController.getInternalString(C3286R.string.music_device_delete_alert_message), LocaleController.getString("Delete", C3286R.string.Delete), true, null, new Callbacks$Callback1() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda5
             @Override // org.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                MusicActivity.m2059showDeviceMusicDeleteConfirmDialog$lambda24(MessageObject.this, this, (Boolean) obj);
+                MusicActivity.showDeviceMusicDeleteConfirmDialog$lambda$24(MessageObject.this, this, (Boolean) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showDeviceMusicDeleteConfirmDialog$lambda-24  reason: not valid java name */
-    public static final void m2059showDeviceMusicDeleteConfirmDialog$lambda24(final MessageObject message, final MusicActivity this$0, Boolean isConfirmed) {
+    public static final void showDeviceMusicDeleteConfirmDialog$lambda$24(final MessageObject message, final MusicActivity this$0, Boolean isConfirmed) {
         Intrinsics.checkNotNullParameter(message, "$message");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullExpressionValue(isConfirmed, "isConfirmed");
@@ -595,41 +581,39 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MusicActivity.m2060showDeviceMusicDeleteConfirmDialog$lambda24$lambda23(MessageObject.this, this$0);
+                    MusicActivity.showDeviceMusicDeleteConfirmDialog$lambda$24$lambda$23(MessageObject.this, this$0);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showDeviceMusicDeleteConfirmDialog$lambda-24$lambda-23  reason: not valid java name */
-    public static final void m2060showDeviceMusicDeleteConfirmDialog$lambda24$lambda23(final MessageObject message, final MusicActivity this$0) {
+    public static final void showDeviceMusicDeleteConfirmDialog$lambda$24$lambda$23(final MessageObject message, final MusicActivity this$0) {
         Intrinsics.checkNotNullParameter(message, "$message");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         final boolean delete = new File(message.messageOwner.attachPath).delete();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                MusicActivity.m61x1c24f635(delete, message, this$0);
+                MusicActivity.m61xb1359a91(delete, message, this$0);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showDeviceMusicDeleteConfirmDialog$lambda-24$lambda-23$lambda-22$lambda-21 */
-    public static final void m61x1c24f635(boolean z, MessageObject message, MusicActivity this$0) {
+    /* renamed from: showDeviceMusicDeleteConfirmDialog$lambda$24$lambda$23$lambda$22$lambda$21 */
+    public static final void m61xb1359a91(boolean z, MessageObject message, MusicActivity this$0) {
         Intrinsics.checkNotNullParameter(message, "$message");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (z) {
-            int id = message.getId();
             MessageObject playingMessageObject = this$0.getMediaController().getPlayingMessageObject();
-            if (playingMessageObject != null && id == playingMessageObject.getId()) {
+            if (playingMessageObject != null && message.getId() == playingMessageObject.getId()) {
                 this$0.getMediaController().cleanupPlayer(true, true, false, false);
             }
             this$0.loadDeviceMusic();
             return;
         }
-        String string = LocaleController.getString("UnknownError", C3158R.string.UnknownError);
+        String string = LocaleController.getString("UnknownError", C3286R.string.UnknownError);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"UnknownError\", R.string.UnknownError)");
         ContextExtKt.toast(string);
     }
@@ -642,10 +626,9 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
         private final Context context;
         final /* synthetic */ MusicActivity this$0;
 
-        public DeviceAdapter(MusicActivity this$0, Context context) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
+        public DeviceAdapter(MusicActivity musicActivity, Context context) {
             Intrinsics.checkNotNullParameter(context, "context");
-            this.this$0 = this$0;
+            this.this$0 = musicActivity;
             this.context = context;
         }
 
@@ -673,7 +656,6 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             } else if (i == IdFabric$ViewTypes.LOADING) {
                 FrameLayout frameLayout2 = new FrameLayout(this.context);
                 frameLayout2.addView(new LoadingCell(frameLayout2.getContext()), LayoutHelper.createFrame(-2, -2, 17));
-                Unit unit = Unit.INSTANCE;
                 frameLayout = frameLayout2;
             } else if (i == IdFabric$ViewTypes.EMPTY) {
                 frameLayout = new DialogsEmptyCell(this.context);
@@ -691,7 +673,6 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
                 };
             }
             frameLayout.setLayoutParams(new RecyclerView.LayoutParams(-1, MusicActivity.Companion.isContentViewType(i) ? -2 : -1));
-            Unit unit2 = Unit.INSTANCE;
             return new RecyclerListView.Holder(frameLayout);
         }
 
@@ -734,17 +715,22 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
 
             static {
                 int[] iArr = new int[MusicTab.values().length];
-                iArr[MusicTab.ALBUMS.ordinal()] = 1;
-                iArr[MusicTab.CHANNELS.ordinal()] = 2;
+                try {
+                    iArr[MusicTab.ALBUMS.ordinal()] = 1;
+                } catch (NoSuchFieldError unused) {
+                }
+                try {
+                    iArr[MusicTab.CHANNELS.ordinal()] = 2;
+                } catch (NoSuchFieldError unused2) {
+                }
                 $EnumSwitchMapping$0 = iArr;
             }
         }
 
-        public DialogsAdapter(MusicActivity this$0, Context context, MusicTab musicTab) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
+        public DialogsAdapter(MusicActivity musicActivity, Context context, MusicTab musicTab) {
             Intrinsics.checkNotNullParameter(context, "context");
             Intrinsics.checkNotNullParameter(musicTab, "musicTab");
-            this.this$0 = this$0;
+            this.this$0 = musicActivity;
             this.context = context;
             this.musicTab = musicTab;
         }
@@ -777,13 +763,11 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             if (i == IdFabric$ViewTypes.LOADING) {
                 FrameLayout frameLayout2 = new FrameLayout(this.context);
                 frameLayout2.addView(new LoadingCell(frameLayout2.getContext()), LayoutHelper.createFrame(-2, -2, 17));
-                Unit unit = Unit.INSTANCE;
                 frameLayout = frameLayout2;
             } else {
                 frameLayout = i == IdFabric$ViewTypes.EMPTY ? new DialogsEmptyCell(this.context) : new ProfileSearchCell(this.context);
             }
             frameLayout.setLayoutParams(new RecyclerView.LayoutParams(-1, MusicActivity.Companion.isContentViewType(i) ? -2 : -1));
-            Unit unit2 = Unit.INSTANCE;
             return new RecyclerListView.Holder(frameLayout);
         }
 

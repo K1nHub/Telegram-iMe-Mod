@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public getDataSource(Lcom/smedialink/storage/domain/model/crypto/send/TransactionArgs;)Lcom/smedialink/storage/data/datasource/base/SignTransactionDatasource;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -107,23 +107,23 @@
     :goto_0
     return-object p1
 
-    .line 27
     :cond_2
-    sget-object p1, Lcom/smedialink/storage/data/datasource/base/DataSourceFactory;->Companion:Lcom/smedialink/storage/data/datasource/base/DataSourceFactory$Companion;
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, ""
+    .line 27
+    sget-object v0, Lcom/smedialink/storage/data/datasource/base/DataSourceFactory;->Companion:Lcom/smedialink/storage/data/datasource/base/DataSourceFactory$Companion;
 
-    invoke-virtual {p1, v0}, Lcom/smedialink/storage/data/datasource/base/DataSourceFactory$Companion;->unsupportedDataSource(Ljava/lang/String;)Ljava/lang/String;
+    const-string v1, ""
 
-    move-result-object p1
+    invoke-virtual {v0, v1}, Lcom/smedialink/storage/data/datasource/base/DataSourceFactory$Companion;->unsupportedDataSource(Ljava/lang/String;)Ljava/lang/String;
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    move-result-object v0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-direct {v0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw p1
 .end method

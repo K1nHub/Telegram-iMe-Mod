@@ -20,16 +20,12 @@
 
 # direct methods
 .method public constructor <init>(Lcom/smedialink/ui/recent_chats/RecentChatsBar;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 117
     iput-object p1, p0, Lcom/smedialink/ui/recent_chats/RecentChatsBar$ListAdapter;->this$0:Lcom/smedialink/ui/recent_chats/RecentChatsBar;
@@ -75,6 +71,10 @@
 
     .line 126
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    const-string v0, "null cannot be cast to non-null type org.fork.ui.view.AvatarDrawableCell"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lorg/fork/ui/view/AvatarDrawableCell;
 
@@ -170,9 +170,6 @@
     invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 123
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 121
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;

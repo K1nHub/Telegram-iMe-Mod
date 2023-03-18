@@ -6,13 +6,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;,
-        Lorg/fork/controller/LockedSectionsController$Companion;
+        Lorg/fork/controller/LockedSectionsController$Companion;,
+        Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nLockedSectionsController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LockedSectionsController.kt\norg/fork/controller/LockedSectionsController\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,204:1\n13536#2,2:205\n11328#2:209\n11663#2,3:210\n211#3,2:207\n*S KotlinDebug\n*F\n+ 1 LockedSectionsController.kt\norg/fork/controller/LockedSectionsController\n*L\n30#1:205,2\n81#1:209\n81#1:210,3\n58#1:207,2\n*E\n"
+    value = "SMAP\nLockedSectionsController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LockedSectionsController.kt\norg/fork/controller/LockedSectionsController\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,204:1\n13579#2,2:205\n11335#2:209\n11670#2,3:210\n215#3,2:207\n*S KotlinDebug\n*F\n+ 1 LockedSectionsController.kt\norg/fork/controller/LockedSectionsController\n*L\n30#1:205,2\n81#1:209\n81#1:210,3\n58#1:207,2\n*E\n"
 .end annotation
 
 
@@ -365,14 +365,14 @@
 
     move-result-object v1
 
-    .line 11328
+    .line 11335
     new-instance v2, Ljava/util/ArrayList;
 
     array-length v3, v1
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11663
+    .line 11670
     array-length v3, v1
 
     const/4 v4, 0x0
@@ -429,12 +429,14 @@
 
     move-result-object v5
 
+    .line 11671
     invoke-interface {v2, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
+    .line 81
     :cond_0
     iget-object v1, v0, Lorg/fork/controller/LockedSectionsController;->sectionsPasscodeData:Ljava/util/Map;
 
@@ -653,7 +655,7 @@
 
     move-result-object v1
 
-    .line 13536
+    .line 13579
     array-length v2, v1
 
     const/4 v4, 0x0
@@ -787,11 +789,18 @@
 
     const-string v7, ""
 
+    const-string v8, "getString(TelegramPrefer\u2026ants.Symbols.EMPTY_STRING"
+
     if-nez v6, :cond_0
 
     move-object v6, v7
 
+    goto :goto_1
+
     :cond_0
+    invoke-static {v6, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_1
     invoke-virtual {v3, v6}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setPasscodeHash(Ljava/lang/String;)V
 
     .line 39
@@ -801,13 +810,13 @@
 
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User$Default;->passcodeRetryInMs()J
 
-    move-result-wide v8
+    move-result-wide v9
 
-    invoke-interface {v0, v6, v8, v9}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+    invoke-interface {v0, v6, v9, v10}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
-    move-result-wide v8
+    move-result-wide v9
 
-    invoke-virtual {v3, v8, v9}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setPasscodeRetryInMs(J)V
+    invoke-virtual {v3, v9, v10}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setPasscodeRetryInMs(J)V
 
     .line 40
     invoke-static {v5}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->buildPasscodeSaltStringKey(Lorg/fork/enums/LockedSection;)Ljava/lang/String;
@@ -816,21 +825,23 @@
 
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User$Default;->passcodeSaltString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-interface {v0, v6, v8}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v0, v6, v9}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
     if-nez v6, :cond_1
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_1
     move-object v7, v6
 
+    :goto_2
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     .line 41
-    :goto_1
     invoke-interface {v7}, Ljava/lang/CharSequence;->length()I
 
     move-result v6
@@ -839,12 +850,12 @@
 
     const/4 v6, 0x1
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_2
     const/4 v6, 0x0
 
-    :goto_2
+    :goto_3
     if-eqz v6, :cond_3
 
     const/4 v6, 0x0
@@ -862,7 +873,7 @@
 
     move-result-object v7
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_3
     const/4 v6, 0x0
@@ -873,7 +884,7 @@
     move-result-object v7
 
     .line 41
-    :goto_3
+    :goto_4
     invoke-virtual {v3, v7}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setPasscodeSalt(Ljava/util/List;)V
 
     .line 46
@@ -950,7 +961,7 @@
     .line 58
     iget-object v1, p0, Lorg/fork/controller/LockedSectionsController;->sectionsPasscodeData:Ljava/util/Map;
 
-    .line 211
+    .line 215
     invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v1

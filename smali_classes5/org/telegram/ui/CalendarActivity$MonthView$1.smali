@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/CalendarActivity$MonthView;Lorg/telegram/ui/CalendarActivity;)V
     .locals 0
 
-    .line 563
+    .line 562
     iput-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$1;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 5
 
-    .line 566
+    .line 565
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$1;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v0, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->messagesByDays:Landroid/util/SparseArray;
@@ -47,7 +47,7 @@
 
     return-void
 
-    .line 569
+    .line 568
     :cond_0
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
@@ -65,7 +65,7 @@
 
     const/4 v2, -0x1
 
-    .line 572
+    .line 571
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/CalendarActivity$MonthView$1;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
@@ -73,7 +73,7 @@
 
     if-ge p1, v4, :cond_3
 
-    .line 573
+    .line 572
     iget-object v3, v3, Lorg/telegram/ui/CalendarActivity$MonthView;->messagesByDays:Landroid/util/SparseArray;
 
     const/4 v4, 0x0
@@ -88,10 +88,10 @@
 
     if-ne v1, v0, :cond_1
 
-    .line 576
+    .line 575
     iget v1, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->date:I
 
-    .line 578
+    .line 577
     :cond_1
     iget v2, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->date:I
 
@@ -105,26 +105,26 @@
 
     if-ltz v2, :cond_4
 
-    .line 583
+    .line 582
     iget-object p1, v3, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/CalendarActivity;->access$302(Lorg/telegram/ui/CalendarActivity;I)I
 
-    .line 584
+    .line 583
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$1;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     invoke-static {p1, v2}, Lorg/telegram/ui/CalendarActivity;->access$402(Lorg/telegram/ui/CalendarActivity;I)I
 
-    .line 585
+    .line 584
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$1;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/CalendarActivity;->access$600(Lorg/telegram/ui/CalendarActivity;)V
 
-    .line 586
+    .line 585
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$1;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;

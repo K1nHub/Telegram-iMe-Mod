@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/ui/recent_chats/RecentChatsBar$ListAdapter;,
-        Lcom/smedialink/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;
+        Lcom/smedialink/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;,
+        Lcom/smedialink/ui/recent_chats/RecentChatsBar$ListAdapter;
     }
 .end annotation
 
@@ -33,18 +33,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$2jOcLcwcA3n-xa5Atf695rFLNrA(Lcom/smedialink/ui/recent_chats/RecentChatsBar;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$Ww2f5_IO0ateJxuCSSgnEOWdSZQ(Lcom/smedialink/ui/recent_chats/RecentChatsBar;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/recent_chats/RecentChatsBar;->setupListeners$lambda-2(Lcom/smedialink/ui/recent_chats/RecentChatsBar;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/recent_chats/RecentChatsBar;->setupListeners$lambda$2(Lcom/smedialink/ui/recent_chats/RecentChatsBar;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$BqnplMMfUad038d6EmBuP_KeEDI(Lcom/smedialink/storage/domain/model/HistoryDialogModel;)Z
+.method public static synthetic $r8$lambda$Zq2MVMyIMUOQOvlYuiJSuksQyF4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/recent_chats/RecentChatsBar;->removeData$lambda-0(Lcom/smedialink/storage/domain/model/HistoryDialogModel;)Z
+    invoke-static {p0, p1}, Lcom/smedialink/ui/recent_chats/RecentChatsBar;->removeData$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -202,19 +202,23 @@
     return-object v0
 .end method
 
-.method private static final removeData$lambda-0(Lcom/smedialink/storage/domain/model/HistoryDialogModel;)Z
+.method private static final removeData$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
     .locals 1
 
-    const-string v0, "it"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 46
-    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/HistoryDialogModel;->isPinned()Z
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Boolean;
+
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p0
-
-    xor-int/lit8 p0, p0, 0x1
 
     return p0
 .end method
@@ -247,7 +251,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-2(Lcom/smedialink/ui/recent_chats/RecentChatsBar;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$2(Lcom/smedialink/ui/recent_chats/RecentChatsBar;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
@@ -259,9 +263,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 88
-    invoke-virtual {p0}, Lcom/smedialink/ui/recent_chats/RecentChatsBar;->getDelegate()Lcom/smedialink/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;
-
-    move-result-object v0
+    iget-object v0, p0, Lcom/smedialink/ui/recent_chats/RecentChatsBar;->delegate:Lcom/smedialink/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;
 
     iget-object p0, p0, Lcom/smedialink/ui/recent_chats/RecentChatsBar;->data:Ljava/util/List;
 
@@ -332,14 +334,18 @@
 .end method
 
 .method public final removeData()V
-    .locals 2
+    .locals 3
 
     .line 46
     iget-object v0, p0, Lcom/smedialink/ui/recent_chats/RecentChatsBar;->data:Ljava/util/List;
 
-    sget-object v1, Lcom/smedialink/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;->INSTANCE:Lcom/smedialink/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;
+    sget-object v1, Lcom/smedialink/ui/recent_chats/RecentChatsBar$removeData$1;->INSTANCE:Lcom/smedialink/ui/recent_chats/RecentChatsBar$removeData$1;
 
-    invoke-static {v0, v1}, Lj$/util/Collection$-EL;->removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
+    new-instance v2, Lcom/smedialink/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-static {v0, v2}, Lj$/util/Collection$-EL;->removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
 
     .line 47
     invoke-direct {p0}, Lcom/smedialink/ui/recent_chats/RecentChatsBar;->getListAdapter()Lcom/smedialink/ui/recent_chats/RecentChatsBar$ListAdapter;

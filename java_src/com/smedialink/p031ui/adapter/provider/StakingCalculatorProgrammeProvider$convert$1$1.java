@@ -37,7 +37,6 @@ public final class StakingCalculatorProgrammeProvider$convert$1$1 extends Lambda
         materialShapeDrawable.setFillColor(ColorStateList.valueOf(Theme.getColor("windowBackgroundWhite")));
         networkIconCornerSize = stakingCalculatorProgrammeProvider.getNetworkIconCornerSize();
         materialShapeDrawable.setCornerSize(networkIconCornerSize);
-        Unit unit = Unit.INSTANCE;
         applyForView.setBackground(materialShapeDrawable);
     }
 }

@@ -33,7 +33,7 @@ public class FileUploadOperation {
     private boolean isLastPart;
 
     /* renamed from: iv */
-    private byte[] f1425iv;
+    private byte[] f1430iv;
     private byte[] ivChange;
     private byte[] key;
     protected long lastProgressUpdateTime;
@@ -75,7 +75,7 @@ public class FileUploadOperation {
         private long bytesOffset;
 
         /* renamed from: iv */
-        private byte[] f1426iv;
+        private byte[] f1431iv;
 
         private UploadCachedResult() {
         }
@@ -163,7 +163,7 @@ public class FileUploadOperation {
             this.uploadedBytesCount = 0L;
             this.saveInfoTimes = 0;
             this.key = null;
-            this.f1425iv = null;
+            this.f1430iv = null;
             this.ivChange = null;
             this.currentUploadRequetsCount = 0;
             this.lastSavedPartNum = 0;
@@ -260,7 +260,7 @@ public class FileUploadOperation {
         edit.putLong(this.fileKey + "_id", this.currentFileId);
         edit.remove(this.fileKey + "_uploaded");
         if (this.isEncrypted) {
-            edit.putString(this.fileKey + "_iv", Utilities.bytesToHex(this.f1425iv));
+            edit.putString(this.fileKey + "_iv", Utilities.bytesToHex(this.f1430iv));
             edit.putString(this.fileKey + "_ivc", Utilities.bytesToHex(this.ivChange));
             edit.putString(this.fileKey + "_key", Utilities.bytesToHex(this.key));
         }

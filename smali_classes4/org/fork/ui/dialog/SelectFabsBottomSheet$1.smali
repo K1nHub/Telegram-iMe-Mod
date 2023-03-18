@@ -19,13 +19,13 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/fork/ui/dialog/SelectFabsBottomSheet;Landroid/content/Context;)V
+.method constructor <init>(Landroid/content/Context;Lorg/fork/ui/dialog/SelectFabsBottomSheet;)V
     .locals 0
 
-    iput-object p1, p0, Lorg/fork/ui/dialog/SelectFabsBottomSheet$1;->this$0:Lorg/fork/ui/dialog/SelectFabsBottomSheet;
+    iput-object p2, p0, Lorg/fork/ui/dialog/SelectFabsBottomSheet$1;->this$0:Lorg/fork/ui/dialog/SelectFabsBottomSheet;
 
     .line 48
-    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method

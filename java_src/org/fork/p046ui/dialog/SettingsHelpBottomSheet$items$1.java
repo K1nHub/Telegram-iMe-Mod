@@ -23,7 +23,6 @@ final class SettingsHelpBottomSheet$items$1 extends Lambda implements Function0<
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         Browser.openUrl(this.this$0.getContext(), "https://t.me/imemessenger");

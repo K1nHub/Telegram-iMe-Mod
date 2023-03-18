@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCatalogCategoriesPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogCategoriesPresenter.kt\ncom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 4 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,248:1\n286#2,2:249\n1547#2:251\n1618#2,3:252\n39#3,6:255\n39#3,6:261\n39#3,6:267\n27#4:273\n*S KotlinDebug\n*F\n+ 1 CatalogCategoriesPresenter.kt\ncom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter\n*L\n40#1:249,2\n69#1:251\n69#1:252,3\n88#1:255,6\n97#1:261,6\n126#1:267,6\n205#1:273\n*E\n"
+    value = "SMAP\nCatalogCategoriesPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogCategoriesPresenter.kt\ncom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 4 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,249:1\n288#2,2:250\n1549#2:252\n1620#2,3:253\n39#3,8:256\n39#3,8:264\n39#3,8:272\n27#4:280\n*S KotlinDebug\n*F\n+ 1 CatalogCategoriesPresenter.kt\ncom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter\n*L\n40#1:250,2\n69#1:252\n69#1:253,3\n88#1:256,8\n97#1:264,8\n126#1:272,8\n206#1:280\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -72,10 +72,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$m6-itaq_tixKbCGIOuvkZWWPe9M(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;ZLcom/smedialink/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
+.method public static synthetic $r8$lambda$LqkWO8SCu48BcgVOo2oSd3UiItw(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->loadInitial$lambda-4(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;ZLcom/smedialink/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
+    invoke-static {p0, p1}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->loadInitial$lambda$4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p0
 
@@ -159,6 +159,17 @@
     return-void
 .end method
 
+.method public static final synthetic access$getCategoriesObservable(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;Lcom/smedialink/storage/domain/model/Result;Z)Lio/reactivex/Observable;
+    .locals 0
+
+    .line 27
+    invoke-direct {p0, p1, p2}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->getCategoriesObservable(Lcom/smedialink/storage/domain/model/Result;Z)Lio/reactivex/Observable;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static final synthetic access$getCategoryAll(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;)Lcom/smedialink/model/common/FilterItem;
     .locals 0
 
@@ -212,17 +223,17 @@
         }
     .end annotation
 
-    .line 202
+    .line 203
     iget-object v0, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->catalogInteractor:Lcom/smedialink/storage/domain/interactor/catalog/CatalogInteractor;
 
-    .line 203
+    .line 204
     iget-object v1, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->chatType:Lcom/smedialink/storage/domain/model/catalog/ChatType;
 
     invoke-virtual {v0, v1, p2}, Lcom/smedialink/storage/domain/interactor/catalog/CatalogInteractor;->getCategories(Lcom/smedialink/storage/domain/model/catalog/ChatType;Z)Lio/reactivex/Observable;
 
     move-result-object p2
 
-    .line 204
+    .line 205
     iget-object v0, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -242,7 +253,11 @@
 
     invoke-direct {v0, p0, p1}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$getCategoriesObservable$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;Lcom/smedialink/storage/domain/model/Result;)V
 
-    invoke-virtual {p2, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, v0}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p2, p1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -256,10 +271,10 @@
 .method private final getCategoryAll()Lcom/smedialink/model/common/FilterItem;
     .locals 5
 
-    .line 236
+    .line 237
     new-instance v0, Lcom/smedialink/model/common/FilterItem;
 
-    .line 238
+    .line 239
     iget-object v1, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->catalog_all:I
@@ -282,7 +297,7 @@
 
     const/4 v4, 0x1
 
-    .line 236
+    .line 237
     invoke-direct {v0, v2, v3, v1, v4}, Lcom/smedialink/model/common/FilterItem;-><init>(JLjava/lang/String;Z)V
 
     return-object v0
@@ -300,7 +315,7 @@
         }
     .end annotation
 
-    .line 214
+    .line 215
     invoke-direct {p0}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->getSelectedCategoryId()J
 
     move-result-wide v0
@@ -311,13 +326,13 @@
 
     if-nez v4, :cond_0
 
-    .line 215
+    .line 216
     iget-object v0, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->catalogInteractor:Lcom/smedialink/storage/domain/interactor/catalog/CatalogInteractor;
 
-    .line 217
+    .line 218
     iget-object v1, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->chatType:Lcom/smedialink/storage/domain/model/catalog/ChatType;
 
-    .line 218
+    .line 219
     iget-object v2, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->categoriesChannelsCursors:Ljava/util/Map;
 
     invoke-direct {p0}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->getSelectedCategoryId()J
@@ -334,26 +349,26 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 216
+    .line 217
     invoke-virtual {v0, v1, v2}, Lcom/smedialink/storage/domain/interactor/catalog/CatalogInteractor;->getAllCampaigns(Lcom/smedialink/storage/domain/model/catalog/ChatType;Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 221
+    .line 222
     :cond_0
     iget-object v0, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->catalogInteractor:Lcom/smedialink/storage/domain/interactor/catalog/CatalogInteractor;
 
-    .line 223
+    .line 224
     invoke-direct {p0}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->getSelectedCategoryId()J
 
     move-result-wide v1
 
-    .line 224
+    .line 225
     iget-object v3, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->chatType:Lcom/smedialink/storage/domain/model/catalog/ChatType;
 
-    .line 225
+    .line 226
     iget-object v4, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->categoriesChannelsCursors:Ljava/util/Map;
 
     invoke-direct {p0}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->getSelectedCategoryId()J
@@ -370,7 +385,7 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 222
+    .line 223
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/smedialink/storage/domain/interactor/catalog/CatalogInteractor;->getCampaignsByCategoryId(JLcom/smedialink/storage/domain/model/catalog/ChatType;Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object v0
@@ -398,7 +413,7 @@
 
     new-array v0, v0, [Lcom/chad/library/adapter/base/entity/node/BaseNode;
 
-    .line 231
+    .line 232
     new-instance v1, Lcom/smedialink/model/common/FiltersListItem;
 
     iget-object v2, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->categories:Ljava/util/List;
@@ -413,12 +428,12 @@
 
     aput-object v1, v0, v2
 
-    .line 230
+    .line 231
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->mutableListOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 233
+    .line 234
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     return-object v0
@@ -430,7 +445,7 @@
     .line 40
     iget-object v0, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->categories:Ljava/util/List;
 
-    .line 286
+    .line 288
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -465,16 +480,16 @@
     :goto_0
     check-cast v1, Lcom/smedialink/model/common/FilterItem;
 
-    if-nez v1, :cond_2
+    if-eqz v1, :cond_2
 
-    const-wide/16 v0, -0x1
+    invoke-virtual {v1}, Lcom/smedialink/model/common/FilterItem;->getId()J
+
+    move-result-wide v0
 
     goto :goto_1
 
     :cond_2
-    invoke-virtual {v1}, Lcom/smedialink/model/common/FilterItem;->getId()J
-
-    move-result-wide v0
+    const-wide/16 v0, -0x1
 
     :goto_1
     return-wide v0
@@ -512,11 +527,15 @@
     move-result-object v0
 
     .line 124
-    new-instance v1, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$$ExternalSyntheticLambda0;
+    new-instance v1, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$loadInitial$1;
 
-    invoke-direct {v1, p0, p1}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;Z)V
+    invoke-direct {v1, p0, p1}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$loadInitial$1;-><init>(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;Z)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->concatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$$ExternalSyntheticLambda0;
+
+    invoke-direct {p1, v1}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->concatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -531,8 +550,9 @@
 
     move-result-object p1
 
-    const-string v0, "catalogInteractor\n      \u2026(schedulersProvider.ui())"
+    const-string v0, "private fun loadInitial(\u2026     .autoDispose()\n    }"
 
+    .line 124
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 44
@@ -540,18 +560,29 @@
 
     invoke-direct {v0, p0}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$loadInitial$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;)V
 
-    new-instance v1, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$loadInitial$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$loadInitial$$inlined$subscribeWithErrorHandle$default$2;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, v2}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$loadInitial$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v0, v2}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$loadInitial$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
 
-    invoke-virtual {p1, v0, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 46
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v3, v0}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {p1, v1, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1
@@ -578,21 +609,19 @@
     return-void
 .end method
 
-.method private static final loadInitial$lambda-4(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;ZLcom/smedialink/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
+.method private static final loadInitial$lambda$4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "result"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     .line 124
-    invoke-direct {p0, p2, p1}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->getCategoriesObservable(Lcom/smedialink/storage/domain/model/Result;Z)Lio/reactivex/Observable;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Lio/reactivex/ObservableSource;
 
     return-object p0
 .end method
@@ -608,7 +637,7 @@
 
     const/4 v0, 0x0
 
-    .line 173
+    .line 174
     new-instance v1, Lcom/smedialink/model/common/GlobalStateItem;
 
     sget-object v2, Lcom/smedialink/model/state/GlobalState$Progress;->INSTANCE:Lcom/smedialink/model/state/GlobalState$Progress;
@@ -621,14 +650,14 @@
 
     move-result-object p1
 
-    .line 174
+    .line 175
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesView;
 
-    .line 175
+    .line 176
     iget-object v1, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->categories:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
@@ -639,17 +668,17 @@
 
     goto :goto_0
 
-    .line 176
+    .line 177
     :cond_0
     invoke-direct {p0, p1}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->getNodesWithCategoriesFilter(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p1
 
-    .line 174
+    .line 175
     :goto_0
     invoke-interface {v0, p1}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesView;->renderNodes(Ljava/util/List;)V
 
-    .line 178
+    .line 179
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -667,7 +696,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 184
+    .line 185
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p2
@@ -676,7 +705,7 @@
 
     invoke-interface {p2}, Lcom/smedialink/ui/base/mvp/LoadMoreView;->onLoadMoreError()V
 
-    .line 185
+    .line 186
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p2
@@ -693,7 +722,7 @@
 
     goto :goto_1
 
-    .line 187
+    .line 188
     :cond_0
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -701,10 +730,10 @@
 
     check-cast p2, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesView;
 
-    .line 189
+    .line 190
     new-instance v0, Lcom/smedialink/model/common/GlobalStateItem;
 
-    .line 190
+    .line 191
     invoke-virtual {p1}, Lcom/smedialink/storage/data/network/model/error/ErrorModel;->isNoConnectionStatus()Z
 
     move-result p1
@@ -715,15 +744,15 @@
 
     goto :goto_0
 
-    .line 191
+    .line 192
     :cond_1
     sget-object p1, Lcom/smedialink/model/state/GlobalState$Unexpected;->INSTANCE:Lcom/smedialink/model/state/GlobalState$Unexpected;
 
-    .line 189
+    .line 190
     :goto_0
     invoke-direct {v0, p1}, Lcom/smedialink/model/common/GlobalStateItem;-><init>(Lcom/smedialink/model/state/GlobalState;)V
 
-    .line 188
+    .line 189
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
@@ -732,7 +761,7 @@
 
     move-result-object p1
 
-    .line 187
+    .line 188
     invoke-interface {p2, p1}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesView;->renderNodes(Ljava/util/List;)V
 
     :goto_1
@@ -742,7 +771,7 @@
 .method private final onChannelsLoadingSuccess(Lcom/smedialink/storage/domain/model/catalog/CampaignsCursored;Z)V
     .locals 4
 
-    .line 139
+    .line 140
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/catalog/CampaignsCursored;->getItems()Ljava/util/List;
 
     move-result-object v0
@@ -751,7 +780,7 @@
 
     move-result-object v0
 
-    .line 140
+    .line 141
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/catalog/CampaignsCursored;->getMeta()Lcom/smedialink/storage/domain/model/catalog/CursorMeta;
 
     move-result-object p1
@@ -760,7 +789,7 @@
 
     move-result-object p1
 
-    .line 141
+    .line 142
     iget-object v1, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->categoriesChannelsCursors:Ljava/util/Map;
 
     invoke-direct {p0}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->getSelectedCategoryId()J
@@ -775,12 +804,12 @@
 
     if-eqz p2, :cond_0
 
-    .line 143
+    .line 144
     invoke-direct {p0, v0}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->onLoadMoreChannels(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 144
+    .line 145
     :cond_0
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
@@ -788,7 +817,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 145
+    .line 146
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p2
@@ -815,7 +844,7 @@
 
     invoke-interface {p2, v0}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesView;->renderNodes(Ljava/util/List;)V
 
-    .line 146
+    .line 147
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p2
@@ -826,7 +855,7 @@
 
     goto :goto_0
 
-    .line 149
+    .line 150
     :cond_1
     iget-object p2, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->channelsByCategories:Ljava/util/Map;
 
@@ -844,7 +873,7 @@
 
     invoke-interface {p2, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 150
+    .line 151
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p2
@@ -860,7 +889,7 @@
     :goto_0
     if-nez p1, :cond_2
 
-    .line 154
+    .line 155
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -871,7 +900,7 @@
 
     goto :goto_1
 
-    .line 156
+    .line 157
     :cond_2
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -896,7 +925,7 @@
         }
     .end annotation
 
-    .line 161
+    .line 162
     iget-object v0, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->channelsByCategories:Ljava/util/Map;
 
     invoke-direct {p0}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->getSelectedCategoryId()J
@@ -913,20 +942,20 @@
 
     check-cast v0, Ljava/util/Set;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    .line 163
+    invoke-interface {v0, p1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
     goto :goto_0
 
-    .line 162
     :cond_0
-    invoke-interface {v0, p1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
+    const/4 v0, 0x0
 
     :goto_0
     if-nez v0, :cond_1
 
-    .line 165
+    .line 166
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -937,7 +966,7 @@
 
     goto :goto_1
 
-    .line 167
+    .line 168
     :cond_1
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -1060,7 +1089,7 @@
 
 # virtual methods
 .method public final loadChannels(Z)V
-    .locals 3
+    .locals 4
 
     .line 86
     invoke-direct {p0}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->getChannelsObservable()Lio/reactivex/Observable;
@@ -1087,18 +1116,29 @@
 
     invoke-direct {v1, p0, p1}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$loadChannels$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;Z)V
 
-    new-instance p1, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$loadChannels$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {p1, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v1, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$loadChannels$$inlined$subscribeWithErrorHandle$default$2;
 
     const/4 v2, 0x0
 
-    invoke-direct {p1, v2}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$loadChannels$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v2}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$loadChannels$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
 
-    invoke-virtual {v0, v1, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 46
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v3, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, p1, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1
@@ -1139,7 +1179,7 @@
     .line 69
     iget-object v0, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->categories:Ljava/util/List;
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -1150,7 +1190,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1170,7 +1210,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     move-object v5, v2
 
     check-cast v5, Lcom/smedialink/model/common/FilterItem;
@@ -1204,6 +1244,7 @@
 
     move-result-object v2
 
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -1376,16 +1417,27 @@
 
     invoke-direct {v1, p0, p1}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$onChannelClick$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;Lcom/smedialink/model/catalog/CampaignItem;)V
 
-    new-instance p1, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$onChannelClick$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {p1, v4}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$onChannelClick$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {p1, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v1, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v1, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$onChannelClick$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v1, v4}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter$onChannelClick$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, p1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-void

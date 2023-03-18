@@ -6,20 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/smedialink/ui/base/mvp/base/BaseView;
-
-.field public final synthetic f$1:Z
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/smedialink/ui/base/mvp/base/BaseView;Z)V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda2;->f$0:Lcom/smedialink/ui/base/mvp/base/BaseView;
-
-    iput-boolean p2, p0, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda2;->f$1:Z
+    iput-object p1, p0, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda2;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -27,15 +23,11 @@
 
 # virtual methods
 .method public final accept(Ljava/lang/Object;)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda2;->f$0:Lcom/smedialink/ui/base/mvp/base/BaseView;
+    iget-object v0, p0, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda2;->f$0:Lkotlin/jvm/functions/Function1;
 
-    iget-boolean v1, p0, Lcom/smedialink/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda2;->f$1:Z
-
-    check-cast p1, Lio/reactivex/disposables/Disposable;
-
-    invoke-static {v0, v1, p1}, Lcom/smedialink/utils/extentions/rx/RxExtKt;->$r8$lambda$ZEOkOeN6lTkYTm6kFMnVCiujxPg(Lcom/smedialink/ui/base/mvp/base/BaseView;ZLio/reactivex/disposables/Disposable;)V
+    invoke-static {v0, p1}, Lcom/smedialink/utils/extentions/rx/RxExtKt;->$r8$lambda$2bit6sM4zwDxSA5pxLk8RcQIXjY(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method

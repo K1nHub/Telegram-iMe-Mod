@@ -7,7 +7,7 @@ import io.reactivex.internal.fuseable.QueueDisposable;
 import io.reactivex.internal.fuseable.SimpleQueue;
 import io.reactivex.internal.util.QueueDrainHelper;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class InnerQueuedObserver<T> extends AtomicReference<Disposable> implements Observer<T>, Disposable {
     volatile boolean done;
     int fusionMode;

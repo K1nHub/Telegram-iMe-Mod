@@ -5,12 +5,12 @@ public class TLRPC$TL_forumTopicDeleted extends TLRPC$TL_forumTopic {
 
     @Override // org.telegram.tgnet.TLRPC$TL_forumTopic, org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1547id = abstractSerializedData.readInt32(z);
+        this.f1552id = abstractSerializedData.readInt32(z);
     }
 
     @Override // org.telegram.tgnet.TLRPC$TL_forumTopic, org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt32(this.f1547id);
+        abstractSerializedData.writeInt32(this.f1552id);
     }
 }

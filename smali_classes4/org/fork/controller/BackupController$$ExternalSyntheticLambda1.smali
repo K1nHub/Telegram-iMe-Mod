@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/controller/BackupController$$ExternalSyntheticLambda1;->f$1:Lorg/fork/utils/Callbacks$Callback1;
 
-    invoke-static {v0, v1}, Lorg/fork/controller/BackupController;->$r8$lambda$5YlqmZJ2sF0M2eFaY1VSVykM1wY(Lorg/fork/controller/BackupController;Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-static {v0, v1}, Lorg/fork/controller/BackupController;->$r8$lambda$Xn3L4nd1pyq5Y4ADFkdqBstmCM0(Lorg/fork/controller/BackupController;Lorg/fork/utils/Callbacks$Callback1;)V
 
     return-void
 .end method

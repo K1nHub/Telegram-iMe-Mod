@@ -7,7 +7,7 @@ import android.os.Build;
 import android.system.OsConstants;
 import android.util.Log;
 import androidx.exifinterface.media.ExifInterfaceUtils;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
 import java.io.BufferedInputStream;
@@ -133,7 +133,7 @@ public class ExifInterface {
         sExifTagMapsForWriting = new HashMap[exifTagArr11.length];
         sTagSetForCompatibility = new HashSet<>(Arrays.asList("FNumber", "DigitalZoomRatio", "ExposureTime", "SubjectDistance", "GPSTimeStamp"));
         sExifPointerTagMap = new HashMap<>();
-        Charset forName = Charset.forName(C0474C.ASCII_NAME);
+        Charset forName = Charset.forName(C0468C.ASCII_NAME);
         ASCII = forName;
         IDENTIFIER_EXIF_APP1 = "Exif\u0000\u0000".getBytes(forName);
         IDENTIFIER_XMP_APP1 = "http://ns.adobe.com/xap/1.0/\u0000".getBytes(forName);

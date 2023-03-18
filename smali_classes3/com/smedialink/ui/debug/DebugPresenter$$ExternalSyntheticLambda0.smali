@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/debug/DebugPresenter$$ExternalSyntheticLambda0;->f$1:Lcom/smedialink/storage/domain/model/common/Environment;
 
-    invoke-static {v0, v1}, Lcom/smedialink/ui/debug/DebugPresenter;->$r8$lambda$hnl0_Ni7F0DgmSRMjJHfCvQvoMY(Lcom/smedialink/ui/debug/DebugPresenter;Lcom/smedialink/storage/domain/model/common/Environment;)V
+    invoke-static {v0, v1}, Lcom/smedialink/ui/debug/DebugPresenter;->$r8$lambda$KKRVxe_ICmaMVbKDgNoQas5ySqE(Lcom/smedialink/ui/debug/DebugPresenter;Lcom/smedialink/storage/domain/model/common/Environment;)V
 
     return-void
 .end method

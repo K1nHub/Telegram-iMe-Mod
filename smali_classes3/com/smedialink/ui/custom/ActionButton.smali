@@ -287,16 +287,16 @@
     .line 52
     iget-object v0, p0, Lcom/smedialink/ui/custom/ActionButton;->forcedButtonHeight:Ljava/lang/Integer;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/smedialink/ui/custom/ActionButton;->getButtonHeight()I
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {p0}, Lcom/smedialink/ui/custom/ActionButton;->getButtonHeight()I
 
     move-result v0
 

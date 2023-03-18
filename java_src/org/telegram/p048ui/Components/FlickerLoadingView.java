@@ -740,8 +740,6 @@ public class FlickerLoadingView extends View {
         if (getViewType() == 100) {
             return AndroidUtilities.m50dp(60);
         }
-        int i2 = 78;
-        int i3 = 48;
         switch (getViewType()) {
             case 1:
                 return AndroidUtilities.m50dp(78) + 1;
@@ -756,12 +754,7 @@ public class FlickerLoadingView extends View {
             case 18:
                 return AndroidUtilities.m50dp(64);
             case 7:
-                if (SharedConfig.isDialogsCompactModeEnabled) {
-                    i2 = 48;
-                } else if (!SharedConfig.useThreeLinesLayout) {
-                    i2 = 72;
-                }
-                return AndroidUtilities.m50dp(i2 + 1);
+                return AndroidUtilities.m50dp((SharedConfig.isDialogsCompactModeEnabled ? 48 : SharedConfig.useThreeLinesLayout ? 78 : 72) + 1);
             case 8:
                 return AndroidUtilities.m50dp(61);
             case 9:
@@ -782,7 +775,7 @@ public class FlickerLoadingView extends View {
                 return AndroidUtilities.m50dp(107);
             case 16:
             case 23:
-                return AndroidUtilities.m50dp(48);
+                return AndroidUtilities.m50dp(50);
             case 19:
                 return AndroidUtilities.m50dp(58);
             case 21:
@@ -791,9 +784,9 @@ public class FlickerLoadingView extends View {
                 return AndroidUtilities.m50dp(60);
             case 24:
                 if (!SharedConfig.isDialogsCompactModeEnabled) {
-                    i3 = (SharedConfig.useThreeLinesLayout ? 76 : 64) + 1;
+                    r2 = (SharedConfig.useThreeLinesLayout ? 76 : 64) + 1;
                 }
-                return AndroidUtilities.m50dp(i3);
+                return AndroidUtilities.m50dp(r2);
             case 25:
                 return AndroidUtilities.m50dp(51);
             case 26:

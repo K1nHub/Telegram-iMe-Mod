@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 3091
+    .line 3093
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$14;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$EmptyPhotoViewerProvider;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ltz p3, :cond_4
 
-    .line 3095
+    .line 3097
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$14;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatActivity;->access$2900(Lorg/telegram/ui/ChatActivity;)Ljava/util/ArrayList;
@@ -66,7 +66,7 @@
 
     goto/16 :goto_3
 
-    .line 3098
+    .line 3100
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$14;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -80,7 +80,7 @@
 
     move-result p2
 
-    .line 3099
+    .line 3101
     iget-object p4, p0, Lorg/telegram/ui/ChatActivity$14;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p4}, Lorg/telegram/ui/ChatActivity;->access$2900(Lorg/telegram/ui/ChatActivity;)Ljava/util/ArrayList;
@@ -98,7 +98,7 @@
     :goto_0
     if-ge v0, p2, :cond_4
 
-    .line 3103
+    .line 3105
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$14;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v1, v1, Lorg/telegram/ui/ChatActivity;->mentionContainer:Lorg/telegram/ui/Components/MentionsContainerView;
@@ -111,24 +111,24 @@
 
     move-result-object v1
 
-    .line 3104
+    .line 3106
     instance-of v2, v1, Lorg/telegram/ui/Cells/ContextLinkCell;
 
     if-eqz v2, :cond_1
 
-    .line 3105
+    .line 3107
     move-object v2, v1
 
     check-cast v2, Lorg/telegram/ui/Cells/ContextLinkCell;
 
-    .line 3106
+    .line 3108
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/ContextLinkCell;->getResult()Lorg/telegram/tgnet/TLRPC$BotInlineResult;
 
     move-result-object v3
 
     if-ne v3, p3, :cond_1
 
-    .line 3107
+    .line 3109
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/ContextLinkCell;->getPhotoImage()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v2
@@ -145,22 +145,22 @@
 
     new-array p1, p1, [I
 
-    .line 3113
+    .line 3115
     invoke-virtual {v1, p1}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 3114
+    .line 3116
     new-instance p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
 
     invoke-direct {p2}, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;-><init>()V
 
-    .line 3115
+    .line 3117
     aget p3, p1, p4
 
     iput p3, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->viewX:I
 
     const/4 p3, 0x1
 
-    .line 3116
+    .line 3118
     aget p1, p1, p3
 
     sget p3, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -179,7 +179,7 @@
 
     iput p1, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->viewY:I
 
-    .line 3118
+    .line 3120
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$14;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->mentionContainer:Lorg/telegram/ui/Components/MentionsContainerView;
@@ -190,17 +190,17 @@
 
     iput-object p1, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->parentView:Landroid/view/View;
 
-    .line 3119
+    .line 3121
     iput-object v2, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 3120
+    .line 3122
     invoke-virtual {v2}, Lorg/telegram/messenger/ImageReceiver;->getBitmapSafe()Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     move-result-object p1
 
     iput-object p1, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->thumb:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
-    .line 3121
+    .line 3123
     invoke-virtual {v2}, Lorg/telegram/messenger/ImageReceiver;->getRoundRadius()[I
 
     move-result-object p1
@@ -224,7 +224,7 @@
 
     if-ltz p1, :cond_1
 
-    .line 3130
+    .line 3132
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$14;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatActivity;->access$2900(Lorg/telegram/ui/ChatActivity;)Ljava/util/ArrayList;
@@ -239,7 +239,7 @@
 
     goto :goto_0
 
-    .line 3133
+    .line 3135
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$14;->this$0:Lorg/telegram/ui/ChatActivity;
 

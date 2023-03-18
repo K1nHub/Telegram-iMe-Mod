@@ -70,7 +70,8 @@ public final class KiklikoGifView extends FrameLayout {
     public final void setGif(GifResponse gif) {
         Intrinsics.checkNotNullParameter(gif, "gif");
         this.gif = gif;
-        this.file = new File(FileLoader.getDirectory(4), Intrinsics.stringPlus(Utilities.MD5(gif.getFile().getMp4()), ".mp4"));
+        File directory = FileLoader.getDirectory(4);
+        this.file = new File(directory, Utilities.MD5(gif.getFile().getMp4()) + ".mp4");
         Glide.with(getContext()).load(gif.getFile().getWebp()).diskCacheStrategy(DiskCacheStrategy.ALL).optionalTransform(WebpDrawable.class, new WebpDrawableTransformation(new CenterCrop())).into(getGifView());
     }
 

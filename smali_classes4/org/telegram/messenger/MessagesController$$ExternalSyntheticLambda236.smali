@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # static fields
@@ -32,16 +32,10 @@
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public final run()V
     .locals 0
 
-    check-cast p1, Lorg/telegram/messenger/MessagesController$DialogFilter;
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->checkAutoNightThemeConditions()V
 
-    check-cast p2, Lorg/telegram/messenger/MessagesController$DialogFilter;
-
-    invoke-static {p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$1oUioLfdXqiW_ZP8ykUZ-T0w3Ew(Lorg/telegram/messenger/MessagesController$DialogFilter;Lorg/telegram/messenger/MessagesController$DialogFilter;)I
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

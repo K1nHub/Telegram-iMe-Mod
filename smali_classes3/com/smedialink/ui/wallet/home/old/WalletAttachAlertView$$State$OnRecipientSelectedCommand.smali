@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State;Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 1
 
-    .line 430
+    .line 412
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "onRecipientSelected"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 432
+    .line 414
     iput-object p2, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State$OnRecipientSelectedCommand;->id:Ljava/lang/String;
 
-    .line 433
+    .line 415
     iput-object p3, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State$OnRecipientSelectedCommand;->address:Ljava/lang/String;
 
-    .line 434
+    .line 416
     iput-boolean p4, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State$OnRecipientSelectedCommand;->contactSelected:Z
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;)V
     .locals 3
 
-    .line 439
+    .line 421
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State$OnRecipientSelectedCommand;->id:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State$OnRecipientSelectedCommand;->address:Ljava/lang/String;
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 422
+    .line 404
     check-cast p1, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State$OnRecipientSelectedCommand;->apply(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;)V

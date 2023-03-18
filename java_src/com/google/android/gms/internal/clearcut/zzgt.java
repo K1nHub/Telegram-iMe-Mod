@@ -5,18 +5,18 @@ import com.google.android.gms.internal.clearcut.zzcg;
 public final class zzgt {
 
     /* loaded from: classes.dex */
-    public static final class zza extends zzcg<zza, C6600zza> implements zzdq {
+    public static final class zza extends zzcg<zza, C6744zza> implements zzdq {
         private static volatile zzdz<zza> zzbg;
         private static final zza zzbil;
 
         /* renamed from: com.google.android.gms.internal.clearcut.zzgt$zza$zza  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C6600zza extends zzcg.zza<zza, C6600zza> implements zzdq {
-            private C6600zza() {
+        public static final class C6744zza extends zzcg.zza<zza, C6744zza> implements zzdq {
+            private C6744zza() {
                 super(zza.zzbil);
             }
 
-            /* synthetic */ C6600zza(zzgu zzguVar) {
+            /* synthetic */ C6744zza(zzgu zzguVar) {
                 this();
             }
         }
@@ -75,7 +75,7 @@ public final class zzgt {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C6600zza(null);
+                    return new C6744zza(null);
                 case 3:
                     return zzcg.zza(zzbil, "\u0001\u0000", (Object[]) null);
                 case 4:

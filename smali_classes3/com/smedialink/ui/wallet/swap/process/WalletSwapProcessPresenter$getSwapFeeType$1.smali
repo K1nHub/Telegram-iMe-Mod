@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 826
+    .line 838
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessPresenter$getSwapFeeType$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -59,7 +59,7 @@
 .method public final invoke()V
     .locals 1
 
-    .line 826
+    .line 838
     iget-object v0, p0, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessPresenter$getSwapFeeType$1;->this$0:Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessPresenter;
 
     invoke-static {v0}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessPresenter;->access$chooseSwapFee(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessPresenter;)V

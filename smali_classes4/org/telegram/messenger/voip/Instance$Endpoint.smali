@@ -29,6 +29,8 @@
 
 .field public final port:I
 
+.field public reflectorId:I
+
 .field public final stun:Z
 
 .field public final tcp:Z
@@ -44,43 +46,74 @@
 .method public constructor <init>(ZJLjava/lang/String;Ljava/lang/String;II[BZZLjava/lang/String;Ljava/lang/String;Z)V
     .locals 0
 
-    .line 207
+    .line 210
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 208
+    .line 211
     iput-boolean p1, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->isRtc:Z
 
-    .line 209
+    .line 212
     iput-wide p2, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->id:J
 
-    .line 210
+    .line 213
     iput-object p4, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->ipv4:Ljava/lang/String;
 
-    .line 211
+    .line 214
     iput-object p5, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->ipv6:Ljava/lang/String;
 
-    .line 212
+    .line 215
     iput p6, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->port:I
 
-    .line 213
+    .line 216
     iput p7, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->type:I
 
-    .line 214
+    .line 217
     iput-object p8, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->peerTag:[B
 
-    .line 215
+    .line 218
     iput-boolean p9, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->turn:Z
 
-    .line 216
+    .line 219
     iput-boolean p10, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->stun:Z
 
-    .line 217
+    if-eqz p1, :cond_0
+
+    .line 221
     iput-object p11, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->username:Ljava/lang/String;
 
-    .line 218
+    .line 222
     iput-object p12, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->password:Ljava/lang/String;
 
-    .line 219
+    goto :goto_0
+
+    :cond_0
+    if-eqz p8, :cond_1
+
+    const-string p1, "reflector"
+
+    .line 224
+    iput-object p1, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->username:Ljava/lang/String;
+
+    .line 225
+    invoke-static {p8}, Lcom/google/android/exoplayer2/util/Util;->toHexString([B)Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->password:Ljava/lang/String;
+
+    goto :goto_0
+
+    :cond_1
+    const/4 p1, 0x0
+
+    .line 227
+    iput-object p1, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->username:Ljava/lang/String;
+
+    .line 228
+    iput-object p1, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->password:Ljava/lang/String;
+
+    .line 230
+    :goto_0
     iput-boolean p13, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->tcp:Z
 
     return-void
@@ -91,7 +124,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 224
+    .line 235
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -148,7 +181,7 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->peerTag:[B
 
-    .line 230
+    .line 241
     invoke-static {v1}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
 
     move-result-object v1

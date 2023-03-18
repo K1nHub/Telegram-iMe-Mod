@@ -10,7 +10,6 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.smedialink.model.wallet.settings.SettingMenuItem;
 import com.smedialink.model.wallet.settings.SettingUiItem;
-import com.smedialink.p031ui.base.mvp.base.BaseView;
 import com.smedialink.p031ui.wallet.common.WalletTabFragment;
 import com.smedialink.p031ui.wallet.crypto.settings.WalletAccountSettingsFragment;
 import com.smedialink.p031ui.wallet.settings.adapter.WalletSettingsRecycleAdapter;
@@ -20,9 +19,9 @@ import com.smedialink.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.smedialink.utils.extentions.delegate.ResettableLazy;
 import com.smedialink.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.smedialink.utils.extentions.delegate.ResettableLazyManager;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
@@ -40,7 +39,6 @@ import org.koin.p047mp.KoinPlatformTools;
 import org.telegram.messenger.databinding.ForkFragmentWalletSettingsBinding;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
-import timber.log.Timber;
 /* compiled from: WalletSettingsFragment.kt */
 /* renamed from: com.smedialink.ui.wallet.settings.WalletSettingsFragment */
 /* loaded from: classes3.dex */
@@ -59,9 +57,18 @@ public final class WalletSettingsFragment extends WalletTabFragment implements W
 
         static {
             int[] iArr = new int[SettingMenuItem.values().length];
-            iArr[SettingMenuItem.HELP.ordinal()] = 1;
-            iArr[SettingMenuItem.ETH_ACCOUNT.ordinal()] = 2;
-            iArr[SettingMenuItem.INTERFACE.ordinal()] = 3;
+            try {
+                iArr[SettingMenuItem.HELP.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[SettingMenuItem.ETH_ACCOUNT.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[SettingMenuItem.INTERFACE.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -119,8 +126,7 @@ public final class WalletSettingsFragment extends WalletTabFragment implements W
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescriptions$lambda-1  reason: not valid java name */
-    public static final void m1719getThemeDescriptions$lambda1(WalletSettingsFragment this$0) {
+    public static final void getThemeDescriptions$lambda$1(WalletSettingsFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getSettingsRecycleAdapter().notifyDataSetChanged();
     }
@@ -131,7 +137,7 @@ public final class WalletSettingsFragment extends WalletTabFragment implements W
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.smedialink.ui.wallet.settings.WalletSettingsFragment$$ExternalSyntheticLambda1
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                WalletSettingsFragment.m1719getThemeDescriptions$lambda1(WalletSettingsFragment.this);
+                WalletSettingsFragment.getThemeDescriptions$lambda$1(WalletSettingsFragment.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -156,48 +162,22 @@ public final class WalletSettingsFragment extends WalletTabFragment implements W
         getSettingsRecycleAdapter().setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.wallet.settings.WalletSettingsFragment$$ExternalSyntheticLambda0
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                WalletSettingsFragment.m1720setupListeners$lambda4(WalletSettingsFragment.this, baseQuickAdapter, view, i);
+                WalletSettingsFragment.setupListeners$lambda$4(WalletSettingsFragment.this, baseQuickAdapter, view, i);
             }
         });
         RxEventBus rxEventBus = getRxEventBus();
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.settings.WalletSettingsFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                WalletSettingsPresenter presenter;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                DomainRxEvents.CryptoEvent cryptoEvent = (DomainRxEvents.CryptoEvent) it;
-                if (cryptoEvent instanceof DomainRxEvents.SuccessResetWallet ? true : Intrinsics.areEqual(cryptoEvent, DomainRxEvents.SuccessCreateWallet.INSTANCE) ? true : Intrinsics.areEqual(cryptoEvent, DomainRxEvents.SuccessRestoreWallet.INSTANCE)) {
-                    presenter = WalletSettingsFragment.this.getPresenter();
-                    presenter.loadSettingsMenu();
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.settings.WalletSettingsFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2227x3106d7dd(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2228x3106d7de(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         autoDispose(subscribe);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-4  reason: not valid java name */
-    public static final void m1720setupListeners$lambda4(WalletSettingsFragment this$0, BaseQuickAdapter noName_0, View noName_1, int i) {
+    public static final void setupListeners$lambda$4(WalletSettingsFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         int i2 = WhenMappings.$EnumSwitchMapping$0[this$0.getSettingsRecycleAdapter().getItem(i).getItem().ordinal()];
         if (i2 == 1) {
             this$0.openFAQ();

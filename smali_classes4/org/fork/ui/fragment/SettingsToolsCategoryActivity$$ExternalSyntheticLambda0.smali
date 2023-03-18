@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity$$ExternalSyntheticLambda0;->f$0:Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, p1}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->$r8$lambda$aqK4Jq4PPO7Pa2dbx-yXa_GQEJ0(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/content/DialogInterface;)V
+    invoke-static {v0, p1}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->$r8$lambda$OwKcWvKShQfgtiUS0DbJq7-46DM(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

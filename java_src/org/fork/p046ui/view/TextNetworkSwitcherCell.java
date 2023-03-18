@@ -101,7 +101,7 @@ public final class TextNetworkSwitcherCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initTextView() {
         TextView textView = new TextView(getContext());
-        textView.setTextColor(Theme.getColor(getDialog() ? "dialogTextBlack" : "windowBackgroundWhiteBlackText"));
+        textView.setTextColor(Theme.getColor(this.dialog ? "dialogTextBlack" : "windowBackgroundWhiteBlackText"));
         textView.setTextSize(1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);

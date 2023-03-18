@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStringsJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StringsJVM.kt\nkotlin/text/StringsKt__StringsJVMKt\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,825:1\n1169#2,2:826\n1#3:828\n1720#4,3:829\n*S KotlinDebug\n*F\n+ 1 StringsJVM.kt\nkotlin/text/StringsKt__StringsJVMKt\n*L\n73#1:826,2\n621#1:829,3\n*E\n"
+    value = "SMAP\nStringsJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StringsJVM.kt\nkotlin/text/StringsKt__StringsJVMKt\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,825:1\n1174#2,2:826\n1#3:828\n1726#4,3:829\n*S KotlinDebug\n*F\n+ 1 StringsJVM.kt\nkotlin/text/StringsKt__StringsJVMKt\n*L\n73#1:826,2\n621#1:829,3\n*E\n"
 .end annotation
 
 
@@ -108,6 +108,10 @@
     const-string v2, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v2, "null cannot be cast to non-null type java.lang.String"
+
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
@@ -316,7 +320,7 @@
 
     move-result-object v0
 
-    .line 1720
+    .line 1726
     instance-of v3, v0, Ljava/util/Collection;
 
     if-eqz v3, :cond_1
@@ -336,7 +340,7 @@
 
     goto :goto_0
 
-    .line 1721
+    .line 1727
     :cond_1
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -506,15 +510,26 @@
 
     invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    if-gt v1, p1, :cond_1
+    .line 806
+    new-instance v2, Lkotlin/ranges/IntRange;
+
+    invoke-direct {v2, v1, p1}, Lkotlin/ranges/IntRange;-><init>(II)V
+
+    invoke-virtual {v2}, Lkotlin/ranges/IntProgression;->iterator()Lkotlin/collections/IntIterator;
+
+    move-result-object p1
+
+    :goto_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {p1}, Lkotlin/collections/IntIterator;->nextInt()I
 
     .line 807
-    :goto_1
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
-
-    if-eq v1, p1, :cond_1
-
-    add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
@@ -524,7 +539,7 @@
 
     move-result-object v2
 
-    const-string p0, "{\n                    va\u2026tring()\n                }"
+    const-string/jumbo p0, "{\n                    va\u2026tring()\n                }"
 
     .line 807
     invoke-static {v2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -628,7 +643,7 @@
 
     const/4 v0, 0x0
 
-    .line 1169
+    .line 1174
     :goto_0
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 

@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 12
+    .line 14
     sget-object v0, Lcom/smedialink/storage/data/di/module/StorageModuleKt$dataStorageModule$1;->INSTANCE:Lcom/smedialink/storage/data/di/module/StorageModuleKt$dataStorageModule$1;
 
     const/4 v1, 0x0
@@ -32,7 +32,7 @@
 .method public static final getDataStorageModule()Lorg/koin/core/module/Module;
     .locals 1
 
-    .line 12
+    .line 14
     sget-object v0, Lcom/smedialink/storage/data/di/module/StorageModuleKt;->dataStorageModule:Lorg/koin/core/module/Module;
 
     return-object v0

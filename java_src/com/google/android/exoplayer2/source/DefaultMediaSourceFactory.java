@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.source;
 
 import android.content.Context;
 import android.net.Uri;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.drm.DrmSessionManagerProvider;
@@ -86,9 +86,9 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
         DelegateFactoryLoader delegateFactoryLoader = new DelegateFactoryLoader(extractorsFactory);
         this.delegateFactoryLoader = delegateFactoryLoader;
         delegateFactoryLoader.setDataSourceFactory(factory);
-        this.liveTargetOffsetMs = C0474C.TIME_UNSET;
-        this.liveMinOffsetMs = C0474C.TIME_UNSET;
-        this.liveMaxOffsetMs = C0474C.TIME_UNSET;
+        this.liveTargetOffsetMs = C0468C.TIME_UNSET;
+        this.liveMinOffsetMs = C0468C.TIME_UNSET;
+        this.liveMaxOffsetMs = C0468C.TIME_UNSET;
         this.liveMinSpeed = -3.4028235E38f;
         this.liveMaxSpeed = -3.4028235E38f;
     }
@@ -180,7 +180,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
     public MediaSource createMediaSource(MediaItem mediaItem) {
         Assertions.checkNotNull(mediaItem.localConfiguration);
         String scheme = mediaItem.localConfiguration.uri.getScheme();
-        if (scheme != null && scheme.equals(C0474C.SSAI_SCHEME)) {
+        if (scheme != null && scheme.equals(C0468C.SSAI_SCHEME)) {
             return ((MediaSource.Factory) Assertions.checkNotNull(this.serverSideAdInsertionMediaSourceFactory)).createMediaSource(mediaItem);
         }
         MediaItem.LocalConfiguration localConfiguration = mediaItem.localConfiguration;
@@ -188,7 +188,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
         MediaSource.Factory mediaSourceFactory = this.delegateFactoryLoader.getMediaSourceFactory(inferContentTypeForUriAndMimeType);
         Assertions.checkStateNotNull(mediaSourceFactory, "No suitable media source factory found for content type: " + inferContentTypeForUriAndMimeType);
         MediaItem.LiveConfiguration.Builder buildUpon = mediaItem.liveConfiguration.buildUpon();
-        if (mediaItem.liveConfiguration.targetOffsetMs == C0474C.TIME_UNSET) {
+        if (mediaItem.liveConfiguration.targetOffsetMs == C0468C.TIME_UNSET) {
             buildUpon.setTargetOffsetMs(this.liveTargetOffsetMs);
         }
         if (mediaItem.liveConfiguration.minPlaybackSpeed == -3.4028235E38f) {
@@ -197,10 +197,10 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
         if (mediaItem.liveConfiguration.maxPlaybackSpeed == -3.4028235E38f) {
             buildUpon.setMaxPlaybackSpeed(this.liveMaxSpeed);
         }
-        if (mediaItem.liveConfiguration.minOffsetMs == C0474C.TIME_UNSET) {
+        if (mediaItem.liveConfiguration.minOffsetMs == C0468C.TIME_UNSET) {
             buildUpon.setMinOffsetMs(this.liveMinOffsetMs);
         }
-        if (mediaItem.liveConfiguration.maxOffsetMs == C0474C.TIME_UNSET) {
+        if (mediaItem.liveConfiguration.maxOffsetMs == C0468C.TIME_UNSET) {
             buildUpon.setMaxOffsetMs(this.liveMaxOffsetMs);
         }
         MediaItem.LiveConfiguration build = buildUpon.build();
@@ -241,7 +241,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
                     if (loadErrorHandlingPolicy2 != null) {
                         factory2.setLoadErrorHandlingPolicy(loadErrorHandlingPolicy2);
                     }
-                    mediaSourceArr[i + 1] = factory2.createMediaSource(immutableList.get(i), C0474C.TIME_UNSET);
+                    mediaSourceArr[i + 1] = factory2.createMediaSource(immutableList.get(i), C0468C.TIME_UNSET);
                 }
             }
             createMediaSource = new MergingMediaSource(mediaSourceArr);
@@ -479,7 +479,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
         @Override // com.google.android.exoplayer2.extractor.Extractor
         public void init(ExtractorOutput extractorOutput) {
             TrackOutput track = extractorOutput.track(0, 3);
-            extractorOutput.seekMap(new SeekMap.Unseekable(C0474C.TIME_UNSET));
+            extractorOutput.seekMap(new SeekMap.Unseekable(C0468C.TIME_UNSET));
             extractorOutput.endTracks();
             track.format(this.format.buildUpon().setSampleMimeType(MimeTypes.TEXT_UNKNOWN).setCodecs(this.format.sampleMimeType).build());
         }

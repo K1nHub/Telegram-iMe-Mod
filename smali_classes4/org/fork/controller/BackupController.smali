@@ -15,7 +15,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBackupController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BackupController.kt\norg/fork/controller/BackupController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,571:1\n56#2,6:572\n1849#3,2:578\n1849#3,2:580\n1547#3:582\n1618#3,3:583\n1849#3,2:587\n1000#3,2:589\n1849#3,2:591\n1895#3,14:594\n1849#3,2:609\n1043#3:611\n1557#3:612\n1588#3,4:613\n1043#3:617\n1557#3:618\n1588#3,4:619\n1849#3,2:623\n1547#3:625\n1618#3,3:626\n1#4:586\n13536#5:593\n13537#5:608\n*S KotlinDebug\n*F\n+ 1 BackupController.kt\norg/fork/controller/BackupController\n*L\n35#1:572,6\n457#1:578,2\n461#1:580,2\n469#1:582\n469#1:583,3\n490#1:587,2\n500#1:589,2\n507#1:591,2\n516#1:594,14\n527#1:609,2\n538#1:611\n539#1:612\n539#1:613,4\n545#1:617\n546#1:618\n546#1:619,4\n248#1:623,2\n478#1:625\n478#1:626,3\n515#1:593\n515#1:608\n*E\n"
+    value = "SMAP\nBackupController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BackupController.kt\norg/fork/controller/BackupController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,571:1\n56#2,6:572\n1855#3,2:578\n1855#3,2:580\n1549#3:582\n1620#3,3:583\n1855#3,2:587\n1002#3,2:589\n1855#3,2:591\n1963#3,14:594\n1855#3,2:609\n1045#3:611\n1559#3:612\n1590#3,4:613\n1045#3:617\n1559#3:618\n1590#3,4:619\n1855#3,2:623\n1#4:586\n13579#5:593\n13580#5:608\n*S KotlinDebug\n*F\n+ 1 BackupController.kt\norg/fork/controller/BackupController\n*L\n35#1:572,6\n457#1:578,2\n461#1:580,2\n469#1:582\n469#1:583,3\n490#1:587,2\n500#1:589,2\n507#1:591,2\n516#1:594,14\n527#1:609,2\n538#1:611\n539#1:612\n539#1:613,4\n545#1:617\n546#1:618\n546#1:619,4\n248#1:623,2\n515#1:593\n515#1:608\n*E\n"
 .end annotation
 
 
@@ -45,36 +45,36 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$5YlqmZJ2sF0M2eFaY1VSVykM1wY(Lorg/fork/controller/BackupController;Lorg/fork/utils/Callbacks$Callback1;)V
+.method public static synthetic $r8$lambda$DuCX8mNERWmLvuMy-W4_EeINZEc(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/controller/BackupController;->restore$lambda-15$lambda-13(Lorg/fork/controller/BackupController;Lorg/fork/utils/Callbacks$Callback1;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$kkqJNeeI6ea5MYIOKnxXgkkksI8(Lorg/fork/models/backup/TopicBackup;)Z
-    .locals 0
-
-    invoke-static {p0}, Lorg/fork/controller/BackupController;->migrateToCurrentVersion$lambda-21(Lorg/fork/models/backup/TopicBackup;)Z
+    invoke-static {p0, p1}, Lorg/fork/controller/BackupController;->migrateToCurrentVersion$lambda$20(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
 
     move-result p0
 
     return p0
 .end method
 
-.method public static synthetic $r8$lambda$oD9RRGIXGbT3ESzSiwEYgeYXisI(Lorg/fork/controller/BackupController;Lorg/telegram/messenger/MessageObject;Ljava/util/List;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback1;)V
+.method public static synthetic $r8$lambda$Xn3L4nd1pyq5Y4ADFkdqBstmCM0(Lorg/fork/controller/BackupController;Lorg/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/controller/BackupController;->restore$lambda-15(Lorg/fork/controller/BackupController;Lorg/telegram/messenger/MessageObject;Ljava/util/List;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-static {p0, p1}, Lorg/fork/controller/BackupController;->restore$lambda$15$lambda$13(Lorg/fork/controller/BackupController;Lorg/fork/utils/Callbacks$Callback1;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$rxSf4t-uBGcCckjgf4l9ZYh12Xg(Ljava/lang/Exception;Lorg/fork/utils/Callbacks$Callback1;)V
+.method public static synthetic $r8$lambda$_ht9Aa3sp6k_eW88dKD6wmO17C0(Lorg/fork/controller/BackupController;Lorg/telegram/messenger/MessageObject;Ljava/util/List;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/controller/BackupController;->restore$lambda-15$lambda-14(Ljava/lang/Exception;Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/controller/BackupController;->restore$lambda$15(Lorg/fork/controller/BackupController;Lorg/telegram/messenger/MessageObject;Ljava/util/List;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback1;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$xFhENqjYPZy-4lix6Qm1C9oddq0(Ljava/lang/Exception;Lorg/fork/utils/Callbacks$Callback1;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/fork/controller/BackupController;->restore$lambda$15$lambda$14(Ljava/lang/Exception;Lorg/fork/utils/Callbacks$Callback1;)V
 
     return-void
 .end method
@@ -190,7 +190,7 @@
     move-result-object v1
 
     .line 445
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, "_id"
 
@@ -249,60 +249,53 @@
 .end method
 
 .method private final migrateToCurrentVersion(Lorg/fork/models/backup/Backup;)Lorg/fork/models/backup/Backup;
-    .locals 233
+    .locals 236
 
     .line 454
     invoke-virtual/range {p1 .. p1}, Lorg/fork/models/backup/Backup;->getVersion()Ljava/lang/Integer;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
+    const/4 v0, 0x0
 
     :goto_0
     const/4 v2, 0x1
 
     add-int/2addr v0, v2
 
-    const/16 v3, 0xc
-
-    move-object/from16 v4, p1
-
-    if-gt v0, v3, :cond_38
+    move-object/from16 v3, p1
 
     :goto_1
-    add-int/lit8 v15, v0, 0x1
+    const/16 v4, 0xd
 
-    const/16 v14, 0xa
+    if-ge v0, v4, :cond_2a
 
-    const/16 v118, 0x0
+    const/16 v15, 0xa
+
+    const/16 v119, 0x0
 
     packed-switch v0, :pswitch_data_0
 
-    move v0, v15
-
-    :goto_2
-    const/4 v1, 0x1
-
-    const/16 v118, 0x0
-
-    goto/16 :goto_1f
+    goto/16 :goto_6
 
     .line 536
     :pswitch_0
-    invoke-virtual {v4}, Lorg/fork/models/backup/Backup;->getSortingSettings()Ljava/util/List;
+    invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getSortingSettings()Ljava/util/List;
 
-    move-result-object v0
+    move-result-object v4
 
-    if-eqz v0, :cond_5
+    if-eqz v4, :cond_4
+
+    const/4 v4, 0x0
 
     const/4 v5, 0x0
 
@@ -321,8 +314,6 @@
     const/4 v12, 0x0
 
     const/4 v13, 0x0
-
-    const/4 v0, 0x0
 
     const/16 v16, 0x0
 
@@ -456,94 +447,89 @@
 
     const/16 v81, 0x0
 
+    const/16 v82, 0x0
+
     .line 537
-    invoke-virtual {v4}, Lorg/fork/models/backup/Backup;->getSortingSettings()Ljava/util/List;
-
-    move-result-object v3
-
-    if-nez v3, :cond_1
-
-    :goto_3
-    move-object/from16 v1, v118
-
-    goto :goto_5
-
-    .line 1043
-    :cond_1
-    new-instance v1, Lorg/fork/controller/BackupController$migrateToCurrentVersion$$inlined$sortedBy$1;
-
-    invoke-direct {v1}, Lorg/fork/controller/BackupController$migrateToCurrentVersion$$inlined$sortedBy$1;-><init>()V
-
-    invoke-static {v3, v1}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
+    invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getSortingSettings()Ljava/util/List;
 
     move-result-object v1
 
-    if-nez v1, :cond_2
+    if-eqz v1, :cond_3
 
-    goto :goto_3
+    .line 1045
+    new-instance v2, Lorg/fork/controller/BackupController$migrateToCurrentVersion$$inlined$sortedBy$1;
 
-    .line 1557
-    :cond_2
-    new-instance v3, Ljava/util/ArrayList;
+    invoke-direct {v2}, Lorg/fork/controller/BackupController$migrateToCurrentVersion$$inlined$sortedBy$1;-><init>()V
 
-    invoke-static {v1, v14}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v1, v2}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
 
-    move-result v2
+    move-result-object v1
 
-    invoke-direct {v3, v2}, Ljava/util/ArrayList;-><init>(I)V
+    if-eqz v1, :cond_3
 
-    .line 1589
+    .line 1559
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-static {v1, v15}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+
+    move-result v14
+
+    invoke-direct {v2, v14}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 1591
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    const/4 v14, 0x0
 
-    :goto_4
+    :goto_2
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v82
+    move-result v83
 
-    if-eqz v82, :cond_4
+    if-eqz v83, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v82
+    move-result-object v83
 
-    add-int/lit8 v83, v2, 0x1
+    add-int/lit8 v84, v14, 0x1
 
-    if-gez v2, :cond_3
+    if-gez v14, :cond_1
 
-    .line 1590
+    .line 1592
     invoke-static {}, Lkotlin/collections/CollectionsKt;->throwIndexOverflow()V
 
-    :cond_3
-    move-object/from16 v14, v82
+    :cond_1
+    move-object/from16 v15, v83
 
-    check-cast v14, Lorg/fork/models/backup/SortingTabStateBackup;
+    check-cast v15, Lorg/fork/models/backup/SortingTabStateBackup;
 
     .line 539
-    invoke-virtual {v14, v2}, Lorg/fork/models/backup/SortingTabStateBackup;->setPosition(I)V
+    invoke-virtual {v15, v14}, Lorg/fork/models/backup/SortingTabStateBackup;->setPosition(I)V
 
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    .line 1592
+    invoke-interface {v2, v15}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {v3, v14}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    move/from16 v14, v84
 
-    move/from16 v2, v83
+    const/16 v15, 0xa
 
-    const/16 v14, 0xa
-
-    goto :goto_4
+    goto :goto_2
 
     .line 540
-    :cond_4
-    invoke-static {v3}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
+    :cond_2
+    invoke-static {v2}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object v1
 
-    :goto_5
-    const/16 v82, 0x0
+    goto :goto_3
 
+    :cond_3
+    move-object/from16 v1, v119
+
+    :goto_3
     const/16 v83, 0x0
 
     const/16 v84, 0x0
@@ -604,21 +590,23 @@
 
     const/16 v112, 0x0
 
-    const/16 v113, -0x1
+    const/16 v113, 0x0
 
     const/16 v114, -0x1
 
-    const/16 v115, -0x1001
+    const/16 v115, -0x1
 
-    const/16 v116, 0xfff
+    const/16 v116, -0x4001
 
-    const/16 v117, 0x0
+    const/16 v117, 0x3fff
+
+    const/16 v118, 0x0
+
+    const/4 v2, 0x0
+
+    move-object v14, v2
 
     const/16 v2, 0xa
-
-    move-object v14, v0
-
-    move v0, v15
 
     move-object/from16 v15, v16
 
@@ -752,31 +740,29 @@
 
     move-object/from16 v80, v81
 
-    move-object/from16 v81, v1
+    move-object/from16 v81, v82
+
+    move-object/from16 v82, v1
 
     .line 537
-    invoke-static/range {v4 .. v117}, Lorg/fork/models/backup/Backup;->copy$default(Lorg/fork/models/backup/Backup;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;IIIILjava/lang/Object;)Lorg/fork/models/backup/Backup;
+    invoke-static/range {v3 .. v118}, Lorg/fork/models/backup/Backup;->copy$default(Lorg/fork/models/backup/Backup;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;IIIILjava/lang/Object;)Lorg/fork/models/backup/Backup;
 
-    move-result-object v4
+    move-result-object v3
 
-    goto :goto_6
+    goto :goto_4
 
-    :cond_5
-    move v0, v15
-
+    :cond_4
     const/16 v2, 0xa
 
-    :goto_6
-    move-object/from16 v119, v4
+    :goto_4
+    move-object/from16 v120, v3
 
     .line 543
-    invoke-virtual/range {v119 .. v119}, Lorg/fork/models/backup/Backup;->getArchiveSortingSettings()Ljava/util/List;
+    invoke-virtual/range {v120 .. v120}, Lorg/fork/models/backup/Backup;->getArchiveSortingSettings()Ljava/util/List;
 
     move-result-object v1
 
-    if-eqz v1, :cond_a
-
-    const/16 v120, 0x0
+    if-eqz v1, :cond_8
 
     const/16 v121, 0x0
 
@@ -932,20 +918,20 @@
 
     const/16 v197, 0x0
 
+    const/16 v198, 0x0
+
+    const/16 v199, 0x0
+
+    const/16 v200, 0x0
+
     .line 544
-    invoke-virtual/range {v119 .. v119}, Lorg/fork/models/backup/Backup;->getArchiveSortingSettings()Ljava/util/List;
+    invoke-virtual/range {v120 .. v120}, Lorg/fork/models/backup/Backup;->getArchiveSortingSettings()Ljava/util/List;
 
     move-result-object v1
 
-    if-nez v1, :cond_6
+    if-eqz v1, :cond_7
 
-    :goto_7
-    move-object/from16 v198, v118
-
-    goto :goto_9
-
-    .line 1043
-    :cond_6
+    .line 1045
     new-instance v3, Lorg/fork/controller/BackupController$migrateToCurrentVersion$$inlined$sortedBy$2;
 
     invoke-direct {v3}, Lorg/fork/controller/BackupController$migrateToCurrentVersion$$inlined$sortedBy$2;-><init>()V
@@ -954,12 +940,9 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_7
+    if-eqz v1, :cond_7
 
-    goto :goto_7
-
-    .line 1557
-    :cond_7
+    .line 1559
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-static {v1, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
@@ -968,19 +951,19 @@
 
     invoke-direct {v3, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1589
+    .line 1591
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
     const/4 v2, 0x0
 
-    :goto_8
+    :goto_5
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_9
+    if-eqz v4, :cond_6
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -988,39 +971,32 @@
 
     add-int/lit8 v5, v2, 0x1
 
-    if-gez v2, :cond_8
+    if-gez v2, :cond_5
 
-    .line 1590
+    .line 1592
     invoke-static {}, Lkotlin/collections/CollectionsKt;->throwIndexOverflow()V
 
-    :cond_8
+    :cond_5
     check-cast v4, Lorg/fork/models/backup/SortingTabStateBackup;
 
     .line 546
     invoke-virtual {v4, v2}, Lorg/fork/models/backup/SortingTabStateBackup;->setPosition(I)V
 
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
+    .line 1592
     invoke-interface {v3, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     move v2, v5
 
-    goto :goto_8
+    goto :goto_5
 
     .line 547
-    :cond_9
+    :cond_6
     invoke-static {v3}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
-    move-result-object v118
+    move-result-object v119
 
-    goto :goto_7
-
-    :goto_9
-    const/16 v199, 0x0
-
-    const/16 v200, 0x0
-
-    const/16 v201, 0x0
+    :cond_7
+    move-object/from16 v201, v119
 
     const/16 v202, 0x0
 
@@ -1074,67 +1050,67 @@
 
     const/16 v227, 0x0
 
-    const/16 v228, -0x1
+    const/16 v228, 0x0
 
-    const/16 v229, -0x1
+    const/16 v229, 0x0
 
-    const/16 v230, -0x4001
+    const/16 v230, 0x0
 
-    const/16 v231, 0xfff
+    const/16 v231, -0x1
 
-    const/16 v232, 0x0
+    const/16 v232, -0x1
+
+    const v233, -0x10001
+
+    const/16 v234, 0x3fff
+
+    const/16 v235, 0x0
 
     .line 544
-    invoke-static/range {v119 .. v232}, Lorg/fork/models/backup/Backup;->copy$default(Lorg/fork/models/backup/Backup;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;IIIILjava/lang/Object;)Lorg/fork/models/backup/Backup;
+    invoke-static/range {v120 .. v235}, Lorg/fork/models/backup/Backup;->copy$default(Lorg/fork/models/backup/Backup;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;IIIILjava/lang/Object;)Lorg/fork/models/backup/Backup;
 
     move-result-object v1
 
-    move-object v4, v1
+    move-object v3, v1
 
-    goto :goto_a
+    goto :goto_6
 
-    :cond_a
-    move-object/from16 v4, v119
+    :cond_8
+    move-object/from16 v3, v120
 
-    :goto_a
+    :cond_9
+    :goto_6
     const/4 v1, 0x1
 
-    const/16 v2, 0xc
+    const/16 v119, 0x0
 
-    const/16 v118, 0x0
-
-    goto/16 :goto_20
-
-    :pswitch_1
-    move v0, v15
+    goto/16 :goto_17
 
     .line 524
-    invoke-virtual {v4}, Lorg/fork/models/backup/Backup;->getArchiveSortingSettings()Ljava/util/List;
+    :pswitch_1
+    invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getArchiveSortingSettings()Ljava/util/List;
 
     move-result-object v1
 
-    if-nez v1, :cond_b
-
-    goto/16 :goto_2
+    if-eqz v1, :cond_9
 
     .line 525
-    :cond_b
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :cond_c
+    :cond_a
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_d
+    if-eqz v4, :cond_b
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    move-object v5, v3
+    move-object v5, v4
 
     check-cast v5, Lorg/fork/models/backup/SortingTabStateBackup;
 
@@ -1148,34 +1124,34 @@
 
     move-result v5
 
-    if-eqz v5, :cond_c
+    if-eqz v5, :cond_a
 
-    move-object/from16 v118, v3
+    move-object/from16 v119, v4
 
-    :cond_d
-    move-object/from16 v2, v118
+    :cond_b
+    move-object/from16 v2, v119
 
     check-cast v2, Lorg/fork/models/backup/SortingTabStateBackup;
 
-    if-nez v2, :cond_e
+    if-nez v2, :cond_c
 
-    goto :goto_c
+    goto :goto_6
 
-    .line 1849
-    :cond_e
+    .line 1855
+    :cond_c
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v4
 
-    :cond_f
-    :goto_b
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    :cond_d
+    :goto_7
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_10
+    if-eqz v5, :cond_e
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v5
 
@@ -1190,7 +1166,7 @@
 
     move-result v7
 
-    if-le v6, v7, :cond_f
+    if-le v6, v7, :cond_d
 
     .line 529
     invoke-virtual {v5}, Lorg/fork/models/backup/SortingTabStateBackup;->getPosition()I
@@ -1201,111 +1177,84 @@
 
     invoke-virtual {v5, v6}, Lorg/fork/models/backup/SortingTabStateBackup;->setPosition(I)V
 
-    goto :goto_b
+    goto :goto_7
 
     .line 532
-    :cond_10
+    :cond_e
     invoke-interface {v1, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 533
-    :goto_c
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    goto/16 :goto_2
-
-    :pswitch_2
-    move v0, v15
+    goto :goto_6
 
     .line 522
-    invoke-virtual {v4}, Lorg/fork/models/backup/Backup;->getMessagePopupItems()Ljava/util/List;
+    :pswitch_2
+    invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getMessagePopupItems()Ljava/util/List;
 
     move-result-object v1
 
-    if-nez v1, :cond_11
+    if-eqz v1, :cond_9
 
-    goto/16 :goto_2
-
-    :cond_11
-    sget-object v2, Lorg/fork/enums/MessagePopupItem;->SAVE_AS:Lorg/fork/enums/MessagePopupItem;
-
-    invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v2
+    const-string v2, "SAVE_AS"
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_2
-
-    :pswitch_3
-    move v0, v15
+    goto :goto_6
 
     .line 521
-    invoke-virtual {v4}, Lorg/fork/models/backup/Backup;->getMessagePopupItems()Ljava/util/List;
+    :pswitch_3
+    invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getMessagePopupItems()Ljava/util/List;
 
     move-result-object v1
 
-    if-nez v1, :cond_12
+    if-eqz v1, :cond_9
 
-    goto/16 :goto_2
-
-    :cond_12
-    sget-object v2, Lorg/fork/enums/MessagePopupItem;->COPY_IMAGE:Lorg/fork/enums/MessagePopupItem;
-
-    invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v2
+    const-string v2, "COPY_IMAGE"
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_2
-
-    :pswitch_4
-    move v0, v15
+    goto :goto_6
 
     .line 505
-    invoke-virtual {v4}, Lorg/fork/models/backup/Backup;->getMultiPanelSettings()Ljava/util/Map;
+    :pswitch_4
+    invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getMultiPanelSettings()Ljava/util/Map;
 
     move-result-object v1
 
-    if-nez v1, :cond_13
-
-    goto/16 :goto_2
+    if-eqz v1, :cond_9
 
     .line 506
-    :cond_13
     sget-object v2, Lorg/fork/enums/DialogType;->CHANNEL:Lorg/fork/enums/DialogType;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-interface {v1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, Ljava/util/List;
+    check-cast v4, Ljava/util/List;
 
-    if-nez v3, :cond_14
+    if-nez v4, :cond_f
 
-    goto/16 :goto_13
+    goto/16 :goto_6
 
     .line 507
-    :cond_14
+    :cond_f
     invoke-virtual {v2}, Lorg/fork/enums/DialogType;->getMultiPanelButtons()Ljava/util/List;
 
     move-result-object v2
 
-    .line 1849
+    .line 1855
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :goto_d
+    :goto_8
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_19
+    if-eqz v5, :cond_14
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1316,19 +1265,19 @@
     .line 508
     sget-object v6, Lorg/fork/enums/MultiPanelButton;->MUTE:Lorg/fork/enums/MultiPanelButton;
 
-    if-eq v5, v6, :cond_18
+    if-eq v5, v6, :cond_13
 
     .line 509
-    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
 
-    :cond_15
+    :cond_10
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v7
 
-    if-eqz v7, :cond_16
+    if-eqz v7, :cond_11
 
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1350,22 +1299,22 @@
 
     move-result v8
 
-    if-eqz v8, :cond_15
+    if-eqz v8, :cond_10
 
-    goto :goto_e
+    goto :goto_9
 
-    :cond_16
-    move-object/from16 v7, v118
+    :cond_11
+    move-object/from16 v7, v119
 
-    :goto_e
+    :goto_9
     check-cast v7, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
-    if-nez v7, :cond_17
+    if-nez v7, :cond_12
 
-    goto :goto_d
+    goto :goto_a
 
     .line 511
-    :cond_17
+    :cond_12
     invoke-virtual {v7}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;->getPosition()I
 
     move-result v5
@@ -1376,14 +1325,15 @@
 
     invoke-virtual {v7, v5}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;->setPosition(I)V
 
-    goto :goto_d
+    goto :goto_8
 
-    :cond_18
+    :cond_13
+    :goto_a
     const/4 v6, 0x1
 
-    goto :goto_d
+    goto :goto_8
 
-    :cond_19
+    :cond_14
     const/4 v6, 0x1
 
     .line 514
@@ -1399,20 +1349,20 @@
 
     invoke-direct {v2, v5, v6, v7}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;-><init>(Ljava/lang/String;ZI)V
 
-    invoke-interface {v3, v7, v2}, Ljava/util/List;->add(ILjava/lang/Object;)V
+    invoke-interface {v4, v7, v2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     .line 515
     invoke-static {}, Lorg/fork/enums/DialogType;->values()[Lorg/fork/enums/DialogType;
 
     move-result-object v2
 
-    .line 13536
+    .line 13579
     array-length v5, v2
 
     const/4 v7, 0x0
 
-    :goto_f
-    if-ge v7, v5, :cond_20
+    :goto_b
+    if-ge v7, v5, :cond_9
 
     aget-object v6, v2, v7
 
@@ -1427,11 +1377,8 @@
 
     check-cast v6, Ljava/util/List;
 
-    if-nez v6, :cond_1a
+    if-eqz v6, :cond_1a
 
-    goto :goto_12
-
-    :cond_1a
     sget-object v8, Lorg/fork/enums/MultiPanelButton;->PINS:Lorg/fork/enums/MultiPanelButton;
 
     invoke-virtual {v8}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -1442,39 +1389,39 @@
 
     move-result v8
 
-    .line 1895
-    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    .line 1963
+    invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v10
 
-    .line 1896
+    .line 1964
     invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v11
 
-    if-nez v11, :cond_1b
+    if-nez v11, :cond_15
 
-    move-object/from16 v11, v118
+    move-object/from16 v11, v119
 
-    goto :goto_10
+    goto :goto_c
 
-    .line 1897
-    :cond_1b
+    .line 1965
+    :cond_15
     invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v11
 
-    .line 1898
+    .line 1966
     invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v12
 
-    if-nez v12, :cond_1c
+    if-nez v12, :cond_16
 
-    goto :goto_10
+    goto :goto_c
 
-    .line 1899
-    :cond_1c
+    .line 1967
+    :cond_16
     move-object v12, v11
 
     check-cast v12, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
@@ -1484,13 +1431,13 @@
 
     move-result v12
 
-    .line 1901
-    :cond_1d
+    .line 1969
+    :cond_17
     invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v13
 
-    .line 1902
+    .line 1970
     move-object v14, v13
 
     check-cast v14, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
@@ -1500,31 +1447,26 @@
 
     move-result v14
 
-    if-ge v12, v14, :cond_1e
+    if-ge v12, v14, :cond_18
 
     move-object v11, v13
 
     move v12, v14
 
-    .line 1907
-    :cond_1e
+    .line 1975
+    :cond_18
     invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v13
 
-    if-nez v13, :cond_1d
+    if-nez v13, :cond_17
 
     .line 516
-    :goto_10
+    :goto_c
     check-cast v11, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
-    if-nez v11, :cond_1f
+    if-eqz v11, :cond_19
 
-    const/4 v10, 0x0
-
-    goto :goto_11
-
-    :cond_1f
     invoke-virtual {v11}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;->getPosition()I
 
     move-result v10
@@ -1533,62 +1475,46 @@
 
     add-int/2addr v10, v11
 
-    :goto_11
+    goto :goto_d
+
+    :cond_19
+    const/4 v10, 0x0
+
+    :goto_d
     new-instance v11, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
     invoke-direct {v11, v9, v8, v10}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;-><init>(Ljava/lang/String;ZI)V
 
     invoke-interface {v6, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :goto_12
+    :cond_1a
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_f
-
-    .line 519
-    :cond_20
-    :goto_13
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    goto/16 :goto_2
-
-    :pswitch_5
-    move v0, v15
+    goto :goto_b
 
     .line 503
-    invoke-virtual {v4}, Lorg/fork/models/backup/Backup;->getDrawerItems()Ljava/util/Set;
+    :pswitch_5
+    invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getDrawerItems()Ljava/util/Set;
 
     move-result-object v1
 
-    if-nez v1, :cond_21
+    if-eqz v1, :cond_9
 
-    goto/16 :goto_2
-
-    :cond_21
-    sget-object v2, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;->CATALOG:Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
-
-    invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v2
+    const-string v2, "CATALOG"
 
     invoke-interface {v1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_2
-
-    :pswitch_6
-    move v0, v15
+    goto/16 :goto_6
 
     .line 486
-    invoke-virtual {v4}, Lorg/fork/models/backup/Backup;->getMultiPanelSettings()Ljava/util/Map;
+    :pswitch_6
+    invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getMultiPanelSettings()Ljava/util/Map;
 
     move-result-object v1
 
-    if-nez v1, :cond_22
-
-    goto/16 :goto_2
+    if-eqz v1, :cond_9
 
     .line 487
-    :cond_22
     sget-object v2, Lorg/fork/enums/DialogType;->BOT:Lorg/fork/enums/DialogType;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -1601,28 +1527,28 @@
 
     check-cast v1, Ljava/util/List;
 
-    if-nez v1, :cond_23
+    if-nez v1, :cond_1b
 
-    goto/16 :goto_18
+    goto/16 :goto_6
 
     .line 488
-    :cond_23
+    :cond_1b
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :cond_24
+    :cond_1c
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_25
+    if-eqz v4, :cond_1d
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    move-object v5, v3
+    move-object v5, v4
 
     check-cast v5, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
@@ -1640,61 +1566,42 @@
 
     move-result v5
 
-    if-eqz v5, :cond_24
+    if-eqz v5, :cond_1c
 
-    goto :goto_14
+    goto :goto_e
 
-    :cond_25
-    move-object/from16 v3, v118
+    :cond_1d
+    move-object/from16 v4, v119
 
-    :goto_14
-    check-cast v3, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
+    :goto_e
+    check-cast v4, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
-    if-nez v3, :cond_26
+    if-eqz v4, :cond_9
 
-    move-object/from16 v2, v118
-
-    goto :goto_15
-
-    :cond_26
-    invoke-virtual {v3}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;->getPosition()I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    :goto_15
-    if-nez v2, :cond_27
-
-    goto/16 :goto_18
-
-    :cond_27
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v4}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;->getPosition()I
 
     move-result v2
 
     .line 490
-    sget-object v3, Lorg/fork/enums/DialogType;->BOT:Lorg/fork/enums/DialogType;
+    sget-object v4, Lorg/fork/enums/DialogType;->BOT:Lorg/fork/enums/DialogType;
 
-    invoke-virtual {v3}, Lorg/fork/enums/DialogType;->getMultiPanelButtons()Ljava/util/List;
+    invoke-virtual {v4}, Lorg/fork/enums/DialogType;->getMultiPanelButtons()Ljava/util/List;
 
-    move-result-object v3
+    move-result-object v4
 
-    .line 1849
-    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    .line 1855
+    invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v4
 
-    :goto_16
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    :goto_f
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_2c
+    if-eqz v5, :cond_22
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v5
 
@@ -1703,19 +1610,19 @@
     .line 491
     sget-object v6, Lorg/fork/enums/MultiPanelButton;->CACHE:Lorg/fork/enums/MultiPanelButton;
 
-    if-eq v5, v6, :cond_2b
+    if-eq v5, v6, :cond_21
 
     .line 492
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
 
-    :cond_28
+    :cond_1e
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v7
 
-    if-eqz v7, :cond_29
+    if-eqz v7, :cond_1f
 
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1737,27 +1644,27 @@
 
     move-result v8
 
-    if-eqz v8, :cond_28
+    if-eqz v8, :cond_1e
 
-    goto :goto_17
+    goto :goto_10
 
-    :cond_29
-    move-object/from16 v7, v118
+    :cond_1f
+    move-object/from16 v7, v119
 
-    :goto_17
+    :goto_10
     check-cast v7, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
-    if-nez v7, :cond_2a
+    if-nez v7, :cond_20
 
-    goto :goto_16
+    goto :goto_11
 
     .line 494
-    :cond_2a
+    :cond_20
     invoke-virtual {v7}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;->getPosition()I
 
     move-result v5
 
-    if-lt v5, v2, :cond_2b
+    if-lt v5, v2, :cond_21
 
     .line 495
     invoke-virtual {v7}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;->getPosition()I
@@ -1770,18 +1677,19 @@
 
     invoke-virtual {v7, v5}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;->setPosition(I)V
 
-    goto :goto_16
+    goto :goto_f
 
-    :cond_2b
+    :cond_21
+    :goto_11
     const/4 v6, 0x1
 
-    goto :goto_16
+    goto :goto_f
 
-    :cond_2c
+    :cond_22
     const/4 v6, 0x1
 
     .line 499
-    new-instance v3, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
+    new-instance v4, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
     sget-object v5, Lorg/fork/enums/MultiPanelButton;->CACHE:Lorg/fork/enums/MultiPanelButton;
 
@@ -1789,107 +1697,87 @@
 
     move-result-object v5
 
-    invoke-direct {v3, v5, v6, v2}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;-><init>(Ljava/lang/String;ZI)V
+    invoke-direct {v4, v5, v6, v2}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;-><init>(Ljava/lang/String;ZI)V
 
-    invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1000
+    .line 1002
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-le v2, v6, :cond_2d
+    if-le v2, v6, :cond_9
 
-    new-instance v2, Lorg/fork/controller/BackupController$migrateToCurrentVersion$lambda-26$$inlined$sortBy$1;
+    new-instance v2, Lorg/fork/controller/BackupController$migrateToCurrentVersion$lambda$25$$inlined$sortBy$1;
 
-    invoke-direct {v2}, Lorg/fork/controller/BackupController$migrateToCurrentVersion$lambda-26$$inlined$sortBy$1;-><init>()V
+    invoke-direct {v2}, Lorg/fork/controller/BackupController$migrateToCurrentVersion$lambda$25$$inlined$sortBy$1;-><init>()V
 
     invoke-static {v1, v2}, Lkotlin/collections/CollectionsKt;->sortWith(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 501
-    :cond_2d
-    :goto_18
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    goto/16 :goto_2
-
-    :pswitch_7
-    move v0, v15
+    goto/16 :goto_6
 
     .line 475
-    invoke-virtual {v4}, Lorg/fork/models/backup/Backup;->getTopics()Ljava/util/List;
+    :pswitch_7
+    invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getTopics()Ljava/util/List;
 
     move-result-object v1
 
-    if-nez v1, :cond_2e
+    if-eqz v1, :cond_9
 
-    goto/16 :goto_2
+    sget-object v2, Lorg/fork/controller/BackupController$migrateToCurrentVersion$3;->INSTANCE:Lorg/fork/controller/BackupController$migrateToCurrentVersion$3;
 
-    :cond_2e
-    sget-object v2, Lorg/fork/controller/BackupController$$ExternalSyntheticLambda3;->INSTANCE:Lorg/fork/controller/BackupController$$ExternalSyntheticLambda3;
+    new-instance v4, Lorg/fork/controller/BackupController$$ExternalSyntheticLambda3;
 
-    invoke-static {v1, v2}, Lj$/util/Collection$-EL;->removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
+    invoke-direct {v4, v2}, Lorg/fork/controller/BackupController$$ExternalSyntheticLambda3;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    goto/16 :goto_2
+    invoke-static {v1, v4}, Lj$/util/Collection$-EL;->removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
 
-    :pswitch_8
-    move v0, v15
+    goto/16 :goto_6
 
     .line 474
-    invoke-virtual {v4}, Lorg/fork/models/backup/Backup;->getDrawerItems()Ljava/util/Set;
+    :pswitch_8
+    invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getDrawerItems()Ljava/util/Set;
 
     move-result-object v1
 
-    if-nez v1, :cond_2f
+    if-eqz v1, :cond_9
 
-    goto/16 :goto_2
-
-    :cond_2f
-    sget-object v2, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;->MANAGEMENT:Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
-
-    invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v2
+    const-string v2, "MANAGEMENT"
 
     invoke-interface {v1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_2
+    goto/16 :goto_6
 
     :pswitch_9
-    move v0, v15
-
     const/16 v2, 0xa
 
     .line 461
-    invoke-virtual {v4}, Lorg/fork/models/backup/Backup;->getSortingSettings()Ljava/util/List;
+    invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getSortingSettings()Ljava/util/List;
 
     move-result-object v1
 
-    if-nez v1, :cond_30
+    if-eqz v1, :cond_25
 
-    goto :goto_1b
-
-    .line 1849
-    :cond_30
+    .line 1855
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :goto_19
+    :goto_12
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_32
+    if-eqz v4, :cond_24
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, Lorg/fork/models/backup/SortingTabStateBackup;
+    check-cast v4, Lorg/fork/models/backup/SortingTabStateBackup;
 
     .line 462
-    invoke-virtual {v3}, Lorg/fork/models/backup/SortingTabStateBackup;->getFabDataBackup()Lorg/fork/models/backup/FabDataBackup;
+    invoke-virtual {v4}, Lorg/fork/models/backup/SortingTabStateBackup;->getFabDataBackup()Lorg/fork/models/backup/FabDataBackup;
 
     move-result-object v5
 
@@ -1899,10 +1787,10 @@
 
     move-result v5
 
-    if-eqz v5, :cond_31
+    if-eqz v5, :cond_23
 
     .line 463
-    invoke-virtual {v3}, Lorg/fork/models/backup/SortingTabStateBackup;->getFabDataBackup()Lorg/fork/models/backup/FabDataBackup;
+    invoke-virtual {v4}, Lorg/fork/models/backup/SortingTabStateBackup;->getFabDataBackup()Lorg/fork/models/backup/FabDataBackup;
 
     move-result-object v5
 
@@ -1910,13 +1798,13 @@
 
     move-result-object v5
 
-    goto :goto_1a
+    goto :goto_13
 
     .line 465
-    :cond_31
+    :cond_23
     sget-object v5, Lcom/smedialink/storage/domain/model/filters/FilterFab;->Companion:Lcom/smedialink/storage/domain/model/filters/FilterFab$Companion;
 
-    invoke-virtual {v3}, Lorg/fork/models/backup/SortingTabStateBackup;->getFabDataBackup()Lorg/fork/models/backup/FabDataBackup;
+    invoke-virtual {v4}, Lorg/fork/models/backup/SortingTabStateBackup;->getFabDataBackup()Lorg/fork/models/backup/FabDataBackup;
 
     move-result-object v6
 
@@ -1933,21 +1821,23 @@
     move-result-object v5
 
     .line 466
-    :goto_1a
+    :goto_13
     invoke-static {v5}, Lkotlin/collections/CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
     move-result-object v5
 
     .line 462
-    invoke-virtual {v3, v5}, Lorg/fork/models/backup/SortingTabStateBackup;->setFabs(Ljava/util/Set;)V
+    invoke-virtual {v4, v5}, Lorg/fork/models/backup/SortingTabStateBackup;->setFabs(Ljava/util/Set;)V
 
-    goto :goto_19
+    goto :goto_12
 
-    .line 1850
-    :cond_32
+    .line 1856
+    :cond_24
     sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    :goto_1b
+    :cond_25
+    const/4 v4, 0x0
+
     const/4 v5, 0x0
 
     const/4 v6, 0x0
@@ -1967,8 +1857,6 @@
     const/4 v13, 0x0
 
     const/4 v14, 0x0
-
-    const/4 v15, 0x0
 
     const/16 v16, 0x0
 
@@ -2096,52 +1984,54 @@
 
     const/16 v78, 0x0
 
+    const/16 v79, 0x0
+
     .line 468
-    invoke-virtual {v4}, Lorg/fork/models/backup/Backup;->getAllChatsTabFab()Ljava/lang/String;
+    invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getAllChatsTabFab()Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v3, "fab_multi"
+    const-string v15, "fab_multi"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v15}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_27
 
     .line 469
-    invoke-virtual {v4}, Lorg/fork/models/backup/Backup;->getAllChatsTabMultiFabs()Ljava/util/List;
+    invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getAllChatsTabMultiFabs()Ljava/util/List;
 
     move-result-object v1
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    .line 1547
-    new-instance v3, Ljava/util/ArrayList;
+    .line 1549
+    new-instance v15, Ljava/util/ArrayList;
 
     invoke-static {v1, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v2
 
-    invoke-direct {v3, v2}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v15, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :goto_1c
+    :goto_14
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_26
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Lcom/smedialink/storage/domain/model/filters/FilterFab;
 
     .line 469
@@ -2149,46 +2039,46 @@
 
     move-result-object v2
 
-    invoke-interface {v3, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    .line 1621
+    invoke-interface {v15, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1c
+    goto :goto_14
 
-    :cond_33
-    invoke-static {v3}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
+    .line 469
+    :cond_26
+    invoke-static {v15}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
     move-result-object v1
 
-    move-object/from16 v79, v1
+    move-object/from16 v80, v1
 
     const/4 v1, 0x1
 
-    const/16 v118, 0x0
+    const/16 v119, 0x0
 
-    goto :goto_1d
+    goto :goto_15
 
-    :cond_34
+    :cond_27
     const/4 v1, 0x1
 
     new-array v2, v1, [Ljava/lang/String;
 
     .line 471
-    invoke-virtual {v4}, Lorg/fork/models/backup/Backup;->getAllChatsTabFab()Ljava/lang/String;
+    invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getAllChatsTabFab()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v15
 
-    const/16 v118, 0x0
+    const/16 v119, 0x0
 
-    aput-object v3, v2, v118
+    aput-object v15, v2, v119
 
     invoke-static {v2}, Lkotlin/collections/SetsKt;->mutableSetOf([Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v2
 
-    move-object/from16 v79, v2
+    move-object/from16 v80, v2
 
-    :goto_1d
-    const/16 v80, 0x0
-
+    :goto_15
     const/16 v81, 0x0
 
     const/16 v82, 0x0
@@ -2253,65 +2143,66 @@
 
     const/16 v112, 0x0
 
-    const/16 v113, -0x1
+    const/16 v113, 0x0
 
     const/16 v114, -0x1
 
-    const/16 v115, -0x401
+    const/16 v115, -0x1
 
-    const/16 v116, 0xfff
+    const/16 v116, -0x1001
 
-    const/16 v117, 0x0
+    const/16 v117, 0x3fff
+
+    const/16 v118, 0x0
+
+    const/4 v2, 0x0
+
+    move-object v15, v2
 
     .line 468
-    invoke-static/range {v4 .. v117}, Lorg/fork/models/backup/Backup;->copy$default(Lorg/fork/models/backup/Backup;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;IIIILjava/lang/Object;)Lorg/fork/models/backup/Backup;
+    invoke-static/range {v3 .. v118}, Lorg/fork/models/backup/Backup;->copy$default(Lorg/fork/models/backup/Backup;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;IIIILjava/lang/Object;)Lorg/fork/models/backup/Backup;
 
     move-result-object v2
 
     .line 473
     sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    move-object v4, v2
+    move-object v3, v2
 
-    goto :goto_1f
+    goto :goto_17
 
     :pswitch_a
-    move v0, v15
-
     const/4 v1, 0x1
 
-    const/16 v118, 0x0
+    const/16 v119, 0x0
 
     .line 457
-    invoke-virtual {v4}, Lorg/fork/models/backup/Backup;->getTopics()Ljava/util/List;
+    invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getTopics()Ljava/util/List;
 
     move-result-object v2
 
-    if-nez v2, :cond_35
+    if-eqz v2, :cond_29
 
-    goto :goto_1f
-
-    .line 1849
-    :cond_35
+    .line 1855
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :goto_1e
+    :goto_16
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_36
+    if-eqz v4, :cond_28
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, Lorg/fork/models/backup/TopicBackup;
+    check-cast v4, Lorg/fork/models/backup/TopicBackup;
 
     .line 458
-    invoke-virtual {v3}, Lorg/fork/models/backup/TopicBackup;->getTopicId()Ljava/lang/String;
+    invoke-virtual {v4}, Lorg/fork/models/backup/TopicBackup;->getTopicId()Ljava/lang/String;
 
     move-result-object v5
 
@@ -2321,34 +2212,24 @@
 
     move-result-object v5
 
-    invoke-virtual {v3, v5}, Lorg/fork/models/backup/TopicBackup;->setIcon(Lcom/smedialink/storage/data/repository/topics/Topic;)V
+    invoke-virtual {v4, v5}, Lorg/fork/models/backup/TopicBackup;->setIcon(Lcom/smedialink/storage/data/repository/topics/Topic;)V
 
-    goto :goto_1e
+    goto :goto_16
 
-    .line 1850
-    :cond_36
+    .line 1856
+    :cond_28
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    :goto_1f
-    const/16 v2, 0xc
+    :cond_29
+    :goto_17
+    add-int/lit8 v0, v0, 0x1
 
-    :goto_20
-    if-le v0, v2, :cond_37
-
-    goto :goto_21
-
-    :cond_37
     const/4 v2, 0x1
-
-    const/16 v3, 0xc
 
     goto/16 :goto_1
 
-    :cond_38
-    :goto_21
-    return-object v4
-
-    nop
+    :cond_2a
+    return-object v3
 
     :pswitch_data_0
     .packed-switch 0x2
@@ -2366,110 +2247,23 @@
     .end packed-switch
 .end method
 
-.method private static final migrateToCurrentVersion$lambda-21(Lorg/fork/models/backup/TopicBackup;)Z
-    .locals 4
+.method private static final migrateToCurrentVersion$lambda$20(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
+    .locals 1
 
-    const-string v0, "topicModel"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 476
-    new-instance v0, Ljava/util/LinkedHashSet;
-
-    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
-
-    invoke-virtual {p0, v0}, Lorg/fork/models/backup/TopicBackup;->setPresets(Ljava/util/Set;)V
-
-    .line 477
-    invoke-virtual {p0}, Lorg/fork/models/backup/TopicBackup;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    .line 478
-    invoke-virtual {p0}, Lorg/fork/models/backup/TopicBackup;->getIcon()Lcom/smedialink/storage/data/repository/topics/Topic;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
-    invoke-virtual {v0}, Lcom/smedialink/storage/data/repository/topics/Topic;->getPresets()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
-    .line 1547
-    new-instance v1, Ljava/util/ArrayList;
-
-    const/16 v2, 0xa
-
-    invoke-static {v0, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
-
-    move-result v2
-
-    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 1618
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    .line 1619
-    check-cast v2, Ljava/lang/Number;
-
-    invoke-virtual {v2}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v2
-
-    neg-long v2, v2
-
-    .line 478
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    .line 479
-    :cond_0
-    invoke-virtual {p0}, Lorg/fork/models/backup/TopicBackup;->getDatabaseDialogs()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-static {v1}, Lkotlin/collections/CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->removeAll(Ljava/util/Collection;)Z
-
-    .line 480
-    invoke-virtual {p0}, Lorg/fork/models/backup/TopicBackup;->getDatabaseDialogs()Ljava/util/Set;
+    .line 475
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-interface {p0}, Ljava/util/Set;->isEmpty()Z
+    check-cast p0, Ljava/lang/Boolean;
+
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p0
-
-    return p0
-
-    :cond_1
-    const/4 p0, 0x0
 
     return p0
 .end method
@@ -2516,7 +2310,7 @@
     return v0
 .end method
 
-.method private static final restore$lambda-15(Lorg/fork/controller/BackupController;Lorg/telegram/messenger/MessageObject;Ljava/util/List;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback1;)V
+.method private static final restore$lambda$15(Lorg/fork/controller/BackupController;Lorg/telegram/messenger/MessageObject;Ljava/util/List;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback1;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -2770,7 +2564,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSuggestPremiumReactionsEmoji(Z)V
 
-    .line 1849
+    .line 1855
     :cond_8
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -3868,7 +3662,7 @@
     .end packed-switch
 .end method
 
-.method private static final restore$lambda-15$lambda-13(Lorg/fork/controller/BackupController;Lorg/fork/utils/Callbacks$Callback1;)V
+.method private static final restore$lambda$15$lambda$13(Lorg/fork/controller/BackupController;Lorg/fork/utils/Callbacks$Callback1;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -3896,7 +3690,7 @@
     return-void
 .end method
 
-.method private static final restore$lambda-15$lambda-14(Ljava/lang/Exception;Lorg/fork/utils/Callbacks$Callback1;)V
+.method private static final restore$lambda$15$lambda$14(Ljava/lang/Exception;Lorg/fork/utils/Callbacks$Callback1;)V
     .locals 1
 
     const-string v0, "$e"
@@ -3929,7 +3723,7 @@
 
 # virtual methods
 .method public final backup(Z)V
-    .locals 118
+    .locals 120
 
     move-object/from16 v1, p0
 
@@ -4366,18 +4160,22 @@
 
     move-result-object v46
 
+    const/16 v47, 0x0
+
     .line 124
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getRecentChatsController()Lorg/fork/controller/RecentChatsController;
 
     move-result-object v14
 
-    invoke-virtual {v14}, Lorg/fork/controller/RecentChatsController;->getSelectedRecentChatsDialogTypes()Ljava/util/Set;
+    invoke-virtual {v14}, Lorg/fork/controller/RecentChatsController;->isSaveArchiveRecentChatsEnabled()Z
 
-    move-result-object v14
+    move-result v14
 
-    invoke-virtual {v2, v14}, Lorg/fork/enums/DialogType$Companion;->mapEnumsToNames(Ljava/util/Set;)Ljava/util/Set;
+    invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v47
+    move-result-object v48
+
+    const/16 v49, 0x0
 
     .line 126
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMultiPanelController()Lorg/fork/controller/MultiPanelController;
@@ -4390,7 +4188,7 @@
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v48
+    move-result-object v50
 
     .line 127
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMultiPanelController()Lorg/fork/controller/MultiPanelController;
@@ -4403,7 +4201,7 @@
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v49
+    move-result-object v51
 
     .line 128
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMultiPanelController()Lorg/fork/controller/MultiPanelController;
@@ -4412,56 +4210,56 @@
 
     invoke-virtual {v14}, Lorg/fork/controller/MultiPanelController;->getBackupData()Ljava/util/Map;
 
-    move-result-object v50
+    move-result-object v52
 
     .line 130
     sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isOpenForwardingOptionsAutomaticallyEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v51
+    move-result-object v53
 
     .line 131
     sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isCustomSharingModeEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v52
+    move-result-object v54
 
     .line 132
     sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isMultiReplyEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v53
+    move-result-object v55
 
     .line 133
     sget-object v14, Lorg/telegram/messenger/SharedConfig;->selectedChatProfileTelegramIdMode:Lorg/fork/enums/ChatProfileTelegramIdMode;
 
     invoke-virtual {v14}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v54
+    move-result-object v56
 
     .line 134
     sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isMessageQuickTranslateEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v55
+    move-result-object v57
 
     .line 135
     sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isBotHelpTranslateEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v56
+    move-result-object v58
 
     .line 136
     sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isTranslateInSendPopupEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v57
+    move-result-object v59
 
     .line 137
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
@@ -4474,7 +4272,7 @@
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v58
+    move-result-object v60
 
     .line 138
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
@@ -4487,7 +4285,7 @@
 
     invoke-virtual {v14}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v59
+    move-result-object v61
 
     .line 139
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
@@ -4500,21 +4298,21 @@
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v60
+    move-result-object v62
 
     .line 140
     sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isCombineMessagesEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v61
+    move-result-object v63
 
     .line 141
     sget-object v14, Lorg/fork/enums/PhotoViewerMenuItem;->Companion:Lorg/fork/enums/PhotoViewerMenuItem$Companion;
 
     sget-object v15, Lorg/telegram/messenger/SharedConfig;->selectedPhotoViewerMenuItems:Ljava/util/Set;
 
-    move-object/from16 v62, v1
+    move-object/from16 v64, v1
 
     const-string v1, "selectedPhotoViewerMenuItems"
 
@@ -4529,7 +4327,7 @@
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v63
+    move-result-object v65
 
     .line 143
     sget-object v14, Lorg/telegram/messenger/SharedConfig;->selectedDialogTypesForMessagePopupReactions:Ljava/util/Set;
@@ -4540,46 +4338,46 @@
 
     invoke-virtual {v2, v14}, Lorg/fork/enums/DialogType$Companion;->mapEnumsToNames(Ljava/util/Set;)Ljava/util/Set;
 
-    move-result-object v64
+    move-result-object v66
 
     .line 144
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isReactionsInSendPopupEnabled:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v65
+    move-result-object v67
 
-    const/16 v66, 0x0
+    const/16 v68, 0x0
 
-    const/16 v67, 0x0
+    const/16 v69, 0x0
 
     .line 146
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isFilterTabsAtBottomEnabled:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v68
+    move-result-object v70
 
     .line 147
     sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabsNotificationMode:Lorg/fork/enums/FilterTabNotificationMode;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v69
+    move-result-object v71
 
     .line 148
     sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lorg/fork/enums/FilterTabWidthMode;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v70
+    move-result-object v72
 
     .line 149
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isRememberLastFilterTabEnabled:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v71
+    move-result-object v73
 
     .line 150
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
@@ -4592,7 +4390,7 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v72
+    move-result-object v74
 
     .line 151
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
@@ -4605,7 +4403,7 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v73
+    move-result-object v75
 
     .line 152
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
@@ -4614,14 +4412,14 @@
 
     invoke-virtual {v2}, Lorg/fork/controller/FiltersController;->getFiltersBackupData()Ljava/util/List;
 
-    move-result-object v74
+    move-result-object v76
 
     .line 154
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isChatSortingEnabledByDefault:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v75
+    move-result-object v77
 
     .line 155
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
@@ -4634,7 +4432,7 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v76
+    move-result-object v78
 
     .line 156
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
@@ -4647,7 +4445,7 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v77
+    move-result-object v79
 
     .line 157
     sget-object v2, Lcom/smedialink/storage/domain/model/filters/FilterFab;->Companion:Lcom/smedialink/storage/domain/model/filters/FilterFab$Companion;
@@ -4662,7 +4460,7 @@
 
     invoke-virtual {v2, v14}, Lcom/smedialink/storage/domain/model/filters/FilterFab$Companion;->mapEnumsToNames(Ljava/util/Set;)Ljava/util/Set;
 
-    move-result-object v78
+    move-result-object v80
 
     .line 158
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
@@ -4677,7 +4475,7 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v79
+    move-result-object v81
 
     .line 159
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
@@ -4686,7 +4484,7 @@
 
     invoke-virtual {v2, v15}, Lorg/fork/controller/FiltersController;->getBackupSortingTabs(Z)Ljava/util/List;
 
-    move-result-object v80
+    move-result-object v82
 
     .line 160
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
@@ -4701,7 +4499,7 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v81
+    move-result-object v83
 
     .line 161
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
@@ -4710,7 +4508,7 @@
 
     invoke-virtual {v2, v14}, Lorg/fork/controller/FiltersController;->getBackupSortingTabs(Z)Ljava/util/List;
 
-    move-result-object v82
+    move-result-object v84
 
     .line 162
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
@@ -4719,7 +4517,7 @@
 
     invoke-virtual {v2, v15}, Lorg/fork/controller/FiltersController;->getPinnedChats(Z)Ljava/util/Map;
 
-    move-result-object v83
+    move-result-object v85
 
     .line 163
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
@@ -4728,28 +4526,28 @@
 
     invoke-virtual {v2, v14}, Lorg/fork/controller/FiltersController;->getPinnedChats(Z)Ljava/util/Map;
 
-    move-result-object v84
+    move-result-object v86
 
     .line 165
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isCloudAlbumsEnabled:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v85
+    move-result-object v87
 
     .line 166
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isAlbumsIntroShown:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v86
+    move-result-object v88
 
     .line 167
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isSortCloudAlbumsByNameEnabled:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v87
+    move-result-object v89
 
     .line 168
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getAlbumsController()Lorg/fork/controller/AlbumsController;
@@ -4762,7 +4560,7 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v88
+    move-result-object v90
 
     .line 169
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getAlbumsController()Lorg/fork/controller/AlbumsController;
@@ -4771,7 +4569,7 @@
 
     invoke-virtual {v2}, Lorg/fork/controller/AlbumsController;->getAlbums()Ljava/util/List;
 
-    move-result-object v89
+    move-result-object v91
 
     .line 171
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getBookmarksController()Lorg/fork/controller/BookmarksController;
@@ -4780,7 +4578,7 @@
 
     invoke-virtual {v2}, Lorg/fork/controller/BookmarksController;->getBookmarks()Ljava/util/Map;
 
-    move-result-object v90
+    move-result-object v92
 
     .line 173
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getDialogTranslationSettingsController()Lorg/fork/controller/DialogTranslationController;
@@ -4789,42 +4587,42 @@
 
     invoke-virtual {v2}, Lorg/fork/controller/DialogTranslationController;->getBackupData()Ljava/util/List;
 
-    move-result-object v91
+    move-result-object v93
 
     .line 175
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isPlayerPinned:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v92
+    move-result-object v94
 
     .line 176
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isPinnedPlayerMinimized:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v93
+    move-result-object v95
 
     .line 177
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isPinnedPlayerThemeOverridden:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v94
+    move-result-object v96
 
     .line 178
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isPinnedPlayerNightThemeEnabled:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v95
+    move-result-object v97
 
     .line 179
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isMusicIntroShown:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v96
+    move-result-object v98
 
     .line 180
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMusicController()Lorg/fork/controller/MusicController;
@@ -4837,7 +4635,7 @@
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v97
+    move-result-object v99
 
     .line 181
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMusicController()Lorg/fork/controller/MusicController;
@@ -4846,21 +4644,21 @@
 
     invoke-virtual {v2}, Lorg/fork/controller/MusicController;->getPlaylists()Ljava/util/Map;
 
-    move-result-object v98
+    move-result-object v100
 
     .line 183
     sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedTemplatesMode:Lorg/fork/enums/TemplatesMode;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v99
+    move-result-object v101
 
     .line 184
     sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedTemplatesSortingType:Lorg/fork/enums/TemplatesSortingType;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v100
+    move-result-object v102
 
     .line 185
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getTemplatesController()Lorg/fork/controller/TemplatesController;
@@ -4869,11 +4667,11 @@
 
     invoke-virtual {v2}, Lorg/fork/controller/TemplatesController;->getTemplatesChannelId()J
 
-    move-result-wide v101
+    move-result-wide v103
 
-    invoke-static/range {v101 .. v102}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static/range {v103 .. v104}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v101
+    move-result-object v103
 
     .line 186
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getTemplatesController()Lorg/fork/controller/TemplatesController;
@@ -4882,7 +4680,7 @@
 
     invoke-virtual {v2}, Lorg/fork/controller/TemplatesController;->getTemplatesBackupData()Ljava/util/List;
 
-    move-result-object v102
+    move-result-object v104
 
     .line 188
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lorg/fork/controller/ForkTopicsController;
@@ -4895,7 +4693,7 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v103
+    move-result-object v105
 
     .line 189
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lorg/fork/controller/ForkTopicsController;
@@ -4908,7 +4706,7 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v104
+    move-result-object v106
 
     .line 190
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lorg/fork/controller/ForkTopicsController;
@@ -4921,7 +4719,7 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v105
+    move-result-object v107
 
     .line 191
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lorg/fork/controller/ForkTopicsController;
@@ -4934,7 +4732,7 @@
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v106
+    move-result-object v108
 
     .line 192
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lorg/fork/controller/ForkTopicsController;
@@ -4947,7 +4745,7 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v107
+    move-result-object v109
 
     .line 193
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lorg/fork/controller/ForkTopicsController;
@@ -4956,40 +4754,40 @@
 
     invoke-virtual {v2}, Lorg/fork/controller/ForkTopicsController;->getTopicsBackupData()Ljava/util/List;
 
-    move-result-object v108
+    move-result-object v110
 
     const/16 v2, 0xc
 
     .line 195
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v116
-
-    const/16 v109, 0x0
-
-    const/16 v110, 0x0
+    move-result-object v118
 
     const/16 v111, 0x0
 
-    const/high16 v112, -0x40000000    # -2.0f
+    const/16 v112, 0x0
 
     const/16 v113, 0x0
 
-    const/16 v114, 0xc00
+    const/16 v114, 0x2800
 
-    const/16 v115, 0x0
+    const/16 v115, 0x3
+
+    const/16 v116, 0x3000
+
+    const/16 v117, 0x0
 
     move-object v2, v0
 
     move-object/from16 v14, v35
 
-    const/16 v117, 0x0
+    const/16 v119, 0x0
 
     move-object/from16 v15, v21
 
     move-object/from16 v21, v34
 
-    move-object/from16 v34, v62
+    move-object/from16 v34, v64
 
     move-object/from16 v35, v36
 
@@ -5043,11 +4841,11 @@
 
     move-object/from16 v60, v61
 
-    move-object/from16 v61, v1
+    move-object/from16 v61, v62
 
     move-object/from16 v62, v63
 
-    move-object/from16 v63, v64
+    move-object/from16 v63, v1
 
     move-object/from16 v64, v65
 
@@ -5137,10 +4935,14 @@
 
     move-object/from16 v107, v108
 
-    move-object/from16 v108, v116
+    move-object/from16 v108, v109
+
+    move-object/from16 v109, v110
+
+    move-object/from16 v110, v118
 
     .line 79
-    invoke-direct/range {v2 .. v115}, Lorg/fork/models/backup/Backup;-><init>(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;IIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v2 .. v117}, Lorg/fork/models/backup/Backup;-><init>(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;IIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     .line 197
     new-instance v1, Ljava/io/File;
@@ -5189,9 +4991,6 @@
     .line 200
     invoke-virtual {v2}, Ljava/io/OutputStreamWriter;->flush()V
 
-    .line 201
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 202
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getAccountInstance()Lorg/telegram/messenger/AccountInstance;
 
@@ -5205,7 +5004,7 @@
 
     move-result-object v3
 
-    aput-object v3, v2, v117
+    aput-object v3, v2, v119
 
     invoke-static {v2}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
@@ -5217,7 +5016,7 @@
 
     move-result-object v1
 
-    aput-object v1, v0, v117
+    aput-object v1, v0, v119
 
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
@@ -5310,15 +5109,6 @@
     return-object v0
 .end method
 
-.method public final getLastAutoBackupTime()J
-    .locals 2
-
-    .line 40
-    iget-wide v0, p0, Lorg/fork/controller/BackupController;->lastAutoBackupTime:J
-
-    return-wide v0
-.end method
-
 .method public final getSelectedAutoBackupInterval()Lorg/fork/enums/Interval;
     .locals 1
 
@@ -5357,7 +5147,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/BackupController;->setAutoBackupEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/BackupController;->isAutoBackupEnabled:Z
 
     .line 47
     sget-object v0, Lorg/fork/enums/Interval;->Companion:Lorg/fork/enums/Interval$Companion;
@@ -5386,7 +5176,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/BackupController;->setSelectedAutoBackupInterval(Lorg/fork/enums/Interval;)V
+    iput-object v0, p0, Lorg/fork/controller/BackupController;->selectedAutoBackupInterval:Lorg/fork/enums/Interval;
 
     .line 48
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->lastAutoBackupTime()Ljava/lang/String;
@@ -5401,7 +5191,7 @@
 
     move-result-wide v0
 
-    invoke-virtual {p0, v0, v1}, Lorg/fork/controller/BackupController;->setLastAutoBackupTime(J)V
+    iput-wide v0, p0, Lorg/fork/controller/BackupController;->lastAutoBackupTime:J
 
     return-void
 .end method
@@ -5554,9 +5344,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/BackupController;->isAutoBackupEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/BackupController;->isAutoBackupEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -5565,9 +5353,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/BackupController;->getSelectedAutoBackupInterval()Lorg/fork/enums/Interval;
-
-    move-result-object v2
+    iget-object v2, p0, Lorg/fork/controller/BackupController;->selectedAutoBackupInterval:Lorg/fork/enums/Interval;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
@@ -5580,9 +5366,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/BackupController;->getLastAutoBackupTime()J
-
-    move-result-wide v2
+    iget-wide v2, p0, Lorg/fork/controller/BackupController;->lastAutoBackupTime:J
 
     invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
@@ -5597,15 +5381,6 @@
 
     .line 38
     iput-boolean p1, p0, Lorg/fork/controller/BackupController;->isAutoBackupEnabled:Z
-
-    return-void
-.end method
-
-.method public final setLastAutoBackupTime(J)V
-    .locals 0
-
-    .line 40
-    iput-wide p1, p0, Lorg/fork/controller/BackupController;->lastAutoBackupTime:J
 
     return-void
 .end method

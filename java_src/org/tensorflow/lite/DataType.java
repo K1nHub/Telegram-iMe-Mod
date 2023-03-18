@@ -16,7 +16,7 @@ public enum DataType {
 
     /* renamed from: org.tensorflow.lite.DataType$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C65131 {
+    static /* synthetic */ class C66581 {
         static final /* synthetic */ int[] $SwitchMap$org$tensorflow$lite$DataType;
 
         static {
@@ -46,7 +46,7 @@ public enum DataType {
     }
 
     public int byteSize() {
-        int i = C65131.$SwitchMap$org$tensorflow$lite$DataType[ordinal()];
+        int i = C66581.$SwitchMap$org$tensorflow$lite$DataType[ordinal()];
         if (i == 1 || i == 2) {
             return 4;
         }
@@ -79,7 +79,7 @@ public enum DataType {
     }
 
     String toStringName() {
-        int i = C65131.$SwitchMap$org$tensorflow$lite$DataType[ordinal()];
+        int i = C66581.$SwitchMap$org$tensorflow$lite$DataType[ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {

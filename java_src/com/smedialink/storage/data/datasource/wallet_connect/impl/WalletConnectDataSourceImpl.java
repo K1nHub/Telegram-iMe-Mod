@@ -3,17 +3,13 @@ package com.smedialink.storage.data.datasource.wallet_connect.impl;
 import com.smedialink.storage.data.datasource.wallet_connect.WalletConnectDataSource;
 import com.smedialink.storage.data.network.api.own.WalletConnectApi;
 import com.smedialink.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
-import com.smedialink.storage.data.network.model.request.crypto.wallet.SendCryptoTransferTransactionRequest;
-import com.smedialink.storage.data.network.model.response.base.ApiBaseResponse;
-import com.smedialink.storage.data.network.model.response.crypto.wallet.TransactionResponse;
 import com.smedialink.storage.domain.manager.crypto.CryptoAccessManager;
 import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.crypto.Wallet;
 import com.smedialink.storage.domain.model.crypto.send.TransactionArgs;
 import com.smedialink.storage.domain.model.crypto.wallet_connect.WalletConnectTransactionArgs;
+import com.smedialink.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.functions.Function;
 import kotlin.jvm.internal.Intrinsics;
 import org.web3j.crypto.RawTransaction;
 import org.web3j.crypto.TransactionEncoder;
@@ -37,38 +33,7 @@ public final class WalletConnectDataSourceImpl implements WalletConnectDataSourc
     @Override // com.smedialink.storage.data.datasource.wallet_connect.WalletConnectDataSource
     public Observable<Result<String>> sendTransaction(TransactionArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable flatMap = sign(args).flatMap(new Function() { // from class: com.smedialink.storage.data.datasource.wallet_connect.impl.WalletConnectDataSourceImpl$sendTransaction$$inlined$flatMapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lio/reactivex/ObservableSource<+TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final ObservableSource apply(Result result) {
-                WalletConnectApi walletConnectApi;
-                final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler;
-                Intrinsics.checkNotNullParameter(result, "result");
-                if (!(result instanceof Result.Success)) {
-                    return result instanceof Result.Error ? Observable.just(Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null)) : Observable.empty();
-                }
-                walletConnectApi = WalletConnectDataSourceImpl.this.walletConnectApi;
-                String str = (String) result.getData();
-                if (str == null) {
-                    str = "";
-                }
-                Observable<ApiBaseResponse<TransactionResponse>> sendWalletConnectCryptoTransaction = walletConnectApi.sendWalletConnectCryptoTransaction(new SendCryptoTransferTransactionRequest(str));
-                firebaseFunctionsErrorHandler = WalletConnectDataSourceImpl.this.firebaseErrorHandler;
-                Observable<R> map = sendWalletConnectCryptoTransaction.map(new Function() { // from class: com.smedialink.storage.data.datasource.wallet_connect.impl.WalletConnectDataSourceImpl$sendTransaction$lambda-1$$inlined$mapSuccess$1
-                    /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-                    @Override // io.reactivex.functions.Function
-                    public final Result apply(ApiBaseResponse response) {
-                        Intrinsics.checkNotNullParameter(response, "response");
-                        if (!response.isSuccess()) {
-                            return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-                        }
-                        return Result.Companion.success(((TransactionResponse) response.getPayload()).getTransactionHash());
-                    }
-                });
-                Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-                return map;
-            }
-        });
+        Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1501x2f0ca7ae(this)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }
@@ -83,7 +48,7 @@ public final class WalletConnectDataSourceImpl implements WalletConnectDataSourc
         RawTransaction createTransactionByType = createTransactionByType(walletConnectTransactionArgs);
         long chainId = walletConnectTransactionArgs.getChainId();
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        Observable<Result<String>> just = Observable.just(Result.Companion.success(Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet == null ? null : eVMWallet.getCredentials()))));
+        Observable<Result<String>> just = Observable.just(Result.Companion.success(Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet != null ? eVMWallet.getCredentials() : null))));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         return just;
     }

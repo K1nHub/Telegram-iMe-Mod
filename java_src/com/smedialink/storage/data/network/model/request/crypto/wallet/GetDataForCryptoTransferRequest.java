@@ -8,7 +8,7 @@ public final class GetDataForCryptoTransferRequest {
     private final String networkType;
 
     /* renamed from: to */
-    private final String f290to;
+    private final String f292to;
     private final String type;
     private final String value;
 
@@ -17,7 +17,7 @@ public final class GetDataForCryptoTransferRequest {
             str = getDataForCryptoTransferRequest.type;
         }
         if ((i & 2) != 0) {
-            str2 = getDataForCryptoTransferRequest.f290to;
+            str2 = getDataForCryptoTransferRequest.f292to;
         }
         if ((i & 4) != 0) {
             str3 = getDataForCryptoTransferRequest.value;
@@ -33,7 +33,7 @@ public final class GetDataForCryptoTransferRequest {
     }
 
     public final String component2() {
-        return this.f290to;
+        return this.f292to;
     }
 
     public final String component3() {
@@ -56,28 +56,28 @@ public final class GetDataForCryptoTransferRequest {
         }
         if (obj instanceof GetDataForCryptoTransferRequest) {
             GetDataForCryptoTransferRequest getDataForCryptoTransferRequest = (GetDataForCryptoTransferRequest) obj;
-            return Intrinsics.areEqual(this.type, getDataForCryptoTransferRequest.type) && Intrinsics.areEqual(this.f290to, getDataForCryptoTransferRequest.f290to) && Intrinsics.areEqual(this.value, getDataForCryptoTransferRequest.value) && Intrinsics.areEqual(this.networkType, getDataForCryptoTransferRequest.networkType);
+            return Intrinsics.areEqual(this.type, getDataForCryptoTransferRequest.type) && Intrinsics.areEqual(this.f292to, getDataForCryptoTransferRequest.f292to) && Intrinsics.areEqual(this.value, getDataForCryptoTransferRequest.value) && Intrinsics.areEqual(this.networkType, getDataForCryptoTransferRequest.networkType);
         }
         return false;
     }
 
     public int hashCode() {
         int hashCode = this.type.hashCode() * 31;
-        String str = this.f290to;
+        String str = this.f292to;
         int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.value;
         return ((hashCode2 + (str2 != null ? str2.hashCode() : 0)) * 31) + this.networkType.hashCode();
     }
 
     public String toString() {
-        return "GetDataForCryptoTransferRequest(type=" + this.type + ", to=" + ((Object) this.f290to) + ", value=" + ((Object) this.value) + ", networkType=" + this.networkType + ')';
+        return "GetDataForCryptoTransferRequest(type=" + this.type + ", to=" + this.f292to + ", value=" + this.value + ", networkType=" + this.networkType + ')';
     }
 
     public GetDataForCryptoTransferRequest(String type, String str, String str2, String networkType) {
         Intrinsics.checkNotNullParameter(type, "type");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         this.type = type;
-        this.f290to = str;
+        this.f292to = str;
         this.value = str2;
         this.networkType = networkType;
     }
@@ -91,7 +91,7 @@ public final class GetDataForCryptoTransferRequest {
     }
 
     public final String getTo() {
-        return this.f290to;
+        return this.f292to;
     }
 
     public final String getValue() {

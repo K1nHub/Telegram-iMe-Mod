@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/base/mvp/MvpFragment$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function0;
 
-    invoke-static {v0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->$r8$lambda$cczv6a6U87EWJKifV4uWhjmFez4(Lkotlin/jvm/functions/Function0;)V
+    invoke-static {v0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->$r8$lambda$VZBu5BV0Oy3wClKLKECbnkWk9tM(Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method

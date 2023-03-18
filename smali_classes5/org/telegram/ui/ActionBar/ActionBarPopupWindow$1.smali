@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)V
     .locals 0
 
-    .line 852
+    .line 845
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$1;->val$content:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,14 +35,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 855
+    .line 848
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$1;->val$content:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$602(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;Z)Z
 
-    .line 856
+    .line 849
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$1;->val$content:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getItemsCount()I
@@ -52,21 +52,21 @@
     :goto_0
     if-ge v0, p1, :cond_2
 
-    .line 858
+    .line 851
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$1;->val$content:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getItemAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 859
+    .line 852
     instance-of v2, v1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$GapView;
 
     if-eqz v2, :cond_0
 
     goto :goto_2
 
-    .line 862
+    .line 855
     :cond_0
     invoke-virtual {v1}, Landroid/view/View;->isEnabled()Z
 

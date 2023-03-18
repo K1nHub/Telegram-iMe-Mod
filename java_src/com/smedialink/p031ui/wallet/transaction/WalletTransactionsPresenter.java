@@ -2,7 +2,6 @@ package com.smedialink.p031ui.wallet.transaction;
 
 import com.chad.library.adapter.base.entity.node.BaseNode;
 import com.iMe.i_staking.StakingInteractor;
-import com.smedialink.common.AppRxEvents;
 import com.smedialink.mapper.staking.StackingOperationUiMappingKt;
 import com.smedialink.mapper.transaction.TransactionUiMappingKt;
 import com.smedialink.model.common.GlobalStateItem;
@@ -26,14 +25,13 @@ import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
 import com.smedialink.storage.domain.storage.HintsPreferenceHelper;
 import com.smedialink.storage.domain.utils.p030rx.RxEventBus;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
-import com.smedialink.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.smedialink.storage.domain.utils.p030rx.event.RxEvent;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.extentions.common.StringExtKt;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -45,7 +43,6 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import timber.log.Timber;
 /* compiled from: WalletTransactionsPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.transaction.WalletTransactionsPresenter */
@@ -189,52 +186,20 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
         loadInternal(z, z3, stakingOperations$default, new WalletTransactionsPresenter$loadStakingOperations$1(this, z3));
     }
 
-    private final <T> void loadInternal(final boolean z, final boolean z2, Observable<Result<T>> observable, final Function1<? super T, Unit> function1) {
+    private final <T> void loadInternal(boolean z, boolean z2, Observable<Result<T>> observable, Function1<? super T, Unit> function1) {
         Observable<Result<T>> doFinally = observable.distinctUntilChanged().observeOn(this.schedulersProvider.mo707ui()).doFinally(new Action() { // from class: com.smedialink.ui.wallet.transaction.WalletTransactionsPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
-                WalletTransactionsPresenter.m1799loadInternal$lambda0(WalletTransactionsPresenter.this);
+                WalletTransactionsPresenter.loadInternal$lambda$0(WalletTransactionsPresenter.this);
             }
         });
         Intrinsics.checkNotNullExpressionValue(doFinally, "observable\n             …e.showRefreshing(false) }");
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = doFinally.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.transaction.WalletTransactionsPresenter$loadInternal$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    Function1.this.invoke(((Result.Success) result).getData());
-                } else if (result instanceof Result.Loading) {
-                    if (z2) {
-                        return;
-                    }
-                    this.onLoading(z);
-                } else if (result instanceof Result.Error) {
-                    this.onError(((Result.Error) result).getError(), z2);
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.transaction.WalletTransactionsPresenter$loadInternal$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2310x713e530(function1, z2, this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2311x713e531((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
-    /* renamed from: loadInternal$lambda-0 */
-    public static final void m1799loadInternal$lambda0(WalletTransactionsPresenter this$0) {
+    public static final void loadInternal$lambda$0(WalletTransactionsPresenter this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ((WalletTransactionsView) this$0.getViewState()).showRefreshing(false);
     }
@@ -260,33 +225,7 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.transaction.WalletTransactionsPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                RxEvent rxEvent = (RxEvent) it;
-                if (rxEvent instanceof AppRxEvents.UpdateWalletScreen ? true : rxEvent instanceof DomainRxEvents.SuccessResetWallet ? true : rxEvent instanceof DomainRxEvents.SuccessCreateWallet ? true : rxEvent instanceof DomainRxEvents.SuccessRestoreWallet ? true : rxEvent instanceof DomainRxEvents.RefreshTransactions) {
-                    WalletTransactionsPresenter.load$default(WalletTransactionsPresenter.this, true, false, null, 6, null);
-                } else if (rxEvent instanceof DomainRxEvents.StakingOperationsReload) {
-                    WalletTransactionsPresenter.this.selectedNetworkType = ((DomainRxEvents.StakingOperationsReload) rxEvent).getNetworkType();
-                    WalletTransactionsPresenter.load$default(WalletTransactionsPresenter.this, true, false, null, 6, null);
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.transaction.WalletTransactionsPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2308x655d1dad(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2309x655d1dae(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

@@ -20,16 +20,12 @@
 
 # direct methods
 .method public constructor <init>(Lorg/fork/ui/fragment/ReactionsSettingsActivity;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 225
     iput-object p1, p0, Lorg/fork/ui/fragment/ReactionsSettingsActivity$ListAdapter;->this$0:Lorg/fork/ui/fragment/ReactionsSettingsActivity;
@@ -220,7 +216,7 @@
 
     move-result v1
 
-    const-string v2, "windowBackgroundGrayShadow"
+    const-string/jumbo v2, "windowBackgroundGrayShadow"
 
     if-ne p2, v1, :cond_1
 
@@ -381,7 +377,7 @@
 
     move-result v0
 
-    const-string v1, "valueBackupImageView"
+    const-string/jumbo v1, "valueBackupImageView"
 
     if-eqz v0, :cond_5
 
@@ -462,15 +458,19 @@
 
     return-void
 
-    .line 325
     :cond_7
+    const-string p2, "MediaDataController.getI\u2026                ?: return"
+
+    invoke-static {v5, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 325
     iget-object p2, v5, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->static_icon:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    const-string v1, "windowBackgroundGray"
+    const-string/jumbo v1, "windowBackgroundGray"
 
     invoke-static {p2, v1, v0}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Ljava/util/ArrayList;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
@@ -496,7 +496,7 @@
 
     const-string v2, "100_100"
 
-    const-string v4, "webp"
+    const-string/jumbo v4, "webp"
 
     .line 326
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
@@ -544,9 +544,6 @@
     .line 262
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;->setType(I)V
 
-    .line 263
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     goto :goto_0
 
     .line 264
@@ -571,7 +568,7 @@
     :cond_1
     sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->NOTIFICATION_CHECK:I
 
-    const-string v0, "windowBackgroundWhite"
+    const-string/jumbo v0, "windowBackgroundWhite"
 
     if-ne p2, p1, :cond_2
 
@@ -591,9 +588,6 @@
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 267
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     goto :goto_0
 
@@ -616,9 +610,6 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 270
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 272
     :goto_0
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
@@ -630,9 +621,6 @@
     invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 273
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 260
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;

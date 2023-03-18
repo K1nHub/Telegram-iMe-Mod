@@ -35,7 +35,7 @@
 .method public final getHeaders()Ljava/util/Map;
     .locals 1
 
-    invoke-static {}, Lcom/smedialink/utils/helper/GlideHelper;->$r8$lambda$fL6f6nfxOC_EsV7lR1wj6FJBuzg()Ljava/util/Map;
+    invoke-static {}, Lcom/smedialink/utils/helper/GlideHelper;->$r8$lambda$YDN8IC0-lEmJCTPyCuaC6w6xYKQ()Ljava/util/Map;
 
     move-result-object v0
 

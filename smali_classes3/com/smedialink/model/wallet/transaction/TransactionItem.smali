@@ -447,15 +447,21 @@
     if-eqz p1, :cond_0
 
     .line 70
-    iget-object p1, p0, Lcom/smedialink/model/wallet/transaction/TransactionItem;->transaction:Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getDirection()Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object p1
+    iget-object v0, p0, Lcom/smedialink/model/wallet/transaction/TransactionItem;->transaction:Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
 
-    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;->getSymbol()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getDirection()Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;
 
-    move-result-object p1
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;->getSymbol()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v0, p0, Lcom/smedialink/model/wallet/transaction/TransactionItem;->transaction:Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
 
@@ -463,7 +469,9 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 

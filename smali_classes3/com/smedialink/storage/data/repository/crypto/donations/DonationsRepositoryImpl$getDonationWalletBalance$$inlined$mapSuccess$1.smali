@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/storage/data/repository/crypto/donations/DonationsRepositoryImpl$getDonationWalletBalance$$inlined$mapSuccess$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "FirebaseExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Function;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,18 +18,20 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        "R:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Function;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+        "Lcom/smedialink/storage/data/network/model/response/wallet/WalletBalancesResponse;",
+        ">;",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;",
+        ">;>;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n+ 2 DonationsRepositoryImpl.kt\ncom/smedialink/storage/data/repository/crypto/donations/DonationsRepositoryImpl\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n81#2,3:87\n84#2:93\n85#2:95\n764#3:90\n855#3,2:91\n1043#3:94\n8#4:96\n6#4:97\n*S KotlinDebug\n*F\n+ 1 DonationsRepositoryImpl.kt\ncom/smedialink/storage/data/repository/crypto/donations/DonationsRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n*L\n83#1:90\n83#1:91,2\n84#1:94\n71#2:96\n72#2:97\n*E\n"
+    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n+ 2 DonationsRepositoryImpl.kt\ncom/smedialink/storage/data/repository/crypto/donations/DonationsRepositoryImpl\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n81#2,3:87\n84#2:93\n85#2:95\n766#3:90\n857#3,2:91\n1045#3:94\n8#4:96\n6#4:97\n*S KotlinDebug\n*F\n+ 1 DonationsRepositoryImpl.kt\ncom/smedialink/storage/data/repository/crypto/donations/DonationsRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n*L\n83#1:90\n83#1:91,2\n84#1:94\n71#2:96\n72#2:97\n*E\n"
 .end annotation
 
 
@@ -43,20 +45,26 @@
 
     iput-object p1, p0, Lcom/smedialink/storage/data/repository/crypto/donations/DonationsRepositoryImpl$getDonationWalletBalance$$inlined$mapSuccess$1;->$errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/smedialink/storage/domain/model/Result;
+.method public final invoke(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/smedialink/storage/domain/model/Result;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)",
+            "(",
+            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/smedialink/storage/data/network/model/response/wallet/WalletBalancesResponse;",
+            ">;)",
             "Lcom/smedialink/storage/domain/model/Result<",
-            "TR;>;"
+            "Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;",
+            ">;"
         }
     .end annotation
 
@@ -83,12 +91,12 @@
 
     move-result-object p1
 
-    .line 764
+    .line 766
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -128,15 +136,16 @@
     :goto_1
     if-eqz v2, :cond_0
 
+    .line 857
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 1043
+    .line 1045
     :cond_2
-    new-instance p1, Lcom/smedialink/storage/data/repository/crypto/donations/DonationsRepositoryImpl$getDonationWalletBalance$lambda-6$$inlined$sortedBy$1;
+    new-instance p1, Lcom/smedialink/storage/data/repository/crypto/donations/DonationsRepositoryImpl$getDonationWalletBalance$lambda$6$$inlined$sortedBy$1;
 
-    invoke-direct {p1}, Lcom/smedialink/storage/data/repository/crypto/donations/DonationsRepositoryImpl$getDonationWalletBalance$lambda-6$$inlined$sortedBy$1;-><init>()V
+    invoke-direct {p1}, Lcom/smedialink/storage/data/repository/crypto/donations/DonationsRepositoryImpl$getDonationWalletBalance$lambda$6$$inlined$sortedBy$1;-><init>()V
 
     invoke-static {v0, p1}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
 
@@ -181,13 +190,13 @@
     return-object p1
 .end method
 
-.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     .line 70
     check-cast p1, Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;
 
-    invoke-virtual {p0, p1}, Lcom/smedialink/storage/data/repository/crypto/donations/DonationsRepositoryImpl$getDonationWalletBalance$$inlined$mapSuccess$1;->apply(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-virtual {p0, p1}, Lcom/smedialink/storage/data/repository/crypto/donations/DonationsRepositoryImpl$getDonationWalletBalance$$inlined$mapSuccess$1;->invoke(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p1
 

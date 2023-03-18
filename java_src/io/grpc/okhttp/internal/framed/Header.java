@@ -1,7 +1,7 @@
 package io.grpc.okhttp.internal.framed;
 
 import okio.ByteString;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Header {
     final int hpackSize;
     public final ByteString name;

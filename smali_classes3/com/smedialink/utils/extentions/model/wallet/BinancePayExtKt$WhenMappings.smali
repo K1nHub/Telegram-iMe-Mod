@@ -32,26 +32,34 @@
 
     new-array v0, v0, [I
 
-    sget-object v1, Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionDirection;->IN:Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionDirection;
+    const/4 v1, 0x1
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    :try_start_0
+    sget-object v2, Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionDirection;->IN:Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionDirection;
 
-    move-result v1
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
-    const/4 v2, 0x1
+    move-result v2
 
-    aput v2, v0, v1
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    sget-object v1, Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionDirection;->OUT:Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionDirection;
+    :catch_0
+    const/4 v2, 0x2
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    :try_start_1
+    sget-object v3, Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionDirection;->OUT:Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionDirection;
 
-    move-result v1
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
-    const/4 v3, 0x2
+    move-result v3
 
-    aput v3, v0, v1
+    aput v2, v0, v3
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
+    :catch_1
     sput-object v0, Lcom/smedialink/utils/extentions/model/wallet/BinancePayExtKt$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-static {}, Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionStatus;->values()[Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionStatus;
@@ -62,22 +70,31 @@
 
     new-array v0, v0, [I
 
-    sget-object v1, Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionStatus;->INITIAL:Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionStatus;
+    :try_start_2
+    sget-object v3, Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionStatus;->INITIAL:Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionStatus;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v1
+    move-result v3
 
-    aput v2, v0, v1
+    aput v1, v0, v3
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
+    :catch_2
+    :try_start_3
     sget-object v1, Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionStatus;->PENDING:Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionStatus;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
-    aput v3, v0, v1
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
+    :catch_3
+    :try_start_4
     sget-object v1, Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionStatus;->PAID:Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionStatus;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
@@ -87,7 +104,10 @@
     const/4 v2, 0x3
 
     aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
+    :catch_4
     sput-object v0, Lcom/smedialink/utils/extentions/model/wallet/BinancePayExtKt$WhenMappings;->$EnumSwitchMapping$1:[I
 
     return-void

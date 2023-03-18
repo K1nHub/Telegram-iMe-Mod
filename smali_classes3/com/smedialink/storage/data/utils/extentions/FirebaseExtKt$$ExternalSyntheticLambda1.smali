@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$$ExternalSyntheticLambda1;->f$0:Lio/reactivex/ObservableEmitter;
 
-    invoke-static {v0, p1}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->$r8$lambda$je-YNJfM6a6_ry7vjVYL1yUpPyI(Lio/reactivex/ObservableEmitter;Lcom/google/android/gms/tasks/Task;)V
+    invoke-static {v0, p1}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->$r8$lambda$TVjrEQ_PLzMKWHiLLdS6BPU2AWY(Lio/reactivex/ObservableEmitter;Lcom/google/android/gms/tasks/Task;)V
 
     return-void
 .end method

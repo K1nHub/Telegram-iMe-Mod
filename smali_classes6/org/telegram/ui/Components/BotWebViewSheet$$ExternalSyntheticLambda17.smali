@@ -33,7 +33,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda17;->f$1:I
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->$r8$lambda$rbFocS0CgRwoy__8meqTQCpz-0k(Lorg/telegram/ui/Components/BotWebViewSheet;ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->$r8$lambda$SjGQ54v9eJH3i4HUkNj3YQPz13I(Lorg/telegram/ui/Components/BotWebViewSheet;ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

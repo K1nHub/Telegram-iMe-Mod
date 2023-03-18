@@ -19,7 +19,7 @@ import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
@@ -143,7 +143,7 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
         MessageObject messageObject = null;
         if (photoEntry.isVideo || photoEntry.editedInfo != null) {
             TLRPC$TL_message tLRPC$TL_message = new TLRPC$TL_message();
-            tLRPC$TL_message.f1518id = 0;
+            tLRPC$TL_message.f1523id = 0;
             tLRPC$TL_message.message = "";
             tLRPC$TL_message.media = new TLRPC$TL_messageMediaEmpty();
             tLRPC$TL_message.action = new TLRPC$TL_messageActionEmpty();
@@ -232,34 +232,34 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
         }
         BottomSheet.Builder builder = new BottomSheet.Builder(this.parentFragment.getParentActivity());
         if (i == 1) {
-            builder.setTitle(LocaleController.formatString("SetPhotoFor", C3158R.string.SetPhotoFor, this.user.first_name), true);
+            builder.setTitle(LocaleController.formatString("SetPhotoFor", C3286R.string.SetPhotoFor, this.user.first_name), true);
         } else if (i == 2) {
-            builder.setTitle(LocaleController.formatString("SuggestPhotoFor", C3158R.string.SuggestPhotoFor, this.user.first_name), true);
+            builder.setTitle(LocaleController.formatString("SuggestPhotoFor", C3286R.string.SuggestPhotoFor, this.user.first_name), true);
         } else {
-            builder.setTitle(LocaleController.getString("ChoosePhoto", C3158R.string.ChoosePhoto), true);
+            builder.setTitle(LocaleController.getString("ChoosePhoto", C3286R.string.ChoosePhoto), true);
         }
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         final ArrayList arrayList3 = new ArrayList();
-        arrayList.add(LocaleController.getString("ChooseTakePhoto", C3158R.string.ChooseTakePhoto));
-        arrayList2.add(Integer.valueOf(C3158R.C3160drawable.msg_camera));
+        arrayList.add(LocaleController.getString("ChooseTakePhoto", C3286R.string.ChooseTakePhoto));
+        arrayList2.add(Integer.valueOf(C3286R.C3288drawable.msg_camera));
         arrayList3.add(0);
         if (this.canSelectVideo) {
-            arrayList.add(LocaleController.getString("ChooseRecordVideo", C3158R.string.ChooseRecordVideo));
-            arrayList2.add(Integer.valueOf(C3158R.C3160drawable.msg_video));
+            arrayList.add(LocaleController.getString("ChooseRecordVideo", C3286R.string.ChooseRecordVideo));
+            arrayList2.add(Integer.valueOf(C3286R.C3288drawable.msg_video));
             arrayList3.add(4);
         }
-        arrayList.add(LocaleController.getString("ChooseFromGallery", C3158R.string.ChooseFromGallery));
-        arrayList2.add(Integer.valueOf(C3158R.C3160drawable.msg_photos));
+        arrayList.add(LocaleController.getString("ChooseFromGallery", C3286R.string.ChooseFromGallery));
+        arrayList2.add(Integer.valueOf(C3286R.C3288drawable.msg_photos));
         arrayList3.add(1);
         if (this.searchAvailable) {
-            arrayList.add(LocaleController.getString("ChooseFromSearch", C3158R.string.ChooseFromSearch));
-            arrayList2.add(Integer.valueOf(C3158R.C3160drawable.msg_search));
+            arrayList.add(LocaleController.getString("ChooseFromSearch", C3286R.string.ChooseFromSearch));
+            arrayList2.add(Integer.valueOf(C3286R.C3288drawable.msg_search));
             arrayList3.add(2);
         }
         if (z) {
-            arrayList.add(LocaleController.getString("DeletePhoto", C3158R.string.DeletePhoto));
-            arrayList2.add(Integer.valueOf(C3158R.C3160drawable.msg_delete));
+            arrayList.add(LocaleController.getString("DeletePhoto", C3286R.string.DeletePhoto));
+            arrayList2.add(Integer.valueOf(C3286R.C3288drawable.msg_delete));
             arrayList3.add(3);
         }
         int[] iArr = new int[arrayList2.size()];
@@ -277,7 +277,7 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
         create.setOnHideListener(onDismissListener);
         this.parentFragment.showDialog(create);
         if (z) {
-            create.setItemColor(arrayList.size() - 1, Theme.getColor("dialogTextRed2"), Theme.getColor("dialogRedIcon"));
+            create.setItemColor(arrayList.size() - 1, Theme.getColor("dialogTextRed"), Theme.getColor("dialogRedIcon"));
         }
     }
 
@@ -549,9 +549,9 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
         }
         int i = this.type;
         if (i == 1) {
-            this.chatAttachAlert.getSelectedTextView().setText(LocaleController.formatString("SetPhotoFor", C3158R.string.SetPhotoFor, this.user.first_name));
+            this.chatAttachAlert.getSelectedTextView().setText(LocaleController.formatString("SetPhotoFor", C3286R.string.SetPhotoFor, this.user.first_name));
         } else if (i == 2) {
-            this.chatAttachAlert.getSelectedTextView().setText(LocaleController.formatString("SuggestPhotoFor", C3158R.string.SuggestPhotoFor, this.user.first_name));
+            this.chatAttachAlert.getSelectedTextView().setText(LocaleController.formatString("SuggestPhotoFor", C3286R.string.SuggestPhotoFor, this.user.first_name));
         }
     }
 
@@ -565,7 +565,7 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
         Bitmap bitmap = null;
         if (sendingMediaInfo.isVideo || sendingMediaInfo.videoEditedInfo != null) {
             TLRPC$TL_message tLRPC$TL_message = new TLRPC$TL_message();
-            tLRPC$TL_message.f1518id = 0;
+            tLRPC$TL_message.f1523id = 0;
             tLRPC$TL_message.message = "";
             tLRPC$TL_message.media = new TLRPC$TL_messageMediaEmpty();
             tLRPC$TL_message.action = new TLRPC$TL_messageActionEmpty();
@@ -759,7 +759,7 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
             }
             PhotoCropActivity photoCropActivity = new PhotoCropActivity(bundle);
             photoCropActivity.setDelegate(this);
-            launchActivity.lambda$runLinkRequest$80(photoCropActivity);
+            launchActivity.lambda$runLinkRequest$86(photoCropActivity);
         } catch (Exception e) {
             FileLog.m45e(e);
             processBitmap(ImageLoader.loadBitmap(str, uri, 800.0f, 800.0f, true), null);
@@ -818,7 +818,7 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
                     this.currentPicturePath = null;
                 }
             } else {
-                this.parentFragment.getParentActivity().overridePendingTransition(C3158R.anim.alpha_in, C3158R.anim.alpha_out);
+                this.parentFragment.getParentActivity().overridePendingTransition(C3286R.anim.alpha_in, C3286R.anim.alpha_out);
                 PhotoViewer.getInstance().setParentActivity(this.parentFragment);
                 try {
                     attributeInt = new ExifInterface(this.currentPicturePath).getAttributeInt("Orientation", 1);

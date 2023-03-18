@@ -1,6 +1,7 @@
 package com.smedialink.mapper.google;
 
 import com.smedialink.storage.domain.model.google.RecognizedImageModel;
+import java.util.Iterator;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ImageRecognitionMapper.kt */
@@ -9,8 +10,9 @@ public final class ImageRecognitionMapperKt {
     public static final String toUi(List<RecognizedImageModel> list) {
         Intrinsics.checkNotNullParameter(list, "<this>");
         StringBuilder sb = new StringBuilder();
-        for (RecognizedImageModel recognizedImageModel : list) {
-            sb.append(Intrinsics.stringPlus(toUi(recognizedImageModel), " \n"));
+        Iterator<T> it = list.iterator();
+        while (it.hasNext()) {
+            sb.append(toUi((RecognizedImageModel) it.next()) + " \n");
         }
         String sb2 = sb.toString();
         Intrinsics.checkNotNullExpressionValue(sb2, "stringBuilder.toString()");

@@ -34,7 +34,7 @@ public class HelloParticles {
         public float speedScale = 1.0f;
 
         /* renamed from: dt */
-        private final float f1752dt = 1000.0f / AndroidUtilities.screenRefreshRate;
+        private final float f1763dt = 1000.0f / AndroidUtilities.screenRefreshRate;
 
         public Drawable(int i) {
             this.bitmapScale = 1.0f;
@@ -98,23 +98,23 @@ public class HelloParticles {
             private long duration;
 
             /* renamed from: h */
-            private int f1753h;
+            private int f1764h;
             float inProgress;
 
             /* renamed from: l */
-            private int f1754l;
+            private int f1765l;
             private float scale;
             private boolean set;
             private StaticLayout staticLayout;
 
             /* renamed from: w */
-            private int f1755w;
+            private int f1766w;
 
             /* renamed from: x */
-            private float f1756x;
+            private float f1767x;
 
             /* renamed from: y */
-            private float f1757y;
+            private float f1768y;
 
             private Particle() {
             }
@@ -122,12 +122,12 @@ public class HelloParticles {
             public void draw(Canvas canvas, int i, long j) {
                 if (!Drawable.this.paused) {
                     AndroidUtilities.m50dp(4);
-                    float unused = Drawable.this.f1752dt;
+                    float unused = Drawable.this.f1763dt;
                     Drawable drawable = Drawable.this;
                     float f = drawable.speedScale;
                     float f2 = this.inProgress;
                     if (f2 != 1.0f) {
-                        float f3 = f2 + (drawable.f1752dt / ((float) this.duration));
+                        float f3 = f2 + (drawable.f1763dt / ((float) this.duration));
                         this.inProgress = f3;
                         if (f3 > 1.0f) {
                             this.inProgress = 1.0f;
@@ -138,8 +138,8 @@ public class HelloParticles {
                     canvas.save();
                     float pow = 1.0f - (((float) Math.pow(this.inProgress - 0.5f, 2.0d)) * 4.0f);
                     float f4 = (this.scale / Drawable.this.bitmapScale) * ((0.4f * pow) + 0.7f);
-                    canvas.translate(this.f1756x - (this.f1755w / 2.0f), this.f1757y - (this.f1753h / 2.0f));
-                    canvas.scale(f4, f4, this.f1755w / 2.0f, this.f1753h / 2.0f);
+                    canvas.translate(this.f1767x - (this.f1766w / 2.0f), this.f1768y - (this.f1764h / 2.0f));
+                    canvas.scale(f4, f4, this.f1766w / 2.0f, this.f1764h / 2.0f);
                     Drawable.this.paint.setAlpha((int) (this.alpha * pow));
                     canvas.drawBitmap(this.bitmap, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, Drawable.this.paint);
                     canvas.restore();
@@ -158,32 +158,32 @@ public class HelloParticles {
                 StaticLayout staticLayout = new StaticLayout(str, Drawable.this.textPaint, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
                 this.staticLayout = staticLayout;
                 if (staticLayout.getLineCount() <= 0) {
-                    this.f1753h = 0;
-                    this.f1755w = 0;
-                    this.f1754l = 0;
+                    this.f1764h = 0;
+                    this.f1766w = 0;
+                    this.f1765l = 0;
                 } else {
-                    this.f1754l = (int) this.staticLayout.getLineLeft(0);
-                    this.f1755w = (int) this.staticLayout.getLineWidth(0);
-                    this.f1753h = this.staticLayout.getHeight();
+                    this.f1765l = (int) this.staticLayout.getLineLeft(0);
+                    this.f1766w = (int) this.staticLayout.getLineWidth(0);
+                    this.f1764h = this.staticLayout.getHeight();
                 }
                 Bitmap bitmap = (Bitmap) Drawable.this.bitmaps.get(str);
                 this.bitmap = bitmap;
                 if (bitmap == null) {
-                    this.bitmap = Bitmap.createBitmap(Math.max(1, this.f1755w - Math.max(0, this.f1754l)), Math.max(1, this.f1753h), Bitmap.Config.ARGB_8888);
+                    this.bitmap = Bitmap.createBitmap(Math.max(1, this.f1766w - Math.max(0, this.f1765l)), Math.max(1, this.f1764h), Bitmap.Config.ARGB_8888);
                     Canvas canvas = new Canvas(this.bitmap);
-                    canvas.translate(-this.f1754l, BitmapDescriptorFactory.HUE_RED);
+                    canvas.translate(-this.f1765l, BitmapDescriptorFactory.HUE_RED);
                     this.staticLayout.draw(canvas);
                     Drawable.this.bitmaps.put(str, this.bitmap);
                 }
                 RectF rectF = Drawable.this.rect;
                 float f = rectF.left;
-                int i2 = this.f1755w;
+                int i2 = this.f1766w;
                 float f2 = f + (i2 / 4.0f);
                 float f3 = rectF.right - (i2 / 4.0f);
                 if (i % 2 == 0) {
-                    f3 = rectF.centerX() - (this.f1755w / 2.0f);
+                    f3 = rectF.centerX() - (this.f1766w / 2.0f);
                 } else {
-                    f2 = (this.f1755w / 2.0f) + rectF.centerX();
+                    f2 = (this.f1766w / 2.0f) + rectF.centerX();
                 }
                 float f4 = f3 - f2;
                 float abs = Math.abs(Utilities.fastRandom.nextInt() % f4) + f2;
@@ -196,8 +196,8 @@ public class HelloParticles {
                     for (int i4 = 0; i4 < Drawable.this.particles.size(); i4++) {
                         Particle particle = Drawable.this.particles.get(i4);
                         if (particle.set) {
-                            float min = Math.min(Math.abs((particle.f1756x + ((particle.f1755w * (this.scale / Drawable.this.bitmapScale)) * 1.1f)) - abs3), Math.abs(particle.f1756x - abs3));
-                            float f7 = particle.f1757y - abs4;
+                            float min = Math.min(Math.abs((particle.f1767x + ((particle.f1766w * (this.scale / Drawable.this.bitmapScale)) * 1.1f)) - abs3), Math.abs(particle.f1767x - abs3));
+                            float f7 = particle.f1768y - abs4;
                             float f8 = (min * min) + (f7 * f7);
                             if (f8 < f6) {
                                 f6 = f8;
@@ -210,9 +210,9 @@ public class HelloParticles {
                         f5 = f6;
                     }
                 }
-                this.f1756x = abs;
-                this.f1757y = abs2;
-                double atan2 = Math.atan2(abs - Drawable.this.rect.centerX(), this.f1757y - Drawable.this.rect.centerY());
+                this.f1767x = abs;
+                this.f1768y = abs2;
+                double atan2 = Math.atan2(abs - Drawable.this.rect.centerX(), this.f1768y - Drawable.this.rect.centerY());
                 Math.sin(atan2);
                 Math.cos(atan2);
                 this.alpha = (int) (((Utilities.fastRandom.nextInt(50) + 50) / 100.0f) * 255.0f);

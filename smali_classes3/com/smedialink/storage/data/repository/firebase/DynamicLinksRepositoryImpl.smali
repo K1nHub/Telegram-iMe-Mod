@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDynamicLinksRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DynamicLinksRepositoryImpl.kt\ncom/smedialink/storage/data/repository/firebase/DynamicLinksRepositoryImpl\n+ 2 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,29:1\n26#2:30\n8#3:31\n*S KotlinDebug\n*F\n+ 1 DynamicLinksRepositoryImpl.kt\ncom/smedialink/storage/data/repository/firebase/DynamicLinksRepositoryImpl\n*L\n24#1:30\n23#1:31\n*E\n"
+    value = "SMAP\nDynamicLinksRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DynamicLinksRepositoryImpl.kt\ncom/smedialink/storage/data/repository/firebase/DynamicLinksRepositoryImpl\n+ 2 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,29:1\n26#2:30\n*S KotlinDebug\n*F\n+ 1 DynamicLinksRepositoryImpl.kt\ncom/smedialink/storage/data/repository/firebase/DynamicLinksRepositoryImpl\n*L\n24#1:30\n*E\n"
 .end annotation
 
 
@@ -19,10 +19,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$q0JyxcgUn8YCa3gPC0dQBrkaPig(Lcom/google/firebase/dynamiclinks/PendingDynamicLinkData;)Lcom/smedialink/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$R_6hXnrQRP6TbmEXBxjdHH8aLBY(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/storage/data/repository/firebase/DynamicLinksRepositoryImpl;->getLink$lambda-0(Lcom/google/firebase/dynamiclinks/PendingDynamicLinkData;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/repository/firebase/DynamicLinksRepositoryImpl;->getLink$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p0
 
@@ -52,30 +52,19 @@
     return-void
 .end method
 
-.method private static final getLink$lambda-0(Lcom/google/firebase/dynamiclinks/PendingDynamicLinkData;)Lcom/smedialink/storage/domain/model/Result;
+.method private static final getLink$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 1
 
-    const-string v0, "response"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 23
-    sget-object v0, Lcom/smedialink/storage/domain/model/google/DynamicLinkData;->Companion:Lcom/smedialink/storage/domain/model/google/DynamicLinkData$Companion;
-
-    invoke-virtual {p0}, Lcom/google/firebase/dynamiclinks/PendingDynamicLinkData;->getLink()Landroid/net/Uri;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-virtual {v0, p0}, Lcom/smedialink/storage/domain/model/google/DynamicLinkData$Companion;->parseDynamicLink(Landroid/net/Uri;)Lcom/smedialink/storage/domain/model/google/DynamicLinkData;
-
-    move-result-object p0
-
-    .line 8
-    sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
-
-    invoke-virtual {v0, p0}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
-
-    move-result-object p0
+    check-cast p0, Lcom/smedialink/storage/domain/model/Result;
 
     return-object p0
 .end method
@@ -113,10 +102,14 @@
 
     move-result-object p1
 
-    sget-object p2, Lcom/smedialink/storage/data/repository/firebase/DynamicLinksRepositoryImpl$$ExternalSyntheticLambda0;->INSTANCE:Lcom/smedialink/storage/data/repository/firebase/DynamicLinksRepositoryImpl$$ExternalSyntheticLambda0;
-
     .line 23
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    sget-object p2, Lcom/smedialink/storage/data/repository/firebase/DynamicLinksRepositoryImpl$getLink$1;->INSTANCE:Lcom/smedialink/storage/data/repository/firebase/DynamicLinksRepositoryImpl$getLink$1;
+
+    new-instance v0, Lcom/smedialink/storage/data/repository/firebase/DynamicLinksRepositoryImpl$$ExternalSyntheticLambda0;
+
+    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/repository/firebase/DynamicLinksRepositoryImpl$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -128,11 +121,15 @@
     iget-object p2, p0, Lcom/smedialink/storage/data/repository/firebase/DynamicLinksRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance v0, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance v0, Lcom/smedialink/storage/data/repository/firebase/DynamicLinksRepositoryImpl$getLink$$inlined$handleError$1;
 
-    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/repository/firebase/DynamicLinksRepositoryImpl$getLink$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 

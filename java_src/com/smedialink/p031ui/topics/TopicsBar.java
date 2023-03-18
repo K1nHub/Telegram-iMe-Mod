@@ -20,7 +20,6 @@ import java.util.Iterator;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.controller.ForkTopicsController;
@@ -321,11 +320,10 @@ public final class TopicsBar extends FrameLayout {
             }
         };
         recyclerListView.setLayoutManager(linearLayoutManager);
-        Unit unit = Unit.INSTANCE;
         recyclerListView.setLayoutManager(linearLayoutManager);
         recyclerListView.setAdapter(getListAdapter());
         recyclerListView.setPadding(AndroidUtilities.m50dp(7), 0, AndroidUtilities.m50dp(7), 0);
-        new ItemTouchHelper(new TouchHelperCallback(this)).attachToRecyclerView(recyclerListView);
+        new ItemTouchHelper(new TouchHelperCallback()).attachToRecyclerView(recyclerListView);
         recyclerListView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.smedialink.ui.topics.TopicsBar$initListView$1$3
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i, int i2) {
@@ -340,22 +338,21 @@ public final class TopicsBar extends FrameLayout {
         getListView().setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.smedialink.ui.topics.TopicsBar$$ExternalSyntheticLambda0
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                TopicsBar.m1547setupListeners$lambda3(TopicsBar.this, view, i);
+                TopicsBar.setupListeners$lambda$3(TopicsBar.this, view, i);
             }
         });
         getListView().setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: com.smedialink.ui.topics.TopicsBar$$ExternalSyntheticLambda1
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view, int i) {
-                boolean m1548setupListeners$lambda4;
-                m1548setupListeners$lambda4 = TopicsBar.m1548setupListeners$lambda4(TopicsBar.this, view, i);
-                return m1548setupListeners$lambda4;
+                boolean z;
+                z = TopicsBar.setupListeners$lambda$4(TopicsBar.this, view, i);
+                return z;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-3  reason: not valid java name */
-    public static final void m1547setupListeners$lambda3(TopicsBar this$0, View view, int i) {
+    public static final void setupListeners$lambda$3(TopicsBar this$0, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         TopicsBarDelegate topicsBarDelegate = this$0.delegate;
         Intrinsics.checkNotNull(topicsBarDelegate);
@@ -372,8 +369,7 @@ public final class TopicsBar extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-4  reason: not valid java name */
-    public static final boolean m1548setupListeners$lambda4(TopicsBar this$0, View view, int i) {
+    public static final boolean setupListeners$lambda$4(TopicsBar this$0, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         TopicsBarDelegate topicsBarDelegate = this$0.delegate;
         Intrinsics.checkNotNull(topicsBarDelegate);
@@ -392,28 +388,24 @@ public final class TopicsBar extends FrameLayout {
     /* renamed from: com.smedialink.ui.topics.TopicsBar$TouchHelperCallback */
     /* loaded from: classes3.dex */
     public final class TouchHelperCallback extends ItemTouchHelper.Callback {
-        final /* synthetic */ TopicsBar this$0;
-
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
         public void onSwiped(RecyclerView.ViewHolder viewHolder, int i) {
             Intrinsics.checkNotNullParameter(viewHolder, "viewHolder");
         }
 
-        public TouchHelperCallback(TopicsBar this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public TouchHelperCallback() {
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
         public boolean isLongPressDragEnabled() {
-            return this.this$0.isEditing;
+            return TopicsBar.this.isEditing;
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
         public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
             Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
             Intrinsics.checkNotNullParameter(viewHolder, "viewHolder");
-            return ItemTouchHelper.Callback.makeMovementFlags((!this.this$0.isEditing || this.this$0.getListAdapter().isNoTopicPosition(viewHolder.getAdapterPosition())) ? 0 : 12, 0);
+            return ItemTouchHelper.Callback.makeMovementFlags((!TopicsBar.this.isEditing || TopicsBar.this.getListAdapter().isNoTopicPosition(viewHolder.getAdapterPosition())) ? 0 : 12, 0);
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
@@ -421,17 +413,17 @@ public final class TopicsBar extends FrameLayout {
             Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
             Intrinsics.checkNotNullParameter(source, "source");
             Intrinsics.checkNotNullParameter(target, "target");
-            if (this.this$0.getListAdapter().isNoTopicPosition(source.getAdapterPosition()) || this.this$0.getListAdapter().isNoTopicPosition(target.getAdapterPosition())) {
+            if (TopicsBar.this.getListAdapter().isNoTopicPosition(source.getAdapterPosition()) || TopicsBar.this.getListAdapter().isNoTopicPosition(target.getAdapterPosition())) {
                 return false;
             }
-            this.this$0.getListAdapter().swapElements(source.getAdapterPosition(), target.getAdapterPosition());
+            TopicsBar.this.getListAdapter().swapElements(source.getAdapterPosition(), target.getAdapterPosition());
             return true;
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
         public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int i) {
             if (i != 0) {
-                this.this$0.getListView().cancelClickRunnables(false);
+                TopicsBar.this.getListView().cancelClickRunnables(false);
             }
             super.onSelectedChanged(viewHolder, i);
         }
@@ -442,42 +434,38 @@ public final class TopicsBar extends FrameLayout {
     /* renamed from: com.smedialink.ui.topics.TopicsBar$ListAdapter */
     /* loaded from: classes3.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ TopicsBar this$0;
-
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             return false;
         }
 
-        public ListAdapter(TopicsBar this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public ListAdapter() {
         }
 
         public final boolean isNoTopicPosition(int i) {
-            TopicModel topicModel = (TopicModel) CollectionsKt.getOrNull(this.this$0.data, i);
+            TopicModel topicModel = (TopicModel) CollectionsKt.getOrNull(TopicsBar.this.data, i);
             return topicModel != null && topicModel.getTopicId() == -2;
         }
 
         public final void swapElements(int i, int i2) {
-            long topicId = ((TopicModel) this.this$0.data.get(i)).getTopicId();
-            long topicId2 = ((TopicModel) this.this$0.data.get(i2)).getTopicId();
-            Collections.swap(this.this$0.data, i, i2);
+            long topicId = ((TopicModel) TopicsBar.this.data.get(i)).getTopicId();
+            long topicId2 = ((TopicModel) TopicsBar.this.data.get(i2)).getTopicId();
+            Collections.swap(TopicsBar.this.data, i, i2);
             notifyItemMoved(i, i2);
-            ForkTopicsController.Companion.getInstance(this.this$0.currentAccount).swapTopics(topicId, topicId2);
+            ForkTopicsController.Companion.getInstance(TopicsBar.this.currentAccount).swapTopics(topicId, topicId2);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            return this.this$0.data.size();
+            return TopicsBar.this.data.size();
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
             Intrinsics.checkNotNullParameter(parent, "parent");
-            final Context context = this.this$0.getContext();
-            final TopicsBar topicsBar = this.this$0;
+            final Context context = TopicsBar.this.getContext();
+            final TopicsBar topicsBar = TopicsBar.this;
             TopicView topicView = new TopicView(context) { // from class: com.smedialink.ui.topics.TopicsBar$ListAdapter$onCreateViewHolder$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -506,15 +494,16 @@ public final class TopicsBar extends FrameLayout {
                 }
             };
             topicView.setLayoutParams(LayoutHelper.createRecycler(-2, 24, 8, 6, 8, 6));
-            Unit unit = Unit.INSTANCE;
             return new RecyclerListView.Holder(topicView);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            TopicView topicView = (TopicView) holder.itemView;
-            TopicsBar topicsBar = this.this$0;
+            View view = holder.itemView;
+            Intrinsics.checkNotNull(view, "null cannot be cast to non-null type com.smedialink.ui.topics.TopicView");
+            TopicView topicView = (TopicView) view;
+            TopicsBar topicsBar = TopicsBar.this;
             TopicModel topicModel = (TopicModel) topicsBar.data.get(holder.getAdapterPosition());
             topicView.setTopic(topicModel, topicModel.getTopicId() == topicsBar.selectedTopicId);
             topicView.position = holder.getAdapterPosition();

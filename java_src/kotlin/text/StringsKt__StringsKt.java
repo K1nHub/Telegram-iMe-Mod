@@ -278,6 +278,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return regionMatchesImpl(charSequence, charSequence.length() - suffix.length(), suffix, 0, suffix.length(), z);
     }
 
+    /* JADX WARN: Type inference failed for: r9v2, types: [kotlin.collections.IntIterator, java.util.Iterator] */
     public static final int indexOfAny(CharSequence charSequence, char[] chars, int i, boolean z) {
         int coerceAtLeast;
         boolean z2;
@@ -289,33 +290,30 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
             return ((String) charSequence).indexOf(single, i);
         }
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(i, 0);
-        int lastIndex = StringsKt.getLastIndex(charSequence);
-        if (coerceAtLeast > lastIndex) {
-            return -1;
-        }
-        while (true) {
-            char charAt = charSequence.charAt(coerceAtLeast);
+        ?? it = new IntRange(coerceAtLeast, StringsKt.getLastIndex(charSequence)).iterator();
+        while (it.hasNext()) {
+            int nextInt = it.nextInt();
+            char charAt = charSequence.charAt(nextInt);
             int length = chars.length;
             int i2 = 0;
             while (true) {
                 if (i2 >= length) {
                     z2 = false;
+                    continue;
                     break;
                 } else if (CharsKt__CharKt.equals(chars[i2], charAt, z)) {
                     z2 = true;
+                    continue;
                     break;
                 } else {
                     i2++;
                 }
             }
             if (z2) {
-                return coerceAtLeast;
+                return nextInt;
             }
-            if (coerceAtLeast == lastIndex) {
-                return -1;
-            }
-            coerceAtLeast++;
         }
+        return -1;
     }
 
     public static final int lastIndexOfAny(CharSequence charSequence, char[] chars, int i, boolean z) {

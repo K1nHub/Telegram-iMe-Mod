@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChatAttachAlertWalletLayout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatAttachAlertWalletLayout.kt\norg/fork/ui/view/ChatAttachAlertWalletLayout$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,544:1\n56#2,6:545\n*S KotlinDebug\n*F\n+ 1 ChatAttachAlertWalletLayout.kt\norg/fork/ui/view/ChatAttachAlertWalletLayout$presenter$2\n*L\n72#1:545,6\n*E\n"
+    value = "SMAP\nChatAttachAlertWalletLayout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatAttachAlertWalletLayout.kt\norg/fork/ui/view/ChatAttachAlertWalletLayout$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,537:1\n56#2,6:538\n*S KotlinDebug\n*F\n+ 1 ChatAttachAlertWalletLayout.kt\norg/fork/ui/view/ChatAttachAlertWalletLayout$presenter$2\n*L\n70#1:538,6\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 .method public final invoke()Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;
     .locals 4
 
-    .line 72
+    .line 70
     iget-object v0, p0, Lorg/fork/ui/view/ChatAttachAlertWalletLayout$presenter$2;->this$0:Lorg/fork/ui/view/ChatAttachAlertWalletLayout;
 
     .line 58
@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    .line 72
+    .line 70
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -86,7 +86,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 72
+    .line 70
     invoke-virtual {p0}, Lorg/fork/ui/view/ChatAttachAlertWalletLayout$presenter$2;->invoke()Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;
 
     move-result-object v0

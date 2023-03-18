@@ -5,49 +5,35 @@
 
 # direct methods
 .method public static final getClonedBodyString(Lokhttp3/ResponseBody;)Ljava/lang/String;
-    .locals 3
+    .locals 2
 
-    const/4 v0, 0x0
-
-    if-nez p0, :cond_0
-
-    goto :goto_0
+    if-eqz p0, :cond_0
 
     .line 7
-    :cond_0
     invoke-virtual {p0}, Lokhttp3/ResponseBody;->source()Lokio/BufferedSource;
 
     move-result-object p0
 
-    if-nez p0, :cond_1
+    if-eqz p0, :cond_0
 
-    goto :goto_0
-
-    :cond_1
-    const-wide v1, 0x7fffffffffffffffL
+    const-wide v0, 0x7fffffffffffffffL
 
     .line 9
-    invoke-interface {p0, v1, v2}, Lokio/BufferedSource;->request(J)Z
+    invoke-interface {p0, v0, v1}, Lokio/BufferedSource;->request(J)Z
 
     .line 10
     invoke-interface {p0}, Lokio/BufferedSource;->buffer()Lokio/Buffer;
 
     move-result-object p0
 
-    if-nez p0, :cond_2
+    if-eqz p0, :cond_0
 
-    goto :goto_0
-
-    :cond_2
     invoke-virtual {p0}, Lokio/Buffer;->clone()Lokio/Buffer;
 
     move-result-object p0
 
-    if-nez p0, :cond_3
+    if-eqz p0, :cond_0
 
-    goto :goto_0
-
-    :cond_3
     const-string v0, "UTF-8"
 
     .line 11
@@ -61,13 +47,18 @@
 
     invoke-virtual {p0, v0}, Lokio/Buffer;->readString(Ljava/nio/charset/Charset;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
 
     :goto_0
-    if-nez v0, :cond_4
+    if-nez p0, :cond_1
 
-    const-string v0, ""
+    const-string p0, ""
 
-    :cond_4
-    return-object v0
+    :cond_1
+    return-object p0
 .end method

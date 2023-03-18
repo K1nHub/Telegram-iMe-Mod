@@ -4,8 +4,7 @@ import com.smedialink.storage.data.datasource.cancel.WalletCancelDataSource;
 import com.smedialink.storage.data.network.api.own.CancelApi;
 import com.smedialink.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.smedialink.storage.data.network.model.request.crypto.cancel.SendEthereumCancelOrBoostTransactionRequest;
-import com.smedialink.storage.data.network.model.response.base.ApiBaseResponse;
-import com.smedialink.storage.data.network.model.response.crypto.wallet.TransactionResponse;
+import com.smedialink.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.smedialink.storage.data.utils.extentions.NumberExtKt;
 import com.smedialink.storage.data.utils.extentions.Web3jExtKt;
 import com.smedialink.storage.domain.manager.crypto.CryptoAccessManager;
@@ -14,7 +13,6 @@ import com.smedialink.storage.domain.model.crypto.Wallet;
 import com.smedialink.storage.domain.model.crypto.cancel.CancelArgs;
 import com.smedialink.storage.domain.model.crypto.send.TransferArgs;
 import io.reactivex.Observable;
-import io.reactivex.functions.Function;
 import java.math.BigInteger;
 import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
@@ -58,21 +56,9 @@ public final class EthWalletCancelDataSourceImpl implements WalletCancelDataSour
         RawTransaction createTransactionByType = createTransactionByType(ethereum.getTransferArgs());
         long chainId = ethereum.getTransferArgs().getChainId();
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        String hexString = Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet == null ? null : eVMWallet.getCredentials()));
+        String hexString = Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet != null ? eVMWallet.getCredentials() : null));
         Intrinsics.checkNotNullExpressionValue(hexString, "toHexString(signedTransaction)");
-        Observable<ApiBaseResponse<TransactionResponse>> sendEthereumCancelTransaction = this.cancelApi.sendEthereumCancelTransaction(new SendEthereumCancelOrBoostTransactionRequest(hexString, ethereum.getOldTxHash()));
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable map = sendEthereumCancelTransaction.map(new Function() { // from class: com.smedialink.storage.data.datasource.cancel.impl.EthWalletCancelDataSourceImpl$cancel$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (response.isSuccess()) {
-                    return Result.Companion.success(((TransactionResponse) response.getPayload()).getTransactionHash());
-                }
-                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-            }
-        });
+        Observable map = this.cancelApi.sendEthereumCancelTransaction(new SendEthereumCancelOrBoostTransactionRequest(hexString, ethereum.getOldTxHash())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new EthWalletCancelDataSourceImpl$cancel$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         return map;
     }

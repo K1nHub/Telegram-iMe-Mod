@@ -1989,7 +1989,7 @@
     .line 885
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBar;->actionMode:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_d
 
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeVisible:Z
 
@@ -2122,43 +2122,11 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 907
-    :cond_4
-    iget-boolean v2, p0, Lorg/telegram/ui/ActionBar/ActionBar;->occupyStatusBar:Z
-
-    if-eqz v2, :cond_5
-
-    iget-object v2, p0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeTop:Landroid/view/View;
-
-    if-eqz v2, :cond_5
-
-    sget-boolean v3, Lorg/telegram/messenger/SharedConfig;->noStatusBar:Z
-
-    if-nez v3, :cond_5
-
-    .line 908
-    sget-object v3, Landroid/view/View;->ALPHA:Landroid/util/Property;
-
-    new-array v5, v4, [F
-
-    aput v6, v5, v0
-
-    invoke-static {v2, v3, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 910
-    :cond_5
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->noStatusBar:Z
-
-    if-eqz v2, :cond_8
-
     .line 911
+    :cond_4
     iget v2, p0, Lorg/telegram/ui/ActionBar/ActionBar;->actionBarColor:I
 
-    if-nez v2, :cond_6
+    if-nez v2, :cond_5
 
     .line 912
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
@@ -2174,7 +2142,7 @@
     goto :goto_1
 
     .line 914
-    :cond_6
+    :cond_5
     invoke-static {v2}, Landroidx/core/graphics/ColorUtils;->calculateLuminance(I)D
 
     move-result-wide v2
@@ -2183,7 +2151,7 @@
 
     cmpg-double v5, v2, v7
 
-    if-gez v5, :cond_7
+    if-gez v5, :cond_6
 
     .line 915
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -2201,7 +2169,7 @@
     goto :goto_1
 
     .line 917
-    :cond_7
+    :cond_6
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -2215,17 +2183,16 @@
     invoke-static {v2, v4}, Lorg/telegram/messenger/AndroidUtilities;->setLightStatusBar(Landroid/view/Window;Z)V
 
     .line 921
-    :cond_8
     :goto_1
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeAnimation:Landroid/animation/AnimatorSet;
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_7
 
     .line 922
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->cancel()V
 
     .line 924
-    :cond_9
+    :cond_7
     new-instance v2, Landroid/animation/AnimatorSet;
 
     invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
@@ -2238,7 +2205,7 @@
     .line 926
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBar;->backgroundUpdateListener:Ljava/lang/Runnable;
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_8
 
     const/4 v1, 0x2
 
@@ -2268,7 +2235,7 @@
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     .line 935
-    :cond_a
+    :cond_8
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeAnimation:Landroid/animation/AnimatorSet;
 
     const-wide/16 v2, 0xc8
@@ -2292,14 +2259,14 @@
     .line 959
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/ActionBar;->isSearchFieldVisible:Z
 
-    if-nez v1, :cond_c
+    if-nez v1, :cond_a
 
     .line 960
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBar;->titleTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     aget-object v2, v1, v0
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_9
 
     .line 961
     aget-object v1, v1, v0
@@ -2307,10 +2274,10 @@
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
     .line 963
-    :cond_b
+    :cond_9
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBar;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_a
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBar;->subtitle:Ljava/lang/CharSequence;
 
@@ -2318,7 +2285,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_c
+    if-nez v1, :cond_a
 
     .line 964
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBar;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -2326,19 +2293,19 @@
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
     .line 967
-    :cond_c
+    :cond_a
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBar;->menu:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_b
 
     .line 968
     invoke-virtual {v1, v0}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     .line 970
-    :cond_d
+    :cond_b
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBar;->backButtonImageView:Landroid/widget/ImageView;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_d
 
     .line 971
     invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
@@ -2348,7 +2315,7 @@
     .line 972
     instance-of v1, v0, Lorg/telegram/ui/ActionBar/BackDrawable;
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_c
 
     .line 973
     check-cast v0, Lorg/telegram/ui/ActionBar/BackDrawable;
@@ -2356,7 +2323,7 @@
     invoke-virtual {v0, v6, v4}, Lorg/telegram/ui/ActionBar/BackDrawable;->setRotation(FZ)V
 
     .line 975
-    :cond_e
+    :cond_c
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBar;->backButtonImageView:Landroid/widget/ImageView;
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/ActionBar;->itemsBackgroundColor:I
@@ -2367,11 +2334,9 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    :cond_f
+    :cond_d
     :goto_2
     return-void
-
-    nop
 
     :array_0
     .array-data 4
@@ -2486,13 +2451,9 @@
     invoke-virtual {v1}, Lorg/telegram/ui/Components/EllipsizeSpanAnimator;->onAttachedToWindow()V
 
     .line 1733
-    sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->noStatusBar:Z
+    iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeVisible:Z
 
     const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
-
-    iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeVisible:Z
 
     if-eqz v1, :cond_1
 
@@ -2577,10 +2538,6 @@
     invoke-virtual {v1}, Lorg/telegram/ui/Components/EllipsizeSpanAnimator;->onDetachedFromWindow()V
 
     .line 1750
-    sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->noStatusBar:Z
-
-    if-eqz v1, :cond_2
-
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeVisible:Z
 
     if-eqz v1, :cond_2
@@ -2663,257 +2620,6 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->setParentView(Landroid/view/View;)V
 
     :cond_3
-    return-void
-.end method
-
-.method public onDrawCrossfadeBackground(Landroid/graphics/Canvas;)V
-    .locals 8
-
-    .line 678
-    iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/ActionBar;->blurredBackground:Z
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    iget v0, p0, Lorg/telegram/ui/ActionBar/ActionBar;->actionBarColor:I
-
-    if-eqz v0, :cond_0
-
-    .line 679
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBar;->rectTmp:Landroid/graphics/Rect;
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
-
-    move-result v2
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result v3
-
-    invoke-virtual {v0, v1, v1, v2, v3}, Landroid/graphics/Rect;->set(IIII)V
-
-    .line 680
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBar;->blurScrimPaint:Landroid/graphics/Paint;
-
-    iget v1, p0, Lorg/telegram/ui/ActionBar/ActionBar;->actionBarColor:I
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 681
-    iget-object v2, p0, Lorg/telegram/ui/ActionBar/ActionBar;->contentView:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getY()F
-
-    move-result v4
-
-    iget-object v5, p0, Lorg/telegram/ui/ActionBar/ActionBar;->rectTmp:Landroid/graphics/Rect;
-
-    iget-object v6, p0, Lorg/telegram/ui/ActionBar/ActionBar;->blurScrimPaint:Landroid/graphics/Paint;
-
-    const/4 v7, 0x1
-
-    move-object v3, p1
-
-    invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->drawBlurRect(Landroid/graphics/Canvas;FLandroid/graphics/Rect;Landroid/graphics/Paint;Z)V
-
-    goto :goto_0
-
-    .line 683
-    :cond_0
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getBackground()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    .line 685
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
-
-    move-result v2
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
-
-    move-result v3
-
-    invoke-virtual {v0, v1, v1, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    .line 686
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    :cond_1
-    :goto_0
-    return-void
-.end method
-
-.method public onDrawCrossfadeContent(Landroid/graphics/Canvas;ZZF)V
-    .locals 5
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    .line 692
-    :goto_0
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
-
-    move-result v2
-
-    if-ge v1, v2, :cond_2
-
-    .line 693
-    invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v2
-
-    if-eqz p3, :cond_0
-
-    .line 694
-    iget-object v3, p0, Lorg/telegram/ui/ActionBar/ActionBar;->backButtonImageView:Landroid/widget/ImageView;
-
-    if-eq v2, v3, :cond_1
-
-    :cond_0
-    invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    instance-of v3, v2, Lorg/telegram/ui/ActionBar/ActionBarMenu;
-
-    if-eqz v3, :cond_1
-
-    .line 695
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
-
-    .line 696
-    invoke-virtual {v2}, Landroid/view/View;->getX()F
-
-    move-result v3
-
-    invoke-virtual {v2}, Landroid/view/View;->getY()F
-
-    move-result v4
-
-    invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 697
-    invoke-virtual {v2, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
-
-    .line 698
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
-
-    :cond_1
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    .line 702
-    :cond_2
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
-
-    if-eqz p2, :cond_3
-
-    .line 703
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
-
-    move-result p2
-
-    int-to-float p2, p2
-
-    mul-float p2, p2, p4
-
-    const/high16 p4, 0x3f000000    # 0.5f
-
-    mul-float p2, p2, p4
-
-    goto :goto_1
-
-    :cond_3
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
-
-    move-result p2
-
-    neg-int p2, p2
-
-    int-to-float p2, p2
-
-    const v1, 0x3ecccccd    # 0.4f
-
-    mul-float p2, p2, v1
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    sub-float/2addr v1, p4
-
-    mul-float p2, p2, v1
-
-    :goto_1
-    const/4 p4, 0x0
-
-    invoke-virtual {p1, p2, p4}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 704
-    :goto_2
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
-
-    move-result p2
-
-    if-ge v0, p2, :cond_6
-
-    .line 705
-    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object p2
-
-    if-eqz p3, :cond_4
-
-    .line 706
-    iget-object p4, p0, Lorg/telegram/ui/ActionBar/ActionBar;->backButtonImageView:Landroid/widget/ImageView;
-
-    if-eq p2, p4, :cond_5
-
-    :cond_4
-    invoke-virtual {p2}, Landroid/view/View;->getVisibility()I
-
-    move-result p4
-
-    if-nez p4, :cond_5
-
-    instance-of p4, p2, Lorg/telegram/ui/ActionBar/ActionBarMenu;
-
-    if-nez p4, :cond_5
-
-    .line 707
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
-
-    .line 708
-    invoke-virtual {p2}, Landroid/view/View;->getX()F
-
-    move-result p4
-
-    invoke-virtual {p2}, Landroid/view/View;->getY()F
-
-    move-result v1
-
-    invoke-virtual {p1, p4, v1}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 709
-    invoke-virtual {p2, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
-
-    .line 710
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
-
-    :cond_5
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_2
-
-    .line 713
-    :cond_6
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
-
     return-void
 .end method
 
@@ -7478,7 +7184,7 @@
     .line 725
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/ActionBar;->actionMode:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
-    if-eqz v7, :cond_1b
+    if-eqz v7, :cond_16
 
     iget-boolean v8, v0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeVisible:Z
 
@@ -7494,7 +7200,7 @@
 
     const/4 v12, 0x0
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_9
 
     .line 730
     new-instance v7, Ljava/util/ArrayList;
@@ -7600,38 +7306,6 @@
     .line 748
     iput-object v3, v0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeHidingViews:[Landroid/view/View;
 
-    .line 749
-    iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->occupyStatusBar:Z
-
-    if-eqz v1, :cond_5
-
-    iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeTop:Landroid/view/View;
-
-    if-eqz v1, :cond_5
-
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->noStatusBar:Z
-
-    if-nez v2, :cond_5
-
-    .line 750
-    sget-object v2, Landroid/view/View;->ALPHA:Landroid/util/Property;
-
-    new-array v3, v15, [F
-
-    fill-array-data v3, :array_3
-
-    invoke-static {v1, v2, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v1
-
-    invoke-virtual {v7, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 752
-    :cond_5
-    sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->noStatusBar:Z
-
-    if-eqz v1, :cond_7
-
     .line 753
     iget v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeColor:I
 
@@ -7643,7 +7317,7 @@
 
     cmpg-double v3, v1, v5
 
-    if-gez v3, :cond_6
+    if-gez v3, :cond_5
 
     .line 754
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -7661,7 +7335,7 @@
     goto :goto_1
 
     .line 756
-    :cond_6
+    :cond_5
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -7675,17 +7349,16 @@
     invoke-static {v1, v8}, Lorg/telegram/messenger/AndroidUtilities;->setLightStatusBar(Landroid/view/Window;Z)V
 
     .line 759
-    :cond_7
     :goto_1
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeAnimation:Landroid/animation/AnimatorSet;
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_6
 
     .line 760
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
     .line 762
-    :cond_8
+    :cond_6
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
@@ -7698,12 +7371,12 @@
     .line 764
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->backgroundUpdateListener:Ljava/lang/Runnable;
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_7
 
     new-array v1, v15, [F
 
     .line 765
-    fill-array-data v1, :array_4
+    fill-array-data v1, :array_3
 
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
@@ -7726,7 +7399,7 @@
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     .line 773
-    :cond_9
+    :cond_7
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeAnimation:Landroid/animation/AnimatorSet;
 
     const-wide/16 v2, 0xc8
@@ -7750,7 +7423,7 @@
     .line 816
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->backButtonImageView:Landroid/widget/ImageView;
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_16
 
     .line 817
     invoke-virtual {v1}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
@@ -7760,7 +7433,7 @@
     .line 818
     instance-of v2, v1, Lorg/telegram/ui/ActionBar/BackDrawable;
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_8
 
     .line 819
     check-cast v1, Lorg/telegram/ui/ActionBar/BackDrawable;
@@ -7770,7 +7443,7 @@
     invoke-virtual {v1, v9, v8}, Lorg/telegram/ui/ActionBar/BackDrawable;->setRotation(FZ)V
 
     .line 821
-    :cond_a
+    :cond_8
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->backButtonImageView:Landroid/widget/ImageView;
 
     iget v2, v0, Lorg/telegram/ui/ActionBar/ActionBar;->itemsActionModeBackgroundColor:I
@@ -7783,13 +7456,13 @@
 
     goto/16 :goto_5
 
-    :cond_b
+    :cond_9
     const/high16 v9, 0x3f800000    # 1.0f
 
     .line 824
     invoke-virtual {v7, v9}, Landroid/widget/LinearLayout;->setAlpha(F)V
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_b
 
     const/4 v7, 0x0
 
@@ -7797,12 +7470,12 @@
     :goto_2
     array-length v9, v3
 
-    if-ge v7, v9, :cond_d
+    if-ge v7, v9, :cond_b
 
     .line 827
     aget-object v9, v3, v7
 
-    if-eqz v9, :cond_c
+    if-eqz v9, :cond_a
 
     .line 828
     aget-object v9, v3, v7
@@ -7811,21 +7484,21 @@
 
     invoke-virtual {v9, v10}, Landroid/view/View;->setAlpha(F)V
 
-    :cond_c
+    :cond_a
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_2
 
-    :cond_d
-    if-eqz v2, :cond_e
+    :cond_b
+    if-eqz v2, :cond_c
 
     const/high16 v7, 0x3f800000    # 1.0f
 
     .line 833
     invoke-virtual {v2, v7}, Landroid/view/View;->setAlpha(F)V
 
-    :cond_e
-    if-eqz v5, :cond_f
+    :cond_c
+    if-eqz v5, :cond_d
 
     int-to-float v6, v6
 
@@ -7836,7 +7509,7 @@
     iput-object v5, v0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeTranslationView:Landroid/view/View;
 
     .line 839
-    :cond_f
+    :cond_d
     iput-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeExtraView:Landroid/view/View;
 
     .line 840
@@ -7844,30 +7517,6 @@
 
     .line 841
     iput-object v3, v0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeHidingViews:[Landroid/view/View;
-
-    .line 842
-    iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->occupyStatusBar:Z
-
-    if-eqz v1, :cond_10
-
-    iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeTop:Landroid/view/View;
-
-    if-eqz v1, :cond_10
-
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->noStatusBar:Z
-
-    if-nez v2, :cond_10
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    .line 843
-    invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
-
-    .line 845
-    :cond_10
-    sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->noStatusBar:Z
-
-    if-eqz v1, :cond_12
 
     .line 846
     iget v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeColor:I
@@ -7880,7 +7529,7 @@
 
     cmpg-double v3, v1, v5
 
-    if-gez v3, :cond_11
+    if-gez v3, :cond_e
 
     .line 847
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -7898,7 +7547,7 @@
     goto :goto_3
 
     .line 849
-    :cond_11
+    :cond_e
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -7912,37 +7561,19 @@
     invoke-static {v1, v8}, Lorg/telegram/messenger/AndroidUtilities;->setLightStatusBar(Landroid/view/Window;Z)V
 
     .line 852
-    :cond_12
     :goto_3
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->actionMode:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     invoke-virtual {v1, v12}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 853
-    iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->occupyStatusBar:Z
-
-    if-eqz v1, :cond_13
-
-    iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeTop:Landroid/view/View;
-
-    if-eqz v1, :cond_13
-
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->noStatusBar:Z
-
-    if-nez v2, :cond_13
-
-    .line 854
-    invoke-virtual {v1, v12}, Landroid/view/View;->setVisibility(I)V
-
     .line 856
-    :cond_13
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->titleTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     aget-object v2, v1, v12
 
     const/4 v3, 0x4
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_f
 
     .line 857
     aget-object v1, v1, v12
@@ -7950,10 +7581,10 @@
     invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
     .line 859
-    :cond_14
+    :cond_f
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_10
 
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->subtitle:Ljava/lang/CharSequence;
 
@@ -7961,7 +7592,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_10
 
     .line 860
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -7969,19 +7600,19 @@
     invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
     .line 862
-    :cond_15
+    :cond_10
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->menu:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_11
 
     .line 863
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     .line 865
-    :cond_16
+    :cond_11
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->actionModeHidingViews:[Landroid/view/View;
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_14
 
     const/4 v1, 0x0
 
@@ -7991,40 +7622,40 @@
 
     array-length v5, v2
 
-    if-ge v1, v5, :cond_19
+    if-ge v1, v5, :cond_14
 
     .line 867
     aget-object v5, v2, v1
 
-    if-eqz v5, :cond_18
+    if-eqz v5, :cond_13
 
-    if-eqz v4, :cond_17
+    if-eqz v4, :cond_12
 
     .line 868
     array-length v5, v4
 
-    if-ge v1, v5, :cond_17
+    if-ge v1, v5, :cond_12
 
     aget-boolean v5, v4, v1
 
-    if-eqz v5, :cond_18
+    if-eqz v5, :cond_13
 
     .line 869
-    :cond_17
+    :cond_12
     aget-object v2, v2, v1
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_18
+    :cond_13
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_4
 
     .line 874
-    :cond_19
+    :cond_14
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->backButtonImageView:Landroid/widget/ImageView;
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_16
 
     .line 875
     invoke-virtual {v1}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
@@ -8034,7 +7665,7 @@
     .line 876
     instance-of v2, v1, Lorg/telegram/ui/ActionBar/BackDrawable;
 
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_15
 
     .line 877
     check-cast v1, Lorg/telegram/ui/ActionBar/BackDrawable;
@@ -8044,7 +7675,7 @@
     invoke-virtual {v1, v2, v12}, Lorg/telegram/ui/ActionBar/BackDrawable;->setRotation(FZ)V
 
     .line 879
-    :cond_1a
+    :cond_15
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->backButtonImageView:Landroid/widget/ImageView;
 
     iget v2, v0, Lorg/telegram/ui/ActionBar/ActionBar;->itemsActionModeBackgroundColor:I
@@ -8055,7 +7686,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    :cond_1b
+    :cond_16
     :goto_5
     return-void
 
@@ -8078,12 +7709,6 @@
     .end array-data
 
     :array_3
-    .array-data 4
-        0x0
-        0x3f800000    # 1.0f
-    .end array-data
-
-    :array_4
     .array-data 4
         0x0
         0x3f800000    # 1.0f

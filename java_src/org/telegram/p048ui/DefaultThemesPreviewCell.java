@@ -1,6 +1,9 @@
 package org.telegram.p048ui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Point;
@@ -8,14 +11,17 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.view.View;
+import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
@@ -47,7 +53,7 @@ public class DefaultThemesPreviewCell extends LinearLayout {
     int themeIndex;
     private Boolean wasPortrait;
 
-    public DefaultThemesPreviewCell(final Context context, final BaseFragment baseFragment, int i) {
+    public DefaultThemesPreviewCell(Context context, final BaseFragment baseFragment, int i) {
         super(context);
         LinearLayoutManager linearLayoutManager;
         this.layoutManager = null;
@@ -91,7 +97,7 @@ public class DefaultThemesPreviewCell extends LinearLayout {
         recyclerListView.setEmptyView(flickerLoadingView);
         recyclerListView.setAnimateEmptyView(true, 0);
         if (this.currentType == 0) {
-            int i2 = C3158R.C3164raw.sun_outline;
+            int i2 = C3286R.C3291raw.sun_outline;
             RLottieDrawable rLottieDrawable = new RLottieDrawable(i2, "" + i2, AndroidUtilities.m50dp(28), AndroidUtilities.m50dp(28), true, null);
             this.darkThemeDrawable = rLottieDrawable;
             rLottieDrawable.setPlayInDirectionOfCustomEndFrame(true);
@@ -105,31 +111,9 @@ public class DefaultThemesPreviewCell extends LinearLayout {
             addView(textCell2, LayoutHelper.createFrame(-1, -2));
             TextCell textCell3 = new TextCell(context);
             this.browseThemesCell = textCell3;
-            textCell3.setTextAndIcon(LocaleController.getString("SettingsBrowseThemes", C3158R.string.SettingsBrowseThemes), C3158R.C3160drawable.msg_colors, false);
+            textCell3.setTextAndIcon(LocaleController.getString("SettingsBrowseThemes", C3286R.string.SettingsBrowseThemes), C3286R.C3288drawable.msg_colors, false);
             addView(this.browseThemesCell, LayoutHelper.createFrame(-1, -2));
-            this.dayNightCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DefaultThemesPreviewCell.1
-                /* JADX WARN: Removed duplicated region for block: B:28:0x0079  */
-                /* JADX WARN: Removed duplicated region for block: B:29:0x007e  */
-                /* JADX WARN: Removed duplicated region for block: B:32:0x0088  */
-                /* JADX WARN: Removed duplicated region for block: B:33:0x008e  */
-                /* JADX WARN: Removed duplicated region for block: B:36:0x0150  */
-                /* JADX WARN: Removed duplicated region for block: B:37:0x0157  */
-                /* JADX WARN: Removed duplicated region for block: B:40:0x015b  */
-                /* JADX WARN: Removed duplicated region for block: B:57:0x01e4  */
-                /* JADX WARN: Removed duplicated region for block: B:58:0x01f8  */
-                @Override // android.view.View.OnClickListener
-                /*
-                    Code decompiled incorrectly, please refer to instructions dump.
-                    To view partially-correct add '--show-bad-code' argument
-                */
-                public void onClick(android.view.View r16) {
-                    /*
-                        Method dump skipped, instructions count: 540
-                        To view this dump add '--comments-level debug' option
-                    */
-                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.DefaultThemesPreviewCell.View$OnClickListenerC53231.onClick(android.view.View):void");
-                }
-            });
+            this.dayNightCell.setOnClickListener(new View$OnClickListenerC54601(context, baseFragment));
             this.darkThemeDrawable.setPlayInDirectionOfCustomEndFrame(true);
             this.browseThemesCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DefaultThemesPreviewCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
@@ -140,9 +124,9 @@ public class DefaultThemesPreviewCell extends LinearLayout {
             if (!Theme.isCurrentThemeDay()) {
                 RLottieDrawable rLottieDrawable2 = this.darkThemeDrawable;
                 rLottieDrawable2.setCurrentFrame(rLottieDrawable2.getFramesCount() - 1);
-                this.dayNightCell.setTextAndIcon(LocaleController.getString("SettingsSwitchToDayMode", C3158R.string.SettingsSwitchToDayMode), (Drawable) this.darkThemeDrawable, true);
+                this.dayNightCell.setTextAndIcon(LocaleController.getString("SettingsSwitchToDayMode", C3286R.string.SettingsSwitchToDayMode), (Drawable) this.darkThemeDrawable, true);
             } else {
-                this.dayNightCell.setTextAndIcon(LocaleController.getString("SettingsSwitchToNightMode", C3158R.string.SettingsSwitchToNightMode), (Drawable) this.darkThemeDrawable, true);
+                this.dayNightCell.setTextAndIcon(LocaleController.getString("SettingsSwitchToNightMode", C3286R.string.SettingsSwitchToNightMode), (Drawable) this.darkThemeDrawable, true);
             }
         }
         if (!MediaDataController.getInstance(baseFragment.getCurrentAccount()).defaultEmojiThemes.isEmpty()) {
@@ -175,11 +159,11 @@ public class DefaultThemesPreviewCell extends LinearLayout {
             TLRPC$TL_theme tlTheme = chatThemeItem.chatTheme.getTlTheme(this.themeIndex);
             Theme.ThemeInfo theme = Theme.getTheme(Theme.getBaseThemeKey(tlTheme.settings.get(chatThemeItem.chatTheme.getSettingsIndex(this.themeIndex))));
             if (theme != null) {
-                Theme.ThemeAccent themeAccent = theme.accentsByThemeId.get(tlTheme.f1624id);
+                Theme.ThemeAccent themeAccent = theme.accentsByThemeId.get(tlTheme.f1630id);
                 if (themeAccent == null) {
                     themeAccent = theme.createNewAccent(tlTheme, baseFragment.getCurrentAccount());
                 }
-                accentId = themeAccent.f1649id;
+                accentId = themeAccent.f1655id;
                 theme.setCurrentAccentId(accentId);
             }
             themeInfo = theme;
@@ -203,6 +187,94 @@ public class DefaultThemesPreviewCell extends LinearLayout {
             SharedPreferences.Editor edit = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0).edit();
             edit.putString((this.currentType == 1 || themeInfo.isDark()) ? "lastDarkTheme" : "lastDayTheme", themeInfo.getKey());
             edit.commit();
+        }
+        Theme.turnOffAutoNight(baseFragment);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: org.telegram.ui.DefaultThemesPreviewCell$1 */
+    /* loaded from: classes5.dex */
+    public class View$OnClickListenerC54601 implements View.OnClickListener {
+        final /* synthetic */ Context val$context;
+        final /* synthetic */ BaseFragment val$parentFragment;
+
+        View$OnClickListenerC54601(Context context, BaseFragment baseFragment) {
+            this.val$context = context;
+            this.val$parentFragment = baseFragment;
+        }
+
+        /* JADX WARN: Removed duplicated region for block: B:28:0x0079  */
+        /* JADX WARN: Removed duplicated region for block: B:29:0x007e  */
+        /* JADX WARN: Removed duplicated region for block: B:32:0x0089  */
+        /* JADX WARN: Removed duplicated region for block: B:33:0x008f  */
+        @Override // android.view.View.OnClickListener
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+            To view partially-correct add '--show-bad-code' argument
+        */
+        public void onClick(android.view.View r15) {
+            /*
+                Method dump skipped, instructions count: 283
+                To view this dump add '--comments-level debug' option
+            */
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.DefaultThemesPreviewCell.View$OnClickListenerC54601.onClick(android.view.View):void");
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$onClick$0(final int i, Context context, int i2, boolean z, BaseFragment baseFragment) {
+            DefaultThemesPreviewCell.this.updateDayNightMode();
+            DefaultThemesPreviewCell.this.updateSelectedPosition();
+            final int color = Theme.getColor("windowBackgroundWhiteBlueText4");
+            DefaultThemesPreviewCell.this.darkThemeDrawable.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(BitmapDescriptorFactory.HUE_RED, 1.0f);
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.DefaultThemesPreviewCell.1.1
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    DefaultThemesPreviewCell.this.darkThemeDrawable.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(i, color, ((Float) valueAnimator.getAnimatedValue()).floatValue()), PorterDuff.Mode.SRC_IN));
+                }
+            });
+            ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.DefaultThemesPreviewCell.1.2
+                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                public void onAnimationEnd(Animator animator) {
+                    DefaultThemesPreviewCell.this.darkThemeDrawable.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
+                    super.onAnimationEnd(animator);
+                }
+            });
+            ofFloat.setDuration(350L);
+            ofFloat.start();
+            final int color2 = Theme.getColor("windowBackgroundGray");
+            final Window window = context instanceof Activity ? ((Activity) context).getWindow() : null;
+            if (window != null) {
+                if (DefaultThemesPreviewCell.this.navBarAnimator != null && DefaultThemesPreviewCell.this.navBarAnimator.isRunning()) {
+                    DefaultThemesPreviewCell.this.navBarAnimator.cancel();
+                }
+                final int i3 = (DefaultThemesPreviewCell.this.navBarAnimator == null || !DefaultThemesPreviewCell.this.navBarAnimator.isRunning()) ? i2 : DefaultThemesPreviewCell.this.navBarColor;
+                DefaultThemesPreviewCell.this.navBarAnimator = ValueAnimator.ofFloat(BitmapDescriptorFactory.HUE_RED, 1.0f);
+                final float f = z ? 50.0f : 200.0f;
+                DefaultThemesPreviewCell.this.navBarAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.DefaultThemesPreviewCell.1.3
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                        DefaultThemesPreviewCell.this.navBarColor = ColorUtils.blendARGB(i3, color2, Math.max((float) BitmapDescriptorFactory.HUE_RED, Math.min(1.0f, ((((Float) valueAnimator.getAnimatedValue()).floatValue() * r2) - f) / r4)));
+                        AndroidUtilities.setNavigationBarColor(window, DefaultThemesPreviewCell.this.navBarColor, false);
+                        AndroidUtilities.setLightNavigationBar(window, AndroidUtilities.computePerceivedBrightness(DefaultThemesPreviewCell.this.navBarColor) >= 0.721f);
+                    }
+                });
+                DefaultThemesPreviewCell.this.navBarAnimator.addListener(new AnimatorListenerAdapter(this) { // from class: org.telegram.ui.DefaultThemesPreviewCell.1.4
+                    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                    public void onAnimationEnd(Animator animator) {
+                        AndroidUtilities.setNavigationBarColor(window, color2, false);
+                        AndroidUtilities.setLightNavigationBar(window, AndroidUtilities.computePerceivedBrightness(color2) >= 0.721f);
+                    }
+                });
+                DefaultThemesPreviewCell.this.navBarAnimator.setDuration(350L);
+                DefaultThemesPreviewCell.this.navBarAnimator.start();
+            }
+            if (Theme.isCurrentThemeDay()) {
+                DefaultThemesPreviewCell.this.dayNightCell.setTextAndIcon(LocaleController.getString("SettingsSwitchToNightMode", C3286R.string.SettingsSwitchToNightMode), (Drawable) DefaultThemesPreviewCell.this.darkThemeDrawable, true);
+            } else {
+                DefaultThemesPreviewCell.this.dayNightCell.setTextAndIcon(LocaleController.getString("SettingsSwitchToDayMode", C3286R.string.SettingsSwitchToDayMode), (Drawable) DefaultThemesPreviewCell.this.darkThemeDrawable, true);
+            }
+            Theme.turnOffAutoNight(baseFragment);
         }
     }
 
@@ -303,8 +375,8 @@ public class DefaultThemesPreviewCell extends LinearLayout {
                     this.selectedPosition = i;
                     break;
                 } else {
-                    Theme.ThemeAccent themeAccent = Theme.getActiveTheme().accentsByThemeId.get(tlTheme.f1624id);
-                    if (themeAccent != null && themeAccent.f1649id == Theme.getActiveTheme().currentAccentId) {
+                    Theme.ThemeAccent themeAccent = Theme.getActiveTheme().accentsByThemeId.get(tlTheme.f1630id);
+                    if (themeAccent != null && themeAccent.f1655id == Theme.getActiveTheme().currentAccentId) {
                         this.selectedPosition = i;
                         break;
                     }

@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingProgrammesFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingProgrammesFragment.kt\ncom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,172:1\n13#2,4:173\n56#3,6:177\n*S KotlinDebug\n*F\n+ 1 StakingProgrammesFragment.kt\ncom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment\n*L\n41#1:173,4\n44#1:177,6\n*E\n"
+    value = "SMAP\nStakingProgrammesFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingProgrammesFragment.kt\ncom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,173:1\n13#2,4:174\n56#3,6:178\n*S KotlinDebug\n*F\n+ 1 StakingProgrammesFragment.kt\ncom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment\n*L\n41#1:174,4\n44#1:178,6\n*E\n"
 .end annotation
 
 
@@ -40,52 +40,54 @@
 
 .field private final stakingProgrammesRecycleAdapter$delegate:Lkotlin/Lazy;
 
+.field private final stakingTabType:Lcom/smedialink/storage/domain/model/staking/StakingTabType;
+
 
 # direct methods
-.method public static synthetic $r8$lambda$1QkpnUAxvBZ6DBr6G8uzYiRm6vo(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$BhQamHOBHGj6ry7L5ibzf_V7mVE(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/smedialink/storage/domain/model/wallet/staking/StakingOrderType;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->setupRecycleView$lambda-5$lambda-4$lambda-3(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->showSelectStakingOrderTypeDialog$lambda$1(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/smedialink/storage/domain/model/wallet/staking/StakingOrderType;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Hz-OhW5L-kaDkvYO7WAmL3NMHME(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
+.method public static synthetic $r8$lambda$FSrfsEI-l_iqPbbDMkfTeK5xs3k(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->showLevelRequiredDialog$lambda-2(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->setupRecycleView$lambda$5$lambda$4$lambda$3(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$LIRua4p5vewAqpHap_rspu45Leg(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/smedialink/storage/domain/model/wallet/staking/StakingOrderType;)V
+.method public static synthetic $r8$lambda$It1eKFglsxXyg52nN4yLC5CiICk(Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->showSelectStakingOrderTypeDialog$lambda-1(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/smedialink/storage/domain/model/wallet/staking/StakingOrderType;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->setupListeners$lambda$11$lambda$9(Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$THdVcJC3Y9685CfdR9lOcOm2S_Y(Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$PsuSs-HSpG7THnkSVUIaihF9WTg(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->setupListeners$lambda-11$lambda-9(Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->showLevelRequiredDialog$lambda$2(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$dj2RH3LPmSb6e7BHGQibeagj0DI(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$ezSKCsbmxmMz2xfB2NIE27Ow-Q4(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->setupListeners$lambda-11$lambda-10(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->setupListeners$lambda$11$lambda$10(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$yVvSBxm-CAbzg_n4tCTQQeSzf_0(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
+.method public static synthetic $r8$lambda$vR21_g8FZwr_b4wPB8Muhcw9hLY(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->setupLoadMore$lambda-8$lambda-7$lambda-6(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->setupLoadMore$lambda$8$lambda$7$lambda$6(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
 
     return-void
 .end method
@@ -156,13 +158,16 @@
     .line 38
     invoke-direct {p0}, Lcom/smedialink/ui/base/WalletAuthFragment;-><init>()V
 
-    .line 41
-    new-instance v0, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2;
+    .line 37
+    iput-object p1, p0, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->stakingTabType:Lcom/smedialink/storage/domain/model/staking/StakingTabType;
 
-    invoke-direct {v0, p0, p1}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2;-><init>(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/smedialink/storage/domain/model/staking/StakingTabType;)V
+    .line 41
+    new-instance p1, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2;
+
+    invoke-direct {p1, p0}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2;-><init>(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
 
     .line 16
-    new-instance p1, Lmoxy/ktx/MoxyKtxDelegate;
+    new-instance v0, Lmoxy/ktx/MoxyKtxDelegate;
 
     invoke-interface {p0}, Lmoxy/MvpDelegateHolder;->getMvpDelegate()Lmoxy/MvpDelegate;
 
@@ -196,10 +201,10 @@
 
     move-result-object v2
 
-    invoke-direct {p1, v1, v2, v0}, Lmoxy/ktx/MoxyKtxDelegate;-><init>(Lmoxy/MvpDelegate;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
+    invoke-direct {v0, v1, v2, p1}, Lmoxy/ktx/MoxyKtxDelegate;-><init>(Lmoxy/MvpDelegate;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
     .line 41
-    iput-object p1, p0, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
+    iput-object v0, p0, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
 
     .line 58
     sget-object p1, Lorg/koin/mp/KoinPlatformTools;->INSTANCE:Lorg/koin/mp/KoinPlatformTools;
@@ -236,6 +241,15 @@
     iput-object p1, p0, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->binding$delegate:Lcom/smedialink/utils/extentions/delegate/ResettableLazy;
 
     return-void
+.end method
+
+.method public static final synthetic access$getStakingTabType$p(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)Lcom/smedialink/storage/domain/model/staking/StakingTabType;
+    .locals 0
+
+    .line 36
+    iget-object p0, p0, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->stakingTabType:Lcom/smedialink/storage/domain/model/staking/StakingTabType;
+
+    return-object p0
 .end method
 
 .method private final getBinding()Lorg/telegram/messenger/databinding/ForkFragmentStakingProgrammesBinding;
@@ -298,19 +312,19 @@
 .method private final setupListeners()V
     .locals 2
 
-    .line 140
+    .line 141
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->getStakingProgrammesRecycleAdapter()Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;
 
     move-result-object v0
 
-    .line 141
+    .line 142
     new-instance v1, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, v0, p0}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
 
     invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setOnItemClickListener(Lcom/chad/library/adapter/base/listener/OnItemClickListener;)V
 
-    .line 146
+    .line 147
     new-instance v1, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
@@ -320,14 +334,14 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-11$lambda-10(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$11$lambda$10(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
     const-string p3, "this$0"
 
     invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p3, "$noName_0"
+    const-string p3, "<anonymous parameter 0>"
 
     invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -335,12 +349,12 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 147
+    .line 148
     invoke-virtual {p2}, Landroid/view/View;->getId()I
 
     move-result p1
 
-    .line 148
+    .line 149
     sget p2, Lorg/telegram/messenger/R$id;->image_header_right_button:I
 
     if-ne p1, p2, :cond_0
@@ -353,9 +367,9 @@
 
     goto :goto_0
 
-    .line 149
+    .line 150
     :cond_0
-    sget p2, Lorg/telegram/messenger/R$id;->image_staking_filters_info:I
+    sget p2, Lorg/telegram/messenger/R$id;->image_info:I
 
     if-ne p1, p2, :cond_1
 
@@ -366,7 +380,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-11$lambda-9(Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$11$lambda$9(Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "$this_with"
@@ -377,22 +391,22 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p2, "$noName_1"
+    const-string p2, "<anonymous parameter 1>"
 
     invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 142
+    .line 143
     invoke-virtual {p0, p4}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getItem(I)Ljava/lang/Object;
 
     move-result-object p0
 
     check-cast p0, Lcom/chad/library/adapter/base/entity/node/BaseNode;
 
-    .line 143
+    .line 144
     instance-of p2, p0, Lcom/smedialink/model/staking/StakingProgrammeItem;
 
     if-eqz p2, :cond_0
@@ -412,17 +426,17 @@
 .method private final setupLoadMore(Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;)V
     .locals 2
 
-    .line 129
+    .line 130
     invoke-virtual {p1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getLoadMoreModule()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
 
     move-result-object v0
 
     const/4 v1, 0x5
 
-    .line 130
+    .line 131
     invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->setPreLoadNumber(I)V
 
-    .line 131
+    .line 132
     new-instance v1, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$$ExternalSyntheticLambda3;
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$$ExternalSyntheticLambda3;-><init>(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
@@ -431,20 +445,20 @@
 
     const/4 v0, 0x0
 
-    .line 134
+    .line 135
     invoke-virtual {p1, v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setAnimationEnable(Z)V
 
     return-void
 .end method
 
-.method private static final setupLoadMore$lambda-8$lambda-7$lambda-6(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
+.method private static final setupLoadMore$lambda$8$lambda$7$lambda$6(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
     .locals 3
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 132
+    .line 133
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->getPresenter()Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesPresenter;
 
     move-result-object p0
@@ -461,7 +475,7 @@
 .end method
 
 .method private final setupRecycleView()V
-    .locals 4
+    .locals 5
 
     .line 115
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentStakingProgrammesBinding;
@@ -487,22 +501,40 @@
     invoke-virtual {v2, v3}, Lcom/smedialink/ui/adapter/provider/FilterProvider;->setOnFilterClickListener(Lcom/chad/library/adapter/base/listener/OnItemClickListener;)V
 
     .line 120
+    invoke-virtual {v1}, Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;->getHeaderWithRightButtonProvider()Lcom/smedialink/ui/adapter/provider/HeaderWithRightButtonProvider;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->stakingTabType:Lcom/smedialink/storage/domain/model/staking/StakingTabType;
+
+    sget-object v4, Lcom/smedialink/storage/domain/model/staking/StakingTabType;->PARTICIPATED:Lcom/smedialink/storage/domain/model/staking/StakingTabType;
+
+    if-ne v3, v4, :cond_0
+
+    const/4 v3, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v3, 0x0
+
+    :goto_0
+    invoke-virtual {v2, v3}, Lcom/smedialink/ui/adapter/provider/HeaderWithRightButtonProvider;->setInfoButtonVisible(Z)V
+
+    .line 121
     new-instance v2, Lcom/smedialink/ui/wallet/staking/programmes/adapter/diff/StakingProgrammesDiffCallback;
 
     invoke-direct {v2}, Lcom/smedialink/ui/wallet/staking/programmes/adapter/diff/StakingProgrammesDiffCallback;-><init>()V
 
     invoke-virtual {v1, v2}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffCallback(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;)V
 
-    .line 121
-    invoke-direct {p0, v1}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->setupLoadMore(Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;)V
-
     .line 122
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    invoke-direct {p0, v1}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->setupLoadMore(Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;)V
 
     .line 116
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 123
+    .line 124
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -516,7 +548,7 @@
     return-void
 .end method
 
-.method private static final setupRecycleView$lambda-5$lambda-4$lambda-3(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupRecycleView$lambda$5$lambda$4$lambda$3(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/smedialink/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
@@ -527,11 +559,11 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p2, "$noName_1"
+    const-string p2, "<anonymous parameter 1>"
 
     invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -563,7 +595,7 @@
     return-void
 .end method
 
-.method private static final showLevelRequiredDialog$lambda-2(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
+.method private static final showLevelRequiredDialog$lambda$2(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -586,7 +618,7 @@
     return-void
 .end method
 
-.method private static final showSelectStakingOrderTypeDialog$lambda-1(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/smedialink/storage/domain/model/wallet/staking/StakingOrderType;)V
+.method private static final showSelectStakingOrderTypeDialog$lambda$1(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/smedialink/storage/domain/model/wallet/staking/StakingOrderType;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -610,7 +642,7 @@
 .method private final showStakingFiltersInfoDialog()V
     .locals 9
 
-    .line 158
+    .line 159
     invoke-virtual {p0}, Lcom/smedialink/ui/base/WalletAuthFragment;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     move-result-object v0
@@ -621,7 +653,7 @@
 
     move-result-object v3
 
-    .line 159
+    .line 160
     invoke-virtual {p0}, Lcom/smedialink/ui/base/WalletAuthFragment;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     move-result-object v0
@@ -632,7 +664,7 @@
 
     move-result-object v4
 
-    .line 160
+    .line 161
     invoke-virtual {p0}, Lcom/smedialink/ui/base/WalletAuthFragment;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     move-result-object v0
@@ -651,12 +683,12 @@
 
     move-object v2, p0
 
-    .line 157
+    .line 158
     invoke-static/range {v2 .. v8}, Lcom/smedialink/utils/dialogs/DialogsFactoryKt;->createInfoBottomSheetDialog$default(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback;ILjava/lang/Object;)Lorg/telegram/ui/ActionBar/BottomSheet;
 
     move-result-object v0
 
-    .line 156
+    .line 157
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void

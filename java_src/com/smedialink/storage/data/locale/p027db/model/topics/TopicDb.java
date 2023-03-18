@@ -35,7 +35,7 @@ public final class TopicDb {
     }
 
     public String toString() {
-        return "TopicDb(topicId=" + this.topicId + ", name=" + ((Object) this.name) + ", icon=" + ((Object) this.icon) + ", order=" + this.order + ", presets=" + this.presets + ", dialogs=" + this.dialogs + ", userId=" + this.userId + ')';
+        return "TopicDb(topicId=" + this.topicId + ", name=" + this.name + ", icon=" + this.icon + ", order=" + this.order + ", presets=" + this.presets + ", dialogs=" + this.dialogs + ", userId=" + this.userId + ')';
     }
 
     public TopicDb(long j, String str, String str2, int i, List<Long> presets, List<Long> dialogs, long j2) {

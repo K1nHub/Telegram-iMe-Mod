@@ -145,7 +145,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         /* renamed from: com.google.firestore.v1.StructuredQuery$CollectionSelector$Builder */
         /* loaded from: classes3.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CollectionSelector, Builder> implements MessageLiteOrBuilder {
-            /* synthetic */ Builder(C10681 c10681) {
+            /* synthetic */ Builder(C10611 c10611) {
                 this();
             }
 
@@ -168,7 +168,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-            switch (C10681.f214xa1df5c61[methodToInvoke.ordinal()]) {
+            switch (C10611.f214xa1df5c61[methodToInvoke.ordinal()]) {
                 case 1:
                     return new CollectionSelector();
                 case 2:
@@ -207,7 +207,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
 
     /* renamed from: com.google.firestore.v1.StructuredQuery$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10681 {
+    static /* synthetic */ class C10611 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f214xa1df5c61;
@@ -353,7 +353,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         /* renamed from: com.google.firestore.v1.StructuredQuery$Filter$Builder */
         /* loaded from: classes3.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Filter, Builder> implements MessageLiteOrBuilder {
-            /* synthetic */ Builder(C10681 c10681) {
+            /* synthetic */ Builder(C10611 c10611) {
                 this();
             }
 
@@ -382,7 +382,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-            switch (C10681.f214xa1df5c61[methodToInvoke.ordinal()]) {
+            switch (C10611.f214xa1df5c61[methodToInvoke.ordinal()]) {
                 case 1:
                     return new Filter();
                 case 2:
@@ -539,7 +539,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         /* renamed from: com.google.firestore.v1.StructuredQuery$CompositeFilter$Builder */
         /* loaded from: classes3.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CompositeFilter, Builder> implements MessageLiteOrBuilder {
-            /* synthetic */ Builder(C10681 c10681) {
+            /* synthetic */ Builder(C10611 c10611) {
                 this();
             }
 
@@ -562,7 +562,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-            switch (C10681.f214xa1df5c61[methodToInvoke.ordinal()]) {
+            switch (C10611.f214xa1df5c61[methodToInvoke.ordinal()]) {
                 case 1:
                     return new CompositeFilter();
                 case 2:
@@ -762,7 +762,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         /* renamed from: com.google.firestore.v1.StructuredQuery$FieldFilter$Builder */
         /* loaded from: classes3.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<FieldFilter, Builder> implements MessageLiteOrBuilder {
-            /* synthetic */ Builder(C10681 c10681) {
+            /* synthetic */ Builder(C10611 c10611) {
                 this();
             }
 
@@ -791,7 +791,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-            switch (C10681.f214xa1df5c61[methodToInvoke.ordinal()]) {
+            switch (C10611.f214xa1df5c61[methodToInvoke.ordinal()]) {
                 case 1:
                     return new FieldFilter();
                 case 2:
@@ -960,7 +960,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         /* renamed from: com.google.firestore.v1.StructuredQuery$UnaryFilter$Builder */
         /* loaded from: classes3.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<UnaryFilter, Builder> implements MessageLiteOrBuilder {
-            /* synthetic */ Builder(C10681 c10681) {
+            /* synthetic */ Builder(C10611 c10611) {
                 this();
             }
 
@@ -983,7 +983,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-            switch (C10681.f214xa1df5c61[methodToInvoke.ordinal()]) {
+            switch (C10611.f214xa1df5c61[methodToInvoke.ordinal()]) {
                 case 1:
                     return new UnaryFilter();
                 case 2:
@@ -1065,7 +1065,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         /* renamed from: com.google.firestore.v1.StructuredQuery$Order$Builder */
         /* loaded from: classes3.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Order, Builder> implements MessageLiteOrBuilder {
-            /* synthetic */ Builder(C10681 c10681) {
+            /* synthetic */ Builder(C10611 c10611) {
                 this();
             }
 
@@ -1088,7 +1088,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-            switch (C10681.f214xa1df5c61[methodToInvoke.ordinal()]) {
+            switch (C10611.f214xa1df5c61[methodToInvoke.ordinal()]) {
                 case 1:
                     return new Order();
                 case 2:
@@ -1153,7 +1153,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         /* renamed from: com.google.firestore.v1.StructuredQuery$FieldReference$Builder */
         /* loaded from: classes3.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<FieldReference, Builder> implements MessageLiteOrBuilder {
-            /* synthetic */ Builder(C10681 c10681) {
+            /* synthetic */ Builder(C10611 c10611) {
                 this();
             }
 
@@ -1170,7 +1170,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-            switch (C10681.f214xa1df5c61[methodToInvoke.ordinal()]) {
+            switch (C10611.f214xa1df5c61[methodToInvoke.ordinal()]) {
                 case 1:
                     return new FieldReference();
                 case 2:
@@ -1225,7 +1225,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         /* renamed from: com.google.firestore.v1.StructuredQuery$Projection$Builder */
         /* loaded from: classes3.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Projection, Builder> implements MessageLiteOrBuilder {
-            /* synthetic */ Builder(C10681 c10681) {
+            /* synthetic */ Builder(C10611 c10611) {
                 this();
             }
 
@@ -1236,7 +1236,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-            switch (C10681.f214xa1df5c61[methodToInvoke.ordinal()]) {
+            switch (C10611.f214xa1df5c61[methodToInvoke.ordinal()]) {
                 case 1:
                     return new Projection();
                 case 2:
@@ -1386,7 +1386,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
     /* renamed from: com.google.firestore.v1.StructuredQuery$Builder */
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<StructuredQuery, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10681 c10681) {
+        /* synthetic */ Builder(C10611 c10611) {
             this();
         }
 
@@ -1433,7 +1433,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10681.f214xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10611.f214xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new StructuredQuery();
             case 2:

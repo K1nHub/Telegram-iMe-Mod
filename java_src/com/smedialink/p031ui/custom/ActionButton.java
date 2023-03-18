@@ -87,7 +87,7 @@ public class ActionButton extends AppCompatTextView {
     /* JADX INFO: Access modifiers changed from: protected */
     public final int getPreferredButtonHeight() {
         Integer num = this.forcedButtonHeight;
-        return num == null ? getButtonHeight() : num.intValue();
+        return num != null ? num.intValue() : getButtonHeight();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

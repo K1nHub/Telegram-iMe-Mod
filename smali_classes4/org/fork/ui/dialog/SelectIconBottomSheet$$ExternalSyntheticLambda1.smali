@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/dialog/SelectIconBottomSheet$$ExternalSyntheticLambda1;->f$0:Lorg/fork/ui/dialog/SelectIconBottomSheet;
 
-    invoke-static {v0, p1, p2}, Lorg/fork/ui/dialog/SelectIconBottomSheet;->$r8$lambda$djsiIrdJF-63RC_GYt44_JV-2_Q(Lorg/fork/ui/dialog/SelectIconBottomSheet;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2}, Lorg/fork/ui/dialog/SelectIconBottomSheet;->$r8$lambda$WUCYAcF8tjwLJayqEipdCS6khEw(Lorg/fork/ui/dialog/SelectIconBottomSheet;Landroid/view/View;I)V
 
     return-void
 .end method

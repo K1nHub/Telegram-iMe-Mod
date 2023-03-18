@@ -24,7 +24,7 @@ import org.fork.utils.CollectionsUtilsKt;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -60,11 +60,20 @@ public final class FilteredContactsProcessingService extends Service implements 
 
         static {
             int[] iArr = new int[ContactsActionType.values().length];
-            iArr[ContactsActionType.DELETE.ordinal()] = 1;
-            iArr[ContactsActionType.UNBLOCK.ordinal()] = 2;
+            try {
+                iArr[ContactsActionType.DELETE.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[ContactsActionType.UNBLOCK.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
             int[] iArr2 = new int[State.values().length];
-            iArr2[State.DELETING.ordinal()] = 1;
+            try {
+                iArr2[State.DELETING.ordinal()] = 1;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$1 = iArr2;
         }
     }
@@ -134,7 +143,7 @@ public final class FilteredContactsProcessingService extends Service implements 
         ContactsActionType valueOf;
         List<Long> list = this.contactsIds;
         long[] longArrayExtra = intent.getLongArrayExtra("contacts_ids");
-        List<Long> mutableList = longArrayExtra == null ? null : ArraysKt___ArraysKt.toMutableList(longArrayExtra);
+        List<Long> mutableList = longArrayExtra != null ? ArraysKt___ArraysKt.toMutableList(longArrayExtra) : null;
         if (mutableList == null) {
             mutableList = CollectionsKt__CollectionsKt.emptyList();
         }
@@ -161,7 +170,7 @@ public final class FilteredContactsProcessingService extends Service implements 
 
     private final void buildNotification() {
         if (this.builder == null) {
-            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_ContactsProcessingChannel", C3158R.C3160drawable.fork_ic_contacts_24, StopFilteredChatParticipantsProcessingReceiver.class);
+            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_ContactsProcessingChannel", C3286R.C3288drawable.fork_ic_contacts_24, StopFilteredChatParticipantsProcessingReceiver.class);
         }
     }
 
@@ -170,17 +179,16 @@ public final class FilteredContactsProcessingService extends Service implements 
             runWithDelay(new Runnable() { // from class: com.smedialink.services.FilteredContactsProcessingService$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FilteredContactsProcessingService.m1291processNextContactsPart$lambda0(FilteredContactsProcessingService.this);
+                    FilteredContactsProcessingService.processNextContactsPart$lambda$0(FilteredContactsProcessingService.this);
                 }
             });
         } else {
-            stopServiceWithToast(C3158R.string.contacts_processing_success);
+            stopServiceWithToast(C3286R.string.contacts_processing_success);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: processNextContactsPart$lambda-0  reason: not valid java name */
-    public static final void m1291processNextContactsPart$lambda0(FilteredContactsProcessingService this$0) {
+    public static final void processNextContactsPart$lambda$0(FilteredContactsProcessingService this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.updateNotification(true, State.DELETING);
         int size = this$0.contactsIds.size();
@@ -234,19 +242,18 @@ public final class FilteredContactsProcessingService extends Service implements 
         contactsController.deleteContact(CollectionsUtilsKt.toArrayList(arrayList), false, new Callbacks$Callback1() { // from class: com.smedialink.services.FilteredContactsProcessingService$$ExternalSyntheticLambda1
             @Override // org.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                FilteredContactsProcessingService.m1290deleteContactsPart$lambda2(FilteredContactsProcessingService.this, (Throwable) obj);
+                FilteredContactsProcessingService.deleteContactsPart$lambda$2(FilteredContactsProcessingService.this, (Throwable) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: deleteContactsPart$lambda-2  reason: not valid java name */
-    public static final void m1290deleteContactsPart$lambda2(FilteredContactsProcessingService this$0, Throwable th) {
+    public static final void deleteContactsPart$lambda$2(FilteredContactsProcessingService this$0, Throwable th) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (th == null) {
             this$0.processNextContactsPart();
         } else {
-            this$0.stopServiceWithToast(C3158R.string.contacts_processing_error);
+            this$0.stopServiceWithToast(C3286R.string.contacts_processing_error);
         }
     }
 
@@ -269,18 +276,17 @@ public final class FilteredContactsProcessingService extends Service implements 
             return;
         }
         if (WhenMappings.$EnumSwitchMapping$1[state.ordinal()] == 1) {
-            string = LocaleController.formatStringInternal(C3158R.string.contacts_processing, Integer.valueOf(this.processedContactsCount), Integer.valueOf(this.contactsIds.size()));
+            string = LocaleController.formatStringInternal(C3286R.string.contacts_processing, Integer.valueOf(this.processedContactsCount), Integer.valueOf(this.contactsIds.size()));
         } else {
-            string = LocaleController.getString("WaitingForNetwork", C3158R.string.WaitingForNetwork);
+            string = LocaleController.getString("WaitingForNetwork", C3286R.string.WaitingForNetwork);
         }
         NotificationCompat.Builder builder = this.builder;
-        if (builder == null) {
-            return;
-        }
-        builder.setTicker(string);
-        builder.setContentText(string);
-        if (z) {
-            NotificationManagerCompat.from(ApplicationLoader.applicationContext).notify(this.notificationChannelId, builder.build());
+        if (builder != null) {
+            builder.setTicker(string);
+            builder.setContentText(string);
+            if (z) {
+                NotificationManagerCompat.from(ApplicationLoader.applicationContext).notify(this.notificationChannelId, builder.build());
+            }
         }
     }
 

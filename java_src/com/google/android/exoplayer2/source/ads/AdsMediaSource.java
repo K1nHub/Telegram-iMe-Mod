@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.p017ui.AdViewProvider;
@@ -277,7 +277,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
                 AdMediaSourceHolder[][] adMediaSourceHolderArr2 = this.adMediaSourceHolders;
                 if (i2 < adMediaSourceHolderArr2[i].length) {
                     AdMediaSourceHolder adMediaSourceHolder = adMediaSourceHolderArr2[i][i2];
-                    jArr[i][i2] = adMediaSourceHolder == null ? C0474C.TIME_UNSET : adMediaSourceHolder.getDurationUs();
+                    jArr[i][i2] = adMediaSourceHolder == null ? C0468C.TIME_UNSET : adMediaSourceHolder.getDurationUs();
                     i2++;
                 }
             }
@@ -435,7 +435,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
 
         public long getDurationUs() {
             Timeline timeline = this.timeline;
-            return timeline == null ? C0474C.TIME_UNSET : timeline.getPeriod(0, AdsMediaSource.this.period).getDurationUs();
+            return timeline == null ? C0468C.TIME_UNSET : timeline.getPeriod(0, AdsMediaSource.this.period).getDurationUs();
         }
 
         public void releaseMediaPeriod(MaskingMediaPeriod maskingMediaPeriod) {

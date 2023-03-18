@@ -29,15 +29,14 @@ public final class WalletTokenDetailsPresenter$resolveAvailableTokenActions$11 e
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         StakingDetailedMetadata stakingDetailedMetadata;
+        StakingDetailsItem stakingDetails;
         stakingDetailedMetadata = this.this$0.stakingMetadata;
-        StakingDetailsItem mapToUi = stakingDetailedMetadata == null ? null : StakingDetailedMetadataUiMappingKt.mapToUi(stakingDetailedMetadata);
-        if (mapToUi == null) {
-            mapToUi = ((TokenDetailsArgs.Staking) this.$args).getStakingDetails();
+        if (stakingDetailedMetadata == null || (stakingDetails = StakingDetailedMetadataUiMappingKt.mapToUi(stakingDetailedMetadata)) == null) {
+            stakingDetails = ((TokenDetailsArgs.Staking) this.$args).getStakingDetails();
         }
-        ((WalletTokenDetailsView) this.this$0.getViewState()).openStakingCalculatorScreen(mapToUi);
+        ((WalletTokenDetailsView) this.this$0.getViewState()).openStakingCalculatorScreen(stakingDetails);
     }
 }

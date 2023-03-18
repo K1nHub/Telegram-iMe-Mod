@@ -2457,7 +2457,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->linkedUserId:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", linkedObjectId="
 
@@ -2465,7 +2465,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->linkedObjectId:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", type="
 
@@ -2489,7 +2489,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->status:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", cryptoCode="
 
@@ -2497,7 +2497,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->cryptoCode:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", fromWalletAddress="
 
@@ -2505,7 +2505,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->fromWalletAddress:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", toWalletAddress="
 
@@ -2513,7 +2513,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->toWalletAddress:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", txHash="
 
@@ -2521,7 +2521,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->txHash:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", networkType="
 
@@ -2529,7 +2529,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->networkType:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", spentCurrency="
 
@@ -2537,7 +2537,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->spentCurrency:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", amountToSpent="
 
@@ -2545,7 +2545,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->amountToSpent:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", assetCode="
 
@@ -2553,7 +2553,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->assetCode:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", assetName="
 
@@ -2561,7 +2561,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->assetName:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", payerUserId="
 
@@ -2569,7 +2569,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->payerUserId:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", stakingId="
 
@@ -2641,7 +2641,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->shouldFinishAt:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", debtAsToken="
 

@@ -52,18 +52,17 @@ public final class NeurobotsStoreActivity$createView$2 extends ActionBarMenuItem
         searchField.postDelayed(new Runnable() { // from class: com.smedialink.ui.shop.NeurobotsStoreActivity$createView$2$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                NeurobotsStoreActivity$createView$2.m1497onSearchExpand$lambda0(NeurobotsStoreActivity.this);
+                NeurobotsStoreActivity$createView$2.onSearchExpand$lambda$0(NeurobotsStoreActivity.this);
             }
         }, 250L);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onSearchExpand$lambda-0  reason: not valid java name */
-    public static final void m1497onSearchExpand$lambda0(NeurobotsStoreActivity this$0) {
+    public static final void onSearchExpand$lambda$0(NeurobotsStoreActivity this$0) {
         ActionBarMenuItem actionBarMenuItem;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         actionBarMenuItem = this$0.searchItem;
-        AndroidUtilities.showKeyboard(actionBarMenuItem == null ? null : actionBarMenuItem.getSearchField());
+        AndroidUtilities.showKeyboard(actionBarMenuItem != null ? actionBarMenuItem.getSearchField() : null);
     }
 
     @Override // org.telegram.p048ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
@@ -124,7 +123,7 @@ public final class NeurobotsStoreActivity$createView$2 extends ActionBarMenuItem
     @Override // org.telegram.p048ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
     public void onTextChanged(EditText editText) {
         PublishSubject publishSubject;
-        String valueOf = String.valueOf(editText == null ? null : editText.getText());
+        String valueOf = String.valueOf(editText != null ? editText.getText() : null);
         if (valueOf.length() > 0) {
             publishSubject = this.this$0.searchSubject;
             publishSubject.onNext(valueOf);

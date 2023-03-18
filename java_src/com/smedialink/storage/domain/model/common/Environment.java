@@ -1,7 +1,6 @@
 package com.smedialink.storage.domain.model.common;
 
 import java.util.ArrayList;
-import java.util.Objects;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Environment.kt */
@@ -65,9 +64,7 @@ public enum Environment {
             for (Environment environment : values) {
                 arrayList.add(environment.name());
             }
-            Object[] array = arrayList.toArray(new String[0]);
-            Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-            return (String[]) array;
+            return (String[]) arrayList.toArray(new String[0]);
         }
     }
 }

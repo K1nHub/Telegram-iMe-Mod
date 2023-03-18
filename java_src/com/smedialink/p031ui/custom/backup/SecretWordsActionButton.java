@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import com.tbuonomo.viewpagerdotsindicator.ViewExtKt;
-import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
@@ -56,7 +55,6 @@ public final class SecretWordsActionButton extends TextView {
         spannableStringBuilder.setSpan(new ColoredImageSpan(drawable), 0, 1, 0);
         spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m50dp(8)), 1, 2, 0);
         spannableStringBuilder.append((CharSequence) buttonText);
-        Unit unit = Unit.INSTANCE;
         setText(spannableStringBuilder);
     }
 

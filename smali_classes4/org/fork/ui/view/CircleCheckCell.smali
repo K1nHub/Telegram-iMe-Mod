@@ -26,10 +26,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$zCiYGDrzFrGEa916ImIZDEgx4tU(Lorg/telegram/ui/Components/CheckBox2;Lorg/fork/ui/view/CircleCheckCell;F)V
+.method public static synthetic $r8$lambda$cQSjznEqIsoW6uYsu7HxVgFwqG8(Lorg/telegram/ui/Components/CheckBox2;Lorg/fork/ui/view/CircleCheckCell;F)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/CircleCheckCell;->initCheckBox$lambda-4$lambda-3(Lorg/telegram/ui/Components/CheckBox2;Lorg/fork/ui/view/CircleCheckCell;F)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/CircleCheckCell;->initCheckBox$lambda$4$lambda$3(Lorg/telegram/ui/Components/CheckBox2;Lorg/fork/ui/view/CircleCheckCell;F)V
 
     return-void
 .end method
@@ -361,7 +361,7 @@
     return-object v0
 .end method
 
-.method private static final initCheckBox$lambda-4$lambda-3(Lorg/telegram/ui/Components/CheckBox2;Lorg/fork/ui/view/CircleCheckCell;F)V
+.method private static final initCheckBox$lambda$4$lambda$3(Lorg/telegram/ui/Components/CheckBox2;Lorg/fork/ui/view/CircleCheckCell;F)V
     .locals 0
 
     const-string p2, "$this_apply"
@@ -430,9 +430,7 @@
     invoke-direct {v0, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     .line 67
-    invoke-virtual {p0}, Lorg/fork/ui/view/CircleCheckCell;->getIconScaleType()Landroid/widget/ImageView$ScaleType;
-
-    move-result-object v1
+    iget-object v1, p0, Lorg/fork/ui/view/CircleCheckCell;->iconScaleType:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
@@ -576,9 +574,6 @@
 
     .line 49
     invoke-virtual {p3, p1}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
-
-    .line 50
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 47
     invoke-virtual {p2, p3}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V

@@ -9,13 +9,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/model/wallet/transaction/TransactionActionItem$Send;,
-        Lcom/smedialink/model/wallet/transaction/TransactionActionItem$Support;,
-        Lcom/smedialink/model/wallet/transaction/TransactionActionItem$Profile;,
+        Lcom/smedialink/model/wallet/transaction/TransactionActionItem$Boost;,
+        Lcom/smedialink/model/wallet/transaction/TransactionActionItem$Cancel;,
         Lcom/smedialink/model/wallet/transaction/TransactionActionItem$Copy;,
         Lcom/smedialink/model/wallet/transaction/TransactionActionItem$OpenScan;,
-        Lcom/smedialink/model/wallet/transaction/TransactionActionItem$Cancel;,
-        Lcom/smedialink/model/wallet/transaction/TransactionActionItem$Boost;
+        Lcom/smedialink/model/wallet/transaction/TransactionActionItem$Profile;,
+        Lcom/smedialink/model/wallet/transaction/TransactionActionItem$Send;,
+        Lcom/smedialink/model/wallet/transaction/TransactionActionItem$Support;
     }
 .end annotation
 

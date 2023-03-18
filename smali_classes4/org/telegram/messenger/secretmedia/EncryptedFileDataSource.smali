@@ -12,15 +12,9 @@
 
 
 # instance fields
-.field private bytesRemaining:J
+.field private bytesRemaining:I
 
-.field private file:Ljava/io/RandomAccessFile;
-
-.field private fileOffset:I
-
-.field private iv:[B
-
-.field private key:[B
+.field fileInputStream:Lorg/telegram/messenger/secretmedia/EncryptedFileInputStream;
 
 .field private opened:Z
 
@@ -33,22 +27,8 @@
 
     const/4 v0, 0x0
 
-    .line 46
+    .line 53
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;-><init>(Z)V
-
-    const/16 v0, 0x20
-
-    new-array v0, v0, [B
-
-    .line 41
-    iput-object v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->key:[B
-
-    const/16 v0, 0x10
-
-    new-array v0, v0, [B
-
-    .line 42
-    iput-object v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->iv:[B
 
     return-void
 .end method
@@ -58,12 +38,12 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 51
+    .line 58
     invoke-direct {p0}, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;-><init>()V
 
     if-eqz p1, :cond_0
 
-    .line 53
+    .line 60
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->addTransferListener(Lcom/google/android/exoplayer2/upstream/TransferListener;)V
 
     :cond_0
@@ -73,264 +53,219 @@
 
 # virtual methods
 .method public close()V
-    .locals 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource$EncryptedFileDataSourceException;
-        }
-    .end annotation
+    .locals 1
 
-    const/4 v0, 0x0
-
-    .line 118
-    iput-object v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->uri:Landroid/net/Uri;
-
-    const/4 v1, 0x0
-
-    .line 119
-    iput v1, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->fileOffset:I
-
-    .line 121
+    .line 120
     :try_start_0
-    iget-object v2, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->file:Ljava/io/RandomAccessFile;
+    iget-object v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->fileInputStream:Lorg/telegram/messenger/secretmedia/EncryptedFileInputStream;
 
-    if-eqz v2, :cond_0
-
-    .line 122
-    invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
+    invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 127
-    :cond_0
-    iput-object v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->file:Ljava/io/RandomAccessFile;
-
-    .line 128
-    iget-boolean v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->opened:Z
-
-    if-eqz v0, :cond_1
-
-    .line 129
-    iput-boolean v1, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->opened:Z
-
-    .line 130
-    invoke-virtual {p0}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferEnded()V
-
-    :cond_1
-    return-void
-
-    :catchall_0
-    move-exception v2
 
     goto :goto_0
 
     :catch_0
-    move-exception v2
+    move-exception v0
 
-    .line 125
-    :try_start_1
-    new-instance v3, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource$EncryptedFileDataSourceException;
+    .line 122
+    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
-    invoke-direct {v3, v2}, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource$EncryptedFileDataSourceException;-><init>(Ljava/io/IOException;)V
-
-    throw v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 127
+    .line 124
     :goto_0
-    iput-object v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->file:Ljava/io/RandomAccessFile;
-
-    .line 128
     iget-boolean v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->opened:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_0
 
-    .line 129
-    iput-boolean v1, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->opened:Z
+    const/4 v0, 0x0
 
-    .line 130
+    .line 125
+    iput-boolean v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->opened:Z
+
+    .line 126
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferEnded()V
 
-    .line 132
-    :cond_2
-    throw v2
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 128
+    iput-object v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->fileInputStream:Lorg/telegram/messenger/secretmedia/EncryptedFileInputStream;
+
+    .line 129
+    iput-object v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->uri:Landroid/net/Uri;
+
+    return-void
 .end method
 
 .method public getUri()Landroid/net/Uri;
     .locals 1
 
-    .line 113
+    .line 114
     iget-object v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->uri:Landroid/net/Uri;
 
     return-object v0
 .end method
 
 .method public open(Lcom/google/android/exoplayer2/upstream/DataSpec;)J
-    .locals 6
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource$EncryptedFileDataSourceException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    const-string v0, "r"
+    .line 67
+    iget-object v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
 
-    .line 60
-    :try_start_0
+    iput-object v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->uri:Landroid/net/Uri;
+
+    .line 68
+    new-instance v0, Ljava/io/File;
+
     iget-object v1, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
 
-    iput-object v1, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->uri:Landroid/net/Uri;
+    invoke-virtual {v1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
-    .line 61
-    new-instance v1, Ljava/io/File;
+    move-result-object v1
 
-    iget-object v2, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+    .line 69
+    invoke-virtual {v0}, Ljava/io/File;->getName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    .line 62
-    invoke-virtual {v1}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 63
-    new-instance v3, Ljava/io/File;
+    .line 70
+    new-instance v2, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/FileLoader;->getInternalCacheDir()Ljava/io/File;
 
-    move-result-object v4
+    move-result-object v3
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, ".key"
+    const-string v1, ".key"
 
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-direct {v3, v4, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v2, v3, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 64
-    new-instance v2, Ljava/io/RandomAccessFile;
+    const/16 v1, 0x7d8
 
-    invoke-direct {v2, v3, v0}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    .line 73
+    :try_start_0
+    new-instance v3, Lorg/telegram/messenger/secretmedia/EncryptedFileInputStream;
 
-    .line 65
-    iget-object v3, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->key:[B
+    invoke-direct {v3, v0, v2}, Lorg/telegram/messenger/secretmedia/EncryptedFileInputStream;-><init>(Ljava/io/File;Ljava/io/File;)V
 
-    invoke-virtual {v2, v3}, Ljava/io/RandomAccessFile;->read([B)I
-
-    .line 66
-    iget-object v3, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->iv:[B
-
-    invoke-virtual {v2, v3}, Ljava/io/RandomAccessFile;->read([B)I
-
-    .line 67
-    invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
-
-    .line 69
-    new-instance v2, Ljava/io/RandomAccessFile;
-
-    invoke-direct {v2, v1, v0}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    iput-object v2, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->file:Ljava/io/RandomAccessFile;
-
-    .line 70
-    iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
-
-    invoke-virtual {v2, v0, v1}, Ljava/io/RandomAccessFile;->seek(J)V
-
-    .line 71
-    iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
-
-    long-to-int v1, v0
-
-    iput v1, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->fileOffset:I
-
-    .line 72
-    iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
-
-    const-wide/16 v2, -0x1
-
-    cmp-long v4, v0, v2
-
-    if-nez v4, :cond_0
-
-    iget-object v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->file:Ljava/io/RandomAccessFile;
-
-    invoke-virtual {v0}, Ljava/io/RandomAccessFile;->length()J
-
-    move-result-wide v0
-
-    iget-wide v2, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
-
-    sub-long/2addr v0, v2
-
-    :cond_0
-    iput-wide v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->bytesRemaining:J
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v4, v0, v2
-
-    if-ltz v4, :cond_1
-
-    const/4 v0, 0x1
-
-    .line 80
-    iput-boolean v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->opened:Z
-
-    .line 81
-    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferStarted(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
-
-    .line 83
-    iget-wide v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->bytesRemaining:J
-
-    return-wide v0
+    iput-object v3, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->fileInputStream:Lorg/telegram/messenger/secretmedia/EncryptedFileInputStream;
 
     .line 74
-    :cond_1
-    :try_start_1
-    new-instance p1, Ljava/io/EOFException;
+    iget-wide v4, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
-    invoke-direct {p1}, Ljava/io/EOFException;-><init>()V
+    invoke-virtual {v3, v4, v5}, Lorg/telegram/messenger/secretmedia/EncryptedFileInputStream;->skip(J)J
 
-    throw p1
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .line 75
+    invoke-virtual {v0}, Ljava/io/File;->length()J
 
-    :catch_0
-    move-exception p1
+    move-result-wide v2
+
+    long-to-int v0, v2
 
     .line 77
-    new-instance v0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource$EncryptedFileDataSourceException;
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferInitializing(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
 
-    invoke-direct {v0, p1}, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource$EncryptedFileDataSourceException;-><init>(Ljava/io/IOException;)V
+    .line 78
+    iget-wide v2, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
-    throw v0
+    int-to-long v4, v0
+
+    cmp-long v0, v2, v4
+
+    if-gtz v0, :cond_2
+
+    sub-long/2addr v4, v2
+
+    long-to-int v0, v4
+
+    .line 81
+    iput v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->bytesRemaining:I
+
+    .line 82
+    iget-wide v2, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+
+    const-wide/16 v4, -0x1
+
+    cmp-long v6, v2, v4
+
+    if-eqz v6, :cond_0
+
+    int-to-long v6, v0
+
+    .line 83
+    invoke-static {v6, v7, v2, v3}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v2
+
+    long-to-int v0, v2
+
+    iput v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->bytesRemaining:I
+
+    :cond_0
+    const/4 v0, 0x1
+
+    .line 85
+    iput-boolean v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->opened:Z
+
+    .line 86
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferStarted(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
+
+    .line 87
+    iget-wide v2, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+
+    cmp-long p1, v2, v4
+
+    if-eqz p1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    iget p1, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->bytesRemaining:I
+
+    int-to-long v2, p1
+
+    :goto_0
+    return-wide v2
+
+    .line 79
+    :cond_2
+    new-instance p1, Lcom/google/android/exoplayer2/upstream/DataSourceException;
+
+    invoke-direct {p1, v1}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(I)V
+
+    throw p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 89
+    :catchall_0
+    new-instance p1, Lcom/google/android/exoplayer2/upstream/DataSourceException;
+
+    invoke-direct {p1, v1}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(I)V
+
+    throw p1
 .end method
 
 .method public read([BII)I
-    .locals 9
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource$EncryptedFileDataSourceException;
-        }
-    .end annotation
+    .locals 1
 
     if-nez p3, :cond_0
 
@@ -338,85 +273,48 @@
 
     return p1
 
-    .line 90
+    .line 97
     :cond_0
-    iget-wide v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->bytesRemaining:J
+    iget v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->bytesRemaining:I
 
-    const-wide/16 v2, 0x0
-
-    cmp-long v4, v0, v2
-
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     const/4 p1, -0x1
 
     return p1
 
-    .line 95
+    .line 100
     :cond_1
-    :try_start_0
-    iget-object v2, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->file:Ljava/io/RandomAccessFile;
-
-    int-to-long v3, p3
-
-    invoke-static {v0, v1, v3, v4}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v0
-
-    long-to-int p3, v0
-
-    invoke-virtual {v2, p1, p2, p3}, Ljava/io/RandomAccessFile;->read([BII)I
+    invoke-static {p3, v0}, Ljava/lang/Math;->min(II)I
 
     move-result p3
 
-    .line 96
-    iget-object v1, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->key:[B
+    .line 102
+    :try_start_0
+    iget-object v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->fileInputStream:Lorg/telegram/messenger/secretmedia/EncryptedFileInputStream;
 
-    iget-object v2, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->iv:[B
-
-    int-to-long v7, p3
-
-    iget v6, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->fileOffset:I
-
-    move-object v0, p1
-
-    move v3, p2
-
-    move-wide v4, v7
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/Utilities;->aesCtrDecryptionByteArray([B[B[BIJI)V
-
-    .line 97
-    iget p1, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->fileOffset:I
-
-    add-int/2addr p1, p3
-
-    iput p1, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->fileOffset:I
+    invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/messenger/secretmedia/EncryptedFileInputStream;->read([BII)I
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-lez p3, :cond_2
-
-    .line 103
-    iget-wide p1, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->bytesRemaining:J
-
-    sub-long/2addr p1, v7
-
-    iput-wide p1, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->bytesRemaining:J
-
-    .line 104
-    invoke-virtual {p0, p3}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->bytesTransferred(I)V
-
-    :cond_2
-    return p3
+    goto :goto_0
 
     :catch_0
     move-exception p1
 
-    .line 99
-    new-instance p2, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource$EncryptedFileDataSourceException;
+    .line 104
+    invoke-virtual {p1}, Ljava/io/IOException;->printStackTrace()V
 
-    invoke-direct {p2, p1}, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource$EncryptedFileDataSourceException;-><init>(Ljava/io/IOException;)V
+    .line 106
+    :goto_0
+    iget p1, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->bytesRemaining:I
 
-    throw p2
+    sub-int/2addr p1, p3
+
+    iput p1, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileDataSource;->bytesRemaining:I
+
+    .line 107
+    invoke-virtual {p0, p3}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->bytesTransferred(I)V
+
+    return p3
 .end method

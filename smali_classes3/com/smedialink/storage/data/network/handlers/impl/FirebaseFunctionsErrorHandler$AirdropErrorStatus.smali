@@ -76,7 +76,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 85
+    .line 91
     new-instance v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
     const-string v1, "AIRDROP_NOT_ACTIVE"
@@ -87,7 +87,7 @@
 
     sput-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;->AIRDROP_NOT_ACTIVE:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
-    .line 86
+    .line 92
     new-instance v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
     const-string v1, "REQUEST_ID_NOT_FOUND"
@@ -98,7 +98,7 @@
 
     sput-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;->REQUEST_ID_NOT_FOUND:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
-    .line 87
+    .line 93
     new-instance v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
     const-string v1, "USER_ALREADY_PARTICIPATED"
@@ -109,7 +109,7 @@
 
     sput-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;->USER_ALREADY_PARTICIPATED:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
-    .line 88
+    .line 94
     new-instance v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
     const-string v1, "AIRDROP_NO_TOKENS"
@@ -137,7 +137,7 @@
         }
     .end annotation
 
-    .line 84
+    .line 90
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void

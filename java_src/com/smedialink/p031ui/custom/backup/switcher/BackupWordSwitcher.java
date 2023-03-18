@@ -13,7 +13,6 @@ import com.smedialink.storage.domain.utils.system.ResourceManager;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -27,7 +26,7 @@ import moxy.ktx.MoxyKtxDelegate;
 import org.koin.core.component.KoinComponent;
 import org.koin.p047mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkContentWordSwitcherBinding;
 import org.telegram.p048ui.ActionBar.Theme;
 /* compiled from: BackupWordSwitcher.kt */
@@ -67,10 +66,9 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
         setupView();
         getMMvpDelegate().onCreate();
         MvpDelegate<MvpFrameLayout> mvpDelegate2 = getMvpDelegate();
-        if (mvpDelegate2 == null) {
-            return;
+        if (mvpDelegate2 != null) {
+            mvpDelegate2.onAttach();
         }
-        mvpDelegate2.onAttach();
     }
 
     private final BackupWordSwitcherPresenter getPresenter() {
@@ -95,12 +93,12 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
         gradientDrawable.setCornerRadius(AndroidUtilities.m51dp(9.0f));
         gradientDrawable.setColor(Theme.getColor("windowBackgroundWhite"));
         gradientDrawable.setStroke(AndroidUtilities.m51dp(1.0f), Theme.getColor("chats_actionBackground"));
-        Unit unit = Unit.INSTANCE;
         constraintLayout.setBackground(gradientDrawable);
         forkContentWordSwitcherBinding.textTitle.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
         ConstraintLayout constraintWords = forkContentWordSwitcherBinding.constraintWords;
         Intrinsics.checkNotNullExpressionValue(constraintWords, "constraintWords");
-        filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(constraintWords), C1829xc55125e6.INSTANCE);
+        filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(constraintWords), C1909xbf3f1d4f.INSTANCE);
+        Intrinsics.checkNotNull(filter, "null cannot be cast to non-null type kotlin.sequences.Sequence<R of kotlin.sequences.SequencesKt___SequencesKt.filterIsInstance>");
         for (BackupWordView backupWordView : filter) {
             backupWordView.applyColors();
         }
@@ -123,15 +121,14 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
             mvpDelegate2.onDestroyView();
         }
         MvpDelegate<MvpFrameLayout> mvpDelegate3 = getMvpDelegate();
-        if (mvpDelegate3 == null) {
-            return;
+        if (mvpDelegate3 != null) {
+            mvpDelegate3.onDestroy();
         }
-        mvpDelegate3.onDestroy();
     }
 
     @Override // com.smedialink.p031ui.custom.backup.switcher.BackupWordSwitcherMvpView
     public void setupTitle(int i) {
-        this.binding.textTitle.setText(getResourceManager().getString(C3158R.string.wallet_eth_backup_confirm_word_description, Integer.valueOf(i)));
+        this.binding.textTitle.setText(getResourceManager().getString(C3286R.string.wallet_eth_backup_confirm_word_description, Integer.valueOf(i)));
     }
 
     @Override // com.smedialink.p031ui.custom.backup.switcher.BackupWordSwitcherMvpView
@@ -141,6 +138,7 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
         ConstraintLayout constraintLayout = this.binding.constraintWords;
         Intrinsics.checkNotNullExpressionValue(constraintLayout, "binding.constraintWords");
         filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(constraintLayout), BackupWordSwitcher$setupBackupWords$$inlined$filterIsInstance$1.INSTANCE);
+        Intrinsics.checkNotNull(filter, "null cannot be cast to non-null type kotlin.sequences.Sequence<R of kotlin.sequences.SequencesKt___SequencesKt.filterIsInstance>");
         int i = 0;
         for (Object obj : filter) {
             int i2 = i + 1;
@@ -156,14 +154,13 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
         backupWordView.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.custom.backup.switcher.BackupWordSwitcher$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BackupWordSwitcher.m1452setupListenerFor$lambda5$lambda4(BackupWordSwitcher.this, backupWordView, backupWordView, view);
+                BackupWordSwitcher.setupListenerFor$lambda$5$lambda$4(BackupWordSwitcher.this, backupWordView, backupWordView, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListenerFor$lambda-5$lambda-4  reason: not valid java name */
-    public static final void m1452setupListenerFor$lambda5$lambda4(BackupWordSwitcher this$0, BackupWordView view, BackupWordView this_with, View view2) {
+    public static final void setupListenerFor$lambda$5$lambda$4(BackupWordSwitcher this$0, BackupWordView view, BackupWordView this_with, View view2) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(view, "$view");
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
@@ -186,6 +183,7 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
         ConstraintLayout constraintLayout = this.binding.constraintWords;
         Intrinsics.checkNotNullExpressionValue(constraintLayout, "binding.constraintWords");
         filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(constraintLayout), BackupWordSwitcher$setupListeners$$inlined$filterIsInstance$1.INSTANCE);
+        Intrinsics.checkNotNull(filter, "null cannot be cast to non-null type kotlin.sequences.Sequence<R of kotlin.sequences.SequencesKt___SequencesKt.filterIsInstance>");
         for (BackupWordView backupWordView : filter) {
             setupListenerFor(backupWordView);
         }

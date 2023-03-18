@@ -3,10 +3,10 @@
 
 
 # static fields
-.field public static final binance_pay_install:I = 0x7f111927
+.field public static final binance_pay_install:I = 0x7f101970
 
-.field public static final binance_pay_not_install_tip:I = 0x7f111928
+.field public static final binance_pay_not_install_tip:I = 0x7f101971
 
-.field public static final binance_pay_update:I = 0x7f111929
+.field public static final binance_pay_update:I = 0x7f101972
 
-.field public static final binance_pay_version_not_support:I = 0x7f11192a
+.field public static final binance_pay_version_not_support:I = 0x7f101973

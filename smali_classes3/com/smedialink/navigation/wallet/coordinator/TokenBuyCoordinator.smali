@@ -10,10 +10,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$d8jDRCfY_9sEojF4s7QntdggUg8(Lcom/smedialink/navigation/wallet/coordinator/TokenBuyCoordinator;Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/smedialink/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;)V
+.method public static synthetic $r8$lambda$XpqamOpGqIR4nK59zhQudm0uP4E(Lcom/smedialink/navigation/wallet/coordinator/TokenBuyCoordinator;Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/smedialink/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/navigation/wallet/coordinator/TokenBuyCoordinator;->showNoEnoughMoneyDialog$lambda-0(Lcom/smedialink/navigation/wallet/coordinator/TokenBuyCoordinator;Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/smedialink/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/navigation/wallet/coordinator/TokenBuyCoordinator;->showNoEnoughMoneyDialog$lambda$0(Lcom/smedialink/navigation/wallet/coordinator/TokenBuyCoordinator;Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/smedialink/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;)V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     return-void
 .end method
 
-.method private static final showNoEnoughMoneyDialog$lambda-0(Lcom/smedialink/navigation/wallet/coordinator/TokenBuyCoordinator;Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/smedialink/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;)V
+.method private static final showNoEnoughMoneyDialog$lambda$0(Lcom/smedialink/navigation/wallet/coordinator/TokenBuyCoordinator;Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/smedialink/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;)V
     .locals 7
 
     const-string v0, "this$0"

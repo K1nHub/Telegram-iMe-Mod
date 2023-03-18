@@ -24,7 +24,7 @@ public class SparseArrayCompat<E> implements Cloneable {
     }
 
     /* renamed from: clone */
-    public SparseArrayCompat<E> m862clone() {
+    public SparseArrayCompat<E> m863clone() {
         try {
             SparseArrayCompat<E> sparseArrayCompat = (SparseArrayCompat) super.clone();
             sparseArrayCompat.mKeys = (int[]) this.mKeys.clone();
@@ -51,7 +51,7 @@ public class SparseArrayCompat<E> implements Cloneable {
     }
 
     /* renamed from: gc */
-    private void m855gc() {
+    private void m856gc() {
         int i = this.mSize;
         int[] iArr = this.mKeys;
         Object[] objArr = this.mValues;
@@ -88,7 +88,7 @@ public class SparseArrayCompat<E> implements Cloneable {
             }
         }
         if (this.mGarbage && i3 >= this.mKeys.length) {
-            m855gc();
+            m856gc();
             i2 = ~ContainerHelpers.binarySearch(this.mKeys, this.mSize, i);
         }
         int i4 = this.mSize;
@@ -118,28 +118,28 @@ public class SparseArrayCompat<E> implements Cloneable {
 
     public int size() {
         if (this.mGarbage) {
-            m855gc();
+            m856gc();
         }
         return this.mSize;
     }
 
     public int keyAt(int i) {
         if (this.mGarbage) {
-            m855gc();
+            m856gc();
         }
         return this.mKeys[i];
     }
 
     public E valueAt(int i) {
         if (this.mGarbage) {
-            m855gc();
+            m856gc();
         }
         return (E) this.mValues[i];
     }
 
     public int indexOfValue(E e) {
         if (this.mGarbage) {
-            m855gc();
+            m856gc();
         }
         for (int i = 0; i < this.mSize; i++) {
             if (this.mValues[i] == e) {
@@ -166,7 +166,7 @@ public class SparseArrayCompat<E> implements Cloneable {
             return;
         }
         if (this.mGarbage && i2 >= this.mKeys.length) {
-            m855gc();
+            m856gc();
         }
         int i3 = this.mSize;
         if (i3 >= this.mKeys.length) {

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda7;->f$1:Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/TopicsFragment;->$r8$lambda$OjQaFoebkoD_vxhBvFd10aR4lWg(Lorg/telegram/ui/TopicsFragment;Lorg/telegram/tgnet/TLRPC$TL_forumTopic;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/TopicsFragment;->$r8$lambda$6HJLlPAuxoK_WcJIoUEJfMZUV50(Lorg/telegram/ui/TopicsFragment;Lorg/telegram/tgnet/TLRPC$TL_forumTopic;Landroid/view/View;)V
 
     return-void
 .end method

@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPushNotificationsManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PushNotificationsManager.kt\ncom/smedialink/manager/notifications/PushNotificationsManager\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 SharedPrefferencesExt.kt\ncom/smedialink/storage/data/utils/extentions/SharedPrefferencesExtKt\n+ 4 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 5 GsonExt.kt\ncom/smedialink/storage/data/utils/extentions/GsonExtKt\n*L\n1#1,213:1\n1547#2:214\n1618#2,2:215\n1620#2:225\n764#2:226\n855#2,2:227\n1741#2,3:229\n1547#2:232\n1618#2,3:233\n20#3,4:217\n20#3,4:221\n39#4,6:236\n14#5,8:242\n14#5,8:250\n14#5,8:258\n14#5,8:266\n14#5,8:274\n14#5,8:282\n14#5,8:290\n14#5,8:298\n14#5,8:306\n14#5,8:314\n14#5,8:322\n14#5,8:330\n14#5,8:338\n*S KotlinDebug\n*F\n+ 1 PushNotificationsManager.kt\ncom/smedialink/manager/notifications/PushNotificationsManager\n*L\n48#1:214\n48#1:215,2\n48#1:225\n63#1:226\n63#1:227,2\n66#1:229,3\n71#1:232\n71#1:233,3\n52#1:217,4\n53#1:221,4\n76#1:236,6\n129#1:242,8\n130#1:250,8\n131#1:258,8\n132#1:266,8\n133#1:274,8\n134#1:282,8\n135#1:290,8\n136#1:298,8\n137#1:306,8\n138#1:314,8\n139#1:322,8\n140#1:330,8\n141#1:338,8\n*E\n"
+    value = "SMAP\nPushNotificationsManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PushNotificationsManager.kt\ncom/smedialink/manager/notifications/PushNotificationsManager\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 SharedPrefferencesExt.kt\ncom/smedialink/storage/data/utils/extentions/SharedPrefferencesExtKt\n+ 4 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 5 GsonExt.kt\ncom/smedialink/storage/data/utils/extentions/GsonExtKt\n*L\n1#1,214:1\n1549#2:215\n1620#2,2:216\n1622#2:226\n766#2:227\n857#2,2:228\n1747#2,3:230\n1549#2:233\n1620#2,3:234\n20#3,4:218\n20#3,4:222\n39#4,8:237\n14#5,8:245\n14#5,8:253\n14#5,8:261\n14#5,8:269\n14#5,8:277\n14#5,8:285\n14#5,8:293\n14#5,8:301\n14#5,8:309\n14#5,8:317\n14#5,8:325\n14#5,8:333\n14#5,8:341\n*S KotlinDebug\n*F\n+ 1 PushNotificationsManager.kt\ncom/smedialink/manager/notifications/PushNotificationsManager\n*L\n48#1:215\n48#1:216,2\n48#1:226\n63#1:227\n63#1:228,2\n66#1:230,3\n71#1:233\n71#1:234,3\n52#1:218,4\n53#1:222,4\n76#1:237,8\n130#1:245,8\n131#1:253,8\n132#1:261,8\n133#1:269,8\n134#1:277,8\n135#1:285,8\n136#1:293,8\n137#1:301,8\n138#1:309,8\n139#1:317,8\n140#1:325,8\n141#1:333,8\n142#1:341,8\n*E\n"
 .end annotation
 
 
@@ -31,10 +31,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$Hv8zincrtm32sGOQ1OIt63UoifA(Lcom/smedialink/manager/notifications/PushNotificationsManager;)V
+.method public static synthetic $r8$lambda$tLtcV_TSvCA1Fqi6WrmE4DRGe6Q(Lcom/smedialink/manager/notifications/PushNotificationsManager;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/manager/notifications/PushNotificationsManager;->sendPushToken$lambda-6(Lcom/smedialink/manager/notifications/PushNotificationsManager;)V
+    invoke-static {p0}, Lcom/smedialink/manager/notifications/PushNotificationsManager;->sendPushToken$lambda$6(Lcom/smedialink/manager/notifications/PushNotificationsManager;)V
 
     return-void
 .end method
@@ -115,25 +115,25 @@
 
     const-string v0, "type"
 
-    .line 124
+    .line 125
     invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     const-string v1, "null cannot be cast to non-null type kotlin.String"
 
-    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v0, Ljava/lang/String;
 
     const-string v2, "userId"
 
-    .line 125
+    .line 126
     invoke-interface {p1, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-static {v2, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v2, Ljava/lang/String;
 
@@ -141,7 +141,7 @@
 
     move-result-wide v1
 
-    .line 127
+    .line 128
     invoke-static {v1, v2}, Lorg/fork/utils/UserUtils;->isUserActive(J)Z
 
     move-result v1
@@ -150,7 +150,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 128
+    .line 129
     sget-object v1, Lcom/smedialink/storage/domain/model/notification/NotificationType;->Companion:Lcom/smedialink/storage/domain/model/notification/NotificationType$Companion;
 
     invoke-virtual {v1, v0}, Lcom/smedialink/storage/domain/model/notification/NotificationType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/notification/NotificationType;
@@ -609,7 +609,7 @@
 .method private final isNeedUpdateBinanceScreen(Lcom/smedialink/model/wallet/notification/PushNotificationModel;)Z
     .locals 0
 
-    .line 121
+    .line 122
     instance-of p1, p1, Lcom/smedialink/model/wallet/notification/PushNotificationModel$BinancePayRequestStatusUpdated;
 
     return p1
@@ -618,17 +618,17 @@
 .method private final isNeedUpdateWallet(Lcom/smedialink/model/wallet/notification/PushNotificationModel;)Z
     .locals 1
 
-    .line 116
+    .line 117
     instance-of v0, p1, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Cancel;
 
     if-nez v0, :cond_1
 
-    .line 117
+    .line 118
     instance-of v0, p1, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer;
 
     if-nez v0, :cond_1
 
-    .line 118
+    .line 119
     instance-of p1, p1, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Approve;
 
     if-eqz p1, :cond_0
@@ -651,7 +651,7 @@
 .method private final notifyUpdatesIfNeed(Lcom/smedialink/model/wallet/notification/PushNotificationModel;)V
     .locals 1
 
-    .line 110
+    .line 111
     invoke-direct {p0, p1}, Lcom/smedialink/manager/notifications/PushNotificationsManager;->isNeedUpdateWallet(Lcom/smedialink/model/wallet/notification/PushNotificationModel;)Z
 
     move-result v0
@@ -666,7 +666,7 @@
 
     goto :goto_0
 
-    .line 111
+    .line 112
     :cond_0
     invoke-direct {p0, p1}, Lcom/smedialink/manager/notifications/PushNotificationsManager;->isNeedUpdateBinanceScreen(Lcom/smedialink/model/wallet/notification/PushNotificationModel;)Z
 
@@ -685,7 +685,7 @@
     return-void
 .end method
 
-.method private static final sendPushToken$lambda-6(Lcom/smedialink/manager/notifications/PushNotificationsManager;)V
+.method private static final sendPushToken$lambda$6(Lcom/smedialink/manager/notifications/PushNotificationsManager;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -703,7 +703,7 @@
 .method private final showPushNotification(Lcom/smedialink/model/wallet/notification/PushNotificationModel;)V
     .locals 7
 
-    .line 151
+    .line 152
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroidx/core/app/NotificationManagerCompat;->from(Landroid/content/Context;)Landroidx/core/app/NotificationManagerCompat;
@@ -714,7 +714,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 153
+    .line 154
     new-instance v1, Landroid/content/Intent;
 
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -723,7 +723,7 @@
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 154
+    .line 155
     invoke-virtual {p1}, Lcom/smedialink/model/wallet/notification/PushNotificationModel;->getAction()Ljava/lang/String;
 
     move-result-object v2
@@ -732,10 +732,10 @@
 
     const v2, 0x8000
 
-    .line 155
+    .line 156
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 156
+    .line 157
     invoke-virtual {p1}, Lcom/smedialink/model/wallet/notification/PushNotificationModel;->getUserId()J
 
     move-result-wide v2
@@ -744,7 +744,7 @@
 
     invoke-virtual {v1, v4, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 157
+    .line 158
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const/4 v3, 0x0
@@ -755,7 +755,7 @@
 
     move-result-object v1
 
-    .line 159
+    .line 160
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const-string v3, "AppName"
@@ -772,7 +772,7 @@
 
     if-nez v2, :cond_0
 
-    .line 160
+    .line 161
     new-instance v2, Landroid/app/NotificationChannel;
 
     sget v5, Lorg/telegram/messenger/R$string;->AppName:I
@@ -785,10 +785,10 @@
 
     invoke-direct {v2, v4, v5, v6}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
 
-    .line 161
+    .line 162
     invoke-virtual {v0, v2}, Landroidx/core/app/NotificationManagerCompat;->createNotificationChannel(Landroid/app/NotificationChannel;)V
 
-    .line 164
+    .line 165
     :cond_0
     new-instance v2, Landroidx/core/app/NotificationCompat$Builder;
 
@@ -796,7 +796,7 @@
 
     invoke-direct {v2, v5, v4}, Landroidx/core/app/NotificationCompat$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 165
+    .line 166
     sget v4, Lorg/telegram/messenger/R$string;->AppName:I
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -807,7 +807,7 @@
 
     move-result-object v2
 
-    .line 166
+    .line 167
     invoke-virtual {p1}, Lcom/smedialink/model/wallet/notification/PushNotificationModel;->getMessage()Ljava/lang/String;
 
     move-result-object p1
@@ -816,7 +816,7 @@
 
     move-result-object p1
 
-    .line 167
+    .line 168
     sget v2, Lorg/telegram/messenger/R$drawable;->fork_notification:I
 
     invoke-virtual {p1, v2}, Landroidx/core/app/NotificationCompat$Builder;->setSmallIcon(I)Landroidx/core/app/NotificationCompat$Builder;
@@ -825,17 +825,17 @@
 
     const/4 v2, 0x1
 
-    .line 168
+    .line 169
     invoke-virtual {p1, v2}, Landroidx/core/app/NotificationCompat$Builder;->setAutoCancel(Z)Landroidx/core/app/NotificationCompat$Builder;
 
     move-result-object p1
 
-    .line 169
+    .line 170
     invoke-virtual {p1, v2}, Landroidx/core/app/NotificationCompat$Builder;->setGroupSummary(Z)Landroidx/core/app/NotificationCompat$Builder;
 
     move-result-object p1
 
-    .line 170
+    .line 171
     sget v2, Lorg/telegram/messenger/R$string;->drawer_wallet_item_title:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -846,12 +846,12 @@
 
     move-result-object p1
 
-    .line 171
+    .line 172
     invoke-virtual {p1, v1}, Landroidx/core/app/NotificationCompat$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroidx/core/app/NotificationCompat$Builder;
 
     move-result-object p1
 
-    .line 172
+    .line 173
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     sget v2, Lorg/telegram/messenger/R$color;->fork_color:I
@@ -866,12 +866,12 @@
 
     const-string v1, "msg"
 
-    .line 173
+    .line 174
     invoke-virtual {p1, v1}, Landroidx/core/app/NotificationCompat$Builder;->setCategory(Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
 
     move-result-object p1
 
-    .line 174
+    .line 175
     invoke-virtual {p1}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
 
     move-result-object p1
@@ -880,7 +880,7 @@
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 176
+    .line 177
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -913,7 +913,7 @@
 
     const-string v0, "type"
 
-    .line 94
+    .line 95
     invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -928,33 +928,29 @@
     const/4 v0, 0x0
 
     :goto_0
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
-    .line 96
+    .line 97
     invoke-direct {p0, p1}, Lcom/smedialink/manager/notifications/PushNotificationsManager;->convertMapParamsToModel(Ljava/util/Map;)Lcom/smedialink/model/wallet/notification/PushNotificationModel;
 
     move-result-object p1
 
-    if-nez p1, :cond_1
-
-    goto :goto_1
-
-    .line 97
-    :cond_1
-    invoke-direct {p0, p1}, Lcom/smedialink/manager/notifications/PushNotificationsManager;->showPushNotification(Lcom/smedialink/model/wallet/notification/PushNotificationModel;)V
+    if-eqz p1, :cond_1
 
     .line 98
+    invoke-direct {p0, p1}, Lcom/smedialink/manager/notifications/PushNotificationsManager;->showPushNotification(Lcom/smedialink/model/wallet/notification/PushNotificationModel;)V
+
+    .line 99
     invoke-direct {p0, p1}, Lcom/smedialink/manager/notifications/PushNotificationsManager;->notifyUpdatesIfNeed(Lcom/smedialink/model/wallet/notification/PushNotificationModel;)V
 
-    :cond_2
-    :goto_1
+    :cond_1
     return v0
 .end method
 
 .method public final onDestroy()V
     .locals 1
 
-    .line 90
+    .line 91
     iget-object v0, p0, Lcom/smedialink/manager/notifications/PushNotificationsManager;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-virtual {v0}, Lio/reactivex/disposables/CompositeDisposable;->clear()V
@@ -1002,7 +998,7 @@
 
     move-result-object v2
 
-    .line 1547
+    .line 1549
     new-instance v3, Ljava/util/ArrayList;
 
     const/16 v4, 0xa
@@ -1013,7 +1009,7 @@
 
     invoke-direct {v3, v5}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1102,7 +1098,7 @@
     .line 55
     invoke-direct {v6, v5, v8, v9}, Lcom/smedialink/model/wallet/notification/NotificationInformation;-><init>(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 51
+    .line 1621
     :cond_3
     invoke-interface {v3, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
@@ -1114,12 +1110,12 @@
 
     move-result-object v2
 
-    .line 764
+    .line 766
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1161,11 +1157,12 @@
     :goto_4
     if-eqz v8, :cond_5
 
+    .line 857
     invoke-interface {v3, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
-    .line 1741
+    .line 1747
     :cond_7
     invoke-interface {v3}, Ljava/util/Collection;->isEmpty()Z
 
@@ -1175,7 +1172,7 @@
 
     goto :goto_5
 
-    .line 1742
+    .line 1748
     :cond_8
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1241,7 +1238,7 @@
     :cond_c
     invoke-interface {v0, p1}, Lcom/smedialink/storage/domain/storage/PreferenceHelper;->setPushToken(Ljava/lang/String;)V
 
-    .line 1547
+    .line 1549
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-static {v3, v4}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
@@ -1250,7 +1247,7 @@
 
     invoke-direct {p1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1266,7 +1263,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lcom/smedialink/model/wallet/notification/NotificationInformation;
 
     .line 71
@@ -1274,6 +1271,7 @@
 
     move-result-object v1
 
+    .line 1621
     invoke-interface {p1, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_6
@@ -1305,19 +1303,30 @@
 
     invoke-direct {v0, v3, p0}, Lcom/smedialink/manager/notifications/PushNotificationsManager$sendPushToken$$inlined$subscribeWithErrorHandle$default$1;-><init>(Ljava/util/List;Lcom/smedialink/manager/notifications/PushNotificationsManager;)V
 
-    new-instance v1, Lcom/smedialink/manager/notifications/PushNotificationsManager$sendPushToken$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v1, v6}, Lcom/smedialink/manager/notifications/PushNotificationsManager$sendPushToken$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v0}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p1, v0, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v0, Lcom/smedialink/manager/notifications/PushNotificationsManager$sendPushToken$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v0, v6}, Lcom/smedialink/manager/notifications/PushNotificationsManager$sendPushToken$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v0}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {p1, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 85
+    .line 86
     iget-object v0, p0, Lcom/smedialink/manager/notifications/PushNotificationsManager;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-static {p1, v0}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt;->autoDispose(Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;)V

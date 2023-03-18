@@ -6,16 +6,16 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/fork/ui/dialog/SelectedFilesBottomSheet$RootView;,
-        Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FilesAdapter;,
-        Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileView;,
+        Lorg/fork/ui/dialog/SelectedFilesBottomSheet$Companion;,
         Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileItem;,
-        Lorg/fork/ui/dialog/SelectedFilesBottomSheet$Companion;
+        Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileView;,
+        Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FilesAdapter;,
+        Lorg/fork/ui/dialog/SelectedFilesBottomSheet$RootView;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSelectedFilesBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectedFilesBottomSheet.kt\norg/fork/ui/dialog/SelectedFilesBottomSheet\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 Uri.kt\nandroidx/core/net/UriKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,519:1\n296#2,2:520\n1618#3,3:522\n36#4:525\n1#5:526\n*S KotlinDebug\n*F\n+ 1 SelectedFilesBottomSheet.kt\norg/fork/ui/dialog/SelectedFilesBottomSheet\n*L\n126#1:520,2\n130#1:522,3\n202#1:525\n*E\n"
+    value = "SMAP\nSelectedFilesBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectedFilesBottomSheet.kt\norg/fork/ui/dialog/SelectedFilesBottomSheet\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 Uri.kt\nandroidx/core/net/UriKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,519:1\n304#2,2:520\n1620#3,3:522\n36#4:525\n1#5:526\n*S KotlinDebug\n*F\n+ 1 SelectedFilesBottomSheet.kt\norg/fork/ui/dialog/SelectedFilesBottomSheet\n*L\n126#1:520,2\n130#1:522,3\n202#1:525\n*E\n"
 .end annotation
 
 
@@ -77,34 +77,34 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$97OhIyjxx0zr6wfmQU0ADWZCxts(Lorg/fork/ui/dialog/SelectedFilesBottomSheet;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$1kPAsSXxs8b_95LlGrMnByfdL_k(Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileItem;Lorg/fork/ui/dialog/SelectedFilesBottomSheet;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->setupListeners$lambda-8$lambda-7(Lorg/fork/ui/dialog/SelectedFilesBottomSheet;Landroid/view/View;I)V
+    invoke-static {p0, p1}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->openFile$lambda$16(Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileItem;Lorg/fork/ui/dialog/SelectedFilesBottomSheet;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$EZpCsW_HsNsTXzBY-em3UypPGW8(Ljava/lang/Throwable;)V
+.method public static synthetic $r8$lambda$3s_HnFrzqjCFuRetEBfvyuOpKo0(Ljava/lang/Throwable;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->openFile$lambda-16$lambda-13$lambda-12(Ljava/lang/Throwable;)V
+    invoke-static {p0}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->openFile$lambda$16$lambda$13$lambda$12(Ljava/lang/Throwable;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$TTnobr3g5zyAnzP3IzEfToZZZZw(Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileItem;Lorg/fork/ui/dialog/SelectedFilesBottomSheet;)V
+.method public static synthetic $r8$lambda$kHRk9tlZFSGOezdNKBWVEGGJrlc(Ljava/io/File;Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileItem;Lorg/fork/ui/dialog/SelectedFilesBottomSheet;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->openFile$lambda-16(Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileItem;Lorg/fork/ui/dialog/SelectedFilesBottomSheet;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->openFile$lambda$16$lambda$15$lambda$14(Ljava/io/File;Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileItem;Lorg/fork/ui/dialog/SelectedFilesBottomSheet;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$xyvyPz4O647ZfAYSgI60hXxk1rY(Ljava/io/File;Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileItem;Lorg/fork/ui/dialog/SelectedFilesBottomSheet;)V
+.method public static synthetic $r8$lambda$znk4ZV-cakxtzN_gdWi_inddfRA(Lorg/fork/ui/dialog/SelectedFilesBottomSheet;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->openFile$lambda-16$lambda-15$lambda-14(Ljava/io/File;Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileItem;Lorg/fork/ui/dialog/SelectedFilesBottomSheet;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->setupListeners$lambda$8$lambda$7(Lorg/fork/ui/dialog/SelectedFilesBottomSheet;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -343,9 +343,6 @@
     move-result-object p3
 
     invoke-virtual {p1, p2, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 72
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 65
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
@@ -825,7 +822,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 296
+    .line 304
     :goto_0
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
@@ -920,7 +917,7 @@
 
     iget-object v1, p0, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->files:Ljava/util/List;
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -936,7 +933,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Landroid/net/Uri;
 
     .line 131
@@ -971,8 +968,13 @@
 
     goto :goto_2
 
-    .line 134
     :cond_0
+    const-string v4, "ApplicationLoader.applic\u2026nts.Symbols.EMPTY_STRING)"
+
+    .line 131
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 134
     invoke-interface {v3}, Landroid/database/Cursor;->moveToFirst()Z
 
     .line 135
@@ -1012,16 +1014,16 @@
 
     move-result-object v6
 
-    if-nez v6, :cond_1
+    if-eqz v6, :cond_1
 
-    const-wide/16 v6, 0x0
+    invoke-virtual {v6}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v6
 
     goto :goto_1
 
     :cond_1
-    invoke-virtual {v6}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v6
+    const-wide/16 v6, 0x0
 
     .line 138
     :goto_1
@@ -1042,7 +1044,7 @@
 
     move-object v3, v4
 
-    .line 144
+    .line 1621
     :goto_2
     invoke-interface {v1, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
@@ -1067,7 +1069,7 @@
     return-void
 .end method
 
-.method private static final openFile$lambda-16(Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileItem;Lorg/fork/ui/dialog/SelectedFilesBottomSheet;)V
+.method private static final openFile$lambda$16(Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileItem;Lorg/fork/ui/dialog/SelectedFilesBottomSheet;)V
     .locals 6
 
     const-string v0, "$fileItem"
@@ -1085,16 +1087,16 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v0
+    const/4 v0, 0x0
 
     :goto_0
     if-nez v0, :cond_1
@@ -1113,7 +1115,7 @@
 
     sget-object v0, Ljava/io/File;->separator:Ljava/lang/String;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileItem;->getName()Ljava/lang/String;
 
@@ -1151,6 +1153,10 @@
     goto :goto_2
 
     :cond_2
+    const-string v2, "ApplicationLoader.applic\u2026    ?: return@runCatching"
+
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     const/16 v2, 0x400
 
     new-array v2, v2, [B
@@ -1247,7 +1253,7 @@
     return-void
 .end method
 
-.method private static final openFile$lambda-16$lambda-13$lambda-12(Ljava/lang/Throwable;)V
+.method private static final openFile$lambda$16$lambda$13$lambda$12(Ljava/lang/Throwable;)V
     .locals 1
 
     const-string v0, "$it"
@@ -1263,7 +1269,7 @@
     return-void
 .end method
 
-.method private static final openFile$lambda-16$lambda-15$lambda-14(Ljava/io/File;Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileItem;Lorg/fork/ui/dialog/SelectedFilesBottomSheet;)V
+.method private static final openFile$lambda$16$lambda$15$lambda$14(Ljava/io/File;Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileItem;Lorg/fork/ui/dialog/SelectedFilesBottomSheet;)V
     .locals 2
 
     const-string v0, "$file"
@@ -1298,9 +1304,7 @@
     move-result-object v0
 
     .line 203
-    invoke-virtual {p2}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->getActivity()Landroid/app/Activity;
-
-    move-result-object v1
+    iget-object v1, p2, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->activity:Landroid/app/Activity;
 
     .line 204
     iget-object p2, p2, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -1335,15 +1339,12 @@
     :cond_0
     iget-object v0, p0, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    goto :goto_0
-
-    :cond_1
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
     .line 246
-    :goto_0
+    :cond_1
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
@@ -1365,12 +1366,12 @@
 
     const/high16 v5, 0x3f800000    # 1.0f
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_2
     const/4 v5, 0x0
 
-    :goto_1
+    :goto_0
     const/4 v6, 0x0
 
     aput v5, v1, v6
@@ -1397,9 +1398,6 @@
 
     .line 265
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
-
-    .line 266
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 246
     iput-object v0, p0, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
@@ -1498,7 +1496,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-8$lambda-7(Lorg/fork/ui/dialog/SelectedFilesBottomSheet;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$8$lambda$7(Lorg/fork/ui/dialog/SelectedFilesBottomSheet;Landroid/view/View;I)V
     .locals 0
 
     const-string p1, "this$0"
@@ -1619,15 +1617,6 @@
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method public final getActivity()Landroid/app/Activity;
-    .locals 1
-
-    .line 45
-    iget-object v0, p0, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->activity:Landroid/app/Activity;
-
-    return-object v0
 .end method
 
 .method public final getOnFilesChangedAction()Lorg/fork/utils/Callbacks$Callback1;

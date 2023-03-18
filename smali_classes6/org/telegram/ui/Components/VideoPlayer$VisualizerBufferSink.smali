@@ -51,12 +51,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/VideoPlayer;)V
     .locals 2
 
-    .line 654
+    .line 661
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->this$0:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 649
+    .line 656
     new-instance p1, Lorg/telegram/messenger/FourierTransform$FFT;
 
     const/16 v0, 0x400
@@ -69,24 +69,24 @@
 
     new-array p1, v0, [F
 
-    .line 650
+    .line 657
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->real:[F
 
     const/4 p1, 0x0
 
-    .line 652
+    .line 659
     iput p1, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->position:I
 
     const/16 v0, 0x2000
 
-    .line 655
+    .line 662
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->byteBuffer:Ljava/nio/ByteBuffer;
 
-    .line 656
+    .line 663
     invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     return-void
@@ -95,7 +95,7 @@
 .method private synthetic lambda$handleBuffer$0()V
     .locals 4
 
-    .line 674
+    .line 681
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->this$0:Lorg/telegram/ui/Components/VideoPlayer;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/VideoPlayer;->audioUpdateHandler:Landroid/os/Handler;
@@ -104,7 +104,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 675
+    .line 682
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->this$0:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/VideoPlayer;->access$200(Lorg/telegram/ui/Components/VideoPlayer;)Lorg/telegram/ui/Components/VideoPlayer$AudioVisualizerDelegate;
@@ -123,7 +123,7 @@
 .method private synthetic lambda$handleBuffer$1([F)V
     .locals 2
 
-    .line 752
+    .line 759
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->this$0:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/VideoPlayer;->access$200(Lorg/telegram/ui/Components/VideoPlayer;)Lorg/telegram/ui/Components/VideoPlayer$AudioVisualizerDelegate;
@@ -148,7 +148,7 @@
 .method public handleBuffer(Ljava/nio/ByteBuffer;)V
     .locals 10
 
-    .line 669
+    .line 676
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->this$0:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/VideoPlayer;->access$200(Lorg/telegram/ui/Components/VideoPlayer;)Lorg/telegram/ui/Components/VideoPlayer$AudioVisualizerDelegate;
@@ -159,7 +159,7 @@
 
     return-void
 
-    .line 672
+    .line 679
     :cond_0
     sget-object v0, Lcom/google/android/exoplayer2/audio/AudioProcessor;->EMPTY_BUFFER:Ljava/nio/ByteBuffer;
 
@@ -175,7 +175,7 @@
 
     goto/16 :goto_6
 
-    .line 680
+    .line 687
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->this$0:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -191,7 +191,7 @@
 
     return-void
 
-    .line 684
+    .line 691
     :cond_2
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
@@ -203,7 +203,7 @@
 
     if-le v0, v1, :cond_3
 
-    .line 686
+    .line 693
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->this$0:Lorg/telegram/ui/Components/VideoPlayer;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/VideoPlayer;->audioUpdateHandler:Landroid/os/Handler;
@@ -212,7 +212,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 687
+    .line 694
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->this$0:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/VideoPlayer;->access$200(Lorg/telegram/ui/Components/VideoPlayer;)Lorg/telegram/ui/Components/VideoPlayer$AudioVisualizerDelegate;
@@ -225,13 +225,13 @@
 
     return-void
 
-    .line 694
+    .line 701
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->byteBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v1, p1}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
-    .line 696
+    .line 703
     iget p1, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->position:I
 
     add-int/2addr p1, v0
@@ -242,7 +242,7 @@
 
     if-lt p1, v0, :cond_d
 
-    .line 700
+    .line 707
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->byteBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p1, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
@@ -252,7 +252,7 @@
     :goto_0
     if-ge p1, v0, :cond_4
 
-    .line 702
+    .line 709
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->real:[F
 
     iget-object v3, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->byteBuffer:Ljava/nio/ByteBuffer;
@@ -273,16 +273,16 @@
 
     goto :goto_0
 
-    .line 704
+    .line 711
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->byteBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
-    .line 705
+    .line 712
     iput v2, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->position:I
 
-    .line 707
+    .line 714
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->fft:Lorg/telegram/messenger/FourierTransform$FFT;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->real:[F
@@ -300,7 +300,7 @@
 
     if-ge v1, v0, :cond_7
 
-    .line 710
+    .line 717
     iget-object v5, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->fft:Lorg/telegram/messenger/FourierTransform$FFT;
 
     invoke-virtual {v5}, Lorg/telegram/messenger/FourierTransform;->getSpectrumReal()[F
@@ -309,7 +309,7 @@
 
     aget v5, v5, v1
 
-    .line 711
+    .line 718
     iget-object v6, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->fft:Lorg/telegram/messenger/FourierTransform$FFT;
 
     invoke-virtual {v6}, Lorg/telegram/messenger/FourierTransform;->getSpectrumImaginary()[F
@@ -326,7 +326,7 @@
 
     float-to-double v5, v5
 
-    .line 712
+    .line 719
     invoke-static {v5, v6}, Ljava/lang/Math;->sqrt(D)D
 
     move-result-wide v5
@@ -371,7 +371,7 @@
 
     float-to-double v0, v3
 
-    .line 720
+    .line 727
     invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
     move-result-wide v0
@@ -395,7 +395,7 @@
     :goto_3
     if-ge v2, v1, :cond_b
 
-    .line 726
+    .line 733
     aput p1, v3, v2
 
     add-int/lit8 v2, v2, 0x1
@@ -410,7 +410,7 @@
 
     mul-int v1, v0, v2
 
-    .line 733
+    .line 740
     iget-object v6, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->fft:Lorg/telegram/messenger/FourierTransform$FFT;
 
     invoke-virtual {v6}, Lorg/telegram/messenger/FourierTransform;->getSpectrumReal()[F
@@ -419,7 +419,7 @@
 
     aget v6, v6, v1
 
-    .line 734
+    .line 741
     iget-object v7, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->fft:Lorg/telegram/messenger/FourierTransform$FFT;
 
     invoke-virtual {v7}, Lorg/telegram/messenger/FourierTransform;->getSpectrumImaginary()[F
@@ -436,7 +436,7 @@
 
     float-to-double v6, v6
 
-    .line 735
+    .line 742
     invoke-static {v6, v7}, Ljava/lang/Math;->sqrt(D)D
 
     move-result-wide v6
@@ -449,19 +449,19 @@
 
     aput v1, v3, v2
 
-    .line 737
+    .line 744
     aget v1, v3, v2
 
     cmpl-float v1, v1, v4
 
     if-lez v1, :cond_9
 
-    .line 738
+    .line 745
     aput v4, v3, v2
 
     goto :goto_5
 
-    .line 739
+    .line 746
     :cond_9
     aget v1, v3, v2
 
@@ -469,7 +469,7 @@
 
     if-gez v1, :cond_a
 
-    .line 740
+    .line 747
     aput p1, v3, v2
 
     :cond_a
@@ -481,7 +481,7 @@
     :cond_b
     const/16 p1, 0x40
 
-    .line 747
+    .line 754
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -498,7 +498,7 @@
 
     return-void
 
-    .line 750
+    .line 757
     :cond_c
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -506,7 +506,7 @@
 
     iput-wide v0, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->lastUpdateTime:J
 
-    .line 752
+    .line 759
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->this$0:Lorg/telegram/ui/Components/VideoPlayer;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/VideoPlayer;->audioUpdateHandler:Landroid/os/Handler;
@@ -522,7 +522,7 @@
     :cond_d
     return-void
 
-    .line 673
+    .line 680
     :cond_e
     :goto_6
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer$VisualizerBufferSink;->this$0:Lorg/telegram/ui/Components/VideoPlayer;

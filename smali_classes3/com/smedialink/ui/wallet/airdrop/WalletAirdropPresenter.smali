@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletAirdropPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAirdropPresenter.kt\ncom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter\n+ 2 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 4 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,125:1\n16#2,3:126\n39#3,6:129\n39#3,6:135\n39#3,6:142\n15#4:141\n*S KotlinDebug\n*F\n+ 1 WalletAirdropPresenter.kt\ncom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter\n*L\n52#1:126,3\n53#1:129,6\n77#1:135,6\n98#1:142,6\n96#1:141\n*E\n"
+    value = "SMAP\nWalletAirdropPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAirdropPresenter.kt\ncom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter\n+ 2 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 4 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,129:1\n16#2,3:130\n39#3,8:133\n39#3,8:141\n39#3,8:150\n15#4:149\n*S KotlinDebug\n*F\n+ 1 WalletAirdropPresenter.kt\ncom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter\n*L\n52#1:130,3\n53#1:133,8\n77#1:141,8\n100#1:150,8\n98#1:149\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -155,21 +155,32 @@
 
     invoke-direct {v2, p0}, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$checkAirdropStart$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter;)V
 
-    new-instance v3, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$checkAirdropStart$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v3, v0}, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$checkAirdropStart$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v3, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p1, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v2, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$checkAirdropStart$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v2, v0}, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$checkAirdropStart$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v0, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {p1, v3, v0}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
-    .line 90
+    .line 92
     invoke-static {p0, p1, v1, v0, v1}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -234,12 +245,12 @@
 .method private final handleErrors(Lcom/smedialink/storage/data/network/model/error/ErrorModel;)V
     .locals 9
 
-    .line 112
+    .line 116
     invoke-virtual {p1}, Lcom/smedialink/storage/data/network/model/error/ErrorModel;->getStatus()Lcom/smedialink/storage/data/network/model/error/IErrorStatus;
 
     move-result-object v0
 
-    .line 113
+    .line 117
     sget-object v1, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;->AIRDROP_NOT_ACTIVE:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
     const/4 v2, 0x1
@@ -261,7 +272,7 @@
     :goto_0
     if-eqz v2, :cond_3
 
-    .line 114
+    .line 118
     iget-object v0, p0, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter;->preferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getAirdropMetadata()Lcom/smedialink/storage/data/locale/prefs/model/WalletAirdropMetadata;
@@ -288,7 +299,7 @@
 
     invoke-interface {v0, v1}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->setAirdropMetadata(Lcom/smedialink/storage/data/locale/prefs/model/WalletAirdropMetadata;)V
 
-    .line 115
+    .line 119
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter;->isBotActivated()Z
 
     move-result v0
@@ -301,7 +312,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 116
+    .line 120
     :cond_2
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -319,7 +330,7 @@
 
     goto :goto_1
 
-    .line 119
+    .line 123
     :cond_3
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -380,18 +391,29 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter;)V
 
-    new-instance v2, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v1, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v3}, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v3}, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 46
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v3, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-void
@@ -400,14 +422,14 @@
 .method private final registerInAirdrop()V
     .locals 6
 
-    .line 94
+    .line 96
     iget-object v0, p0, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter;->airdropInteractor:Lcom/smedialink/storage/domain/interactor/crypto/airdrop/AirdropInteractor;
 
     const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    .line 95
+    .line 97
     invoke-static {v0, v1, v2, v1}, Lcom/smedialink/storage/domain/interactor/crypto/airdrop/AirdropInteractor;->registerInAirdrop$default(Lcom/smedialink/storage/domain/interactor/crypto/airdrop/AirdropInteractor;Lcom/smedialink/storage/domain/model/crypto/airdrop/AirdropVersion;ILjava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object v0
@@ -417,7 +439,11 @@
 
     invoke-direct {v3, p0}, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$registerInAirdrop$$inlined$flatMapSuccess$1;-><init>(Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter;)V
 
-    invoke-virtual {v0, v3}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v4, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v4, v3}, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v4}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v0
 
@@ -425,7 +451,7 @@
 
     invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 97
+    .line 99
     iget-object v3, p0, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v3}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -440,7 +466,7 @@
 
     invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 98
+    .line 100
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v3
@@ -452,19 +478,30 @@
 
     invoke-direct {v4, p0}, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$registerInAirdrop$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter;)V
 
-    new-instance v5, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$registerInAirdrop$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v5, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v5, v3}, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$registerInAirdrop$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v5, v4}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v4, v5}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v4, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$registerInAirdrop$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v4, v3}, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter$registerInAirdrop$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v3, v4}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, v5, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v3, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 108
+    .line 112
     invoke-static {p0, v0, v1, v2, v1}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void

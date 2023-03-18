@@ -267,7 +267,7 @@ public abstract class FragmentManager {
 
     /* renamed from: androidx.fragment.app.FragmentManager$5 */
     /* loaded from: classes.dex */
-    class C02095 implements LifecycleEventObserver {
+    class C02035 implements LifecycleEventObserver {
         final /* synthetic */ FragmentManager this$0;
         final /* synthetic */ Lifecycle val$lifecycle;
         final /* synthetic */ FragmentResultListener val$listener;
@@ -852,7 +852,7 @@ public abstract class FragmentManager {
         this.mTmpAddedFragments.clear();
         if (!z && this.mCurState >= 1) {
             for (int i4 = i; i4 < i2; i4++) {
-                Iterator<FragmentTransaction.C0220Op> it = arrayList.get(i4).mOps.iterator();
+                Iterator<FragmentTransaction.C0214Op> it = arrayList.get(i4).mOps.iterator();
                 while (it.hasNext()) {
                     Fragment fragment = it.next().mFragment;
                     if (fragment != null && fragment.mFragmentManager != null) {
@@ -873,7 +873,7 @@ public abstract class FragmentManager {
                     }
                 }
             } else {
-                Iterator<FragmentTransaction.C0220Op> it2 = backStackRecord2.mOps.iterator();
+                Iterator<FragmentTransaction.C0214Op> it2 = backStackRecord2.mOps.iterator();
                 while (it2.hasNext()) {
                     Fragment fragment3 = it2.next().mFragment;
                     if (fragment3 != null) {
@@ -905,7 +905,7 @@ public abstract class FragmentManager {
         ViewGroup viewGroup;
         HashSet hashSet = new HashSet();
         while (i < i2) {
-            Iterator<FragmentTransaction.C0220Op> it = arrayList.get(i).mOps.iterator();
+            Iterator<FragmentTransaction.C0214Op> it = arrayList.get(i).mOps.iterator();
             while (it.hasNext()) {
                 Fragment fragment = it.next().mFragment;
                 if (fragment != null && (viewGroup = fragment.mContainer) != null) {

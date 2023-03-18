@@ -18,6 +18,6 @@ final class ReactionsSettingsActivity$listAdapter$2 extends Lambda implements Fu
 
     @Override // kotlin.jvm.functions.Function0
     public final ReactionsSettingsActivity.ListAdapter invoke() {
-        return new ReactionsSettingsActivity.ListAdapter(this.this$0);
+        return new ReactionsSettingsActivity.ListAdapter();
     }
 }

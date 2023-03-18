@@ -14,7 +14,7 @@ import okio.ByteString;
 import okio.Okio;
 import okio.Source;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Hpack {
     private static final Map<ByteString, Integer> NAME_TO_FIRST_INDEX;
     private static final ByteString PSEUDO_PREFIX = ByteString.encodeUtf8(":");
@@ -29,7 +29,7 @@ public final class Hpack {
         NAME_TO_FIRST_INDEX = nameToFirstIndex();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Reader {
         Header[] dynamicTable;
         int dynamicTableByteCount;
@@ -273,7 +273,7 @@ public final class Hpack {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Writer {
         Header[] dynamicTable;
         private int dynamicTableByteCount;

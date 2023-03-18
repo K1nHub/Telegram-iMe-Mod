@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;,
-        Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;,
         Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity$Companion;,
+        Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;,
+        Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;,
         Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity$WhenMappings;
     }
 .end annotation
@@ -43,10 +43,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$-0akcactFuMTCQ0GNkx_NNXcTos(Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$Odguc9DeVWpNPnxzXBHYFDN2H0I(Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;->setupListeners$lambda-4(Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;->setupListeners$lambda$4(Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -431,7 +431,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundGray"
+    const-string/jumbo v1, "windowBackgroundGray"
 
     .line 128
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -592,9 +592,7 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
     .line 93
-    invoke-virtual {p0}, Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;->getType()Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
-
-    move-result-object v2
+    iget-object v2, p0, Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;->type:Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
 
     sget-object v3, Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity$WhenMappings;->$EnumSwitchMapping$0:[I
 
@@ -661,7 +659,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-4(Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$4(Lorg/fork/ui/fragment/ChooseIntervalSettingsActivity;Landroid/view/View;I)V
     .locals 2
 
     const-string v0, "this$0"
@@ -881,7 +879,7 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "windowBackgroundGray"
+    const-string/jumbo v9, "windowBackgroundGray"
 
     move-object v2, v10
 
@@ -1036,7 +1034,7 @@
 
     aput-object v7, v11, v4
 
-    const-string v15, "windowBackgroundGrayShadow"
+    const-string/jumbo v15, "windowBackgroundGrayShadow"
 
     move-object v8, v3
 
@@ -1069,7 +1067,7 @@
 
     aput-object v6, v11, v5
 
-    const-string v15, "windowBackgroundWhite"
+    const-string/jumbo v15, "windowBackgroundWhite"
 
     move-object v8, v3
 
@@ -1102,7 +1100,7 @@
 
     const/4 v11, 0x0
 
-    const-string v13, "windowBackgroundChecked"
+    const-string/jumbo v13, "windowBackgroundChecked"
 
     move-object v6, v3
 
@@ -1131,7 +1129,7 @@
 
     aput-object v5, v9, v2
 
-    const-string v13, "windowBackgroundUnchecked"
+    const-string/jumbo v13, "windowBackgroundUnchecked"
 
     move-object v6, v3
 
@@ -1164,7 +1162,7 @@
 
     const/4 v13, 0x0
 
-    const-string v14, "windowBackgroundCheckText"
+    const-string/jumbo v14, "windowBackgroundCheckText"
 
     move-object v6, v3
 
@@ -1195,7 +1193,7 @@
 
     const/4 v14, 0x0
 
-    const-string v15, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v15, "windowBackgroundWhiteBlackText"
 
     move-object v7, v3
 
@@ -1440,7 +1438,7 @@
 
     aput-object v6, v10, v2
 
-    const-string v14, "windowBackgroundWhiteGrayText"
+    const-string/jumbo v14, "windowBackgroundWhiteGrayText"
 
     move-object v7, v3
 
@@ -1469,7 +1467,7 @@
 
     const/4 v14, 0x0
 
-    const-string v15, "windowBackgroundWhiteBlueHeader"
+    const-string/jumbo v15, "windowBackgroundWhiteBlueHeader"
 
     move-object v7, v3
 
@@ -1496,7 +1494,7 @@
 
     move-result-object v11
 
-    const-string v15, "windowBackgroundWhiteGrayText4"
+    const-string/jumbo v15, "windowBackgroundWhiteGrayText4"
 
     move-object v7, v3
 

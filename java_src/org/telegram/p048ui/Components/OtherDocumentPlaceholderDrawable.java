@@ -15,7 +15,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
@@ -151,14 +151,14 @@ public class OtherDocumentPlaceholderDrawable extends RecyclableDrawable impleme
         canvas.drawText(this.fileName, (width - ((int) Math.ceil(namePaint.measureText(this.fileName)))) / 2, AndroidUtilities.m50dp(96) + m50dp2, namePaint);
         canvas.drawText(this.fileSize, (width - ((int) Math.ceil(sizePaint.measureText(this.fileSize)))) / 2, AndroidUtilities.m50dp(125) + m50dp2, sizePaint);
         if (this.loaded) {
-            string = LocaleController.getString("OpenFile", C3158R.string.OpenFile);
+            string = LocaleController.getString("OpenFile", C3286R.string.OpenFile);
             textPaint = openPaint;
             m50dp = 0;
         } else {
             if (this.loading) {
-                string = LocaleController.getString("Cancel", C3158R.string.Cancel).toUpperCase();
+                string = LocaleController.getString("Cancel", C3286R.string.Cancel).toUpperCase();
             } else {
-                string = LocaleController.getString("TapToDownload", C3158R.string.TapToDownload);
+                string = LocaleController.getString("TapToDownload", C3286R.string.TapToDownload);
             }
             m50dp = AndroidUtilities.m50dp(28);
             textPaint = buttonPaint;

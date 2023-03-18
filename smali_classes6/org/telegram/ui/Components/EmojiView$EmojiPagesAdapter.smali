@@ -25,7 +25,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 8722
+    .line 8740
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPagesAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0}, Landroidx/viewpager/widget/PagerAdapter;-><init>()V
@@ -36,7 +36,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/EmojiView;Lorg/telegram/ui/Components/EmojiView$1;)V
     .locals 0
 
-    .line 8722
+    .line 8740
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/EmojiView$EmojiPagesAdapter;-><init>(Lorg/telegram/ui/Components/EmojiView;)V
 
     return-void
@@ -53,7 +53,7 @@
 
     if-ne p1, v1, :cond_0
 
-    .line 8730
+    .line 8748
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPagesAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/EmojiView;->access$20200(Lorg/telegram/ui/Components/EmojiView;)Z
@@ -76,7 +76,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 8731
+    .line 8749
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPagesAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -97,14 +97,14 @@
     :cond_4
     if-nez p1, :cond_5
 
-    .line 8734
+    .line 8752
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPagesAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget-boolean v2, p1, Lorg/telegram/ui/Components/EmojiView;->emojiBanned:Z
 
     if-eqz v2, :cond_5
 
-    .line 8735
+    .line 8753
     invoke-virtual {p1, v1, v1, v0}, Lorg/telegram/ui/Components/EmojiView;->showStickerBanHint(ZZZ)V
 
     return v0
@@ -122,7 +122,7 @@
 .method public destroyItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
     .locals 0
 
-    .line 8725
+    .line 8743
     check-cast p3, Landroid/view/View;
 
     invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
@@ -133,7 +133,7 @@
 .method public getCount()I
     .locals 1
 
-    .line 8742
+    .line 8760
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPagesAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$20300(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -162,7 +162,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 8753
+    .line 8771
     sget p1, Lorg/telegram/messenger/R$string;->kikliko_name:I
 
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -186,7 +186,7 @@
 
     return-object p1
 
-    .line 8762
+    .line 8780
     :cond_1
     sget p1, Lorg/telegram/messenger/R$string;->AccDescrStickers:I
 
@@ -198,7 +198,7 @@
 
     return-object p1
 
-    .line 8760
+    .line 8778
     :cond_2
     sget p1, Lorg/telegram/messenger/R$string;->AccDescrGIFs:I
 
@@ -210,7 +210,7 @@
 
     return-object p1
 
-    .line 8758
+    .line 8776
     :cond_3
     sget p1, Lorg/telegram/messenger/R$string;->Emoji:I
 
@@ -230,7 +230,7 @@
 
     const/16 p1, 0xc
 
-    .line 8775
+    .line 8793
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -240,7 +240,7 @@
     :cond_0
     const/16 p1, 0x12
 
-    .line 8771
+    .line 8789
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -251,7 +251,7 @@
 .method public instantiateItem(Landroid/view/ViewGroup;I)Ljava/lang/Object;
     .locals 1
 
-    .line 8789
+    .line 8807
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPagesAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$20300(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -266,7 +266,7 @@
 
     iget-object p2, p2, Lorg/telegram/ui/Components/EmojiView$Tab;->view:Landroid/view/View;
 
-    .line 8790
+    .line 8808
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     return-object p2

@@ -29,7 +29,7 @@ public final class ObservableDoFinally<T> extends AbstractObservableWithUpstream
         final Action onFinally;
 
         /* renamed from: qd */
-        QueueDisposable<T> f447qd;
+        QueueDisposable<T> f452qd;
         boolean syncFused;
         Disposable upstream;
 
@@ -43,7 +43,7 @@ public final class ObservableDoFinally<T> extends AbstractObservableWithUpstream
             if (DisposableHelper.validate(this.upstream, disposable)) {
                 this.upstream = disposable;
                 if (disposable instanceof QueueDisposable) {
-                    this.f447qd = (QueueDisposable) disposable;
+                    this.f452qd = (QueueDisposable) disposable;
                 }
                 this.downstream.onSubscribe(this);
             }
@@ -79,7 +79,7 @@ public final class ObservableDoFinally<T> extends AbstractObservableWithUpstream
 
         @Override // io.reactivex.internal.fuseable.QueueFuseable
         public int requestFusion(int i) {
-            QueueDisposable<T> queueDisposable = this.f447qd;
+            QueueDisposable<T> queueDisposable = this.f452qd;
             if (queueDisposable == null || (i & 4) != 0) {
                 return 0;
             }
@@ -92,17 +92,17 @@ public final class ObservableDoFinally<T> extends AbstractObservableWithUpstream
 
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public void clear() {
-            this.f447qd.clear();
+            this.f452qd.clear();
         }
 
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public boolean isEmpty() {
-            return this.f447qd.isEmpty();
+            return this.f452qd.isEmpty();
         }
 
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public T poll() throws Exception {
-            T poll = this.f447qd.poll();
+            T poll = this.f452qd.poll();
             if (poll == null && this.syncFused) {
                 runFinally();
             }

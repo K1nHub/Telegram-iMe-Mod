@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p016ts;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.extractor.ConstantBitrateSeekMap;
 import com.google.android.exoplayer2.extractor.Extractor;
@@ -174,13 +174,13 @@ public final class AdtsExtractor implements Extractor {
             return;
         }
         boolean z2 = (this.flags & 1) != 0 && this.averageFrameSize > 0;
-        if (z2 && this.reader.getSampleDurationUs() == C0474C.TIME_UNSET && !z) {
+        if (z2 && this.reader.getSampleDurationUs() == C0468C.TIME_UNSET && !z) {
             return;
         }
-        if (z2 && this.reader.getSampleDurationUs() != C0474C.TIME_UNSET) {
+        if (z2 && this.reader.getSampleDurationUs() != C0468C.TIME_UNSET) {
             this.extractorOutput.seekMap(getConstantBitrateSeekMap(j, (this.flags & 2) != 0));
         } else {
-            this.extractorOutput.seekMap(new SeekMap.Unseekable(C0474C.TIME_UNSET));
+            this.extractorOutput.seekMap(new SeekMap.Unseekable(C0468C.TIME_UNSET));
         }
         this.hasOutputSeekMap = true;
     }

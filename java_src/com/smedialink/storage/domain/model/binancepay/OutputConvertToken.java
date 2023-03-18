@@ -45,7 +45,7 @@ public final class OutputConvertToken {
         }
         if (obj instanceof OutputConvertToken) {
             OutputConvertToken outputConvertToken = (OutputConvertToken) obj;
-            return Intrinsics.areEqual(this.tokenInfo, outputConvertToken.tokenInfo) && Intrinsics.areEqual(Double.valueOf(this.minLimit), Double.valueOf(outputConvertToken.minLimit)) && Intrinsics.areEqual(Double.valueOf(this.maxLimit), Double.valueOf(outputConvertToken.maxLimit));
+            return Intrinsics.areEqual(this.tokenInfo, outputConvertToken.tokenInfo) && Double.compare(this.minLimit, outputConvertToken.minLimit) == 0 && Double.compare(this.maxLimit, outputConvertToken.maxLimit) == 0;
         }
         return false;
     }

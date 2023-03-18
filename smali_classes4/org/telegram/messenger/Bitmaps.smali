@@ -719,7 +719,7 @@
     :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p1, "width must be > 0"
+    const-string/jumbo p1, "width must be > 0"
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -739,7 +739,7 @@
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p1, "y must be >= 0"
+    const-string/jumbo p1, "y must be >= 0"
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -749,7 +749,7 @@
     :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p1, "x must be >= 0"
+    const-string/jumbo p1, "x must be >= 0"
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -1186,7 +1186,7 @@
     :cond_b
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p1, "y + height must be <= bitmap.height()"
+    const-string/jumbo p1, "y + height must be <= bitmap.height()"
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -1196,7 +1196,7 @@
     :cond_c
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p1, "x + width must be <= bitmap.width()"
+    const-string/jumbo p1, "x + width must be <= bitmap.width()"
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

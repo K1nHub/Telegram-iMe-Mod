@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nReactionPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ReactionPresenter.kt\ncom/smedialink/ui/reaction/ReactionPresenter\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,109:1\n15#2:110\n39#3,6:111\n*S KotlinDebug\n*F\n+ 1 ReactionPresenter.kt\ncom/smedialink/ui/reaction/ReactionPresenter\n*L\n55#1:110\n63#1:111,6\n*E\n"
+    value = "SMAP\nReactionPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ReactionPresenter.kt\ncom/smedialink/ui/reaction/ReactionPresenter\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,110:1\n15#2:111\n39#3,8:112\n*S KotlinDebug\n*F\n+ 1 ReactionPresenter.kt\ncom/smedialink/ui/reaction/ReactionPresenter\n*L\n55#1:111\n63#1:112,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -170,7 +170,7 @@
 
     new-array v0, v0, [Lkotlin/Pair;
 
-    .line 101
+    .line 102
     iget-object v1, p0, Lcom/smedialink/ui/reaction/ReactionPresenter;->messageId:Ljava/lang/String;
 
     const-string v2, "id"
@@ -183,7 +183,7 @@
 
     aput-object v1, v0, v2
 
-    .line 102
+    .line 103
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$messages_BotResults;->query_id:J
 
     invoke-static {v1, v2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
@@ -200,7 +200,7 @@
 
     aput-object p1, v0, v1
 
-    .line 103
+    .line 104
     invoke-static {}, Lcom/smedialink/storage/common/AppConfiguration$Reaction;->getBotId()J
 
     move-result-wide v1
@@ -219,7 +219,7 @@
 
     aput-object p1, v0, v1
 
-    .line 104
+    .line 105
     invoke-static {}, Lcom/smedialink/storage/common/AppConfiguration$Reaction;->getBotName()Ljava/lang/String;
 
     move-result-object p1
@@ -234,7 +234,7 @@
 
     aput-object p1, v0, v1
 
-    .line 100
+    .line 101
     invoke-static {v0}, Lkotlin/collections/MapsKt;->hashMapOf([Lkotlin/Pair;)Ljava/util/HashMap;
 
     move-result-object p1
@@ -249,7 +249,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 92
+    .line 93
     iget-object v0, p0, Lcom/smedialink/ui/reaction/ReactionPresenter;->telegramGateway:Lcom/smedialink/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
@@ -269,7 +269,7 @@
 .method public final getButtonLines()V
     .locals 2
 
-    .line 79
+    .line 80
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -393,7 +393,11 @@
 
     invoke-direct {v2, p0}, Lcom/smedialink/ui/reaction/ReactionPresenter$prepareTextMessage$$inlined$flatMapSuccess$1;-><init>(Lcom/smedialink/ui/reaction/ReactionPresenter;)V
 
-    invoke-virtual {v1, v2}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v3, Lcom/smedialink/ui/reaction/ReactionPresenter$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v3, v2}, Lcom/smedialink/ui/reaction/ReactionPresenter$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v1, v3}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v1
 
@@ -451,21 +455,32 @@
 
     invoke-direct {v3, p0, v4}, Lcom/smedialink/ui/reaction/ReactionPresenter$prepareTextMessage$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/reaction/ReactionPresenter;Lorg/telegram/messenger/MessageObject;)V
 
-    new-instance v4, Lcom/smedialink/ui/reaction/ReactionPresenter$prepareTextMessage$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v4, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v4, v2}, Lcom/smedialink/ui/reaction/ReactionPresenter$prepareTextMessage$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v4, v3}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v1, v3, v4}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v3, Lcom/smedialink/ui/reaction/ReactionPresenter$prepareTextMessage$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v3, v2}, Lcom/smedialink/ui/reaction/ReactionPresenter$prepareTextMessage$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v3}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v1, v4, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v1
 
     const-string v2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v2, 0x1
 
-    .line 74
+    .line 75
     invoke-static {p0, v1, v5, v2, v5}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -491,7 +506,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 83
+    .line 84
     sget-object v0, Landroid/util/Patterns;->WEB_URL:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -504,7 +519,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 84
+    .line 85
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -515,7 +530,7 @@
 
     goto :goto_0
 
-    .line 86
+    .line 87
     :cond_0
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 

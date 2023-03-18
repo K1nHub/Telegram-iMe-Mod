@@ -35,7 +35,7 @@ public final class CollectionToArray {
             objArr2 = objArr;
         } else {
             Object newInstance = Array.newInstance(objArr.getClass().getComponentType(), size);
-            Objects.requireNonNull(newInstance, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>");
+            Intrinsics.checkNotNull(newInstance, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>");
             objArr2 = (Object[]) newInstance;
         }
         while (true) {

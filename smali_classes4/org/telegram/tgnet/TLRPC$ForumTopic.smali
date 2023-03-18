@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 65524
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,7 +31,6 @@
 
     goto :goto_0
 
-    .line 65534
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
 
@@ -40,7 +38,6 @@
 
     goto :goto_0
 
-    .line 65533
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_forumTopic_layer147;
 
@@ -48,7 +45,6 @@
 
     goto :goto_0
 
-    .line 65530
     :cond_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_forumTopicDeleted;
 
@@ -61,7 +57,6 @@
 
     goto :goto_1
 
-    .line 65534
     :cond_3
     new-instance p0, Ljava/lang/RuntimeException;
 

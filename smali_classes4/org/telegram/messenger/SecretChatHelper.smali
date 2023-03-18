@@ -7406,7 +7406,7 @@
 
     iput v3, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
 
-    const-string v3, "x"
+    const-string/jumbo v3, "x"
 
     .line 922
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
@@ -7593,7 +7593,7 @@
 
     if-nez v3, :cond_15
 
-    const-string v3, "video/mp4"
+    const-string/jumbo v3, "video/mp4"
 
     .line 951
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
@@ -8793,7 +8793,7 @@
 
     if-eqz v1, :cond_3f
 
-    const-string v1, "we already have request key with higher exchange_id"
+    const-string/jumbo v1, "we already have request key with higher exchange_id"
 
     .line 1177
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V

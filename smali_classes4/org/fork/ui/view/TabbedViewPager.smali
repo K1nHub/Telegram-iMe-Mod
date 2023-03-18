@@ -30,10 +30,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$LP1aPCL8QfyEj1JABVxLStOIFxg(Lorg/fork/ui/view/TabbedViewPager;)V
+.method public static synthetic $r8$lambda$RECVTjWPnWFvdTzHDQICveCib_M(Lorg/fork/ui/view/TabbedViewPager;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/view/TabbedViewPager;->getThemeDescription$lambda-0(Lorg/fork/ui/view/TabbedViewPager;)V
+    invoke-static {p0}, Lorg/fork/ui/view/TabbedViewPager;->getThemeDescription$lambda$0(Lorg/fork/ui/view/TabbedViewPager;)V
 
     return-void
 .end method
@@ -159,7 +159,7 @@
     return-object p0
 .end method
 
-.method private static final getThemeDescription$lambda-0(Lorg/fork/ui/view/TabbedViewPager;)V
+.method private static final getThemeDescription$lambda$0(Lorg/fork/ui/view/TabbedViewPager;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -318,7 +318,7 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "windowBackgroundGray"
+    const-string/jumbo v9, "windowBackgroundGray"
 
     move-object v2, v10
 

@@ -23,17 +23,50 @@ public final class WalletTransactionMappingKt {
 
         static {
             int[] iArr = new int[TransactionType.values().length];
-            iArr[TransactionType.REGISTRATION.ordinal()] = 1;
-            iArr[TransactionType.REFERRAL_BONUS.ordinal()] = 2;
-            iArr[TransactionType.PURCHASE_COINS.ordinal()] = 3;
-            iArr[TransactionType.LOTTERY_BONUS.ordinal()] = 4;
-            iArr[TransactionType.TRANSFER_COINS.ordinal()] = 5;
-            iArr[TransactionType.TRANSFER_CRYPTO.ordinal()] = 6;
-            iArr[TransactionType.CANCEL_CRYPTO.ordinal()] = 7;
-            iArr[TransactionType.APPROVE_CRYPTO.ordinal()] = 8;
-            iArr[TransactionType.SIMPLEX_PAYMENT_REQUEST.ordinal()] = 9;
-            iArr[TransactionType.TAKE_AWAY_COINS.ordinal()] = 10;
-            iArr[TransactionType.SWAP_CRYPTO.ordinal()] = 11;
+            try {
+                iArr[TransactionType.REGISTRATION.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[TransactionType.REFERRAL_BONUS.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[TransactionType.PURCHASE_COINS.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[TransactionType.LOTTERY_BONUS.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[TransactionType.TRANSFER_COINS.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr[TransactionType.TRANSFER_CRYPTO.ordinal()] = 6;
+            } catch (NoSuchFieldError unused6) {
+            }
+            try {
+                iArr[TransactionType.CANCEL_CRYPTO.ordinal()] = 7;
+            } catch (NoSuchFieldError unused7) {
+            }
+            try {
+                iArr[TransactionType.APPROVE_CRYPTO.ordinal()] = 8;
+            } catch (NoSuchFieldError unused8) {
+            }
+            try {
+                iArr[TransactionType.SIMPLEX_PAYMENT_REQUEST.ordinal()] = 9;
+            } catch (NoSuchFieldError unused9) {
+            }
+            try {
+                iArr[TransactionType.TAKE_AWAY_COINS.ordinal()] = 10;
+            } catch (NoSuchFieldError unused10) {
+            }
+            try {
+                iArr[TransactionType.SWAP_CRYPTO.ordinal()] = 11;
+            } catch (NoSuchFieldError unused11) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -115,7 +148,10 @@ public final class WalletTransactionMappingKt {
                     String str4 = senderAccountId == null ? "" : senderAccountId;
                     NetworkType.Companion companion6 = NetworkType.Companion;
                     String networkType = walletTransactionResponse.getNetworkType();
-                    return new Transaction.Crypto.Donation(id6, bigDecimal8, map, map15, createdAt3, parseSupportedTokenCode, map16, map18, bigDecimal9, map17, str3, str2, str, companion6.map(networkType == null ? "" : networkType), str4, receiverAccountId);
+                    if (networkType == null) {
+                        networkType = "";
+                    }
+                    return new Transaction.Crypto.Donation(id6, bigDecimal8, map, map15, createdAt3, parseSupportedTokenCode, map16, map18, bigDecimal9, map17, str3, str2, str, companion6.map(networkType), str4, receiverAccountId);
                 }
                 String id7 = walletTransactionResponse.getId();
                 BigDecimal bigDecimal10 = new BigDecimal(walletTransactionResponse.getAmount());
@@ -177,8 +213,7 @@ public final class WalletTransactionMappingKt {
                 String simplexOrderId = walletTransactionResponse.getSimplexOrderId();
                 String str12 = simplexOrderId == null ? "" : simplexOrderId;
                 String amountToSpent = walletTransactionResponse.getAmountToSpent();
-                BigDecimal bigDecimal16 = amountToSpent == null ? null : new BigDecimal(amountToSpent);
-                BigDecimal bigDecimal17 = bigDecimal16 == null ? BigDecimal.ZERO : bigDecimal16;
+                BigDecimal bigDecimal16 = amountToSpent != null ? new BigDecimal(amountToSpent) : BigDecimal.ZERO;
                 String spentCurrency = walletTransactionResponse.getSpentCurrency();
                 if (spentCurrency == null) {
                     spentCurrency = TokenCode.USD.getName();
@@ -187,9 +222,12 @@ public final class WalletTransactionMappingKt {
                 FiatCode fiatCode = new FiatCode(spentCurrency, 0, 2, null);
                 NetworkType.Companion companion9 = NetworkType.Companion;
                 String networkType4 = walletTransactionResponse.getNetworkType();
-                NetworkType map31 = companion9.map(networkType4 == null ? "" : networkType4);
-                Intrinsics.checkNotNullExpressionValue(bigDecimal17, "amountToSpent?.toBigDecimal() ?: BigDecimal.ZERO");
-                return new Transaction.Crypto.SimplexPurchase(id9, bigDecimal14, map, map27, createdAt6, parseSupportedTokenCode3, map28, map30, bigDecimal15, map29, str13, map31, str10, str9, str12, bigDecimal17, fiatCode);
+                if (networkType4 == null) {
+                    networkType4 = "";
+                }
+                NetworkType map31 = companion9.map(networkType4);
+                Intrinsics.checkNotNullExpressionValue(bigDecimal16, "amountToSpent?.toBigDecimal() ?: BigDecimal.ZERO");
+                return new Transaction.Crypto.SimplexPurchase(id9, bigDecimal14, map, map27, createdAt6, parseSupportedTokenCode3, map28, map30, bigDecimal15, map29, str13, map31, str10, str9, str12, bigDecimal16, fiatCode);
             case 10:
                 TokenCode parseSupportedTokenCode4 = parseSupportedTokenCode(walletTransactionResponse.getTokenCode());
                 if (parseSupportedTokenCode4 == null) {
@@ -206,11 +244,11 @@ public final class WalletTransactionMappingKt {
                     return unsupportedTransaction(walletTransactionResponse);
                 }
                 String id10 = walletTransactionResponse.getId();
-                BigDecimal bigDecimal18 = new BigDecimal(walletTransactionResponse.getAmount());
+                BigDecimal bigDecimal17 = new BigDecimal(walletTransactionResponse.getAmount());
                 String createdAt7 = walletTransactionResponse.getCreatedAt();
                 TransactionDirection map32 = TransactionDirection.Companion.map(walletTransactionResponse.getDirection());
                 Status map33 = Status.Companion.map(walletTransactionResponse.getStatus());
-                BigDecimal bigDecimal19 = new BigDecimal(walletTransactionResponse.getFeeAmount());
+                BigDecimal bigDecimal18 = new BigDecimal(walletTransactionResponse.getFeeAmount());
                 TokenCode map34 = TokenCode.Companion.map(walletTransactionResponse.getFeeTokenCode());
                 TransactionProcessingType map35 = TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing());
                 TradeType.Companion companion10 = TradeType.Companion;
@@ -220,21 +258,17 @@ public final class WalletTransactionMappingKt {
                 }
                 TradeType map36 = companion10.map(tradeType);
                 String inputAmount = walletTransactionResponse.getInputAmount();
-                BigDecimal bigDecimal20 = inputAmount == null ? null : new BigDecimal(inputAmount);
-                BigDecimal bigDecimal21 = bigDecimal20 == null ? BigDecimal.ZERO : bigDecimal20;
+                BigDecimal bigDecimal19 = inputAmount != null ? new BigDecimal(inputAmount) : BigDecimal.ZERO;
                 String outputAmount = walletTransactionResponse.getOutputAmount();
-                BigDecimal bigDecimal22 = outputAmount == null ? null : new BigDecimal(outputAmount);
-                if (bigDecimal22 == null) {
-                    bigDecimal22 = BigDecimal.ZERO;
-                }
+                BigDecimal bigDecimal20 = outputAmount != null ? new BigDecimal(outputAmount) : BigDecimal.ZERO;
                 String txHash5 = walletTransactionResponse.getTxHash();
                 String str14 = txHash5 == null ? "" : txHash5;
                 NetworkType.Companion companion11 = NetworkType.Companion;
                 String networkType5 = walletTransactionResponse.getNetworkType();
                 NetworkType map37 = companion11.map(networkType5 != null ? networkType5 : "");
-                Intrinsics.checkNotNullExpressionValue(bigDecimal21, "inputAmount?.toBigDecimal() ?: BigDecimal.ZERO");
-                Intrinsics.checkNotNullExpressionValue(bigDecimal22, "outputAmount?.toBigDecimal() ?: BigDecimal.ZERO");
-                return new Transaction.Crypto.Swap(id10, bigDecimal18, map, map32, createdAt7, parseSupportedTokenCode5, map33, map35, bigDecimal19, map34, str14, map37, parseSupportedTokenCode5, parseSupportedTokenCode6, map36, bigDecimal21, bigDecimal22);
+                Intrinsics.checkNotNullExpressionValue(bigDecimal19, "inputAmount?.toBigDecimal() ?: BigDecimal.ZERO");
+                Intrinsics.checkNotNullExpressionValue(bigDecimal20, "outputAmount?.toBigDecimal() ?: BigDecimal.ZERO");
+                return new Transaction.Crypto.Swap(id10, bigDecimal17, map, map32, createdAt7, parseSupportedTokenCode5, map33, map35, bigDecimal18, map34, str14, map37, parseSupportedTokenCode5, parseSupportedTokenCode6, map36, bigDecimal19, bigDecimal20);
             default:
                 return unsupportedTransaction(walletTransactionResponse);
         }

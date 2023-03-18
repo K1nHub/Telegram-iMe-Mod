@@ -24,14 +24,14 @@
 .method public static getExtras(Landroid/app/Notification;)Landroid/os/Bundle;
     .locals 2
 
-    .line 7325
+    .line 7474
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x13
 
     if-lt v0, v1, :cond_0
 
-    .line 7326
+    .line 7475
     iget-object p0, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
     return-object p0
@@ -41,7 +41,7 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 7328
+    .line 7477
     invoke-static {p0}, Landroidx/core/app/NotificationCompatJellybean;->getExtras(Landroid/app/Notification;)Landroid/os/Bundle;
 
     move-result-object p0

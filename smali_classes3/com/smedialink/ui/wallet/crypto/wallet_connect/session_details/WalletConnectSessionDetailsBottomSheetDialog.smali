@@ -378,7 +378,7 @@
 
     const/16 v4, 0x78
 
-    invoke-static {v3, v4}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+    invoke-static {v3, v4}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withAlpha(II)I
 
     move-result v3
 

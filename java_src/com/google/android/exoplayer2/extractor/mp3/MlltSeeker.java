@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.extractor.mp3;
 
 import android.util.Pair;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.extractor.SeekMap;
 import com.google.android.exoplayer2.extractor.SeekPoint;
 import com.google.android.exoplayer2.metadata.id3.MlltFrame;
@@ -44,7 +44,7 @@ public final class MlltSeeker implements Seeker {
     private MlltSeeker(long[] jArr, long[] jArr2, long j) {
         this.referencePositions = jArr;
         this.referenceTimesMs = jArr2;
-        this.durationUs = j == C0474C.TIME_UNSET ? Util.msToUs(jArr2[jArr2.length - 1]) : j;
+        this.durationUs = j == C0468C.TIME_UNSET ? Util.msToUs(jArr2[jArr2.length - 1]) : j;
     }
 
     @Override // com.google.android.exoplayer2.extractor.SeekMap

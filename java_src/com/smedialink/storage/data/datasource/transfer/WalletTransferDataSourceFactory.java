@@ -20,8 +20,14 @@ public final class WalletTransferDataSourceFactory implements DataSourceFactory<
 
         static {
             int[] iArr = new int[BlockchainType.values().length];
-            iArr[BlockchainType.EVM.ordinal()] = 1;
-            iArr[BlockchainType.TON.ordinal()] = 2;
+            try {
+                iArr[BlockchainType.EVM.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[BlockchainType.TON.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }

@@ -15,8 +15,8 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/fork/ui/view/MessageMoreActionsView$SubMenuItem$Option;,
-        Lorg/fork/ui/view/MessageMoreActionsView$SubMenuItem$Gap;
+        Lorg/fork/ui/view/MessageMoreActionsView$SubMenuItem$Gap;,
+        Lorg/fork/ui/view/MessageMoreActionsView$SubMenuItem$Option;
     }
 .end annotation
 

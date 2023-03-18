@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/storage/domain/interactor/crypto/simplex/SimplexInteractor$getBuyingCryptoQuote$$inlined$mapSuccess$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "ObservableExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Function;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,13 +18,18 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        "R:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Function;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Ljava/util/List<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/crypto/simplex/BuyingCryptoQuote;",
+        ">;>;",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/crypto/simplex/BuyingCryptoQuote;",
+        ">;>;"
     }
 .end annotation
 
@@ -35,20 +40,32 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Lcom/smedialink/storage/domain/model/Result;)Ljava/lang/Object;
+.method public final invoke(Lcom/smedialink/storage/domain/model/Result;)Ljava/lang/Object;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)TR;"
+            "(",
+            "Lcom/smedialink/storage/domain/model/Result<",
+            "+",
+            "Ljava/util/List<",
+            "+",
+            "Lcom/smedialink/storage/domain/model/crypto/simplex/BuyingCryptoQuote;",
+            ">;>;)",
+            "Lcom/smedialink/storage/domain/model/Result<",
+            "+",
+            "Lcom/smedialink/storage/domain/model/crypto/simplex/BuyingCryptoQuote;",
+            ">;"
         }
     .end annotation
 
@@ -105,6 +122,10 @@
 
     move-result-object p1
 
+    const-string v0, "null cannot be cast to non-null type R of com.smedialink.storage.domain.utils.extentions.ObservableExtKt.mapSuccess"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     goto :goto_0
 
     .line 31
@@ -122,13 +143,13 @@
     return-object p1
 .end method
 
-.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     .line 27
     check-cast p1, Lcom/smedialink/storage/domain/model/Result;
 
-    invoke-virtual {p0, p1}, Lcom/smedialink/storage/domain/interactor/crypto/simplex/SimplexInteractor$getBuyingCryptoQuote$$inlined$mapSuccess$1;->apply(Lcom/smedialink/storage/domain/model/Result;)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lcom/smedialink/storage/domain/interactor/crypto/simplex/SimplexInteractor$getBuyingCryptoQuote$$inlined$mapSuccess$1;->invoke(Lcom/smedialink/storage/domain/model/Result;)Ljava/lang/Object;
 
     move-result-object p1
 

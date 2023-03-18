@@ -354,7 +354,7 @@
 
     const-string v2, "null cannot be cast to non-null type kotlin.ranges.IntRange"
 
-    invoke-static {v0, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v2, 0x0
 

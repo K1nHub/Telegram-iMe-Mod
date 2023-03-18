@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/manager/notifications/PushNotificationsManager$Companion$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {v0}, Lcom/smedialink/manager/notifications/PushNotificationsManager$Companion;->$r8$lambda$kuglt144Pz-Soi8PpCmA6HnXjwA(Lorg/telegram/ui/LaunchActivity;)V
+    invoke-static {v0}, Lcom/smedialink/manager/notifications/PushNotificationsManager$Companion;->$r8$lambda$lcCUXXLJsy3ImeYcESdVjKEN9oI(Lorg/telegram/ui/LaunchActivity;)V
 
     return-void
 .end method

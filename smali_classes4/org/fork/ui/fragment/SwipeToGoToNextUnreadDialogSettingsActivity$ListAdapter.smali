@@ -20,16 +20,12 @@
 
 # direct methods
 .method public constructor <init>(Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 139
     iput-object p1, p0, Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$ListAdapter;->this$0:Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;
@@ -305,7 +301,7 @@
 
     move-result v1
 
-    const-string v2, "windowBackgroundGrayShadow"
+    const-string/jumbo v2, "windowBackgroundGrayShadow"
 
     if-ne p2, v1, :cond_3
 
@@ -472,7 +468,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
-    const-string p2, "windowBackgroundWhite"
+    const-string/jumbo p2, "windowBackgroundWhite"
 
     .line 185
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -480,9 +476,6 @@
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 186
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 188
     :goto_0
@@ -495,9 +488,6 @@
     invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 189
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 181
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;

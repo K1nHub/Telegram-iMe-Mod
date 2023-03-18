@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
@@ -22,20 +22,20 @@ public class ChatAttachRestrictedLayout extends ChatAttachAlert.AttachAlertLayou
     private int gridExtraSpace;
 
     /* renamed from: id */
-    public final int f1687id;
+    public final int f1693id;
     private final RecyclerListView listView;
     private final EmptyTextProgressView progressView;
 
     public ChatAttachRestrictedLayout(int i, ChatAttachAlert chatAttachAlert, Context context, Theme.ResourcesProvider resourcesProvider) {
         super(chatAttachAlert, context, resourcesProvider);
-        this.f1687id = i;
+        this.f1693id = i;
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context, null, resourcesProvider);
         this.progressView = emptyTextProgressView;
-        emptyTextProgressView.setText(LocaleController.getString("NoPhotos", C3158R.string.NoPhotos));
+        emptyTextProgressView.setText(LocaleController.getString("NoPhotos", C3286R.string.NoPhotos));
         emptyTextProgressView.setOnTouchListener(null);
         emptyTextProgressView.setTextSize(16);
         addView(emptyTextProgressView, LayoutHelper.createFrame(-1, -2));
-        emptyTextProgressView.setLottie(C3158R.C3164raw.media_forbidden, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        emptyTextProgressView.setLottie(C3286R.C3291raw.media_forbidden, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         TLRPC$Chat currentChat = ((ChatActivity) this.parentAlert.baseFragment).getCurrentChat();
         if (i == 1) {
             emptyTextProgressView.setText(ChatObject.getRestrictedErrorText(currentChat, 7));
@@ -133,7 +133,7 @@ public class ChatAttachRestrictedLayout extends ChatAttachAlert.AttachAlertLayou
         /*
             r3 = this;
             super.onPreMeasure(r4, r5)
-            int r4 = org.telegram.p048ui.ActionBar.C3222ActionBar.getCurrentActionBarHeight()
+            int r4 = org.telegram.p048ui.ActionBar.C3351ActionBar.getCurrentActionBarHeight()
             int r4 = r5 - r4
             r0 = 0
             int r4 = java.lang.Math.max(r0, r4)

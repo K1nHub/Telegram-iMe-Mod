@@ -15,11 +15,11 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Donation;,
-        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Transfer;,
         Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;,
+        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Donation;,
         Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;,
-        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Swap;
+        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Swap;,
+        Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Transfer;
     }
 .end annotation
 

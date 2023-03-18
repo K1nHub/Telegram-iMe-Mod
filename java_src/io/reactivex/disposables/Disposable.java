@@ -1,5 +1,5 @@
 package io.reactivex.disposables;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public interface Disposable {
     void dispose();
 

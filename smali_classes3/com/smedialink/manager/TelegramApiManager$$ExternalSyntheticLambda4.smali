@@ -45,7 +45,7 @@
 
     iget-object v3, p0, Lcom/smedialink/manager/TelegramApiManager$$ExternalSyntheticLambda4;->f$3:Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;
 
-    invoke-static {v0, v1, v2, v3, p1}, Lcom/smedialink/manager/TelegramApiManager;->$r8$lambda$9PvZ5_7SlHYMdV-PNX7Uu0t9zgI(Lcom/smedialink/manager/TelegramApiManager;Lorg/telegram/tgnet/TLRPC$TL_messages_acceptUrlAuth;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;Lio/reactivex/ObservableEmitter;)V
+    invoke-static {v0, v1, v2, v3, p1}, Lcom/smedialink/manager/TelegramApiManager;->$r8$lambda$lU6kJHLHg67LB_rptNG1hm9nbf0(Lcom/smedialink/manager/TelegramApiManager;Lorg/telegram/tgnet/TLRPC$TL_messages_acceptUrlAuth;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;Lio/reactivex/ObservableEmitter;)V
 
     return-void
 .end method

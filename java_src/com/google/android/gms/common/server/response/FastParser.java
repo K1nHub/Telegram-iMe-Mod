@@ -1,7 +1,7 @@
 package com.google.android.gms.common.server.response;
 
 import android.util.Log;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.gms.common.annotation.KeepForSdk;
 import com.google.android.gms.common.internal.ShowFirstParty;
 import com.google.android.gms.common.server.response.FastJsonResponse;
@@ -182,7 +182,7 @@ public class FastParser<T extends FastJsonResponse> {
         char[] cArr = this.zaq;
         if (zam2 > 0) {
             char c = cArr[0];
-            int i3 = c == '-' ? Integer.MIN_VALUE : C0474C.RATE_UNSET_INT;
+            int i3 = c == '-' ? Integer.MIN_VALUE : C0468C.RATE_UNSET_INT;
             int i4 = c == '-' ? 1 : 0;
             if (i4 < zam2) {
                 i = i4 + 1;
@@ -288,7 +288,7 @@ public class FastParser<T extends FastJsonResponse> {
         char[] cArr = this.zaq;
         if (zam2 > 0) {
             char c = cArr[0];
-            long j2 = c == '-' ? Long.MIN_VALUE : C0474C.TIME_UNSET;
+            long j2 = c == '-' ? Long.MIN_VALUE : C0468C.TIME_UNSET;
             int i2 = c == '-' ? 1 : 0;
             if (i2 < zam2) {
                 i = i2 + 1;

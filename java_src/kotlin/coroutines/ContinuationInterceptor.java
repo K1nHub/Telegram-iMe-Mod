@@ -36,6 +36,7 @@ public interface ContinuationInterceptor extends CoroutineContext.Element {
                 }
                 return null;
             } else if (ContinuationInterceptor.Key == key) {
+                Intrinsics.checkNotNull(continuationInterceptor, "null cannot be cast to non-null type E of kotlin.coroutines.ContinuationInterceptor.get");
                 return continuationInterceptor;
             } else {
                 return null;

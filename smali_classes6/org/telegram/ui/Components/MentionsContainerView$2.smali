@@ -55,16 +55,21 @@
 
     move-result-object v0
 
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/MentionsContainerView$2;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/MentionsContainerView;->access$200(Lorg/telegram/ui/Components/MentionsContainerView;)Lorg/telegram/ui/Adapters/MentionsAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Adapters/MentionsAdapter;->getBotWebViewSwitch()Lorg/telegram/tgnet/TLRPC$TL_inlineBotWebView;
+
+    move-result-object v0
+
     if-eqz v0, :cond_0
 
-    .line 138
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getItemCount()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x2
-
-    return v0
+    goto :goto_0
 
     .line 140
     :cond_0
@@ -73,6 +78,17 @@
     move-result v0
 
     add-int/lit8 v0, v0, -0x1
+
+    return v0
+
+    .line 138
+    :cond_1
+    :goto_0
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getItemCount()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x2
 
     return v0
 .end method
@@ -129,12 +145,25 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_1
 
+    iget-object v0, p0, Lorg/telegram/ui/Components/MentionsContainerView$2;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/MentionsContainerView;->access$200(Lorg/telegram/ui/Components/MentionsContainerView;)Lorg/telegram/ui/Adapters/MentionsAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Adapters/MentionsAdapter;->getBotWebViewSwitch()Lorg/telegram/tgnet/TLRPC$TL_inlineBotWebView;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2
+
+    :cond_1
     add-int/lit8 p1, p1, 0x1
 
     .line 89
-    :cond_1
+    :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/MentionsContainerView$2;->size:Lorg/telegram/ui/Components/Size;
 
     const/4 v1, 0x0
@@ -158,7 +187,7 @@
     .line 92
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$BotInlineResult;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_e
 
     .line 93
     check-cast p1, Lorg/telegram/tgnet/TLRPC$BotInlineResult;
@@ -168,7 +197,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     .line 95
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
@@ -184,7 +213,7 @@
 
     const/high16 v3, 0x42c80000    # 100.0f
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     iget v4, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
 
@@ -192,20 +221,20 @@
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     const/high16 v4, 0x42c80000    # 100.0f
 
     :goto_0
     iput v4, v2, Lorg/telegram/ui/Components/Size;->width:F
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     .line 97
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
 
     int-to-float v3, v0
 
-    :cond_3
+    :cond_4
     iput v3, v2, Lorg/telegram/ui/Components/Size;->height:F
 
     .line 98
@@ -218,7 +247,7 @@
 
     move-result v0
 
-    if-ge v1, v0, :cond_d
+    if-ge v1, v0, :cond_e
 
     .line 99
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -234,21 +263,21 @@
     .line 100
     instance-of v2, v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeImageSize;
 
-    if-nez v2, :cond_5
+    if-nez v2, :cond_6
 
     instance-of v2, v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
     goto :goto_2
 
-    :cond_4
+    :cond_5
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
     .line 101
-    :cond_5
+    :cond_6
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/Components/MentionsContainerView$2;->size:Lorg/telegram/ui/Components/Size;
 
@@ -268,10 +297,10 @@
     goto/16 :goto_7
 
     .line 106
-    :cond_6
+    :cond_7
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->content:Lorg/telegram/tgnet/TLRPC$WebDocument;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_a
 
     .line 107
     :goto_3
@@ -283,7 +312,7 @@
 
     move-result v0
 
-    if-ge v1, v0, :cond_d
+    if-ge v1, v0, :cond_e
 
     .line 108
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->content:Lorg/telegram/tgnet/TLRPC$WebDocument;
@@ -299,21 +328,21 @@
     .line 109
     instance-of v2, v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeImageSize;
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_9
 
     instance-of v2, v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_8
 
     goto :goto_4
 
-    :cond_7
+    :cond_8
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_3
 
     .line 110
-    :cond_8
+    :cond_9
     :goto_4
     iget-object p1, p0, Lorg/telegram/ui/Components/MentionsContainerView$2;->size:Lorg/telegram/ui/Components/Size;
 
@@ -333,10 +362,10 @@
     goto :goto_7
 
     .line 115
-    :cond_9
+    :cond_a
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->thumb:Lorg/telegram/tgnet/TLRPC$WebDocument;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_d
 
     .line 116
     :goto_5
@@ -348,7 +377,7 @@
 
     move-result v0
 
-    if-ge v1, v0, :cond_d
+    if-ge v1, v0, :cond_e
 
     .line 117
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->thumb:Lorg/telegram/tgnet/TLRPC$WebDocument;
@@ -364,21 +393,21 @@
     .line 118
     instance-of v2, v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeImageSize;
 
-    if-nez v2, :cond_b
+    if-nez v2, :cond_c
 
     instance-of v2, v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_b
 
     goto :goto_6
 
-    :cond_a
+    :cond_b
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_5
 
     .line 119
-    :cond_b
+    :cond_c
     :goto_6
     iget-object p1, p0, Lorg/telegram/ui/Components/MentionsContainerView$2;->size:Lorg/telegram/ui/Components/Size;
 
@@ -398,10 +427,10 @@
     goto :goto_7
 
     .line 124
-    :cond_c
+    :cond_d
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_e
 
     .line 125
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
@@ -416,7 +445,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_e
 
     .line 127
     iget-object v0, p0, Lorg/telegram/ui/Components/MentionsContainerView$2;->size:Lorg/telegram/ui/Components/Size;
@@ -435,7 +464,7 @@
     iput p1, v0, Lorg/telegram/ui/Components/Size;->height:F
 
     .line 132
-    :cond_d
+    :cond_e
     :goto_7
     iget-object p1, p0, Lorg/telegram/ui/Components/MentionsContainerView$2;->size:Lorg/telegram/ui/Components/Size;
 

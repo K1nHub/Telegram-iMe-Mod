@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.widget.LinearLayoutCompat;
-import androidx.core.graphics.ColorUtils;
 import com.smedialink.model.wallet.crypto.wallet_connect.WalletConnectSessionItem;
 import com.smedialink.p031ui.base.mvp.MvpBottomSheet;
 import com.smedialink.p031ui.custom.BigActionButton;
@@ -25,7 +24,7 @@ import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentWalletConnectSessionDetailsBinding;
 import org.telegram.p048ui.ActionBar.AlertDialog;
@@ -135,11 +134,11 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
         Intrinsics.checkNotNullParameter(network, "network");
         ForkContentWalletConnectSessionDetailsBinding binding = getBinding();
         binding.viewHeader.setupViewData(iconUrl, name, url);
-        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3158R.string.wallet_connect_session_details_connected), connectedDate, C3158R.C3160drawable.msg_calendar2, true);
-        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3158R.string.wallet_connect_session_details_address), address, C3158R.C3160drawable.fork_ic_nav_wallet_24, true);
+        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3286R.string.wallet_connect_session_details_connected), connectedDate, C3286R.C3288drawable.msg_calendar2, true);
+        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3286R.string.wallet_connect_session_details_address), address, C3286R.C3288drawable.fork_ic_nav_wallet_24, true);
         DetailsIconCellView viewNetworkCell = binding.viewNetworkCell;
         Intrinsics.checkNotNullExpressionValue(viewNetworkCell, "viewNetworkCell");
-        DetailsIconCellView.setupViewData$default(viewNetworkCell, getResourceManager().getString(C3158R.string.wallet_connect_session_details_network), network, C3158R.C3160drawable.msg_language, false, 8, null);
+        DetailsIconCellView.setupViewData$default(viewNetworkCell, getResourceManager().getString(C3286R.string.wallet_connect_session_details_network), network, C3286R.C3288drawable.msg_language, false, 8, null);
     }
 
     private final void setupColors() {
@@ -148,11 +147,11 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
         binding.viewConnectedCell.setupColors();
         binding.viewAddressCell.setupColors();
         binding.viewNetworkCell.setupColors();
-        binding.buttonDisconnect.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(4), Theme.getColor("chat_attachAudioBackground"), ColorUtils.setAlphaComponent(Theme.getColor("windowBackgroundWhite"), 120)));
+        binding.buttonDisconnect.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(4), Theme.getColor("chat_attachAudioBackground"), ViewExtKt.withAlpha(Theme.getColor("windowBackgroundWhite"), 120)));
     }
 
     private final void setupTexts() {
-        getBinding().buttonDisconnect.setText(LocaleController.getString("Disconnect", C3158R.string.Disconnect));
+        getBinding().buttonDisconnect.setText(LocaleController.getString("Disconnect", C3286R.string.Disconnect));
     }
 
     private final void setupListeners() {

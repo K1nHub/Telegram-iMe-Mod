@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/UsersAlertBase$SearchField;Lorg/telegram/ui/Components/UsersAlertBase;)V
     .locals 0
 
-    .line 229
+    .line 221
     iput-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$1;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$SearchField;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/CloseProgressDrawable2;-><init>()V
@@ -35,7 +35,7 @@
 .method protected getCurrentColor()I
     .locals 1
 
-    .line 232
+    .line 224
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$1;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$SearchField;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;

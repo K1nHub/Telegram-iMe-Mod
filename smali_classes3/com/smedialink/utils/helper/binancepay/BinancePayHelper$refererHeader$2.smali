@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/utils/helper/binancepay/BinancePayHelper;-><clinit>()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/smedialink/utils/helper/binancepay/BinancePayHelper;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

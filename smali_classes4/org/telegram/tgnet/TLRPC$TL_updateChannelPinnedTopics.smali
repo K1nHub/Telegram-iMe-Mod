@@ -33,10 +33,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 33647
+    .line 33792
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$Update;-><init>()V
 
-    .line 33652
+    .line 33797
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -51,21 +51,21 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 33655
+    .line 33800
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelPinnedTopics;->flags:I
 
-    .line 33656
+    .line 33801
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelPinnedTopics;->channel_id:J
 
-    .line 33657
+    .line 33802
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelPinnedTopics;->flags:I
 
     const/4 v1, 0x1
@@ -74,7 +74,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 33658
+    .line 33803
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -89,7 +89,7 @@
 
     return-void
 
-    .line 33661
+    .line 33806
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -101,7 +101,7 @@
 
     aput-object v0, p2, v3
 
-    const-string v0, "wrong Vector magic, got %x"
+    const-string/jumbo v0, "wrong Vector magic, got %x"
 
     invoke-static {v0, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -111,7 +111,7 @@
 
     throw p1
 
-    .line 33665
+    .line 33810
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -120,7 +120,7 @@
     :goto_0
     if-ge v3, v0, :cond_2
 
-    .line 33667
+    .line 33812
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelPinnedTopics;->order:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
@@ -144,22 +144,22 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 33673
+    .line 33818
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelPinnedTopics;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 33674
+    .line 33819
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelPinnedTopics;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 33675
+    .line 33820
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelPinnedTopics;->channel_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 33676
+    .line 33821
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelPinnedTopics;->flags:I
 
     and-int/lit8 v0, v0, 0x1
@@ -168,17 +168,17 @@
 
     const v0, 0x1cb5c415
 
-    .line 33677
+    .line 33822
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 33678
+    .line 33823
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelPinnedTopics;->order:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 33679
+    .line 33824
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -186,7 +186,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 33681
+    .line 33826
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelPinnedTopics;->order:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

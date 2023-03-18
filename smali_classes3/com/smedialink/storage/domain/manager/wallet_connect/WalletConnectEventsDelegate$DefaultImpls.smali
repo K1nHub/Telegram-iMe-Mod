@@ -18,10 +18,6 @@
 .method public static onEthSign(Lcom/smedialink/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;JLcom/trustwallet/walletconnect/WCSessionStoreItem;Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;)V
     .locals 0
 
-    const-string p1, "this"
-
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string p0, "sessionStoreItem"
 
     invoke-static {p3, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -34,11 +30,7 @@
 .end method
 
 .method public static onFailure(Lcom/smedialink/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;Ljava/lang/Throwable;)V
-    .locals 1
-
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .locals 0
 
     const-string p0, "throwable"
 
@@ -48,11 +40,7 @@
 .end method
 
 .method public static onSessionRequest(Lcom/smedialink/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
-    .locals 1
-
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .locals 0
 
     const-string p0, "sessionItem"
 
@@ -64,19 +52,11 @@
 .method public static onSuccess(Lcom/smedialink/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;I)V
     .locals 0
 
-    const-string p1, "this"
-
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     return-void
 .end method
 
 .method public static onTransactionProcessing(Lcom/smedialink/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;JLcom/trustwallet/walletconnect/WCSessionStoreItem;Lcom/smedialink/storage/domain/model/crypto/wallet_connect/WalletConnectProcessedTransaction;Z)V
     .locals 0
-
-    const-string p1, "this"
-
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string p0, "sessionStoreItem"
 
@@ -92,10 +72,6 @@
 .method public static onWalletChangeNetwork(Lcom/smedialink/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;JLcom/trustwallet/walletconnect/WCSessionStoreItem;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 0
 
-    const-string p1, "this"
-
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string p0, "sessionStoreItem"
 
     invoke-static {p3, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -108,11 +84,7 @@
 .end method
 
 .method public static onWalletChangeUnsupportedNetwork(Lcom/smedialink/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;)V
-    .locals 1
-
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .locals 0
 
     return-void
 .end method

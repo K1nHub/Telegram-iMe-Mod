@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.smedialink.storage.data.utils.extentions.GsonExtKt;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import kotlin.NoWhenBranchMatchedException;
@@ -35,15 +34,42 @@ public enum FilterFab {
 
         static {
             int[] iArr = new int[FilterFab.values().length];
-            iArr[FilterFab.CREATE_CHAT.ordinal()] = 1;
-            iArr[FilterFab.ARCHIVE.ordinal()] = 2;
-            iArr[FilterFab.CLOUD.ordinal()] = 3;
-            iArr[FilterFab.MARK_ALL_READ.ordinal()] = 4;
-            iArr[FilterFab.WALLET.ordinal()] = 5;
-            iArr[FilterFab.CONTACTS.ordinal()] = 6;
-            iArr[FilterFab.MUSIC.ordinal()] = 7;
-            iArr[FilterFab.ALBUMS.ordinal()] = 8;
-            iArr[FilterFab.CREATE_ALBUM.ordinal()] = 9;
+            try {
+                iArr[FilterFab.CREATE_CHAT.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[FilterFab.ARCHIVE.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[FilterFab.CLOUD.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[FilterFab.MARK_ALL_READ.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[FilterFab.WALLET.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr[FilterFab.CONTACTS.ordinal()] = 6;
+            } catch (NoSuchFieldError unused6) {
+            }
+            try {
+                iArr[FilterFab.MUSIC.ordinal()] = 7;
+            } catch (NoSuchFieldError unused7) {
+            }
+            try {
+                iArr[FilterFab.ALBUMS.ordinal()] = 8;
+            } catch (NoSuchFieldError unused8) {
+            }
+            try {
+                iArr[FilterFab.CREATE_ALBUM.ordinal()] = 9;
+            } catch (NoSuchFieldError unused9) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -176,23 +202,22 @@ public enum FilterFab {
         }
 
         public final Set<FilterFab> mapNamesToEnums(Set<String> set) {
-            int collectionSizeOrDefault;
-            Collection collection;
+            List list;
             Set<FilterFab> mutableSet;
-            if (set == null) {
-                collection = null;
-            } else {
+            int collectionSizeOrDefault;
+            if (set != null) {
                 collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(set, 10);
-                Collection arrayList = new ArrayList(collectionSizeOrDefault);
+                list = new ArrayList(collectionSizeOrDefault);
                 for (String str : set) {
-                    arrayList.add(FilterFab.Companion.mapNameToEnum(str));
+                    list.add(FilterFab.Companion.mapNameToEnum(str));
                 }
-                collection = arrayList;
+            } else {
+                list = null;
             }
-            if (collection == null) {
-                collection = CollectionsKt__CollectionsKt.emptyList();
+            if (list == null) {
+                list = CollectionsKt__CollectionsKt.emptyList();
             }
-            mutableSet = CollectionsKt___CollectionsKt.toMutableSet(collection);
+            mutableSet = CollectionsKt___CollectionsKt.toMutableSet(list);
             return mutableSet;
         }
     }

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;Landroid/view/View;)V
     .locals 0
 
-    .line 1570
+    .line 1572
     iput-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$4;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     iput-object p2, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$4;->val$v:Landroid/view/View;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1573
+    .line 1575
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$4;->val$v:Landroid/view/View;
 
     const/16 v0, 0x8
@@ -48,7 +48,7 @@
 
     const/4 p1, 0x0
 
-    .line 1575
+    .line 1577
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$4;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
@@ -62,7 +62,7 @@
 
     if-ge p1, v0, :cond_1
 
-    .line 1576
+    .line 1578
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$4;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     iget-object v0, v0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -73,10 +73,10 @@
 
     move-result-object v0
 
-    .line 1577
+    .line 1579
     iget-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$4;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
-    invoke-static {v1}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->access$100(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v1}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->access$200(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v1
 
@@ -84,7 +84,7 @@
 
     const/4 v1, 0x0
 
-    .line 1578
+    .line 1580
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
     :cond_0

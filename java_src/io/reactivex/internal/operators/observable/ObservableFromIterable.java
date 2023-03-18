@@ -49,22 +49,22 @@ public final class ObservableFromIterable<T> extends Observable<T> {
         boolean fusionMode;
 
         /* renamed from: it */
-        final Iterator<? extends T> f449it;
+        final Iterator<? extends T> f454it;
 
         FromIterableDisposable(Observer<? super T> observer, Iterator<? extends T> it) {
             this.downstream = observer;
-            this.f449it = it;
+            this.f454it = it;
         }
 
         void run() {
             while (!isDisposed()) {
                 try {
-                    this.downstream.onNext(ObjectHelper.requireNonNull(this.f449it.next(), "The iterator returned a null value"));
+                    this.downstream.onNext(ObjectHelper.requireNonNull(this.f454it.next(), "The iterator returned a null value"));
                     if (isDisposed()) {
                         return;
                     }
                     try {
-                        if (!this.f449it.hasNext()) {
+                        if (!this.f454it.hasNext()) {
                             if (isDisposed()) {
                                 return;
                             }
@@ -99,14 +99,14 @@ public final class ObservableFromIterable<T> extends Observable<T> {
                 return null;
             }
             if (this.checkNext) {
-                if (!this.f449it.hasNext()) {
+                if (!this.f454it.hasNext()) {
                     this.done = true;
                     return null;
                 }
             } else {
                 this.checkNext = true;
             }
-            return (T) ObjectHelper.requireNonNull(this.f449it.next(), "The iterator returned a null value");
+            return (T) ObjectHelper.requireNonNull(this.f454it.next(), "The iterator returned a null value");
         }
 
         @Override // io.reactivex.internal.fuseable.SimpleQueue

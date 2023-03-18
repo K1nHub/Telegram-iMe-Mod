@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.text.TextUtils;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.gms.common.annotation.KeepForSdk;
 import com.google.android.gms.common.internal.HideFirstParty;
 import com.google.android.gms.common.internal.ShowFirstParty;
@@ -140,7 +140,7 @@ public class GoogleApiAvailabilityLight {
         if (errorResolutionIntent == null) {
             return null;
         }
-        return PendingIntent.getActivity(context, i2, errorResolutionIntent, com.google.android.gms.internal.common.zzd.zza | C0474C.BUFFER_FLAG_FIRST_SAMPLE);
+        return PendingIntent.getActivity(context, i2, errorResolutionIntent, com.google.android.gms.internal.common.zzd.zza | C0468C.BUFFER_FLAG_FIRST_SAMPLE);
     }
 
     @KeepForSdk

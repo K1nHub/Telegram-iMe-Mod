@@ -9,13 +9,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;,
+        Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$Oneinch;,
+        Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$PancakeSwap;,
+        Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$Symbiosis;,
         Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$Uniswap;,
         Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$UniswapV3;,
-        Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$PancakeSwap;,
-        Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$Oneinch;,
-        Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$Symbiosis;,
-        Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$Unknown;,
-        Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;
+        Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$Unknown;
     }
 .end annotation
 

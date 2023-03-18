@@ -862,7 +862,7 @@
     :cond_b
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "x509TrustManager == null"
+    const-string/jumbo v1, "x509TrustManager == null"
 
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

@@ -16,11 +16,7 @@ public final class BundleKt {
     public static final Bundle bundleOf(Pair<String, ? extends Object>... pairs) {
         Intrinsics.checkNotNullParameter(pairs, "pairs");
         Bundle bundle = new Bundle(pairs.length);
-        int length = pairs.length;
-        int i = 0;
-        while (i < length) {
-            Pair<String, ? extends Object> pair = pairs[i];
-            i++;
+        for (Pair<String, ? extends Object> pair : pairs) {
             String component1 = pair.component1();
             Object component2 = pair.component2();
             if (component2 == null) {
@@ -67,30 +63,31 @@ public final class BundleKt {
                 Class<?> componentType = component2.getClass().getComponentType();
                 Intrinsics.checkNotNull(componentType);
                 if (Parcelable.class.isAssignableFrom(componentType)) {
+                    Intrinsics.checkNotNull(component2, "null cannot be cast to non-null type kotlin.Array<android.os.Parcelable>");
                     bundle.putParcelableArray(component1, (Parcelable[]) component2);
                 } else if (String.class.isAssignableFrom(componentType)) {
+                    Intrinsics.checkNotNull(component2, "null cannot be cast to non-null type kotlin.Array<kotlin.String>");
                     bundle.putStringArray(component1, (String[]) component2);
                 } else if (CharSequence.class.isAssignableFrom(componentType)) {
+                    Intrinsics.checkNotNull(component2, "null cannot be cast to non-null type kotlin.Array<kotlin.CharSequence>");
                     bundle.putCharSequenceArray(component1, (CharSequence[]) component2);
                 } else if (Serializable.class.isAssignableFrom(componentType)) {
                     bundle.putSerializable(component1, (Serializable) component2);
                 } else {
-                    String canonicalName = componentType.getCanonicalName();
-                    throw new IllegalArgumentException("Illegal value array type " + ((Object) canonicalName) + " for key \"" + component1 + '\"');
+                    throw new IllegalArgumentException("Illegal value array type " + componentType.getCanonicalName() + " for key \"" + component1 + '\"');
                 }
             } else if (component2 instanceof Serializable) {
                 bundle.putSerializable(component1, (Serializable) component2);
             } else {
-                int i2 = Build.VERSION.SDK_INT;
-                if (i2 >= 18 && (component2 instanceof IBinder)) {
-                    bundle.putBinder(component1, (IBinder) component2);
-                } else if (i2 >= 21 && (component2 instanceof Size)) {
-                    bundle.putSize(component1, (Size) component2);
-                } else if (i2 >= 21 && (component2 instanceof SizeF)) {
-                    bundle.putSizeF(component1, (SizeF) component2);
+                int i = Build.VERSION.SDK_INT;
+                if (i >= 18 && (component2 instanceof IBinder)) {
+                    BundleApi18ImplKt.putBinder(bundle, component1, (IBinder) component2);
+                } else if (i >= 21 && (component2 instanceof Size)) {
+                    BundleApi21ImplKt.putSize(bundle, component1, (Size) component2);
+                } else if (i >= 21 && (component2 instanceof SizeF)) {
+                    BundleApi21ImplKt.putSizeF(bundle, component1, (SizeF) component2);
                 } else {
-                    String canonicalName2 = component2.getClass().getCanonicalName();
-                    throw new IllegalArgumentException("Illegal value type " + ((Object) canonicalName2) + " for key \"" + component1 + '\"');
+                    throw new IllegalArgumentException("Illegal value type " + component2.getClass().getCanonicalName() + " for key \"" + component1 + '\"');
                 }
             }
         }

@@ -53,22 +53,25 @@ public final class BotsCategoriesAdapter extends RecyclerListView.SelectionAdapt
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         if (getItemViewType(i) == 0) {
-            DisplayingBotsCategory displayingBotsCategory = (DisplayingBotsCategory) this.content.get(i);
+            Object obj = this.content.get(i);
+            Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type com.smedialink.ui.shop.view.model.DisplayingBotsCategory");
+            DisplayingBotsCategory displayingBotsCategory = (DisplayingBotsCategory) obj;
             View view = holder.itemView;
             BotCategoryTitleView botCategoryTitleView = view instanceof BotCategoryTitleView ? (BotCategoryTitleView) view : null;
-            if (botCategoryTitleView == null) {
+            if (botCategoryTitleView != null) {
+                botCategoryTitleView.setText(displayingBotsCategory.getTitle());
                 return;
             }
-            botCategoryTitleView.setText(displayingBotsCategory.getTitle());
             return;
         }
-        DisplayingBots displayingBots = (DisplayingBots) this.content.get(i);
+        Object obj2 = this.content.get(i);
+        Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type com.smedialink.ui.shop.view.model.DisplayingBots");
+        DisplayingBots displayingBots = (DisplayingBots) obj2;
         View view2 = holder.itemView;
         BotsListView botsListView = view2 instanceof BotsListView ? (BotsListView) view2 : null;
-        if (botsListView == null) {
-            return;
+        if (botsListView != null) {
+            botsListView.setContent(displayingBots.getItems());
         }
-        botsListView.setContent(displayingBots.getItems());
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter

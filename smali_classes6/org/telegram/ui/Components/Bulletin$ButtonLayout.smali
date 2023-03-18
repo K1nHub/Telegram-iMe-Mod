@@ -28,10 +28,10 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 1010
+    .line 1011
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Bulletin$Layout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1011
+    .line 1012
     iput-object p2, p0, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-void
@@ -42,7 +42,7 @@
 .method public getButton()Lorg/telegram/ui/Components/Bulletin$Button;
     .locals 1
 
-    .line 1036
+    .line 1037
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;->button:Lorg/telegram/ui/Components/Bulletin$Button;
 
     return-object v0
@@ -51,14 +51,14 @@
 .method protected measureChildWithMargins(Landroid/view/View;IIII)V
     .locals 6
 
-    .line 1025
+    .line 1026
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;->button:Lorg/telegram/ui/Components/Bulletin$Button;
 
     if-eqz v0, :cond_0
 
     if-eq p1, v0, :cond_0
 
-    .line 1026
+    .line 1027
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -86,22 +86,22 @@
 
     move v5, p5
 
-    .line 1028
+    .line 1029
     invoke-super/range {v0 .. v5}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 1029
+    .line 1030
     iget-object p2, p0, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;->button:Lorg/telegram/ui/Components/Bulletin$Button;
 
     if-eq p1, p2, :cond_1
 
-    .line 1030
+    .line 1031
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p2
 
     check-cast p2, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 1031
+    .line 1032
     iget p3, p0, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;->childrenMeasuredWidth:I
 
     iget p4, p2, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
@@ -131,13 +131,13 @@
 
     const/4 v0, 0x0
 
-    .line 1016
+    .line 1017
     iput v0, p0, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;->childrenMeasuredWidth:I
 
-    .line 1017
+    .line 1018
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 1018
+    .line 1019
     iget-object p2, p0, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;->button:Lorg/telegram/ui/Components/Bulletin$Button;
 
     if-eqz p2, :cond_0
@@ -150,7 +150,7 @@
 
     if-ne p1, p2, :cond_0
 
-    .line 1019
+    .line 1020
     iget p1, p0, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;->childrenMeasuredWidth:I
 
     iget-object p2, p0, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;->button:Lorg/telegram/ui/Components/Bulletin$Button;
@@ -174,26 +174,26 @@
 .method public setButton(Lorg/telegram/ui/Components/Bulletin$Button;)V
     .locals 3
 
-    .line 1040
+    .line 1041
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;->button:Lorg/telegram/ui/Components/Bulletin$Button;
 
     if-eqz v0, :cond_0
 
-    .line 1041
+    .line 1042
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/Bulletin$Layout;->removeCallback(Lorg/telegram/ui/Components/Bulletin$Layout$Callback;)V
 
-    .line 1042
+    .line 1043
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;->button:Lorg/telegram/ui/Components/Bulletin$Button;
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 1044
+    .line 1045
     :cond_0
     iput-object p1, p0, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;->button:Lorg/telegram/ui/Components/Bulletin$Button;
 
     if-eqz p1, :cond_1
 
-    .line 1046
+    .line 1047
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Layout;->addCallback(Lorg/telegram/ui/Components/Bulletin$Layout$Callback;)V
 
     const/4 v0, 0x0
@@ -202,7 +202,7 @@
 
     const/high16 v2, -0x40000000    # -2.0f
 
-    .line 1047
+    .line 1048
     invoke-static {v2, v2, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrameRelatively(FFI)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
@@ -216,7 +216,7 @@
 .method public setTimer()V
     .locals 8
 
-    .line 1052
+    .line 1053
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$TimerView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -231,10 +231,10 @@
 
     const-wide/16 v1, 0x1388
 
-    .line 1053
+    .line 1054
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin$TimerView;->access$1902(Lorg/telegram/ui/Components/Bulletin$TimerView;J)J
 
-    .line 1054
+    .line 1055
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;->timerView:Lorg/telegram/ui/Components/Bulletin$TimerView;
 
     const/high16 v1, 0x41a00000    # 20.0f

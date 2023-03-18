@@ -142,7 +142,7 @@
 .end method
 
 .method public setOffset(F)V
-    .locals 1
+    .locals 2
 
     .line 45
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -161,23 +161,53 @@
 
     cmpl-float p1, p1, v0
 
-    if-nez p1, :cond_0
+    if-nez p1, :cond_1
 
     .line 47
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/DoubleLimitsPageView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v0, 0x0
 
+    invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->findViewHolderForAdapterPosition(I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lorg/telegram/ui/Components/Premium/DoubleLimitsPageView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->findViewHolderForAdapterPosition(I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+
+    move-result-object p1
+
+    iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getTop()I
+
+    move-result p1
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/Premium/DoubleLimitsPageView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    invoke-virtual {v1}, Landroid/view/ViewGroup;->getPaddingTop()I
+
+    move-result v1
+
+    if-eq p1, v1, :cond_1
+
+    .line 48
+    :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/Components/Premium/DoubleLimitsPageView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
+
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->scrollToPosition(I)V
 
-    :cond_0
+    :cond_1
     return-void
 .end method
 
 .method public setTopOffset(I)V
     .locals 2
 
-    .line 53
+    .line 55
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/DoubleLimitsPageView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, 0x0

@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ChannelTracer {
     static final Logger logger = Logger.getLogger(ChannelLogger.class.getName());
     private final Collection<InternalChannelz$ChannelTrace$Event> events;
@@ -36,7 +36,7 @@ public final class ChannelTracer {
                         removeFirst();
                     }
                     ChannelTracer.access$008(ChannelTracer.this);
-                    return super.add((C22551) internalChannelz$ChannelTrace$Event);
+                    return super.add((C23791) internalChannelz$ChannelTrace$Event);
                 }
             };
         } else {
@@ -48,8 +48,8 @@ public final class ChannelTracer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: io.grpc.internal.ChannelTracer$2 */
-    /* loaded from: classes3.dex */
-    public static /* synthetic */ class C22562 {
+    /* loaded from: classes4.dex */
+    public static /* synthetic */ class C23802 {
         static final /* synthetic */ int[] $SwitchMap$io$grpc$InternalChannelz$ChannelTrace$Event$Severity;
 
         static {
@@ -69,7 +69,7 @@ public final class ChannelTracer {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void reportEvent(InternalChannelz$ChannelTrace$Event internalChannelz$ChannelTrace$Event) {
         Level level;
-        int i = C22562.$SwitchMap$io$grpc$InternalChannelz$ChannelTrace$Event$Severity[internalChannelz$ChannelTrace$Event.severity.ordinal()];
+        int i = C23802.$SwitchMap$io$grpc$InternalChannelz$ChannelTrace$Event$Severity[internalChannelz$ChannelTrace$Event.severity.ordinal()];
         if (i == 1) {
             level = Level.FINE;
         } else if (i == 2) {

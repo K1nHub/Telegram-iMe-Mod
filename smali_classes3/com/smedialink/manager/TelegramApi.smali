@@ -70,6 +70,21 @@
     .end annotation
 .end method
 
+.method public abstract getUsersByIds(Ljava/util/List;)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Long;",
+            ">;)",
+            "Lio/reactivex/Observable<",
+            "Ljava/util/List<",
+            "Lorg/telegram/tgnet/TLRPC$User;",
+            ">;>;"
+        }
+    .end annotation
+.end method
+
 .method public abstract subscribeToChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {

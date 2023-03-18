@@ -26,16 +26,12 @@
 
 # direct methods
 .method public constructor <init>(Lcom/smedialink/ui/topics/TopicsAlert;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 251
     iput-object p1, p0, Lcom/smedialink/ui/topics/TopicsAlert$RootView;->this$0:Lcom/smedialink/ui/topics/TopicsAlert;

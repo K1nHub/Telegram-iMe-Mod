@@ -15,11 +15,26 @@ public final class WalletSwapDataSourceFactory implements DataSourceFactory<Swap
 
         static {
             int[] iArr = new int[SwapProtocol.values().length];
-            iArr[SwapProtocol.UNISWAP.ordinal()] = 1;
-            iArr[SwapProtocol.UNISWAP_V3.ordinal()] = 2;
-            iArr[SwapProtocol.PANCAKESWAP.ordinal()] = 3;
-            iArr[SwapProtocol.ONEINCH.ordinal()] = 4;
-            iArr[SwapProtocol.SYMBIOSIS.ordinal()] = 5;
+            try {
+                iArr[SwapProtocol.UNISWAP.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[SwapProtocol.UNISWAP_V3.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[SwapProtocol.PANCAKESWAP.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[SwapProtocol.ONEINCH.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[SwapProtocol.SYMBIOSIS.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }

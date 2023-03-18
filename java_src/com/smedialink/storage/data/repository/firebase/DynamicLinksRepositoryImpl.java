@@ -3,12 +3,14 @@ package com.smedialink.storage.data.repository.firebase;
 import com.google.firebase.dynamiclinks.PendingDynamicLinkData;
 import com.smedialink.storage.data.network.api.google.DynamicLinksApi;
 import com.smedialink.storage.data.network.handlers.impl.ApiErrorHandler;
-import com.smedialink.storage.data.utils.extentions.RxExtKt$handleError$1;
+import com.smedialink.storage.data.utils.extentions.RxExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.smedialink.storage.data.utils.system.AndroidActivityHolder;
 import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.google.DynamicLinkData;
 import com.smedialink.storage.domain.repository.firebase.DynamicLinksRepository;
 import io.reactivex.Observable;
+import io.reactivex.functions.Function;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DynamicLinksRepositoryImpl.kt */
 /* loaded from: classes3.dex */
@@ -27,17 +29,25 @@ public final class DynamicLinksRepositoryImpl implements DynamicLinksRepository 
     public Observable<Result<DynamicLinkData>> getLink(AndroidActivityHolder holder, String url) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(url, "url");
-        Observable<R> map = this.dynamicLinksApi.getLink(holder, url).map(DynamicLinksRepositoryImpl$$ExternalSyntheticLambda0.INSTANCE);
+        Observable<PendingDynamicLinkData> link = this.dynamicLinksApi.getLink(holder, url);
+        final DynamicLinksRepositoryImpl$getLink$1 dynamicLinksRepositoryImpl$getLink$1 = DynamicLinksRepositoryImpl$getLink$1.INSTANCE;
+        Observable<R> map = link.map(new Function() { // from class: com.smedialink.storage.data.repository.firebase.DynamicLinksRepositoryImpl$$ExternalSyntheticLambda0
+            @Override // io.reactivex.functions.Function
+            public final Object apply(Object obj) {
+                Result link$lambda$0;
+                link$lambda$0 = DynamicLinksRepositoryImpl.getLink$lambda$0(Function1.this, obj);
+                return link$lambda$0;
+            }
+        });
         Intrinsics.checkNotNullExpressionValue(map, "dynamicLinksApi\n        …ponse.link).toSuccess() }");
-        Observable<Result<DynamicLinkData>> onErrorReturn = map.onErrorReturn(new RxExtKt$handleError$1(this.errorHandler));
+        Observable<Result<DynamicLinkData>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new DynamicLinksRepositoryImpl$getLink$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getLink$lambda-0  reason: not valid java name */
-    public static final Result m1366getLink$lambda0(PendingDynamicLinkData response) {
-        Intrinsics.checkNotNullParameter(response, "response");
-        return Result.Companion.success(DynamicLinkData.Companion.parseDynamicLink(response.getLink()));
+    public static final Result getLink$lambda$0(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (Result) tmp0.invoke(obj);
     }
 }

@@ -54,7 +54,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
     }
 
     public AnimatedEmojiSpan(TLRPC$Document tLRPC$Document, Paint.FontMetricsInt fontMetricsInt) {
-        this(tLRPC$Document.f1502id, 1.2f, fontMetricsInt);
+        this(tLRPC$Document.f1507id, 1.2f, fontMetricsInt);
         this.document = tLRPC$Document;
     }
 
@@ -93,7 +93,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
 
     public long getDocumentId() {
         TLRPC$Document tLRPC$Document = this.document;
-        return tLRPC$Document != null ? tLRPC$Document.f1502id : this.documentId;
+        return tLRPC$Document != null ? tLRPC$Document.f1507id : this.documentId;
     }
 
     public void replaceFontMetrics(Paint.FontMetricsInt fontMetricsInt) {
@@ -702,7 +702,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
 
         private void checkBackgroundRendering() {
             DrawingInBackgroundThreadDrawable drawingInBackgroundThreadDrawable;
-            if (this.allowBackgroundRendering && this.holders.size() >= 10 && this.backgroundThreadDrawable == null && LiteMode.isEnabled(4)) {
+            if (this.allowBackgroundRendering && this.holders.size() >= 10 && this.backgroundThreadDrawable == null && LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD)) {
                 DrawingInBackgroundThreadDrawable drawingInBackgroundThreadDrawable2 = new DrawingInBackgroundThreadDrawable() { // from class: org.telegram.ui.Components.AnimatedEmojiSpan.SpansChunk.1
                     private final ArrayList<AnimatedEmojiHolder> backgroundHolders = new ArrayList<>();
 

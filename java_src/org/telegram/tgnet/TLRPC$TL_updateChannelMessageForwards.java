@@ -6,12 +6,12 @@ public class TLRPC$TL_updateChannelMessageForwards extends TLRPC$Update {
     public int forwards;
 
     /* renamed from: id */
-    public int f1625id;
+    public int f1631id;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         this.channel_id = abstractSerializedData.readInt64(z);
-        this.f1625id = abstractSerializedData.readInt32(z);
+        this.f1631id = abstractSerializedData.readInt32(z);
         this.forwards = abstractSerializedData.readInt32(z);
     }
 
@@ -19,7 +19,7 @@ public class TLRPC$TL_updateChannelMessageForwards extends TLRPC$Update {
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeInt64(this.channel_id);
-        abstractSerializedData.writeInt32(this.f1625id);
+        abstractSerializedData.writeInt32(this.f1631id);
         abstractSerializedData.writeInt32(this.forwards);
     }
 }

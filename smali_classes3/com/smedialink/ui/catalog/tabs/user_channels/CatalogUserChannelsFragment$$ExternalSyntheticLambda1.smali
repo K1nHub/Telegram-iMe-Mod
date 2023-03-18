@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;
 
-    invoke-static {v0}, Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;->$r8$lambda$qq9vqk_9cLGQM3E6bquSgSPGc-4(Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;)V
+    invoke-static {v0}, Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;->$r8$lambda$fy-TdKpAFRtuBtFtx5p3vABLKaE(Lcom/smedialink/ui/catalog/tabs/user_channels/CatalogUserChannelsFragment;)V
 
     return-void
 .end method

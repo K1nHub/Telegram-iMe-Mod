@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBaseFragmentExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BaseFragmentExt.kt\ncom/smedialink/utils/extentions/common/BaseFragmentExtKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,37:1\n286#2,2:38\n286#2,2:40\n1#3:42\n*S KotlinDebug\n*F\n+ 1 BaseFragmentExt.kt\ncom/smedialink/utils/extentions/common/BaseFragmentExtKt\n*L\n14#1:38,2\n19#1:40,2\n*E\n"
+    value = "SMAP\nBaseFragmentExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BaseFragmentExt.kt\ncom/smedialink/utils/extentions/common/BaseFragmentExtKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,37:1\n288#2,2:38\n288#2,2:40\n1#3:42\n*S KotlinDebug\n*F\n+ 1 BaseFragmentExt.kt\ncom/smedialink/utils/extentions/common/BaseFragmentExtKt\n*L\n14#1:38,2\n19#1:40,2\n*E\n"
 .end annotation
 
 
@@ -38,31 +38,25 @@
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_2
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getFragmentStack()Ljava/util/List;
 
     move-result-object p0
 
-    if-nez p0, :cond_1
+    if-eqz p0, :cond_2
 
-    goto :goto_0
-
-    .line 286
-    :cond_1
+    .line 288
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    :cond_2
+    :cond_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_1
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -77,25 +71,25 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_0
 
     move-object v0, v1
 
-    .line 287
-    :cond_3
+    .line 289
+    :cond_1
     check-cast v0, Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    :goto_0
-    if-eqz v0, :cond_4
+    :cond_2
+    if-eqz v0, :cond_3
 
     const/4 p0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_4
+    :cond_3
     const/4 p0, 0x0
 
-    :goto_1
+    :goto_0
     return p0
 .end method
 
@@ -156,31 +150,25 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_3
 
-    goto :goto_2
-
-    :cond_0
     invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getFragmentStack()Ljava/util/List;
 
     move-result-object p0
 
-    if-nez p0, :cond_1
+    if-eqz p0, :cond_3
 
-    goto :goto_2
-
-    .line 286
-    :cond_1
+    .line 288
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    :cond_2
+    :cond_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_2
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -195,7 +183,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_1
 
     invoke-virtual {p1, v1}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -213,35 +201,32 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_1
 
     const/4 v1, 0x1
 
     goto :goto_0
 
-    :cond_3
+    :cond_1
     const/4 v1, 0x0
 
     :goto_0
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_0
 
     goto :goto_1
 
-    :cond_4
+    :cond_2
     const/4 v0, 0x0
 
     :goto_1
     check-cast v0, Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    if-nez v0, :cond_5
-
-    goto :goto_2
+    if-eqz v0, :cond_3
 
     .line 15
-    :cond_5
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
-    :goto_2
+    :cond_3
     return-void
 .end method
 

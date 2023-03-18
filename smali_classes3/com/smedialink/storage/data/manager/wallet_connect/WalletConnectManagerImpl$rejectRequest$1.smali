@@ -56,7 +56,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 186
+    .line 187
     invoke-virtual {p0}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$rejectRequest$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -67,7 +67,7 @@
 .method public final invoke()V
     .locals 7
 
-    .line 186
+    .line 187
     iget-object v0, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$rejectRequest$1;->this$0:Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     invoke-static {v0}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getWcClients$p(Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Ljava/util/Map;
@@ -84,11 +84,8 @@
 
     check-cast v1, Lcom/trustwallet/walletconnect/WCClient;
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     iget-wide v2, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$rejectRequest$1;->$requestId:J
 
     const/4 v4, 0x0
@@ -99,6 +96,6 @@
 
     invoke-static/range {v1 .. v6}, Lcom/trustwallet/walletconnect/WCClient;->rejectRequest$default(Lcom/trustwallet/walletconnect/WCClient;JLjava/lang/String;ILjava/lang/Object;)Z
 
-    :goto_0
+    :cond_0
     return-void
 .end method

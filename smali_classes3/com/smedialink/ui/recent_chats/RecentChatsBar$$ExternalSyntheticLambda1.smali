@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/recent_chats/RecentChatsBar;
 
-    invoke-static {v0, p1, p2}, Lcom/smedialink/ui/recent_chats/RecentChatsBar;->$r8$lambda$2jOcLcwcA3n-xa5Atf695rFLNrA(Lcom/smedialink/ui/recent_chats/RecentChatsBar;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2}, Lcom/smedialink/ui/recent_chats/RecentChatsBar;->$r8$lambda$Ww2f5_IO0ateJxuCSSgnEOWdSZQ(Lcom/smedialink/ui/recent_chats/RecentChatsBar;Landroid/view/View;I)V
 
     return-void
 .end method

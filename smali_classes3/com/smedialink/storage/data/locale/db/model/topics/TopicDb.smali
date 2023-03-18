@@ -381,7 +381,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/locale/db/model/topics/TopicDb;->name:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", icon="
 
@@ -389,7 +389,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/locale/db/model/topics/TopicDb;->icon:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", order="
 

@@ -33,7 +33,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda94;->f$1:I
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$-JWPeNHLUveA5UqrCvTPswrC-a8([ZILandroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$mdrty7mxUr6b1ZEaWOrI8x8pq20([ZILandroid/view/View;)V
 
     return-void
 .end method

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/chad/library/adapter/base/BaseQuickAdapter$$ExternalSyntheticLambda2;->f$1:Lcom/chad/library/adapter/base/BaseQuickAdapter;
 
-    invoke-static {v0, v1, p1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->$r8$lambda$MbMlS2ILMWb5ym3uHOt0lVti5ew(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;)Z
+    invoke-static {v0, v1, p1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->$r8$lambda$YasEa5FRMJowQ1X9Hh4Ub2I2yag(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;)Z
 
     move-result p1
 

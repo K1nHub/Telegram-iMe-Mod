@@ -44,7 +44,7 @@ import org.fork.p046ui.dialog.SelectedFilesBottomSheet;
 import org.fork.utils.Callbacks$Callback1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
@@ -83,10 +83,6 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         return false;
     }
 
-    public final Activity getActivity() {
-        return this.activity;
-    }
-
     public final Callbacks$Callback1<ArrayList<Uri>> getOnFilesChangedAction() {
         return this.onFilesChangedAction;
     }
@@ -120,14 +116,13 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         lazy6 = LazyKt__LazyJVMKt.lazy(new SelectedFilesBottomSheet$listAdapter$2(this));
         this.listAdapter$delegate = lazy6;
         this.files = new ArrayList();
-        RootView rootView = new RootView(this);
+        RootView rootView = new RootView();
         rootView.setWillNotDraw(false);
         rootView.addView(getTopShadow(), LayoutHelper.createFrame(-1, AndroidUtilities.getShadowHeight(), 48, 0, 54, 0, 0));
         rootView.addView(getTitleTextView(), LayoutHelper.createFrame(-1, 56, 48));
         rootView.addView(getListView(), LayoutHelper.createFrame(-1, -1, 48, 0, 54, 0, 48));
         rootView.addView(getBottomShadow(), LayoutHelper.createFrame(-1, AndroidUtilities.getShadowHeight(), 80, 0, 0, 0, 48));
         rootView.addView(getSaveButton(), LayoutHelper.createFrame(-1, 48, 80));
-        Unit unit = Unit.INSTANCE;
         this.containerView = rootView;
         setupListeners();
         mapUrisToUi();
@@ -175,7 +170,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getInternalString(C3158R.string.multiple_files_sending_selected));
+        textView.setText(LocaleController.getInternalString(C3286R.string.multiple_files_sending_selected));
         textView.setTextColor(getThemedColor("dialogTextBlack"));
         textView.setTextSize(1, 20.0f);
         textView.setLinkTextColor(getThemedColor("dialogTextLink"));
@@ -190,7 +185,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setBackground(Theme.createSelectorWithBackgroundDrawable(getThemedColor("dialogBackground"), getThemedColor("listSelectorSDK21")));
-        textView.setText(LocaleController.getString("Save", C3158R.string.Save));
+        textView.setText(LocaleController.getString("Save", C3286R.string.Save));
         textView.setTextColor(getThemedColor("dialogTextBlue2"));
         return textView;
     }
@@ -232,20 +227,21 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         List<FileItem> list2 = this.files;
         for (Uri uri : list) {
             Cursor query = ApplicationLoader.applicationContext.getContentResolver().query(uri, null, null, null, null);
-            if (query == null) {
-                fileItem = new FileItem(uri, "", "");
-            } else {
+            if (query != null) {
+                Intrinsics.checkNotNullExpressionValue(query, "ApplicationLoader.applic…nts.Symbols.EMPTY_STRING)");
                 query.moveToFirst();
                 String string = query.getString(query.getColumnIndex("_display_name"));
                 Intrinsics.checkNotNullExpressionValue(string, "getString(getColumnIndex…bleColumns.DISPLAY_NAME))");
                 String string2 = query.getString(query.getColumnIndex("_size"));
                 Intrinsics.checkNotNullExpressionValue(string2, "getString(getColumnIndex(OpenableColumns.SIZE))");
                 longOrNull = StringsKt__StringNumberConversionsKt.toLongOrNull(string2);
-                String formatFileSize = AndroidUtilities.formatFileSize(longOrNull == null ? 0L : longOrNull.longValue());
+                String formatFileSize = AndroidUtilities.formatFileSize(longOrNull != null ? longOrNull.longValue() : 0L);
                 Intrinsics.checkNotNullExpressionValue(formatFileSize, "formatFileSize(\n        …                        )");
                 FileItem fileItem2 = new FileItem(uri, string, formatFileSize);
                 query.close();
                 fileItem = fileItem2;
+            } else {
+                fileItem = new FileItem(uri, "", "");
             }
             list2.add(fileItem);
         }
@@ -263,7 +259,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.fork.ui.dialog.SelectedFilesBottomSheet$$ExternalSyntheticLambda4
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                SelectedFilesBottomSheet.m2010setupListeners$lambda8$lambda7(SelectedFilesBottomSheet.this, view, i);
+                SelectedFilesBottomSheet.setupListeners$lambda$8$lambda$7(SelectedFilesBottomSheet.this, view, i);
             }
         });
         getListAdapter().setOnItemDeleteClick(new SelectedFilesBottomSheet$setupListeners$2(this));
@@ -271,8 +267,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-8$lambda-7  reason: not valid java name */
-    public static final void m2010setupListeners$lambda8$lambda7(SelectedFilesBottomSheet this$0, View view, int i) {
+    public static final void setupListeners$lambda$8$lambda$7(SelectedFilesBottomSheet this$0, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.openFile(this$0.files.get(i));
     }
@@ -281,27 +276,27 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.ui.dialog.SelectedFilesBottomSheet$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                SelectedFilesBottomSheet.m2007openFile$lambda16(SelectedFilesBottomSheet.FileItem.this, this);
+                SelectedFilesBottomSheet.openFile$lambda$16(SelectedFilesBottomSheet.FileItem.this, this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: openFile$lambda-16  reason: not valid java name */
-    public static final void m2007openFile$lambda16(final FileItem fileItem, final SelectedFilesBottomSheet this$0) {
-        Object m1870constructorimpl;
+    public static final void openFile$lambda$16(final FileItem fileItem, final SelectedFilesBottomSheet this$0) {
+        Object m1463constructorimpl;
         Intrinsics.checkNotNullParameter(fileItem, "$fileItem");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         File checkDirectory = FileLoader.checkDirectory(3);
-        String absolutePath = checkDirectory == null ? null : checkDirectory.getAbsolutePath();
+        String absolutePath = checkDirectory != null ? checkDirectory.getAbsolutePath() : null;
         if (absolutePath == null) {
             return;
         }
-        final File file = new File(absolutePath + ((Object) File.separator) + fileItem.getName());
+        final File file = new File(absolutePath + File.separator + fileItem.getName());
         try {
             Result.Companion companion = Result.Companion;
             InputStream openInputStream = ApplicationLoader.applicationContext.getContentResolver().openInputStream(fileItem.getUri());
             if (openInputStream != null) {
+                Intrinsics.checkNotNullExpressionValue(openInputStream, "ApplicationLoader.applic…    ?: return@runCatching");
                 byte[] bArr = new byte[1024];
                 FileOutputStream fileOutputStream = new FileOutputStream(file);
                 while (true) {
@@ -315,49 +310,47 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
                 openInputStream.close();
                 fileOutputStream.close();
             }
-            m1870constructorimpl = Result.m1870constructorimpl(Unit.INSTANCE);
+            m1463constructorimpl = Result.m1463constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1870constructorimpl = Result.m1870constructorimpl(ResultKt.createFailure(th));
+            m1463constructorimpl = Result.m1463constructorimpl(ResultKt.createFailure(th));
         }
-        final Throwable m1871exceptionOrNullimpl = Result.m1871exceptionOrNullimpl(m1870constructorimpl);
-        if (m1871exceptionOrNullimpl != null) {
+        final Throwable m1464exceptionOrNullimpl = Result.m1464exceptionOrNullimpl(m1463constructorimpl);
+        if (m1464exceptionOrNullimpl != null) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.ui.dialog.SelectedFilesBottomSheet$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SelectedFilesBottomSheet.m2008openFile$lambda16$lambda13$lambda12(m1871exceptionOrNullimpl);
+                    SelectedFilesBottomSheet.openFile$lambda$16$lambda$13$lambda$12(m1464exceptionOrNullimpl);
                 }
             });
         }
-        if (Result.m1873isSuccessimpl(m1870constructorimpl)) {
-            Unit unit = (Unit) m1870constructorimpl;
+        if (Result.m1466isSuccessimpl(m1463constructorimpl)) {
+            Unit unit = (Unit) m1463constructorimpl;
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.ui.dialog.SelectedFilesBottomSheet$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SelectedFilesBottomSheet.m2009openFile$lambda16$lambda15$lambda14(file, fileItem, this$0);
+                    SelectedFilesBottomSheet.openFile$lambda$16$lambda$15$lambda$14(file, fileItem, this$0);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: openFile$lambda-16$lambda-13$lambda-12  reason: not valid java name */
-    public static final void m2008openFile$lambda16$lambda13$lambda12(Throwable it) {
+    public static final void openFile$lambda$16$lambda$13$lambda$12(Throwable it) {
         Intrinsics.checkNotNullParameter(it, "$it");
         Timber.m4e(it);
         ThrowableExtKt.showToast(it);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: openFile$lambda-16$lambda-15$lambda-14  reason: not valid java name */
-    public static final void m2009openFile$lambda16$lambda15$lambda14(File file, FileItem fileItem, SelectedFilesBottomSheet this$0) {
+    public static final void openFile$lambda$16$lambda$15$lambda$14(File file, FileItem fileItem, SelectedFilesBottomSheet this$0) {
         Intrinsics.checkNotNullParameter(file, "$file");
         Intrinsics.checkNotNullParameter(fileItem, "$fileItem");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         String name = fileItem.getName();
         Uri fromFile = Uri.fromFile(file);
         Intrinsics.checkNotNullExpressionValue(fromFile, "fromFile(this)");
-        AndroidUtilities.openForView(file, name, Utilities.getMimeType(fromFile), this$0.getActivity(), this$0.resourcesProvider);
+        AndroidUtilities.openForView(file, name, Utilities.getMimeType(fromFile), this$0.activity, this$0.resourcesProvider);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -444,7 +437,6 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             });
             animatorSet2.setDuration(150L);
             animatorSet2.start();
-            Unit unit = Unit.INSTANCE;
             this.shadowAnimation = animatorSet2;
         }
     }
@@ -456,21 +448,17 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         private boolean fullHeight;
         private int lastNotifyWidth;
         private final RectF rect;
-        final /* synthetic */ SelectedFilesBottomSheet this$0;
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public RootView(SelectedFilesBottomSheet this$0) {
-            super(this$0.getContext());
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public RootView() {
+            super(SelectedFilesBottomSheet.this.getContext());
             this.rect = new RectF();
         }
 
         @Override // android.view.ViewGroup
         public boolean onInterceptTouchEvent(MotionEvent ev) {
             Intrinsics.checkNotNullParameter(ev, "ev");
-            if (ev.getAction() == 0 && this.this$0.scrollOffsetY != 0 && ev.getY() < this.this$0.scrollOffsetY) {
-                this.this$0.dismiss();
+            if (ev.getAction() == 0 && SelectedFilesBottomSheet.this.scrollOffsetY != 0 && ev.getY() < SelectedFilesBottomSheet.this.scrollOffsetY) {
+                SelectedFilesBottomSheet.this.dismiss();
                 return true;
             }
             return super.onInterceptTouchEvent(ev);
@@ -479,29 +467,29 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         @Override // android.view.View
         public boolean onTouchEvent(MotionEvent e) {
             Intrinsics.checkNotNullParameter(e, "e");
-            return !this.this$0.isDismissed() && super.onTouchEvent(e);
+            return !SelectedFilesBottomSheet.this.isDismissed() && super.onTouchEvent(e);
         }
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
             int size = View.MeasureSpec.getSize(i2);
-            this.this$0.ignoreLayout = true;
+            SelectedFilesBottomSheet.this.ignoreLayout = true;
             setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
-            this.this$0.ignoreLayout = false;
-            this.this$0.itemWidth = View.MeasureSpec.getSize(i);
-            int m50dp = AndroidUtilities.m50dp(110) + (this.this$0.files.size() * AndroidUtilities.m50dp(60)) + ((BottomSheet) this.this$0).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
+            SelectedFilesBottomSheet.this.ignoreLayout = false;
+            SelectedFilesBottomSheet.this.itemWidth = View.MeasureSpec.getSize(i);
+            int m50dp = AndroidUtilities.m50dp(110) + (SelectedFilesBottomSheet.this.files.size() * AndroidUtilities.m50dp(60)) + ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
             int i3 = size / 5;
             int i4 = ((float) m50dp) < ((float) i3) * 3.2f ? 0 : i3 * 2;
             if (i4 != 0 && m50dp < size) {
                 i4 -= size - m50dp;
             }
             if (i4 == 0) {
-                i4 = ((BottomSheet) this.this$0).backgroundPaddingTop;
+                i4 = ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop;
             }
-            if (this.this$0.getListView().getPaddingTop() != i4) {
-                this.this$0.ignoreLayout = true;
-                this.this$0.getListView().setPadding(0, i4, 0, 0);
-                this.this$0.ignoreLayout = false;
+            if (SelectedFilesBottomSheet.this.getListView().getPaddingTop() != i4) {
+                SelectedFilesBottomSheet.this.ignoreLayout = true;
+                SelectedFilesBottomSheet.this.getListView().setPadding(0, i4, 0, 0);
+                SelectedFilesBottomSheet.this.ignoreLayout = false;
             }
             this.fullHeight = m50dp >= size;
             super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m50dp, size), 1073741824));
@@ -512,15 +500,15 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             int i5 = i3 - i;
             if (this.lastNotifyWidth != i5) {
                 this.lastNotifyWidth = i5;
-                this.this$0.getListAdapter().notifyDataSetChanged();
+                SelectedFilesBottomSheet.this.getListAdapter().notifyDataSetChanged();
             }
             super.onLayout(z, i, i2, i3, i4);
-            this.this$0.updateLayout();
+            SelectedFilesBottomSheet.this.updateLayout();
         }
 
         @Override // android.view.View, android.view.ViewParent
         public void requestLayout() {
-            if (this.this$0.ignoreLayout) {
+            if (SelectedFilesBottomSheet.this.ignoreLayout) {
                 return;
             }
             super.requestLayout();
@@ -549,8 +537,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
     /* renamed from: org.fork.ui.dialog.SelectedFilesBottomSheet$FilesAdapter */
     /* loaded from: classes4.dex */
     public final class FilesAdapter extends RecyclerListView.SelectionAdapter {
-        private Function1<? super Integer, Unit> onItemDeleteClick;
-        final /* synthetic */ SelectedFilesBottomSheet this$0;
+        private Function1<? super Integer, Unit> onItemDeleteClick = SelectedFilesBottomSheet$FilesAdapter$onItemDeleteClick$1.INSTANCE;
 
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
@@ -558,10 +545,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             return true;
         }
 
-        public FilesAdapter(SelectedFilesBottomSheet this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
-            this.onItemDeleteClick = SelectedFilesBottomSheet$FilesAdapter$onItemDeleteClick$1.INSTANCE;
+        public FilesAdapter() {
         }
 
         public final Function1<Integer, Unit> getOnItemDeleteClick() {
@@ -575,13 +559,13 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            return this.this$0.files.size();
+            return SelectedFilesBottomSheet.this.files.size();
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
             Intrinsics.checkNotNullParameter(parent, "parent");
-            SelectedFilesBottomSheet selectedFilesBottomSheet = this.this$0;
+            SelectedFilesBottomSheet selectedFilesBottomSheet = SelectedFilesBottomSheet.this;
             Context context = selectedFilesBottomSheet.getContext();
             Intrinsics.checkNotNullExpressionValue(context, "context");
             return new RecyclerListView.Holder(new FileView(selectedFilesBottomSheet, context));
@@ -590,7 +574,9 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            ((FileView) holder.itemView).setupView((FileItem) this.this$0.files.get(i), new SelectedFilesBottomSheet$FilesAdapter$onBindViewHolder$1$1(this, i));
+            View view = holder.itemView;
+            Intrinsics.checkNotNull(view, "null cannot be cast to non-null type org.fork.ui.dialog.SelectedFilesBottomSheet.FileView");
+            ((FileView) view).setupView((FileItem) SelectedFilesBottomSheet.this.files.get(i), new SelectedFilesBottomSheet$FilesAdapter$onBindViewHolder$1$1(this, i));
         }
     }
 
@@ -606,15 +592,14 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         final /* synthetic */ SelectedFilesBottomSheet this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public FileView(SelectedFilesBottomSheet this$0, Context context) {
+        public FileView(SelectedFilesBottomSheet selectedFilesBottomSheet, Context context) {
             super(context);
             Lazy lazy;
             Lazy lazy2;
             Lazy lazy3;
             Lazy lazy4;
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullParameter(context, "context");
-            this.this$0 = this$0;
+            this.this$0 = selectedFilesBottomSheet;
             lazy = LazyKt__LazyJVMKt.lazy(new SelectedFilesBottomSheet$FileView$imageView$2(this));
             this.imageView$delegate = lazy;
             lazy2 = LazyKt__LazyJVMKt.lazy(new SelectedFilesBottomSheet$FileView$nameTextView$2(this));
@@ -668,7 +653,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         public final ImageView initImageView() {
             ImageView imageView = new ImageView(getContext());
             SelectedFilesBottomSheet selectedFilesBottomSheet = this.this$0;
-            CombinedDrawable createCircleDrawableWithIcon = Theme.createCircleDrawableWithIcon(AndroidUtilities.m50dp(44), C3158R.C3160drawable.msg_round_file_s);
+            CombinedDrawable createCircleDrawableWithIcon = Theme.createCircleDrawableWithIcon(AndroidUtilities.m50dp(44), C3286R.C3288drawable.msg_round_file_s);
             Theme.setCombinedDrawableColor(createCircleDrawableWithIcon, selectedFilesBottomSheet.getThemedColor("chat_outMediaIcon"), false);
             Theme.setCombinedDrawableColor(createCircleDrawableWithIcon, selectedFilesBottomSheet.getThemedColor("chat_inMediaIcon"), true);
             imageView.setImageDrawable(createCircleDrawableWithIcon);
@@ -701,9 +686,9 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             ImageView imageView = new ImageView(getContext());
             SelectedFilesBottomSheet selectedFilesBottomSheet = this.this$0;
             imageView.setColorFilter(new PorterDuffColorFilter(selectedFilesBottomSheet.getThemedColor("chat_replyPanelClose"), PorterDuff.Mode.MULTIPLY));
-            imageView.setContentDescription(LocaleController.getString("Delete", C3158R.string.Delete));
+            imageView.setContentDescription(LocaleController.getString("Delete", C3286R.string.Delete));
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(C3158R.C3160drawable.input_clear);
+            imageView.setImageResource(C3286R.C3288drawable.input_clear);
             imageView.setBackground(Theme.createSelectorDrawable(selectedFilesBottomSheet.getThemedColor("listSelectorSDK21"), 3));
             return imageView;
         }

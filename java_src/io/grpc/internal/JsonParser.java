@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class JsonParser {
     private static final Logger logger = Logger.getLogger(JsonParser.class.getName());
 
@@ -34,8 +34,8 @@ public final class JsonParser {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: io.grpc.internal.JsonParser$1 */
-    /* loaded from: classes3.dex */
-    public static /* synthetic */ class C23071 {
+    /* loaded from: classes4.dex */
+    public static /* synthetic */ class C24311 {
         static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
 
         static {
@@ -70,7 +70,7 @@ public final class JsonParser {
 
     private static Object parseRecursive(JsonReader jsonReader) throws IOException {
         Preconditions.checkState(jsonReader.hasNext(), "unexpected end of JSON");
-        switch (C23071.$SwitchMap$com$google$gson$stream$JsonToken[jsonReader.peek().ordinal()]) {
+        switch (C24311.$SwitchMap$com$google$gson$stream$JsonToken[jsonReader.peek().ordinal()]) {
             case 1:
                 return parseJsonArray(jsonReader);
             case 2:

@@ -8,30 +8,30 @@ public class RainbowPrivateKeySpec implements KeySpec {
     private short[][] A2inv;
 
     /* renamed from: b1 */
-    private short[] f1407b1;
+    private short[] f1412b1;
 
     /* renamed from: b2 */
-    private short[] f1408b2;
+    private short[] f1413b2;
     private Layer[] layers;
 
     /* renamed from: vi */
-    private int[] f1409vi;
+    private int[] f1414vi;
 
     public RainbowPrivateKeySpec(short[][] sArr, short[] sArr2, short[][] sArr3, short[] sArr4, int[] iArr, Layer[] layerArr) {
         this.A1inv = sArr;
-        this.f1407b1 = sArr2;
+        this.f1412b1 = sArr2;
         this.A2inv = sArr3;
-        this.f1408b2 = sArr4;
-        this.f1409vi = iArr;
+        this.f1413b2 = sArr4;
+        this.f1414vi = iArr;
         this.layers = layerArr;
     }
 
     public short[] getB1() {
-        return this.f1407b1;
+        return this.f1412b1;
     }
 
     public short[] getB2() {
-        return this.f1408b2;
+        return this.f1413b2;
     }
 
     public short[][] getInvA1() {
@@ -47,6 +47,6 @@ public class RainbowPrivateKeySpec implements KeySpec {
     }
 
     public int[] getVi() {
-        return this.f1409vi;
+        return this.f1414vi;
     }
 }

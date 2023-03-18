@@ -1,5 +1,6 @@
 package androidx.core.provider;
 
+import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -20,27 +21,7 @@ import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
 public class FontProvider {
-    private static final Comparator<byte[]> sByteArrayComparator = new Comparator<byte[]>() { // from class: androidx.core.provider.FontProvider.1
-        /* JADX WARN: Multi-variable type inference failed */
-        @Override // java.util.Comparator
-        public int compare(byte[] bArr, byte[] bArr2) {
-            int i;
-            int i2;
-            if (bArr.length != bArr2.length) {
-                i = bArr.length;
-                i2 = bArr2.length;
-            } else {
-                for (int i3 = 0; i3 < bArr.length; i3++) {
-                    if (bArr[i3] != bArr2[i3]) {
-                        i = bArr[i3];
-                        i2 = bArr2[i3];
-                    }
-                }
-                return 0;
-            }
-            return i - i2;
-        }
-    };
+    private static final Comparator<byte[]> sByteArrayComparator = FontProvider$$ExternalSyntheticLambda0.INSTANCE;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static FontsContractCompat.FontFamilyResult getFontFamilyResult(Context context, FontRequest fontRequest, CancellationSignal cancellationSignal) throws PackageManager.NameNotFoundException {
@@ -76,16 +57,19 @@ public class FontProvider {
     static FontsContractCompat.FontInfo[] query(Context context, FontRequest fontRequest, String str, CancellationSignal cancellationSignal) {
         int i;
         Uri withAppendedId;
+        int i2;
+        boolean z;
         ArrayList arrayList = new ArrayList();
         Uri build = new Uri.Builder().scheme("content").authority(str).build();
         Uri build2 = new Uri.Builder().scheme("content").authority(str).appendPath("file").build();
         Cursor cursor = null;
         try {
             String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
+            ContentResolver contentResolver = context.getContentResolver();
             if (Build.VERSION.SDK_INT > 16) {
-                cursor = context.getContentResolver().query(build, strArr, "query = ?", new String[]{fontRequest.getQuery()}, null, cancellationSignal);
+                cursor = Api16Impl.query(contentResolver, build, strArr, "query = ?", new String[]{fontRequest.getQuery()}, null, cancellationSignal);
             } else {
-                cursor = context.getContentResolver().query(build, strArr, "query = ?", new String[]{fontRequest.getQuery()}, null);
+                cursor = contentResolver.query(build, strArr, "query = ?", new String[]{fontRequest.getQuery()}, null);
             }
             if (cursor != null && cursor.getCount() > 0) {
                 int columnIndex = cursor.getColumnIndex("result_code");
@@ -96,16 +80,24 @@ public class FontProvider {
                 int columnIndex5 = cursor.getColumnIndex("font_weight");
                 int columnIndex6 = cursor.getColumnIndex("font_italic");
                 while (cursor.moveToNext()) {
-                    int i2 = columnIndex != -1 ? cursor.getInt(columnIndex) : 0;
-                    int i3 = columnIndex4 != -1 ? cursor.getInt(columnIndex4) : 0;
+                    int i3 = columnIndex != -1 ? cursor.getInt(columnIndex) : 0;
+                    int i4 = columnIndex4 != -1 ? cursor.getInt(columnIndex4) : 0;
                     if (columnIndex3 == -1) {
-                        i = i2;
+                        i = i3;
                         withAppendedId = ContentUris.withAppendedId(build, cursor.getLong(columnIndex2));
                     } else {
-                        i = i2;
+                        i = i3;
                         withAppendedId = ContentUris.withAppendedId(build2, cursor.getLong(columnIndex3));
                     }
-                    arrayList2.add(FontsContractCompat.FontInfo.create(withAppendedId, i3, columnIndex5 != -1 ? cursor.getInt(columnIndex5) : 400, columnIndex6 != -1 && cursor.getInt(columnIndex6) == 1, i));
+                    int i5 = columnIndex5 != -1 ? cursor.getInt(columnIndex5) : 400;
+                    if (columnIndex6 == -1 || cursor.getInt(columnIndex6) != 1) {
+                        i2 = i;
+                        z = false;
+                    } else {
+                        i2 = i;
+                        z = true;
+                    }
+                    arrayList2.add(FontsContractCompat.FontInfo.create(withAppendedId, i4, i5, z, i2));
                 }
                 arrayList = arrayList2;
             }
@@ -122,6 +114,26 @@ public class FontProvider {
             return fontRequest.getCertificates();
         }
         return FontResourcesParserCompat.readCerts(resources, fontRequest.getCertificatesArrayResId());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
+    public static /* synthetic */ int lambda$static$0(byte[] bArr, byte[] bArr2) {
+        int i;
+        int i2;
+        if (bArr.length != bArr2.length) {
+            i = bArr.length;
+            i2 = bArr2.length;
+        } else {
+            for (int i3 = 0; i3 < bArr.length; i3++) {
+                if (bArr[i3] != bArr2[i3]) {
+                    i = bArr[i3];
+                    i2 = bArr2[i3];
+                }
+            }
+            return 0;
+        }
+        return i - i2;
     }
 
     private static boolean equalsByteArrayList(List<byte[]> list, List<byte[]> list2) {
@@ -142,5 +154,13 @@ public class FontProvider {
             arrayList.add(signature.toByteArray());
         }
         return arrayList;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api16Impl {
+        static Cursor query(ContentResolver contentResolver, Uri uri, String[] strArr, String str, String[] strArr2, String str2, Object obj) {
+            return contentResolver.query(uri, strArr, str, strArr2, str2, (CancellationSignal) obj);
+        }
     }
 }

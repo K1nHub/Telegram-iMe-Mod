@@ -3,22 +3,17 @@ package com.smedialink.storage.data.repository.recognition;
 import android.graphics.Bitmap;
 import android.util.Base64;
 import com.google.android.exoplayer2.util.MimeTypes;
-import com.smedialink.storage.data.mapper.google.GoogleServicesMapperKt;
 import com.smedialink.storage.data.network.api.own.GoogleServicesApi;
 import com.smedialink.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.smedialink.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.smedialink.storage.data.network.model.request.voicetotext.VoiceToTextRequest;
-import com.smedialink.storage.data.network.model.response.base.ApiBaseResponse;
-import com.smedialink.storage.data.network.model.response.google.ImageToObjectsResponse;
-import com.smedialink.storage.data.network.model.response.google.ImageToTextResponse;
-import com.smedialink.storage.data.network.model.response.google.VoiceToTextResponse;
 import com.smedialink.storage.data.utils.extentions.BitmapExtKt;
-import com.smedialink.storage.data.utils.extentions.RxExtKt$handleError$1;
+import com.smedialink.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
+import com.smedialink.storage.data.utils.extentions.RxExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.google.RecognizedImageModel;
 import com.smedialink.storage.domain.repository.google.GoogleServicesRepository;
 import io.reactivex.Observable;
-import io.reactivex.functions.Function;
 import java.io.File;
 import java.util.List;
 import kotlin.Pair;
@@ -29,7 +24,6 @@ import kotlin.p035io.FilesKt__FileReadWriteKt;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-import timber.log.Timber;
 /* compiled from: GoogleServicesRepositoryImpl.kt */
 /* loaded from: classes3.dex */
 public final class GoogleServicesRepositoryImpl implements GoogleServicesRepository {
@@ -61,21 +55,9 @@ public final class GoogleServicesRepositoryImpl implements GoogleServicesReposit
         readBytes = FilesKt__FileReadWriteKt.readBytes(voiceFile);
         String encodeToString = Base64.encodeToString(readBytes, 2);
         Intrinsics.checkNotNullExpressionValue(encodeToString, "encodeToString(voiceFile…dBytes(), Base64.NO_WRAP)");
-        Observable<ApiBaseResponse<VoiceToTextResponse>> voiceText = this.googleServicesApi.getVoiceText(new VoiceToTextRequest(encodeToString, langCode));
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = voiceText.map(new Function() { // from class: com.smedialink.storage.data.repository.recognition.GoogleServicesRepositoryImpl$getVoiceText$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (response.isSuccess()) {
-                    return Result.Companion.success(((VoiceToTextResponse) response.getPayload()).getText());
-                }
-                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-            }
-        });
+        Observable<R> map = this.googleServicesApi.getVoiceText(new VoiceToTextRequest(encodeToString, langCode)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new GoogleServicesRepositoryImpl$getVoiceText$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$handleError$1(this.errorHandler));
+        Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new GoogleServicesRepositoryImpl$getVoiceText$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -84,27 +66,9 @@ public final class GoogleServicesRepositoryImpl implements GoogleServicesReposit
     public Observable<Result<String>> getPhotoText(Bitmap photo) {
         Intrinsics.checkNotNullParameter(photo, "photo");
         Pair<MultipartBody.Part, File> convertBitmapToMultipart = convertBitmapToMultipart(photo);
-        final File component2 = convertBitmapToMultipart.component2();
-        Observable<ApiBaseResponse<ImageToTextResponse>> photoText = this.googleServicesApi.getPhotoText(convertBitmapToMultipart.component1());
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = photoText.map(new Function() { // from class: com.smedialink.storage.data.repository.recognition.GoogleServicesRepositoryImpl$getPhotoText$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (!response.isSuccess()) {
-                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-                }
-                try {
-                    component2.delete();
-                } catch (Exception e) {
-                    Timber.m4e(e);
-                }
-                return Result.Companion.success(GoogleServicesMapperKt.toDomain((ImageToTextResponse) response.getPayload()));
-            }
-        });
+        Observable<R> map = this.googleServicesApi.getPhotoText(convertBitmapToMultipart.component1()).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new GoogleServicesRepositoryImpl$getPhotoText$$inlined$mapSuccess$1(this.firebaseErrorHandler, convertBitmapToMultipart.component2())));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$handleError$1(this.errorHandler));
+        Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new GoogleServicesRepositoryImpl$getPhotoText$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -113,27 +77,9 @@ public final class GoogleServicesRepositoryImpl implements GoogleServicesReposit
     public Observable<Result<List<RecognizedImageModel>>> getPhotoObjects(Bitmap photo) {
         Intrinsics.checkNotNullParameter(photo, "photo");
         Pair<MultipartBody.Part, File> convertBitmapToMultipart = convertBitmapToMultipart(photo);
-        final File component2 = convertBitmapToMultipart.component2();
-        Observable<ApiBaseResponse<ImageToObjectsResponse>> photoObjects = this.googleServicesApi.getPhotoObjects(convertBitmapToMultipart.component1());
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = photoObjects.map(new Function() { // from class: com.smedialink.storage.data.repository.recognition.GoogleServicesRepositoryImpl$getPhotoObjects$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (!response.isSuccess()) {
-                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-                }
-                try {
-                    component2.delete();
-                } catch (Exception e) {
-                    Timber.m4e(e);
-                }
-                return Result.Companion.success(GoogleServicesMapperKt.toDomain((ImageToObjectsResponse) response.getPayload()));
-            }
-        });
+        Observable<R> map = this.googleServicesApi.getPhotoObjects(convertBitmapToMultipart.component1()).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1789xab083842(this.firebaseErrorHandler, convertBitmapToMultipart.component2())));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<RecognizedImageModel>>> onErrorReturn = map.onErrorReturn(new RxExtKt$handleError$1(this.errorHandler));
+        Observable<Result<List<RecognizedImageModel>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1788x9906889f(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

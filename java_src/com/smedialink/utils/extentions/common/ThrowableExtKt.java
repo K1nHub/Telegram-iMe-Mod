@@ -1,7 +1,7 @@
 package com.smedialink.utils.extentions.common;
 
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: ThrowableExt.kt */
 /* loaded from: classes3.dex */
@@ -10,7 +10,7 @@ public final class ThrowableExtKt {
         Intrinsics.checkNotNullParameter(th, "<this>");
         String localizedMessage = th.getLocalizedMessage();
         if (localizedMessage == null) {
-            localizedMessage = LocaleController.getString("ErrorOccurred", C3158R.string.ErrorOccurred);
+            localizedMessage = LocaleController.getString("ErrorOccurred", C3286R.string.ErrorOccurred);
         }
         Intrinsics.checkNotNullExpressionValue(localizedMessage, "localizedMessage ?: Loca…, R.string.ErrorOccurred)");
         ContextExtKt.toast(localizedMessage);

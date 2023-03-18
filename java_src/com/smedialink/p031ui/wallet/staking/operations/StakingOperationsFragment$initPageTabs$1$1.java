@@ -5,6 +5,7 @@ import com.smedialink.model.wallet.details.StakingOperationsGroup;
 import com.smedialink.navigation.common.router.base.BaseNavigationRouter;
 import com.smedialink.navigation.common.router.base.NavigationRouter;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StakingOperationsFragment.kt */
@@ -27,6 +28,7 @@ public final class StakingOperationsFragment$initPageTabs$1$1 extends Lambda imp
     public final View invoke() {
         NavigationRouter navigationRouter;
         navigationRouter = this.this$0.getNavigationRouter();
+        Intrinsics.checkNotNull(navigationRouter, "null cannot be cast to non-null type com.smedialink.navigation.common.router.base.BaseNavigationRouter<com.smedialink.ui.base.mvp.MvpFragment>");
         return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(this.$group.getId());
     }
 }

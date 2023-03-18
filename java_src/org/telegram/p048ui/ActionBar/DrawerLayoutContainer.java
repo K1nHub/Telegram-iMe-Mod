@@ -27,7 +27,7 @@ import androidx.annotation.Keep;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 /* renamed from: org.telegram.ui.ActionBar.DrawerLayoutContainer */
@@ -41,7 +41,7 @@ public class DrawerLayoutContainer extends FrameLayout {
     private int behindKeyboardColor;
     private AnimatorSet currentAnimation;
     private boolean drawCurrentPreviewFragmentAbove;
-    private ViewGroup drawerLayout;
+    private FrameLayout drawerLayout;
     private boolean drawerOpened;
     private float drawerPosition;
     private boolean firstLayout;
@@ -72,10 +72,6 @@ public class DrawerLayoutContainer extends FrameLayout {
         return false;
     }
 
-    public INavigationLayout getParentActionBarLayout() {
-        return this.parentActionBarLayout;
-    }
-
     public DrawerLayoutContainer(Context context) {
         super(context);
         this.rect = new Rect();
@@ -99,7 +95,7 @@ public class DrawerLayoutContainer extends FrameLayout {
             });
             setSystemUiVisibility(1280);
         }
-        this.shadowLeft = getResources().getDrawable(C3158R.C3160drawable.menu_shadow);
+        this.shadowLeft = getResources().getDrawable(C3286R.C3288drawable.menu_shadow);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -163,9 +159,9 @@ public class DrawerLayoutContainer extends FrameLayout {
         marginLayoutParams.bottomMargin = windowInsets.getSystemWindowInsetBottom();
     }
 
-    public void setDrawerLayout(ViewGroup viewGroup) {
-        this.drawerLayout = viewGroup;
-        addView(viewGroup);
+    public void setDrawerLayout(FrameLayout frameLayout) {
+        this.drawerLayout = frameLayout;
+        addView(frameLayout);
         this.drawerLayout.setVisibility(4);
         if (Build.VERSION.SDK_INT >= 21) {
             this.drawerLayout.setFitsSystemWindows(true);
@@ -178,12 +174,12 @@ public class DrawerLayoutContainer extends FrameLayout {
 
     @Keep
     public void setDrawerPosition(float f) {
-        ViewGroup viewGroup = this.drawerLayout;
-        if (viewGroup == null) {
+        FrameLayout frameLayout = this.drawerLayout;
+        if (frameLayout == null) {
             return;
         }
         this.drawerPosition = f;
-        if (f > viewGroup.getMeasuredWidth()) {
+        if (f > frameLayout.getMeasuredWidth()) {
             this.drawerPosition = this.drawerLayout.getMeasuredWidth();
         } else if (this.drawerPosition < BitmapDescriptorFactory.HUE_RED) {
             this.drawerPosition = BitmapDescriptorFactory.HUE_RED;
@@ -295,7 +291,7 @@ public class DrawerLayoutContainer extends FrameLayout {
         return this.scrimOpacity;
     }
 
-    public View getDrawerLayout() {
+    public FrameLayout getDrawerLayout() {
         return this.drawerLayout;
     }
 
@@ -309,6 +305,10 @@ public class DrawerLayoutContainer extends FrameLayout {
             iNavigationLayout.presentFragment(baseFragment);
         }
         closeDrawer(false);
+    }
+
+    public INavigationLayout getParentActionBarLayout() {
+        return this.parentActionBarLayout;
     }
 
     public void closeDrawer() {
@@ -720,11 +720,11 @@ public class DrawerLayoutContainer extends FrameLayout {
             canvas.save();
             int i = bounds.left;
             int i2 = bounds.top;
-            canvas.clipRect(i, i2, bounds.right, C3222ActionBar.getCurrentActionBarHeight() + i2);
+            canvas.clipRect(i, i2, bounds.right, C3351ActionBar.getCurrentActionBarHeight() + i2);
             this.topDrawable.draw(canvas);
             canvas.restore();
             canvas.save();
-            canvas.clipRect(bounds.left, bounds.top + C3222ActionBar.getCurrentActionBarHeight(), bounds.right, bounds.bottom);
+            canvas.clipRect(bounds.left, bounds.top + C3351ActionBar.getCurrentActionBarHeight(), bounds.right, bounds.bottom);
             this.bottomDrawable.draw(canvas);
             canvas.restore();
         }

@@ -98,65 +98,6 @@
     return-void
 .end method
 
-.method public static final loadFrom(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Ljava/lang/Integer;Z)V
-    .locals 1
-
-    const-string v0, "<this>"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "url"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "context"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    if-eqz p3, :cond_0
-
-    .line 39
-    invoke-virtual {p3}, Ljava/lang/Integer;->intValue()I
-
-    move-result p3
-
-    invoke-static {p2, p3}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p3
-
-    goto :goto_0
-
-    .line 41
-    :cond_0
-    new-instance p3, Landroid/graphics/drawable/GradientDrawable;
-
-    invoke-direct {p3}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
-
-    const/4 v0, 0x1
-
-    .line 42
-    invoke-virtual {p3, v0}, Landroid/graphics/drawable/GradientDrawable;->setShape(I)V
-
-    .line 43
-    sget v0, Lorg/telegram/messenger/R$color;->placeholder_color:I
-
-    invoke-static {p2, v0}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
-
-    move-result v0
-
-    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v0
-
-    invoke-virtual {p3, v0}, Landroid/graphics/drawable/GradientDrawable;->setColor(Landroid/content/res/ColorStateList;)V
-
-    .line 46
-    :goto_0
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/smartpanel/extension/ImageViewExtKt;->loadFrom(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;Z)V
-
-    return-void
-.end method
-
 .method public static synthetic loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;ZILjava/lang/Object;)V
     .locals 0
 
@@ -175,6 +116,65 @@
 
     .line 14
     :cond_1
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/smartpanel/extension/ImageViewExtKt;->loadFrom(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;Z)V
+
+    return-void
+.end method
+
+.method public static final loadFromWithPlaceholderResId(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Ljava/lang/Integer;Z)V
+    .locals 1
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "url"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "context"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-eqz p3, :cond_0
+
+    .line 40
+    invoke-virtual {p3}, Ljava/lang/Integer;->intValue()I
+
+    move-result p3
+
+    invoke-static {p2, p3}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p3
+
+    goto :goto_0
+
+    .line 42
+    :cond_0
+    new-instance p3, Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-direct {p3}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
+
+    const/4 v0, 0x1
+
+    .line 43
+    invoke-virtual {p3, v0}, Landroid/graphics/drawable/GradientDrawable;->setShape(I)V
+
+    .line 44
+    sget v0, Lorg/telegram/messenger/R$color;->placeholder_color:I
+
+    invoke-static {p2, v0}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
+
+    move-result v0
+
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
+
+    invoke-virtual {p3, v0}, Landroid/graphics/drawable/GradientDrawable;->setColor(Landroid/content/res/ColorStateList;)V
+
+    .line 47
+    :goto_0
     invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/smartpanel/extension/ImageViewExtKt;->loadFrom(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;Z)V
 
     return-void

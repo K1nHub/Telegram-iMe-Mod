@@ -45,7 +45,7 @@
 
     iget-object v3, p0, Lcom/smedialink/utils/dialogs/DialogsFactoryKt$$ExternalSyntheticLambda0;->f$3:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    invoke-static {v0, v1, v2, v3, p1}, Lcom/smedialink/utils/dialogs/DialogsFactoryKt;->$r8$lambda$pPwbZliEVvOHqhUsWDwgzQTAQ1I(Lcom/smedialink/storage/domain/model/crypto/NetworkType;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Lorg/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+    invoke-static {v0, v1, v2, v3, p1}, Lcom/smedialink/utils/dialogs/DialogsFactoryKt;->$r8$lambda$secRQxZS3U5fh5lbUuRRLzqNevs(Lcom/smedialink/storage/domain/model/crypto/NetworkType;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Lorg/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
 
     return-void
 .end method

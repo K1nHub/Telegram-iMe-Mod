@@ -550,7 +550,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/request/reaction/ReactionRequestData;->text:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", reactions="
 

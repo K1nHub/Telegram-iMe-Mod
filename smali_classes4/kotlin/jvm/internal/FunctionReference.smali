@@ -105,6 +105,7 @@
 
     if-eqz v1, :cond_1
 
+    .line 109
     invoke-virtual {p0}, Lkotlin/jvm/internal/CallableReference;->getSignature()Ljava/lang/String;
 
     move-result-object v1
@@ -131,6 +132,7 @@
 
     if-ne v1, v3, :cond_1
 
+    .line 112
     invoke-virtual {p0}, Lkotlin/jvm/internal/CallableReference;->getBoundReceiver()Ljava/lang/Object;
 
     move-result-object v1
@@ -145,6 +147,7 @@
 
     if-eqz v1, :cond_1
 
+    .line 113
     invoke-virtual {p0}, Lkotlin/jvm/internal/CallableReference;->getOwner()Lkotlin/reflect/KDeclarationContainer;
 
     move-result-object v1
@@ -292,6 +295,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 136
     invoke-virtual {p0}, Lkotlin/jvm/internal/CallableReference;->getName()Ljava/lang/String;
 
     move-result-object v1

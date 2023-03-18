@@ -826,69 +826,69 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_c
 
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_c
 
-    instance-of v0, p1, Lorg/telegram/ui/Cells/TextCheckbox2Cell;
+    instance-of p1, p1, Lorg/telegram/ui/Cells/TextCheckbox2Cell;
 
-    if-nez v0, :cond_0
+    if-nez p1, :cond_0
 
     goto/16 :goto_6
 
     .line 230
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget-object v1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->searchListViewAdapter:Lorg/telegram/ui/RestrictedLanguagesSelectActivity$ListAdapter;
+    iget-object v0, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->searchListViewAdapter:Lorg/telegram/ui/RestrictedLanguagesSelectActivity$ListAdapter;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    if-ne v0, v1, :cond_1
+    if-ne p1, v0, :cond_1
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
     :goto_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_2
+    if-eqz p1, :cond_2
 
     .line 233
-    iget-object v4, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->searchResult:Ljava/util/ArrayList;
+    iget-object v3, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->searchResult:Ljava/util/ArrayList;
 
-    if-eqz v4, :cond_2
+    if-eqz v3, :cond_2
 
     .line 234
-    invoke-virtual {v4, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v3, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p2
 
-    move-object v1, p2
+    move-object v0, p2
 
-    check-cast v1, Lorg/telegram/messenger/TranslateController$Language;
+    check-cast v0, Lorg/telegram/messenger/TranslateController$Language;
 
     goto :goto_1
 
     .line 236
     :cond_2
-    iget v4, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->separatorRow:I
+    iget v3, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->separatorRow:I
 
-    if-ltz v4, :cond_3
+    if-ltz v3, :cond_3
 
-    if-le p2, v4, :cond_3
+    if-le p2, v3, :cond_3
 
     add-int/lit8 p2, p2, -0x1
 
@@ -896,33 +896,33 @@
     if-ltz p2, :cond_4
 
     .line 239
-    iget-object v4, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->allLanguages:Ljava/util/ArrayList;
+    iget-object v3, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->allLanguages:Ljava/util/ArrayList;
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
-    move-result v4
+    move-result v3
 
-    if-ge p2, v4, :cond_4
+    if-ge p2, v3, :cond_4
 
     .line 240
-    iget-object v1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->allLanguages:Ljava/util/ArrayList;
+    iget-object v0, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->allLanguages:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p2
 
-    move-object v1, p2
+    move-object v0, p2
 
-    check-cast v1, Lorg/telegram/messenger/TranslateController$Language;
+    check-cast v0, Lorg/telegram/messenger/TranslateController$Language;
 
     :cond_4
     :goto_1
-    if-eqz v1, :cond_d
+    if-eqz v0, :cond_c
 
     .line 243
-    iget-object p2, v1, Lorg/telegram/messenger/TranslateController$Language;->code:Ljava/lang/String;
+    iget-object p2, v0, Lorg/telegram/messenger/TranslateController$Language;->code:Ljava/lang/String;
 
-    if-eqz p2, :cond_d
+    if-eqz p2, :cond_c
 
     .line 244
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
@@ -934,123 +934,99 @@
     move-result-object p2
 
     .line 245
-    iget-object v1, v1, Lorg/telegram/messenger/TranslateController$Language;->code:Ljava/lang/String;
+    iget-object v0, v0, Lorg/telegram/messenger/TranslateController$Language;->code:Ljava/lang/String;
 
     .line 246
-    iget-object v4, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->selectedLanguages:Ljava/util/HashSet;
+    iget-object v3, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->selectedLanguages:Ljava/util/HashSet;
 
-    invoke-virtual {v4, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v1, :cond_5
-
-    .line 247
-    iget-object v5, p2, Lorg/telegram/messenger/LocaleController$LocaleInfo;->pluralLangCode:Ljava/lang/String;
-
-    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_5
-
-    if-eqz v4, :cond_5
-
-    .line 248
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->shakeViewSpring(Landroid/view/View;)V
-
-    .line 249
-    sget-object p1, Lorg/telegram/messenger/BotWebViewVibrationEffect;->APP_ERROR:Lorg/telegram/messenger/BotWebViewVibrationEffect;
-
-    invoke-virtual {p1}, Lorg/telegram/messenger/BotWebViewVibrationEffect;->vibrate()V
-
-    return-void
-
-    :cond_5
-    if-eqz v4, :cond_6
+    if-eqz v3, :cond_5
 
     .line 253
-    iget-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->selectedLanguages:Ljava/util/HashSet;
+    iget-object v3, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->selectedLanguages:Ljava/util/HashSet;
 
     new-instance v4, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda0;
 
-    invoke-direct {v4, v1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda0;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v0}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda0;-><init>(Ljava/lang/String;)V
 
-    invoke-static {p1, v4}, Lj$/util/Collection$-EL;->removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
+    invoke-static {v3, v4}, Lj$/util/Collection$-EL;->removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
 
     goto :goto_2
 
     .line 255
-    :cond_6
-    iget-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->selectedLanguages:Ljava/util/HashSet;
+    :cond_5
+    iget-object v3, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->selectedLanguages:Ljava/util/HashSet;
 
-    invoke-virtual {p1, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 257
     :goto_2
-    iget-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->selectedLanguages:Ljava/util/HashSet;
+    iget-object v3, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->selectedLanguages:Ljava/util/HashSet;
 
-    invoke-virtual {p1}, Ljava/util/HashSet;->size()I
+    invoke-virtual {v3}, Ljava/util/HashSet;->size()I
 
-    move-result p1
+    move-result v3
 
     const-string v4, "translate_button_restricted_languages_changed"
 
     const-string v5, "translate_button_restricted_languages"
 
-    if-ne p1, v3, :cond_7
+    if-ne v3, v2, :cond_6
 
-    iget-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->selectedLanguages:Ljava/util/HashSet;
+    iget-object v3, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->selectedLanguages:Ljava/util/HashSet;
 
     iget-object p2, p2, Lorg/telegram/messenger/LocaleController$LocaleInfo;->pluralLangCode:Ljava/lang/String;
 
-    invoke-virtual {p1, p2}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v3, p2}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
-    move-result p1
+    move-result p2
 
-    if-eqz p1, :cond_7
+    if-eqz p2, :cond_6
 
     .line 258
-    iget-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->preferences:Landroid/content/SharedPreferences;
+    iget-object p2, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->preferences:Landroid/content/SharedPreferences;
 
-    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    move-result-object p1
+    move-result-object p2
 
-    invoke-interface {p1, v5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p2, v5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object p1
+    move-result-object p2
 
-    invoke-interface {p1, v4}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p2, v4}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object p1
+    move-result-object p2
 
-    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     goto :goto_3
 
     .line 260
-    :cond_7
-    iget-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->preferences:Landroid/content/SharedPreferences;
+    :cond_6
+    iget-object p2, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->preferences:Landroid/content/SharedPreferences;
 
-    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    move-result-object p1
+    move-result-object p2
 
-    iget-object p2, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->selectedLanguages:Ljava/util/HashSet;
+    iget-object v3, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->selectedLanguages:Ljava/util/HashSet;
 
-    invoke-interface {p1, v5, p2}, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p2, v5, v3}, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object p1
+    move-result-object p2
 
-    invoke-interface {p1, v4, v3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p2, v4, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object p1
+    move-result-object p2
 
-    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     :goto_3
-    if-eqz v0, :cond_9
+    if-eqz p1, :cond_8
 
     const/4 p1, 0x0
 
@@ -1062,12 +1038,12 @@
 
     move-result p2
 
-    if-ge v2, p2, :cond_c
+    if-ge v1, p2, :cond_b
 
     .line 265
     iget-object p2, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->searchResult:Ljava/util/ArrayList;
 
-    invoke-virtual {p2, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p2
 
@@ -1075,23 +1051,23 @@
 
     iget-object p2, p2, Lorg/telegram/messenger/TranslateController$Language;->code:Ljava/lang/String;
 
-    invoke-static {v1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-static {v0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_8
+    if-eqz p2, :cond_7
 
     .line 266
     invoke-direct {p0, p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->rebind(I)V
 
-    :cond_8
-    add-int/lit8 v2, v2, 0x1
+    :cond_7
+    add-int/lit8 v1, v1, 0x1
 
     add-int/lit8 p1, p1, 0x1
 
     goto :goto_4
 
-    :cond_9
+    :cond_8
     const/4 p1, 0x0
 
     .line 270
@@ -1102,20 +1078,20 @@
 
     move-result p2
 
-    if-ge v2, p2, :cond_c
+    if-ge v1, p2, :cond_b
 
     .line 271
     iget p2, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->separatorRow:I
 
-    if-ne p1, p2, :cond_a
+    if-ne p1, p2, :cond_9
 
     add-int/lit8 p1, p1, 0x1
 
     .line 274
-    :cond_a
+    :cond_9
     iget-object p2, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->allLanguages:Ljava/util/ArrayList;
 
-    invoke-virtual {p2, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p2
 
@@ -1123,24 +1099,24 @@
 
     iget-object p2, p2, Lorg/telegram/messenger/TranslateController$Language;->code:Ljava/lang/String;
 
-    invoke-static {v1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-static {v0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_a
 
     .line 275
     invoke-direct {p0, p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->rebind(I)V
 
-    :cond_b
-    add-int/lit8 v2, v2, 0x1
+    :cond_a
+    add-int/lit8 v1, v1, 0x1
 
     add-int/lit8 p1, p1, 0x1
 
     goto :goto_5
 
     .line 280
-    :cond_c
+    :cond_b
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1153,7 +1129,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/messenger/TranslateController;->checkRestrictedLanguagesUpdate()V
 
-    :cond_d
+    :cond_c
     :goto_6
     return-void
 .end method
@@ -1699,13 +1675,13 @@
 .end method
 
 .method public static toggleLanguage(Ljava/lang/String;Z)Z
-    .locals 4
-
-    const/4 v0, 0x0
+    .locals 3
 
     if-nez p0, :cond_0
 
-    return v0
+    const/4 p0, 0x0
+
+    return p0
 
     .line 127
     :cond_0
@@ -1716,63 +1692,47 @@
     .line 128
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Lorg/telegram/messenger/LocaleController;->getCurrentLocaleInfo()Lorg/telegram/messenger/LocaleController$LocaleInfo;
+    invoke-virtual {v0}, Lorg/telegram/messenger/LocaleController;->getCurrentLocaleInfo()Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 129
     invoke-static {}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->getRestrictedLanguages()Ljava/util/HashSet;
 
-    move-result-object v2
+    move-result-object v1
 
-    if-eqz p0, :cond_1
-
-    .line 130
-    iget-object v3, v1, Lorg/telegram/messenger/LocaleController$LocaleInfo;->pluralLangCode:Ljava/lang/String;
-
-    invoke-virtual {p0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    if-eqz p1, :cond_1
-
-    return v0
-
-    :cond_1
-    if-nez p1, :cond_2
+    if-nez p1, :cond_1
 
     .line 136
-    invoke-virtual {v2, p0}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p0}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     .line 138
-    :cond_2
-    invoke-virtual {v2, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    :cond_1
+    invoke-virtual {v1, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 140
     :goto_0
-    invoke-virtual {v2}, Ljava/util/HashSet;->size()I
+    invoke-virtual {v1}, Ljava/util/HashSet;->size()I
 
     move-result p0
 
     const-string p1, "translate_button_restricted_languages"
 
-    const/4 v0, 0x1
+    const/4 v2, 0x1
 
-    if-ne p0, v0, :cond_3
+    if-ne p0, v2, :cond_2
 
-    iget-object p0, v1, Lorg/telegram/messenger/LocaleController$LocaleInfo;->pluralLangCode:Ljava/lang/String;
+    iget-object p0, v0, Lorg/telegram/messenger/LocaleController$LocaleInfo;->pluralLangCode:Ljava/lang/String;
 
-    invoke-virtual {v2, p0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_2
 
     .line 141
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
@@ -1792,7 +1752,7 @@
     goto :goto_1
 
     .line 143
-    :cond_3
+    :cond_2
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object p0
@@ -1801,7 +1761,7 @@
 
     move-result-object p0
 
-    invoke-interface {p0, p1, v2}, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p0, p1, v1}, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p0
 
@@ -1811,7 +1771,7 @@
     :goto_1
     invoke-static {}, Lorg/telegram/messenger/TranslateController;->invalidateSuggestedLanguageCodes()V
 
-    return v0
+    return v2
 .end method
 
 

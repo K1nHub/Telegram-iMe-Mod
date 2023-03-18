@@ -95,13 +95,13 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x4
 
-    const/4 v2, 0x4
+    const/4 v2, 0x0
 
     const/4 v3, 0x1
 
-    if-le v0, v2, :cond_2
+    if-le v0, v1, :cond_2
 
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
@@ -109,7 +109,9 @@
 
     if-eqz v0, :cond_2
 
-    invoke-static {v2}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
+    const/16 v0, 0x4004
+
+    invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v0
 
@@ -131,25 +133,25 @@
 
     .line 1009
     :goto_2
-    iget-object v2, p0, Lorg/telegram/ui/Components/StickerMasksAlert$DrawingInBackgroundLine;->imageViewEmojis:Ljava/util/ArrayList;
+    iget-object v1, p0, Lorg/telegram/ui/Components/StickerMasksAlert$DrawingInBackgroundLine;->imageViewEmojis:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    move-result v2
+    move-result v1
 
-    if-ge v1, v2, :cond_4
+    if-ge v2, v1, :cond_4
 
     .line 1010
-    iget-object v2, p0, Lorg/telegram/ui/Components/StickerMasksAlert$DrawingInBackgroundLine;->imageViewEmojis:Ljava/util/ArrayList;
+    iget-object v1, p0, Lorg/telegram/ui/Components/StickerMasksAlert$DrawingInBackgroundLine;->imageViewEmojis:Ljava/util/ArrayList;
 
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Lorg/telegram/ui/Components/StickerMasksAlert$ImageViewEmoji;
+    check-cast v1, Lorg/telegram/ui/Components/StickerMasksAlert$ImageViewEmoji;
 
     .line 1011
-    iget v4, v2, Lorg/telegram/ui/Components/StickerMasksAlert$ImageViewEmoji;->pressedProgress:F
+    iget v4, v1, Lorg/telegram/ui/Components/StickerMasksAlert$ImageViewEmoji;->pressedProgress:F
 
     const/4 v5, 0x0
 
@@ -157,14 +159,14 @@
 
     if-nez v4, :cond_5
 
-    iget-object v2, v2, Lorg/telegram/ui/Components/StickerMasksAlert$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
+    iget-object v1, v1, Lorg/telegram/ui/Components/StickerMasksAlert$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
 
-    if-eqz v2, :cond_3
+    if-eqz v1, :cond_3
 
     goto :goto_3
 
     :cond_3
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 

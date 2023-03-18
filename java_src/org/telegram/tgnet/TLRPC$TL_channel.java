@@ -1,7 +1,8 @@
 package org.telegram.tgnet;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
+import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_channel extends TLRPC$Chat {
     public static int constructor = -2094689180;
@@ -35,7 +36,7 @@ public class TLRPC$TL_channel extends TLRPC$Chat {
         this.join_request = (536870912 & readInt32) != 0;
         this.forum = (readInt32 & 1073741824) != 0;
         this.flags2 = abstractSerializedData.readInt32(z);
-        this.f1494id = abstractSerializedData.readInt64(z);
+        this.f1499id = abstractSerializedData.readInt64(z);
         if ((this.flags & 8192) != 0) {
             this.access_hash = abstractSerializedData.readInt64(z);
         }
@@ -65,7 +66,7 @@ public class TLRPC$TL_channel extends TLRPC$Chat {
         if ((this.flags & 16384) != 0) {
             this.admin_rights = TLRPC$TL_chatAdminRights.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
-        if ((this.flags & 32768) != 0) {
+        if ((this.flags & LiteMode.FLAG_CHAT_SCALE) != 0) {
             this.banned_rights = TLRPC$TL_chatBannedRights.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
         if ((this.flags & 262144) != 0) {
@@ -128,7 +129,7 @@ public class TLRPC$TL_channel extends TLRPC$Chat {
         this.flags = i15;
         int i16 = this.gigagroup ? i15 | ConnectionsManager.FileTypeFile : i15 & (-67108865);
         this.flags = i16;
-        int i17 = this.noforwards ? i16 | C0474C.BUFFER_FLAG_FIRST_SAMPLE : i16 & (-134217729);
+        int i17 = this.noforwards ? i16 | C0468C.BUFFER_FLAG_FIRST_SAMPLE : i16 & (-134217729);
         this.flags = i17;
         int i18 = this.join_to_send ? i17 | 268435456 : i17 & (-268435457);
         this.flags = i18;
@@ -138,7 +139,7 @@ public class TLRPC$TL_channel extends TLRPC$Chat {
         this.flags = i20;
         abstractSerializedData.writeInt32(i20);
         abstractSerializedData.writeInt32(this.flags2);
-        abstractSerializedData.writeInt64(this.f1494id);
+        abstractSerializedData.writeInt64(this.f1499id);
         if ((this.flags & 8192) != 0) {
             abstractSerializedData.writeInt64(this.access_hash);
         }
@@ -159,7 +160,7 @@ public class TLRPC$TL_channel extends TLRPC$Chat {
         if ((this.flags & 16384) != 0) {
             this.admin_rights.serializeToStream(abstractSerializedData);
         }
-        if ((this.flags & 32768) != 0) {
+        if ((this.flags & LiteMode.FLAG_CHAT_SCALE) != 0) {
             this.banned_rights.serializeToStream(abstractSerializedData);
         }
         if ((this.flags & 262144) != 0) {

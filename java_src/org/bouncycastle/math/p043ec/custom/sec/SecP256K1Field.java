@@ -8,18 +8,18 @@ import org.bouncycastle.math.raw.Nat256;
 public class SecP256K1Field {
 
     /* renamed from: P */
-    static final int[] f1348P = {-977, -2, -1, -1, -1, -1, -1, -1};
+    static final int[] f1353P = {-977, -2, -1, -1, -1, -1, -1, -1};
     static final int[] PExt = {954529, 1954, 1, 0, 0, 0, 0, 0, -1954, -3, -1, -1, -1, -1, -1, -1};
     private static final int[] PExtInv = {-954529, -1955, -2, -1, -1, -1, -1, -1, 1953, 2};
 
     public static void add(int[] iArr, int[] iArr2, int[] iArr3) {
-        if (Nat256.add(iArr, iArr2, iArr3) != 0 || (iArr3[7] == -1 && Nat256.gte(iArr3, f1348P))) {
+        if (Nat256.add(iArr, iArr2, iArr3) != 0 || (iArr3[7] == -1 && Nat256.gte(iArr3, f1353P))) {
             Nat.add33To(8, 977, iArr3);
         }
     }
 
     public static void addOne(int[] iArr, int[] iArr2) {
-        if (Nat.inc(8, iArr, iArr2) != 0 || (iArr2[7] == -1 && Nat256.gte(iArr2, f1348P))) {
+        if (Nat.inc(8, iArr, iArr2) != 0 || (iArr2[7] == -1 && Nat256.gte(iArr2, f1353P))) {
             Nat.add33To(8, 977, iArr2);
         }
     }
@@ -27,7 +27,7 @@ public class SecP256K1Field {
     public static int[] fromBigInteger(BigInteger bigInteger) {
         int[] fromBigInteger = Nat256.fromBigInteger(bigInteger);
         if (fromBigInteger[7] == -1) {
-            int[] iArr = f1348P;
+            int[] iArr = f1353P;
             if (Nat256.gte(fromBigInteger, iArr)) {
                 Nat256.subFrom(iArr, fromBigInteger);
             }
@@ -54,18 +54,18 @@ public class SecP256K1Field {
         if (Nat256.isZero(iArr)) {
             Nat256.zero(iArr2);
         } else {
-            Nat256.sub(f1348P, iArr, iArr2);
+            Nat256.sub(f1353P, iArr, iArr2);
         }
     }
 
     public static void reduce(int[] iArr, int[] iArr2) {
-        if (Nat256.mul33DWordAdd(977, Nat256.mul33Add(977, iArr, 8, iArr, 0, iArr2, 0), iArr2, 0) != 0 || (iArr2[7] == -1 && Nat256.gte(iArr2, f1348P))) {
+        if (Nat256.mul33DWordAdd(977, Nat256.mul33Add(977, iArr, 8, iArr, 0, iArr2, 0), iArr2, 0) != 0 || (iArr2[7] == -1 && Nat256.gte(iArr2, f1353P))) {
             Nat.add33To(8, 977, iArr2);
         }
     }
 
     public static void reduce32(int i, int[] iArr) {
-        if ((i == 0 || Nat256.mul33WordAdd(977, i, iArr, 0) == 0) && !(iArr[7] == -1 && Nat256.gte(iArr, f1348P))) {
+        if ((i == 0 || Nat256.mul33WordAdd(977, i, iArr, 0) == 0) && !(iArr[7] == -1 && Nat256.gte(iArr, f1353P))) {
             return;
         }
         Nat.add33To(8, 977, iArr);
@@ -97,7 +97,7 @@ public class SecP256K1Field {
     }
 
     public static void twice(int[] iArr, int[] iArr2) {
-        if (Nat.shiftUpBit(8, iArr, 0, iArr2) != 0 || (iArr2[7] == -1 && Nat256.gte(iArr2, f1348P))) {
+        if (Nat.shiftUpBit(8, iArr, 0, iArr2) != 0 || (iArr2[7] == -1 && Nat256.gte(iArr2, f1353P))) {
             Nat.add33To(8, 977, iArr2);
         }
     }

@@ -29,7 +29,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletSelectTokenPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSelectTokenPresenter.kt\ncom/smedialink/ui/wallet/swap/token/WalletSelectTokenPresenter$supportedTokensItemsMap$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,129:1\n1206#2,2:130\n1236#2,4:132\n*S KotlinDebug\n*F\n+ 1 WalletSelectTokenPresenter.kt\ncom/smedialink/ui/wallet/swap/token/WalletSelectTokenPresenter$supportedTokensItemsMap$2\n*L\n33#1:130,2\n33#1:132,4\n*E\n"
+    value = "SMAP\nWalletSelectTokenPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSelectTokenPresenter.kt\ncom/smedialink/ui/wallet/swap/token/WalletSelectTokenPresenter$supportedTokensItemsMap$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,131:1\n1208#2,2:132\n1238#2,4:134\n*S KotlinDebug\n*F\n+ 1 WalletSelectTokenPresenter.kt\ncom/smedialink/ui/wallet/swap/token/WalletSelectTokenPresenter$supportedTokensItemsMap$2\n*L\n33#1:132,2\n33#1:134,4\n*E\n"
 .end annotation
 
 
@@ -84,7 +84,7 @@
 
     const/16 v1, 0xa
 
-    .line 1206
+    .line 1208
     invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v1
@@ -99,12 +99,12 @@
 
     move-result v1
 
-    .line 1207
+    .line 1209
     new-instance v2, Ljava/util/LinkedHashMap;
 
     invoke-direct {v2, v1}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 1236
+    .line 1238
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -120,7 +120,7 @@
 
     move-result-object v1
 
-    .line 1237
+    .line 1239
     check-cast v1, Lcom/smedialink/model/wallet/select/SelectableToken;
 
     .line 33
@@ -136,6 +136,7 @@
 
     invoke-direct {v4, v1, v6, v5, v6}, Lcom/smedialink/model/wallet/select/SelectableTokenItem;-><init>(Lcom/smedialink/model/wallet/select/SelectableToken;Lcom/smedialink/model/wallet/select/SelectableTokenBalance;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
+    .line 1239
     invoke-interface {v2, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0

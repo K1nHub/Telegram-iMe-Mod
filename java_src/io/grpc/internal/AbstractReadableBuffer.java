@@ -1,5 +1,5 @@
 package io.grpc.internal;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractReadableBuffer implements ReadableBuffer {
     @Override // io.grpc.internal.ReadableBuffer, java.io.Closeable, java.lang.AutoCloseable
     public void close() {

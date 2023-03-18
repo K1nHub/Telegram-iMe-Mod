@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/base/mvp/base/MvpBaseDelegate$$ExternalSyntheticLambda0;->f$0:Lio/reactivex/disposables/Disposable;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/base/mvp/base/MvpBaseDelegate;->$r8$lambda$VWWknMWZCaqcya_agIg7liCFevM(Lio/reactivex/disposables/Disposable;Landroid/content/DialogInterface;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/base/mvp/base/MvpBaseDelegate;->$r8$lambda$EpMFvCvUTAqEm2qzyLu_swuhPEQ(Lio/reactivex/disposables/Disposable;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

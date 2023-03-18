@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ReactedUsersListView;Landroidx/recyclerview/widget/LinearLayoutManager;)V
     .locals 0
 
-    .line 170
+    .line 173
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView$3;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ReactedUsersListView$3;->val$llm:Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -39,7 +39,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 173
+    .line 176
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView$3;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     iget-boolean p2, p1, Lorg/telegram/ui/Components/ReactedUsersListView;->isLoaded:Z
@@ -82,7 +82,7 @@
 
     if-lt p1, p2, :cond_0
 
-    .line 174
+    .line 177
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView$3;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ReactedUsersListView;->access$500(Lorg/telegram/ui/Components/ReactedUsersListView;)V

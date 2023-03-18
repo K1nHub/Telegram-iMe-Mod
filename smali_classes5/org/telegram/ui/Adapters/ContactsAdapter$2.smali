@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Adapters/ContactsAdapter;Landroid/content/Context;Landroid/view/ViewGroup;)V
     .locals 0
 
-    .line 601
+    .line 605
     iput-object p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter$2;->this$0:Lorg/telegram/ui/Adapters/ContactsAdapter;
 
     iput-object p3, p0, Lorg/telegram/ui/Adapters/ContactsAdapter$2;->val$parent:Landroid/view/ViewGroup;
@@ -39,14 +39,14 @@
 .method protected onMeasure(II)V
     .locals 4
 
-    .line 605
+    .line 609
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
     if-nez p2, :cond_0
 
-    .line 607
+    .line 611
     iget-object p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter$2;->val$parent:Landroid/view/ViewGroup;
 
     invoke-virtual {p2}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -58,7 +58,7 @@
 
     if-nez p2, :cond_2
 
-    .line 610
+    .line 614
     sget-object p2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget p2, p2, Landroid/graphics/Point;->y:I
@@ -88,12 +88,12 @@
     :cond_2
     const/16 v1, 0x32
 
-    .line 612
+    .line 616
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    .line 613
+    .line 617
     iget-object v2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter$2;->this$0:Lorg/telegram/ui/Adapters/ContactsAdapter;
 
     invoke-static {v2}, Lorg/telegram/ui/Adapters/ContactsAdapter;->access$100(Lorg/telegram/ui/Adapters/ContactsAdapter;)I
@@ -115,7 +115,7 @@
 
     add-int/2addr v2, v1
 
-    .line 614
+    .line 618
     :goto_1
     iget-object v3, p0, Lorg/telegram/ui/Adapters/ContactsAdapter$2;->this$0:Lorg/telegram/ui/Adapters/ContactsAdapter;
 
@@ -127,7 +127,7 @@
 
     add-int/2addr v2, v1
 
-    .line 617
+    .line 621
     :cond_4
     iget-object v3, p0, Lorg/telegram/ui/Adapters/ContactsAdapter$2;->this$0:Lorg/telegram/ui/Adapters/ContactsAdapter;
 
@@ -152,7 +152,7 @@
 
     sub-int v0, p2, v2
 
-    .line 625
+    .line 629
     :cond_6
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollections.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collections.kt\nkotlin/collections/CollectionsKt__CollectionsKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,469:1\n392#1:471\n1#2:470\n*S KotlinDebug\n*F\n+ 1 Collections.kt\nkotlin/collections/CollectionsKt__CollectionsKt\n*L\n386#1:471\n*E\n"
+    value = "SMAP\nCollections.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collections.kt\nkotlin/collections/CollectionsKt__CollectionsKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,471:1\n394#1:473\n1#2:472\n*S KotlinDebug\n*F\n+ 1 Collections.kt\nkotlin/collections/CollectionsKt__CollectionsKt\n*L\n388#1:473\n*E\n"
 .end annotation
 
 
@@ -96,7 +96,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 314
+    .line 316
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -112,14 +112,14 @@
 
     ushr-int/lit8 v0, v0, 0x1
 
-    .line 321
+    .line 323
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/Comparable;
 
-    .line 322
+    .line 324
     invoke-static {v1, p1}, Lkotlin/comparisons/ComparisonsKt;->compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 
     move-result v1
@@ -162,7 +162,7 @@
 
     if-eqz p4, :cond_1
 
-    .line 313
+    .line 315
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p3
@@ -209,7 +209,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 223
+    .line 225
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p0
@@ -341,7 +341,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 291
+    .line 293
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -357,7 +357,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 293
+    .line 295
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -368,7 +368,7 @@
 
     goto :goto_0
 
-    .line 292
+    .line 294
     :cond_1
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
@@ -393,7 +393,7 @@
 
     return-void
 
-    .line 447
+    .line 449
     :cond_0
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
@@ -423,7 +423,7 @@
 
     throw p1
 
-    .line 446
+    .line 448
     :cond_1
     new-instance p0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -447,7 +447,7 @@
 
     throw p0
 
-    .line 445
+    .line 447
     :cond_2
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -479,7 +479,7 @@
 .method public static throwCountOverflow()V
     .locals 2
 
-    .line 467
+    .line 469
     new-instance v0, Ljava/lang/ArithmeticException;
 
     const-string v1, "Count overflow has happened."
@@ -492,7 +492,7 @@
 .method public static throwIndexOverflow()V
     .locals 2
 
-    .line 463
+    .line 465
     new-instance v0, Ljava/lang/ArithmeticException;
 
     const-string v1, "Index overflow has happened."

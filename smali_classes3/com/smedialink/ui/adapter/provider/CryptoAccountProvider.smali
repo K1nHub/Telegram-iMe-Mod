@@ -60,7 +60,7 @@
 .end method
 
 .method private final setupMenuItems(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)V
-    .locals 6
+    .locals 7
 
     .line 85
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->removeAllSubItems()V
@@ -89,17 +89,25 @@
     invoke-direct {v3, v4, v5}, Lorg/telegram/ui/Cells/CheckBoxCell;-><init>(Landroid/content/Context;I)V
 
     .line 91
-    iget-object v4, p0, Lcom/smedialink/ui/adapter/provider/CryptoAccountProvider;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    sget v5, Lorg/telegram/messenger/R$string;->wallet_ton_address_v3r2:I
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-interface {v4, v5}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    iget-object v5, p0, Lcom/smedialink/ui/adapter/provider/CryptoAccountProvider;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v4
+    sget v6, Lorg/telegram/messenger/R$string;->wallet_ton_address_v3r2:I
 
-    const-string v5, " "
+    invoke-interface {v5, v6}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v5, 0x20
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 

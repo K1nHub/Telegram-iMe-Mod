@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 /* loaded from: classes3.dex */
 abstract class BinaryReader implements Reader {
-    /* synthetic */ BinaryReader(C11911 c11911) {
+    /* synthetic */ BinaryReader(C11841 c11841) {
         this();
     }
 
@@ -1103,7 +1103,7 @@ abstract class BinaryReader implements Reader {
         }
 
         private Object readField(WireFormat.FieldType fieldType, Class<?> cls, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            switch (C11911.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
+            switch (C11841.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
                 case 1:
                     return Boolean.valueOf(readBool());
                 case 2:
@@ -1415,7 +1415,7 @@ abstract class BinaryReader implements Reader {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.BinaryReader$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C11911 {
+    public static /* synthetic */ class C11841 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 
         static {

@@ -12,12 +12,11 @@ import com.google.android.gms.internal.clearcut.zzgt;
 import com.google.android.gms.internal.clearcut.zzt;
 import com.google.android.gms.wallet.WalletConstants;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LiteMode;
 /* loaded from: classes.dex */
 public final class zzge {
 
     /* loaded from: classes.dex */
-    public static final class zza extends zzcg<zza, C6599zza> implements zzdq {
+    public static final class zza extends zzcg<zza, C6743zza> implements zzdq {
         private static volatile zzdz<zza> zzbg;
         private static final zza zzsm;
         private zzcn<String> zzsh = zzcg.zzbb();
@@ -28,12 +27,12 @@ public final class zzge {
 
         /* renamed from: com.google.android.gms.internal.clearcut.zzge$zza$zza  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C6599zza extends zzcg.zza<zza, C6599zza> implements zzdq {
-            private C6599zza() {
+        public static final class C6743zza extends zzcg.zza<zza, C6743zza> implements zzdq {
+            private C6743zza() {
                 super(zza.zzsm);
             }
 
-            /* synthetic */ C6599zza(zzgf zzgfVar) {
+            /* synthetic */ C6743zza(zzgf zzgfVar) {
                 this();
             }
         }
@@ -56,7 +55,7 @@ public final class zzge {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C6599zza(null);
+                    return new C6743zza(null);
                 case 3:
                     return zzcg.zza(zzsm, "\u0001\u0005\u0000\u0000\u0001\u0005\u0005\u0006\u0000\u0005\u0000\u0001\u001a\u0002\u001a\u0003\u0016\u0004\u0014\u0005\u0014", new Object[]{"zzsh", "zzsi", "zzsj", "zzsk", "zzsl"});
                 case 4:
@@ -2055,7 +2054,7 @@ public final class zzge {
             TANGO_CORE(477),
             ROMANESCO_GCORE(478),
             APPS_TELEPATH_ANDROID_PRIMES(479),
-            PIGEON_EXPERIMENTAL(LiteMode.FLAGS_CHAT),
+            PIGEON_EXPERIMENTAL(480),
             SPEAKEASY_BARKEEP_CLIENT(481),
             BASELINE_ANDROID_PRIMES(482),
             TANGO_CORE_COUNTERS(483),
@@ -3344,7 +3343,7 @@ public final class zzge {
                         return ROMANESCO_GCORE;
                     case 479:
                         return APPS_TELEPATH_ANDROID_PRIMES;
-                    case LiteMode.FLAGS_CHAT /* 480 */:
+                    case 480:
                         return PIGEON_EXPERIMENTAL;
                     case 481:
                         return SPEAKEASY_BARKEEP_CLIENT;

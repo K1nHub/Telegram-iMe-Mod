@@ -25,7 +25,7 @@ public class ChartData {
     protected long timeStep;
 
     /* renamed from: x */
-    public long[] f1665x;
+    public long[] f1671x;
     public float[] xPercentage;
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -39,24 +39,24 @@ public class ChartData {
             JSONArray jSONArray2 = jSONArray.getJSONArray(i);
             if (jSONArray2.getString(0).equals("x")) {
                 int length = jSONArray2.length() - 1;
-                this.f1665x = new long[length];
+                this.f1671x = new long[length];
                 int i2 = 0;
                 while (i2 < length) {
                     int i3 = i2 + 1;
-                    this.f1665x[i2] = jSONArray2.getLong(i3);
+                    this.f1671x[i2] = jSONArray2.getLong(i3);
                     i2 = i3;
                 }
             } else {
                 Line line = new Line(this);
                 this.lines.add(line);
                 int length2 = jSONArray2.length() - 1;
-                line.f1666id = jSONArray2.getString(0);
-                line.f1667y = new int[length2];
+                line.f1672id = jSONArray2.getString(0);
+                line.f1673y = new int[length2];
                 int i4 = 0;
                 while (i4 < length2) {
                     int i5 = i4 + 1;
-                    line.f1667y[i4] = jSONArray2.getInt(i5);
-                    int[] iArr = line.f1667y;
+                    line.f1673y[i4] = jSONArray2.getInt(i5);
+                    int[] iArr = line.f1673y;
                     if (iArr[i4] > line.maxValue) {
                         line.maxValue = iArr[i4];
                     }
@@ -66,7 +66,7 @@ public class ChartData {
                     i4 = i5;
                 }
             }
-            long[] jArr = this.f1665x;
+            long[] jArr = this.f1671x;
             if (jArr.length > 1) {
                 this.timeStep = jArr[1] - jArr[0];
             } else {
@@ -80,7 +80,7 @@ public class ChartData {
         for (int i6 = 0; i6 < this.lines.size(); i6++) {
             Line line2 = this.lines.get(i6);
             if (optJSONObject != null) {
-                Matcher matcher = compile.matcher(optJSONObject.getString(line2.f1666id));
+                Matcher matcher = compile.matcher(optJSONObject.getString(line2.f1672id));
                 if (matcher.matches()) {
                     if (!TextUtils.isEmpty(matcher.group(1))) {
                         line2.colorKey = "statisticChartLine_" + matcher.group(1).toLowerCase();
@@ -91,7 +91,7 @@ public class ChartData {
                 }
             }
             if (optJSONObject2 != null) {
-                line2.name = optJSONObject2.getString(line2.f1666id);
+                line2.name = optJSONObject2.getString(line2.f1672id);
             }
         }
     }
@@ -99,7 +99,7 @@ public class ChartData {
     /* JADX INFO: Access modifiers changed from: protected */
     public void measure() {
         SimpleDateFormat simpleDateFormat;
-        long[] jArr = this.f1665x;
+        long[] jArr = this.f1671x;
         int length = jArr.length;
         if (length == 0) {
             return;
@@ -112,7 +112,7 @@ public class ChartData {
             fArr[0] = 1.0f;
         } else {
             for (int i = 0; i < length; i++) {
-                this.xPercentage[i] = ((float) (this.f1665x[i] - j)) / ((float) (j2 - j));
+                this.xPercentage[i] = ((float) (this.f1671x[i] - j)) / ((float) (j2 - j));
             }
         }
         for (int i2 = 0; i2 < this.lines.size(); i2++) {
@@ -122,7 +122,7 @@ public class ChartData {
             if (this.lines.get(i2).minValue < this.minValue) {
                 this.minValue = this.lines.get(i2).minValue;
             }
-            this.lines.get(i2).segmentTree = new SegmentTree(this.lines.get(i2).f1667y);
+            this.lines.get(i2).segmentTree = new SegmentTree(this.lines.get(i2).f1673y);
         }
         long j3 = this.timeStep;
         this.daysLookup = new String[((int) ((j2 - j) / j3)) + 10];
@@ -144,7 +144,7 @@ public class ChartData {
                 }
                 i3++;
             } else {
-                long[] jArr2 = this.f1665x;
+                long[] jArr2 = this.f1671x;
                 this.oneDayPercentage = ((float) this.timeStep) / ((float) (jArr2[jArr2.length - 1] - jArr2[0]));
                 return;
             }
@@ -153,7 +153,7 @@ public class ChartData {
 
     public String getDayString(int i) {
         String[] strArr = this.daysLookup;
-        long[] jArr = this.f1665x;
+        long[] jArr = this.f1671x;
         return strArr[(int) ((jArr[i] - jArr[0]) / this.timeStep)];
     }
 
@@ -231,12 +231,12 @@ public class ChartData {
         public String colorKey;
 
         /* renamed from: id */
-        public String f1666id;
+        public String f1672id;
         public String name;
         public SegmentTree segmentTree;
 
         /* renamed from: y */
-        public int[] f1667y;
+        public int[] f1673y;
         public int maxValue = 0;
         public int minValue = Integer.MAX_VALUE;
         public int color = -16777216;

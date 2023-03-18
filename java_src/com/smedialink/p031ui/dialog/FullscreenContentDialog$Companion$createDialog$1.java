@@ -33,9 +33,8 @@ final class FullscreenContentDialog$Companion$createDialog$1 extends Lambda impl
         Intrinsics.checkNotNullParameter(it, "it");
         this.$dialog.dismiss();
         Callbacks$Callback callbacks$Callback = this.$buttonActionListener;
-        if (callbacks$Callback == null) {
-            return;
+        if (callbacks$Callback != null) {
+            callbacks$Callback.invoke();
         }
-        callbacks$Callback.invoke();
     }
 }

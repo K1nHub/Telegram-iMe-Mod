@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletTransactionsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTransactionsPresenter.kt\ncom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 6 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,294:1\n39#2,6:295\n39#2,6:304\n16#3,3:301\n764#4:310\n855#4,2:311\n1475#4:313\n1500#4,3:314\n1503#4,3:324\n1849#4,2:328\n1475#4:331\n1500#4,3:332\n1503#4,3:342\n1849#4,2:346\n357#5,7:317\n357#5,7:335\n211#6:327\n212#6:330\n211#6:345\n212#6:348\n*S KotlinDebug\n*F\n+ 1 WalletTransactionsPresenter.kt\ncom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter\n*L\n201#1:295,6\n233#1:304,6\n232#1:301,3\n252#1:310\n252#1:311,2\n263#1:313\n263#1:314,3\n263#1:324,3\n266#1:328,2\n281#1:331\n281#1:332,3\n281#1:342,3\n284#1:346,2\n263#1:317,7\n281#1:335,7\n264#1:327\n264#1:330\n282#1:345\n282#1:348\n*E\n"
+    value = "SMAP\nWalletTransactionsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTransactionsPresenter.kt\ncom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 6 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,295:1\n39#2,8:296\n39#2,8:307\n16#3,3:304\n766#4:315\n857#4,2:316\n1477#4:318\n1502#4,3:319\n1505#4,3:329\n1855#4,2:333\n1477#4:336\n1502#4,3:337\n1505#4,3:347\n1855#4,2:351\n361#5,7:322\n361#5,7:340\n215#6:332\n216#6:335\n215#6:350\n216#6:353\n*S KotlinDebug\n*F\n+ 1 WalletTransactionsPresenter.kt\ncom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter\n*L\n201#1:296,8\n234#1:307,8\n233#1:304,3\n253#1:315\n253#1:316,2\n264#1:318\n264#1:319,3\n264#1:329,3\n267#1:333,2\n282#1:336\n282#1:337,3\n282#1:347,3\n285#1:351,2\n264#1:322,7\n282#1:340,7\n265#1:332\n265#1:335\n283#1:350\n283#1:353\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -65,10 +65,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$SD3_3IQvgnLabLsEpK7gXlE52Lg(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;)V
+.method public static synthetic $r8$lambda$lj8Y4zodOZo976hInIbhRCKe0DE(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;->loadInternal$lambda-0(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;->loadInternal$lambda$0(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;)V
 
     return-void
 .end method
@@ -305,19 +305,19 @@
         }
     .end annotation
 
-    .line 251
+    .line 252
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;
 
     instance-of v0, v0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$TokenDetailsTab;
 
     if-eqz v0, :cond_2
 
-    .line 764
+    .line 766
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -338,7 +338,7 @@
 
     check-cast v2, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
 
-    .line 252
+    .line 253
     iget-object v3, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;
 
     check-cast v3, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$TokenDetailsTab;
@@ -353,6 +353,7 @@
 
     if-eqz v2, :cond_0
 
+    .line 857
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -365,9 +366,9 @@
 .end method
 
 .method private final listenEvents()V
-    .locals 4
+    .locals 5
 
-    .line 231
+    .line 232
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;->rxEventBus:Lcom/smedialink/storage/domain/utils/rx/RxEventBus;
 
     .line 16
@@ -404,23 +405,34 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;)V
 
-    new-instance v2, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v1, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v3}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v3}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 46
+    new-instance v4, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v4, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, v2, v4}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
-    .line 247
+    .line 248
     invoke-static {p0, v0, v3, v1, v3}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -516,29 +528,40 @@
 
     invoke-direct {v1, p4, p2, p0, p1}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$loadInternal$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lkotlin/jvm/functions/Function1;ZLcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;Z)V
 
-    new-instance p1, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$loadInternal$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {p1, v0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$loadInternal$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {p1, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p3, v1, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance p2, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$loadInternal$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {p2, v0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$loadInternal$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance p4, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {p4, p2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {p3, p1, p4}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string p2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 p2, 0x0
 
     const/4 p3, 0x1
 
-    .line 208
+    .line 209
     invoke-static {p0, p1, p2, p3, p2}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
 .end method
 
-.method private static final loadInternal$lambda-0(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;)V
+.method private static final loadInternal$lambda$0(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -750,35 +773,35 @@
         }
     .end annotation
 
-    .line 275
+    .line 276
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;->stakingOperations:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 277
+    .line 278
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 278
+    .line 279
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;
 
     instance-of v0, v0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$StakingOperationsTab;
 
-    .line 279
+    .line 280
     iget-object v1, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;->stakingOperations:Ljava/util/List;
 
-    .line 280
+    .line 281
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->distinct(Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 1475
+    .line 1477
     new-instance v2, Ljava/util/LinkedHashMap;
 
     invoke-direct {v2}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 1500
+    .line 1502
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -794,12 +817,12 @@
 
     move-result-object v3
 
-    .line 1501
+    .line 1503
     move-object v4, v3
 
     check-cast v4, Lcom/smedialink/storage/domain/model/staking/StakingOperation;
 
-    .line 281
+    .line 282
     invoke-virtual {v4}, Lcom/smedialink/storage/domain/model/staking/StakingOperation;->getCreatedAt()Ljava/lang/String;
 
     move-result-object v4
@@ -812,31 +835,31 @@
 
     move-result-object v4
 
-    .line 357
+    .line 361
     invoke-interface {v2, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
 
     if-nez v5, :cond_0
 
-    .line 1502
+    .line 1504
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 360
+    .line 364
     invoke-interface {v2, v4, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1502
+    .line 1504
     :cond_0
     check-cast v5, Ljava/util/List;
 
-    .line 1503
+    .line 1505
     invoke-interface {v5, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 211
+    .line 215
     :cond_1
     invoke-interface {v2}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -859,7 +882,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 282
+    .line 283
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -872,14 +895,14 @@
 
     check-cast v2, Ljava/util/List;
 
-    .line 283
+    .line 284
     new-instance v4, Lcom/smedialink/model/wallet/home/HeaderItem;
 
     invoke-direct {v4, v3}, Lcom/smedialink/model/wallet/home/HeaderItem;-><init>(Ljava/lang/String;)V
 
     invoke-interface {p1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1849
+    .line 1855
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -897,7 +920,7 @@
 
     check-cast v3, Lcom/smedialink/storage/domain/model/staking/StakingOperation;
 
-    .line 285
+    .line 286
     invoke-static {v3, v0}, Lcom/smedialink/mapper/staking/StackingOperationUiMappingKt;->mapToUi(Lcom/smedialink/storage/domain/model/staking/StakingOperation;Z)Lcom/chad/library/adapter/base/entity/node/BaseNode;
 
     move-result-object v3
@@ -925,30 +948,30 @@
         }
     .end annotation
 
-    .line 258
+    .line 259
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;->transactions:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 260
+    .line 261
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 261
+    .line 262
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;->transactions:Ljava/util/List;
 
-    .line 262
+    .line 263
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->distinct(Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 1475
+    .line 1477
     new-instance v1, Ljava/util/LinkedHashMap;
 
     invoke-direct {v1}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 1500
+    .line 1502
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -964,12 +987,12 @@
 
     move-result-object v2
 
-    .line 1501
+    .line 1503
     move-object v3, v2
 
     check-cast v3, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
 
-    .line 263
+    .line 264
     invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getCreatedAt()Ljava/lang/String;
 
     move-result-object v3
@@ -982,31 +1005,31 @@
 
     move-result-object v3
 
-    .line 357
+    .line 361
     invoke-interface {v1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
     if-nez v4, :cond_0
 
-    .line 1502
+    .line 1504
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 360
+    .line 364
     invoke-interface {v1, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1502
+    .line 1504
     :cond_0
     check-cast v4, Ljava/util/List;
 
-    .line 1503
+    .line 1505
     invoke-interface {v4, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 211
+    .line 215
     :cond_1
     invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -1029,7 +1052,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 264
+    .line 265
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -1042,14 +1065,14 @@
 
     check-cast v1, Ljava/util/List;
 
-    .line 265
+    .line 266
     new-instance v3, Lcom/smedialink/model/wallet/home/HeaderItem;
 
     invoke-direct {v3, v2}, Lcom/smedialink/model/wallet/home/HeaderItem;-><init>(Ljava/lang/String;)V
 
     invoke-interface {p1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1849
+    .line 1855
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -1067,7 +1090,7 @@
 
     check-cast v2, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
 
-    .line 267
+    .line 268
     invoke-static {v2}, Lcom/smedialink/mapper/transaction/TransactionUiMappingKt;->mapToUI(Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;)Lcom/smedialink/model/wallet/transaction/TransactionItem;
 
     move-result-object v2
@@ -1085,7 +1108,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 218
+    .line 219
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p2
@@ -1096,13 +1119,13 @@
 
     goto :goto_1
 
-    .line 221
+    .line 222
     :cond_0
     invoke-virtual {p1}, Lcom/smedialink/storage/data/network/model/error/ErrorModel;->getStatus()Lcom/smedialink/storage/data/network/model/error/IErrorStatus;
 
     move-result-object p2
 
-    .line 222
+    .line 223
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->NO_CONNECTION:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
     if-ne p2, v0, :cond_1
@@ -1111,15 +1134,15 @@
 
     goto :goto_0
 
-    .line 223
+    .line 224
     :cond_1
     sget-object p2, Lcom/smedialink/model/state/GlobalState$Unexpected;->INSTANCE:Lcom/smedialink/model/state/GlobalState$Unexpected;
 
-    .line 220
+    .line 221
     :goto_0
     invoke-direct {p0, p2}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;->renderGlobalState(Lcom/smedialink/model/state/GlobalState;)V
 
-    .line 227
+    .line 228
     :goto_1
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -1143,7 +1166,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 212
+    .line 213
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -1156,7 +1179,7 @@
 
     goto :goto_0
 
-    .line 213
+    .line 214
     :cond_0
     sget-object p1, Lcom/smedialink/model/state/GlobalState$Progress;->INSTANCE:Lcom/smedialink/model/state/GlobalState$Progress;
 

@@ -37,7 +37,6 @@ public final class StakingProgrammeProvider$convert$1$2 extends Lambda implement
         materialShapeDrawable.setFillColor(ColorStateList.valueOf(Theme.getColor("windowBackgroundWhite")));
         networkIconCornerSize = stakingProgrammeProvider.getNetworkIconCornerSize();
         materialShapeDrawable.setCornerSize(networkIconCornerSize);
-        Unit unit = Unit.INSTANCE;
         applyForView.setBackground(materialShapeDrawable);
     }
 }

@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 829
+    .line 830
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$setupViewsContents$1$2;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -59,10 +59,10 @@
 .method public final invoke()V
     .locals 5
 
-    .line 830
+    .line 831
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$setupViewsContents$1$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 831
+    .line 832
     sget-object v1, Lcom/smedialink/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog;->Companion:Lcom/smedialink/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog$Companion;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -83,7 +83,7 @@
 
     move-result-object v1
 
-    .line 830
+    .line 831
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void

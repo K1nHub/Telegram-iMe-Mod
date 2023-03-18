@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTranslationRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TranslationRepositoryImpl.kt\ncom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n+ 4 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt\n+ 5 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,95:1\n764#2:96\n855#2,2:97\n26#3:99\n26#3:101\n70#4:100\n8#5:102\n*S KotlinDebug\n*F\n+ 1 TranslationRepositoryImpl.kt\ncom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl\n*L\n47#1:96\n47#1:97,2\n76#1:99\n83#1:101\n82#1:100\n74#1:102\n*E\n"
+    value = "SMAP\nTranslationRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TranslationRepositoryImpl.kt\ncom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n+ 4 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt\n*L\n1#1,95:1\n766#2:96\n857#2,2:97\n26#3:99\n26#3:101\n70#4:100\n*S KotlinDebug\n*F\n+ 1 TranslationRepositoryImpl.kt\ncom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl\n*L\n47#1:96\n47#1:97,2\n76#1:99\n83#1:101\n82#1:100\n*E\n"
 .end annotation
 
 
@@ -41,40 +41,20 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$M6sKK59nPtrNttuZiRy8FrmG7gE(Ljava/util/List;)Lcom/smedialink/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$26Rm9ooQpxmprSwrG_HXeWGKRRk(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;->translate$lambda-4(Ljava/util/List;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;->translate$lambda$2(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$NCcnrqoG8fyg00zHhSZTTOViSog(Ljava/util/ArrayList;)Lcom/smedialink/storage/domain/model/translation/Translation;
+.method public static synthetic $r8$lambda$K9FbZfpB5P-w-6f4BCSguBVEZfg(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;->translate$lambda-3$lambda-1(Ljava/util/ArrayList;)Lcom/smedialink/storage/domain/model/translation/Translation;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic $r8$lambda$RqhTbMFdDdbZWlbzGVeTCZkVWN4(Ljava/util/List;Lio/reactivex/Observable;)Lio/reactivex/ObservableSource;
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;->translate$lambda-3$lambda-2(Ljava/util/List;Lio/reactivex/Observable;)Lio/reactivex/ObservableSource;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic $r8$lambda$w58hMjM1yQqPy7bgYzspeamwmeg(Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/CharSequence;)Lio/reactivex/ObservableSource;
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;->translate$lambda-3(Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/CharSequence;)Lio/reactivex/ObservableSource;
+    invoke-static {p0, p1}, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;->translate$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p0
 
@@ -161,188 +141,54 @@
     return-void
 .end method
 
-.method private static final translate$lambda-3(Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/CharSequence;)Lio/reactivex/ObservableSource;
-    .locals 2
+.method public static final synthetic access$getGoogleTranslationApi$p(Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;)Lcom/smedialink/storage/data/network/api/own/GoogleTranslationApi;
+    .locals 0
 
-    const-string v0, "this$0"
+    .line 20
+    iget-object p0, p0, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;->googleTranslationApi:Lcom/smedialink/storage/data/network/api/own/GoogleTranslationApi;
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    return-object p0
+.end method
 
-    const-string v0, "$targetLanguage"
+.method public static final synthetic access$getUserAgents$p(Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;)Ljava/util/List;
+    .locals 0
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "$blocks"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "blockText"
-
-    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 52
-    iget-object v0, p0, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;->googleTranslationApi:Lcom/smedialink/storage/data/network/api/own/GoogleTranslationApi;
-
-    .line 54
+    .line 20
     iget-object p0, p0, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;->userAgents:Ljava/util/List;
 
-    sget-object v1, Lkotlin/random/Random;->Default:Lkotlin/random/Random$Default;
-
-    invoke-static {p0, v1}, Lkotlin/collections/CollectionsKt;->random(Ljava/util/Collection;Lkotlin/random/Random;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/lang/String;
-
-    if-nez p1, :cond_0
-
-    const-string p1, "auto"
-
-    .line 57
-    :cond_0
-    invoke-virtual {p4}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p4
-
-    .line 53
-    invoke-interface {v0, p0, p1, p2, p4}, Lcom/smedialink/storage/data/network/api/own/GoogleTranslationApi;->translate(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
-
-    move-result-object p0
-
-    sget-object p1, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$$ExternalSyntheticLambda2;->INSTANCE:Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$$ExternalSyntheticLambda2;
-
-    .line 59
-    invoke-virtual {p0, p1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
-
-    move-result-object p0
-
-    .line 60
-    new-instance p1, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$$ExternalSyntheticLambda0;
-
-    invoke-direct {p1, p3}, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$$ExternalSyntheticLambda0;-><init>(Ljava/util/List;)V
-
-    invoke-virtual {p0, p1}, Lio/reactivex/Observable;->compose(Lio/reactivex/ObservableTransformer;)Lio/reactivex/Observable;
-
-    move-result-object p0
-
     return-object p0
 .end method
 
-.method private static final translate$lambda-3$lambda-1(Ljava/util/ArrayList;)Lcom/smedialink/storage/domain/model/translation/Translation;
+.method private static final translate$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 1
 
-    const-string v0, "response"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 59
-    invoke-static {p0}, Lcom/smedialink/storage/data/mapper/translate/TranslationMappingKt;->mapToDomain(Ljava/util/ArrayList;)Lcom/smedialink/storage/domain/model/translation/Translation;
+    .line 51
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Lio/reactivex/ObservableSource;
 
     return-object p0
 .end method
 
-.method private static final translate$lambda-3$lambda-2(Ljava/util/List;Lio/reactivex/Observable;)Lio/reactivex/ObservableSource;
-    .locals 2
+.method private static final translate$lambda$2(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+    .locals 1
 
-    const-string v0, "$blocks"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "observable"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 61
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result p0
-
-    const/4 v0, 0x1
-
-    if-le p0, v0, :cond_0
-
-    const-wide/16 v0, 0x258
-
-    sget-object p0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {p1, v0, v1, p0}, Lio/reactivex/Observable;->delay(JLjava/util/concurrent/TimeUnit;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    :cond_0
-    return-object p1
-.end method
-
-.method private static final translate$lambda-4(Ljava/util/List;)Lcom/smedialink/storage/domain/model/Result;
-    .locals 10
-
-    const-string v0, "translations"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 68
-    new-instance v0, Lcom/smedialink/storage/domain/model/translation/Translation;
-
-    .line 69
-    new-instance v7, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$translate$2$1;
-
-    invoke-direct {v7, p0}, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$translate$2$1;-><init>(Ljava/util/List;)V
-
-    const-string v2, ""
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x0
-
-    move-object v1, p0
-
-    invoke-static/range {v1 .. v9}, Lkotlin/collections/CollectionsKt;->joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 73
-    invoke-static {p0}, Lkotlin/collections/CollectionsKt;->firstOrNull(Ljava/util/List;)Ljava/lang/Object;
+    .line 67
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lcom/smedialink/storage/domain/model/translation/Translation;
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/translation/Translation;->getSourceLang()Ljava/lang/String;
-
-    move-result-object p0
-
-    :goto_0
-    if-nez p0, :cond_1
-
-    const-string p0, ""
-
-    .line 68
-    :cond_1
-    invoke-direct {v0, v1, p0}, Lcom/smedialink/storage/domain/model/translation/Translation;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 8
-    sget-object p0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
-
-    invoke-virtual {p0, v0}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
-
-    move-result-object p0
+    check-cast p0, Lcom/smedialink/storage/domain/model/Result;
 
     return-object p0
 .end method
@@ -378,7 +224,11 @@
 
     invoke-direct {v2, v1}, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$languages$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
-    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v1, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v1, v2}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v0
 
@@ -390,11 +240,15 @@
     iget-object v1, p0, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/GoogleServicesErrorHandler;
 
     .line 26
-    new-instance v2, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance v2, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$languages$$inlined$handleError$1;
 
-    invoke-direct {v2, v1}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {v2, v1}, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$languages$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v1, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v1, v2}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v0
 
@@ -439,12 +293,12 @@
 
     move-result-object p1
 
-    .line 764
+    .line 766
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -476,6 +330,7 @@
 
     if-eqz v2, :cond_0
 
+    .line 857
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -487,11 +342,15 @@
     move-result-object p1
 
     .line 51
-    new-instance v1, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$$ExternalSyntheticLambda1;
+    new-instance v1, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$translate$1;
 
-    invoke-direct {v1, p0, p2, p3, v0}, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
+    invoke-direct {v1, p0, p2, p3, v0}, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$translate$1;-><init>(Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
 
-    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->concatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$$ExternalSyntheticLambda1;
+
+    invoke-direct {p2, v1}, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->concatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -505,14 +364,18 @@
 
     move-result-object p1
 
-    sget-object p2, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$$ExternalSyntheticLambda3;->INSTANCE:Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$$ExternalSyntheticLambda3;
-
     .line 67
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    sget-object p2, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$translate$2;->INSTANCE:Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$translate$2;
+
+    new-instance p3, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$$ExternalSyntheticLambda0;
+
+    invoke-direct {p3, p2}, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    const-string p2, "fromIterable(blocks)\n   \u2026ccess()\n                }"
+    const-string p2, "override fun translate(\n\u2026Error(errorHandler)\n    }"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -520,11 +383,15 @@
     iget-object p2, p0, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/GoogleServicesErrorHandler;
 
     .line 26
-    new-instance p3, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance p3, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$translate$$inlined$handleError$1;
 
-    invoke-direct {p3, p2}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {p3, p2}, Lcom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$translate$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, p3}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 

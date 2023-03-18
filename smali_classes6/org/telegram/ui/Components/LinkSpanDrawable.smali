@@ -174,7 +174,7 @@
     .line 56
     iput-wide v0, p0, Lorg/telegram/ui/Components/LinkSpanDrawable;->mReleaseStart:J
 
-    const/16 v0, 0x20
+    const v0, 0x81e0
 
     .line 66
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z

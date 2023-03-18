@@ -114,7 +114,7 @@ public final class TelegramStatisticsChartData {
     }
 
     public String toString() {
-        return "TelegramStatisticsChartData(colors=" + this.colors + ", columns=" + this.columns + ", hidden=" + this.hidden + ", names=" + this.names + ", strokeWidth=" + this.strokeWidth + ", subchart=" + this.subchart + ", title=" + this.title + ", types=" + this.types + ", xRangeFormatter=" + this.xRangeFormatter + ", xTickFormatter=" + this.xTickFormatter + ", xTooltipFormatter=" + ((Object) this.xTooltipFormatter) + ", yTickFormatter=" + ((Object) this.yTickFormatter) + ", yTooltipFormatter=" + this.yTooltipFormatter + ')';
+        return "TelegramStatisticsChartData(colors=" + this.colors + ", columns=" + this.columns + ", hidden=" + this.hidden + ", names=" + this.names + ", strokeWidth=" + this.strokeWidth + ", subchart=" + this.subchart + ", title=" + this.title + ", types=" + this.types + ", xRangeFormatter=" + this.xRangeFormatter + ", xTickFormatter=" + this.xTickFormatter + ", xTooltipFormatter=" + this.xTooltipFormatter + ", yTickFormatter=" + this.yTickFormatter + ", yTooltipFormatter=" + this.yTooltipFormatter + ')';
     }
 
     /* JADX WARN: Multi-variable type inference failed */

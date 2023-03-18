@@ -4,8 +4,6 @@ import com.binance.android.binancepay.api.BinancePayFactory;
 import com.binance.android.binancepay.api.BinancePayListener;
 import com.smedialink.model.dialog.DialogModel;
 import com.smedialink.p031ui.base.mvp.base.BaseView;
-import com.smedialink.storage.data.network.handlers.impl.ApiErrorHandler;
-import com.smedialink.storage.data.network.model.error.ErrorModel;
 import com.smedialink.storage.data.utils.system.AndroidActivityHolder;
 import com.smedialink.storage.domain.interactor.binancepay.BinanceInternalInteractor;
 import com.smedialink.storage.domain.interactor.firebase.DynamicLinksInteractor;
@@ -16,18 +14,17 @@ import com.smedialink.storage.domain.model.wallet.token.TokenInfo;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.extentions.p033rx.RxExtKt;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.smedialink.utils.formatter.BalanceFormatter;
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.utils.Callbacks$Callback;
-import org.telegram.messenger.C3158R;
-import timber.log.Timber;
+import org.telegram.messenger.C3286R;
 /* compiled from: BinancePayProcessManager.kt */
 /* loaded from: classes3.dex */
 public final class BinancePayProcessManager {
@@ -64,66 +61,28 @@ public final class BinancePayProcessManager {
         this.subscriptions.clear();
     }
 
-    public void loadAndPay(final AndroidActivityHolder holder, String link) {
+    public void loadAndPay(AndroidActivityHolder holder, String link) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(link, "link");
-        Observable<R> flatMap = this.dynamicLinksInteractor.getLink(holder, link).flatMap(new Function() { // from class: com.smedialink.manager.crypto.pay.BinancePayProcessManager$loadAndPay$$inlined$flatMapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lio/reactivex/ObservableSource<+TR;>; */
+        Observable<Result<DynamicLinkData>> link2 = this.dynamicLinksInteractor.getLink(holder, link);
+        final BinancePayProcessManager$loadAndPay$$inlined$flatMapSuccess$1 binancePayProcessManager$loadAndPay$$inlined$flatMapSuccess$1 = new BinancePayProcessManager$loadAndPay$$inlined$flatMapSuccess$1(this);
+        Observable<R> flatMap = link2.flatMap(new Function(binancePayProcessManager$loadAndPay$$inlined$flatMapSuccess$1) { // from class: com.smedialink.manager.crypto.pay.BinancePayProcessManager$inlined$sam$i$io_reactivex_functions_Function$0
+            private final /* synthetic */ Function1 function;
+
+            {
+                Intrinsics.checkNotNullParameter(binancePayProcessManager$loadAndPay$$inlined$flatMapSuccess$1, "function");
+                this.function = binancePayProcessManager$loadAndPay$$inlined$flatMapSuccess$1;
+            }
+
             @Override // io.reactivex.functions.Function
-            public final ObservableSource apply(Result result) {
-                BinanceInternalInteractor binanceInternalInteractor;
-                Intrinsics.checkNotNullParameter(result, "result");
-                if (!(result instanceof Result.Success)) {
-                    return result instanceof Result.Error ? Observable.just(Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null)) : Observable.empty();
-                }
-                Object data = result.getData();
-                Intrinsics.checkNotNull(data);
-                DynamicLinkData dynamicLinkData = (DynamicLinkData) data;
-                if (!(dynamicLinkData instanceof DynamicLinkData.BinancePayment)) {
-                    Observable just = Observable.just(Result.Companion.error$default(Result.Companion, new ErrorModel(ApiErrorHandler.ErrorStatus.BAD_RESPONSE, (Throwable) null, 2, (DefaultConstructorMarker) null), null, 2, null));
-                    Intrinsics.checkNotNullExpressionValue(just, "just(this)");
-                    return just;
-                }
-                binanceInternalInteractor = BinancePayProcessManager.this.binanceInternalInteractor;
-                return binanceInternalInteractor.getTransaction(((DynamicLinkData.BinancePayment) dynamicLinkData).getBinancePayId());
+            public final /* synthetic */ Object apply(Object obj) {
+                return this.function.invoke(obj);
             }
         });
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "dynamicLinksInteractor\n …(schedulersProvider.ui())");
-        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) getViewState(), false, 2, (Object) null);
-        final BinancePayProcessView binancePayProcessView = this.viewState;
-        Disposable subscribe = withLoadingDialog$default.subscribe(new Consumer() { // from class: com.smedialink.manager.crypto.pay.BinancePayProcessManager$loadAndPay$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                BinancePayProcessView viewState;
-                ResourceManager resourceManager;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    BinancePayProcessManager.this.pay(holder, (BinanceTransaction) ((Result.Success) result).getData());
-                } else if (result instanceof Result.Error) {
-                    viewState = BinancePayProcessManager.this.getViewState();
-                    ErrorModel error = ((Result.Error) result).getError();
-                    resourceManager = BinancePayProcessManager.this.resourceManager;
-                    viewState.showToast(error.getMessage(resourceManager));
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.manager.crypto.pay.BinancePayProcessManager$loadAndPay$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) getViewState(), false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1456x2414b84e(this, holder)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1457x2414b84f(this.viewState)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         autoDispose(subscribe);
     }
@@ -134,14 +93,13 @@ public final class BinancePayProcessManager {
         getViewState().showConfirmPaymentDialog(getConfirmPayDialogModel(transaction.getInitiatorUserId()), new Callbacks$Callback() { // from class: com.smedialink.manager.crypto.pay.BinancePayProcessManager$$ExternalSyntheticLambda0
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                BinancePayProcessManager.m1267pay$lambda2(BinancePayProcessManager.this, holder, transaction);
+                BinancePayProcessManager.pay$lambda$2(BinancePayProcessManager.this, holder, transaction);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: pay$lambda-2  reason: not valid java name */
-    public static final void m1267pay$lambda2(BinancePayProcessManager this$0, AndroidActivityHolder holder, BinanceTransaction transaction) {
+    public static final void pay$lambda$2(BinancePayProcessManager this$0, AndroidActivityHolder holder, BinanceTransaction transaction) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(holder, "$holder");
         Intrinsics.checkNotNullParameter(transaction, "$transaction");
@@ -162,17 +120,17 @@ public final class BinancePayProcessManager {
                 ResourceManager resourceManager3;
                 viewState = BinancePayProcessManager.this.getViewState();
                 resourceManager = BinancePayProcessManager.this.resourceManager;
-                String string = resourceManager.getString(C3158R.string.wallet_binance_pay_request_paid_success_dialog_title);
+                String string = resourceManager.getString(C3286R.string.wallet_binance_pay_request_paid_success_dialog_title);
                 resourceManager2 = BinancePayProcessManager.this.resourceManager;
-                String string2 = resourceManager2.getString(C3158R.string.wallet_binance_pay_request_paid_success_dialog_description, BalanceFormatter.formatBalance(Double.valueOf(binanceTransaction.getAmount()), TokenInfo.Crypto.Ethereum.BNB.INSTANCE.getDecimals()), binanceTransaction.getAsset(), binanceTransaction.getInitiatorUserId());
+                String string2 = resourceManager2.getString(C3286R.string.wallet_binance_pay_request_paid_success_dialog_description, BalanceFormatter.formatBalance(Double.valueOf(binanceTransaction.getAmount()), TokenInfo.Crypto.Ethereum.BNB.INSTANCE.getDecimals()), binanceTransaction.getAsset(), binanceTransaction.getInitiatorUserId());
                 resourceManager3 = BinancePayProcessManager.this.resourceManager;
-                viewState.showSuccessPaymentProcessedDialog(string, string2, resourceManager3.getString(C3158R.string.common_ok));
+                viewState.showSuccessPaymentProcessedDialog(string, string2, resourceManager3.getString(C3286R.string.common_ok));
             }
         });
     }
 
     private final DialogModel getConfirmPayDialogModel(String str) {
-        return new DialogModel(this.resourceManager.getString(C3158R.string.wallet_binance_pay_transaction_direction_in_title), this.resourceManager.getString(C3158R.string.wallet_binance_pay_confirm_pay_dialog_description, str), this.resourceManager.getString(C3158R.string.common_cancel), this.resourceManager.getString(C3158R.string.wallet_binance_pay_action_pay));
+        return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_binance_pay_transaction_direction_in_title), this.resourceManager.getString(C3286R.string.wallet_binance_pay_confirm_pay_dialog_description, str), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.wallet_binance_pay_action_pay));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

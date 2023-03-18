@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 53
+    .line 54
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
@@ -83,7 +83,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 53
+    .line 54
     invoke-static {p1}, Lcom/smedialink/storage/data/di/module/NetworkModuleKt;->access$createCache(Lorg/koin/core/scope/Scope;)Lokhttp3/Cache;
 
     move-result-object p1

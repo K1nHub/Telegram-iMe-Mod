@@ -12,7 +12,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.enums.TemplatesSortingType;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
@@ -68,7 +68,7 @@ public final class TemplatesHeaderCell extends LinearLayout {
     public final void bind(int i, final BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate templatesDelegate) {
         Intrinsics.checkNotNullParameter(templatesDelegate, "templatesDelegate");
         TextView headerTextView = getHeaderTextView();
-        headerTextView.setText(LocaleController.getInternalString(i > 0 ? C3158R.string.chat_templates : C3158R.string.chat_templates_list_header));
+        headerTextView.setText(LocaleController.getInternalString(i > 0 ? C3286R.string.chat_templates : C3286R.string.chat_templates_list_header));
         headerTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
         ActionBarMenuItem sortButton = getSortButton();
         sortButton.setVisibility(i > 1 ? 0 : 8);
@@ -79,15 +79,14 @@ public final class TemplatesHeaderCell extends LinearLayout {
         createButton.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.view.TemplatesHeaderCell$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TemplatesHeaderCell.m2123bind$lambda3$lambda2(BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate.this, view);
+                TemplatesHeaderCell.bind$lambda$3$lambda$2(BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate.this, view);
             }
         });
         createButton.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: bind$lambda-3$lambda-2  reason: not valid java name */
-    public static final void m2123bind$lambda3$lambda2(BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate templatesDelegate, View view) {
+    public static final void bind$lambda$3$lambda$2(BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate templatesDelegate, View view) {
         Intrinsics.checkNotNullParameter(templatesDelegate, "$templatesDelegate");
         templatesDelegate.didPressOpenTemplates(true);
     }
@@ -113,21 +112,20 @@ public final class TemplatesHeaderCell extends LinearLayout {
         actionBarMenuItem.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.fork.ui.view.TemplatesHeaderCell$$ExternalSyntheticLambda2
             @Override // org.telegram.p048ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i) {
-                TemplatesHeaderCell.m2124initSortButton$lambda7$lambda5(ActionBarMenuItem.this, this, i);
+                TemplatesHeaderCell.initSortButton$lambda$7$lambda$5(ActionBarMenuItem.this, this, i);
             }
         });
         actionBarMenuItem.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.view.TemplatesHeaderCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TemplatesHeaderCell.m2125initSortButton$lambda7$lambda6(ActionBarMenuItem.this, view);
+                TemplatesHeaderCell.initSortButton$lambda$7$lambda$6(ActionBarMenuItem.this, view);
             }
         });
         return actionBarMenuItem;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initSortButton$lambda-7$lambda-5  reason: not valid java name */
-    public static final void m2124initSortButton$lambda7$lambda5(ActionBarMenuItem this_apply, TemplatesHeaderCell this$0, int i) {
+    public static final void initSortButton$lambda$7$lambda$5(ActionBarMenuItem this_apply, TemplatesHeaderCell this$0, int i) {
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         TemplatesSortingType templatesSortingType = TemplatesSortingType.values()[i];
@@ -137,8 +135,7 @@ public final class TemplatesHeaderCell extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initSortButton$lambda-7$lambda-6  reason: not valid java name */
-    public static final void m2125initSortButton$lambda7$lambda6(ActionBarMenuItem this_apply, View view) {
+    public static final void initSortButton$lambda$7$lambda$6(ActionBarMenuItem this_apply, View view) {
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         this_apply.toggleSubMenu();
     }
@@ -148,7 +145,7 @@ public final class TemplatesHeaderCell extends LinearLayout {
         TextView textView = new TextView(getContext());
         ViewExtKt.withMediumTypeface(textView);
         ViewExtKt.setHorizontalPadding(textView, 16);
-        String string = LocaleController.getString("Create", C3158R.string.Create);
+        String string = LocaleController.getString("Create", C3286R.string.Create);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Create\", R.string.Create)");
         String upperCase = string.toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");

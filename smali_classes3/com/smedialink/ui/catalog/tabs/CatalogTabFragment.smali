@@ -42,18 +42,15 @@
     .line 25
     iget-object v0, p0, Lcom/smedialink/ui/catalog/tabs/CatalogTabFragment;->bottomNavigationDelegate:Lcom/smedialink/ui/wallet/common/BottomNavigationDelegate;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     new-instance v1, Lcom/smedialink/ui/catalog/tabs/CatalogTabFragment$onResume$1;
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/catalog/tabs/CatalogTabFragment$onResume$1;-><init>(Lcom/smedialink/ui/catalog/tabs/CatalogTabFragment;)V
 
     invoke-interface {v0, v1}, Lcom/smedialink/ui/wallet/common/BottomNavigationDelegate;->getBottomNavigationPadding(Lkotlin/jvm/functions/Function1;)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 

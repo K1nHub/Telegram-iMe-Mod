@@ -1,4 +1,6 @@
 package org.telegram.messenger;
+
+import com.google.android.exoplayer2.analytics.AnalyticsListener;
 /* loaded from: classes4.dex */
 public class CharacterCompat {
     public static final char MIN_HIGH_SURROGATE = 55296;
@@ -10,6 +12,6 @@ public class CharacterCompat {
     }
 
     public static char lowSurrogate(int i) {
-        return (char) ((i & 1023) + 56320);
+        return (char) ((i & AnalyticsListener.EVENT_DRM_KEYS_LOADED) + 56320);
     }
 }

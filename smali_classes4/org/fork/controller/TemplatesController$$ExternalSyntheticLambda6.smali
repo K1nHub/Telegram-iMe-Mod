@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/controller/TemplatesController$$ExternalSyntheticLambda6;->f$0:Lorg/fork/controller/TemplatesController;
 
-    invoke-static {v0}, Lorg/fork/controller/TemplatesController;->$r8$lambda$fHpbZSXMFoNMcjdHmGd-I-zJikI(Lorg/fork/controller/TemplatesController;)V
+    invoke-static {v0}, Lorg/fork/controller/TemplatesController;->$r8$lambda$yu0A_k6qlpT0ShEOM1W0Z6NSBl0(Lorg/fork/controller/TemplatesController;)V
 
     return-void
 .end method

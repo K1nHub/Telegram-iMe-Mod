@@ -35,10 +35,6 @@
         }
     .end annotation
 
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "context"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -247,7 +243,7 @@
 
     const/4 v1, 0x0
 
-    const-string v2, "windowBackgroundWhite"
+    const-string/jumbo v2, "windowBackgroundWhite"
 
     const-string v3, "checkboxCheck"
 
@@ -356,9 +352,6 @@
     move-result v3
 
     invoke-virtual {v1, v2, v3}, Landroid/graphics/drawable/GradientDrawable;->setStroke(II)V
-
-    .line 155
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     goto :goto_0
 

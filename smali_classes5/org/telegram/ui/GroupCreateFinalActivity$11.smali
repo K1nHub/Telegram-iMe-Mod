@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCreateFinalActivity;Z)V
     .locals 0
 
-    .line 745
+    .line 748
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$11;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/GroupCreateFinalActivity$11;->val$show:Z
@@ -39,7 +39,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 761
+    .line 764
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$11;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     const/4 v0, 0x0
@@ -52,7 +52,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 748
+    .line 751
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$11;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$900(Lorg/telegram/ui/GroupCreateFinalActivity;)Landroid/animation/AnimatorSet;
@@ -71,7 +71,7 @@
 
     goto :goto_1
 
-    .line 751
+    .line 754
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$11;->val$show:Z
 
@@ -79,7 +79,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 752
+    .line 755
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$11;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$1000(Lorg/telegram/ui/GroupCreateFinalActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -90,7 +90,7 @@
 
     goto :goto_0
 
-    .line 754
+    .line 757
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$11;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
@@ -100,7 +100,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 756
+    .line 759
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$11;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 

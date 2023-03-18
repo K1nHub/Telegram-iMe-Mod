@@ -37,7 +37,7 @@
 
     check-cast p1, Ljava/lang/Void;
 
-    invoke-static {p1}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$h1-mam4P44rMkJ9AZK3q3U4TYj8(Ljava/lang/Void;)Lorg/telegram/tgnet/TLRPC$MessageEntity;
+    invoke-static {p1}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$qPCs06yZ4TTdl86K1-V6dmls_SQ(Ljava/lang/Void;)Lorg/telegram/tgnet/TLRPC$MessageEntity;
 
     move-result-object p1
 
